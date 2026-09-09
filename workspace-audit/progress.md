@@ -95,7 +95,8 @@
 
 ## 任务交接与插入指令登记（2026-09-09 晚）
 
-- **用户裁决**：本考古任务「不需要再推进下去，另有新的对话接替」；插入指令「把衔尾蛇副本并入衔尾蛇文件夹内，并留下说明」。阶段2 进行至六条宇宙线入账后中止（claim_ledger 现行 **1,364 条**，100% 逐字验证；SIM/REAL/DS/DB/CB/VERIF/PART2 已入账；GLM-WEB/QWEN/复审/统合线已提取未入账——中间清单在 `data/extract/arch.jsonl`，其中 53 条行号漂移已由 `tools/repair_relocate.txt` 修复入账，**未修复残留 0**；knowledge 主库线未提取）。接替会话从阶段2 剩余线 + 阶段3 起继续。
+- **用户裁决**：本考古任务「不需要再推进下去，另有新的对话接替」；插入指令「把衔尾蛇副本并入衔尾蛇文件夹内，并留下说明」。阶段2 进行至七条宇宙线入账后中止（claim_ledger 现行 **1,620 条**，100% 逐字验证；SIM/REAL/DS/DB-CB/VERIF/PART2/GLM-WEB-QWEN-复审-统合 已入账；knowledge 主库线未提取）。接替会话从阶段2 剩余线 + 阶段3 起继续。
+  - 【数字更正 2026-09-09】本节初稿误写"1,364 现行"（漏计 real 批次 256 条），实为 1,620 现行，以 `ledger_tool.txt count` 实时输出为准。
 - **衔尾蛇副本并入执行**（用户指令，考古 R1 因任务交接由本指令豁免）：
   - `衔尾蛇副本/`（40,800 文件 / 35.46MB）→ `大审查/衔尾蛇/attic/衔尾蛇副本-冻结快照-20260909/`，robocopy /MOVE，0 失败。
   - 验证：目的地计数 40,800 一致；随机 8 文件 sha256 对照本账本 files.jsonl 基线 8/8 一致（`tools/verify_move.txt`）。
@@ -106,11 +107,12 @@
 
 ## 阶段2 断言账本（全量）——进行中，接替点
 
-- 进入时间：2026-09-09 ~21:00；状态：**六线已入账，其余待接替**
-- 账本现状（`py -X utf8 workspace-audit/tools/ledger_tool.txt count`）：
-  - 总行数 1,366（含试金石期 2 条 superseded），现行 **1,364**
-  - 按类型：hypothesis 146 / method 203 / parameter 96 / result 463 / verdict 456（现行口径近似，以 count 命令实时输出为准）
-  - 按状态：verified ~784 / open ~513 / refuted 29 / superseded 32 / contradicted 5
-- 已完成入账的提取批次：`ds.jsonl`（264+1手工）、`sim2.jsonl`（516）、`arch.jsonl`（147+53修复）、`dbcb.jsonl`（149）、`verif.jsonl`（179+1手工）、`real.jsonl`（256）
+- 进入时间：2026-09-09 ~21:00；状态：**七线已入账，knowledge 线待接替**
+- 账本现状（`py -X utf8 workspace-audit/tools/ledger_tool.txt count`，2026-09-09 23:30 实测）：
+  - 总行数 1,622（含试金石期 2 条 superseded），现行 **1,620**
+  - 按类型：hypothesis 151 / method 242 / parameter 110 / result 591 / verdict 526
+  - 按状态：verified 969 / open 565 / refuted 42 / superseded 36 / contradicted 8
+- 已完成入账的提取批次：`ds.jsonl`（264+1手工）、`sim2.jsonl`（516）、`arch.jsonl`（147+53修复）、`dbcb.jsonl`（149）、`verif.jsonl`（179+1手工）、`real.jsonl`（256）、副本说明快照元数据（3）
 - 中间清单存档：`data/extract/*.jsonl`（子代理产出，均经程序化锚点复核后入账）
-- 质量门记录：`ledger_verify.txt` 全程 100% 逐字命中（现行口径）；ingest 失败累计 55 条，53 条重定位修复、2 条手工修正，未解决残留 0（`data/ingest-errors-unresolved.jsonl` 无新增）
+- 质量门记录：`ledger_verify.txt` 全程 100% 逐字命中（现行口径；已内置 衔尾蛇副本 路径迁移映射）；ingest 失败累计 55 条，53 条重定位修复、2 条手工修正，未解决残留 0
+- 接替会话注意：①knowledge 主库线（pitfalls/patterns/decisions/reflections/两轴模型等）未提取，提取提示词模板见本 progress 历史（子代理模式：只产 data/extract/*.jsonl，主会话 ingest 验证）；②arch.jsonl 提取员的 qwen 行号漂移教训——.extract.txt 文件有 `\r\r\n` 行尾，Read 行号与 Python readlines 行号不一致，ingest 失败时跑 `tools/repair_relocate.txt`；③阶段4 独立校验质量门未做，阶段3 分支树未开始。

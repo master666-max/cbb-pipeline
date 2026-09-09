@@ -24,6 +24,12 @@ if os.path.exists(sup_path):
 sup_rows = [r for r in rows if r["claim_id"] in sup]
 rows = [r for r in rows if r["claim_id"] not in sup]
 
+# 路径迁移映射（2026-09-09 用户指令移动 衔尾蛇副本/ → 大审查/衔尾蛇/attic/…；
+# 账本行的 source_file 保持入账时原样（R7），验证时经此表解析现路径）
+PATH_MAP = {
+    "衔尾蛇副本/": os.path.join("大审查", "衔尾蛇", "attic", "衔尾蛇副本-冻结快照-20260909") + "/",
+}
+
 cache = {}
 hit = miss = 0
 misses = []
@@ -38,7 +44,12 @@ for r in rows:
         misses.append((r["claim_id"], "锚点格式坏", anchor))
         continue
     if src not in cache:
-        fp = os.path.join(ROOT, src)
+        resolved = src
+        for oldp, newp in PATH_MAP.items():
+            if src.startswith(oldp):
+                resolved = newp + src[len(oldp):]
+                break
+        fp = os.path.join(ROOT, *resolved.split("/"))
         try:
             with open(fp, encoding="utf-8", errors="replace") as f:
                 cache[src] = f.readlines()
