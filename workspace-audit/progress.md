@@ -93,6 +93,24 @@
 - 锚点抽检：109/109 全命中（尾数7 仅 7 条→全抽；机械校验+语义核对双过，audit-log phase=1）。
 - 自检三问：alias/participants/mechanism 每条带锚点；三处矛盾并陈未裁决；推定均标【待确认】。
 
-## 阶段2 断言账本（全量）
+## 任务交接与插入指令登记（2026-09-09 晚）
 
-（待进行）
+- **用户裁决**：本考古任务「不需要再推进下去，另有新的对话接替」；插入指令「把衔尾蛇副本并入衔尾蛇文件夹内，并留下说明」。阶段2 进行至六条宇宙线入账后中止（claim_ledger 现行 **1,364 条**，100% 逐字验证；SIM/REAL/DS/DB/CB/VERIF/PART2 已入账；GLM-WEB/QWEN/复审/统合线已提取未入账——中间清单在 `data/extract/arch.jsonl`，其中 53 条行号漂移已由 `tools/repair_relocate.txt` 修复入账，**未修复残留 0**；knowledge 主库线未提取）。接替会话从阶段2 剩余线 + 阶段3 起继续。
+- **衔尾蛇副本并入执行**（用户指令，考古 R1 因任务交接由本指令豁免）：
+  - `衔尾蛇副本/`（40,800 文件 / 35.46MB）→ `大审查/衔尾蛇/attic/衔尾蛇副本-冻结快照-20260909/`，robocopy /MOVE，0 失败。
+  - 验证：目的地计数 40,800 一致；随机 8 文件 sha256 对照本账本 files.jsonl 基线 8/8 一致（`tools/verify_move.txt`）。
+  - 说明落盘：`大审查/衔尾蛇/attic/并入说明-2026-09-09.md`。
+  - 注意：首次 MSYS `mv` 因 Permission denied 被拒（无副作用，数据无损），改 robocopy 成功；attic 目录位于 大审查 嵌套仓库工作树内，untracked。
+  - 边界情况：目的地处 MSYS `mv` 报错后一次误读（"已不在根级"），复查确认源在、git 零 diff，无数据损失——如实登记。
+- **对账提示**：本次移动后，files.jsonl 基线中 `衔尾蛇副本/` 前缀的 40,800 条记录对应路径已变更（新前缀 `大审查/衔尾蛇/attic/衔尾蛇副本-冻结快照-20260909/`）。基线文件本身不改（R7）；接替会话做全树重扫时按新路径对账。
+
+## 阶段2 断言账本（全量）——进行中，接替点
+
+- 进入时间：2026-09-09 ~21:00；状态：**六线已入账，其余待接替**
+- 账本现状（`py -X utf8 workspace-audit/tools/ledger_tool.txt count`）：
+  - 总行数 1,366（含试金石期 2 条 superseded），现行 **1,364**
+  - 按类型：hypothesis 146 / method 203 / parameter 96 / result 463 / verdict 456（现行口径近似，以 count 命令实时输出为准）
+  - 按状态：verified ~784 / open ~513 / refuted 29 / superseded 32 / contradicted 5
+- 已完成入账的提取批次：`ds.jsonl`（264+1手工）、`sim2.jsonl`（516）、`arch.jsonl`（147+53修复）、`dbcb.jsonl`（149）、`verif.jsonl`（179+1手工）、`real.jsonl`（256）
+- 中间清单存档：`data/extract/*.jsonl`（子代理产出，均经程序化锚点复核后入账）
+- 质量门记录：`ledger_verify.txt` 全程 100% 逐字命中（现行口径）；ingest 失败累计 55 条，53 条重定位修复、2 条手工修正，未解决残留 0（`data/ingest-errors-unresolved.jsonl` 无新增）
