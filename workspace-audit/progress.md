@@ -118,3 +118,38 @@
 - 中间清单存档：`data/extract/*.jsonl`（子代理产出，均经程序化锚点复核后入账）
 - 质量门记录：`ledger_verify.txt` 全程 100% 逐字命中（现行口径；已内置 衔尾蛇副本 路径迁移映射）；ingest 失败累计 55 条，53 条重定位修复、2 条手工修正，未解决残留 0
 - 接替会话注意：①knowledge 主库线（pitfalls/patterns/decisions/reflections/两轴模型等）未提取，提取提示词模板见本 progress 历史（子代理模式：只产 data/extract/*.jsonl，主会话 ingest 验证）；②arch.jsonl 提取员的 qwen 行号漂移教训——.extract.txt 文件有 `\r\r\n` 行尾，Read 行号与 Python readlines 行号不一致，ingest 失败时跑 `tools/repair_relocate.txt`；③阶段4 独立校验质量门未做，阶段3 分支树未开始。
+
+## 阶段2 断言账本（全量）——已完成（2026-09-10 接替会话收尾）
+
+- 接替会话进入时间：2026-09-10；完成时间：2026-09-10
+- 续跑核对：阶段0/0.5/1 全部哈希逐位一致；claim_ledger 1,622 行与交接记录吻合（无篡改）。
+- 收尾范围圈定（`tools/gap_scan.txt` + `tools/gap_dedup.txt`）：全树叙事文件 − 已入账 − 43 个哈希级副本 − 边界剔除 = **终选 178 文件**（去重口径：同 sha256 且任一副本已入账 → COPY-SKIP；未入账同哈希对取一份、另一份登记跳过）。
+- 六批次提取（子代理，均先读 `tools/extractor-guide.md`——**提取模板已持久化固化**，修复交接期模板仅存会话历史的问题；自检 `tools/extract_check.txt` 全 PASS 后入账）：
+
+| 批次 | 文件数 | 断言数 | sha256[:16] |
+|---|---|---|---|
+| know.jsonl（knowledge 主库+trajectories 29） | 35 | 266 | f0b423a95d0cab37 |
+| sim3.jsonl（混元 R3–R17+总报告版本链+方法论+工单） | 29 | 578 | 4f1ca103cfa765f9 |
+| part2.jsonl（PART2 十二轮预注册/报告+根级账本） | 41 | 402 | f6fa7a3eb91f3c23 |
+| oreal.jsonl（大审查残留+衔尾蛇快照版本对） | 16 | 204 | 5cbe54ec05dd3489 |
+| deploy.jsonl（库调试两实例+_l8_lab+根meta+两轴模型） | 26 | 399 | b62dc8cf241d282e |
+| ds2.jsonl（DS 交接包独有：批次R2-R5+探针4-6+v3.1.0） | 30 | 455 | 0a96a5fb17fa6310 |
+
+- **账本终态**（`ledger_tool.txt count`）：总行数 **3,926**（现行 **3,924**）；类型 hypothesis 233 / method 657 / parameter 474 / result 1,512 / verdict 1,048；状态 verified 3,079 / open 702 / superseded 67 / refuted 52 / contradicted 24。claim_ledger.csv 3,927 行（含表头）sha256[:16] `faf6f5f8885340df`；audit-log.csv 293 行 `8a8da3274ed4d33a`；supersede_log.csv 不变（3 行）。
+- 质量门：`ledger_verify.txt` 全账本 **100% 逐字命中**（3,924/3,924 现行口径）；抽检 `spotcheck_p2b.txt` 尾数逢7 共 129 条 **129/129 命中**（audit-log phase=2b）；ingest 六批 2,304 条 **零失败**。
+- 关键分类决策（≤5）：
+  1. **宇宙前缀扩容**：新增 KB-（knowledge 主库）、PART1-（四轮审查链）、L8LAB-、DEPLOY-（库调试部署）、META-（根级元文档）五前缀，连同旧 12 宇宙入 `extractor-guide.md` 前缀表。
+  2. **版本对并陈不裁决**：v3.9 工单三版本（现行<zcode<快照）、总树两版、豆包总报告两版（副本=六轮33实验→9.9日版=七轮45实验）、DS v3.0.0/v3.1.0（主文逐字节一致仅尾加3行，未改判）——各版入账，差异处重点锚定，可定序标 superseded、不可定序标 contradicted。
+  3. **交接验收类文书**（混元交接验收/DeepSeek交接验收）按"跨宇宙对账核心证据"高密度提取，note 标 REAL验收SIM 等。
+  4. trajectories 撞号如实保留（task-018/020/024 跨日期重名）——源库 W-5 真实缺陷的证据，不代为修复。
+  5. sim3 发现：HANDOVER-ZCode线 顶部"28 轮后阴性结论全部不可直接引用"为波及面最大的 superseded 声明（11 条版本链改判入账）。
+- 边界情况及处理（边界清单存 `data/gap-final-list.txt` 尾行统计）：
+  - 代码/脚本不入账：zcode/sandbox_r2/*.txt（21个Python实验脚本）、衔尾蛇/proto/*、_l8_lab/tools/*、混元 *.py（其断言由对应叙事报告覆盖）。
+  - 引擎样板不入账：两部署实例 SKILL.md、citations.md（属 676 副本家族）；库调试两实例 references/ 四件同哈希取工作区版。
+  - 文献线延迟：引用论文总表.md（根）+ 豆包/引用论文总表_修订版.md → 阶段6 lit-ledger 处理。
+  - 非实验项目区不入账：语料分析/迷深清洗工作/mepub/ComfyUI/comfyui-docx-scratch/soul/archive/attic/workspace/.zcode；实验性双库工作区 按 AGENTS.md D-002 为冻结参照档案跳过（【待确认】若用户要求并入需补提）。
+  - qwen .extract.txt 的 `\r\r\n` 行尾漂移在自检脚本复现（arch.jsonl 53 条历史 FAIL 属已知已修复项，账本侧 100%）——子代理改用 Python readlines 实测行号后零漂移。
+- 未解决问题：
+  - 豆包 agora/memevo 两沙盒 zip 仍未解包（【待确认】延续）；沙盒总报告（agora 34 条/记忆库 mem-evo 35+5 条）已入账提供线级覆盖。
+  - SIM 第一/第二轮文件名未见于 混元/ 目录（R01/R02 断言仅存于总报告转述）——若在自演化离线实验/ 数据目录内有早期轮次，属数据目录边界未提取。
+- 自检三问：本阶段新断言全部带锚点（程序化截取+双重校验）；版本冲突全部并陈（superseded/contradicted 标注，未裁决）；推定（跨宇宙对账语义、版本定序）均落在 note/状态标注且有文内依据。
