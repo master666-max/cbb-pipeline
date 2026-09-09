@@ -160,12 +160,12 @@
 
 | 文件 | 行数 | sha256[:16] |
 |---|---|---|
-| tree_edges.csv | 174 | 待commit后回填 |
-| 20-分支树.mmd | 391 | 待commit后回填 |
-| ghost_list.csv | 4 | 待commit后回填 |
-| 3-分支树.md | 76 | 待commit后回填 |
-| data/tree-nodes.csv | 644 | （tree_scan 产出） |
-| data/tree-candidates.csv | 656 | （候选存档） |
+| tree_edges.csv | 174 | e765c0b8db0e6bf7 |
+| 20-分支树.mmd | 391 | 01ecd2001a44ccca |
+| ghost_list.csv | 4 | ddef5dfd3a80e500 |
+| 3-分支树.md | 59 | 91ead5afc077d196 |
+| data/tree-nodes.csv | 644 | b1fa3dcf9cf887be |
+| data/tree-candidates.csv | 656 | 7444973e1ba6db1f |
 
 - 关键数字（`tools/tree_scan.txt` + `tools/tree_validate.txt`）：643 节点/20 宇宙；173 边（replicates 65/refutes 39/motivated_by 35/supersedes 22/contradicts 10/extends 2）；INFERRED 55（31.8%）；触点 183、孤立 460、25 簇、最大簇 116、最深链 13（PART2 轮次链）。
 - 关键分类决策（≤5）：①"未复现"=refutes（E80 八驳边）；②E57 双裁决并陈（REAL驳/DS剂量化复现）；③修正编号≠实验号（修正57≠E57）；④版本链只连相邻；⑤混元/任务报告.md 与 codebuddy 同源存疑 → SIM-TASK 线弃边留人工。
