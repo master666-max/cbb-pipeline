@@ -65,4 +65,34 @@
 
 ## 阶段1 实体规范化
 
+- 进入时间：2026-09-09 ~19:55；完成时间：2026-09-09 ~20:50
+- 产出登记（`py -X utf8 workspace-audit/tools/progress_hash.txt`）：
+
+| 文件 | 行数 | sha256[:16] |
+|---|---|---|
+| 1-实体总表.md | 45 | e015fd337bd05e41 |
+| 1-版本谱系.md | 66 | a88ee1e950a2dc3f |
+| alias_map.csv | 51 | 76de419324bdae0f |
+| participants.csv | 15 | e9e4223dd2ef84f4 |
+| mechanism-registry.csv | 46 | 597c60b269599db2 |
+
+- 关键分类决策（≤5）：
+  1. **宇宙前缀制正式化**：SIM（混元离线推演）/REAL（衔尾蛇）/R2（第二批）/DS/PART2/VERIF/DB-AGORA/DB-MEMEVO/CB/GLM-WEB/QWEN/PART1 共 12 宇宙；E81 澄清为跨宇宙引用而非撞号（`混元/…第十八轮.md:3`）。
+  2. **引擎 hash 链实测**：9d8b3b0d→02931add→5f8199aa→ef2c645a→d5e4fb77；5f8199aa 三副本逐位一致（v3.0目录/库调试v3.2/猴子记忆库推演）。
+  3. **VERSION 字符串矛盾登记不裁决**（三解释并陈，见 1-版本谱系.md §一）。
+  4. 机制 45 条按 active(28)/refuted(12)/unknown(5) 入账，MECH-41/42/43 标 CONTRADICTION-CANDIDATE（跨宇宙矛盾）。
+  5. 总报告版本演化线索：14轮后（codebuddy 依据）→17轮后→26轮（两轴模型口径）。
+- 边界情况及处理：
+  - 豆包 agora/memevo zip 未解包（【待确认】解包落 workspace-audit/data/ 是否合规；倾向合规因不动原件）。
+  - qwen 工单文件名 v3.8 vs 内容 v3.9-1 版本错位——登记不裁决。
+  - Windows 10（衔尾蛇口径）vs Windows 11（VERIF 口径）环境描述并陈【待确认】。
+- 未解决问题：
+  - SIM 第十八~二十八轮 E 编号全景（E81–E125?）待阶段2 逐轮读取。
+  - 引用论文总表 原版 vs 修订版 diff 待考。
+  - 提示词阶段7 的 E28"对未收敛物强行固化"名实差异仍未定位（SIM-E28=层次化归并）。
+- 锚点抽检：109/109 全命中（尾数7 仅 7 条→全抽；机械校验+语义核对双过，audit-log phase=1）。
+- 自检三问：alias/participants/mechanism 每条带锚点；三处矛盾并陈未裁决；推定均标【待确认】。
+
+## 阶段2 断言账本（全量）
+
 （待进行）

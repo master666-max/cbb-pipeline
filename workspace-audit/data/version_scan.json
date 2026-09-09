@@ -1,0 +1,210 @@
+[
+ {
+  "pack": "library-bootstrap-l8-addon",
+  "version_lines": [],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-l8-addon-v2.0.2",
+  "version_lines": [
+   "README.md:1: # library-bootstrap L8 add-on v2.0.2 · 自指演化层（含偏差修正）",
+   "README.md:3: > 17 文件 · 2026-09-05 发布 · 前置：先装纯净主包 v2.0.2（或统合版已含本层）。",
+   "README.md:5: ## v2.0.2 变更（vs l8-addon v1.0）"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-l8-addon-v2.1",
+  "version_lines": [
+   "README.md:1: # L8 add-on v2.1 · 自指演化层（SHA-256 版）",
+   "README.md:3: > v2.1 变更：l8_guard/lifelog_append 全面 SHA-256 截 16 位（T11 复测）、migrate_sha256.txt 迁移脚本（幂等 T30）、anchor_head.txt 外部锚定（W-011，T31）、TOURNAMENT-SOP 归因修正（direct"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-l9-addon",
+  "version_lines": [
+   "README.md:4: > 指导思想：《仿生认知架构（BCA）实施规划书 v0.1》（五层架构 + 四公理）。"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-l9-addon-v2.0.2",
+  "version_lines": [
+   "README.md:1: # library-bootstrap L9 add-on v2.0.2 · BCA 内省仿生层（含偏差修正）",
+   "README.md:3: > 30 文件 · 2026-09-05 发布 · 前置：先装 L8 add-on v2.0.2（或统合版已含本层）。",
+   "README.md:5: ## v2.0.2 变更（vs l9-addon v1.0）"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-l9-addon-v2.1-实验档位",
+  "version_lines": [
+   "README.md:1: # L9 add-on v2.1 · BCA 内省仿生层（实验档位 · 验收未运行）",
+   "README.md:3: > v2.1 变更：state_update v2（Δ 六类事件固定映射表，同序列回放逐位一致 T34）；broadcast 打分公式 0.6/0.3/0.1（W-020，T36 确定性）+ arousal 四象限仲裁（W-019，T35）；anchor_head.txt；第四维 stakes 追认",
+   "README.md:4: > **状态标注（W-016 用户裁决 2026-09-06）**：L9 本质是实验档位——「因为很 cool 所以做」是其设计定位的一部分。机制与测试完整（20 断言全过），但 A1/A2/A3 消融/干预/谄媚验收未运行；预注册协议已入档，验收数据收集列 v2.2，运行后按结果处置。"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-v1.0-发布版",
+  "version_lines": [
+   "README.md:1: # library-bootstrap v1.0 · Agent Harness 通用建库 Skill"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-v2.0.2-纯净主包",
+  "version_lines": [
+   "README.md:1: # library-bootstrap · 纯净主包 v2.0.2（L0-L7 稳定档）",
+   "README.md:5: ## v2.0.2 变更（vs v1.0-发布版）",
+   "README.md:9: - L8/L9 不在本包（纯净设计）；如需请装对应 add-on 或直接换超绝统合版 v2.0.2。"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-v2.1-纯净主包",
+  "version_lines": [
+   "README.md:1: # library-bootstrap · 纯净主包 v2.1（L0-L7 稳定档）",
+   "README.md:3: > v2.1 变更：SHA-256 哈希（bootstrap_verify）、lint 扩展五项（L-int-02~06）、schema v3.1 七字段、铁律 6（打包硬排除）、检索匹配策略成文、m-core 六条铁律模板。测试 58/58（源树）。"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-v3.0",
+  "version_lines": [
+   "bootstrap_v3.py:20: VERSION = \"3.8.1\"",
+   "bootstrap_v3.py:63: # v3.2/C-013：v2.x 终版题录全量定稿入包（absorb-pending 机制退役——数据源固定，回填不再依赖源树）",
+   "bootstrap_v3.py:74: \"A24\": {\"title\": \"《仿生认知架构（BCA）实施规划书 v0.1》（用户提供）\", \"venue\": \"工作区文档（doc 型，无 arXiv 编号）\", \"status\": \"verified\"},",
+   "bootstrap_v3.py:78: # v3.2/C-006：变异基准黑名单（guard 子命令执法依据；宪章第七条的机器可读形态）",
+   "bootstrap_v3.py:107: \"validity\"]  # v3.2/C-010(D4)：扩至十字段——keywords（检索 ×3 加权）、links（[[条目id]] 扩散一跳）；旧八字段条目 migrate 回填空值",
+   "bootstrap_v3.py:142: # v3.1/V-008：install L8+ 时对 MUTATION-SOP 追加的守卫段（文本单点源自宪章条款，不改 v2.x 冻结源）",
+   "bootstrap_v3.py:151: # v3.1/V-009：referee（干净上下文评审）提示词——CLI 无法 spawn harness 子代理，",
+   "bootstrap_v3.py:257: e[\"keywords\"], e[\"links\"] = kw, lk  # v3.7/L-006：类型强转",
+   "bootstrap_v3.py:323: # ── v3.2/C-000(D1=a)：v3 原生内容体渲染——入口/技能/README/包模板全部由 SOURCES 生成 ──",
+   "bootstrap_v3.py:433: skipped.append(f\"{rel}（{p.stat().st_size//1024}KB>512KB）\")  # v3.1/V-010：不静默",
+   "bootstrap_v3.py:440: # v3.2/C-012：镜像语义——本轮未命中的旧条目移入 removed 区并报告（不静默残留，符合铁律1）",
+   "bootstrap_v3.py:535: if \"已存在\" in str(ex): MON.setdefault(\"skipped_dup\", []).append(e[\"id\"])  # v3.6/K-001：幂等跳过≠拒绝",
+   "bootstrap_v3.py:573: ov_path = DATA_DIR / \"registry_overrides.json\"  # v3.5/J-003：人工裁决进账——overrides 参与对账",
+   "bootstrap_v3.py:576: if absorb_overrides:  # v3.7/L-002(D2)：裁决值回写建议 + 清旁路文件（恢复单一事实源权威）",
+   "bootstrap_v3.py:588: # v3.1/V-003：三态分离 match/mismatch/error，error=未对账，不许静默计入通过",
+   "bootstrap_v3.py:594: if throttle: time.sleep(2.0)  # v3.1 补丁：条间降速（84 连发=限流重置的根因）；测试可关",
+   "bootstrap_v3.py:608: pass  # v3.7/L-002：override 命中但未对上——mismatch 分支统一处理并标注",
+   "bootstrap_v3.py:626: if mismatch and fix:  # v3.5/J-003 修复：--fix 真正写 overrides（v3.1 重写 verify 时该段丢失，--fix 沦为空操作）",
+   "bootstrap_v3.py:631: if mismatch:  # v3.8/N-001：mismatch 影响退出码（发布门 && 语义成立）；error=未对账不 exit",
+   "bootstrap_v3.py:636: if out is None: out = Path(lib) if lib else Path(\"./dist\")  # v3.5/J-004",
+   "bootstrap_v3.py:641: (out / \"citations.md\").write_text(render_citations(), encoding=\"utf-8\")  # v3.2/C-013：题录即产物",
+   "bootstrap_v3.py:643: out = Path(lib)  # v3.5/J-004：--lib 模式渲染产物默认落库",
+   "bootstrap_v3.py:647: if not (lib / \"state.json\").exists():  # v3.6/K-005",
+   "bootstrap_v3.py:652: st[\"version\"] = VERSION; st[\"package_sha256\"] = self_hash()  # v3.5/J-005：state 随包升级",
+   "bootstrap_v3.py:653: st[\"merkle_root\"] = merkle_root(lib, exclude={\"state.json\"})  # v3.4 补丁：渲染件刷新也是写操作，Y-001 时序对齐"
+  ],
+  "key_hashes": {
+   "bootstrap_v3.py": "5f8199aa371e91ea",
+   "review-20260908/bootstrap_v3.8.2_补丁后.py": "ef2c645aea64fb9e"
+  }
+ },
+ {
+  "pack": "library-bootstrap-v3.9",
+  "version_lines": [
+   "bootstrap_v3.9.py:20: VERSION = \"3.9\"  # v3.9/衔尾蛇工单：法层参数外置(W-1/W-2)+run-tests修复(W-3)+state并发锁(W-4)+反思前提注记(W-6)",
+   "bootstrap_v3.9.py:63: # v3.2/C-013：v2.x 终版题录全量定稿入包（absorb-pending 机制退役——数据源固定，回填不再依赖源树）",
+   "bootstrap_v3.9.py:74: \"A24\": {\"title\": \"《仿生认知架构（BCA）实施规划书 v0.1》（用户提供）\", \"venue\": \"工作区文档（doc 型，无 arXiv 编号）\", \"status\": \"verified\"},",
+   "bootstrap_v3.9.py:78: # v3.2/C-006：变异基准黑名单（guard 子命令执法依据；宪章第七条的机器可读形态）",
+   "bootstrap_v3.9.py:112: \"validity\"]  # v3.2/C-010(D4)：扩至十字段——keywords（检索 ×3 加权）、links（[[条目id]] 扩散一跳）；旧八字段条目 migrate 回填空值",
+   "bootstrap_v3.9.py:126: # v3.8.2/L9-DELIVER：补全 L9 已吸收但漏交付的内容体（论文核对 T4：A24/A29/A32/A33）",
+   "bootstrap_v3.9.py:154: # v3.1/V-008：install L8+ 时对 MUTATION-SOP 追加的守卫段（文本单点源自宪章条款，不改 v2.x 冻结源）",
+   "bootstrap_v3.9.py:163: # v3.1/V-009：referee（干净上下文评审）提示词——CLI 无法 spawn harness 子代理，",
+   "bootstrap_v3.9.py:269: e[\"keywords\"], e[\"links\"] = kw, lk  # v3.7/L-006：类型强转",
+   "bootstrap_v3.9.py:317: # v3.8.2/L9-DELIVER：依赖边对齐内容体 install.md 声明",
+   "bootstrap_v3.9.py:338: # ── v3.2/C-000(D1=a)：v3 原生内容体渲染——入口/技能/README/包模板全部由 SOURCES 生成 ──",
+   "bootstrap_v3.9.py:456: skipped.append(f\"{rel}（二进制缓存不吸收）\"); continue  # v3.8.2/L9-DELIVER",
+   "bootstrap_v3.9.py:458: skipped.append(f\"{rel}（{p.stat().st_size//1024}KB>512KB）\")  # v3.1/V-010：不静默",
+   "bootstrap_v3.9.py:465: # v3.2/C-012：镜像语义——本轮未命中的旧条目移入 removed 区并报告（不静默残留，符合铁律1）",
+   "bootstrap_v3.9.py:543: _tid = (\"TRAJ-\" + mt.group(0).replace(\"-\", \"\") + \"-\" + mtask.group(1)) if mtask else (\"TRAJ-\" + fn.stem[:8])  # v3.9/W-5：ID 含日期，杜绝跨月撞号",
+   "bootstrap_v3.9.py:561: if \"已存在\" in str(ex): MON.setdefault(\"skipped_dup\", []).append(e[\"id\"])  # v3.6/K-001：幂等跳过≠拒绝",
+   "bootstrap_v3.9.py:599: ov_path = DATA_DIR / \"registry_overrides.json\"  # v3.5/J-003：人工裁决进账——overrides 参与对账",
+   "bootstrap_v3.9.py:602: if absorb_overrides:  # v3.7/L-002(D2)：裁决值回写建议 + 清旁路文件（恢复单一事实源权威）",
+   "bootstrap_v3.9.py:614: # v3.1/V-003：三态分离 match/mismatch/error，error=未对账，不许静默计入通过",
+   "bootstrap_v3.9.py:620: if throttle: time.sleep(2.0)  # v3.1 补丁：条间降速（84 连发=限流重置的根因）；测试可关",
+   "bootstrap_v3.9.py:634: pass  # v3.7/L-002：override 命中但未对上——mismatch 分支统一处理并标注",
+   "bootstrap_v3.9.py:652: if mismatch and fix:  # v3.5/J-003 修复：--fix 真正写 overrides（v3.1 重写 verify 时该段丢失，--fix 沦为空操作）",
+   "bootstrap_v3.9.py:657: if mismatch:  # v3.8/N-001：mismatch 影响退出码（发布门 && 语义成立）；error=未对账不 exit",
+   "bootstrap_v3.9.py:662: if out is None: out = Path(lib) if lib else Path(\"./dist\")  # v3.5/J-004",
+   "bootstrap_v3.9.py:667: (out / \"citations.md\").write_text(render_citations(), encoding=\"utf-8\")  # v3.2/C-013：题录即产物"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-超绝统合版",
+  "version_lines": [],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-超绝统合版v2.0.1",
+  "version_lines": [],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-超绝统合版v2.0.2",
+  "version_lines": [
+   "README.md:1: # library-bootstrap · 超绝统合版 v2.0.2（三处偏差修正版）",
+   "README.md:4: > 旧版 v2.0 / v2.0.1 保留原位；本版为唯一推荐装包。",
+   "README.md:6: ## v2.0.2 变更记录（vs v2.0.1）"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "library-bootstrap-超绝统合版v2.1",
+  "version_lines": [
+   "README.md:1: # library-bootstrap · 超绝统合版 v2.1（三处偏差修正 + 统合修订 26 工单落地）",
+   "README.md:3: > 2026-09-06 发布。**本版为 L0-L9 十档全量**。W-016 用户裁决（2026-09-06）：L9 本质是实验档位，保留在统合版内，以「验收未运行」状态标注披露；A1/A2/A3 预注册协议已入档，验收数据收集列 v2.2。",
+   "README.md:4: > v2.1 依据《统合修订工单 2026-09-06》完成 P0 全部 16 条 + P1 全部 10 条，P2（W-027~038）列 v2.2。",
+   "README.md:6: ## v2.1 关键变更",
+   "README.md:13: - **schema v3.1**（W-014）：条目七字段（新增 schema_version=3，迁移幂等）。",
+   "README.md:20: py -X utf8 run_tests.txt → 58 PASS / 0 FAIL（T1-T45，含 v2.1 新增 20 断言）"
+  ],
+  "key_hashes": {}
+ },
+ {
+  "pack": "库调试v3.2",
+  "version_lines": [
+   "bootstrap_v3.py:20: VERSION = \"3.8.1\"",
+   "bootstrap_v3.py:63: # v3.2/C-013：v2.x 终版题录全量定稿入包（absorb-pending 机制退役——数据源固定，回填不再依赖源树）",
+   "bootstrap_v3.py:74: \"A24\": {\"title\": \"《仿生认知架构（BCA）实施规划书 v0.1》（用户提供）\", \"venue\": \"工作区文档（doc 型，无 arXiv 编号）\", \"status\": \"verified\"},",
+   "bootstrap_v3.py:78: # v3.2/C-006：变异基准黑名单（guard 子命令执法依据；宪章第七条的机器可读形态）",
+   "bootstrap_v3.py:107: \"validity\"]  # v3.2/C-010(D4)：扩至十字段——keywords（检索 ×3 加权）、links（[[条目id]] 扩散一跳）；旧八字段条目 migrate 回填空值",
+   "bootstrap_v3.py:142: # v3.1/V-008：install L8+ 时对 MUTATION-SOP 追加的守卫段（文本单点源自宪章条款，不改 v2.x 冻结源）",
+   "bootstrap_v3.py:151: # v3.1/V-009：referee（干净上下文评审）提示词——CLI 无法 spawn harness 子代理，",
+   "bootstrap_v3.py:257: e[\"keywords\"], e[\"links\"] = kw, lk  # v3.7/L-006：类型强转",
+   "bootstrap_v3.py:323: # ── v3.2/C-000(D1=a)：v3 原生内容体渲染——入口/技能/README/包模板全部由 SOURCES 生成 ──",
+   "bootstrap_v3.py:433: skipped.append(f\"{rel}（{p.stat().st_size//1024}KB>512KB）\")  # v3.1/V-010：不静默",
+   "bootstrap_v3.py:440: # v3.2/C-012：镜像语义——本轮未命中的旧条目移入 removed 区并报告（不静默残留，符合铁律1）",
+   "bootstrap_v3.py:535: if \"已存在\" in str(ex): MON.setdefault(\"skipped_dup\", []).append(e[\"id\"])  # v3.6/K-001：幂等跳过≠拒绝",
+   "bootstrap_v3.py:573: ov_path = DATA_DIR / \"registry_overrides.json\"  # v3.5/J-003：人工裁决进账——overrides 参与对账",
+   "bootstrap_v3.py:576: if absorb_overrides:  # v3.7/L-002(D2)：裁决值回写建议 + 清旁路文件（恢复单一事实源权威）",
+   "bootstrap_v3.py:588: # v3.1/V-003：三态分离 match/mismatch/error，error=未对账，不许静默计入通过",
+   "bootstrap_v3.py:594: if throttle: time.sleep(2.0)  # v3.1 补丁：条间降速（84 连发=限流重置的根因）；测试可关",
+   "bootstrap_v3.py:608: pass  # v3.7/L-002：override 命中但未对上——mismatch 分支统一处理并标注",
+   "bootstrap_v3.py:626: if mismatch and fix:  # v3.5/J-003 修复：--fix 真正写 overrides（v3.1 重写 verify 时该段丢失，--fix 沦为空操作）",
+   "bootstrap_v3.py:631: if mismatch:  # v3.8/N-001：mismatch 影响退出码（发布门 && 语义成立）；error=未对账不 exit",
+   "bootstrap_v3.py:636: if out is None: out = Path(lib) if lib else Path(\"./dist\")  # v3.5/J-004",
+   "bootstrap_v3.py:641: (out / \"citations.md\").write_text(render_citations(), encoding=\"utf-8\")  # v3.2/C-013：题录即产物",
+   "bootstrap_v3.py:643: out = Path(lib)  # v3.5/J-004：--lib 模式渲染产物默认落库",
+   "bootstrap_v3.py:647: if not (lib / \"state.json\").exists():  # v3.6/K-005",
+   "bootstrap_v3.py:652: st[\"version\"] = VERSION; st[\"package_sha256\"] = self_hash()  # v3.5/J-005：state 随包升级",
+   "bootstrap_v3.py:653: st[\"merkle_root\"] = merkle_root(lib, exclude={\"state.json\"})  # v3.4 补丁：渲染件刷新也是写操作，Y-001 时序对齐"
+  ],
+  "key_hashes": {
+   "bootstrap_v3.py": "5f8199aa371e91ea"
+  }
+ },
+ {
+  "pack": "库调试工作区",
+  "version_lines": [
+   "README.md:1: # 内省仿生:BCA · library-bootstrap v3.9 库",
+   "spec.md:1: # spec v3.9"
+  ],
+  "key_hashes": {}
+ }
+]
