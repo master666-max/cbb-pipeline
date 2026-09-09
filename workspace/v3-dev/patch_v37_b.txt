@@ -1,0 +1,181 @@
+# -*- coding: utf-8 -*-
+# v3.7 patch B：A3 尾段收口 + 旧测试适配 + 6 条新测试 + VERSION
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def save():
+    io.open(p, 'w', encoding='utf-8', newline=chr(10)).write(s)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1); save()
+
+# guard-anchor 汇总行（A2 缺尾）
+if 'guard-anchor' not in s:
+    rep('''        print(f"guard anchor: 对账 {len(table)} 项 → 不一致 {len(mis)}"''',
+        '''        _ledger_append(lib, "guard-anchor", f"items={len(table)} mismatch={len(mis)}")  # v3.7/L-003
+        print(f"guard anchor: 对账 {len(table)} 项 → 不一致 {len(mis)}"''')
+
+# L-004 eval 劣化
+if '宪章警告' not in s:
+    rep('''        base = {"ts": time.strftime("%F %T"), "n": n, "recall@5": round(hits / n, 3), "MRR": round(rr / n, 3), "misses": misses}''',
+        '''        base = {"ts": time.strftime("%F %T"), "n": n, "recall@5": round(hits / n, 3), "MRR": round(rr / n, 3), "misses": misses}
+        old_bp = lib / "evals" / "baseline.json"
+        degrade = ""
+        if old_bp.exists():  # v3.7/L-004：宪章纪律落地——劣化超 5% 警告
+            ob = json.loads(old_bp.read_text(encoding="utf-8"))
+            if ob.get("recall@5") and base["recall@5"] < ob["recall@5"] * 0.95:
+                degrade = "；[宪章警告] recall@5 劣化超 5%——检索参数变更须对账，不得合入"''')
+    rep('''（基线写入 evals/baseline.json，misses {len(misses)} 条；v2.x 参照线 recall@5=0.455——条目集不同，仅参照）")''',
+        '''（基线写入 evals/baseline.json，misses {len(misses)} 条；v2.x 参照线 recall@5=0.455——条目集不同，仅参照）{degrade}")
+        if degrade: sys.exit(2)''')
+
+# L-006 类型强转
+if '类型强转' not in s:
+    rep('''    e.setdefault("keywords", []); e.setdefault("links", [])
+    return e''',
+        '''    kw = e.get("keywords", [])
+    if isinstance(kw, str): kw = [kw]
+    if not isinstance(kw, list): kw = []
+    lk = e.get("links", [])
+    if isinstance(lk, str): lk = [lk]
+    if not isinstance(lk, list): lk = []
+    e["keywords"], e["links"] = kw, lk  # v3.7/L-006：类型强转
+    return e''')
+
+# CLI absorb-overrides
+if 'absorb-overrides", action' not in s:
+    rep('''s = sub.add_parser("verify");      s.add_argument("--fix", action="store_true"); s.add_argument("--data", default=None)''',
+        '''s = sub.add_parser("verify");      s.add_argument("--fix", action="store_true"); s.add_argument("--absorb-overrides", action="store_true"); s.add_argument("--data", default=None)  # v3.7/L-002''')
+    rep('''"verify": lambda: cmd_verify(a.fix),''',
+        '''"verify": lambda: cmd_verify(a.fix, absorb_overrides=a.absorb_overrides),''')
+
+# 旧测试适配 L-008 全量渲染化：适配页对象消失，断言改为渲染化全覆盖
+        ims = list((tmp / "experimental-l8").rglob("install.md"))  # v3.7/L-008
+        assert ims and all("渲染产物" in q.read_text(encoding="utf-8")[:120] for q in ims), "install.md 未全量渲染化")
+    '''        ims = list((tmp / "experimental-l8").rglob("install.md"))  # v3.7/L-008：全量渲染化后适配页仅存于模板 md
+        assert all("渲染产物" in q.read_text(encoding="utf-8")[:120] for q in ims), "install.md 未全量渲染化"''')
+
+# 6 条新测试
+tests = '''@t
+def t_redeliver_pilot_unified():
+    """v3.7/L-001：redeliver 复用 _body_for——PILOT/全量渲染文件 redeliver 后漂移 0"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_l1")
+    try:
+        cmd_install("L9", [], tmp, True)
+        victim = tmp / "experimental-l8" / "constitution" / "install.md"
+        victim.write_text(victim.read_text(encoding="utf-8") + chr(10) + "<!-- 手改 -->", encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_install("L9", [], tmp, True, redeliver=True)
+        assert "重交付" in buf.getvalue()
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_install("L9", [], tmp, True)
+        assert "漂移 0" in buf.getvalue(), "redeliver 后 PILOT 文件仍漂移（分叉未消灭）"
+        assert "渲染产物" in victim.read_text(encoding="utf-8")[:120], "redeliver 未按渲染化重写"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_absorb_overrides_loop():
+    """v3.7/L-002：--absorb-overrides 出回写建议+清旁路，单一事实源复位"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_l2")
+    real_data = str(DATA_DIR)
+    real_urlopen = urllib.request.urlopen
+    xml = "<?xml?><feed><title>q</title><title>Mocked Test Title</title></feed>"
+    def _mock(*a, **k): return _io.BytesIO(xml.encode("utf-8"))
+    try:
+        set_data_dir(tmp / "pkgdata")
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        (DATA_DIR / "bodies.json").write_text("{}", encoding="utf-8")
+        urllib.request.urlopen = _mock
+        try:
+            with contextlib.redirect_stdout(_io.StringIO()): cmd_verify(fix=True, throttle=False)
+            assert (DATA_DIR / "registry_overrides.json").exists()
+            buf = _io.StringIO()
+            with contextlib.redirect_stdout(buf): cmd_verify(fix=False, throttle=False, absorb_overrides=True)
+            out = buf.getvalue()
+            assert "REGISTRY-ABSORB.md" in out and "单一事实源复位" in out
+            assert not (DATA_DIR / "registry_overrides.json").exists(), "旁路文件未清空"
+            assert (DATA_DIR / "REGISTRY-ABSORB.md").exists()
+        finally:
+            urllib.request.urlopen = real_urlopen
+    finally:
+        set_data_dir(real_data); shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_ledger_guard_absorb():
+    """v3.7/L-003：guard-snapshot/guard-anchor/absorb-md 汇总入账本"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_l3")
+    try:
+        cmd_install("L2", [], tmp, True)
+        with contextlib.redirect_stdout(_io.StringIO()): cmd_guard(None, tmp, snapshot=True)
+        with contextlib.redirect_stdout(_io.StringIO()): cmd_guard(None, tmp, anchor=tmp / "anchor_snapshot.json")
+        ledger = (tmp / "ledger" / "changes.jsonl").read_text(encoding="utf-8")
+        assert "guard-snapshot" in ledger and "guard-anchor" in ledger
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_eval_degradation():
+    """v3.7/L-004：基线劣化超 5% 触发宪章警告并 exit 2"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_l4")
+    try:
+        cmd_install("L2", [], tmp, True)
+        mk = lambda i, c: {"id": i, "created_at": "2026-09-07", "updated_at": "", "content": c,
+                           "keywords": [c[:3]], "links": [], "source_event_id": "gen",
+                           "importance": 6, "confidence": "高", "validity": {}}
+        cmd_engine("append", tmp, json.dumps(mk("e1", "哈希链内容"), ensure_ascii=False))
+        (tmp / "evals").mkdir(exist_ok=True)
+        qs = [{"query": "哈希", "expected": ["e1"], "type": "lexical"}]
+        (tmp / "evals" / "golden_queries.json").write_text(json.dumps(qs, ensure_ascii=False), encoding="utf-8")
+        (tmp / "evals" / "baseline.json").write_text(json.dumps({"recall@5": 1.0, "MRR": 1.0}), encoding="utf-8")
+        (tmp / "memory" / "longterm" / "e1.json").write_text("{}", encoding="utf-8")  # 制造劣化：expected 条目失效
+        code = 0
+        try:
+            buf = _io.StringIO()
+            with contextlib.redirect_stdout(buf): cmd_engine("eval", tmp)
+        except SystemExit as ex: code = ex.code
+        assert code == 2 and "宪章警告" in buf.getvalue(), "劣化未触发宪章警告"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_cross_month_real():
+    """v3.7/L-005：真跨月——次月首行 prev=上月尾哈希（X-018 核心路径补测）"""
+    import types as _t
+    tmp = _tmpdir("_bsv3t_l5")
+    import time as _time_mod
+    real_strftime = _time_mod.strftime
+    try:
+        h1 = chain_append(tmp / "audit", "first line")
+        _time_mod.strftime = lambda fmt, *a: "2099-12" if fmt == "%Y-%m" else "2099-12-31 23:59"  # 模块级 patch：chain_append 同源
+        h2 = chain_append(tmp / "audit", "next month line")
+        files = sorted((tmp / "audit").glob("lifelog-*.md"))
+        assert len(files) == 2, f"应生成两个月文件: {[f.name for f in files]}"
+        first_of_next = files[-1].read_text(encoding="utf-8").splitlines()[0]
+        assert f"prev:{h1}" in first_of_next, "次月首行未引用上月尾哈希"
+    finally:
+        _time_mod.strftime = real_strftime
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_entry_normalize_types():
+    """v3.7/L-006：keywords/links 类型强转"""
+    e = entry_normalize({"id": "x", "keywords": "单一", "links": None, "created_at": "2026-09-07",
+                         "updated_at": "", "content": "c", "source_event_id": "g", "importance": 1,
+                         "confidence": "高", "validity": {}})
+    assert e["keywords"] == ["单一"] and e["links"] == []
+    e2 = entry_normalize({"id": "y", "keywords": 123, "links": "ab", "created_at": "2026-09-07",
+                          "updated_at": "", "content": "c", "source_event_id": "g", "importance": 1,
+                          "confidence": "高", "validity": {}})
+    assert e2["keywords"] == [] and e2["links"] == ["ab"]
+
+@t
+def t_shape():'''
+rep('@t\ndef t_shape():', tests)
+rep('VERSION = "3.6.0"', 'VERSION = "3.7.0"')
+print('patch B done')

@@ -1,0 +1,29 @@
+{
+ "pre": {
+  "default": {
+   "audit_recall5": 0.25,
+   "audit_U": -0.4062,
+   "kw_recall5": 0.4
+  },
+  "evolved": {
+   "audit_recall5": 1.0,
+   "audit_U": 0.85,
+   "kw_recall5": 1.0
+  }
+ },
+ "post": {
+  "default": {
+   "audit_recall5": 0.25,
+   "audit_U": -0.4437,
+   "kw_recall5": 0.2
+  },
+  "evolved": {
+   "audit_recall5": 1.0,
+   "audit_U": 0.8312,
+   "kw_recall5": 1.0
+  }
+ },
+ "reflect_triggered": true,
+ "materials_file": "D:\\zcode专用！！！！危险！！！！！！！！！\\大审查\\zcode\\sandbox\\lib-x2d\\memory\\reflect\\materials-20260908-215553.md",
+ "wrapup": "wrap-up 完成，四维情绪 ×0.7，库根 d2bc594a40b48724…\n  [反思触发] importance_accum=590 ≥ 阈值 50——执行反思合成（无据不写），完成后将 importance_accum 重置（批量导入累积——importance 阈值评估临时上浮）\n"
+}

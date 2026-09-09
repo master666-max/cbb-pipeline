@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bootstrap_v3.py 架构审查可视化 · 2026-09-08</title>
+<style>
+  :root{ --ink:#1A1B1C; --sub:#5B6470; --line:#E4E3DD; --bg:#F7F6F1; --card:#FFFFFF;
+         --accent:#3E7CB1; --accent-soft:#E8F1F8; --p0:#D9534F; --p0-soft:#FBEAEA;
+         --p1:#E08A1E; --p1-soft:#FBF3E6; --p2:#6B7785; --p2-soft:#EEF1F4; --ok:#3D8B37; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:'PingFang SC','Segoe UI',Roboto,Arial,sans-serif;line-height:1.55;padding:24px 14px}
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-size:21px;margin:0 0 4px}
+  h2{font-size:16px;margin:26px 0 10px;padding-left:9px;border-left:4px solid var(--accent)}
+  .meta{color:var(--sub);font-size:12.5px;margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+  .chip{font-size:12px;padding:5px 11px;border-radius:999px;background:var(--accent-soft);color:#275980;border:1px solid #CFE2F0}
+  .chip.b0{background:var(--p0-soft);color:#A23B38;border-color:#F0CCCC}
+  .chip.b1{background:var(--p1-soft);color:#9A5E12;border-color:#F0DFC4}
+  .chip.b2{background:var(--p2-soft);color:#46505C;border-color:#DDE2E8}
+  /* layer diagram */
+  .anchor{border:1.6px dashed var(--accent);border-radius:14px;padding:10px;background:linear-gradient(180deg,#F2F7FB,#FBFCFE)}
+  .anchor-t{font-size:12px;color:#275980;margin-bottom:8px;font-weight:600}
+  .layer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--card);
+         border:1px solid var(--line);border-radius:10px;padding:7px 10px;margin:6px 0}
+  .layer .ln{font-size:11px;color:var(--sub);min-width:74px;font-variant-numeric:tabular-nums}
+  .layer .nm{font-size:13px;font-weight:600;min-width:138px}
+  .layer .ds{font-size:11.5px;color:var(--sub);flex:1;min-width:160px}
+  .tags{display:flex;gap:5px;flex-wrap:wrap}
+  .tag{font-size:10.5px;padding:2px 7px;border-radius:6px;font-weight:600;letter-spacing:.2px}
+  .tag.t0{background:var(--p0-soft);color:var(--p0)} .tag.t1{background:var(--p1-soft);color:var(--p1)}
+  .tag.t2{background:var(--p2-soft);color:var(--p2)}
+  /* flow */
+  .flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin:8px 0}
+  .step{flex:1 1 120px;min-width:120px;background:var(--card);border:1px solid var(--line);
+        border-radius:10px;padding:9px 10px;font-size:12px;position:relative;margin-right:22px;margin-bottom:8px}
+  .step:last-child{margin-right:0}
+  .step:not(:last-child)::after{content:"→";position:absolute;right:-19px;top:50%;transform:translateY(-50%);
+        color:var(--accent);font-weight:700;font-size:15px}
+  .step.bad{border-color:#E8B9B8;background:var(--p0-soft)}
+  .step.good{border-color:#BBD8B8;background:#F1F7F0}
+  .step b{display:block;font-size:12.5px;margin-bottom:2px}
+  .step small{color:var(--sub)}
+  .flow-label{font-size:12px;font-weight:600;margin:10px 0 2px}
+  .flow-label.ok{color:var(--ok)} .flow-label.bad{color:var(--p0)}
+  /* bars */
+  .bar-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:12.5px}
+  .bar-row .lab{width:96px;color:var(--ink);flex:none}
+  .bar-track{flex:1;background:#EEF0EC;border-radius:6px;height:18px;position:relative;overflow:hidden}
+  .bar-fill{height:100%;border-radius:6px;background:var(--accent);display:flex;align-items:center;
+        justify-content:flex-end;padding-right:7px;color:#fff;font-size:11px;font-weight:600;min-width:22px}
+  .bar-fill.c0{background:var(--p0)} .bar-fill.c1{background:var(--p1)} .bar-fill.c2{background:var(--p2)}
+  /* target arch */
+  .grid{display:flex;gap:10px;flex-wrap:wrap}
+  .modcol{flex:1 1 300px;min-width:260px}
+  .mod{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:12px;margin:6px 0}
+  .mod b{font-size:12.5px} .mod small{color:var(--sub)}
+  .bundle{text-align:center;border:1.6px solid var(--accent);background:var(--accent-soft);border-radius:10px;
+        padding:9px;margin:10px 0;font-size:12.5px;font-weight:600;color:#275980}
+  .cross{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .cross div{flex:1 1 150px;min-width:150px;background:#FFFDF5;border:1px solid #EADFB8;border-radius:9px;
+        padding:8px 10px;font-size:11.5px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--sub);margin-top:8px}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
+  .note{font-size:11.5px;color:var(--sub);margin-top:6px}
+  table{border-collapse:collapse;width:100%;font-size:12px;margin-top:6px}
+  th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#F2F1EB;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>bootstrap_v3.py（v3.8.1）架构审查可视化</h1>
+  <div class="meta">审查 2026-09-08 · 方法：全量通读 2415 行 + 临时目录隔离动态实证（15 项复现）· 数字均由源码/探针现算</div>
+
+  <div class="card">
+    <div class="chips">
+      <span class="chip">2415 行</span><span class="chip">119 个 def</span>
+      <span class="chip">68 个内联自测</span><span class="chip">24 处 sys.exit</span>
+      <span class="chip">16 处 Merkle 重算</span>
+      <span class="chip b0">P0 ×5</span><span class="chip b1">P1 ×10</span><span class="chip b2">P2 ×14</span>
+    </div>
+    <div class="note">P0＝破坏自身铁律/安全/数据完整性；P1＝功能正确性/契约违背；P2＝健壮性/可移植/性能。标签编号对应《代码审查报告》条目。</div>
+  </div>
+
+  <h2>① 现状：所有职责挤在同一个 sha256 信任锚内（热点定位图）</h2>
+  <div class="anchor">
+    <div class="anchor-t">bootstrap_v3.py —— 单文件即安装包、即信任锚（公理 E）。问题热点按代码段标注：</div>
+
+    <div class="layer"><span class="ln">L22–196</span><span class="nm">SOURCES 纯数据</span>
+      <span class="ds">REGISTRY 33 · TUNABLES 12（7 个死参数）· LAWS 6 · LEVELS 10 · PACKAGES 12</span>
+      <span class="tags"><span class="tag t2">P2-18</span><span class="tag t2">P2-21</span></span></div>
+
+    <div class="layer"><span class="ln">L212–304</span><span class="nm">完整性基件</span>
+      <span class="ds">sha / Merkle / 哈希链 / schema / DAG 环检测</span>
+      <span class="tags"><span class="tag t0">P0-1</span><span class="tag t1">P1-7</span><span class="tag t1">P1-8</span><span class="tag t1">P1-14</span><span class="tag t2">P2-16</span></span></div>
+
+    <div class="layer"><span class="ln">L306–397</span><span class="nm">渲染器 ×7</span>
+      <span class="ds">spec / quickref / citations / entrypoint / skills / readme / pkg</span>
+      <span class="tags"><span class="tag t2">P2-16</span><span class="tag t2">P2-24</span></span></div>
+
+    <div class="layer"><span class="ln">L407–538 · 1152</span><span class="nm">absorb / absorb-md / migrate</span>
+      <span class="ds">源树抽取、v4 Markdown 迁移、legacy 链续接</span>
+      <span class="tags"><span class="tag t1">P1-9</span><span class="tag t2">P2-23</span><span class="tag t2">P2-25</span></span></div>
+
+    <div class="layer"><span class="ln">L571–632</span><span class="nm">verify 网络对账</span>
+      <span class="ds">arXiv 标题三态对账（match/mismatch/error）</span>
+      <span class="tags"><span class="tag t2">P2-22</span></span></div>
+
+    <div class="layer"><span class="ln">L634–875</span><span class="nm">build / install / _deliver</span>
+      <span class="ds">落盘、manifest、校验模式四视图、L8/L9 慢车道</span>
+      <span class="tags"><span class="tag t1">P1-6</span><span class="tag t1">P1-10</span><span class="tag t1">P1-11</span><span class="tag t2">P2-24</span></span></div>
+
+    <div class="layer"><span class="ln">L877–1100</span><span class="nm">engine（10 个 op）</span>
+      <span class="ds">append/retrieve/eval/wrapup/reflect/doctor/retire/shadow …</span>
+      <span class="tags"><span class="tag t0">P0-2</span><span class="tag t0">P0-3</span><span class="tag t0">P0-4</span><span class="tag t0">P0-5</span><span class="tag t1">P1-12</span></span></div>
+
+    <div class="layer"><span class="ln">L1102–1141</span><span class="nm">guard 变异守卫</span>
+      <span class="ds">黑名单否决 / snapshot / anchor 锚定</span>
+      <span class="tags"><span class="tag t0">P0-5</span><span class="tag t1">P1-13</span><span class="tag t2">P2-28</span></span></div>
+
+    <div class="layer"><span class="ln">L1179–2374</span><span class="nm">内联自测 ×68（约半文件）</span>
+      <span class="ds">@t 自注册；依赖全局态与 cwd 中的 absorb 产物</span>
+      <span class="tags"><span class="tag t1">P1-15</span><span class="tag t2">P2-20</span><span class="tag t2">P2-29</span></span></div>
+
+    <div class="layer"><span class="ln">L2386–2415</span><span class="nm">argparse CLI</span>
+      <span class="ds">9 子命令分发；退出码语义未入 help</span>
+      <span class="tags"><span class="tag t2">P2-26</span><span class="tag t2">P2-27</span></span></div>
+
+    <div class="legend">
+      <span><span class="dot" style="background:var(--p0)"></span>P0 铁律/安全</span>
+      <span><span class="dot" style="background:var(--p1)"></span>P1 契约/正确性</span>
+      <span><span class="dot" style="background:var(--p2)"></span>P2 健壮性/性能</span>
+    </div>
+  </div>
+
+  <h2>② 根因一：写操作「提交序列」手写 6+ 处，口径不一致 → doctor 第五态误报</h2>
+  <div class="card">
+    <div class="flow-label ok">合规路径（append / wrapup / retire / reflect-done / install）</div>
+    <div class="flow">
+      <div class="step good"><b>写业务数据</b><small>条目/状态变更</small></div>
+      <div class="step good"><b>audit 哈希链</b><small>chain_append</small></div>
+      <div class="step good"><b>ledger 账本</b><small>changes.jsonl</small></div>
+      <div class="step good"><b>重算 Merkle 根</b><small>排除 state.json</small></div>
+      <div class="step good"><b>写 state</b><small>缺原子写/锁（P2-19）</small></div>
+    </div>
+    <div class="flow-label bad">断链路径（shadow / reflect / guard snapshot·anchor）—— 实证：一次 shadow 后 state 根立即 ≠ 重算根</div>
+    <div class="flow">
+      <div class="step"><b>写 audit/ledger</b><small>文件进入根口径</small></div>
+      <div class="step bad"><b>✗ 不刷根</b><small>无 merkle_root 调用</small></div>
+      <div class="step bad"><b>state 根陈旧</b><small>e3e9…≠23c7…</small></div>
+      <div class="step bad"><b>doctor 误报</b><small>「被篡改/未刷根」</small></div>
+      <div class="step bad"><b>真信号被淹没</b><small>告警信噪比崩塌</small></div>
+    </div>
+    <div class="note">根治＝抽出唯一 <b>commit(lib, action, audit_text, state_mutator)</b> 原语：库级锁 → audit → ledger → state 变更 → 重算根 → tmp+os.replace 原子落盘。一处实现，消灭 P0-5 / P2-19 与全部重复序列。</div>
+  </div>
+
+  <h2>③ 29 项发现的分布（确定性枚举）</h2>
+  <div class="card">
+    <div class="bar-row"><span class="lab">P0 严重</span>
+      <div class="bar-track"><div class="bar-fill c0" style="width:17.2%">5</div></div></div>
+    <div class="bar-row"><span class="lab">P1 高</span>
+      <div class="bar-track"><div class="bar-fill c1" style="width:34.5%">10</div></div></div>
+    <div class="bar-row"><span class="lab">P2 中</span>
+      <div class="bar-track"><div class="bar-fill c2" style="width:48.3%">14</div></div></div>
+    <div style="height:10px"></div>
+    <div class="bar-row"><span class="lab">安全/铁律</span>
+      <div class="bar-track"><div class="bar-fill" style="width:40%">4</div></div></div>
+    <div class="bar-row"><span class="lab">一致性/契约</span>
+      <div class="bar-track"><div class="bar-fill" style="width:50%">5</div></div></div>
+    <div class="bar-row"><span class="lab">功能正确性</span>
+      <div class="bar-track"><div class="bar-fill" style="width:70%">7</div></div></div>
+    <div class="bar-row"><span class="lab">健壮/可移植</span>
+      <div class="bar-track"><div class="bar-fill" style="width:100%">10</div></div></div>
+    <div class="bar-row"><span class="lab">性能</span>
+      <div class="bar-track"><div class="bar-fill" style="width:20%">2</div></div></div>
+    <div class="bar-row"><span class="lab">测试隔离</span>
+      <div class="bar-track"><div class="bar-fill" style="width:10%">1</div></div></div>
+    <div class="note">口径：按报告主类别归类，每条计一次，合计 29。</div>
+  </div>
+
+  <h2>④ 目标架构：开发态分包 + 构建期 bundle，对外仍是单文件锚点</h2>
+  <div class="card">
+    <div class="grid">
+      <div class="modcol">
+        <div class="mod"><b>sources.py</b><br><small>REGISTRY/TUNABLES/LAWS/LEVELS——唯一事实源</small></div>
+        <div class="mod"><b>integrity.py</b><br><small>chain / merkle / 原子写 / 库锁 / commit 原语</small></div>
+        <div class="mod"><b>schema.py</b><br><small>id 白名单、类型化校验、日期/枚举</small></div>
+        <div class="mod"><b>engine.py</b><br><small>条目生命周期、检索、eval（领域异常，不 sys.exit）</small></div>
+      </div>
+      <div class="modcol">
+        <div class="mod"><b>installer.py</b><br><small>交付 / 校验四视图 / 升级通道 / classify 分类器</small></div>
+        <div class="mod"><b>render.py</b><br><small>全部渲染函数与「渲染产物路径注册表」</small></div>
+        <div class="mod"><b>registry_verify.py</b><br><small>arXiv 对账（网络隔离可测）</small></div>
+        <div class="mod"><b>migrate.py · tests/</b><br><small>迁移逻辑；测试移出信任锚、fixture 自洽</small></div>
+      </div>
+    </div>
+    <div class="bundle">构建期 bundle：固定顺序拼接 → 生成单文件 bootstrap_v3.py → 自哈希锚点（公理 E 不变；测试噪声不再入锚）</div>
+    <div class="cross">
+      <div><b>Context 显式注入</b><br>data_dir / lib / now / net 显式传参，消灭全局 DATA_DIR 与 monkeypatch，支持多库与固定时钟测试</div>
+      <div><b>commit 原语</b><br>所有写操作唯一入口：锁→audit→ledger→state→根→原子落盘</div>
+      <div><b>classify(rel)</b><br>delivered/rendered/runtime/tool_output/env_trace/foreign 单一口径，校验·doctor·guard 共用</div>
+    </div>
+  </div>
+
+  <h2>⑤ 修复优先级</h2>
+  <div class="card">
+    <table>
+      <tr><th>阶段</th><th>内容</th><th>条目</th></tr>
+      <tr><td>立即<br>（守铁律）</td><td>id 白名单+路径断言；retire 不覆盖；全库 id 唯一；证据真值校验；断链路径补刷根</td><td>P0-1/2/3/5 临时版、P1-7</td></tr>
+      <tr><td>短期</td><td>eval 基线不回写；档位差异提示与升级通道；半身库补 state；classify 统一；LF/路径分隔统一；原子写+锁；空参友好退出；runner 兜 BaseException</td><td>P0-4、P1-6/9/10/11/12/13/15、P2-16/19</td></tr>
+      <tr><td>中期</td><td>commit 原语重构；领域异常分层；增量 Merkle/批量挂根；死参数实现或标注；测试 fixture 自洽</td><td>P0-5 根治、P1-8/14、P2-17/18/20</td></tr>
+      <tr><td>长期</td><td>开发态分包+bundle；检索层（分词/倒排）落地；升级产品化</td><td>架构 §5.2</td></tr>
+    </table>
+  </div>
+  <div class="note">本图为依据源码结构自绘的示意，不代表官方架构；所有计数可由源码与同目录 probe 探针复算。</div>
+</div>
+</body>
+</html>

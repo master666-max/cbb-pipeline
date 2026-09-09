@@ -1,0 +1,220 @@
+# X4 · 事件溯源内核（Windows 版）—— 对照 v3 状态机的四项验证
+# 运行：py -X utf8 proto/x4_kernel.txt demo
+#       py -X utf8 proto/x4_kernel.txt append --lib <lib> --id <id> --imp <n>   （并发探针用 CLI）
+# 逻辑对照混元 bs3v4.py 的验证目标（V1 事件流唯一真相源 / V2 并发无丢更新 /
+#   V3 chain_tip 检出截断 / V4 fold 性能），代码为本沙盒原创（锁目录方案，Windows 无 fcntl）。
+# 输出：data/x4_results.json
+import sys, os, json, time, shutil, hashlib, argparse, subprocess
+from pathlib import Path
+from dataclasses import dataclass
+
+def canon(obj):
+    return json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+def sha(b):
+    return hashlib.sha256(b if isinstance(b, bytes) else b.encode()).hexdigest()
+
+@dataclass(frozen=True)
+class Event:
+    seq: int
+    ts: str
+    type: str
+    payload: dict
+    prev: str = ""
+    @property
+    def body(self):
+        return canon({"seq": self.seq, "ts": self.ts, "type": self.type, "payload": self.payload})
+    @property
+    def h(self):
+        return sha(self.prev + "\x00" + self.body)
+    def line(self):
+        return canon({"seq": self.seq, "ts": self.ts, "type": self.type, "payload": self.payload,
+                      "prev": self.prev, "h": self.h})
+    @staticmethod
+    def parse(line):
+        d = json.loads(line)
+        return Event(d["seq"], d["ts"], d["type"], d["payload"], d["prev"])
+
+class LockDir:
+    """锁目录原子创建（Windows 等效 fcntl 的互斥原语；超时抛错不静默）。"""
+    def __init__(self, path, timeout=10.0):
+        self.p = Path(str(path) + ".lock"); self.timeout = timeout; self.acquired = False
+    def __enter__(self):
+        t0 = time.time()
+        while True:
+            try:
+                self.p.mkdir(parents=True); self.acquired = True; return self
+            except FileExistsError:
+                if time.time() - t0 > self.timeout:
+                    raise TimeoutError(f"锁获取超时: {self.p}")
+                time.sleep(0.005)
+    def __exit__(self, *a):
+        if self.acquired:
+            shutil.rmtree(self.p, ignore_errors=True)
+
+class EventStore:
+    def __init__(self, root):
+        self.root = Path(root); self.dir = self.root / "audit"
+        self.dir.mkdir(parents=True, exist_ok=True)
+    def _shard(self, ts):
+        return self.dir / f"events-{ts[:7]}.jsonl"
+    def tail(self):
+        files = sorted(self.dir.glob("events-*.jsonl"))
+        if not files:
+            return 0, ""
+        last = files[-1].read_text(encoding="utf-8").strip().splitlines()
+        if not last:
+            return 0, ""
+        ev = Event.parse(last[-1]); return ev.seq, ev.h
+    def read_all(self):
+        out = []
+        for f in sorted(self.dir.glob("events-*.jsonl")):
+            for line in f.read_text(encoding="utf-8").strip().splitlines():
+                if line.strip():
+                    out.append(Event.parse(line))
+        return out
+    def append(self, type_, payload):
+        with LockDir(self.root / ".lock"):
+            seq, prev = self.tail()
+            ev = Event(seq + 1, time.strftime("%Y-%m-%dT%H:%M:%S"), type_, payload, prev)
+            with self._shard(ev.ts).open("a", encoding="utf-8") as fh:
+                fh.write(ev.line() + "\n"); fh.flush(); os.fsync(fh.fileno())
+            return ev
+
+def fold(events):
+    """纯函数 fold：事件流 → 状态（V1：state 是 fold 产物，不是独立真相）。"""
+    st = {"seq": 0, "chain_tip": "", "entries": {}, "importance_accum": 0,
+          "emotion": {"valence": 0.0, "arousal": 0.5, "certainty": 0.5, "stakes": 0.0}}
+    for e in events:
+        p = e.payload
+        if e.type == "ENTRY_APPENDED":
+            if p["id"] in st["entries"]:
+                raise ValueError(f"条目 id 重复: {p['id']}")
+            st["entries"][p["id"]] = p
+            st["importance_accum"] += int(p.get("importance", 0))
+        elif e.type == "ENTRY_INVALIDATED":
+            st["entries"][p["id"]].setdefault("validity", {})["t_invalid"] = p["t_invalid"]
+        st["seq"] = e.seq; st["chain_tip"] = e.h
+    return st
+
+class Library:
+    def __init__(self, root):
+        self.root = Path(root); self.store = EventStore(self.root)
+        (self.root / "memory").mkdir(parents=True, exist_ok=True)
+    def commit(self, type_, payload):
+        ev = self.store.append(type_, payload)
+        st = fold(self.store.read_all())          # V4 生产版用增量 fold；此处全量以测 O(n·commit)
+        (self.root / "state.json").write_text(json.dumps(
+            {"seq": st["seq"], "chain_tip": st["chain_tip"],
+             "importance_accum": st["importance_accum"], "emotion": st["emotion"]},
+            ensure_ascii=False, indent=1), encoding="utf-8")
+        self._materialize(st)
+        return st
+    def _materialize(self, st):
+        md = self.root / "memory"
+        for eid, p in st["entries"].items():
+            f = md / f"{p['id']}.json"
+            if not f.exists():
+                f.write_text(canon(p), encoding="utf-8")
+    def verify(self):
+        """V3：截断/篡改检出——state.json 的 chain_tip vs 事件流重放真值。"""
+        st = fold(self.store.read_all())
+        snap = json.loads((self.root / "state.json").read_text(encoding="utf-8"))
+        prev = ""
+        chain_ok = True
+        for e in self.store.read_all():
+            if e.prev != prev or e.h != sha(e.prev + "\x00" + e.body):
+                chain_ok = False; break
+            prev = e.h
+        return {"chain_continuous": chain_ok,
+                "truncated": snap.get("chain_tip") != st["chain_tip"],
+                "snapshot_tip": (snap.get("chain_tip") or "")[:12],
+                "recomputed_tip": st["chain_tip"][:12],
+                "entries": len(st["entries"]), "accum": st["importance_accum"]}
+
+# ───────────────────────── CLI ─────────────────────────
+def cli_append(lib, eid, imp):
+    lib = Library(lib)
+    lib.commit("ENTRY_APPENDED", {"id": eid, "importance": imp, "content": f"条目 {eid}",
+                                  "keywords": [], "validity": {}})
+
+def demo(base):
+    res = {}
+    # V2 并发：8 进程真并发 append（对照 X1 v3 实测 10/40）
+    lib_c = base / "lib-x4-conc"
+    if lib_c.exists():
+        shutil.rmtree(lib_c)
+    lib_c.mkdir(parents=True)
+    Library(lib_c).commit("ENTRY_APPENDED", {"id": "seed-0", "importance": 0, "content": "s", "keywords": [], "validity": {}})
+    procs = [subprocess.Popen([sys.executable, "-X", "utf8", str(Path(__file__).resolve()), "append",
+                               "--lib", str(lib_c), "--id", f"c-{i}", "--imp", "5"],
+                              stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) for i in range(8)]
+    rcs = [p.wait() for p in procs]
+    v = Library(lib_c).verify()
+    res["V2_并发"] = {"rcs": rcs, "accum": v["accum"], "expected": 40,
+                      "entries": v["entries"], "chain_continuous": v["chain_continuous"],
+                      "对比_v3_实测": "10/40（丢 75%）"}
+    # V3 截断：删事件流尾部 2 行 → chain_tip 必须暴露
+    lib_t = base / "lib-x4-trunc"
+    if lib_t.exists():
+        shutil.rmtree(lib_t)
+    lib_t.mkdir(parents=True)
+    L = Library(lib_t)
+    for i in range(5):
+        L.commit("ENTRY_APPENDED", {"id": f"e{i}", "importance": 1, "content": "x", "keywords": [], "validity": {}})
+    ev = sorted((lib_t / "audit").glob("events-*.jsonl"))[-1]
+    lines = ev.read_text(encoding="utf-8").strip().splitlines()
+    ev.write_bytes(("\n".join(lines[:-2]) + "\n").encode("utf-8"))
+    res["V3_截断检出"] = Library(lib_t).verify()
+    # V1 重建：删 memory/ → 从事件流 fold 物化 → 条目集 Jaccard
+    lib_r = base / "lib-x4-rebuild"
+    if lib_r.exists():
+        shutil.rmtree(lib_r)
+    lib_r.mkdir(parents=True)
+    L = Library(lib_r)
+    ids_before = set()
+    for i in range(20):
+        eid = f"r{i}"
+        L.commit("ENTRY_APPENDED", {"id": eid, "importance": 1, "content": "x", "keywords": [], "validity": {}})
+        ids_before.add(eid)
+    for f in (lib_r / "memory").glob("*.json"):
+        f.unlink()
+    st = fold(Library(lib_r).store.read_all())
+    Library(lib_r)._materialize(st)
+    ids_after = {f.stem for f in (lib_r / "memory").glob("*.json")}
+    jac = len(ids_before & ids_after) / len(ids_before | ids_after)
+    res["V1_重建等价"] = {"jaccard": jac, "n": len(ids_before)}
+    # V4 性能：300 条目 commit（全量 fold）+ 增量 fold 对照
+    lib_p = base / "lib-x4-perf"
+    if lib_p.exists():
+        shutil.rmtree(lib_p)
+    lib_p.mkdir(parents=True)
+    L = Library(lib_p)
+    t0 = time.time()
+    for i in range(300):
+        L.commit("ENTRY_APPENDED", {"id": f"p{i}", "importance": 1, "content": "x", "keywords": [], "validity": {}})
+    full = time.time() - t0
+    evs = L.store.read_all()
+    t0 = time.time()
+    for _ in range(300):
+        fold(evs)
+    refold = time.time() - t0
+    res["V4_性能"] = {"commit300_s": round(full, 3), "fold300_单次_s": round(refold / 300, 5),
+                      "对照_报告bs3v4实测": "merkle 0.005s / retrieve 0.008s"}
+    print(json.dumps(res, ensure_ascii=False, indent=1))
+    out = base.parent / "data" / "x4_results.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"→ {out}")
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("cmd", choices=["demo", "append"])
+    ap.add_argument("--lib", default=None)
+    ap.add_argument("--id", default=None)
+    ap.add_argument("--imp", type=int, default=1)
+    a = ap.parse_args()
+    if a.cmd == "demo":
+        demo(Path(__file__).resolve().parent.parent / "sandbox")
+    else:
+        cli_append(a.lib, a.id, a.imp)

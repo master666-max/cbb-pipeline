@@ -1,0 +1,22 @@
+{
+ "id": "PT-009",
+ "created_at": "2026-09-06",
+ "updated_at": "",
+ "content": "PT-009 verify 网络鲁棒三件套：端点降级链（export API 被阻断→主站 abs 页）、NFKD 变音符折叠（防 Gödel/Godel 伪 diff）、限流自知（连发触发重置，条间降速）；离线三态报告 error 不计入通过。",
+ "keywords": [
+  "verify",
+  "对账",
+  "降级",
+  "变音符",
+  "限流"
+ ],
+ "links": [
+  "PT-008"
+ ],
+ "source_event_id": "M-94abfadc3b91",
+ "importance": 7,
+ "confidence": "高",
+ "validity": {
+  "t_valid": "2026-09-06"
+ }
+}

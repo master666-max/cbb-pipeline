@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""installations.json 手术:合并原版条目 + status=installed + 剥离模板字段"""
+import json, shutil
+
+ROOT = r"C:/Users/26672/AppData/Roaming/Comfy Desktop"
+live_path = ROOT + "/installations.json"
+orig_path = ROOT + "/zcode-quarantine/installations.json.variant-marker"
+live_bak = ROOT + "/zcode-quarantine/installations.json.control-live"
+
+live = json.load(open(live_path, encoding="utf-8"))
+shutil.move(live_path, live_bak)  # 现役移入隔离区存档(只移不删)
+
+orig = json.load(open(orig_path, encoding="utf-8"))
+entry = next(x for x in orig if x.get("id") == "inst-1788795314652")
+cloud = next(x for x in live if x.get("sourceId") == "cloud")
+
+# 手术三连
+entry["status"] = "installed"          # 盖章:已安装
+entry["seen"] = True                    # 不再触发首次引导
+for k in ("pendingTemplateOpen", "downloadTemplateModels",
+          "bundledTemplateId", "bundledTemplateSizeBytes"):
+    entry.pop(k, None)                  # 剥离模板自动下载字段
+
+json.dump([entry, cloud], open(live_path, "w", encoding="utf-8"),
+          ensure_ascii=False, indent=2)
+print("手术完成:")
+d = json.load(open(live_path, encoding="utf-8"))
+for x in d:
+    print(f"  - {x['name']}  status={x.get('status','-')}  seen={x.get('seen','-')}")

@@ -1,0 +1,118 @@
+# -*- coding: utf-8 -*-
+# v3.4 patch part2：H-004 absorb-md 收编 + H-005 golden 随包 + CLI 接线
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1)
+
+# ── H-004：absorb-md（v4 Markdown → v3 JSON 迁移器收编；dry_run 只出监测报告）──
+anchor = 'def _norm_title(s: str) -> str:'
+absorb_md = '''def cmd_absorb_md(src, lib, dry_run=False):
+    """v3.4/H-004：v4 双库 Markdown 条目 → v3 JSON 十字段迁移（收编自一次性迁移器；守恒+监测报告内置）"""
+    src = Path(src); lib = Path(lib)
+    if not (src / "knowledge").exists(): sys.exit(f"absorb-md: {src} 下无 knowledge/（v4 双库布局校验失败）")
+    MON = {"parsed": 0, "skipped_template": 0, "appended": 0, "rejected": [], "no_date": [], "ids": []}
+    def _read(rel):
+        return (src / rel).read_text(encoding="utf-8")
+    def _parse(text, prefix):
+        out, cur = [], None
+        for line in text.splitlines():
+            m = re.match(r"^### (" + prefix + r"-\\d+) / (.+?) / (.+)$", line.strip())
+            if m:
+                if cur: out.append(cur)
+                eid, date, title = m.group(1), m.group(2).strip(), m.group(3).strip()
+                if "{" in date or "{" in title:
+                    MON["skipped_template"] += 1; cur = None; continue
+                if not re.match(r"^\\d{4}-\\d{2}-\\d{2}$", date):
+                    MON["no_date"].append(eid); date = "2026-09-06"
+                cur = {"id": eid, "date": date, "title": title, "fields": {}}
+                continue
+            if cur is not None:
+                fm = re.match(r"^-( .+?)：(.*)$", line.rstrip())
+                if fm: cur["fields"].setdefault(fm.group(1).strip(), []).append(fm.group(2).strip())
+                else: cur["fields"].setdefault("_body", []).append(line.rstrip())
+        if cur: out.append(cur)
+        return out
+    def _entry(e, default_imp):
+        f = e["fields"]
+        core = ""
+        for k in ("教训", "决策", "洞察", "核心步骤"):
+            if k in f: core = (e["title"] + "：" + f[k][0])[:220]; break
+        if not core:
+            core = (e["title"] + "：" + " ".join(x.strip() for x in f.get("_body", []) if x.strip()))[:220]
+        kw = []
+        if f.get("关键词"): kw = [x for x in re.split(r"[、，]", f["关键词"][0]) if x]
+        links = list(dict.fromkeys(re.findall(r"\\[\\[(.+?)\\]\\]", " ".join(sum(f.values(), [])))))[:8]
+        state = f.get("状态", [""])[0]
+        imp = 3 if "superseded" in state else (7 if state == "active" or "决策" in f else default_imp)
+        conf = "高" if f.get("置信度", [""])[0].startswith("高") else "中"
+        return {"id": e["id"], "created_at": e["date"], "updated_at": "", "content": core,
+                "keywords": kw[:12], "links": links, "source_event_id": "genesis-v4",
+                "importance": imp, "confidence": conf, "validity": {"t_valid": e["date"]}}
+    entries = []
+    for name, prefix in (("pitfalls.md", "P"), ("patterns.md", "PT"), ("reflections.md", "R"), ("decisions.md", "D")):
+        es = _parse(_read("knowledge" / Path(name) if False else "knowledge/" + name), prefix)
+        MON["parsed"] += len(es)
+        entries.extend(_entry(e, 6) for e in es)
+    # soul 指针（原位保留）
+    sf = src / "soul" / "SOUL.md"
+    soul_note = "人格与用户画像见原工作区 soul/（SOUL.md/USER.md，v3 库无灵魂层目录——原位保留+指针）。"
+    entries.append({"id": "SOUL-POINTER", "created_at": "2026-09-03", "updated_at": "",
+                    "content": soul_note + f"来源路径：{src / 'soul'}",
+                    "keywords": ["soul", "人格", "画像"], "links": [], "source_event_id": "genesis-v4",
+                    "importance": 9, "confidence": "高", "validity": {"t_valid": "2026-09-03"}})
+    # 轨迹索引条目
+    tdir = src / "knowledge" / "trajectories"
+    if tdir.exists():
+        for fn in sorted(tdir.rglob("*.md")):
+            mt = re.search(r"(\\d{4}-\\d{2}-\\d{2})", str(fn))
+            head = fn.read_text(encoding="utf-8").splitlines()[0].lstrip("# ").strip() if fn.read_text(encoding="utf-8") else ""
+            mtask = re.search(r"task-(\\d+)", fn.name)
+            entries.append({"id": ("TRAJ-" + mtask.group(1)) if mtask else ("TRAJ-" + fn.stem[:8]),
+                            "created_at": mt.group(0) if mt else "2026-09-03", "updated_at": "",
+                            "content": (head + f"（情景轨迹，全文={fn}）")[:220],
+                            "keywords": ["轨迹"], "links": [], "source_event_id": "genesis-v4",
+                            "importance": 3, "confidence": "高", "validity": {}})
+    ids = [e["id"] for e in entries]
+    dups = sorted({i for i in ids if ids.count(i) > 1})
+    if dups: sys.exit("absorb-md: 条目 ID 重复 " + str(dups))
+    print(f"absorb-md[{'dry-run' if dry_run else '执行'}]: 解析 {MON['parsed']} 条（模板跳过 {MON['skipped_template']}，无日期修正 {len(MON['no_date'])}）+ soul 指针 1 + 轨迹索引 {len(ids) - MON['parsed'] - 1} = 共 {len(ids)} 条")
+    if dry_run:
+        print("  dry-run 不写入；确认后去掉 --dry-run 执行")
+        return
+    for e in entries:
+        try:
+            cmd_engine("append", lib, json.dumps(e, ensure_ascii=False))
+            MON["appended"] += 1
+        except SystemExit as ex:
+            MON["rejected"].append(e["id"] + ": " + str(ex)[:80])
+    print(f"absorb-md: 追加 {MON['appended']} 条" + (f"；拒绝 {len(MON['rejected'])}：\\n  " + "\\n  ".join(MON['rejected'][:6]) if MON["rejected"] else "，0 拒绝"))
+
+def _norm_title(s: str) -> str:'''
+rep(anchor, absorb_md)
+
+# ── H-005：install 落 golden 评测集（DATA_DIR/evals/golden_queries.json 存在则复制）──
+rep('''    cmd_build(target)  # v3.2/C-002：先渲染再算根——根含渲染件，口径与 wrapup 一致''',
+    '''    if int(level[1:]) >= 2:  # v3.4/H-005：golden 评测集随包落 evals/
+        gq = DATA_DIR / "evals" / "golden_queries.json"
+        if gq.exists():
+            (target / "evals").mkdir(parents=True, exist_ok=True)
+            (target / "evals" / "golden_queries.json").write_text(gq.read_text(encoding="utf-8"), encoding="utf-8")
+    cmd_build(target)  # v3.2/C-002：先渲染再算根——根含渲染件，口径与 wrapup 一致''')
+
+# ── CLI 接线：build-docs --lib、absorb-md ──
+rep("s = sub.add_parser(\"build-docs\"); s.add_argument(\"--out\", default=\"./dist\")  # v3.1/V-011",
+    "s = sub.add_parser(\"build-docs\"); s.add_argument(\"--out\", default=\"./dist\"); s.add_argument(\"--lib\", default=None)  # v3.4/H-001")
+rep('''s = sub.add_parser("migrate");     s.add_argument("--lib", default="./mylib")''',
+    '''s = sub.add_parser("absorb-md");   s.add_argument("--src", required=True); s.add_argument("--lib", required=True)
+s.add_argument("--dry-run", action="store_true")  # v3.4/H-004
+s = sub.add_parser("migrate");     s.add_argument("--lib", default="./mylib")''')
+rep('''     "build-docs": lambda: cmd_build(Path(a.out)),''',
+    '''     "build-docs": lambda: cmd_build(Path(a.out), a.lib),
+     "absorb-md": lambda: cmd_absorb_md(Path(a.src), Path(a.lib), a.dry_run),''')
+
+io.open(p, 'w', encoding='utf-8', newline='\n').write(s)
+print('patch part2 done')

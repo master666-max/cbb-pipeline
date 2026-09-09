@@ -1,0 +1,155 @@
+# -*- coding: utf-8 -*-
+import re, os, io, sys, json, hashlib, glob
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
+SRC = '文字/04_web版'
+OUT = '分析/01_P1'
+os.makedirs(OUT + '/检视版', exist_ok=True)
+
+EDITION = {'第一章': 'web_reconstructed', '第二章': 'web_reconstructed', '第三章': 'web_reconstructed',
+           '第四章': 'web_original', '第五章': 'web_original', '第六章': 'web_original',
+           '第7-1章': 'web_original', '第7-2章': 'web_original', '第7-3章': 'web_original',
+           '第八章': 'web_original+web_only', '第九章': 'web_original+web_only', '第十章': 'web_original+web_only'}
+
+CAST = ['涡波','相川涡波','基督','缇亚','迪亚布罗','拉丝缇娅拉','缇娅拉','玛利亚','玛莉亚','斯诺','塞拉','赛拉',
+ '莉帕','阳滝','阿尔缇','缇达','诺斯菲','帕林库洛','诺文','海因','芬里尔','拉古涅','格连','芙兰琉莱','莱纳',
+ '缇缇','艾德','古奈尔','赛尔德拉','法夫纳','诺伊','艾尔米拉德','佩露修娜','库艾迦','斐勒卢托','赫尔米娜',
+ '雷纳尔多','西娅','露洁','诺瓦露','伊丽莎白','莱纳','海莉','维斯','迪普拉库拉','始祖','使徒','勒迦希','勒伽西']
+cast_re = re.compile('|'.join(re.escape(c) for c in CAST))
+
+TRANSL = re.compile(r'^(翻译君[:：]|图源[:：]|翻译[:：]|校对[:：]|润色[:：]|网译版|台版|嵌字[:：]|修图[:：])')
+IMG = re.compile(r'^!\[')
+NOTE = re.compile(r'^>\s')
+PANEL = re.compile(r'^(──(状态|名字[:：]|先天技能[:：]|后天技能[:：]|怪物|职业|装备|技能|魔法|属性|表示)|状态[:：]|ＨＰ|HP )')
+SEP = re.compile(r'^[◆◇]{2,}')
+H = re.compile(r'^(#{2,3})\s+(.*)$')
+PAST = re.compile(r'千年前|西暦|新暦|千年后|千年後|古代|正史|边境战争|境界战争|始祖|久远的过去')
+
+stats = {'chapters': {}, 'translator_lines': 0, 'image_lines': 0, 'panel_dup_removed': 0, 'blocks': 0, 'bytes': 0}
+
+all_blocks = []
+for mdfile in sorted(glob.glob(SRC + '/第*章/*.md')):
+    chapter = os.path.basename(os.path.dirname(mdfile))
+    text = open(mdfile, encoding='utf-8').read()
+    lines = text.split('\n')
+    edition = EDITION.get(chapter, 'web_original')
+    unit = chapter
+    unit_type = '章'
+    translator = '未知'
+    panel_seen = {}
+    # 收集行 → 段（按空行与◆切分），title/说明/译者/图片/面板特殊处理
+    para = []      # 当前正文段（body lines)
+    panels = []    # 当前状态栏行缓冲
+    blocks = []    # 本章 body 段列表 (list of str)
+    body_and_panel = []  # 顺序化的段落（含面板占位）
+    def flush_text():
+        if para:
+            body_and_panel.append(('text', '\n'.join(para)))
+            para.clear()
+    def flush_panel():
+        if panels:
+            body_and_panel.append(('panel', '\n'.join(panels)))
+            panels.clear()
+    for ln in lines:
+        h = H.match(ln)
+        if h:
+            flush_text(); flush_panel()
+            unit = h.group(2).strip()
+            unit_type = '话' if unit.startswith('第') and ('话' in unit[:6] or re.match(r'^第\d', unit)) else '章'
+            continue
+        if NOTE.match(ln) or ln.strip() in ('', '---'):
+            flush_text(); flush_panel(); continue
+        if TRANSL.match(ln):
+            stats['translator_lines'] += 1
+            flush_text(); flush_panel(); continue
+        if IMG.match(ln):
+            stats['image_lines'] += 1
+            flush_text(); flush_panel(); continue
+        if SEP.match(ln):
+            flush_text(); flush_panel(); continue
+        if PANEL.match(ln):
+            flush_text(); panels.append(ln); continue
+        else:
+            if panels: flush_panel()
+            para.append(ln)
+    flush_text(); flush_panel()
+
+    # 面板去重（章内）
+    blocks_out = []
+    for kind, content in body_and_panel:
+        if kind == 'panel':
+            key = hashlib.md5(content.encode('utf-8')).hexdigest()
+            if key in panel_seen:
+                stats['panel_dup_removed'] += 1
+                blocks_out.append('[面板略]')
+            else:
+                panel_seen[key] = True
+                blocks_out.append(content)
+        else:
+            blocks_out.append(content)
+    # 正文块长度归一（300~1500，过长按空行拆）
+    norm = []
+    for content in blocks_out:
+        if content == '[面板略]':
+            norm.append(content); continue
+        for chunk in content.split('\n\n'):
+            chunk = chunk.strip('\n')
+            if not chunk: continue
+            norm.append(chunk)
+    # 合并过短 & 拆分过长（按字符）
+    units = []
+    buf = []
+    buflen = 0
+    for c in norm:
+        L = len(c)
+        if L > 1500:
+            # 拆（在句末切，避免重复）
+            if buf: units.append('\n\n'.join(buf)); buf=[]; buflen=0
+            cur = c
+            while len(cur) > 1500:
+                head = cur[:1500]; rest = cur[1500:]
+                idx = head.rfind('。')
+                if idx > 400:
+                    head, rest = head[:idx+1], head[idx+1:] + rest
+                units.append(head); cur = rest
+            if cur: units.append(cur)
+            continue
+        if buflen + L > 1500 and buf:
+            units.append('\n\n'.join(buf)); buf=[]; buflen=0
+        buf.append(c); buflen += L
+    if buf: units.append('\n\n'.join(buf))
+
+    # 输出块
+    unit_counter = {}
+    for i, blk in enumerate(units):
+        if not blk.strip(): continue
+        un = unit
+        t = blk
+        timeline = '千年前(回忆)' if PAST.search(t) else '现代线'
+        cast = sorted(set(cast_re.findall(t)))
+        blk_id = '%s_%03d' % (chapter, i + 1)
+        rec = {'id': blk_id, 'chapter': chapter, 'unit': un, 'edition': edition,
+               'timeline': timeline, 'cast': cast, 'translator': translator, 'chars': len(t), 'text': t}
+        all_blocks.append(rec)
+        stats['blocks'] += 1
+        stats['bytes'] += len(t)
+    stats['chapters'][chapter] = {'blocks': len(units), 'chars': sum(len(b) for b in units)}
+    # 检视版
+    view = ['# ' + chapter, '']
+    for i, blk in enumerate(units):
+        if not blk.strip(): continue
+        ca = sorted(set(cast_re.findall(blk)))
+        pc = ''  # placeholder
+        view.append('<!-- %s | %s | %s | cast=%s -->' % ('%s_%03d' % (chapter, i+1), edition, PAST.search(blk) and '千年前' or '现代', ','.join(ca)))
+        view.append(blk.replace('[面板略]', '（[面板略] 面板见首次出现处）'))
+        view.append('')
+    open(OUT + '/检视版/' + chapter + '.md', 'w', encoding='utf-8', newline='\n').write('\n'.join(view).strip() + '\n')
+
+with open(OUT + '/场景块语料.jsonl', 'w', encoding='utf-8') as f:
+    for r in all_blocks:
+        f.write(json.dumps(r, ensure_ascii=False) + '\n')
+json.dump(stats, open(OUT + '/去噪统计.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('总块数:', stats['blocks'], '总字数:', stats['bytes'])
+print('译者行移除:', stats['translator_lines'], '图片行移除:', stats['image_lines'], '面板重复移除:', stats['panel_dup_removed'])
+for c, s in sorted(stats['chapters'].items()):
+    print('  %-8s 块=%d 字=%d' % (c, s['blocks'], s['chars']))

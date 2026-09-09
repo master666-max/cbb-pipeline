@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+import json, io, sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+st = json.load(open('分析/01_P1/去噪统计.json', encoding='utf-8'))
+lines = ['# P1 切分与去噪小结', '',
+ '> 对象：`文字/04_web版` 12 个 md｜切分单位：章 → 话/节 → 场景块（300–1500 字）', '']
+lines += ['## 汇总', '', '- 场景块总数：**3103**', '- 正文字符总量：**4,447,671**（约 445 万字）',
+ '- 去除译者署名行：%d' % st['translator_lines'],
+ '- 去除外部图片链接行：%d' % st['image_lines'],
+ '- 重复状态栏面板去重（保留首次、后续 `[面板略]`）：%d' % st['panel_dup_removed'], '']
+lines += ['## 各章块数与字数', '', '| 章 | 块数 | 字符数 |', '|---|---|---|']
+for c, s in sorted(st['chapters'].items()):
+    lines.append('| %s | %d | %s |' % (c, s['blocks'], format(s['chars'], ',')))
+lines += ['', '## 产物', '',
+ '- `场景块语料.jsonl`：每块一行 JSON（id/chapter/unit/edition/timeline/cast/translator/chars/text）',
+ '- `检视版/`：按章的人读版本，每块前有 HTML 注释元数据',
+ '- `去噪统计.json`：本小结背后的原始统计', '',
+ '> 注：时线标注为启发式二分（千年前关键词→"千年前(回忆)"，否则"现代线"），交错情形在 P2 细化。']
+open('分析/01_P1/小结.md', 'w', encoding='utf-8', newline='\n').write('\n'.join(lines) + '\n')
+print('P1 report written')

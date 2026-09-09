@@ -1,0 +1,68 @@
+# search_knowledge.txt — 知识条目检索（扩散激活简化版，HippoRAG 2 启发）
+# 用法: py -X utf8 tools/search_knowledge.txt 关键词1 关键词2 ...
+# 计分: 关键词行命中 x3 + 标题命中 x2 + 正文命中 x1；[[关联]]邻居一跳得条目分的一半
+import os, re, sys, glob
+
+sys.stdout.reconfigure(encoding='utf-8')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+def parse_entries():
+    entries = {}
+    libs = ['knowledge/pitfalls.md', 'knowledge/patterns.md', 'knowledge/reflections.md', 'knowledge/decisions.md']
+    for lib in libs:
+        path = os.path.join(ROOT, lib)
+        if not os.path.exists(path):
+            continue
+        text = re.sub(r'<!--.*?-->', '', open(path, encoding='utf-8').read(), flags=re.S)
+        for block in re.split(r'\n### ', text)[1:]:
+            head, _, body = block.partition('\n')
+            parts = [p.strip() for p in head.split('/')]
+            pid = parts[0]
+            if not re.match(r'^[A-Z]{1,2}-\d+$', pid):
+                continue
+            links = set(re.findall(r'\[\[([A-Z]-\d+)\]\]', body))
+            entries[pid] = {'title': ' / '.join(parts[1:]).strip(), 'body': body, 'links': links, 'lib': lib}
+    return entries
+
+def score_entry(e, terms):
+    s = 0
+    kw = re.search(r'- 关键词：(.*)', e['body'])
+    kw_text = kw.group(1) if kw else ''
+    for t in terms:
+        if t in kw_text: s += 3
+        if t in e['title']: s += 2
+        if t in e['body']: s += 1
+    return s
+
+def main():
+    terms = [t for t in sys.argv[1:] if t.strip()]
+    if not terms:
+        print('用法: py -X utf8 tools/search_knowledge.txt 关键词...')
+        return
+    entries = parse_entries()
+    scored = {}
+    for pid, e in entries.items():
+        s = score_entry(e, terms)
+        if s > 0:
+            scored[pid] = s
+    # 扩散激活：邻居一跳得 0.5x
+    for pid in list(scored):
+        for nb in entries[pid]['links']:
+            if nb in entries and nb not in scored:
+                scored[nb] = scored[pid] * 0.5
+    if not scored:
+        print('无命中。试: EPUB / docx / 清洗 / py / 双库')
+        return
+    print('检索「%s」命中 %d 条（★=直击，☆=联想邻居）:' % (' '.join(terms), len(scored)))
+    for pid, s in sorted(scored.items(), key=lambda x: -x[1])[:6]:
+        e = entries[pid]
+        tag = '★' if score_entry(e, terms) > 0 else '☆'
+        scene = re.search(r'- (?:场景|适用场景|决策|洞察)：(.*)', e['body'])
+        brief = (scene.group(1)[:60] + '…') if scene and len(scene.group(1)) > 60 else (scene.group(1) if scene else '')
+        print('%s [%s] %d分 %s' % (tag, pid, s, e['title']))
+        if brief:
+            print('    %s' % brief)
+        print('    %s#%s' % (e['lib'], pid.lower()))
+
+if __name__ == '__main__':
+    main()

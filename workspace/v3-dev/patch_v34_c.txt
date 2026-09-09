@@ -1,0 +1,139 @@
+# -*- coding: utf-8 -*-
+# v3.4 patch part3：六条新测试 + VERSION bump
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:60]
+    s = s.replace(a, b, 1)
+
+tests = '''@t
+def t_build_docs_refreshes_render():
+    """v3.4/H-001：build-docs --lib 刷新 AGENTS/README，校验模式渲染件清零"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_h1")
+    try:
+        cmd_install("L2", [], tmp, True)
+        ag = tmp / "AGENTS.md"; ag.write_text(ag.read_text(encoding="utf-8") + "\\n<!-- 旧版本残留 -->", encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_build(tmp, tmp)  # --lib 刷新
+        assert "AGENTS.md" in buf.getvalue(), "build-docs --lib 未刷渲染件"
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_install("L2", [], tmp, True)
+        assert "渲染件被改 0" in buf.getvalue(), "刷新后仍报渲染件被改"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_host_trace_env_line():
+    """v3.4/H-002(D1=a)：宿主目录 .v2c 报环境痕迹、不进未在册"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_h2")
+    try:
+        cmd_install("L2", [], tmp, True)
+        (tmp / ".v2c").mkdir(); (tmp / ".v2c" / "plugin_root").write_text("x", encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_install("L2", [], tmp, True)
+        out = buf.getvalue()
+        assert "环境痕迹" in out and "plugin_root" in out, "宿主痕迹未被报告"
+        assert "未在册 0" in out, "宿主痕迹泄漏进未在册计数"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_reflect_materials():
+    """v3.4/H-003：reflect 取材打包器产出素材文件"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_h3")
+    try:
+        cmd_install("L2", [], tmp, True)
+        st_path = tmp / "state.json"
+        st = json.loads(st_path.read_text(encoding="utf-8"))
+        st["importance_accum"] = TUNABLES["reflect_importance_threshold"]["value"]
+        st_path.write_text(json.dumps(st, ensure_ascii=False), encoding="utf-8")
+        e = {"id": "m1", "created_at": "2026-09-06", "updated_at": "", "content": "高重要度经验",
+             "keywords": [], "links": [], "source_event_id": "gen", "importance": 9,
+             "confidence": "高", "validity": {}}
+        cmd_engine("append", tmp, json.dumps(e, ensure_ascii=False))
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_engine("reflect", tmp)
+        assert "素材已打包" in buf.getvalue()
+        mat = list((tmp / "memory" / "reflect").glob("materials-*.md"))[0].read_text(encoding="utf-8")
+        assert "触发原因" in mat and "m1" in mat and "无据不写" in mat
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_absorb_md_dryrun():
+    """v3.4/H-004：absorb-md 收编——mini v4 源树 dry-run 解析对账"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_h4"); src = tmp / "v4src"
+    (src / "knowledge").mkdir(parents=True)
+    (src / "knowledge" / "pitfalls.md").write_text(
+        "# P\\n\\n### P-901 / 2026-09-06 / 测试教训\\n- 教训：测试性教训内容\\n- 关键词：测试、迁移\\n- 状态：active\\n", encoding="utf-8")
+    (src / "knowledge" / "patterns.md").write_text(
+        "# PT\\n\\n### PT-901 / 2026-09-06 / 测试范式\\n- 核心步骤：测试范式内容\\n- 状态：active\\n\\n### PT-001 / {日期} / {模式名}\\n", encoding="utf-8")
+    buf = _io.StringIO()
+    with contextlib.redirect_stdout(buf): cmd_absorb_md(src, tmp / "lib", dry_run=True)
+    out = buf.getvalue()
+    assert "解析 2 条" in out and "模板跳过 1" in out and "dry-run" in out, "dry-run 对账异常: " + out
+    assert not (tmp / "lib" / "memory").exists(), "dry-run 不应写入"
+    with contextlib.redirect_stdout(_io.StringIO()): cmd_absorb_md(src, tmp / "lib", dry_run=False)
+    assert (tmp / "lib" / "memory" / "longterm" / "P-901.json").exists()
+    assert (tmp / "lib" / "memory" / "intermediate" / "TRAJ-001.json").exists() is False  # 无轨迹目录则无索引条目
+    assert (tmp / "lib" / "memory" / "longterm" / "SOUL-POINTER.json").exists()
+
+@t
+def t_golden_shipped():
+    """v3.4/H-005：golden 评测集随包落 evals/ 且 eval 直接跑通"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_h5")
+    try:
+        set_data_dir(tmp / "pkgdata")  # 造包数据：evals/golden_queries.json
+        (DATA_DIR / "evals").mkdir(parents=True, exist_ok=True)
+        qs = [{"query": "哈希", "expected": ["gg1"], "type": "lexical"}]
+        (DATA_DIR / "evals" / "golden_queries.json").write_text(json.dumps(qs, ensure_ascii=False), encoding="utf-8")
+        cmd_install("L2", [], tmp, True)
+        set_data_dir(Path.cwd() / "bootstrap_data")  # 还原
+        assert (tmp / "evals" / "golden_queries.json").exists(), "golden 集未随包落盘"
+        good = {"id": "gg1", "created_at": "2026-09-06", "updated_at": "", "content": "哈希链",
+                "keywords": ["哈希"], "links": [], "source_event_id": "gen", "importance": 7,
+                "confidence": "高", "validity": {}}
+        cmd_engine("append", tmp, json.dumps(good, ensure_ascii=False))
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_engine("eval", tmp)
+        out = buf.getvalue()
+        assert "recall@5=1.0" in out and "参照线" in out, "eval 增强缺失: " + out
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+        set_data_dir(Path.cwd() / "bootstrap_data")
+
+@t
+def t_doctor():
+    """v3.4/H-006：doctor 三方对账——孤儿条目精确报告"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_h6")
+    try:
+        cmd_install("L2", [], tmp, True)
+        good = {"id": "d1", "created_at": "2026-09-06", "updated_at": "", "content": "x",
+                "keywords": [], "links": [], "source_event_id": "gen", "importance": 1,
+                "confidence": "高", "validity": {}}
+        cmd_engine("append", tmp, json.dumps(good, ensure_ascii=False))
+        # 模拟中断：删 audit 中的 entry 行（篡改审计面后 doctor 应报 memory 有而 audit 无）
+        ap = list((tmp / "audit").glob("lifelog-*.md"))[0]
+        lines = [l for l in ap.read_text(encoding="utf-8").splitlines() if "entry:d1" not in l]
+        ap.write_text("\\n".join(lines) + "\\n", encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_engine("doctor", tmp)
+        out = buf.getvalue()
+        assert "memory有而audit无" in out and "d1" in out, "doctor 未报孤儿条目: " + out
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_shape():'''
+rep('@t\ndef t_shape():', tests)
+rep('VERSION = "3.3.0"', 'VERSION = "3.4.0"')
+io.open(p, 'w', encoding='utf-8', newline='\n').write(s)
+print('patch part3 done')

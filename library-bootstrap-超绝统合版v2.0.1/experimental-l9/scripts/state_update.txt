@@ -1,0 +1,34 @@
+# state_update.txt — 情绪向量更新器（L9 · stakes 锚定 + 指数混合 λ=0.7）
+# 用法: python3 state_update.txt --verdict passed|failed|corrected [--adopted yes|no]
+import os, sys, json
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+STATE = os.path.join(os.getcwd(), 'state', '.library-state.json')
+LAM = 0.7
+
+def delta(verdict, adopted):
+    # 锚定①任务完成质量：passed→(+,+,+,−) failed→(−,+,−,+) corrected→(−,0,+,+)
+    # 锚定②长期利益 adopted→(+0.2)（体系采纳=长期价值）
+    d = {'passed': (0.2, -0.1, 0.3, -0.2), 'failed': (-0.3, 0.2, -0.2, 0.1), 'corrected': (-0.2, 0.0, 0.2, 0.2)}[verdict]
+    if adopted == 'yes':
+        d = (d[0] + 0.2, d[1], d[2], d[3])
+    return d
+
+def main():
+    if '--verdict' not in sys.argv:
+        print('用法: state_update.txt --verdict passed|failed|corrected [--adopted yes|no]'); sys.exit(2)
+    verdict = sys.argv[sys.argv.index('--verdict') + 1]
+    adopted = sys.argv[sys.argv.index('--adopted') + 1] if '--adopted' in sys.argv else 'no'
+    s = json.load(open(STATE, encoding='utf-8'))
+    d = delta(verdict, adopted)
+    e = s['emotion']
+    old = tuple(e[k] for k in ['valence', 'arousal', 'certainty', 'interest'])
+    new = tuple(max(-1.0, min(1.0, LAM * o + (1 - LAM) * dd)) for o, dd in zip(old, d))
+    for k, v in zip(['valence', 'arousal', 'certainty', 'interest'], new):
+        e[k] = round(v, 2)
+    e.setdefault('history', []).append({'date': os.path.getmtime(STATE), 'verdict': verdict, 'delta': list(d)})
+    json.dump(s, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+    print('情绪更新: %s → %s (Δ%s, adopted=%s)' % (tuple(round(x,2) for x in old), new, d, adopted))
+
+if __name__ == '__main__':
+    main()

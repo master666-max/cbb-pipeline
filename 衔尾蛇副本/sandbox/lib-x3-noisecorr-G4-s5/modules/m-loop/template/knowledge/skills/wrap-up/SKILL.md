@@ -1,0 +1,30 @@
+> [v3 语境适配页（bootstrap_v3 安装器注入，v3.5/J-008a）] 本文件写于 v2.x 语境。v3 库等价物：审计链=audit/lifelog-*.md（engine 自动入链，无需手动 lifelog_append）；变更账本=ledger/changes.jsonl；变异守卫=guard 子命令（基准黑名单+锚定）；条目写入=engine append（schema 十字段）；检索=engine retrieve；state/ 目录对应 state.json 与 memory/。v2.x 原文路径按需参考，冲突处以本页与 spec.md 为准。
+
+---
+name: wrap-up
+description: 任何任务完成后必须调用。当用户说「执行 wrap-up」、表示任务完成、或会话即将结束时使用。执行清场、归档、复盘、互链、索引同步的五步闭环，驱动双库持续进化。
+---
+# 任务收尾五步
+
+## 1 清场
+- 列出临时文件清单，经用户确认后删除或移入 `attic/`。
+- 确认唯一最终交付物，其余版本移入 `attic/`。
+
+## 2 归档
+- `workspace/{task}` → `archive/{YYYY}/{MM}/{task}/`，按单项目模板补 README（一句话/复现/数据流/关键决策/踩坑与经验/复用提示）。
+- 归档后目录视为只读。废弃版本移入 `attic/`，永不删除。
+
+## 3 复盘（写入 knowledge/）
+- 失败/弯路 → `pitfalls.md` 新条目（必须含根因一句话 + 实例链接）。
+- 成功路径 → `patterns.md` 新条目，或已有条目验证次数 +1。
+- 写入前先与已有条目对比去重，禁止新增重复条目。
+- 每条必须有工作区内真实依据，无依据不写，拿不准标【待确认】。
+
+## 4 互链
+- 新条目补「实例」字段；项目 README 补回链（指向 pitfalls/patterns 条目）。
+- 抽查互链，断链当场修复。
+
+## 5 索引同步
+- 更新 `knowledge/_index.md` 与 `archive/_INDEX.md`：新增行、触发次数、最后引用日期。
+- 验证 ≥3 次的 pattern，列为「建议升级为独立 skill」，不自动执行。
+- 更新 trajectory 轨迹文件（只追加）。

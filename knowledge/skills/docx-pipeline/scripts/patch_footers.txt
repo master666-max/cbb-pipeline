@@ -1,0 +1,61 @@
+# patch_footers.txt — 由 py -X utf8 执行
+# 作用：1) 删除封面节的空 <w:pgNumType/>；2) 按各节 pgNumType fmt 给对应页脚 PAGE 域补格式开关
+import re, shutil, sys, zipfile
+
+SRC = "output.docx"
+TMP = "output_patched.docx"
+
+zin = zipfile.ZipFile(SRC, "r")
+names = zin.namelist()
+docxml = zin.read("word/document.xml").decode("utf-8")
+rels = zin.read("word/_rels/document.xml.rels").decode("utf-8")
+
+# 1) 删除空 pgNumType（docx-js 对未设置页码的节也会输出，干扰 WPS）
+docxml_new = docxml.replace("<w:pgNumType/>", "")
+
+# 2) 找到每个 sectPr，按 fmt 决定它引用的页脚文件应为 ROMAN 还是 arabic
+rel_map = dict(re.findall(r'<Relationship[^>]*Id="([^"]+)"[^>]*Target="([^"]+)"', rels))
+
+roman_targets, arabic_targets = set(), set()
+for sect in re.findall(r"<w:sectPr[ >].*?</w:sectPr>", docxml_new, flags=re.S):
+    fmt = None
+    if 'w:fmt="upperRoman"' in sect or 'w:fmt="lowerRoman"' in sect:
+        fmt = "roman"
+    elif 'w:fmt="decimal"' in sect:
+        fmt = "arabic"
+    if not fmt:
+        continue
+    for rid in re.findall(r'<w:footerReference[^>]*w:type="default"[^>]*r:id="([^"]+)"', sect) or \
+               re.findall(r'<w:footerReference[^>]*r:id="([^"]+)"[^>]*w:type="default"', sect):
+        target = rel_map.get(rid, "")
+        target = target.split("/")[-1]
+        if fmt == "roman":
+            roman_targets.add("word/" + target)
+        else:
+            arabic_targets.add("word/" + target)
+
+print("roman footers:", sorted(roman_targets))
+print("arabic footers:", sorted(arabic_targets))
+
+def patch_footer(xml, switch):
+    # 将裸 PAGE 域替换为带格式开关的域
+    return re.sub(
+        r"(<w:instrText[^>]*>)\s*PAGE\s*(</w:instrText>)",
+        lambda m: m.group(1) + " PAGE \\* " + switch + " \\* MERGEFORMAT " + m.group(2),
+        xml,
+    )
+
+zout = zipfile.ZipFile(TMP, "w", zipfile.ZIP_DEFLATED)
+for name in names:
+    data = zin.read(name)
+    if name == "word/document.xml":
+        data = docxml_new.encode("utf-8")
+    elif name in roman_targets:
+        data = patch_footer(data.decode("utf-8"), "ROMAN").encode("utf-8")
+    elif name in arabic_targets:
+        data = patch_footer(data.decode("utf-8"), "arabic").encode("utf-8")
+    zout.writestr(name, data)
+zout.close()
+zin.close()
+shutil.move(TMP, SRC)
+print("patched OK ->", SRC)

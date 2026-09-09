@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+import re, os, io, sys, json, csv
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
+SRC = '分析/01_P1/场景块语料.jsonl'
+OUT = '分析/02_P2'
+os.makedirs(OUT, exist_ok=True)
+CAST = ['涡波','基督','缇亚','迪亚布罗','拉丝缇娅拉','缇娅拉','玛利亚','玛莉亚','斯诺','塞拉','赛拉',
+ '莉帕','阳滝','阿尔缇','缇达','诺斯菲','帕林库洛','诺文','海因','芬里尔','拉古涅','格连','芙兰琉莱','莱纳',
+ '缇缇','艾德','古奈尔','赛尔德拉','法夫纳','诺伊','艾尔米拉德','佩露修娜','库艾迦','斐勒卢托','赫尔米娜','露洁','诺瓦露','海莉','维斯']
+DIAL = re.compile(r'^「[^」]*」[\s！？⋯～—…!?]*$')
+SAY = re.compile(r'([\u4e00-\u9fff]{2,8}?)(?:说道|说|道|回答|答道|答道|低语|低声说|喊道|喊|宣言|喝道|呼唤|喃喃道|喃喃|规劝|劝问道|问|问道|答|叹息|咆哮|轻声道|咕哝|应声|接口|接口道|接话|补充|解释|解释|提醒|提醒道|提醒道|提醒道)')
+TELEPATHY = re.compile(r'^\[[^\]】]{1,60}\]$')
+FORE = re.compile(r'(当时(?:还|并)?(?:不|未)?(?:知道|明白|察觉|料到|想到|意识到)|后来(?:才|方)?(?:知道|明白|发觉|得知|发现)|其实(?:是|为)|原来(?!来)|如今(?:想来|回想|再想起)|殊不知|哪知|没想到|想不到|不曾想|殊不知|回过头(?:再)?看|现在(?:才|想想)|事后(?:才|回想)|当时只道|这都是为了|为.{0,6}埋下)')
+FORE2 = re.compile(r'伏笔|铺垫')
+
+def find_speaker(line):
+    m = SAY.search(line)
+    if not m: return None
+    cand = m.group(1)
+    for c in CAST:
+        if c in cand:
+            return c
+    return None
+
+stats = {'dialogue_lines': 0, 'telepathy_lines': 0, 'foreshadow_candidates': 0, 'blocks': 0, 'speaker_resolved': 0}
+fout = open(OUT + '/场景块语料_标注.jsonl', 'w', encoding='utf-8')
+review = []
+for ln in open(SRC, encoding='utf-8'):
+    r = json.loads(ln)
+    text = r['text']
+    lines = text.split('\n')
+    dlg = []; tele = []; fore = []
+    for i, l in enumerate(lines):
+        lst = l.strip()
+        if not lst: continue
+        if DIAL.match(lst):
+            stats['dialogue_lines'] += 1
+            sp = None
+            # 先看行尾引导（"「…」某某说"）
+            m = SAY.search(lst)
+            if m: sp = find_speaker(lst)
+            # 再看前2行叙述引导（"某某说：「…」"行内含引导词）
+            if not sp:
+                for j in range(i-1, max(-1, i-3), -1):
+                    sp = find_speaker(lines[j])
+                    if sp: break
+            if sp: stats['speaker_resolved'] += 1
+            dlg.append({'speaker': sp or '?', 'text': lst[:100]})
+        if TELEPATHY.match(lst):
+            stats['telepathy_lines'] += 1
+            tele.append(lst[:100])
+        if FORE.search(lst) or FORE2.search(lst):
+            stats['foreshadow_candidates'] += 1
+            fore.append(lst[:150])
+    r['dialogue_lines'] = dlg
+    r['telepathy_lines'] = tele
+    r['foreshadow_candidates'] = fore
+    if '千年前(回忆)' in r['timeline'] and ('西暦' in text or '新暦' in text or '现代' in text or '今' in text):
+        r['timeline'] = '千年前后交错'
+    fout.write(json.dumps(r, ensure_ascii=False) + '\n')
+    stats['blocks'] += 1
+    for d in dlg:
+        if d['speaker'] == '?':
+            review.append(['dialogue_speaker', r['id'], r['chapter'], r['unit'], d['text']])
+    for f in fore:
+        review.append(['foreshadow', r['id'], r['chapter'], r['unit'], f])
+fout.close()
+os.makedirs('分析/复核队列', exist_ok=True)
+with open('分析/复核队列/02_P2_对白说话人与伏笔.csv', 'w', encoding='utf-8', newline='') as f:
+    w = csv.writer(f)
+    w.writerow(['类型', '块ID', '章', '节', '原文片段', '人工判定'])
+    for row in review:
+        w.writerow(row)
+json.dump(stats, open(OUT + '/标注统计.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('块数:', stats['blocks'])
+print('对白行:', stats['dialogue_lines'], '| 自动归属说话人:', stats['speaker_resolved'], '| 待复核:', stats['dialogue_lines']-stats['speaker_resolved'])
+print('心灵通讯/独白行:', stats['telepathy_lines'])
+print('伏笔候选行:', stats['foreshadow_candidates'])
+print('复核队列条数:', len(review))

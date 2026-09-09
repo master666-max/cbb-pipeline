@@ -1,0 +1,122 @@
+# -*- coding: utf-8 -*-
+# v3.5 patch B：J-003 overrides 闭环 / J-008a 适配页 / J-009 reflect-synthesis / J-010 --redeliver
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def save():
+    io.open(p, 'w', encoding='utf-8', newline=chr(10)).write(s)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1); save()
+
+# ── J-003：verify 加载 overrides（对账裁决进账）+ throttle 参数（测试加速）──
+rep('''def cmd_verify(fix: bool):
+    print(f"包自哈希: {self_hash()}")''',
+    '''def cmd_verify(fix: bool, throttle: bool = True):
+    print(f"包自哈希: {self_hash()}")
+    ov_path = DATA_DIR / "registry_overrides.json"  # v3.5/J-003：人工裁决进账——overrides 参与对账
+    overrides = json.loads(ov_path.read_text(encoding="utf-8")) if ov_path.exists() else {}
+    if overrides: print(f"  [overrides] 应用 {len(overrides)} 条人工裁决")''')
+rep('''        total += 1
+        time.sleep(2.0)  # v3.1 补丁：条间降速（84 连发=限流重置的根因）
+        try:''',
+    '''        total += 1
+        if throttle: time.sleep(2.0)  # v3.1 补丁：条间降速（84 连发=限流重置的根因）；测试可关
+        try:''')
+rep('''            api_title, via = _fetch_arxiv_title(meta["arxiv_id"])
+            n_api, n_mine = _norm_title(api_title), _norm_title(meta.get("title", ""))''',
+    '''            api_title, via = _fetch_arxiv_title(meta["arxiv_id"])
+            my_title = overrides.get(aid, {}).get("api_title") or meta.get("title", "")
+            if aid in overrides: via = "override"
+            n_api, n_mine = _norm_title(api_title), _norm_title(my_title)''')
+rep('''            report[aid] = {"status": "match" if ok else "mismatch", "api_title": api_title, "via": via,
+                           "ts": time.strftime("%F %T")}''',
+    '''            report[aid] = {"status": "match" if ok else "mismatch", "api_title": api_title, "via": via,
+                           "ts": time.strftime("%F %T"), "my_title": my_title}''')
+
+# ── J-008a：experimental install.md 注入 v3 语境适配页（文件头，不改原文语义）──
+rep('''REFeree_PLACEHOLDER = None''', '''REFeree_PLACEHOLDER = None''') if False else None
+rep('''def _deliver(b: dict, mods: list, packages: list, level: str, target: Path):''',
+    '''ADAPTER_PAGE_V3 = (
+    "> [v3 语境适配页（bootstrap_v3 安装器注入，v3.5/J-008a）] 本文件写于 v2.x 语境。v3 库等价物："
+    "审计链=audit/lifelog-*.md（engine 自动入链，无需手动 lifelog_append）；"
+    "变更账本=ledger/changes.jsonl；变异守卫=guard 子命令（基准黑名单+锚定）；"
+    "条目写入=engine append（schema 十字段）；检索=engine retrieve；"
+    "state/ 目录对应 state.json 与 memory/。v2.x 原文路径按需参考，冲突处以本页与 spec.md 为准。\\n"
+)
+
+def _deliver(b: dict, mods: list, packages: list, level: str, target: Path):''')
+rep('''            data = meta["body"].encode("utf-8")
+            dest.write_bytes(data)''',
+    '''            body_text = meta["body"]
+            if rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith("install.md"):
+                body_text = ADAPTER_PAGE_V3 + NL_CH + body_text  # v3.5/J-008a(D1=a)：适配页置顶，原文保留
+            data = body_text.encode("utf-8")
+            dest.write_bytes(data)''')
+
+# ── J-009：reflect 合成提示词常量 + L5+ 落盘 ──
+rep('''REFeree_PLACEHOLDER = None''', '''REFeree_PLACEHOLDER = None''') if False else None
+rep('''ADAPTER_PAGE_V3 = (''',
+    '''REFLECT_SYNTHESIS = """# reflect-synthesis · 反思合成提示词（v3.5/J-009 渲染，随包分发）
+
+> 用法：engine reflect 产出素材包（memory/reflect/materials-*.md）后，把素材与本提示词交给 harness 执行合成。
+
+你是对本库近期写入做反思合成的 agent。规则：
+1. 只依据素材包内的条目与依据链，提炼跨任务高层规律 2~3 条——不是复述单条经验（Generative Agents 式）。
+2. 每条洞察必须附依据条目号；无据不写（铁律 2）；与库内既有 R 条目重复则合并升版本而非新建。
+3. 产出格式：每条洞察一段（洞察正文 + 依据条目号列表 + 置信度），以 id=R-{下一个可用编号} 走 engine append（importance>=7）。
+4. 合成完成后将 state.json 的 importance_accum 置 0（显式记录于 changes.jsonl 由下一次 wrapup 覆盖）。
+"""
+ADAPTER_PAGE_V3 = (''')
+
+rep('''    if n >= 4:  # v3.1/V-009：referee 提示词随包落盘
+        rf = target / "references" / "referee.md"''',
+    '''    if n >= 5:  # v3.5/J-009：reflect 合成提示词随包（L5+）
+        rs = target / "references" / "reflect-synthesis.md"
+        rs.write_text(REFLECT_SYNTHESIS, encoding="utf-8")
+        manifest["files"]["references/reflect-synthesis.md"] = hashlib.sha256(REFLECT_SYNTHESIS.encode()).hexdigest()[:16]
+        (target / ".library-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+    if n >= 4:  # v3.1/V-009：referee 提示词随包落盘
+        rf = target / "references" / "referee.md"''')
+
+# NL_CH 常量（适配页换行）
+rep('''ADAPTER_PAGE_V3 = (''',
+    '''NL_CH = chr(10)
+ADAPTER_PAGE_V3 = (''')
+
+# ── J-010：install 校验模式 --redeliver ──
+rep('''def cmd_install(level: str, packages: list, target: Path, yes: bool):''',
+    '''def cmd_install(level: str, packages: list, target: Path, yes: bool, redeliver: bool = False):''')
+rep('''        print(f"install[校验模式]: {st.get('level')} 已安装（{len(mf['files'])} 文件在册）→ ''',
+    '''        if drift and redeliver:  # v3.5/J-010(D2)：显式授权重交付——按当前 bodies 重写漂移文件
+            b_rd = load_bodies()
+            if not any(b_rd.get(x) for x in ("modules", "packages", "presets", "docs")):
+                sys.exit("install --redeliver：bodies 为空，无从重交付。用 --data 指定包的 bootstrap_data。")
+            fixed, gone = 0, []
+            for rel in drift:
+                meta = None
+                for slot, items in b_rd.items():
+                    if slot == "removed" or not isinstance(items, dict): continue
+                    for k, m in items.items():
+                        if m.get("src", "").replace("\\\\", "/") == rel: meta = m; break
+                    if meta: break
+                if meta:
+                    body_text = meta["body"]
+                    if rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith("install.md"):
+                        body_text = ADAPTER_PAGE_V3 + NL_CH + body_text
+                    (target / rel).write_text(body_text, encoding="utf-8")
+                    mf["files"][rel] = hashlib.sha256((target / rel).read_bytes()).hexdigest()[:16]
+                    fixed += 1
+                else:
+                    gone.append(rel)  # 不在 bodies（如渲染件）——提示走 build-docs --lib
+            mf_path.write_text(json.dumps(mf, ensure_ascii=False, indent=1), encoding="utf-8")
+            st["merkle_root"] = merkle_root(target, exclude={"state.json"})
+            state_path.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+            print(f"  [重交付] {fixed} 个文件已按当前 bodies 重写（--redeliver 显式授权）" +
+                  (f"；非内容体漂移 {gone}（走 build-docs --lib）" if gone else ""))
+            drift = []
+        print(f"install[校验模式]: {st.get('level')} 已安装（{len(mf['files'])} 文件在册）→ ''')
+
+io.open(p, 'w', encoding='utf-8', newline='\n').write(s)
+print('patch B done')

@@ -1,0 +1,70 @@
+# -*- coding: utf-8 -*-
+# v3.5 patch A v2：逐 rep 落盘 + chr(10) 构造（零转义依赖）
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+NL2 = chr(92) + 'n'  # 文件中应出现的两字符：反斜杠+n
+def save():
+    io.open(p, 'w', encoding='utf-8', newline=chr(10)).write(s)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1); save()
+
+# J-001
+rep('''        dest.mkdir(parents=True, exist_ok=True)
+        (dest / f"{e['id']}.json").write_text(json.dumps(e, ensure_ascii=False, indent=1), encoding="utf-8")''',
+    '''        dest.mkdir(parents=True, exist_ok=True)
+        epath = dest / f"{e['id']}.json"
+        if epath.exists():  # v3.5/J-001：永不覆盖（铁律 1）——同 id 拒绝，更新走显式裁决
+            old = json.loads(epath.read_text(encoding="utf-8"))
+            sys.exit(f"schema v3 拒绝写入：条目 {e['id']} 已存在（created_at={old.get('created_at')}）。更新请人工裁决或换 id——写入路径不覆盖。")
+        (dest / f"{e['id']}.json").write_text(json.dumps(e, ensure_ascii=False, indent=1), encoding="utf-8")''')
+
+# J-002
+rep('''    for slot, items in b.items():
+        for key, meta in sorted(items.items()):''',
+    '''    for slot, items in b.items():
+        if slot == "removed": continue  # v3.5/J-002：镜像删除区不参与交付
+        for key, meta in sorted(items.items()):''')
+
+# J-004+005
+rep('''    msg = f"build: 生成 spec.md / 提示词速查.md / citations.md → {out}（手改生成区=违例）"''',
+    '''    if lib and out == Path("./dist"):
+        out = Path(lib)  # v3.5/J-004：--lib 模式渲染产物默认落库
+    msg = f"build: 生成 spec.md / 提示词速查.md / citations.md → {out}（手改生成区=违例）"''')
+rep('''        (lib / "README.md").write_text(render_readme(st["level"]), encoding="utf-8")
+        st["merkle_root"] = merkle_root(lib, exclude={"state.json"})''',
+    '''        (lib / "README.md").write_text(render_readme(st["level"]), encoding="utf-8")
+        st["version"] = VERSION; st["package_sha256"] = self_hash()  # v3.5/J-005：state 随包升级
+        st["merkle_root"] = merkle_root(lib, exclude={"state.json"})''')
+
+# J-006
+rep('''- 预演：`engine shadow --lib . --text "<变更描述>"`（只记日志不改状态——公理 G）''',
+    '''- 评测：`engine eval --lib .`（golden 评测，recall@5/MRR 基线入 evals/）
+- 反思取材：`engine reflect --lib .`（素材打包 → harness 合成 → append id=R-xxx）
+- 体检：`engine doctor --lib .`（memory/audit/ledger 三方对账，差异只报告）
+- 变异守卫：`guard --diff <候选> --lib .`（触碰基准黑名单即否决）；`guard --snapshot`/`--anchor` 锚定对账
+- 预演：`engine shadow --lib . --text "<变更描述>"`（只记日志不改状态——公理 G）''')
+
+# J-007
+rep('''f"条目回填 source_event_id=genesis；parity 门=recall@5 ≥ 基线−0.03")''',
+    '''f"条目回填 source_event_id=genesis；parity 门=recall@5 ≥ 基线−0.03——下一步：engine eval --lib <库> 对账（v3.5/J-007）")''')
+
+# CLI：build-docs lambda 支持 out=None + J-004
+rep('''"build-docs": lambda: cmd_build(Path(a.out), a.lib),''',
+    '''"build-docs": lambda: cmd_build(Path(a.out) if a.out else None, a.lib),''')
+rep('''s.add_argument("--out", default="./dist"); s.add_argument("--lib", default=None)  # v3.4/H-001''',
+    '''s.add_argument("--out", default=None); s.add_argument("--lib", default=None)  # v3.5/J-004：out 缺省随 lib''')
+
+# cmd_build 签名 out 可能 None
+rep('''def cmd_build(out: Path, lib=None):''',
+    '''def cmd_build(out, lib=None):''')
+rep('''    out.mkdir(parents=True, exist_ok=True)
+    (out / "spec.md").write_text(render_spec(), encoding="utf-8")''',
+    '''    if out is None: out = Path(lib) if lib else Path("./dist")  # v3.5/J-004
+    out = Path(out)
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "spec.md").write_text(render_spec(), encoding="utf-8")''')
+
+print('patch A v2 done')

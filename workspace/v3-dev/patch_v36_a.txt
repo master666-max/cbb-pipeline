@@ -1,0 +1,76 @@
+# -*- coding: utf-8 -*-
+# v3.6 patch A：K-001 幂等三态 / K-002 链校验 / K-003 reflect-done / K-004 入口引用 / K-005 友好退出 / K-006 序号
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def save():
+    io.open(p, 'w', encoding='utf-8', newline=chr(10)).write(s)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1); save()
+
+# K-001：absorb-md 幂等三态
+rep('''    print(f"absorb-md[{'dry-run' if dry_run else '执行'}]: 解析 {MON['parsed']} 条（模板跳过 {MON['skipped_template']}，无日期修正 {len(MON['no_date'])}）+ soul 指针 1 + 轨迹索引 {len(ids) - MON['parsed'] - 1} = 共 {len(ids)} 条")''',
+    '''    print(f"absorb-md[{'dry-run' if dry_run else '执行'}]: 解析 {MON['parsed']} 条（模板跳过 {MON['skipped_template']}，无日期修正 {len(MON['no_date'])}）+ soul 指针 1 + 轨迹索引 {len(ids) - MON['parsed'] - 1} = 共 {len(ids)} 条")''')
+rep('''        except SystemExit as ex:
+            MON["rejected"].append(e["id"] + ": " + str(ex)[:80])
+    print(f"absorb-md: 追加 {MON['appended']} 条" + (f"；拒绝 {len(MON['rejected'])}：" + "；".join(MON["rejected"][:6]) if MON["rejected"] else "，0 拒绝"))''',
+    '''        except SystemExit as ex:
+            if "已存在" in str(ex): MON.setdefault("skipped_dup", []).append(e["id"])  # v3.6/K-001：幂等跳过≠拒绝
+            else: MON["rejected"].append(e["id"] + ": " + str(ex)[:80])
+    print(f"absorb-md: 追加 {MON['appended']} 条 / 幂等跳过 {len(MON.get('skipped_dup', []))} 条"
+          + (f"；真拒绝 {len(MON['rejected'])}：" + "；".join(MON["rejected"][:6]) if MON["rejected"] else "，0 拒绝"))''')
+
+# K-003：reflect-done + K-006 序号 + 素材尾注改指命令
+rep('''        fn = d / ("materials-" + time.strftime("%Y%m%d-%H%M%S") + ".md")''',
+    '''        ts = time.strftime("%Y%m%d-%H%M%S")
+        fn = d / (f"materials-{ts}.md")
+        n = 2  # v3.6/K-006：同秒不覆盖
+        while fn.exists(): fn = d / f"materials-{ts}-{n}.md"; n += 1''')
+rep('''        lines.append("合成完成后将 state.json 的 importance_accum 置 0。")''',
+    '''        lines.append("合成完成入库后执行 engine reflect-done --lib <库>（重置累计器并入账本——勿手工编辑 state.json）。")''')
+rep('''    elif op == "doctor":''',
+    '''    elif op == "reflect-done":  # v3.6/K-003：合成完成的重置走账本（消灭手工编辑 state.json 的绕行）
+        st_path = lib / "state.json"; s = json.loads(st_path.read_text(encoding="utf-8"))
+        s["importance_accum"] = 0
+        _ledger_append(lib, "reflect-done", "accum→0（反思合成已入库）")
+        chain_append(lib / "audit", "reflect-done：importance_accum 置 0")
+        s["merkle_root"] = merkle_root(lib, exclude={"state.json"})
+        st_path.write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding="utf-8")
+        print("reflect-done: importance_accum 已重置并入账本/审计链")
+    elif op == "doctor":''')
+
+# K-002：doctor 增审计链逐行重算
+rep('''        print(f"doctor: memory {len(mem)} / audit {len(audit_ids)} / ledger {len(ledger_ids)}")''',
+    '''        chain_bad = []  # v3.6/K-002：审计链逐行重算（v2.x T11 防线归位）
+        prev = ""
+        for ap in sorted((lib / "audit").glob("lifelog-*.md")):
+            for idx, line in enumerate(ap.read_text(encoding="utf-8").strip().splitlines(), 1):
+                m = re.search(r"prev:(\\S+) \\| h:([0-9a-f]{64}) \\| (.*)$", line)
+                if not m: chain_bad.append(f"{ap.name}:{idx}（格式异常）"); prev = ""; continue
+                p2, h2, text = (m.group(1) if m.group(1) != "genesis" else ""), m.group(2), m.group(3)
+                if line_hash(p2, text) != h2: chain_bad.append(f"{ap.name}:{idx}")
+                prev = h2
+        print(f"doctor: memory {len(mem)} / audit {len(audit_ids)} / ledger {len(ledger_ids)} / 审计链 {'连续' if not chain_bad else f'断链 {len(chain_bad)} 处'}")''')
+rep('''        if not (o1 or o2 or o3 or o4): print("  三方一致")
+        else: print("  → 差异等用户裁决，不自动修（铁律1）")''',
+    '''        if chain_bad: print("  [断链] " + "，".join(chain_bad[:8]) + "（审计链被篡改——按 10.2.1 口径对账人侧锚点）")
+        if not (o1 or o2 or o3 or o4) and not chain_bad: print("  三方+链 全一致")
+        else: print("  → 差异等用户裁决，不自动修（铁律1）")''')
+
+# K-004：入口引用修正
+rep('''2. `state/README.md`（库状态：档位/根/情绪/累计器）''',
+    '''2. `state.json`（库状态：档位/根/情绪/累计器）''')
+
+# K-005：build-docs --lib 友好退出
+rep('''    if lib:
+        lib = Path(lib)
+        st = json.loads((lib / "state.json").read_text(encoding="utf-8"))''',
+    '''    if lib:
+        lib = Path(lib)
+        if not (lib / "state.json").exists():  # v3.6/K-005
+            sys.exit(f"build-docs: --lib 需为已安装库（{lib} 缺 state.json）")
+        st = json.loads((lib / "state.json").read_text(encoding="utf-8"))''')
+
+print('patch A done')

@@ -1,0 +1,35 @@
+# 题录（v3.2/C-013 由 REGISTRY 渲染，手改即违例）
+
+- **A1** MemGPT: Towards LLMs as Operating Systems（2310.08560）
+- **A2** Generative Agents: Interactive Simulacra of Human Behavior（2304.03442）
+- **A3** Reflexion: Language Agents with Verbal Reinforcement Learning（2303.11366）
+- **A4** Cognitive Architectures for Language Agents（2309.02427）
+- **A5** Voyager: An Open-Ended Embodied Agent with Large Language Models（2305.16291）
+- **A6** MemoryBank: Enhancing Large Language Models with Long-Term Memory（2305.10250）
+- **A7** A Survey on the Memory Mechanism of Large Language Model based Agents（2404.13501）
+- **A8** HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models（2405.14831）
+- **A9** From RAG to Memory: Non-Parametric Continual Learning for LLMs (HippoRAG 2)（2502.14802）
+- **A10** A-MEM: Agentic Memory for LLM Agents（2502.12110）
+- **A11** Zep: A Temporal Knowledge Graph Architecture for Agent Memory（2501.13956）
+- **A12** Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory（2504.19413）
+- **A13** Sleep-time Compute: Beyond Inference Scaling at Test-time（2504.13171）
+- **A14** Memory OS of AI Agent（2506.06326） — 教训纪念碑：v2.x 标题与作者皆错；勿与 PyPI MemoryOS(=MemTensor MemOS) 混淆
+- **A15** G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems（2506.07398）
+- **A16** MemOS: A Memory OS for AI System（2507.03724） — 一作非 Wang；MemCube=明文/激活/参数三类记忆
+- **A17** MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent（2507.02259） — 机制=分段读取+固定长度记忆覆写（勿写『分页』）
+- **A18** MIRIX: Multi-Agent Memory System（2507.07957）
+- **A19** Memory-R1: Enhancing LLM Agents to Manage and Utilize Memories via RL（2508.19828）
+- **A20** LightMem: Lightweight and Efficient Memory-Augmented Generation（2510.18866）
+- **A21** The Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents（2505.22954） — 术语=objective hacking(非 reward hacking)；Appendix F Node114 删特殊标记绕过幻觉检测；处方=豁免+锚定+对变异引擎不可见
+- **A22** A Survey of Self-Evolving Agents: On Path to Artificial Super Intelligence（2507.21046） — BR-2 编号修复：本条为 A22（v3 骨架曾误占 A28）
+- **A23** Improving Factuality and Reasoning in Language Models through Multiagent Debate（2305.14325）
+- **A24** 《仿生认知架构（BCA）实施规划书 v0.1》（用户提供）（工作区文档（doc 型，无 arXiv 编号））
+- **A25** Context Rot: How Increasing Input Tokens Impacts LLM Performance（Chroma Research (2025-07, Hong et al.)） — Anthropic《Effective context engineering for AI agents》为引用方，归属不得再错
+- **A26** OpenClaw / Letta 官方文档（docs.openclaw.ai、docs.letta.com（doc 型））
+- **A27** MemInsight: Autonomous Memory Augmentation for LLM Agents（2503.21760） — 计入 arXiv 口径，勿漏算
+- **A28** Manus 官方资料: Context Engineering for AI Agents（manus.im/blog） — BR-2 编号修复：doc 型（非论文，无 arXiv 编号）；v3 骨架曾把本编号误给 A22 综述
+- **A29** Complementary Learning Systems (McClelland, McNaughton & O'Reilly)（）
+- **A30** A Cognitive Theory of Consciousness (GWT, Baars)（）
+- **A31** The Somatic Marker Hypothesis (Damasio)（） — BR-5：Descartes' Error 初版 1994（G.P. Putnam's Sons）；1996 为平装年版
+- **A32** Default Mode Network (Raichle et al.)（）
+- **A33** Mood and Memory: mood-congruent memory (Bower)（） — L9 情绪系统实际使用者，v3 补齐（v2.x 缺第五项理论）

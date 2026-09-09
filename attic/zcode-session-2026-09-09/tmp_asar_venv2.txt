@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+"""找 uv venv 创建命令与 site-packages 复用方式"""
+import re
+
+text = open(r"C:/Users/26672/AppData/Local/Programs/Comfy Desktop/resources/app.asar",
+            "rb").read().decode("utf-8", "replace")
+
+for pat in [r"system-site", r"systemSite", r"venv-u", r'"venv"', r"createVenv", r"seed-v"]:
+    print(f"===== {pat} =====")
+    for m in list(re.finditer(pat, text))[:4]:
+        s, e = max(0, m.start()-250), min(len(text), m.end()+350)
+        print(text[s:e].replace("\n", " "))
+        print("-----")

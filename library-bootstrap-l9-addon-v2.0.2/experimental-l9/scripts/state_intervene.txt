@@ -1,0 +1,40 @@
+# state_intervene.txt — 状态干预/消融接口（L9 · 可读可写可消融可干预）
+# 用法: python3 state_intervene.txt --set arousal=0.8 | --disable emotion | --enable emotion | --ablate emotion | show
+import os, sys, json
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+STATE = os.path.join(os.getcwd(), 'state', '.library-state.json')
+
+def load():
+    return json.load(open(STATE, encoding='utf-8'))
+
+def save(s):
+    json.dump(s, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+
+def main():
+    args = sys.argv[1:]
+    if not os.path.exists(STATE):
+        print('✗ 无 state/.library-state.json（先装 exp9-instrumentation）'); sys.exit(2)
+    if not args:
+        print('用法: --set key=value | --disable emotion | --enable emotion | show'); return
+    if args[0] == 'show':
+        print(json.dumps(load(), ensure_ascii=False, indent=2)); return
+    if args[0] == '--set':
+        s = load()
+        k, v = args[1].split('=')
+        if k in s['emotion']:
+            s['emotion'][k] = float(v)
+        elif k in ['gwt', 'emotion']:
+            s['ablation'][k] = v == 'true'
+        else:
+            print('✗ 未知键', k); sys.exit(2)
+        save(s); print('已置 %s=%s' % (k, v)); return
+    if args[0] in ('--disable', '--ablate'):
+        s = load(); s['ablation'][args[1]] = True; save(s)
+        print('已消融 %s（A/B 对比前先 snapshot）' % args[1]); return
+    if args[0] == '--enable':
+        s = load(); s['ablation'][args[1]] = False; save(s); print('已恢复 %s' % args[1]); return
+    print('✗ 未知命令'); sys.exit(2)
+
+if __name__ == '__main__':
+    main()

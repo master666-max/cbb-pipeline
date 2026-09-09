@@ -1,0 +1,87 @@
+# bootstrap_verify.txt — 安装校验与 manifest 生成（library-bootstrap，纯标准库）
+# 用法:
+#   首次安装收尾: python3 bootstrap_verify.txt --init {preset} {module1,module2,...} [--packs x-rp,...] [--exp vector-search,...]
+#   重装/校验:    python3 bootstrap_verify.txt          （读 .library-manifest.json 逐文件比对）
+#   依赖校验:     python3 bootstrap_verify.txt --deps m-core,m-evolve
+import os, re, sys, json, hashlib
+from datetime import date
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+MANIFEST = '.library-manifest.json'
+DEPS = {
+    'm-core': [], 'm-index': ['m-core'], 'm-loop': ['m-index'],
+    'm-tools': ['m-core'], 'm-schema3': ['m-core'],
+    'm-evolve': ['m-loop', 'm-schema3'], 'm-soul': ['m-core'],
+    'm-reflect': ['m-loop'], 'm-cron': ['m-tools', 'm-reflect'], 'm-radar': ['m-core'],
+}
+
+def sha1_8(path):
+    return hashlib.sha1(open(path, 'rb').read()).hexdigest()[:8]
+
+def check_deps(mods):
+    missing = []
+    for m in mods:
+        for d in DEPS.get(m, []):
+            if d not in mods:
+                missing.append('%s 依赖 %s' % (m, d))
+    return missing
+
+def main():
+    args = sys.argv[1:]
+    if not args:
+        # 校验模式
+        if not os.path.exists(MANIFEST):
+            print('✗ 无 manifest；首次安装请用 --init'); sys.exit(1)
+        mf = json.load(open(MANIFEST, encoding='utf-8'))
+        ok = drift = gone = 0
+        for f in mf['files']:
+            p = f['path']
+            if not os.path.exists(p):
+                print('✗ 缺失: %s (%s)' % (p, f.get('module', '?'))); gone += 1
+            elif sha1_8(p) != f['sha1_8']:
+                print('⚠ 漂移(被修改): %s' % p); drift += 1
+            else:
+                ok += 1
+        print('校验: %d 一致 / %d 漂移 / %d 缺失' % (ok, drift, gone))
+        sys.exit(1 if (drift or gone) else 0)
+    if args[0] == '--deps':
+        mods = args[1].split(',') if len(args) > 1 else []
+        miss = check_deps(mods)
+        if miss:
+            for m in miss: print('✗ 依赖不满足:', m)
+            sys.exit(1)
+        print('依赖 OK:', ','.join(mods)); return
+    if args[0] == '--init':
+        preset = args[1]
+        mods = args[2].split(',') if len(args) > 2 else ['m-core']
+        packs = []
+        exp = []
+        if '--packs' in args:
+            packs = args[args.index('--packs') + 1].split(',')
+        if '--exp' in args:
+            exp = args[args.index('--exp') + 1].split(',')
+        miss = check_deps(mods)
+        if miss:
+            for m in miss: print('✗ 依赖不满足:', m)
+            sys.exit(1)
+        # 收集模板产生的文件（= 体系中应存在的结构文件）
+        tracked = []
+        for root, _, files in os.walk('.'):
+            if any(skip in root for skip in ['.git', 'attic', 'archive', 'workspace', 'node_modules', 'data']):
+                continue
+            for f in files:
+                if f.endswith(('.md', '.txt', '.keep')) and f not in ('probe_test.py', 'probe_test.txt'):
+                    tracked.append(os.path.normpath(os.path.join(root, f)).replace('\\', '/'))
+        mf = {
+            'skill': 'library-bootstrap', 'skill_version': '1.0.0',
+            'installed_at': str(date.today()), 'preset': preset,
+            'modules': mods, 'packs': packs, 'experimental': exp,
+            'files': [{'path': p, 'sha1_8': sha1_8(p)} for p in sorted(tracked)],
+        }
+        json.dump(mf, open(MANIFEST, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+        print('manifest 生成: %d 个文件已登记（preset=%s, modules=%s, packs=%s）' % (len(tracked), preset, ','.join(mods), ','.join(packs)))
+        return
+    print('用法: bootstrap_verify.txt [--init preset mods [--packs p] [--exp e]] [--deps mods]')
+
+if __name__ == '__main__':
+    main()

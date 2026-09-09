@@ -1,0 +1,97 @@
+# -*- coding: utf-8 -*-
+# v3.4 patch：H-003 reflect / H-004 absorb-md / H-005 golden+eval / H-006 doctor / CLI 接线
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+NL = chr(10)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:60]
+    s = s.replace(a, b, 1)
+
+# ── H-005：eval 增强（misses top1 + 参照线）──
+rep('        n = len(qs)' + NL +
+    '        base = {"ts": time.strftime("%F %T"), "n": n, "recall@5": round(hits / n, 3), "MRR": round(rr / n, 3), "misses": misses}' + NL +
+    '        (lib / "evals" / "baseline.json").write_text(json.dumps(base, ensure_ascii=False, indent=1), encoding="utf-8")' + NL +
+    '        _ledger_append(lib, "eval", f"n={n} recall@5={base[chr(39)+chr(39)]}")'.replace("chr(39)+chr(39)", "'recall@5'") if False else
+    '        n = len(qs)',
+    '        n = len(qs)')
+# 上面过于绕，改为直接在 misses 计算处补 top1：
+rep('''            if found: hits += 1; rr += 1.0 / found[0]
+            else: misses.append(item.get("query", "?"))''',
+    '''            if found: hits += 1; rr += 1.0 / found[0]
+            else: misses.append(f"{item.get('query', '?')}（top1={ranked[0] if ranked else '-'}）")''')
+rep('''        print(f"eval: n={n}  recall@5={base['recall@5']}  MRR={base['MRR']}（基线写入 evals/baseline.json，misses {len(misses)} 条）")''',
+    '''        print(f"eval: n={n}  recall@5={base['recall@5']}  MRR={base['MRR']}（基线写入 evals/baseline.json，misses {len(misses)} 条；v2.x 参照线 recall@5=0.455——条目集不同，仅参照）")''')
+
+# ── H-003 reflect + H-006 doctor：插在 retire 分支之前 ──
+anchor_ref = '    elif op == "retire":  # v3.1/V-013：失效条目 TTL 出仓（移 attic，留痕）'
+reflect_block = '''    elif op == "reflect":  # v3.4/H-003：反思取材打包器（LLM 合成由 harness 执行——单文件边界诚实形态）
+        st = json.loads((lib / "state.json").read_text(encoding="utf-8"))
+        thr = TUNABLES["reflect_importance_threshold"]["value"]
+        acc = st.get("importance_accum", 0)
+        top = sorted(_all_entries(lib), key=lambda x: -x[1].get("importance", 0))[:6]
+        recent_ids = []
+        lp = lib / "ledger" / "changes.jsonl"
+        if lp.exists():
+            for line in lp.read_text(encoding="utf-8").strip().splitlines()[-40:]:
+                try:
+                    r = json.loads(line)
+                    if r.get("action") == "append": recent_ids.append(r.get("detail", ""))
+                except Exception: pass
+        d = lib / "memory" / "reflect"; d.mkdir(parents=True, exist_ok=True)
+        fn = d / ("materials-" + time.strftime("%Y%m%d-%H%M%S") + ".md")
+        lines = ["# 反思素材包（engine reflect 渲染，LLM 合成由 harness 执行）", "",
+                 f"- 触发原因：importance_accum={acc}" + (f" ≥ 阈值 {thr}" if acc >= thr else "（手动取材）"),
+                 f"- 近期写入：{len(recent_ids)} 条（{', '.join(recent_ids[:10])}）",
+                 f"- 高重要度条目 TOP{len(top)}（合成时优先取材，无据不写——铁律 2）：", ""]
+        for fid, e, _ in top:
+            lines.append(f"## {fid}（importance={e.get('importance')}）")
+            lines.append(e.get("content", "")[:400]); lines.append("")
+        lines.append("---")
+        lines.append("合成产出要求：跨任务高层规律 2~3 条（非复述单条经验），每条附依据条目号；")
+        lines.append("产出走 engine append（id=R-xxx，importance>=7）；完成后手工将 state.json 的 importance_accum 置 0。")
+        fn.write_text(NL.join(lines), encoding="utf-8")
+        _ledger_append(lib, "reflect", f"materials={fn.name}")
+        print(f"reflect: 素材已打包 → {fn}（触发：importance_accum={acc}；合成后重置 accum）")
+    elif op == "doctor":  # v3.4/H-006：三方对账（memory↔audit↔ledger），只报告不自动修
+        mem = {f.stem for f in (lib / "memory").rglob("*.json")}
+        audit_ids, ledger_ids = set(), set()
+        for ap in (lib / "audit").glob("lifelog-*.md"):
+            audit_ids |= set(re.findall(r"entry:(\\S+) →", ap.read_text(encoding="utf-8")))
+        lp = lib / "ledger" / "changes.jsonl"
+        if lp.exists():
+            for line in lp.read_text(encoding="utf-8").strip().splitlines():
+                try:
+                    r = json.loads(line)
+                    if r.get("action") == "append":
+                        m = re.search(r"entry=(\\S+?) ", r.get("detail", "") + " ")
+                        if m: ledger_ids.add(m.group(1))
+                except Exception: pass
+        o1 = sorted(mem - audit_ids); o2 = sorted(audit_ids - mem)
+        o3 = sorted(ledger_ids - mem); o4 = sorted(mem - ledger_ids)
+        print(f"doctor: memory {len(mem)} / audit {len(audit_ids)} / ledger {len(ledger_ids)}")
+        for tag, lst in (("memory有而audit无", o1), ("audit有而memory无", o2),
+                         ("ledger有而memory无", o3), ("memory有而ledger无", o4)):
+            if lst: print(f"  [{tag}] {', '.join(lst[:8])}")
+        if not (o1 or o2 or o3 or o4): print("  三方一致")
+        else: print("  → 差异等用户裁决，不自动修（铁律1）")
+'''
+rep(anchor_ref, reflect_block + anchor_ref)
+
+# reflect/doctor 需要的 _all_entries 辅助
+rep('def _rank_entries(lib, q: str):',
+    '''def _all_entries(lib):
+    out = []
+    for f in Path(lib).rglob("memory/*/\\*.json".replace("\\\\*", "*")):
+        pass
+    for f in (Path(lib) / "memory").rglob("*.json"):
+        e = json.loads(f.read_text(encoding="utf-8"))
+        if e.get("validity", {}).get("t_invalid"): continue
+        out.append((f.stem, entry_normalize(e), 0.0))
+    return out
+
+def _rank_entries(lib, q: str):''')
+
+io.open(p, 'w', encoding='utf-8', newline='\n').write(s)
+print('patch part1 done')

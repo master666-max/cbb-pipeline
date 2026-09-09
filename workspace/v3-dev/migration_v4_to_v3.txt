@@ -1,0 +1,142 @@
+# -*- coding: utf-8 -*-
+# migration_v4_to_v3.py — v4 双库(knowledge/*.md) → v3.2 L9 JSON 十字段条目 迁移器（一次性工具，M6）
+# 监测目标（v3.3-1/2 素材）：解析容错、字段丢失、schema 拒绝、ID 重复、守恒断言
+import io, os, re, sys, json, time
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import importlib.util
+spec = importlib.util.spec_from_file_location("bs3", os.path.join(os.path.dirname(os.path.abspath(__file__)), "_mig_bs.py"))
+bs3 = importlib.util.module_from_spec(spec); spec.loader.exec_module(bs3)
+
+ROOT = r"D:\zcode专用！！！！危险！！！！！！！！！"
+LIB  = os.path.join(ROOT, "库调试v3.2")
+SRC  = {"pitfalls": "knowledge/pitfalls.md", "patterns": "knowledge/patterns.md",
+        "reflections": "knowledge/reflections.md", "decisions": "knowledge/decisions.md"}
+
+MONITOR = {"parsed": 0, "skipped_template": 0, "appended": 0, "rejected": [], "field_gaps": [],
+           "no_date": [], "id_list": [], "files_read": 0}
+
+def read(p):
+    MONITOR["files_read"] += 1
+    return io.open(os.path.join(ROOT, p), encoding="utf-8").read()
+
+def parse_entries(text, prefix):
+    """按 ### {prefix}-NNN 切条目；模板占位（{日期}/{模式名}）跳过并计数"""
+    out, cur = [], None
+    for line in text.splitlines():
+        m = re.match(r"^### (" + prefix + r"-\d+) / (.+?) / (.+)$", line.strip())
+        if m:
+            if cur: out.append(cur)
+            eid, date, title = m.group(1), m.group(2).strip(), m.group(3).strip()
+            if "{" in date or "{" in title:
+                MONITOR["skipped_template"] += 1
+                cur = None; continue
+            if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
+                MONITOR["no_date"].append(eid); date = "2026-09-06"
+            cur = {"id": eid, "date": date, "title": title, "fields": {}}
+            continue
+        if cur is not None:
+            fm = re.match(r"^-( .+?)：(.*)$", line.rstrip())
+            if fm: cur["fields"].setdefault(fm.group(1).strip(), []).append(fm.group(2).strip())
+            else: cur["fields"].setdefault("_body", []).append(line.rstrip())
+    if cur: out.append(cur)
+    return out
+
+def core_content(e):
+    """标题 + 首个核心字段句（教训/决策/洞察/核心步骤），截 220 字"""
+    f = e["fields"]
+    for k in ("教训", "决策", "洞察", "核心步骤"):
+        if k in f:
+            return (e["title"] + "：" + f[k][0])[:220]
+    body = " ".join(x.strip() for x in f.get("_body", []) if x.strip())
+    return (e["title"] + "：" + body)[:220] if body else e["title"]
+
+def to_entry(e, default_imp):
+    f = e["fields"]
+    content = core_content(e)
+    if len(content) <= len(e["title"]) + 1:
+        MONITOR["field_gaps"].append(e["id"] + "(content 空)")
+    kw = []
+    for sep in ("、", " ", "，"):
+        raw = f.get("关键词", [])
+        if raw: kw = [x for x in re.split(r"[、，]", raw[0]) if x]; break
+    links = re.findall(r"\[\[(.+?)\]\]", " ".join(sum(f.values(), [])))
+    state = (f.get("状态", [""])[0])
+    imp = 3 if "superseded" in state else (7 if state == "active" or "决策" in f else default_imp)
+    conf = "高" if f.get("置信度", [""])[0].startswith("高") else ("中" if f.get("置信度") else "中")
+    return {"id": e["id"], "created_at": e["date"], "updated_at": "", "content": content,
+            "keywords": kw[:12], "links": list(dict.fromkeys(links))[:8],
+            "source_event_id": "genesis-v4", "importance": imp, "confidence": conf,
+            "validity": {"t_valid": e["date"]}}
+
+entries = []
+for name, path in SRC.items():
+    text = read(path)
+    prefix = {"pitfalls": "P", "patterns": "PT", "reflections": "R", "decisions": "D"}[name]
+    es = parse_entries(text, prefix)
+    MONITOR["parsed"] += len(es)
+    for e in es:
+        entries.append(to_entry(e, default_imp=6))
+
+# soul 指针（原位保留，M3）
+for soul_file, who in (("soul/SOUL.md", "agent 人格"), ("soul/USER.md", "用户画像 miza")):
+    read(soul_file)
+    entries.append({"id": "SOUL-" + soul_file.split("/")[-1][:4].upper(), "created_at": "2026-09-03",
+                    "updated_at": "", "content": f"{who}：原位保留于工作区根 soul/{soul_file.split('/')[-1]}（v3 库无灵魂层目录，M3 裁决=原位保留+指针）。加载惯例：会话开始先读 soul/ 两文件再进 v3 检索。",
+                    "keywords": ["soul", "人格", "画像", who.split(" ")[-1]], "links": [],
+                    "source_event_id": "genesis-v4", "importance": 9, "confidence": "高",
+                    "validity": {"t_valid": "2026-09-03"}})
+
+# trajectories 索引条目（M5=索引不全文转）
+traj_dir = os.path.join(ROOT, "knowledge", "trajectories")
+for dirpath, _, files in os.walk(traj_dir):
+    for fn in sorted(files):
+        if not fn.endswith(".md"): continue
+        full = os.path.join(dirpath, fn)
+        MONITOR["files_read"] += 1
+        head = io.open(full, encoding="utf-8").readline().strip().lstrip("# ")
+        tid = "TRAJ-" + re.search(r"task-(\d+)", fn).group(1) if re.search(r"task-(\d+)", fn) else "TRAJ-" + fn[:8]
+        rel = os.path.relpath(full, ROOT).replace("\\", "/")
+        entries.append({"id": tid, "created_at": re.search(r"\d{4}-\d{2}-\d{2}", fn).group(0) if re.search(r"\d{4}-\d{2}-\d{2}", fn) else "2026-09-03",
+                        "updated_at": "", "content": f"{head}（情景轨迹，全文={rel}）"[:220],
+                        "keywords": ["轨迹", fn.replace(".md", "").split("-", 2)[-1][:12]], "links": [],
+                        "source_event_id": "genesis-v4", "importance": 3, "confidence": "高",
+                        "validity": {}})
+
+# 本会话工作入库（用户指令：对目前会话进行整理入库）——v3 系列新经验（根库尚无条目）
+sess = [
+ {"id": "PT-008", "created_at": "2026-09-06", "updated_at": "",
+  "content": "PT-008 架构根治模式：把文书审查的机制层处方升格为架构公理（单一事实源/文档即产物/自注册测试），让病灶失去存在前提而非逐条拦截——四轮审查 60+ 发现经 v3 单文件统合吸收关闭。",
+  "keywords": ["架构", "根治", "单一事实源", "自注册", "v3"], "links": ["PT-007"],
+  "source_event_id": "genesis-v4", "importance": 8, "confidence": "高",
+  "validity": {"t_valid": "2026-09-06"}},
+ {"id": "P-007", "created_at": "2026-09-06", "updated_at": "",
+  "content": "P-007 测试工程三坑：①自爆断言（断言文本比被测措辞更宽，必挂）②测试内 os.chdir 不恢复污染后续用例③SystemExit 非 Exception，run-tests 的 except Exception 捕不住会整进程退出——三坑均在 v3.1/v3.2 首跑实测。",
+  "keywords": ["测试", "自爆断言", "chdir", "SystemExit", "首跑"], "links": ["PT-005"],
+  "source_event_id": "genesis-v4", "importance": 7, "confidence": "高",
+  "validity": {"t_valid": "2026-09-06"}},
+ {"id": "PT-009", "created_at": "2026-09-06", "updated_at": "",
+  "content": "PT-009 verify 网络鲁棒三件套：端点降级链（export API 被阻断→主站 abs 页）、NFKD 变音符折叠（防 Gödel/Godel 伪 diff）、限流自知（连发触发重置，条间降速）；离线三态报告 error 不计入通过。",
+  "keywords": ["verify", "对账", "降级", "变音符", "限流"], "links": ["PT-008"],
+  "source_event_id": "genesis-v4", "importance": 7, "confidence": "高",
+  "validity": {"t_valid": "2026-09-06"}},
+]
+entries.extend(sess)
+
+# 守恒与去重断言（监测）
+ids = [e["id"] for e in entries]
+dups = {i for i in ids if ids.count(i) > 1}
+assert not dups, f"迁移器内 ID 重复: {dups}"
+src_total = MONITOR["parsed"]
+assert len(entries) == src_total + 2 + 15 + len(sess), f"条目守恒失败: {len(entries)} vs {src_total}+2+15+{len(sess)}"
+
+# 逐条 engine append（真实走 schema 校验——迁移 bug 会在此时暴露）
+for e in entries:
+    MONITOR["id_list"].append(e["id"])
+    try:
+        bs3.cmd_engine("append", LIB, json.dumps(e, ensure_ascii=False))
+        MONITOR["appended"] += 1
+    except SystemExit as ex:
+        MONITOR["rejected"].append(e["id"] + ": " + str(ex)[:100])
+
+print("\n=== 迁移监测报告 ===")
+print(json.dumps({k: (v if k != "id_list" else f"{len(v)} 条") for k, v in MONITOR.items()}, ensure_ascii=False, indent=1))

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>引用论文实现核对 · library-bootstrap v3</title>
+<style>
+  :root{--ink:#1A1B1C;--sub:#5B6470;--line:#E4E3DD;--bg:#F7F6F1;--card:#FFF;
+        --accent:#3E7CB1;--t1:#3D8B37;--t1bg:#EEF6ED;--t2:#3E7CB1;--t2bg:#E8F1F8;
+        --t3:#8A7635;--t3bg:#FAF5E4;--t4:#D9534F;--t4bg:#FBEAEA}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'PingFang SC','Segoe UI',Roboto,Arial,sans-serif;line-height:1.55;padding:24px 14px}
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-size:21px;margin:0 0 4px}h2{font-size:16px;margin:26px 0 10px;padding-left:9px;border-left:4px solid var(--accent)}
+  .meta{color:var(--sub);font-size:12.5px;margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+  .chip{font-size:12px;padding:5px 11px;border-radius:999px;background:#E8F1F8;color:#275980;border:1px solid #CFE2F0}
+  .chip.ok{background:#EEF6ED;color:#2F6B2A;border-color:#CBE3C8}
+  .chip.bad{background:#FBEAEA;color:#A23B38;border-color:#F0CCCC}
+  .tier{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .tier .box{flex:1 1 210px;min-width:210px;border-radius:11px;padding:10px 12px;border:1px solid var(--line)}
+  .box h3{margin:0 0 6px;font-size:13px;display:flex;justify-content:space-between}
+  .box .ids{font-size:12.5px;line-height:1.9}
+  .b1{background:var(--t1bg);border-color:#CBE3C8}.b1 h3{color:var(--t1)}
+  .b2{background:var(--t2bg);border-color:#CFE2F0}.b2 h3{color:var(--t2)}
+  .b3{background:var(--t3bg);border-color:#EADFB8}.b3 h3{color:var(--t3)}
+  .b4{background:var(--t4bg);border-color:#F0CCCC}.b4 h3{color:var(--t4)}
+  .pill{display:inline-block;min-width:34px;text-align:center;padding:1px 7px;margin:1px 2px;border-radius:6px;background:#fff;border:1px solid var(--line);font-size:11.5px;font-variant-numeric:tabular-nums}
+  .b4 .pill{border-color:#E8B9B8}
+  .bar-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:12.5px}
+  .bar-row .lab{width:150px;flex:none}
+  .track{flex:1;background:#EEF0EC;border-radius:6px;height:18px}
+  .fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px;color:#fff;font-size:11px;font-weight:600}
+  table{border-collapse:collapse;width:100%;font-size:12px;margin-top:6px}
+  th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#F2F1EB}
+  .yes{color:var(--t1);font-weight:700}.no{color:var(--t4);font-weight:700}
+  .flow{display:flex;gap:10px;flex-wrap:wrap}
+  .dir{flex:1 1 200px;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#fff;font-size:12px}
+  .dir h4{margin:0 0 6px;font-size:12.5px}
+  .dir .item{display:flex;justify-content:space-between;gap:8px;padding:3px 0;border-bottom:1px dashed #EDECE6}
+  .dir .item:last-child{border-bottom:none}
+  .note{font-size:11.5px;color:var(--sub);margin-top:6px}
+  .legend{font-size:11.5px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>引用论文实现情况核对（总表 × REGISTRY × 代码 × 132 内容体）</h1>
+  <div class="meta">2026-09-08 · 机器化比对可复跑 · T1 代码层 / T2 内容体随档交付 / T3 参考挂账 / T4 名实不符</div>
+
+  <div class="card">
+    <div class="chips">
+      <span class="chip ok">24 个 arXiv 编号零错号</span>
+      <span class="chip">REGISTRY 33 条</span>
+      <span class="chip bad">总表正文仅 31 条（漏 A4/A10）</span>
+      <span class="chip bad">T4 名实不符 9 条（27%）</span>
+    </div>
+    <div class="bar-row"><span class="lab">T1 代码层 9</span><div class="track"><div class="fill" style="width:27.3%;background:#3D8B37">9</div></div></div>
+    <div class="bar-row"><span class="lab">T2 内容体层 9</span><div class="track"><div class="fill" style="width:27.3%;background:#3E7CB1">9</div></div></div>
+    <div class="bar-row"><span class="lab">T3 参考挂账 6</span><div class="track"><div class="fill" style="width:18.2%;background:#8A7635">6</div></div></div>
+    <div class="bar-row"><span class="lab">T4 名实不符 9</span><div class="track"><div class="fill" style="width:27.3%;background:#D9534F">9</div></div></div>
+  </div>
+
+  <h2>① 33 条文献的实现层级</h2>
+  <div class="tier">
+    <div class="box b1"><h3>T1 代码层可执行 <span>9</span></h3>
+      <div class="ids">
+        <span class="pill">A2</span>反思阈值/素材/重置 三因子检索
+        <span class="pill">A21</span>黑名单+guard+不可见条款+令牌门
+        <span class="pill">A27</span>keywords 字段与 ×3 加权
+        <span class="pill">A31</span>四维情绪向量+衰减
+        <span class="pill">A11</span>t_invalid 失效不参与检索<i>（部分）</i>
+        <span class="pill">A16</span>来源元数据<i>（弱）</i>
+        <span class="pill">A8</span>links 一跳扩散<i>（弱，非 PPR）</i>
+        <span class="pill">A6</span>线性时效衰减<i>（弱，非遗忘曲线）</i>
+        <span class="pill">A25</span>三级会话加载<i>（弱，200 为死参数）</i>
+      </div></div>
+    <div class="box b2"><h3>T2 内容体随档交付 <span>9</span></h3>
+      <div class="ids">
+        <span class="pill">A3</span>auto-critic(L7)
+        <span class="pill">A10</span>m-evolve(L3) <b>总表漏列</b>
+        <span class="pill">A13</span>m-cron/sleep-pipeline
+        <span class="pill">A23</span>council 四席位(L8，已声明偏离)
+        <span class="pill">A30</span>gwt(L9)
+        <span class="pill">A26</span>m-soul(L4)
+        <span class="pill">A1</span><i>弱：两级目录</i>
+        <span class="pill">A20</span><i>弱：搭睡眠便车</i>
+        <span class="pill">A28</span><i>弱：12.4 死引用</i>
+      </div></div>
+    <div class="box b3"><h3>T3 参考/挂账 <span>6</span></h3>
+      <div class="ids">
+        <span class="pill">A4</span>CoALA 综述 <b>总表漏列</b>
+        <span class="pill">A7</span>记忆机制综述
+        <span class="pill">A9</span>HippoRAG2 理论锚
+        <span class="pill">A15</span>声明不适用+雷达触发
+        <span class="pill">A17</span>声明不适用+长文触发
+        <span class="pill">A22</span>自进化综述
+      </div></div>
+    <div class="box b4"><h3>T4 名实不符 <span>9</span></h3>
+      <div class="ids">
+        <span class="pill">A5</span>技能固化层无证
+        <span class="pill">A12</span>wrapup 无抽取/合并
+        <span class="pill">A14</span>热温冷/页调度无证（死参数）
+        <span class="pill">A18</span>六类映射 D-004 查无
+        <span class="pill">A19</span>四操作缺 UPDATE/NOOP
+        <span class="pill">A24</span>BCA 正文不随 L9 交付
+        <span class="pill">A29</span>dual-memory 不交付
+        <span class="pill">A32</span>dmn 不交付
+        <span class="pill">A33</span>情绪重排双无
+      </div></div>
+  </div>
+  <div class="note legend">T1-弱/T2-弱表示有简化对应但与论文原机制差距明显，总表措辞需降级；详见报告矩阵。</div>
+
+  <h2>② 最大断裂：L9 内容体交付映射（bodies 吸收 9 个子目录，L9 只交付 3 个）</h2>
+  <div class="card">
+    <div class="flow">
+      <div class="dir" style="border-color:#CBE3C8;background:#F6FBF5;">
+        <h4 class="yes">✔ 随 L9 交付（MODULE_MAPPING 命中）</h4>
+        <div class="item"><span>emotion（2 文件）</span><span class="yes">A31</span></div>
+        <div class="item"><span>gwt（2 文件）</span><span class="yes">A30</span></div>
+        <div class="item"><span>sleep-pipeline（2 文件）</span><span class="yes">A13/A20</span></div>
+      </div>
+      <div class="dir" style="border-color:#F0CCCC;background:#FDF7F7;">
+        <h4 class="no">✘ 已吸收但 L9 不交付（映射缺失）</h4>
+        <div class="item"><span>constitution-bca（3）BCA 公理+消融/谄媚验收</span><span class="no">A24</span></div>
+        <div class="item"><span>dmn（2）默认模式网络</span><span class="no">A32</span></div>
+        <div class="item"><span>dual-memory（2）CLS 双速率+情绪重排</span><span class="no">A29/A33</span></div>
+        <div class="item"><span>goalstack（2）目标栈</span><span>总表未提</span></div>
+        <div class="item"><span>instrumentation（3）测量仪表</span><span>—</span></div>
+        <div class="item"><span>scripts（12，含 .pyc 垃圾）</span><span>sleep_gate 等</span></div>
+      </div>
+    </div>
+    <div class="note">L9 安装门提示「BCA 公理正文随 absorb 内容体展示」，但代码只输出一行字符串、无展示逻辑；装完 L9 也拿不到 BCA 公理与验收三件。修复需慢车道决策：补映射并加交付断言，或把总表用途改写为「规划中，未交付」。</div>
+  </div>
+
+  <h2>③ 题录层问题 B1–B7</h2>
+  <div class="card">
+    <table>
+      <tr><th>编号</th><th>问题</th><th>处置</th></tr>
+      <tr><td>B1</td><td>总表正文漏 A4、A10（31≠33），A10 还是 L3 命名文献</td><td>补两条正文</td></tr>
+      <tr><td>B2</td><td>总表标 v3.8.2，代码 VERSION=3.8.1</td><td>版本对齐</td></tr>
+      <tr><td>B3</td><td>A31 总表用书名 Descartes' Error，REGISTRY 用假说名 Somatic Marker</td><td>假说名（书名）并列</td></tr>
+      <tr><td>B4</td><td>A20/A27/A25 作者只在总表、未回灌 REGISTRY，违反公理 A</td><td>回灌 SOURCES 后重渲染</td></tr>
+      <tr><td>B5</td><td>review_intervals 来源标「A2 Ebbinghaus」，艾宾浩斯实为 A6</td><td>改挂 A6</td></tr>
+      <tr><td>B6</td><td>A28「发布纪律 12.4」全库 0 命中，死引用</td><td>补章节或删引用</td></tr>
+      <tr><td>B7</td><td>A18「六类映射表 D-004」全库 0 命中</td><td>补件或删编号</td></tr>
+    </table>
+  </div>
+
+  <h2>④ 处置路径</h2>
+  <div class="card">
+    <table>
+      <tr><th>动作</th><th>内容</th><th>影响条目</th></tr>
+      <tr><td>1. 慢车道决策</td><td>L9 六个未交付子目录：补 MODULE_MAPPING+交付断言，或总表改写为「规划中」；修 gate 正文展示承诺</td><td>A24/A29/A32/A33</td></tr>
+      <tr><td>2. 措辞降级</td><td>按代码事实改写「页调度/抽取合并/六类映射/四操作/PPR/技能库/情绪重排」</td><td>A5/A8/A12/A14/A18/A19/A33</td></tr>
+      <tr><td>3. 题录卫生</td><td>B1–B7 一次清完，作者回灌，citations 重渲染</td><td>全部</td></tr>
+      <tr><td>4. bodies 卫生</td><td>absorb 加 .pyc 等二进制后缀黑名单后重吸</td><td>scripts</td></tr>
+    </table>
+    <div class="note">本图依据源码、bodies.json 与总表机器比对生成，为结构示意；逐条证据与行号见《论文实现核对报告.md》。</div>
+  </div>
+</div>
+</body>
+</html>

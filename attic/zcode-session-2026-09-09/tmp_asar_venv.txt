@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+"""提取 venv 创建与路径解析逻辑"""
+import re
+
+text = open(r"C:/Users/26672/AppData/Local/Programs/Comfy Desktop/resources/app.asar",
+            "rb").read().decode("utf-8", "replace")
+
+for pat in [r"function getVenvPythonPath", r"function getVenvDir",
+            r'uv", "venv"', r"virtualenv", r"seed"]:
+    print(f"===== {pat} =====")
+    for m in list(re.finditer(pat, text))[:3]:
+        s, e = max(0, m.start()-150), min(len(text), m.end()+420)
+        print(text[s:e].replace("\n", " "))
+        print("-----")

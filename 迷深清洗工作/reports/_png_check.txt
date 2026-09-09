@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+import zlib, json, base64, os, glob
+BASE = r"D:\zcode专用！！！！危险！！！！！！！！！\迷深清洗工作"
+pd = os.path.join(BASE, "迷深大酒馆v1.02", "角色卡PNG（内嵌专属世界书）")
+jd = os.path.join(BASE, "迷深大酒馆v1.02", "角色卡JSON")
+
+def read_png_chara(path):
+    data = open(path, "rb").read()
+    assert data[:8] == b"\x89PNG\r\n\x1a\n", "not png"
+    pos = 8
+    chunks = {}
+    while pos < len(data):
+        ln = int.from_bytes(data[pos:pos+4], "big")
+        typ = data[pos+4:pos+8].decode("ascii", "replace")
+        payload = data[pos+8:pos+8+ln]
+        if typ in ("tEXt", "zTXt", "iTXt"):
+            chunks.setdefault(typ, []).append(payload)
+        pos += 12 + ln
+        if typ == "IEND":
+            break
+    # chara 通常在 tEXt
+    for typ, arr in chunks.items():
+        for p in arr:
+            try:
+                if typ == "tEXt":
+                    k, _, v = p.partition(b"\x00")
+                    if k in (b"chara", b"ccv3"):
+                        return json.loads(base64.b64decode(v))
+                elif typ == "zTXt":
+                    k, _, rest = p.partition(b"\x00")
+                    v = zlib.decompress(rest[1:])
+                    if k in (b"chara", b"ccv3"):
+                        return json.loads(base64.b64decode(v))
+            except Exception:
+                continue
+    return None
+
+def canon(obj):
+    d = obj.get("data", obj)
+    keep = {k: d.get(k) for k in ["name","description","personality","scenario","first_mes","mes_example","system_prompt","post_history_instructions","alternate_greetings","character_book"]}
+    return json.dumps(keep, ensure_ascii=False, sort_keys=True)
+
+print(f"{'PNG':<44} {'json卡':<40} name一致 内容一致")
+for pf in sorted(glob.glob(os.path.join(pd, "*.png"))):
+    card = read_png_chara(pf)
+    base = os.path.basename(pf)[:-4]
+    if card is None:
+        print(f"{base:<44} —— 无chara块")
+        continue
+    d = card.get("data", card)
+    pname = d.get("name", "?")
+    # 找最接近的 json
+    match = None
+    for jf in glob.glob(os.path.join(jd, "*.json")):
+        try:
+            j = json.load(open(jf, encoding="utf-8"))
+            if j.get("data", j).get("name") == pname:
+                match = jf; break
+        except Exception:
+            pass
+    if match is None:
+        print(f"{base:<44} {pname:<40} 找不到同名JSON卡")
+        continue
+    j = json.load(open(match, encoding="utf-8"))
+    same = canon(card) == canon(j)
+    print(f"{base:<44} {os.path.basename(match):<40} {pname} {'SAME' if same else 'DIFF'}")

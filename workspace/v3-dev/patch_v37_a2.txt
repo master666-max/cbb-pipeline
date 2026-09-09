@@ -1,0 +1,125 @@
+# -*- coding: utf-8 -*-
+# v3.7 patch A2：patch A 剩余段（锚点按磁盘实际文本）
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def save():
+    io.open(p, 'w', encoding='utf-8', newline=chr(10)).write(s)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1); save()
+
+if '_body_for' not in s:
+    # L-008：PILOT 集合 → 全量规则
+    rep('''PILOT_RENDER_INSTALLS = {  # v3.6/K-007a(D1=a)：试点渲染化（v2.x 原文保留于 bodies，实战一代后 v3.7 全量）
+    "experimental-l8/constitution/install.md",
+    "experimental-l8/lifelog/install.md",
+    "experimental-l8/mutation-engine/install.md",
+}''',
+        '''# v3.7/L-008(D1)：全量渲染化——experimental 双层 install.md 一律渲染（试点机制零新增，扩为规则）
+PILOT_RENDER_INSTALLS = set()  # 保留名供兼容；渲染判据移入 _body_for''')
+    # L-001：_body_for 统一函数
+    rep('''def _deliver(b: dict, mods: list, packages: list, level: str, target: Path):''',
+        '''def _body_for(rel: str, meta: dict, b: dict):
+    """v3.7/L-001：单文件内容唯一决策点——全量渲染化（experimental install.md）/适配页（其余 experimental md）/原文"""
+    body_text = meta["body"]
+    if rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith("install.md"):
+        return render_installer_v3(rel, b)
+    if rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith(".md"):
+        return ADAPTER_PAGE_V3 + NL_CH + body_text
+    return body_text
+
+def _deliver(b: dict, mods: list, packages: list, level: str, target: Path):''')
+    rep('''            body_text = meta["body"]
+            if rel in PILOT_RENDER_INSTALLS:
+                body_text = render_installer_v3(rel, b)  # v3.6/K-007a：试点渲染化（替代 v2.x 原文交付）
+            elif rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith("install.md"):
+                body_text = ADAPTER_PAGE_V3 + NL_CH + body_text  # v3.5/J-008a(D1=a)：适配页置顶，原文保留
+            data = body_text.encode("utf-8")
+            dest.write_bytes(data)''',
+        '''            body_text = _body_for(rel, meta, b)  # v3.7/L-001：单文件落盘逻辑唯一化
+            data = body_text.encode("utf-8")
+            dest.write_bytes(data)''')
+    rep('''                if meta:
+                    body_text = meta["body"]
+                    if rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith("install.md"):
+                        body_text = ADAPTER_PAGE_V3 + NL_CH + body_text
+                    (target / rel).write_text(body_text, encoding="utf-8")''',
+        '''                if meta:
+                    (target / rel).write_text(_body_for(rel, meta, b_rd), encoding="utf-8")  # v3.7/L-001：共用唯一决策点''')
+
+if 'absorb_overrides' not in s:
+    rep('''def cmd_verify(fix: bool, throttle: bool = True):''',
+        '''def cmd_verify(fix: bool, throttle: bool = True, absorb_overrides: bool = False):''')
+    rep('''    overrides = json.loads(ov_path.read_text(encoding="utf-8")) if ov_path.exists() else {}
+    if overrides: print(f"  [overrides] 应用 {len(overrides)} 条人工裁决")''',
+        '''    overrides = json.loads(ov_path.read_text(encoding="utf-8")) if ov_path.exists() else {}
+    if overrides: print(f"  [overrides] 应用 {len(overrides)} 条人工裁决")
+    if absorb_overrides:  # v3.7/L-002(D2)：裁决值回写建议 + 清旁路文件（恢复单一事实源权威）
+        if not overrides:
+            print("  [absorb-overrides] 无 overrides 可回写")
+        else:
+            patch_lines = ["# REGISTRY 回写建议（v3.7/L-002 生成——按慢车道人工确认后更新 SOURCES，随后删除本文件）", ""]
+            for aid, ov in sorted(overrides.items()):
+                patch_lines.append(f'- {aid}: title → {ov.get("api_title", "")!r}')
+            (DATA_DIR / "REGISTRY-ABSORB.md").write_text(chr(10).join(patch_lines) + chr(10), encoding="utf-8")
+            ov_path.unlink()
+            print(f"  [absorb-overrides] {len(overrides)} 条裁决已出回写建议 → REGISTRY-ABSORB.md；overrides 已清空（单一事实源复位）")
+        overrides = {}''')
+    rep('''            if ok: n_match += 1
+            else:''',
+        '''            if ok: n_match += 1
+            elif aid in overrides:
+                pass  # v3.7/L-002：override 命中但未对上——mismatch 分支统一处理并标注
+            else:''')
+
+if 'guard-snapshot' not in s:
+    rep('''        print(f"guard snapshot: {len(base)} 项（含包自哈希）→ {out}（抄录人侧保管）")''',
+        '''        _ledger_append(lib, "guard-snapshot", f"items={len(base)}")  # v3.7/L-003
+        print(f"guard snapshot: {len(base)} 项（含包自哈希）→ {out}（抄录人侧保管）")''')
+    rep('''        print(f"guard anchor: 对账 {len(table)} 项 → 不一致 {len(mis)}" + (("：" + "\\n  " + "\\n  ".join(mis)) if mis else ""))''',
+        '''        _ledger_append(lib, "guard-anchor", f"items={len(table)} mismatch={len(mis)}")  # v3.7/L-003
+        print(f"guard anchor: 对账 {len(table)} 项 → 不一致 {len(mis)}" + (("：" + "\\n  " + "\\n  ".join(mis)) if mis else ""))''')
+    rep('''    print(f"absorb-md: 追加 {MON['appended']} 条 / 幂等跳过 {len(MON.get('skipped_dup', []))} 条"''',
+        '''    _ledger_append(lib, "absorb-md", f"parsed={MON['parsed']} appended={MON['appended']} dup={len(MON.get('skipped_dup', []))}")  # v3.7/L-003
+    print(f"absorb-md: 追加 {MON['appended']} 条 / 幂等跳过 {len(MON.get('skipped_dup', []))} 条"''')
+
+if '宪章警告' not in s:
+    rep('''        n = len(qs)
+        base = {"ts": time.strftime("%F %T"), "n": n, "recall@5": round(hits / n, 3), "MRR": round(rr / n, 3), "misses": misses}''',
+        '''        n = len(qs)
+        base = {"ts": time.strftime("%F %T"), "n": n, "recall@5": round(hits / n, 3), "MRR": round(rr / n, 3), "misses": misses}
+        old_bp = lib / "evals" / "baseline.json"
+        degrade = ""
+        if old_bp.exists():  # v3.7/L-004：宪章纪律落地——劣化超 5% 警告（基线仍更新，警告在案）
+            ob = json.loads(old_bp.read_text(encoding="utf-8"))
+            if ob.get("recall@5") and base["recall@5"] < ob["recall@5"] * 0.95:
+                degrade = f"\\n  [宪章警告] recall@5 {ob['recall@5']} → {base['recall@5']}（劣化超 5%——检索参数变更须对账，不得合入）"''')
+    rep('''        print(f"eval: n={n}  recall@5={base['recall@5']}  MRR={base['MRR']}（基线写入 evals/baseline.json，misses {len(misses)} 条；v2.x 参照线 recall@5=0.455——条目集不同，仅参照）")''',
+        '''        print(f"eval: n={n}  recall@5={base['recall@5']}  MRR={base['MRR']}（基线写入 evals/baseline.json，misses {len(misses)} 条；v2.x 参照线 recall@5=0.455——条目集不同，仅参照）{degrade}")
+        if degrade: sys.exit(2)''')
+
+if '类型强转' not in s:
+    rep('''def entry_normalize(e: dict) -> dict:
+    """v3.2/C-010：八字段旧条目 → 十字段兼容回填（keywords/links 缺省空，不拒绝）"""
+    e.setdefault("keywords", []); e.setdefault("links", [])
+    return e''',
+        '''def entry_normalize(e: dict) -> dict:
+    """v3.2/C-010：八字段旧条目 → 十字段兼容回填；v3.7/L-006：keywords/links 类型强转（str→[str]，非列表→[]）"""
+    kw = e.get("keywords", [])
+    if isinstance(kw, str): kw = [kw]
+    if not isinstance(kw, list): kw = []
+    lk = e.get("links", [])
+    if isinstance(lk, str): lk = [lk]
+    if not isinstance(lk, list): lk = []
+    e["keywords"], e["links"] = kw, lk
+    return e''')
+
+if 'absorb-overrides", action' not in s:
+    rep('''s = sub.add_parser("verify");      s.add_argument("--fix", action="store_true"); s.add_argument("--data", default=None)''',
+        '''s = sub.add_parser("verify");      s.add_argument("--fix", action="store_true"); s.add_argument("--absorb-overrides", action="store_true"); s.add_argument("--data", default=None)  # v3.7/L-002''')
+    rep('''"verify": lambda: cmd_verify(a.fix),''',
+        '''"verify": lambda: cmd_verify(a.fix, absorb_overrides=a.absorb_overrides),''')
+
+print('patch A2 done')

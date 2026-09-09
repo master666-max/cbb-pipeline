@@ -1,0 +1,378 @@
+{
+  "name": "千年羁绊关系网",
+  "description": "千年羁绊关系网 v2.1（混合策略）：37 角色千年羁绊·核心闭环·群像关系簇。uid 0/1/7 为高剧透手动条目（默认禁用，剧情进入身份揭示后手动启用）；其余 6 条为低频自动条目，触发词已收窄为结构性特异性词。本库触发词不使用人名（人名归角色专属世界书与共通世界书管辖）。仅当条目启用时其内容方可作为背景知识，且角色不得主动向对话者揭示千年真相，除非剧情已推进至对应揭示节点。",
+  "metadata": {},
+  "entries": [
+    {
+      "uid": 0,
+      "key": [
+        "千年",
+        "羁绊",
+        "名义婚姻",
+        "镜像",
+        "留恋",
+        "千年循环"
+      ],
+      "keys": [
+        "千年",
+        "羁绊",
+        "名义婚姻",
+        "镜像",
+        "留恋",
+        "千年循环"
+      ],
+      "disable": true,
+      "prevent_recursion": true,
+      "content": "<!--【手动条目】含千年真相级剧透（千年循环/镜像结构/守护者层级），剧情进入身份揭示后手动启用-->\n【核心闭环（千年羁绊循环）】\n关系[millennium_loop]: 涡波 → 相川阳滝（妹妹依存·病态依存，「妹妹就是我的一切」）→ 诺斯菲（千年镜像/名义婚姻/千年前夫妻）→ 涡波。千年循环闭合；救赎线核心：涡波→拉丝缇娅拉→玛利亚→涡波。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 0,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": "",
+        "disable": true
+      }
+    },
+    {
+      "uid": 1,
+      "key": [
+        "镜像",
+        "镜像对照",
+        "同构",
+        "锁钥"
+      ],
+      "keys": [
+        "镜像",
+        "镜像对照",
+        "同构",
+        "锁钥"
+      ],
+      "disable": true,
+      "prevent_recursion": true,
+      "content": "<!--【手动条目】含千年真相级剧透（千年循环/镜像结构/守护者层级），剧情进入身份揭示后手动启用-->\n【簇1 镜像对照系】\n镜像对照系\n- **涡波 ↔ 使徒西斯（宿主缇亚）——互为「捕获—托付」镜像**：使徒西斯曾「战力从容捕获始祖涡波」，后又将『使徒希丝的魔石』让渡给涡波、托付『拯救世界』问题；涡波侧持有使徒身体、与缇亚深度共现。同一对存在在两段关系里方向相反，构成千年前后互为镜像的「锁—钥」。\n- **缇娅拉（圣人）↔ 缇亚／使徒西斯——圣·使镜像**：缇娅拉被称「圣人缇娅拉」，是『魔石人类』的母亲、收集圣人血主持再诞；缇亚则承载使徒西斯这一另一意识，二人「共用迪亚布罗・西斯之身、相貌酷似」，缇亚「笑着称呼西斯为双亲」。一在圣者侧收束血裔，一在使徒侧承载旧人格，呈「圣人／使徒」对称位。\n- **阿尔缇 ↔ 玛利亚——火之理源流·继承镜像**：阿尔缇为十层守护者（涡波将其置于十层），玛利亚「继承其力量（第458话）」并同化火之理——旧理之主与新理之主的镜像接力。\n- **涡波 ↔ 相川阳滝——同构镜像**：「她是我在这世上唯一无二的妹妹」／「妹妹就是我的一切」（第7-2章 287话）；结局「终于能与我『亲和』了呢」。兄妹同构镜像与诺斯菲构成镜像三角（涡波→阳滝→诺斯菲→涡波）。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 1,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": "",
+        "disable": true
+      }
+    },
+    {
+      "uid": 2,
+      "key": [
+        "救赎闭环",
+        "两情相悦",
+        "婚约对象"
+      ],
+      "keys": [
+        "救赎闭环",
+        "两情相悦",
+        "婚约对象"
+      ],
+      "prevent_recursion": true,
+      "content": "【簇2 救赎线】\n救赎线（救赎闭环）\n结构环：**涡波 → 拉丝缇娅拉 → 玛利亚 → 涡波**（头部核心闭环之「救赎线核心」）。\n- **涡波 → 拉丝缇娅拉**：关系为「恋人/婚约・**救赎**」、话语相似度最高、第275话告白。\n- **拉丝缇娅拉 → 玛利亚**：以温柔对待令玛利亚觉「活着有意义」；「玛利亚酱，最喜欢你了！」（第7-2章 291话）。\n- **玛利亚 → 涡波**：奴隶市场被买下 → 借『炯眼』看穿他并缔结主从魔法关系 → 中后期独占执念与「夺走宣言」，回馈至涡波的镜像依存。\n- 闭合语义：两段「被救／获温柔」与一段「执念依存」彼此咬合，构成全文的次级循环。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 2,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": ""
+      }
+    },
+    {
+      "uid": 3,
+      "key": [
+        "师承",
+        "继承意志",
+        "次元魔法教授",
+        "剑术导师"
+      ],
+      "keys": [
+        "师承",
+        "继承意志",
+        "次元魔法教授",
+        "剑术导师"
+      ],
+      "prevent_recursion": true,
+      "content": "【簇3 师徒/继承线】\n师徒／继承线\n- **艾德 → 露洁（继承意志）**：露洁以「艾德老师」相称，逃出研究院的露洁姐妹蒙艾德与海莉援手、将惨状告知二人；艾德并为魔石人类提供血液抽取之助。\n- **（木之理）**：艾德与木之理系统关联（艾德×诺斯菲「木之理系统」），拉丝缇娅拉曾折戟于『木之理的盗窃者』等三人。\n- **涡波 → 莉帕（次元魔法教授）**：教授次元魔法；术者互认「作为『术者』的我」。\n- **诺文 → 莱纳（剑术）**：诺文为涡波剑术导师（第7-1章，传授技能骨干）；与莱纳的剑术师徒关系于此补记。\n- **艾德 → 海莉**：海莉的关联见簇4同源链。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 3,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": ""
+      }
+    },
+    {
+      "uid": 4,
+      "key": [
+        "魔石人类姐妹",
+        "义姐",
+        "血亲网"
+      ],
+      "keys": [
+        "魔石人类姐妹",
+        "义姐",
+        "血亲网"
+      ],
+      "prevent_recursion": true,
+      "content": "【簇4 姐妹线】\n姐妹线\n- **诺瓦露 ↔ 露洁（魔石人类姐妹）**：姐妹外貌全然相同、以红衣区分；露洁以姐姐口吻嗔怪其「壊毛病」、屡次拦阻其独自突进、牵手注视诞生之地末路。延伸：诺瓦露视拉丝缇娅拉为「血脉相连的『魔石人类』（家人）、类似妹妹的存在」，且「她用的是我的身体」——魔石人类血裔网中的身体共有。\n- **赫勒比勒夏因家（海因／芙兰琉莱／莱纳／卢卡）**：海因与莱纳为兄弟，海因第324话遗言托付莱纳、并嘱「海因他最爱惜的应该是你姐姐芙兰琉莱」；芙兰琉莱为莱纳义姐（第272话「你的义姐芙兰琉莱」）；卢卡为次男、莱纳之兄（第十章），自认被与「完美的海因兄长大人」比较。\n- **海莉（同源）**：海莉为「以骑士海因为材料制作的魔石人类」（法夫纳所言）——非血缘而承海因之材，故同列此簇；与莱纳另有继承关系（吸收其魔力与魂、继承『风之腕』）。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 4,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": ""
+      }
+    },
+    {
+      "uid": 5,
+      "key": [
+        "三使徒并立",
+        "司掌爱情与正义之心",
+        "圣人使徒共鸣"
+      ],
+      "keys": [
+        "三使徒并立",
+        "司掌爱情与正义之心",
+        "圣人使徒共鸣"
+      ],
+      "prevent_recursion": true,
+      "content": "【簇5 使徒系】\n使徒系\n- **三使徒并立**：使徒希丝（西斯）／使徒迪普拉库拉／使徒勒迦希（勒伽希）。真史派将「使徒迪普拉库拉、希丝、勒迦希三人」同列信仰对象；三人同在称号授予现场；阳滝初诊由迪普拉库拉给出、勒伽希补充病理。\n- **身份澄清**：使徒「勒迦希」与帕林库洛之侄女西娅（携缇达魔石的小队队长）并非同一存在——多处注明「不可混淆」「非使徒本体」。\n- **使徒西斯 × 缇亚**：同一身体、另一意识（共用迪亚布罗・西斯之身、相貌酷似、缇亚称西斯为「双亲」）；缇亚以「涡波」称呼主君。缇达与使徒西斯属同一身份系（第一章，缇亚率先与之对话）。\n- **缇娅拉（千年前圣人系）相关**：缇娅拉即『魔石人类』之母，收集圣人血主持再诞——使徒侧千年体制的圣者对应位；诺斯菲「为了向使徒西斯复仇，拼上了自己所有的力量」；使徒西斯与诺斯菲有千年渊源（诺斯菲时作南之『御旗』）。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 5,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": ""
+      }
+    },
+    {
+      "uid": 6,
+      "key": [
+        "主从契约",
+        "千年之约",
+        "御旗",
+        "契约网络"
+      ],
+      "keys": [
+        "主从契约",
+        "千年之约",
+        "御旗",
+        "契约网络"
+      ],
+      "prevent_recursion": true,
+      "content": "【簇6 主从/契约系】\n主从／契约系\n- **涡波中心的主从·契约**：帕林库洛（近卫/战斗前辈，第三章恳求其当会长）；莱纳（担任近卫后转任大圣堂骑士）；诺伊（与涡波有『我主』称谓渊源的主从对象）；古奈尔（千年之约：「怪物伙伴」约定、阳滝病发后背约独留她于历基亚、冰冷『交流』后和好并以「两个人一起购物」为酬）。\n- **使徒—守护者侧的契约网络**：迪普拉库拉侍奉「主人诺伊」（诺伊与使徒西斯的渊源见第九章）；古奈尔曾为迪普拉库拉主上、后将其抛弃（470话）；迪普拉库拉、希丝、赛尔德拉、古奈尔、诺伊等人的『契约』由莉帕任『裁判员』；格连为诺斯菲纳入麾下的骑士（第7-2章）；艾尔米拉德受诺斯菲『坦率』魔法操纵、为其御旗。\n- **露洁**：与涡波同属终章共斗阵营（第十章同阵营协助者）；两人之间无专属契约记录。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 6,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": ""
+      }
+    },
+    {
+      "uid": 7,
+      "key": [
+        "守护者",
+        "理之盗窃者",
+        "试炼",
+        "层守护者"
+      ],
+      "keys": [
+        "守护者",
+        "理之盗窃者",
+        "试炼",
+        "层守护者"
+      ],
+      "disable": true,
+      "prevent_recursion": true,
+      "content": "<!--【手动条目】含千年真相级剧透（千年循环/镜像结构/守护者层级），剧情进入身份揭示后手动启用-->\n【簇7 守护者系】\n守护者系（理之盗窃者＝层守护者）\n- 体系：迷宫各层由理之盗窃者守护（「同为迷宫守护者体系」，法芙纳，199话）；斐勒卢托称「守护者诺文·阿雷亚斯」。诺文与艾德的群像宣言：「缇达、阿尔缇、诺文、艾德、缇缇、法芙纳──还有诺斯菲和我⋯⋯我们因为同样的理由而拥有同样的生存方式。」\n- 层号出处：缇达 20层（第一章20层之战）、阿尔缇 10层（置于十层）、赛尔德拉 80层（无之理，80层／次元裂缝）、诺伊 90层（次元之理）出自话文；其余层号（0/30/60/66/70/100/110）见《各层理之盗窃者》档案。\n| 角色 | 层 | 之理 |\n|---|---|---|\n| 涡波 | 0 | 火之理同化；次元之理契约 |\n| 诺文 | 30 | 剑之守护者 |\n| 缇达 | 20 | 与使徒西斯同一身份系 |\n| 阿尔缇 | 10 | 火之理（旧主） |\n| 诺斯菲 | 60 | 光（「光VS火之理」对照） |\n| 法芙纳 | 70 | 迷宫守护者体系 |\n| 赛尔德拉 | 80 | 无之理 |\n| 诺伊 | 90 | 次元之理 |\n| 缇缇 | 66 | 支配之王（Lord） |\n| 相川阳滝 | 100 | 水之理（核心闭环·镜像三角主轴） |\n| 玛利亚 | 110 | 火之理（继任） |\n- 关联研究线：赫尔米娜将涅夏家的研究基础传授给法芙纳（第九章），为70层一系的研究后继。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 7,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": "",
+        "disable": true
+      }
+    },
+    {
+      "uid": 8,
+      "key": [
+        "南北联合",
+        "北方同盟",
+        "五国框架"
+      ],
+      "keys": [
+        "南北联合",
+        "北方同盟",
+        "五国框架"
+      ],
+      "prevent_recursion": true,
+      "content": "【簇8 阵营线】\n阵营线\n- **北方联盟＝佩艾希亚**：古奈尔与露洁以掌权者身份「十分严肃地命令我们离开」佩艾希亚城；诺瓦露属佩艾希亚侧（曾被送回佩艾希亚）；露洁与古奈尔并列为终章『南北联合』双核心（思想＋中立见证人）。\n- **南方联盟＝弗茨亚茨／大圣堂**：现人神拉丝缇娅拉（弗茨亚茨）及其直属骑士莱纳（大圣堂现人神直属骑士，第265话）；塞拉（「身心双方都是弗茨亚茨当下第一的骑士」）；元老院侧斐勒卢托与雷琪（「弗茨亚茨的斐勒卢托和元老院的雷琪」；斐勒卢托向拉丝缇娅拉权限交还，295话）。护卫体制含海因（四骑士）与佩露修娜（劳拉维亚公会会长、以会长身份招募涡波；与塞拉「同为『现人神』护卫骑士」）；拉古涅为天上七骑士总长（佩露修娜因战争调走后顺位接任，第229话）。诺斯菲为「南之『御旗』」，艾尔米拉德为其御旗／受『坦率』魔法操纵方，格连为其麾下骑士——南方侧内部权谋复杂。\n- **南北联合（终章）**：露洁与古奈尔并列为『南北联合』双核心；露洁、勒伽希（西娅小队）、诺瓦露同阵营协助（「这是西娅和诺瓦露拜托我准备的惊喜」）；涡波一行自双方收拢，终章共斗见阳滝与缇亚的「结局早餐三人行」与露洁与古奈尔的终章共行。",
+      "extensions": {
+        "position": 4,
+        "exclude_recursion": false,
+        "display_index": 8,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4,
+        "selectiveLogic": 0,
+        "group": "",
+        "group_override": false,
+        "group_weight": 100,
+        "prevent_recursion": true,
+        "delay_until_recursion": false,
+        "scan_depth": 2,
+        "match_whole_words": false,
+        "use_group_scoring": false,
+        "case_sensitive": false,
+        "automation_id": "",
+        "role": 0,
+        "sticky": 0,
+        "cooldown": 0,
+        "delay": 0,
+        "automatedId": ""
+      }
+    }
+  ]
+}

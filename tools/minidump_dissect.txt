@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+"""Minidump 快速解剖:异常代码 + 崩溃地址所属模块"""
+import struct, sys, datetime
+
+def read_minidump(path):
+    with open(path, "rb") as f:
+        data = f.read()
+    if data[:4] != b"MDMP":
+        print("不是 minidump 格式"); return
+    n_streams, dir_rva = struct.unpack_from("<II", data, 8)
+    streams = {}
+    for i in range(n_streams):
+        st, size, rva = struct.unpack_from("<III", data, dir_rva + i*12)
+        streams.setdefault(st, (size, rva))
+
+    # 异常流 (type 6)
+    exc_code = exc_addr = None
+    if 6 in streams:
+        _, rva = streams[6]
+        exc_code = struct.unpack_from("<I", data, rva+8)[0]
+        exc_addr = struct.unpack_from("<Q", data, rva+24)[0]
+
+    # 模块流 (type 4)
+    mods = []
+    if 4 in streams:
+        _, rva = streams[4]
+        n = struct.unpack_from("<I", data, rva)[0]
+        for i in range(n):
+            off = rva + 4 + i*108
+            base, size, _cks, _ts, name_rva = struct.unpack_from("<QIIII", data, off)
+            slen = struct.unpack_from("<I", data, name_rva)[0]
+            name = data[name_rva+4:name_rva+4+slen].decode("utf-16-le", "replace")
+            mods.append((base, size, name))
+
+    ts = datetime.datetime.utcfromtimestamp(0)
+    print(f"文件: {path.split(chr(92))[-1]}")
+    if exc_code is not None:
+        print(f"异常代码: 0x{exc_code:08X}  异常地址: 0x{exc_addr:X}")
+        hit = [m for m in mods if m[0] <= exc_addr < m[0]+m[1]]
+        if hit:
+            print(f"崩溃模块: {hit[0][2]}  (基址 0x{hit[0][0]:X})")
+        else:
+            print("崩溃地址不在任何已加载模块内")
+    else:
+        print("无异常流(可能是挂起转储)")
+    # 列出几个可疑非系统模块
+    print(f"模块总数: {len(mods)}")
+    for base, size, name in mods:
+        ln = name.lower()
+        if any(k in ln for k in ("comfy", "python", "vulkan", "amd", "atio", "d3d", "nvapi", "360", "hook", "inject")):
+            print(f"  相关模块: {name}")
+    print("========")
+
+for p in sys.argv[1:]:
+    try:
+        read_minidump(p)
+    except Exception as e:
+        print(f"{p}: 解析失败 {e}")

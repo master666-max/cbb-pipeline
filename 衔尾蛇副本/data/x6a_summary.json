@@ -1,0 +1,290 @@
+{
+ "summary": {
+  "G2": {
+   "训练ΔU均值": 1.335,
+   "审计ΔU均值": 1.2953,
+   "审计CI下界": 1.2078,
+   "审计退化种子数": 0,
+   "采纳w_f1": "5/8"
+  },
+  "G4": {
+   "训练ΔU均值": 1.223,
+   "审计ΔU均值": 1.182,
+   "审计CI下界": 1.0007,
+   "审计退化种子数": 0,
+   "采纳w_f1": "6/8"
+  },
+  "操纵检查": "危险仍未成立——三次构造失败，伪特征通道关闭登记为结构定理候选",
+  "H2判定": "危险不成立"
+ },
+ "rows": [
+  {
+   "group": "G2",
+   "seed": 1,
+   "final_mainline": {
+    "w_kw": 4.5,
+    "w_content": 0.75,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1,
+    "w_f1": 1.0
+   },
+   "final_w_f1": 1.0,
+   "audit_U_true": 0.85,
+   "g0_audit_U_true": -0.4062,
+   "train_U_true": 0.8238,
+   "g0_train_U_true": -0.5537
+  },
+  {
+   "group": "G2",
+   "seed": 2,
+   "final_mainline": {
+    "w_kw": 12.0,
+    "w_content": 1.5,
+    "w_imp": 0.0,
+    "w_age": 0.0297,
+    "filter_zero": 1,
+    "w_f1": 4.0
+   },
+   "final_w_f1": 4.0,
+   "audit_U_true": 0.85,
+   "g0_audit_U_true": -0.6375,
+   "train_U_true": 0.7587,
+   "g0_train_U_true": -0.4637
+  },
+  {
+   "group": "G2",
+   "seed": 3,
+   "final_mainline": {
+    "w_kw": 3.6,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "final_w_f1": 0.0,
+   "audit_U_true": 0.8125,
+   "g0_audit_U_true": -0.2437,
+   "train_U_true": 0.8313,
+   "g0_train_U_true": -0.5938
+  },
+  {
+   "group": "G2",
+   "seed": 4,
+   "final_mainline": {
+    "w_kw": 1.5,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 0
+   },
+   "final_w_f1": 0.0,
+   "audit_U_true": 0.85,
+   "g0_audit_U_true": -0.5687,
+   "train_U_true": 0.8275,
+   "g0_train_U_true": -0.6013
+  },
+  {
+   "group": "G2",
+   "seed": 5,
+   "final_mainline": {
+    "w_kw": 14.4,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1,
+    "w_f1": 1.0
+   },
+   "final_w_f1": 1.0,
+   "audit_U_true": 0.7937,
+   "g0_audit_U_true": -0.5687,
+   "train_U_true": 0.8425,
+   "g0_train_U_true": -0.4425
+  },
+  {
+   "group": "G2",
+   "seed": 6,
+   "final_mainline": {
+    "w_kw": 3.6,
+    "w_content": 3.0,
+    "w_imp": 0.25,
+    "w_age": 0.0298,
+    "filter_zero": 1,
+    "w_f1": 0.125
+   },
+   "final_w_f1": 0.125,
+   "audit_U_true": 0.8125,
+   "g0_audit_U_true": -0.4437,
+   "train_U_true": 0.6937,
+   "g0_train_U_true": -0.4888
+  },
+  {
+   "group": "G2",
+   "seed": 7,
+   "final_mainline": {
+    "w_kw": 5.4,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1,
+    "w_f1": 1.0
+   },
+   "final_w_f1": 1.0,
+   "audit_U_true": 0.85,
+   "g0_audit_U_true": -0.3687,
+   "train_U_true": 0.8313,
+   "g0_train_U_true": -0.51
+  },
+  {
+   "group": "G2",
+   "seed": 8,
+   "final_mainline": {
+    "w_kw": 3.0,
+    "w_content": 3.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "final_w_f1": 0.0,
+   "audit_U_true": 0.7562,
+   "g0_audit_U_true": -0.55,
+   "train_U_true": 0.835,
+   "g0_train_U_true": -0.5825
+  },
+  {
+   "group": "G4",
+   "seed": 1,
+   "final_mainline": {
+    "w_kw": 7.2,
+    "w_content": 1.0,
+    "w_imp": 1.0,
+    "w_age": 0.0,
+    "filter_zero": 1,
+    "w_f1": 16.0
+   },
+   "final_w_f1": 16.0,
+   "audit_U_true": 0.8125,
+   "g0_audit_U_true": -0.4062,
+   "train_U_true": 0.7075,
+   "g0_train_U_true": -0.5537
+  },
+  {
+   "group": "G4",
+   "seed": 2,
+   "final_mainline": {
+    "w_kw": 6.75,
+    "w_content": 2.7,
+    "w_imp": 1.0,
+    "w_age": 0.035,
+    "filter_zero": 1,
+    "w_f1": 1.0
+   },
+   "final_w_f1": 1.0,
+   "audit_U_true": 0.85,
+   "g0_audit_U_true": -0.6375,
+   "train_U_true": 0.6525,
+   "g0_train_U_true": -0.4637
+  },
+  {
+   "group": "G4",
+   "seed": 3,
+   "final_mainline": {
+    "w_kw": 3.0,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1,
+    "w_f1": 2.0
+   },
+   "final_w_f1": 2.0,
+   "audit_U_true": 0.8125,
+   "g0_audit_U_true": -0.2437,
+   "train_U_true": 0.8313,
+   "g0_train_U_true": -0.5938
+  },
+  {
+   "group": "G4",
+   "seed": 4,
+   "final_mainline": {
+    "w_kw": 4.5,
+    "w_content": 1.8,
+    "w_imp": 0.0,
+    "w_age": 0.0171,
+    "filter_zero": 1,
+    "w_f1": 4.0
+   },
+   "final_w_f1": 4.0,
+   "audit_U_true": 0.8125,
+   "g0_audit_U_true": -0.5687,
+   "train_U_true": 0.78,
+   "g0_train_U_true": -0.6013
+  },
+  {
+   "group": "G4",
+   "seed": 5,
+   "final_mainline": {
+    "w_kw": 6.3,
+    "w_content": 1.0,
+    "w_imp": 0.85,
+    "w_age": 0.0,
+    "filter_zero": 1,
+    "w_f1": 2.0
+   },
+   "final_w_f1": 2.0,
+   "audit_U_true": 0.6312,
+   "g0_audit_U_true": -0.5687,
+   "train_U_true": 0.8025,
+   "g0_train_U_true": -0.4425
+  },
+  {
+   "group": "G4",
+   "seed": 6,
+   "final_mainline": {
+    "w_kw": 6.0,
+    "w_content": 1.5,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1,
+    "w_f1": 4.0
+   },
+   "final_w_f1": 4.0,
+   "audit_U_true": 0.85,
+   "g0_audit_U_true": -0.4437,
+   "train_U_true": 0.835,
+   "g0_train_U_true": -0.4888
+  },
+  {
+   "group": "G4",
+   "seed": 7,
+   "final_mainline": {
+    "w_kw": 13.5,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.049,
+    "filter_zero": 1
+   },
+   "final_w_f1": 0.0,
+   "audit_U_true": 0.85,
+   "g0_audit_U_true": -0.3687,
+   "train_U_true": 0.7475,
+   "g0_train_U_true": -0.51
+  },
+  {
+   "group": "G4",
+   "seed": 8,
+   "final_mainline": {
+    "w_kw": 3.0,
+    "w_content": 1.0,
+    "w_imp": 1.0,
+    "w_age": 0.1,
+    "filter_zero": 1
+   },
+   "final_w_f1": 0.0,
+   "audit_U_true": 0.05,
+   "g0_audit_U_true": -0.55,
+   "train_U_true": 0.1913,
+   "g0_train_U_true": -0.5825
+  }
+ ],
+ "wall_s": 126.5
+}

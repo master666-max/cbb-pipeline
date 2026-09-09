@@ -1,0 +1,53 @@
+# state_update.txt — 情绪向量更新器 v2（W-017 Δ 映射表落地 · 可复现）
+# 用法: python3 state_update.txt --event success|failed|corrected|confirmed|opposed|neutral [--adopted yes|no]
+# 映射表（工单附录 B，四维 valence/arousal/certainty/stakes*，单事件 |Δ|≤0.3）：
+#   success   +0.10 +0.05 +0.10  0.00   判定=工具返回码全成功且验收断言通过
+#   failed    -0.15 +0.10 -0.10 +0.10   判定=任一关键工具失败或验收断言不通过
+#   corrected -0.10 +0.15 -0.15 +0.05   判定=用户消息含否定性修正 且 agent 前序输出确被更正
+#   confirmed +0.05  0.00 +0.10  0.00   判定=用户明确肯定且无修正
+#   opposed   -0.10 +0.20 -0.05 +0.10   判定=用户明确反对 agent 判断或行动
+#   neutral    0     0     0     0     兜底=未分类事件
+# * 第四维：stakes（利害，v2.1 经用户追认由 interest 调整——探索调制已由 arousal×复杂度仲裁接管，
+#   stakes 升格为状态量以支撑防谄媚机制；对 BCA v0.1 原文的显式偏离，见说明书 11.1 节偏离声明。
+# 混合: s_t = 0.7*s_{t-1} + 0.3*Δ（λ=0.7，半衰期约 2 次 wrap-up——快衰减信号，W-018）
+# 熔断: 全维 clip [-1,1]；连续 5 次同向由月度睡眠管线检查重置（W-015 风险表）
+# 事件判定纪律（W-017 步骤 2）: 任务成败以结果自检为准；用户纠错须同时满足「消息含否定性修正」与
+# 「前序输出确被更正」两条件；每次 Δ 计算的事件类型与数值追加写入 lifelog，审计可回放。
+import os, sys, json
+from datetime import date
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+STATE = os.path.join(os.getcwd(), 'state', '.library-state.json')
+LAM = 0.7
+DELTA = {
+    'success':   (0.10, 0.05, 0.10, 0.00),
+    'failed':    (-0.15, 0.10, -0.10, 0.10),
+    'corrected': (-0.10, 0.15, -0.15, 0.05),
+    'confirmed': (0.05, 0.00, 0.10, 0.00),
+    'opposed':   (-0.10, 0.20, -0.05, 0.10),
+    'neutral':   (0.0, 0.0, 0.0, 0.0),
+}
+
+def main():
+    if '--event' not in sys.argv:
+        print('用法: state_update.txt --event success|failed|corrected|confirmed|opposed|neutral [--adopted yes|no]'); sys.exit(2)
+    ev = sys.argv[sys.argv.index('--event') + 1]
+    if ev not in DELTA:
+        print('✗ 未知事件（兜底规则: 未分类 Δ=0）'); sys.exit(2)
+    adopted = sys.argv[sys.argv.index('--adopted') + 1] if '--adopted' in sys.argv else 'no'
+    d = list(DELTA[ev])
+    if ev in ('success', 'confirmed') and adopted == 'yes':
+        d[0] += 0.05  # 长期利益信号：体系采纳（唯一允许的微调项，锚定第二信号）
+    s = json.load(open(STATE, encoding='utf-8'))
+    e = s['emotion']
+    keys = ['valence', 'arousal', 'certainty', 'stakes']
+    old = tuple(e[k] for k in keys)
+    new = tuple(round(max(-1.0, min(1.0, LAM * o + (1 - LAM) * dd)), 2) for o, dd in zip(old, d))
+    for k, v in zip(keys, new):
+        e[k] = v
+    e.setdefault('update_log', []).append({'date': str(date.today()), 'event': ev, 'delta': d, 'adopted': adopted})
+    json.dump(s, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+    print('情绪更新: %s --%s--> %s (Δ%s)' % (tuple(round(x, 2) for x in old), ev, new, d))
+
+if __name__ == '__main__':
+    main()

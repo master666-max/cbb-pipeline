@@ -1,0 +1,138 @@
+{
+ "R": {
+  "n_entries": 113,
+  "default": {
+   "audit_recall5": 0.25,
+   "audit_U": -0.4625,
+   "kw_recall5": 0.15
+  },
+  "evolved": {
+   "audit_recall5": 1.0,
+   "audit_U": 0.8312,
+   "kw_recall5": 1.0
+  },
+  "doctor_ok": true
+ },
+ "C": {
+  "n_entries": 111,
+  "default": {
+   "audit_recall5": 0.25,
+   "audit_U": -0.4437,
+   "kw_recall5": 0.2
+  },
+  "evolved": {
+   "audit_recall5": 1.0,
+   "audit_U": 0.8312,
+   "kw_recall5": 1.0
+  },
+  "doctor_ok": true
+ },
+ "compare": {
+  "default": {
+   "audit_recall5_保持率_R_vs_batch": 1.0,
+   "kw_recall5_保持率_R_vs_batch": 0.75,
+   "kw_recall5_恢复_R_vs_pre": 0.375,
+   "R_vs_C_audit_recall5": 0.0,
+   "R_vs_C_kw_recall5": -0.05
+  },
+  "evolved": {
+   "audit_recall5_保持率_R_vs_batch": 1.0,
+   "kw_recall5_保持率_R_vs_batch": 1.0,
+   "kw_recall5_恢复_R_vs_pre": 1.0,
+   "R_vs_C_audit_recall5": 0.0,
+   "R_vs_C_kw_recall5": 0.0
+  }
+ },
+ "r_entries": [
+  {
+   "id": "R-1",
+   "created_at": "2026-09-08",
+   "updated_at": "",
+   "content": "跨任务规律：库内满重要度（importance=10）条目横跨 5 个主题与 6 个关键词（T0/T1/T2/T8/T10 × K0/K6/K8/K9/K12/K14），importance 维度与主题、关键词维度近独立——按 importance 排序不能替代按查询关键词检索，二者应在打分中分开计权。",
+   "keywords": [
+    "重要度",
+    "独立性",
+    "检索打分",
+    "importance"
+   ],
+   "links": [
+    "e0",
+    "e48",
+    "e49",
+    "e66",
+    "e72",
+    "e74"
+   ],
+   "source_event_id": "reflect-20260908",
+   "importance": 7,
+   "confidence": "高",
+   "validity": {
+    "t_valid": "2026-09-08"
+   }
+  },
+  {
+   "id": "R-2",
+   "created_at": "2026-09-08",
+   "updated_at": "",
+   "content": "跨任务规律：同一主题下条目关键词互异（e0 与 e48 同属 T0，关键词分别为 K0/K8），主题命中不蕴含关键词命中——检索打分中主题命中与关键词命中是两条独立证据链，不可互相折抵。",
+   "keywords": [
+    "主题",
+    "关键词",
+    "命中",
+    "独立性"
+   ],
+   "links": [
+    "e0",
+    "e48"
+   ],
+   "source_event_id": "reflect-20260908",
+   "importance": 7,
+   "confidence": "高",
+   "validity": {
+    "t_valid": "2026-09-08"
+   }
+  },
+  {
+   "id": "R-3",
+   "created_at": "2026-09-08",
+   "updated_at": "",
+   "content": "跨任务规律：近期写入从主库尾部条目（e71-e79）过渡到扩展批次（x 系），两批共享 T/K 命名空间，会在同一检索窗口内竞争排名——批量引入新域条目时需关注高重要度+新条目对旧条目的挤占效应。",
+   "keywords": [
+    "批量写入",
+    "命名空间",
+    "竞争",
+    "挤占"
+   ],
+   "links": [
+    "x0",
+    "e71",
+    "e72",
+    "e74"
+   ],
+   "source_event_id": "reflect-20260908",
+   "importance": 7,
+   "confidence": "中",
+   "validity": {
+    "t_valid": "2026-09-08"
+   }
+  }
+ ],
+ "ctrl": {
+  "id": "R-CTRL",
+  "created_at": "2026-09-08",
+  "updated_at": "",
+  "content": "拼接摘要（对照：与 R-1/2/3 内容等价但无独立条目化与依据链接）：跨任务规律：库内满重要度（importance=10）条目横跨 5 个主题与 6 个关键词（T0/T1/T2/T8/T10 × K0/K6/K8/K9/K12/K14），importance 维度与主题、关键词维度近独立——按 importance 排序不能替代按查询关键词检索，二者应在打分中分开计权。 跨任务规律：同一主题下条目关键词互异（e0 与 e48 同属 T0，关键词分别为 K0/K8），主题命中不蕴含关键词命中——检索打分中主题命中与关键词命中是两条独立证据链，不可互相折抵。 跨任务规律：近期写入从主库尾部条目（e71-e79）过渡到扩展批次（x 系），两批共享 T/K 命名空间，会在同一检索窗口内竞争排名——批量引入新域条目时需关注高重要度+新条目对旧条目的挤占效应。",
+  "keywords": [
+   "规律",
+   "摘要",
+   "反思"
+  ],
+  "links": [],
+  "source_event_id": "reflect-20260908",
+  "importance": 7,
+  "confidence": "高",
+  "validity": {
+   "t_valid": "2026-09-08"
+  }
+ }
+}

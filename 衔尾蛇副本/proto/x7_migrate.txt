@@ -1,0 +1,81 @@
+# X7 · 库调试v3.2 → 库调试工作区 内容迁移（走引擎正路）
+# 运行：py -X utf8 proto/x7_migrate.txt
+# 规则：
+#   - 条目逐条 engine append（路由/审计链/账本/刷根全走真引擎），同 id 幂等跳过
+#   - source_event_id 重写为「迁移事件哈希」——修复 absorb-md 时代 genesis-v4 空锚缺陷（源码 P0-2）
+#   - attic 内条目与 t_invalid 条目不迁（失效留档案）
+#   - golden_queries.json 随迁 → 新库重立 eval 基线
+#   - 库调试v3.2 本体原地保留作档案（铁律 1：只新增不删除）
+import re, json, time, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bootstrap_v3.9.py"      # v3.9 引擎（c265530d）
+OLD = Path(r"D:\zcode专用！！！！危险！！！！！！！！！\库调试v3.2")
+NEW = Path(r"D:\zcode专用！！！！危险！！！！！！！！！\库调试工作区")
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+m = load_mod("bs39", VENDOR)
+m.set_data_dir(str(BASE / "library-bootstrap-v3.9" / "bootstrap_data"))
+
+# 迁移事件锚：取新库审计链尾哈希（install 事件）
+tail = sorted((NEW / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+m.chain_append(NEW / "audit", f"X7 内容迁移自 库调试v3.2（v3.8.1 时代库）→ 库调试工作区（v3.9）")
+m._ledger_append(NEW, "x7-migrate", f"from=库调试v3.2")
+st_p = NEW / "state.json"
+st = json.loads(st_p.read_text(encoding="utf-8"))
+st["merkle_root"] = m.merkle_root(NEW, exclude={"state.json"})
+st_p.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"迁移事件锚 seid={seid}")
+
+migrated, skipped_invalid, skipped_dup, rejected = [], [], [], 0
+for f in sorted((OLD / "memory").rglob("*.json")):
+    if "attic" in str(f):
+        skipped_invalid.append(f"{f.stem}(attic)")
+        continue
+    e = json.loads(f.read_text(encoding="utf-8"))
+    if (e.get("validity") or {}).get("t_invalid"):
+        skipped_invalid.append(f"{f.stem}(t_invalid)")
+        continue
+    e["source_event_id"] = seid                                # 空锚修复
+    rec = {k: e.get(k, "") for k in ("id", "created_at", "updated_at", "content", "keywords",
+                                     "links", "source_event_id", "importance", "confidence", "validity")}
+    try:
+        m.cmd_engine("append", str(NEW), json.dumps(rec, ensure_ascii=False))
+        migrated.append(e["id"])
+    except SystemExit as ex:
+        if "已存在" in str(ex):
+            skipped_dup.append(e["id"])
+        else:
+            rejected += 1
+            print(f"  [拒绝] {e['id']}: {str(ex)[:100]}")
+
+# golden_queries 随迁
+gq_old = OLD / "evals" / "golden_queries.json"
+gq_new = NEW / "evals" / "golden_queries.json"
+if gq_old.exists():
+    gq_new.write_bytes(gq_old.read_bytes())
+
+# 新库基线 eval + doctor
+buf = StringIO()
+with redirect_stdout(buf):
+    m.cmd_engine("eval", str(NEW), text=str(gq_new))
+eval_line = buf.getvalue().strip().splitlines()[-2] if len(buf.getvalue().strip().splitlines()) > 1 else buf.getvalue()
+buf = StringIO()
+with redirect_stdout(buf):
+    m.cmd_engine("doctor", str(NEW))
+doc = buf.getvalue().strip().splitlines()[0]
+
+print(f"迁移完成：入新库 {len(migrated)} 条 ｜ 失效跳过 {len(skipped_invalid)} ｜ 幂等跳过 {len(skipped_dup)} ｜ 拒绝 {rejected}")
+print(f"golden_queries 随迁 ✓（n={len(json.loads(gq_new.read_text(encoding='utf-8')))}）")
+print(f"eval: {eval_line.strip()}")
+print(f"doctor: {doc}")

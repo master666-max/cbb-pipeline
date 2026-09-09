@@ -1,0 +1,157 @@
+# -*- coding: utf-8 -*-
+# v3.6 patch B：K-007a 试点渲染化（三 install.md）+ 6 条测试 + VERSION 3.6.0
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def save():
+    io.open(p, 'w', encoding='utf-8', newline=chr(10)).write(s)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1); save()
+
+# K-007a(D1=a)：试点渲染化——三个高频 install.md 由 SOURCES 生成 v3 语义指南，v2.x 原文保留于 bodies
+rep('''ADAPTER_PAGE_V3 = (''',
+    '''PILOT_RENDER_INSTALLS = {  # v3.6/K-007a(D1=a)：试点渲染化（v2.x 原文保留于 bodies，实战一代后 v3.7 全量）
+    "experimental-l8/constitution/install.md",
+    "experimental-l8/lifelog/install.md",
+    "experimental-l8/mutation-engine/install.md",
+}
+def render_installer_v3(rel: str, b: dict) -> str:
+    files = sorted(m["src"] for slot in ("modules", "packages", "presets", "docs")
+                   if isinstance(b.get(slot), dict)
+                   for m in b[slot].values()
+                   if m.get("src", "").replace(chr(92) + chr(92), "/").startswith(rel.rsplit("/", 1)[0] + "/"))
+    lines = [f"# {rel}（v3.6/K-007a 渲染产物，手改即违例——v2.x 原文保留于包 bodies）", "",
+             "## 本模块在 v3 库中的等价物",
+             "- 审计链：audit/lifelog-*.md（engine append/wrapup/retire 自动入链，无需手动 lifelog_append）",
+             "- 变更账本：ledger/changes.jsonl（公理 C，全动作记账）",
+             "- 变异守卫：guard --diff <候选> --lib .（基准黑名单）+ guard --snapshot/--anchor（锚定）",
+             "- 条目读写：engine append / retrieve / eval（schema 十字段）",
+             "- 体检：engine doctor --lib .（memory/audit/ledger/审计链 四态）", "",
+             f"## 本模块交付文件（{len(files)} 个，已由 install 落盘）"]
+    lines += [f"- {f_}" for f_ in files]
+    lines += ["", "## 校验", "- install 校验模式（重复 install）：漂移/未在册/渲染件/根对账 四项",
+              "- v2.x 原文指南仅作历史参考，冲突处以本文件与 spec.md 为准。", ""]
+    return chr(10).join(lines)
+ADAPTER_PAGE_V3 = (''')
+rep('''            body_text = meta["body"]
+            if rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith("install.md"):
+                body_text = ADAPTER_PAGE_V3 + NL_CH + body_text  # v3.5/J-008a(D1=a)：适配页置顶，原文保留''',
+    '''            body_text = meta["body"]
+            if rel in PILOT_RENDER_INSTALLS:
+                body_text = render_installer_v3(rel, b)  # v3.6/K-007a：试点渲染化（替代 v2.x 原文交付）
+            elif rel.startswith(("experimental-l8/", "experimental-l9/")) and rel.endswith("install.md"):
+                body_text = ADAPTER_PAGE_V3 + NL_CH + body_text  # v3.5/J-008a(D1=a)：适配页置顶，原文保留''')
+
+# 测试 6 条
+tests = '''@t
+def t_absorb_md_idempotent():
+    """v3.6/K-001：重跑幂等——已存在跳过计数，不混入 rejected"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_k1"); src = tmp / "v4src"
+    (src / "knowledge").mkdir(parents=True)
+    (src / "knowledge" / "pitfalls.md").write_text(
+        "### P-901 / 2026-09-06 / 教训" + chr(10) + "- 教训：内容" + chr(10) + "- 状态：active" + chr(10), encoding="utf-8")
+    (src / "knowledge" / "patterns.md").write_text("", encoding="utf-8")
+    lib = tmp / "lib"
+    buf = _io.StringIO()
+    with contextlib.redirect_stdout(buf): cmd_absorb_md(src, lib, dry_run=False)
+    assert "追加 3 条" in buf.getvalue(), "首跑异常: " + buf.getvalue()[-200:]
+    buf = _io.StringIO()
+    with contextlib.redirect_stdout(buf): cmd_absorb_md(src, lib, dry_run=False)
+    out = buf.getvalue()
+    assert "幂等跳过 3 条" in out and "0 拒绝" in out, "重跑幂等语义错误: " + out[-200:]
+    assert not (lib / "memory" / "longterm" / "SOUL-POINTER.json").read_text(encoding="utf-8").count("SOUL-POINTER") > 1
+
+@t
+def t_doctor_chain_check():
+    """v3.6/K-002：doctor 审计链逐行重算——篡改精确报行"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_k2")
+    try:
+        cmd_install("L2", [], tmp, True)
+        e = {"id": "k2e", "created_at": "2026-09-07", "updated_at": "", "content": "x",
+             "keywords": [], "links": [], "source_event_id": "gen", "importance": 1,
+             "confidence": "高", "validity": {}}
+        cmd_engine("append", tmp, json.dumps(e, ensure_ascii=False))
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_engine("doctor", tmp)
+        assert "审计链 连续" in buf.getvalue()
+        ap = list((tmp / "audit").glob("lifelog-*.md"))[0]
+        lines = ap.read_text(encoding="utf-8").splitlines()
+        lines[0] = lines[0].replace("M-001", "M-XXX")  # 篡改首行
+        ap.write_text(chr(10).join(lines) + chr(10), encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_engine("doctor", tmp)
+        out = buf.getvalue()
+        assert "断链 1 处" in out and ":1" in out, "篡改未被链校验定位: " + out
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_reflect_done():
+    """v3.6/K-003：reflect-done 重置累计器并走账本/审计链"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_k3")
+    try:
+        cmd_install("L2", [], tmp, True)
+        st_path = tmp / "state.json"
+        st = json.loads(st_path.read_text(encoding="utf-8"))
+        st["importance_accum"] = 88
+        st_path.write_text(json.dumps(st, ensure_ascii=False), encoding="utf-8")
+        (tmp / "memory" / "reflect").mkdir(parents=True, exist_ok=True)
+        (tmp / "memory" / "reflect" / "materials-x.md").write_text("素材", encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_engine("reflect-done", tmp)
+        assert "已重置" in buf.getvalue()
+        st = json.loads(st_path.read_text(encoding="utf-8"))
+        assert st["importance_accum"] == 0
+        ledger = (tmp / "ledger" / "changes.jsonl").read_text(encoding="utf-8")
+        assert "reflect-done" in ledger
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_entrypoint_state_ref():
+    """v3.6/K-004：入口引用 state.json 而非幽灵路径"""
+    tmp = _tmpdir("_bsv3t_k4")
+    try:
+        cmd_install("L2", [], tmp, True)
+        ag = (tmp / "AGENTS.md").read_text(encoding="utf-8")
+        assert "state.json" in ag and "state/README.md" not in ag
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_build_docs_lib_nostate():
+    """v3.6/K-005：--lib 指向非库目录友好退出"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_k5")
+    try:
+        refused = False
+        try: cmd_build(None, tmp)
+        except SystemExit as ex: refused = "state.json" in str(ex)
+        assert refused, "无 state 目录未友好拒绝"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_pilot_rendered_installs():
+    """v3.6/K-007a(D1=a)：试点三文件渲染化交付（v3 语义替代 v2.x 原文）"""
+    tmp = _tmpdir("_bsv3t_k6")
+    try:
+        cmd_install("L9", [], tmp, True)
+        for rel in PILOT_RENDER_INSTALLS:
+            p = tmp / rel
+            assert p.exists(), f"试点文件未交付 {rel}"
+            head = p.read_text(encoding="utf-8")[:80]
+            assert "渲染产物" in head and "等价物" in p.read_text(encoding="utf-8"), f"试点未渲染化 {rel}"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_shape():'''
+rep('@t\ndef t_shape():', tests)
+rep('VERSION = "3.5.0"', 'VERSION = "3.6.0"')
+print('patch B done')

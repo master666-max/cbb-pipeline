@@ -1,0 +1,60 @@
+# verify.txt — 程序化版式/内容检测（替代目视验收）
+import pymupdf
+
+doc = pymupdf.open("output.pdf")
+W, H = doc[0].rect.width, doc[0].rect.height
+print("pages=%d page_size=%.0fx%.0f" % (doc.page_count, W, H))
+
+problems = []
+for i, page in enumerate(doc):
+    n = i + 1
+    txt = page.get_text("text")
+    # 1) 空白页检测：整页文字极少
+    if len(txt.strip()) < 5:
+        problems.append("page %d 疑似空白页 text_len=%d" % (n, len(txt.strip())))
+    # 2) 文本块溢出右侧页边（A4 宽度 595pt，右边距约 75pt，内容应止于 ~525pt；留 30pt 余量）
+    for b in page.get_text("blocks"):
+        x0, y0, x1, y1 = b[:4]
+        if x1 > W - 40:
+            snippet = (b[4] or "").replace("\n", " ")[:40]
+            problems.append("page %d 文本块疑似溢出右缘 x1=%.1f: %s" % (n, x1, snippet))
+    # 3) 底缘溢出
+    for b in page.get_text("blocks"):
+        if b[3] > H - 12:
+            problems.append("page %d 文本块疑似溢出底缘 y1=%.1f: %s" % (n, b[3], (b[4] or "").replace("\n", " ")[:30]))
+
+# 4) 全文档脏字符串检测
+full = "".join(p.get_text("text") for p in doc)
+for bad in ["undefined", "null", "NaN", "object Object", "\ufffd", "TODO", "【Please fill"]:
+    c = full.count(bad)
+    if c:
+        problems.append("全文含脏字符串 %r x%d" % (bad, c))
+
+# 5) 封面：采样角落背景色应为深色；包含标题
+c0 = doc[0].get_pixmap(clip=pymupdf.Rect(5, 5, 12, 12)).pixel(3, 3)
+print("cover corner pixel:", c0)
+t1 = doc[0].get_text("text")
+for kw in ["ComfyUI", "零基础入门"]:
+    if kw not in t1:
+        problems.append("封面缺关键词 %r" % kw)
+
+# 6) 目录页检查
+t2 = doc[1].get_text("text")
+if "目" not in t2 or "第" not in t2:
+    problems.append("目录页(2)内容可疑")
+# 正文首页(3)页脚应为阿拉伯 1；目录页(2)页脚应为罗马 i
+foot2 = [l.strip() for l in doc[1].get_text("text").splitlines() if l.strip()]
+foot3 = [l.strip() for l in doc[2].get_text("text").splitlines() if l.strip()]
+print("p2 last lines:", foot2[-2:], "| p3 last lines:", foot3[-2:])
+
+# 7) 第10章应存在（结尾）
+if "第 10 章" not in full:
+    problems.append("缺少第 10 章")
+
+print("----")
+if problems:
+    print("发现 %d 个问题:" % len(problems))
+    for p in problems:
+        print("  -", p)
+else:
+    print("自动检测全部通过")

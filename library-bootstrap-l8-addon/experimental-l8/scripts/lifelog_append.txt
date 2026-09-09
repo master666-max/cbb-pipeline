@@ -1,0 +1,27 @@
+# lifelog_append.txt — 哈希链日志追加器（L8 信任锚写入器，append-only）
+# 用法: python3 lifelog_append.txt "<事件描述>"
+# 行格式: YYYY-MM-DD | 事件 | 前行哈希 | 本行哈希(前哈希+日期+事件 的 sha1_8)
+import os, sys, hashlib
+from datetime import date
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+if len(sys.argv) < 2:
+    print('用法: lifelog_append.txt "事件描述"'); sys.exit(2)
+
+ROOT = os.getcwd()
+log_dir = os.path.join(ROOT, 'knowledge', 'lifelog')
+os.makedirs(log_dir, exist_ok=True)
+fn = os.path.join(log_dir, date.today().strftime('%Y-%m') + '.mdl')
+prev = ''
+if os.path.exists(fn):
+    for line in reversed(open(fn, encoding='utf-8').read().splitlines()):
+        if line and not line.startswith('#'):
+            prev = line.split(' | ')[3]
+            break
+event = ' '.join(sys.argv[1:])
+row = '%s | %s | %s' % (date.today().isoformat(), event, prev)
+h = hashlib.sha1((date.today().isoformat() + '|' + event + '|' + prev).encode('utf-8')).hexdigest()[:8]
+if not os.path.exists(fn):
+    open(fn, 'w', encoding='utf-8').write('# L8 lifelog · append-only 哈希链\n')
+open(fn, 'a', encoding='utf-8').write(row + ' | ' + h + '\n')
+print('已追加: %s | %s | %s | %s' % (date.today().isoformat(), event, prev, h))

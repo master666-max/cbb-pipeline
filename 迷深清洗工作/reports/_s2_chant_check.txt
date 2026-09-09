@@ -1,0 +1,170 @@
+# -*- coding: utf-8 -*-
+# 阶段2-A：咏唱库213条 全量语料核验
+# 用法: py -X utf8 _s2_chant_check.txt   (在 迷深清洗工作 目录下)
+import json, re, os, sys, bisect
+from difflib import SequenceMatcher
+
+BASE = os.path.dirname(os.path.abspath(__file__))  # reports/
+ROOT = os.path.dirname(BASE)                        # 迷深清洗工作/
+CORPUS = os.path.join(ROOT, '异世界迷宫最深部_知识库', '文字')
+CHANT = os.path.join(ROOT, '迷深大酒馆v1.02', '共通三库', '咏唱库.json')
+
+def norm(s):
+    out = []
+    for ch in s:
+        o = ord(ch)
+        if (0x4E00 <= o <= 0x9FFF) or (0x3400 <= o <= 0x4DBF) or (0x3040 <= o <= 0x30FF):
+            out.append(ch)
+        elif 'A' <= ch <= 'Z':
+            out.append(ch.lower())
+        elif 'a' <= ch <= 'z':
+            out.append(ch)
+        elif '0' <= ch <= '9':
+            out.append(ch)
+    return ''.join(out)
+
+# ---- 1. 构建语料主索引 ----
+files = []
+for dirpath, dirnames, filenames in os.walk(CORPUS):
+    for fn in sorted(filenames):
+        if fn.endswith('.md'):
+            files.append(os.path.join(dirpath, fn))
+files.sort()
+
+master = []          # list of normalized line strings (with '\n' separator appended)
+offsets = []         # start offset of each line in master
+meta = []            # (relpath, lineno)
+pos = 0
+for fp in files:
+    rel = os.path.relpath(fp, CORPUS)
+    with open(fp, encoding='utf-8', errors='replace') as f:
+        for i, line in enumerate(f, 1):
+            nl = norm(line)
+            master.append(nl)
+            offsets.append(pos)
+            meta.append((rel, i))
+            pos += len(nl) + 1
+MASTER = '\n'.join(master)
+print('corpus files:', len(files), 'master chars:', len(MASTER), file=sys.stderr)
+
+def locate(idx):
+    i = bisect.bisect_right(offsets, idx) - 1
+    return meta[i]
+
+# ---- 2. 提取咏唱行 ----
+META_KEYS = ('效果:', '等级:', '代价:', '触发:', '来源:', '关联:', '另见', '备注', '注:', '补:', '参考', '变体')
+def extract_chants(content):
+    lines = content.split('\n')
+    chants = []   # (kind, text)
+    for ln in lines:
+        s = ln.strip()
+        if not s: continue
+        if s.startswith('角色') or s.startswith('【'): continue
+        if any(s.startswith(k) for k in META_KEYS): break_meta = True
+        if any(s.startswith(k) for k in META_KEYS): continue
+        if '「' in s and '」' in s:
+            # 取所有「...」内部内容（外层引号内的全部，含『』嵌套）
+            for m in re.finditer(r'「([^「」]*)」', s):
+                t = m.group(1).strip()
+                if norm(t): chants.append(('q', t))
+        else:
+            chants.append(('p', s))
+    return chants
+
+# ---- 3. 检索 ----
+def exact_find(ns):
+    if not ns: return None
+    idx = MASTER.find(ns)
+    if idx >= 0:
+        return locate(idx)
+    return None
+
+def fuzzy_best(ns, ratio_thresh=0.70, lcs_thresh=10):
+    if len(ns) < 5: return None
+    L = len(ns)
+    seeds = []
+    if L >= 12:
+        seeds = [ns[:6], ns[L//2-3:L//2+3], ns[-6:]]
+    else:
+        seeds = [ns[:6]]
+    best = (0.0, 0, None)
+    for seed in seeds:
+        if len(seed) < 4: continue
+        start = 0
+        cnt = 0
+        while cnt < 60:
+            idx = MASTER.find(seed, start)
+            if idx < 0: break
+            cnt += 1
+            start = idx + 1
+            lo = max(0, idx - 30); hi = min(len(MASTER), idx + L + 60)
+            win = MASTER[lo:hi]
+            sm = SequenceMatcher(None, ns, win, autojunk=False)
+            r = sm.ratio()
+            m = sm.find_longest_match(0, L, 0, len(win))
+            lcs = m.size
+            score = max(r, min(1.0, lcs / max(1, L)))
+            if (lcs > best[1]) or (lcs == best[1] and r > best[0]):
+                if lcs > best[1] or r > best[0]:
+                    best = (max(best[0], r), max(best[1], lcs), locate(idx))
+    r, lcs, loc = best
+    if r >= ratio_thresh or lcs >= lcs_thresh:
+        return {'ratio': round(r,3), 'lcs': lcs, 'loc': loc}
+    return None
+
+with open(CHANT, encoding='utf-8') as f:
+    lib = json.load(f)
+
+results = []
+for e in lib['entries']:
+    chants = extract_chants(e['content'])
+    per = []
+    n_exact = n_near = n_zero = 0
+    for kind, t in chants:
+        ns = norm(t)
+        loc = exact_find(ns)
+        if loc:
+            per.append({'text': t, 'status': 'exact', 'loc': loc}); n_exact += 1
+        else:
+            fz = fuzzy_best(ns)
+            if fz:
+                per.append({'text': t, 'status': 'near', **fz}); n_near += 1
+            else:
+                per.append({'text': t, 'status': 'zero'}); n_zero += 1
+    total = len(per)
+    if total == 0:
+        status = 'nochant'
+    elif n_exact == total: status = 'exact'
+    elif n_exact + n_near == total: status = 'near'
+    elif n_exact + n_near > 0: status = 'mixed'
+    else: status = 'zero'
+    src = ''
+    for ln in e['content'].split('\n'):
+        if ln.startswith('来源'): src = ln.strip(); break
+    results.append({'uid': e['uid'], 'key': e['key'][0] if e['key'] else '?',
+                    'status': status, 'exact': n_exact, 'near': n_near, 'zero': n_zero,
+                    'total': total, 'src': src, 'lines': per})
+
+with open(os.path.join(BASE, '_tmp_chant_results.json'), 'w', encoding='utf-8') as f:
+    json.dump(results, f, ensure_ascii=False, indent=1)
+
+from collections import Counter
+c = Counter(r['status'] for r in results)
+print('=== 咏唱库 213 条命中分布 ===')
+for k in ['exact','near','mixed','zero','nochant']:
+    print(k, c.get(k,0))
+print()
+print('=== 零命中条目 ===')
+for r in results:
+    if r['status']=='zero':
+        print('uid %s | %s | %s' % (r['uid'], r['key'], r['src']))
+        for l in r['lines']:
+            print('   [%s] %s' % (l['status'], l['text'][:80]))
+print()
+print('=== mixed(部分行零命中) ===')
+for r in results:
+    if r['status']=='mixed':
+        print('uid %s | %s | exact%d near%d zero%d | %s' % (r['uid'], r['key'], r['exact'], r['near'], r['zero'], r['src']))
+        for l in r['lines']:
+            if l['status']=='zero':
+                print('   [zero] %s' % l['text'][:80])

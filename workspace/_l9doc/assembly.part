@@ -1,0 +1,69 @@
+const c1 = require("./content1.js");
+const c2 = require("./content2.js");
+const bodyChildren = [...c1.ch1, ...c1.ch2, ...c1.ch3, ...c1.ch4, ...c1.ch5, ...c1.ch6, ...c1.ch7,
+  ...c2.ch8, ...c2.ch9, ...c2.ch10, ...c2.ch11, ...c2.ch12, ...c2.ch13, ...c2.appendixA, ...c2.appendixB];
+
+const doc = new Document({
+  creator: "library-bootstrap",
+  title: "library-bootstrap 建库档位内部机理说明书",
+  styles: {
+    default: {
+      document: {
+        run: { font: { ascii: "Calibri", eastAsia: "Microsoft YaHei" }, size: 24, color: P.body },
+        paragraph: { spacing: { line: 312 } },
+      },
+      heading1: {
+        run: { font: { ascii: "Calibri", eastAsia: "SimHei" }, size: 32, bold: true, color: P.headingDark },
+        paragraph: { spacing: { before: 360, after: 160 }, outlineLevel: 0 },
+      },
+      heading2: {
+        run: { font: { ascii: "Calibri", eastAsia: "SimHei" }, size: 28, bold: true, color: P.headingDark },
+        paragraph: { spacing: { before: 260, after: 120 }, outlineLevel: 1 },
+      },
+    },
+  },
+  numbering: { config: numberingConfig },
+  sections: [
+    {
+      properties: { page: { size: pgSize, margin: { top: 0, bottom: 0, left: 0, right: 0 } } },
+      children: buildCoverR1({
+        title: "library-bootstrap 建库档位内部机理说明书",
+        subtitle: "L0-L9 十档架构 · 内部机理 · 论文出处 · 验收判据",
+        englishLabel: "LIBRARY BOOTSTRAP MECHANISM SPEC",
+        metaLines: [
+          "适用对象：建库体系使用者、评审者与维护者",
+          "覆盖范围：L0-L9 十档 · 26 项论文与资料题录 · 38 断言测试体系",
+          "文档性质：v2.0.2 偏差修正版 · 严肃模式 · 全文可溯源",
+          "编写时间：2026 年 9 月",
+        ],
+        footerLeft: "LIBRARY-BOOTSTRAP",
+        footerRight: "2026.09",
+      }),
+    },
+    {
+      properties: {
+        type: SectionType.NEXT_PAGE,
+        page: { size: pgSize, margin: bodyMargin,
+          pageNumbers: { start: 1, formatType: NumberFormat.UPPER_ROMAN } },
+      },
+      headers: { default: docHeader() },
+      footers: { default: pageFooter() },
+      children: tocSectionChildren,
+    },
+    {
+      properties: {
+        type: SectionType.NEXT_PAGE,
+        page: { size: pgSize, margin: bodyMargin,
+          pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL } },
+      },
+      headers: { default: docHeader() },
+      footers: { default: pageFooter() },
+      children: bodyChildren,
+    },
+  ],
+});
+
+Packer.toBuffer(doc).then(buf => {
+  fs.writeFileSync("manual.docx", buf);
+  console.log("OK manual.docx written, bytes=" + buf.length);
+});

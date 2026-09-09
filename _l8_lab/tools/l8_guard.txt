@@ -1,0 +1,73 @@
+# l8_guard.txt — L8 卫兵：完整性校验（宪章第一/四条执行器）
+# 用法: python3 l8_guard.txt [--check-templates <skill_root>] [default: full check]
+# 检查: ①live 模板未被未授权修改(与 manifest 对账) ②每个候选三件套齐+基准通过标记
+#       ③lifelog 哈希链完整(报断链行号) ④LEDGER 与候选目录一致
+import os, re, sys, hashlib
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+ROOT = os.getcwd()
+problems = []
+
+def sha1_8(p):
+    return hashlib.sha1(open(p, 'rb').read()).hexdigest()[:8]
+
+# ③ lifelog 哈希链
+log_dir = os.path.join(ROOT, 'knowledge', 'lifelog')
+if os.path.isdir(log_dir):
+    prev = ''
+    for fn in sorted(os.listdir(log_dir)):
+        if not fn.endswith('.mdl'):
+            continue
+        for i, line in enumerate(open(os.path.join(log_dir, fn), encoding='utf-8'), 1):
+            line = line.rstrip('\n')
+            if not line or line.startswith('#'):
+                continue
+            parts = line.split(' | ')
+            if len(parts) < 4 or parts[2] != prev:
+                problems.append('lifelog 断链: %s 第 %d 行 (期望前哈希 %s, 实际 %s)' % (fn, i, prev, parts[2] if len(parts) > 2 else '?'))
+                break
+            calc = hashlib.sha1((parts[0] + '|' + parts[1] + '|' + parts[2]).encode('utf-8')).hexdigest()[:8]
+            if calc != parts[3]:
+                problems.append('lifelog 行哈希不符: %s 第 %d 行 (疑被篡改)' % (fn, i))
+            prev = parts[3]
+else:
+    print('ℹ 无 lifelog 目录（L8 未启用 lifelog）')
+
+# ② 候选三件套 + 台账
+mut_dir = os.path.join(ROOT, 'mutations')
+if os.path.isdir(mut_dir):
+    cand_dir = os.path.join(mut_dir, 'candidates')
+    cands = sorted(os.listdir(cand_dir)) if os.path.isdir(cand_dir) else []
+    ledger = os.path.join(mut_dir, 'LEDGER.md')
+    ledger_text = open(ledger, encoding='utf-8').read() if os.path.exists(ledger) else ''
+    for c in cands:
+        cp = os.path.join(cand_dir, c)
+        if not os.path.isdir(cp):
+            continue
+        for need in ['MOTIVATION.md', 'BENCHMARK.md', 'DIFF.md']:
+            if not os.path.exists(os.path.join(cp, need)):
+                problems.append('候选 %s 缺 %s（宪章第二条）' % (c, need))
+        if c not in ledger_text:
+            problems.append('候选 %s 未入台账 LEDGER.md' % c)
+    # 台账里批准但未生效的
+    for m in re.findall(r'MUT-\d+.*?\|\s*approved', ledger_text):
+        print('⚠ 台账中已批准未晋升:', m.split('|')[0].strip(), '（请执行晋升流程）')
+
+# ① live 体系文件对账（--check-templates <skill_root> 时启用；对账 manifest 全部文件）
+args = sys.argv[1:]
+if '--check-templates' in args:
+    skill_root = args[args.index('--check-templates') + 1]
+    mf = os.path.join(ROOT, '.library-manifest.json')
+    if os.path.exists(mf) and os.path.isdir(skill_root):
+        import json
+        manifest = json.load(open(mf, encoding='utf-8'))
+        if manifest.get('skill') == 'library-bootstrap':
+            for f in manifest['files']:
+                p = os.path.join(ROOT, f['path'])
+                if os.path.exists(p) and sha1_8(p) != f['sha1_8']:
+                    problems.append('live 体系文件漂移(疑未授权修改): %s' % f['path'])
+
+for p in problems:
+    print('✗', p)
+print('l8_guard: %d 问题' % len(problems))
+sys.exit(1 if problems else 0)

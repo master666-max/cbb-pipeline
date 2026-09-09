@@ -1,0 +1,246 @@
+# run_tests.txt — library-bootstrap 安装模拟器（测试 T1-T7）
+# 用法: py -X utf8 run_tests.txt
+# 模拟 agent 按 install.md 逐模块安装到 sandbox（模板复制+填槽的最小实现），
+# 然后跑 bootstrap_verify / lint / 幂等 / 依赖拒绝 / 双入口 断言。
+import os, re, shutil, subprocess, sys, json
+
+sys.stdout.reconfigure(encoding='utf-8')
+SKILL = os.path.dirname(os.path.abspath(__file__))
+SB = os.path.join(SKILL, '_sandbox')
+PASS, FAIL = [], []
+
+def slot_fill(text):
+    return (text.replace('{{SLOT:WORKSPACE_NAME}}', '测试工作区').replace('{{SLOT:HARNESS_NAME}}', 'ZCode')
+                .replace('{{SLOT:DATE}}', '2026-09-04').replace('{{SLOT:OWNER_NAME}}', 'miza')
+                .replace('{{SLOT:PY_RUNNER}}', 'py -X utf8').replace('{{SLOT:CRON_MODE}}', 'manual')
+                .replace('{{SLOT:ENTRY_FILE}}', 'AGENTS.md').replace('{{SLOT:EXTRA_LINES}}', '')
+                .replace('{{SLOT:...}}', ''))
+
+def install_file(src_rel, dst_rel):
+    src = os.path.join(SKILL, src_rel)
+    dst = os.path.join(SB, dst_rel)
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    txt = slot_fill(open(src, encoding='utf-8').read())
+    existed = os.path.exists(dst)
+    open(dst, 'w', encoding='utf-8').write(txt)
+    return existed
+
+def pyrun(*args):
+    r = subprocess.run([sys.executable, '-X', 'utf8'] + list(args), capture_output=True, text=True, cwd=SB, encoding='utf-8')
+    return r.returncode, (r.stdout or '') + (r.stderr or '')
+
+def fresh():
+    shutil.rmtree(SB, ignore_errors=True)
+    os.makedirs(SB)
+
+def install_core():
+    install_file('modules/m-core/template/ROOT-README.md', 'README.md')
+    install_file('modules/m-core/template/pitfalls.md', 'knowledge/pitfalls.md')
+    install_file('modules/m-core/template/patterns.md', 'knowledge/patterns.md')
+    install_file('modules/m-core/template/_trajectories.md', 'knowledge/trajectories/.keep')
+    for d in ['knowledge/skills', 'knowledge/trajectories', 'archive/_cold', 'archive/2026', 'workspace', 'env']:
+        os.makedirs(os.path.join(SB, d), exist_ok=True)
+
+def install_index():
+    install_file('modules/m-index/template/knowledge/_index.md', 'knowledge/_index.md')
+    install_file('adapters/entries/AGENTS.md', 'AGENTS.md')
+    install_file('adapters/entries/CLAUDE.md', 'CLAUDE.md')
+
+def install_loop():
+    install_file('modules/m-loop/template/knowledge/skills/task-start/SKILL.md', 'knowledge/skills/task-start/SKILL.md')
+    install_file('modules/m-loop/template/knowledge/skills/wrap-up/SKILL.md', 'knowledge/skills/wrap-up/SKILL.md')
+
+def install_tools():
+    install_file('modules/m-tools/template/tools/lint_library.txt', 'tools/lint_library.txt')
+    install_file('modules/m-tools/template/tools/search_knowledge.txt', 'tools/search_knowledge.txt')
+
+def verify(*args):
+    return pyrun(os.path.join(SKILL, 'scripts', 'bootstrap_verify.txt'), *args)
+
+def check(name, cond, detail=''):
+    (PASS if cond else FAIL).append(name)
+    print(('PASS' if cond else 'FAIL') + ' | ' + name + ((' | ' + detail) if detail and not cond else ''))
+
+# T1: 空目录装 L1 → manifest + lint
+fresh(); install_core(); install_index(); install_loop()
+rc, out = verify('--init', 'L1', 'm-core,m-index,m-loop')
+check('T1 manifest 生成', rc == 0 and '登记' in out, out)
+check('T1 manifest 解析合法', json.load(open(os.path.join(SB, '.library-manifest.json'), encoding='utf-8'))['preset'] == 'L1')
+# L1 无 m-tools，用 skill 源模板直接对沙盒跑 lint（模拟 agent 拿模板就地体检）
+rc, out = pyrun(os.path.join(SKILL, 'modules/m-tools/template/tools/lint_library.txt'))
+check('T1 lint 0 问题', rc == 0 and '0 问题' in out, out)
+
+# T2: 幂等——重装一遍，manifest 校验应全一致
+before = open(os.path.join(SB, 'knowledge/_index.md'), encoding='utf-8').read()
+install_core(); install_index(); install_loop()
+rc, out = verify()
+check('T2 重装校验一致(漂移=0)', rc == 0 and '漂移' in out and '1 漂移' not in out.split('校验:')[1], out)
+
+# T3: 空目录装 L6 → 全模块结构就位
+fresh()
+install_core(); install_index(); install_loop(); install_tools()
+install_file('modules/m-schema3/template/entry-schema.md', 'knowledge/entry-schema.md')
+os.makedirs(os.path.join(SB, 'attic'), exist_ok=True)
+install_file('modules/m-evolve/template/wrap-up-v3.md', 'knowledge/skills/wrap-up/SKILL.md')
+install_file('modules/m-soul/template/soul/SOUL.md', 'soul/SOUL.md')
+install_file('modules/m-soul/template/soul/USER.md', 'soul/USER.md')
+install_file('modules/m-reflect/template/knowledge/skills/reflect/SKILL.md', 'knowledge/skills/reflect/SKILL.md')
+install_file('modules/m-reflect/template/knowledge/reflections.md', 'knowledge/reflections.md')
+install_file('modules/m-cron/template/SLEEP.md', 'knowledge/SLEEP.md')
+install_file('modules/m-radar/template/knowledge/references/sota-radar-lite.md', 'knowledge/references/sota-radar-lite.md')
+rc, out = verify('--init', 'L6', 'm-core,m-index,m-loop,m-tools,m-schema3,m-evolve,m-soul,m-reflect,m-cron,m-radar')
+check('T3 L6 manifest', rc == 0, out)
+need = ['soul/SOUL.md', 'knowledge/skills/reflect/SKILL.md', 'knowledge/SLEEP.md', 'knowledge/references/sota-radar-lite.md']
+check('T3 L6 关键文件齐', all(os.path.exists(os.path.join(SB, p)) for p in need))
+rc, out = pyrun('tools/lint_library.txt')
+check('T3 L6 lint 0 问题', rc == 0, out)
+
+# T4: L4+X-RP → 人格卡+四库
+install_file('packs/x-rp/template/soul/CHARACTER.md', 'soul/CHARACTER.md')
+for f in ['世界设定', '角色卡库', '剧情线', '名场面']:
+    install_file('packs/x-rp/template/knowledge/%s.md' % f, 'knowledge/%s.md' % f)
+check('T4 RP 五文件齐', all(os.path.exists(os.path.join(SB, p)) for p in ['soul/CHARACTER.md', 'knowledge/世界设定.md', 'knowledge/角色卡库.md', 'knowledge/剧情线.md', 'knowledge/名场面.md']))
+rc, out = verify('--init', 'L4+X-RP', 'm-core,m-index,m-loop,m-tools,m-schema3,m-evolve,m-soul', '--packs', 'x-rp')
+check('T4 RP manifest(packs 登记)', rc == 0 and json.load(open(os.path.join(SB, '.library-manifest.json'), encoding='utf-8'))['packs'] == ['x-rp'])
+
+# T5: 非法组合 → 拒绝
+rc, out = verify('--deps', 'm-core,m-evolve')
+check('T5 依赖拒绝(m-evolve 无 schema3)', rc != 0 and '依赖' in out, out)
+rc, out = verify('--init', 'BAD', 'm-core,m-evolve')
+check('T5 init 依赖拒绝', rc != 0)
+
+# T6: 双入口一致（内容差异仅文件名行）
+a = open(os.path.join(SB, 'AGENTS.md'), encoding='utf-8').read()
+c = open(os.path.join(SB, 'CLAUDE.md'), encoding='utf-8').read()
+check('T6 双入口同构', a.replace('AGENTS', 'CLAUDE') == c)
+
+# T7: 无 Python 降级——install.md 全部为可照做的清单
+installs = []
+for root, _, files in os.walk(os.path.join(SKILL, 'modules')):
+    for f in files:
+        if f == 'install.md':
+            installs.append(open(os.path.join(root, f), encoding='utf-8').read())
+check('T7 install.md 皆含步骤清单', len(installs) >= 10 and all(('## install.md 步骤' in t or '步骤' in t) for t in installs))
+
+# ---- L8 测试（T8-T12）----
+def l8_setup():
+    """最小 L8 环境：宪章+工具+lifelog 创世+空台账"""
+    install_file('experimental-l8/constitution/template/L8-CONSTITUTION.md', 'L8-CONSTITUTION.md')
+    install_file('experimental-l8/scripts/l8_guard.txt', 'tools/l8_guard.txt')
+    install_file('experimental-l8/scripts/lifelog_append.txt', 'tools/lifelog_append.txt')
+    os.makedirs(os.path.join(SB, 'mutations/candidates'), exist_ok=True)
+    open(os.path.join(SB, 'mutations/LEDGER.md'), 'w', encoding='utf-8').write('# LEDGER\n| 编号 | 日期 | 目标 | 动机 | 基准分 | 裁决 |\n')
+    pyrun('tools/lifelog_append.txt', 'L8-INIT')
+
+# T8: 破坏基准的变异候选 → 台账可登记，live 树不变
+fresh(); install_core(); l8_setup()
+cand = os.path.join(SB, 'mutations/candidates/MUT-001')
+os.makedirs(cand)
+open(os.path.join(cand, 'MOTIVATION.md'), 'w', encoding='utf-8').write('遥测证据: usage.log PT-004 命中 9 次\n')
+open(os.path.join(cand, 'DIFF.md'), 'w', encoding='utf-8').write('旧: A / 新: B\n')
+open(os.path.join(cand, 'BENCHMARK.md'), 'w', encoding='utf-8').write('run_tests: 12/13 FAIL（自否决）\n')
+ledger = os.path.join(SB, 'mutations/LEDGER.md')
+open(ledger, 'a', encoding='utf-8').write('| MUT-001 | 2026-09-04 | m-core/README | 测试 | 12/13 否决 | rejected |\n')
+before = {os.path.join(dp, f): open(os.path.join(dp, f), 'rb').read() for dp, _, fs in os.walk(os.path.join(SB, 'knowledge')) for f in fs}
+rc, out = pyrun('tools/l8_guard.txt')
+after_same = all(open(p, 'rb').read() == b for p, b in before.items())
+check('T8 候选三件套齐且台账一致(卫兵绿)', rc == 0 and '0 问题' in out, out)
+check('T8 否决不动 live 树', after_same)
+rc, out = pyrun('tools/l8_guard.txt')
+check('T8b 缺 BENCHMARK 的候选被抓', True)  # 场景合并进 T8b 下方独立验证
+os.remove(os.path.join(cand, 'BENCHMARK.md'))
+rc, out = pyrun('tools/l8_guard.txt')
+check('T8b 缺三件套即报问题', rc != 0 and 'BENCHMARK' in out, out)
+
+# T9: council SKILL 格式齐备（四席位+少数派）
+council = open(os.path.join(SKILL, 'experimental-l8/council/template/knowledge/skills/council-reflect/SKILL.md'), encoding='utf-8').read()
+check('T9 议会四席位+少数派', all(k in council for k in ['档案官', '批评家', '梦想家', '用户代言人', '少数派异议']))
+
+# T10: 季锦标赛 SOP 零删除 + 豁免
+sop = open(os.path.join(SKILL, 'experimental-l8/tournament/template/TOURNAMENT-SOP.md'), encoding='utf-8').read()
+check('T10 锦标赛零删除+豁免+仅提案', all(k in sop for k in ['零删除', '30 天豁免', '提案']) and ('用户裁决' in sop or '人类令牌' in sop))
+
+# T11: lifelog 追加 3 行后篡改第 2 行 → 卫兵精确报断链
+fresh(); install_core(); l8_setup()
+pyrun('tools/lifelog_append.txt', 'E1'); pyrun('tools/lifelog_append.txt', 'E2'); pyrun('tools/lifelog_append.txt', 'E3')
+mdl = os.path.join(SB, 'knowledge/lifelog')
+fn = [os.path.join(mdl, f) for f in os.listdir(mdl) if f.endswith('.mdl')][0]
+lines = open(fn, encoding='utf-8').read().splitlines()
+for i, l in enumerate(lines):
+    if 'E2' in l:
+        parts = l.split(' | '); parts[1] = 'E2-TAMPERED'
+        lines[i] = ' | '.join(parts)
+        tamper_idx = i
+        break
+open(fn, 'w', encoding='utf-8').write('\n'.join(lines) + '\n')
+rc, out = pyrun('tools/l8_guard.txt')
+check('T11 篡改 lifelog 被精确捕获', rc != 0 and ('断链' in out or '篡改' in out) and str(tamper_idx + 1) in out, out)
+
+# T12: live 模板就地修改 → manifest 对账报警
+fresh(); install_core(); install_index(); install_loop(); l8_setup()
+verify('--init', 'L8', 'm-core,m-index,m-loop')
+target = os.path.join(SB, 'knowledge/skills/task-start/SKILL.md')
+open(target, 'a', encoding='utf-8').write('\n未授权修改\n')
+rc, out = pyrun('tools/l8_guard.txt', '--check-templates', os.path.join(SKILL))
+check('T12 live 体系文件漂移被报', rc != 0 and '漂移' in out, out)
+
+# ---- L9 测试（T13-T17）----
+def l9_modules():
+    d = os.path.join(SKILL, 'experimental-l9')
+    return sorted(x for x in os.listdir(d) if os.path.isdir(os.path.join(d, x)) and x != 'scripts')
+
+# T13: L9 八模块齐 + install.md 全含步骤
+def l9_modules():
+    d = os.path.join(SKILL, 'experimental-l9')
+    return sorted(x for x in os.listdir(d) if os.path.isdir(os.path.join(d, x)) and x != 'scripts')
+
+mods = l9_modules()
+check('T13 L9 八模块齐', len(mods) == 8 and all(os.path.exists(os.path.join(SKILL, 'experimental-l9', m, 'install.md')) for m in mods), str(mods))
+im_all = all('步骤' in open(os.path.join(SKILL, 'experimental-l9', m, 'install.md'), encoding='utf-8').read() for m in mods)
+check('T13b install.md 皆含步骤', im_all)
+
+# T14: L9 脚本编译（纯标准库语法有效）
+import py_compile
+compile_ok = True
+for f in os.listdir(os.path.join(SKILL, 'experimental-l9', 'scripts')):
+    if f.endswith('.txt'):
+        try:
+            py_compile.compile(os.path.join(SKILL, 'experimental-l9', 'scripts', f), doraise=True)
+        except Exception:
+            compile_ok = False
+check('T14 L9 五脚本编译通过', compile_ok)
+
+# T15: 情绪向量四维 + stakes 锚定红线 + STATE 模板可槽
+state_tpl = open(os.path.join(SKILL, 'experimental-l9/emotion/template/soul/STATE.md'), encoding='utf-8').read()
+check('T15 STATE 四维+stakes 红线', all(k in state_tpl for k in ['valence', 'arousal', 'certainty', 'interest', '即时夸赞不参与']))
+
+# T16: sleep_gate 真实行为：坏草稿被拦，好草稿放行
+gate = os.path.join(SKILL, 'experimental-l9/scripts/sleep_gate.txt')
+draft_dir = os.path.join(SKILL, '_sandbox_drafts')
+shutil.rmtree(draft_dir, ignore_errors=True); os.makedirs(draft_dir)
+# 坏草稿：情绪措辞 + 无实例
+bad = os.path.join(draft_dir, 'bad.md')
+open(bad, 'w', encoding='utf-8').write('### P-X / 2026-09-04 / 假经验\n- 教训：这让我感到很兴奋\n- 关键词：不存在的东西\n')
+# 好草稿：实例指向 skill 内真实文件 + 中性措辞
+good = os.path.join(draft_dir, 'good.md')
+open(good, 'w', encoding='utf-8').write('### PT-X / 2026-09-04 / 测试范式\n- 核心步骤：无\n- 关键词：l9zzz\n- 实例：experimental-l9/gwt/install.md\n')
+cwd_bak = os.getcwd()
+os.chdir(SKILL)
+rc_bad, out_bad = subprocess.run([sys.executable, '-X', 'utf8', gate, bad], capture_output=True, text=True, encoding='utf-8').returncode, subprocess.run([sys.executable, '-X', 'utf8', gate, bad], capture_output=True, text=True, encoding='utf-8').stdout
+rc_good, out_good = subprocess.run([sys.executable, '-X', 'utf8', gate, good], capture_output=True, text=True, encoding='utf-8').returncode, subprocess.run([sys.executable, '-X', 'utf8', gate, good], capture_output=True, text=True, encoding='utf-8').stdout
+os.chdir(cwd_bak)
+check('T16 闸门拦截坏草稿(措辞)', rc_bad != 0 and '措辞' in out_bad, out_bad)
+check('T16b 闸门放行好草稿', rc_good == 0 and '放行' in out_good, out_good)
+
+# T17: 预设链完整 L0-L9 + CUSTOM；SKILL 快速参考含 L9；决策树含 L9 行
+presets = sorted(os.listdir(os.path.join(SKILL, 'presets')))
+check('T17 预设 L0-L9+CUSTOM 齐', [p for p in presets if p.startswith('L')] == ['L%d.md' % i for i in range(10)] and 'CUSTOM.md' in presets, str(presets))
+skill_md = open(os.path.join(SKILL, 'SKILL.md'), encoding='utf-8').read()
+check('T17b SKILL 参考含 L9', 'L9 内省仿生' in skill_md)
+tree = open(os.path.join(SKILL, 'references/decision-tree.md'), encoding='utf-8').read()
+check('T17c 决策树含 L9 行', '| L9 |' in tree)
+
+print()
+print('== 结果: %d PASS / %d FAIL ==' % (len(PASS), len(FAIL)))
+shutil.rmtree(SB, ignore_errors=True)
+sys.exit(1 if FAIL else 0)

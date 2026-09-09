@@ -1,0 +1,103 @@
+# -*- coding: utf-8 -*-
+# 阶段2-A 补充：near/zero 行的语料原句对照 + 上下文抓取
+import json, os, sys, bisect, re
+from difflib import SequenceMatcher
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(BASE)
+CORPUS = os.path.join(ROOT, '异世界迷宫最深部_知识库', '文字')
+
+def norm(s):
+    out = []
+    for ch in s:
+        o = ord(ch)
+        if (0x4E00 <= o <= 0x9FFF) or (0x3400 <= o <= 0x4DBF) or (0x3040 <= o <= 0x30FF):
+            out.append(ch)
+        elif 'A' <= ch <= 'Z': out.append(ch.lower())
+        elif 'a' <= ch <= 'z' or '0' <= ch <= '9': out.append(ch)
+    return ''.join(out)
+
+files = []
+for dirpath, dirnames, filenames in os.walk(CORPUS):
+    for fn in sorted(filenames):
+        if fn.endswith('.md'): files.append(os.path.join(dirpath, fn))
+files.sort()
+
+normlines, offsets, meta, rawlines = [], [], [], []
+pos = 0
+for fp in files:
+    rel = os.path.relpath(fp, CORPUS)
+    with open(fp, encoding='utf-8', errors='replace') as f:
+        for i, line in enumerate(f, 1):
+            nl = norm(line)
+            normlines.append(nl); offsets.append(pos); meta.append((rel, i)); rawlines.append(line.rstrip('\n'))
+            pos += len(nl) + 1
+MASTER = '\n'.join(normlines)
+
+def line_at(idx):
+    i = bisect.bisect_right(offsets, idx) - 1
+    return i
+
+def best_window(ns):
+    L = len(ns)
+    seeds = [ns[:6], ns[L//2-3:L//2+3], ns[-6:]] if L >= 12 else [ns[:6]]
+    best = (-1, -1, -1)  # (lcs, ratio, idx)
+    for seed in seeds:
+        if len(seed) < 4: continue
+        start = 0; cnt = 0
+        while cnt < 60:
+            idx = MASTER.find(seed, start)
+            if idx < 0: break
+            cnt += 1; start = idx + 1
+            lo = max(0, idx-30); hi = min(len(MASTER), idx+L+60)
+            win = MASTER[lo:hi]
+            sm = SequenceMatcher(None, ns, win, autojunk=False)
+            r = sm.ratio(); m = sm.find_longest_match(0, L, 0, len(win))
+            if (m.size, r, -idx) > (best[0], best[1], -best[2]): best = (m.size, r, idx)
+    return best
+
+rs = json.load(open(os.path.join(BASE, '_tmp_chant_results.json'), encoding='utf-8'))
+targets = [r for r in rs if r['status'] in ('near', 'mixed', 'zero', 'nochant')]
+out = []
+for r in targets:
+    out.append('='*20 + ' uid %s | %s | %s' % (r['uid'], r['key'], r['src']))
+    for l in r['lines']:
+        ns = norm(l['text'])
+        if l['status'] == 'exact':
+            idx = MASTER.find(ns)
+            i = line_at(idx)
+            out.append('  [EXACT] lib : %s' % l['text'][:100])
+            out.append('          corr: %s:%d %s' % (meta[i][0].replace(chr(92),'/').split('/')[-1], meta[i][1], rawlines[i][:100]))
+        else:
+            lcs, ratio, idx = best_window(ns)
+            if idx >= 0:
+                i = line_at(idx)
+                out.append('  [%s lcs=%d/%d] lib : %s' % (l['status'], lcs, len(ns), l['text'][:100]))
+                out.append('          corr: %s:%d %s' % (meta[i][0].replace(chr(92),'/').split('/')[-1], meta[i][1], rawlines[i][:120]))
+            else:
+                out.append('  [%s] lib : %s   (语料无种子命中)' % (l['status'], l['text'][:100]))
+    out.append('')
+open(os.path.join(BASE, '_tmp_chant_near_detail.txt'), 'w', encoding='utf-8').write('\n'.join(out))
+print('written _tmp_chant_near_detail.txt', len(targets), 'entries')
+
+# ---- 归属抽验：抽20条exact，输出命中处上下文（前6行后2行） ----
+import random
+random.seed(20260909)
+exs = [r for r in rs if r['status'] == 'exact']
+sample = random.sample(exs, 20)
+# 保证角色多样性：按第一行角色名分层其实更好，直接随机+手工读
+ctx = []
+for r in sample:
+    first_chant = r['lines'][0]
+    ns = norm(first_chant['text'])
+    idx = MASTER.find(ns)
+    i = line_at(idx) if idx >= 0 else -1
+    ctx.append('='*20 + ' uid %s | %s' % (r['uid'], r['key']))
+    ctx.append('  咏唱句: ' + r['lines'][0]['text'][:60])
+    if i >= 0:
+        for j in range(max(0, i-6), min(len(rawlines), i+3)):
+            tag = '>>' if j == i else '  '
+            ctx.append('  %s %s:%d %s' % (tag, meta[j][0].replace(chr(92),'/').split('/')[-1], meta[j][1], rawlines[j][:110]))
+    ctx.append('')
+open(os.path.join(BASE, '_tmp_chant_attrib_sample.txt'), 'w', encoding='utf-8').write('\n'.join(ctx))
+print('written _tmp_chant_attrib_sample.txt')

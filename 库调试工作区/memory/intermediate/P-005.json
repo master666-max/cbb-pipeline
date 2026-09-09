@@ -1,0 +1,25 @@
+{
+ "id": "P-005",
+ "created_at": "2026-09-05",
+ "updated_at": "",
+ "content": "分发包模板必须中性化 + install.md 引用必须可校验（源库用户数据泄漏事故）：①分发包的模板默认值必须是「中立 + {{SLOT}} + 【待填充】」，源库用户画像只能进 references/示例且标注可删——把 dogfood 数据当默认模板 = 给所有未来装库者装一个「假用户模型」（铁律 2 的装库侧违反）；②install.md 写了「复制 template/X」但 X 不存在（引用完整性无校验）；③注释写意图、代码写",
+ "keywords": [
+  "分发包",
+  "模板中性化",
+  "用户数据",
+  "引用完整性",
+  "行为测试",
+  "dogfood",
+  "假用户模型"
+ ],
+ "links": [
+  "PT-005",
+  "TWIN 中性化修复"
+ ],
+ "source_event_id": "M-94abfadc3b91",
+ "importance": 6,
+ "confidence": "高",
+ "validity": {
+  "t_valid": "2026-09-05"
+ }
+}

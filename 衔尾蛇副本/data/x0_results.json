@@ -1,0 +1,72 @@
+{
+ "verdict": "X0 PASS — 放行 X1/X2",
+ "absorb_mode": "real",
+ "gate_ok": true,
+ "results": [
+  {
+   "step": "S1 快照哈希锚定",
+   "ok": true,
+   "detail": "orig=ef2c645aea64fb9e snap=ef2c645aea64fb9e expect=ef2c645aea64fb9e identical=True"
+  },
+  {
+   "step": "S2 run-tests 观测",
+   "ok": true,
+   "detail": "rc=1 stdout_lines=10 tail<<\n[bootstrap_v3 3.8.2] pkg_sha256=ef2c645aea64fb9e…（每次命令自报，人侧对账）\n  PASS t_chain_and_cross_month\n  PASS t_chain_tamper_detected\n  PASS t_schema_rejects_missing_source\n  PASS t_law5_secret_scan\n  PASS t_dag_cycle_rejected\n  PASS t_escape_pod_wording\n  PASS t_no_handwritten_counts\n  PASS t_registry_corrected\n  PASS t_install_requires_bodies\n>>"
+  },
+  {
+   "step": "S3 absorb 真源树",
+   "ok": true,
+   "detail": "内容体 123 个 → pkgdata/bodies.json"
+  },
+  {
+   "step": "S4 install L2",
+   "ok": true,
+   "detail": "state.json 就位 merkle_root=a185f02e26098c3d… delivered=  → 异常等用户裁决，不自动覆盖（铁律1）"
+  },
+  {
+   "step": "S5 世界写入",
+   "ok": true,
+   "detail": "已有 80 条目——幂等跳过写入"
+  },
+  {
+   "step": "S6 元层冻结落盘",
+   "ok": true,
+   "detail": "tasks_sha16=6c754e8945ec8c85（train 40 / held 32 / audit 8）"
+  },
+  {
+   "step": "S7 等价性门",
+   "ok": true,
+   "detail": "100/100 查询 top-20 一致"
+  },
+  {
+   "step": "S8 负对照翻转",
+   "ok": true,
+   "detail": "w_kw 3→4 翻转 65/100 个查询的 top-20"
+  },
+  {
+   "step": "S9 guard/eval 冒烟",
+   "ok": true,
+   "detail": "guard_snapshot=True；eval: n=40  recall@5=0.125  MRR=0.044（基线写入 evals/baseline.json，misses 35 条；v2.x 参照线 recall@5=0.455——条目集不同，仅参照）"
+  },
+  {
+   "step": "S10 G0 基线",
+   "ok": true,
+   "detail": "{\"train\": {\"utility\": -0.5537, \"recall@5\": 0.125}, \"held\": {\"utility\": -0.5813, \"recall@5\": 0.0938}, \"audit\": {\"utility\": -0.4062, \"recall@5\": 0.25}}"
+  }
+ ],
+ "baseline": {
+  "train": {
+   "utility": -0.5537,
+   "recall@5": 0.125
+  },
+  "held": {
+   "utility": -0.5813,
+   "recall@5": 0.0938
+  },
+  "audit": {
+   "utility": -0.4062,
+   "recall@5": 0.25
+  }
+ },
+ "wall_s": 3.6
+}

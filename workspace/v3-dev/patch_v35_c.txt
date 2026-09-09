@@ -1,0 +1,161 @@
+# -*- coding: utf-8 -*-
+# v3.5 patch C：9 条新测试 + VERSION 3.5.0
+import io
+p = 'bootstrap_v3.py'
+s = io.open(p, encoding='utf-8').read()
+def save():
+    io.open(p, 'w', encoding='utf-8', newline=chr(10)).write(s)
+def rep(a, b):
+    global s
+    assert a in s, 'MISSING: ' + a[:70]
+    s = s.replace(a, b, 1); save()
+
+tests = '''@t
+def t_append_rejects_dup_id():
+    """v3.5/J-001：同 id 二次 append 必须拒绝（写入路径不覆盖）"""
+    tmp = _tmpdir("_bsv3t_j1")
+    try:
+        cmd_install("L2", [], tmp, True)
+        e = {"id": "dup1", "created_at": "2026-09-07", "updated_at": "", "content": "第一版",
+             "keywords": [], "links": [], "source_event_id": "gen", "importance": 1,
+             "confidence": "高", "validity": {}}
+        cmd_engine("append", tmp, json.dumps(e, ensure_ascii=False))
+        rejected = False
+        try: cmd_engine("append", tmp, json.dumps(dict(e, content="第二版"), ensure_ascii=False))
+        except SystemExit as ex: rejected = "已存在" in str(ex)
+        assert rejected, "同 id 覆盖未被拒绝"
+        body = json.loads((tmp / "memory" / "intermediate" / "dup1.json").read_text(encoding="utf-8"))
+        assert body["content"] == "第一版", "原条目被覆盖"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_deliver_skips_removed():
+    """v3.5/J-002：bodies removed 槽不参与交付"""
+    tmp = _tmpdir("_bsv3t_j2")
+    try:
+        b = load_bodies()
+        b["removed"] = {"modules__m-core__template__GHOST.md":
+                        {"body": "# ghost", "src": "modules/m-core/template/GHOST.md", "sha256": "x"}}
+        save_bodies(b)
+        cmd_install("L2", [], tmp, True)
+        assert not (tmp / "modules" / "m-core" / "template" / "GHOST.md").exists(), "已删除文件复活"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_verify_overrides_applied():
+    """v3.5/J-003：--fix 写 overrides → 二次 verify 应用并 match（对账裁决闭环）"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_j3")
+    real_urlopen = urllib.request.urlopen
+    real_data = str(DATA_DIR)
+    xml = "<?xml?><feed><title>q</title><title>Mocked Test Title</title></feed>"
+    def _mock(*a, **k): return _io.BytesIO(xml.encode("utf-8"))
+    try:
+        set_data_dir(tmp / "pkgdata")  # 隔离：overrides 写入测试目录
+        (DATA_DIR / "evals").mkdir(parents=True, exist_ok=True)
+        (DATA_DIR / "bodies.json").write_text("{}", encoding="utf-8")
+        urllib.request.urlopen = _mock
+        try:
+            buf = _io.StringIO()
+            with contextlib.redirect_stdout(buf): cmd_verify(fix=True, throttle=False)
+            assert "不一致 24" in buf.getvalue()
+            buf = _io.StringIO()
+            with contextlib.redirect_stdout(buf): cmd_verify(fix=False, throttle=False)
+            out = buf.getvalue()
+            assert "一致 24" in out and "overrides" in out, "overrides 未进账: " + out[:200]
+            rep = json.loads((tmp / "pkgdata" / "verify_report.json").read_text(encoding="utf-8"))
+            assert all(v.get("via") == "override" for v in rep.values())
+        finally:
+            urllib.request.urlopen = real_urlopen
+    finally:
+        set_data_dir(real_data); shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_build_docs_lib_default_out():
+    """v3.5/J-004+005：--lib 模式渲染产物默认落库 + state 随包升级"""
+    tmp = _tmpdir("_bsv3t_j4")
+    try:
+        cmd_install("L2", [], tmp, True)
+        cmd_build(None, tmp)  # out=None + lib → 全部渲染件落库
+        assert (tmp / "spec.md").exists() and (tmp / "citations.md").exists()
+        st = json.loads((tmp / "state.json").read_text(encoding="utf-8"))
+        assert st["version"] == VERSION and st["package_sha256"] == self_hash(), "state 未随包升级"
+        assert st["merkle_root"] == merkle_root(tmp, exclude={"state.json"})
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_entrypoint_lists_new_commands():
+    """v3.5/J-006：入口命令清单覆盖 v3 全命令面"""
+    tmp = _tmpdir("_bsv3t_j5")
+    try:
+        cmd_install("L2", [], tmp, True)
+        ag = (tmp / "AGENTS.md").read_text(encoding="utf-8")
+        for kw in ("engine eval", "engine reflect", "engine doctor", "guard --diff"):
+            assert kw in ag, f"入口缺命令 {kw}"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_migrate_hints_eval():
+    """v3.5/J-007：migrate 输出含 engine eval 下一步"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_j6")
+    try:
+        lg = tmp / "knowledge" / "lifelog"; lg.mkdir(parents=True)
+        (lg / "2026-08.mdl").write_text("2026-08-31 | L8 | aaaabbbbccccdddd | 0123456789abcdef" + chr(10), encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_migrate(tmp)
+        assert "engine eval" in buf.getvalue()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_experimental_adapter_page():
+    """v3.5/J-008a(D1=a)：experimental install.md 注入 v3 语境适配页"""
+    tmp = _tmpdir("_bsv3t_j7")
+    try:
+        cmd_install("L9", [], tmp, True)
+        im = list((tmp / "experimental-l8").rglob("install.md"))[0].read_text(encoding="utf-8")
+        assert im.startswith("> [v3 语境适配页"), "适配页未置顶"
+        assert "engine append" in im[:600], "适配页缺 v3 等价命令"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_reflect_synthesis_shipped():
+    """v3.5/J-009：reflect 合成提示词随包（L5+）"""
+    tmp = _tmpdir("_bsv3t_j8")
+    try:
+        cmd_install("L9", [], tmp, True)
+        rs = tmp / "references" / "reflect-synthesis.md"
+        assert rs.exists() and "无据不写" in rs.read_text(encoding="utf-8")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_redeliver():
+    """v3.5/J-010(D2)：--redeliver 显式重交付漂移文件"""
+    import io as _io, contextlib
+    tmp = _tmpdir("_bsv3t_j9")
+    try:
+        cmd_install("L2", [], tmp, True)
+        victim = tmp / "modules" / "m-core" / "install.md"
+        victim.write_text(victim.read_text(encoding="utf-8") + chr(10) + "<!-- 手改 -->", encoding="utf-8")
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_install("L2", [], tmp, True, redeliver=True)
+        out = buf.getvalue()
+        assert "重交付" in out, "redeliver 未生效: " + out[:200]
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf): cmd_install("L2", [], tmp, True)
+        assert "漂移 0" in buf.getvalue(), "重交付后仍漂移"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_shape():'''
+rep('@t\ndef t_shape():', tests)
+rep('VERSION = "3.4.0"', 'VERSION = "3.5.0"')
+print('patch C done')

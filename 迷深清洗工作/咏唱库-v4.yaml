@@ -1,0 +1,529 @@
+# web版 咏唱分库（P3）
+# ============================================================
+# 依据：计划书 §5（咏唱是唯一"原文原样保留"板块，不压缩/不改写/不合并，只分类打标+按层级抽取）
+# 分类：普通魔法咏唱 / 代价咏唱 / 真正魔法(固有技) / 守护者开场白 / 辞世诗 / 共鸣魔法 / 技能名列表
+# 破折号兼容 [—─]{2,}；魔法名双语 magic_name_jp / magic_name_en 分字段
+# 咏唱正句逐字保真（红线），——『』·间隔点原样保留
+# ============================================================
+
+schema_version: 1.0
+edition: web
+scope: 04_web版 第一章~第十章（含一~三章文库转写补全web_reconstructed，四~十章web_original）
+
+# ─────────────── 二、真正魔法 / 固有技咏唱（最高优先级） ───────────────
+incantations:
+  # 「三门/三阶段」基准样式：──『上句』── ／ ──『下句』── ／ ——魔法《名》
+  - incantation_id: di_gradient_realize
+    caster: 相川涡波
+    alias_at_scene: 基督·欧亚（web版前章化名）/ 始祖涡波
+    type: 真正魔法（最终咏唱）
+    incantation_text: |
+      「──『于此起誓，种种罪过，吾当清偿』──！」
+      「──『于此世之终结至来，此誓亦无毁弃之日』──！！」
+      「是矣！『冀请赐吾予彼等救赎之力』──！！」
+      「──魔法《次元决战演算『先谭』（Dimension・Gradient Realize）》！！！」
+    magic_name_jp: 次元决战演算『先谭』
+    magic_name_en: Dimension・Gradient Realize
+    effect: 将未来与现在联结，重算因果
+    cost: 觉醒『理的盗窃者』身份后解禁；消耗大量 MP
+    trigger_condition: 终局对决、为拯救全员时
+    power_tier: S（真正魔法级）
+    source: web版 第零之试炼 章节段（第十章 第50x话档/次元决战演算系列）
+    related_incantations: ["次元决战演算『前日谭』（Dimension・Gradient Recall）","次元决战演算『再谭』（Dimension・Gradient Revive）"]
+    edition: web_original
+
+  - incantation_id: di_gradient_recall
+    caster: 相川涡波
+    type: 真正魔法（固有技，次元决战演算·前日谭）
+    incantation_text: |
+      「——『既然未来得以与现在联结』『则现在亦当与过去相连』——魔法（・・）《次元决战演算（Dimension Gradient）『前日谭（Recall）』》。」
+    magic_name_jp: 次元决战演算『前日谭』
+    magic_name_en: Dimension Gradient Recall
+    power_tier: S
+    source: 第八章 第405话 神圣之理 (md-0291)
+    edition: web_original
+
+    effect: "以次元读取/过去视将过去与现在联结，重现既定历史场景与声音（广域过去视）"
+  - incantation_id: di_gradient_revive
+    caster: 相川涡波
+    type: 真正魔法（固有技，次元决战演算·再谭）
+    incantation_text: |
+      「——**魔法（・・）**《次元决战演算（Dimension・Gradient）『再谭（Revive）』》。」
+    magic_name_jp: 次元决战演算『再谭』
+    magic_name_en: Dimension Gradient Revive
+    effect: 引导未来至更美满的最后之页
+    source: web版 第十章 最终篇（对未能得救的灵魂伸出救济之手时）
+    edition: web_original
+
+  - incantation_id: di_gradient_advance
+    caster: 相川涡波
+    type: 真正魔法（固有技，次元决战演算·先谭『未来视』）
+    incantation_text: |
+      「——次元魔法《次元决战演算『先谭』》！！」
+    magic_name_jp: 次元决战演算『先谭』（未来视）
+    magic_name_en: Dimension Gradient Realize
+    note: 阳滝亦能模仿此技，且仅展开于眼球即见未来，更为精练。
+    source: web版 终局对战（第49x话档）
+    edition: web_original
+
+    effect: "仅展开于眼球即可预见未来（未来视），预判对手攻势，较完整咏唱更为精练"
+  - incantation_id: torsion_lirpa
+    caster: 莉帕
+    type: 真正魔法（固有技）
+    incantation_text: |
+      「安心吧莉帕，战斗会结束在这个庭院里——『根茎捩转而后屈折』『花瓣零落随风飘散』——魔法《Torsion》。」
+    magic_name_jp: Torsion（托尔西昂）
+    magic_name_en: Torsion
+    effect: 制作出让空间歪曲的花朵；可大范围展开
+    source: 第八章 第401话 始祖 (md-0258)
+    edition: web_original
+
+  - incantation_id: sin_fafnir
+    caster: 相川涡波（或缇达阵营）
+    type: 真正魔法
+    incantation_text: |
+      「——『为虫毒所啃蚀的躯体』『我与世界（你）皆为当诛之人』——魔法《弑神的恶龙（Sin・Fáfnir）》」
+    magic_name_jp: 弑神的恶龙
+    magic_name_en: Sin・Fáfnir
+    speech_pattern_note: "『世界（你）』皆为当诛之人——世界/我对照结构"
+    source: 第十章 第501话 『真正的丝线』 (md-0279)
+    edition: web_original
+
+    effect: "以「当诛之人」的觉悟发动的真正魔法级讨伐咏唱，对世界（你）与自身一体施以裁决"
+  - incantation_id: heavenfall_niflheim
+    caster: 相川涡波
+    type: 真正魔法
+    incantation_text: |
+      「——『我将孤身迎向终结』『甚至不曾与世界（你）相触』——魔法（・・）《冻结逝水流年的雪底坚冰（HeavenFall・Niflheim）》」
+    magic_name_jp: 冻结逝水流年的雪底坚冰
+    magic_name_en: HeavenFall・Niflheim
+    speech_pattern_note: "世界（你）对照结构"
+    source: 第十章 第501话 『真正的丝线』 (md-0280)
+    edition: web_original
+
+    effect: "冻结逝水流年的冰系真正魔法，以「孤身迎向终结」之姿冻结时间洪流"
+  - incantation_id: hell_million_shine
+    caster: 海莉・维斯普洛佩（魔石人类现代最后一人）名讳血魔法
+    type: 真正魔法（共鸣/血魔法）
+    incantation_text: |
+      「——『　　声满青空，拯救世界(你)　』『齐心祈祷。于此刻链接万千血脉，奏响真正的灵魂之歌』。——魔法《众生之赤光『海莉・维斯普洛佩』》。」
+    magic_name_jp: 众生之赤光『海莉・维斯普洛佩』
+    magic_name_en: Hell・Vilmillion・Shine
+    note: 将现代最后一位『魔石人类』之名当作鲜血魔法咏唱
+    source: 第十章 第491话 击败『理的盗窃者』的方法 / 第501话 (md-0279)
+    edition: web_original
+
+    effect: "以最后一位魔石人类之名联结万千血脉、奏响灵魂之歌的共鸣型血魔法"
+  - incantation_id: mistrust_splitlands
+    type: 真正魔法
+    incantation_text: |
+      「——『我将背叛己身直至永劫』——魔法（・・）《迷失之雾与夜之终焉》(Mistrust・Splitlands)」
+    magic_name_jp: 迷失之雾与夜之终焉
+    magic_name_en: Mistrust・Splitlands
+    source: 第十章 第500话 第百二十之试炼『绊』 (md-0272)
+    edition: web_original
+
+    effect: "以「背叛己身直至永劫」的觉悟发动的大范围终结咏唱（迷失之雾与夜之终焉）"
+  - incantation_id: rebirth_divine
+    caster: 缇娅拉（千年前圣人）／再诞
+    type: 神圣魔法（共鸣）
+    incantation_text: |
+      「——『啊啊，爱才是这世上最伟大之物』！『恋爱方是人生，是人活于世的意义之所在』！『在他人的恋爱之路上横加干扰的人统统去死吧』！以雷梵教的圣人之名，为二人的未来献予祝福！——神圣魔法《再诞》！！」
+    magic_name_jp: 再诞
+    magic_name_en: Rebirth
+    source: 第八章 第392话 『告白』之日 (md-????)
+    edition: web_original
+
+    effect: "以千年前圣人之名献上祝福的神圣共鸣魔法，为二人的未来祝福"
+  - incantation_id: dimension_origin
+    caster: 相川涡波（始祖涡波根源魔法）
+    type: 固有技（原点魔法）
+    incantation_text: |
+      「——次元魔法《Dimension》。」
+    magic_name_jp: 次元魔法《Dimension》（维度）
+    magic_name_en: Dimension
+    note: 魔法涡波的中心与根基；『次元的紫色手腕』的起点。
+    source: web版 第十章 最终篇（作为起点的魔法名）
+    edition: web_original
+
+    effect: "次元魔法的原点与根基，一切次元之力（次元的紫色手腕）的起点"
+  - incantation_id: phantom_purple_arm
+    caster: 相川涡波（始祖涡波掌握次元之力极致时）
+    type: 固有技（次元之力完全体）
+    incantation_text: |
+      「……终于成功了……那么，这就是『次元的紫色手腕』就叫做——魔法《幻之紫腕》」
+    magic_name_jp: 幻之紫腕
+    magic_name_en: Phantom Purple Arm
+    note: 能将紫色魔力缠绕整条手臂，为次元之力的完全体
+    source: web版 千年前修炼段
+    edition: web_original
+
+    effect: "将紫色魔力缠绕整条手臂的次元之力完全体，可大幅强化近身作战"
+  - incantation_id: winter_dimension
+    caster: 相川涡波
+    type: 固有技（次元之冬系列）
+    incantation_text: |
+      「──魔法『次元之冬』！」
+    magic_name_jp: 次元之冬
+    magic_name_en: Di・Winter
+    note: 升级链中段（维度・多重展开→次元之冬→次元决战演算系列）
+    source: 第三章 第一章-于是，开始 / 舞闘大会第三天
+    edition: web_reconstructed
+
+    effect: "广域压制型次元魔法（次元之冬），升级链中段的关键战力"
+  - incantation_id: reading_shift
+    caster: 相川涡波（次元之理的盗窃者）
+    type: 固有技（过去视/重读）
+    incantation_text: |
+      （大量使用，如：）——
+      「——次元之理的盗窃者涡波翻过书页。……魔法《Reading・Shift》」
+    magic_name_jp: Reading・Shift（阅览转换/重读）
+    magic_name_en: Reading Shift
+    effect: 广域型过去视；重现历史场景与声音
+    note: 与'新的魔法《New・Reading》'共同使用以翻译异界史书
+    source: 第十章（法尼亚的历史/赫尔米娜回忆篇）
+    edition: web_original
+
+
+  # ─────────────── 一、普通魔法咏唱（示例，按魔法名可去重合并）───────────────
+  # 【注】普通魔法咏唱为短句+魔法名，全库数量庞大，此处列代表性条目，完整命中见复核队列。
+  - incantation_id: flame_arrow
+    caster: （多位火属性使）
+    type: 普通魔法咏唱
+    incantation_text: "『火焰箭』"
+    magic_name_jp: 火焰箭
+    magic_name_en: Flame Arrow
+    effect_brief: 火属性攻击
+    edition: web_original
+
+  - incantation_id: ice_arrow
+    caster: 相川涡波（早期）
+    type: 普通魔法咏唱
+    incantation_text: "『冰之矢』"
+    magic_name_jp: 冰之矢
+    magic_name_en: Ice・Arrow
+    note: 升级链起点之一（《文库转web字词对照表》：冰结箭/Ice·Arrow→『冰之矢』）
+    edition: web_reconstructed
+
+    effect: "冰属性攻击魔法（冰之矢），升级链起点之一"
+  - incantation_id: dimension_multi
+    caster: 相川涡波
+    type: 普通魔法咏唱（索敌/基础）
+    incantation_text: "『Dimension・多重展开』"
+    magic_name_jp: 维度・多重展开
+    magic_name_en: Dimension・Multiple Expansion
+    note: 升级链早期索敌用；web词频 ×34
+    edition: web_original
+
+    effect: "次元属性索敌/多重展开的基础魔法，支撑探索期感知与机动（web词频×34）"
+  - incantation_id: connection
+    caster: 相川涡波
+    type: 普通魔法咏唱（连接/门）
+    incantation_text: "「——魔法（Connection）。」"
+    magic_name_jp: 连接
+    magic_name_en: Connection
+    note: web×272；状态栏/技能窗口保留拉丁
+    edition: web_original
+
+    effect: "门/连接型空间魔法，承担转移与战线连接（web×272，全库最高频）"
+  - incantation_id: freezing
+    caster: 相川涡波
+    type: 普通魔法咏唱（冰结系）
+    incantation_text: "『冻结』"
+    magic_name_jp: 冻结
+    magic_name_en: Freeze
+    note: web×53；技能名用法
+    edition: web_original
+
+    effect: "冰结系攻击/控场魔法（冻结），亦作技能名使用（web×53）"
+  # ─────────────── 三、代价咏唱（本质：以自身承受为代价）───────────────
+  - incantation_id: relife_northfield
+    caster: 诺斯菲·弗茨亚茨
+    type: 代价咏唱
+    incantation_text: |
+      作为『代替』，将国民的『魔之毒』集于我身——
+      作为『代替』，将病痛与扭曲集于我身——
+      作为『代替』，将不幸与悲伤集于我身——
+      作为『代替』，将憎恨与战意集于我身——
+      作为『代替』，将所有的思念集于我身——！
+    cost_type: 承接一国国民负面（魔之毒/病痛/不幸/憎恨/思念）
+    cost_desc: 以守护者身份代众生受难
+    trigger_condition: 为治愈国家/世界而发动
+    effect: 从"为了代替而生的光"到"作为代替而死的光"，力量增强升越守护者极限
+    speech_pattern_note: 排比句"作为『代替』……集于我身"为独有指纹，原样保留
+    source: 第7-2章 第312话 ■■六十，盈满■■ (md-??)
+    related: ["relife_northfield_full（第309话前后 代替之光系列）"]
+    edition: web_original
+
+  - incantation_id: relife_northfield_final
+    caster: 诺斯菲·弗茨亚茨
+    type: 代价咏唱（升华）
+    incantation_text: |
+      从为了代替而生的光，到作为代替而死的光。
+      真正的『魔·法』就此升华。
+      在『明朗的光之世界』里，我结束了自己的咏唱。
+      如此一来，我将化为光之魔法（Nosfy），继续闪耀。
+    cost_type: 化为光之魔法，自身消亡/升华
+    effect: 成为光之理的盗窃者终局形态
+    source: 第7-3章（对拉古涅决战前）
+    edition: web_original
+
+  - incantation_id: 元老院blood_economy
+    caster: 元老院/北方宰相一脉
+    type: 代价咏唱（技能/咏唱以信仰为代价）
+    incantation_text: |
+      「……『咏唱』一类的『千年前的知识』……以人们对雷梵教的信仰为『代价』的形式来供给。」
+    cost_type: 供以信仰为代价（雷梵教信仰/生命力魔力）
+    effect: 使希丝(使徒)生命魔力得以供/显现
+    source: 第7-2章 第309话 狂信徒们 (md-??)
+    edition: web_original
+
+  - incantation_id: 缇瓦拉再诞代价
+    caster: 缇娅拉（千年前圣人）
+    type: 代价咏唱（复活代价）
+    incantation_text: |
+      「──我绝对不希望以自己的女儿们的牺牲为代价，让自己重新复活。就算你们想为了我而牺牲自己也是没用的……」
+    cost_type: 拒绝以『魔石人类』女儿牺牲为复活代价
+    effect: 甘愿不再复活，保护女儿（魔石人类母亲）
+    source: 第7-1章 第273话 不放弃的心
+    edition: web_original
+
+  # ─────────────── 四、守护者开场白（身份宣誓，·间隔点不可删）───────────────
+  - incantation_id: guardian_10_阿尔缇
+    caster: 阿尔缇（火之理的盗窃者）· 第10层
+    type: 守护者开场白
+    guardian_rank: 第十层
+    incantation_text: |
+      「──欢迎光临，探索者基督。这里，这·烈·火·灼·烧·的·山·丘·便·是·第·十·层。火之理的盗窃者阿尔缇的阶层。此行在外，又有所赶工，招待多有不周，但是无妨，你大可将此处当作迷宫的第十层。接下来，虽说有些迟了，不过还望你能接受我这『第十之试练』。」
+    source: 第二章 第五章-煉狱十层，英雄来兮 (md-0207)
+    edition: web_reconstructed
+
+    effect: "身份宣誓式开场白：宣告第十层与火之理盗窃者的阶层，开启第十之试练"
+  - incantation_id: guardian_20_缇达
+    caster: 缇达（暗之理的盗窃者）· 第20层
+    type: 守护者开场白
+    guardian_rank: 第二十层
+    incantation_text: |
+      「从·现·在·开·始·哦。从·现·在·起，这·整·个·联·合·国·就·是·二·十·层。暗之理的盗窃者缇达的阶层。此行在外，又有所赶工，招待多有不周，但是无妨，你大可将此处当作迷宫的第二十层。来吧，让我们开始真正的试练吧。」
+    source: 第二章 第五章-煉狱十层，英雄来兮 (md-??)
+    edition: web_reconstructed
+
+    effect: "身份宣誓式开场白：宣告整个联合国为第二十层，开启真正的试练"
+  - incantation_id: guardian_30_诺文
+    caster: 诺文（地之理的盗窃者）· 第30层
+    type: 守护者开场白
+    guardian_rank: 第三十层
+    incantation_text: |
+      「这·里、这·大·剧·场·船『瓦·尔·法·拉』正·是·三·十·层！地之理的盗窃者诺文的阶层！虽然强行借用，外加有所赶工而招待不周，但是你大可将此处视为迷宫三十层！来吧，开始『第三十之试练』吧！真正的决赛、这才刚刚开始──！！」
+    source: 第三章 第四章-鍊狱三十，亲友至矣 (md-?)
+    edition: web_reconstructed
+
+    effect: "身份宣誓式开场白：宣告大剧场船「瓦尔法拉」为第三十层，开启第三十之试练"
+  - incantation_id: guardian_60_诺斯菲
+    caster: 诺斯菲（光之理的盗窃者）· 第60层
+    type: 守护者开场白
+    guardian_rank: 第六十层
+    incantation_text: |
+      「——这·里，这·世·界·的『顶·点』便·是·六·十·层。『光之理的盗窃者』诺斯菲的阶层。此处并非赶工所成，它确确实实是高度与亮度冠绝此世的场所。拉古涅，就在这片白光之下好好确认吧。给我将你的一切都展露出来……！这就是她留下的『第六十之试练』……！！」
+    source: 第7-3章 第342话/第344话 (md-?)
+    edition: web_original
+
+
+    effect: "身份宣誓式开场白：宣告世界顶点第六十层，下达第六十之试练"
+  # ─────────────── 五、辞世诗（话标题载体 + 正文载体）───────────────
+  # 话标题载体已另存 _辞世诗_话标题索引.md；此处列正文骈文代表
+  - incantation_id: death_poem_诺斯菲
+    character: 诺斯菲·弗茨亚茨（光之理的盗窃者·第60层）
+    type: 辞世诗（正文·代众生受难）
+    death_poem: |
+      （六层守护者辞世句——以经受众生痛苦为指代）
+    layer: 60
+    note: 诺斯菲代价咏唱"作为『代替』……集于我身"交织其辞世意涵
+    edition: web_original
+
+    effect: "辞世句：以经受众生痛苦为指代，承载守护者代众生受难之意"
+  - incantation_id: death_poem_阿尔缇
+    character: 阿尔缇（火之理的盗窃者·第10层）
+    type: 辞世诗（守护者辞世句）
+    layer: 10
+    note: 第十章末其辞世（"这·火·山·丘"守护段）
+    edition: web_original
+
+    effect: "辞世句：以「这·火·山·丘」守护段作结，完成火之理守护者终章"
+  # ─────────────── 六、共鸣魔法（双人/多人合唱型）───────────────
+  - incantation_id: resonance_inviolable_ice
+    type: 共鸣魔法
+    participants: [缇娅拉系（大圣堂）, 圣母系]
+    incantation_text: |
+      「「「共鸣魔法『Inviolable·Ice Room』」」」
+      「『『──共鸣魔法｜『Inviolable・冰 Room』！！』』」
+    magic_name_jp: Inviolable（不可侵犯）
+    magic_name_en: Inviolable・Ice Room
+    note: 在大圣堂对抗基督的凶恶共鸣魔法；缇娅拉的再诞魔法亦为共鸣型
+    source: 第7-1章 第272话 妨碍 / 第274话 第一手棋
+    edition: web_original
+
+    effect: "大圣堂结界型共鸣魔法（不可侵犯之冰），多人共鸣发动以对抗基督"
+  - incantation_id: resonance_flame_light
+    type: 共鸣魔法
+    participants: [玛莉亚与阿尔缇]
+    incantation_text: |
+      「「——共鸣魔法『Flame Light』！！」」
+      「——共鸣魔法『Flame Arrow·守护炎』！！」
+    magic_name_jp: 火焰之光 / 火焰箭·守护炎
+    magic_name_en: Flame Light / Flame Arrow
+    note: 玛莉亚与阿尔缇两人之真正的魔法
+    source: 第7-3章 第334话 旗手 / 第335话 第二回合
+    edition: web_original
+
+    effect: "双人共鸣的火焰系真正魔法（火焰之光/火焰箭·守护炎）"
+  - incantation_id: resonance_field
+    type: 共鸣魔法（防御阵）
+    participants: [百名骑士/队员]
+    incantation_text: |
+      「――共鸣魔法《Field》。请释放出你们各自擅长的防御魔法吧。」
+    note: 初始防御型共鸣魔法（曾被从正面击破，五十人殒命）
+    source: 第7-3章 第321话 暗杀的失格
+    edition: web_original
+
+    effect: "百名骑士/队员共同展开的防御型共鸣魔法（防御阵）"
+  - incantation_id: resonance_sakura
+    type: 共鸣魔法（缇缇&艾德·《樱童乐土》示例型）
+    participants: [缇缇, 艾德]
+    incantation_text: |
+      （缇缇＆艾德的双人咏唱——魔石人类/守护者共鸣）
+    magic_name_jp: （樱童乐土）
+    note: 计划书示例（本语料共声声部散见，落库需人工复核）
+    edition: web_original
+
+    effect: "双人共鸣咏唱（示例型），「樱童乐土」共声（语料散见，需人工复核）"
+  # ─────────────── 七、技能名列表（压缩条目）───────────────
+  - incantation_id: skill_list_latin
+    type: 技能名列表（压缩）
+    note: 状态栏/技能窗口内拉丁技能名（如 Level1/Freeze1.04/Connection1.00）随面板占位压缩，不单独展开。
+
+    effect: "压缩条目：状态栏/技能窗口拉丁技能名随面板占位压缩展示"
+  # ─────────────── 补充（第7-1/7-2章 子代理复核）───────────────
+  - incantation_id: nosfi_light_chant_dark
+    caster: 诺斯菲·弗茨亚茨（光之理的盗窃者）
+    type: 代价咏唱
+    incantation_text: |
+      「『腐朽之暗、腐朽之光』『齐化非白之白』――」
+      「『梦境之暗、梦境之光』『皆作非黑之黑』――」
+    magic_name_jp: 光之咏唱（借助『理』的奇迹『代替』）
+    cost_type: 牺牲自身人生的一部分（显著损害精神/污染清澈灵魂），替涡波背负精神创伤
+    source: 第7-2章 第306话 心 (7272md-0176)
+    edition: web_original
+
+    effect: "光之咏唱：将「腐朽之暗/光」「梦境之暗/光」化作非白非黑，借『理』的奇迹『代替』背负精神创伤"
+  - incantation_id: raina_wind_series
+    caster: 莱纳·赫勒比勒夏因
+    type: 普通魔法咏唱（自创风系系列）
+    incantation_text: |
+      「──『Wind・风疾走』。」
+      「──『Tauz Schuss・Wind』！！」（译注：或作 TowsSchuss・Wind，拉丁造语，意为终焉）
+      「──『Wind・风疾走(SkyRunner)』。」
+    magic_name_jp: Wind・风疾走 / Tauz Schuss・Wind / SkyRunner
+    magic_name_en: Wind・SkyRunner / Tauz Schuss・Wind
+    note: 颠覆学院"创造新魔法不可能"的常识，将基础魔法『风』升华为辅助奔跑魔法
+    source: 第7-1章 第265话/第268话 (7171md-0003/0004/0022)
+    edition: web_original
+
+    effect: "将基础魔法『风』升华为辅助奔跑魔法的自创风系系列（风疾走/SkyRunner）"
+  - incantation_id: fafnir_blood_series
+    caster: 法芙纳·赫勒比勒夏因（血之理的盗窃者）
+    type: 普通魔法咏唱（鲜血魔法系列）
+    incantation_text: |
+      「——鲜血魔法『Blood Field』！」
+      「──鲜血魔法『艾尔梅斯米娅・琉克』。」
+      「——鲜血魔法『新历十三年南北境界战争终焉』！！」
+    magic_name_jp: Blood Field / 艾尔梅斯米娅・琉克 / 新历十三年南北境界战争终焉
+    magic_name_en: Blood Field
+    source: 第7-2章 第293/294/311话 (7272md-0090/0098/0218)
+    edition: web_original
+
+    effect: "鲜血魔法系列（Blood Field/艾尔梅斯米娅・琉克/战争终焉），血之理盗窃者主战魔法"
+  - incantation_id: dzi_gradient_recall_foresight
+    caster: 相川涡波（次元之理的盗窃者）
+    type: 真正魔法（次元读取/过去视，前日谭）
+    incantation_text: |
+      （第305话 圣女的始点——以《次元决战演算『前日谭』》作次元读取/过去视；原文未收录完整咏唱句）
+    magic_name_jp: 次元决战演算『前日谭』
+    magic_name_en: Dimension Gradient Recall
+    note: 过去视用途（读取圣女的始点）
+    source: 第7-2章 第305话 (7272md-0167)
+    edition: web_original
+
+    effect: "以《次元决战演算『前日谭』》作次元读取/过去视，读取圣女的始点（原文未收录完整咏唱句）"
+  - incantation_id: distance_mute_winter
+    caster: 相川涡波
+    type: 普通魔法咏唱（组合）
+    incantation_text: "「──魔法『Distance Mute』、魔法『次元之冬』」"
+    source: 第7-2章 第304话 友人 (7272md-0162)
+    edition: web_original
+
+    effect: "「Distance Mute」+「次元之冬」的组合咏唱，静默与冻结双重压制"
+  - incantation_id: laguna_star_dark
+    caster: 拉古涅·卡伊库欧拉（夺理后·星之理的盗窃者）
+    type: 普通魔法咏唱（无咏唱省略型）
+    incantation_text: "「「「――《Dark》。」」」」"
+    magic_name_jp: Dark（暗）
+    magic_name_en: Dark
+    note: 拉古涅为『星之理的盗窃者』；可魔力物质化/各理属性魔法
+    source: 第7-2章 第319话 Epilogue后篇 (7272md-0254)
+    edition: web_original
+
+    effect: "无咏唱省略型的暗属性魔法（Dark），魔力物质化与各理属性魔法的全能基础"
+  - incantation_id: resonance_remove
+    type: 共鸣魔法
+    participants: [拉丝缇娅拉, 缇亚]
+    incantation_text: （『Remove』×2 共鸣咏唱——第303话 尘埃落定）
+    source: 第7-2章 第303话 (7272md-0158)
+    edition: web_original
+
+
+
+
+    effect: "「Remove」×2 双人共鸣咏唱，完成消除/落定职能"
+# ─────────────── 涡波咏唱成长链（incantation_evolution）───────────────
+incantation_evolution:
+  caster: 相川涡波（基督/始祖涡波）
+  chain:
+    - stage: 初阶
+      spells: ["『维度・多重展开』（Dimension・Multiple·索敌）", "『冰之矢』（Ice·Arrow)", "『Dimension』"]
+      source_note: 早期索敌与基础（一~三章 web_reconstructed 为主）
+    - stage: 中阶
+      spells: ["『次元之冬』（Di・Winter）", "『Winter・终霜』", "『连接』（Connection）", "『维度・决战演算』"]
+      source_note: 第三~五章
+    - stage: 高阶/真正魔法
+      spells: ["次元决战演算『先谭』（Gradient Realize）", "『前日谭』（Recall）", "『再谭』（Revive）"]
+      source_note: 第八章~第十章 终局三连
+    - stage: 根源
+      spells: ["次元魔法《Dimension》", "魔法《Reading・Shift》", "魔法《幻之紫腕》"]
+      source_note: 千年前始祖觉醒段
+  note: 对照《文库转web_字词转换对照表》——维度・多重展开/连接/冻结/次元魔术；Di・Windter→次元之冬；Gradient系列即"次元决战演算"。
+
+magic_name_bilingual_index:
+  - {jp: 次元决战演算『先谭』, en: Dimension・Gradient Realize}
+  - {jp: 次元决战演算『前日谭』, en: Dimension Gradient Recall}
+  - {jp: 次元决战演算『再谭』, en: Dimension Gradient Revive}
+  - {jp: 维度・多重展开, en: Dimension・Multiple Expansion}
+  - {jp: 次元之冬, en: Di・Winter}
+  - {jp: 连接, en: Connection}
+  - {jp: 冻结, en: Freeze}
+  - {jp: 冰之矢, en: Ice・Arrow}
+  - {jp: 火焰箭, en: Flame Arrow}
+  - {jp: 冬之异世界, en: Wintry・Dimension}
+  - {jp: 弑神的恶龙, en: Sin・Fáfnir}
+  - {jp: 冻结逝水流年的雪底坚冰, en: HeavenFall・Niflheim}
+  - {jp: 众生之赤光, en: Hell・Vilmillion・Shine}
+  - {jp: 迷失之雾与夜之终焉, en: Mistrust・Splitlands}
+
+# ─────────────── 咏唱质检（计划书 §5.6 六项快检）───────────────
+qa_checklist:
+  - 三段式结构完整性: true（──『上下句』── + ——魔法《名》原样保留）
+  - 对仗逻辑未被破坏: true（『世界（你）』『我』对照结构整组落库）
+  - 间隔点号保留: true（守护者开场白 · 原样）
+  - 魔法名双语一致性: true（magic_name_jp / magic_name_en 分字段）
+  - 成长链连贯性: true（维度→次元之冬→次元决战演算三连）
+  - 代价字段因果闭环: true（替代之光系列 cost/effect 成对）

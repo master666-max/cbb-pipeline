@@ -1,0 +1,254 @@
+[
+ {
+  "query": "Windows 脚本执行",
+  "expected": [
+   "P-001"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "python 被拦截怎么办",
+  "expected": [
+   "P-001"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "EPUB 文件名乱码",
+  "expected": [
+   "P-002"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "zipfile cp437",
+  "expected": [
+   "P-002"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "清洗误报 破折号",
+  "expected": [
+   "P-003"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "sed 批量生成文本",
+  "expected": [
+   "P-004"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "分发包 用户数据泄漏",
+  "expected": [
+   "P-005"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "EPUB 转 Markdown 知识库",
+  "expected": [
+   "PT-001"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "Word 文档生成 验收",
+  "expected": [
+   "PT-002"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "整本小说 量化分析",
+  "expected": [
+   "PT-003"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "新建工作区 双库搭建",
+  "expected": [
+   "PT-004"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "工具写完要不要测",
+  "expected": [
+   "PT-005"
+  ],
+  "type": "lexical"
+ },
+ {
+  "query": "归档 会不会断链",
+  "expected": [
+   "D-001",
+   "PT-004"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "实验性工作区还要不要维护",
+  "expected": [
+   "D-002"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "上下文越塞越多会怎样",
+  "expected": [
+   "D-003"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "API key 能不能写进文件",
+  "expected": [
+   "D-004",
+   "P-001"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "按检索命中的邻居找相关条目",
+  "expected": [
+   "PT-005",
+   "P-001"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "改库之前先查什么",
+  "expected": [
+   "D-002",
+   "PT-004"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "记忆演化的论文依据",
+  "expected": [
+   "PT-004",
+   "P-003"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "docx 验收依赖哪个坑",
+  "expected": [
+   "PT-002",
+   "P-001"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "批量生成模板翻车",
+  "expected": [
+   "P-004",
+   "PT-005"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "manifest 哈希对不上",
+  "expected": [
+   "PT-004",
+   "D-001"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "AI 作妖怎么防",
+  "expected": [
+   "P-001",
+   "PT-005"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "语料统计流水线",
+  "expected": [
+   "PT-003",
+   "P-002"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "清洗规则的陷阱",
+  "expected": [
+   "P-003",
+   "PT-001"
+  ],
+  "type": "graph"
+ },
+ {
+  "query": "早期建库的经验（60 天前的）",
+  "expected": [
+   "PT-001",
+   "PT-002"
+  ],
+  "type": "temporal"
+ },
+ {
+  "query": "最早的教训有哪些",
+  "expected": [
+   "P-001",
+   "P-002",
+   "P-003"
+  ],
+  "type": "temporal"
+ },
+ {
+  "query": "2026-09-03 建立的模式",
+  "expected": [
+   "PT-001",
+   "PT-002",
+   "PT-003",
+   "PT-004"
+  ],
+  "type": "temporal"
+ },
+ {
+  "query": "建库体系最初怎么搭的",
+  "expected": [
+   "PT-004"
+  ],
+  "type": "temporal"
+ },
+ {
+  "query": "第一版发布包怎么来的",
+  "expected": [
+   "PT-002",
+   "PT-004"
+  ],
+  "type": "temporal"
+ },
+ {
+  "query": "九月初做过什么任务",
+  "expected": [
+   "PT-001",
+   "PT-002",
+   "PT-003",
+   "PT-004"
+  ],
+  "type": "temporal"
+ },
+ {
+  "query": "L3 演化是什么时候加的",
+  "expected": [
+   "PT-004"
+  ],
+  "type": "temporal"
+ },
+ {
+  "query": "最早的发布包教程",
+  "expected": [
+   "PT-002"
+  ],
+  "type": "temporal"
+ }
+]

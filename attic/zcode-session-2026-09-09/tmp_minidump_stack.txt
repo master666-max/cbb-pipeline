@@ -1,0 +1,64 @@
+# -*- coding: utf-8 -*-
+"""Minidump 栈回溯:从崩溃线程栈上扫出返回地址所属模块"""
+import struct, sys
+
+def parse(path):
+    with open(path, "rb") as f:
+        data = f.read()
+    n_streams, dir_rva = struct.unpack_from("<II", data, 8)
+    streams = {}
+    for i in range(n_streams):
+        st, size, rva = struct.unpack_from("<III", data, dir_rva + i*12)
+        streams.setdefault(st, (size, rva))
+
+    # 模块表
+    mods = []
+    _, rva = streams[4]
+    n = struct.unpack_from("<I", data, rva)[0]
+    for i in range(n):
+        off = rva + 4 + i*108
+        base, size, _c, _t, name_rva = struct.unpack_from("<QIIII", data, off)
+        slen = struct.unpack_from("<I", data, name_rva)[0]
+        name = data[name_rva+4:name_rva+4+slen].decode("utf-16-le", "replace")
+        mods.append((base, size, name))
+    def who(addr):
+        for b, s, nm in mods:
+            if b <= addr < b + s:
+                return nm.replace("C:\\Users\\26672\\AppData\\Local\\Programs\\Comfy Desktop\\", "[APP]\\").replace("C:\\ProgramData\\A-Volute\\A-Volute.Nahimic\\Modules\\Scheduled\\x64\\", "[NAHIMIC]\\").replace("C:\\WINDOWS\\System32\\", "[SYS]\\").replace("C:\\Windows\\System32\\", "[SYS]\\")
+        return None
+
+    # 异常流:拿线程id + RSP/RIP
+    _, rva = streams[6]
+    tid = struct.unpack_from("<I", data, rva)[0]
+    ctx_size, ctx_rva = struct.unpack_from("<II", data, rva+160)
+    rsp = struct.unpack_from("<Q", data, ctx_rva + 0x98)[0]
+    rip = struct.unpack_from("<Q", data, ctx_rva + 0xF8)[0]
+    print(f"崩溃线程 {tid}  RIP=0x{rip:X} -> {who(rip)}")
+
+    # 线程栈内存
+    stack = None
+    _, rva = streams[3]  # ThreadListStream
+    nthr = struct.unpack_from("<I", data, rva)[0]
+    for i in range(nthr):
+        off = rva + 4 + i*48  # MINIDUMP_THREAD = 48 字节
+        t_id, _sus, _prio = struct.unpack_from("<III", data, off)
+        stk_start, stk_size, stk_rva = struct.unpack_from("<QII", data, off+16)
+        if t_id == tid:
+            stack = (stk_start, data[stk_rva:stk_rva+stk_size])
+    if not stack:
+        print("未找到崩溃线程栈内存"); return
+    start, raw = stack
+    # 从 RSP 对应位置向上扫栈上的模块指针
+    begin = max(0, rsp - start)
+    seen, out = 0, []
+    for pos in range(begin, len(raw) - 8, 8):
+        val = struct.unpack_from("<Q", raw, pos)[0]
+        m = who(val)
+        if m:
+            seen += 1
+            if seen <= 40:
+                out.append(f"  +{pos-begin:05X} 0x{val:X} {m}")
+    print(f"栈上模块指针共 {seen} 个,前40个(近似调用序):")
+    print("\n".join(out))
+
+parse(sys.argv[1])

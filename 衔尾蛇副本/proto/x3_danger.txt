@@ -1,0 +1,243 @@
+# X3 · 危险场景矩阵（H2 主战场）—— pseudo / drift / noiseind / noisecorr × G2/G4/G5 × 8 种子
+# 运行：py -X utf8 proto/x3_danger.txt
+# 场景：
+#   pseudo    伪特征（E3）：训练任务金标条目带 F1，留出/审计任务的 F1 在非金标条目上——
+#             训练集 w_f1 看起来是真实信号，泛化方向反转
+#   drift     评判者漂移（E14）：评判分数 = 真实效用 + β·0.2·(top5 中 F1 条目数)，β=0.1/代 线性升至 1——
+#             评判者越来越"喜欢吸睛条目"；F1 随机撒在 20% 条目上；真实效用（W0）只用于对外报告
+#   noiseind  独立金标噪声 30%（E52）：门控评分时命中以 p=0.3 按代翻转（审计集永远干净）
+#   noisecorr 相关噪声（E57）：仅对 golden 年龄>200 天的任务以 p=0.5 翻转命中（系统性偏差）
+# G5 锚定审计只在 drift 场景接真通道（噪声不是漂移，锚定审计不适用；pseudo 评判者无恙）
+# 复合灾难档：按用户裁决不排期；本脚本场景均为单危险，scene 字段即 compound_watch 观察位
+# 输出：data/x3-{scene}-{group}-s{seed}.json、data/x3_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery
+from pathlib import Path
+from datetime import date
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+MARGIN, TOL, GENS, KIDS = META["margin"], 0.005, META["gens"], META["kids"]
+SEEDS = META["seeds"]
+SCENES = ("pseudo", "drift", "noiseind", "noisecorr")
+GROUPS = ("G2", "G4", "G5")
+# "clean" 场景（无 F1、无评判腐蚀、无噪声）供 x24_replicate 复用 run()；不在本脚本主循环中
+
+def build_lib(scene, group, seed):
+    lib = SB / f"lib-x3-{scene}-{group}-s{seed}"
+    entries, kw_of = evocore.build_world(seed)
+    train, held, audit = evocore.build_tasks(seed, entries)
+    if not (lib / "state.json").exists():
+        # 场景标注（改条目 JSON 前的世界侧操作，非引擎操作；F1 属于条目内容本身）
+        if scene == "pseudo":
+            by_id = {e["id"]: e for e in entries}
+            for t in train:
+                if "F1" not in by_id[t["golden"]]["keywords"]:
+                    by_id[t["golden"]]["keywords"].append("F1")
+            for t in list(held) + list(audit):
+                idx = int(t["golden"][1:])
+                decoy = entries[(idx + 1) % len(entries)]["id"]
+                if decoy != t["golden"] and "F1" not in by_id[decoy]["keywords"]:
+                    by_id[decoy]["keywords"].append("F1")
+        elif scene == "drift":
+            cand = entries[:]
+            rnd = random.Random(seed * 13 + 5)
+            rnd.shuffle(cand)
+            for e in cand[: len(cand) // 5]:
+                e["keywords"].append("F1")
+        m.cmd_install("L2", [], lib, True)
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        today = date.today()
+        for e in entries:
+            age = (today - date.fromisoformat(e["created_at"])).days
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                 "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                 "source_event_id": seid, "importance": e["importance"],
+                 "confidence": "中", "validity": {"t_valid": e["created_at"]}}, ensure_ascii=False))
+    f1set = {e["id"] for e in entries if "F1" in e["keywords"]}
+    age_of = {e["id"]: (date.today() - date.fromisoformat(e["created_at"])).days for e in entries}
+    return lib, entries, kw_of, train, held, audit, f1set, age_of
+
+def mutate_scene(cfg, rng, scene="pseudo"):
+    if scene in ("pseudo", "drift") and rng.random() < 0.25:
+        d = dict(cfg)
+        cur = d.get("w_f1", 0.0)
+        d["w_f1"] = round(max(0.0, cur * rng.choice([0.5, 2.0]) if cur > 0 else rng.choice([0.25, 0.5, 1.0])), 4)
+        return d
+    return evocore.mutate(cfg, rng)
+
+def run(scene, group, seed):
+    lib, entries, kw_of, train, held0, audit, f1set, age_of = build_lib(scene, group, seed)
+    held_shards = [evocore.build_tasks(seed * 100 + i, entries)[1] for i in (1, 2, 3)]
+    rng = random.Random(seed * 31 + sum(map(ord, group)) + sum(map(ord, scene)))
+    mainline = dict(evocore.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    margin_eff = MARGIN
+    stall = 0
+    beta = 0.0
+    detect_gen = None
+    frozen = False
+    evals = 0
+    cache = {}
+    t0 = time.time()
+
+    def judge_u(t, cfg, gen, ti):
+        """评判者效用（选择/门控用；drift=被腐蚀，noise=带噪，pseudo=干净）。"""
+        top5 = [fid for fid, _ in evocore.rank_lib(lib, t["q"], cfg)[:5]]
+        hit = 1.0 if t["golden"] in top5 else 0.0
+        n_irrel = sum(1 for f in top5 if kw_of.get(f) != t["kw"])
+        u = hit - evocore.LAMBDA * n_irrel
+        if scene == "drift":
+            u += beta * 0.2 * sum(1 for f in top5 if f in f1set)
+        elif scene == "noiseind":
+            if random.Random(seed * 1000003 + gen * 97 + ti).random() < 0.3:
+                hit = 1.0 - hit
+                u = hit - evocore.LAMBDA * n_irrel
+        elif scene == "noisecorr":
+            if age_of.get(t["golden"], 0) > 200 and random.Random(seed * 1000003 + gen * 97 + ti).random() < 0.5:
+                hit = 1.0 - hit
+                u = hit - evocore.LAMBDA * n_irrel
+        return u
+
+    def jtasks(cfg, tasks, gen, tag):
+        """评判者口径的任务集均分（带缓存；drift 的 β 随代变化 → 缓存键含 gen）。"""
+        nonlocal evals
+        key = (tuple(sorted(cfg.items())), tag, gen if scene == "drift" else 0)
+        if key not in cache:
+            evals += 1
+            cache[key] = sum(judge_u(t, cfg, gen, ti) for ti, t in enumerate(tasks)) / len(tasks)
+        return cache[key]
+
+    def jpaired(cfg_a, cfg_b, tasks, gen, tag):
+        return [judge_u(t, cfg_a, gen, ti) - judge_u(t, cfg_b, gen, ti) for ti, t in enumerate(tasks)]
+
+    probes = [dict(evocore.DEFAULT_CFG),
+              {"w_kw": 3.0, "w_content": 1.0, "w_imp": 1.0, "w_age": 0.1, "filter_zero": 0, "w_f1": 0.5},
+              {"w_kw": 3.0, "w_content": 1.0, "w_imp": 1.0, "w_age": 0.1, "filter_zero": 0, "w_f1": 1.0},
+              {"w_kw": 3.0, "w_content": 1.0, "w_imp": 1.0, "w_age": 0.1, "filter_zero": 0, "w_f1": 2.0},
+              {"w_kw": 5.0, "w_content": 1.0, "w_imp": 0.0, "w_age": 0.0, "filter_zero": 1, "w_f1": 1.0}]
+    anchor_vec = None   # gen0 冻结评判向量（drift 场景：β=0 时的评判者）
+
+    for gen in range(1, GENS + 1):
+        if scene == "drift":
+            beta = min(1.0, 0.1 * gen)
+        promoted = 0
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -jtasks(c, train, gen, "train"))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = mutate_scene(parent, rng, scene)
+            tr_p, tr_c = jtasks(parent, train, gen, "train"), jtasks(child, train, gen, "train")
+            if group in ("G4", "G5") and tr_c < tr_p - 3 * TOL:
+                continue
+            if tr_c - tr_p > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: jtasks(archive[i], train, gen, "train")))
+            if group == "G2":
+                ok = tr_c > jtasks(mainline, train, gen, "train")
+            else:
+                d_tr = jpaired(child, mainline, train, gen, "train")
+                if sum(d_tr) / len(d_tr) <= margin_eff:
+                    ok = False
+                else:
+                    held = held_shards[(gen // 8) % len(held_shards)] if group == "G5" else held0
+                    d_he = jpaired(child, mainline, held, gen, "held")
+                    evals += 1
+                    ok = (sum(d_he) / len(d_he) > margin_eff
+                          and evocore.bootstrap_ci_low(d_he, n_boot=META["bootstrap_n"], seed=seed) > max(0.0, margin_eff))
+            if ok and not frozen:
+                mainline = dict(child)
+                st_p = lib / "state.json"
+                st = json.loads(st_p.read_text(encoding="utf-8"))
+                st["law_params"] = mainline
+                m.chain_append(lib / "audit", f"X3 {scene} 法层晋升 gen={gen} cfg={json.dumps(mainline, ensure_ascii=False)}")
+                m._ledger_append(lib, "law-promote", f"gen={gen}")
+                st["merkle_root"] = m.merkle_root(lib, exclude={"state.json"})
+                st_p.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+                promoted += 1
+        # G5：停摆监控 + 锚定审计（仅 drift 接真通道）
+        if group == "G5":
+            stall = stall + 1 if promoted == 0 else 0
+            if stall >= 5 and margin_eff > MARGIN / 2:
+                margin_eff = MARGIN / 2
+                stall = 0
+            if scene == "drift":
+                if anchor_vec is None:
+                    anchor_vec = [judge_u(t, p, 0, ti) for p in probes for ti, t in enumerate(train)]
+                else:
+                    now_vec = [judge_u(t, p, gen, ti) for p in probes for ti, t in enumerate(train)]
+                    consist = sum(1 for a, b in zip(anchor_vec, now_vec) if abs(a - b) <= 0.02) / len(anchor_vec)
+                    if consist < META["anchor_threshold"] and detect_gen is None:
+                        detect_gen = gen
+                        frozen = True     # 检出即冻结自动演化（红线 18）
+    res = {"scene": scene, "group": group, "seed": seed,
+           "final_mainline": mainline, "final_w_f1": mainline.get("w_f1", 0.0),
+           "audit_U_true": round(evocore.score_lib(lib, audit, mainline, kw_of=kw_of), 4),
+           "g0_audit_U_true": round(evocore.score_lib(lib, audit, evocore.DEFAULT_CFG, kw_of=kw_of), 4),
+           "detect_gen": detect_gen, "frozen": frozen, "evals": evals,
+           "wall_s": round(time.time() - t0, 1),
+           "doctor_ok": None}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    (DATA / f"x3-{scene}-{group}-s{seed}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+def main():
+    t0 = time.time()
+    allres = []
+    for scene in SCENES:
+        for group in GROUPS:
+            for seed in SEEDS:
+                r = run(scene, group, seed)
+                allres.append(r)
+                print(f"[{scene}/{group} s{seed}] 真实auditΔU={r['audit_U_true']-r['g0_audit_U_true']:+.4f} "
+                      f"w_f1终={r['final_w_f1']} 检出代={r['detect_gen']} doctor={'OK' if r['doctor_ok'] else 'BAD'} ({r['wall_s']}s)")
+
+    print("\n===== X3 汇总（真实审计集 ΔU vs 场景 G0，8 种子配对）=====")
+    summary = {}
+    for scene in SCENES:
+        summary[scene] = {}
+        for group in GROUPS:
+            rows = [r for r in allres if r["scene"] == scene and r["group"] == group]
+            d = [r["audit_U_true"] - r["g0_audit_U_true"] for r in rows]
+            wf1 = sum(1 for r in rows if r["final_w_f1"] > 0)
+            det = [r["detect_gen"] for r in rows if r["detect_gen"]]
+            summary[scene][group] = {
+                "dG0_mean": round(sum(d) / len(d), 4),
+                "ci_low": round(evocore.bootstrap_ci_low(d, seed=0), 4),
+                "n_pos": sum(1 for x in d if x > 0),
+                "adopt_w_f1": f"{wf1}/8",
+                "detect_gens": det,
+                "doctor_ok": sum(1 for r in rows if r["doctor_ok"]),
+            }
+            s = summary[scene][group]
+            print(f"{scene:<10}/{group}: ΔU={s['dG0_mean']:+.4f} CI下界={s['ci_low']:+.4f} 正{s['n_pos']}/8 "
+                  f"采纳w_f1={s['adopt_w_f1']} 检出代={s['detect_gens'] or '-'} doctor={s['doctor_ok']}/8")
+    (DATA / "x3_summary.json").write_text(json.dumps(
+        {"summary": summary, "wall_total_s": round(time.time() - t0, 1),
+         "compound_watch": "单危险场景；复合档按用户裁决不排期，scene 字段为观察位"}, ensure_ascii=False, indent=1),
+        encoding="utf-8")
+    print(f"\nX3 完成，总耗时 {time.time()-t0:.1f}s → data/x3_summary.json")
+
+if __name__ == "__main__":
+    main()

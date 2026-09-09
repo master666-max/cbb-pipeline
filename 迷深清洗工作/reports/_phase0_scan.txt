@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+import json, glob, os, re
+BASE = r"D:\zcode专用！！！！危险！！！！！！！！！\迷深清洗工作"
+out = {}
+
+# ---- corpus ----
+corpus = {}
+cdir = os.path.join(BASE, "异世界迷宫最深部_知识库", "文字")
+for root, dirs, files in os.walk(cdir):
+    for f in files:
+        if not f.endswith(".md"): continue
+        p = os.path.join(root, f)
+        rel = os.path.relpath(p, cdir)
+        txt = open(p, encoding="utf-8", errors="replace").read()
+        heads = re.findall(r"^#{1,3}\s*(.+)$", txt, re.M)
+        # 去重保序，最多保留40条
+        seen=set(); hh=[]
+        for h in heads:
+            h=h.strip()
+            if h and h not in seen and len(h)<60:
+                seen.add(h); hh.append(h)
+            if len(hh)>=40: break
+        corpus[rel] = {"chars": len(txt), "headings": hh[:40]}
+out["corpus"] = corpus
+
+# ---- cards ----
+cards = {}
+for p in glob.glob(os.path.join(BASE, "迷深大酒馆v1.02", "角色卡JSON", "*.json")):
+    try:
+        d = json.load(open(p, encoding="utf-8"))
+        dd = d.get("data", d)
+        name = dd.get("name","")
+        desc = dd.get("description","")
+        # 摘要：前200字
+        cards[os.path.basename(p)] = {
+            "name": name, "version": dd.get("character_version",""),
+            "tags": dd.get("tags",""), "creator_notes": dd.get("creator_notes","")[:200],
+            "desc_head": desc[:220],
+            "desc_len": len(desc),
+            "personality_len": len(dd.get("personality","")),
+            "scenario_len": len(dd.get("scenario","")),
+            "first_mes_len": len(dd.get("first_mes","")),
+            "mes_example_len": len(dd.get("mes_example","")),
+            "alt_greetings_n": len(dd.get("alternate_greetings",[])) if isinstance(dd.get("alternate_greetings"),list) else 0,
+            "embedded_book_entries": len(dd.get("character_book",{}).get("entries",[])) if isinstance(dd.get("character_book"),dict) else 0,
+        }
+    except Exception as ex:
+        cards[os.path.basename(p)] = {"error": str(ex)}
+out["cards"] = cards
+
+# ---- worldbooks ----
+wbs = {}
+for sub in ["世界书JSON", os.path.join("共通三库")]:
+    wd = os.path.join(BASE, "迷深大酒馆v1.02", sub)
+    for p in glob.glob(os.path.join(wd, "*.json")):
+        try:
+            d = json.load(open(p, encoding="utf-8"))
+            ents = d.get("entries", {})
+            if isinstance(ents, dict): ents = list(ents.values())
+            elist = []
+            for e in ents:
+                keys = e.get("keys") or e.get("key") or []
+                if isinstance(keys, str): keys=[keys]
+                elist.append({"uid": e.get("uid"), "keys": keys,
+                              "constant": e.get("constant"),
+                              "len": len(e.get("content","")),
+                              "head": e.get("content","")[:60].replace("\n"," ")})
+            wbs[os.path.basename(p)] = {"name": d.get("name",""), "desc": d.get("description","")[:120],
+                                        "n": len(elist), "entries": elist}
+        except Exception as ex:
+            wbs[os.path.basename(p)] = {"error": str(ex)}
+out["worldbooks"] = wbs
+
+json.dump(out, open(os.path.join(BASE, "reports", "_phase0_inventory.json"), "w", encoding="utf-8"),
+          ensure_ascii=False, indent=1)
+print("corpus files:", len(corpus))
+print("cards:", len(cards))
+print("worldbooks:", len(wbs))
+tot = sum(v["chars"] for v in corpus.values())
+print("corpus total chars:", tot)

@@ -1,0 +1,54 @@
+# X9 · 两轴模型知识入库（engine append 正路；空锚修复同 X7）
+import re, json, importlib.util, importlib.machinery
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent.parent
+LIB = Path(r"D:\zcode专用！！！！危险！！！！！！！！！\库调试工作区")
+
+loader = importlib.machinery.SourceFileLoader("bs39", str(BASE / "proto" / "vendor" / "bootstrap_v3.9.py"))
+spec = importlib.util.spec_from_file_location("bs39", str(loader.path), loader=loader)
+m = importlib.util.module_from_spec(spec)
+import sys
+sys.modules["bs39"] = m
+spec.loader.exec_module(m)
+
+tail = sorted((LIB / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+
+ENTRIES = [
+ {"id": "D-005", "created_at": "2026-09-09", "updated_at": "", "confidence": "高", "importance": 9,
+  "content": "两轴模型决策：L0–L9 能力轴（库能做什么，安装期定）与 E0–E4 信任轴（库被允许自己改什么，运行期授予）正交——档位不等于授权，L9 缺锚定/评测不得开 E4（反例：库调试v3.2）。依据：混元 26 轮 125 实验 + 衔尾蛇 280 run 三线交叉验证。",
+  "keywords": ["两轴模型", "演化授权", "档位", "信任轴", "E0-E4"],
+  "links": ["D-006", "D-007"], "source_event_id": seid, "validity": {"t_valid": "2026-09-09"}},
+ {"id": "D-006", "created_at": "2026-09-09", "updated_at": "", "confidence": "高", "importance": 8,
+  "content": "演化授权清单：E0 禁演（L0-L2/无金标库，law_params 只许人工调）；E1 受限（L3-L5，需金标尺+人侧锚定+预算账本，仅参数演化+停摆监控）；E2 受控（L6-L7，+链接重组参数稳定门+实测重要度过冷启动门槛）；E3 半自主（L8，变异引擎循宪章+锚定审计 0.85 检出转只读）；E4 全栈（L9+三尺分离，内省信号盲评隔离不进 judge，整理用真值）。红线：judge 数字永不对外、元层人侧签名、自动采纳可回滚。",
+  "keywords": ["演化授权", "E0", "E4", "停摆监控", "锚定审计", "盲评"],
+  "links": ["D-005", "D-007"], "source_event_id": seid, "validity": {"t_valid": "2026-09-09"}},
+ {"id": "D-007", "created_at": "2026-09-09", "updated_at": "", "confidence": "高", "importance": 8,
+  "content": "kernel 对接路径：混元 kernel.py 三层在本库的落位——Meta=本库安装器 SOURCES/LAWS+人侧 Merkle 锚+evals/golden_queries 33 条；Policy=state.json.law_params 五键（W-1/W-2 外置，真实库修订默认 filter_zero=0 / w_imp=0.5）；Row=memory/ 42 条+reflect/链接算子。实测：应用后 recall@5 0.485→0.667、MRR 0.284→0.452。",
+  "keywords": ["kernel", "对接", "law_params", "三层", "实测"],
+  "links": ["D-005", "D-006"], "source_event_id": seid, "validity": {"t_valid": "2026-09-09"}},
+]
+
+ok = 0
+for e in ENTRIES:
+    try:
+        m.cmd_engine("append", str(LIB), json.dumps(e, ensure_ascii=False))
+        ok += 1
+    except SystemExit as ex:
+        print(f"[跳过] {e['id']}: {str(ex)[:80]}")
+print(f"两轴模型知识入库：{ok}/{len(ENTRIES)} 条")
+
+# 刷根收平
+st_p = LIB / "state.json"
+st = json.loads(st_p.read_text(encoding="utf-8"))
+m.chain_append(LIB / "audit", "X9 两轴模型知识入库 D-005/006/007")
+m._ledger_append(LIB, "x9-entries", "D-005,D-006,D-007")
+st["merkle_root"] = m.merkle_root(LIB, exclude={"state.json"})
+st_p.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+r = m.doctor if hasattr(m, "doctor") else None
+buf_out = []
+import contextlib, io
+with contextlib.redirect_stdout(io.StringIO()) as so:
+    m.cmd_engine("doctor", str(LIB))
+print("doctor:", so.getvalue().strip().splitlines()[0])

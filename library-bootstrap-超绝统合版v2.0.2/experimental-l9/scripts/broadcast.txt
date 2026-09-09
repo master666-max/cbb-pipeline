@@ -1,0 +1,73 @@
+# broadcast.txt — GWT 广播仲裁器（L9 · 谁有权写入上下文窗口，显式竞争）
+# 用法: python3 broadcast.txt --task "任务描述"
+# 候选源 = {关键词直击条目, reflections 摘要}；打分 = 相关性 × 情绪调制；落选→PENDING(当前只写不读；回读功能属机器变异候选，需走 MUTATION-SOP)
+import os, re, sys, json
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+ROOT = os.getcwd()
+STATE = os.path.join(ROOT, 'state', '.library-state.json')
+PENDING = os.path.join(ROOT, 'state', 'PENDING.md')
+
+def load_state():
+    if os.path.exists(STATE):
+        return json.load(open(STATE, encoding='utf-8'))
+    return {'emotion': {'valence': 0.0, 'arousal': 0.0, 'certainty': 0.5, 'interest': 0.0}, 'ablation': {}, 'goal': {}}
+
+def parse_entries():
+    out = {}
+    for lib in ['knowledge/pitfalls.md', 'knowledge/patterns.md', 'knowledge/reflections.md', 'knowledge/decisions.md']:
+        p = os.path.join(ROOT, lib)
+        if not os.path.exists(p): continue
+        text = re.sub(r'<!--.*?-->', '', open(p, encoding='utf-8').read(), flags=re.S)
+        for block in re.split(r'\n### ', text)[1:]:
+            head = block.partition('\n')[0]
+            pid = head.split('/')[0].strip()
+            if re.match(r'^[A-Z]{1,2}-\d+$', pid):
+                body = block[block.index('\n') + 1:]
+                out[pid] = body
+    return out
+
+def score_entry(eid, body, terms, s):
+    base = 0
+    kw = re.search(r'- 关键词：(.*)', body)
+    kw_text = kw.group(1) if kw else ''
+    for t in terms:
+        if t in kw_text: base += 3
+        elif t in eid: base += 2
+        elif t in body: base += 1
+    # 情绪调制：arousal 放大探索类(带 关键词 的语义条目)，certainty 压低猜测类(含【待确认】)
+    if '【待确认】' in body:
+        base *= 0.5 if s['emotion']['certainty'] < 0.2 else 1.0
+    if s['emotion']['arousal'] > 0.5 and kw_text:
+        base *= 1.2
+    return base
+
+def main():
+    if '--task' not in sys.argv:
+        print('用法: broadcast.txt --task "任务描述"'); sys.exit(2)
+    task = sys.argv[sys.argv.index('--task') + 1]
+    s = load_state()
+    if s.get('ablation', {}).get('gwt'):
+        print('⚠ GWT 已消融（state_intervene --ablate gwt）——跳过仲裁，task-start 退回自由检索')
+        return
+    terms = [t for t in re.split(r'[\s，。、/]+', task) if t.strip()][:4]
+    entries = parse_entries()
+    scored = [(eid, score_entry(eid, b, terms, s)) for eid, b in entries.items()]
+    scored = [(eid, sc) for eid, sc in scored if sc > 0]
+    scored.sort(key=lambda x: -x[1])
+    top = scored[:3]
+    print('广播清单（task=%s, arousal=%.1f, certainty=%.1f）:' % (task, s['emotion']['arousal'], s['emotion']['certainty']))
+    for eid, sc in top:
+        print('  注入 %s（分 %.0f）→ knowledge 对应库' % (eid, sc))
+    rest = scored[3:]
+    if rest:
+        os.makedirs(os.path.dirname(PENDING), exist_ok=True)
+        with open(PENDING, 'a', encoding='utf-8') as f:
+            for eid, sc in rest:
+                f.write('- %s（分 %.0f，%s 落选降级）\n' % (eid, sc, __import__('datetime').date.today()))
+        print('  落选 %d 条 → state/PENDING.md（不丢弃）' % len(rest))
+    if not scored:
+        print('  无候选（索引空或全不相关）→ 建议直接开工')
+
+if __name__ == '__main__':
+    main()

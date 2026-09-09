@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+"""列出 7z 包顶层条目 v2: 按多空格切字段"""
+import subprocess, sys, re
+out = subprocess.run([r"C:/Program Files/Bandizip/bz.exe", "l", sys.argv[1]],
+                     capture_output=True, text=True).stdout
+tops = {}
+for line in out.splitlines():
+    fields = re.split(r"\s{2,}", line.strip())
+    if len(fields) >= 5 and re.match(r"\d{4}-", fields[0]):
+        name = fields[-1]
+        top = name.replace("\\", "/").split("/")[0]
+        tops[top] = tops.get(top, 0) + 1
+for t, n in sorted(tops.items()):
+    print(f"{t}  ({n} 个条目)")

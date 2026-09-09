@@ -1,0 +1,221 @@
+# web版 角色卡（P4）
+# ============================================================
+# 依据：计划书 §六（人物维度提取——做"角色卡"）
+# 规则：心理独白全部保留不压缩；隐瞒身份分层保留（secret_layers）；伪名独立保留（web_pseudonym）
+# 引文均取自场景块语料（带 block_id / episode 来源）
+# ============================================================
+schema_version: 1.0
+edition: web
+scope: 04_web版 第一章~第十章
+
+characters:
+
+  # ═══════════════ 一、核心七人 ═══════════════
+  - name: 相川涡波（アイカワ・カナミ）
+    aliases:
+      - {name: 基督·欧亚, alias_type: web_pseudonym, timeline: "web版前期身份隐藏；全名见下"}
+      - {name: "相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克", alias_type: full_name, note: "语料原句（第7-1章第266话常驻称谓）"}
+      - {name: 始祖涡波, alias_type: epithet, timeline: 千年前}
+      - {name: 次元之理的盗窃者, alias_type: epithet, timeline: 后期真相揭示}
+      - {name: 罗德（Lord）, alias_type: epithet, note: 守护者等级称谓}
+      - {name: 齐格弗里德·维吉托, alias_type: web_only_placeholder, note: "本语料未出现（附录B1）"}
+    age: 17（外表）/ 千年以上（真实）
+    role: 主角 / 千年前莱文教始祖 / 次元之理的盗窃者 / 迷宫吾创造者
+    appearance: |
+      （原句摘录）"高二学生身形，银灰色发……"，异世界剑士装束（文库插画设定：鹈饲沙树绘制）。
+      战斗时以次元魔法为轴心，后期成长剑技（本为妹妹阳滝所有）。
+    personality:
+      surface: 温柔善良、寡断软弱、以假面示人
+      core: "空壳、重度依存症患者（对妹妹阳滝的病态依存）、将演技化为真实的信条"
+      growth: "从初期以妹妹为唯一中心 → 圣诞祭事件 → 觉醒为迷宫始祖身份"
+    inner_monologue:
+      - {text: "「我绝对要救你。只要能救你，我会──！！」", source: "第一章 第三章-梦的奴隶 奴隶的梦"}
+      - {text: "──我绝对要救出拉丝缇娅拉。", source: "第二章 第一章-用以辨明狂气的理智的焼却"}
+      - {text: "「是了，我绝对要救下缇娅拉。这·次·绝·不·能·再·救·不·到。」", source: "第八章 第369话 最初的背叛"}
+      - {text: "「我刚才说自己有信心，那其实是一种确信……现在的话，我一定能救到所有人。」", source: "第八章 第362话 次元的上升"}
+    speech_pattern:
+      - 前期语气克制、自问自答
+      - 面对玛利亚时回避、缄默
+      - 千年始祖身份觉醒后语调转冷、直白
+    abilities:
+      - 次元属性魔法（魔力特化，素质 7.00 → 后期 6.21）
+      - 冰结魔法、剑术（原本属妹妹阳滝）
+      - 并列思考（后期获得）
+      - 咏唱成长链：维度・多重展开 → 次元之冬 → 次元决战演算『先谭/前日谭/再谭』
+    relationships:
+      - {partner: 阳滝, type: 妹妹, note: "一切行动的原点，病态依存（'妹妹就是我的一切'）"}
+      - {partner: 拉丝缇娅拉, type: 救赎与被救赎/婚约对象}
+      - {partner: 玛利亚, type: 镜像依存, note: "同化火之理的关键"}
+      - {partner: 诺斯菲, type: 名义女儿/妻子, note: "象征其无法获得真爱的执念；千年前夫妻"}
+    secret_layers:
+      - {layer: 1, view: 前期读者视角, content: 普通高中生穿越者}
+      - {layer: 2, view: 中期揭示, content: 千年前迷宫创造者、莱文教始祖（始祖涡波）}
+      - {layer: 3, view: 最终真相, content: 次元之理的盗窃者、魔法涡波的中心与根基}
+    web_notes:
+      - "基督·欧亚为 web 版前章化名，独立保留（不替换为涡波），以免破坏身份隐藏检索。"
+      - "使徒西斯（缇亚）线——涡波 alias_at_scene 演化。"
+
+  - name: 拉丝缇娅拉（缇娅拉・弗茨亚茨）
+    aliases:
+      - {name: 缇娅拉, alias_type: short}
+      - {name: 圣人缇娅拉, alias_type: epithet, timeline: 千年前信仰对象}
+      - {name: 拉丝缇娅拉, alias_type: full}
+      - {name: 拉斯缇亚拉, alias_type: variant, note: 后期换译者体系}
+    role: 圣人 / 教皇国圣女 / 涡波婚约对象
+    personality: "温柔坚定，为爱勇往直前；强行邀请不愿敞开心扉的玛利亚同床夜聊"
+    inner_monologue: []
+    relationships:
+      - {partner: 涡波, type: 救赎与被救赎/婚约, note: "千年前开始的爱恋"}
+      - {partner: 诺斯菲, type: 同为弗茨亚茨公主/对手}
+      - {partner: 玛利亚, type: 闺蜜般的羁绊, note: "第291话 圣女 同床夜聊"}
+    secret_layers: []
+    web_notes: "继承了圣人的力量；收纳『魔之毒』的器量（第288话）。"
+
+  - name: 缇娅（迪亚布罗・西斯 / 使徒西斯）
+    aliases:
+      - {name: 迪亚布罗・西斯, alias_type: hidden_identity, note: "非真名，化名"}
+      - {name: 缇娅, alias_type: short}
+      - {name: 使徒西斯, alias_type: identity}
+      - {name: 迪亚波罗・西斯, alias_type: variant}
+    role: 使徒 / 圣人缇娅拉的化名身份（身份隐藏）
+    personality: "金发成年女性外表；使徒统率者；感性异于常人"
+    relationships:
+      - {partner: 涡波, type: 使徒/主君关系}
+      - {partner: 缇娅拉, type: 圣人继承/共鸣体}
+    secret_layers:
+      - {layer: 1, content: 使徒西斯，统率使徒}
+      - {layer: 2, content: 与圣人缇娅拉的关联（魔法身体显现）}
+    web_notes: "第282话自述'详细的记得自己是迪亚波罗·西斯'。"
+
+  - name: 玛利亚
+    aliases: []
+    role: 同化『火之理的盗窃者』力量之人；由奴隶到影之主角
+    personality: "病娇倾向、内心独白为核心承载（计划书 §八.2）；背面深沉，对男主镜像依存"
+    inner_monologue: []
+    relationships:
+      - {partner: 涡波, type: 镜像依存/恋慕, note: "同化火之理的关键"}
+      - {partner: 阿尔缇, type: 继承其火之理的盗窃者之力}
+      - {partner: 拉丝缇娅拉, type: 挚友, note: "第291话被强行邀请同床夜聊"}
+    secret_layers: []
+    web_notes: "继承阿尔缇『火之理的盗窃者』之力 + 人造死神之力（第286话）。"
+
+  - name: 斯诺
+    aliases: []
+    role: 同化火之理成员 / 伙伴团核心战力
+    personality: "'害怕变得认真'；运动神经极佳；认真起来为众人之最（第285话）"
+    inner_monologue: []
+    relationships:
+      - {partner: 缇亚, type: 伙伴}
+      - {partner: 涡波, type: 伙伴}
+    web_notes: "第285话：'如果斯诺认真起来的话应该是最强的吧？你用了龙化战斗'"
+
+  - name: 诺斯菲・弗茨亚茨（诺斯菲 / 光之理的盗窃者）
+    aliases:
+      - {name: 诺斯菲, alias_type: short}
+      - {name: 光之理的盗窃者, alias_type: epithet}
+    role: 第60层守护者 / 光之理的盗窃者 / 弗茨亚茨'南'之'御旗'
+    age: 千年（千年前与涡波为夫妻）
+    personality: "千年追求涡波之爱而不得；代价咏唱'作为『代替』……集于我身'为其独有指纹；因代价而异常坦率（第300话）"
+    inner_monologue: []
+    relationships:
+      - {partner: 涡波, type: 名义妻子/夫妻/千年前, note: "千年前夫妻，想追回逃往北方的丈夫（第283话）"}
+      - {partner: 拉丝缇娅拉, type: 对手/同为公主}
+      - {partner: 缇达家系, type: 弗茨亚茨系}
+    web_notes: "代价咏唱以降——从'为了代替而生的光'到'作为代替而死的光'，升华为光之魔法（Nosfy）。"
+
+  - name: 相川阳滝
+    aliases:
+      - {name: 阳滝, alias_type: short}
+      - {name: 阳泷/阳泮, alias_type: variant, note: "早期/转写残留译名"}
+      - {name: 水之理的盗窃者, alias_type: epithet}
+    role: 涡波之妹 / 水之理的盗窃者 / 千年镜像宿主体
+    personality: "对哥哥病态依存的对象；病弱（原本不治之症）→ 被魔法治愈；后期觉醒为对涡波命运的镜像"
+    relationships:
+      - {partner: 涡波, type: 妹妹, note: "'阳滝不可能得病'/'妹妹就是我的一切'（第287话）"}
+      - {partner: 诺斯菲, type: 千年镜像}
+    secret_layers:
+      - {layer: 1, content: 普通病弱妹妹}
+      - {layer: 2, content: 水之理的盗窃者 / 千年镜像宿主体}
+    web_notes: "第277话：其'病'的真相似与最深部/诺斯菲线相关。亦能模仿次元决战演算『先谭』且更精练（眼球展开即见未来）。"
+
+  # ═══════════════ 二、第二梯队（简卡，散件见复核/暂存） ═══════════════
+
+  # 第二梯队核心事实（来自本语料提取，简卡；详见各暂存/复核）
+  - name: 缇缇
+    aliases: []
+    role: 缇娅拉系守护者/魔石人类；风之理的盗窃者（第7-2章语境）；共鸣魔法《樱童乐土》参与者（计划书示例）
+    relationships: [{partner: 艾德, type: 双人共鸣/伙伴}]
+    web_notes: "第226话 缇缇启程的日子；与艾德双人咏唱。"
+
+  - name: 艾德
+    role: 舞闘大会对手/伙伴；木之理的盗窃者（第7-1/7-2章语境）
+    relationships: [{partner: 缇缇, type: 双人共鸣/伙伴}]
+    web_notes: "第7-2章：木之理的盗窃者持有者。"
+
+  - name: 海因
+    role: 第二梯队；棋盘棋子隐喻（第二章 第三章-一枚名唤海因的棋子）
+
+  - name: 莱纳
+    role: 涡波近卫/骑士；守卫与战斗核心（第282话近卫自述，转任大圣堂骑士）
+    web_notes: "第7-1章第266话：担任涡波近卫、完成后转任大圣堂骑士。"
+
+  - name: 帕林库洛
+    role: 暗之理的盗窃者（对战玛利亚；若无世界奉还阵力量玛利亚可单独取胜 第290话）
+    aliases: [{name: 帕林, alias_type: short}]
+    web_notes: "与玛利亚对战，传说中仅次于阿尔缇。"
+
+  - name: 古奈尔
+    role: 第二梯队；历基亚攻陷对象之一
+    relationships: [{partner: 涡波, type: 被"攻陷"（戏谑；第276话 是真是假 数战果）}]
+
+  - name: 赛尔德拉
+    role: 上位魔人（魔人研究院）/『血之理的盗窃者』相关；龙人
+    aliases: [{name: 龙人 Dragonewt, alias_type: race}]
+    web_notes: "第7-3章：使『血之魔兽』包覆施展新魔法；『上位魔人』。"
+
+  - name: 法夫纳（法夫纳・赫勒比勒夏因）
+    role: 血之理的盗窃者；以伪名歌颂并获世界魔力支持（《Reevan》）
+    aliases: [{name: 法夫纳・赫勒比勒夏因, alias_type: 伪名}]
+    web_notes: "第7-2章：将血液转为感觉器官；血之池支配。"
+
+  - name: 诺伊
+    role: 第二梯队（频次低488，散见）
+
+  - name: 莉帕（格林・利姆・莉帕 / 『慕影死神』）
+    role: 魔石人类；涡波次元魔法学习者；真正魔法《Torsion》caster
+    aliases: [{name: 慕影死神, alias_type: spell_title, magic_jp: 慕影死神, magic_en: Grim・R・Reaper}]
+    relationships: [{partner: 涡波, type: 被教导/战斗莎场伙伴}]
+    web_notes: "第八章 第401话：'安心吧莉帕……——魔法《Torsion》'；能运用瞬间移动warp类魔法。"
+
+  - name: 格连
+    role: 第二梯队；使用『魔人化』（第300话），诺斯菲战斗祭司
+    web_notes: "第300话 坦率的心：徒劳无益让你使用了魔人化。"
+
+  - name: 芙兰琉莱
+    role: 第二梯队（频次低256）
+
+  - name: 拉古涅
+    role: 第7-3章核心对手；卡伊库欧拉（须成为第一）；60层试炼对象
+    aliases: [{name: 拉古涅・卡伊库欧拉, alias_type: full}]
+    web_notes: "第342话 反狱六十；与诺斯菲60层终战。"
+
+  - name: 阿尔缇
+    role: 火之理的盗窃者；第10层守护者；玛利亚继承其力量
+    web_notes: "第7-2章第286话：'继承了火之理的盗窃者的力量之人玛利亚'⇄阿尔缇。"
+
+  - name: 诺文（阿雷亚斯）
+    role: 地之理的盗窃者；第30层守护者；大剧场船『瓦尔法拉』
+    aliases: [{name: 诺文・阿雷亚斯, alias_type: full}]
+    web_notes: "第30层开场白：'这·大·剧·场·船瓦尔法拉正·是·三·十·层！地之理的盗窃者诺文的阶层'。"
+
+  - name: 缇达
+    role: 暗之理的盗窃者；第20层守护者
+    web_notes: "第20层开场白：'这·整·个·联·合·国·就·是·二·十·层。暗之理的盗窃者缇达的阶层'；曾以精神干涉使始祖涡波崩溃（第305话）。"
+
+  - name: 赫尔米娜（血之里的盗窃者助手）
+    role: 血之理的盗窃者法夫纳相关者；'能听懂'的清洁工；法夫纳记忆线索
+    web_notes: "第十章：以《Reading・Shift》重现其声音。"
+
+  - name: 海莉・维斯普洛佩
+    role: 现代最后一位『魔石人类』；其名被当血魔法咏唱（《众生之赤光》）
+    web_notes: "第十章 第491话。"

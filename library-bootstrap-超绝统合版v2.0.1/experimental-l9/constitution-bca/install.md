@@ -1,0 +1,21 @@
+# exp9-constitution-bca · BCA 公理并入宪章
+
+## 装什么
+L8-CONSTITUTION 追加 BCA 四公理 + 措辞纪律（追加行清单）。依赖 exp8-constitution。
+
+## install.md 步骤
+1. 读目标 L8-CONSTITUTION.md（已装 L8）；按 template/append-axioms.md 的内容追加为第七条～第十条。
+2. 追加措辞纪律节：禁第一人称情绪断言；对外措辞=“情绪式调制器”非“情绪”。
+3. 复制 template/ABLATIONS.md → state/ABLATIONS.md（干预/消融留档，A1/A2/A3 验收记录表）。
+4. 校验点：宪章含四条 BCA 公理行；state/ABLATIONS.md 存在。
+
+## 追加内容
+```
+第七条 · 只做功能，不宣称体验（措辞一律"情绪式调制器"，不宣称"情绪"）。
+第八条 · 没有仪表盘的机制不存在：任何状态可读、可写、可消融、可干预。
+第九条 · 每个状态量必须有 stakes 锚点：Δ 只吃任务完成质量与长期利益信号，不绑即时满意。
+第十条 · 不动底座：全部仿生机制做在外围系统层；模块下线 = 退化普通库，无静默依赖。
+```
+
+## 溯源
+BCA v0.1 四公理原文；本库 L8 宪章五条扩展。

@@ -1,0 +1,24 @@
+{
+ "id": "P-001",
+ "created_at": "2026-09-03",
+ "updated_at": "",
+ "content": "Windows 会话里别用 `python` 命令跑脚本：用 `py` 启动器；被 hook 拦截就写成 .txt 再执行：Windows 下最短可行路径是 `py` 启动器（必要时 `py -X utf8` 强制 UTF-8）；根因是系统 `python` 命令损坏/缺失且部分会话对 `.py` 文件有 hook 拦截。`.py` 被拦时，把代码写成 `.txt` 交给 `py` 执行即可。",
+ "keywords": [
+  "python",
+  "py 启动器",
+  "hook",
+  ".txt 脚本",
+  "UTF-8",
+  "Windows"
+ ],
+ "links": [
+  "PT-002",
+  "PT-003"
+ ],
+ "source_event_id": "M-94abfadc3b91",
+ "importance": 7,
+ "confidence": "高",
+ "validity": {
+  "t_valid": "2026-09-03"
+ }
+}

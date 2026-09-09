@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+"""在 app.asar 中提取关键路径探测逻辑的上下文"""
+import re, sys
+
+data = open(r"C:/Users/26672/AppData/Local/Programs/Comfy Desktop/resources/app.asar",
+            "rb").read()
+text = data.decode("utf-8", "replace")
+
+patterns = [
+    r'standalone-env',
+    r'envs", "default"',
+    r'Python 环境',
+]
+for pat in patterns:
+    print(f"===== 模式: {pat} =====")
+    for m in list(re.finditer(re.escape(pat), text))[:4]:
+        s, e = max(0, m.start()-260), min(len(text), m.end()+260)
+        ctx = text[s:e].replace("\n", " ")
+        print(ctx)
+        print("-----")

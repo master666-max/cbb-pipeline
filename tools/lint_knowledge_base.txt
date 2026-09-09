@@ -1,0 +1,93 @@
+# lint_knowledge_base.txt — 双库体检（py -X utf8 本文件 运行）
+# 检查：markdown 断链 / _index 行数 / SKILL frontmatter / v3 schema / 过期条目 / 12 个月未引用项目
+import os, re, sys
+from datetime import datetime, timedelta
+
+sys.stdout.reconfigure(encoding='utf-8')
+problems, warnings = [], []
+
+MD_DIRS = ['knowledge', 'archive', 'soul', 'workspace']
+md_files = ['AGENTS.md']
+for d in MD_DIRS:
+    for root, _, files in os.walk(d):
+        for f in files:
+            if f.endswith('.md'):
+                md_files.append(os.path.join(root, f))
+
+# 1) markdown 断链
+links = 0
+for t in md_files:
+    base = os.path.dirname(t)
+    text = open(t, encoding='utf-8').read()
+    for m in re.finditer(r'\]\(([^)#]+?)(#[^)]*)?\)', text):
+        p = m.group(1)
+        if p.startswith(('http', 'mailto:')):
+            continue
+        links += 1
+        if not os.path.exists(os.path.normpath(os.path.join(base, p))):
+            problems.append('断链: %s -> %s' % (t, p))
+
+# 2) _index 行数
+n = len(open('knowledge/_index.md', encoding='utf-8').read().splitlines())
+if n >= 200:
+    problems.append('_index.md 超 200 行: %d' % n)
+
+# 3) SKILL frontmatter
+for root, dirs, files in os.walk('knowledge/skills'):
+    if 'SKILL.md' in files:
+        s = os.path.join(root, 'SKILL.md')
+        head = open(s, encoding='utf-8').read().split('---')[1]
+        if 'name:' not in head or 'description:' not in head:
+            problems.append('frontmatter 不合规: %s' % s)
+
+# 4) v3 schema：每条 pitfall/pattern 有关键词与版本行（先剥掉 HTML 注释模板，避免误报）
+for lib in ['knowledge/pitfalls.md', 'knowledge/patterns.md']:
+    text = re.sub(r'<!--.*?-->', '', open(lib, encoding='utf-8').read(), flags=re.S)
+    for block in re.split(r'\n### ', text)[1:]:
+        pid = block.split('/')[0].strip()
+        for field in ['关键词', '版本']:
+            if ('\n- %s：' % field) not in '\n' + block:
+                problems.append('%s 条目 %s 缺「%s」行' % (lib, pid, field))
+
+# 5) 过期条目：待验证/验证 0 次且条目日期超 30 天
+today = datetime.now()
+for lib in ['knowledge/patterns.md']:
+    text = open(lib, encoding='utf-8').read()
+    for block in re.split(r'\n### ', text)[1:]:
+        pid = block.split('/')[0].strip()
+        dm = re.search(r'/(\d{4}-\d{2}-\d{2})/', block)
+        if dm and (re.search(r'待验证|已验证 0 次', block)):
+            age = (today - datetime.strptime(dm.group(1), '%Y-%m-%d')).days
+            if age > 30:
+                warnings.append('%s %s 待验证超 30 天（%d 天）→ 按规则移入归档区' % (lib, pid, age))
+
+# 6) 工件 12 个月未引用
+text = open('archive/_INDEX.md', encoding='utf-8').read()
+for m in re.finditer(r'\|\s*(\d\S*/[\w\-]+)\s*\|.*?\|\s*(\d{4}-\d{2}-\d{2})\s*\|', text):
+    age = (today - datetime.strptime(m.group(2), '%Y-%m-%d')).days
+    if age > 365:
+        warnings.append('archive 项目 %s 已 %d 天未引用 → 建议移入 _cold' % (m.group(1), age))
+
+# 7) 轨迹撞号检测（v3.9/W-5）：同 task-N 跨日期目录 = legacy 撞号风险
+traj = {}
+traj_dir = os.path.join('knowledge', 'trajectories')
+if os.path.isdir(traj_dir):
+    for root, dirs, files in os.walk(traj_dir):
+        date_dir = os.path.basename(root)
+        if not re.match(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', date_dir):
+            continue
+        for f in files:
+            m = re.match(r'task-([0-9]+)', f)
+            if m:
+                traj.setdefault(m.group(1), set()).add(date_dir)
+for tn, tdirs in sorted(traj.items()):
+    if len(tdirs) > 1:
+        warnings.append('轨迹同号跨日期（legacy 撞号风险，v3.9 absorb-md 已按日期消歧）: task-%s 出现于 %s' % (tn, ', '.join(sorted(tdirs))))
+
+print('体检文件 %d 个，markdown 链接 %d 条' % (len(md_files), links))
+for w in warnings:
+    print('⚠', w)
+for p in problems:
+    print('✗', p)
+print('结果：%d 问题 / %d 提醒' % (len(problems), len(warnings)))
+sys.exit(1 if problems else 0)
