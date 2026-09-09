@@ -153,3 +153,24 @@
   - 豆包 agora/memevo 两沙盒 zip 仍未解包（【待确认】延续）；沙盒总报告（agora 34 条/记忆库 mem-evo 35+5 条）已入账提供线级覆盖。
   - SIM 第一/第二轮文件名未见于 混元/ 目录（R01/R02 断言仅存于总报告转述）——若在自演化离线实验/ 数据目录内有早期轮次，属数据目录边界未提取。
 - 自检三问：本阶段新断言全部带锚点（程序化截取+双重校验）；版本冲突全部并陈（superseded/contradicted 标注，未裁决）；推定（跨宇宙对账语义、版本定序）均落在 note/状态标注且有文内依据。
+
+## 阶段3 分支树构建——已完成（2026-09-10）
+
+- 进入/完成：2026-09-10。产出登记：
+
+| 文件 | 行数 | sha256[:16] |
+|---|---|---|
+| tree_edges.csv | 174 | 待commit后回填 |
+| 20-分支树.mmd | 391 | 待commit后回填 |
+| ghost_list.csv | 4 | 待commit后回填 |
+| 3-分支树.md | 76 | 待commit后回填 |
+| data/tree-nodes.csv | 644 | （tree_scan 产出） |
+| data/tree-candidates.csv | 656 | （候选存档） |
+
+- 关键数字（`tools/tree_scan.txt` + `tools/tree_validate.txt`）：643 节点/20 宇宙；173 边（replicates 65/refutes 39/motivated_by 35/supersedes 22/contradicts 10/extends 2）；INFERRED 55（31.8%）；触点 183、孤立 460、25 簇、最大簇 116、最深链 13（PART2 轮次链）。
+- 关键分类决策（≤5）：①"未复现"=refutes（E80 八驳边）；②E57 双裁决并陈（REAL驳/DS剂量化复现）；③修正编号≠实验号（修正57≠E57）；④版本链只连相邻；⑤混元/任务报告.md 与 codebuddy 同源存疑 → SIM-TASK 线弃边留人工。
+- 边界情况：E0/E4 命名空间冲突（两轴模型信任轴 vs SIM 实验号）、E132 假阳性（SIM-WEB- 前缀漏配）——3 候选全消解，0 真幽灵；460 孤立节点半数为 KB 记账条目（常态，见 3-分支树.md §五）。
+- 质量门：173/173 边 anchor 机械校验在账本（validate 脚本）；TIME-ANOMALY 0；抽检 24 条（每7取1）入 audit-log phase=3。
+- 自检三问：无边无锚（INFERRED 均带推断链）；E57/同文件矛盾并陈未裁决；§五孤立节点解读显式标【研判推断】。
+
+## 阶段4 独立校验——待做（接替点若中断）
