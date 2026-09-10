@@ -1,0 +1,74 @@
+# -*- coding: utf-8 -*-
+"""phase4_verdict_ingest.txt — 阶段4 裁决执行：方法论-01 入账 + incident-log + alias_map
+程序化锚点截取（ledger_add_extract），锚点在本文件写死为逐字子串，行号由脚本在
+gate-revision.md / 04-diff.md 中机械定位 —— 杜绝手抄与行号漂移。
+"""
+import os, csv, sys
+
+AUD = r"D:\zcode专用！！！！危险！！！！！！！！！\workspace-audit"
+ns = {}
+exec(compile(open(os.path.join(AUD, "tools", "ledger_tool.txt"), encoding="utf-8").read(), "ledger_tool", "exec"), ns)
+ledger_add_extract = ns["ledger_add_extract"]
+
+GR = "workspace-audit/gate-revision.md"
+DF = "workspace-audit/04-diff.md"
+
+def line_of(rel, anchor):
+    with open(os.path.join(os.path.dirname(AUD), rel), encoding="utf-8", errors="replace") as f:
+        for n, t in enumerate(f, 1):
+            if anchor in t:
+                return n
+    raise SystemExit(f"锚点定位失败: {rel} :: {anchor!r}")
+
+EID = "方法论-01"
+# (rel, start_anchor, end_anchor, claim_type, status)
+specs = [
+    (GR, "本次 diff 不一致属", "非**真实性污染**：", "verdict", "verified"),
+    (GR, "抽检 129/129 全过", "**毒为零**", "result", "verified"),
+    (GR, "**真实性门**", "→ **HALT**（立即中止）", "method", "verified"),
+    (GR, "**可复现性门**", "触发**方差标注义务**", "method", "verified"),
+    (GR, "陈述：**无死规则下 LLM 提取判断方差**", "同一文件集、同样合格的独立提取员，", "verdict", "verified"),
+    (GR, "四口径实测：", "内容级折算覆盖 79.5%。", "parameter", "verified"),
+    (GR, "**硬规则 1（区间输出）**", "不给点估计。", "method", "verified"),
+    (GR, "**硬规则 2（区间同现）**", "均视同违规）", "method", "verified"),
+    (GR, "**硬规则 3（红队计伤）**", "伤级事故计入 incident-log）", "method", "verified"),
+    (GR, "**B 的效力边界（必须写明）**", "不证\"**读者自然一致**\"——", "verdict", "verified"),
+    (GR, "**回炉上限**", "**禁止无限回炉**。", "parameter", "verified"),
+    (GR, "机制清单（mechanism-registry）与 LM 矩阵行", "宁多勿漏）**", "verdict", "verified"),
+    (DF, "| v1 预登记 |", "**57.7%**¹ |", "result", "verified"),
+    (DF, "对称口径（信息性）", "Jaccard 选择分歧率 53.9%。", "result", "verified"),
+]
+added = dup = fail = 0
+for rel, sa, ea, ct, st in specs:
+    ln = line_of(rel, sa)
+    try:
+        cid, res = ledger_add_extract(rel, ln, sa, ea, ct, EID, "document", st)
+    except Exception as e:
+        fail += 1
+        print(f"  FAIL {rel}:{ln} {sa[:30]!r} → {e}")
+        continue
+    if res == "added":
+        added += 1
+    else:
+        dup += 1
+print(f"方法论-01 入账：新增 {added}，重复 {dup}，失败 {fail} / 共 {len(specs)}")
+
+# incident-log.csv 首次建立（阶段2 遗留缺口，如实登记）
+IL = os.path.join(AUD, "incident-log.csv")
+new_file = not os.path.exists(IL)
+with open(IL, "a", encoding="utf-8", newline="") as f:
+    w = csv.writer(f)
+    if new_file:
+        w.writerow(["实验ID", "事故描述摘录", "涉及机制", "死因分类"])
+    w.writerow([EID,
+                "无死规则下LLM提取判断方差：四口径不一致率57.3%-58.9%，断言级保真100%但枚举不可复现（可复现性方差，非真实性污染）",
+                "提取判据缺位（密度基准/type-status边界/版本对规则未入操作定义）",
+                "门设计缺陷（单阈值混两种失败模式）——非事故·方法论发现"])
+print("incident-log.csv 已建立并记入 方法论-01")
+
+# alias_map.csv 追加命名空间行
+AM = os.path.join(AUD, "alias_map.csv")
+with open(AM, "a", encoding="utf-8", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["提取判断方差", EID, "方法论", "workspace-audit/gate-revision.md", "审计方法论发现（非12宇宙实验）；无死规则下LLM提取判断方差"])
+print("alias_map.csv 已追加 方法论-01 命名空间行")
