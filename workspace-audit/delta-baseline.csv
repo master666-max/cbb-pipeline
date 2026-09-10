@@ -1,0 +1,20 @@
+item,kind,line_count,value_or_sha,note
+claim_ledger.csv,ledger,3941,f3b2af869e9345d7,
+alias_map.csv,ledger,53,ff63d0b2e3b10871,
+tree_edges.csv,ledger,174,e765c0b8db0e6bf7,
+lit-ledger.csv,ledger,117,c93f1186f7902f3b,
+incident-log.csv,ledger,26,331e6a1a07dc1421,
+ordering-claims.csv,ledger,9,ca9e821f574bea87,
+ghost-papers.csv,ledger,35,410b41b52d301d6c,
+mechanism-registry.csv,ledger,46,597c60b269599db2,
+lm-matrix.csv,ledger,271,e7e113b269669732,
+supersede_log.csv,ledger,3,cc426805828c7ff2,
+audit-log.csv,ledger,322,27db7847967f1723,
+五区.收敛区,derived,,"3093 [2458,4201]",zone-verified
+五区.开放前线,derived,,"702 [558,954]",zone-open
+五区.坟场,derived,,"52 [41,71]",zone-refuted
+五区.矛盾区,derived,,"24 [19,33]",zone-contradicted
+五区.幽灵区,derived,,3（全量枚举）,ghost_list
+人口P,derived,,3871,现行有效断言
+边数,derived,,"173 [口径区间 118(实证),173(全部)]",INFERRED=55
+open假设.IV=0,derived,,97,孤立前线
