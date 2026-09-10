@@ -180,7 +180,7 @@
 
 | 文件 | 行数 | sha256[:16] |
 |---|---|---|
-| 04-diff.md | 63 | commit 后见 git |
+| 04-diff.md | 54 | 192fbdc57b13702d |（原登记 63 为录误：git 首提交 92701b5 起即 54 行从未变动；2026-09-10 续跑会话实测修正）|
 | HALT.md | 68 | commit 后见 git |
 | data/extract/blind-sim{a,b,c}.jsonl | 302+281+504 | 盲建中间产物（自检 1,087/1,087 PASS） |
 | data/phase4-diff-detail.csv | 1582 | diff 全量明细 |
@@ -213,3 +213,45 @@
 | claim_ledger.csv | 3,941 | +14 条 方法论-01（现行 3,938，100% 逐字） |
 - **任务状态**：阶段5-11 **未启动**；按用户指示**新会话以闲时任务接续**（本会话执行完裁决修订即停，不再推进主任务）。
 - 接续会话入口：先读 `progress.md`（本块）→ `gate-revision.md`（两级门/硬规则/B 计划）→ 从**阶段5 景观五区**起。
+
+## 续跑会话开工登记（2026-09-10 · v2 规格 · 阶段5 起接续）
+
+- 收到 PROMPT-SPEC-v2；规格 v2 全文已存档为本目录 `PROMPT-SPEC-v2.md`（此前盘上只有 v1=00-PROMPT.md，后续会话需要 v2 文字），此后只追加不修改。
+- **续跑核对**（`py -X utf8 workspace-audit/tools/progress_hash.txt` + 逐文件 `wc -l`/`sha256sum`，2026-09-10 实测）：
+  - 00-PROMPT/00-盘点/00-文献清单/00-重复表/data.files.jsonl 等=阶段0 登记**逐位一致**；claim_ledger **3,941 行**、alias_map 53、tree_edges 174（`e765c0b8db0e6bf7` ✓）、incident-log 3、ghost_list 4（✓）、mechanism-registry 46（✓）、participants 15（✓）、supersede_log 3（✓）、audit-log **317**（=阶段2 的 293+阶段3 抽检 24，吻合）、HALT 80、gate-revision 71——与阶段1-4+裁决登记一致。
+  - `ledger_tool.txt count`：现行 **3,938**（verified 3,093 / open 702 / refuted 52 / contradicted 24 / superseded 67；hypothesis 233 / method 662 / parameter 476 / result 1,515 / verdict 1,052）——与裁决登记一致。
+  - **一处录误就地修正**：阶段4 块 04-diff.md 登记"63 行"，实测 **54 行**；git 三提交（92701b5/22f1d14/d90e3f6）均 54 行、sha16 `192fbdc57b13702d` 从未变动——判为登记录误非篡改（先例：d90e3f6 同类修正）。
+  - `git status workspace-audit/` 干净（HEAD=d90e3f6）。
+- **v2 规格文字 vs 盘上裁决出入登记**（按规格"已发生的事实优先于规格文本"逐条裁定）：
+  1. v2 云"若 workspace-audit/ 已存在改用 workspace-audit-v2/"：本目录即本任务首轮（阶段0-4）产物，且人工裁决（gate-revision.md）明示"阶段5-11 照跑、从阶段5 起"——**裁定续用 workspace-audit/，不另建 v2 目录**（建新目录=强制重做已完成阶段，违反规格自身续跑条款）。
+  2. v2 以"HALT-RESOLVED.md"为恢复凭证名：盘上实际凭证=`gate-revision.md`（用户裁决）+HALT.md §六（裁决解除节）——实质一致（人工裁决解除 HALT），文件名不同，如实登记不改动。
+  3. v2 阶段4 两级门文字与 gate-revision.md §三-§七 一致，无实质出入；方差纪律 V1-V4 与裁决 §五-§七 一致。
+- 边界情况：incident-log.csv 第 2/3 行为**逐字节重复行**（裁决执行时双写；R7 不删行保留原样；后续一切 incident 计数按唯一行计——已预注册入 tools/phase5-guide.md）。
+- 本会话任务：阶段5 → 11.5 依序推进（方差纪律 V1-V4 全程生效）。
+
+## 阶段5 景观五区划分——已完成（2026-09-10，v2 规格）
+
+- prompt_version：PROMPT-SPEC-v2.md（本日存档）；规则预注册 `tools/phase5-guide.md`（v1+§九v2 修订块）。
+- 产出登记（wc -l + sha256[:16]）：
+
+| 文件 | 行数 | sha256[:16] |
+|---|---|---|
+| 30-景观五区.md | 254 | f3f608c9904f59ff |
+| tools/phase5-guide.md | 93 | 08b288455e6b47a7 |
+| tools/phase5_zones.txt | 179 | 2494115fab92ec30 |
+| tools/phase5_fragments.txt | 49 | 783de62c9325997d |
+| data/phase5-zone-assignments.csv | 3,872 | bbfb0125736c6ce1 |
+| data/phase5-death-causes.csv | 53 | 862e63d545f30c30 |
+| data/phase5-frontier-ranked.csv | 161 | 6b92bc6203247b1a |
+| data/phase5-summary.txt | 105 | 66c7cf1f1b9d4d81 |
+
+- 关键数字（全部点值+区间同现，因子 0.795/1.358）：收敛区 3,093 [2,458,4,201]（tier-1 跨宇宙确认仅 164 [130,223]）/ 开放前线 702 [558,954]（hypothesis 160，**97 条 IV=0 孤立**）/ 坟场 52 [41,71]（死因 DC-1 未复现 16 居首）/ 矛盾区 24 [19,33]（E14 簇最大）/ 幽灵区 3 候选 0 真幽灵；四区和=3,871=人口 PASS。
+- 关键分类决策（≤5）：
+  1. 统计总体 P=3,871（status≠superseded ∧ ∉supersede_log）——与 ledger_tool"现行"口径差异 67 行（superseded-status 仍计入 tool 现行但按有效版本规则不入分区），预注册于 guide §一。
+  2. tier 确认边取 replicates|extends 入边、跨宇宙（tree-nodes universe 列）判 tier-1；宇宙级端点边（REAL→SIM 等 5 条）不计入实验 tier，单独并陈。
+  3. IV=实验关联边数（含全部 relation），排序 IV→实验 open 假设数→claim_id。
+  4. 死因关键词表 v1 覆盖率 50% → 按 R10 追加 v2 块（DC-7 新类+3 类扩词）→ 86.5%，DC-0 剩 7 条中 5 条为 hypothesis 行结构性局限（引文=假设原文），如实呈现不再迭代。
+  5. 机制矛盾候选双口径：字面 CONTRADICTION-CANDIDATE=1（MECH-41）vs 阶段1 登记语义三件套 3——并陈不裁决。
+- 边界情况及处理：①mechanism-registry 字面/语义标记差 2 条（见决策5）；②坟场 DC-0×claim_type 交叉表呈现结构性局限；③incident 计数唯一行规则（重复行事件不双计）已入 guide §七；④阶段5 无新入账断言，锚点抽检不适用，替代质量门=基数硬校验（脚本 exit 码）+全表脚本产出零手抄。
+- 未解决问题：开放前线 97 条 IV=0 假设的"孤立性"是提取密度方差还是真实无连线——留阶段9/10 用（B 计划后可复核）。
+- 自检三问：见 30-景观五区.md §七（三段研判推断显式隔离；矛盾三口径并陈；区间因子外推假设页首声明）。
