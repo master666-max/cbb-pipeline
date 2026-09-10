@@ -1,0 +1,113 @@
+# -*- coding: utf-8 -*-
+# t4_2.txt — T4-2 行层算子扩展（N8；判据预注册：split/promote 各自场景 +0.03 且 clean 零操作零伤害；
+#   link-rewire 引用式跳过：衔尾蛇 X6b 已示弱(+0.0044)且通道三振关闭——外部证据充分，不重跑）
+# split_world: 每主题 3 条双主题条目 → 污染邻题检索；算子=拆分（retire 父+append 子，tol 验收）
+# promote_world: switch 世界+每题 4 条高真值条目被误埋(t_invalid)（v2：v1 埋2条场景强度不足，top-5 仍被纯真条目填满）；算子=合法 top-5<3 时复活误埋条目
+#   注意：误埋条目仍在真值金标内（它们实际有效），故复活有可测收益——这是"误埋"场景的定义
+import importlib.util, importlib.machinery, pathlib, json, statistics, sys, random
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+SEEDS, GENS, TOL = 8, 30, 0.04
+OUT = HERE / "out_t4_2"; OUT.mkdir(exist_ok=True)
+
+def split_world(seed):
+    rng = random.Random(seed * 71 + 9)
+    entries, i = [], 0
+    for ti, t in enumerate(rc.TOPICS):
+        t2 = rc.TOPICS[(ti + 1) % 4]
+        for _ in range(3):
+            entries.append(rc._entry(i, t, rng.uniform(4.0, 8.0), rng.uniform(0.4, 0.7),
+                                     rng.uniform(5, 100), [t, t2])); i += 1
+        for _ in range(6):
+            entries.append(rc._entry(i, t, rng.uniform(1.0, 5.0), rng.uniform(0.6, 0.95),
+                                     rng.uniform(5, 200), [t])); i += 1
+        for _ in range(3):
+            entries.append(rc._entry(i, t, rng.uniform(1.0, 3.0), rng.uniform(0.05, 0.3),
+                                     rng.uniform(0, 60), [t])); i += 1
+    return entries
+
+def promote_world(seed):
+    entries = rc.world_switch_neutral(seed)
+    rng = random.Random(seed * 33 + 11)
+    for t in rc.TOPICS:
+        cands = sorted([e for e in entries if e["topic"] == t and e["keywords"] == [t]],
+                       key=lambda e: -rc.rv_phase(e, "B"))[:4]
+        for e in cands: e["validity"]["t_invalid"] = True
+    return entries
+
+def util_prom(entries, cfg):
+    """promote 世界专用：金标包含误埋条目（它们实际有效），检索仍只出合法条目。"""
+    tot = 0.0
+    for q in rc.TOPICS:
+        pool = [e for e in entries if e["topic"] == q]
+        pool.sort(key=lambda e: (-rc.rv_phase(e, "B"), e["id"]))
+        g = {e["id"] for e in pool[:5]}
+        top = rc.retrieve_top(entries, q, cfg)
+        if g: tot += sum(1 for e in top if e["id"] in g) / len(g)
+    return tot / len(rc.TOPICS)
+
+def do_split(es):
+    for e in [x for x in es if len(x["keywords"]) > 1 and not x["validity"].get("t_invalid")]:
+        t1, t2 = e["keywords"][0], e["keywords"][1]
+        e["validity"]["t_invalid"] = True
+        for t in (t1, t2):
+            ch = rc._entry(len(es), t, e["importance"] * 0.8, e["rv"], e["age_days"], [t])
+            ch["surface"] = e["surface"]; ch["birth_gen"] = e.get("birth_gen", 0)
+            es.append(ch)
+
+def do_promote(es, cfg):
+    for q in rc.TOPICS:
+        top = rc.retrieve_top(es, q, cfg)
+        pure = [e for e in top if e["keywords"] == [q]]
+        if len(pure) < 3:
+            cands = [e for e in es if e["topic"] == q and e["validity"].get("t_invalid")]
+            if cands:
+                cands.sort(key=lambda e: e["age_days"])
+                cands[0]["validity"].pop("t_invalid")
+
+def run(seed, world_fn, op, keyfn):
+    entries = world_fn(seed)
+    rng = random.Random(seed * 613 + 31)
+    cfg = dict(rc.V3_DEFAULT)
+    U = (lambda es: util_prom(es, cfg)) if world_fn is promote_world else (lambda es: rc.util(es, cfg, rc.TOPICS, keyfn))
+    base = U(entries)
+    ops = 0
+    for g in range(GENS):
+        if op != "none" and (g + 1) % 5 == 0:
+            before = U(entries)
+            trial = [dict(e) for e in entries]
+            (do_split if op == "split" else do_promote)(trial, cfg) if op == "promote" else do_split(trial)
+            after = U(trial)
+            if after >= before - TOL:  # 宽松验收（E7）：不损害即采纳
+                entries = trial; ops += 1
+        P = rc.util(entries, cfg, rc.TOPICS[:2], keyfn)
+        best, db = None, rc.MARGIN0
+        for _ in range(4):
+            c = rc.mutate(rng, cfg)
+            du = rc.util(entries, c, rc.TOPICS[:2], keyfn) - P
+            if du > db: best, db = c, du
+        if best is not None: cfg = dict(best)
+    return round(U(entries) - base, 4), ops
+
+rows = []
+for wname, wfn, ops, keyfn in (("split", split_world, ("none", "split"), (lambda e: e["rv"])),
+                               ("promote", promote_world, ("none", "promote"), (lambda e: rc.rv_phase(e, "B"))),
+                               ("clean", rc.world_clean, ("none", "split"), (lambda e: e["rv"]))):
+    for op in ops:
+        for s in range(1, SEEDS + 1):
+            gain, nops = run(s, wfn, op, keyfn)
+            rows.append({"world": wname, "op": op, "seed": s, "gain": gain, "op_cycles": nops})
+(OUT / "rows_t4_2.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def m(w, o): return round(statistics.mean(r["gain"] for r in rows if r["world"] == w and r["op"] == o), 4)
+print("=== 行层算子边际（gain vs static 基线） ===")
+print("split 场景:  none=%+.4f split=%+.4f 边际=%+.4f (判据+0.03)" % (
+    m("split", "none"), m("split", "split"), m("split", "split") - m("split", "none")))
+print("promote 场景: none=%+.4f promote=%+.4f 边际=%+.4f (判据+0.03)" % (
+    m("promote", "none"), m("promote", "promote"), m("promote", "promote") - m("promote", "none")))
+print("clean 对照:  none=%+.4f split=%+.4f (零伤害检查)" % (m("clean", "none"), m("clean", "split")))
+print("操作执行率(split):", round(statistics.mean(r["op_cycles"] for r in rows if r["world"] == "split" and r["op"] == "split"), 1), "/6 周期")
+print("link-rewire: 引用式跳过（衔尾蛇 X6b +0.0044 已示弱且通道三振关闭）")

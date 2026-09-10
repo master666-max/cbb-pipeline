@@ -1,0 +1,88 @@
+# 阶段3 机械标记器（规则表固定，规则外不标记）
+# 规则解释口径（保守且记录，登记于 reports/03-flags.md）：
+#  SUSPECT_JUMP : 同 run 内相邻两个"有分数"的代（round 差<=5）|Δgen_score|>0.2 -> 锚定后一代
+#  STALLED      : 同 run 内连续 >=20 个有分数的代 gen_score 完全相同 -> 每个最长停滞段一次
+#  CONTRADICTION: 同一 (source,run_id,round) 上 drift_flag=true 且 adopt_count>0
+#  INCOMPLETE   : run 内 gen_score 为 null 的行占比 >30%（严格大于）
+#  DUP_CONFLICT : 同 (source,run_id,round) 存在 >=2 个互不相同的非空 gen_score（两行都保留）
+# 每条 flag 必须附 notes_raw 逐字摘录（<=200字），无摘录即丢弃并计数登记。
+import json, glob, os
+from collections import defaultdict
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+rows = []
+for p in sorted(glob.glob(os.path.join(ROOT, "unified", "*.jsonl"))):
+    for line in open(p, encoding="utf-8"):
+        if line.strip():
+            rows.append(json.loads(line))
+
+runs = defaultdict(list)
+for r in rows:
+    runs[(r["source"], r["run_id"])].append(r)
+for k in runs:
+    runs[k].sort(key=lambda r: (r["round"] is None, r["round"] if r["round"] is not None else 0, r["gen_score"] is None, r["gen_score"] if r["gen_score"] is not None else 0))
+
+flags, dropped_noexcerpt = [], 0
+
+def emit(ftype, src, rid, rnd, excerpt, raw_file, raw_line_no, detail):
+    global dropped_noexcerpt
+    ex = (excerpt or "").strip()
+    if not ex:
+        dropped_noexcerpt += 1
+        return
+    flags.append({"flag": ftype, "source": src, "run_id": rid, "round": rnd,
+                  "excerpt": ex[:200], "raw_file": raw_file, "raw_line_no": raw_line_no,
+                  "detail": detail})
+
+for (src, rid), rr in runs.items():
+    # SUSPECT_JUMP
+    pts = [r for r in rr if r["round"] is not None and r["gen_score"] is not None]
+    for a, b in zip(pts, pts[1:]):
+        gap = b["round"] - a["round"]
+        if gap <= 5 and abs(b["gen_score"] - a["gen_score"]) > 0.2:
+            emit("SUSPECT_JUMP", src, rid, b["round"], b["notes_raw"], b["raw_file"], b["raw_line_no"],
+                 f"round{a['round']}:{a['gen_score']} -> round{b['round']}:{b['gen_score']} Δ={round(b['gen_score']-a['gen_score'],6)}")
+    # STALLED
+    if len(pts) >= 20:
+        i = 0
+        while i < len(pts):
+            j = i
+            while j + 1 < len(pts) and pts[j + 1]["gen_score"] == pts[i]["gen_score"] and (pts[j + 1]["round"] - pts[j]["round"]) <= 5:
+                j += 1
+            seglen = j - i + 1
+            if seglen >= 20:
+                emit("STALLED", src, rid, pts[i]["round"], pts[i]["notes_raw"], pts[i]["raw_file"], pts[i]["raw_line_no"],
+                     f"连续{seglen}代同值 {pts[i]['gen_score']}（round {pts[i]['round']}..{pts[j]['round']}）")
+            i = j + 1
+    # CONTRADICTION / DUP_CONFLICT: 按 (run, round) 分组
+    byround = defaultdict(list)
+    for r in rr:
+        byround[r["round"]].append(r)
+    for rnd, group in byround.items():
+        for r in group:
+            if r["drift_flag"] is True and (r["adopt_count"] or 0) > 0:
+                emit("CONTRADICTION", src, rid, rnd, r["notes_raw"], r["raw_file"], r["raw_line_no"],
+                     f"drift_flag=true 且 adopt_count={r['adopt_count']}")
+        vals = sorted(set(r["gen_score"] for r in group if r["gen_score"] is not None))
+        if len(vals) >= 2:
+            for r in group:
+                if r["gen_score"] is not None:
+                    emit("DUP_CONFLICT", src, rid, rnd, r["notes_raw"], r["raw_file"], r["raw_line_no"],
+                         f"同run同round多值: {vals}")
+    # INCOMPLETE
+    n_null = sum(1 for r in rr if r["gen_score"] is None)
+    if len(rr) and n_null / len(rr) > 0.3:
+        anchor = next((r for r in rr if r["gen_score"] is None), rr[0])
+        emit("INCOMPLETE", src, rid, anchor["round"], anchor["notes_raw"], anchor["raw_file"], anchor["raw_line_no"],
+             f"gen_score缺失 {n_null}/{len(rr)} = {round(n_null/len(rr),4)}")
+
+with open(os.path.join(ROOT, "sandbox", "flags.json"), "w", encoding="utf-8", newline="\n") as f:
+    for x in flags:
+        f.write(json.dumps(x, ensure_ascii=False) + "\n")
+
+from collections import Counter
+c = Counter((x["source"], x["flag"]) for x in flags)
+tc = Counter(x["flag"] for x in flags)
+print("flags_total=", len(flags), "dropped_noexcerpt=", dropped_noexcerpt)
+for t, n in tc.most_common(): print(f"  {t}: {n}")
+for (s, t), n in sorted(c.items()): print(f"  {s}/{t}: {n}")

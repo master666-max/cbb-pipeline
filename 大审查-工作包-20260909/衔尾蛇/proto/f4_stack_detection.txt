@@ -1,0 +1,51 @@
+# F4 · ②+③ 叠加世界下 X10 迁移预报器的检出行为（不是翻案：测已有预报器的失效域边界）
+# 运行：py -X utf8 proto/f4_stack_detection.txt
+# 世界：X14 中文歧义词世界（②语义族 + ③年龄结构天然在场，标签已零填充）。
+# 预报器：X10 边际迁移的词族适配版——L1'=audit 含族头词任务；迁移=train 头词任务金标排名>5。
+# 输出：data/f4_stack_detection.json
+import json, importlib.util, importlib.machinery
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent.parent
+DATA = BASE / "data"
+SB = BASE / "sandbox"
+HEADS = {"测试", "学习", "网络", "安全", "数据", "系统", "模型", "索引"}
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evo = load_mod("evocore_zh", BASE / "proto" / "x14" / "evocore_zh.txt")
+
+def golden_rank(lib, t, cfg):
+    rid = evo.rank_lib(lib, t["q"], cfg)
+    return next((i for i, (f, _) in enumerate(rid, 1) if f == t["golden"]), None)
+
+def predict(lib, train, audit, cfg):
+    train_dead = any(t["kw"] in HEADS and golden_rank(lib, t, cfg) > 5 for t in train if t["kw"] in HEADS)
+    audit_exposed = any(t["kw"] in HEADS for t in audit)
+    return train_dead and audit_exposed
+
+conf = {"TP": 0, "FP": 0, "FN": 0, "TN": 0}
+detail = []
+for seed in range(1, 25):
+    r = json.loads((DATA / f"x14-ng-s{seed}.json").read_text(encoding="utf-8"))
+    cfg = r["final_mainline"]
+    lib = SB / f"x14-ng-s{seed}"
+    entries, kw_of = evo.build_world(seed)
+    train, held, audit = evo.build_tasks(seed, entries)
+    pred = predict(lib, train, audit, cfg)
+    actual = r["audit_recall5"] < 0.95
+    conf[["TN", "FP", "FN", "TP"][int(actual) * 2 + int(pred)]] += 1
+    detail.append(f"  s{seed}: 实际={actual}({r['audit_recall5']:.2f}) 预报={pred}")
+
+print("\n".join(detail))
+print(f"叠加世界混淆矩阵: {conf}")
+verdict = ("全对" if conf["FP"] == 0 and conf["FN"] == 0 else
+           f"FP={conf['FP']} FN={conf['FN']}——边界条件见数据")
+print(f"检出行为：{verdict}")
+(DATA / "f4_stack_detection.json").write_text(json.dumps({"confusion": conf, "detail": detail},
+                                                         ensure_ascii=False, indent=1), encoding="utf-8")

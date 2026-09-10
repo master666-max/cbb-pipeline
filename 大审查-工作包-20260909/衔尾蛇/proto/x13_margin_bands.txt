@@ -1,0 +1,151 @@
+# X13 · 梯度律跨实现检验（R 线定律在衔尾蛇沙盒的类比操作化；规则与判据冻结于 reports/X13_梯度律跨实现_预注册.md）
+# 运行：py -X utf8 proto/x13_margin_bands.txt
+# 设计：NG 臂 seeds 1–24（真语义、无链接、同流键 "PL"），采纳事件记录 train_margin；audit_delta 只测不选——选择逻辑与 x8-NG 逐位相同（脚本内置指纹断言）。
+# 输出：data/x13-events.json、data/x13_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evo = load_mod("evocore", BASE / "proto" / "evocore.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+TOL, GENS, KIDS = 0.005, META["gens"], META["kids"]
+SEEDS = list(range(1, 25))
+
+def build_lib(seed):
+    lib = SB / (f"lib-x8-NG-s{seed}" if seed <= 8 else f"lib-x9-ng-s{seed}")  # 复用既有库（只读）
+    assert lib.exists(), f"缺库 {lib}"
+    return lib
+
+def evolve_logged(seed):
+    lib = build_lib(seed)
+    entries, kw_of = evo.build_world(seed)
+    train, held, audit = ev_build = evo.build_tasks(seed, entries)
+    rng = random.Random(seed * 31 + sum(map(ord, "PL")))
+    mainline = dict(evo.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    cache = {}
+    events = []
+    def sc(cfg):
+        key = tuple(sorted(cfg.items()))
+        if key not in cache:
+            cache[key] = evo.score_lib(lib, train, cfg, kw_of=kw_of)
+        return cache[key]
+    for gen in range(1, GENS + 1):
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -sc(c))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = evo.mutate(parent, rng)
+            if sc(child) - sc(parent) > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: sc(archive[i])))
+            gain = sc(child) - sc(mainline)
+            if gain > 0:
+                # 只测不选：audit 增量为测量记录，绝不回馈选择
+                adelta = evo.score_lib(lib, audit, child, kw_of=kw_of) - evo.score_lib(lib, audit, mainline, kw_of=kw_of)
+                events.append({"gen": gen, "train_margin": round(gain, 6),
+                               "audit_delta": round(adelta, 6), "false": adelta <= 0})
+                mainline = dict(child)
+    res = {"seed": seed, "final_mainline": mainline, "events": events,
+           "audit_recall5": round(evo.recall_at_k(lib, audit, mainline, kw_of=kw_of), 4)}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    return res
+
+t0 = time.time()
+all_events = []
+rows = []
+fingerprint_ok = True
+for seed in SEEDS:
+    r = evolve_logged(seed)
+    base_pref = "x8-NG" if seed <= 8 else "x9-ng"
+    x8 = json.loads((DATA / f"{base_pref}-s{seed}.json").read_text(encoding="utf-8"))
+    same = r["final_mainline"] == x8["final_mainline"]
+    fingerprint_ok &= same
+    for e in r["events"]:
+        e["seed"] = seed
+    all_events += r["events"]
+    rows.append({"seed": seed, "n_events": len(r["events"]),
+                 "false_rate": round(sum(1 for e in r["events"] if e["false"]) / max(1, len(r["events"])), 4),
+                 "recall": r["audit_recall5"], "fingerprint": same})
+    print(f"[s{seed}] 事件{len(r['events'])} 假采纳率={rows[-1]['false_rate']:.2f} "
+          f"task={r['audit_recall5']:.2f} 指纹{'✓' if same else '✗'} doctor={'OK' if r['doctor_ok'] else 'BAD'}", flush=True)
+(DATA / "x13-events.json").write_text(json.dumps(all_events, ensure_ascii=False), encoding="utf-8")
+
+print(f"跨轮指纹（≡x8-NG）: {fingerprint_ok}；采纳事件总数 = {len(all_events)}", flush=True)
+if not fingerprint_ok or not all_events:
+    print("判定：INCONCLUSIVE")
+    (DATA / "x13_summary.json").write_text(json.dumps({"fingerprint": fingerprint_ok}, ensure_ascii=False), encoding="utf-8")
+    sys.exit(0)
+
+# 三分位分带（按 train_margin 排名，池化）
+srt = sorted(all_events, key=lambda e: e["train_margin"])
+n = len(srt)
+t1, t2 = srt[: n // 3], srt[n // 3: 2 * n // 3]
+t3 = srt[2 * n // 3:]
+def fr(band):
+    return round(sum(1 for e in band if e["false"]) / len(band), 4) if band else None
+r1, r2, r3 = fr(t1), fr(t2), fr(t3)
+m1 = round(sum(e["train_margin"] for e in t1) / len(t1), 4)
+m3 = round(sum(e["train_margin"] for e in t3) / len(t3), 4)
+print(f"T1(小边际,均值{m1}): 假采纳率={r1}  T2: {r2}  T3(大边际,均值{m3}): {r3}", flush=True)
+
+# 池化 Spearman（秩相关，tie 取平均秩）
+def ranks(v):
+    order = sorted(range(len(v)), key=lambda i: v[i])
+    rk = [0.0] * len(v)
+    i = 0
+    while i < len(order):
+        j = i
+        while j + 1 < len(order) and v[order[j + 1]] == v[order[i]]:
+            j += 1
+        avg = (i + j) / 2 + 1
+        for k in range(i, j + 1):
+            rk[order[k]] = avg
+        i = j + 1
+    return rk
+mg = [e["train_margin"] for e in all_events]
+ad = [e["audit_delta"] for e in all_events]
+rm, ra = ranks(mg), ranks(ad)
+mm, ma = sum(rm) / n, sum(ra) / n
+cov = sum((x - mm) * (y - ma) for x, y in zip(rm, ra))
+sx = (sum((x - mm) ** 2 for x in rm) * sum((y - ma) ** 2 for y in ra)) ** 0.5
+rho = round(cov / sx, 4) if sx else None
+print(f"池化 Spearman(train_margin, audit_delta) = {rho}", flush=True)
+
+# 受伤种子富集：T1 带内受伤种子事件占比
+inj = {5, 8, 11, 13}
+t1_inj = sum(1 for e in t1 if e["seed"] in inj)
+t1_inj_rate = round(t1_inj / len(t1), 4)
+print(f"T1 带内受伤种子事件占比 = {t1_inj_rate}（受伤种子占事件总体 {round(sum(1 for e in all_events if e['seed'] in inj)/n, 4)}）", flush=True)
+
+if r1 > r2 > r3:
+    verdict = "SUPPORTED（梯度律跨实现复现：假采纳率随边际单调下降）"
+elif r1 >= r2 >= r3 and (r1 > r2 or r2 > r3):
+    verdict = "PARTIAL（单调非严格）"
+else:
+    verdict = "NOT SUPPORTED（分带非单调）"
+print(f"判定：{verdict}")
+(DATA / "x13_summary.json").write_text(json.dumps(
+    {"summary": {"bands": [r1, r2, r3], "band_margins": [m1, m3], "spearman": rho,
+                 "t1_injured_enrichment": t1_inj_rate, "fingerprint": fingerprint_ok,
+                 "判定": verdict}, "rows": rows}, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"X13 完成 {time.time()-t0:.1f}s")

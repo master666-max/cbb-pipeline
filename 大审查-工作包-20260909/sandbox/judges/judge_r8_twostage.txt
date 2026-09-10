@@ -1,0 +1,81 @@
+# judge_r8_twostage.txt · Round 8 判据脚本（两阶段门控 vs R2 锁定对照）
+# 用法: py -X utf8 sandbox/judges/judge_r8_twostage.txt --selftest | --real
+import json, sys, os
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+R2_SINGLE = {'rate': 0.5243, 'final': 0.7567}   # σ0.08/m0.05 单阶段（锁定）
+R2_MARGIN15 = {'rate': 0.3102, 'final': 0.7648}  # σ0.08/m0.15 单阶段（锁定）
+
+def cell_stats(cell):
+    runs = cell['runs']
+    ev = [e for r in runs for e in r['events']]
+    rate = sum(1 for e in ev if e['dtrue'] <= 0) / len(ev) if ev else None
+    return {'rate': rate, 'final': sum(r['final_U'] for r in runs) / len(runs), 'n_adopt': len(ev)}
+
+def h1_rule(rate):
+    if rate < 0.30:
+        v = 'SUPPORTED'
+    elif rate >= 0.45:
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, 1.0 - rate
+
+def h2_rule(final):
+    if final >= 0.735:
+        v = 'SUPPORTED'
+    elif final < 0.70:
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, final
+
+def false_rate(events):
+    if not events:
+        return None
+    return sum(1 for e in events if e['dtrue'] <= 0) / len(events)
+
+def selftest():
+    ok = True
+    fr = false_rate([{'dtrue': 0.1}, {'dtrue': -0.05}, {'dtrue': -0.2}])
+    print('case1 false_rate got=%.4f exp=0.6667 %s' % (fr, 'PASS' if abs(fr - 2 / 3) < 5e-4 else 'FAIL'))
+    ok = ok and abs(fr - 2 / 3) < 5e-4
+    v1, m1 = h1_rule(0.25)
+    print('case2a H1 verdict=%s exp=SUPPORTED %s; mech got=%.4f exp=0.7500 %s' % (
+        v1, 'PASS' if v1 == 'SUPPORTED' else 'FAIL', m1, 'PASS' if abs(m1 - 0.75) < 5e-5 else 'FAIL'))
+    ok = ok and v1 == 'SUPPORTED' and abs(m1 - 0.75) < 5e-5
+    v2, m2 = h1_rule(0.47)
+    print('case2b H1 verdict=%s exp=REFUTED %s' % (v2, 'PASS' if v2 == 'REFUTED' else 'FAIL'))
+    ok = ok and v2 == 'REFUTED'
+    v3, m3 = h1_rule(0.35)
+    print('case2c H1 verdict=%s exp=INCONCLUSIVE %s' % (v3, 'PASS' if v3 == 'INCONCLUSIVE' else 'FAIL'))
+    ok = ok and v3 == 'INCONCLUSIVE'
+    v4, m4 = h2_rule(0.75)
+    print('case3a H2 verdict=%s exp=SUPPORTED %s; mech got=%.4f exp=0.7500 %s' % (
+        v4, 'PASS' if v4 == 'SUPPORTED' else 'FAIL', m4, 'PASS' if abs(m4 - 0.75) < 5e-5 else 'FAIL'))
+    ok = ok and v4 == 'SUPPORTED' and abs(m4 - 0.75) < 5e-5
+    v5, m5 = h2_rule(0.69)
+    print('case3b H2 verdict=%s exp=REFUTED %s' % (v5, 'PASS' if v5 == 'REFUTED' else 'FAIL'))
+    ok = ok and v5 == 'REFUTED'
+    v6, m6 = h2_rule(0.72)
+    print('case3c H2 verdict=%s exp=INCONCLUSIVE %s' % (v6, 'PASS' if v6 == 'INCONCLUSIVE' else 'FAIL'))
+    ok = ok and v6 == 'INCONCLUSIVE'
+    print('SELFTEST', 'PASS' if ok else 'FAIL')
+    return ok
+
+def real():
+    cell = json.load(open('sandbox/out/r8_results.json', encoding='utf-8'))['cells'][0]
+    st = cell_stats(cell)
+    print('two-stage: rate=%.4f final=%.4f adopt=%d' % (st['rate'], st['final'], st['n_adopt']))
+    print('R2 single m0.05: rate=%.4f final=%.4f | R2 m0.15: rate=%.4f final=%.4f' % (
+        R2_SINGLE['rate'], R2_SINGLE['final'], R2_MARGIN15['rate'], R2_MARGIN15['final']))
+    v1, m1 = h1_rule(st['rate'])
+    print('== H-R8-1 == verdict=%s mechanical=%.4f effect=%.4f' % (v1, m1, R2_SINGLE['rate'] - st['rate']))
+    v2, m2 = h2_rule(st['final'])
+    print('== H-R8-2 == verdict=%s mechanical=%.4f effect=%+.4f' % (v2, m2, st['final'] - R2_SINGLE['final']))
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    real()

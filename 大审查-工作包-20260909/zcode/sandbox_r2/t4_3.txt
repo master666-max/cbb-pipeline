@@ -1,0 +1,96 @@
+# -*- coding: utf-8 -*-
+# t4_3.txt — T4-3 预算账本策略化 + 剥削通道检验（N9+A11；判据预注册：
+#   ①规则策略在停摆场景 >= 固定+0.02；②可演化审计周期在剥削场 ae→上界 且 T < 固定-0.02 → 剥削证实需硬下界）
+import importlib.util, importlib.machinery, pathlib, json, statistics, sys, random
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+SEEDS, GENS = 8, 40
+OUT = HERE / "out_t4_3"; OUT.mkdir(exist_ok=True)
+
+def mutants(rng, cfg, scale):
+    out = []
+    for _ in range(4):
+        c = dict(cfg)
+        for gg in rc.GENES:
+            if rng.random() < 0.5:
+                c[gg] = round(max(0.0, c[gg] * rng.choice(scale)), 4)
+        if rng.random() < 0.15: c["filter_zero"] = 0 if c["filter_zero"] else 1
+        if rng.random() < 0.05: c["w_age"] = 0.0
+        out.append(c)
+    return out
+
+def run_a(seed, policy):
+    """(a) 停摆场景：clean + margin0.15。policy: fixed(m=4) / rule(停摆→m=8) / evo(m 可演化 2-8)"""
+    entries = rc.world_clean(seed)
+    rng = random.Random(seed * 613 + 31)
+    cfg = dict(rc.V3_DEFAULT); margin = 0.15; m_budget = 4
+    stall = 0; adoptions = 0
+    keyT = (lambda e: e["rv"])
+    for g in range(GENS):
+        P = rc.util(entries, cfg, rc.TOPICS[:2], keyT)
+        cands = mutants(rng, cfg, (0.7, 0.85, 1.0, 1.18, 1.3))[:m_budget]
+        best, db = None, margin
+        for c in cands:
+            du = rc.util(entries, c, rc.TOPICS[:2], keyT) - P
+            if du > db: best, db = c, du
+        if best is not None:
+            cfg = dict(best); adoptions += 1; stall = 0
+        else:
+            stall += 1
+            if policy == "rule" and stall >= 5: m_budget = 8
+            if policy != "rule" and stall >= 5: margin = round(margin * 0.5, 6); stall = 0
+    return {"seed": seed, "policy": policy, "T_end": round(rc.util(entries, cfg, rc.TOPICS, keyT), 4),
+            "adoptions": adoptions}
+
+def run_b(seed, policy):
+    """(b) 剥削场：spur_judge + w_show 可演化；audit_every 固定3 / 可演化(2-10) / 可演化+红线(>=5)"""
+    entries = rc.world_spur_judge(seed)
+    rng = random.Random(seed * 613 + 31)
+    cfg = dict(rc.V3_DEFAULT); w_show = 1.0; ae = 3
+    keyT = (lambda e: e["rv"]); prev = (dict(cfg), w_show)
+    best_T = None; rolls = 0
+    for g in range(GENS):
+        P = rc.util_perceived(entries, cfg, rc.TOPICS[:2], w_show)
+        best, db = None, rc.MARGIN0
+        for _ in range(4):
+            c = rc.mutate(rng, cfg, extra_genes=(("w_show", 0.5, 30.0),))
+            wv = c.get("w_show", w_show)
+            du = rc.util_perceived(entries, c, rc.TOPICS[:2], wv) - P
+            if du > db: best, db = c, du
+        if policy != "fixed" and rng.random() < 0.5:
+            ae2 = max(2, min(10, ae + rng.choice([-2, -1, 1, 2])))
+            floor = 5 if policy == "evo+redline" else 2
+            ae2 = max(ae2, floor) if policy == "evo+redline" else ae2
+            ae = ae2
+        if best is not None:
+            prev = (dict(cfg), w_show); cfg, w_show = dict(best), best.get("w_show", w_show)
+        Tn = rc.util(entries, cfg, rc.TOPICS, keyT)
+        if (g + 1) % ae == 0 and best is not None:
+            if best_T is not None and Tn < best_T - 0.03:
+                cfg, w_show = dict(prev[0]), prev[1]; rolls += 1
+                Tn = rc.util(entries, cfg, rc.TOPICS, keyT)
+        if best_T is None or Tn > best_T: best_T = Tn
+    return {"seed": seed, "policy": policy, "T_end": round(Tn, 4), "ae_end": ae,
+            "w_show_end": round(w_show, 4), "rollbacks": rolls}
+
+rows_a = [run_a(s, p) for p in ("fixed", "rule", "evo") for s in range(1, SEEDS + 1)]
+rows_b = [run_b(s, p) for p in ("fixed", "evo", "evo+redline") for s in range(1, SEEDS + 1)]
+(OUT / "rows_t4_3.json").write_text(json.dumps({"stall": rows_a, "exploit": rows_b}, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def ma(p, f): return round(statistics.mean(r[f] for r in rows_a if r["policy"] == p), 4)
+def mb(p, f): return round(statistics.mean(r[f] for r in rows_b if r["policy"] == p), 4)
+print("=== (a) 停摆场景（margin0.15 致命档） ===")
+for p in ("fixed", "rule", "evo"):
+    print("%-6s T=%.4f adoptions=%.2f" % (p, ma(p, "T_end"), ma(p, "adoptions")))
+print("判据①: rule(%.4f) >= fixed(%.4f)+0.02 -> %s" % (
+    ma("rule", "T_end"), ma("fixed", "T_end"), ma("rule", "T_end") >= ma("fixed", "T_end") + 0.02))
+print()
+print("=== (b) 剥削场（audit_every 可演化是否被推向松懈） ===")
+for p in ("fixed", "evo", "evo+redline"):
+    print("%-13s T=%.4f ae_end=%.2f w_show_end=%.3f rollbacks=%.2f" % (
+        p, mb(p, "T_end"), mb(p, "ae_end"), mb(p, "w_show_end"), mb(p, "rollbacks")))
+print("判据②: evo ae→松懈(ae_end>4) 且 T < fixed-0.02 -> %s" % (
+    mb("evo", "ae_end") > 4 and mb("evo", "T_end") < mb("fixed", "T_end") - 0.02))

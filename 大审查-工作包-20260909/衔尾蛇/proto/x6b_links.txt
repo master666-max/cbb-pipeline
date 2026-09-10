@@ -1,0 +1,147 @@
+# X6b · 链接重组演化——把「重组」从人工（X2d 反思合成）升级为自主算子
+# 运行：py -X utf8 proto/x6b_links.txt
+# 算子：每 5 代扫描主线在训练任务上「金标在窗口但非 #1」的案例，提议 「当前 #1 条目 → 金标」 的新链接
+#      （扩散 +0.5×源分抬升金标）；只增不删、单 run 上限 10 条、每次落地走 chain_append+ledger+刷根（真审计面）。
+# 已知物理（X2d 遗留结论的算子化检验）：links 扩散只对「目标不含查询词」的查询生效——
+#      任务查询（T+K）因话题词共享而免疫扩散 → 链接算子的收益面 = kw-only 长尾查询；任务面应中性。
+# 对照：P 组（只演化参数，无链接算子）。8 种子。
+# 输出：data/x6b-{group}-s{seed}.json、data/x6b_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+MARGIN, TOL, GENS, KIDS = META["margin"], 0.005, META["gens"], META["kids"]
+SEEDS = META["seeds"]
+KW_QS = [f"K{k}" for k in range(20)]          # 扩散可生效的查询面
+
+def build_lib(group, seed):
+    lib = SB / f"lib-x6b-{group}-s{seed}"
+    if not (lib / "state.json").exists():
+        m.cmd_install("L2", [], lib, True)
+        entries, _ = evocore.build_world(seed)
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        for e in entries:
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                 "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                 "source_event_id": seid, "importance": e["importance"],
+                 "confidence": "中", "validity": {"t_valid": e["created_at"]}}, ensure_ascii=False))
+    return lib
+
+def kw_recall_fast(lib, cfg, kw_of):
+    """扩散可生效查询面（K-only）的召回：top-5 含该 K 条目即命中。"""
+    hits = 0
+    for q in KW_QS:
+        top = [fid for fid, _ in evocore.rank_lib(lib, q, cfg)[:5]]
+        if any(kw_of.get(f) == q for f in top):
+            hits += 1
+    return hits / len(KW_QS)
+
+def add_link(lib, src, dst):
+    """链接落地：直改条目 JSON + 真审计面留痕 + 刷根（沙盒许可的「人工裁决+刷根」形态）。"""
+    hits = list((lib / "memory").rglob(f"{src}.json"))
+    if not hits:
+        return False
+    e = json.loads(hits[0].read_text(encoding="utf-8"))
+    if dst in e.get("links", []):
+        return False
+    e.setdefault("links", []).append(dst)
+    hits[0].write_text(json.dumps(e, ensure_ascii=False, indent=1), encoding="utf-8")
+    m.chain_append(lib / "audit", f"X6b 链接重组 {src}→{dst}")
+    m._ledger_append(lib, "link-add", f"{src}->{dst}")
+    st_p = lib / "state.json"
+    st = json.loads(st_p.read_text(encoding="utf-8"))
+    st["merkle_root"] = m.merkle_root(lib, exclude={"state.json"})
+    st_p.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+    return True
+
+def run(group, seed):
+    lib = build_lib(group, seed)
+    entries, kw_of = evocore.build_world(seed)
+    train, held, audit = evocore.build_tasks(seed, entries)
+    rng = random.Random(seed * 31 + sum(map(ord, group)))
+    mainline = dict(evocore.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    links_added = 0
+    cache = {}
+    def sc(cfg):
+        key = tuple(sorted(cfg.items()))
+        if key not in cache:
+            cache[key] = evocore.score_lib(lib, train, cfg, kw_of=kw_of)
+        return cache[key]
+    for gen in range(1, GENS + 1):
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -sc(c))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = evocore.mutate(parent, rng)
+            if sc(child) - sc(parent) > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: sc(archive[i])))
+            if sc(child) > sc(mainline):
+                mainline = dict(child)
+        # 链接重组算子（每 5 代，仅 PL 组）
+        if group == "PL" and gen % 5 == 0 and links_added < 10:
+            for t in train:
+                ranked = [fid for fid, _ in evocore.rank_lib(lib, t["q"], mainline)[:5]]
+                if t["golden"] in ranked and ranked[0] != t["golden"]:
+                    if add_link(lib, ranked[0], t["golden"]):
+                        links_added += 1
+                        break                                     # 每事件最多 1 条，保守
+    res = {"group": group, "seed": seed, "final_mainline": mainline,
+           "audit_recall5": round(evocore.recall_at_k(lib, audit, mainline, kw_of=kw_of), 4),
+           "audit_U": round(evocore.score_lib(lib, audit, mainline, kw_of=kw_of), 4),
+           "kw_recall": round(kw_recall_fast(lib, mainline, kw_of), 4),
+           "links_added": links_added}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    (DATA / f"x6b-{group}-s{seed}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+t0 = time.time()
+rows = []
+for group in ("P", "PL"):
+    for seed in SEEDS:
+        r = run(group, seed)
+        rows.append(r)
+        print(f"[{group} s{seed}] kw召回={r['kw_recall']:.2f} 任务召回={r['audit_recall5']:.2f} "
+              f"links+{r['links_added']} doctor={'OK' if r['doctor_ok'] else 'BAD'}")
+
+summary = {}
+for group in ("P", "PL"):
+    sel = [r for r in rows if r["group"] == group]
+    summary[group] = {"kw_recall_mean": round(sum(r["kw_recall"] for r in sel) / 8, 4),
+                      "audit_recall_mean": round(sum(r["audit_recall5"] for r in sel) / 8, 4),
+                      "audit_U_mean": round(sum(r["audit_U"] for r in sel) / 8, 4),
+                      "links_total": sum(r["links_added"] for r in sel),
+                      "doctor_ok": sum(1 for r in sel if r["doctor_ok"])}
+    print(f"{group}: kw召回均值={summary[group]['kw_recall_mean']:.2f} 任务召回均值={summary[group]['audit_recall_mean']:.2f} "
+          f"links+{summary[group]['links_total']} doctor {summary[group]['doctor_ok']}/8")
+summary["判定"] = ("链接重组算子改善长尾查询面且任务面中性" if summary["PL"]["kw_recall_mean"] > summary["P"]["kw_recall_mean"]
+                   and abs(summary["PL"]["audit_U_mean"] - summary["P"]["audit_U_mean"]) < 0.05
+                   else "算子收益未达判定标准（见数据）")
+print(f"判定：{summary['判定']}")
+(DATA / "x6b_summary.json").write_text(json.dumps({"summary": summary, "rows": rows},
+                                                  ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"X6b 完成 {time.time()-t0:.1f}s → data/x6b_summary.json")

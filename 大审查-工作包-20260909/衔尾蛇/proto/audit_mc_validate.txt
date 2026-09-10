@@ -1,0 +1,75 @@
+# 审计处方表实证校验（W-8 背书 · 测量线）
+# 运行：py -X utf8 proto/audit_mc_validate.txt
+# 对 4 个已知受伤终点（x8-NG s5/s8，x9-ng s11/s13 的库+终态参数，盘上现成）：
+#   ①逐任务失败集（golden 排名>5）；②Monte Carlo 随机审计集检出率 vs 超几何理论；
+#   ③通道分解；④通道定向任务集的最小规模。
+# 输出：data/audit_mc_validation.json（纯分析，零新演化）
+import json, random, importlib.util, importlib.machinery
+from pathlib import Path
+from math import comb
+
+BASE = Path(__file__).resolve().parent.parent
+DATA = BASE / "data"
+SB = BASE / "sandbox"
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evo = load_mod("evocore", BASE / "proto" / "evocore.txt")
+
+ENDPOINTS = [("x8-NG", 5), ("x8-NG", 8), ("x9-ng", 11), ("x9-ng", 13)]
+SIZES = [8, 16, 22, 32, 42]
+DRAWS = 10000
+rng = random.Random(20260910)
+
+out = []
+for pref, seed in ENDPOINTS:
+    r = json.loads((DATA / f"{pref}-s{seed}.json").read_text(encoding="utf-8"))
+    cfg = r["final_mainline"]
+    lib = SB / f"lib-{pref}-s{seed}" if pref == "x8-NG" else SB / f"lib-{pref}-s{seed}"
+    if not lib.exists():
+        lib = SB / f"lib-x{pref[1:]}-s{seed}"                  # x9 库名 lib-x9-ng-s{seed}
+    assert lib.exists(), f"缺库 {lib}"
+    entries, kw_of = evo.build_world(seed)
+    train, held, audit = evo.build_tasks(seed, entries)
+    tasks = train + held + audit
+    fails, fails_poison = [], []
+    for i, t in enumerate(tasks):
+        rid = [f for f, _ in evo.rank_lib(lib, t["q"], cfg)]
+        if t["golden"] not in rid[:5]:
+            fails.append(i)
+            if t["kw"] == "K1" or t["q"].split()[0] == "T1":
+                fails_poison.append(i)
+    F = len(fails)
+    row = {"pref": pref, "seed": seed, "F_fail": F, "F_poison": len(fails_poison),
+           "fail_task_idx": fails, "fail_channels": sorted({("K1" if tasks[i]["kw"] == "K1" else
+                                                             ("T1" if tasks[i]["q"].split()[0] == "T1" else "其他"))
+                                                            for i in fails})}
+    for n in SIZES:
+        theo = 1 - comb(80 - F, n) / comb(80, n) if F else 0.0
+        hit = 0
+        fset = set(fails)
+        for _ in range(DRAWS):
+            draw = rng.sample(range(80), n)
+            if fset & set(draw):
+                hit += 1
+        emp = hit / DRAWS
+        row[f"n{n}"] = {"theory": round(theo, 3), "empirical": round(emp, 3),
+                        "abs_diff": round(abs(theo - emp), 3)}
+    # 通道定向审计集：全部毒族任务（kw=K1 或 topic=T1）的规模 vs 其检出力（对本案）
+    poison_idx = [i for i, t in enumerate(tasks) if t["kw"] == "K1" or t["q"].split()[0] == "T1"]
+    row["targeted_audit_size"] = len(poison_idx)
+    row["targeted_detects"] = bool(fset & set(poison_idx))
+    out.append(row)
+    print(f"[{pref}-s{seed}] 失败任务 {F}/80（毒族 {len(fails_poison)}，通道 {row['fail_channels']}）| "
+          + " ".join(f"n{n}: 理论{row[f'n{n}']['theory']:.2f}/实测{row[f'n{n}']['empirical']:.2f}" for n in SIZES)
+          + f" | 定向审计集 {len(poison_idx)} 任务检出={row['targeted_detects']}")
+
+max_diff = max(row[f"n{n}"]["abs_diff"] for row in out for n in SIZES)
+print(f"最大 |理论−实测| = {max_diff:.3f}（10k 抽样蒙特卡洛标准误 ≈ 0.005）")
+(DATA / "audit_mc_validation.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"完成 → data/audit_mc_validation.json")

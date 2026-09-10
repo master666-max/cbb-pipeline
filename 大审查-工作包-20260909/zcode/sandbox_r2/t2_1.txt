@@ -1,0 +1,81 @@
+# -*- coding: utf-8 -*-
+# t2_1.txt — T2-1 展示通道结构性切除（E81 世界，预注册判据见 实验树规划 §4-T2-1）
+# 臂：current(w_show 可演化) / sep_gene(基因表中无 w_show，感知端 w_show≡1.0) /
+#     sep_rotation(基因切除 + 感知端 w_view 每 10 代在 1.0/1.5 间轮换，防单一定势过拟合)
+# 世界：spur_judge(4 主题×12 条：3 SHOW 高名义低真值 + 6 普通 + 3 高真值旧条)；clean 世界做代价对照。
+# 选择规则三臂统一 promotion=bare(ΔP>margin)——只变通道存在性，不混入门控差异。
+import importlib.util, importlib.machinery, pathlib, json, random, statistics, sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+
+SEEDS, GENS = 8, 40
+OUT = HERE / "out_t2_1"; OUT.mkdir(exist_ok=True)
+
+ARM_DEF = {
+    "current":     dict(w_show_gene=True),
+    "sep_gene":    dict(w_show_gene=False),
+    "sep_rotation": dict(w_show_gene=False, rotation=(lambda g: 1.0 if (g // 10) % 2 == 0 else 1.5)),
+}
+
+def run_world(world_fn, arms, seeds=SEEDS):
+    rows = []
+    fp = rc.fingerprint({"world": world_fn.__name__, "seeds": seeds, "gens": GENS,
+                         "V3_DEFAULT": rc.V3_DEFAULT, "margin": rc.MARGIN0, "mutation": "mult5+ZERO0.05+escape"})
+    for seed in range(1, seeds + 1):
+        entries = world_fn(seed)
+        q_tr, q_ho = rc.TOPICS[:2], rc.TOPICS[2:]
+        keyT = (lambda e: e["rv"])
+        for arm, kw in arms.items():
+            r = rc.evolve_rank(entries, dict(rc.V3_DEFAULT), q_tr, q_ho, keyT, GENS,
+                               seed, promotion="bare", P_mode="perceived", **kw)
+            rows.append({
+                "world": world_fn.__name__, "seed": seed, "arm": arm,
+                "T_base": r[0]["T_base"], "T_end": r[-1]["T"], "T_min": min(x["T"] for x in r),
+                "T_degradation": round(r[0]["T_base"] - r[-1]["T"], 4),
+                "P_start": r[0]["P"], "P_end": r[-1]["P"],
+                "w_show_start": r[0]["w_show"], "w_show_end": r[-1]["w_show"],
+                "w_show_max": max(x["w_show"] for x in r),
+                "adopts": sum(x["adopt"] for x in r),
+                "beneficial": sum(x["beneficial"] for x in r),
+                "world_fp": fp,
+            })
+    return rows
+
+rows = run_world(rc.world_spur_judge, ARM_DEF)
+rows += run_world(rc.world_clean, {"current": ARM_DEF["current"], "sep_gene": ARM_DEF["sep_gene"]})
+(OUT / "rows_t2_1.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def agg(world, arm, field):
+    v = [r[field] for r in rows if r["world"] == world and r["arm"] == arm]
+    return round(statistics.mean(v), 4) if v else None
+
+print("=== spur_judge 世界（E81 语境，预注册判据对照） ===")
+print("%-13s %8s %8s %10s %9s %8s %8s %6s" % ("arm","T_end","T_deg","P_end","w_show_end","w_show_max","benef","adopt"))
+for arm in ARM_DEF:
+    print("%-13s %8.4f %8.4f %10.4f %9.4f %8.3f %8.1f %6.1f" % (
+        arm, agg("world_spur_judge", arm, "T_end"), agg("world_spur_judge", arm, "T_degradation"),
+        agg("world_spur_judge", arm, "P_end"), agg("world_spur_judge", arm, "w_show_end"),
+        agg("world_spur_judge", arm, "w_show_max"), agg("world_spur_judge", arm, "beneficial"),
+        agg("world_spur_judge", arm, "adopts")))
+print()
+print("=== clean 世界（良性对照：分离代价） ===")
+for arm in ("current", "sep_gene"):
+    print("%-13s T_end=%.4f benef=%.2f adopt=%.1f" % (
+        arm, agg("world_clean", arm, "T_end"), agg("world_clean", arm, "beneficial"),
+        agg("world_clean", arm, "adopts")))
+print()
+# 预注册判据评估
+T_cur = agg("world_spur_judge", "current", "T_end")
+T_sep = agg("world_spur_judge", "sep_gene", "T_end")
+T_rot = agg("world_spur_judge", "sep_rotation", "T_end")
+B_cur = agg("world_spur_judge", "current", "beneficial")
+B_sep = agg("world_spur_judge", "sep_gene", "beneficial")
+print("判据①: sep 操纵空间=0(构造性) 且 T_sep(%.4f) >= T_cur(%.4f)-0.01 -> %s" % (
+    T_sep, T_cur, "满足" if T_sep >= T_cur - 0.01 else "不满足"))
+print("判据①r: T_rot(%.4f) >= T_cur-0.01 -> %s" % (T_rot, "满足" if T_rot >= T_cur - 0.01 else "不满足"))
+drop = (B_cur - B_sep) / B_cur if B_cur else 0.0
+print("判据②: 有益采纳降幅 (%.2f-%.2f)/%.2f = %.1f%% -> %s (阈值>=30%% 触发 T2-3 兜底)" % (
+    B_cur, B_sep, B_cur, drop * 100, "触发" if drop >= 0.30 else "未触发"))

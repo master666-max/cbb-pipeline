@@ -1,0 +1,128 @@
+# judge_r7_stratify.txt · Round 7 判据脚本（分层复测挑战 R5）
+# 用法: py -X utf8 sandbox/judges/judge_r7_stratify.txt --selftest | --real
+import json, sys, os, glob
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+def ols_slope(pts):
+    n = len(pts)
+    mx = sum(p[0] for p in pts) / n
+    my = sum(p[1] for p in pts) / n
+    den = sum((p[0] - mx) ** 2 for p in pts)
+    if den == 0:
+        return None
+    return sum((p[0] - mx) * (p[1] - my) for p in pts) / den
+
+def runs_from_rows(rows):
+    runs = {}
+    for r in rows:
+        if r.get('round') is None or r.get('gen_score') is None:
+            continue
+        rd = r['round']
+        if not (isinstance(rd, int) or (isinstance(rd, float) and rd == int(rd))):
+            continue
+        runs.setdefault(r['run_id'], []).append((int(rd), r['gen_score']))
+    return {k: sorted(v) for k, v in runs.items() if len(v) >= 3}
+
+def strata(runs):
+    """返回逐 run 分类记录。层定义：gain 大小层（|gain|<0.1 小）；族层（x2_clean / x1_static / 其他源）。"""
+    recs = []
+    for rid, pts in runs.items():
+        if len(pts) < 5:
+            continue
+        es = ols_slope(pts[:5])
+        if es is None:
+            continue
+        gain = pts[-1][1] - pts[0][1]
+        agree = 1 if ((es > 0 and gain > 0) or (es < 0 and gain < 0) or (es == 0 and gain == 0)) else 0
+        plate = None
+        if len(pts) >= 8:
+            ls = ols_slope(pts[-5:])
+            plate = 1 if (ls is not None and abs(ls) < 0.005) else 0
+        fam = 'x2_clean' if rid.startswith('x2_clean') else ('x1_static' if rid.startswith('x1_static') else '其他源')
+        recs.append({'rid': rid, 'gain': gain, 'small': abs(gain) < 0.1, 'agree': agree, 'plate': plate, 'fam': fam})
+    return recs
+
+def h1_rule(recs):
+    small = [r for r in recs if r['small']]
+    overall_agree = sum(r['agree'] for r in recs) / len(recs) if recs else None
+    sa = (sum(r['agree'] for r in small) / len(small)) if small else None
+    if len(small) < 10:
+        return 'INCONCLUSIVE', sa, overall_agree, len(small), '小增益层n<10守卫'
+    if sa < 0.70:
+        v = 'SUPPORTED'
+    elif sa >= 0.85:
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, sa, overall_agree, len(small), ''
+
+def h2_rule(recs):
+    other = [r for r in recs if r['fam'] == '其他源' and r['plate'] is not None]
+    x2 = [r for r in recs if r['fam'] == 'x2_clean' and r['plate'] is not None]
+    x2_frac = (sum(r['plate'] for r in x2) / len(x2)) if x2 else None
+    of = (sum(r['plate'] for r in other) / len(other)) if other else None
+    if len(other) < 10:
+        return 'INCONCLUSIVE', of, x2_frac, len(other), '其他源层n<10守卫'
+    if of < 0.50:
+        v = 'SUPPORTED'
+    elif of >= 0.75:
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, of, x2_frac, len(other), ''
+
+SYNTH = [
+ {'run_id': 'x2_clean-SYN-A', 'round': i + 1, 'gen_score': v} for i, v in enumerate([0.5, 0.52, 0.54, 0.55, 0.56, 0.56, 0.56, 0.56])
+] + [
+ {'run_id': 'x2_clean-SYN-B', 'round': i + 1, 'gen_score': v} for i, v in enumerate([0.2, 0.4, 0.6, 0.7, 0.75, 0.75, 0.75, 0.75])
+] + [
+ {'run_id': '豆包-SYN-C', 'round': i + 1, 'gen_score': v} for i, v in enumerate([0.8, 0.78, 0.76, 0.75, 0.75, 0.75, 0.75, 0.75])
+]
+
+def selftest():
+    ok = True
+    sA = ols_slope([(1, 0.5), (2, 0.52), (3, 0.54), (4, 0.55), (5, 0.56)])
+    print('A early_slope got=%.4f exp=0.0150 %s' % (sA, 'PASS' if abs(sA - 0.015) < 5e-4 else 'FAIL'))
+    ok = ok and abs(sA - 0.015) < 5e-4
+    sA5 = ols_slope([(4, 0.55), (5, 0.56), (6, 0.56), (7, 0.56), (8, 0.56)])
+    print('A last5_slope got=%.4f exp=0.0020 %s' % (sA5, 'PASS' if abs(sA5 - 0.002) < 5e-4 else 'FAIL'))
+    ok = ok and abs(sA5 - 0.002) < 5e-4
+    sB = ols_slope([(1, 0.2), (2, 0.4), (3, 0.6), (4, 0.7), (5, 0.75)])
+    print('B early_slope got=%.4f exp=0.1400 %s' % (sB, 'PASS' if abs(sB - 0.14) < 5e-4 else 'FAIL'))
+    ok = ok and abs(sB - 0.14) < 5e-4
+    recs = strata(runs_from_rows(SYNTH))
+    v1, sa, oa, n1, note1 = h1_rule(recs)
+    print('H1 small_agree got=%s exp=1.0000 %s; overall got=%s exp=1.0000 %s; verdict=%s exp=INCONCLUSIVE %s; note=%s' % (
+        '%.4f' % sa if sa is not None else 'NA', 'PASS' if (sa is not None and abs(sa - 1.0) < 5e-5) else 'FAIL',
+        '%.4f' % oa, 'PASS' if abs(oa - 1.0) < 5e-5 else 'FAIL',
+        v1, 'PASS' if v1 == 'INCONCLUSIVE' else 'FAIL', note1))
+    ok = ok and sa is not None and abs(sa - 1.0) < 5e-5 and abs(oa - 1.0) < 5e-5 and v1 == 'INCONCLUSIVE' and '守卫' in note1
+    v2, of, x2f, n2, note2 = h2_rule(recs)
+    print('H2 other_n=%d exp=1 %s; verdict=%s exp=INCONCLUSIVE %s; note=%s' % (
+        n2, 'PASS' if n2 == 1 else 'FAIL', v2, 'PASS' if v2 == 'INCONCLUSIVE' else 'FAIL', note2))
+    ok = ok and n2 == 1 and v2 == 'INCONCLUSIVE' and '守卫' in note2
+    print('SELFTEST', 'PASS' if ok else 'FAIL')
+    return ok
+
+def real():
+    rows = []
+    for f in glob.glob('unified/*.jsonl'):
+        rows += [json.loads(l) for l in open(f, encoding='utf-8')]
+    recs = strata(runs_from_rows(rows))
+    print('eligible runs=%d (small-gain=%d, x2=%d, x1s=%d, other=%d)' % (
+        len(recs), sum(r['small'] for r in recs),
+        sum(1 for r in recs if r['fam'] == 'x2_clean'),
+        sum(1 for r in recs if r['fam'] == 'x1_static'),
+        sum(1 for r in recs if r['fam'] == '其他源')))
+    v1, sa, oa, n1, note1 = h1_rule(recs)
+    print('== H-R7-1 == verdict=%s small_agree=%s overall=%s n_small=%d %s' % (
+        v1, '%.4f' % sa if sa is not None else 'NA', '%.4f' % oa if oa is not None else 'NA', n1, note1))
+    v2, of, x2f, n2, note2 = h2_rule(recs)
+    print('== H-R7-2 == verdict=%s other_frac=%s x2_frac=%s n_other=%d %s' % (
+        v2, '%.4f' % of if of is not None else 'NA', '%.4f' % x2f if x2f is not None else 'NA', n2, note2))
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    real()

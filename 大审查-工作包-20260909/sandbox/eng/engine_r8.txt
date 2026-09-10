@@ -1,0 +1,40 @@
+# engine_r8.txt · Round 8 两阶段门控引擎（r2 平坦世界骨架 + 双评估门）
+# 运行: py -X utf8 sandbox/eng/engine_r8.txt
+# 世界: U=max(0,1-||x-t||^2); sigma=0.08; margin=0.05; step=0.35; G=30; 100 run; seed=150000+run
+# 两阶段门控: 采纳需 obs1_c>obs1_m+m 且 obs2_c>obs2_m+m（4 个独立噪声/代）
+import random, json, os
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+G, STEP, SIGMA, MARGIN, N_RUNS = 30, 0.35, 0.08, 0.05, 100
+
+def U(x, t):
+    d2 = (x[0] - t[0]) ** 2 + (x[1] - t[1]) ** 2
+    return max(0.0, 1.0 - d2)
+
+def main():
+    runs = []
+    for ri in range(N_RUNS):
+        rng = random.Random(150000 + ri)
+        t = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+        x = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+        u_init = U(x, t)
+        events = []
+        for g in range(1, G + 1):
+            cand = (x[0] + rng.gauss(0, STEP), x[1] + rng.gauss(0, STEP))
+            gate1 = (U(cand, t) + rng.gauss(0, SIGMA)) > (U(x, t) + rng.gauss(0, SIGMA) + MARGIN)
+            gate2 = (U(cand, t) + rng.gauss(0, SIGMA)) > (U(x, t) + rng.gauss(0, SIGMA) + MARGIN)
+            if gate1 and gate2:
+                events.append({'g': g, 'dtrue': round(U(cand, t) - U(x, t), 10)})
+                x = cand
+        runs.append({'final_U': round(U(x, t), 10), 'init_U': round(u_init, 10), 'events': events})
+    n_ad = sum(len(r['events']) for r in runs)
+    fr = sum(1 for r in runs for e in r['events'] if e['dtrue'] <= 0)
+    print('two-stage: adopt=%d false=%d rate=%.4f final_mean=%.4f' % (
+        n_ad, fr, fr / n_ad, sum(r['final_U'] for r in runs) / len(runs)))
+    json.dump({'cells': [{'sigma': SIGMA, 'margin': MARGIN, 'gate': 'two_stage', 'runs': runs}]},
+              open('sandbox/out/r8_results.json', 'w', encoding='utf-8'), ensure_ascii=False)
+    print('written sandbox/out/r8_results.json')
+
+if __name__ == '__main__':
+    main()

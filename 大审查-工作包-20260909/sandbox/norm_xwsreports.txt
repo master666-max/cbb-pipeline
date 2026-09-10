@@ -1,0 +1,80 @@
+# 阶段1 归一化提取器 · 衔尾蛇/reports（B级 md）
+# 口径：X0 G0表与X1 G0/G1表的 gen_score=审计集效用(与 data/x1_static.jsonl 的 G{n}_audit_U 同口径,
+#       run_id 也与之一致 -> 跨文件交叉校验,值应一致,不一致则 DUP_CONFLICT 如实暴露)
+#       X6c 表取 recall 首值(复合单元格"recall X / MRR Y")
+#       其余(X2a主表/X3矩阵/X6a/X6b/补充轮X3c/总报告假设判定/24种子复核/X4并发对照)为汇总复述,不入库(登记)
+import os, re, json
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+rows, dirty = [], []
+
+def num(s):
+    s = s.replace("**", "").strip()
+    m = re.match(r"^[+−\-]?\d+(\.\d+)?$", s)
+    if not m: return None
+    try: return float(s.replace("−", "-").replace("+", ""))
+    except ValueError: return None
+
+def first_num(s):
+    m = re.search(r"[+−\-]?\d+\.?\d*", s.replace("**", ""))
+    if not m: return None
+    try: return float(m.group(0).replace("−", "-"))
+    except ValueError: return None
+
+def cells(line): return [c.strip() for c in line.strip().strip("|").split("|")]
+
+def add(run_id, rnd, gs, line_no, fn, note):
+    rows.append({"source": "衔尾蛇", "run_id": run_id, "round": rnd, "gen_score": gs,
+                 "adopt_count": None, "drift_flag": None, "raw_line_no": line_no,
+                 "raw_file": f"衔尾蛇/reports/{fn}", "notes_raw": note})
+
+# X1_静态基线.md L8: | seed | G0 | G1 | 差 | (审计集效用)
+fn = "X1_静态基线.md"
+lines = open(os.path.join(ROOT, "衔尾蛇", "reports", fn), encoding="utf-8").read().splitlines()
+for i, ln in enumerate(lines):
+    if ln.rstrip() == "| seed | G0 | G1 | 差 |":
+        j = i + 2
+        while j < len(lines) and lines[j].strip().startswith("|"):
+            cs = cells(lines[j])
+            seed = cs[0].replace("**", "").strip()
+            if not seed.isdigit():
+                j += 1; continue
+            add(f"x1_static-s{seed}", 0, num(cs[1]) if len(cs) > 1 else None, j + 1, fn, lines[j].rstrip())
+            add(f"x1_static-s{seed}", 1, num(cs[2]) if len(cs) > 2 else None, j + 1, fn, lines[j].rstrip())
+            j += 1
+        break
+
+# X0_环境自检与等价性.md L23: | 集合 | utility | recall@5 | -> 只取 audit 行(审计口径), train/held 行登记不入
+fn = "X0_环境自检与等价性.md"
+lines = open(os.path.join(ROOT, "衔尾蛇", "reports", fn), encoding="utf-8").read().splitlines()
+for i, ln in enumerate(lines):
+    if ln.rstrip() == "| 集合 | utility | recall@5 |":
+        j = i + 2
+        while j < len(lines) and lines[j].strip().startswith("|"):
+            cs = cells(lines[j])
+            key = cs[0].replace("**", "").strip()
+            if "audit" in key.lower():
+                add("x1_static-s1", 0, num(cs[1]) if len(cs) > 1 else None, j + 1, fn, lines[j].rstrip())
+            j += 1
+        break
+
+# 第三轮_X6_库内容推演.md L36: | 任务面 | 自称 importance（A 库） | 实测派生（B 库） | Δ |
+fn = "第三轮_X6_库内容推演.md"
+lines = open(os.path.join(ROOT, "衔尾蛇", "reports", fn), encoding="utf-8").read().splitlines()
+for i, ln in enumerate(lines):
+    if ln.startswith("| 任务面 | 自称 importance"):
+        j = i + 2
+        while j < len(lines) and lines[j].strip().startswith("|"):
+            cs = cells(lines[j])
+            key = cs[0].replace("**", "").strip()
+            for col, suf in ((1, "-自称A"), (2, "-实测B")):
+                gs = first_num(cs[col]) if col < len(cs) else None
+                add(f"x6c-{key}{suf}", None, gs, j + 1, fn, lines[j].rstrip())
+            j += 1
+        break
+
+with open(os.path.join(ROOT, "unified", "衔尾蛇reports.jsonl"), "w", encoding="utf-8", newline="\n") as f:
+    for r in rows:
+        f.write(json.dumps(r, ensure_ascii=False) + "\n")
+print("rows=", len(rows), "runs=", len(set(r["run_id"] for r in rows)))
+for r in rows[:4]: print(json.dumps(r, ensure_ascii=False)[:170])

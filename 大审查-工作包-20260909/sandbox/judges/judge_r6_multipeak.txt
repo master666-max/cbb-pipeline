@@ -1,0 +1,107 @@
+# judge_r6_multipeak.txt · Round 6 判据脚本（多峰陷阱与首峰锁定）
+# 用法: py -X utf8 sandbox/judges/judge_r6_multipeak.txt --selftest | --real
+import json, sys, os, statistics
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+def median(xs):
+    return statistics.median(xs)
+
+def h1_rule(trap_ratios):
+    m = median(trap_ratios)
+    if m < 0.80:
+        v = 'SUPPORTED'
+    elif m >= 0.95:
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, 1.0 - m
+
+def stay_rate(pairs):
+    """pairs: [(first_peak, final_peak)]。"""
+    if not pairs:
+        return None
+    return sum(1 for a, b in pairs if a is not None and a == b) / len(pairs)
+
+def h2_rule(pairs):
+    s = stay_rate(pairs)
+    if s >= 0.70:
+        v = 'SUPPORTED'
+    elif s <= 0.40:
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, s
+
+def spearman(xs, ys):
+    n = len(xs)
+    if n < 3:
+        return None
+
+    def ranks(vs):
+        order = sorted(range(n), key=lambda i: vs[i])
+        rk = [0.0] * n
+        i = 0
+        while i < n:
+            j = i
+            while j + 1 < n and vs[order[j + 1]] == vs[order[i]]:
+                j += 1
+            avg = (i + j) / 2 + 1
+            for k in range(i, j + 1):
+                rk[order[k]] = avg
+            i = j + 1
+        return rk
+    rx, ry = ranks(xs), ranks(ys)
+    mx, my = sum(rx) / n, sum(ry) / n
+    sx = sum((a - mx) ** 2 for a in rx) ** 0.5
+    sy = sum((b - my) ** 2 for b in ry) ** 0.5
+    if sx == 0 or sy == 0:
+        return None
+    return sum((a - mx) * (b - my) for a, b in zip(rx, ry)) / (sx * sy)
+
+def selftest():
+    ok = True
+    v1, m1 = h1_rule([0.5, 0.9])
+    print('case1 H1 verdict=%s exp=SUPPORTED %s; mech got=%.4f exp=0.3000 %s' % (
+        v1, 'PASS' if v1 == 'SUPPORTED' else 'FAIL', m1, 'PASS' if abs(m1 - 0.3) < 5e-5 else 'FAIL'))
+    ok = ok and v1 == 'SUPPORTED' and abs(m1 - 0.3) < 5e-5
+    v2, m2 = h1_rule([0.9, 0.97])
+    print('case2 H1 verdict=%s exp=INCONCLUSIVE %s; mech got=%.4f exp=0.0650 %s' % (
+        v2, 'PASS' if v2 == 'INCONCLUSIVE' else 'FAIL', m2, 'PASS' if abs(m2 - 0.065) < 5e-5 else 'FAIL'))
+    ok = ok and v2 == 'INCONCLUSIVE' and abs(m2 - 0.065) < 5e-5
+    v3, m3 = h2_rule([(1, 1), (2, 3), (1, 1)])
+    print('case3 H2 verdict=%s exp=INCONCLUSIVE %s; mech got=%.4f exp=0.6667 %s' % (
+        v3, 'PASS' if v3 == 'INCONCLUSIVE' else 'FAIL', m3, 'PASS' if abs(m3 - 2 / 3) < 5e-4 else 'FAIL'))
+    ok = ok and v3 == 'INCONCLUSIVE' and abs(m3 - 2 / 3) < 5e-4
+    v4, m4 = h2_rule([(1, 2), (1, 3)])
+    print('case4 H2 verdict=%s exp=REFUTED %s; mech got=%.4f exp=0.0000 %s' % (
+        v4, 'PASS' if v4 == 'REFUTED' else 'FAIL', m4, 'PASS' if abs(m4) < 5e-5 else 'FAIL'))
+    ok = ok and v4 == 'REFUTED' and abs(m4) < 5e-5
+    v5, m5 = h2_rule([(1, 1), (1, 1), (2, 2)])
+    print('case5 H2 verdict=%s exp=SUPPORTED %s; mech got=%.4f exp=1.0000 %s' % (
+        v5, 'PASS' if v5 == 'SUPPORTED' else 'FAIL', m5, 'PASS' if abs(m5 - 1.0) < 5e-5 else 'FAIL'))
+    ok = ok and v5 == 'SUPPORTED' and abs(m5 - 1.0) < 5e-5
+    print('SELFTEST', 'PASS' if ok else 'FAIL')
+    return ok
+
+def real():
+    runs = json.load(open('sandbox/out/r6_results.json', encoding='utf-8'))['runs']
+    traps = [r['trap_ratio'] for r in runs]
+    pairs = [(r['first_peak'], r['final_peak']) for r in runs]
+    v1, m1 = h1_rule(traps)
+    v2, m2 = h2_rule(pairs)
+    s = stay_rate(pairs)
+    found = [r for r in runs if r['h_first'] is not None]
+    rho = spearman([r['h_first'] for r in found], [r['final_U'] for r in found])
+    sw = [r['switches'] for r in runs]
+    print('median_trap=%.4f stay_rate=%s first_found=%d/%d spearman(h_first,final)=%s mean_switches=%.2f' % (
+        median(traps), '%.4f' % s if s is not None else 'NA', len(found), len(runs),
+        '%.4f' % rho if rho is not None else 'NA', sum(sw) / len(sw)))
+    print('== H-R6-1 == verdict=%s mechanical=%.4f effect=%.4f' % (v1, m1, m1))
+    print('== H-R6-2 == verdict=%s mechanical=%s effect=%s' % (
+        v2, '%.4f' % m2 if m2 is not None else 'NA', '%.4f' % (m2 - 0.5) if m2 is not None else 'NA'))
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    real()

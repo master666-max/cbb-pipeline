@@ -1,0 +1,17 @@
+{
+ "per_run": {
+  "S1::A": {"rows": 5, "curve_points": [[1, 0.1], [2, 0.2], [3, 0.3], [4, 0.4], [5, 0.5]], "n_points": 5, "first_score": 0.1, "last_score": 0.5, "delta": 0.4, "slope": 0.1, "n_adopt_rows": 5, "positive_gens": 3, "adoption_rate": 0.6, "adopt_mean": 0.6, "detection_rounds": [], "first_detection": null, "triggers": 0, "missing_ratio": 0.0},
+  "S1::B": {"rows": 4, "curve_points": [[1, 0.5], [2, 0.5], [3, 0.5], [4, 0.5]], "n_points": 4, "first_score": 0.5, "last_score": 0.5, "delta": 0.0, "slope": 0.0, "n_adopt_rows": 4, "positive_gens": 0, "adoption_rate": 0.0, "adopt_mean": 0.0, "detection_rounds": [], "first_detection": null, "triggers": 0, "missing_ratio": 0.0},
+  "S2::C": {"rows": 3, "curve_points": [[1.0, 0.1]], "n_points": 1, "first_score": 0.1, "last_score": 0.1, "delta": null, "slope": null, "n_adopt_rows": 0, "positive_gens": 0, "adoption_rate": null, "adopt_mean": null, "detection_rounds": [3.8, 9.4], "first_detection": 3.8, "triggers": 2, "missing_ratio": 0.666667},
+  "S2::D": {"rows": 1, "curve_points": [], "n_points": 0, "first_score": null, "last_score": null, "delta": null, "slope": null, "n_adopt_rows": 0, "positive_gens": 0, "adoption_rate": null, "adopt_mean": null, "detection_rounds": [2.0], "first_detection": 2.0, "triggers": 1, "missing_ratio": 1.0},
+  "S2::E": {"rows": 1, "curve_points": [], "n_points": 0, "first_score": null, "last_score": null, "delta": null, "slope": null, "n_adopt_rows": 0, "positive_gens": 0, "adoption_rate": null, "adopt_mean": null, "detection_rounds": [], "first_detection": null, "triggers": 0, "missing_ratio": 0.0},
+  "S3::F": {"rows": 4, "curve_points": [[1, 0.2], [2, 0.4], [3, 0.6]], "n_points": 3, "first_score": 0.2, "last_score": 0.6, "delta": 0.4, "slope": 0.2, "n_adopt_rows": 0, "positive_gens": 0, "adoption_rate": null, "adopt_mean": null, "detection_rounds": [], "first_detection": null, "triggers": 0, "missing_ratio": 0.25},
+  "S3::G": {"rows": 1, "curve_points": [], "n_points": 0, "first_score": null, "last_score": null, "delta": null, "slope": null, "n_adopt_rows": 0, "positive_gens": 0, "adoption_rate": null, "adopt_mean": null, "detection_rounds": [], "first_detection": null, "triggers": 0, "missing_ratio": 0.0},
+  "S3::H": {"rows": 2, "curve_points": [[1, 0.1], [1, 0.3]], "n_points": 2, "first_score": 0.1, "last_score": 0.3, "delta": 0.2, "slope": null, "n_adopt_rows": 0, "positive_gens": 0, "adoption_rate": null, "adopt_mean": null, "detection_rounds": [], "first_detection": null, "triggers": 0, "missing_ratio": 0.0}
+ },
+ "by_source": {
+  "S1": {"runs": 2, "rows": 9, "runs_with_curve": 2, "slopes": {"n": 2, "mean": 0.05, "min": 0.0, "max": 0.1}, "adoption_rate_mean": 0.3, "total_triggers": 0},
+  "S2": {"runs": 3, "rows": 5, "runs_with_curve": 0, "slopes": {"n": 0, "mean": null, "min": null, "max": null}, "adoption_rate_mean": null, "total_triggers": 3},
+  "S3": {"runs": 3, "rows": 7, "runs_with_curve": 2, "slopes": {"n": 1, "mean": 0.2, "min": 0.2, "max": 0.2}, "adoption_rate_mean": null, "total_triggers": 0}
+ }
+}

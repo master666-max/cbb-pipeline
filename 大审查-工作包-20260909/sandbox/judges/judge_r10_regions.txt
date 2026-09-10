@@ -1,0 +1,75 @@
+# judge_r10_regions.txt · Round 10 判据脚本（三区排序定律）
+# 用法: py -X utf8 sandbox/judges/judge_r10_regions.txt --selftest | --real
+import json, sys, os
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+ORDER = ('peak', 'slope', 'desert')
+
+def region_rates(events):
+    agg = {}
+    for e in events:
+        rg = e['region']
+        agg.setdefault(rg, [0, 0])
+        agg[rg][0] += 1
+        agg[rg][1] += 1 if e['dtrue'] <= 0 else 0
+    return {rg: (n, (f / n if n else None)) for rg, (n, f) in agg.items()}
+
+def order_rule(events):
+    """返回 verdict, mechanical(荒漠-峰顶 rate), rates。守卫：三区各 n>=30。"""
+    rr = region_rates(events)
+    rates = {rg: rr.get(rg, (0, None))[1] for rg in ORDER}
+    ns = {rg: rr.get(rg, (0, None))[0] for rg in ORDER}
+    if any(ns[rg] < 30 for rg in ORDER) or any(rates[rg] is None for rg in ORDER):
+        gaps = None
+        mech = None
+        return 'INCONCLUSIVE', mech, rates, ns, 'n<30守卫: %s' % ns
+    gaps = [rates[ORDER[i + 1]] - rates[ORDER[i]] for i in range(2)]
+    mech = max(0.0, min(1.0, rates['desert'] - rates['peak']))
+    if all(gp > 0 for gp in gaps):
+        v = 'SUPPORTED'
+    elif any(gp < 0 for gp in gaps):
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, mech, rates, ns, 'gaps=%s' % ['%.4f' % g for g in gaps]
+
+def mk_events(spec):
+    ev = []
+    for rg, (n, rate) in spec.items():
+        nf = round(rate * n)
+        ev += [{'region': rg, 'dtrue': -1 if i < nf else 1} for i in range(n)]
+    return ev
+
+def selftest():
+    ok = True
+    v1, m1, r1, n1, note1 = order_rule(mk_events({'peak': (40, 0.10), 'slope': (40, 0.30), 'desert': (40, 0.60)}))
+    print('case1 verdict=%s exp=SUPPORTED %s; mech got=%s exp=0.5000 %s; rates=%s' % (
+        v1, 'PASS' if v1 == 'SUPPORTED' else 'FAIL', '%.4f' % m1 if m1 is not None else 'NA',
+        'PASS' if (m1 is not None and abs(m1 - 0.5) < 5e-5) else 'FAIL', r1))
+    ok = ok and v1 == 'SUPPORTED' and m1 is not None and abs(m1 - 0.5) < 5e-5
+    v2, m2, r2, n2, note2 = order_rule(mk_events({'peak': (35, 0.05), 'slope': (35, 0.35), 'desert': (35, 0.55)}))
+    print('case2 verdict=%s exp=SUPPORTED %s' % (v2, 'PASS' if v2 == 'SUPPORTED' else 'FAIL'))
+    ok = ok and v2 == 'SUPPORTED'
+    v3, m3, r3, n3, note3 = order_rule(mk_events({'peak': (40, 0.40), 'slope': (40, 0.30), 'desert': (40, 0.50)}))
+    print('case3 verdict=%s exp=REFUTED %s' % (v3, 'PASS' if v3 == 'REFUTED' else 'FAIL'))
+    ok = ok and v3 == 'REFUTED'
+    v4, m4, r4, n4, note4 = order_rule(mk_events({'peak': (10, 0.1), 'slope': (10, 0.3), 'desert': (10, 0.6)}))
+    print('case4 verdict=%s exp=INCONCLUSIVE %s; note=%s' % (v4, 'PASS' if v4 == 'INCONCLUSIVE' else 'FAIL', note4))
+    ok = ok and v4 == 'INCONCLUSIVE' and '守卫' in note4
+    print('SELFTEST', 'PASS' if ok else 'FAIL')
+    return ok
+
+def real():
+    data = json.load(open('sandbox/out/r10_regions.json', encoding='utf-8'))
+    for world, hid in (('sharp', 'H-R10-1'), ('flat', 'H-R10-2')):
+        events = [e for r in data[world] for e in r['events']]
+        v, m, rates, ns, note = order_rule(events)
+        print('== %s (%s) == n=%s rates=%s verdict=%s mechanical=%s %s' % (
+            hid, world, ns, {k: ('%.4f' % x) if x is not None else 'NA' for k, x in rates.items()},
+            v, ('%.4f' % m) if m is not None else 'NA', note))
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    real()

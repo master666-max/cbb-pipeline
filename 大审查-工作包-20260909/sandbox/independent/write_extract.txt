@@ -1,0 +1,369 @@
+# -*- coding: utf-8 -*-
+# 独立逐记录提取：衔尾蛇/data -> xws_independent.jsonl
+# 口径决策详见 README_口径.md（与本脚本同步维护）
+import json, os, sys, io, re
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
+BASE = r"D:\zcode专用！！！！危险！！！！！！！！！\大审查"
+DATA = os.path.join(BASE, "衔尾蛇", "data")
+OUTDIR = os.path.join(BASE, "sandbox", "independent")
+OUT_JSONL = os.path.join(OUTDIR, "xws_independent.jsonl")
+OUT_DIRTY = os.path.join(OUTDIR, "dirty_independent.txt")
+
+records = []
+dirty = []
+
+class Ctx:
+    """文件上下文：原文行 + 顺序游标锚点定位"""
+    def __init__(self, name):
+        self.name = name
+        self.rel = "衔尾蛇/data/" + name
+        with open(os.path.join(DATA, name), encoding="utf-8") as f:
+            self.raw = f.read()
+        self.lines = self.raw.splitlines()
+        # JSONL 不做整档解析；.json 解析失败直接抛出，由外层捕获记 dirty
+        self.data = json.loads(self.raw) if name.endswith(".json") else None
+        self.cursor = 0
+    def find(self, token):
+        for i in range(self.cursor, len(self.lines)):
+            if token in self.lines[i]:
+                self.cursor = i + 1
+                return i + 1
+        for i in range(0, self.cursor):
+            if token in self.lines[i]:
+                return i + 1
+        return None
+    def anchor(self, token, desc):
+        ln = self.find(token)
+        if ln is None:
+            dirty.append("%s:1:%s:锚点未找到[%s]（记录[%s]行号回退为1）" % (
+                self.name, self.lines[0][:60] if self.lines else "", token, desc))
+            return 1
+        return ln
+    def excerpt(self, line_no, maxlen=200):
+        if line_no is None:
+            return self.raw.strip()[:maxlen]
+        parts, total = [], 0
+        for i in range(line_no - 1, len(self.lines)):
+            parts.append(self.lines[i])
+            total += len(self.lines[i]) + 1
+            if total >= maxlen:
+                break
+        return "\n".join(parts)[:maxlen]
+
+def emit(run_id, rnd, score, adopt, drift, line_no, notes, raw_file):
+    records.append({
+        "source": "衔尾蛇",
+        "run_id": run_id,
+        "round": rnd,
+        "gen_score": score,
+        "adopt_count": adopt,
+        "drift_flag": drift,
+        "raw_line_no": line_no,
+        "notes_raw": (notes or "")[:200],
+        "raw_file": raw_file,
+    })
+
+def num(x):
+    if isinstance(x, bool):
+        return None
+    return x if isinstance(x, (int, float)) else None
+
+def adopt_frac(s):
+    if isinstance(s, str):
+        m = re.match(r"\s*(\d+)\s*/\s*\d+\s*$", s)
+        if m:
+            return int(m.group(1))
+    return None
+
+def G(gstr):
+    return int(gstr[1:])
+
+FAM = {}  # run_id 前缀族 -> 计数
+
+def fam(tag):
+    FAM[tag] = FAM.get(tag, 0) + 1
+
+# ---------- 1. x1_static.jsonl（JSONL：每行=1种子；G0/G1 两条记录） ----------
+c = Ctx("x1_static.jsonl")
+ln = 0
+for line in c.lines:
+    ln += 1
+    if not line.strip():
+        continue
+    o = json.loads(line)
+    emit("x1_static_s%d" % o["seed"], 0, num(o["G0_audit_U"]), None, None, ln, line, c.rel); fam("x1_static")
+    emit("x1_static_s%d" % o["seed"], 1, num(o["G1_audit_U"]), None, None, ln, line, c.rel); fam("x1_static")
+
+# ---------- 2. x0 ----------
+c = Ctx("x0_equivalence.json")
+ln = c.anchor('"n_queries"', "equivalence")
+emit("x0_equivalence", None, None, None, (not c.data["equivalent"]), ln, c.excerpt(ln), c.rel); fam("x0_equivalence")
+
+c = Ctx("x0_results.json")
+for st in c.data["results"]:
+    ln = c.anchor('"step": "%s"' % st["step"], st["step"])
+    emit("x0_results", None, None, None, (not st["ok"]), ln, c.excerpt(ln), c.rel); fam("x0_results")
+ln = c.anchor('"baseline"', "G0基线")
+b = c.data["baseline"]
+emit("x0_results", 0, num(b["audit"]["utility"]), None, None, ln, c.excerpt(ln), c.rel); fam("x0_results")
+
+# ---------- 3. x1_probes ----------
+c = Ctx("x1_probes.json")
+ln = c.anchor('"concurrent"', "并发探针")
+emit("x1_probes_concurrent", None, None, None, True, ln, c.excerpt(ln), c.rel); fam("x1_probes")
+ln = c.anchor('"truncation"', "截断探针")
+tr = c.data["truncation"]
+emit("x1_probes_truncation", None, None, None, bool(tr["set_layer_flagged"]), ln, c.excerpt(ln), c.rel); fam("x1_probes")
+ln = c.anchor('"forget"', "遗忘探针")
+fg = c.data["forget"]
+emit("x1_probes_forget", None, None, None, bool(fg["doctor_caught_manual_edit"]), ln, c.excerpt(ln), c.rel); fam("x1_probes")
+ln = c.anchor('"paired_G1_minus_G0_audit"', "配对差")
+pr = c.data["paired_G1_minus_G0_audit"]
+emit("x1_probes_paired", None, num(pr["mean"]), None, None, ln, c.excerpt(ln), c.rel); fam("x1_probes")
+
+# ---------- 4. x2_clean 40 文件（result 1 条 + log 25 条） ----------
+for g in range(2, 7):
+    for s in range(1, 9):
+        name = "x2_clean-G%d-s%d.json" % (g, s)
+        c = Ctx(name)
+        r = c.data["result"]
+        ln = c.anchor('"audit_U"', "result")
+        emit(name[:-5], g, num(r["audit_U"]), None, None, ln, c.excerpt(ln), c.rel); fam("x2_clean")
+        for e in c.data["log"]:
+            ln = c.anchor('"gen": %d,' % e["gen"], "log gen%d" % e["gen"])
+            emit(name[:-5], num(e["gen"]), num(e["train_U"]), num(e["promoted"]), None,
+                 ln, c.excerpt(ln), c.rel); fam("x2_clean")
+
+# ---------- 5. x2_clean_summary ----------
+c = Ctx("x2_clean_summary.json")
+sm = c.data["summary"]
+ln = c.anchor('"G1_及格线_dG0"', "G1及格线")
+emit("x2_clean_summary", 1, None, None, None, ln, c.excerpt(ln), c.rel); fam("x2_clean_summary")
+for g in ["G2", "G3", "G4", "G5", "G6"]:
+    blk = sm[g]
+    ln = c.anchor('"%s":' % g, g)
+    emit("x2_clean_summary", G(g), num(blk["audit_U_mean"]), None, None, ln, c.excerpt(ln), c.rel); fam("x2_clean_summary")
+
+# ---------- 6. x24_summary ----------
+c = Ctx("x24_summary.json")
+sm = c.data
+for key, rnd in [("H1_clean_G4_vs_G0_24seed", 4), ("H2_pseudo_G2_vs_G0_24seed", 2), ("H2_pseudo_G4_vs_G0_24seed", 4)]:
+    blk = sm[key]
+    ln = c.anchor('"%s"' % key, key)
+    emit("x24_summary", rnd, num(blk["mean"]), None, None, ln, c.excerpt(ln), c.rel); fam("x24_summary")
+ad = sm["H2_pseudo_采纳w_f1"]
+for g in ["G2", "G4"]:
+    ln = c.anchor('"%s": "%s"' % (g, ad[g]), "采纳" + g)
+    emit("x24_summary", G(g), None, adopt_frac(ad[g]), None, ln, c.excerpt(ln), c.rel); fam("x24_summary")
+
+# ---------- 7. x2bc 三文件 ----------
+for name in ["x2bc_results.json", "x2bc_results_coef0.08.json", "x2bc_results_coef0.25.json"]:
+    c = Ctx(name)
+    stem = name[:-5]
+    d = c.data
+    for r in d["x2b"]["pure_greedy"]:
+        ln = c.anchor('"cfg"', "greedy")
+        emit(stem, None, num(r["train"]), None, None, ln, c.excerpt(ln), c.rel); fam("x2bc")
+    h = c.anchor('"w_imp_scan"', "scan header")
+    c.cursor = h - 1
+    for r in d["x2b"]["w_imp_scan"]:
+        ln = c.anchor('"w_imp"', "scan")
+        emit(stem, None, num(r["train"]), None, None, ln, c.excerpt(ln), c.rel); fam("x2bc")
+    h = c.anchor('"rows"', "x2c rows header")
+    c.cursor = h - 1
+    for r in d["x2c"]["rows"]:
+        ln = c.anchor('"seed": %d,' % r["seed"], "x2c seed%d" % r["seed"])
+        emit(stem, None, num(r["A_end"]), num(r["b_promos"]), None, ln, c.excerpt(ln), c.rel); fam("x2bc")
+    for key in ["retention_single_mean", "retention_pareto_mean"]:
+        ln = c.anchor('"%s"' % key, key)
+        emit(stem, None, num(d["x2c"][key]), None, None, ln, c.excerpt(ln), c.rel); fam("x2bc")
+    ln = c.anchor('"verdict_作弊不可表达"', "verdict")
+    emit(stem, None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x2bc")
+    ln = c.anchor('"v1_否定性登记"', "v1登记")
+    emit(stem, None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x2bc")
+
+# ---------- 8. x2d ----------
+c = Ctx("x2d_R_entries.json")
+for e in c.data:
+    ln = c.anchor('"id": "%s"' % e["id"], e["id"])
+    emit("x2d_R_entries", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x2d_R_entries")
+
+c = Ctx("x2d_stage1.json")
+for phase, rnd in [("pre", 0), ("post", 1)]:
+    for arm in ["default", "evolved"]:
+        blk = c.data[phase][arm]
+        ln = c.anchor('"%s"' % arm, "stage1 %s.%s" % (phase, arm))
+        emit("x2d_stage1", rnd, num(blk["audit_U"]), None, None, ln, c.excerpt(ln), c.rel); fam("x2d_stage1")
+ln = c.anchor('"reflect_triggered"', "reflect")
+emit("x2d_stage1", None, None, None, bool(c.data["reflect_triggered"]), ln, c.excerpt(ln), c.rel); fam("x2d_stage1")
+
+c = Ctx("x2d_stage2.json")
+for lib in ["R", "C"]:
+    for arm in ["default", "evolved"]:
+        blk = c.data[lib][arm]
+        ln = c.anchor('"%s"' % arm, "stage2 %s.%s" % (lib, arm))
+        emit("x2d_stage2_%s" % lib, None, num(blk["audit_U"]), None, None, ln, c.excerpt(ln), c.rel); fam("x2d_stage2")
+for arm in ["default", "evolved"]:
+    ln = c.anchor('"%s"' % arm, "compare." + arm)
+    emit("x2d_stage2_compare", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x2d_stage2")
+ln = c.anchor('"R-CTRL"', "ctrl")
+emit("x2d_stage2_ctrl", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x2d_stage2")
+
+# ---------- 9. x3 单记录文件族（clean/drift/noisecorr/noiseind/pseudo/x3c） ----------
+pat3 = re.compile(r"^(x3-(clean|drift|noisecorr|noiseind|pseudo)|x3c)-G\d+-s\d+\.json$")
+for name in sorted(os.listdir(DATA)):
+    if pat3.match(name):
+        c = Ctx(name)
+        d = c.data
+        has_dg = "detect_gen" in d
+        drift = (d.get("detect_gen") is not None) if has_dg else None
+        emit(name[:-5], G(d["group"]), num(d["audit_U_true"]), None, drift, 1, c.excerpt(1), c.rel)
+        fam("-".join(name.split("-")[:2]) if name.startswith("x3-") else "x3c")
+
+# ---------- 10. x3_summary ----------
+c = Ctx("x3_summary.json")
+for scene in ["pseudo", "drift", "noiseind", "noisecorr"]:
+    blk = c.data["summary"][scene]
+    sl = c.anchor('"%s"' % scene, "scene " + scene)
+    c.cursor = sl - 1
+    for g in ["G2", "G4", "G5"]:
+        b2 = blk[g]
+        ln = c.anchor('"%s":' % g, "%s %s" % (scene, g))
+        emit("x3_summary_%s" % scene, G(g), num(b2["dG0_mean"]), adopt_frac(b2.get("adopt_w_f1")),
+             (len(b2.get("detect_gens") or []) > 0), ln, c.excerpt(ln), c.rel); fam("x3_summary")
+
+# ---------- 11. x3b_valley ----------
+c = Ctx("x3b_valley.json")
+for r in c.data["rows"]:
+    ln = c.anchor('"seed": %d,' % r["seed"], "valley seed%d" % r["seed"])
+    emit("x3b_valley", None, num(r["L_u"]), None, bool(r["valley"]), ln, c.excerpt(ln), c.rel); fam("x3b")
+ln = c.anchor('"valley_seeds"', "valley summary")
+emit("x3b_valley_summary", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x3b")
+
+# ---------- 12. x3c_summary ----------
+c = Ctx("x3c_summary.json")
+sm = c.data["summary"]
+for g in ["G2", "G4", "G5"]:
+    b = sm[g]
+    ln = c.anchor('"%s":' % g, g)
+    emit("x3c_summary", G(g), num(b["dG0_mean"]), adopt_frac(b.get("adopt_w_f1")),
+         (len(b.get("detect_gens") or []) > 0), ln, c.excerpt(ln), c.rel); fam("x3c_summary")
+ln = c.anchor('"E80检验_G4减G2"', "E80")
+emit("x3c_summary", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x3c_summary")
+
+# ---------- 13. x4_results ----------
+c = Ctx("x4_results.json")
+v2 = c.data["V2_并发"]
+ln = c.anchor('"V2_并发"', "V2")
+emit("x4_results", None, None, None, (v2["accum"] != v2["expected"]), ln, c.excerpt(ln), c.rel); fam("x4")
+v3 = c.data["V3_截断检出"]
+ln = c.anchor('"V3_截断检出"', "V3")
+emit("x4_results", None, None, None, (v3["snapshot_tip"] != v3["recomputed_tip"]), ln, c.excerpt(ln), c.rel); fam("x4")
+v1 = c.data["V1_重建等价"]
+ln = c.anchor('"V1_重建等价"', "V1")
+emit("x4_results", None, num(v1["jaccard"]), None, None, ln, c.excerpt(ln), c.rel); fam("x4")
+ln = c.anchor('"V4_性能"', "V4")
+emit("x4_results", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x4")
+
+# ---------- 14. x5_real 20 文件 + g0 ----------
+for name in sorted(os.listdir(DATA)):
+    if re.match(r"^x5_real-G\d+-(clean|drift)-s\d+\.json$", name):
+        c = Ctx(name)
+        d = c.data
+        emit(name[:-5], G(d["group"]), num(d["audit_true"]["mrr"]), None, None, 1, c.excerpt(1), c.rel)
+        fam("x5_real")
+c = Ctx("x5_real_summary.json")
+h = c.anchor('"g0"', "g0 header")
+c.cursor = h - 1
+for k in ["1", "2", "3", "4", "5"]:
+    blk = c.data["g0"][k]
+    ln = c.anchor('"%s": {' % k, "g0 seed" + k)
+    emit("x5_real_summary_g0", 0, num(blk["audit_mrr"]), None, None, ln, c.excerpt(ln), c.rel); fam("x5_real_summary")
+
+# ---------- 15. x6a ----------
+c = Ctx("x6a_summary.json")
+sm = c.data["summary"]
+for g in ["G2", "G4"]:
+    b = sm[g]
+    ln = c.anchor('"%s":' % g, g)
+    emit("x6a_summary", G(g), num(b["审计ΔU均值"]), adopt_frac(b.get("采纳w_f1")), None, ln, c.excerpt(ln), c.rel); fam("x6a_summary")
+ln = c.anchor('"操纵检查"', "操纵检查")
+emit("x6a_summary", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x6a_summary")
+ln = c.anchor('"H2判定"', "H2判定")
+emit("x6a_summary", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x6a_summary")
+for r in c.data["rows"]:
+    ln = c.anchor('"seed": %d,' % r["seed"], "row %s s%d" % (r["group"], r["seed"]))
+    emit("x6a-%s-s%d" % (r["group"], r["seed"]), G(r["group"]), num(r["audit_U_true"]), None, None,
+         ln, c.excerpt(ln), c.rel); fam("x6a_rows")
+
+# ---------- 16. x6b ----------
+for name in sorted(os.listdir(DATA)):
+    if re.match(r"^x6b-[PPL]+-s\d+\.json$", name):
+        c = Ctx(name)
+        d = c.data
+        emit(name[:-5], None, num(d["audit_U"]), num(d["links_added"]), None, 1, c.excerpt(1), c.rel)
+        fam("x6b")
+c = Ctx("x6b_summary.json")
+sm = c.data["summary"]
+for g in ["P", "PL"]:
+    b = sm[g]
+    ln = c.anchor('"%s":' % g, g)
+    emit("x6b_summary", None, num(b["audit_U_mean"]), num(b["links_total"]), None, ln, c.excerpt(ln), c.rel); fam("x6b_summary")
+ln = c.anchor('"判定"', "判定")
+emit("x6b_summary", None, None, None, None, ln, c.excerpt(ln), c.rel); fam("x6b_summary")
+
+# ---------- 17. x6c ----------
+c = Ctx("x6c_e32_summary.json")
+for st in ["held", "audit"]:
+    b = c.data["summary"][st]
+    ln = c.anchor('"%s":' % st, st)
+    emit("x6c_e32_summary", None, num(b["mrr增益"]), None, None, ln, c.excerpt(ln), c.rel); fam("x6c_summary")
+h = c.anchor('"rows"', "rows header")
+c.cursor = h - 1
+for r in c.data["rows"]:
+    ln = c.anchor('"seed": %d,' % r["seed"], "row %s %s s%d" % (r["lib"], r["set"], r["seed"]))
+    libcode = "A" if r["lib"] == "自称A" else "B"
+    emit("x6c_e32-%s-%s-s%d" % (libcode, r["set"], r["seed"]), None, num(r["mrr"]), None, None,
+         ln, c.excerpt(ln), c.rel); fam("x6c_rows")
+h = c.anchor('"measured_top8"', "top8 header")
+c.cursor = h - 1
+for pid, val in c.data["measured_top8"]:
+    ln = c.anchor('"%s"' % pid, pid)
+    emit("x6c_e32_top8", None, num(val), None, None, ln, c.excerpt(ln), c.rel); fam("x6c_top8")
+
+# ---------- dirty 登记：x2bc 重复异常 ----------
+_dup = "x2bc_results.json 与 x2bc_results_coef0.08.json 内容字节级完全相同（sha256=028be96e99a05516），数据中无 coef 字段可区分两者对应的系数取值；两文件均已按原样各自提取，下游合并时需按内容去重"
+dirty.append("x2bc_results.json:1:" + Ctx("x2bc_results.json").lines[0] + ":" + _dup)
+dirty.append("x2bc_results_coef0.08.json:1:" + Ctx("x2bc_results_coef0.08.json").lines[0] + ":" + _dup)
+
+# ---------- 输出 ----------
+with open(OUT_JSONL, "w", encoding="utf-8", newline="\n") as f:
+    for r in records:
+        f.write(json.dumps(r, ensure_ascii=False, allow_nan=False) + "\n")
+with open(OUT_DIRTY, "w", encoding="utf-8", newline="\n") as f:
+    for d in dirty:
+        f.write(d + "\n")
+
+print("记录总数:", len(records))
+print("run_id 数:", len({r["run_id"] for r in records}))
+print("dirty 条数:", len(dirty))
+print("\n按族计数:")
+for k in sorted(FAM):
+    print("  %-18s %d" % (k, FAM[k]))
+print("\n按 raw_file 计数（前 25）:")
+from collections import Counter
+cnt = Counter(r["raw_file"] for r in records)
+for k, v in cnt.most_common(25):
+    print("  %-50s %d" % (k, v))
+print("涉及文件数:", len(cnt))
+# 校验
+bad = 0
+for r in records:
+    if r["source"] != "衔尾蛇" or not r["run_id"] or len(r["notes_raw"]) > 200:
+        bad += 1
+    if r["round"] is not None and not isinstance(r["round"], (int, float)):
+        bad += 1
+    if r["drift_flag"] is not None and not isinstance(r["drift_flag"], bool):
+        bad += 1
+print("校验异常:", bad)

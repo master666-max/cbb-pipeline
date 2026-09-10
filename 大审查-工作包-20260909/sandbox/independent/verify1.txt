@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+# 抽查：随机+定点核验 raw_line_no 与 notes_raw 是否与原文一致
+import json, os, sys, io, random
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+BASE = r"D:\zcode专用！！！！危险！！！！！！！！！\大审查"
+DATA = os.path.join(BASE, "衔尾蛇", "data")
+recs = [json.loads(l) for l in open(os.path.join(BASE, "sandbox", "independent", "xws_independent.jsonl"), encoding="utf-8")]
+print("总行数:", len(recs))
+
+rawcache = {}
+def lines_of(rel):
+    if rel not in rawcache:
+        rawcache[rel] = open(os.path.join(BASE, rel.replace("/", os.sep)), encoding="utf-8").read().splitlines()
+    return rawcache[rel]
+
+# 1) 核验 notes_raw 是原文行前缀（从 raw_line_no 起的原文以 notes_raw 开头，或 notes_raw 是其截断）
+bad = 0
+for r in recs:
+    ls = lines_of(r["raw_file"])
+    ln = r["raw_line_no"]
+    if ln < 1 or ln > len(ls):
+        print("行号越界:", r["raw_file"], ln); bad += 1; continue
+    joined = "\n".join(ls[ln - 1:])[:200]
+    if joined.find(r["notes_raw"]) != 0:
+        print("非逐字前缀:", r["raw_file"], ln, repr(r["notes_raw"][:60]), repr(joined[:60])); bad += 1
+print("逐字核验异常数:", bad)
+
+# 2) 定点抽查若干记录
+def show(idx):
+    r = recs[idx]
+    print("-" * 60)
+    print(json.dumps(r, ensure_ascii=False)[:420])
+
+import random
+random.seed(7)
+# 找各族代表
+targets = {}
+for i, r in enumerate(recs):
+    key = r["run_id"].split("-")[0].split("_")[0]
+    targets.setdefault(r["raw_file"].split("/")[-1], i)
+for f in ["x1_static.jsonl", "x0_results.json", "x1_probes.json", "x2_clean-G3-s2.json",
+          "x2bc_results_coef0.25.json", "x2d_stage2.json", "x3-drift-G5-s3.json", "x3_summary.json",
+          "x3b_valley.json", "x5_real_summary.json", "x6a_summary.json", "x6c_e32_summary.json",
+          "x24_summary.json", "x2_clean_summary.json", "x6b_summary.json", "x4_results.json"]:
+    idxs = [i for i, r in enumerate(recs) if r["raw_file"].endswith(f)]
+    show(idxs[0]); show(idxs[-1])
+
+# 3) drift_flag=true 的记录分布
+from collections import Counter
+print("\ndrift_flag 计数:", Counter(str(r["drift_flag"]) for r in recs))
+print("drift=true 的文件:", Counter(r["raw_file"].split("/")[-1] for r in recs if r["drift_flag"] is True))
+# 4) adopt_count 非空分布
+print("\nadopt 非空数:", sum(1 for r in recs if r["adopt_count"] is not None))
+print("gen_score 非空数:", sum(1 for r in recs if r["gen_score"] is not None))

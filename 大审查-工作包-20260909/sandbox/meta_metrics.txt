@@ -1,0 +1,78 @@
+# meta_metrics.txt · meta_log 同名列机械反推（PART III）
+# 输入：data-archive.csv + reports/round-N-预注册.md 的机器标记 + sandbox/judges/ 文件名
+# 输出：meta_check.csv（与 meta_log.csv 同名列）。自填与机测差值不修正——差值本身是数据。
+# 运行：py -X utf8 sandbox/meta_metrics.txt
+# 依赖的预注册机器标记（每轮预注册必须含）：
+#   PRIOR: <hid> <p>          NOVELTY: <hid> <0|1>        KIND: <hid> confirm|disconfirm
+#   EVAL_UNITS: <hid> <n>     RED_TEAM: <round> <0|1>
+# 已知局限（如实登记，不作修正）：review_* 三列在回顾轮的值来自 R-REVIEW 文件的
+#   CLUSTERS_FOUND / REFUTED_COMMON_CAUSE 标记行（机械解析），非预注册文件——
+#   任务书限定机测只用 data-archive+预注册，此为可机械化的最接近实现，偏差照存。
+import csv, glob, os, re, sys
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # 工作根=大审查/
+
+rows = list(csv.DictReader(open('data-archive.csv', encoding='utf-8-sig')))
+by_round = {}
+for r in rows:
+    by_round.setdefault(r['round'], []).append(r)
+
+prereg = {}
+for f in sorted(glob.glob('reports/round-*-预注册.md')):
+    m = re.match(r'round-(\d+)', os.path.basename(f))
+    if m:
+        prereg[int(m.group(1))] = open(f, encoding='utf-8').read()
+
+def markers(text, tag):
+    out = {}
+    for line in text.splitlines():
+        mm = re.search(r'%s:\s*(\S+)\s+([^\s（(，,]+)' % tag, line.strip())  # search 非 match：预注册标记行常带 "- " 前缀；值遇注释括号截断
+        if mm:
+            out[mm.group(1)] = mm.group(2)
+    return out
+
+out_rows = []
+for rnd in sorted(by_round, key=lambda x: int(x)):
+    hs = by_round[rnd]
+    txt = prereg.get(int(rnd), '')
+    nov = markers(txt, 'NOVELTY'); kind = markers(txt, 'KIND')
+    ev = markers(txt, 'EVAL_UNITS'); pri_m = markers(txt, 'PRIOR')
+    redteam = markers(txt, 'RED_TEAM')
+    # R-REVIEW 标记（若当轮触发回顾）
+    clusters, refuted_cc = 0, ''
+    for rf in glob.glob('reports/R%d-REVIEW.md' % int(rnd)):
+        t = open(rf, encoding='utf-8').read()
+        mc = re.search(r'CLUSTERS_FOUND:\s*(\d+)', t)
+        mr = re.search(r'REFUTED_COMMON_CAUSE:\s*(\S+)', t)
+        clusters = int(mc.group(1)) if mc else 0
+        refuted_cc = mr.group(1) if mr else ''
+    split_map = {'DATA-DRIVEN': 'D', 'NARRATIVE-DRIVEN': 'N', 'LIT-REPLICATE': 'L', 'REVIEW-DRIVEN': 'R'}
+    split = ''.join(split_map.get(h['source_type'], '?') for h in hs)
+    priors = ','.join(h['self_report_prior'] for h in hs)
+    hits = ','.join('1' if h['verdict'] == 'SUPPORTED' else '0' for h in hs)
+    novelty_flags = sum(1 for h in hs if nov.get(h['hypothesis_id']) == '0')
+    directions = '/'.join(h['direction'] for h in hs)
+    eval_used = sum(int(ev.get(h['hypothesis_id'], 0)) for h in hs)
+    toolbox_ext = len(glob.glob('sandbox/judges/*_r%s_*' % rnd))
+    n_conf = sum(1 for h in hs if kind.get(h['hypothesis_id']) == 'confirm')
+    n_dis = sum(1 for h in hs if kind.get(h['hypothesis_id']) == 'disconfirm')
+    cvd = '%d:%d' % (n_conf, n_dis)
+    try:
+        div = sum(abs(float(h['self_report_post']) - float(h['mechanical'])) for h in hs) / len(hs)
+        div = round(div, 4)
+    except Exception:
+        div = ''
+    bcond = sum(1 for h in hs if h.get('boundary_conditions', '').strip())
+    review_at = 1 if glob.glob('reports/R%d-REVIEW.md' % int(rnd)) else 0
+    rd_n = sum(1 for h in hs if h['source_type'] == 'REVIEW-DRIVEN')
+    out_rows.append([rnd, len(hs), split, priors, hits, novelty_flags, directions, eval_used,
+                     toolbox_ext, cvd, div, int(redteam.get(rnd, 0) or 0), bcond, review_at,
+                     clusters, refuted_cc, rd_n, ''])
+
+w = csv.writer(open('meta_check.csv', 'w', newline='', encoding='utf-8'))
+w.writerow(['round', 'hypotheses_n', 'source_type_split', 'priors', 'hits', 'novelty_flags',
+            'directions', 'eval_count_used', 'toolbox_extensions', 'confirm_vs_disconfirm',
+            'divergence_mean', 'red_team_triggered', 'boundary_conditions_total', 'review_at_round',
+            'review_clusters_found', 'review_refuted_common_cause', 'REVIEW_DRIVEN_n', 'note_free'])
+w.writerows(out_rows)
+print('meta_check.csv written: %d rounds' % len(out_rows))

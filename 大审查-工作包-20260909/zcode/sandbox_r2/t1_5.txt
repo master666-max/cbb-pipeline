@@ -1,0 +1,79 @@
+# -*- coding: utf-8 -*-
+# t1_5.txt — T1-5 整理标准的自指边界（原则12c 极限测试；判据预注册：
+#   演化标准+真值抽验 >= 固定标准-0.01 且 真值调用<=固定标准的30% -> "标准可下放、判定不可下放"成立）
+# 臂：fixed(固定真值标准,全库评分) / evo_truth(标准可演化+每周期4条真值抽验) / evo_judge(负对照: judge α0.3 抽验)
+#     / evo_blind(标准演化无任何校验, 危险对照)
+import importlib.util, importlib.machinery, pathlib, json, random, statistics, sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+SEEDS, GENS, ALPHA = 8, 40, 0.3
+OUT = HERE / "out_t1_5"; OUT.mkdir(exist_ok=True)
+
+def run(seed, mode):
+    rng = random.Random(seed * 1013 + 17)
+    entries = rc.ds_world(seed)
+    cfg = dict(rc.V3_DEFAULT); w = 0.5
+    theta = [1.0, -1.0, 0.0]  # [rv, surface, age_norm] 固定标准起点
+    base = rc.ds_util(entries, cfg, ALPHA, "truth")
+    truth_calls = 0
+    def std_score(e, th):
+        return th[0] * e["rv"] + th[1] * e["surface"] + th[2] * (1 - e["age_days"] / 300.0)
+    for g in range(GENS):
+        rc.ds_write(entries, rng, w)
+        P = rc.ds_util(entries, cfg, ALPHA, "perceived")
+        best, db = None, rc.MARGIN0
+        for _ in range(4):
+            c = rc.mutate(rng, cfg)
+            du = rc.ds_util(entries, c, ALPHA, "perceived") - P
+            if du > db: best, db = c, du
+        if best is not None: cfg = dict(best)
+        w2 = max(0.0, min(1.0, w + rng.uniform(-0.08, 0.08)))
+        trial = [dict(e) for e in entries]
+        probe = rc.ds_write(trial, rng, w2)
+        if rc.ds_util(trial, cfg, ALPHA, "perceived") - P > rc.MARGIN0:
+            w = w2; entries.extend(probe)
+        if (g + 1) % 10 == 0 and len(entries) > 10:
+            if mode == "fixed":
+                rm = sorted(entries, key=lambda e: std_score(e, theta))[:5]
+                entries[:] = [e for e in entries if id(e) not in {id(x) for x in rm}]
+                truth_calls += len(entries)  # 全库按真值标准评分
+            else:
+                th2 = [max(-2.0, min(2.0, t * rng.choice([0.7, 0.85, 1.0, 1.15, 1.3]))) for t in theta]
+                rm = sorted(entries, key=lambda e: std_score(e, th2))[:5]
+                ok = True
+                if mode == "evo_truth":
+                    sample = rm[:4]; truth_calls += 4
+                    med = statistics.median(e["rv"] for e in entries)
+                    ok = sum(1 for e in sample if e["rv"] < med) >= 3
+                elif mode == "evo_judge":
+                    sample = rm[:4]
+                    med = statistics.median(ALPHA * e["rv"] + (1 - ALPHA) * e["surface"] for e in entries)
+                    ok = sum(1 for e in sample if ALPHA * e["rv"] + (1 - ALPHA) * e["surface"] < med) >= 3
+                if ok:
+                    theta = th2
+                    entries[:] = [e for e in entries if id(e) not in {id(x) for x in rm}]
+    return {"seed": seed, "mode": mode, "gain": round(rc.ds_util(entries, cfg, ALPHA, "truth") - base, 4),
+            "truth_calls": truth_calls, "theta": [round(t, 3) for t in theta]}
+
+rows = [run(s, md) for md in ("fixed", "evo_truth", "evo_judge", "evo_blind") for s in range(1, SEEDS + 1)]
+(OUT / "rows_t1_5.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def m(md, f):
+    return round(statistics.mean(r[f] for r in rows if r["mode"] == md), 4)
+
+print("=== 整理标准四臂（α=0.3） ===")
+for md in ("fixed", "evo_truth", "evo_judge", "evo_blind"):
+    print("%-10s gain=%+.4f truth_calls=%g theta_mean=%s" % (
+        md, m(md, "gain"), m(md, "truth_calls"),
+        [round(statistics.mean(r["theta"][i] for r in rows if r["mode"] == md), 2) for i in range(3)]))
+g_fixed, g_et = m("fixed", "gain"), m("evo_truth", "gain")
+calls_ratio = m("evo_truth", "truth_calls") / max(m("fixed", "truth_calls"), 1)
+print()
+print("判据: evo_truth(%.4f) >= fixed(%.4f)-0.01 -> %s ; 真值调用占比=%.1f%% (<=30%%?) -> %s ; 分层下放成立=%s" % (
+    g_et, g_fixed, g_et >= g_fixed - 0.01, calls_ratio * 100, calls_ratio <= 0.30,
+    g_et >= g_fixed - 0.01 and calls_ratio <= 0.30))
+print("负对照 evo_judge=%.4f (预期差于 evo_truth——judge 当判定者被污染) ; evo_blind=%.4f (无校验危险对照)" % (
+    m("evo_judge", "gain"), m("evo_blind", "gain")))

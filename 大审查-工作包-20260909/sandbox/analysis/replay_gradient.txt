@@ -1,0 +1,91 @@
+# replay_gradient.txt · Round 11 仪器化重放 v3（r2 平坦格 + r4 尖峰格，加记局部梯度）
+# 运行: py -X utf8 sandbox/analysis/replay_gradient.txt
+# 验证门：100 run 终值与锁定 JSON 逐 run 相等（|diff|<1e-9），失败即退出非零。
+import random, json, os, math, sys
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+G, STEP, SIGMA, MARGIN, N_RUNS = 30, 0.35, 0.08, 0.05, 100
+R_SHARP = 0.15
+
+def dist(x, t):
+    return math.hypot(x[0] - t[0], x[1] - t[1])
+
+def U_flat(x, t):
+    d2 = (x[0] - t[0]) ** 2 + (x[1] - t[1]) ** 2
+    return max(0.0, 1.0 - d2)
+
+def grad_flat(x, t):
+    d = dist(x, t)
+    return 2 * d if d < 1 else 0.0
+
+def U_sharp(x, t):
+    d2 = (x[0] - t[0]) ** 2 + (x[1] - t[1]) ** 2
+    return math.exp(-d2 / (2 * R_SHARP ** 2))
+
+def grad_sharp(x, t):
+    d = dist(x, t)
+    return U_sharp(x, t) * d / (R_SHARP ** 2)
+
+def band(g):
+    if g < 0.1:
+        return 'low'
+    if g < 0.5:
+        return 'mid'
+    return 'high'
+
+def replay(U, grad, seed_base):
+    out = []
+    for ri in range(N_RUNS):
+        rng = random.Random(seed_base + ri)
+        t = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+        x = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+        events = []
+        for g in range(1, G + 1):
+            cand = (x[0] + rng.gauss(0, STEP), x[1] + rng.gauss(0, STEP))
+            obs_c = U(cand, t) + rng.gauss(0, SIGMA)
+            obs_m = U(x, t) + rng.gauss(0, SIGMA)
+            if obs_c > obs_m + MARGIN:
+                u_old = U(x, t)
+                gmag = grad(x, t)
+                events.append({'g': g, 'u_old': round(u_old, 10), 'grad': round(gmag, 10),
+                               'band': band(gmag),
+                               'dtrue': round(U(cand, t) - u_old, 10)})
+                x = cand
+        out.append({'final_U': round(U(x, t), 10), 'events': events})
+    return out
+
+def locked_cell(locked, sigma, margin):
+    for c in locked['cells']:
+        if abs(c['sigma'] - sigma) < 1e-9 and abs(c['margin'] - margin) < 1e-9:
+            return c['runs']
+    raise KeyError('cell not found')
+
+def verify(replayed, locked_path, sigma, margin):
+    locked = json.load(open(locked_path, encoding='utf-8'))
+    locked_runs = locked_cell(locked, sigma, margin)
+    return sum(1 for a, b in zip(replayed, locked_runs) if abs(a['final_U'] - b['final_U']) > 1e-9)
+
+def main():
+    flat = replay(U_flat, grad_flat, 400000)
+    bad_flat = verify(flat, 'sandbox/out/r2_results.json', 0.08, 0.05)
+    sharp = replay(U_sharp, grad_sharp, 90000)
+    bad_sharp = verify(sharp, 'sandbox/out/r4_results.json', 0.08, 0.05)
+    print('verify flat: %d/100 mismatch | verify sharp: %d/100 mismatch' % (bad_flat, bad_sharp))
+    if bad_flat or bad_sharp:
+        print('VERIFY FAIL — 中止')
+        sys.exit(1)
+    json.dump({'flat': flat, 'sharp': sharp}, open('sandbox/out/r11_gradient.json', 'w', encoding='utf-8'), ensure_ascii=False)
+    for world, rs in (('flat', flat), ('sharp', sharp)):
+        agg = {}
+        for r in rs:
+            for e in r['events']:
+                b = e['band']
+                agg.setdefault(b, [0, 0])
+                agg[b][0] += 1
+                agg[b][1] += 1 if e['dtrue'] <= 0 else 0
+        print(world, {k: (n, (f / n if n else None)) for k, (n, f) in sorted(agg.items())})
+    print('written sandbox/out/r11_gradient.json')
+
+if __name__ == '__main__':
+    main()

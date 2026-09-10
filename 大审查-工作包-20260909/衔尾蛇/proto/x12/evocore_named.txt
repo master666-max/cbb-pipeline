@@ -1,0 +1,191 @@
+"""evocore — 自演化沙盒内核（零依赖，标准库 only）
+=====================================================
+角色：
+  1) 世界模型：结构化条目世界 + 任务集（元层输入，种子确定性）
+  2) 法层适配器：bootstrap_v3.8.2 `_rank_entries` 的参数化重实现
+     —— 等价性由 x0_selfcheck.txt 的等价门保证（默认参数下 top-20 逐条一致）
+  3) 效用与统计：K/LAMBDA 冻结（元层）、配对差、bootstrap 95% 下界
+  4) 变异算子：沿用报告 evolve.py 已验证形态
+纪律：
+  - 缓存 key 用 (lib, rev) 显式元组，禁 id()（报告失败 #7）
+  - 元层常量（K/LAMBDA/margin/tol）不得被任何演化逻辑写
+"""
+import json, time, random
+from datetime import date, timedelta
+from pathlib import Path
+
+# ── 元层（冻结；任何演化环不得修改）─────────────────────────────────
+K = 5          # 检索窗口，与源码 cmd_engine 默认 k=5 一致
+LAMBDA = 0.15  # 每条无关条目的效用代价（报告 E 口径）
+
+DEFAULT_CFG = {"w_kw": 3.0, "w_content": 1.0, "w_imp": 1.0, "w_age": 0.1, "filter_zero": 0}
+PARAMS = ["w_kw", "w_content", "w_imp", "w_age"]
+
+# ── 世界模型 ────────────────────────────────────────────────────────
+def build_world(seed, n_entries=80, n_topics=16, n_kws=20, age_max=400):
+    """结构化世界：条目 i 属于 T{i%16} / K{i%20}；age 注入 created_at；30% 挂同主题链接。
+    返回 (entries_schema_full, kw_of)。"""
+    rnd = random.Random(seed)
+    today = date.today()
+    entries = []
+    for i in range(n_entries):
+        t, k = i % n_topics, i % n_kws
+        age = rnd.randint(0, age_max)
+        created = (today - timedelta(days=age)).isoformat()
+        entries.append({
+            "id": f"e{i}", "topic": f"T{t:02d}", "kw": f"K{k:02d}",  # X12 反事实：零填充命名
+            "created_at": created, "updated_at": "",
+            "content": f"T{t:02d} K{k:02d} 内容片段 {i}",
+            "keywords": [f"K{k:02d}"], "links": [],
+            "importance": rnd.randint(1, 10),
+            "confidence": "中", "validity": {"t_valid": created},
+        })
+    # 同主题链接：同一 T 下随机指一个邻居（供 links 扩散与 X2d 重组实验）
+    by_topic = {}
+    for e in entries:
+        by_topic.setdefault(e["topic"], []).append(e["id"])
+    for e in entries:
+        if rnd.random() < 0.3:
+            peers = [x for x in by_topic[e["topic"]] if x != e["id"]]
+            if peers:
+                e["links"] = [rnd.choice(peers)]
+    kw_of = {e["id"]: e["kw"] for e in entries}
+    return entries, kw_of
+
+def build_tasks(seed, entries, n_train=40, n_audit=8):
+    """任务集并三集切分：train / held / audit（audit 永不参与演化）。"""
+    rnd = random.Random(seed * 100003 + 7)
+    idx = list(range(len(entries)))
+    rnd.shuffle(idx)
+    tasks = [{"q": f"{entries[i]['topic']} {entries[i]['kw']}",
+              "kw": entries[i]["kw"], "golden": entries[i]["id"]} for i in idx]
+    n = len(tasks)
+    n_held = n - n_train - n_audit
+    return tasks[:n_train], tasks[n_train:n_train + n_held], tasks[n_train + n_held:]
+
+def random_queries(seed, kws, topics, n=20):
+    """等价门用的杂询棍：单词/双词/零命中/扩散激发（纯 K 查询会触发 links 扩散路径）。"""
+    rnd = random.Random(seed * 7919 + 3)
+    out = []
+    for _ in range(n):
+        mode = rnd.randrange(5)
+        k = rnd.choice(kws); t = rnd.choice(topics)
+        if mode == 0:   out.append(k)                      # 纯关键词 → 扩散路径
+        elif mode == 1: out.append(t)                      # 纯主题
+        elif mode == 2: out.append(f"{t} {k} 内容")
+        elif mode == 3: out.append(f"{k} 片段 {rnd.randrange(100)}")
+        else:           out.append(f"zzz 不存在的词 {rnd.randrange(100)}")  # 零命中
+    return out
+
+# ── 法层适配器（源码 _rank_entries L898–928 的参数化重实现）──────────
+_EC = {}  # 条目加载缓存，key=(lib, rev)——禁 id()
+
+def entry_normalize(e):
+    """复刻源码 L256–265：keywords/links 类型强转（str→[str]，异型→[]）。"""
+    kw = e.get("keywords", [])
+    if isinstance(kw, str): kw = [kw]
+    if not isinstance(kw, list): kw = []
+    lk = e.get("links", [])
+    if isinstance(lk, str): lk = [lk]
+    if not isinstance(lk, list): lk = []
+    e["keywords"], e["links"] = kw, lk
+    return e
+
+def load_lib_entries(lib, rev=0):
+    """按源码同序（rglob）读取条目；t_invalid 的过滤在 rank 阶段做（与源码一致）。"""
+    key = (str(lib), rev)
+    if key in _EC:
+        return _EC[key]
+    out = []
+    for f in Path(lib).joinpath("memory").rglob("*.json"):
+        out.append((f.stem, json.loads(f.read_text(encoding="utf-8"))))
+    _EC[key] = out
+    return out
+
+def rank_lib(lib, q, cfg, rev=0):
+    """返回与源码 _rank_entries 同构的排序列表 [(fid, (score, entry, content))]。
+    默认参数下必须与 m._rank_entries top-20 逐条一致（X0 等价门）。"""
+    scored = {}
+    for fid, raw in load_lib_entries(lib, rev=rev):
+        if (raw.get("validity") or {}).get("t_invalid"): continue   # Zep 式：失效不删除不参与
+        e = entry_normalize(dict(raw))
+        try:
+            age_days = (time.time() - time.mktime(time.strptime(e["created_at"][:10], "%Y-%m-%d"))) / 86400
+        except Exception:
+            age_days = 0.0
+        c = e["content"]
+        kw_join = " ".join(e["keywords"])
+        kw_hit = sum(1 for w in q.split() if w in kw_join)
+        c_hit = sum(1 for w in q.split() if w in c)
+        if kw_hit: c_hit = max(c_hit, 1)
+        if cfg.get("filter_zero") and kw_hit == 0 and c_hit == 0:   # 演化可开的零命中过滤（源码无）
+            continue
+        s = (kw_hit * cfg["w_kw"] + c_hit * cfg["w_content"]
+             + e.get("importance", 0) * cfg["w_imp"] - cfg["w_age"] * age_days)
+        if cfg.get("w_f1"):                                          # X3 场景基因：伪特征/吸睛特征权重（默认缺省=不激活）
+            s += cfg["w_f1"] * (1 if "F1" in e["keywords"] else 0)
+        scored[fid] = (s, e, c)
+    # [[links]] 一跳扩散——逐行复刻源码 L921–927（快照迭代，不加链式）
+    for fid, (s, e, c) in list(scored.items()):
+        if s <= 0: continue
+        for link in e.get("links", []):
+            lid = str(link).strip("[]")
+            if lid in scored and not any(w and w in (scored[lid][1]["content"] + " " + " ".join(scored[lid][1]["keywords"]))
+                                         for w in q.split()):
+                base, e2, c2 = scored[lid]
+                scored[lid] = (base + s * 0.5, e2, c2)
+    return sorted(scored.items(), key=lambda kv: kv[1][0], reverse=True)
+
+def ranked_ids(lib, q, cfg, rev=0, k=None):
+    return [fid for fid, _ in rank_lib(lib, q, cfg, rev=rev)[: (k or K)]]
+
+# ── 效用与统计（元层冻结口径）───────────────────────────────────────
+def utility(ranked_ids, task, kw_of):
+    top = ranked_ids[:K]
+    hit = 1.0 if task["golden"] in top else 0.0
+    n_irrel = sum(1 for fid in top if kw_of.get(fid) != task["kw"])
+    return hit - LAMBDA * n_irrel
+
+def score_lib(lib, tasks, cfg, rev=0, kw_of=None):
+    if kw_of is None:
+        kw_of = {fid: (e.get("keywords") or [""])[0] for fid, e in load_lib_entries(lib, rev=rev)}
+    return sum(utility(ranked_ids(lib, t["q"], cfg, rev=rev), t, kw_of) for t in tasks) / max(1, len(tasks))
+
+def recall_at_k(lib, tasks, cfg, rev=0, k=5, kw_of=None):
+    hits = 0
+    for t in tasks:
+        if t["golden"] in ranked_ids(lib, t["q"], cfg, rev=rev, k=k):
+            hits += 1
+    return hits / max(1, len(tasks))
+
+def paired_diff(lib, tasks, cfg_a, cfg_b, rev=0, kw_of=None):
+    """同任务集配对差均值：cfg_a − cfg_b（选择压力的货币）。"""
+    if kw_of is None:
+        kw_of = {fid: (e.get("keywords") or [""])[0] for fid, e in load_lib_entries(lib, rev=rev)}
+    d = []
+    for t in tasks:
+        d.append(utility(ranked_ids(lib, t["q"], cfg_a, rev=rev), t, kw_of)
+                 - utility(ranked_ids(lib, t["q"], cfg_b, rev=rev), t, kw_of))
+    return d
+
+def bootstrap_ci_low(diffs, n_boot=1000, seed=0):
+    """配对差均值的 bootstrap 95% 置信下界（红线 15：判据=下界 > max(0, margin)）。"""
+    rnd = random.Random(seed)
+    n = len(diffs)
+    means = []
+    for _ in range(n_boot):
+        means.append(sum(diffs[rnd.randrange(n)] for _ in range(n)) / n)
+    means.sort()
+    return means[int(0.025 * n_boot)]
+
+# ── 变异算子（报告 evolve.py 同款，已验证能产生有效搜索）────────────
+def mutate(cfg, rnd):
+    d = dict(cfg)
+    if rnd.random() < 0.12:
+        d["filter_zero"] = 1 - d["filter_zero"]
+    else:
+        p = rnd.choice(PARAMS)
+        d[p] = round(max(0.0, d[p] * rnd.choice([0.5, 0.7, 0.85, 1.2, 1.5, 2.0])), 4)
+        if rnd.random() < 0.2:
+            d[p] = 0.0
+    return d

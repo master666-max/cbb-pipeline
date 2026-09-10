@@ -1,0 +1,75 @@
+# lint_library.txt — 双库体检（library-bootstrap 移植版，纯标准库）
+# 用法（按环境探测结果选启动器）: python3 lint_library.txt | py -X utf8 lint_library.txt
+import os, re, sys
+from datetime import datetime
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+problems, warnings = [], []
+md_files = ['README.md', 'AGENTS.md', 'CLAUDE.md']
+entry = [f for f in md_files if os.path.exists(f)]
+md_files = entry[:]
+for d in ['knowledge', 'archive', 'soul', 'workspace']:
+    if os.path.isdir(d):
+        for root, _, files in os.walk(d):
+            for f in files:
+                if f.endswith('.md'):
+                    md_files.append(os.path.join(root, f))
+
+links = 0
+for t in md_files:
+    if not os.path.exists(t):
+        continue
+    base = os.path.dirname(t)
+    text = open(t, encoding='utf-8').read()
+    for m in re.finditer(r'\]\(([^)#]+?)(#[^)]*)?\)', text):
+        p = m.group(1)
+        if p.startswith(('http', 'mailto:')):
+            continue
+        links += 1
+        if not os.path.exists(os.path.normpath(os.path.join(base, p))):
+            problems.append('断链: %s -> %s' % (t, p))
+
+if os.path.exists('knowledge/_index.md'):
+    n = len(open('knowledge/_index.md', encoding='utf-8').read().splitlines())
+    if n >= 200:
+        problems.append('_index.md 超 200 行: %d' % n)
+
+for s in ['task-start', 'wrap-up']:
+    p = os.path.join('knowledge', 'skills', s, 'SKILL.md')
+    if os.path.exists(p):
+        head = open(p, encoding='utf-8').read().split('---')[1]
+        if 'name:' not in head or 'description:' not in head:
+            problems.append('frontmatter 不合规: %s' % p)
+
+
+# L-int-04: L4 常驻三件合计行数 ≤150（W-012；空行与注释行计入）
+sum3, parts = 0, []
+for p3 in ['soul/SOUL.md', 'soul/USER.md', 'knowledge/_index.md']:
+    if os.path.exists(p3):
+        n3 = len(open(p3, encoding='utf-8').read().splitlines())
+        sum3 += n3
+        parts.append('%s=%d' % (p3, n3))
+if parts and sum3 > 150:
+    problems.append('L4 常驻三件合计 %d 行超 150（%s）' % (sum3, ' '.join(parts)))
+
+# W-014/L-int schema: schema_version 字段存在性（entry-schema 模板在位时检查）
+if os.path.exists('knowledge/entry-schema.md'):
+    if 'schema_version' not in open('knowledge/entry-schema.md', encoding='utf-8').read():
+        problems.append('entry-schema.md 缺 schema_version 字段（W-014）')
+
+# L-int-06: PENDING 写入计数与年龄（W-038 联动）
+pend = 'state/PENDING.md'
+if os.path.exists(pend):
+    plines = [l for l in open(pend, encoding='utf-8').read().splitlines() if l.strip().startswith('- ')]
+    if len(plines) > 20:
+        warnings.append('PENDING 积压 %d 条（超过 20，触发 W-038 出路流程提示）' % len(plines))
+
+print('L4 常驻三件合计: %s（限额 150）' % (sum3 if parts else 'n/a'))
+
+print('体检文件 %d 个，markdown 链接 %d 条' % (len(md_files), links))
+for w in warnings:
+    print('⚠', w)
+for p in problems:
+    print('✗', p)
+print('结果：%d 问题 / %d 提醒' % (len(problems), len(warnings)))
+sys.exit(1 if problems else 0)

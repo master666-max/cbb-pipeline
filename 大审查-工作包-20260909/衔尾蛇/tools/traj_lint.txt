@@ -1,0 +1,35 @@
+# traj_lint — 轨迹 ID 跨日撞号守卫（W-5 方案 c 之 lint 兜底，2026-09-10）
+# 运行：py -X utf8 tools/traj_lint.txt <trajectories根目录>
+# 规则：同一 task-{NNN} 编号不得出现在两个及以上日期目录（引用不带日期时即歧义）。
+# 退出码：0=无撞号；1=撞号（打印明细）；2=目录不存在。
+# 生成器规范（方案 c 之主修，解冻后随 W-7 批次落地）：新轨迹命名 task-{YYYYMMDD}-{NNN}-{标题}.md，
+#   引用一律 TRAJ-{YYYYMMDD}-{NNN}；lint 保留作为旧格式存量的兜底守卫。
+import sys, re
+from pathlib import Path
+from collections import defaultdict
+
+root = Path(sys.argv[1]) if len(sys.argv) > 1 else None
+if not root or not root.is_dir():
+    print(f"用法：py -X utf8 tools/traj_lint.txt <trajectories根目录>（got {root}）")
+    sys.exit(2)
+
+pat = re.compile(r"^task-(\d{1,4})-")
+owner = defaultdict(list)                                    # NNN -> [日期目录,…]
+n_files = 0
+for day in sorted(p.name for p in root.iterdir() if p.is_dir()):
+    for f in sorted((root / day).iterdir()):
+        mt = pat.match(f.name)
+        if not mt:
+            print(f"  [警告] 非标准命名（跳过）：{day}/{f.name}")
+            continue
+        n_files += 1
+        owner[mt.group(1)].append(day)
+
+collisions = {k: v for k, v in sorted(owner.items()) if len(v) > 1}
+if collisions:
+    print(f"撞号：{len(collisions)} 个编号跨日重复（{n_files} 个轨迹文件已扫）")
+    for k, v in collisions.items():
+        print(f"  task-{k}: {v}")
+    sys.exit(1)
+print(f"OK：{n_files} 个轨迹文件，无跨日撞号。")
+sys.exit(0)

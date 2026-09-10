@@ -1,0 +1,71 @@
+# 24 种子复核 —— H1（干净场景 G4 vs G0）与 H2（伪特征场景 G2/G4 对比）的关键结论加跑到 24 种子
+# 运行：py -X utf8 proto/x24_replicate.txt   （种子 9–24 新跑，1–8 复用 X2a/X3 已采数据）
+# 输出：data/x24_summary.json
+import json, time, importlib.util, importlib.machinery
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent.parent
+DATA = BASE / "data"
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+x3 = load_mod("x3d", BASE / "proto" / "x3_danger.txt")   # main 已加 __main__ 守卫，导入不触发主循环
+
+NEW_SEEDS = list(range(9, 25))
+t0 = time.time()
+new = {"clean_G4": {}, "pseudo_G2": {}, "pseudo_G4": {}}
+for seed in NEW_SEEDS:
+    r = x3.run("clean", "G4", seed)
+    new["clean_G4"][seed] = {"audit_U": r["audit_U_true"], "g0": r["g0_audit_U_true"]}
+    print(f"[clean/G4 s{seed}] ΔU={r['audit_U_true']-r['g0_audit_U_true']:+.4f}")
+    r = x3.run("pseudo", "G2", seed)
+    new["pseudo_G2"][seed] = {"audit_U": r["audit_U_true"], "g0": r["g0_audit_U_true"], "w_f1": r["final_w_f1"]}
+    print(f"[pseudo/G2 s{seed}] ΔU={r['audit_U_true']-r['g0_audit_U_true']:+.4f} w_f1={r['final_w_f1']}")
+    r = x3.run("pseudo", "G4", seed)
+    new["pseudo_G4"][seed] = {"audit_U": r["audit_U_true"], "g0": r["g0_audit_U_true"], "w_f1": r["final_w_f1"]}
+    print(f"[pseudo/G4 s{seed}] ΔU={r['audit_U_true']-r['g0_audit_U_true']:+.4f} w_f1={r['final_w_f1']}")
+
+# ── 合并 1–8 与 9–24 → 24 种子配对统计 ──
+def load_x2a(group):
+    out = {}
+    for s in range(1, 9):
+        r = json.loads((DATA / f"x2_clean-{group}-s{s}.json").read_text(encoding="utf-8"))["result"]
+        out[s] = {"audit_U": r["audit_U"]}
+    return out
+
+g0 = {int(r["seed"]): r for r in (json.loads(l) for l in (DATA / "x1_static.jsonl").read_text(encoding="utf-8").splitlines())}
+clean_G4 = {s: {"audit_U": v["audit_U"], "g0": g0[s]["G0_audit_U"]} for s, v in load_x2a("G4").items()}
+clean_G4.update({s: {"audit_U": v["audit_U"], "g0": v["g0"]} for s, v in new["clean_G4"].items()})
+pseudo_G2, pseudo_G4 = {}, {}
+for s in range(1, 9):
+    for grp, store in (("G2", pseudo_G2), ("G4", pseudo_G4)):
+        r = json.loads((DATA / f"x3-pseudo-{grp}-s{s}.json").read_text(encoding="utf-8"))
+        store[s] = {"audit_U": r["audit_U_true"], "g0": r["g0_audit_U_true"], "w_f1": r["final_w_f1"]}
+pseudo_G2.update({s: {"audit_U": v["audit_U"], "g0": v["g0"], "w_f1": v["w_f1"]} for s, v in new["pseudo_G2"].items()})
+pseudo_G4.update({s: {"audit_U": v["audit_U"], "g0": v["g0"], "w_f1": v["w_f1"]} for s, v in new["pseudo_G4"].items()})
+
+def paired(d):
+    diffs = [v["audit_U"] - v["g0"] for v in d.values()]
+    return {"n": len(diffs), "mean": round(sum(diffs) / len(diffs), 4),
+            "ci_low": round(evocore.bootstrap_ci_low(diffs, seed=0), 4),
+            "n_pos": sum(1 for x in diffs if x > 0)}
+
+out = {
+    "H1_clean_G4_vs_G0_24seed": paired(clean_G4),
+    "H2_pseudo_G2_vs_G0_24seed": paired(pseudo_G2),
+    "H2_pseudo_G4_vs_G0_24seed": paired(pseudo_G4),
+    "H2_pseudo_采纳w_f1": {
+        "G2": f"{sum(1 for v in pseudo_G2.values() if v['w_f1'] > 0)}/24",
+        "G4": f"{sum(1 for v in pseudo_G4.values() if v['w_f1'] > 0)}/24",
+    },
+    "wall_s": round(time.time() - t0, 1),
+}
+print("\n===== 24 种子复核 =====")
+print(json.dumps(out, ensure_ascii=False, indent=1))
+(DATA / "x24_summary.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")

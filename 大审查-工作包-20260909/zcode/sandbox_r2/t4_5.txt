@@ -1,0 +1,78 @@
+# -*- coding: utf-8 -*-
+# t4_5.txt v2 — T4-5 锚定集刷新经济学 × 疲劳雏形（N4；重设计说明：
+#   v1 用 switch 相位漂移，但演化能追踪相位→真值无退化→审计无事可做（场景退化，作废）。
+#   v2 改用 E81 世界内生真值漂移（w_show 膨胀），锚读数带疲劳噪声 a_meas=T*(1±err)，
+#   err(J)=0.05+0.10*min(1,J/200)，J 随审计(4/次)与刷新(batch/次)累积 → 高疲劳下阈值数学上不可达=漏检侵蚀。
+# 判据（预注册）：疲劳是否翻转 trigger vs 周期刷新的排序；误触发/漏检如何随批量变化。
+import importlib.util, importlib.machinery, pathlib, json, statistics, sys, random
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+SEEDS, GENS, AUDIT_EVERY = 8, 40, 3
+OUT = HERE / "out_t4_5"; OUT.mkdir(exist_ok=True)
+
+def run(seed, policy, batch):
+    entries = rc.world_spur_judge(seed)
+    rng = random.Random(seed * 613 + 31)
+    cfg = dict(rc.V3_DEFAULT); w_show = 1.0
+    keyT = (lambda e: e["rv"])
+    anchor0 = rc.util(entries, cfg, rc.TOPICS, keyT)
+    J = 0.0; prev = (dict(cfg), w_show)
+    T_end = anchor0; triggers = 0; first_det = -1
+    for g in range(GENS):
+        P = rc.util_perceived(entries, cfg, rc.TOPICS[:2], w_show)
+        best, db = None, rc.MARGIN0
+        for _ in range(4):
+            c = rc.mutate(rng, cfg, extra_genes=(("w_show", 0.5, 30.0),))
+            wv = c.get("w_show", w_show)
+            du = rc.util_perceived(entries, c, rc.TOPICS[:2], wv) - P
+            if du > db: best, db = c, du
+        if best is not None:
+            prev = (dict(cfg), w_show); cfg, w_show = dict(best), best.get("w_show", w_show)
+        T_true = rc.util(entries, cfg, rc.TOPICS, keyT)
+        if (g + 1) % AUDIT_EVERY == 0 and best is not None:
+            err = 0.05 + 0.10 * min(1.0, J / 200.0)
+            a_meas = T_true * (1 + rng.uniform(-err, err))  # 疲劳污染的锚读数
+            if a_meas < anchor0 - 0.03:
+                triggers += 1
+                if first_det < 0: first_det = g + 1
+                cfg, w_show = dict(prev[0]), prev[1]
+                J += 4
+                T_true = rc.util(entries, cfg, rc.TOPICS, keyT)
+        if policy in ("p10", "p25") and (g + 1) % int(policy[1:]) == 0:
+            err = 0.05 + 0.10 * min(1.0, J / 200.0)
+            anchor0 = max(0.05, T_true * (1 + rng.uniform(-err, err)))  # 重锚（带疲劳噪声）
+            J += batch
+        if policy == "trigger" and triggers > 0 and triggers % 2 == 0 and (g + 1) % 6 == 0:
+            err = 0.05 + 0.10 * min(1.0, J / 200.0)
+            anchor0 = max(0.05, T_true * (1 + rng.uniform(-err, err)))
+            J += batch
+        T_end = T_true
+    return {"seed": seed, "policy": policy, "batch": batch, "T_end": round(T_end, 4),
+            "triggers": triggers, "first_det": first_det, "J_end": round(J, 1),
+            "w_show_end": round(w_show, 3)}
+
+rows = []
+for policy in ("never", "p10", "p25", "trigger"):
+    for batch in (4, 8, 16):
+        rows += [run(s, policy, batch) for s in range(1, SEEDS + 1)]
+(OUT / "rows_t4_5.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def m(p, b, f):
+    return round(statistics.mean(r[f] for r in rows if r["policy"] == p and r["batch"] == b), 4)
+
+print("=== T_end（低=疲劳/漂移侵蚀重） ===")
+print("%-9s %8s %8s %8s" % ("policy", "b=4", "b=8", "b=16"))
+for p in ("never", "p10", "p25", "trigger"):
+    print("%-9s %8.4f %8.4f %8.4f" % (p, m(p, 4, "T_end"), m(p, 8, "T_end"), m(p, 16, "T_end")))
+print()
+print("=== 触发/检出 ===")
+for p in ("never", "p10", "p25", "trigger"):
+    for b in (4, 16):
+        rs = [r for r in rows if r["policy"] == p and r["batch"] == b]
+        det = [r["first_det"] for r in rs if r["first_det"] > 0]
+        print("%-9s b=%-3d 触发均值=%.2f 检出率=%d/8 首检均值=%s J累积=%.0f" % (
+            p, b, statistics.mean(r["triggers"] for r in rs), len(det),
+            round(statistics.mean(det), 1) if det else "—", statistics.mean(r["J_end"] for r in rs)))

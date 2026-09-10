@@ -1,0 +1,288 @@
+# 阶段1 归一化提取器 · 混元（B级 md 源，显式逐表配置）
+# 口径（登记于 reports/01-归一化.md）：
+#   gen_score 取各表"真值口径"列（真实效用/真值增益/相对起点/终值/ΔU/τ/净收益）；多指标列拆成多个 run
+#   round=null（推演表为终局均值）；例外：E49 长期运行表 round=代数；检出型表 round=检出代数且 drift_flag=true
+#   adopt_count 仅 E24/E29b2 表有采纳次数列
+#   任务报告.md 的 H1-H8 是混元自身独立沙盒实验（非复述），单独入库 run=混元任务-H<N>-...
+#   复合单元格 "X / Y"（如 ΔU/回撤）取首个数值，整行逐字保留在 notes_raw
+#   总览表/修正表/清单表/一致率表/判别分布表/坍缩表/成本代数表/精度探针表/对比复述表：不入库（登记原因）
+#   结果表行真值列无法解析(区间/复合多值) -> dirty 带行号
+import os, re, json
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(ROOT, "混元")
+rows, dirty, skipped = [], [], []
+
+def num(s):
+    s = s.replace("**", "").strip()
+    s = re.sub(r"[(（].*?[)）]\s*$", "", s).strip()
+    m = re.match(r"^[+−\-]?\d+(\.\d+)?%?$", s)
+    if not m: return None
+    s2 = s.replace("%", "").replace("−", "-").replace("+", "")
+    try: return float(s2)
+    except ValueError: return None
+
+def first_num(s):
+    m = re.search(r"[+−\-]?\d+\.?\d*", s.replace("**", ""))
+    if not m: return None
+    try: return float(m.group(0).replace("−", "-"))
+    except ValueError: return None
+
+def cells(line):
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+def clean(s):
+    return s.replace("**", "").replace("`", "").strip()
+
+# 配置项: (文件, 表头全行, key列idx列表, run模板, [(指标列idx, 后缀)], adopt列, mode, round列)
+# mode: 'score'正常 | 'detect'(round=round列, drift=round非空) | 'gen'(round=key数值)
+CFG = [
+ # 第三轮
+ ("bootstrap_自演化推演_第三轮.md", "| 判断样本数 | 权重误差 | 排序相关 τ | top1 命中 | top3 重合 |", [0], "混元-E9-{k}样本", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第三轮.md", "| 模式 | 留出集真实效用 | 终局 margin | 终局变异率 |", [0], "混元-E10-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第三轮.md", "| 档案策略 | 恢复后效用 | 档案规模 |", [0], "混元-E11-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第三轮.md", "| 模式 | 留出集提升 | 实际代数 |", [0], "混元-E13-{k}", [(1, "")], None, "score", None),
+ # 第四轮
+ ("bootstrap_自演化推演_第四轮.md", "| 锚定速率 α | 真实效用(W0) | 感知效用(w_t) | 起点 |", [0], "混元-E14-α{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第四轮.md", "| 检出阈值 | 检出率 | 平均检出代数 |", [0], "混元-E14-检出-θ{k}", [], None, "detect", 2),
+ ("bootstrap_自演化推演_第四轮.md", "| 锚定 α | 加权策略 | 真实效用 | 相对起点 |", [0, 1], "混元-E14c-α{k0}-{k1}", [(2, "")], None, "score", None),
+ # 第五轮（E14 重跑，与第四轮同 run_id -> DUP 检验缓存bug修正）
+ ("bootstrap_自演化推演_第五轮.md", "| 锚定 α | 真实效用 | 感知效用 | 起点 |", [0], "混元-E14-α{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第五轮.md", "| 检出阈值 | 检出率 | 平均检出代数 |", [0], "混元-E14-检出-θ{k}", [], None, "detect", 2),
+ ("bootstrap_自演化推演_第五轮.md", "| 变异模式 | 门控 | 真实效用 | 相对起点 |", [0, 1], "混元-E19-{k0}-{k1}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第五轮.md", "| 样本数 | 随机 τ | 不确定性采样 τ | **最大差异采样 τ** |", [0], "混元-E20-{k}样本", [(1, "-随机"), (2, "-不确定"), (3, "-最大差异")], None, "score", None),
+ ("bootstrap_自演化推演_第五轮.md", "| 锚定 α | 不冻结 | 冻结+恢复 | 最优 |", [0], "混元-E21-α{k}", [(1, "-不冻结"), (2, "-冻结恢复")], None, "score", None),
+ ("bootstrap_自演化推演_第五轮.md", "| 标注 | 审计 | 频率 | 成本 | 相对起点 | 效用/成本 |", [0, 1, 2], "混元-E22-标{k0}审{k1}频{k2}", [(4, "")], None, "score", None),
+ ("bootstrap_自演化推演_第五轮.md", "| 维度 d | n=20 | n=40 | n=80 | n=160 | 达 τ>0.9 所需 |", [0], "混元-E23-d{k}", [(1, "-n20"), (2, "-n40"), (3, "-n80"), (4, "-n160")], None, "score", None),
+ # 第六轮
+ ("bootstrap_自演化推演_第六轮.md", "| 元参数 | 门控 | 主线比较 | 相对起点 | 终局 margin | 采纳次数 |", [0, 1, 2], "混元-E24-{k0}-{k1}-{k2}", [(3, "")], 5, "score", None),
+ ("bootstrap_自演化推演_第六轮.md", "| 标注 | 审计 | 频率 | 成本 | 相对起点 | 效用/成本 |", [0, 1, 2], "混元-E25-标{k0}审{k1}频{k2}", [(4, "")], None, "score", None),
+ ("bootstrap_自演化推演_第六轮.md", "| 漂移 α | 不审计 | 审计 | 审计划算？ |", [0], "混元-E25b-α{k}", [(1, "-不审计"), (2, "-审计")], None, "score", None),
+ ("bootstrap_自演化推演_第六轮.md", "| 漂移类型 | 恢复 | 重锚 | 渐进升级 |", [0], "混元-E26-{k}", [(1, "-恢复"), (2, "-重锚"), (3, "-渐进升级")], None, "score", None),
+ ("bootstrap_自演化推演_第六轮.md", "| 策略 | 相对起点 |", [0], "混元-E27-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第六轮.md", "| 样本数 | 平铺 τ | **层次化 τ** | 差 |", [0], "混元-E28-{k}样本", [(1, "-平铺"), (2, "-层次化")], None, "score", None),
+ # 第七轮
+ ("bootstrap_自演化推演_第七轮.md", "| 配置 | 相对起点 | 档案规模 | 重锚次数 |", [0], "混元-E29-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第七轮.md", "| Pareto | bootstrap | 轮换 | 廉价筛选 | 锚定 | 相对起点 |", [0, 1, 2, 3, 4], "混元-E29b-P{k0}B{k1}R{k2}C{k3}A{k4}", [(5, "")], None, "score", None),
+ ("bootstrap_自演化推演_第七轮.md", "| 噪声 | 门控 | margin | 相对起点 | 采纳次数 |", [0, 1, 2], "混元-E29b2-{k0}-{k1}-m{k2}", [(3, "")], 4, "score", None),
+ ("bootstrap_自演化推演_第七轮.md", "| 排序依据 | top-10 条目真实质量 |", [0], "混元-E32-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第七轮.md", "| 策略 | A 能力保留 | 平均规模 | 峰值规模 |", [0], "混元-E30-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第七轮.md", "| 容忍度 tol | 偏差 0.0 | 偏差 0.20 | 实际代数（偏差0） |", [0], "混元-E33-tol{k}", [(1, "-偏差0.0"), (2, "-偏差0.20")], None, "score", None),
+ ("bootstrap_自演化推演_第七轮.md", "| 轮换周期 | 自报提升 | 真实提升 | 膨胀 |", [0], "混元-E31-{k}", [(2, "")], None, "score", None),
+ # 第八轮
+ ("bootstrap_自演化推演_第八轮.md", "| 阈值 | 无漂移误报次数 | 误报率 | 有漂移首次检出代数 |", [0], "混元-E34-θ{k}", [], None, "detect", 3),
+ ("bootstrap_自演化推演_第八轮.md", "| 阈值 | 误报次数 | 裁决成本 | 检出代数 | 避免损失 | **净收益** |", [0], "混元-E37-θ{k}", [(5, "")], None, "score", None),
+ ("bootstrap_自演化推演_第八轮.md", "| 每代漂移损失 | 净收益 | 审计算划算吗 |", [0], "混元-E37b-损失{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第八轮.md", "| 门控 | 均值 |", [0], "混元-E36-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第八轮.md", "| 轮换周期 | 自报提升 | 真实提升 | 膨胀 |", [0], "混元-E35-{k}", [(2, "")], None, "score", None),
+ # 第九轮
+ ("bootstrap_自演化推演_第九轮.md", "| 场景 | v3 基线 | 修正后架构 | 差 |", [0], "混元-E40-{k}", [(1, "-v3"), (2, "-v4")], None, "score", None),
+ ("bootstrap_自演化推演_第九轮.md", "| 注入的违规 | 相对起点 | vs 基线 |", [0], "混元-E41-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第九轮.md", "| 配置 | 相对起点 | 注意力成本 | 检出 | 检出代数 |", [0], "混元-E38-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第九轮.md", "| 预算 | 标注条数 | 实际成本 | 相对起点 | 效用/成本 |", [0], "混元-E39-预算{k}", [(3, "")], None, "score", None),
+ # 第十轮（E42 红线复检）
+ ("bootstrap_自演化推演_第十轮.md", "| 准入 | 到达全局最优 | 终值 |", [0], "混元-E42-E7复检-{k}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十轮.md", "| | 新鲜集效用 | 终局 `w_spur` |", [0], "混元-E42-E3复检-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十轮.md", "| 档案 | A 能力保留 |", [0], "混元-E42-E16复检-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十轮.md", "| 模式 | 相对起点 | 代数 |", [0], "混元-E42-E13复检-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十轮.md", "| 模式 | 相对起点 | 平均 margin |", [0], "混元-E43-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十轮.md", "| | 相对起点 | 终局 margin | 放宽次数 |", [0], "混元-E44-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十轮.md", "| 策略 | top-10 真实质量 |", [0], "混元-E46-{k}", [(1, "")], None, "score", None),
+ # 第十一轮
+ ("bootstrap_自演化推演_第十一轮.md", "| 模式 | 相对起点 | 首次检出代数 | 检出次数 | 终局规避度 |", [0], "混元-E47-{k}", [], None, "detect", 2),
+ ("bootstrap_自演化推演_第十一轮.md", "| 岛数 | 迁移 | 相对起点 |", [0, 1], "混元-E48-{k0}岛-迁移{k1}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十一轮.md", "| 代数 | 相对起点 |", [0], "混元-E49-长期运行", [(1, "")], None, "gen", 0),
+ ("bootstrap_自演化推演_第十一轮.md", "| 冲突率 | 全保留 τ | 剔除矛盾 τ | 差 |", [0], "混元-E51-{k}", [(1, "-全保留"), (2, "-剔除矛盾")], None, "score", None),
+ # 第十二轮
+ ("bootstrap_自演化推演_第十二轮.md", "| 金标噪声 | 新鲜集相对起点 |", [0], "混元-E52-噪声{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十二轮.md", "| 任务数 | 相对起点 |", [0], "混元-E53-{k}任务", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十二轮.md", "| 模式 | 相对起点 | 终局步长 |", [0], "混元-E54-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十二轮.md", "| tol | 平滑地形 | 欺骗地形 |", [0], "混元-E55-tol{k}", [(1, "-平滑"), (2, "-欺骗")], None, "score", None),
+ ("bootstrap_自演化推演_第十二轮.md", "| 模式 | 末期 top-5 真实质量 | 末期标准差 | 起始质量 |", [0], "混元-E56-{k}", [(1, "")], None, "score", None),
+ # 第十三轮
+ ("bootstrap_自演化推演_第十三轮.md", "| 金标类型 | 新鲜集相对起点 | 终局 `w_imp` |", [0], "混元-E57-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十三轮.md", "| 模式 | 首次检出代数 | 检出次数 | 峰值规避度 |", [0], "混元-E58-{k}", [], None, "detect", 1),
+ ("bootstrap_自演化推演_第十三轮.md", "| 岛数 | 无迁移 | 有迁移 |", [0], "混元-E59-{k}岛", [(1, "-无迁移"), (2, "-有迁移")], None, "score", None),
+ ("bootstrap_自演化推演_第十三轮.md", "| 模式 | 参数 | 相对起点 | 档案规模 |", [0, 1], "混元-E60-{k0}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十三轮.md", "| 损坏类型 | 损坏前 | 损坏后 | 变化 |", [0], "混元-E61-{k}", [(1, "-损坏前"), (2, "-损坏后")], None, "score", None),
+ # 第十四轮
+ ("bootstrap_自演化推演_第十四轮.md", "| 场景 | v3 基线 | **v4 配置** | 差 |", [0], "混元-E63-{k}", [(1, "-v3"), (2, "-v4")], None, "score", None),
+ ("bootstrap_自演化推演_第十四轮.md", "| 阶段 | 加入的机制 | 相对起点 | **边际** |", [0, 1], "混元-E66-阶段{k0}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十四轮.md", "| 预算 | 清洁代数占比 | 终局效用 | 清洁/成本 |", [0], "混元-E64-预算{k}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十四轮.md", "| 失败模式 | 无护栏 | 有护栏 | 收益 |", [0], "混元-E65-{k}", [(1, "-无护栏"), (2, "-有护栏")], None, "score", None),
+ # 第十五轮
+ ("bootstrap_自演化推演_第十五轮.md", "| 失败模式 | 对应护栏 | 关护栏 | 开护栏 | **护栏收益** |", [0], "混元-E67-{k}", [(2, "-关护栏"), (3, "-开护栏")], None, "score", None),
+ ("bootstrap_自演化推演_第十五轮.md", "| margin | tol | cap | 终局效用 |", [0, 1, 2], "混元-E68-m{k0}t{k1}c{k2}", [(3, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十五轮.md", "| 刷新策略 | 终局效用 | 重锚/重采次数 |", [0], "混元-E69-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十五轮.md", "| 签名周期 | 终局效用 |", [0], "混元-E70-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十五轮.md", "| 配置 | 终局效用 |", [0], "混元-E70b-{k}", [(1, "")], None, "score", None),
+ # 第十六轮
+ ("bootstrap_自演化推演_第十六轮.md", "| 门控方式 | 新鲜集效用 | 终局 `w_spur` |", [0], "混元-E71-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十六轮.md", "| 场景 | cap=4 | **cap=8** | cap=12 | cap=20 | cap=40 | 最优 |", [0], "混元-E72-{k}", [(1, "-cap4"), (2, "-cap8"), (3, "-cap12"), (4, "-cap20"), (5, "-cap40")], None, "score", None),
+ ("bootstrap_自演化推演_第十六轮.md", "| 算子 | 相对起点 |", [0], "混元-E73-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十六轮.md", "| 维度 | 有剥削通道 | 无剥削通道 | **剥削损失** |", [0], "混元-E74-d{k}", [(1, "-有通道"), (2, "-无通道")], None, "score", None),
+ ("bootstrap_自演化推演_第十六轮.md", "| 路径 | 相对起点 | 冷启动花费 |", [0], "混元-E75-{k}", [(1, "")], None, "score", None),
+ # 第十七轮
+ ("bootstrap_自演化推演_第十七轮.md", "| 配置 | 混合场景 | 收益占比 |", [0], "混元-E76-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十七轮.md", "| 配置 | 良性环境 | vs v3 |", [0], "混元-E77-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十七轮.md", "| 移除的 | 相对起点 | **损失** |", [0], "混元-E79-移除{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十七轮.md", "| 配置 | 相对起点 |", [0], "混元-E80-{k}", [(1, "")], None, "score", None),
+ # 第十八轮
+ ("bootstrap_自演化推演_第十八轮.md", "| 探针集 | 审计周期 | 真值变化 | **回退次数** |", [0, 1], "混元-E84-{k0}-{k1}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十八轮.md", "| 审计周期 | 真值变化 | **judge 自报** | **膨胀倍数** |", [0], "混元-E85-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十八轮.md", "| 表象维度 | 无审计·真值 | 展示权重终值 | 审计每 2 代 | 回退 |", [0], "混元-E86-d{k}-无审计", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十八轮.md", "| 对策 | 真值变化 | 展示权重 | 回退次数 |", [0], "混元-E87-{k}", [(1, "")], None, "score", None),
+ # 第十九轮
+ ("bootstrap_自演化推演_第十九轮.md", "| 表象维度 | 单点变异·真值 | 单点·权重 | **协调变异·真值** | **协调·权重** | 回退 |", [0], "混元-E88-d{k}", [(1, "-单点"), (3, "-协调")], None, "score", None),
+ ("bootstrap_自演化推演_第十九轮.md", "| 周期 | 样本 | 真值增益 | 成本 | **增益/成本** |", [0, 1], "混元-E90-周期{k0}样本{k1}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第十九轮.md", "| 系统能否预知审计 | 真值变化 | mask 终值 | 展示权重 | 回退 |", [0], "混元-E91-{k}", [(1, "")], None, "score", None),
+ # 第二十轮
+ ("bootstrap_自演化推演_第二十轮.md", "| 配置 | **真值增益** | 展示权重终值 | 回退 |", [0], "混元-E92-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十轮.md", "| 预算 | 真值增益 | 花费 | 转正？ |", [0], "混元-E93-预算{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十轮.md", "| 配置 | 真值增益 |", [0], "混元-E94-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十轮.md", "| 参数 | 取值 | 真值增益 | 判读 |", [0, 1], "混元-E95-{k0}-{k1}", [(2, "")], None, "score", None),
+ # 第二十一轮
+ ("bootstrap_自演化推演_第二十一轮.md", "| cap | 真值增益 |", [0], "混元-E96-cap{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十一轮.md", "| tol | 真值增益 |", [0], "混元-E96-tol{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十一轮.md", "| margin | 真值增益 |", [0], "混元-E96-margin{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十一轮.md", "| 预算 | 真值增益 | 花费 | **审计次数** |", [0], "混元-E97-预算{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十一轮.md", "| 探针样本 | 有审计 | 无审计 | **审计收益** |", [0], "混元-E97b-样本{k}", [(1, "-有审计"), (2, "-无审计")], None, "score", None),
+ ("bootstrap_自演化推演_第二十一轮.md", "| 伪装成本 | 真值增益 | **mask 终值** | 展示权重 | 回退 |", [0], "混元-E98-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十一轮.md", "| judge 看真值比例 | 真值增益 |", [0], "混元-E100-比例{k}", [(1, "")], None, "score", None),
+ # 第二十二轮
+ ("bootstrap_自演化推演_第二十二轮.md", "| 温度 | 真值增益 |", [0], "混元-E104-温度{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十二轮.md", "| 幅度 | 真值增益 | 标准差 | 为正种子 |", [0], "混元-E104-幅度{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十二轮.md", "| 幅度 | 有审计 | 无审计 | **审计收益** |", [0], "混元-E104c-幅度{k}", [(1, "-有审计"), (2, "-无审计")], None, "score", None),
+ ("bootstrap_自演化推演_第二十二轮.md", "| 配置 | 真值增益 |", [0], "混元-E101-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十二轮.md", "| 审计方式 | 真值增益 | 回退次数 |", [0], "混元-E103-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十二轮.md", "| 刷新周期 | 真值增益 |", [0], "混元-E102-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十二轮.md", "| 盲评 | 审计 | 标注 | **真值增益** |", [0, 1, 2], "混元-E105-盲{k0}审{k1}标{k2}", [(3, "")], None, "score", None),
+ # 第二十三轮
+ ("bootstrap_自演化推演_第二十三轮.md", "| 幅度 | 真值增益 | 为正种子 |", [0], "混元-E106-幅度{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十三轮.md", "| 幅度 | 真值增益 |", [0], "混元-E109-幅度{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十三轮.md", "| 幅度 | 有审计 | 无审计 | **审计收益** |", [0], "混元-E107-幅度{k}", [(1, "-有审计"), (2, "-无审计")], None, "score", None),
+ ("bootstrap_自演化推演_第二十三轮.md", "| 步骤 | 配置 | 真值增益 | **边际** |", [0, 1], "混元-E110-步骤{k0}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十三轮.md", "| 配置 | 真值增益 | 展示权重 | 回退 |", [0], "混元-E108-{k}", [(1, "")], None, "score", None),
+ # 第二十四轮
+ ("bootstrap_自演化推演_第二十四轮.md", "| 审计污染 | 幅度 0.5 | 幅度 1.0 | 幅度 2.0 | **幅度 3.0** |", [0], "混元-E111-污染{k}", [(1, "-幅度0.5"), (2, "-幅度1.0"), (3, "-幅度2.0"), (4, "-幅度3.0")], None, "score", None),
+ ("bootstrap_自演化推演_第二十四轮.md", "| 幅度 | 真值增益 | 回退次数 | **展示权重** |", [0], "混元-E112-幅度{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十四轮.md", "| 策略 | 真值增益 | 终局幅度 | 回退 |", [0], "混元-E113-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十四轮.md", "| 幅度 | 温度 | 真值增益 |", [0, 1], "混元-E114-幅度{k0}温{k1}", [(2, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十四轮.md", "| 配置 | 真值增益 |", [0], "混元-E115-{k}", [(1, "")], None, "score", None),
+ # 第二十五轮
+ ("bootstrap_自演化推演_第二十五轮.md", "| 写入周期 | 真值增益 |", [0], "混元-E116-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十五轮.md", "| 写入质量 | 有审计 | 无审计 | **审计收益** |", [0], "混元-E119-{k}", [(1, "-有审计"), (2, "-无审计")], None, "score", None),
+ ("bootstrap_自演化推演_第二十五轮.md", "| 整理周期 | 真值增益 | 自写占比 | 世界大小 |", [0], "混元-E120-{k}", [(1, "")], None, "score", None),
+ ("bootstrap_自演化推演_第二十五轮.md", "| 每次写入 | 真值增益 |", [0], "混元-E118-{k}", [(1, "")], None, "score", None),
+ # 任务报告.md（混元自身 H 系列沙盒实验）
+ ("任务报告.md", "| 臂 | ΔU | recall@5 | 评估次数 | 正号种子 |", [0], "混元任务-H1-clean-{k}", [(1, "")], None, "score", None),
+ ("任务报告.md", "| 臂 | ΔU | recall@5 | 正号种子 |", [0], "混元任务-H5-pseudo-{k}", [(1, "")], None, "score", None),
+ ("任务报告.md", "| 臂 | ΔU | 逃出局部最优 |", [0], "混元任务-H6-deceptive-{k}", [(1, "")], None, "score", None),
+ ("任务报告.md", "| 口径 | top-10 条目真实质量 |", [0], "混元任务-H2-{k}", [(1, "")], None, "score", None),
+ ("任务报告.md", "| 模式 | recall@5 | U |", [0], "混元任务-H4-{k}", [(1, "")], None, "score", None),
+ ("任务报告.md", "| 档案策略 | ΔU | 切换前旧目标能力 |", [0], "混元任务-H3-switch-{k}", [(1, "")], None, "score", None),
+ ("任务报告.md", "| 预算 | 可跑代数 | ΔU |", [0], "混元任务-H8-预算{k}", [(2, "")], None, "score", None),
+]
+
+# 特例：任务报告 H7 复合单元格表（two-tier ΔU / 回撤 等）
+def extract_task_h7():
+    fn = "任务报告.md"
+    lines = open(os.path.join(SRC, fn), encoding="utf-8").read().splitlines()
+    for i, ln in enumerate(lines):
+        if ln.startswith("| α | two-tier ΔU"):
+            j = i + 2
+            while j < len(lines) and lines[j].strip().startswith("|"):
+                cs = cells(lines[j])
+                if len(cs) >= 6:
+                    alpha = clean(cs[0])
+                    for col, suf in ((1, "-two-tier"), (2, "-anchor")):
+                        gs = first_num(cs[col]) if col < len(cs) else None
+                        rid = f"混元任务-H7-α{alpha}{suf}"
+                        # 冻结列: "0/12"->drift=False, "12/12"->True
+                        fr = cs[5] if len(cs) > 5 else ""
+                        df = None
+                        m = re.match(r"^(\d+)/(\d+)$", fr.replace("**", "").strip())
+                        if m: df = int(m.group(1)) > 0
+                        rows.append({"source": "混元", "run_id": rid, "round": None, "gen_score": gs,
+                                     "adopt_count": None, "drift_flag": df, "raw_line_no": j + 1,
+                                     "raw_file": f"混元/{fn}", "notes_raw": lines[j].rstrip()})
+                j += 1
+            return
+
+FILES_CACHE = {}
+def get_lines(fn):
+    if fn not in FILES_CACHE:
+        FILES_CACHE[fn] = open(os.path.join(SRC, fn), encoding="utf-8").read().splitlines()
+    return FILES_CACHE[fn]
+
+used = set()
+for cfg in CFG:
+    fn, sig, keycols, fmt, metrics, adopt_col, mode, round_col = cfg
+    lines = get_lines(fn)
+    hit = None
+    for i, ln in enumerate(lines):
+        if ln.rstrip() == sig:
+            hit = i; break
+    if hit is None:
+        dirty.append((fn, 0, sig, "表头未找到(配置失效)"))
+        continue
+    used.add((fn, hit + 1))
+    j = hit + 2  # 跳过分隔行
+    while j < len(lines) and lines[j].strip().startswith("|"):
+        cs = cells(lines[j])
+        if len(cs) < 2: break
+        keys = [clean(cs[kc]) if kc < len(cs) else "?" for kc in keycols]
+        kd = {f"k{i}": k for i, k in enumerate(keys)}
+        if len(keys) == 1: kd["k"] = keys[0]
+        rid_base = fmt.format(**kd)
+        if mode == "detect":
+            rv = num(cs[round_col]) if round_col < len(cs) else None
+            rv2 = first_num(cs[round_col]) if rv is None and round_col < len(cs) else rv
+            if rv2 is not None and ("—" not in cs[round_col]):
+                rows.append({"source": "混元", "run_id": rid_base, "round": rv2, "gen_score": None,
+                             "adopt_count": None, "drift_flag": True, "raw_line_no": j + 1,
+                             "raw_file": f"混元/{fn}", "notes_raw": lines[j].rstrip()})
+            else:
+                rows.append({"source": "混元", "run_id": rid_base, "round": None, "gen_score": None,
+                             "adopt_count": None, "drift_flag": False, "raw_line_no": j + 1,
+                             "raw_file": f"混元/{fn}", "notes_raw": lines[j].rstrip()})
+        elif mode == "gen":
+            rv = num(cs[round_col]) if round_col < len(cs) else None
+            gs = None
+            for col, suf in metrics:
+                if col < len(cs): gs = num(cs[col])
+            rows.append({"source": "混元", "run_id": rid_base, "round": rv, "gen_score": gs,
+                         "adopt_count": None, "drift_flag": None, "raw_line_no": j + 1,
+                         "raw_file": f"混元/{fn}", "notes_raw": lines[j].rstrip()})
+        else:
+            for col, suf in metrics:
+                rid = rid_base + suf
+                if col >= len(cs):
+                    dirty.append((fn, j + 1, lines[j], f"列数不足 col={col}")); continue
+                raw_v = cs[col]
+                gs = num(raw_v)
+                if gs is None: gs = first_num(raw_v)  # 复合单元格取首值(口径已登记)
+                if gs is None and raw_v not in ("—", "-", ""):
+                    dirty.append((fn, j + 1, lines[j], f"真值列无法解析: {raw_v}"))
+                    continue
+                ac = num(cs[adopt_col]) if adopt_col is not None and adopt_col < len(cs) else None
+                rows.append({"source": "混元", "run_id": rid, "round": None, "gen_score": gs,
+                             "adopt_count": ac, "drift_flag": None, "raw_line_no": j + 1,
+                             "raw_file": f"混元/{fn}", "notes_raw": lines[j].rstrip()})
+        j += 1
+
+extract_task_h7()
+
+with open(os.path.join(ROOT, "unified", "混元.jsonl"), "w", encoding="utf-8", newline="\n") as f:
+    for r in rows:
+        f.write(json.dumps(r, ensure_ascii=False) + "\n")
+if dirty:
+    with open(os.path.join(ROOT, "unified", "dirty", "混元__tables.txt"), "w", encoding="utf-8", newline="\n") as f:
+        for fn, ln, txt, why in dirty:
+            f.write(f"[{fn}:{ln}] why={why}\n{txt}\n")
+
+print("rows=", len(rows), "dirty=", len(dirty), "runs=", len(set(r["run_id"] for r in rows)))
+from collections import Counter
+fam = Counter(re.match(r"混元[^-]*-E?\d+", r["run_id"]).group(0) if re.match(r"混元[^-]*-E?\d+", r["run_id"]) else r["run_id"] for r in rows)
+print("families:", len(fam))
+for d in dirty[:12]: print("DIRTY:", d[0], d[1], d[3][:50])

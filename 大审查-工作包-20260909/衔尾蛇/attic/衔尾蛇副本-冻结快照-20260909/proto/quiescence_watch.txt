@@ -1,0 +1,41 @@
+# quiescence_watch — 库调试v3.2 静默监测器（等待另一智能体收尾）
+# 运行：py -X utf8 proto/quiescence_watch.txt
+# 每 90s 采一次库指纹（文件数/最大mtime/账本尾行）；连续 3 次不变 → QUIESCENT 退出；
+# 30 分钟上限 → STILL-ACTIVE 退出（附最后一次指纹与账本尾行）。
+import os, json, time, hashlib
+from pathlib import Path
+
+LIB = Path(r"D:\zcode专用！！！！危险！！！！！！！！！\库调试v3.2")
+INTERVAL, WINDOW, MAXMIN = 90, 3, 30
+
+def fingerprint():
+    n = 0; mt_max = 0.0
+    for root, dirs, files in os.walk(LIB):
+        for f in files:
+            n += 1
+            try: mt_max = max(mt_max, os.path.getmtime(os.path.join(root, f)))
+            except OSError: pass
+    tail = ""
+    lp = LIB / "ledger" / "changes.jsonl"
+    if lp.exists():
+        lines = lp.read_text(encoding="utf-8").strip().splitlines()
+        tail = lines[-1][:120] if lines else ""
+    return hashlib.sha256(f"{n}|{mt_max:.3f}|{tail}".encode()).hexdigest()[:16], n, tail
+
+same = 0
+last_fp = None
+t0 = time.time()
+while (time.time() - t0) < MAXMIN * 60:
+    fp, n, tail = fingerprint()
+    if fp == last_fp:
+        same += 1
+    else:
+        same = 0
+    last_fp = fp
+    print(f"[{time.strftime('%H:%M:%S')}] fp={fp} files={n} same_streak={same} tail={tail[:60]}", flush=True)
+    if same >= WINDOW - 1:
+        print(f"QUIESCENT — 连续 {WINDOW} 次指纹不变（{INTERVAL}s 间隔），库已静默", flush=True)
+        sys.exit(0)
+    time.sleep(INTERVAL)
+print(f"STILL-ACTIVE — {MAXMIN} 分钟内指纹持续变化", flush=True)
+print(f"最后账本行：{tail}", flush=True)

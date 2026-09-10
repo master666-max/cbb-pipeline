@@ -1,0 +1,103 @@
+# 阶段2 分析器 analyze.py（可执行 .txt）
+# 指标定义（全部确定性，输出 JSON；浮点一律 round(.,6) 便于逐位比对）：
+#   曲线 curve      : round!=null 且 gen_score!=null 的 (round, gen_score) 点列，按 round、score 升序
+#   n_points        : 曲线点数；first/last/delta=last-first
+#   slope           : n_points>=3 且 round 有方差时 OLS 斜率 cov(x,y)/var(x)，否则 null
+#   adoption        : adopt_count!=null 的行数 n_adopt_rows；positive_gens=采纳>0 的代数；
+#                     adoption_rate=positive_gens/n_adopt_rows(null 若 n=0)；adopt_mean=均值
+#   drift           : drift_flag==true 的行 -> detection_rounds(升序)、first_detection、triggers=count
+#   missing_ratio   : gen_score==null 的行 / 该 run 全部行
+#   汇总 per source : runs/rows/有曲线run数/slope 列表(mean/min/max)/触发总数/采纳率均值
+# 用法: py -X utf8 analyze.txt <jsonl文件...>  --out 输出路径(可选,默认stdout)
+import json, sys, glob, os
+from collections import defaultdict
+
+def r6(x):
+    return None if x is None else round(x, 6)
+
+def analyze(paths):
+    rows = []
+    for p in paths:
+        for line in open(p, encoding="utf-8"):
+            line = line.strip()
+            if line:
+                rows.append(json.loads(line))
+    runs = defaultdict(list)
+    for r in rows:
+        runs[(r["source"], r["run_id"])].append(r)
+
+    per_run = {}
+    for (src, rid), rr in sorted(runs.items()):
+        pts = sorted([(r["round"], r["gen_score"]) for r in rr
+                      if r["round"] is not None and r["gen_score"] is not None])
+        xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+        slope = None
+        if len(pts) >= 3:
+            mx = sum(xs) / len(xs); my = sum(ys) / len(ys)
+            cov = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+            var = sum((x - mx) ** 2 for x in xs)
+            if var > 0:
+                slope = r6(cov / var)
+        ad = [r["adopt_count"] for r in rr if r["adopt_count"] is not None]
+        pos = sum(1 for a in ad if a > 0)
+        det = sorted(r["round"] for r in rr if r["drift_flag"] is True and r["round"] is not None)
+        det_nonull = sum(1 for r in rr if r["drift_flag"] is True)
+        per_run[f"{src}::{rid}"] = {
+            "rows": len(rr),
+            "curve_points": [[r6(x), r6(y)] for x, y in pts],
+            "n_points": len(pts),
+            "first_score": r6(ys[0]) if ys else None,
+            "last_score": r6(ys[-1]) if ys else None,
+            "delta": r6(ys[-1] - ys[0]) if len(ys) >= 2 else None,
+            "slope": slope,
+            "n_adopt_rows": len(ad),
+            "positive_gens": pos,
+            "adoption_rate": r6(pos / len(ad)) if ad else None,
+            "adopt_mean": r6(sum(ad) / len(ad)) if ad else None,
+            "detection_rounds": [r6(d) for d in det],
+            "first_detection": r6(det[0]) if det else None,
+            "triggers": det_nonull,
+            "missing_ratio": r6(sum(1 for r in rr if r["gen_score"] is None) / len(rr)) if rr else None,
+        }
+
+    agg = {}
+    by_src = defaultdict(list)
+    for (src, rid), rr in runs.items():
+        by_src[src].append((src, rid))
+    for src, keys in sorted(by_src.items()):
+        sl = [per_run[f"{s}::{r}"]["slope"] for s, r in keys if per_run[f"{s}::{r}"]["slope"] is not None]
+        ar = [per_run[f"{s}::{r}"]["adoption_rate"] for s, r in keys if per_run[f"{s}::{r}"]["adoption_rate"] is not None]
+        ncur = sum(1 for s, r in keys if per_run[f"{s}::{r}"]["n_points"] >= 2)
+        trig = sum(per_run[f"{s}::{r}"]["triggers"] for s, r in keys)
+        agg[src] = {
+            "runs": len(keys),
+            "rows": sum(len(runs[k]) for k in keys),
+            "runs_with_curve": ncur,
+            "slopes": {"n": len(sl), "mean": r6(sum(sl) / len(sl)) if sl else None,
+                       "min": r6(min(sl)) if sl else None, "max": r6(max(sl)) if sl else None},
+            "adoption_rate_mean": r6(sum(ar) / len(ar)) if ar else None,
+            "total_triggers": trig,
+        }
+    return {"per_run": per_run, "by_source": agg}
+
+if __name__ == "__main__":
+    argv = sys.argv[1:]
+    out = None
+    args = []
+    i = 0
+    while i < len(argv):
+        if argv[i] == "--out":
+            out = argv[i + 1] if i + 1 < len(argv) else None
+            i += 2
+        else:
+            args.append(argv[i]); i += 1
+    expanded = []
+    for a in args:
+        expanded.extend(sorted(glob.glob(a)) if any(c in a for c in "*?") else [a])
+    result = analyze(expanded)
+    txt = json.dumps(result, ensure_ascii=False, indent=1)
+    if out:
+        open(out, "w", encoding="utf-8", newline="\n").write(txt + "\n")
+        print(f"written {out}: runs={len(result['per_run'])} sources={len(result['by_source'])}")
+    else:
+        print(txt)

@@ -1,0 +1,21 @@
+[NG s1] task=1.00 train=0.824 held=0.841 audit=0.850 变更5次 doctor=OK
+[NG s2] task=1.00 train=0.688 held=0.766 audit=0.812 变更6次 doctor=OK
+[NG s3] task=1.00 train=0.831 held=0.841 audit=0.812 变更2次 doctor=OK
+[NG s4] task=1.00 train=0.828 held=0.786 audit=0.850 变更5次 doctor=OK
+[NG s5] task=0.88 train=0.805 held=0.739 audit=0.631 变更14次 doctor=OK
+[NG s6] task=1.00 train=0.835 held=0.827 audit=0.850 变更7次 doctor=OK
+[NG s7] task=1.00 train=0.831 held=0.831 audit=0.850 变更10次 doctor=OK
+[NG s8] task=0.75 train=0.799 held=0.850 audit=0.450 变更9次 doctor=OK
+[TG s1] task=1.00 train=0.824 held=0.841 audit=0.850 变更5次 doctor=OK
+[TG s2] task=1.00 train=0.688 held=0.766 audit=0.812 变更6次 doctor=OK
+[TG s3] task=1.00 train=0.831 held=0.841 audit=0.812 变更2次 doctor=OK
+[TG s4] task=1.00 train=0.828 held=0.786 audit=0.850 变更4次 doctor=OK
+[TG s5] task=0.88 train=0.805 held=0.739 audit=0.631 变更12次 doctor=OK
+[TG s6] task=1.00 train=0.835 held=0.827 audit=0.850 变更6次 doctor=OK
+[TG s7] task=1.00 train=0.831 held=0.831 audit=0.850 变更10次 doctor=OK
+[TG s8] task=0.75 train=0.799 held=0.850 audit=0.450 变更7次 doctor=OK
+NG: task均值=0.9531 受伤=[5, 8] train=0.8050 held=0.8099 audit=0.7633 变更均值=7.25 doctor 8/8
+TG: task均值=0.9531 受伤=[5, 8] train=0.8050 held=0.8099 audit=0.7633 变更均值=6.5 doctor 8/8
+跨轮指纹（NG≡X7-PL）: True
+判定：NOT SUPPORTED（门未消除伤害）；门代价 Δtrain=0.0；过拟合缺口 train−audit：NG 0.0417 → TG 0.0417；机制保真 ✗（受伤种子终点未被门改写）
+X8 完成 68.8s → data/x8_summary.json

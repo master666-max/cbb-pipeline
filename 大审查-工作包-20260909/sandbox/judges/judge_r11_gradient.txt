@@ -1,0 +1,72 @@
+# judge_r11_gradient.txt · Round 11 判据脚本（梯度带单调律）
+# 用法: py -X utf8 sandbox/judges/judge_r11_gradient.txt --selftest | --real
+import json, sys, os
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+ORDER = ('low', 'mid', 'high')  # 预测 rate 沿此序严格下降
+
+def band_rates(events):
+    agg = {}
+    for e in events:
+        b = e['band']
+        agg.setdefault(b, [0, 0])
+        agg[b][0] += 1
+        agg[b][1] += 1 if e['dtrue'] <= 0 else 0
+    return {b: (n, (f / n if n else None)) for b, (n, f) in agg.items()}
+
+def grad_rule(events):
+    rr = band_rates(events)
+    rates = {b: rr.get(b, (0, None))[1] for b in ORDER}
+    ns = {b: rr.get(b, (0, None))[0] for b in ORDER}
+    if any(ns[b] < 30 for b in ORDER) or any(rates[b] is None for b in ORDER):
+        return 'INCONCLUSIVE', None, rates, ns, 'n<30守卫: %s' % ns
+    gaps = [rates[ORDER[i]] - rates[ORDER[i + 1]] for i in range(2)]  # low-mid, mid-high 应均>0
+    mech = max(0.0, min(1.0, rates['low'] - rates['high']))
+    if all(gp > 0 for gp in gaps):
+        v = 'SUPPORTED'
+    elif any(gp < 0 for gp in gaps):
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, mech, rates, ns, 'gaps=%s' % ['%.4f' % g for g in gaps]
+
+def mk_events(spec):
+    ev = []
+    for b, (n, rate) in spec.items():
+        nf = round(rate * n)
+        ev += [{'band': b, 'dtrue': -1 if i < nf else 1} for i in range(n)]
+    return ev
+
+def selftest():
+    ok = True
+    v1, m1, r1, n1, note1 = grad_rule(mk_events({'low': (40, 0.70), 'mid': (40, 0.40), 'high': (40, 0.10)}))
+    print('case1 verdict=%s exp=SUPPORTED %s; mech got=%s exp=0.6000 %s' % (
+        v1, 'PASS' if v1 == 'SUPPORTED' else 'FAIL', '%.4f' % m1 if m1 is not None else 'NA',
+        'PASS' if (m1 is not None and abs(m1 - 0.6) < 5e-5) else 'FAIL'))
+    ok = ok and v1 == 'SUPPORTED' and m1 is not None and abs(m1 - 0.6) < 5e-5
+    v2, m2, r2, n2, note2 = grad_rule(mk_events({'low': (40, 0.30), 'mid': (40, 0.50), 'high': (40, 0.10)}))
+    print('case2 verdict=%s exp=REFUTED %s' % (v2, 'PASS' if v2 == 'REFUTED' else 'FAIL'))
+    ok = ok and v2 == 'REFUTED'
+    v3, m3, r3, n3, note3 = grad_rule(mk_events({'low': (40, 0.50), 'mid': (40, 0.50), 'high': (40, 0.10)}))
+    print('case3 verdict=%s exp=INCONCLUSIVE %s' % (v3, 'PASS' if v3 == 'INCONCLUSIVE' else 'FAIL'))
+    ok = ok and v3 == 'INCONCLUSIVE'
+    v4, m4, r4, n4, note4 = grad_rule(mk_events({'low': (10, 0.7), 'mid': (10, 0.4), 'high': (10, 0.1)}))
+    print('case4 verdict=%s exp=INCONCLUSIVE %s; note=%s' % (v4, 'PASS' if v4 == 'INCONCLUSIVE' else 'FAIL', note4))
+    ok = ok and v4 == 'INCONCLUSIVE' and '守卫' in note4
+    print('SELFTEST', 'PASS' if ok else 'FAIL')
+    return ok
+
+def real():
+    data = json.load(open('sandbox/out/r11_gradient.json', encoding='utf-8'))
+    for world, hid in (('flat', 'H-R11-1'), ('sharp', 'H-R11-2')):
+        events = [e for r in data[world] for e in r['events']]
+        v, m, rates, ns, note = grad_rule(events)
+        print('== %s (%s) == n=%s rates=%s verdict=%s mechanical=%s %s' % (
+            hid, world, ns, {k: ('%.4f' % x) if x is not None else 'NA' for k, x in rates.items()},
+            v, ('%.4f' % m) if m is not None else 'NA', note))
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    real()

@@ -1,0 +1,474 @@
+{
+ "summary": {
+  "census_K1_44": true,
+  "confusion": {
+   "回溯x8": {
+    "TP": 4,
+    "FP": 2,
+    "FN": 0,
+    "TN": 10
+   },
+   "前瞻x9": {
+    "TP": 2,
+    "FP": 5,
+    "FN": 0,
+    "TN": 9
+   }
+  },
+  "判定": "NOT SUPPORTED（规则与实际不符，见混淆矩阵）",
+  "前瞻组受伤实际": [
+   11,
+   13
+  ]
+ },
+ "runs": [
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 1,
+   "cfg": {
+    "w_kw": 3.0,
+    "w_content": 1.5,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 2,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 3.0,
+    "w_imp": 1.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 3,
+   "cfg": {
+    "w_kw": 3.0,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 0
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 4,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 5,
+   "cfg": {
+    "w_kw": 8.64,
+    "w_content": 4.8,
+    "w_imp": 0.1265,
+    "w_age": 0.035,
+    "filter_zero": 1
+   },
+   "actual": true,
+   "recall": 0.875
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 6,
+   "cfg": {
+    "w_kw": 5.4,
+    "w_content": 0.85,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 7,
+   "cfg": {
+    "w_kw": 3.6,
+    "w_content": 2.25,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-NG",
+   "seed": 8,
+   "cfg": {
+    "w_kw": 24.0,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0175,
+    "filter_zero": 1
+   },
+   "actual": true,
+   "recall": 0.75
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 1,
+   "cfg": {
+    "w_kw": 3.0,
+    "w_content": 1.5,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 2,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 3.0,
+    "w_imp": 1.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 3,
+   "cfg": {
+    "w_kw": 3.0,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 0
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 4,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 5,
+   "cfg": {
+    "w_kw": 8.64,
+    "w_content": 4.8,
+    "w_imp": 0.1265,
+    "w_age": 0.035,
+    "filter_zero": 1
+   },
+   "actual": true,
+   "recall": 0.875
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 6,
+   "cfg": {
+    "w_kw": 5.4,
+    "w_content": 0.85,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 7,
+   "cfg": {
+    "w_kw": 3.6,
+    "w_content": 2.25,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "回溯x8",
+   "pref": "x8-TG",
+   "seed": 8,
+   "cfg": {
+    "w_kw": 24.0,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0175,
+    "filter_zero": 1
+   },
+   "actual": true,
+   "recall": 0.75
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 10,
+   "cfg": {
+    "w_kw": 12.0,
+    "w_content": 9.72,
+    "w_imp": 0.0,
+    "w_age": 0.0245,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 11,
+   "cfg": {
+    "w_kw": 9.0,
+    "w_content": 0.75,
+    "w_imp": 1.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": true,
+   "recall": 0.875
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 12,
+   "cfg": {
+    "w_kw": 4.32,
+    "w_content": 1.0,
+    "w_imp": 0.425,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 13,
+   "cfg": {
+    "w_kw": 6.0,
+    "w_content": 1.0,
+    "w_imp": 0.49,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": true,
+   "recall": 0.875
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 14,
+   "cfg": {
+    "w_kw": 24.3,
+    "w_content": 1.0,
+    "w_imp": 1.2,
+    "w_age": 0.0425,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 15,
+   "cfg": {
+    "w_kw": 6.48,
+    "w_content": 1.0,
+    "w_imp": 0.5,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 16,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 1.5,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 17,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 18,
+   "cfg": {
+    "w_kw": 3.0,
+    "w_content": 1.5,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 19,
+   "cfg": {
+    "w_kw": 10.8,
+    "w_content": 7.2,
+    "w_imp": 0.357,
+    "w_age": 0.025,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 20,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 21,
+   "cfg": {
+    "w_kw": 10.8,
+    "w_content": 1.0,
+    "w_imp": 1.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 22,
+   "cfg": {
+    "w_kw": 10.2,
+    "w_content": 9.0,
+    "w_imp": 0.85,
+    "w_age": 0.0213,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 23,
+   "cfg": {
+    "w_kw": 3.0,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 24,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 3.0,
+    "w_imp": 0.5,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  },
+  {
+   "tag": "前瞻x9",
+   "pref": "x9-ng",
+   "seed": 9,
+   "cfg": {
+    "w_kw": 4.5,
+    "w_content": 1.0,
+    "w_imp": 0.0,
+    "w_age": 0.0,
+    "filter_zero": 1
+   },
+   "actual": false,
+   "recall": 1.0
+  }
+ ]
+}

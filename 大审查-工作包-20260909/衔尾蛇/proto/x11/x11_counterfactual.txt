@@ -1,0 +1,137 @@
+# X11 · 反事实语义实验（关键词子串→精确成员；隔离与判据冻结于 reports/X11_反事实语义_预注册.md）
+# 运行：py -X utf8 proto/x11/x11_counterfactual.txt
+# 隔离：加载 proto/x11/evocore_exact.txt（与主线单行 diff，脚本内断言）；vendor sha 断言；库前缀 sandbox/x11-*；输出 data/x11-*。
+# 输出：data/x11-ng-s{seed}.json、data/x11_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery, hashlib
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent.parent           # 衔尾蛇/
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+# ── 隔离断言（预注册 §四） ──
+h = hashlib.sha256(VENDOR.read_bytes()).hexdigest()[:16]
+assert h == "ef2c645aea64fb9e", f"vendor sha 变动：{h}"
+a = (BASE / "proto" / "evocore.txt").read_text(encoding="utf-8").splitlines()
+b = (BASE / "proto" / "x11" / "evocore_exact.txt").read_text(encoding="utf-8").splitlines()
+d = [i for i, (x, y) in enumerate(zip(a, b)) if x != y]
+assert len(a) == len(b) and d == [117], f"反事实核心越界：diff 行 {d}"
+print(f"隔离断言 OK：vendor={h}，核心 diff 行 {[i+1 for i in d]}（唯一）", flush=True)
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evo = load_mod("evocore_exact", BASE / "proto" / "x11" / "evocore_exact.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+TOL, GENS, KIDS = 0.005, META["gens"], META["kids"]
+SEEDS = list(range(1, 25))
+
+# ── 普查断言：反事实语义下 K1 碰撞面 = 4 ──
+entries, _ = evo.build_world(1)
+k1_hits = sum(1 for e in entries if "K1" in (e.get("keywords") or []))
+assert k1_hits == 4, f"K1 碰撞面 {k1_hits} ≠ 4"
+print(f"普查断言 OK：K1 碰撞面（精确成员）= {k1_hits}（真语义 44）", flush=True)
+
+# ── 分歧度量化：种子 1 默认参数，80 任务 top-5 差异 ──
+evo_main = load_mod("evocore_mainline_ref", BASE / "proto" / "evocore.txt")
+lib_probe = None                                            # 用任一既有真语义库做对账面（只读）
+for pat in ("lib-x8-NG-s1", "lib-x10-ng-s25", "lib-x9-ng-s9"):
+    hits = sorted((BASE / "sandbox").glob(pat))
+    if hits:
+        lib_probe = hits[0]
+        break
+if lib_probe is None:
+    sys.exit("缺少对账库（x8/x9/x10 均未找到）")
+es1, kw1 = evo.build_world(1)
+tr1, hd1, au1 = evo.build_tasks(1, es1)
+tasks1 = tr1 + hd1 + au1
+diff_tasks = sum(1 for t in tasks1
+                 if [f for f, _ in evo.rank_lib(lib_probe, t["q"], evo.DEFAULT_CFG)[:5]]
+                 != [f for f, _ in evo_main.rank_lib(lib_probe, t["q"], evo_main.DEFAULT_CFG)[:5]])
+print(f"分歧度：种子1 默认参数下 80 任务 top-5 差异 = {diff_tasks}/80", flush=True)
+
+def build_lib(seed):
+    lib = SB / f"x11-ng-s{seed}"
+    if not (lib / "state.json").exists():
+        m.cmd_install("L2", [], lib, True)
+        entries, _ = evo.build_world(seed)
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        for e in entries:
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                 "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                 "source_event_id": seid, "importance": e["importance"],
+                 "confidence": "中", "validity": {"t_valid": e["created_at"]}}, ensure_ascii=False))
+    return lib
+
+def evolve_ng(seed):
+    lib = build_lib(seed)
+    entries, kw_of = evo.build_world(seed)
+    train, held, audit = evo.build_tasks(seed, entries)
+    rng = random.Random(seed * 31 + sum(map(ord, "PL")))    # 与 X8/X9/X10 同流键——配对
+    mainline = dict(evo.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    cache = {}
+    def sc(cfg):
+        key = tuple(sorted(cfg.items()))
+        if key not in cache:
+            cache[key] = evo.score_lib(lib, train, cfg, kw_of=kw_of)
+        return cache[key]
+    for gen in range(1, GENS + 1):
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -sc(c))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = evo.mutate(parent, rng)
+            if sc(child) - sc(parent) > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: sc(archive[i])))
+            if sc(child) > sc(mainline):
+                mainline = dict(child)
+    res = {"seed": seed, "final_mainline": mainline,
+           "audit_recall5": round(evo.recall_at_k(lib, audit, mainline, kw_of=kw_of), 4)}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    (DATA / f"x11-ng-s{seed}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+t0 = time.time()
+print("== 反事实演化 seeds 1–24 ==", flush=True)
+rows = []
+for seed in SEEDS:
+    r = evolve_ng(seed)
+    rows.append(r)
+    base_pref = "x8-NG" if seed <= 8 else "x9-ng"
+    base = json.loads((DATA / f"{base_pref}-s{seed}.json").read_text(encoding="utf-8"))
+    r["baseline_recall"] = base["audit_recall5"]
+    print(f"[s{seed}] 反事实task={r['audit_recall5']:.2f}（真语义基线 {base['audit_recall5']:.2f}）"
+          f" doctor={'OK' if r['doctor_ok'] else 'BAD'}", flush=True)
+
+injured = [r["seed"] for r in rows if r["audit_recall5"] < 0.95]
+known = {5, 8, 11, 13}
+mean_pair = round(sum(r["audit_recall5"] - r["baseline_recall"] for r in rows) / len(rows), 4)
+print(f"反事实受伤种子: {injured or '无'}；配对差均值（反事实−真语义）= {mean_pair}")
+if not injured:
+    verdict = "SUPPORTED（毒通道根除：24/24 零受伤）"
+elif len(injured) < 4 and known.isdisjoint(injured):
+    verdict = "PARTIAL（已知受伤种子全部转健康，存在残余通道）"
+else:
+    verdict = "NOT SUPPORTED"
+print(f"判定：{verdict}")
+(DATA / "x11_summary.json").write_text(json.dumps(
+    {"summary": {"injured": injured, "paired_diff_mean": mean_pair, "top5_divergence_seed1": diff_tasks,
+                 "判定": verdict}, "rows": rows}, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"X11 完成 {time.time()-t0:.1f}s → data/x11_summary.json")

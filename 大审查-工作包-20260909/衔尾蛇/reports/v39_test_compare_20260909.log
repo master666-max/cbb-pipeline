@@ -1,0 +1,217 @@
+[v382] 加载模块 bs3_snapshot.txt …
+[v382] 模块加载完成，TESTS=71
+[v382] 1/71 t_chain_and_cross_month: PASS
+[v382] 2/71 t_chain_tamper_detected: PASS
+[v382] 3/71 t_schema_rejects_missing_source: PASS
+[v382] 4/71 t_law5_secret_scan: PASS
+[v382] 5/71 t_dag_cycle_rejected: PASS
+[v382] 6/71 t_escape_pod_wording: PASS
+[v382] 7/71 t_no_handwritten_counts: PASS
+[v382] 8/71 t_registry_corrected: PASS
+[v382] 9/71 t_install_requires_bodies: PASS
+[v382] 10/71 t_merkle_root_consistency: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 11/71 t_reinstall_reports_unregistered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 12/71 t_ledger_changes: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 13/71 t_guard_rejects_baseline_touch: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 14/71 t_reflect_trigger: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 15/71 t_retrieve_keywords_boost: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 16/71 t_entrypoint_rendered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 17/71 t_l8_guards: FAIL: AssertionError bodies 缺 MUTATION-SOP 内容体（先跑 absorb）
+[v382] 18/71 t_install_l2_smoke: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 19/71 t_install_delivers_bodies: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 20/71 t_verify_offline_honest: PASS
+[v382] 21/71 t_retrieve_bad_ts: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 22/71 t_retire_ttl: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 23/71 t_install_l8_gate: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+migrate: 已续接 C:\Users\26672\AppData\Local\Temp\_bsv3t_migsqlnfv8h\knowledge\lifelog\2026-08.mdl 尾哈希 0123456789abcdef（算法=v2.x(sha256-16)，截 16 hex 旧链以尾哈希为续接锚）；条目回填 source_event_id=genesis；parity 门=recall@5 ≥ 基线−0.03——下一步：engine eval --lib <库> 对账（v3.5/J-007）
+[v382] 24/71 t_migrate_mdl: PASS
+[v382] 25/71 t_absorb_mapping: FAIL: AssertionError docs 槽缺 SKILL.md
+[v382] 26/71 t_engine_lifecycle: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 27/71 t_root_refresh_on_write: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 28/71 t_reinstall_without_data: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 29/71 t_reinstall_no_false_unregistered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 30/71 t_engine_str_path: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 31/71 t_eval_retrieval: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 32/71 t_guard_anchor: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 33/71 t_bulk_import_note: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 34/71 t_large_entry: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 35/71 t_memory_ledger_consistency: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 36/71 t_build_docs_refreshes_render: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 37/71 t_host_trace_env_line: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 38/71 t_reflect_materials: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 39/71 t_absorb_md_dryrun: PASS
+build: 生成 spec.md / 提示词速查.md / citations.md → C:\Users\26672\AppData\Local\Temp\_bsv3t_h5_3y5z6ak（手改生成区=违例）
+install: L2 + [] → C:\Users\26672\AppData\Local\Temp\_bsv3t_h5_3y5z6ak
+  交付内容体 1 个（含 {SLOT} 待填文件 0 个——按 install 指南填槽）
+  Merkle 根（排除 state.json）: 085ce8d3cd5ba7f2266fc29b315253cb0c708477d518a5e584de2101535c6f4f
+  请将此根抄录至人侧（公理E）
+append: gg1 事件哈希 bd7cf1ed986a574a…
+[v382] 40/71 t_golden_shipped: PASS
+[v382] 41/71 t_doctor: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 42/71 t_append_rejects_dup_id: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 43/71 t_deliver_skips_removed: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 44/71 t_verify_overrides_applied: PASS
+[v382] 45/71 t_build_docs_lib_default_out: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 46/71 t_entrypoint_lists_new_commands: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 47/71 t_migrate_hints_eval: PASS
+[v382] 48/71 t_experimental_adapter_page: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 49/71 t_reflect_synthesis_shipped: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 50/71 t_redeliver: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 51/71 t_absorb_md_idempotent: PASS
+[v382] 52/71 t_doctor_chain_check: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 53/71 t_reflect_done: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 54/71 t_entrypoint_state_ref: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 55/71 t_build_docs_lib_nostate: PASS
+[v382] 56/71 t_full_render_rule: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 57/71 t_redeliver_pilot_unified: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 58/71 t_absorb_overrides_loop: PASS
+[v382] 59/71 t_ledger_guard_absorb: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 60/71 t_eval_degradation: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 61/71 t_cross_month_real: PASS
+[v382] 62/71 t_entry_normalize_types: PASS
+[v382] 63/71 t_verify_exit_codes: PASS
+migrate: 已续接 C:\Users\26672\AppData\Local\Temp\_bsv3t_n2bhlho7s8\knowledge\lifelog\2026-08.mdl 尾哈希 0123456789abcdef（算法=v2.x(sha256-16)，截 16 hex 旧链以尾哈希为续接锚）；条目回填 source_event_id=genesis；parity 门=recall@5 ≥ 基线−0.03——下一步：engine eval --lib <库> 对账（v3.5/J-007）
+append: mst1 事件哈希 1c4af32b0e2d87f0…
+[v382] 64/71 t_migrate_state: PASS
+[v382] 65/71 t_doctor_crossmonth_and_state: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 66/71 t_verify_l9_no_gate: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 67/71 t_append_max_bytes: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 68/71 t_shape: PASS
+[v382] 69/71 t_l9_full_delivery: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 70/71 t_l8_not_deliver_l9: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v382] 71/71 t_l9_module_deps: PASS
+[v39] 加载模块 bootstrap_v3.9.py …
+[v39] 模块加载完成，TESTS=71
+[v39] 1/71 t_chain_and_cross_month: PASS
+[v39] 2/71 t_chain_tamper_detected: PASS
+[v39] 3/71 t_schema_rejects_missing_source: PASS
+[v39] 4/71 t_law5_secret_scan: PASS
+[v39] 5/71 t_dag_cycle_rejected: PASS
+[v39] 6/71 t_escape_pod_wording: PASS
+[v39] 7/71 t_no_handwritten_counts: PASS
+[v39] 8/71 t_registry_corrected: PASS
+[v39] 9/71 t_install_requires_bodies: PASS
+[v39] 10/71 t_merkle_root_consistency: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 11/71 t_reinstall_reports_unregistered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 12/71 t_ledger_changes: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 13/71 t_guard_rejects_baseline_touch: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 14/71 t_reflect_trigger: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 15/71 t_retrieve_keywords_boost: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 16/71 t_entrypoint_rendered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 17/71 t_l8_guards: FAIL: AssertionError bodies 缺 MUTATION-SOP 内容体（先跑 absorb）
+[v39] 18/71 t_install_l2_smoke: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 19/71 t_install_delivers_bodies: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 20/71 t_verify_offline_honest: PASS
+[v39] 21/71 t_retrieve_bad_ts: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 22/71 t_retire_ttl: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 23/71 t_install_l8_gate: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+migrate: 已续接 C:\Users\26672\AppData\Local\Temp\_bsv3t_migore8gdwq\knowledge\lifelog\2026-08.mdl 尾哈希 0123456789abcdef（算法=v2.x(sha256-16)，截 16 hex 旧链以尾哈希为续接锚）；条目回填 source_event_id=genesis；parity 门=recall@5 ≥ 基线−0.03——下一步：engine eval --lib <库> 对账（v3.5/J-007）
+[v39] 24/71 t_migrate_mdl: PASS
+[v39] 25/71 t_absorb_mapping: FAIL: AssertionError docs 槽缺 SKILL.md
+[v39] 26/71 t_engine_lifecycle: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 27/71 t_root_refresh_on_write: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 28/71 t_reinstall_without_data: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 29/71 t_reinstall_no_false_unregistered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 30/71 t_engine_str_path: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 31/71 t_eval_retrieval: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 32/71 t_guard_anchor: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 33/71 t_bulk_import_note: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 34/71 t_large_entry: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 35/71 t_memory_ledger_consistency: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 36/71 t_build_docs_refreshes_render: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 37/71 t_host_trace_env_line: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 38/71 t_reflect_materials: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 39/71 t_absorb_md_dryrun: PASS
+build: 生成 spec.md / 提示词速查.md / citations.md → C:\Users\26672\AppData\Local\Temp\_bsv3t_h5s9fes37f（手改生成区=违例）
+install: L2 + [] → C:\Users\26672\AppData\Local\Temp\_bsv3t_h5s9fes37f
+  交付内容体 1 个（含 {SLOT} 待填文件 0 个——按 install 指南填槽）
+  Merkle 根（排除 state.json）: d186ff73c6c9e30b12488a045182d0a51eb8d574d603961766f5fc20019e944b
+  请将此根抄录至人侧（公理E）
+append: gg1 事件哈希 20f7357a565dd848…
+[v39] 40/71 t_golden_shipped: PASS
+[v39] 41/71 t_doctor: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 42/71 t_append_rejects_dup_id: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 43/71 t_deliver_skips_removed: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 44/71 t_verify_overrides_applied: PASS
+[v39] 45/71 t_build_docs_lib_default_out: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 46/71 t_entrypoint_lists_new_commands: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 47/71 t_migrate_hints_eval: PASS
+[v39] 48/71 t_experimental_adapter_page: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 49/71 t_reflect_synthesis_shipped: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 50/71 t_redeliver: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 51/71 t_absorb_md_idempotent: PASS
+[v39] 52/71 t_doctor_chain_check: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 53/71 t_reflect_done: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 54/71 t_entrypoint_state_ref: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 55/71 t_build_docs_lib_nostate: PASS
+[v39] 56/71 t_full_render_rule: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 57/71 t_redeliver_pilot_unified: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 58/71 t_absorb_overrides_loop: PASS
+[v39] 59/71 t_ledger_guard_absorb: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 60/71 t_eval_degradation: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 61/71 t_cross_month_real: PASS
+[v39] 62/71 t_entry_normalize_types: PASS
+[v39] 63/71 t_verify_exit_codes: PASS
+migrate: 已续接 C:\Users\26672\AppData\Local\Temp\_bsv3t_n2nj8g9f_a\knowledge\lifelog\2026-08.mdl 尾哈希 0123456789abcdef（算法=v2.x(sha256-16)，截 16 hex 旧链以尾哈希为续接锚）；条目回填 source_event_id=genesis；parity 门=recall@5 ≥ 基线−0.03——下一步：engine eval --lib <库> 对账（v3.5/J-007）
+append: mst1 事件哈希 6e733f859a3738d2…
+[v39] 64/71 t_migrate_state: PASS
+[v39] 65/71 t_doctor_crossmonth_and_state: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 66/71 t_verify_l9_no_gate: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 67/71 t_append_max_bytes: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 68/71 t_shape: PASS
+[v39] 69/71 t_l9_full_delivery: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 70/71 t_l8_not_deliver_l9: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的 bootst
+[v39] 71/71 t_l9_module_deps: PASS
+v3.8.2: 24/71 PASS   v3.9: 24/71 PASS
+仅 v3.8.2 失败（v3.9 修好的）: 无
+仅 v3.9 失败（补丁疑似引入）: 
+两版共同失败（环境依赖/既有缺陷）: 47 个
+  t_absorb_mapping: FAIL: AssertionError docs 槽缺 SKILL.md
+  t_append_max_bytes: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_append_rejects_dup_id: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_build_docs_lib_default_out: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_build_docs_refreshes_render: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_bulk_import_note: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_deliver_skips_removed: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_doctor: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_doctor_chain_check: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_doctor_crossmonth_and_state: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_engine_lifecycle: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_engine_str_path: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_entrypoint_lists_new_commands: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_entrypoint_rendered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_entrypoint_state_ref: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_eval_degradation: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_eval_retrieval: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_experimental_adapter_page: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_full_render_rule: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_guard_anchor: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_guard_rejects_baseline_touch: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_host_trace_env_line: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_install_delivers_bodies: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_install_l2_smoke: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_install_l8_gate: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_l8_guards: FAIL: AssertionError bodies 缺 MUTATION-SOP 内容体（先跑 absorb）
+  t_l8_not_deliver_l9: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_l9_full_delivery: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_large_entry: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_ledger_changes: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_ledger_guard_absorb: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_memory_ledger_consistency: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_merkle_root_consistency: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_redeliver: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_redeliver_pilot_unified: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_reflect_done: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_reflect_materials: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_reflect_synthesis_shipped: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_reflect_trigger: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_reinstall_no_false_unregistered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_reinstall_reports_unregistered: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_reinstall_without_data: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_retire_ttl: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_retrieve_bad_ts: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_retrieve_keywords_boost: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_root_refresh_on_write: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+  t_verify_l9_no_gate: FAIL: SystemExit v3.2/C-001：bodies 内容体为空——install 拒绝产出空库。先跑 absorb <v2.x源树>，或用 --data 指定包的
+
+判定：补丁零回归

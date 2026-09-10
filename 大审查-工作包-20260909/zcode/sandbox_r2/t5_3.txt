@@ -1,0 +1,59 @@
+# -*- coding: utf-8 -*-
+# t5_3.txt — T5-3 外部参照的老化（E14 哲学的工程参数化；判据预注册：
+#   exposure 高档使检出延迟 >=50% 或漏检 → "锚定集也要防暴露"参数化成立）
+# 机制：每次审计后，锚参照被系统自报拉扯：anchor0 += exposure*max(0,P-T)（自报高于真值时锚被拖低→阈值变相放松）。
+import importlib.util, importlib.machinery, pathlib, json, statistics, sys, random
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+SEEDS, GENS = 8, 40
+OUT = HERE / "out_t5_3"; OUT.mkdir(exist_ok=True)
+
+def run(seed, exposure):
+    entries = rc.world_spur_judge(seed)
+    rng = random.Random(seed * 613 + 31)
+    cfg = dict(rc.V3_DEFAULT); w_show = 1.0
+    keyT = (lambda e: e["rv"]); prev = (dict(cfg), w_show)
+    anchor0 = rc.util(entries, cfg, rc.TOPICS, keyT); best_T = anchor0
+    triggers = 0; first_det = -1
+    for g in range(GENS):
+        P = rc.util_perceived(entries, cfg, rc.TOPICS[:2], w_show)
+        best, db = None, rc.MARGIN0
+        for _ in range(4):
+            c = rc.mutate(rng, cfg, extra_genes=(("w_show", 0.5, 30.0),))
+            wv = c.get("w_show", w_show)
+            du = rc.util_perceived(entries, c, rc.TOPICS[:2], wv) - P
+            if du > db: best, db = c, du
+        if best is not None:
+            prev = (dict(cfg), w_show); cfg, w_show = dict(best), best.get("w_show", w_show)
+        Tn = rc.util(entries, cfg, rc.TOPICS, keyT)
+        if (g + 1) % 3 == 0 and best is not None:
+            if Tn < anchor0 - 0.03:
+                triggers += 1
+                if first_det < 0: first_det = g + 1
+                cfg, w_show = dict(prev[0]), prev[1]
+                Tn = rc.util(entries, cfg, rc.TOPICS, keyT)
+            anchor0 += exposure * max(0.0, rc.util_perceived(entries, cfg, rc.TOPICS, w_show) - Tn)
+            if Tn > best_T: best_T = Tn
+    return {"seed": seed, "exposure": exposure, "T_end": round(Tn, 4),
+            "triggers": triggers, "first_det": first_det, "anchor_end": round(anchor0, 4)}
+
+rows = [run(s, x) for x in (0.0, 0.05, 0.15) for s in range(1, SEEDS + 1)]
+(OUT / "rows_t5_3.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+def m(x, f): return round(statistics.mean(r[f] for r in rows if r["exposure"] == x), 4)
+print("=== 参照老化（E14 工程参数化） ===")
+for x in (0.0, 0.05, 0.15):
+    det = [r["first_det"] for r in rows if r["exposure"] == x and r["first_det"] > 0]
+    print("exposure=%.2f T=%.4f 触发=%.2f 检出率=%d/8 首检=%s 锚终值=%.4f" % (
+        x, m(x, "T_end"), m(x, "triggers"), len(det),
+        round(statistics.mean(det), 1) if det else "—", m(x, "anchor_end")))
+d0 = [r["first_det"] for r in rows if r["exposure"] == 0.0 and r["first_det"] > 0]
+d15 = [r["first_det"] for r in rows if r["exposure"] == 0.15 and r["first_det"] > 0]
+if d0 and d15:
+    delay = statistics.mean(d15) / statistics.mean(d0) - 1
+    print("检出延迟(0.15 vs 0)=%+.0f%% -> %s" % (delay * 100,
+          "成立：锚定集也要防暴露" if delay >= 0.5 else "延迟不足阈值，登记边界"))
+else:
+    print("高档 exposure 检出率下降 -> 漏检式失效")

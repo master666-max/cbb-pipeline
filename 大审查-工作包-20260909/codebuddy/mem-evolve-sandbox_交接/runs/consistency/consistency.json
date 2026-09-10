@@ -1,0 +1,123 @@
+{
+ "v3": {
+  "C1_doctor_clean": {
+   "all_green": true,
+   "flags": {
+    "mem_not_audit": false,
+    "audit_not_mem": false,
+    "ledger_not_mem": false,
+    "mem_not_ledger": false,
+    "chain_broken": false,
+    "state_bad": false,
+    "all_green": true
+   }
+  },
+  "C3_truncate_full": {
+   "variant": "full",
+   "k": 2,
+   "detected_internal": false,
+   "flags": {
+    "mem_not_audit": false,
+    "audit_not_mem": false,
+    "ledger_not_mem": false,
+    "mem_not_ledger": false,
+    "chain_broken": false,
+    "state_bad": false,
+    "all_green": true
+   },
+   "detected_by_human_anchor": true
+  },
+  "C3_truncate_audit_only": {
+   "variant": "audit",
+   "k": 2,
+   "detected_internal": true,
+   "flags": {
+    "mem_not_audit": true,
+    "audit_not_mem": false,
+    "ledger_not_mem": false,
+    "mem_not_ledger": false,
+    "chain_broken": false,
+    "state_bad": false,
+    "all_green": false
+   },
+   "detected_by_human_anchor": true
+  },
+  "C4_concurrency": {
+   "n_proc": 12,
+   "expected_accum": 210,
+   "actual_accum": 160,
+   "loss_rate": 0.2381
+  },
+  "C5_laws": {
+   "law2_empty_source_rejected": false,
+   "law2_detail": [],
+   "law5_secret_rejected": true,
+   "control_valid_rejected": false
+  },
+  "R1_merkle_scaling": [
+   {
+    "n": 50,
+    "merkle_seconds": 0.020622
+   },
+   {
+    "n": 100,
+    "merkle_seconds": 0.037666
+   },
+   {
+    "n": 200,
+    "merkle_seconds": 0.07296
+   },
+   {
+    "n": 400,
+    "merkle_seconds": 0.140151
+   }
+  ],
+  "G_quickref": {
+   "ratios_at_n0": [
+    "1/7",
+    "0/0"
+   ],
+   "ratios_at_n999": [
+    "1/7",
+    "999/999"
+   ],
+   "depends_on_n": true
+  }
+ },
+ "v4": {
+  "clean": {
+   "detected_internal": false,
+   "flags": {
+    "chain_broken": false,
+    "tip_mismatch": false,
+    "count_mismatch": false
+   },
+   "detected_by_human_anchor": false,
+   "anchor_flags": {
+    "no_anchor": false,
+    "tip_vs_human": false,
+    "count_vs_human": false
+   },
+   "tip_now": "bdadc325cdf5",
+   "count_now": 6,
+   "count_state": 6
+  },
+  "after_truncate": {
+   "detected_internal": false,
+   "flags": {
+    "chain_broken": false,
+    "tip_mismatch": false,
+    "count_mismatch": false
+   },
+   "detected_by_human_anchor": true,
+   "anchor_flags": {
+    "no_anchor": false,
+    "tip_vs_human": true,
+    "count_vs_human": true
+   },
+   "tip_now": "b19130bb35ff",
+   "count_now": 4,
+   "count_state": 4
+  }
+ }
+}

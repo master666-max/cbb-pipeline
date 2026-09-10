@@ -1,0 +1,158 @@
+# X17 · drift 断崖第二实现复现（判据冻结于 reports/X17_drift断崖复现_预注册.md）
+# 运行：py -X utf8 proto/x17_drift_cliff.txt
+# 五臂逐项叠加（A0 无 / A1 +参数膨胀 / A2 +评判者漂移 / A3 +世界漂移 / A4 +corrupt），24 种子，同流键 "PL"。
+# 输出：data/x17-{arm}-s{seed}.json、data/x17_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evo = load_mod("evocore_named", BASE / "proto" / "x12" / "evocore_named.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+TOL, GENS, KIDS = 0.005, META["gens"], META["kids"]
+SEEDS = list(range(1, 25))
+ARMS = ["A0", "A1", "A2", "A3", "A4"]
+
+def build_lib(arm, seed):
+    lib = SB / f"x17-{arm}-s{seed}"
+    if not (lib / "state.json").exists():
+        m.cmd_install("L2", [], lib, True)
+        entries, _ = evo.build_world(seed)
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        for e in entries:
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                 "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                 "source_event_id": seid, "importance": e["importance"],
+                 "confidence": "中", "validity": {"t_valid": e["created_at"]}}, ensure_ascii=False))
+    return lib
+
+def evolve(arm, seed):
+    lib = build_lib(arm, seed)
+    entries, kw_of = evo.build_world(seed)
+    train, held, audit = evo.build_tasks(seed, entries)
+    rng = random.Random(seed * 31 + sum(map(ord, "PL")))
+    rng_corrupt = random.Random(9000 + seed)                # corrupt 专用独立流
+    start = dict(evo.DEFAULT_CFG)
+    if arm in ("A1", "A2", "A3", "A4"):                     # A1 起逐臂累积：参数膨胀在场
+        start.update(w_age=0.05, w_content=3.4)
+    mainline = dict(start)
+    archive = [dict(mainline)]
+    n_entries = len(list((lib / "memory").rglob("*.json")))
+    cache = {}
+    def sc(cfg, _n=[0]):
+        key = (tuple(sorted(cfg.items())), n_entries)       # 缓存键含条目计数（A3 防陈旧）
+        if key not in cache:
+            cache[key] = evo.score_lib(lib, train, cfg, kw_of=kw_of)
+        return cache[key]
+    def sel_score(cfg):
+        """选择分：A2+ 附加评判者漂移项（赏识 top5 importance 均值，train 前 10 任务均值）。"""
+        base = sc(cfg)
+        if arm in ("A2", "A3", "A4"):
+            imp_means = []
+            for t in train[:10]:
+                top5 = evo.rank_lib(lib, t["q"], cfg)[:5]
+                if top5:
+                    imp_means.append(sum(x[1][1].get("importance", 0) for x in top5) / len(top5))
+            return base + 0.1 * (sum(imp_means) / max(1, len(imp_means)))
+        return base
+    def world_drift():
+        """A3+：每 5 代追加 4 条新进高重要度条目（既有词表/主题、当日创建、importance 9-10）。"""
+        nonlocal n_entries
+        es, _ = evo.build_world(seed)
+        pool = sorted({e["kw"] for e in es})
+        tps = sorted({e["topic"] for e in es})
+        today = time.strftime("%Y-%m-%d")
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        for j in range(4):
+            nid = f"d{seed}_{n_entries}"
+            w = pool[(n_entries + j) % len(pool)]
+            tp = tps[(n_entries + j) % len(tps)]
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": nid, "created_at": today, "updated_at": "",
+                 "content": f"{tp} {w} 新进条目 {nid}", "keywords": [w], "links": [],
+                 "source_event_id": seid, "importance": 9 + (j % 2),
+                 "confidence": "中", "validity": {"t_valid": today}}, ensure_ascii=False))
+            n_entries += 1
+    for gen in range(1, GENS + 1):
+        if arm == "A3" and gen % 5 == 0 and gen <= GENS - 5:
+            world_drift()
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -sel_score(c))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = evo.mutate(parent, rng)
+            if sel_score(child) - sel_score(parent) > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: sel_score(archive[i])))
+            if sel_score(child) > sel_score(mainline):
+                mainline = dict(child)
+        if arm == "A4" and gen == 15:                       # corrupt：独立流的参数随机化
+            mainline = evo.mutate(mainline, rng_corrupt)
+            mainline = evo.mutate(mainline, rng_corrupt)
+    res = {"arm": arm, "seed": seed, "final_mainline": mainline,
+           "audit_recall5": round(evo.recall_at_k(lib, audit, mainline, kw_of=kw_of), 4)}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    (DATA / f"x17-{arm}-s{seed}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+t0 = time.time()
+rows = {}
+for arm in ARMS:
+    rows[arm] = []
+    for seed in SEEDS:
+        r = evolve(arm, seed)
+        rows[arm].append(r)
+    bad = sum(1 for r in rows[arm] if not r["doctor_ok"])
+    mean_r = round(sum(r["audit_recall5"] for r in rows[arm]) / 24, 4)
+    inj = sum(1 for r in rows[arm] if r["audit_recall5"] < 0.95)
+    print(f"[{arm}] recall均值={mean_r} 受伤={inj}/24 doctor异常={bad}", flush=True)
+
+# 边际（逐种子配对差）与 t
+from math import sqrt
+def paired(a, b):
+    diffs = [rows[a][i]["audit_recall5"] - rows[b][i]["audit_recall5"] for i in range(24)]
+    mean_d = sum(diffs) / 24
+    var = sum((d - mean_d) ** 2 for d in diffs) / 23
+    se = sqrt(var / 24)
+    t = mean_d / se if se > 0 else 0.0
+    return round(mean_d, 4), round(t, 2)
+margs = {}
+for prev, cur in (("A0", "A1"), ("A1", "A2"), ("A2", "A3"), ("A3", "A4")):
+    md, t = paired(cur, prev)
+    margs[f"{cur}-{prev}"] = {"marginal": md, "t": t}
+    print(f"边际 {cur}−{prev}: {md:+.4f} (t={t})", flush=True)
+
+cliff = margs["A3-A2"]
+others = [v["marginal"] for k, v in margs.items() if k != "A3-A2"]
+if cliff["marginal"] == min(others + [cliff["marginal"]]) and abs(cliff["t"]) >= 2:
+    verdict = "SUPPORTED（断崖在 drift，E144 获第二实现）"
+elif max(others) < cliff["marginal"] or all(abs(v["t"]) < 2 for v in margs.values()):
+    verdict = "INCONCLUSIVE（本世界危险梯度不足以产生断崖——边界登记）"
+else:
+    verdict = "NOT SUPPORTED（断崖换位/不存在）"
+print(f"判定：{verdict}")
+(DATA / "x17_summary.json").write_text(json.dumps({"summary": {"marginals": margs, "判定": verdict},
+                                                   "means": {a: round(sum(r["audit_recall5"] for r in rows[a]) / 24, 4) for a in ARMS}},
+                                                  ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"X17 完成 {time.time()-t0:.1f}s")

@@ -1,0 +1,205 @@
+{
+ "summary": {
+  "held": {
+   "自称A": {
+    "recall5": 1.0,
+    "mrr": 0.4693
+   },
+   "实测B": {
+    "recall5": 0.68,
+    "mrr": 0.3167
+   },
+   "mrr增益": -0.1526,
+   "recall5增益": -0.32
+  },
+  "audit": {
+   "自称A": {
+    "recall5": 1.0,
+    "mrr": 0.4734
+   },
+   "实测B": {
+    "recall5": 0.6,
+    "mrr": 0.225
+   },
+   "mrr增益": -0.2484,
+   "recall5增益": -0.4
+  },
+  "判定": "实测未优于自称（E32 真库未复现——采纳信号太稀疏或自称已够好）"
+ },
+ "rows": [
+  {
+   "seed": 1,
+   "set": "held",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.4467
+  },
+  {
+   "seed": 1,
+   "set": "audit",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.4167
+  },
+  {
+   "seed": 1,
+   "set": "held",
+   "lib": "实测B",
+   "recall5": 0.4,
+   "mrr": 0.15
+  },
+  {
+   "seed": 1,
+   "set": "audit",
+   "lib": "实测B",
+   "recall5": 0.5,
+   "mrr": 0.25
+  },
+  {
+   "seed": 2,
+   "set": "held",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.5667
+  },
+  {
+   "seed": 2,
+   "set": "audit",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.2667
+  },
+  {
+   "seed": 2,
+   "set": "held",
+   "lib": "实测B",
+   "recall5": 0.8,
+   "mrr": 0.3667
+  },
+  {
+   "seed": 2,
+   "set": "audit",
+   "lib": "实测B",
+   "recall5": 0.5,
+   "mrr": 0.125
+  },
+  {
+   "seed": 3,
+   "set": "held",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.4
+  },
+  {
+   "seed": 3,
+   "set": "audit",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.6
+  },
+  {
+   "seed": 3,
+   "set": "held",
+   "lib": "实测B",
+   "recall5": 0.6,
+   "mrr": 0.2333
+  },
+  {
+   "seed": 3,
+   "set": "audit",
+   "lib": "实测B",
+   "recall5": 0.5,
+   "mrr": 0.25
+  },
+  {
+   "seed": 4,
+   "set": "held",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.4333
+  },
+  {
+   "seed": 4,
+   "set": "audit",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.6667
+  },
+  {
+   "seed": 4,
+   "set": "held",
+   "lib": "实测B",
+   "recall5": 0.8,
+   "mrr": 0.3333
+  },
+  {
+   "seed": 4,
+   "set": "audit",
+   "lib": "实测B",
+   "recall5": 0.5,
+   "mrr": 0.1667
+  },
+  {
+   "seed": 5,
+   "set": "held",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.5
+  },
+  {
+   "seed": 5,
+   "set": "audit",
+   "lib": "自称A",
+   "recall5": 1.0,
+   "mrr": 0.4167
+  },
+  {
+   "seed": 5,
+   "set": "held",
+   "lib": "实测B",
+   "recall5": 0.8,
+   "mrr": 0.5
+  },
+  {
+   "seed": 5,
+   "set": "audit",
+   "lib": "实测B",
+   "recall5": 1.0,
+   "mrr": 0.3333
+  }
+ ],
+ "measured_top8": [
+  [
+   "PT-004",
+   2.5487379000000003
+  ],
+  [
+   "PT-009",
+   2.3782969
+  ],
+  [
+   "P-004",
+   2.21705721
+  ],
+  [
+   "P-006",
+   2.1594672100000003
+  ],
+  [
+   "P-005",
+   1.9687869000000002
+  ],
+  [
+   "P-007",
+   1.729
+  ],
+  [
+   "SOUL-POINTER",
+   1.71
+  ],
+  [
+   "PT-007",
+   1.67705721
+  ]
+ ]
+}

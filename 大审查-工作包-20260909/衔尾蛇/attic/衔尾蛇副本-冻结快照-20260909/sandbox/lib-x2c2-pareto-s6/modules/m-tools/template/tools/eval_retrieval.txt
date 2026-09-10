@@ -1,0 +1,63 @@
+# eval_retrieval.txt — 检索评测基线（W-022 · golden query 评测集）
+# 用法: python3 eval_retrieval.txt <评测集json>   （在库根目录运行）
+# 评测集格式: [{"query": "...", "expected": ["PT-001","P-002"], "type": "lexical|graph|temporal"}]
+# 指标: recall@5 与 MRR；基线数字登记后，任何检索参数变更（权重、传播、λ、k）必须重跑全集，
+#       recall@5 或 MRR 劣化 >5% 不得合入（宪章级纪律）；例外需变更记录写明理由并经用户确认。
+import os, re, sys, json
+from datetime import date
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+
+def parse_entries():
+    entries = {}
+    for lib in ['knowledge/pitfalls.md', 'knowledge/patterns.md', 'knowledge/reflections.md', 'knowledge/decisions.md']:
+        if not os.path.exists(lib): continue
+        text = re.sub(r'<!--.*?-->', '', open(lib, encoding='utf-8').read(), flags=re.S)
+        for block in re.split(r'\n### ', text)[1:]:
+            head = block.partition('\n')[0]
+            pid = head.split('/')[0].strip()
+            if re.match(r'^[A-Z]{1,2}-\d+$', pid):
+                entries[pid] = block
+    return entries
+
+def search(entries, terms):
+    scored = {}
+    for pid, body in entries.items():
+        kw = re.search(r'- 关键词：(.*)', body)
+        kw_text = kw.group(1) if kw else ''
+        title = body.partition('\n')[0]
+        s = 0
+        for t in terms:
+            if t in kw_text: s += 3
+            if t in title: s += 2
+            if t in body: s += 1
+        if s > 0: scored[pid] = s
+    for pid in list(scored):
+        for nb in re.findall(r'[\[]([A-Z]{1,2}-[\d]+)[]]', entries[pid]):
+            if nb in entries and nb not in scored:
+                scored[nb] = scored[pid] * 0.5
+    return [pid for pid, _ in sorted(scored.items(), key=lambda x: -x[1])[:5]]
+
+def main():
+    if len(sys.argv) < 2 or not os.path.exists(sys.argv[1]):
+        print('用法: eval_retrieval.txt <评测集json>'); sys.exit(2)
+    cases = json.load(open(sys.argv[1], encoding='utf-8'))
+    entries = parse_entries()
+    n_lex = sum(1 for c in cases if c.get('type') == 'lexical')
+    n_graph = sum(1 for c in cases if c.get('type') == 'graph')
+    n_temp = sum(1 for c in cases if c.get('type') == 'temporal')
+    hits5, rr = 0, 0.0
+    for c in cases:
+        terms = [t for t in re.split(r'[\s，。、/]+', c['query']) if t.strip()]
+        got = search(entries, terms)
+        exp = c['expected']
+        if any(e in got for e in exp): hits5 += 1
+        ranks = [got.index(e) + 1 for e in exp if e in got]
+        rr += (1.0 / min(ranks)) if ranks else 0.0
+    n = len(cases)
+    print('评测集: %d 条（lexical=%d graph=%d temporal=%d）' % (n, n_lex, n_graph, n_temp))
+    print('recall@5 = %.3f  MRR = %.3f' % (hits5 / n, rr / n))
+    print('运行日期: %s | 参数快照: 3/2/1 权重, 邻居 0.5, k=5' % date.today())
+
+if __name__ == '__main__':
+    main()

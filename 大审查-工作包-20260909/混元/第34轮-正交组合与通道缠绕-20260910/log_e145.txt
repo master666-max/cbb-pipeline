@@ -1,0 +1,40 @@
+  drift_strict: 44/44
+  drift_strict_2s: 44/44
+  drift_strict_cd: 44/44
+  drift_strict_cd2s: 44/44
+  corrupt_strict: 44/44
+  corrupt_strict_2s: 44/44
+  corrupt_strict_cd: 44/44
+  corrupt_strict_cd2s: 44/44
+  none_strict: 44/44
+  none_strict_2s: 44/44
+  none_strict_cd: 44/44
+  none_strict_cd2s: 44/44
+
+====================================================================================================
+E145 · CD 门控二态判别（配对 n=44）
+--- drift ---
+strict       增益=-0.1459  回退= 8.5 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+strict_2s    增益=-0.0302  回退= 1.2 重锚= 1.0 CD= 0.0 cur_best测量= 1.0
+             vs strict: +0.1157 ± 0.0213 (t=+5.44)
+strict_cd    增益=-0.0346  回退= 2.4 重锚= 0.0 CD= 1.0 cur_best测量= 0.0
+             vs strict: +0.1113 ± 0.0201 (t=+5.53)
+strict_cd2s  增益=-0.0231  回退= 1.0 重锚= 1.0 CD= 0.8 cur_best测量= 1.0
+             vs strict: +0.1227 ± 0.0211 (t=+5.83)
+--- corrupt ---
+strict       增益=+0.1908  回退= 1.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+strict_2s    增益=+0.1908  回退= 1.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+             vs strict: +0.0000 ± 0.0000 (t=+0.00)
+strict_cd    增益=+0.1908  回退= 1.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+             vs strict: +0.0000 ± 0.0000 (t=+0.00)
+strict_cd2s  增益=+0.1908  回退= 1.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+             vs strict: +0.0000 ± 0.0000 (t=+0.00)
+--- none ---
+strict       增益=+0.2091  回退= 0.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+strict_2s    增益=+0.2091  回退= 0.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+             vs strict: +0.0000 ± 0.0000 (t=+0.00)
+strict_cd    增益=+0.2091  回退= 0.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+             vs strict: +0.0000 ± 0.0000 (t=+0.00)
+strict_cd2s  增益=+0.2091  回退= 0.0 重锚= 0.0 CD= 0.0 cur_best测量= 0.0
+             vs strict: +0.0000 ± 0.0000 (t=+0.00)
+====================================================================================================

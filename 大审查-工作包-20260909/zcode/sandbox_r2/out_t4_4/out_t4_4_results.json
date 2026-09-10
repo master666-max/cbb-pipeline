@@ -1,0 +1,57 @@
+{
+ "clean": {
+  "legacy": {
+   "ok": true,
+   "why": "链连续/根一致"
+  },
+  "hardened": {
+   "ok": true,
+   "why": "链/根/tip/派生断言/事件重算 全过"
+  }
+ },
+ "attacks": {
+  "A1_截断尾2行": {
+   "legacy": {
+    "ok": true,
+    "why": "链连续/根一致"
+   },
+   "hardened": {
+    "ok": false,
+    "why": "chain_tip 不匹配(长度或末行锚)"
+   }
+  },
+  "A2_重排中间两行": {
+   "legacy": {
+    "ok": false,
+    "why": "链断裂@6"
+   },
+   "hardened": {
+    "ok": false,
+    "why": "链断裂@6"
+   }
+  },
+  "A3_并发丢更新(55应60)": {
+   "legacy": {
+    "ok": true,
+    "why": "链连续/根一致"
+   },
+   "hardened": {
+    "ok": false,
+    "why": "事件重算不一致@e00: state=10 events=5"
+   },
+   "state_accum": 10,
+   "expected": 60
+  },
+  "A4_孤儿写+重算根": {
+   "legacy": {
+    "ok": true,
+    "why": "链连续/根一致"
+   },
+   "hardened": {
+    "ok": false,
+    "why": "派生断言失败: 审计行(12) < 条目数(13)"
+   }
+  }
+ },
+ "verdict": true
+}

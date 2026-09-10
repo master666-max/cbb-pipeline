@@ -1,0 +1,22 @@
+{
+ "group": "G2",
+ "seed": 5,
+ "scene": "drift",
+ "final_mainline": {
+  "w_kw": 3.0,
+  "w_content": 1.0,
+  "w_imp": 0.7,
+  "w_age": 0.1,
+  "filter_zero": 1
+ },
+ "audit_true": {
+  "recall5": 1.0,
+  "mrr": 1.0
+ },
+ "g0_audit": {
+  "audit_recall5": 1.0,
+  "audit_mrr": 0.4167
+ },
+ "evals": 551,
+ "doctor_ok": true
+}

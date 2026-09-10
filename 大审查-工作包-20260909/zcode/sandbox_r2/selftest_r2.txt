@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+# selftest_r2.txt — r2core 自测门（手算答案，全过才许跑 T 系实验）
+import importlib.util, importlib.machinery, pathlib, random, sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_loader = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_spec = importlib.util.spec_from_loader("r2core", _loader)
+rc = importlib.util.module_from_spec(_spec)
+_loader.exec_module(rc)
+
+ok = []
+def check(name, got, want):
+    ok.append((name, got == want, got, want))
+
+# --- 手算 1：打分与排序（V3_DEFAULT） ---
+# e1: kw=t0, content={t0}, imp .8, age 10 -> 3*1+1*1+0.8-0.1*10/100 = 4.79
+# e2: kw=t0, imp .2, age 50 -> 3+1+0.2-0.05 = 4.15
+# e3: kw=n1(junk), imp .9, age 0 -> 0+0+0.9-0 = 0.90
+E = [
+    {"id": "e1", "topic": "t0", "importance": 0.8, "rv": 0.9, "age_days": 10, "show": 0,
+     "surface": 0.0, "keywords": ["t0"], "content_tokens": {"t0"}, "validity": {}},
+    {"id": "e2", "topic": "t0", "importance": 0.2, "rv": 0.4, "age_days": 50, "show": 0,
+     "surface": 0.0, "keywords": ["t0"], "content_tokens": {"t0"}, "validity": {}},
+    {"id": "e3", "topic": "t0", "importance": 0.9, "rv": 0.1, "age_days": 0, "show": 0,
+     "surface": 0.0, "keywords": ["n1"], "content_tokens": {"n1"}, "validity": {}},
+]
+top = rc.retrieve_top(E, "t0", dict(rc.V3_DEFAULT))
+check("score_order_default", [e["id"] for e in top], ["e1", "e2", "e3"])
+top_fz = rc.retrieve_top(E, "t0", dict(rc.V3_DEFAULT, filter_zero=1))
+check("filter_zero_excludes_junk", [e["id"] for e in top_fz], ["e1", "e2"])
+# 单条分数手算
+s1 = rc.score(E[0], dict(rc.V3_DEFAULT), "t0")
+check("score_e1_hand", round(s1, 2), 4.79)
+
+# --- 手算 2：效用（全检回=1.0；rv 金标序） ---
+u = rc.util(E, dict(rc.V3_DEFAULT), ["t0"], (lambda e: e["rv"]))
+check("util_full_recall", round(u, 4), 1.0)
+g = rc.gold_top(E, "t0", (lambda e: e["rv"]))
+check("gold_by_rv", g, ["e1", "e2", "e3"])
+
+# --- 手算 3：judge 感知（E81 机制） imp×(1+(w_show-1)×show) ---
+check("perception_show_w2", rc.judge_perception({"importance": 0.8, "show": 1}, 2.0), 1.6)
+check("perception_noshow_w2", rc.judge_perception({"importance": 0.8, "show": 0}, 2.0), 0.8)
+check("perception_default", rc.judge_perception({"importance": 0.8, "show": 1}, 1.0), 0.8)
+
+# --- 手算 4：变异不变量（键保持/非负/置零逃逸存在） ---
+rng = random.Random(7)
+c0 = dict(rc.V3_DEFAULT)
+for _ in range(200):
+    c = rc.mutate(rng, c0, extra_genes=(("w_show", 0.5, 30.0),))
+    assert set(c.keys()) == set(c0.keys()) | {"w_show"}, c
+    assert all(c[g] >= 0 for g in rc.GENES)
+    assert 0.5 <= c["w_show"] <= 30.0
+ok.append(("mutate_invariants_200x", True, True, True))
+
+# --- 手算 5：置零逃逸语义（w_age=0 时 25% 概率再激活 → 200 次内应出现 >0 次） ---
+rng = random.Random(11)
+react = 0
+for _ in range(400):
+    c = {"w_kw": 3.0, "w_content": 1.0, "w_imp": 1.0, "w_age": 0.0, "filter_zero": 0}
+    c = rc.mutate(rng, c)
+    if c["w_age"] > 0:
+        react += 1
+ok.append(("escape_reactivation_occurs", react > 0, react, ">0 (MUTATE_ZERO 在 w_age=0 时重置/逃逸)"))
+
+# --- 手算 6：指纹稳定 ---
+check("fingerprint_stable", rc.fingerprint({"a": 1, "b": [2, 3]}), rc.fingerprint({"b": [2, 3], "a": 1}))
+
+# --- 冒烟：evolve_rank 40 代返回 40 行、字段齐 ---
+Ew = rc.world_clean(1)
+q_tr, q_ho = rc.TOPICS[:2], rc.TOPICS[2:]
+rows = rc.evolve_rank(Ew, dict(rc.V3_DEFAULT), q_tr, q_ho, (lambda e: e["rv"]), 40, 1)
+check("evolve_rows_len", len(rows), 40)
+check("evolve_row_keys", sorted(rows[0].keys()), ["P", "T", "T_base", "adopt", "beneficial", "gen", "margin", "w_show"])
+
+fails = [x for x in ok if not x[1]]
+for name, passed, got, want in ok:
+    print(("PASS" if passed else "FAIL"), name, "| got:", got, "| want:", want)
+print("SELFTEST", "PASS" if not fails else "FAIL", f"({len(ok)-len(fails)}/{len(ok)})")
+sys.exit(0 if not fails else 1)

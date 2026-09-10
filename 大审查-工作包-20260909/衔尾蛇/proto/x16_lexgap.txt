@@ -1,0 +1,78 @@
+# X16 · 词面鸿沟剂量曲线（真引擎语义 + X12 零碰撞世界；判据冻结于 reports/X16_词面鸿沟_预注册.md）
+# 运行：py -X utf8 proto/x16_lexgap.txt
+# 设计：24 种子 audit 查询按 p ∈ {0,.25,.5,.75,1} 替换为词表外 token（T→Y、K→X），出厂默认参数 × filter_zero {0,1} 直测 recall@5。
+# 输出：data/x16_lexgap.json
+import json, importlib.util, importlib.machinery
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent.parent
+DATA = BASE / "data"
+SB = BASE / "sandbox"
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evo = load_mod("evocore_named", BASE / "proto" / "x12" / "evocore_named.txt")
+SEEDS = list(range(1, 25))
+PS = [0, 0.25, 0.5, 0.75, 1.0]
+BASE_CFG = {"w_kw": 3.0, "w_content": 1.0, "w_imp": 1.0, "w_age": 0.1}
+
+# 安全断言：X/Y 前缀 token 不在任何条目文本中
+entries, _ = evo.build_world(1)
+for e in entries:
+    text = (e.get("content") or "") + " " + " ".join(e.get("keywords") or [])
+    assert "X" not in text and "Y" not in text, f"鸿沟 token 泄漏：{text[:60]}"
+
+def gap_query(t):
+    """T→Y、K→X 前缀替换（词表外 token，确定性映射）。"""
+    toks = []
+    for w in t["q"].split():
+        if w.startswith("T"):
+            toks.append("Y" + w[1:])
+        elif w.startswith("K"):
+            toks.append("X" + w[1:])
+        else:
+            toks.append(w)
+    return " ".join(toks)
+
+results = {}
+curve = {}
+for fz in (0, 1):
+    for p in PS:
+        recs, gap_recs, orig_recs = [], [], []
+        for seed in SEEDS:
+            lib = SB / f"x12-ng-s{seed}"
+            assert lib.exists(), f"缺库 {lib}"
+            entries, kw_of = evo.build_world(seed)
+            train, held, audit = evo.build_tasks(seed, entries)
+            n_gap = int(p * len(audit))
+            for i, t in enumerate(audit):
+                q = gap_query(t) if i < n_gap else t["q"]
+                rid = [f for f, _ in evo.rank_lib(lib, q, dict(BASE_CFG, filter_zero=fz))]
+                hit = t["golden"] in rid[:5]
+                recs.append(hit)
+                (gap_recs if i < n_gap else orig_recs).append(hit)
+        key = f"fz{fz}_p{p}"
+        results[key] = {"overall": round(sum(recs) / len(recs), 4),
+                        "gap_tasks": round(sum(gap_recs) / len(gap_recs), 4) if gap_recs else None,
+                        "orig_tasks": round(sum(orig_recs) / len(orig_recs), 4) if orig_recs else None}
+        print(f"fz={fz} p={p}: 总体={results[key]['overall']:.3f} "
+              f"鸿沟任务={results[key]['gap_tasks']} 原任务={results[key]['orig_tasks']}", flush=True)
+
+for p in PS:
+    curve[str(p)] = round(results[f"fz0_p{p}"]["overall"] - results[f"fz1_p{p}"]["overall"], 4)
+mono = all(curve[str(PS[i+1])] >= curve[str(PS[i])] - 1e-9 for i in range(len(PS) - 1))
+r1 = results["fz1_p1.0"]["gap_tasks"] == 0
+r2 = all(results[f"fz0_p{p}"]["gap_tasks"] > results[f"fz1_p{p}"]["gap_tasks"] for p in (0.5, 0.75, 1.0))
+verdict = "SUPPORTED（清零开关+保底通道复现，E60 获第二实现）" if (r1 and r2) else ("PARTIAL（R1∧R3 成立，R2 失败）" if r1 and mono else "NOT SUPPORTED")
+print(f"\n缺口曲线（fz0−fz1 总体 recall 差）: {curve} 单调={mono}")
+print(f"R1 清零开关: {r1} | R2 保底通道: {r2} | R3 单调: {mono}")
+print(f"判定：{verdict}")
+(DATA / "x16_lexgap.json").write_text(json.dumps({"results": results, "curve": curve,
+    "R1_清零开关": r1, "R2_保底通道": r2, "R3_单调": mono, "判定": verdict},
+    ensure_ascii=False, indent=1), encoding="utf-8")
+print("完成 → data/x16_lexgap.json")

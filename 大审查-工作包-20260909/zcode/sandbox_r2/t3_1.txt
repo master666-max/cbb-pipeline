@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+# t3_1.txt — T3-1 护栏代价方向统一复测（C6 裁决；预注册判据见 实验树规划 §4-T3-1）
+# 参数对齐表（预注册，开跑前写下；两架构共享引擎/世界/种子，仅护栏栈不同）：
+#   公共：margin=0.01、变异=乘性5档+MUTATE_ZERO0.05+逃逸、4 候选/代、12 seeds × 40 代、train/hold=主题折半
+#   v4h(混元式)：宽松档案准入 tol=0.06(本 harness 档案只记录不参与晋升——偏差已登记) + 晋升双门(Δtrain>margin ∧ Δhold>margin)
+#               + 锚定审计每3代(相对跌>0.15 即回退, 对应阈值0.85) + 停摆监控(连续5代零采纳→margin减半)
+#   dsg(deepseek式)：晋升双门同上 + 真值抽样审计每3代(跌>0.03 回退, R1-4 定价默认) + 无停摆监控
+#   bare：单门 Δtrain>margin；static：不演化
+# 世界（两良性场景）：clean / switch_neutral(A→B 相位切换@20代, 唯一强改进 filter_zero 对 A/B 无关)
+# 判据①：两架构在两世界的 cost_vs_bare 同号 → C6 消解为构造差异
+# 判据②：异号 → 审计类型×停摆监控 2×2 消融定位翻转参数（本脚本直接输出全矩阵）
+import importlib.util, importlib.machinery, pathlib, json, statistics, sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+
+SEEDS, G1, G2 = 12, 20, 20
+OUT = HERE / "out_t3_1"; OUT.mkdir(exist_ok=True)
+ARMS = {
+    "bare":            dict(promotion="bare"),
+    "gated":           dict(promotion="gated"),
+    "gated+truth":     dict(promotion="gated", audit="truth", audit_every=3, audit_drop=0.03),
+    "gated+anchor":    dict(promotion="gated", audit="anchor", audit_every=3, anchor_drop=0.15),
+    "gated+truth+stall": dict(promotion="gated", audit="truth", audit_every=3, audit_drop=0.03, stall=True),
+    "gated+anchor+stall": dict(promotion="gated", audit="anchor", audit_every=3, anchor_drop=0.15, stall=True),
+}
+
+def run_arm(world_fn, arm, seed, kw):
+    raise NotImplementedError  # 已内联至主循环（保留占位以防误用）
+
+rows = []
+for world_fn, wname in ((rc.world_clean, "clean"), (rc.world_switch_neutral, "switch_neutral")):
+    for seed in range(1, SEEDS + 1):
+        entries = world_fn(seed)
+        q_tr, q_ho = rc.TOPICS[:2], rc.TOPICS[2:]
+        for arm, kw in ARMS.items():
+            if world_fn is rc.world_clean:
+                key = (lambda e: e["rv"])
+                r = rc.evolve_rank(entries, dict(rc.V3_DEFAULT), q_tr, q_ho, key, G1 + G2, seed, **kw)
+                rows.append({"world": wname, "seed": seed, "arm": arm,
+                             "T_base": r[0]["T_base"], "T_end": r[-1]["T"], "uA_after": None,
+                             "adopts": sum(x["adopt"] for x in r),
+                             "world_fp": rc.fingerprint({"w": wname, "seed": seed, "g": G1 + G2})})
+            else:
+                keyA = (lambda e: rc.rv_phase(e, "A")); keyB = (lambda e: rc.rv_phase(e, "B"))
+                ra = rc.evolve_rank(entries, dict(rc.V3_DEFAULT), q_tr, q_ho, keyA, G1, seed, **kw)
+                cfg_mid = dict(rc.evolve_rank.last_final_cfg)  # stage A 谱系续入 stage B
+                rb = rc.evolve_rank(entries, cfg_mid, q_tr, q_ho, keyB, G2, seed + 5000, **kw)
+                uA_after = rc.util(entries, dict(rc.evolve_rank.last_final_cfg), q_tr + q_ho, keyA)
+                rows.append({"world": wname, "seed": seed, "arm": arm,
+                             "T_base": ra[0]["T_base"], "T_end": rb[-1]["T"], "uA_after": round(uA_after, 4),
+                             "adopts": sum(x["adopt"] for x in ra) + sum(x["adopt"] for x in rb),
+                             "world_fp": rc.fingerprint({"w": wname, "seed": seed, "g1": G1, "g2": G2})})
+(OUT / "rows_t3_1.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def m(world, arm, f):
+    v = [r[f] for r in rows if r["world"] == world and r["arm"] == arm]
+    return round(statistics.mean(v), 4)
+
+print("=== T_end（终局真值） ===")
+for w in ("clean", "switch_neutral"):
+    print(w + ":")
+    for arm in ("static",) + tuple(ARMS):
+        pass
+    print("  (static 行=T_base 参考线)")
+    print("  %-22s %8s %8s %8s %8s" % ("arm", "T_base", "T_end", "Δbase", "adopts"))
+    for arm in ARMS:
+        tb, te, ad = m(w, arm, "T_base"), m(w, arm, "T_end"), m(w, arm, "adopts")
+        print("  %-22s %8.4f %8.4f %+8.4f %8.1f" % (arm, tb, te, te - tb, ad))
+print()
+print("=== C6 判据：cost_vs_bare（T_arm − T_bare，同世界同种子配对均值） ===")
+for w in ("clean", "switch_neutral"):
+    line = w + ": "
+    for arm in ("gated", "gated+truth", "gated+anchor", "gated+truth+stall", "gated+anchor+stall"):
+        pairs = [r["T_end"] - b["T_end"] for r in rows if r["world"] == w and r["arm"] == arm
+                 for b in rows if b["world"] == w and b["arm"] == "bare" and b["seed"] == r["seed"]]
+        line += "%s=%+.4f  " % (arm.replace("gated", "g"), round(statistics.mean(pairs), 4) if pairs else float("nan"))
+    print(line)

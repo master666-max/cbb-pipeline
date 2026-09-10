@@ -1,0 +1,140 @@
+# X8 · 留出集验收门——X7 定罪机制（train 单面验收→终点过拟合）的对症闸（LIT-REPLICATE：Prechelt 早停 / 兄弟线留出集门消融+0.294，见 reports/X8_留出集验收门_预注册.md）
+# 运行：py -X utf8 proto/x8_held_gate.txt
+# 设计（预注册已冻结）：NG（train 单面，与 X7 验收规则全同）/ TG（train 改善 ∧ held 不回退 ε=TOL）。
+#   两臂同 rng 键 "PL"（提议序列首次验收分歧前逐位相同）；链接算子去除（X7 已证端点惰性）。
+#   NG 兼作跨轮确定性指纹：预测其终态与 X7-PL 逐位一致（X7 内 PL≡PLS 已证 G5 后无新王）。
+# 输出：data/x8-{arm}-s{seed}.json、data/x8_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+TOL, GENS, KIDS = 0.005, META["gens"], META["kids"]
+SEEDS = META["seeds"]
+
+def build_lib(arm, seed):
+    lib = SB / f"lib-x8-{arm}-s{seed}"
+    if not (lib / "state.json").exists():
+        m.cmd_install("L2", [], lib, True)
+        entries, _ = evocore.build_world(seed)
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        for e in entries:
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                 "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                 "source_event_id": seid, "importance": e["importance"],
+                 "confidence": "中", "validity": {"t_valid": e["created_at"]}}, ensure_ascii=False))
+    return lib
+
+def run(arm, seed):
+    lib = build_lib(arm, seed)
+    entries, kw_of = evocore.build_world(seed)
+    train, held, audit = evocore.build_tasks(seed, entries)
+    rng = random.Random(seed * 31 + sum(map(ord, "PL")))   # 预注册：两臂同流键
+    mainline = dict(evocore.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    changes = 0
+    cache = {}
+    def sc(cfg, tasks, tag):
+        key = (tag, tuple(sorted(cfg.items())))
+        if key not in cache:
+            cache[key] = evocore.score_lib(lib, tasks, cfg, kw_of=kw_of)
+        return cache[key]
+    for gen in range(1, GENS + 1):
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -sc(c, train, "tr"))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = evocore.mutate(parent, rng)
+            if sc(child, train, "tr") - sc(parent, train, "tr") > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: sc(archive[i], train, "tr")))
+            if sc(child, train, "tr") > sc(mainline, train, "tr"):
+                if arm == "NG" or sc(child, held, "hd") >= sc(mainline, held, "hd") - TOL:
+                    mainline = dict(child)
+                    changes += 1
+    res = {"arm": arm, "seed": seed, "final_mainline": mainline, "mainline_changes": changes,
+           "sc_train": round(evocore.score_lib(lib, train, mainline, kw_of=kw_of), 4),
+           "sc_held": round(evocore.score_lib(lib, held, mainline, kw_of=kw_of), 4),
+           "sc_audit": round(evocore.score_lib(lib, audit, mainline, kw_of=kw_of), 4),
+           "audit_recall5": round(evocore.recall_at_k(lib, audit, mainline, kw_of=kw_of), 4)}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    (DATA / f"x8-{arm}-s{seed}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+t0 = time.time()
+rows = []
+for arm in ("NG", "TG"):
+    for seed in SEEDS:
+        r = run(arm, seed)
+        rows.append(r)
+        print(f"[{arm} s{seed}] task={r['audit_recall5']:.2f} train={r['sc_train']:.3f} held={r['sc_held']:.3f} "
+              f"audit={r['sc_audit']:.3f} 变更{r['mainline_changes']}次 doctor={'OK' if r['doctor_ok'] else 'BAD'}")
+
+summary = {}
+for arm in ("NG", "TG"):
+    sel = [r for r in rows if r["arm"] == arm]
+    summary[arm] = {"audit_recall_mean": round(sum(r["audit_recall5"] for r in sel) / len(sel), 4),
+                    "injured_seeds": [r["seed"] for r in sel if r["audit_recall5"] < 0.95],
+                    "sc_train_mean": round(sum(r["sc_train"] for r in sel) / len(sel), 4),
+                    "sc_held_mean": round(sum(r["sc_held"] for r in sel) / len(sel), 4),
+                    "sc_audit_mean": round(sum(r["sc_audit"] for r in sel) / len(sel), 4),
+                    "changes_mean": round(sum(r["mainline_changes"] for r in sel) / len(sel), 2),
+                    "doctor_ok": sum(1 for r in sel if r["doctor_ok"])}
+    print(f"{arm}: task均值={summary[arm]['audit_recall_mean']:.4f} 受伤={summary[arm]['injured_seeds'] or '无'} "
+          f"train={summary[arm]['sc_train_mean']:.4f} held={summary[arm]['sc_held_mean']:.4f} "
+          f"audit={summary[arm]['sc_audit_mean']:.4f} 变更均值={summary[arm]['changes_mean']} doctor {summary[arm]['doctor_ok']}/8")
+
+# 预注册判据（冻结于 reports/X8_留出集验收门_预注册.md §四）
+x7_pl = {s: json.loads((DATA / f"x7-PL-s{s}.json").read_text(encoding="utf-8")) for s in SEEDS}
+fingerprint = all(rows[i]["final_mainline"] == x7_pl[rows[i]["seed"]]["final_mainline"]
+                  and rows[i]["audit_recall5"] == x7_pl[rows[i]["seed"]]["audit_recall5"]
+                  for i in range(8))                      # rows 前 8 条 = NG s1..s8
+ng, tg = summary["NG"], summary["TG"]
+if not fingerprint:
+    verdict = "INCONCLUSIVE（NG 跨轮指纹与 X7-PL 不一致——先查因，判定冻结）"
+elif len(tg["injured_seeds"]) == 0:
+    verdict = "SUPPORTED（留出集门消除过拟合伤害）"
+elif len(tg["injured_seeds"]) == 1:
+    verdict = "PARTIAL（门不彻底）"
+else:
+    verdict = "NOT SUPPORTED（门未消除伤害）"
+dt = round(tg["sc_train_mean"] - ng["sc_train_mean"], 4)
+gap_ng = round(ng["sc_train_mean"] - ng["sc_audit_mean"], 4)
+gap_tg = round(tg["sc_train_mean"] - tg["sc_audit_mean"], 4)
+mech = "机制保真 ✓" if all(
+    (json.loads((DATA / f"x8-TG-s{s}.json").read_text(encoding="utf-8"))["final_mainline"]
+     != json.loads((DATA / f"x8-NG-s{s}.json").read_text(encoding="utf-8"))["final_mainline"])
+    for s in ng["injured_seeds"]) else "机制保真 ✗（受伤种子终点未被门改写）"
+print(f"跨轮指纹（NG≡X7-PL）: {fingerprint}")
+print(f"判定：{verdict}；门代价 Δtrain={dt}；过拟合缺口 train−audit：NG {gap_ng} → TG {gap_tg}；{mech}")
+summary["跨轮指纹"] = fingerprint
+summary["判定"] = verdict
+summary["门代价_Δtrain均值"] = dt
+summary["过拟合缺口_NG"] = gap_ng
+summary["过拟合缺口_TG"] = gap_tg
+summary["机制保真"] = mech
+(DATA / "x8_summary.json").write_text(json.dumps({"summary": summary, "rows": rows},
+                                                 ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"X8 完成 {time.time()-t0:.1f}s → data/x8_summary.json")

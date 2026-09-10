@@ -1,0 +1,79 @@
+# -*- coding: utf-8 -*-
+# 深入探查：记录级结构样本
+import json, os, sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+DATA = r"D:\zcode专用！！！！危险！！！！！！！！！\大审查\衔尾蛇\data"
+
+def load(name):
+    with open(os.path.join(DATA, name), encoding="utf-8") as f:
+        return json.load(f)
+
+def p(label, obj, n=2, maxlen=1800):
+    print("-" * 70)
+    print("##", label)
+    if isinstance(obj, list):
+        for x in obj[:n]:
+            print(json.dumps(x, ensure_ascii=False, default=str)[:maxlen])
+    else:
+        print(json.dumps(obj, ensure_ascii=False, default=str)[:maxlen])
+
+d = load("x2_clean-G2-s1.json")
+p("x2_clean-G2-s1 result", d["result"])
+p("x2_clean-G2-s1 log[0..2]", d["log"], 3)
+print("log keys union:", sorted({k for e in d["log"] for k in e}))
+
+s = load("x2_clean_summary.json")
+p("x2_clean_summary G2", s["summary"]["G2"])
+p("x2_clean_summary G4", s["summary"]["G4"])
+
+d = load("x0_results.json")
+p("x0_results.results[0..1]", d["results"], 2)
+p("x0_results.baseline", d["baseline"])
+
+d = load("x2bc_results.json")
+p("x2bc x2b.pure_greedy[0..1]", d["x2b"]["pure_greedy"], 2)
+p("x2bc x2b.w_imp_scan[0..1]", d["x2b"]["w_imp_scan"], 2)
+p("x2bc x2c.rows[0..1]", d["x2c"]["rows"], 2)
+
+d = load("x2d_stage1.json")
+p("x2d_stage1 pre.default", d["pre"]["default"])
+p("x2d_stage1 post.evolved", d["post"]["evolved"])
+d = load("x2d_stage2.json")
+p("x2d_stage2 R", d["R"])
+p("x2d_stage2 compare", d["compare"])
+p("x2d_stage2 r_entries[0]", d["r_entries"], 1)
+
+s = load("x3_summary.json")
+p("x3_summary pseudo", s["summary"]["pseudo"])
+p("x3_summary drift", s["summary"]["drift"])
+
+d = load("x3b_valley.json")
+p("x3b_valley rows[0..1]", d["rows"], 2)
+p("x3b_valley summary", d["summary"])
+
+s = load("x3c_summary.json")
+p("x3c_summary G2", s["summary"]["G2"])
+p("x3c_summary E80", {k: s["summary"][k] for k in s["summary"] if k.startswith("E80")})
+
+d = load("x5_real_summary.json")
+p("x5_real_summary g0.1", d["g0"]["1"])
+p("x5_real_summary results.G4_clean[0..1]", d["results"]["G4_clean"], 2)
+
+s = load("x6a_summary.json")
+p("x6a summary.G2", s["summary"]["G2"])
+p("x6a rows[0..1]", s["rows"], 2)
+
+s = load("x6b_summary.json")
+p("x6b summary.P", s["summary"]["P"])
+p("x6b rows[0..1]", s["rows"], 2)
+
+s = load("x6c_e32_summary.json")
+p("x6c summary.held", s["summary"]["held"])
+p("x6c rows[0..2]", s["rows"], 3)
+p("x6c measured_top8[0..1]", s["measured_top8"], 2)
+
+d = load("x1_probes.json")
+p("x1_probes.concurrent", d["concurrent"])
+p("x1_probes.truncation", d["truncation"])
+p("x1_probes.forget", d["forget"])
+p("x1_probes.paired", d["paired_G1_minus_G0_audit"])

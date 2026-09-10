@@ -1,0 +1,21 @@
+# pack_blacklist_check.txt — 打包黑名单检查（W-013 · 铁律 6 执法）
+# 用法: python3 pack_blacklist_check.txt <发布包目录>
+# 判定: 包内文件路径与黑名单（soul/、state/、USER.md、env/、mutations/、knowledge/lifelog/）交集必须为空
+import os, sys
+
+sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
+BLACKLIST = ['soul/', 'state/', 'user.md', 'env/', 'mutations/', 'knowledge/lifelog']
+pkg = sys.argv[1] if len(sys.argv) > 1 else '.'
+hits = []
+for root, _, files in os.walk(pkg):
+    for f in files:
+        rel = os.path.join(root, f).replace(os.sep, '/').lower()
+        if '/template/' in rel:
+            continue  # 模板目录是合法分发内容（中性化骨架），非用户运行时数据
+        for b in BLACKLIST:
+            if '/' + b in rel or rel.startswith(b):
+                hits.append(rel)
+for h in hits:
+    print('✗ 黑名单命中:', h)
+print('pack_blacklist: %d 命中 → %s' % (len(hits), '拦截发布' if hits else '放行'))
+sys.exit(1 if hits else 0)

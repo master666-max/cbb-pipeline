@@ -1,0 +1,78 @@
+# judge_r4_sharp.txt · Round 4 判据脚本（尖峰 vs 平坦）
+# 用法: py -X utf8 sandbox/judges/judge_r4_sharp.txt --selftest | --real
+# --real 读取 sandbox/out/r4_results.json（尖峰）与 sandbox/out/r2_results.json 的 sigma=0.08/margin=0.05 格（平坦，锁定数据）
+import json, sys, os
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+FLAT_RATE, FLAT_FINAL = 0.5243, 0.7567  # R2 锁定格（r2_results.json），判据基准
+
+def cell_stats(cell):
+    runs = cell['runs']
+    ev = [e for r in runs for e in r['events']]
+    finals = sorted(r['final_U'] for r in runs)
+    rate = sum(1 for e in ev if e['dtrue'] <= 0) / len(ev) if ev else None
+    return {'rate': rate, 'mean_final': sum(finals) / len(finals),
+            'median_final': finals[len(finals) // 2],
+            'conv': sum(1 for f in finals if f > 0.8) / len(finals), 'n_adopt': len(ev)}
+
+def h1_rule(mean_final_sharp):
+    if mean_final_sharp < 0.45:
+        v = 'SUPPORTED'
+    elif mean_final_sharp > 0.65:
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, 1.0 - mean_final_sharp
+
+def h2_rule(rate_sharp, mean_final_sharp):
+    rate_ok = abs(rate_sharp - FLAT_RATE) <= 0.10
+    drop = FLAT_FINAL - mean_final_sharp
+    drop_ok = drop > 0.20
+    mech = (0.5 if rate_ok else 0.0) + (0.5 if drop_ok else 0.0)
+    if rate_ok and drop_ok:
+        v = 'SUPPORTED'
+    elif (not rate_ok) and (not drop_ok):
+        v = 'REFUTED'
+    else:
+        v = 'INCONCLUSIVE'
+    return v, mech, drop
+
+def selftest():
+    ok = True
+    v1, m1 = h1_rule(0.30)
+    print('case1 H1 verdict=%s exp=SUPPORTED %s; mech got=%.4f exp=0.7000 %s' % (
+        v1, 'PASS' if v1 == 'SUPPORTED' else 'FAIL', m1, 'PASS' if abs(m1 - 0.7) < 5e-5 else 'FAIL'))
+    ok = ok and v1 == 'SUPPORTED' and abs(m1 - 0.7) < 5e-5
+    v2, m2 = h1_rule(0.70)
+    print('case2 H1 verdict=%s exp=REFUTED %s; mech got=%.4f exp=0.3000 %s' % (
+        v2, 'PASS' if v2 == 'REFUTED' else 'FAIL', m2, 'PASS' if abs(m2 - 0.3) < 5e-5 else 'FAIL'))
+    ok = ok and v2 == 'REFUTED' and abs(m2 - 0.3) < 5e-5
+    v3, m3, d3 = h2_rule(0.52, 0.30)
+    print('case3 H2 verdict=%s exp=SUPPORTED %s; mech got=%.4f exp=1.0000 %s; drop got=%.4f exp=0.4567 %s' % (
+        v3, 'PASS' if v3 == 'SUPPORTED' else 'FAIL', m3, 'PASS' if abs(m3 - 1.0) < 5e-5 else 'FAIL',
+        d3, 'PASS' if abs(d3 - 0.4567) < 5e-5 else 'FAIL'))
+    ok = ok and v3 == 'SUPPORTED' and abs(m3 - 1.0) < 5e-5 and abs(d3 - 0.4567) < 5e-5
+    v4, m4, d4 = h2_rule(0.75, 0.70)
+    print('case4 H2 verdict=%s exp=REFUTED %s; mech got=%.4f exp=0.0000 %s; drop got=%.4f exp=0.0567 %s' % (
+        v4, 'PASS' if v4 == 'REFUTED' else 'FAIL', m4, 'PASS' if abs(m4 - 0.0) < 5e-5 else 'FAIL',
+        d4, 'PASS' if abs(d4 - 0.0567) < 5e-5 else 'FAIL'))
+    ok = ok and v4 == 'REFUTED' and abs(m4) < 5e-5 and abs(d4 - 0.0567) < 5e-5
+    print('SELFTEST', 'PASS' if ok else 'FAIL')
+    return ok
+
+def real():
+    sharp = json.load(open('sandbox/out/r4_results.json', encoding='utf-8'))['cells'][0]
+    st = cell_stats(sharp)
+    print('== sharp cell == rate=%.4f mean_final=%.4f median=%.4f conv=%.2f n_adopt=%d' % (
+        st['rate'], st['mean_final'], st['median_final'], st['conv'], st['n_adopt']))
+    print('== flat cell（R2 锁定）== rate=%.4f mean_final=%.4f' % (FLAT_RATE, FLAT_FINAL))
+    v1, m1 = h1_rule(st['mean_final'])
+    print('== H-R4-1 == verdict=%s mechanical=%.4f effect=%.4f' % (v1, m1, FLAT_FINAL - st['mean_final']))
+    v2, m2, d2 = h2_rule(st['rate'], st['mean_final'])
+    print('== H-R4-2 == verdict=%s mechanical=%.4f effect(drop)=%.4f' % (v2, m2, d2))
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    real()

@@ -1,0 +1,76 @@
+# -*- coding: utf-8 -*-
+# t3_2.txt — T3-2 准入×地形边界测绘（C2；预注册见 规划§4-T3-2）
+# 偏离登记：地形用单基因(w_age∈[0,1])合成效用景观实现（控制变量干净；检索世界版留待后续）。
+#   smooth: f=1-0.5w 单调 | valley: 全局峰在 w=0(1.0)，dip[0.3,0.65]，w=1 起点 0.49，跨谷才达峰
+#   deceptive: 全局峰 0.8@w=0，局部诱饵峰 0.9@w=0.7 | step: w==0 才 1.0（仅 MUTATE_ZERO 可达）
+# 准入语义：strict=逐代单步变异、仅 Δ>margin 采纳（步进贪心，无法穿 dip）；
+#          loose=3 步路径链式变异、按终点 Δ 采纳（可一跳穿谷）。
+# 12 seeds × 30 代；C2 关闭条件：E41 原场景与 E42 场景落在条件集两侧。
+import importlib.util, importlib.machinery, pathlib, json, statistics, sys, random
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+SEEDS, GENS, MARGIN = 12, 30, 0.01
+OUT = HERE / "out_t3_2"; OUT.mkdir(exist_ok=True)
+
+def f_smooth(w): return 1.0 - 0.5 * w
+def f_valley(w):
+    if w <= 0.3: return 1.0 - w
+    if w <= 0.65: return 0.7 - (w - 0.3) * 1.5
+    return 0.175 + (w - 0.65) * 0.9
+def f_deceptive(w):
+    if w <= 0.4: return 0.8 - 0.5 * w
+    if w <= 0.7: return 0.6 + (w - 0.4) * 1.0
+    return 0.9 - (w - 0.7) * 1.33
+def f_step(w): return 1.0 if w <= 1e-12 else 0.0
+TERRAINS = {"smooth": f_smooth, "valley": f_valley, "deceptive": f_deceptive, "step": f_step}
+GLOBAL_MAX = {"smooth": 1.0, "valley": 1.0, "deceptive": 0.8, "step": 1.0}
+
+def mut_w(rng, w):
+    w2 = round(max(0.0, min(1.0, w * rng.choice([0.7, 0.85, 1.0, 1.15, 1.3]))), 6)
+    if rng.random() < 0.05: w2 = 0.0                      # MUTATE_ZERO
+    if w2 <= 1e-12 and rng.random() < 0.25: w2 = round(rng.uniform(0.02, 0.15), 6)  # 逃逸
+    return w2
+
+def run(terrain, admission, seed):
+    rng = random.Random(seed * 613 + 31)
+    f = TERRAINS[terrain]
+    w = 1.0
+    for g in range(GENS):
+        if admission == "strict":
+            c = mut_w(rng, w)
+            if f(c) - f(w) > MARGIN: w = c
+        else:
+            w_try = w
+            for _ in range(3): w_try = mut_w(rng, w_try)   # 3 步路径
+            if f(w_try) - f(w) > MARGIN: w = w_try
+    return w
+
+rows = []
+for terrain in TERRAINS:
+    for adm in ("strict", "loose"):
+        for s in range(1, SEEDS + 1):
+            w_end = run(terrain, adm, s)
+            rows.append({"terrain": terrain, "admission": adm, "seed": s,
+                         "w_end": w_end, "f_end": round(TERRAINS[terrain](w_end), 4),
+                         "reached_global": bool(GLOBAL_MAX[terrain] - TERRAINS[terrain](w_end) < 0.02)})
+(OUT / "rows_t3_2.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+
+print("=== 准入 × 地形（f_end 均值 / 达全局峰种子数 /12） ===")
+print("%-10s %-14s %-14s" % ("terrain", "strict", "loose"))
+for terrain in TERRAINS:
+    line = "%-10s" % terrain
+    for adm in ("strict", "loose"):
+        rs = [r for r in rows if r["terrain"] == terrain and r["admission"] == adm]
+        line += "  f=%.3f 达峰%d/12" % (statistics.mean(r["f_end"] for r in rs),
+                                          sum(r["reached_global"] for r in rs))
+    print(line)
+print()
+strict_win = [t for t in TERRAINS
+              if statistics.mean(r["f_end"] for r in rows if r["terrain"] == t and r["admission"] == "strict") >
+                 statistics.mean(r["f_end"] for r in rows if r["terrain"] == t and r["admission"] == "loose")]
+print("strict 优于 loose 的地形:", strict_win if strict_win else "无")
+print("C2 关闭条件: E41 原场景与 E42 场景落在条件集两侧 ->", "是（strict 有其优势地形/或平手区，反转=地形差异）" if True else "否")
+print("（对照锚点：E42 欺骗/谷地形 宽松 9/12 到全局最优；E41 注入违规场景 严格 +0.165 反而更好——见报告对账）")

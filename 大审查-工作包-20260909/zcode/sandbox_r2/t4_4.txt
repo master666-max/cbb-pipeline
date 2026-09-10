@@ -1,0 +1,129 @@
+# -*- coding: utf-8 -*-
+# t4_4.txt — T4-4 chain_tip 完整性锚定回归（A10；预注册判据见 实验树规划 §4-T4-4）
+# 背景（R1-3 复现的两 P0）：并发 append 丢更新（55/60）；审计截断后链连续+根自洽（密码学静默）。
+# 构造：事件溯源 mini 内核 + 4 攻击回归（截断/重排/并发丢更新/孤儿写）× 两代 doctor（legacy / hardened）。
+#   legacy:   链连续性 + Merkle 根（对"内容集合"）——R1-3 证明其截断盲区
+#   hardened: legacy + chain_tip(外部锚: 行数+末行哈希) + 派生断言(审计行数>=条目数) + 事件重算(accum)
+# 判据：4 攻击 100% 检出、干净库零误报、chain_tip 维护开销可忽略（本题无耗时操作，登记即可）。
+import hashlib, json, sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+def H(s):
+    return hashlib.sha256(s.encode("utf-8")).hexdigest()[:16]
+
+class Store:
+    """append-only 审计链 + 状态表；root 对内容集合（R1-3 语境：Merkle 锚定集合非序列）。"""
+    def __init__(self):
+        self.lines = []      # 审计链: {idx, op, id, payload_sha, prev, self}
+        self.entries = {}    # id -> {"sha": 内容哈希, "accum": 可被 RMW 的状态字段}
+        self.root = ""
+        self.tip = {"len": 0, "last": "GENESIS"}  # hardened 锚（外部保存，如人侧/独立盘）
+
+    def _root(self):
+        return H("|".join(sorted(self.entries)))
+
+    def append(self, eid, sha, accum_delta=0, writer="w1"):
+        idx = len(self.lines)
+        prev = self.lines[-1]["self"] if self.lines else "GENESIS"
+        line = {"idx": idx, "op": "append", "id": eid, "payload_sha": sha,
+                "accum_delta": accum_delta, "writer": writer, "prev": prev,
+                "self": H(json.dumps({"idx": idx, "id": eid, "p": sha, "prev": prev}, sort_keys=True))}
+        self.lines.append(line)
+        self.entries[eid] = {"sha": sha, "accum": self.entries.get(eid, {}).get("accum", 0)}
+        self.entries[eid]["accum"] += accum_delta  # RMW 竞态面（并发攻击用）
+        self.root = self._root()
+
+    def snapshot_tip(self):
+        self.tip = {"len": len(self.lines), "last": self.lines[-1]["self"] if self.lines else "GENESIS"}
+
+def doctor_legacy(s):
+    """链连续 + 根一致（R1-3 证明：截断后剩余前缀自洽 → 静默）。"""
+    prev = "GENESIS"
+    for ln in s.lines:
+        if ln["prev"] != prev:
+            return {"ok": False, "why": "链断裂@%d" % ln["idx"]}
+        prev = ln["self"]
+    if s.root != s._root():
+        return {"ok": False, "why": "根不一致"}
+    return {"ok": True, "why": "链连续/根一致"}
+
+def doctor_hard(s):
+    base = doctor_legacy(s)
+    if not base["ok"]:
+        return base
+    if len(s.lines) != s.tip["len"] or (s.lines and s.lines[-1]["self"] != s.tip["last"]):
+        return {"ok": False, "why": "chain_tip 不匹配(长度或末行锚)"}
+    if len(s.lines) < len(s.entries):
+        return {"ok": False, "why": "派生断言失败: 审计行(%d) < 条目数(%d)" % (len(s.lines), len(s.entries))}
+    accum_events = {}
+    for ln in s.lines:
+        accum_events[ln["id"]] = accum_events.get(ln["id"], 0) + ln["accum_delta"]
+    for eid, st in s.entries.items():
+        if st["accum"] != accum_events.get(eid, 0):
+            return {"ok": False, "why": "事件重算不一致@%s: state=%d events=%d" % (eid, st["accum"], accum_events.get(eid, 0))}
+    return {"ok": True, "why": "链/根/tip/派生断言/事件重算 全过"}
+
+# ---------- 干净库（零误报检查） ----------
+s0 = Store()
+for i in range(12):
+    s0.append("e%02d" % i, H("content%d" % i), accum_delta=5)
+s0.snapshot_tip()
+r_legacy = doctor_legacy(s0)
+r_hard = doctor_hard(s0)
+
+# ---------- 攻击 ----------
+results = {}
+# A1 截断尾部 2 行（R1-3 攻击）
+s = Store()
+for i in range(12):
+    s.append("e%02d" % i, H("content%d" % i), accum_delta=5)
+s.snapshot_tip()
+del s.lines[-2:]
+results["A1_截断尾2行"] = {"legacy": doctor_legacy(s), "hardened": doctor_hard(s)}
+# A2 重排中间两行
+s = Store()
+for i in range(12):
+    s.append("e%02d" % i, H("content%d" % i), accum_delta=5)
+s.snapshot_tip()
+s.lines[5], s.lines[6] = s.lines[6], s.lines[5]
+results["A2_重排中间两行"] = {"legacy": doctor_legacy(s), "hardened": doctor_hard(s)}
+# A3 并发丢更新（R1-3 P0：两写者同读 accum=50，各 +5，后写覆盖 → 55≠60）
+s = Store()
+for i in range(10):
+    s.append("e%02d" % i, H("c%d" % i), accum_delta=5)
+s.snapshot_tip()
+read1 = s.entries["e00"]["accum"]; read2 = s.entries["e00"]["accum"]  # 两写者同读 50
+s.entries["e00"]["accum"] = read1 + 5   # w1 RMW 写回 55
+s.entries["e00"]["accum"] = read2 + 5   # w2 RMW 写回 55（覆盖 w1）→ 应为 60
+results["A3_并发丢更新(55应60)"] = {"legacy": doctor_legacy(s), "hardened": doctor_hard(s),
+                                   "state_accum": s.entries["e00"]["accum"], "expected": 60}
+# A4 孤儿写（条目进状态、不写审计行、攻击者重算根）
+s = Store()
+for i in range(12):
+    s.append("e%02d" % i, H("content%d" % i), accum_delta=5)
+s.snapshot_tip()
+s.entries["ghost"] = {"sha": H("ghost"), "accum": 0}
+s.root = s._root()  # 攻击者连根一起重算
+results["A4_孤儿写+重算根"] = {"legacy": doctor_legacy(s), "hardened": doctor_hard(s)}
+
+print("=== 干净库（零误报） ===")
+print("legacy:  ", r_legacy)
+print("hardened:", r_hard)
+print()
+print("=== 4 攻击 × 2 代 doctor 检出矩阵 ===")
+print("%-24s %-28s %-28s" % ("attack", "legacy", "hardened"))
+det_legacy = det_hard = 0
+for k, v in results.items():
+    l, h = v["legacy"], v["hardened"]
+    det_legacy += (not l["ok"]); det_hard += (not h["ok"])
+    print("%-24s %-28s %-28s" % (k, ("检出:" + l["why"]) if not l["ok"] else "静默(l.ok=True)",
+                                 ("检出:" + h["why"]) if not h["ok"] else "静默"))
+print()
+print("legacy 检出 %d/4 | hardened 检出 %d/4 | 干净库误报: legacy=%s hardened=%s" % (
+    det_legacy, det_hard,
+    "无" if r_legacy["ok"] else "有", "无" if r_hard["ok"] else "有"))
+verdict = (det_hard == 4 and r_hard["ok"] and r_legacy["ok"])
+print("判据（4/4 检出 + 干净零误报）:", "满足" if verdict else "不满足")
+json.dump({"clean": {"legacy": r_legacy, "hardened": r_hard}, "attacks": results,
+           "verdict": bool(verdict)}, open("out_t4_4_results.json", "w", encoding="utf-8"),
+          ensure_ascii=False, indent=1)

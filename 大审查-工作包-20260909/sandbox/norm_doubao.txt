@@ -1,0 +1,132 @@
+# 阶段1 归一化提取器 · 豆包（B级 md：主沙盒报告 E1-E30 + agora 报告 E3-E18）
+# 口径：gen_score 取各表主指标列（配置逐表注明）；复合单元格"X / Y"取首值(口径登记)；
+#       E14/E26 为逐代表(round=代数)；工单类/摘要/失败清单/自我推翻/架构层表不入库(登记)
+# zip 为代码包(agora_sandbox.py 等)，非日志，0行登记；.docx 二进制不入库
+import os, re, json
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+rows, dirty = [], []
+
+def num(s):
+    s = s.replace("**", "").strip()
+    s = re.sub(r"[(（].*?[)）]\s*$", "", s).strip()
+    m = re.match(r"^[+−\-]?\d+(\.\d+)?$", s)
+    if not m: return None
+    try: return float(s.replace("−", "-").replace("+", ""))
+    except ValueError: return None
+
+def first_num(s):
+    m = re.search(r"[+−\-]?\d+\.?\d*", s.replace("**", ""))
+    if not m: return None
+    try: return float(m.group(0).replace("−", "-"))
+    except ValueError: return None
+
+def cells(line):
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+def clean(s): return s.replace("**", "").replace("`", "").strip()
+
+def val(cs, col, allow_first=True):
+    if col >= len(cs): return None
+    v = num(cs[col])
+    if v is None and allow_first: v = first_num(cs[col])
+    return v
+
+def add(run_id, rnd, gs, line_no, fn, note, df=None):
+    rows.append({"source": "豆包", "run_id": run_id, "round": rnd, "gen_score": gs,
+                 "adopt_count": None, "drift_flag": df, "raw_line_no": line_no,
+                 "raw_file": f"豆包/{fn}", "notes_raw": note})
+
+def table(fn, sig, keycols, fmt, metrics, mode="score", round_col=None, gs_col=None, per_round=None):
+    """metrics: [(col,suffix)]; per_round: [(col,round)] 逐代表"""
+    lines = open(os.path.join(ROOT, "豆包", fn), encoding="utf-8").read().splitlines()
+    hit = next((i for i, l in enumerate(lines) if l.rstrip() == sig), None)
+    if hit is None:
+        dirty.append((fn, 0, sig, "表头未找到(配置失效)")); return
+    j = hit + 2
+    while j < len(lines) and lines[j].strip().startswith("|"):
+        cs = cells(lines[j])
+        if len(cs) < 2: break
+        kd = {f"k{i}": (clean(cs[kc]) if kc < len(cs) else "?") for i, kc in enumerate(keycols)}
+        if len(keycols) == 1: kd["k"] = kd["k0"]
+        base = fmt.format(**kd)
+        if per_round:
+            for col, rnd in per_round:
+                gs = val(cs, col)
+                if gs is None and col < len(cs) and cs[col] not in ("—", "-", ""):
+                    dirty.append((fn, j + 1, lines[j], f"col{col}无法解析: {cs[col]}")); continue
+                add(base, rnd, gs, j + 1, fn, lines[j].rstrip())
+        else:
+            for col, suf in metrics:
+                gs = val(cs, col)
+                if gs is None and col < len(cs) and cs[col] not in ("—", "-", ""):
+                    dirty.append((fn, j + 1, lines[j], f"col{col}无法解析: {cs[col]}")); continue
+                add(base + suf, None, gs, j + 1, fn, lines[j].rstrip())
+        j += 1
+
+M = "记忆库自演化引擎_沙盒实验总报告 - 副本.md"
+A = "agora_群体智慧沙盒_实验总报告.md"
+# ---- 主沙盒报告 E1-E30 ----
+table(M, "| 注水比例 | recall@5 | MRR | 零命中条目占 top5 |", [0], "豆包-E1-注水{k}", [(1, "")])
+table(M, "| 方案 | recall@5 | MRR | 零命中占比 |", [0], "豆包-E1b-{k}", [(1, "")])
+table(M, "| 年龄项方案 | 经典知识召回 | 新知召回 |", [0], "豆包-E2-{k}", [(1, "-经典"), (2, "-新知")])
+table(M, "| 库龄/天 | 出厂 | filter_zero | w_age=0 |", [0], "豆包-E2b-{k}天", [(1, "-出厂"), (2, "-filter_zero"), (3, "-w_age0")])
+table(M, "| 农场规模 | recall@5 | 农场条目占 top5 |", [0], "豆包-E3-农场{k}", [(1, "")])
+table(M, "| d | filter_zero 关 | filter_zero 开 |", [0], "豆包-E3b-d{k}", [(1, "-关"), (2, "-开")])
+table(M, "| 分词方式 | recall@5 | MRR | precision@5 |", [0], "豆包-E4-{k}", [(1, "")])
+table(M, "| 阈值 | 诚实（次/均隔/CV） | 20% 注水 | 40% 注水 |", [0], "豆包-E5-阈值{k}", [(1, "-诚实"), (2, "-注水20"), (3, "-注水40")])
+table(M, "| 注水 | 取材策略 | 坏条目占比 | 素材平均真实质量 |", [0, 1], "豆包-E6-注水{k0}-{k1}", [(3, "")])
+table(M, "| p_bad | 自报取材（污染/质量） | 复用取材（污染/质量） |", [0], "豆包-E7-p{k}", [(1, "-自报污染率"), (2, "-复用污染率")])
+table(M, "| 错误形态 | 覆盖词数 | 进 top5 覆盖面 | 占 top1 面 |", [0], "豆包-E7b-{k}", [(2, "")])
+table(M, "| 改动 | recall | 反思次数 | 取材坏率 | 仅情绪数值变 |", [0], "豆包-E8-{k}", [(1, "")])
+table(M, "| world | 阈值 | 高价值留存 TPR | 垃圾入库 FPR | 长期层纯度 |", [0, 1], "豆包-E9-{k0}-阈{k1}", [(4, "")])
+table(M, "| 双门 | TPR | FPR | 纯度 |", [0], "豆包-E9b-{k}", [(3, "")])
+table(M, "| 错标率 | 策略 | 误杀真有效 | 漏放真失效 | 净留在库 |", [0, 1], "豆包-E10-错标{k0}-{k1}", [(4, "")])
+table(M, "| 注水 | 策略 | 相对召回 | 被逐中高质量占比 | 留下注水条 |", [0, 1], "豆包-E11-注水{k0}-{k1}", [(2, "")])
+table(M, "| 条件 | 初始 holdout | 第 20 代 | 第 40 代 | 末态库污染 |", [0], "豆包-E14-{k}",
+      None, per_round=[(1, 0), (2, 20), (3, 40)])
+table(M, "| 基线规则 | 40 代后基线 | 过程最低 |", [0], "豆包-E15-{k}", [(1, "-40代后"), (2, "-过程最低")])
+table(M, "| train 题数 | train 终值 | 独立 holdout | 过拟合 gap |", [0], "豆包-E17-{k}题", [(1, "-train终值"), (2, "-holdout")])
+table(M, "| 抽题数 m | recall 均值 | sd | 95% 半宽 1.96sd | 真改进需超过 |", [0], "豆包-E17b-{k}题", [(1, "")])
+table(M, "| 权力边界 | 训练题终值 | 隐藏题终值 | 诚信缺口 |", [0], "豆包-E18-{k}", [(1, "-训练题"), (2, "-隐藏题")])
+table(M, "| 治理水平 | holdout | 库污染率 | 长期层纯度 | 反思取材坏率 |", [0], "豆包-E19-{k}", [(1, "")])
+table(M, "| 反馈覆盖 cover | 自报 imp 坏率/质量 | 观测 uses 坏率/质量 |", [0], "豆包-E20-cover{k}", [(1, "-自报坏率"), (2, "-uses坏率")])
+table(M, "| α（自报占比） | 坏率 | 素材质量 | 高质量条目覆盖率 |", [0], "豆包-E21-α{k}", [(2, "-素材质量"), (3, "-覆盖率")])
+table(M, "| 取材方式 | 坏率 | 质量 |", [0], "豆包-E24b-{k}", [(2, "-质量"), (1, "-坏率")])
+table(M, "| β（关键词预算） | 旧世界 A | 新世界 B |", [0], "豆包-E22-β{k}", [(1, "-旧世界A"), (2, "-新世界B")])
+table(M, "| 库规模 n | 出厂 holdout | 演化后 holdout | 零命中过滤空结果率 |", [0], "豆包-E23-n{k}", [(1, "-出厂"), (2, "-演化后")])
+table(M, "| 攻击形态 | L0 出厂 | L1 +filter_zero | L2 +uses 重排 |", [0], "豆包-E24-{k}", [(1, "-L0"), (2, "-L1"), (3, "-L2")])
+table(M, "| 结构特征 | 检出 TPR | 误伤 FPR |", [0], "豆包-E25-{k}", [(1, "-TPR"), (2, "-FPR")])
+table(M, "| 取材 | 代 1 | 代 3 | 代 5 |", [0], "豆包-E26-{k}",
+      None, per_round=[(1, 1), (2, 3), (3, 5)])
+table(M, "| 维度 | train | holdout | 种子间 sd |", [0], "豆包-E28-{k}", [(1, "-train"), (2, "-holdout")])
+table(M, "| 训练标注污染 p | 训练分 | 干净隐藏分 | 训练-隐藏缺口 |", [0], "豆包-E29-p{k}", [(1, "-训练分"), (2, "-隐藏分")])
+table(M, "| 工作集变化 | random | LRU | LFU | hybrid |", [0], "豆包-E30-{k}", [(1, "-random"), (2, "-LRU"), (3, "-LFU"), (4, "-hybrid")])
+# ---- agora 报告 E3-E18 ----
+table(A, "| 世界 | mean | median | trim10% | trim20% |", [0], "豆包A-E3-{k}", [(1, "-mean"), (2, "-median"), (3, "-trim10"), (4, "-trim20")])
+table(A, "| 机制 | 级联率 | 错误级联占比 | 私有信号被忽略 | 终局正确率 |", [0], "豆包A-E4-{k}", [(4, "-终局正确率"), (1, "-级联率")])
+table(A, "| 拓扑 | 收敛轮数 | 共识对真值偏差 | 最终群体内 std |", [0], "豆包A-E5-{k}", [(2, "-真值偏差"), (1, "-收敛轮数")])
+table(A, "| 机制 | 最终簇数 | 两极间距 | 仍接近真值 0 的人口 |", [0], "豆包A-E6-{k}", [(3, "-近真值人口"), (1, "-最终簇数"), (2, "-两极间距")])
+table(A, "| 历史题数 m | 等权多数 | 按估计加权 | Oracle（用真能力） |", [0], "豆包A-E7-{k}题", [(1, "-等权多数"), (2, "-按估计加权"), (3, "-Oracle")])
+table(A, "| 历史题数 m | 等权 | 按估计加权 | Oracle |", [0], "豆包A-E7b-{k}题", [(1, "-等权"), (2, "-按估计加权"), (3, "-Oracle")])
+table(A, "| 入场策略 | 坏人被接受率 | 坏人换号次数 | 真好人达到阈值所需交互 |", [0], "豆包A-E8-{k}", [(1, "-坏人被接受率"), (3, "-真好人交互数")])
+table(A, "| 后续理性人数 | 市场终价 | 残留操纵偏差 |", [0], "豆包A-E9-{k}理性", [(1, "-市场终价"), (2, "-操纵偏差")])
+table(A, "| b | 操纵成本 | 做市商补贴 |", [0], "豆包A-E9b-b{k}", [(1, "-操纵成本"), (2, "-做市商补贴")])
+table(A, "| 机制 | 翻转所需 |", [0], "豆包A-E10-{k}", [(1, "")])
+table(A, "| f | 全连接·均值 | 无标度·随机控制 | 无标度·控制 hub | 全连接·中位防御 |", [0], "豆包A-E11-f{k}", [(1, "-全连接均值"), (2, "-无标度随机"), (3, "-无标度hub"), (4, "-中位防御")])
+table(A, "| f | 全连接 | 无标度随机 | 无标度控 hub |", [0], "豆包A-E11b-f{k}", [(1, "-全连接"), (2, "-无标度随机"), (3, "-无标度hub")])
+table(A, "| 多样队 σ | 专家队 MSE | 多样队 MSE | 谁赢 |", [0], "豆包A-E13-σ{k}", [(1, "-专家队MSE"), (2, "-多样队MSE")])
+table(A, "| 组数 G | 每组人数 | 平铺 | 两级聚合 | G 个真独立信源上界 |", [0, 1], "豆包A-E15-G{k0}", [(2, "-平铺"), (3, "-两级"), (4, "-上界")])
+table(A, "| f | mean | median | trim(f) | Krum |", [0], "豆包A-E16-f{k}", [(1, "-mean"), (2, "-median"), (3, "-trim"), (4, "-Krum")])
+table(A, "| 人数 N | 独立世界 | 相关世界 | 相关等效独立人数 |", [0], "豆包A-E17-N{k}", [(1, "-独立世界"), (2, "-相关世界")])
+table(A, "| 环境 | 全历史 | 滑窗 20 | 指数衰减 | 锚定仲裁 |", [0], "豆包A-E18-{k}", [(1, "-全历史"), (2, "-滑窗20"), (3, "-指数衰减"), (4, "-锚定仲裁")])
+
+with open(os.path.join(ROOT, "unified", "豆包.jsonl"), "w", encoding="utf-8", newline="\n") as f:
+    for r in rows:
+        f.write(json.dumps(r, ensure_ascii=False) + "\n")
+if dirty:
+    with open(os.path.join(ROOT, "unified", "dirty", "豆包__tables.txt"), "w", encoding="utf-8", newline="\n") as f:
+        for fn, ln, txt, why in dirty:
+            f.write(f"[{fn}:{ln}] why={why}\n{txt}\n")
+print("rows=", len(rows), "dirty=", len(dirty), "runs=", len(set(r["run_id"] for r in rows)))
+for d in dirty[:10]: print("DIRTY:", d[0], d[1], d[3][:60])

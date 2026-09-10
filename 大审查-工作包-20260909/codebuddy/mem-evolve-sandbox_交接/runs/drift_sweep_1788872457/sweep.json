@@ -1,0 +1,108 @@
+{
+ "table": {
+  "0.2": {
+   "two-tier": {
+    "delta_mean": 0.472541,
+    "delta_std": 0.083919,
+    "drawdown_mean": 0.048889,
+    "peak_mean": 0.732,
+    "self_report_gap": 0.228353,
+    "frozen": "0/3",
+    "agreement_min": 1.0
+   },
+   "two-tier+anchor": {
+    "delta_mean": 0.495875,
+    "delta_std": 0.068397,
+    "drawdown_mean": 0.0,
+    "peak_mean": 0.706444,
+    "self_report_gap": 0.19259,
+    "frozen": "3/3",
+    "agreement_min": 0.6667
+   }
+  }
+ },
+ "rows": [
+  {
+   "alpha": 0.2,
+   "cfg": "two-tier",
+   "seed": 1,
+   "delta": 0.364583,
+   "drawdown": 0.04,
+   "peak": 0.716,
+   "gap": 0.235206,
+   "frozen": false,
+   "agreement_min": 1.0
+  },
+  {
+   "alpha": 0.2,
+   "cfg": "two-tier",
+   "seed": 2,
+   "delta": 0.483833,
+   "drawdown": 0.053333,
+   "peak": 0.726667,
+   "gap": 0.23858,
+   "frozen": false,
+   "agreement_min": 1.0
+  },
+  {
+   "alpha": 0.2,
+   "cfg": "two-tier",
+   "seed": 3,
+   "delta": 0.569208,
+   "drawdown": 0.053333,
+   "peak": 0.753333,
+   "gap": 0.211274,
+   "frozen": false,
+   "agreement_min": 1.0
+  },
+  {
+   "alpha": 0.2,
+   "cfg": "two-tier+anchor",
+   "seed": 1,
+   "delta": 0.404583,
+   "drawdown": 0.0,
+   "peak": 0.716,
+   "gap": 0.182859,
+   "frozen": true,
+   "agreement_min": 0.7917
+  },
+  {
+   "alpha": 0.2,
+   "cfg": "two-tier+anchor",
+   "seed": 2,
+   "delta": 0.513833,
+   "drawdown": 0.0,
+   "peak": 0.703333,
+   "gap": 0.195515,
+   "frozen": true,
+   "agreement_min": 0.5417
+  },
+  {
+   "alpha": 0.2,
+   "cfg": "two-tier+anchor",
+   "seed": 3,
+   "delta": 0.569208,
+   "drawdown": 0.0,
+   "peak": 0.7,
+   "gap": 0.199396,
+   "frozen": true,
+   "agreement_min": 0.6667
+  }
+ ],
+ "args": {
+  "src": "D:\\zcode专用！！！！危险！！！！！！！！！\\library-bootstrap-v3.0\\bootstrap_v3.py",
+  "cmd": "sweep",
+  "alphas": [
+   0.2
+  ],
+  "cfgs": [
+   "two-tier",
+   "two-tier+anchor"
+  ],
+  "seeds": 3,
+  "gens": 40,
+  "drift_start": 15,
+  "fanout": 3,
+  "fn": "<function cmd_sweep at 0x000001993D819590>"
+ }
+}

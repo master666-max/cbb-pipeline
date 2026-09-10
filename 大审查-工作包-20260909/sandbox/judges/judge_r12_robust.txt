@@ -1,0 +1,115 @@
+# judge_r12_robust.txt · Round 12 判据脚本（带边界扰动鲁棒性 + 跨世界池化）
+# 用法: py -X utf8 sandbox/judges/judge_r12_robust.txt --selftest | --real
+import json, sys, os
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+def assign(grad, lo, hi):
+    if grad < lo:
+        return 'low'
+    if grad < hi:
+        return 'mid'
+    return 'high'
+
+ORDER = ('low', 'mid', 'high')
+
+def rates_by(events, lo, hi):
+    agg = {}
+    for e in events:
+        b = assign(e['grad'], lo, hi)
+        agg.setdefault(b, [0, 0])
+        agg[b][0] += 1
+        agg[b][1] += 1 if e['dtrue'] <= 0 else 0
+    return {b: (agg[b][0], agg[b][1] / agg[b][0] if agg[b][0] else None) for b in ORDER}
+
+def monotone(events, lo, hi):
+    """返回 (ok_strict_down, any_up, rates, ns)。"""
+    rr = rates_by(events, lo, hi)
+    rates = [rr[b][1] for b in ORDER]
+    ns = [rr[b][0] for b in ORDER]
+    if any(n < 30 for n in ns) or any(r is None for r in rates):
+        return None, None, rates, ns
+    gaps = [rates[i] - rates[i + 1] for i in range(2)]
+    return all(g > 0 for g in gaps), any(g < 0 for g in gaps), rates, ns
+
+def h1_rule(events):
+    """红队假设：任一套倒置/失守 → SUPPORTED(红队成功)。返回 verdict, mech。"""
+    resA = monotone(events, 0.05, 0.30)
+    resB = monotone(events, 0.15, 0.70)
+    okA, upA, rA, nA = resA
+    okB, upB, rB, nB = resB
+    gaps = []
+    for r in (rA, rB):
+        if r[0] is not None and r[2] is not None:
+            gaps.append(max(0.0, r[0] - r[2]))
+    mech = min(gaps) if gaps else None
+    if (okA is False and upA is True) or (okB is False and upB is True):
+        return 'SUPPORTED', mech  # 红队成功：倒置出现
+    if okA and okB:
+        return 'REFUTED', mech  # 红队失败：两套均严格单调
+    return 'INCONCLUSIVE', mech
+
+def h2_rule(flat_ev, sharp_ev):
+    pooled = flat_ev + sharp_ev
+    ok, up, rates, ns = monotone(pooled, 0.1, 0.5)
+    mech = None
+    if rates[0] is not None and rates[2] is not None:
+        mech = max(0.0, min(1.0, rates[0] - rates[2]))
+    if ok:
+        return 'SUPPORTED', mech
+    if up:
+        return 'REFUTED', mech
+    return 'INCONCLUSIVE', mech
+
+def mk(grad, n, rate):
+    nf = round(rate * n)
+    return [{'grad': grad, 'dtrue': -1 if i < nf else 1} for i in range(n)]
+
+def selftest():
+    ok = True
+    good = mk(0.03, 30, 0.8) + mk(0.2, 30, 0.3) + mk(0.9, 30, 0.1)
+    v1, m1 = h1_rule(good)
+    print('case1 H1 verdict=%s exp=REFUTED %s; mech got=%s exp=0.7000 %s' % (
+        v1, 'PASS' if v1 == 'REFUTED' else 'FAIL', '%.4f' % m1 if m1 is not None else 'NA',
+        'PASS' if (m1 is not None and abs(m1 - 0.7) < 5e-5) else 'FAIL'))
+    ok = ok and v1 == 'REFUTED' and m1 is not None and abs(m1 - 0.7) < 5e-5
+    bad = mk(0.03, 30, 0.3) + mk(0.2, 30, 0.6) + mk(0.9, 30, 0.1)
+    v2, m2 = h1_rule(bad)
+    print('case2 H1 verdict=%s exp=SUPPORTED %s; mech got=%s exp=0.2000 %s' % (
+        v2, 'PASS' if v2 == 'SUPPORTED' else 'FAIL', '%.4f' % m2 if m2 is not None else 'NA',
+        'PASS' if (m2 is not None and abs(m2 - 0.2) < 5e-5) else 'FAIL'))
+    ok = ok and v2 == 'SUPPORTED' and m2 is not None and abs(m2 - 0.2) < 5e-5
+    v3, m3 = h2_rule(good, mk(0.9, 30, 0.05))
+    # 池化高带: false=round(0.1*30)+round(0.05*30)=3+2=5, n=60 → rate=0.0833 → mech=0.8-0.0833=0.7167
+    print('case3 H2 verdict=%s exp=SUPPORTED %s; mech got=%s exp=0.7167 %s' % (
+        v3, 'PASS' if v3 == 'SUPPORTED' else 'FAIL', '%.4f' % m3 if m3 is not None else 'NA',
+        'PASS' if (m3 is not None and abs(m3 - 0.7167) < 5e-5) else 'FAIL'))
+    ok = ok and v3 == 'SUPPORTED' and m3 is not None and abs(m3 - 0.7167) < 5e-5
+    guard = mk(0.03, 10, 0.8) + mk(0.2, 10, 0.3) + mk(0.9, 10, 0.1)
+    v4, m4 = h1_rule(guard)
+    print('case4a H1 verdict=%s exp=INCONCLUSIVE %s' % (v4, 'PASS' if v4 == 'INCONCLUSIVE' else 'FAIL'))
+    ok = ok and v4 == 'INCONCLUSIVE'
+    v5, m5 = h2_rule(guard, guard)
+    print('case4b H2 verdict=%s exp=INCONCLUSIVE %s' % (v5, 'PASS' if v5 == 'INCONCLUSIVE' else 'FAIL'))
+    ok = ok and v5 == 'INCONCLUSIVE'
+    print('SELFTEST', 'PASS' if ok else 'FAIL')
+    return ok
+
+def real():
+    data = json.load(open('sandbox/out/r11_gradient.json', encoding='utf-8'))
+    flat = [e for r in data['flat'] for e in r['events']]
+    sharp = [e for r in data['sharp'] for e in r['events']]
+    v1, m1 = h1_rule(flat)
+    print('== H-R12-1（平坦·扰动带）== verdict=%s mechanical=%s' % (v1, '%.4f' % m1 if m1 is not None else 'NA'))
+    for name, lo, hi in (('A套(0.05/0.30)', 0.05, 0.30), ('B套(0.15/0.70)', 0.15, 0.70)):
+        ok_, up_, rates, ns = monotone(flat, lo, hi)
+        print('  %s: n=%s rates=%s' % (name, ns, ['%.4f' % r if r is not None else 'NA' for r in rates]))
+    v2, m2 = h2_rule(flat, sharp)
+    okp, upp, rates, ns = monotone(flat + sharp, 0.1, 0.5)
+    print('== H-R12-2（池化·默认带）== verdict=%s mechanical=%s n=%s rates=%s' % (
+        v2, '%.4f' % m2 if m2 is not None else 'NA', ns, ['%.4f' % r if r is not None else 'NA' for r in rates]))
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    real()

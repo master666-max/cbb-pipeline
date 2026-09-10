@@ -1,0 +1,121 @@
+# X15 · R 线定律类比检验（早斜率/首采纳；判据冻结于 reports/X15_R线定律类比_预注册.md）
+# 运行：py -X utf8 proto/x15_rline_laws.txt
+# 设计：NG 臂 seeds 1–24（真语义、无链接、同流键 "PL"），逐代记录 audit_U（只测不选）；指纹断言 ≡ x8-NG/x9-ng。
+# 输出：data/x15-trajectories.json、data/x15_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evo = load_mod("evocore", BASE / "proto" / "evocore.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+TOL, GENS, KIDS = 0.005, META["gens"], META["kids"]
+SEEDS = list(range(1, 25))
+
+def build_lib(seed):
+    return SB / (f"lib-x8-NG-s{seed}" if seed <= 8 else f"lib-x9-ng-s{seed}")
+
+def evolve_logged(seed):
+    lib = build_lib(seed)
+    entries, kw_of = evo.build_world(seed)
+    train, held, audit = evo.build_tasks(seed, entries)
+    rng = random.Random(seed * 31 + sum(map(ord, "PL")))
+    mainline = dict(evo.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    cache = {}
+    traj = []
+    def sc(cfg):
+        key = tuple(sorted(cfg.items()))
+        if key not in cache:
+            cache[key] = evo.score_lib(lib, train, cfg, kw_of=kw_of)
+        return cache[key]
+    def aud(cfg):
+        return evo.score_lib(lib, audit, cfg, kw_of=kw_of)
+    traj.append(round(aud(mainline), 6))                     # G0
+    first_adopted = False
+    first_u = None
+    for gen in range(1, GENS + 1):
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -sc(c))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = evo.mutate(parent, rng)
+            if sc(child) - sc(parent) > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: sc(archive[i])))
+            if sc(child) > sc(mainline):
+                mainline = dict(child)
+                if not first_adopted:
+                    first_adopted = True
+                    first_u = aud(mainline)
+        traj.append(round(aud(mainline), 6))
+    res = {"seed": seed, "final_mainline": mainline, "traj": traj,
+           "first_u": first_u}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    return res
+
+t0 = time.time()
+rows, fingerprint_ok = [], True
+for seed in SEEDS:
+    r = evolve_logged(seed)
+    base_pref = "x8-NG" if seed <= 8 else "x9-ng"
+    base = json.loads((DATA / f"{base_pref}-s{seed}.json").read_text(encoding="utf-8"))
+    same = r["final_mainline"] == base["final_mainline"]
+    fingerprint_ok &= same
+    u0, u5, u25 = r["traj"][0], r["traj"][5], r["traj"][25]
+    early, total = u5 - u0, u25 - u0
+    share = (r["first_u"] - u0) / (u25 - u0) if (r["first_u"] is not None and u25 > u0) else None
+    rows.append({"seed": seed, "traj": r["traj"], "first_u": r["first_u"], "u0": u0,
+                 "early": round(early, 6), "total": round(total, 6),
+                 "share": round(share, 4) if share is not None else None,
+                 "fingerprint": same})
+    print(f"[s{seed}] u0={u0:.3f} u5={u5:.3f} 终={u25:.3f} 早斜差={early:+.3f} 总差={total:+.3f} "
+          f"首采纳占比={('%.2f' % share) if share is not None else '—'} 指纹{'✓' if same else '✗'} "
+          f"doctor={'OK' if r['doctor_ok'] else 'BAD'}", flush=True)
+(DATA / "x15-trajectories.json").write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+
+print(f"跨轮指纹: {fingerprint_ok}", flush=True)
+if not fingerprint_ok:
+    print("判定：INCONCLUSIVE（指纹断裂）")
+    (DATA / "x15_summary.json").write_text(json.dumps({"fingerprint": False}, ensure_ascii=False), encoding="utf-8")
+    sys.exit(0)
+
+# L1 早斜率符号律
+info = [r for r in rows if abs(r["total"]) > 1e-9]
+agree = sum(1 for r in info if (r["early"] > 0) == (r["total"] > 0) and r["early"] != 0)
+rate1 = agree / len(info) if info else None
+print(f"L1 早斜率符号律: 有效 run={len(info)} 一致 {agree} → {rate1}", flush=True)
+v1 = "SUPPORTED" if rate1 is not None and rate1 >= 0.80 else ("PARTIAL" if rate1 is not None and rate1 >= 0.65 else "NOT SUPPORTED")
+
+# L2 首采纳贡献律
+sh = [r["share"] for r in rows if r["share"] is not None]
+mean_share = round(sum(sh) / len(sh), 4) if sh else None
+maj = sum(1 for x in sh if x > 0.5)
+v2 = ("SUPPORTED" if sh and mean_share > 0.5 and maj > len(sh) / 2
+      else "PARTIAL" if sh and mean_share > 0.5 else "NOT SUPPORTED")
+print(f"L2 首采纳贡献: 有效 run={len(sh)} 均值={mean_share} 过半数>0.5 的 run={maj}/{len(sh)} → {v2}", flush=True)
+
+print(f"判定：L1={v1}；L2={v2}")
+(DATA / "x15_summary.json").write_text(json.dumps(
+    {"summary": {"L1_rate": rate1, "L1_verdict": v1, "L2_mean_share": mean_share,
+                 "L2_majority": maj, "L2_n": len(sh), "L2_verdict": v2,
+                 "fingerprint": fingerprint_ok}, "rows": rows}, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"X15 完成 {time.time()-t0:.1f}s")

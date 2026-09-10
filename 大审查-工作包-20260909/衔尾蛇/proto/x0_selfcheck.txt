@@ -1,0 +1,203 @@
+# X0 · 环境自检与适配器等价性 — 前置门（通过才准进 X1/X2）
+# 运行：py -X utf8 proto/x0_selfcheck.txt   （工作区根 or zcode 目录均可，路径自解析）
+# 门：S1 哈希锚定 / S3 建库 / S5 真引擎写入 / S7 等价性 100% / S8 负对照翻转
+# 观测项（不设门）：S2 run-tests 行为（源码 P0-1 预告自测有硬编码缺陷，记录即数据）
+import sys, os, re, json, time, hashlib, subprocess, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout, redirect_stderr
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent            # 大审查/zcode
+WS = BASE.parent.parent                                   # 工作区根
+ORIG = BASE.parent / "豆包" / "bootstrap_v3.8.2_补丁后.py"
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+LIB = BASE / "sandbox" / "lib-x0"
+SKILL = WS / "knowledge" / "skills" / "library-bootstrap"
+DATA = BASE / "data"
+EXPECT_SHA16 = "ef2c645aea64fb9e"
+
+for d in (PKG, LIB.parent, DATA, BASE / "reports"):
+    d.mkdir(parents=True, exist_ok=True)
+
+results = []
+def step(name, ok, detail=""):
+    results.append({"step": name, "ok": bool(ok), "detail": str(detail)[:500]})
+    print(f"[{'PASS' if ok else 'FAIL'}] {name}" + (f" — {detail}" if detail else ""))
+
+def load_mod(name, path):
+    # .txt 扩展名无默认 loader，显式指定 SourceFileLoader（P-001 对策）
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+t0 = time.time()
+print(f"== X0 selfcheck ==  py {sys.version.split()[0]}  base={BASE}")
+
+# ── S1 哈希锚定 ─────────────────────────────────────────────────────
+orig_b = ORIG.read_bytes(); snap_b = VENDOR.read_bytes()
+h_orig = hashlib.sha256(orig_b).hexdigest()[:16]
+h_snap = hashlib.sha256(snap_b).hexdigest()[:16]
+step("S1 快照哈希锚定", h_orig == h_snap == EXPECT_SHA16,
+     f"orig={h_orig} snap={h_snap} expect={EXPECT_SHA16} identical={orig_b == snap_b}")
+
+# ── S2 run-tests 行为观测（不设门，如实记录）────────────────────────
+try:
+    p = subprocess.run([sys.executable, "-X", "utf8", str(VENDOR), "run-tests"],
+                       capture_output=True, text=True, encoding="utf-8",
+                       errors="replace", timeout=300, cwd=str(BASE))
+    out_tail = "\n".join((p.stdout or "").strip().splitlines()[-12:])
+    step("S2 run-tests 观测", True,
+         f"rc={p.returncode} stdout_lines={len((p.stdout or '').splitlines())} tail<<\n{out_tail}\n>>")
+except Exception as ex:
+    step("S2 run-tests 观测", False, f"异常 {ex}")
+
+# ── S3 absorb（真源树优先，fallback=源码自测同款最小 bodies）────────
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+absorb_mode = "real"
+try:
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_absorb(str(SKILL))
+    n_bodies = sum(len(v) for v in json.loads((PKG / "bodies.json").read_text(encoding="utf-8")).values()
+                   if isinstance(v, dict))
+    step("S3 absorb 真源树", True, f"内容体 {n_bodies} 个 → {PKG.name}/bodies.json")
+except SystemExit as ex:
+    absorb_mode = "fallback"
+    body_min = "# X0 fallback 最小内容体\n"
+    b = {"modules": {}, "packages": {}, "presets": {}, "docs": {}}
+    for rel in ["modules/m-core/core.md", "modules/m-index/index.md", "modules/m-loop/loop.md",
+                "modules/m-lint/lint.md", "modules/m-search/search.md"]:
+        b["modules"][rel.replace("/", "__")] = {"body": body_min, "src": rel,
+                                                "sha256": hashlib.sha256(body_min.encode()).hexdigest()}
+    b["docs"]["SKILL.md"] = {"body": "# skill\n", "src": "SKILL.md",
+                             "sha256": hashlib.sha256(b"# skill\n").hexdigest()}
+    (PKG / "bodies.json").write_text(json.dumps(b, ensure_ascii=False, indent=1), encoding="utf-8")
+    step("S3 absorb 真源树", False, f"真源树 absorb 退出（{str(ex)[:120]}…）→ 已 fallback 最小 bodies")
+except Exception as ex:
+    step("S3 absorb 真源树", False, f"非预期异常 {ex}")
+    m = None
+
+# ── S4 install L2 建库 ─────────────────────────────────────────────
+if m:
+    try:
+        buf = StringIO()
+        with redirect_stdout(buf):
+            m.cmd_install("L2", [], LIB, True)
+        out = buf.getvalue()
+        ok = (LIB / "state.json").exists()
+        root = json.loads((LIB / "state.json").read_text(encoding="utf-8")).get("merkle_root", "")[:16]
+        step("S4 install L2", ok, f"state.json 就位 merkle_root={root}… delivered={out.count('待填槽') and out or out.splitlines()[-1]}")
+    except SystemExit as ex:
+        step("S4 install L2", False, f"install 退出：{ex}")
+
+# ── S5 世界写入（真引擎 append × 80；幂等：库已有条目则跳过）────────
+if m and (LIB / "state.json").exists():
+    evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+    entries, kw_of = evocore.build_world(1)
+    train, held, audit = evocore.build_tasks(1, entries)
+    n_existing = len(list((LIB / "memory").rglob("*.json")))
+    if n_existing >= len(entries):
+        step("S5 世界写入", True, f"已有 {n_existing} 条目——幂等跳过写入")
+    else:
+        # source_event_id = 安装事件真实哈希前缀（不复刻源码 P0-2 空锚缺陷）
+        tail = sorted((LIB / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        n_ok = 0
+        for e in entries:
+            rec = {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                   "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                   "source_event_id": seid, "importance": e["importance"],
+                   "confidence": "中", "validity": {"t_valid": e["created_at"]}}
+            try:
+                m.cmd_engine("append", str(LIB), json.dumps(rec, ensure_ascii=False))
+                n_ok += 1
+            except SystemExit as ex:
+                step("S5 世界写入", False, f"{e['id']} 被拒：{str(ex)[:120]}")
+                break
+        if n_ok == len(entries):
+            buf = StringIO()
+            with redirect_stdout(buf):
+                m.cmd_engine("doctor", str(LIB))
+            step("S5 世界写入", True, f"{n_ok}/80 条入链；doctor<< {buf.getvalue().strip().splitlines()[0]} >>")
+
+# ── S6 任务集与元层清单落盘 ────────────────────────────────────────
+tasks_all = {"train": train, "held": held, "audit": audit,
+             "note": "元层任务集：人侧冻结；audit 永不参与演化"}
+(DATA / "tasks_seed1.json").write_text(json.dumps(tasks_all, ensure_ascii=False, indent=1), encoding="utf-8")
+tasks_sha = hashlib.sha256((DATA / "tasks_seed1.json").read_bytes()).hexdigest()[:16]
+meta = {"K": evocore.K, "LAMBDA": evocore.LAMBDA, "margin": 0.01, "tolerance": 0.005,
+        "bootstrap_n": 1000, "seeds": [1, 2, 3, 4, 5, 6, 7, 8],
+        "gens": 25, "kids": 3, "anchor_threshold": 0.85,
+        "vendor_sha16": EXPECT_SHA16, "tasks_sha16": tasks_sha,
+        "frozen_by": "人侧（ZCode 会话端），签署于 X0", "frozen_at": time.strftime("%F %T")}
+(DATA / "meta_layer.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+step("S6 元层冻结落盘", True, f"tasks_sha16={tasks_sha}（train {len(train)} / held {len(held)} / audit {len(audit)}）")
+
+# ── S7 等价性门（真引擎 vs 适配器，top-20 逐条一致）────────────────
+queries = [t["q"] for t in train + held + audit] + evocore.random_queries(1, sorted(kw_of.values()),
+                                                                          sorted({e['topic'] for e in entries}))
+mismatch = []
+for q in queries:
+    scored_o, _ = m._rank_entries(LIB, q)
+    ranked_o = [fid for fid, _ in sorted(scored_o.items(), key=lambda kv: kv[1][0], reverse=True)[:20]]
+    ranked_a = [fid for fid, _ in evocore.rank_lib(LIB, q, evocore.DEFAULT_CFG)[:20]]
+    if ranked_o != ranked_a:
+        mismatch.append({"q": q, "engine": ranked_o[:8], "adapter": ranked_a[:8]})
+eq_json = {"n_queries": len(queries), "n_mismatch": len(mismatch),
+           "equivalent": len(mismatch) == 0, "mismatches": mismatch[:10],
+           "vendor_sha16": EXPECT_SHA16, "ts": time.strftime("%F %T")}
+(DATA / "x0_equivalence.json").write_text(json.dumps(eq_json, ensure_ascii=False, indent=1), encoding="utf-8")
+step("S7 等价性门", len(mismatch) == 0, f"{len(queries) - len(mismatch)}/{len(queries)} 查询 top-20 一致")
+
+# ── S8 负对照（改参数必须翻转排序，防假等价）───────────────────────
+cfg4 = dict(evocore.DEFAULT_CFG); cfg4["w_kw"] = 4.0
+n_flip = sum(1 for q in queries
+             if [fid for fid, _ in evocore.rank_lib(LIB, q, cfg4)[:20]]
+             != [fid for fid, _ in evocore.rank_lib(LIB, q, evocore.DEFAULT_CFG)[:20]])
+step("S8 负对照翻转", n_flip >= 1, f"w_kw 3→4 翻转 {n_flip}/{len(queries)} 个查询的 top-20")
+
+# ── S9 guard 快照 + 真引擎 eval 冒烟 ───────────────────────────────
+if m:
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_guard(None, str(LIB), snapshot=True)
+    ok_guard = (LIB / "anchor_snapshot.json").exists()
+    train_json = DATA / "tasks_seed1_train_eval.json"
+    train_json.write_text(json.dumps([{"query": t["q"], "expected": [t["golden"]]} for t in train],
+                                     ensure_ascii=False), encoding="utf-8")
+    buf2 = StringIO()
+    try:
+        with redirect_stdout(buf2):
+            m.cmd_engine("eval", str(LIB), text=str(train_json))
+        eval_out = buf2.getvalue().strip().splitlines()[0]
+        eval_ok = True
+    except SystemExit as ex:
+        eval_out = f"eval 退出 {ex}"
+        eval_ok = False
+    step("S9 guard/eval 冒烟", ok_guard and eval_ok, f"guard_snapshot={ok_guard}；{eval_out}")
+
+# ── S10 G0 基线指标（适配器侧，三集）───────────────────────────────
+rev = 1  # 世界写入后缓存失效
+base_scores = {}
+for name, ts in (("train", train), ("held", held), ("audit", audit)):
+    u = evocore.score_lib(LIB, ts, evocore.DEFAULT_CFG, rev=rev, kw_of=kw_of)
+    r5 = evocore.recall_at_k(LIB, ts, evocore.DEFAULT_CFG, rev=rev, kw_of=kw_of)
+    base_scores[name] = {"utility": round(u, 4), "recall@5": round(r5, 4)}
+step("S10 G0 基线", True, json.dumps(base_scores, ensure_ascii=False))
+
+# ── 收口 ───────────────────────────────────────────────────────────
+gates = [r for r in results if r["step"].split()[0] in ("S1", "S3", "S4", "S5", "S7", "S8")]
+gate_ok = all(r["ok"] for r in gates)
+verdict = "X0 PASS — 放行 X1/X2" if gate_ok else "X0 FAIL — 修适配器，禁止带病进主实验"
+print("\n" + "=" * 60)
+print(verdict)
+print(f"耗时 {time.time() - t0:.1f}s")
+out = {"verdict": verdict, "absorb_mode": absorb_mode, "gate_ok": gate_ok,
+       "results": results, "baseline": base_scores, "wall_s": round(time.time() - t0, 1)}
+(DATA / "x0_results.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"结果已写 {DATA / 'x0_results.json'}")
+sys.exit(0 if gate_ok else 1)

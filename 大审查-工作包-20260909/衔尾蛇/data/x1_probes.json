@@ -1,0 +1,55 @@
+{
+ "concurrent": {
+  "procs": 8,
+  "rcs": "recovered",
+  "accum_gained": 10,
+  "expected": 40,
+  "lost": 30,
+  "doctor_first_line": "doctor: memory 88 / audit 88 / ledger 88 / 审计链 连续 / state 根一致",
+  "chain_break_mentions": 0
+ },
+ "truncation": {
+  "removed": [
+   "e78",
+   "e79"
+  ],
+  "crypto_blind": true,
+  "set_layer_flagged": true,
+  "doctor": [
+   "doctor: memory 80 / audit 78 / ledger 80 / 审计链 连续 / state 根一致",
+   "  [memory有而audit无] e78, e79",
+   "  → 差异等用户裁决，不自动修（铁律1）"
+  ]
+ },
+ "forget": {
+  "doctor_caught_manual_edit": true,
+  "attic": [
+   "e0",
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5",
+   "e6",
+   "e7"
+  ],
+  "moved_exact": true,
+  "stay_untouched": true,
+  "doctor_after": "doctor: memory 80 / audit 80 / ledger 80 / 审计链 连续 / state 根一致"
+ },
+ "paired_G1_minus_G0_audit": {
+  "diffs": [
+   1.05,
+   0.8563,
+   0.4374,
+   1.0187,
+   0.7625,
+   0.9625,
+   0.6562,
+   0.6000000000000001
+  ],
+  "mean": 0.793,
+  "n_pos": 8,
+  "ci_low": 0.6554
+ }
+}

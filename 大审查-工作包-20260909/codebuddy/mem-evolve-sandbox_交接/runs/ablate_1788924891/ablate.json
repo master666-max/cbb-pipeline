@@ -1,0 +1,626 @@
+{
+ "table": {
+  "pseudo": {
+   "full": {
+    "delta_mean": 0.028413,
+    "delta_std": 0.047265,
+    "recall_mean": 0.529167,
+    "evals_mean": 102.0,
+    "escaped": "0/12"
+   },
+   "-cheap": {
+    "delta_mean": 0.028413,
+    "delta_std": 0.047265,
+    "recall_mean": 0.529167,
+    "evals_mean": 102.0,
+    "escaped": "0/12"
+   },
+   "-holdout-gate": {
+    "delta_mean": -0.26542,
+    "delta_std": 0.170737,
+    "recall_mean": 0.047917,
+    "evals_mean": 102.0,
+    "escaped": "0/12"
+   },
+   "-pareto-archive": {
+    "delta_mean": 0.023611,
+    "delta_std": 0.04836,
+    "recall_mean": 0.529167,
+    "evals_mean": 102.0,
+    "escaped": "0/12"
+   },
+   "-stall-monitor": {
+    "delta_mean": 0.026632,
+    "delta_std": 0.04792,
+    "recall_mean": 0.529167,
+    "evals_mean": 102.0,
+    "escaped": "0/12"
+   },
+   "none(全拆)": {
+    "delta_mean": -0.240083,
+    "delta_std": 0.164859,
+    "recall_mean": 0.075,
+    "evals_mean": 77.0,
+    "escaped": "1/12"
+   }
+  }
+ },
+ "rows": [
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 1,
+   "delta": -0.002667,
+   "recall@5": 0.375,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 2,
+   "delta": -0.000667,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 3,
+   "delta": -0.000667,
+   "recall@5": 0.65,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 4,
+   "delta": 0.0,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 5,
+   "delta": 0.0305,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 6,
+   "delta": 0.03625,
+   "recall@5": 0.775,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 7,
+   "delta": -0.000667,
+   "recall@5": 0.3,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 8,
+   "delta": 0.020708,
+   "recall@5": 0.4,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 9,
+   "delta": 0.168667,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 10,
+   "delta": 0.0,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 11,
+   "delta": 0.018667,
+   "recall@5": 0.1,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "full",
+   "seed": 12,
+   "delta": 0.070833,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 1,
+   "delta": -0.002667,
+   "recall@5": 0.375,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 2,
+   "delta": -0.000667,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 3,
+   "delta": -0.000667,
+   "recall@5": 0.65,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 4,
+   "delta": 0.0,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 5,
+   "delta": 0.0305,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 6,
+   "delta": 0.03625,
+   "recall@5": 0.775,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 7,
+   "delta": -0.000667,
+   "recall@5": 0.3,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 8,
+   "delta": 0.020708,
+   "recall@5": 0.4,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 9,
+   "delta": 0.168667,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 10,
+   "delta": 0.0,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 11,
+   "delta": 0.018667,
+   "recall@5": 0.1,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-cheap",
+   "seed": 12,
+   "delta": 0.070833,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 1,
+   "delta": -0.05625,
+   "recall@5": 0.325,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 2,
+   "delta": -0.514875,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 3,
+   "delta": -0.397458,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 4,
+   "delta": -0.320917,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 5,
+   "delta": -0.27675,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 6,
+   "delta": -0.371667,
+   "recall@5": 0.1,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 7,
+   "delta": -0.152208,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 8,
+   "delta": -0.240458,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 9,
+   "delta": -0.098833,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 10,
+   "delta": -0.517958,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 11,
+   "delta": 0.06,
+   "recall@5": 0.15,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-holdout-gate",
+   "seed": 12,
+   "delta": -0.297667,
+   "recall@5": 0.0,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 1,
+   "delta": -0.002667,
+   "recall@5": 0.375,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 2,
+   "delta": -0.000667,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 3,
+   "delta": -0.000667,
+   "recall@5": 0.65,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 4,
+   "delta": 0.0,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 5,
+   "delta": 0.0305,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 6,
+   "delta": 0.0,
+   "recall@5": 0.775,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 7,
+   "delta": -0.000667,
+   "recall@5": 0.3,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 8,
+   "delta": -0.000667,
+   "recall@5": 0.4,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 9,
+   "delta": 0.168667,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 10,
+   "delta": 0.0,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 11,
+   "delta": 0.018667,
+   "recall@5": 0.1,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-pareto-archive",
+   "seed": 12,
+   "delta": 0.070833,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 1,
+   "delta": -0.002667,
+   "recall@5": 0.375,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 2,
+   "delta": -0.000667,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 3,
+   "delta": -0.000667,
+   "recall@5": 0.65,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 4,
+   "delta": 0.0,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 5,
+   "delta": 0.0305,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 6,
+   "delta": 0.03625,
+   "recall@5": 0.775,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 7,
+   "delta": -0.000667,
+   "recall@5": 0.3,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 8,
+   "delta": -0.000667,
+   "recall@5": 0.4,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 9,
+   "delta": 0.168667,
+   "recall@5": 0.5,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 10,
+   "delta": 0.0,
+   "recall@5": 0.8,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 11,
+   "delta": 0.018667,
+   "recall@5": 0.1,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "-stall-monitor",
+   "seed": 12,
+   "delta": 0.070833,
+   "recall@5": 0.575,
+   "evals": 102
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 1,
+   "delta": 0.038083,
+   "recall@5": 0.475,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 2,
+   "delta": -0.425875,
+   "recall@5": 0.1,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 3,
+   "delta": -0.397458,
+   "recall@5": 0.0,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 4,
+   "delta": -0.172583,
+   "recall@5": 0.225,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 5,
+   "delta": -0.22675,
+   "recall@5": 0.0,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 6,
+   "delta": -0.445,
+   "recall@5": 0.0,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 7,
+   "delta": -0.111542,
+   "recall@5": 0.075,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 8,
+   "delta": -0.227125,
+   "recall@5": 0.0,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 9,
+   "delta": -0.152167,
+   "recall@5": 0.0,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 10,
+   "delta": -0.479958,
+   "recall@5": 0.0,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 11,
+   "delta": 0.002667,
+   "recall@5": 0.0,
+   "evals": 77
+  },
+  {
+   "terrain": "pseudo",
+   "arm": "none(全拆)",
+   "seed": 12,
+   "delta": -0.283292,
+   "recall@5": 0.025,
+   "evals": 77
+  }
+ ]
+}

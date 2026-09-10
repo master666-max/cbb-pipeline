@@ -1,0 +1,64 @@
+# 阶段4 diff 计算器：主线阶段1输出 vs 子代理独立输出（衔尾蛇）
+# 锚 = (raw_file 规范化, raw_line_no)；再比 round/gen_score/adopt_count/drift_flag
+# 只呈现差异，不裁决。输出：sandbox/diff_stats.json + 控制台摘要
+import json, glob, os
+from collections import defaultdict, Counter
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+def load(paths):
+    out = []
+    for p in paths:
+        for l in open(p, encoding="utf-8"):
+            if l.strip():
+                out.append(json.loads(l))
+    return out
+
+def norm(p):
+    return p.replace("\\", "/").replace("衔尾蛇/data/", "").replace("衔尾蛇/reports/", "R:").replace(".json", "").replace(".md", "").replace(".jsonl", "")
+
+mine = load([os.path.join(ROOT, "unified", "衔尾蛇.jsonl"), os.path.join(ROOT, "unified", "衔尾蛇reports.jsonl")])
+theirs = load([os.path.join(ROOT, "sandbox", "independent", "xws_independent.jsonl")])
+
+def key(r): return (norm(r.get("raw_file", "")), r.get("raw_line_no"))
+
+mk = defaultdict(list); tk = defaultdict(list)
+for r in mine: mk[key(r)].append(r)
+for r in theirs: tk[key(r)].append(r)
+
+only_mine = sorted(set(mk) - set(tk))
+only_theirs = sorted(set(tk) - set(mk))
+both = set(mk) & set(tk)
+
+field_diffs = []
+for k in sorted(both):
+    a = mk[k][0]; b = tk[k][0]
+    d = {}
+    if a.get("round") != b.get("round"): d["round"] = (a.get("round"), b.get("round"))
+    if a.get("gen_score") != b.get("gen_score"): d["gen_score"] = (a.get("gen_score"), b.get("gen_score"))
+    if a.get("adopt_count") != b.get("adopt_count"): d["adopt_count"] = (a.get("adopt_count"), b.get("adopt_count"))
+    if a.get("drift_flag") != b.get("drift_flag"): d["drift_flag"] = (a.get("drift_flag"), b.get("drift_flag"))
+    if d:
+        field_diffs.append({"anchor": k, "mine_run": a.get("run_id"), "their_run": b.get("run_id"), "diffs": d,
+                            "mine_note": (a.get("notes_raw") or "")[:80], "their_note": (b.get("notes_raw") or "")[:80]})
+
+def fam(k):
+    f = k[0]
+    for pre in ["x2_clean", "x2bc", "x2d", "x3b", "x3-pseudo", "x3-clean", "x3-drift", "x3-noisecorr", "x3-noiseind",
+                "x3c", "x5_real", "x6b", "x1_static", "x0_", "x1_probes", "x2_clean_summary", "x3_summary", "x3c_summary",
+                "x24_summary", "x4_results", "x5_real_summary", "x6b_summary", "x6a_summary", "x6c_e32_summary", "R:"]:
+        if f.startswith(pre): return pre
+    return f.split("-")[0]
+
+stats = {
+    "mine_rows": len(mine), "their_rows": len(theirs),
+    "anchor_both": len(both), "anchor_only_mine": len(only_mine), "anchor_only_theirs": len(only_theirs),
+    "field_diff_records": len(field_diffs),
+    "only_mine_by_family": dict(Counter(fam(k) for k in only_mine)),
+    "only_theirs_by_family": dict(Counter(fam(k) for k in only_theirs)),
+    "field_diff_by_type": dict(Counter(t for fd in field_diffs for t in fd["diffs"])),
+    "field_diff_by_family": dict(Counter(fam(fd["anchor"]) for fd in field_diffs)),
+}
+json.dump({"stats": stats, "field_diffs": field_diffs,
+           "only_mine": [list(k) for k in only_mine], "only_theirs": [list(k) for k in only_theirs]},
+          open(os.path.join(ROOT, "sandbox", "diff_stats.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+print(json.dumps(stats, ensure_ascii=False, indent=1))

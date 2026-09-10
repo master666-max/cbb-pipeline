@@ -1,0 +1,88 @@
+# final_metrics.txt · PART IV 元观测指标（全部机械计算，输出到 stdout）
+# 运行: py -X utf8 sandbox/final_metrics.txt
+import csv, os
+from collections import defaultdict
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # 工作根=大审查/
+
+rows = list(csv.DictReader(open('data-archive.csv', encoding='utf-8-sig')))
+ml = list(csv.DictReader(open('meta_log.csv', encoding='utf-8-sig')))
+mc = list(csv.DictReader(open('meta_check.csv', encoding='utf-8-sig')))
+
+print('=== A. 基本盘 ===')
+print('hypotheses=%d SUPPORTED=%d REFUTED=%d INCONCLUSIVE=%d' % (
+    len(rows), sum(1 for r in rows if r['verdict'] == 'SUPPORTED'),
+    sum(1 for r in rows if r['verdict'] == 'REFUTED'),
+    sum(1 for r in rows if r['verdict'] == 'INCONCLUSIVE')))
+
+print()
+print('=== B. 新颖性衰减（NOVELTY=1 计数 / 轮） ===')
+for r in ml:
+    print('round %s: novelty_flags=%s (0=全部NOVELTY1)' % (r['round'], r['novelty_flags']))
+
+print()
+print('=== C. 命中率 by source_type（SUPPORTED/总数） ===')
+by = defaultdict(lambda: [0, 0])
+for r in rows:
+    by[r['source_type']][0] += (r['verdict'] == 'SUPPORTED')
+    by[r['source_type']][1] += 1
+for k, (s, n) in sorted(by.items()):
+    print('%s: %d/%d = %.4f' % (k, s, n, s / n))
+
+print()
+print('=== D. confirm_vs_disconfirm 随轮次 ===')
+for r in ml:
+    print('round %s: %s' % (r['round'], r['confirm_vs_disconfirm']))
+
+print()
+print('=== E. 先验校准（按 prior 桶：实际 SUPPORTED 率 vs 平均先验） ===')
+buckets = defaultdict(lambda: [0.0, 0, 0])
+for r in rows:
+    p = float(r['self_report_prior'])
+    b = 'p>=0.7' if p >= 0.7 else ('0.55<=p<0.7' if p >= 0.55 else 'p<0.55')
+    buckets[b][0] += p
+    buckets[b][1] += (r['verdict'] == 'SUPPORTED')
+    buckets[b][2] += 1
+for b, (sp, s, n) in sorted(buckets.items()):
+    print('%s: n=%d 平均先验=%.4f 实际命中率=%.4f 差(先验-实际)=%+.4f' % (b, n, sp / n, s / n, sp / n - s / n))
+
+print()
+print('=== F. R5-REVIEW 前后校准对比（轮1-5 vs 轮6-12） ===')
+def calib(rs):
+    priors = [float(r['self_report_prior']) for r in rs]
+    hits = [1 if r['verdict'] == 'SUPPORTED' else 0 for r in rs]
+    return sum(priors) / len(priors), sum(hits) / len(hits), len(rs)
+pre = calib([r for r in rows if int(r['round']) <= 5])
+post = calib([r for r in rows if int(r['round']) >= 6])
+print('R1-5: n=%d 平均先验=%.4f 命中率=%.4f' % pre)
+print('R6-12: n=%d 平均先验=%.4f 命中率=%.4f' % post)
+
+print()
+print('=== G. divergence 曲线（meta_log 自填 vs meta_check 机测） ===')
+mc_by = {r['round']: r for r in mc}
+for r in ml:
+    m = mc_by.get(r['round'], {})
+    same = (r['divergence_mean'] == m.get('divergence_mean'))
+    print('round %s: 自填=%s 机测=%s %s' % (r['round'], r['divergence_mean'] or '(空)',
+          m.get('divergence_mean') or '(空)', '一致' if same else '★分歧'))
+    diffs = []
+    for col in ('hypotheses_n', 'source_type_split', 'priors', 'hits', 'novelty_flags', 'directions',
+                'eval_count_used', 'toolbox_extensions', 'confirm_vs_disconfirm', 'divergence_mean',
+                'boundary_conditions_total', 'REVIEW_DRIVEN_n'):
+        if r.get(col) != m.get(col):
+            diffs.append('%s: 自填[%s] 机测[%s]' % (col, r.get(col), m.get(col)))
+    if diffs:
+        print('    列级分歧: %s' % '; '.join(diffs))
+
+print()
+print('=== H. 先验校准曲线细节（prior vs hit 逐条） ===')
+for r in rows:
+    print('%s %s prior=%s verdict=%s post=%s' % (r['round'], r['hypothesis_id'],
+          r['self_report_prior'], r['verdict'], r['self_report_post']))
+
+print()
+print('=== I. post vs prior（事后自信变化） ===')
+up = sum(1 for r in rows if r['self_report_post'] not in ('',) and float(r['self_report_post']) > float(r['self_report_prior']))
+down = sum(1 for r in rows if r['self_report_post'] not in ('',) and float(r['self_report_post']) < float(r['self_report_prior']))
+same = len(rows) - up - down
+print('post>prior: %d | post<prior: %d | 持平: %d' % (up, down, same))

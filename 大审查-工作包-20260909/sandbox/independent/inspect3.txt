@@ -1,0 +1,126 @@
+# -*- coding: utf-8 -*-
+# 预检：重复性/等价性/行数/排版
+import json, os, sys, io, hashlib
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+DATA = r"D:\zcode专用！！！！危险！！！！！！！！！\大审查\衔尾蛇\data"
+
+def raw(name):
+    with open(os.path.join(DATA, name), encoding="utf-8") as f:
+        return f.read()
+
+def sha(name):
+    return hashlib.sha256(raw(name).encode("utf-8")).hexdigest()[:16]
+
+print("== x2bc 三个文件哈希 ==")
+for n in ["x2bc_results.json", "x2bc_results_coef0.08.json", "x2bc_results_coef0.25.json"]:
+    print(n, sha(n))
+
+print("\n== 多行排版检查（行数） ==")
+for n in ["x0_results.json", "x0_equivalence.json", "x1_probes.json", "x2_clean-G2-s1.json",
+          "x2bc_results.json", "x2d_stage1.json", "x2d_stage2.json", "x2d_R_entries.json",
+          "x3_summary.json", "x3b_valley.json", "x3c_summary.json", "x4_results.json",
+          "x5_real_summary.json", "x6a_summary.json", "x6b_summary.json", "x6c_e32_summary.json",
+          "x2_clean_summary.json", "x24_summary.json", "meta_layer.json", "x3-clean-G4-s9.json",
+          "x6b-P-s1.json", "x5_real-G4-clean-s1.json", "x3c-G2-s1.json"]:
+    print(n, len(raw(n).splitlines()))
+
+print("\n== x1_static.jsonl 行数与键 ==")
+lines = [l for l in raw("x1_static.jsonl").splitlines() if l.strip()]
+print("n_lines =", len(lines))
+for i, l in enumerate(lines):
+    o = json.loads(l)
+    print(i + 1, "seed=", o.get("seed"), "keys=", sorted(o.keys()))
+
+print("\n== x5_real_summary.results 是否与独立文件一致 ==")
+s = json.loads(raw("x5_real_summary.json"))
+for key, arr in s["results"].items():
+    parts = key.split("_")
+    stem = f"x5_real-{parts[0]}-{parts[1]}"
+    mism = 0
+    for elem in arr:
+        fn = f"{stem}-s{elem['seed']}.json"
+        if not os.path.exists(os.path.join(DATA, fn)):
+            print(key, "MISSING FILE", fn); continue
+        fd = json.loads(raw(fn))
+        # 文件里可能有额外字段，比较共有键
+        diff = {k: (elem.get(k), fd.get(k)) for k in set(elem) & set(fd) if elem.get(k) != fd.get(k)}
+        if diff:
+            mism += 1
+            print(key, "seed", elem["seed"], "DIFF", diff)
+    print(key, "n=", len(arr), "mismatch_files=", mism)
+print("g0 keys:", sorted(s["g0"].keys()), {k: sorted(v.keys()) for k, v in list(s["g0"].items())[:1]})
+
+print("\n== x6b_summary.rows 是否与独立文件一致 ==")
+s = json.loads(raw("x6b_summary.json"))
+mism = 0
+for elem in s["rows"]:
+    fn = f"x6b-{elem['group']}-s{elem['seed']}.json"
+    fd = json.loads(raw(fn))
+    if elem != fd:
+        mism += 1
+        print("DIFF", fn, elem, fd)
+print("rows n=", len(s["rows"]), "mismatch=", mism)
+print("x6b 判定:", s["summary"].get("判定"))
+
+print("\n== x2d_stage2.r_entries 与 x2d_R_entries ==")
+r1 = json.loads(raw("x2d_R_entries.json"))
+r2 = json.loads(raw("x2d_stage2.json"))["r_entries"]
+print("R_entries ids:", [e["id"] for e in r1], " stage2 ids:", [e["id"] for e in r2], " equal=", r1 == r2)
+print("ctrl id:", json.loads(raw("x2d_stage2.json"))["ctrl"].get("id"))
+
+print("\n== x2_clean_summary G1及格线 ==")
+s = json.loads(raw("x2_clean_summary.json"))
+print("G1_及格线_dG0 =", s["summary"]["G1_及格线_dG0"])
+print("G6 =", s["summary"]["G6"])
+
+print("\n== x6a rows 组分布 ==")
+s = json.loads(raw("x6a_summary.json"))
+from collections import Counter
+print(Counter([(r["group"], r["seed"]) for r in s["rows"]]).most_common(3), "n=", len(s["rows"]))
+print("keys of row:", sorted(s["rows"][0].keys()))
+
+print("\n== x6c rows 分布 ==")
+s = json.loads(raw("x6c_e32_summary.json"))
+print(Counter([(r["lib"], r["set"]) for r in s["rows"]]), "n=", len(s["rows"]))
+print("measured_top8 sample:", s["measured_top8"][:3])
+
+print("\n== x2bc 内部列表长度 ==")
+d = json.loads(raw("x2bc_results.json"))
+print("pure_greedy", len(d["x2b"]["pure_greedy"]), "w_imp_scan", len(d["x2b"]["w_imp_scan"]),
+      "x2c.rows", len(d["x2c"]["rows"]), "verdict", d["x2b"]["verdict_作弊不可表达"])
+print("x2c version:", d["x2c"]["version"], "retention:", d["x2c"]["retention_single_mean"], d["x2c"]["retention_pareto_mean"])
+pol = {}
+for r in d["x2c"]["rows"]:
+    pol.setdefault(r["policy"], []).append(r["seed"])
+print("policies:", {k: sorted(v) for k, v in pol.items()})
+
+print("\n== x2_clean 各文件 log 长度与 group/seed 校验 ==")
+bad = 0
+for g in range(2, 7):
+    for s_ in range(1, 9):
+        fn = f"x2_clean-G{g}-s{s_}.json"
+        fd = json.loads(raw(fn))
+        if fd["result"]["group"] != f"G{g}" or fd["result"]["seed"] != s_ or len(fd["log"]) != 25:
+            bad += 1
+            print("BAD", fn, fd["result"]["group"], fd["result"]["seed"], len(fd["log"]))
+print("bad =", bad)
+
+print("\n== x3/x3c/x5/x6b 文件名与内部字段校验 ==")
+import glob
+bad = 0
+for fn in os.listdir(DATA):
+    stem = fn[:-5] if fn.endswith(".json") else None
+    if stem and (stem.startswith("x3-") or stem.startswith("x3c-") or stem.startswith("x5_real-") or stem.startswith("x6b-")):
+        fd = json.loads(raw(fn))
+        grp = fd.get("group")
+        seed = fd.get("seed")
+        import re
+        m = re.match(r"^(x3-clean|x3-drift|x3-noisecorr|x3-noiseind|x3-pseudo|x3c|x5_real|x6b)-([GPL0-9]+)-s(\d+)$", stem)
+        if not m:
+            print("NOMATCH", stem); bad += 1; continue
+        g2 = m.group(2)
+        if (grp != g2) or (seed != int(m.group(3))):
+            print("MISMATCH", stem, grp, seed); bad += 1
+        if len(fd.get("log") or []) not in (0,):
+            pass
+print("bad =", bad)

@@ -1,0 +1,169 @@
+# X10 · 训练侧毒任务边际迁移预报器 + 审计规模处方表（测量线；规则与判据冻结于 reports/X10_边际迁移预报器_预注册.md）
+# 运行：py -X utf8 proto/x10_margin_transfer.txt
+# 三段：①处方表（超几何算术）②回溯组（x8-NG 16 run）一致性检查 ③前瞻组（seeds 25–40 新演化）主判据。
+# 输出：data/x10-ng-s{seed}.json、data/x10_prescription.json、data/x10_summary.json
+import sys, re, json, time, random, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+from math import comb
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+TOL, GENS, KIDS = 0.005, META["gens"], META["kids"]
+PROSPECT = list(range(25, 41))
+
+def build_lib(seed):
+    lib = SB / f"lib-x10-ng-s{seed}"
+    if not (lib / "state.json").exists():
+        m.cmd_install("L2", [], lib, True)
+        entries, _ = evocore.build_world(seed)
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        for e in entries:
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                 "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                 "source_event_id": seid, "importance": e["importance"],
+                 "confidence": "中", "validity": {"t_valid": e["created_at"]}}, ensure_ascii=False))
+    return lib
+
+def evolve_ng(seed):
+    """与 x8/x9 NG 臂逐位同构。"""
+    lib = build_lib(seed)
+    entries, kw_of = evocore.build_world(seed)
+    train, held, audit = evocore.build_tasks(seed, entries)
+    rng = random.Random(seed * 31 + sum(map(ord, "PL")))
+    mainline = dict(evocore.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    cache = {}
+    def sc(cfg):
+        key = tuple(sorted(cfg.items()))
+        if key not in cache:
+            cache[key] = evocore.score_lib(lib, train, cfg, kw_of=kw_of)
+        return cache[key]
+    for gen in range(1, GENS + 1):
+        for _ in range(KIDS):
+            pool = sorted(archive, key=lambda c: -sc(c))
+            parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+            child = evocore.mutate(parent, rng)
+            if sc(child) - sc(parent) > -TOL:
+                archive.append(dict(child))
+                if len(archive) > 30:
+                    archive.pop(min(range(len(archive)), key=lambda i: sc(archive[i])))
+            if sc(child) > sc(mainline):
+                mainline = dict(child)
+    res = {"seed": seed, "final_mainline": mainline,
+           "audit_recall5": round(evocore.recall_at_k(lib, audit, mainline, kw_of=kw_of), 4)}
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    res["doctor_ok"] = "全一致" in buf.getvalue()
+    (DATA / f"x10-ng-s{seed}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+def is_poison(t):
+    return t["kw"] == "K1" or t["q"].split()[0] == "T1"
+
+def golden_rank(lib, t, cfg):
+    rid = evocore.rank_lib(lib, t["q"], cfg)
+    return next((i for i, (fid, _) in enumerate(rid, 1) if fid == t["golden"]), None)
+
+def predict(lib, train, audit, cfg):
+    """冻结规则（预注册 §一）。"""
+    k1_dead = any(t["kw"] == "K1" and golden_rank(lib, t, cfg) > 5 for t in train if t["kw"] == "K1")
+    t1_dead = any(t["q"].split()[0] == "T1" and golden_rank(lib, t, cfg) > 5 for t in train if t["q"].split()[0] == "T1")
+    audit_k1 = any(t["kw"] == "K1" for t in audit)
+    audit_t1 = any(t["q"].split()[0] == "T1" for t in audit)
+    return (k1_dead and audit_k1) or (t1_dead and audit_t1), {"k1_dead": k1_dead, "t1_dead": t1_dead}
+
+# ── ① 处方表 ──
+print("== ① 审计规模处方表（80 任务池，超几何） ==", flush=True)
+rx = {}
+for N, label in ((4, "K1"), (5, "T1"), (9, "任一毒")):
+    row = {n: round(1 - comb(80 - N, n) / comb(80, n), 3) for n in (8, 16, 32, 48, 64, 72)}
+    need = {}
+    for target in (0.90, 0.95):
+        n = next((k for k in range(1, 81) if 1 - comb(80 - N, k) / comb(80, k) >= target), None)
+        need[f"{int(target*100)}%"] = n
+    rx[label] = {"N": N, "detect": row, "min_n": need}
+    print(f"{label}(N={N}): " + " ".join(f"n={k}:{v:.2f}" for k, v in row.items()) + f" | 90%需n={need['90%']} 95%需n={need['95%']}", flush=True)
+(DATA / "x10_prescription.json").write_text(json.dumps(rx, ensure_ascii=False, indent=1), encoding="utf-8")
+
+# ── ② 前瞻组演化 ──
+t0 = time.time()
+print("== ② 前瞻组演化 seeds 25–40 ==", flush=True)
+for seed in PROSPECT:
+    r = evolve_ng(seed)
+    print(f"[s{seed}] task={r['audit_recall5']:.2f} {r['final_mainline']} doctor={'OK' if r['doctor_ok'] else 'BAD'}", flush=True)
+
+# ── ③ 预报器：回溯 + 前瞻 ──
+print("== ③ 预报器（规则冻结于预注册） ==", flush=True)
+conf = {"回溯x8-NG": {"TP": 0, "FP": 0, "FN": 0, "TN": 0}, "前瞻x10": {"TP": 0, "FP": 0, "FN": 0, "TN": 0}}
+detail = []
+for tag, pref, seed_list in (("回溯x8-NG", "x8-NG", range(1, 9)), ("前瞻x10", "x10-ng", PROSPECT)):
+    for seed in seed_list:
+        r = json.loads((DATA / f"{pref}-s{seed}.json").read_text(encoding="utf-8"))
+        cfg = r["final_mainline"]
+        lib = SB / (f"lib-{pref.lower()}-s{seed}" if pref == "x10-ng" else f"lib-x8-NG-s{seed}")
+        entries, kw_of = evocore.build_world(seed)
+        train, held, audit = evocore.build_tasks(seed, entries)
+        pred, channels = predict(lib, train, audit, cfg)
+        actual = r["audit_recall5"] < 0.95
+        c = conf[tag]
+        c[["TN", "FN", "FP", "TP"][int(actual) * 2 + int(pred)]] += 1
+        if pred or actual:
+            detail.append(f"   {'✓' if pred == actual else '✗'} {tag}-s{seed}: 实际={actual}({r['audit_recall5']:.2f}) "
+                          f"预报={pred} {channels}")
+for tag, c in conf.items():
+    print(f"{tag}: TP={c['TP']} FP={c['FP']} FN={c['FN']} TN={c['TN']}", flush=True)
+for d in detail:
+    print(d, flush=True)
+
+# 迁移矩阵（描述性）：train 通道死亡 → audit 同通道毒任务实际存活？
+mig = {"K1": {"dead": [0, 0], "alive": [0, 0]}, "T1": {"dead": [0, 0], "alive": [0, 0]}}   # [死, 活]
+for pref, seed_list in (("x8-NG", range(1, 9)), ("x10-ng", PROSPECT)):
+    for seed in seed_list:
+        r = json.loads((DATA / f"{pref}-s{seed}.json").read_text(encoding="utf-8"))
+        cfg = r["final_mainline"]
+        lib = SB / (f"lib-{pref.lower()}-s{seed}" if pref == "x10-ng" else f"lib-x8-NG-s{seed}")
+        entries, kw_of = evocore.build_world(seed)
+        train, held, audit = evocore.build_tasks(seed, entries)
+        for ch, key in (("K1", "k1_dead"), ("T1", "t1_dead")):
+            at = [t for t in audit if (t["kw"] == "K1" if ch == "K1" else t["q"].split()[0] == "T1")]
+            if not at:
+                continue
+            worst = max(golden_rank(lib, t, cfg) for t in at)
+            ch_dead = predict(lib, train, audit, cfg)[1][key]
+            mig[ch]["dead" if ch_dead else "alive"][0 if worst > 5 else 1] += 1
+for ch, d in mig.items():
+    print(f"迁移[{ch}]: train通道死→audit存活 {d['dead'][1]}/{d['dead'][0]+d['dead'][1]} | "
+          f"train通道活→audit存活 {d['alive'][1]}/{d['alive'][0]+d['alive'][1]}", flush=True)
+
+ret, pro = conf["回溯x8-NG"], conf["前瞻x10"]
+if pro["FP"] == 0 and pro["FN"] == 0:
+    verdict = "SUPPORTED（训练侧边际迁移在留出种子上全对）"
+elif pro["FP"] + pro["FN"] == 1:
+    verdict = "PARTIAL（迁移不彻底，见明细）"
+else:
+    verdict = "NOT SUPPORTED（规则与实际不符，见明细）"
+print(f"判定：{verdict}")
+summary = {"confusion": conf, "migration": mig, "判定": verdict,
+           "prescription": rx}
+(DATA / "x10_summary.json").write_text(json.dumps({"summary": summary}, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"X10 完成 {time.time()-t0:.1f}s → data/x10_summary.json")

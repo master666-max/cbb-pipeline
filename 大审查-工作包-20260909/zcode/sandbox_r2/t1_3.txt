@@ -1,0 +1,64 @@
+# -*- coding: utf-8 -*-
+# t1_3.txt — T1-3 冷启动边界（判据预注册：q0=0 时 gain>=-0.03 且终局世界均质>=0.35 -> 冷启动不依赖播种质量强形式）
+# q0∈{0,0.2,0.5,0.8} × n0∈{0,30,60} × 8 seeds × 40 代；附 q0=0 空世界 200 代长跑（4 seeds，定性）。
+import importlib.util, importlib.machinery, pathlib, json, random, statistics, sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = pathlib.Path(__file__).resolve().parent
+_ld = importlib.machinery.SourceFileLoader("r2core", str(HERE / "r2core.txt"))
+_sp = importlib.util.spec_from_loader("r2core", _ld)
+rc = importlib.util.module_from_spec(_sp); _ld.exec_module(rc)
+SEEDS, GENS, ALPHA = 8, 40, 0.7
+OUT = HERE / "out_t1_3"; OUT.mkdir(exist_ok=True)
+
+def run(seed, q0, n0, gens=GENS):
+    rng = random.Random(seed * 1013 + 17)
+    entries = rc.ds_world(seed, n0=n0, q0=q0)
+    cfg = dict(rc.V3_DEFAULT); w = 0.5
+    base = rc.ds_util(entries, cfg, ALPHA, "truth") if entries else 0.0
+    for g in range(gens):
+        rc.ds_write(entries, rng, w)
+        P = rc.ds_util(entries, cfg, ALPHA, "perceived")
+        best, db = None, rc.MARGIN0
+        for _ in range(4):
+            c = rc.mutate(rng, cfg)
+            du = rc.ds_util(entries, c, ALPHA, "perceived") - P
+            if du > db: best, db = c, du
+        if best is not None: cfg = dict(best)
+        w2 = max(0.0, min(1.0, w + rng.uniform(-0.08, 0.08)))
+        trial = [dict(e) for e in entries]
+        probe = rc.ds_write(trial, rng, w2)
+        if rc.ds_util(trial, cfg, ALPHA, "perceived") - P > rc.MARGIN0:
+            w = w2; entries.extend(probe)
+    T_end = rc.ds_util(entries, cfg, ALPHA, "truth")
+    mean_q = statistics.mean(e["rv"] for e in entries) if entries else 0.0
+    return {"seed": seed, "q0": q0, "n0": n0, "gain": round(T_end - base, 4),
+            "T_end": round(T_end, 4), "mean_q": round(mean_q, 4), "n_end": len(entries)}
+
+rows = []
+for q0 in (0.0, 0.2, 0.5, 0.8):
+    for n0 in (0, 30, 60):
+        rows += [run(s, q0, n0) for s in range(1, SEEDS + 1)]
+# 长跑：q0=0 空世界 200 代
+long_rows = []
+for s in range(1, 5):
+    r = run(s, 0.0, 0, gens=200)
+    r["note"] = "200代长跑"; long_rows.append(r)
+(OUT / "rows_t1_3.json").write_text(json.dumps({"grid": rows, "long": long_rows}, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def m(q0, n0, f):
+    return round(statistics.mean(r[f] for r in rows if r["q0"] == q0 and r["n0"] == n0), 4)
+
+print("=== 终局世界平均质量 mean_q（q0 × n0） ===")
+print("%8s %8s %8s %8s" % ("q0\\n0", "0", "30", "60"))
+for q0 in (0.0, 0.2, 0.5, 0.8):
+    print("%8.1f %8.4f %8.4f %8.4f" % (q0, m(q0, 0, "mean_q"), m(q0, 30, "mean_q"), m(q0, 60, "mean_q")))
+print()
+print("=== gain（真值增益，n0=0 时 base=0） ===")
+for q0 in (0.0, 0.2, 0.5, 0.8):
+    print("%8.1f %8.4f %8.4f %8.4f" % (q0, m(q0, 0, "gain"), m(q0, 30, "gain"), m(q0, 60, "gain")))
+print()
+ok_q = all(m(0.0, n0, "gain") >= -0.03 for n0 in (0, 30, 60))
+ok_mq = m(0.0, 60, "mean_q") >= 0.35 and m(0.0, 30, "mean_q") >= 0.35
+print("判据: q0=0 各 n0 gain>=-0.03 -> %s ; q0=0 终局均质>=0.35 -> %s ; 强形式(两者同时): %s" % (
+    ok_q, ok_mq, ok_q and ok_mq))
+print("200代长跑(q0=0,n0=0):", [(r["mean_q"], r["gain"]) for r in long_rows])

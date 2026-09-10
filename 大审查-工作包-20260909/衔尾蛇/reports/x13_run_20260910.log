@@ -1,0 +1,31 @@
+[s1] 事件5 假采纳率=0.20 task=1.00 指纹✓ doctor=OK
+[s2] 事件6 假采纳率=0.50 task=1.00 指纹✓ doctor=OK
+[s3] 事件2 假采纳率=0.50 task=1.00 指纹✓ doctor=OK
+[s4] 事件5 假采纳率=0.40 task=1.00 指纹✓ doctor=OK
+[s5] 事件14 假采纳率=0.29 task=0.88 指纹✓ doctor=OK
+[s6] 事件7 假采纳率=0.43 task=1.00 指纹✓ doctor=OK
+[s7] 事件10 假采纳率=0.20 task=1.00 指纹✓ doctor=OK
+[s8] 事件9 假采纳率=0.33 task=0.75 指纹✓ doctor=OK
+[s9] 事件7 假采纳率=0.14 task=1.00 指纹✓ doctor=OK
+[s10] 事件16 假采纳率=0.31 task=1.00 指纹✓ doctor=OK
+[s11] 事件5 假采纳率=0.20 task=0.88 指纹✓ doctor=OK
+[s12] 事件6 假采纳率=0.17 task=1.00 指纹✓ doctor=OK
+[s13] 事件6 假采纳率=0.17 task=0.88 指纹✓ doctor=OK
+[s14] 事件10 假采纳率=0.40 task=1.00 指纹✓ doctor=OK
+[s15] 事件7 假采纳率=0.57 task=1.00 指纹✓ doctor=OK
+[s16] 事件9 假采纳率=0.11 task=1.00 指纹✓ doctor=OK
+[s17] 事件7 假采纳率=0.43 task=1.00 指纹✓ doctor=OK
+[s18] 事件5 假采纳率=0.20 task=1.00 指纹✓ doctor=OK
+[s19] 事件13 假采纳率=0.31 task=1.00 指纹✓ doctor=OK
+[s20] 事件7 假采纳率=0.14 task=1.00 指纹✓ doctor=OK
+[s21] 事件8 假采纳率=0.12 task=1.00 指纹✓ doctor=OK
+[s22] 事件14 假采纳率=0.36 task=1.00 指纹✓ doctor=OK
+[s23] 事件6 假采纳率=0.33 task=1.00 指纹✓ doctor=OK
+[s24] 事件10 假采纳率=0.40 task=1.00 指纹✓ doctor=OK
+跨轮指纹（≡x8-NG）: True；采纳事件总数 = 194
+T1(小边际,均值0.0149): 假采纳率=0.4531  T2: 0.3538  T3(大边际,均值0.4076): 0.0923
+池化 Spearman(train_margin, audit_delta) = 0.5674
+T1 带内受伤种子事件占比 = 0.1875（受伤种子占事件总体 0.1753）
+判定：SUPPORTED（梯度律跨实现复现：假采纳率随边际单调下降）
+X13 完成 34.7s
+exit=0

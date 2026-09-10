@@ -1,0 +1,77 @@
+# 独立复核混元交接包（PT-011：不信对方验收脚本，亲手戳关键声明）
+import importlib.util, importlib.machinery, json, zipfile, hashlib
+from pathlib import Path
+from dataclasses import FrozenInstanceError
+
+PKG = Path(r"D:\zcode专用！！！！危险！！！！！！！！！\大审查\混元\自演化离线实验")
+results = []
+def check(name, ok, detail=""):
+    results.append((name, bool(ok), str(detail)[:150]))
+    print(f"[{'PASS' if ok else 'FAIL'}] {name}" + (f" — {detail}" if detail else ""))
+
+# 1) zip 与解包逐字节一致（90 条目全查）
+zf = zipfile.ZipFile(Path(r"D:\zcode专用！！！！危险！！！！！！！！！\大审查\混元\自演化离线实验_完整包-交接.zip"))
+mismatch, checked = [], 0
+for info in zf.infolist():
+    if info.is_dir():
+        continue
+    name = info.filename
+    try:
+        fixed = name.encode("cp437").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        fixed = name
+    f = PKG.parent / fixed          # 解包时 DST=混元根，已含 zip 内部顶层目录
+    checked += 1
+    if not f.exists() or hashlib.sha256(f.read_bytes()).hexdigest() != hashlib.sha256(zf.read(info)).hexdigest():
+        mismatch.append(fixed)
+check("1 zip↔解包 逐字节一致", not mismatch, f"{checked} 文件比对，不一致 {len(mismatch)}")
+
+# 2) 内核 27 项验收独立复跑（不经过对方 verify 脚本）
+kernels = list(PKG.glob("**/kernel.py"))
+kpath = kernels[0] if kernels else None
+import sys
+spec = importlib.util.spec_from_file_location("hy_kernel", str(kpath))
+k = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = k          # dataclass 注解解析要求模块先入 sys.modules
+spec.loader.exec_module(k)
+check("2 内核可独立加载", True, f"{kpath.name}, {len(Path(kpath).read_text(encoding='utf-8').splitlines())} 行")
+
+# 3) 类型红线：ScreenResult 不含 accept
+sr = getattr(k, "ScreenResult", None)
+import typing
+sr_args = typing.get_args(sr) if sr else ()
+check("3 ScreenResult 无 accept（类型级红线）", "accept" not in sr_args and "reject" in sr_args, f"取值={sr_args}")
+
+# 4) JudgeScore 对外掩蔽
+js = getattr(k, "JudgeScore", None)
+v = js(3.14) if js else None
+check("4 JudgeScore 对外掩蔽", js is not None and str(v) == "<judge:internal-only>" and abs(v.internal - 3.14) < 1e-9, f"str={str(v)}")
+
+# 5) Meta 冻结（frozen dataclass 不可变）
+Meta = k.Meta
+meta = Meta()
+froze_ok = False
+try:
+    meta.budget = 1
+except FrozenInstanceError:
+    froze_ok = True
+check("5 Meta 冻结不可变", froze_ok, f"budget={meta.budget} signature={meta.signature}")
+
+# 6) 元层关键数字与 HANDOVER 声明一致
+check("6 预算=300（E93 judge 可操纵门槛）", meta.budget == 300)
+check("7 危险阈值=3（E115 降档）", meta.danger_threshold == 3)
+check("8 盲评 alpha=0.95（E87）", abs(meta.blind_alpha - 0.95) < 1e-9)
+check("9 审计频率=5、探针轮换=10（E97b/E84）", meta.audit_every == 5 and meta.rotate_every == 10)
+
+# 10) 内核 27 项验收独立复跑：自己以子进程直呼 verify_kernel.py 并解析结论行
+import subprocess, sys as _sys, re as _re
+r = subprocess.run([_sys.executable, str(PKG / "proto" / "verify_kernel.py")],
+                   capture_output=True, text=True, encoding="utf-8", errors="replace")
+summary = next((l for l in reversed(r.stdout.splitlines()) if "PASS" in l), r.stdout.splitlines()[-1] if r.stdout else "(无输出)")
+mm = _re.search(r"PASS\s*(\d+)\s*/\s*FAIL\s*(\d+)", summary) or _re.search(r"(\d+)\s*/\s*(\d+)", summary)
+ok10 = bool(mm) and int(mm.group(1)) >= 27 and int(mm.group(2) or 0) == 0
+check("10 内核 27 项验收独立复跑", ok10, summary.strip()[:120])
+
+# 汇总
+npass = sum(1 for _, ok, _ in results if ok)
+print(f"\n独立复核：{npass}/{len(results)} 通过")

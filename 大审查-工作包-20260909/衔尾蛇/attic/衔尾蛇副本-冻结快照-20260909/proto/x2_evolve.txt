@@ -1,0 +1,208 @@
+# X2a · 自演化主实验（干净场景）—— G2/G3/G4/G5/G6 × 8 种子
+# 运行：py -X utf8 proto/x2_evolve.txt
+# 纪律：
+#   - 元层冻结：vendor sha16 必须匹配 meta_layer.json，否则拒跑
+#   - 演化只动法层参数；每次晋升把参数写入 state.json 并以真引擎 chain_append/_ledger_append
+#     入审计链/账本 + 刷根（谱系在真审计面留痕；单进程写 = X1 并发探针认定的安全形态）
+#   - 评分缓存合法：库 substrate（memory/）在演化期不变，cfg 的任务集分数是常量（缓存键含 cfg 全量）
+#   - G5 锚定审计在 X2a 不接通道（无漂移注入时一致性按构造=1.0，接假通道只会产出 E34 式假阳/假阴），
+#     其活跃组件=留出集轮换+停摆监控；锚定审计真通道在 X3 漂移场景启用
+# 输出：data/x2_clean-{group}-s{seed}.json、data/x2_clean_summary.json
+import sys, re, json, time, random, hashlib, importlib.util, importlib.machinery
+from pathlib import Path
+from contextlib import redirect_stdout
+from io import StringIO
+
+BASE = Path(__file__).resolve().parent.parent
+VENDOR = BASE / "proto" / "vendor" / "bs3_snapshot.txt"
+PKG = BASE / "sandbox" / "pkgdata"
+SB = BASE / "sandbox"
+DATA = BASE / "data"
+META = json.loads((DATA / "meta_layer.json").read_text(encoding="utf-8"))
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+vendor_sha = hashlib.sha256(VENDOR.read_bytes()).hexdigest()[:16]
+assert vendor_sha == META["vendor_sha16"], f"vendor sha 漂移：{vendor_sha} ≠ {META['vendor_sha16']}"
+evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+m = load_mod("bs3_vendor", VENDOR)
+m.set_data_dir(str(PKG))
+MARGIN, TOL, GENS, KIDS = META["margin"], 0.005, META["gens"], META["kids"]
+SEEDS = META["seeds"]
+
+def build_lib(group, seed):
+    lib = SB / f"lib-{group}-s{seed}"
+    if not (lib / "state.json").exists():
+        m.cmd_install("L2", [], lib, True)
+        entries, _ = evocore.build_world(seed)
+        tail = sorted((lib / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()[-1]
+        seid = "M-" + re.search(r"h:([0-9a-f]{64})", tail).group(1)[:12]
+        for e in entries:
+            m.cmd_engine("append", str(lib), json.dumps(
+                {"id": e["id"], "created_at": e["created_at"], "updated_at": "",
+                 "content": e["content"], "keywords": e["keywords"], "links": e["links"],
+                 "source_event_id": seid, "importance": e["importance"],
+                 "confidence": "中", "validity": {"t_valid": e["created_at"]}}, ensure_ascii=False))
+    return lib
+
+def promote(lib, gen, cfg):
+    st_p = lib / "state.json"
+    st = json.loads(st_p.read_text(encoding="utf-8"))
+    st["law_params"] = cfg
+    m.chain_append(lib / "audit", f"X2 法层晋升 gen={gen} cfg={json.dumps(cfg, ensure_ascii=False)}")
+    m._ledger_append(lib, "law-promote", f"gen={gen}")
+    st["merkle_root"] = m.merkle_root(lib, exclude={"state.json"})
+    st_p.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+
+def doctor_verdict(lib):
+    buf = StringIO()
+    with redirect_stdout(buf):
+        m.cmd_engine("doctor", str(lib))
+    out = buf.getvalue()
+    ok = "全一致" in out                      # doctor 只在五态全一致时打印「五态 全一致」
+    return ok, out.strip().splitlines()[0]
+
+def g6_grid(cfg):
+    cands = []
+    for p in evocore.PARAMS:
+        for f in (0.7, 1.3):
+            d = dict(cfg); d[p] = round(max(0.0, d[p] * f), 4); cands.append(d)
+    for p, v in (("w_age", 0.0), ("w_imp", 0.0), ("w_kw", 1.0)):
+        d = dict(cfg); d[p] = v; cands.append(d)
+    d = dict(cfg); d["filter_zero"] = 1 - d["filter_zero"]; cands.append(d)
+    return cands
+
+def cfg_key(cfg):
+    return tuple(sorted(cfg.items()))
+
+def run(group, seed):
+    lib = build_lib(group, seed)
+    entries, kw_of = evocore.build_world(seed)
+    train, held0, audit = evocore.build_tasks(seed, entries)
+    held_shards = [evocore.build_tasks(seed * 100 + i, entries)[1] for i in (1, 2, 3)]  # G5 轮换池
+    rng = random.Random(seed * 31 + sum(map(ord, group)))
+    mainline = dict(evocore.DEFAULT_CFG)
+    archive = [dict(mainline)]
+    margin_eff = MARGIN
+    stall = 0
+    evals = 0
+    cache = {}
+    log = []
+    t0 = time.time()
+
+    def sc(cfg, tasks, label):
+        nonlocal evals
+        key = (cfg_key(cfg), label)
+        if key not in cache:
+            evals += 1
+            cache[key] = evocore.score_lib(lib, tasks, cfg, kw_of=kw_of)
+        return cache[key]
+
+    for gen in range(1, GENS + 1):
+        promoted = 0
+        if group == "G6":
+            if gen % 5 == 0:
+                best_u, best_c = max(((sc(c, train, "train"), c) for c in g6_grid(mainline)),
+                                     key=lambda x: x[0])
+                if best_u > sc(mainline, train, "train") + margin_eff:
+                    mainline = dict(best_c)
+                    promote(lib, gen, mainline)
+                    promoted += 1
+        else:
+            for _ in range(KIDS):
+                pool = sorted(archive, key=lambda c: -sc(c, train, "train"))
+                parent = rng.choice(pool[:3]) if (rng.random() < 0.7 and len(pool) >= 3) else rng.choice(pool)
+                child = evocore.mutate(parent, rng)
+                tr_p, tr_c = sc(parent, train, "train"), sc(child, train, "train")
+                if group in ("G4", "G5") and tr_c < tr_p - 3 * TOL:   # 廉价筛选：只淘汰（红线 7）
+                    continue
+                if tr_c - tr_p > -TOL:                                 # 档案宽松准入（E7）
+                    archive.append(dict(child))
+                    if len(archive) > 30:                              # 淘汰训练分最低者（分数已缓存，零成本）
+                        archive.pop(min(range(len(archive)), key=lambda i: sc(archive[i], train, "train")))
+                # ── 晋升门 ──
+                if group == "G2":
+                    ok = tr_c > sc(mainline, train, "train")
+                elif group == "G3":
+                    d_tr = evocore.paired_diff(lib, train, child, mainline, kw_of=kw_of)
+                    ok = sum(d_tr) / len(d_tr) > margin_eff
+                else:  # G4/G5：训练配对门 + 留出配对门 + bootstrap 95% 下界（红线 15）
+                    d_tr = evocore.paired_diff(lib, train, child, mainline, kw_of=kw_of)
+                    if sum(d_tr) / len(d_tr) <= margin_eff:
+                        ok = False
+                    else:
+                        held = held_shards[(gen // 8) % len(held_shards)] if group == "G5" else held0
+                        d_he = evocore.paired_diff(lib, held, child, mainline, kw_of=kw_of)
+                        evals += 1
+                        ok = (sum(d_he) / len(d_he) > margin_eff
+                              and evocore.bootstrap_ci_low(d_he, n_boot=META["bootstrap_n"], seed=seed) > max(0.0, margin_eff))
+                if ok:
+                    mainline = dict(child)
+                    promote(lib, gen, mainline)
+                    promoted += 1
+        # G5 停摆监控（E44）：连续 5 代零采纳 → margin 减半一次
+        if group == "G5":
+            stall = stall + 1 if promoted == 0 else 0
+            if stall >= 5 and margin_eff > MARGIN / 2:
+                margin_eff = MARGIN / 2
+                stall = 0
+        log.append({"gen": gen, "promoted": promoted, "mainline": dict(mainline),
+                    "train_U": round(sc(mainline, train, "train"), 4)})
+    res = {"group": group, "seed": seed, "final_mainline": mainline,
+           "audit_U": round(evocore.score_lib(lib, audit, mainline, kw_of=kw_of), 4),
+           "train_U": round(sc(mainline, train, "train"), 4),
+           "held_U": round(evocore.score_lib(lib, held0, mainline, kw_of=kw_of), 4),
+           "audit_recall5": round(evocore.recall_at_k(lib, audit, mainline, kw_of=kw_of), 4),
+           "evals": evals, "archive_n": len(archive), "margin_eff": margin_eff,
+           "wall_s": round(time.time() - t0, 1),
+           "audit_chain_lines": sum(len(f.read_text(encoding="utf-8").strip().splitlines())
+                                    for f in (lib / "audit").glob("lifelog-*.md"))}
+    ok, first = doctor_verdict(lib)
+    res["doctor_ok"], res["doctor"] = ok, first
+    (DATA / f"x2_clean-{group}-s{seed}.json").write_text(
+        json.dumps({"result": res, "log": log}, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+t0 = time.time()
+allres = []
+for group in ("G2", "G3", "G4", "G5", "G6"):
+    for seed in SEEDS:
+        r = run(group, seed)
+        allres.append(r)
+        print(f"[{group} s{seed}] audit_U={r['audit_U']:+.4f} train_U={r['train_U']:+.4f} "
+              f"evals={r['evals']} doctor_ok={r['doctor_ok']} ({r['wall_s']}s)")
+        if not r["doctor_ok"]:
+            print(f"    !! doctor: {r['doctor']}")
+
+g0 = {r["seed"]: r for r in (json.loads(l) for l in (DATA / "x1_static.jsonl").read_text(encoding="utf-8").splitlines())}
+g1_gap = sum(r["G1_audit_U"] - r["G0_audit_U"] for r in g0.values()) / 8
+summary = {"G1_及格线_dG0": round(g1_gap, 4)}
+for group in ("G2", "G3", "G4", "G5", "G6"):
+    rows = [r for r in allres if r["group"] == group]
+    d_audit = [r["audit_U"] - g0[r["seed"]]["G0_audit_U"] for r in rows]
+    d_train = [r["train_U"] - g0[r["seed"]]["G0_train_U"] for r in rows]
+    summary[group] = {
+        "audit_U_mean": round(sum(r["audit_U"] for r in rows) / len(rows), 4),
+        "dG0_audit_mean": round(sum(d_audit) / len(d_audit), 4),
+        "dG0_audit_ci_low": round(evocore.bootstrap_ci_low(d_audit, seed=0), 4),
+        "dG0_audit_n_pos": sum(1 for x in d_audit if x > 0),
+        "selfreport_minus_true": round(sum(d_train) / len(d_train) - sum(d_audit) / len(d_audit), 4),
+        "evals_mean": round(sum(r["evals"] for r in rows) / len(rows), 1),
+        "doctor_ok": sum(1 for r in rows if r["doctor_ok"]),
+    }
+print("\n===== X2a 汇总（vs G0 静态基线；及格线 G1）=====")
+print(f"{'组':<5}{'审计ΔU':>10}{'CI下界':>10}{'正种子':>7}{'自报-真实':>10}{'评估数':>8}{'doctorOK':>9}")
+for g in ("G2", "G3", "G4", "G5", "G6"):
+    s = summary[g]
+    print(f"{g:<5}{s['dG0_audit_mean']:>+10.4f}{s['dG0_audit_ci_low']:>+10.4f}"
+          f"{s['dG0_audit_n_pos']:>5}/8{s['selfreport_minus_true']:>+10.4f}{s['evals_mean']:>8.1f}{s['doctor_ok']:>7}/8")
+print(f"{'G1':<5}{summary['G1_及格线_dG0']:>+10.4f}  (一次性人工调参，无评估数口径)")
+(DATA / "x2_clean_summary.json").write_text(
+    json.dumps({"summary": summary, "wall_total_s": round(time.time() - t0, 1)}, ensure_ascii=False, indent=1),
+    encoding="utf-8")
+print(f"\nX2a 完成，总耗时 {time.time() - t0:.1f}s → data/x2_clean_summary.json")

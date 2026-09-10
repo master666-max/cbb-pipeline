@@ -1,0 +1,626 @@
+{
+ "table": {
+  "deceptive": {
+   "full": {
+    "delta_mean": 0.423264,
+    "delta_std": 0.079502,
+    "recall_mean": 0.6125,
+    "evals_mean": 162.0,
+    "escaped": "10/12"
+   },
+   "-cheap": {
+    "delta_mean": 0.423264,
+    "delta_std": 0.079502,
+    "recall_mean": 0.6125,
+    "evals_mean": 162.0,
+    "escaped": "10/12"
+   },
+   "-holdout-gate": {
+    "delta_mean": 0.423264,
+    "delta_std": 0.117906,
+    "recall_mean": 0.6125,
+    "evals_mean": 162.0,
+    "escaped": "10/12"
+   },
+   "-pareto-archive": {
+    "delta_mean": 0.30243,
+    "delta_std": 0.094956,
+    "recall_mean": 0.6125,
+    "evals_mean": 162.0,
+    "escaped": "0/12"
+   },
+   "-stall-monitor": {
+    "delta_mean": 0.423264,
+    "delta_std": 0.079502,
+    "recall_mean": 0.6125,
+    "evals_mean": 162.0,
+    "escaped": "10/12"
+   },
+   "none(全拆)": {
+    "delta_mean": 0.337847,
+    "delta_std": 0.115041,
+    "recall_mean": 0.6125,
+    "evals_mean": 122.0,
+    "escaped": "3/12"
+   }
+  }
+ },
+ "rows": [
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 1,
+   "delta": 0.407625,
+   "recall@5": 0.675,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 2,
+   "delta": 0.532083,
+   "recall@5": 0.75,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 3,
+   "delta": 0.4485,
+   "recall@5": 0.5,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 4,
+   "delta": 0.429625,
+   "recall@5": 0.9,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 5,
+   "delta": 0.429833,
+   "recall@5": 0.575,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 6,
+   "delta": 0.464208,
+   "recall@5": 0.875,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 7,
+   "delta": 0.384958,
+   "recall@5": 0.4,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 8,
+   "delta": 0.349333,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 9,
+   "delta": 0.348583,
+   "recall@5": 0.475,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 10,
+   "delta": 0.606833,
+   "recall@5": 0.775,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 11,
+   "delta": 0.31775,
+   "recall@5": 0.325,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "full",
+   "seed": 12,
+   "delta": 0.359833,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 1,
+   "delta": 0.407625,
+   "recall@5": 0.675,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 2,
+   "delta": 0.532083,
+   "recall@5": 0.75,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 3,
+   "delta": 0.4485,
+   "recall@5": 0.5,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 4,
+   "delta": 0.429625,
+   "recall@5": 0.9,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 5,
+   "delta": 0.429833,
+   "recall@5": 0.575,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 6,
+   "delta": 0.464208,
+   "recall@5": 0.875,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 7,
+   "delta": 0.384958,
+   "recall@5": 0.4,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 8,
+   "delta": 0.349333,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 9,
+   "delta": 0.348583,
+   "recall@5": 0.475,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 10,
+   "delta": 0.606833,
+   "recall@5": 0.775,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 11,
+   "delta": 0.31775,
+   "recall@5": 0.325,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-cheap",
+   "seed": 12,
+   "delta": 0.359833,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 1,
+   "delta": 0.552625,
+   "recall@5": 0.675,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 2,
+   "delta": 0.532083,
+   "recall@5": 0.75,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 3,
+   "delta": 0.4485,
+   "recall@5": 0.5,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 4,
+   "delta": 0.574625,
+   "recall@5": 0.9,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 5,
+   "delta": 0.429833,
+   "recall@5": 0.575,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 6,
+   "delta": 0.319208,
+   "recall@5": 0.875,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 7,
+   "delta": 0.384958,
+   "recall@5": 0.4,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 8,
+   "delta": 0.204333,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 9,
+   "delta": 0.348583,
+   "recall@5": 0.475,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 10,
+   "delta": 0.606833,
+   "recall@5": 0.775,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 11,
+   "delta": 0.31775,
+   "recall@5": 0.325,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-holdout-gate",
+   "seed": 12,
+   "delta": 0.359833,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 1,
+   "delta": 0.407625,
+   "recall@5": 0.675,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 2,
+   "delta": 0.387083,
+   "recall@5": 0.75,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 3,
+   "delta": 0.3035,
+   "recall@5": 0.5,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 4,
+   "delta": 0.429625,
+   "recall@5": 0.9,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 5,
+   "delta": 0.284833,
+   "recall@5": 0.575,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 6,
+   "delta": 0.319208,
+   "recall@5": 0.875,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 7,
+   "delta": 0.239958,
+   "recall@5": 0.4,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 8,
+   "delta": 0.204333,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 9,
+   "delta": 0.203583,
+   "recall@5": 0.475,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 10,
+   "delta": 0.461833,
+   "recall@5": 0.775,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 11,
+   "delta": 0.17275,
+   "recall@5": 0.325,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-pareto-archive",
+   "seed": 12,
+   "delta": 0.214833,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 1,
+   "delta": 0.407625,
+   "recall@5": 0.675,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 2,
+   "delta": 0.532083,
+   "recall@5": 0.75,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 3,
+   "delta": 0.4485,
+   "recall@5": 0.5,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 4,
+   "delta": 0.429625,
+   "recall@5": 0.9,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 5,
+   "delta": 0.429833,
+   "recall@5": 0.575,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 6,
+   "delta": 0.464208,
+   "recall@5": 0.875,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 7,
+   "delta": 0.384958,
+   "recall@5": 0.4,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 8,
+   "delta": 0.349333,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 9,
+   "delta": 0.348583,
+   "recall@5": 0.475,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 10,
+   "delta": 0.606833,
+   "recall@5": 0.775,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 11,
+   "delta": 0.31775,
+   "recall@5": 0.325,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "-stall-monitor",
+   "seed": 12,
+   "delta": 0.359833,
+   "recall@5": 0.55,
+   "evals": 162
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 1,
+   "delta": 0.552625,
+   "recall@5": 0.675,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 2,
+   "delta": 0.387083,
+   "recall@5": 0.75,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 3,
+   "delta": 0.4385,
+   "recall@5": 0.5,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 4,
+   "delta": 0.429625,
+   "recall@5": 0.9,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 5,
+   "delta": 0.284833,
+   "recall@5": 0.575,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 6,
+   "delta": 0.319208,
+   "recall@5": 0.875,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 7,
+   "delta": 0.239958,
+   "recall@5": 0.4,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 8,
+   "delta": 0.204333,
+   "recall@5": 0.55,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 9,
+   "delta": 0.203583,
+   "recall@5": 0.475,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 10,
+   "delta": 0.461833,
+   "recall@5": 0.775,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 11,
+   "delta": 0.17275,
+   "recall@5": 0.325,
+   "evals": 122
+  },
+  {
+   "terrain": "deceptive",
+   "arm": "none(全拆)",
+   "seed": 12,
+   "delta": 0.359833,
+   "recall@5": 0.55,
+   "evals": 122
+  }
+ ]
+}

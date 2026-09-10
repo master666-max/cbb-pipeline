@@ -1,0 +1,47 @@
+# X8 · law_w_imp 决策 A/B——重要度权重在真实库上的三档实测（只读检索，不写库）
+# 运行：py -X utf8 proto/x8_wimp.txt
+# 背景：库调试工作区（v3.9，33 条金标查询）默认 w_imp=1.0 下 17 条 miss 全是 PT-005 零命中霸占 top1
+#       （importance 通道现行犯）。本实验量三档 w_imp ∈ {1.0, 0.5, 0.0} 的 recall@5 / MRR。
+# 输出：data/x8_wimp.json
+import json, importlib.util, importlib.machinery
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent.parent
+LIB = Path(r"D:\zcode专用！！！！危险！！！！！！！！！\库调试工作区")
+
+def load_mod(name, path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_file_location(name, str(path), loader=loader)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+evocore = load_mod("evocore", BASE / "proto" / "evocore.txt")
+gq = json.loads((LIB / "evals" / "golden_queries.json").read_text(encoding="utf-8"))
+
+def measure(cfg):
+    hits = rr = 0
+    top1_pt005 = 0
+    misses = []
+    for item in gq:
+        top5 = [fid for fid, _ in evocore.rank_lib(LIB, item["query"], cfg)[:5]]
+        if item["expected"][0] in top5:
+            hits += 1
+            rr += 1.0 / (top5.index(item["expected"][0]) + 1)
+        else:
+            misses.append(f"{item['query']}（top1={top5[0] if top5 else '-'}）")
+        if top5 and top5[0] == "PT-005":
+            top1_pt005 += 1
+    n = len(gq)
+    return {"recall5": round(hits / n, 4), "mrr": round(rr / n, 4), "misses": n - hits,
+            "PT005霸占top1次数": top1_pt005, "miss清单": misses}
+
+rows = {}
+for w in (1.0, 0.5, 0.0):
+    cfg = {"w_kw": 3.0, "w_content": 1.0, "w_imp": w, "w_age": 0.1, "filter_zero": 0}
+    r = measure(cfg)
+    rows[f"w_imp={w}"] = r
+    print(f"w_imp={w}: recall@5={r['recall5']}  MRR={r['mrr']}  miss={r['misses']}  PT-005霸占top1={r['PT005霸占top1次数']}次")
+
+(BASE / "data" / "x8_wimp.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+print(f"→ {BASE / 'data' / 'x8_wimp.json'}")

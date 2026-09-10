@@ -1,0 +1,32 @@
+  corrupt_strict_slow: 44/44
+  corrupt_strict_slow_cd: 44/44
+  drift_strict_slow: 44/44
+  drift_strict_slow_cd: 44/44
+  none_strict_slow: 44/44
+  none_strict_slow_cd: 44/44
+
+================================================================================================
+E144 · 修复延迟（streak>=3）是否重开 corrupt 边界（配对 n=44）
+--- corrupt ---
+strict          增益=+0.1908  回退= 1.0 CD重启= 0.0
+strict_slow     增益=+0.1596  回退= 0.9 CD重启= 0.0
+strict_slow_cd  增益=+0.0209  回退= 0.2 CD重启= 0.7
+  strict_slow vs strict: -0.0312 ± 0.0156 (t=-2.00)
+  strict_slow_cd vs strict: -0.1700 ± 0.0230 (t=-7.38)
+  strict_slow_cd vs strict_slow: -0.1388 ± 0.0206 (t=-6.73)
+  corrupt 赛跑：CD曾报警 31/44；报警先于修复 31；首报代均值=12.0；首修复代均值=12.8
+--- drift ---
+strict          增益=-0.1459  回退= 8.5 CD重启= 0.0
+strict_slow     增益=-0.1249  回退= 6.0 CD重启= 0.0
+strict_slow_cd  增益=-0.0018  回退= 0.4 CD重启= 0.9
+  strict_slow vs strict: +0.0210 ± 0.0115 (t=+1.82)
+  strict_slow_cd vs strict: +0.1441 ± 0.0215 (t=+6.69)
+  strict_slow_cd vs strict_slow: +0.1231 ± 0.0216 (t=+5.69)
+--- none ---
+strict          增益=+0.2091  回退= 0.0 CD重启= 0.0
+strict_slow     增益=+0.2099  回退= 0.0 CD重启= 0.0
+strict_slow_cd  增益=+0.2099  回退= 0.0 CD重启= 0.0
+  strict_slow vs strict: +0.0008 ± 0.0007 (t=+1.17)
+  strict_slow_cd vs strict: +0.0008 ± 0.0007 (t=+1.17)
+  strict_slow_cd vs strict_slow: +0.0000 ± 0.0000 (t=+0.00)
+================================================================================================

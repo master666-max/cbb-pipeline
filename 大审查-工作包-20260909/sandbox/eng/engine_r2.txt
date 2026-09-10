@@ -1,0 +1,51 @@
+# engine_r2.txt · Round 2 最小噪声评估引擎（世界定义锁定于 round-2-预注册.md）
+# 运行: py -X utf8 sandbox/eng/engine_r2.txt  → sandbox/out/r2_results.json
+import random, json, os
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+G, STEP, N_RUNS = 30, 0.35, 100
+H1_CELLS = [(s, 0.05) for s in (0.02, 0.06, 0.10)]
+H2_CELLS = [(0.08, m) for m in (0.0, 0.05, 0.15, 0.30)]
+
+def U(x, t):
+    d2 = (x[0] - t[0]) ** 2 + (x[1] - t[1]) ** 2
+    return max(0.0, 1.0 - d2)
+
+def run_once(seed, sigma, margin):
+    rng = random.Random(seed)
+    t = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+    x = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+    x0, t0 = x, t
+    u_init = U(x0, t0)
+    events = []
+    for g in range(1, G + 1):
+        cand = (x[0] + rng.gauss(0, STEP), x[1] + rng.gauss(0, STEP))
+        obs_c = U(cand, t) + rng.gauss(0, sigma)
+        obs_m = U(x, t) + rng.gauss(0, sigma)
+        if obs_c > obs_m + margin:
+            dtrue = U(cand, t) - U(x, t)
+            events.append({'g': g, 'dtrue': round(dtrue, 10)})
+            x = cand
+    return {'final_U': round(U(x, t), 10), 'init_U': round(u_init, 10), 'events': events}
+
+def main():
+    cells, seen = [], set()
+    all_cells = H1_CELLS + [c for c in H2_CELLS if c not in seen]
+    for ci, (sigma, margin) in enumerate(all_cells):
+        key = (sigma, margin)
+        if key in seen:
+            continue
+        seen.add(key)
+        runs = [run_once(ci * 100000 + ri, sigma, margin) for ri in range(N_RUNS)]
+        cells.append({'sigma': sigma, 'margin': margin, 'runs': runs})
+        n_ad = sum(len(r['events']) for r in runs)
+        fr = sum(1 for r in runs for e in r['events'] if e['dtrue'] <= 0)
+        print('cell sigma=%.2f margin=%.2f: adopt=%d false=%d finalU_mean=%.4f' % (
+            sigma, margin, n_ad, fr, sum(r['final_U'] for r in runs) / len(runs)))
+    os.makedirs('sandbox/out', exist_ok=True)
+    json.dump({'cells': cells}, open('sandbox/out/r2_results.json', 'w', encoding='utf-8'), ensure_ascii=False)
+    print('written sandbox/out/r2_results.json (%d cells)' % len(cells))
+
+if __name__ == '__main__':
+    main()

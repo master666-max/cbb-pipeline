@@ -1,0 +1,176 @@
+# 阶段1 归一化提取器 · deepseek（B级 md 源）
+# 口径（登记于 reports/01-归一化.md）：
+#   gen_score 一律取各表"真值"列（主矩阵/电池/探针1/2 = u_audit；探针3 = T_truth）
+#   adopt_count 取"采纳数/adopts"列，缺失填 null；round 一律 null（md 中只有终局均值，无逐代序列）
+#   run_id 规范：主矩阵-<场景>-<arm> / 电池A-spur30-<arm> / 电池B-switch30-<arm> /
+#               探针1-switchc40死区-<arm> / 探针1-switchc_zero2-<arm> / 探针2-rowops2-<场景>-<arm> / 探针3-e81-<arm>
+#   场景名去括号注记（"dup-drift(旧金标)"→"dup-drift"），注记保留在 notes_raw 逐字行内
+#   实验设计文档=设计非数据，0行登记；探针2"冗余度"表=非效用指标，不入库（防口径混淆），已登记
+# 表行解析失败 → unified/dirty/deepseek__*.txt 带行号
+import os, re, json
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(ROOT, "deepseek")
+rows, dirty = [], []
+
+def add(run_id, gs, ac, line_no, fn, note):
+    rows.append({"source": "deepseek", "run_id": run_id, "round": None, "gen_score": gs,
+                 "adopt_count": ac, "drift_flag": None, "raw_line_no": line_no,
+                 "raw_file": f"deepseek/{fn}", "notes_raw": note})
+
+def cells(line):
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+def num(s):
+    s = s.replace("**", "").replace("+", "").replace("−", "-").strip()
+    s = re.sub(r"[(（].*?[)）]\s*$", "", s).strip()  # 去尾部注记 0.4167(退化)->0.4167
+    if s in ("—", "-", ""):
+        return None
+    try: return float(s)
+    except ValueError: return None
+
+def parse_table(lines, start, header_sig, run_fmt, score_col, adopt_col=None, rowkey_col=0,
+               merge_label=None):
+    """从 header_sig 匹配行开始逐行解析表格直到空行/非表行"""
+    i = start
+    hdr = cells(lines[start])
+    if header_sig is not None and not all(any(sig in h for h in hdr) for sig in header_sig[0]):
+        dirty.append((CUR_FN, start + 1, lines[start], "表头签名不符"))
+        return
+    j = start + 2  # 跳过分隔行
+    while j < len(lines) and lines[j].strip().startswith("|"):
+        cs = cells(lines[j])
+        key = cs[rowkey_col].replace("**", "")
+        arms = [a.strip() for a in key.split("/")] if "/" in key else [key]
+        for arm in arms:
+            arm = arm.strip()
+            if merge_label and len(arms) > 1:
+                rid = run_fmt.format(key=merge_label)
+            else:
+                rid = run_fmt.format(key=re.sub(r"[(（].*?[)）]", "", arm).strip())
+            try:
+                gs = num(cs[score_col]) if score_col is not None and score_col < len(cs) else None
+                ac = num(cs[adopt_col]) if adopt_col is not None and adopt_col < len(cs) else None
+            except Exception:
+                dirty.append((CUR_FN, j + 1, lines[j], "单元格数值解析失败"))
+                continue
+            if score_col is not None and score_col < len(cs) and gs is None and cs[score_col] not in ("—", ""):
+                dirty.append((CUR_FN, j + 1, lines[j], f"真值列非数值: {cs[score_col]}"))
+            add(rid, gs, ac, j + 1, CUR_FN, lines[j].rstrip())
+        j += 1
+
+def load(fn):
+    global CUR_FN
+    CUR_FN = fn
+    return open(os.path.join(SRC, fn), encoding="utf-8").read().splitlines()
+
+# ---- 结果报告_V2_第一轮运行.md ----
+L = load("结果报告_V2_第一轮运行.md")
+for i, ln in enumerate(L):
+    if ln.startswith("| 场景 | static | bare | gated |"):
+        # 列: 场景|static|bare|gated|Δ|正种子 -> 每场景3臂
+        j = i + 2
+        while j < len(L) and L[j].strip().startswith("|"):
+            cs = cells(L[j]); scene = re.sub(r"[(（].*?[)）]", "", cs[0].replace("**", "")).strip()
+            for k, arm in ((1, "static"), (2, "bare"), (3, "gated")):
+                add(f"主矩阵-{scene}-{arm}", num(cs[k]), None, j + 1, CUR_FN, L[j].rstrip())
+            j += 1
+    elif ln.startswith("| arm | 自报 u_trainA | 真值 u_audit |"):
+        parse_table(L, i, [(("arm"), )], "电池A-spur30-{key}", 2, 5)
+    elif ln.startswith("| arm | u_audit | u_trainA |"):
+        parse_table(L, i, None, "电池B-switch30-{key}", 1, None)
+
+# ---- 结果_综合实验报告_第一轮与探针.md ----
+L = load("结果_综合实验报告_第一轮与探针.md")
+for i, ln in enumerate(L):
+    if ln.startswith("| 场景 | static | bare | gated |"):
+        j = i + 2
+        while j < len(L) and L[j].strip().startswith("|"):
+            cs = cells(L[j]); scene = re.sub(r"[(（].*?[)）]", "", cs[0].replace("**", "")).strip()
+            for k, arm in ((1, "static"), (2, "bare"), (3, "gated")):
+                add(f"主矩阵-{scene}-{arm}", num(cs[k]), None, j + 1, CUR_FN, L[j].rstrip())
+            j += 1
+    elif ln.startswith("| arm | 自报 u_trainA | 真值 u_audit |"):
+        parse_table(L, i, None, "电池A-spur30-{key}", 2, 5)
+    elif ln.startswith("| arm | u_audit | u_trainA |"):
+        parse_table(L, i, None, "电池B-switch30-{key}", 1, None)
+    elif ln.startswith("| arm | u_audit | uA_true(主线) |") :
+        parse_table(L, i, None, "探针1-switchc_zero2-{key}", 1, None, merge_label=None)
+    elif ln.startswith("| 场景 | static | gated(仅参数) |"):
+        j = i + 2
+        while j < len(L) and L[j].strip().startswith("|"):
+            cs = cells(L[j]); scene = re.sub(r"[(（].*?[)）]", "", cs[0].replace("**", "")).strip()
+            for k, arm in ((1, "static"), (2, "gated"), (3, "gated-row")):
+                add(f"探针2-rowops2-{scene}-{arm}", num(cs[k]), None, j + 1, CUR_FN, L[j].rstrip())
+            j += 1
+    elif ln.startswith("| 臂 | P_judge(自报) | T_truth |"):
+        # 综合报告版仅4列(无adopts列)；合并行(bare / anchor)拆分为两臂
+        j = i + 2
+        while j < len(L) and L[j].strip().startswith("|"):
+            cs = cells(L[j]); key = cs[0].replace("**", "")
+            arms = [re.sub(r"[(（].*?[)）]", "", a).strip() for a in key.split("/")]
+            for arm in arms:
+                if not arm: continue
+                add(f"探针3-e81-{arm}", num(cs[2]) if len(cs) > 2 else None, None,
+                    j + 1, CUR_FN, L[j].rstrip())
+            j += 1
+
+# ---- 结果_探针1_Pareto与灾难性遗忘.md ----
+L = load("结果_探针1_Pareto与灾难性遗忘.md")
+for i, ln in enumerate(L):
+    if ln.startswith("| arm | adopts | uA_true |"):
+        j = i + 2
+        while j < len(L) and L[j].strip().startswith("|"):
+            cs = cells(L[j]); key = cs[0].replace("**", "")
+            if "/" in key:  # 合并行 bare / single / gated / gated-cap
+                rid = "探针1-switchc40死区-演化臂合并"
+                gs = num(cs[2]); ac = None  # adopts为"0.8~1.0"区间，非单值
+                if "~" in cs[1]: ac = None
+                add(rid, gs, ac, j + 1, CUR_FN, L[j].rstrip())
+            else:
+                add(f"探针1-switchc40死区-{key.strip()}", num(cs[2]), num(cs[1]), j + 1, CUR_FN, L[j].rstrip())
+            j += 1
+    elif ln.startswith("| arm | u_audit | uA_true(主线) |"):
+        parse_table(L, i, None, "探针1-switchc_zero2-{key}", 1, None)
+
+# ---- 结果_探针2_行层算子与dup_drift.md ----
+L = load("结果_探针2_行层算子与dup_drift.md")
+for i, ln in enumerate(L):
+    if ln.startswith("| 场景 | static | gated(仅参数) |"):
+        j = i + 2
+        while j < len(L) and L[j].strip().startswith("|"):
+            cs = cells(L[j]); scene = re.sub(r"[(（].*?[)）]", "", cs[0].replace("**", "")).strip()
+            for k, arm in ((1, "static"), (2, "gated"), (3, "gated-row")):
+                add(f"探针2-rowops2-{scene}-{arm}", num(cs[k]), None, j + 1, CUR_FN, L[j].rstrip())
+            j += 1
+    # 冗余度表(| 场景 | static | gated | gated-row |)故意不入库：非效用指标
+
+# ---- 结果_探针3_judge通道污染.md ----
+L = load("结果_探针3_judge通道污染.md")
+for i, ln in enumerate(L):
+    if ln.startswith("| arm | P_judge(自报) | T_truth"):
+        j = i + 2
+        while j < len(L) and L[j].strip().startswith("|"):
+            cs = cells(L[j])
+            arm = cs[0].replace("**", "").strip()
+            arm = re.sub(r"^e81-", "", arm)  # e81-static -> static，避免探针3-e81-e81-static
+            arm = re.sub(r"[(（].*?[)）]", "", arm).strip()  # anchor(仅锚定)->anchor，跨文件run_id对齐
+            # 列: P_judge | T_truth | gap | adopts | 触发 | 回退
+            gs = num(cs[2]) if len(cs) > 2 else None
+            ac = num(cs[4]) if len(cs) > 4 and cs[4] not in ("—",) else None
+            add(f"探针3-e81-{arm}", gs, ac, j + 1, CUR_FN, L[j].rstrip())
+            j += 1
+
+# 实验设计_记忆库自演化引擎V2.md：设计文档，0行（登记）
+
+with open(os.path.join(ROOT, "unified", "deepseek.jsonl"), "w", encoding="utf-8", newline="\n") as f:
+    for r in rows:
+        f.write(json.dumps(r, ensure_ascii=False) + "\n")
+if dirty:
+    with open(os.path.join(ROOT, "unified", "dirty", "deepseek__tables.txt"), "w", encoding="utf-8", newline="\n") as f:
+        for fn, ln, txt, why in dirty:
+            f.write(f"[{fn}:{ln}] why={why}\n{txt}\n")
+print("rows=", len(rows), "dirty=", len(dirty), "runs=", len(set(r["run_id"] for r in rows)))
+from collections import Counter
+for k, v in sorted(Counter(r["run_id"].rsplit("-", 1)[0] if "-" in r["run_id"] else r["run_id"] for r in rows).items()):
+    print(f"  {v:3d}  {k}")

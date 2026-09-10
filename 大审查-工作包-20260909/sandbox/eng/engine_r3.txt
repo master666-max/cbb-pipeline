@@ -1,0 +1,95 @@
+# engine_r3.txt · Round 3 世界切换×档案结构引擎（世界定义锁定于 round-3-预注册.md）
+# 运行: py -X utf8 sandbox/eng/engine_r3.txt            → 跑实验，出 sandbox/out/r3_results.json
+#       py -X utf8 sandbox/eng/engine_r3.txt --check    → 手算单测（U 不变量 + 支配函数）
+import random, json, os, sys
+
+os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # 工作根=大审查/
+
+G, SWITCH, STEP, SIGMA, MARGIN, K, N_RUNS = 30, 15, 0.35, 0.03, 0.05, 5, 100
+
+def U(x, t):
+    d2 = (x[0] - t[0]) ** 2 + (x[1] - t[1]) ** 2
+    return max(0.0, 1.0 - d2)
+
+def dominates(va, vb):
+    """va, vb: 效用向量。va 支配 vb = 两维 >= 且至少一维 >。"""
+    return all(a >= b for a, b in zip(va, vb)) and any(a > b for a, b in zip(va, vb))
+
+def obs(rng, x, t):
+    return U(x, t) + rng.gauss(0, SIGMA)
+
+def sample_targets(rng):
+    while True:
+        ta = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+        tb = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+        if (ta[0] - tb[0]) ** 2 + (ta[1] - tb[1]) ** 2 >= 1.2 ** 2:
+            return ta, tb
+
+def best_on(archive, t):
+    return max(U(x, t) for x in archive)
+
+def run_once(seed, arm):
+    rng = random.Random(seed)
+    ta, tb = sample_targets(rng)
+    x0 = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+    archive = [x0]
+    k = 1 if arm == 'single' else K
+    snap15 = None
+    for g in range(1, G + 1):
+        t = ta if g <= SWITCH else tb
+        seen = [ta] if g <= SWITCH else [ta, tb]
+        parent = max(archive, key=lambda x: obs(rng, x, t))
+        cand = (parent[0] + rng.gauss(0, STEP), parent[1] + rng.gauss(0, STEP))
+        obs_c = obs(rng, cand, t)
+        obs_w = min(obs(rng, x, t) for x in archive)
+        if obs_c > obs_w + MARGIN:
+            archive = archive + [cand]
+            while len(archive) > k:
+                # 优先淘汰被支配者（对已见世界真值向量的含噪支配判断）
+                noisy_vec = lambda x: tuple(obs(rng, x, tt) for tt in seen)
+                vecs = [noisy_vec(x) for x in archive]
+                evict = None
+                for i in range(len(archive)):
+                    for j in range(len(archive)):
+                        if i != j and dominates(vecs[j], vecs[i]):
+                            evict = i
+                            break
+                    if evict is not None:
+                        break
+                if evict is None:
+                    evict = min(range(len(archive)), key=lambda i: obs(rng, archive[i], t))
+                archive.pop(evict)
+        if g == SWITCH:
+            snap15 = list(archive)
+    return {'retA': round(best_on(archive, ta) - best_on(snap15, ta), 10),
+            'Bg': round(best_on(archive, tb) - best_on(snap15, tb), 10)}
+
+def check():
+    ok = True
+    cases = [(U((0, 0), (0, 0)), 1.0), (U((2, 0), (0, 0)), 0.0), (U((0.5, 0), (0, 0)), 0.75)]
+    for got, exp in cases:
+        print('U got=%.4f exp=%.4f %s' % (got, exp, 'PASS' if abs(got - exp) < 5e-5 else 'FAIL'))
+        ok = ok and abs(got - exp) < 5e-5
+    d1 = dominates((0.8, 0.3), (0.5, 0.2))
+    d2 = dominates((0.8, 0.3), (0.9, 0.1))
+    print('dominates1 got=%s exp=True %s' % (d1, 'PASS' if d1 else 'FAIL'))
+    print('dominates2 got=%s exp=False %s' % (d2, 'PASS' if not d2 else 'FAIL'))
+    ok = ok and d1 and not d2
+    print('CHECK', 'PASS' if ok else 'FAIL')
+    return ok
+
+def main():
+    out = {'single': [], 'pareto': []}
+    for arm in ('single', 'pareto'):
+        for ri in range(N_RUNS):
+            out[arm].append(run_once(7000 + ri, arm))
+        rs = out[arm]
+        print('%s: mean_retA=%.4f mean_Bg=%.4f' % (
+            arm, sum(r['retA'] for r in rs) / len(rs), sum(r['Bg'] for r in rs) / len(rs)))
+    json.dump(out, open('sandbox/out/r3_results.json', 'w', encoding='utf-8'), ensure_ascii=False)
+    print('written sandbox/out/r3_results.json')
+
+if __name__ == '__main__':
+    if '--check' in sys.argv:
+        sys.exit(0 if check() else 1)
+    main()
