@@ -72,3 +72,7 @@
 
 ## 三、回滚
 每步一个 commit，`git revert/reset --hard <上一步>` 可逐步回退；临时区与工作包 .git 全程原位不动=终极回滚点。
+
+---
+
+> **执行结果注（2026-09-11 追加）**：全部六步已执行。第2步审计区实际落位 `D:\zcode-workspace-audit`（用户于迁出后令加 zcode 前缀更名；审计区 git 自 BORN `886ac73` 连续有效）。本文内旧路径 `D:\workspace-audit` 均按新路径解读。并入实测 118,497 项对账零差异（smoke_r12×31=vanished 系并行会话清理的执行废墟，见 manifest disposition）；迁出 298 项对账零差异。主区 commit 链：5476d70(AUDIT-ERRATA+tag zero-point-v1) → c781164(MERGE) → 05788db7(AUDIT-EXIT)。

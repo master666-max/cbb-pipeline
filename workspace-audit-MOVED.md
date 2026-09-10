@@ -2,7 +2,7 @@
 
 考古产出目录 `workspace-audit/` 已于 2026-09-11 迁出至独立审计区：
 
-**`D:\workspace-audit`**（独立 git 仓库，BORN commit `886ac73`）
+**`D:\zcode-workspace-audit`**（独立 git 仓库，BORN commit `886ac73`）
 
 - 迁出时点：本主区 commit `5476d70`（= tag `zero-point-v1`，红队勘误后终态）
 - 完整性：298 项文件逐文件 sha256 对账零差异，清单见新家 `出生证明.md`

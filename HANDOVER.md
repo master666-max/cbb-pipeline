@@ -136,6 +136,6 @@ DeepSeek 线 00_交接文档_零损失.md（V2 八场景/R1~R5/统计协议）�
 主工作区已于 2026-09-11 **解冻**，双区架构落地：
 
 1. **临时区回灌**：`D:\临时工作区` 的 `大审查-工作包-20260909/`（冻结期工作副本，118,481 文件，嵌套 .git 留原位）与 `大审查2/`（16 文件核验包）整目录并入本区根（MERGE commit `c781164`，118,529 项清单对账零差异，`_meta/tmp-merge-manifest.csv`）。**并入≠入账**：账本零改动，语义入账=下一轮增量制图（扫描范围 `zero-point-v1..HEAD`，跳过 `_meta/`、存根、HANDOVER、`.v2c/`）。
-2. **审计区迁出**：`workspace-audit/` 已整体迁出至 `D:\workspace-audit`（独立 git，BORN `886ac73`；298 项对账零差异，出生证明+锚点协议v2+零损失交接见新家）。主区 `git rm` 仅记录离开；冻结纪元锚点验证一律 `git show zero-point-v1:<路径>`。
+2. **审计区迁出**：`workspace-audit/` 已整体迁出至 `D:\zcode-workspace-audit`（独立 git，BORN `886ac73`；298 项对账零差异，出生证明+锚点协议v2+零损失交接见新家）。主区 `git rm` 仅记录离开；冻结纪元锚点验证一律 `git show zero-point-v1:<路径>`。
 3. **零点已固化**：tag `zero-point-v1` = commit `5476d70`（红队审计 PASS 后勘误终态：毒0/伤7/痒5，伤级已全数机械修复，详见新家 errata-log.md）。
 4. **实验点火入口**：10-branch-proposals.md 排序表第一条（P-A1 总法则七验），七字段预注册 → 执行 → 每动作 commit。
