@@ -1,19 +1,21 @@
 # 知识库索引（2026-09-04 · v4 更新）
 
-> ⚠️ **主工作区冻结公告（2026-09-09）**：主工作区暂时冻结——不写/不改/不删/不移动任何文件，只允许读。
-> 解冻与恢复工作见 `大审查/混元/HANDOVER-ZCode线-20260909.md`（混元实验线交接文件）。
-> 本页以下内容为冻结时点的快照状态。
+> ✅ **解冻公告（2026-09-09 深夜）**：主工作区冻结已由用户解除，恢复正常工作。
+> 冻结期：2026-09-09（交接文件：根 `HANDOVER.md` 总册 + `大审查/混元/HANDOVER-ZCode线-20260909.md` 混元线分册，保留作史）。
+> 解冻后第一动作：知识库 lint 体检（已完成，见 trajectory task-025）。
 
 > **每次任务开始必读本文件。** 常驻 AI 上下文，保持 200 行内。
 > 加载顺序：`soul/SOUL.md` → `soul/USER.md` → 本文件。
 > 维护规则：每次 wrap-up 的第 5 步同步更新；按验证次数/触发频率排序；断链当场修复（或跑 `py -X utf8 tools/lint_knowledge_base.txt`）。
 
 ## 反思计数
-- 自最后反思以来 wrap-up 次数：3（2026-09-09 reflect R-007~009 后：①迷深角色卡审查续跑 ②混元实验接手+假阴性重测轮 ③第二十八轮更正：对账网页端并行产出、撤回 2a、立 P-014）
-- 最后反思：2026-09-09（R-007~009）
+- 自最后反思以来 wrap-up 次数：2（2026-09-11 reflect R-011~013 后清零；①内核项目关单+工具链通用化+审计规划 ②豆包线十三轮收口+原作者分支接收+WO-AUDIT-豆包规划）
+- 最后反思：2026-09-11（R-011 验收FAIL三因子归因 / R-012 并行协调三账本 / R-013 三载体交叉收敛）
 
 ## 高频 Pitfalls（按触发次数排序）
-- [P-014 接手外来实验线先查并行产出；被否实现上加样本量不构成证据](pitfalls.md#p-014) — 1 次触发（第二十八轮 2a 更正事故）
+- [P-016 importlib 动态加载含 @dataclass 模块：先注册 sys.modules 再 exec_module](pitfalls.md#p-016) — 1 次触发（内核验收工具链通用化三脚本同崩）
+- [P-014 接手外来实验线先查并行产出；被否实现上加样本量不构成证据](pitfalls.md#p-014) — **2 次触发**（第二十八轮 2a 更正事故；豆包线接手漏查原作者端侧工作区，v2 扩检查面）
+- [P-015 消融「边际≈0」≠「护栏无用」，先构造它所防范的危险](pitfalls.md#p-015) — 1 次触发（codebuddy §7.6 + 混元 E41 双线独立发现）
 - [P-001 Windows 脚本执行：用 py 启动器，.py 被拦就写 .txt](pitfalls.md#p-001) — 多次触发（EPUB/PDF 提取、docx 后处理、验收均命中）
 - [P-002 EPUB 解包文件名 cp437 乱码须修复](pitfalls.md#p-002) — 1 次触发
 - [P-003 清洗误报三陷阱：正文词/破折号字形/半角方括号](pitfalls.md#p-003) — 1 次触发
@@ -27,11 +29,11 @@
 - [P-012 登记层自错：hash 手抄/heredoc 断链/自填反转](pitfalls.md#p-012) — 1 次触发（registry 与 meta 双轨对照实证）
 - [P-010 长会话运营三事故：相对路径三路不同源 + 管道截断留存 + 异常归因先想别人](pitfalls.md#p-010) — 1 次触发（v3.9 应用轮路径事故+误判他方，含绝对路径取证法）
 - [PT-010 Electron 应用「转储解剖→隔离对照→缓存投喂→记录手术」排障流水线](patterns.md#pt-010) — 已验证 1 次 · 适用：桌面应用点了没反应/秒崩
-- [PT-007 文档缺陷与实现状态分开判 + 题录改动对账先行](patterns.md#pt-007) — 已验证 2 次（P3-10 双标案 + X-003「Wang 等」现行犯）
+- [PT-007 文档缺陷与实现状态分开判 + 题录改动对账先行](patterns.md#pt-007) — **已验证 4 次**（P3-10 + X-003 + 内核包 53 断言对账 + DX 假红归因）
 - [PT-008 外部 Agent Skills 手动装机路径](patterns.md#pt-008) — 已验证 1 次 · 适用：装第三方技能（clone→安检→cp -n→CLI 依赖随行）
 - [PT-009 真引擎沙盒演化实验流水线](patterns.md#pt-009) — 已验证 1 次 · 适用：真实系统外挂自优化机制的可行性验证（等价门→基线→演化→危险矩阵→内核对比）
 - [PT-012 预注册研究循环流水线](patterns.md#pt-012) — **已验证 2 次** · 适用：自拟实验→自判分的开放式研究循环（锁定/自测门/双轨/机测反推/OBL 出口；v2 增「前提检查门槛」实证）
-- [PT-011 对抗式验证流水线：基线+沙盒+静态数字核验+每结论一脚本+三态总表](patterns.md#pt-011) — **已验证 2 次** · 适用：核验外来 AI 报告/工单属实性（v2：混元交接包 9 组数字复核）
+- [PT-011 对抗式验证流水线：基线+沙盒+静态数字核验+每结论一脚本+三态总表](patterns.md#pt-011) — **已验证 4 次** · 适用：核验外来 AI 报告/工单属实性（v4：修复版验收 3FAIL+1 假红全归因）
 
 ## 验证过的 Patterns（按验证次数排序）
 - [PT-004 双库建库执行路径](patterns.md#pt-004) — **已验证 5 次** · 已 skill 化 → `skills/library-bootstrap/`（v1.1：发布包 + L8 add-on 分包）
@@ -61,6 +63,7 @@
 - [R-004 对抗式外部审查+纪律双向咬合](reflections.md#r-004) — 四轮审查链 60+ 条、属实率 ~90%
 - [R-005 凭记忆写事实=第一大错误源，对账先行根治](reflections.md#r-005) — 已升格 PT-007
 - [R-006 文书递归边际衰减，收敛判据=工件日志](reflections.md#r-006) — v2.1.4 起停止审工单文本
+- [R-010 证据语气三分离：实测/预期/未测](reflections.md#r-010) — 混用即生产假信任；对账手法各配其矛（2026-09-11）
 
 ## 前沿雷达（References）
 - [sota-memory-radar.md](references/sota-memory-radar.md) — SOTA 记忆架构七派全景：21 条目 + 升级触发器（升级前必查）
@@ -82,8 +85,13 @@
 - `trajectories/2026-09-08/task-020-自演化沙盒.md` — 自演化引擎可行性论证 232 run（H1 24 种子坐实 / E14 复现 / 伪特征免疫否定性，详见 PT-009）
 - `trajectories/2026-09-09/task-023-多AI总分析与自演化循环.md` — 大审查四部分任务：PART I 收口 + 12 轮循环 26 假设 + 元观测 + 终报（详见 PT-012/P-011/P-012）
 - `trajectories/2026-09-09/task-021-comfyui修复.md` — ComfyUI Desktop 秒崩修复（minidump 解剖/隔离对照/12 路并发绕限速/venv 补造，详见 P-008 + PT-010）
+- `trajectories/2026-09-11/task-026-内核交接包本地复跑.md` — 云端工单 WO-20260911-K01 四脚本复跑：T15 翻红证伪「53/0」宣称 + 断言数对账（详见 PT-011 v3 / R-010）
+- `trajectories/2026-09-11/task-027-内核修复最终验收.md` — v1.1 修复版最终验收门：修复本体无回归（探针 15/15+DX 10/11），3 FAIL 全归因（审计零差异形态/T5 不显著/DX 假红）（详见 PT-011 v4）
+- `trajectories/2026-09-11/task-028-v22关单版终验.md` — v2.2 可证伪重设计终验 + **关单**：T4 分位门校准为配对 t 门（原件未动+修订注释），31/31+DX 11/11 全绿 exit 0 逐字节复现；结单报告在内核修复闭环执行区
+- `trajectories/2026-09-11/task-029-豆包线十三轮收口与分支接收.md` — E80-E84 五实验（红线 78-85/F33-36/S25-27）+ 原作者端侧平行分支接收（E61-E70 编号双占用警示）+ WO-AUDIT-豆包审计规划（详见 P-014 v2）
 
 ## 工具与自动化
+- **本地 LLM-judge API**（2026-09-11 收录为可用工具，当日活体冒烟通过：服务在线、锚定提示词下返回纯 JSON）：LM Studio OpenAI 兼容服务 @ `127.0.0.1:8080`，judge 模型 M-Prometheus-14B；快速接入=根目录 `LLM-judge-API-快速接入.md`（全量版 `大审查/混元/本地LLM-judge-API-使用说明与接入文档.md`，Python 入口 `judge_adapter.make_judge("llm-api")`，缺环境变量即拒绝启动）。调用红线（违反即数据作废）：送评 canonical order（该 judge 位置偏见 .65）/ rubric 锚定必开（无锚定实测跑飞说英文）/ 分数只作内部比较不外报（冒烟中正确答案被打 0 分）/ temp=0 跨会话留 ±0.05 / `llm_judge_cache_*.json` 不许删。适用边界：探针与试点评分（本地 ~0.6s/次、并发 8→3.5 calls/s，全量实验切 DeepSeek flash API）；**不进 memevo 等确定性沙盒的评分回路**（零依赖+两次逐行一致契约）
 - 外部技能装机（2026-09-08，PT-008）：`~/.zcode/skills/` 新增 12 技能——grill-me/grilling/tdd、find-skills、K-Dense 六件（consciousness-council/literature-review/paper-lookup/database-lookup/citation-management/scientific-writing）、lark-doc/lark-shared；lark-cli v1.0.94 已装（用前需 `lark-cli auth login --recommend`）
 - `tools/search_knowledge.txt` — 知识检索：关键词直击 + [[邻居]]联想一跳（HippoRAG 2 简化版）
 - `tools/lint_knowledge_base.txt` — 全库体检：断链/超限/frontmatter/schema/过期条目（`py -X utf8` 运行）
