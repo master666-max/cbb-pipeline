@@ -1,0 +1,18 @@
+import io
+
+p = r"D:\zcode专用！！！！危险！！！！！！！！！\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+
+old_tail = "、八条待确认 triage）"
+new_tail = "、八条待确认 triage；④本体构筑工单固化（task-048）：U-B00~B09+十轮自审协议十镜头逐轮留痕+goal发车件指针化，用户三裁决落定）"
+assert old_tail in s, "count anchor not found"
+s = s.replace("wrap-up 次数：3", "wrap-up 次数：4", 1)
+s = s.replace(old_tail, new_tail, 1)
+
+anchor_line = [l for l in s.splitlines() if "task-047-全量构筑版阶段一验收" in l and l.startswith("- `")][0]
+t48 = "- `trajectories/2026-09-15/task-048-本体构筑工单固化与goal发车件.md` — 三裁决落定（第四态不增设/cbb-merge并入/basic-memory保守）；本体构筑-工单v1.0=唯一指令源（U-B00~B09/§3十轮自审协议：十镜头R1-R10逐轮留痕+零发现须列检查证据+出口门=最后两轮零新发现/到点回队是常态不许降标收工）；STATE预播种；实验版只读跑测须-B；发车件指针化交用户经闲时任务下发"
+assert anchor_line in s, "trajectory anchor not found"
+s = s.replace(anchor_line, anchor_line + "\n" + t48, 1)
+
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("index updated: count 3->4, task-048 line appended")
