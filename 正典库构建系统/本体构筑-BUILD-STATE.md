@@ -7,7 +7,7 @@
 
 单位清单：
 - U-B00 基线与整改 | 状态=done(2026-09-15) | 判据=实验版73绿(-B只读跑)+graphify-novel v1.1行号补强在位+cbb/骨架 | 证据=73绿=11+9+10+11+11+10+11全OK(EXIT0,git status零污染)；v1.1落盘26条行号引用≥10要求(grep独立抽验16/16精确)；cbb/树成型(contracts+六技能.gitkeep+smoke+自审日志+issues)；十轮自审出口门过=cbb/自审日志/U-B00.md | 幂等=测试只读(-B)；v1.1新文件
-- U-B01 契约层修订 | 判据=四schema v2+校验器好/坏双向+单测绿 | 证据=- | 幂等=文件落盘skip-if-exists
+- U-B01 契约层修订 | 状态=done(2026-09-15) | 判据=四schema v2+校验器好/坏双向+单测绿 | 证据=四schema v2.0落地(record:verified_against三件套+observations19类词表+evidence可选file；issue:fix_action P0-P3+confidence_caliber+cites minItems1；verdict:critique键序强制+0-100定标+分带强制一致+rule_applied五派conflict必填；case:counter_example三段式配对强制+retro_tags)；单测33/33绿(实验版同套件11)双跑一致；不增设第四态有反例断言；十轮自审=cbb/自审日志/U-B01.md | 幂等=文件落盘skip-if-exists
 - U-B02 cbb-coordinate | 判据=追加序+查重占位单测绿 | 证据=- | 幂等=纯函数
 - U-B03 cbb-anchor 双时间轴 | 判据=双轴+as-of+缺坐标不可见单测绿+18条抽检回归 | 证据=- | 幂等=纯函数+版本化不覆盖
 - U-B04 cbb-extract 三层防御 | 判据=四面防御逐面用例+元文本章零抽取+施工参数在位 | 证据=- | 幂等=stub+内容哈希
