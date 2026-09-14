@@ -18,7 +18,7 @@
 - U-A10 neuro-book | 状态=done | 判据=六节报告+三谜(54.7万js疑vendored)谜底已给 | 证据=全量构筑版-分析报告/neuro-book.md（谜底双重翻案：①.js实测仅4文件,巨量实为.ts 2285文件/541,951行(+vue/tsx/mjs)——task-036 JS桶并了TS系同Issue001口径失真②vendored证伪:无node_modules,12包monorepo真源码=AI小说写作桌面应用真产品;AGPL红旗维持=代码零接触,设计思想经报告文字转述吸收;nb-memory双时间轴tick/instant+as-of双语义+缺坐标判不可见=16仓时间设计之冠,cbb-anchor第一对照项;canon晋升门控/issue二态E-A/StoryPromise到章注入/读写分权14人格/会话JSONL+lease） | 幂等=报告快照型，重写走新版本
 - U-A11 oh-story-claudecode | 状态=done | 判据=六节报告落盘 | 证据=全量构筑版-分析报告/oh-story-claudecode.md（拆文七阶段管道+长篇三件套：章节边界表单一切片真值/逐章子代理5-8批/降维聚合15KB章→≤8K回传→√N合并(914章61批实测)；别名四分类proper_name-nickname-descriptor-title+0.85门槛+存疑分开建=去重规则层最强(与neo4j算法层互补)；机械硬检查grep计数不依赖自报=R-018落地；timeline双视图reveal_chapter；append/revision事务分离；元文本防御缺口反面样本+1(章末求月票无过滤)；MIT极活跃；爬虫件ToS风险排除） | 幂等=报告快照型，重写走新版本
 - U-A12 sillytavern-skills | 状态=done | 判据=六节报告落盘 | 证据=全量构筑版-分析报告/sillytavern-skills.md（2技能小仓；CCv3双控制面=system_prompt持久契约vs post_history_instructions末轮转向+禁暗中对抗；lorebook激活参数族scan_depth/insertion_order/token_budget/selective+secondary_keys=X-RP下游导出字段语义；validate_card.py 160行轻量校验器；审查八节含Safety-Leakage独立节；无LICENSE=零复制只读参考；与PT-013互补=它格式侧我们内容侧） | 幂等=报告快照型，重写走新版本
-- U-A13 story-skills | 判据=六节报告 | 证据=- | 幂等=同上
+- U-A13 story-skills | 状态=done | 判据=六节报告落盘（Tier A 契约级精读+主线抽验4处全中） | 证据=全量构筑版-分析报告/story-skills.md（编译器哲学仓：三域分离validate-links-continuity统一{ok,errors,warnings}/关系逆类型12对+对称12项双向回链校验/契诃夫枪≥3章超期算法/P0-P3修复行动生成器每条附精确命令/章号三处一致强制/writeChanged内容不变不写+打包逐字节一致/写入安全围栏/可执行反例+100%覆盖门禁=工程纪律16仓最强;MIT;缺口=无JSON输出(R-020反面)/章号全序替代时间/无别名去重;勘误=CLI实为src三件套非单story.js,skills内3211行是打包产物） | 幂等=报告快照型，重写走新版本
 - U-A14 story-systems-template | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A15 webnovel-writer | 判据=六节报告(GPL红旗复核) | 证据=- | 幂等=同上
 - U-A16 worldbook-skill | 判据=六节报告 | 证据=- | 幂等=同上
