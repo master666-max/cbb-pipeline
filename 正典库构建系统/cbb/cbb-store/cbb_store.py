@@ -219,11 +219,15 @@ class ThreeStateStore:
 
     # ---- 双轨合并（U-B07 重构核心） ----
     def find_by_identity(self, record: dict) -> dict | None:
+        """按身份键找**活版本**（未被取代的最高版本；全部被取代则取最高版本）。"""
         key = identity_key(record)
-        for r in self.iter_records():
-            if identity_key(r) == key:
-                return r
-        return None
+        matches = [r for r in self.iter_records() if identity_key(r) == key]
+        if not matches:
+            return None
+        superseded = {e["old_id"] for e in self._load_all("supersede-index.jsonl")}
+        live = [m for m in matches if m["record_id"] not in superseded]
+        pool = live or matches
+        return max(pool, key=lambda m: m.get("version", 1))
 
     def contradiction_verdict(self, incoming: dict, existing: dict,
                               conflicts: list[dict], school: str = "documented_variance") -> dict:
@@ -257,6 +261,16 @@ class ThreeStateStore:
             return {"track": "on-create", "path": str(path), "created": created}
         conflicts = canonical_conflicts(incoming, existing)
         if not conflicts:
+            # 幂等守卫（P-017）：incoming 证据已被活版本完全包含 → 该观察已合并过，
+            # 不再叠新版本（重放同批次零副作用——append-only 旁车之外的库文件不增殖）
+            def _ev_set(rec):
+                return {(e.get("vol"), e.get("chapter"), e.get("line"), e.get("quote"))
+                        for e in (rec.get("evidence") or [])}
+            if _ev_set(incoming) <= _ev_set(existing):
+                return {"track": "consistent-duplicate", "new_id": existing["record_id"],
+                        "confidence": (existing.get("provenance") or {}).get(
+                            "extractor_confidence"),
+                        "created": False, "repeated": True}
             # 一致重复轨：confidence 上调 + 证据并集，经 supersede 出新版本（旧件不动）
             merged = dict(existing)
             old_conf = (existing.get("provenance") or {}).get("extractor_confidence", 0) or 0

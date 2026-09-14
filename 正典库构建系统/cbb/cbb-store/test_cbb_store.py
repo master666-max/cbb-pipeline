@@ -94,6 +94,26 @@ class TestDualTrack(unittest.TestCase):
         self.assertEqual(len(latest["evidence"]), 2)              # 证据并集
         self.assertEqual(latest["version"], 2)
 
+    def test_reingest_same_observation_idempotent(self):
+        """P-017：同批次重放零副作用——已合并过的观察再入不叠版本（证据子集守卫）。"""
+        store, td = make_store()
+        self.addCleanup(td.cleanup)
+        first = entity_rec("缇达", conf=80, rid="obs-1")
+        store.dual_track(first)
+        second = entity_rec("缇达", conf=84, rid="obs-2")
+        second["evidence"] = [{"vol": 1, "chapter": 20, "line": 3, "quote": "缇达再次出场"}]
+        r1 = store.dual_track(second)
+        self.assertTrue(r1["created"])
+        lib_files = sorted(p.name for p in (store.root / "libraries" / "character" / "provisional").glob("*.json"))
+        r2 = store.dual_track(second)  # 同观察重放
+        self.assertFalse(r2["created"])
+        self.assertTrue(r2["repeated"])
+        lib_files2 = sorted(p.name for p in (store.root / "libraries" / "character" / "provisional").glob("*.json"))
+        self.assertEqual(lib_files, lib_files2)  # 库文件零增殖
+        # find_by_identity 取活版本（不被 glob 序坑）
+        live = store.find_by_identity(second)
+        self.assertEqual(live["record_id"], "obs-1-m")
+
     def test_contradiction_quarantine_and_verdict_not_silent_merge(self):
         store, td = make_store()
         self.addCleanup(td.cleanup)

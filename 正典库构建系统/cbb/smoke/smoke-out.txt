@@ -1,0 +1,90 @@
+== CBB 本体版 v2 六技能集成冒烟（离线）==
+[1/6] cbb-coordinate
+  [PASS] 三章解析（2 故事+1 元文本）
+  [PASS] 缓存命中幂等
+  [PASS] 编号查重占位幂等
+  [PASS] 追加序（乱序 story_pos 不改号）
+  [PASS] 故事序视图不改号
+[2/6] cbb-anchor
+  [PASS] 锚点树三锚+契约 v2.0
+  [PASS] 伪锚点禁墙钟（2000-01-01 起步）
+  [PASS] as-of 双语义（tick 边界）
+  [PASS] 缺坐标判不可见（宁可漏召回）
+  [PASS] 倒叙还原（story_order）
+  [PASS] 人读时间→instant 自研解析
+  [PASS] 倒计时到点兑现
+[3/6] cbb-extract
+  [PASS] 元文本章零抽取（读入侧①）
+  [PASS] 注入块拒抽（安全侧④）
+  [PASS] 机械硬检查全过（不依赖自报）
+  [PASS] 禁词八类扫描（输出侧②）
+  [PASS] 防先验占位（模型侧③）
+  [PASS] 别名四分类门槛
+  [PASS] 长篇施工参数（517 章 65 批）
+[4/6] cbb-gate1
+  [PASS] 三域拦截（悬空证据+死人走路）
+  [PASS] validate+continuity 两域命中
+  [PASS] Issue v2.0 全量契约合规
+  [PASS] EXPLAIN 拒写（Issue 只产不写）
+[5/6] cbb-quarantine
+  [PASS] 三子类分流（矛盾+超期在册）
+  [PASS] urgency 排序（🔴置顶）
+  [PASS] [?] 内联扫描+行号
+[6/6] cbb-store
+  [PASS] 双轨一致重复（confidence 上调+新版本）
+  [PASS] 双轨矛盾（隔离+Verdict 不静默合并）
+  [PASS] 矛盾不落库
+  [PASS] UNIQUE 别名复合 PK 防重
+  [PASS] UNIQUE 出场防重
+  [PASS] 漂移钩子（SHA 变更→stale）
+  [PASS] 漂移扫描捕获 ≥1
+  [PASS] 时序回放（任意章快照）
+  [PASS] cbb-merge 并入（Range）
+[双跑] 同目录第二遍（幂等比对：文件集+库字节+摘要全等）
+[1/6] cbb-coordinate
+  [PASS] 三章解析（2 故事+1 元文本）
+  [PASS] 缓存命中幂等
+  [PASS] 编号查重占位幂等
+  [PASS] 追加序（乱序 story_pos 不改号）
+  [PASS] 故事序视图不改号
+[2/6] cbb-anchor
+  [PASS] 锚点树三锚+契约 v2.0
+  [PASS] 伪锚点禁墙钟（2000-01-01 起步）
+  [PASS] as-of 双语义（tick 边界）
+  [PASS] 缺坐标判不可见（宁可漏召回）
+  [PASS] 倒叙还原（story_order）
+  [PASS] 人读时间→instant 自研解析
+  [PASS] 倒计时到点兑现
+[3/6] cbb-extract
+  [PASS] 元文本章零抽取（读入侧①）
+  [PASS] 注入块拒抽（安全侧④）
+  [PASS] 机械硬检查全过（不依赖自报）
+  [PASS] 禁词八类扫描（输出侧②）
+  [PASS] 防先验占位（模型侧③）
+  [PASS] 别名四分类门槛
+  [PASS] 长篇施工参数（517 章 65 批）
+[4/6] cbb-gate1
+  [PASS] 三域拦截（悬空证据+死人走路）
+  [PASS] validate+continuity 两域命中
+  [PASS] Issue v2.0 全量契约合规
+  [PASS] EXPLAIN 拒写（Issue 只产不写）
+[5/6] cbb-quarantine
+  [PASS] 三子类分流（矛盾+超期在册）
+  [PASS] urgency 排序（🔴置顶）
+  [PASS] [?] 内联扫描+行号
+[6/6] cbb-store
+  [PASS] 双轨一致重复（confidence 上调+新版本）
+  [PASS] 双轨矛盾（隔离+Verdict 不静默合并）
+  [PASS] 矛盾不落库
+  [PASS] UNIQUE 别名复合 PK 防重
+  [PASS] UNIQUE 出场防重
+  [PASS] 漂移钩子（SHA 变更→stale）
+  [PASS] 漂移扫描捕获 ≥1
+  [PASS] 时序回放（任意章快照）
+  [PASS] cbb-merge 并入（Range）
+  [PASS] 双跑摘要全等（确定性+幂等）
+  [PASS] 双跑文件集不变（skip-if-exists）
+  [PASS] 双跑库文件逐字节不变
+  [PASS] 双跑零新增失败
+
+== 冒烟结果：74/74 PASS ==（EXIT 0）
