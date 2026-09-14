@@ -10,7 +10,7 @@
 - U-A02 author-toolkit | 状态=done | 判据=六节报告落盘（三谜"5.8万js"经Issue 001证错挂本仓：实际0 js，谜底在U-A01已给，本仓报告§1已注明） | 证据=全量构筑版-分析报告/author-toolkit.md（六节齐+断言带文件:行号；亮点=finding-schema confidence双口径/审计三分类+引擎权威化/continuity修复策略≈supersedes） | 幂等=报告快照型，重写走新版本
 - U-A03 basic-memory-skills | 状态=done | 判据=六节报告落盘（含 sota-memory-radar 对照：七派未收录此件，定位C派图联想检索实现+D派反思思想） | 证据=全量构筑版-分析报告/basic-memory-skills.md（六节齐+断言带文件:行号；亮点=literary-analysis六阶段管道/Seed先行/validation warn-strict双档/lifecycle archive-never-delete；许可=README文字声明MIT但无LICENSE正文文件【待确认】） | 幂等=报告快照型，重写走新版本
 - U-A04 chinese-webnovel-skills | 状态=done | 判据=六节报告落盘（清洗口径对照=引号规范版本化治理 CHANGELOG v0.29.1） | 证据=全量构筑版-分析报告/chinese-webnovel-skills.md（六节齐+断言带文件:行号；至今最贴域内：八档案模型/伏笔编号台账/时间线绝对锚点+倒计时兑现/知情人名单/世界状态量化/七条逻辑链/失忆三临界点50-100-300章；MIT最干净+维护最活跃；短板=自由文本无校验/两态无隔离——差异化恰为CBB四契约三态） | 幂等=报告快照型，重写走新版本
-- U-A05 claude-book | 判据=六节报告+三谜(191篇md)谜底 | 证据=- | 幂等=同上
+- U-A05 claude-book | 状态=done | 判据=六节报告+三谜(191篇md)谜底已给 | 证据=全量构筑版-分析报告/claude-book.md（谜底①=191md乃框架+完整实例双重身份：club-des-cinq 18本书分析56+state章状态76+法语正文20+bible14等；谜底②=体积在ebook资产12M/旧封面5.7M/成品电子书4M+.git二进制；同构度第一仓：book-analyzer证据式抽取/bible-merger冲突解决表(后书优先+并陈)/bible永久state瞬态双层/六gate+3迭代/knowledge含dramatic irony；MIT干净） | 幂等=报告快照型，重写走新版本
 - U-A06 danghuangshang | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A07 evals-skills | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A08 graphify-novel | 判据=六节报告 | 证据=- | 幂等=同上
