@@ -15,8 +15,8 @@
   | 证据=py -X utf8 cbb-anchor/test_cbb_anchor.py → 10 tests OK（含 18 条时间精度抽检电池/禁墙钟静态+功能双检/版本化不覆盖）；CLI --chapters 14,38,114 出树正常 | 幂等说明=save_tree 同版本已存在即跳过；归一化纯函数无副作用；锚点 Record 契约校验内建于构造
 - U3 cbb-extract 骨架 | 判据=R6 元文本规则内置为标配常量+event/entity 两类候选带证据四元组+stub 模式离线可测 | 状态=done
   | 证据=py -X utf8 cbb-extract/test_cbb_extract.py → 11 tests OK（R6 四条规则逐字在档/元文本章零抽取/证据回落坐标块/record_id 内容哈希幂等/kwargs 伪锚点+R6 形态）；graphiti 运行时=P2 实装（kwargs 组装器已测，管道复用 Tier2 已验证脚本） | 幂等说明=stub 纯函数+内容哈希 record_id，重跑候选逐条一致；env_probe 只出布尔不读值
-- U4 cbb-gate1 骨架 | 判据=确定性四校验（schema 必填/证据四元组完整/悬空引用/时间倒置）+原因码拦截，单测绿 | 状态=todo
-  | 证据= | 幂等说明=
+- U4 cbb-gate1 骨架 | 判据=确定性四校验（schema 必填/证据四元组完整/悬空引用/时间倒置）+原因码拦截，单测绿 | 状态=done
+  | 证据=py -X utf8 cbb-gate1/test_cbb_gate1.py → 11 tests OK（好件放行/四码各自命中/粗精度不硬判/verdict_id 确定性/同批互引合法/悬空quote与悬空id双形态）；拦截→隔离分组映射=M1 暂定（SKILL.md 标【待确认】，issues/ 在案） | 幂等说明=纯函数无时钟无网络，重跑判定逐字段一致
 - U5 cbb-quarantine 骨架 | 判据=五类分组+阻塞下游计数排序+"请你确认"报告生成+裁决通道（留档不删），单测绿 | 状态=todo
   | 证据= | 幂等说明=
 - U6 cbb-store 骨架 | 判据=三态写入纪律（candidate→confirmed/provisional/quarantine 分池）+版本化 supersedes（不覆盖旧件），单测绿 | 状态=todo
