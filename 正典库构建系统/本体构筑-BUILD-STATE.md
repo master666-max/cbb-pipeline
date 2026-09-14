@@ -10,7 +10,7 @@
 - U-B01 契约层修订 | 状态=done(2026-09-15) | 判据=四schema v2+校验器好/坏双向+单测绿 | 证据=四schema v2.0落地(record:verified_against三件套+observations19类词表+evidence可选file；issue:fix_action P0-P3+confidence_caliber+cites minItems1；verdict:critique键序强制+0-100定标+分带强制一致+rule_applied五派conflict必填；case:counter_example三段式配对强制+retro_tags)；单测33/33绿(实验版同套件11)双跑一致；不增设第四态有反例断言；十轮自审=cbb/自审日志/U-B01.md | 幂等=文件落盘skip-if-exists
 - U-B02 cbb-coordinate | 状态=done(2026-09-15) | 判据=追加序+查重占位单测绿 | 证据=NumberingRegistry落地(追加序:story_pos只记录永不重排+by_story_order只读视图;查重占位:(series,key)幂等+append-only落盘即占位+断点重放)；幂等坐标/缓存断点协议v1.0回归7例保留；17单测绿(基线9,含乱序插入与查重占位用例)+CLI冒烟幂等；十轮自审=cbb/自审日志/U-B02.md | 幂等=纯函数+append-only账本重放
 - U-B03 cbb-anchor 双时间轴 | 状态=done(2026-09-15) | 判据=双轴+as-of+缺坐标不可见单测绿+18条抽检回归 | 证据=双时间轴落地(tick摄入序单调必填/instant可回退倒叙合法/time人读不参与排序/asof双语义as_of_tick知识边界+as_of_instant世界状态AND/缺坐标判不可见宁可漏召回不可泄漏/story_order倒叙还原/replay章号轴降级)；instant_from_relative自研解析(day精度产出)；countdowns_due倒计时到点兑现；伪锚点禁墙钟+18条电池逐字回归(test_battery_count_18锁条数)；23单测绿(基线10)双跑一致；AGPL零代码接触(仅引我方详报转述)；十轮自审=cbb/自审日志/U-B03.md | 幂等=纯函数+版本化不覆盖
-- U-B04 cbb-extract 三层防御 | 判据=四面防御逐面用例+元文本章零抽取+施工参数在位 | 证据=- | 幂等=stub+内容哈希
+- U-B04 cbb-extract 三层防御 | 状态=done(2026-09-15) | 判据=四面防御逐面用例+元文本章零抽取+施工参数在位 | 证据=四面防御并配(①R6逐字照抄190字与实验版importlib比对一致+stub闸 ②禁词八类scan_banned逐类用例+transform/delete分族 ③防先验no_prior_fill证据交叉+//原文未提及占位+反推标注 ④注入防御四样本整块拒抽)；吸收六项(证据式条款/占位反推/别名四分类0.85门槛存疑分开/施工参数517章65批15KB→8K→√N/机械硬检查verify_evidence伪造捕获/编写前重读协议条款)；保留stub幂等+build_episode_kwargs；27单测绿(基线11)；十轮自审=cbb/自审日志/U-B04.md(R10一处当场修复=尾批语义补文档) | 幂等=stub+内容哈希
 - U-B05 cbb-gate1 三域 | 判据=三域单测绿+每域≥1可执行反例 | 证据=- | 幂等=纯函数
 - U-B06 cbb-quarantine | 判据=三子类分流+urgency排序单测绿 | 证据=- | 幂等=append-only内容哈希
 - U-B07 cbb-store 双轨+约束 | 判据=双轨分流+UNIQUE防重+漂移钩子+cbb-merge并入单测绿 | 证据=- | 幂等=skip-if-exists+旁车终态守卫
