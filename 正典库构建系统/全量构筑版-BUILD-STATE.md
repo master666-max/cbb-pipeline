@@ -15,7 +15,7 @@
 - U-A07 evals-skills | 状态=done | 判据=六节报告落盘（含已装机外挂沿用判定=维持+【待确认】上游迁移） | 证据=全量构筑版-分析报告/evals-skills.md（judge四要素:单一判据/二值反Likert/borderline例/critique先于verdict；校准:三分割+TPR-TNR+test只跑一次+Rogan-Gladen修正+Bootstrap CI+锁模型版本；meta-skill七原则；**上游已弃用迁移ai-evals-course/evals-skills**README:3-8→待确认装机源切换；与Step0金标方法学=同一方法学两半合体） | 幂等=报告快照型，重写走新版本
 - U-A08 graphify-novel | 状态=done | 判据=六节报告落盘 | 证据=全量构筑版-分析报告/graphify-novel.md（601行SKILL.md设计密度第一梯队：EXTRACTED/INFERRED边证据分层≈R-010图谱版/[?]内联不确定标记+行号汇总≈quarantine内联式/review不写盘+update必先review+正典至上三条款/事件ID追加序/slug主键+aliases别名归一字段级最强/knows-unaware_of双清单/提示注入防御16仓首见/批扫章协议；依赖外部graphify工具不装外挂图层已由neo4j覆盖） | 幂等=报告快照型，重写走新版本
 - U-A09 neo4j-skills | 状态=done | 判据=六节报告落盘（含已装机外挂沿用判定=维持，唯一运行时价值>设计价值仓） | 证据=全量构筑版-分析报告/neo4j-skills.md（29技能官方件机器维护活跃MIT零密钥；图层六件可用：document-import构建/graphrag检索明确分工/modeling五律/import冲突处理/agent-memory事实级去重confidence更新而非新建节点=三态最同构单条/cypher 12硬默认；去重三档Resolver=16仓最强(Exact/Fuzzy0.9/SpaCy语义+label过滤流)；元文本防御无/时间归一仅存储类型规范；小勘误README24vs磁盘29） | 幂等=报告快照型，重写走新版本
-- U-A10 neuro-book | 判据=六节报告+三谜(54.7万行js疑vendored)谜底 | 证据=- | 幂等=同上
+- U-A10 neuro-book | 状态=done | 判据=六节报告+三谜(54.7万js疑vendored)谜底已给 | 证据=全量构筑版-分析报告/neuro-book.md（谜底双重翻案：①.js实测仅4文件,巨量实为.ts 2285文件/541,951行(+vue/tsx/mjs)——task-036 JS桶并了TS系同Issue001口径失真②vendored证伪:无node_modules,12包monorepo真源码=AI小说写作桌面应用真产品;AGPL红旗维持=代码零接触,设计思想经报告文字转述吸收;nb-memory双时间轴tick/instant+as-of双语义+缺坐标判不可见=16仓时间设计之冠,cbb-anchor第一对照项;canon晋升门控/issue二态E-A/StoryPromise到章注入/读写分权14人格/会话JSONL+lease） | 幂等=报告快照型，重写走新版本
 - U-A11 oh-story-claudecode | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A12 sillytavern-skills | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A13 story-skills | 判据=六节报告 | 证据=- | 幂等=同上
