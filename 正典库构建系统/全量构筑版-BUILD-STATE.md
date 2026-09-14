@@ -13,7 +13,7 @@
 - U-A05 claude-book | 状态=done | 判据=六节报告+三谜(191篇md)谜底已给 | 证据=全量构筑版-分析报告/claude-book.md（谜底①=191md乃框架+完整实例双重身份：club-des-cinq 18本书分析56+state章状态76+法语正文20+bible14等；谜底②=体积在ebook资产12M/旧封面5.7M/成品电子书4M+.git二进制；同构度第一仓：book-analyzer证据式抽取/bible-merger冲突解决表(后书优先+并陈)/bible永久state瞬态双层/六gate+3迭代/knowledge含dramatic irony；MIT干净） | 幂等=报告快照型，重写走新版本
 - U-A06 danghuangshang | 状态=done | 判据=六节报告落盘（五文件schema精读+主线抽验6处全中） | 证据=全量构筑版-分析报告/danghuangshang.md（五文件档案=characters/world/foreshadowing/timeline/relations；伏笔五态含🔴遗漏超期态；角色状态变化表(前|后|因)+追加不覆盖；任务状态机七态含revision_required+错误三分含rejected=Verdict工程同构最高件；写路径白名单；勘误两条=仓实为当皇上×OpenClaw多Agent系统小说仅翰林院模块+js实测45/6678非60/8509） | 幂等=报告快照型，重写走新版本
 - U-A07 evals-skills | 状态=done | 判据=六节报告落盘（含已装机外挂沿用判定=维持+【待确认】上游迁移） | 证据=全量构筑版-分析报告/evals-skills.md（judge四要素:单一判据/二值反Likert/borderline例/critique先于verdict；校准:三分割+TPR-TNR+test只跑一次+Rogan-Gladen修正+Bootstrap CI+锁模型版本；meta-skill七原则；**上游已弃用迁移ai-evals-course/evals-skills**README:3-8→待确认装机源切换；与Step0金标方法学=同一方法学两半合体） | 幂等=报告快照型，重写走新版本
-- U-A08 graphify-novel | 判据=六节报告 | 证据=- | 幂等=同上
+- U-A08 graphify-novel | 状态=done | 判据=六节报告落盘 | 证据=全量构筑版-分析报告/graphify-novel.md（601行SKILL.md设计密度第一梯队：EXTRACTED/INFERRED边证据分层≈R-010图谱版/[?]内联不确定标记+行号汇总≈quarantine内联式/review不写盘+update必先review+正典至上三条款/事件ID追加序/slug主键+aliases别名归一字段级最强/knows-unaware_of双清单/提示注入防御16仓首见/批扫章协议；依赖外部graphify工具不装外挂图层已由neo4j覆盖） | 幂等=报告快照型，重写走新版本
 - U-A09 neo4j-skills | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A10 neuro-book | 判据=六节报告+三谜(54.7万行js疑vendored)谜底 | 证据=- | 幂等=同上
 - U-A11 oh-story-claudecode | 判据=六节报告 | 证据=- | 幂等=同上
