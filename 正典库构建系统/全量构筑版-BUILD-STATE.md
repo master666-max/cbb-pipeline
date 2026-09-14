@@ -7,7 +7,7 @@
 
 单位清单（状态：todo）：
 - U-A01 agent-skills | 状态=done | 判据=总纲§R 六节报告落盘+错挂本仓的"5.8万行js"谜底已给 | 证据=全量构筑版-分析报告/agent-skills.md（六节齐、断言带文件:行号、主线抽验12处行号全中；谜底=150个.ts共58,386行技能自带Deno CLI脚本，.js为0）+ Issue 001 | 幂等说明=报告快照型，重写走新版本
-- U-A02 author-toolkit | 判据=六节报告+三谜(5.8万行js用途)谜底 | 证据=- | 幂等=同上
+- U-A02 author-toolkit | 状态=done | 判据=六节报告落盘（三谜"5.8万js"经Issue 001证错挂本仓：实际0 js，谜底在U-A01已给，本仓报告§1已注明） | 证据=全量构筑版-分析报告/author-toolkit.md（六节齐+断言带文件:行号；亮点=finding-schema confidence双口径/审计三分类+引擎权威化/continuity修复策略≈supersedes） | 幂等=报告快照型，重写走新版本
 - U-A03 basic-memory-skills | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A04 chinese-webnovel-skills | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A05 claude-book | 判据=六节报告+三谜(191篇md)谜底 | 证据=- | 幂等=同上
