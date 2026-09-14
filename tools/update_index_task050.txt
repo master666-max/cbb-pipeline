@@ -1,0 +1,18 @@
+import io
+
+p = r"D:\zcode专用！！！！危险！！！！！！！！！\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+
+old = "前轮 5 次=①F3 task-045 ②F2 task-046 ③阶段一验收 task-047 ④工单固化 task-048 ⑤本体构筑执行 task-049）"
+new = "前轮 5 次=①F3 task-045 ②F2 task-046 ③阶段一验收 task-047 ④工单固化 task-048 ⑤本体构筑执行 task-049；①本体构筑全量验收（task-050）：亲测161/161+冒烟74/74双跑+FROZEN零污染+D-004干净+自审日志抽验非形式主义→10/10通过，11条待确认triage，阶段三=迷深实战）"
+assert old in s, "count anchor not found"
+s = s.replace("wrap-up 次数：0", "wrap-up 次数：1", 1)
+s = s.replace(old, new, 1)
+
+anchor_line = [l for l in s.splitlines() if "task-049-本体构筑执行" in l and l.startswith("- `")][0]
+t50 = "- `trajectories/2026-09-15/task-050-本体构筑全量验收.md` — 审核线全量大审查：独立复测161/161+冒烟74/74双跑EXIT0+FROZEN diff空+D-004零命中+污染扫描仅合规注记+自审日志10/10抽验成色（零发现列证据/R4真缺陷当场修/R10红队6候选）；判定10/10通过（真管道blocked照准）；11条待确认triage（9采认/1照准/1关闭）；判定文书=cbb/验收判定-本体构筑.md；阶段三入口已写明"
+assert anchor_line in s, "trajectory anchor not found"
+s = s.replace(anchor_line, anchor_line + "\n" + t50, 1)
+
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("index updated: count 0->1, task-050 line appended")
