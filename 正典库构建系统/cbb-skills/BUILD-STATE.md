@@ -19,8 +19,8 @@
   | 证据=py -X utf8 cbb-gate1/test_cbb_gate1.py → 11 tests OK（好件放行/四码各自命中/粗精度不硬判/verdict_id 确定性/同批互引合法/悬空quote与悬空id双形态）；拦截→隔离分组映射=M1 暂定（SKILL.md 标【待确认】，issues/ 在案） | 幂等说明=纯函数无时钟无网络，重跑判定逐字段一致
 - U5 cbb-quarantine 骨架 | 判据=五类分组+阻塞下游计数排序+"请你确认"报告生成+裁决通道（留档不删），单测绿 | 状态=done
   | 证据=py -X utf8 cbb-quarantine/test_cbb_quarantine.py → 10 tests OK（登记幂等内容哈希/五分组全收/裁决终态不可再裁/报告阻塞降序+请你确认+已裁决留档/落盘持久化新实例对账/报告确定性） | 幂等说明=append-only JSONL+item_id 内容哈希，重复登记跳过；裁决日志只追加
-- U6 cbb-store 骨架 | 判据=三态写入纪律（candidate→confirmed/provisional/quarantine 分池）+版本化 supersedes（不覆盖旧件），单测绿 | 状态=todo
-  | 证据= | 幂等说明=
+- U6 cbb-store 骨架 | 判据=三态写入纪律（candidate→confirmed/provisional/quarantine 分池）+版本化 supersedes（不覆盖旧件），单测绿 | 状态=done
+  | 证据=py -X utf8 cbb-store/test_cbb_store.py → 11 tests OK（quarantine 不落任何 library 目录= B1/入库幂等/人工晋升走旁车日志且记录文件字节不动/supersede version+1 旧件不动+索引链可追/route_by_confidence 永不单凭置信度给 confirmed/neo4j 后端显式桩） | 幂等说明=文件即记录已存在即跳过；transitions/supersede-index append-only
 - U7 集成冒烟 | 判据=六技能串跑最小样本（含元文本章）：坐标→锚点→抽取(stub,R6)→门1→隔离→入库，断言计数全中，退出码 0 | 状态=todo
   | 证据= | 幂等说明=
 - U8 交接文书 | 判据=cbb-skills/交接文书-P1M1.md 落盘（判据达成状态/单位终态/git 摘要/待确认清单/经验候选） | 状态=todo
