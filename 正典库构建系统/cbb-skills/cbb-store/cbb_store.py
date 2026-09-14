@@ -110,6 +110,9 @@ class ThreeStateStore:
         current = self._find(record_id)
         if current is None:
             raise KeyError(f"记录不在库: {record_id}")
+        if self.effective_status(record_id) == to_status:
+            return {"record_id": record_id, "from": to_status, "to": to_status,
+                    "by": by, "note": note, "repeated": True}  # 幂等：目标态已达则不重复入账
         entry = {"record_id": record_id, "from": current["status"], "to": to_status,
                  "by": by, "note": note}
         self._append("transitions.jsonl", entry)
