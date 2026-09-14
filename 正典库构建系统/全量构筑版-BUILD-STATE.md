@@ -21,7 +21,7 @@
 - U-A13 story-skills | 状态=done | 判据=六节报告落盘（Tier A 契约级精读+主线抽验4处全中） | 证据=全量构筑版-分析报告/story-skills.md（编译器哲学仓：三域分离validate-links-continuity统一{ok,errors,warnings}/关系逆类型12对+对称12项双向回链校验/契诃夫枪≥3章超期算法/P0-P3修复行动生成器每条附精确命令/章号三处一致强制/writeChanged内容不变不写+打包逐字节一致/写入安全围栏/可执行反例+100%覆盖门禁=工程纪律16仓最强;MIT;缺口=无JSON输出(R-020反面)/章号全序替代时间/无别名去重;勘误=CLI实为src三件套非单story.js,skills内3211行是打包产物） | 幂等=报告快照型，重写走新版本
 - U-A14 story-systems-template | 状态=done | 判据=六节报告落盘（双镜像去重=.claude为正本.gemini适配层） | 证据=全量构筑版-分析报告/story-systems-template.md（verified_against SHA漂移钩子+timestamp=最后验证时非编辑时+stale重验门=Record溯源三件套16仓最完备,多版本语料直接可用;四态canon-draft-provisional-cut(cut=墓碑态第四态裁决题);map-card引用不复述≤50行强制;Knowledge按场表;外观状态三件套ChainOfCustody/伤情演进/服装;findings强制Cites列;Wardrobe勘误=无独立模板折叠进character+prop;MIT;连续性语义纯提示词弱于story-skills） | 幂等=报告快照型，重写走新版本
 - U-A15 webnovel-writer | 状态=done | 判据=六节报告落盘（GPL红旗复核=GPL-3.0确认,只读不抄铁案维持） | 证据=全量构筑版-分析报告/webnovel-writer.md（域内工程完成度最高同类系统:三库分立;state_changes时序回放重建任意章快照=event sourcing小说版;UNIQUE约束族=约束式去重SQLite完整实现;urgency公式三层级3.0-2.0-1.0+进度比+前3条注入=开环管理最完整工程实现;检索chapter时间闸防剧透;PreToolUse保护+命令白名单;memory四态含contradicted;短板=字符预算/无时间归一/记忆未入库/云依赖=CBB差异清单） | 幂等=报告快照型，重写走新版本
-- U-A16 worldbook-skill | 判据=六节报告 | 证据=- | 幂等=同上
+- U-A16 worldbook-skill | 状态=done | 判据=六节报告落盘（许可勘误=索引清单"定制"精确化CC BY-NC-SA 4.0双证） | 证据=全量构筑版-分析报告/worldbook-skill.md（PT-013直系:禁词剔除八类表=16仓最接近R6机制(输出侧清洗:比喻转白描/万能修饰删/默认特征删"AI数据库已有");错误5提取AI已知信息=防先验污染16仓首见显式命名;不确定四规则=原文未提及占位+反推标注+首次出场为基准(vs claude-book后书优先两派并陈);行号索引+四类标记[W][C][I][★];编写前重读纪律;SubAgent禁词扫描门;错误9例三段式=Case最佳文档形态;中文语料原生成;零文本复制ShareAlike保守） | 幂等=报告快照型，重写走新版本
 - U-A17 跨仓综合报告 | 判据=16详报汇总裁决→全量构筑版本体路线修订书(对照实验版重构/保留清单) | 证据=- | 幂等=同上
 
 前置事实（2026-09-14 审核线核证）：实验版 cbb-skills/ 已冻结（FROZEN-实验版声明.md）；16 仓源码在 现成技能侦察/源码/；evals-skills+neo4j-skills 已装机（实验版 U0）。
