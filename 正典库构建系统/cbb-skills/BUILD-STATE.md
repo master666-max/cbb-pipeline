@@ -23,8 +23,10 @@
   | 证据=py -X utf8 cbb-store/test_cbb_store.py → 11 tests OK（quarantine 不落任何 library 目录= B1/入库幂等/人工晋升走旁车日志且记录文件字节不动/supersede version+1 旧件不动+索引链可追/route_by_confidence 永不单凭置信度给 confirmed/neo4j 后端显式桩） | 幂等说明=文件即记录已存在即跳过；transitions/supersede-index append-only
 - U7 集成冒烟 | 判据=六技能串跑最小样本（含元文本章）：坐标→锚点→抽取(stub,R6)→门1→隔离→入库，断言计数全中，退出码 0 | 状态=done
   | 证据=py -X utf8 smoke/run_smoke.py 双跑 PASS 20/20、EXIT=0/0；产物在 smoke/out/（坐标缓存命中/锚点树/隔离区报告含请你确认/库 character provisional 2 件含 v2 修订/summary.json）；冒烟抓出真缺陷 1 件=store transitions 旁车重跑追加重复行→已加终态守卫修复（cbb-store 单测回归 11 绿） | 幂等说明=缓存命中跳过/入库 skip-if-exists/隔离登记内容哈希去重/迁移终态守卫——重跑零新增副作用（历史 3 行为守卫前留档，append-only 不删）
-- U8 交接文书 | 判据=cbb-skills/交接文书-P1M1.md 落盘（判据达成状态/单位终态/git 摘要/待确认清单/经验候选） | 状态=todo
-  | 证据= | 幂等说明=
+- U8 交接文书 | 判据=cbb-skills/交接文书-P1M1.md 落盘（判据达成状态/单位终态/git 摘要/待确认清单/经验候选） | 状态=done
+  | 证据=交接文书-P1M1.md（7 节齐备：判据逐项对照表/单位终态/9 commit 摘要/6 条待确认/3 条经验候选/运行手册/P2 留白）；issues/2026-09-14-P1M1构建线观察三件.md；全量单测终跑 73/73 绿 | 幂等说明=文书为快照型产物，落盘后不改写（修订走新版本+勘误）
+
+目标判据自检（U8 收口时）：U0-U8 全部 done ✅；六技能+契约+三态桩 ✅；73 单测全绿 ✅；R6 内置 ✅；时间精度抽检 ✅；逐单位 commit ✅；U7 冒烟双跑通过 ✅——**判据达成**。
 
 阻塞登记：（无）
 
