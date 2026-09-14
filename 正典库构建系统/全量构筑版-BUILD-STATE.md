@@ -9,7 +9,7 @@
 - U-A01 agent-skills | 状态=done | 判据=总纲§R 六节报告落盘+错挂本仓的"5.8万行js"谜底已给 | 证据=全量构筑版-分析报告/agent-skills.md（六节齐、断言带文件:行号、主线抽验12处行号全中；谜底=150个.ts共58,386行技能自带Deno CLI脚本，.js为0）+ Issue 001 | 幂等说明=报告快照型，重写走新版本
 - U-A02 author-toolkit | 状态=done | 判据=六节报告落盘（三谜"5.8万js"经Issue 001证错挂本仓：实际0 js，谜底在U-A01已给，本仓报告§1已注明） | 证据=全量构筑版-分析报告/author-toolkit.md（六节齐+断言带文件:行号；亮点=finding-schema confidence双口径/审计三分类+引擎权威化/continuity修复策略≈supersedes） | 幂等=报告快照型，重写走新版本
 - U-A03 basic-memory-skills | 状态=done | 判据=六节报告落盘（含 sota-memory-radar 对照：七派未收录此件，定位C派图联想检索实现+D派反思思想） | 证据=全量构筑版-分析报告/basic-memory-skills.md（六节齐+断言带文件:行号；亮点=literary-analysis六阶段管道/Seed先行/validation warn-strict双档/lifecycle archive-never-delete；许可=README文字声明MIT但无LICENSE正文文件【待确认】） | 幂等=报告快照型，重写走新版本
-- U-A04 chinese-webnovel-skills | 判据=六节报告 | 证据=- | 幂等=同上
+- U-A04 chinese-webnovel-skills | 状态=done | 判据=六节报告落盘（清洗口径对照=引号规范版本化治理 CHANGELOG v0.29.1） | 证据=全量构筑版-分析报告/chinese-webnovel-skills.md（六节齐+断言带文件:行号；至今最贴域内：八档案模型/伏笔编号台账/时间线绝对锚点+倒计时兑现/知情人名单/世界状态量化/七条逻辑链/失忆三临界点50-100-300章；MIT最干净+维护最活跃；短板=自由文本无校验/两态无隔离——差异化恰为CBB四契约三态） | 幂等=报告快照型，重写走新版本
 - U-A05 claude-book | 判据=六节报告+三谜(191篇md)谜底 | 证据=- | 幂等=同上
 - U-A06 danghuangshang | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A07 evals-skills | 判据=六节报告 | 证据=- | 幂等=同上
