@@ -7,7 +7,7 @@
 ## Phase 状态
 
 - P1 FLRW 宇宙学(宇宙年龄/距离积分) — DONE(年龄误差 0.0429%,双方法差 5.2e-13)
-- P2 BBN 弱冻结 + 核网络(Y_p / D/H) — PENDING
+- P2 BBN 弱冻结 + 核网络(Y_p / D/H) — BLOCKED(Y_p=0.3068 误差+0.0598,判据<0.003未达;D/H=2.83e-5 偏+15.4%;重子守恒1.8e-15;瓶颈T=0.0660MeV/t=300.8s 与文献吻合)
 - P3 再复合与 CMB 解耦(Saha/Peebles, r_s, z*) — PENDING
 - P4 线性扰动与结构增长(D+ ODE vs Heath 积分, f0) — PENDING
 - P5 N 体动力学(leapfrog 直接求和, Kepler/Plummer 验证) — PENDING
