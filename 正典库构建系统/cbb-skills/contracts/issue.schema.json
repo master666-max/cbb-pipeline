@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/issue/v1.0",
+  "title": "Issue 契约（照抄 CBB v1.0 Part IV 4.2，第4轮沿用）",
+  "type": "object",
+  "required": ["issue_id", "skill", "error_type", "claim", "evidence_span", "graph_context", "severity"],
+  "properties": {
+    "issue_id": { "type": "string" },
+    "skill": { "type": "string" },
+    "error_type": { "type": ["string", "null"], "description": "admission 场景允许 null（门禁时错误未判定，见 Case 契约 4.4 声明）" },
+    "claim": { "type": "string" },
+    "evidence_span": { "type": "object", "description": "证据定位（坐标四元组形态：vol/chapter/line/quote）" },
+    "graph_context": { "type": "object" },
+    "severity": { "type": "string" },
+    "extraction_confidence": { "type": "number" }
+  },
+  "$comment": "CBB→NAS 转换器以此为终点：库中 confirmed 记录 + 原文 → NAS 侧生成 Issue 走全书批审（双构咬合点①）。"
+}

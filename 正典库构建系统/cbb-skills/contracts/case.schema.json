@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/case/v1.0",
+  "title": "Case 契约（照抄 CBB v1.0 Part IV 4.4，第5轮 schema + 第八轮扩展）",
+  "type": "object",
+  "required": ["issue", "verdict", "provenance", "retrieval_hints", "usage", "gate_scenario"],
+  "properties": {
+    "case_id": { "type": "string", "description": "先例引用键（Record.provenance.precedent_refs 元素）；基线字段清单未单列，作可选补位" },
+    "issue": { "type": "object", "description": "内嵌 Issue（结构见 issue.schema.json）" },
+    "verdict": { "type": "object", "description": "内嵌 Verdict（结构见 verdict.schema.json）" },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "trust_weight"],
+      "properties": {
+        "source": { "enum": ["human", "cloud_arbiter", "self_consistent"], "description": "该 issue 最终真相的来源（human > cloud_arbiter > self_consistent）" },
+        "trust_weight": { "type": "number" }
+      }
+    },
+    "retrieval_hints": {
+      "type": "object",
+      "properties": {
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "entities": { "type": "array", "items": { "type": "string" } },
+        "counter_example_of": { "type": ["string", "null"] }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "properties": {
+        "retrieval_count": { "type": "integer" },
+        "agreement_rate_when_cited": { "type": "number" }
+      }
+    },
+    "gate_scenario": { "enum": ["admission", "extraction"], "description": "双场景硬过滤互斥键（第八轮扩展）" }
+  },
+  "$comment": "声明：issue.error_type 在 admission 场景允许为 null（门禁时错误未判定）。judge 言论不进 Case（入 Record.provenance.gate_trace）；外部库案例→Case 由 FieldMapper 在适配器内执行。"
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/record/v1.0",
+  "title": "Record 契约（照抄 CBB v1.0 Part IV 4.1，冻结基线，不改判）",
+  "type": "object",
+  "required": ["record_id", "record_type", "library", "status", "canonical", "evidence", "provenance", "version", "supersedes"],
+  "properties": {
+    "record_id": { "type": "string", "description": "uuid" },
+    "record_type": { "enum": ["event", "entity", "relation", "foreshadow", "setting", "anchor"] },
+    "library": { "enum": ["event", "character", "timeline", "relation", "setting", "foreshadow"] },
+    "status": { "enum": ["confirmed", "provisional"] },
+    "canonical": { "type": "object", "description": "按库类型的本体字段" },
+    "evidence": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["vol", "chapter", "line", "quote"],
+        "properties": {
+          "vol": { "type": "integer", "minimum": 0 },
+          "chapter": { "type": "integer", "minimum": 0 },
+          "line": { "type": "integer", "minimum": 0 },
+          "quote": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "extractor_confidence": { "type": "number" },
+        "gate_trace": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["gate"],
+            "properties": {
+              "gate": { "enum": ["1", "2a", "2b", "3"] },
+              "verdict_id": { "type": "string" },
+              "ts": { "type": "string" }
+            }
+          }
+        },
+        "precedent_refs": { "type": "array", "items": { "type": "string" } },
+        "status_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to"],
+            "properties": {
+              "from": { "type": "string" },
+              "to": { "type": "string" },
+              "at": { "type": "string" },
+              "by": { "enum": ["human", "shadow", "promotion"] },
+              "graphiti_edge": { "type": "string", "description": "valid_at/invalid_at 边 id" }
+            }
+          }
+        }
+      }
+    },
+    "version": { "type": "integer", "minimum": 1 },
+    "supersedes": { "type": ["string", "null"], "description": "前一版 record_id | null" }
+  },
+  "$comment": "B4 证据即公民→evidence minItems 1（无证据不入库）。Part V 状态机的 candidate 为入库前状态，不进本枚举（B1：库中记录只有 confirmed/provisional）；quarantine 走隔离区（cbb-quarantine），rejected 为人工终态留档。"
+}

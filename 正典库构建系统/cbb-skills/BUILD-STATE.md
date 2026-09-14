@@ -9,8 +9,8 @@
 单位清单：
 - U0 外挂装机（evals-skills+neo4j-skills） | 判据=两仓技能装入 ~/.zcode/skills/ 且 SKILL.md 在位 | 状态=done
   | 证据=36/36 SKILL.md 在位验证通过（evals 7 件 + neo4j 29 件）；源=现成技能侦察/源码/ 本地仓（task-034 已 clone）；方式=cp -n 零覆盖；记录=cbb-skills/u0-外挂装机记录.md | 幂等说明=cp -n + 存在即 SKIP，重跑零副作用
-- U1 cbb-coordinate 骨架＋四契约 JSON Schema | 判据=contracts/ 四 schema 落地+coordinate 清洗/坐标(卷,章,段,行)/幂等缓存可跑，py -X utf8 单测绿 | 状态=todo
-  | 证据= | 幂等说明=（完成后填：缓存命中即跳过，重跑产物逐字节一致）
+- U1 cbb-coordinate 骨架＋四契约 JSON Schema | 判据=contracts/ 四 schema 落地+coordinate 清洗/坐标(卷,章,段,行)/幂等缓存可跑，py -X utf8 单测绿 | 状态=done
+  | 证据=py -X utf8 contracts/test_contracts.py → 11 tests OK；py -X utf8 cbb-coordinate/test_cbb_coordinate.py → 9 tests OK；四 schema=record/issue/verdict/case（照抄 Part IV，含 B4 minItems1 与 candidate 边界 $comment） | 幂等说明=process_file 缓存命中即读不重算，manifest 无时钟字段同输入同输出；三态桩已存在即跳过
 - U2 cbb-anchor 骨架 | 判据=伪锚点 2000-01-01+i 天/禁墙钟/锚点树版本化/时间精度抽检单测绿 | 状态=todo
   | 证据= | 幂等说明=
 - U3 cbb-extract 骨架 | 判据=R6 元文本规则内置为标配常量+event/entity 两类候选带证据四元组+stub 模式离线可测 | 状态=todo

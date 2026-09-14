@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/verdict/v1.0",
+  "title": "Verdict 契约（照抄 CBB v1.0 Part IV 4.3，第4轮沿用）",
+  "type": "object",
+  "required": ["issue_id", "label", "confidence", "judge_id", "reasoning", "evidence_check"],
+  "properties": {
+    "issue_id": { "type": "string" },
+    "label": { "enum": ["conflict", "consistent", "uncertain"] },
+    "confidence": { "type": "number" },
+    "judge_id": { "type": "string" },
+    "reasoning": { "type": "string" },
+    "evidence_check": { "type": "object", "description": "证据自证字段——引用不存在的原文则该票作废" }
+  },
+  "$comment": "所有 judge 的统一接口（门2a/2b/影子审计共用）。运行时 Verdict → 先例 Case 的转换由 Case Extractor 在写入路径执行。"
+}
