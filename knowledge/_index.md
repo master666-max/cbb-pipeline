@@ -9,10 +9,11 @@
 > 维护规则：每次 wrap-up 的第 5 步同步更新；按验证次数/触发频率排序；断链当场修复（或跑 `py -X utf8 tools/lint_knowledge_base.txt`）。
 
 ## 反思计数
-- 自最后反思以来 wrap-up 次数：2（2026-09-14 reflect R-018~019 后清零；①闲时任务机制调研+构建线下发模板：三层架构外壳/goal/STATE锚、后台子代理不支持、锚层不依赖会话；②P1-M1下发准备与首发受阻：环境实测全绿/模板v1.3 scoped-add/凭证setx部署/账号未开通闲时任务→下发单落盘待发）
+- 自最后反思以来 wrap-up 次数：3（2026-09-14 reflect R-018~019 后清零；①闲时任务机制调研+构建线下发模板：三层架构外壳/goal/STATE锚、后台子代理不支持、锚层不依赖会话；②P1-M1下发准备与首发受阻：环境实测全绿/模板v1.3 scoped-add/凭证setx部署/账号未开通闲时任务→下发单落盘待发；③P1-M1六技能骨架构建(构建线,交互式路径代闲时任务)：U0-U8全done/73单测/R6内置/冒烟双跑，/goal+下发单正文接线路径首发跑通）
 - 最后反思：2026-09-14（R-018 自动评测器自己也要先过对账 / R-019 被测模型自任对抗审查者的防循环污染三件套）
 
 ## 高频 Pitfalls（按触发次数排序）
+- [P-017 幂等系统断言断状态不断过程；append-only 旁车日志追加前先查终态](pitfalls.md#p-017) — 1 次触发（P1-M1 集成冒烟双证据：created 口径假红 + transitions 重跑膨胀）
 - [P-016 importlib 动态加载含 @dataclass 模块：先注册 sys.modules 再 exec_module](pitfalls.md#p-016) — 1 次触发（内核验收工具链通用化三脚本同崩）
 - [P-014 接手外来实验线先查并行产出；下发文书断言对账线内最新在案记录](pitfalls.md#p-014) — **3 次触发**（第二十八轮 2a 更正事故；豆包线原作者端侧分支；F1 下发单「两振」口径滞后于 R2 线三振在案事实，v3）
 - [P-015 消融「边际≈0」≠「护栏无用」，先构造它所防范的危险](pitfalls.md#p-015) — 1 次触发（codebuddy §7.6 + 混元 E41 双线独立发现）
@@ -111,6 +112,8 @@
 - `trajectories/2026-09-14/task-039-豆包线十四轮与DISPATCH-P2执行.md` — E86-E91 跨线对账与防御闭环（锚定剂量对账未决 S28/软保底互证/幻影多点 F40 阈值脆弱修正 E84/限速否定 S30/令牌面 κ≈0.25 决定性/附录A 方差推翻双峰夹谷 S29）；红线 91/F40/S30（详见手册 §9 十五轮候选）
 - `trajectories/2026-09-14/task-040-Tier2管道验证与Step0收官.md` — 原装 add_episode 4/4 集入库（40实体/66关系，Tier1 八份原始233边去重合并）；三条件验证全过：R6 元文本防御（excerpt4 零污染 vs Tier1 双败）/伪锚点时序45边/跨章去重；4次发射3折调试记录（cross_encoder占位/driver作用域/属性名/DateTime序列化）
 - `trajectories/2026-09-14/task-041-闲时任务机制调研与下发模板.md` — 官方文档核证闲时任务（免费排队/到点回队续跑/后台子代理不支持/人工介入不免费）与 /goal 目标模式；交付 `正典库构建系统/P1执行区/闲时任务提示词模板.md` v1：三层架构（闲时任务外壳//goal 内核/BUILD-STATE+逐件commit 磁盘锚，锚层不依赖会话），STATE=缓存磁盘=事实（R-014 入断点协议），含 P1-M1 预填示例
+- `trajectories/2026-09-14/task-042-P1M1下发准备与首阻.md` — （审核线会话产出；索引行由构建线 wrap-up 顺带补登，归属审核线）P1-M1 下发准备与首发受阻：环境实测全绿+凭证 setx 用户级+模板 v1.3（scoped-add），OffPeakCreate 被拒（账号未开通闲时任务）→ 下发单落盘 P1执行区/待发
+- `trajectories/2026-09-14/task-043-P1M1六技能骨架构建.md` — 构建线执行 P1-M1（交互式路径=/goal+下发单正文，闲时任务替代路线首发跑通）：U0 36 技能外挂装机（安检 1 命中=Neo4j 官方安装器文档）；四契约 schema 照抄 Part IV+stdlib 校验器；六技能骨架（coordinate 幂等坐标/anchor 伪锚点禁墙钟+18 条精度抽检/extract R6 内置 stub 抽取/gate1 四校验原因码/quarantine 五分组请你确认报告/store 三态+supersedes 版本化）；73 单测全绿+六技能集成冒烟 20/20 双跑（抓出 transitions 非幂等真缺陷→P-017）；9 commit 逐单位可证；交接文书+issues 三件+6 待确认（详见 `正典库构建系统/cbb-skills/交接文书-P1M1.md`）
 
 ## 工具与自动化
 - **本地 LLM-judge API**（2026-09-11 收录为可用工具，当日活体冒烟通过：服务在线、锚定提示词下返回纯 JSON）：LM Studio OpenAI 兼容服务 @ `127.0.0.1:8080`，judge 模型 M-Prometheus-14B；快速接入=根目录 `LLM-judge-API-快速接入.md`（全量版 `大审查/混元/本地LLM-judge-API-使用说明与接入文档.md`，Python 入口 `judge_adapter.make_judge("llm-api")`，缺环境变量即拒绝启动）。调用红线（违反即数据作废）：送评 canonical order（该 judge 位置偏见 .65）/ rubric 锚定必开（无锚定实测跑飞说英文）/ 分数只作内部比较不外报（冒烟中正确答案被打 0 分）/ temp=0 跨会话留 ±0.05 / `llm_judge_cache_*.json` 不许删。适用边界：探针与试点评分（本地 ~0.6s/次、并发 8→3.5 calls/s，全量实验切 DeepSeek flash API）；**不进 memevo 等确定性沙盒的评分回路**（零依赖+两次逐行一致契约）
