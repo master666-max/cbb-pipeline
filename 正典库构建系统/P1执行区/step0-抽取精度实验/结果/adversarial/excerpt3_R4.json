@@ -1,0 +1,84 @@
+{
+ "round": 4,
+ "challenges": [
+  {
+   "type": "漏标时间",
+   "target": "time_expressions(全局)",
+   "claim": "L36 出现明确的未来时间词「总有一天」（以英雄谭完成为指向的未来锚），金标 time_expressions 未收录，属漏收时间表述。",
+   "evidence": "L36:\"继续积攒记载的量的话，总有一天会让它成为英雄谭的~\"",
+   "proposed_fix": "新增{text:'总有一天(让手记成为英雄谭)',line:36,kind:'未来锚',anchorable:false}（未来承诺型不可精确定位）。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions(全局)",
+   "claim": "L166「经过了漫长的时间」是与已收 L145「无法计量又富有余韵的时间」同型的主观时长表述，金标收了 L145 却漏收 L166；同段还有「又度过了一会儿」一类主观时长，口径不一致。",
+   "evidence": "L166:\"经过了漫长的时间，房间里的蜡烛烛光飘摇。\"; L146:\"于是，我们互相拥抱着，又度过了一会儿。\"; 对照已收 L145:\"无法计量又富有余韵的时间，安详地流逝。\"",
+   "proposed_fix": "仿 L145 补收{text:'经过了漫长的时间',line:166,kind:'主观时长',anchorable:false}（如纳入'又度过了一会儿'则同标 anchorable:false）。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions(全局)",
+   "claim": "L136「在弗茨亚茨与我分别之后」是以「分别」事件为端点的先后时间表述，与已收的 L58「自圣诞祭之后」同型却被漏收。",
+   "evidence": "L136:\"即使笑着对我说[别在意],但是在弗茨亚茨与我分别之后，她还是受了很多苦。\"",
+   "proposed_fix": "新增{text:'在弗茨亚茨与我分别之后',line:136,kind:'自事件起(分别后持续)',anchorable:true}，锚事件=弗茨亚茨分别。",
+   "severity": "medium"
+  },
+  {
+   "type": "口径质疑",
+   "target": "annotation_rules_note / entities.拉丝缇娅拉·弗茨亚茨(note)",
+   "claim": "年龄「3岁」是带时间维度的属性，金标仅在实体 note 收录（'3岁(L18，年龄属性)'），既未在 time_expressions 登记年龄锚，规则也未说明年龄/寿命是否属时间口径，本轮时间口径无法据规则判定。",
+   "evidence": "L18:\"按理来说，拉丝缇娅拉才3岁。正常来考虑的话，还是情感没有发育健全的阶段。\"",
+   "proposed_fix": "二选一并在规则中写明：或补{text:'拉丝缇娅拉才3岁',line:18,kind:'年龄属性',anchorable:true}，或明确『年龄/等级不计入 time_expressions，只入实体 note』。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions(全局)",
+   "claim": "L139「我的物语的第一章就迎来了HappyEnd」中的「第一章」是叙事阶段时间锚，金标全表未收录任何章节/阶段进度类时间表述。",
+   "evidence": "L139:\"[啊啊，终于……。这样一来我的物语的第一章就迎来了HappyEnd了呢……]\"",
+   "proposed_fix": "新增{text:'我的物语的第一章迎来了HappyEnd',line:139,kind:'叙事阶段锚',anchorable:false}。",
+   "severity": "low"
+  },
+  {
+   "type": "错标时间",
+   "target": "time_expressions['但是，这才是第一天'](kind)",
+   "claim": "该条 kind 自定为『阶段锚(住船首日)』，但原文只说『这才是第一天』，未明说『第一天』是住船第一天还是同居/旅程第一天；相对锚指向的事件（住船）在文本中并未说清，属锚点臆断。",
+   "evidence": "L31:\"虽然因为要进入女孩子的房间有点心动，但是这才是第一天。就跟我的房间一样只有最低限度的家具而已\"",
+   "proposed_fix": "kind 改为『阶段锚(未明指：第一日)』或加注锚事件为推断，避免把『船』这一外部实体补进相对锚说明。",
+   "severity": "low"
+  },
+  {
+   "type": "错标时间",
+   "target": "time_expressions['这一点在圣诞祭前夜已经确定了'](kind)",
+   "claim": "kind 写『事件锚(感情确定时点)』把叙事功能（感情确定）当成时间类型名，时间类型应表述时点性质（如'事件前夜锚'），相对锚（圣诞祭）与类型混在一起，不符合其余各条纯时点/持续的分类风格。",
+   "evidence": "L10:\"拉丝缇娅拉·弗茨亚茨曾是我最喜欢的人。这一点在圣诞祭前夜已经确定了。\"",
+   "proposed_fix": "kind 改为『事件前夜锚(相对圣诞祭)』，叙事功能移入 note。",
+   "severity": "low"
+  },
+  {
+   "type": "口径质疑",
+   "target": "provenance / R5(噪声含现实日期)",
+   "claim": "本轮主题要求核验 excerpt4『现实日期该抽零』口径，但本册 provenance 仅声明来源为 excerpt3(CHAPTER 0114)，且其自身含现实日期『2026-09-14 用户裁决』；规则既未说明为何该现实日期入 provenance 而不算噪声，也未给 excerpt4 零抽取口径的可核验证据，本批无法据原文行验证 excerpt4 处理。",
+   "evidence": "provenance:\"annotator: 审核线三轮自审完成…（2026-09-14 用户裁决）\"；provenance.excerpt_file:\"材料/excerpt3-CHAPTER0114.md\"（全批无 excerpt4 原文行）",
+   "proposed_fix": "在 annotation_rules_note 中补明『provenance/元数据中的现实日期不作为故事实体亦不登入噪声表』，并说明 excerpt4 零抽取口径的核验材料来源。",
+   "severity": "low"
+  }
+ ],
+ "confidence_score": 70,
+ "usage": {
+  "prompt_tokens": 10723,
+  "completion_tokens": 12912,
+  "total_tokens": 23635,
+  "prompt_tokens_details": {
+   "cached_tokens": 5376
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 11485
+  },
+  "prompt_cache_hit_tokens": 5376,
+  "prompt_cache_miss_tokens": 5347
+ },
+ "finish": "stop"
+}

@@ -1,0 +1,1060 @@
+{
+ "meta": {
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "temperature": 0,
+  "prompt_source": "graphiti_core.prompts extract_message / edge（原装模板装配，自定义实体类型）",
+  "excerpt": "excerpt1-CHAPTER0014.md",
+  "excerpt_sha256_16": "08cc9036f03ec9ee",
+  "usage_nodes": {
+   "prompt_tokens": 6320,
+   "completion_tokens": 7285,
+   "total_tokens": 13605,
+   "prompt_tokens_details": {
+    "cached_tokens": 6144
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 6740
+   },
+   "prompt_cache_hit_tokens": 6144,
+   "prompt_cache_miss_tokens": 176
+  },
+  "usage_edges": {
+   "prompt_tokens": 6130,
+   "completion_tokens": 24789,
+   "total_tokens": 30919,
+   "prompt_tokens_details": {
+    "cached_tokens": 4480
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 20013
+   },
+   "prompt_cache_hit_tokens": 4480,
+   "prompt_cache_miss_tokens": 1650
+  }
+ },
+ "entities": [
+  {
+   "name": "基督·欧亚",
+   "type": "人物"
+  },
+  {
+   "name": "玛利亚",
+   "type": "人物"
+  },
+  {
+   "name": "玲小姐",
+   "type": "人物"
+  },
+  {
+   "name": "克劳",
+   "type": "人物"
+  },
+  {
+   "name": "塞拉·雷迪安特",
+   "type": "人物"
+  },
+  {
+   "name": "缇亚",
+   "type": "人物"
+  },
+  {
+   "name": "拉丝缇娅拉",
+   "type": "人物"
+  },
+  {
+   "name": "帕林库洛",
+   "type": "人物"
+  },
+  {
+   "name": "芙兰琉莱",
+   "type": "人物"
+  },
+  {
+   "name": "阿尔缇",
+   "type": "人物"
+  },
+  {
+   "name": "缇达",
+   "type": "人物"
+  },
+  {
+   "name": "瓦尔德",
+   "type": "地点"
+  },
+  {
+   "name": "大圣堂",
+   "type": "地点"
+  },
+  {
+   "name": "弗茨亚茨",
+   "type": "地点"
+  },
+  {
+   "name": "迷宫",
+   "type": "地点"
+  },
+  {
+   "name": "十三层",
+   "type": "地点"
+  },
+  {
+   "name": "十四层",
+   "type": "地点"
+  },
+  {
+   "name": "十五层",
+   "type": "地点"
+  },
+  {
+   "name": "天上之七骑士",
+   "type": "组织"
+  },
+  {
+   "name": "Dimension",
+   "type": "技能魔法"
+  },
+  {
+   "name": "注视",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Foam",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Growth",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Dimension·决战演算",
+   "type": "技能魔法"
+  },
+  {
+   "name": "正道",
+   "type": "概念"
+  },
+  {
+   "name": "魔石线",
+   "type": "物品"
+  },
+  {
+   "name": "银制防具",
+   "type": "物品"
+  }
+ ],
+ "edges": [
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玛利亚",
+   "relation_type": "LEFT_AT_HOME",
+   "fact": "基督·欧亚将玛利亚留在家中，自己来到了酒馆。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玲小姐",
+   "relation_type": "WORKS_WITH",
+   "fact": "基督·欧亚在酒馆工作时与玲小姐打了个照面，并一如既往地投身于撤盘子和洗盘子之类的杂务。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "克劳",
+   "relation_type": "IS_FRIENDS_WITH",
+   "fact": "基督·欧亚与克劳是老朋友，克劳是基督第一天在这家店工作时便结下缘份的朋友。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "克劳",
+   "relation_type": "TALKS_WITH",
+   "fact": "基督·欧亚与老朋友克劳交谈，打算从他的嘴里套点情报出来。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "克劳",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "INFORMS",
+   "fact": "克劳告诉基督·欧亚，十四层的怪物好像不是很多，与湿地生态的十三层截然不同，十四层简直是不毛之地，一眼望去尽是漫无边际的沙漠，水的存在根本无迹可寻，杂鱼怪物和Boss的数目都相当稀少，基本没有人会选择在那里进行探索和打怪，大抵都会选择通过『正道』直奔十五层。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十四层",
+   "target_entity_name": "十三层",
+   "relation_type": "DIFFERS_FROM",
+   "fact": "十四层与湿地生态的十三层截然不同，十四层简直是不毛之地，一眼望去尽是漫无边际的沙漠，水的存在根本无迹可寻。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十四层",
+   "target_entity_name": "迷宫",
+   "relation_type": "IS_PART_OF",
+   "fact": "十四层是迷宫中的一层，是沙漠地带，高温会夺去人体的水分，未探索区域也为数不少。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十三层",
+   "target_entity_name": "迷宫",
+   "relation_type": "IS_PART_OF",
+   "fact": "十三层是迷宫中的一层，具有湿地生态。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十五层",
+   "target_entity_name": "迷宫",
+   "relation_type": "IS_PART_OF",
+   "fact": "十五层是迷宫中的一层，人们通常通过『正道』直奔十五层。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "正道",
+   "target_entity_name": "十五层",
+   "relation_type": "LEADS_TO",
+   "fact": "人们大抵都会选择通过『正道』直奔十五层。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "天上之七骑士",
+   "relation_type": "MEMBER_OF",
+   "fact": "塞拉·雷迪安特是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "弗茨亚茨",
+   "relation_type": "AFFILIATED_WITH",
+   "fact": "塞拉·雷迪安特是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "天上之七骑士",
+   "target_entity_name": "弗茨亚茨",
+   "relation_type": "AFFILIATED_WITH",
+   "fact": "『天上之七骑士』隶属于弗茨亚茨。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "银制防具",
+   "relation_type": "WEARS",
+   "fact": "塞拉·雷迪安特便于行动的着装上仅仅配有最低限度的银制防具。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "CHALLENGES_TO_DUEL",
+   "fact": "塞拉·雷迪安特专程来找基督·欧亚决斗，并表明战意。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "拉丝缇娅拉",
+   "relation_type": "SEEKS_TO_RECOVER",
+   "fact": "塞拉·雷迪安特此次前来有不得不实现的使命，即通过和基督·欧亚决斗，以期将大小姐拉丝缇娅拉夺回来。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "ACCUSES_OF_ABDUCTION",
+   "fact": "塞拉·雷迪安特指责基督·欧亚拐骗了拉丝缇娅拉大小姐。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "弗茨亚茨",
+   "relation_type": "IS_YOUNG_MISTRESS_OF",
+   "fact": "拉丝缇娅拉是弗茨亚茨的大小姐。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "WROTE_LETTER_ABOUT_ELOPING_WITH",
+   "fact": "拉丝缇娅拉出走后留下的信里，写下了她要与基督·欧亚私奔。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "TALKS_ABOUT",
+   "fact": "拉丝缇娅拉在大圣堂里三句不离基督·欧亚，每天每日都在七骑士耳边念叨在迷宫偶然结识的基督·欧亚是何种男人、为她做过何种举动。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "大圣堂",
+   "relation_type": "LOCATED_IN",
+   "fact": "拉丝缇娅拉曾在大圣堂里三句不离基督·欧亚。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "TRESPASSED_INTO_HOME_OF",
+   "fact": "拉丝缇娅拉非法入侵了基督·欧亚所居住的旅店。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "PUSHED_DOWN",
+   "fact": "拉丝缇娅拉一把将基督·欧亚扑倒。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "CAST_MAGIC_ON",
+   "fact": "拉丝缇娅拉对基督·欧亚施加了魔法。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "SAVED",
+   "fact": "基督·欧亚在迷宫中受拉丝缇娅拉相救。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "拉丝缇娅拉",
+   "relation_type": "CONSIDERS_DANGEROUS",
+   "fact": "基督·欧亚将拉丝缇娅拉视为危险名单前几号的存在。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "缇达",
+   "relation_type": "DEFEATED",
+   "fact": "基督·欧亚先前打倒了令人类感到束手无策的缇达。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "HAD_CONTACT_WITH",
+   "fact": "基督·欧亚之前同那个叫帕林库洛的骑士有过接触。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "芙兰琉莱",
+   "relation_type": "CONFIRMED_NOT",
+   "fact": "基督·欧亚之前跟帕林库洛交谈时确认了拉丝缇娅拉不是芙兰琉莱。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "阿尔缇",
+   "relation_type": "MET",
+   "fact": "阿尔缇的登场导致基督·欧亚对拉丝缇娅拉的印象淡薄了一些。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "芙兰琉莱",
+   "relation_type": "MET",
+   "fact": "芙兰琉莱的登场导致基督·欧亚对拉丝缇娅拉的印象淡薄了一些。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "缇亚",
+   "relation_type": "DOUBTS",
+   "fact": "基督·欧亚不相信缇亚说自己是男性的主张。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "塞拉·雷迪安特",
+   "relation_type": "ACCEPTS_DUEL",
+   "fact": "基督·欧亚接受塞拉·雷迪安特的决斗，条件包括：不能下死手、打倒重伤不行、要点到为止、和平第一；若把对方杀了自动判负，只有让对方主动投降才算真正胜利；若基督赢了，塞拉再也不许在他面前露脸；决斗形式必须一对一。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "HAS_HIGHER_LEVEL_THAN",
+   "fact": "基督·欧亚的等级只有塞拉·雷迪安特的一半左右，不过数值上却差不到哪里去。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "注视",
+   "relation_type": "USES_SKILL",
+   "fact": "基督·欧亚使用『注视』观察塞拉·雷迪安特，并再次确认其状态。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "Dimension",
+   "relation_type": "USES_MAGIC",
+   "fact": "基督·欧亚使用『Dimension』旁听获取信息，并弥补与塞拉·雷迪安特的数值差距。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "Foam",
+   "relation_type": "USES_MAGIC",
+   "fact": "基督·欧亚在决斗中咏唱魔法『Foam』，并在迷宫中多次尝试同时使用『Dimension』和『Foam』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "Dimension·决战演算",
+   "relation_type": "USES_MAGIC",
+   "fact": "基督·欧亚在决斗中咏唱魔法『Dimension·决战演算』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "Foam",
+   "target_entity_name": "Dimension",
+   "relation_type": "ASSISTS",
+   "fact": "『Foam』对『Dimension』有辅助效果，让『Dimension』寄宿在魔法泡沫里，能更加确实地对空间予以把握。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "Growth",
+   "relation_type": "USES_MAGIC",
+   "fact": "塞拉·雷迪安特咏唱魔法『Growth』，身上泛起白光。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "缇亚",
+   "relation_type": "HAS_SIMILAR_MAGIC_TO",
+   "fact": "塞拉·雷迪安特使用的『Growth』与从缇亚那里看来的神圣魔法非常相似，恐怕属性也是一致的。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "魔石线",
+   "relation_type": "SWEARS_ON",
+   "fact": "基督·欧亚与塞拉·雷迪安特互相对着『魔石线』起誓。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "魔石线",
+   "relation_type": "SWEARS_ON",
+   "fact": "塞拉·雷迪安特与基督·欧亚互相对着『魔石线』起誓。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "克劳",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "DEFENDS",
+   "fact": "克劳来到基督·欧亚与塞拉·雷迪安特之间，打算庇护基督·欧亚。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "玲小姐",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "WORRIES_ABOUT",
+   "fact": "玲小姐担心基督·欧亚的安危。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玲小姐",
+   "relation_type": "REASSURES",
+   "fact": "基督·欧亚带着笑容对玲小姐说没问题，刚才和塞拉谈好规则了，再怎么也死不掉，让她放心。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玛利亚",
+   "relation_type": "EXPLORES_WITH",
+   "fact": "基督·欧亚与玛利亚一起潜入迷宫，并带着玛利亚升级。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "玛利亚",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "EXPLORES_WITH",
+   "fact": "玛利亚与基督·欧亚一起潜入迷宫。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "瓦尔德",
+   "relation_type": "LOCATED_IN",
+   "fact": "基督·欧亚在瓦尔德的一家酒馆工作，并在此与克劳、玲小姐、塞拉·雷迪安特等人相遇。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "瓦尔德",
+   "relation_type": "LOCATED_IN",
+   "fact": "塞拉·雷迪安特带着一行人来到瓦尔德的一家酒馆，找基督·欧亚决斗。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  }
+ ],
+ "raw_nodes": [
+  {
+   "name": "基督·欧亚",
+   "type": "人物"
+  },
+  {
+   "name": "玛利亚",
+   "type": "人物"
+  },
+  {
+   "name": "玲小姐",
+   "type": "人物"
+  },
+  {
+   "name": "克劳",
+   "type": "人物"
+  },
+  {
+   "name": "塞拉·雷迪安特",
+   "type": "人物"
+  },
+  {
+   "name": "缇亚",
+   "type": "人物"
+  },
+  {
+   "name": "拉丝缇娅拉",
+   "type": "人物"
+  },
+  {
+   "name": "帕林库洛",
+   "type": "人物"
+  },
+  {
+   "name": "芙兰琉莱",
+   "type": "人物"
+  },
+  {
+   "name": "阿尔缇",
+   "type": "人物"
+  },
+  {
+   "name": "缇达",
+   "type": "人物"
+  },
+  {
+   "name": "瓦尔德",
+   "type": "地点"
+  },
+  {
+   "name": "大圣堂",
+   "type": "地点"
+  },
+  {
+   "name": "弗茨亚茨",
+   "type": "地点"
+  },
+  {
+   "name": "迷宫",
+   "type": "地点"
+  },
+  {
+   "name": "十三层",
+   "type": "地点"
+  },
+  {
+   "name": "十四层",
+   "type": "地点"
+  },
+  {
+   "name": "十五层",
+   "type": "地点"
+  },
+  {
+   "name": "天上之七骑士",
+   "type": "组织"
+  },
+  {
+   "name": "Dimension",
+   "type": "技能魔法"
+  },
+  {
+   "name": "注视",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Foam",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Growth",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Dimension·决战演算",
+   "type": "技能魔法"
+  },
+  {
+   "name": "正道",
+   "type": "概念"
+  },
+  {
+   "name": "魔石线",
+   "type": "物品"
+  },
+  {
+   "name": "银制防具",
+   "type": "物品"
+  }
+ ],
+ "raw_edges": [
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玛利亚",
+   "relation_type": "LEFT_AT_HOME",
+   "fact": "基督·欧亚将玛利亚留在家中，自己来到了酒馆。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玲小姐",
+   "relation_type": "WORKS_WITH",
+   "fact": "基督·欧亚在酒馆工作时与玲小姐打了个照面，并一如既往地投身于撤盘子和洗盘子之类的杂务。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "克劳",
+   "relation_type": "IS_FRIENDS_WITH",
+   "fact": "基督·欧亚与克劳是老朋友，克劳是基督第一天在这家店工作时便结下缘份的朋友。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "克劳",
+   "relation_type": "TALKS_WITH",
+   "fact": "基督·欧亚与老朋友克劳交谈，打算从他的嘴里套点情报出来。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "克劳",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "INFORMS",
+   "fact": "克劳告诉基督·欧亚，十四层的怪物好像不是很多，与湿地生态的十三层截然不同，十四层简直是不毛之地，一眼望去尽是漫无边际的沙漠，水的存在根本无迹可寻，杂鱼怪物和Boss的数目都相当稀少，基本没有人会选择在那里进行探索和打怪，大抵都会选择通过『正道』直奔十五层。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十四层",
+   "target_entity_name": "十三层",
+   "relation_type": "DIFFERS_FROM",
+   "fact": "十四层与湿地生态的十三层截然不同，十四层简直是不毛之地，一眼望去尽是漫无边际的沙漠，水的存在根本无迹可寻。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十四层",
+   "target_entity_name": "迷宫",
+   "relation_type": "IS_PART_OF",
+   "fact": "十四层是迷宫中的一层，是沙漠地带，高温会夺去人体的水分，未探索区域也为数不少。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十三层",
+   "target_entity_name": "迷宫",
+   "relation_type": "IS_PART_OF",
+   "fact": "十三层是迷宫中的一层，具有湿地生态。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "十五层",
+   "target_entity_name": "迷宫",
+   "relation_type": "IS_PART_OF",
+   "fact": "十五层是迷宫中的一层，人们通常通过『正道』直奔十五层。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "正道",
+   "target_entity_name": "十五层",
+   "relation_type": "LEADS_TO",
+   "fact": "人们大抵都会选择通过『正道』直奔十五层。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "天上之七骑士",
+   "relation_type": "MEMBER_OF",
+   "fact": "塞拉·雷迪安特是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "弗茨亚茨",
+   "relation_type": "AFFILIATED_WITH",
+   "fact": "塞拉·雷迪安特是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "天上之七骑士",
+   "target_entity_name": "弗茨亚茨",
+   "relation_type": "AFFILIATED_WITH",
+   "fact": "『天上之七骑士』隶属于弗茨亚茨。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "银制防具",
+   "relation_type": "WEARS",
+   "fact": "塞拉·雷迪安特便于行动的着装上仅仅配有最低限度的银制防具。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "CHALLENGES_TO_DUEL",
+   "fact": "塞拉·雷迪安特专程来找基督·欧亚决斗，并表明战意。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "拉丝缇娅拉",
+   "relation_type": "SEEKS_TO_RECOVER",
+   "fact": "塞拉·雷迪安特此次前来有不得不实现的使命，即通过和基督·欧亚决斗，以期将大小姐拉丝缇娅拉夺回来。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "ACCUSES_OF_ABDUCTION",
+   "fact": "塞拉·雷迪安特指责基督·欧亚拐骗了拉丝缇娅拉大小姐。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "弗茨亚茨",
+   "relation_type": "IS_YOUNG_MISTRESS_OF",
+   "fact": "拉丝缇娅拉是弗茨亚茨的大小姐。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "WROTE_LETTER_ABOUT_ELOPING_WITH",
+   "fact": "拉丝缇娅拉出走后留下的信里，写下了她要与基督·欧亚私奔。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "TALKS_ABOUT",
+   "fact": "拉丝缇娅拉在大圣堂里三句不离基督·欧亚，每天每日都在七骑士耳边念叨在迷宫偶然结识的基督·欧亚是何种男人、为她做过何种举动。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "大圣堂",
+   "relation_type": "LOCATED_IN",
+   "fact": "拉丝缇娅拉曾在大圣堂里三句不离基督·欧亚。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "TRESPASSED_INTO_HOME_OF",
+   "fact": "拉丝缇娅拉非法入侵了基督·欧亚所居住的旅店。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "PUSHED_DOWN",
+   "fact": "拉丝缇娅拉一把将基督·欧亚扑倒。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "CAST_MAGIC_ON",
+   "fact": "拉丝缇娅拉对基督·欧亚施加了魔法。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "拉丝缇娅拉",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "SAVED",
+   "fact": "基督·欧亚在迷宫中受拉丝缇娅拉相救。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "拉丝缇娅拉",
+   "relation_type": "CONSIDERS_DANGEROUS",
+   "fact": "基督·欧亚将拉丝缇娅拉视为危险名单前几号的存在。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "缇达",
+   "relation_type": "DEFEATED",
+   "fact": "基督·欧亚先前打倒了令人类感到束手无策的缇达。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "HAD_CONTACT_WITH",
+   "fact": "基督·欧亚之前同那个叫帕林库洛的骑士有过接触。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "芙兰琉莱",
+   "relation_type": "CONFIRMED_NOT",
+   "fact": "基督·欧亚之前跟帕林库洛交谈时确认了拉丝缇娅拉不是芙兰琉莱。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "阿尔缇",
+   "relation_type": "MET",
+   "fact": "阿尔缇的登场导致基督·欧亚对拉丝缇娅拉的印象淡薄了一些。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "芙兰琉莱",
+   "relation_type": "MET",
+   "fact": "芙兰琉莱的登场导致基督·欧亚对拉丝缇娅拉的印象淡薄了一些。",
+   "valid_at": null,
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "缇亚",
+   "relation_type": "DOUBTS",
+   "fact": "基督·欧亚不相信缇亚说自己是男性的主张。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "塞拉·雷迪安特",
+   "relation_type": "ACCEPTS_DUEL",
+   "fact": "基督·欧亚接受塞拉·雷迪安特的决斗，条件包括：不能下死手、打倒重伤不行、要点到为止、和平第一；若把对方杀了自动判负，只有让对方主动投降才算真正胜利；若基督赢了，塞拉再也不许在他面前露脸；决斗形式必须一对一。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "HAS_HIGHER_LEVEL_THAN",
+   "fact": "基督·欧亚的等级只有塞拉·雷迪安特的一半左右，不过数值上却差不到哪里去。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "注视",
+   "relation_type": "USES_SKILL",
+   "fact": "基督·欧亚使用『注视』观察塞拉·雷迪安特，并再次确认其状态。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "Dimension",
+   "relation_type": "USES_MAGIC",
+   "fact": "基督·欧亚使用『Dimension』旁听获取信息，并弥补与塞拉·雷迪安特的数值差距。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "Foam",
+   "relation_type": "USES_MAGIC",
+   "fact": "基督·欧亚在决斗中咏唱魔法『Foam』，并在迷宫中多次尝试同时使用『Dimension』和『Foam』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "Dimension·决战演算",
+   "relation_type": "USES_MAGIC",
+   "fact": "基督·欧亚在决斗中咏唱魔法『Dimension·决战演算』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "Foam",
+   "target_entity_name": "Dimension",
+   "relation_type": "ASSISTS",
+   "fact": "『Foam』对『Dimension』有辅助效果，让『Dimension』寄宿在魔法泡沫里，能更加确实地对空间予以把握。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "Growth",
+   "relation_type": "USES_MAGIC",
+   "fact": "塞拉·雷迪安特咏唱魔法『Growth』，身上泛起白光。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "缇亚",
+   "relation_type": "HAS_SIMILAR_MAGIC_TO",
+   "fact": "塞拉·雷迪安特使用的『Growth』与从缇亚那里看来的神圣魔法非常相似，恐怕属性也是一致的。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "魔石线",
+   "relation_type": "SWEARS_ON",
+   "fact": "基督·欧亚与塞拉·雷迪安特互相对着『魔石线』起誓。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "魔石线",
+   "relation_type": "SWEARS_ON",
+   "fact": "塞拉·雷迪安特与基督·欧亚互相对着『魔石线』起誓。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "克劳",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "DEFENDS",
+   "fact": "克劳来到基督·欧亚与塞拉·雷迪安特之间，打算庇护基督·欧亚。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "玲小姐",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "WORRIES_ABOUT",
+   "fact": "玲小姐担心基督·欧亚的安危。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玲小姐",
+   "relation_type": "REASSURES",
+   "fact": "基督·欧亚带着笑容对玲小姐说没问题，刚才和塞拉谈好规则了，再怎么也死不掉，让她放心。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "玛利亚",
+   "relation_type": "EXPLORES_WITH",
+   "fact": "基督·欧亚与玛利亚一起潜入迷宫，并带着玛利亚升级。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "玛利亚",
+   "target_entity_name": "基督·欧亚",
+   "relation_type": "EXPLORES_WITH",
+   "fact": "玛利亚与基督·欧亚一起潜入迷宫。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "基督·欧亚",
+   "target_entity_name": "瓦尔德",
+   "relation_type": "LOCATED_IN",
+   "fact": "基督·欧亚在瓦尔德的一家酒馆工作，并在此与克劳、玲小姐、塞拉·雷迪安特等人相遇。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  },
+  {
+   "source_entity_name": "塞拉·雷迪安特",
+   "target_entity_name": "瓦尔德",
+   "relation_type": "LOCATED_IN",
+   "fact": "塞拉·雷迪安特带着一行人来到瓦尔德的一家酒馆，找基督·欧亚决斗。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null
+  }
+ ]
+}

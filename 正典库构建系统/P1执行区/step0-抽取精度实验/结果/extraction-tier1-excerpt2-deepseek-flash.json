@@ -1,0 +1,1936 @@
+{
+ "meta": {
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "temperature": 0,
+  "prompt_source": "graphiti_core.prompts extract_message / edge（原装模板装配，自定义实体类型）",
+  "excerpt": "excerpt2-CHAPTER0038.md",
+  "excerpt_sha256_16": "15dc13a4c11870b0",
+  "usage_nodes": {
+   "prompt_tokens": 5601,
+   "completion_tokens": 14550,
+   "total_tokens": 20151,
+   "prompt_tokens_details": {
+    "cached_tokens": 512
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 14219
+   },
+   "prompt_cache_hit_tokens": 512,
+   "prompt_cache_miss_tokens": 5089
+  },
+  "usage_edges": {
+   "prompt_tokens": 5337,
+   "completion_tokens": 30174,
+   "total_tokens": 35511,
+   "prompt_tokens_details": {
+    "cached_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 22591
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 5337
+  }
+ },
+ "entities": [
+  {
+   "name": "斯诺·沃克",
+   "type": "人物"
+  },
+  {
+   "name": "玛利亚",
+   "type": "人物"
+  },
+  {
+   "name": "涡波",
+   "type": "人物"
+  },
+  {
+   "name": "帕林库洛",
+   "type": "人物"
+  },
+  {
+   "name": "缇莉",
+   "type": "人物"
+  },
+  {
+   "name": "波鲁扎克",
+   "type": "人物"
+  },
+  {
+   "name": "劳拉维亚",
+   "type": "地点"
+  },
+  {
+   "name": "迷宫",
+   "type": "地点"
+  },
+  {
+   "name": "六十七区的市场",
+   "type": "地点"
+  },
+  {
+   "name": "史诗探索者本部",
+   "type": "地点"
+  },
+  {
+   "name": "史诗探索者",
+   "type": "组织"
+  },
+  {
+   "name": "缇莉的队伍",
+   "type": "组织"
+  },
+  {
+   "name": "Dimension",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Dimension·多重展开",
+   "type": "技能魔法"
+  },
+  {
+   "name": "贤能",
+   "type": "技能魔法"
+  },
+  {
+   "name": "咒术",
+   "type": "技能魔法"
+  },
+  {
+   "name": "次元魔法",
+   "type": "技能魔法"
+  },
+  {
+   "name": "感知魔法",
+   "type": "技能魔法"
+  },
+  {
+   "name": "代价",
+   "type": "概念"
+  },
+  {
+   "name": "大火灾",
+   "type": "概念"
+  },
+  {
+   "name": "表示",
+   "type": "概念"
+  },
+  {
+   "name": "正道",
+   "type": "概念"
+  }
+ ],
+ "edges": [
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "WAKES_UP",
+   "fact": "斯诺·沃克在第二天一早叫涡波起床。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "玛利亚",
+   "relation_type": "SIBLING_OF",
+   "fact": "涡波与玛利亚是在一张床上睡着的兄妹两人。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "玛利亚",
+   "relation_type": "GREETS",
+   "fact": "斯诺·沃克向玛利亚道早安。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "ACCOMPANIES",
+   "fact": "斯诺·沃克带着涡波出门。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "TEACHES",
+   "fact": "斯诺·沃克在前往办公室的路上向涡波教授公会事务的基本。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "IS_GUILD_MASTER_OF",
+   "fact": "涡波成为史诗探索者公会会长。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "IS_VICE_GUILD_MASTER_OF",
+   "fact": "斯诺·沃克是史诗探索者副会长。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "FORMERLY_LED",
+   "fact": "帕林库洛原来主导史诗探索者的事务。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "PLANS_AFFAIRS_OF",
+   "fact": "涡波接手史诗探索者今天的事务规划。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "COOPERATES_WITH",
+   "fact": "涡波和斯诺两人合作处理史诗探索者公会事务。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "Dimension",
+   "relation_type": "USES",
+   "fact": "涡波利用次元魔法『Dimension』收集信息并把握在外公会成员的现场状况。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "Dimension·多重展开",
+   "relation_type": "USES",
+   "fact": "涡波使用『Dimension·多重展开』同时处理复数的文件并强化波鲁扎克周围以掌握声音振动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "LOCATED_AT",
+   "fact": "涡波坐镇于史诗探索者本部。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "LOCATED_AT",
+   "fact": "斯诺·沃克在史诗探索者本部涡波身边。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "贤能",
+   "relation_type": "HAS_SKILL",
+   "fact": "等级加持的『贤能』赋予涡波出类拔萃的处理能力。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "次元魔法",
+   "relation_type": "USES",
+   "fact": "涡波使用违反常理的次元魔法。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "COMMANDS",
+   "fact": "涡波对缇莉的队伍下达指示。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "RELAYS_INSTRUCTIONS_TO",
+   "fact": "斯诺·沃克通过魔石向缇莉的队伍传达涡波的指示。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "OBSERVES",
+   "fact": "涡波用Dimension实时观测缇莉队伍追捕逃犯的状况。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉的队伍",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "LOCATED_NORTHEAST_OF",
+   "fact": "缇莉的队伍在距史诗探索者本部东北偏北方向数公里之外。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "缇莉",
+   "relation_type": "INSTRUCTS",
+   "fact": "涡波指示缇莉在下个拐角左转、第三个拐角待机，约17秒后迎击目标。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "LEADS",
+   "fact": "缇莉带领缇莉的队伍。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉的队伍",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "PART_OF",
+   "fact": "缇莉的队伍属于史诗探索者。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "MEMBER_OF",
+   "fact": "缇莉是史诗探索者成员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "咒术",
+   "relation_type": "USES",
+   "fact": "帕林库洛使用『咒术』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "感知魔法",
+   "relation_type": "USES",
+   "fact": "帕林库洛是大陆屈指可数的能使用感知魔法的人。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "次元魔法",
+   "target_entity_name": "感知魔法",
+   "relation_type": "MORE_PRECISE_THAN",
+   "fact": "涡波的次元魔法精度高于帕林库洛的感知魔法。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "次元魔法",
+   "target_entity_name": "咒术",
+   "relation_type": "MORE_PRECISE_THAN",
+   "fact": "涡波的次元魔法比帕林库洛的咒术更精确。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "劳拉维亚",
+   "relation_type": "KNOWS_STATUS_OF",
+   "fact": "涡波掌握了劳拉维亚城市全体的状况。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "REQUESTS_TO_CALL_BY_NAME",
+   "fact": "涡波请斯诺不要称呼他为会长(主人)，直接称呼名字。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "REPEATS_WORDS_OF",
+   "fact": "斯诺·沃克重复涡波的话来传达指示。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "COVERS_WORK_FOR",
+   "fact": "涡波包揽了本应由斯诺负责处理的文件。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "波鲁扎克",
+   "relation_type": "CONTACTS_VIA_MAGIC_STONE",
+   "fact": "斯诺·沃克用魔石传话联络波鲁扎克。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "波鲁扎克",
+   "relation_type": "MONITORS",
+   "fact": "涡波用『Dimension·多重展开』强化波鲁扎克周围以掌握他声音的振动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "波鲁扎克",
+   "relation_type": "INSTRUCTS",
+   "fact": "涡波指示波鲁扎克立刻前往六十七区的市场捕获五级目标。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "波鲁扎克",
+   "target_entity_name": "六十七区的市场",
+   "relation_type": "GOES_TO",
+   "fact": "波鲁扎克前往六十七区的市场。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "波鲁扎克",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "MEMBER_OF",
+   "fact": "波鲁扎克是史诗探索者成员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "波鲁扎克",
+   "target_entity_name": "劳拉维亚",
+   "relation_type": "HELPS_PEOPLE_OF",
+   "fact": "波鲁扎克捕获强盗并带往被害店家，帮助劳拉维亚市民挽回损失。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "劳拉维亚",
+   "relation_type": "HELPS_PEOPLE_OF",
+   "fact": "涡波帮助了一名劳拉维亚市民。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "THANKS_TO",
+   "fact": "斯诺·沃克托涡波的福已经处理完不会被发火的量的文件。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "UNDERSTANDS",
+   "fact": "涡波在今天一天内大致了解了斯诺的性格。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "ASSIGNS_WORK_TO",
+   "fact": "帕林库洛安排人事变动，让生手涡波负责文书工作。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "BLAMES",
+   "fact": "斯诺认为都是安排了这种人事变动的帕林库洛不好。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "COMPLETES_WORK_FOR",
+   "fact": "涡波从正午开始持续处理史诗探索者的文书工作，差不多都解决完毕。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "ENTERS",
+   "fact": "缇莉进入了史诗探索者本部。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "Dimension",
+   "target_entity_name": "缇莉",
+   "relation_type": "SENSES",
+   "fact": "Dimension感知到缇莉进入史诗探索者本部。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "TALKS_WITH",
+   "fact": "缇莉在玄关那边同帕林库洛攀谈。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "REPORTS_TO",
+   "fact": "涡波向帕林库洛报告文书工作基本完成。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "涡波",
+   "relation_type": "PRAISES",
+   "fact": "缇莉称赞涡波作为会长比帕林库洛还出色，能以惊人速度传达准确情报。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "CONSIDERS_TALENT",
+   "fact": "帕林库洛认为涡波是本国求之若渴的人才。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "CONSIDERS_TALENT",
+   "fact": "帕林库洛认为斯诺·沃克是本国求之若渴的人才。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "涡波",
+   "relation_type": "EVALUATES_AS_EXTRAORDINARY",
+   "fact": "缇莉认为涡波自身出乎常理。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "PROCESSES_FINANCIAL_DOCUMENTS",
+   "fact": "涡波在今天一天内处理好了史诗探索者公会的物资流动、经费、人事费用、收支等会计文件。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "COMPLETES_7_DAYS_WORK_FOR",
+   "fact": "涡波完成的工作量相当于七天的量。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "ASSISTS_MEMBERS",
+   "fact": "多亏涡波的辅助，史诗探索者成员们的委托已完成七天的量。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "BOOSTS_EFFICIENCY_OF",
+   "fact": "涡波个人高性能配以斯诺的辅助魔法，使史诗探索者运作效率比往常加快七倍。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "INSTRUCTS",
+   "fact": "帕林库洛让涡波推进迷宫的攻略，作为对公会的贡献。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "ASKS",
+   "fact": "缇莉询问帕林库洛我们该怎么办。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "缇莉",
+   "relation_type": "INSTRUCTS",
+   "fact": "帕林库洛告诉缇莉等人自由使用余下时间，可从公共机关接受任务或组队去想去的地方。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "CAUSES_IDLE",
+   "fact": "因为涡波新官上任做过头，导致史诗探索者所有人无事可做。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "IMPROVES_RELATIONS_WITH",
+   "fact": "涡波与史诗探索者成员交流后进一步打好了关系。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "GREETS",
+   "fact": "晚上涡波跟斯诺问个好。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "玛利亚",
+   "relation_type": "EATS_WITH",
+   "fact": "涡波跟玛利亚一起吃过饭。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "玛利亚",
+   "relation_type": "SLEEPS_WITH",
+   "fact": "涡波和玛利亚两人和昨天一样一起上床休息。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "GOES_TO",
+   "fact": "第二天涡波和斯诺来到了迷宫门前。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "迷宫",
+   "relation_type": "GOES_TO",
+   "fact": "斯诺·沃克被涡波强行拉来迷宫门前。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "REQUESTS_JOINT_ACTION",
+   "fact": "帕林库洛要涡波和斯诺尽可能两人一起行动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "REQUESTS_JOINT_ACTION",
+   "fact": "帕林库洛要涡波和斯诺尽可能两人一起行动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "正道",
+   "relation_type": "REQUESTS_EXTENSION_OF",
+   "fact": "帕林库洛拜托过延长『正道』和讨伐守护者的事。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "HUNTS_IN",
+   "fact": "涡波打算在迷宫里轻松狩猎怪物和寻宝。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "PROTECTS",
+   "fact": "涡波让斯诺在身后看着，基本上由他一个人解决迷宫中的战斗。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "JOINS_PARTY_OF",
+   "fact": "斯诺·沃克加入了涡波的队伍。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "表示",
+   "relation_type": "SEES",
+   "fact": "涡波看着浮现在眼前的『表示』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "ENTERS",
+   "fact": "涡波和斯诺一起进入了迷宫。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "迷宫",
+   "relation_type": "ENTERS",
+   "fact": "斯诺·沃克和涡波一起进入了迷宫。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "FEELS_NOSTALGIC_ABOUT",
+   "fact": "迷宫昏暗的长廊令涡波感到莫名怀念。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "大火灾",
+   "relation_type": "EXPERIENCED",
+   "fact": "涡波经历过那场『大火灾』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "ASKS",
+   "fact": "斯诺问涡波怎么了。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  }
+ ],
+ "raw_nodes": [
+  {
+   "name": "斯诺·沃克",
+   "type": "人物"
+  },
+  {
+   "name": "玛利亚",
+   "type": "人物"
+  },
+  {
+   "name": "涡波",
+   "type": "人物"
+  },
+  {
+   "name": "帕林库洛",
+   "type": "人物"
+  },
+  {
+   "name": "缇莉",
+   "type": "人物"
+  },
+  {
+   "name": "波鲁扎克",
+   "type": "人物"
+  },
+  {
+   "name": "劳拉维亚",
+   "type": "地点"
+  },
+  {
+   "name": "迷宫",
+   "type": "地点"
+  },
+  {
+   "name": "六十七区的市场",
+   "type": "地点"
+  },
+  {
+   "name": "史诗探索者本部",
+   "type": "地点"
+  },
+  {
+   "name": "史诗探索者",
+   "type": "组织"
+  },
+  {
+   "name": "缇莉的队伍",
+   "type": "组织"
+  },
+  {
+   "name": "Dimension",
+   "type": "技能魔法"
+  },
+  {
+   "name": "Dimension·多重展开",
+   "type": "技能魔法"
+  },
+  {
+   "name": "贤能",
+   "type": "技能魔法"
+  },
+  {
+   "name": "咒术",
+   "type": "技能魔法"
+  },
+  {
+   "name": "次元魔法",
+   "type": "技能魔法"
+  },
+  {
+   "name": "感知魔法",
+   "type": "技能魔法"
+  },
+  {
+   "name": "代价",
+   "type": "概念"
+  },
+  {
+   "name": "大火灾",
+   "type": "概念"
+  },
+  {
+   "name": "表示",
+   "type": "概念"
+  },
+  {
+   "name": "正道",
+   "type": "概念"
+  }
+ ],
+ "raw_edges": [
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "WAKES_UP",
+   "fact": "斯诺·沃克在第二天一早叫涡波起床。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "玛利亚",
+   "relation_type": "SIBLING_OF",
+   "fact": "涡波与玛利亚是在一张床上睡着的兄妹两人。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "玛利亚",
+   "relation_type": "GREETS",
+   "fact": "斯诺·沃克向玛利亚道早安。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "ACCOMPANIES",
+   "fact": "斯诺·沃克带着涡波出门。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "TEACHES",
+   "fact": "斯诺·沃克在前往办公室的路上向涡波教授公会事务的基本。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "IS_GUILD_MASTER_OF",
+   "fact": "涡波成为史诗探索者公会会长。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "IS_VICE_GUILD_MASTER_OF",
+   "fact": "斯诺·沃克是史诗探索者副会长。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "FORMERLY_LED",
+   "fact": "帕林库洛原来主导史诗探索者的事务。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "PLANS_AFFAIRS_OF",
+   "fact": "涡波接手史诗探索者今天的事务规划。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "COOPERATES_WITH",
+   "fact": "涡波和斯诺两人合作处理史诗探索者公会事务。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "Dimension",
+   "relation_type": "USES",
+   "fact": "涡波利用次元魔法『Dimension』收集信息并把握在外公会成员的现场状况。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "Dimension·多重展开",
+   "relation_type": "USES",
+   "fact": "涡波使用『Dimension·多重展开』同时处理复数的文件并强化波鲁扎克周围以掌握声音振动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "LOCATED_AT",
+   "fact": "涡波坐镇于史诗探索者本部。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "LOCATED_AT",
+   "fact": "斯诺·沃克在史诗探索者本部涡波身边。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "贤能",
+   "relation_type": "HAS_SKILL",
+   "fact": "等级加持的『贤能』赋予涡波出类拔萃的处理能力。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "次元魔法",
+   "relation_type": "USES",
+   "fact": "涡波使用违反常理的次元魔法。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "COMMANDS",
+   "fact": "涡波对缇莉的队伍下达指示。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "RELAYS_INSTRUCTIONS_TO",
+   "fact": "斯诺·沃克通过魔石向缇莉的队伍传达涡波的指示。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "OBSERVES",
+   "fact": "涡波用Dimension实时观测缇莉队伍追捕逃犯的状况。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉的队伍",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "LOCATED_NORTHEAST_OF",
+   "fact": "缇莉的队伍在距史诗探索者本部东北偏北方向数公里之外。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "缇莉",
+   "relation_type": "INSTRUCTS",
+   "fact": "涡波指示缇莉在下个拐角左转、第三个拐角待机，约17秒后迎击目标。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "缇莉的队伍",
+   "relation_type": "LEADS",
+   "fact": "缇莉带领缇莉的队伍。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉的队伍",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "PART_OF",
+   "fact": "缇莉的队伍属于史诗探索者。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "MEMBER_OF",
+   "fact": "缇莉是史诗探索者成员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "咒术",
+   "relation_type": "USES",
+   "fact": "帕林库洛使用『咒术』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "感知魔法",
+   "relation_type": "USES",
+   "fact": "帕林库洛是大陆屈指可数的能使用感知魔法的人。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "次元魔法",
+   "target_entity_name": "感知魔法",
+   "relation_type": "MORE_PRECISE_THAN",
+   "fact": "涡波的次元魔法精度高于帕林库洛的感知魔法。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "次元魔法",
+   "target_entity_name": "咒术",
+   "relation_type": "MORE_PRECISE_THAN",
+   "fact": "涡波的次元魔法比帕林库洛的咒术更精确。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "劳拉维亚",
+   "relation_type": "KNOWS_STATUS_OF",
+   "fact": "涡波掌握了劳拉维亚城市全体的状况。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "REQUESTS_TO_CALL_BY_NAME",
+   "fact": "涡波请斯诺不要称呼他为会长(主人)，直接称呼名字。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "REPEATS_WORDS_OF",
+   "fact": "斯诺·沃克重复涡波的话来传达指示。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "COVERS_WORK_FOR",
+   "fact": "涡波包揽了本应由斯诺负责处理的文件。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "波鲁扎克",
+   "relation_type": "CONTACTS_VIA_MAGIC_STONE",
+   "fact": "斯诺·沃克用魔石传话联络波鲁扎克。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "波鲁扎克",
+   "relation_type": "MONITORS",
+   "fact": "涡波用『Dimension·多重展开』强化波鲁扎克周围以掌握他声音的振动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "波鲁扎克",
+   "relation_type": "INSTRUCTS",
+   "fact": "涡波指示波鲁扎克立刻前往六十七区的市场捕获五级目标。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "波鲁扎克",
+   "target_entity_name": "六十七区的市场",
+   "relation_type": "GOES_TO",
+   "fact": "波鲁扎克前往六十七区的市场。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "波鲁扎克",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "MEMBER_OF",
+   "fact": "波鲁扎克是史诗探索者成员。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "波鲁扎克",
+   "target_entity_name": "劳拉维亚",
+   "relation_type": "HELPS_PEOPLE_OF",
+   "fact": "波鲁扎克捕获强盗并带往被害店家，帮助劳拉维亚市民挽回损失。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "劳拉维亚",
+   "relation_type": "HELPS_PEOPLE_OF",
+   "fact": "涡波帮助了一名劳拉维亚市民。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "THANKS_TO",
+   "fact": "斯诺·沃克托涡波的福已经处理完不会被发火的量的文件。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "UNDERSTANDS",
+   "fact": "涡波在今天一天内大致了解了斯诺的性格。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "ASSIGNS_WORK_TO",
+   "fact": "帕林库洛安排人事变动，让生手涡波负责文书工作。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "BLAMES",
+   "fact": "斯诺认为都是安排了这种人事变动的帕林库洛不好。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "COMPLETES_WORK_FOR",
+   "fact": "涡波从正午开始持续处理史诗探索者的文书工作，差不多都解决完毕。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "史诗探索者本部",
+   "relation_type": "ENTERS",
+   "fact": "缇莉进入了史诗探索者本部。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "Dimension",
+   "target_entity_name": "缇莉",
+   "relation_type": "SENSES",
+   "fact": "Dimension感知到缇莉进入史诗探索者本部。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "TALKS_WITH",
+   "fact": "缇莉在玄关那边同帕林库洛攀谈。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "REPORTS_TO",
+   "fact": "涡波向帕林库洛报告文书工作基本完成。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "涡波",
+   "relation_type": "PRAISES",
+   "fact": "缇莉称赞涡波作为会长比帕林库洛还出色，能以惊人速度传达准确情报。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "CONSIDERS_TALENT",
+   "fact": "帕林库洛认为涡波是本国求之若渴的人才。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "CONSIDERS_TALENT",
+   "fact": "帕林库洛认为斯诺·沃克是本国求之若渴的人才。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "涡波",
+   "relation_type": "EVALUATES_AS_EXTRAORDINARY",
+   "fact": "缇莉认为涡波自身出乎常理。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "PROCESSES_FINANCIAL_DOCUMENTS",
+   "fact": "涡波在今天一天内处理好了史诗探索者公会的物资流动、经费、人事费用、收支等会计文件。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "COMPLETES_7_DAYS_WORK_FOR",
+   "fact": "涡波完成的工作量相当于七天的量。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "ASSISTS_MEMBERS",
+   "fact": "多亏涡波的辅助，史诗探索者成员们的委托已完成七天的量。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "BOOSTS_EFFICIENCY_OF",
+   "fact": "涡波个人高性能配以斯诺的辅助魔法，使史诗探索者运作效率比往常加快七倍。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "INSTRUCTS",
+   "fact": "帕林库洛让涡波推进迷宫的攻略，作为对公会的贡献。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "缇莉",
+   "target_entity_name": "帕林库洛",
+   "relation_type": "ASKS",
+   "fact": "缇莉询问帕林库洛我们该怎么办。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "缇莉",
+   "relation_type": "INSTRUCTS",
+   "fact": "帕林库洛告诉缇莉等人自由使用余下时间，可从公共机关接受任务或组队去想去的地方。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "CAUSES_IDLE",
+   "fact": "因为涡波新官上任做过头，导致史诗探索者所有人无事可做。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "史诗探索者",
+   "relation_type": "IMPROVES_RELATIONS_WITH",
+   "fact": "涡波与史诗探索者成员交流后进一步打好了关系。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "GREETS",
+   "fact": "晚上涡波跟斯诺问个好。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "玛利亚",
+   "relation_type": "EATS_WITH",
+   "fact": "涡波跟玛利亚一起吃过饭。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "玛利亚",
+   "relation_type": "SLEEPS_WITH",
+   "fact": "涡波和玛利亚两人和昨天一样一起上床休息。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "GOES_TO",
+   "fact": "第二天涡波和斯诺来到了迷宫门前。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "迷宫",
+   "relation_type": "GOES_TO",
+   "fact": "斯诺·沃克被涡波强行拉来迷宫门前。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "涡波",
+   "relation_type": "REQUESTS_JOINT_ACTION",
+   "fact": "帕林库洛要涡波和斯诺尽可能两人一起行动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "REQUESTS_JOINT_ACTION",
+   "fact": "帕林库洛要涡波和斯诺尽可能两人一起行动。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "帕林库洛",
+   "target_entity_name": "正道",
+   "relation_type": "REQUESTS_EXTENSION_OF",
+   "fact": "帕林库洛拜托过延长『正道』和讨伐守护者的事。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "HUNTS_IN",
+   "fact": "涡波打算在迷宫里轻松狩猎怪物和寻宝。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "斯诺·沃克",
+   "relation_type": "PROTECTS",
+   "fact": "涡波让斯诺在身后看着，基本上由他一个人解决迷宫中的战斗。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "JOINS_PARTY_OF",
+   "fact": "斯诺·沃克加入了涡波的队伍。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "表示",
+   "relation_type": "SEES",
+   "fact": "涡波看着浮现在眼前的『表示』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "ENTERS",
+   "fact": "涡波和斯诺一起进入了迷宫。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "迷宫",
+   "relation_type": "ENTERS",
+   "fact": "斯诺·沃克和涡波一起进入了迷宫。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "迷宫",
+   "relation_type": "FEELS_NOSTALGIC_ABOUT",
+   "fact": "迷宫昏暗的长廊令涡波感到莫名怀念。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "涡波",
+   "target_entity_name": "大火灾",
+   "relation_type": "EXPERIENCED",
+   "fact": "涡波经历过那场『大火灾』。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  },
+  {
+   "source_entity_name": "斯诺·沃克",
+   "target_entity_name": "涡波",
+   "relation_type": "ASKS",
+   "fact": "斯诺问涡波怎么了。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    1
+   ]
+  }
+ ]
+}

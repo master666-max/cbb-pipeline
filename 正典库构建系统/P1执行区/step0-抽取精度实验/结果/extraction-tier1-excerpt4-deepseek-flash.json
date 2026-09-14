@@ -1,0 +1,248 @@
+{
+ "meta": {
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "temperature": 0,
+  "prompt_source": "graphiti_core.prompts extract_message / edge（原装模板装配，自定义实体类型）",
+  "excerpt": "excerpt4-CHAPTER0001-序章型.md",
+  "excerpt_sha256_16": "9b0d2d0c7b4d2c4b",
+  "usage_nodes": {
+   "prompt_tokens": 2657,
+   "completion_tokens": 6638,
+   "total_tokens": 9295,
+   "prompt_tokens_details": {
+    "cached_tokens": 512
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 6538
+   },
+   "prompt_cache_hit_tokens": 512,
+   "prompt_cache_miss_tokens": 2145
+  },
+  "usage_edges": {
+   "prompt_tokens": 2178,
+   "completion_tokens": 10386,
+   "total_tokens": 12564,
+   "prompt_tokens_details": {
+    "cached_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 9636
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 2178
+  }
+ },
+ "entities": [
+  {
+   "entity": "真白萌迷深版",
+   "type": "组织"
+  },
+  {
+   "entity": "迷深",
+   "type": "概念"
+  },
+  {
+   "entity": "四大病娇",
+   "type": "概念"
+  },
+  {
+   "entity": "落地死的流星",
+   "type": "人物"
+  },
+  {
+   "entity": "空之境界",
+   "type": "概念"
+  },
+  {
+   "entity": "碧阳学园学生会议事录",
+   "type": "概念"
+  }
+ ],
+ "edges": [
+  {
+   "source_entity_name": "真白萌迷深版",
+   "target_entity_name": "迷深",
+   "relation_type": "IS_DISCUSSION_BOARD_FOR",
+   "fact": "真白萌迷深版是迷深的讨论版/板块。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "真白萌迷深版",
+   "target_entity_name": "迷深",
+   "relation_type": "HAS_MANY_FANS_OF",
+   "fact": "真白萌迷深版有很多迷深粉丝。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "迷深",
+   "target_entity_name": "四大病娇",
+   "relation_type": "HAS_APPELLATION",
+   "fact": "迷深拥有“四大病娇”的称呼，且该称呼勉强有些名气。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "迷深",
+   "target_entity_name": "空之境界",
+   "relation_type": "COMPARED_TO",
+   "fact": "迷深如果不被看得太高，可以当作一般的大众小说来读，类似《空之境界》那类。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "落地死的流星",
+   "target_entity_name": "迷深",
+   "relation_type": "TRANSLATED",
+   "fact": "落地死的流星在373及以前担任迷深的翻译，无偿翻译了迷深几百万字。",
+   "valid_at": null,
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "落地死的流星",
+   "target_entity_name": "迷深",
+   "relation_type": "STOPPED_TRANSLATING",
+   "fact": "落地死的流星停止翻译迷深的原因单纯是累了，并非因为被剧情气走，也不是因为几个角色便当或情节太震撼而内心脆弱被气走。",
+   "valid_at": null,
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  },
+  {
+   "source_entity_name": "碧阳学园学生会议事录",
+   "target_entity_name": "迷深",
+   "relation_type": "ALTERNATIVE_TO",
+   "fact": "《碧阳学园学生会议事录》被推荐给读轻小说是为了看得爽看得开心且不喜欢优柔寡断男主的读者，与适合能接受优柔寡断型主角的《迷深》形成对照。",
+   "valid_at": "2026-09-14T00:00:00Z",
+   "invalid_at": null,
+   "episode_indices": [
+    0
+   ]
+  }
+ ],
+ "raw_nodes": [
+  {
+   "entity": "真白萌迷深版",
+   "type": "组织"
+  },
+  {
+   "entity": "迷深",
+   "type": "概念"
+  },
+  {
+   "entity": "四大病娇",
+   "type": "概念"
+  },
+  {
+   "entity": "落地死的流星",
+   "type": "人物"
+  },
+  {
+   "entity": "空之境界",
+   "type": "概念"
+  },
+  {
+   "entity": "碧阳学园学生会议事录",
+   "type": "概念"
+  }
+ ],
+ "raw_edges": {
+  "facts": [
+   {
+    "source_entity_name": "真白萌迷深版",
+    "target_entity_name": "迷深",
+    "relation_type": "IS_DISCUSSION_BOARD_FOR",
+    "fact": "真白萌迷深版是迷深的讨论版/板块。",
+    "valid_at": "2026-09-14T00:00:00Z",
+    "invalid_at": null,
+    "episode_indices": [
+     0
+    ]
+   },
+   {
+    "source_entity_name": "真白萌迷深版",
+    "target_entity_name": "迷深",
+    "relation_type": "HAS_MANY_FANS_OF",
+    "fact": "真白萌迷深版有很多迷深粉丝。",
+    "valid_at": "2026-09-14T00:00:00Z",
+    "invalid_at": null,
+    "episode_indices": [
+     0
+    ]
+   },
+   {
+    "source_entity_name": "迷深",
+    "target_entity_name": "四大病娇",
+    "relation_type": "HAS_APPELLATION",
+    "fact": "迷深拥有“四大病娇”的称呼，且该称呼勉强有些名气。",
+    "valid_at": "2026-09-14T00:00:00Z",
+    "invalid_at": null,
+    "episode_indices": [
+     0
+    ]
+   },
+   {
+    "source_entity_name": "迷深",
+    "target_entity_name": "空之境界",
+    "relation_type": "COMPARED_TO",
+    "fact": "迷深如果不被看得太高，可以当作一般的大众小说来读，类似《空之境界》那类。",
+    "valid_at": "2026-09-14T00:00:00Z",
+    "invalid_at": null,
+    "episode_indices": [
+     0
+    ]
+   },
+   {
+    "source_entity_name": "落地死的流星",
+    "target_entity_name": "迷深",
+    "relation_type": "TRANSLATED",
+    "fact": "落地死的流星在373及以前担任迷深的翻译，无偿翻译了迷深几百万字。",
+    "valid_at": null,
+    "invalid_at": null,
+    "episode_indices": [
+     0
+    ]
+   },
+   {
+    "source_entity_name": "落地死的流星",
+    "target_entity_name": "迷深",
+    "relation_type": "STOPPED_TRANSLATING",
+    "fact": "落地死的流星停止翻译迷深的原因单纯是累了，并非因为被剧情气走，也不是因为几个角色便当或情节太震撼而内心脆弱被气走。",
+    "valid_at": null,
+    "invalid_at": null,
+    "episode_indices": [
+     0
+    ]
+   },
+   {
+    "source_entity_name": "碧阳学园学生会议事录",
+    "target_entity_name": "迷深",
+    "relation_type": "ALTERNATIVE_TO",
+    "fact": "《碧阳学园学生会议事录》被推荐给读轻小说是为了看得爽看得开心且不喜欢优柔寡断男主的读者，与适合能接受优柔寡断型主角的《迷深》形成对照。",
+    "valid_at": "2026-09-14T00:00:00Z",
+    "invalid_at": null,
+    "episode_indices": [
+     0
+    ]
+   }
+  ]
+ }
+}

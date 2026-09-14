@@ -1,0 +1,53 @@
+{
+ "type": "json_object",
+ "round": 2,
+ "challenges": [
+  {
+   "type": "错标时间",
+   "target": "time_expressions[0].text = \"2023年1月30日补笔\"",
+   "claim": "该条目的 text 跨度越界：真正的时间表达只有『2023年1月30日』，『补笔』是段落小标题/结构标记（后接冒号『：』），并非时间成分，把它并入时间表达属 span 错标。",
+   "evidence": "L24:\"2023年1月30日补笔：\"（『补笔』后紧跟冒号，是补记小节的标题词，而非时刻/日期本身）",
+   "proposed_fix": "若保留该条目（虽另有违反R5之嫌），text 应截取为 \"2023年1月30日\"；或按同类元标题处理一并删除。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "entities（金标为空）",
+   "claim": "金标漏标了在正文中反复出现的『作者』——L5与L11两处均把『作者』作为被指称对象（L5断言作者对作品的用心，L11把『作者』列为不应被辱骂的对象），若按金标自身把『翻译者名』等现实人物纳入FP枚举的同一口径，也应至少枚举/说明『作者』的归属；金标的 annotation_rules_note 只列了翻译者名却漏列『作者』，属口径枚举不完整。",
+   "evidence": "L5:\"总之，作者对本书下的功夫绝对是不一般的。\"；L11:\"但是偏激的辱骂角色、作者还请大家避免\"",
+   "proposed_fix": "在 annotation_rules_note 的FP枚举中补入『作者(现实作者代称)』并明确其不立实体；或在entities中补注并说明排除理由。",
+   "severity": "low"
+  },
+  {
+   "type": "口径质疑",
+   "target": "annotation_rules_note 中对『四大病娇』的FP判定（\"四大病娇/伏笔手法等属于'读者侧对作品的元描述'，CBB 正典库口径不收录\"）",
+   "claim": "『四大病娇』并非纯读者侧修辞，而是对《迷深》作品内一组具名角色（正典角色）的指称，把此类『指向正典角色的集合性称谓』一律归为元描述噪声，会在正典文本中造成系统性漏标；该排除规则与 R1（仅排除未具名角色）并不等价，属规则被悄悄加宽。",
+   "evidence": "L4:\"本书热度虽然不算特别火，但是四大病娇的称呼也勉强说得上有些名气。\"（『称呼』指称的是作品内角色群体，而非读者行为）",
+   "proposed_fix": "在规则中区分『指代正典角色/群体的称谓』与『纯读者侧评论』：前者至少在正典文本中应可建（群体）实体或注记，后者才计入噪声。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标时间",
+   "target": "time_expressions[0] 的 kind/anchorable 组合（kind=\"现实日期(非故事时间)\", anchorable=false）",
+   "claim": "条目自身字段自相矛盾：既然该表达被明确解析为一个具体完备的现实日期（2023年1月30日，可唯一定位到一个真实日历点），就不应同时标记 anchorable=false；若坚持 anchorable=false，则表明它根本不该作为时间表述收录——两种解读下该条目的字段必有一项为错标。",
+   "evidence": "L24:\"2023年1月30日补笔：\"（日期含年·月·日三级，已完备可锚定）；同金标 annotation_rules_note 又称现实日期应计 FP",
+   "proposed_fix": "二择一：要么承认其可锚定并改 anchorable=true（同时调整 kind 说明），要么按注释口径删除该条目使 time_expressions 为空。",
+   "severity": "medium"
+  }
+ ],
+ "confidence_score": 52,
+ "usage": {
+  "prompt_tokens": 2737,
+  "completion_tokens": 12445,
+  "total_tokens": 15182,
+  "prompt_tokens_details": {
+   "cached_tokens": 1152
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 11523
+  },
+  "prompt_cache_hit_tokens": 1152,
+  "prompt_cache_miss_tokens": 1585
+ },
+ "finish": "stop"
+}

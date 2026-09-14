@@ -1,0 +1,412 @@
+{
+ "round": 1,
+ "challenges": [
+  {
+   "type": "漏标实体",
+   "target": "全局/技能魔法",
+   "claim": "『神圣魔法』作为命名技能/魔法被多处提及，但金标未立实体。",
+   "evidence": "L23:“后天技能：剑术2.12神圣魔法0.89”; L160:“既不是始祖的神圣魔法”; L164:“和从缇亚那里看来的神圣魔法非常相似”",
+   "proposed_fix": "新增实体『神圣魔法』（技能魔法）；并补边：塞拉·雷迪安特 拥有/后天技能 神圣魔法（L23）；缇亚 拥有/使用 神圣魔法（L164）。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标实体",
+   "target": "全局/概念",
+   "claim": "『始祖』作为“始祖的神圣魔法”的专名修饰成分出现，金标未收。",
+   "evidence": "L160:“既不是始祖的神圣魔法”",
+   "proposed_fix": "新增实体『始祖』（概念/人物，视全语料裁决），至少记入神圣魔法相关note。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标实体",
+   "target": "塞拉·雷迪安特状态面板",
+   "claim": "状态面板中的『直感』是命名技能，金标只收状态面板未收该技能。",
+   "evidence": "L22:“先天技能：直感1.77”",
+   "proposed_fix": "新增实体『直感』（技能）；补边 塞拉·雷迪安特 先天技能 直感。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标实体",
+   "target": "塞拉·雷迪安特状态面板",
+   "claim": "状态面板中的『剑术』是命名技能，金标未收。",
+   "evidence": "L23:“后天技能：剑术2.12神圣魔法0.89”",
+   "proposed_fix": "新增实体『剑术』（技能）；补边 塞拉·雷迪安特 后天技能 剑术。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标实体",
+   "target": "『Growth』/状态面板",
+   "claim": "『身体强化1.00』作为状态/技能效果被单独列出，金标只将其写在状态面板note里，未立实体或别名。",
+   "evidence": "L166:“【状态】状态：身体强化1.00”",
+   "proposed_fix": "新增实体『身体强化』（状态/技能效果），或至少作为『Growth』的别名/效果补入。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标实体",
+   "target": "拉丝缇娅拉相关物品",
+   "claim": "拉丝缇娅拉留下的『信』是情节关键物品，金标只抽了claim边，未立实体。",
+   "evidence": "L100:“在她留下的信里，写下了她要与你这厮、你这厮、私、私、私私奔——。”",
+   "proposed_fix": "新增实体『信』（物品）；补边 拉丝缇娅拉 留下 信（claim=true或事实边视裁决）。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标实体",
+   "target": "酒馆子地点",
+   "claim": "『厨房』作为酒馆内部具体地点两次出现，金标未收。",
+   "evidence": "L54:“不知何时从厨房里走出来的店长”; L79:“便重新回到了厨房里”",
+   "proposed_fix": "新增地点『厨房』（酒馆子地点）。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "酒馆子地点",
+   "claim": "『酒馆的后方』是决斗准备/进行地点，金标未收。",
+   "evidence": "L148:“带着他们来到了酒馆的后方”; L149:“在酒馆的后方，我们很快就开始了决斗前的准备”",
+   "proposed_fix": "新增地点『酒馆后方』（酒馆子地点）。",
+   "severity": "low"
+  },
+  {
+   "type": "错标实体",
+   "target": "天上之七骑士",
+   "claim": "『七骑士』是天上之七骑士的常用简称，金标aliases为空，漏收别名。",
+   "evidence": "L105:“都在我们七骑士耳边念叨”; L112:“除非你把我们七骑士全部挑于马下”",
+   "proposed_fix": "在『天上之七骑士』aliases中补“七骑士”。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标实体",
+   "target": "塞拉·雷迪安特",
+   "claim": "『骑士小姐』是店长对塞拉的指称，金标未收别名。",
+   "evidence": "L78:“骑士小姐是这么说的哦”",
+   "proposed_fix": "在塞拉·雷迪安特aliases中补“骑士小姐”。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "『Dimension』",
+   "claim": "『次元魔法』是文本对Dimension的指称，金标未收别名。",
+   "evidence": "L168:“此前从未见过的次元魔法的她”",
+   "proposed_fix": "在『Dimension』aliases中补“次元魔法”。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "全局/种族概念",
+   "claim": "『人类』作为比较群体被多次提及，金标未收概念/种族实体。",
+   "evidence": "L24:“是人类最高水准”; L140:“令人类感到束手无策的缇达”; L143:“我现在的实力放在人类当中究竟是何等水平”",
+   "proposed_fix": "新增实体『人类』（概念/种族）；可在塞拉/基督note中挂靠。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "塞拉·雷迪安特",
+   "claim": "『兽人』是塞拉的种族身份，金标只写在note，未立种族实体。",
+   "evidence": "L25:“可以判断她是一名兽人”",
+   "proposed_fix": "新增实体『兽人』（种族），或至少在实体note中明确种族字段。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "迷宫十四层",
+   "claim": "『未探索区域』是十四层重要属性，金标只写在note，未立概念实体。",
+   "evidence": "L10:“十四层的未探索区域也为数不少”",
+   "proposed_fix": "新增实体『未探索区域』（概念），或并入十四层note。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "迷宫十四层",
+   "claim": "『Boss』作为怪物类别被提及，金标未收。",
+   "evidence": "L8:“无论是杂鱼怪物还是Boss的数目都相当稀少”",
+   "proposed_fix": "新增实体『Boss』（概念/怪物类别），或并入十四层note。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标实体",
+   "target": "塞拉·雷迪安特装备",
+   "claim": "『银制防具』是塞拉的具体装备，金标未收物品实体。",
+   "evidence": "L25:“仅仅配有最低限度的银制防具”",
+   "proposed_fix": "新增实体『银制防具』（物品）。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→旅店",
+   "claim": "金标给旅店note“主角居所”，但未建“基督居住旅店”关系边。",
+   "evidence": "L96:“非法入侵了我所居住的旅店”; L113:“你们自己来我家看看吧”",
+   "proposed_fix": "补边 基督·欧亚 居住 旅店。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "玲小姐→酒馆",
+   "claim": "玲小姐是酒馆员工，金标note有“酒馆员工”但无关系边。",
+   "evidence": "L88:“或许是店长和玲小姐……”; L133:“一边干着服务员的工作……玲小姐”",
+   "proposed_fix": "补边 玲小姐 就职/工作 酒馆。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "克劳→酒馆",
+   "claim": "克劳是酒馆常客，金标note有“酒馆常客”但无关系边。",
+   "evidence": "L12:“基本上都会看见他在店里喝酒”",
+   "proposed_fix": "补边 克劳 常客/喝酒 酒馆。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→『注视』",
+   "claim": "金标有『注视』实体，但没有任何“基督使用注视”的关系边。",
+   "evidence": "L17:“我特意使用『注视』观察了一番”; L142:“我使用『注视』，比较自己和雷迪安特的数值”; L165:“我使用『注视』，再度确认雷迪安特的状态”",
+   "proposed_fix": "补边 基督·欧亚 使用 『注视』（可指向塞拉/状态面板）。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→『Dimension』",
+   "claim": "『Dimension』用于旁听情报，金标note有说明但无关系边。",
+   "evidence": "L5:“仅靠『Dimension』旁听所获取的信息”",
+   "proposed_fix": "补边 基督·欧亚 使用 『Dimension』 旁听/收集情报。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "『Foam』→『Dimension』",
+   "claim": "『Foam』对『Dimension』的辅助效果是重要机制，金标只写在note，无关系边。",
+   "evidence": "L155:“我注意到了『Foam』对『Dimension』有辅助效果”",
+   "proposed_fix": "补边 『Foam』 辅助/强化 『Dimension』。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→玛利亚",
+   "claim": "一起潜入迷宫/带玛利亚升级是玛利亚note中的核心事实，却无关系边。",
+   "evidence": "L120:“特别是带着玛利亚升级的事”; L154:“和玛利亚一起潜入迷宫的时候”",
+   "proposed_fix": "补边 基督·欧亚 带/与 玛利亚 潜入迷宫升级。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "缇亚→缇亚",
+   "claim": "缇亚“说自己是男性”是文本明确点出的声称，金标未按R3抽claim=true边。",
+   "evidence": "L90:“反正我也不相信缇亚说自己是男性的主张”",
+   "proposed_fix": "补边 缇亚 声称 自己是男性，claim=true。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "塞拉·雷迪安特→基督·欧亚",
+   "claim": "塞拉/七骑士方声称基督“拐骗”大小姐，金标只抽了“留信声称私奔”，漏了“拐骗”claim。",
+   "evidence": "L98:“大小姐非但被你拐骗，竟然还受到如此羞辱！”; L62:“你是不是拐骗了哪个贵族人家的大小姐？”",
+   "proposed_fix": "补边 塞拉·雷迪安特 声称 基督·欧亚 拐骗 拉丝缇娅拉，claim=true。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "拉丝缇娅拉",
+   "claim": "“大小姐出走/离家出走”是信与对话反复陈述的核心事件，金标未建出走边。",
+   "evidence": "L100:“大小姐出走之后”; L108:“可能就只是离家出走找个乐子而已”; L110:“大小姐她找乐子？离家出走？”",
+   "proposed_fix": "补边 拉丝缇娅拉 离家出走，claim=true（或事实边，视全语料裁决）。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "塞拉·雷迪安特→拉丝缇娅拉",
+   "claim": "“夺回大小姐”是塞拉一行来意，金标只有“上门求决斗”，漏了夺回目标。",
+   "evidence": "L58:“以期将我们的大小姐夺回来”",
+   "proposed_fix": "补边 塞拉·雷迪安特/天上之七骑士 夺回 拉丝缇娅拉。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→拉丝缇娅拉",
+   "claim": "基督明确发誓帮忙寻找拉丝缇娅拉，金标未收。",
+   "evidence": "L122:“但我发誓我会帮忙找的”",
+   "proposed_fix": "补边 基督·欧亚 发誓寻找 拉丝缇娅拉。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚/塞拉·雷迪安特→『魔石线』",
+   "claim": "金标有『魔石线』实体，但无“起誓”关系边。",
+   "evidence": "L150:“在互相对着『魔石线』起誓后”",
+   "proposed_fix": "补边 基督·欧亚/塞拉·雷迪安特 起誓 对象『魔石线』。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "塞拉·雷迪安特→基督·欧亚",
+   "claim": "金标只有“基督接受决斗”，漏了塞拉方接受决斗/条件。",
+   "evidence": "L125:“……唔。嘛，也行。”; L128:“无妨。不过，决斗的形式必须是一对一。”",
+   "proposed_fix": "补边 塞拉·雷迪安特 接受决斗（及条件） 基督·欧亚。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→塞拉·雷迪安特",
+   "claim": "基督提出的决斗报酬“输了就不许露脸”未被金标接受决斗边覆盖。",
+   "evidence": "L127:“如果我赢了的话，我要你再也不许在我面前露脸”",
+   "proposed_fix": "补边 基督·欧亚 提出决斗报酬 塞拉·雷迪安特，或并入接受决斗边。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→塞拉·雷迪安特",
+   "claim": "休息时同席而坐是两人互动事实，金标仅在时间表述中出现，无关系边。",
+   "evidence": "L89:“休息的时候，我和雷迪安特同席而坐”",
+   "proposed_fix": "补边 基督·欧亚 同席 塞拉·雷迪安特。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "克劳→基督·欧亚",
+   "claim": "克劳在冲突中主动庇护基督，金标只有朋友关系，漏了庇护行为。",
+   "evidence": "L45:“克劳来到我们两人之间，打算庇护我”",
+   "proposed_fix": "补边 克劳 庇护 基督·欧亚。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "玲小姐→基督·欧亚",
+   "claim": "玲小姐担心基督安危，金标只有其员工身份note，无担心关系。",
+   "evidence": "L137:“总之要当心啊，基督君……”; L138:“玲小姐在担心着我的安危”",
+   "proposed_fix": "补边 玲小姐 担心 基督·欧亚。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标关系",
+   "target": "塞拉·雷迪安特→直感/剑术/神圣魔法",
+   "claim": "若按技能实体口径，塞拉状态面板中的技能持有关系全部缺失。",
+   "evidence": "L22:“先天技能：直感1.77”; L23:“后天技能：剑术2.12神圣魔法0.89”",
+   "proposed_fix": "补边 塞拉·雷迪安特 拥有 直感/剑术/神圣魔法。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "缇亚→神圣魔法",
+   "claim": "“从缇亚那里看来的神圣魔法”暗示缇亚是神圣魔法持有/展示者，金标只有方向可疑的“观察来源”边。",
+   "evidence": "L164:“和从缇亚那里看来的神圣魔法非常相似”",
+   "proposed_fix": "补边 缇亚 拥有/使用 神圣魔法。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→塞拉·雷迪安特",
+   "claim": "基督对塞拉产生同情，金标未收。",
+   "evidence": "L168:“对接下来将不得不应对此前从未见过的次元魔法的她，我不禁感到了同情”",
+   "proposed_fix": "补边 基督·欧亚 同情 塞拉·雷迪安特。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标关系",
+   "target": "塞拉·雷迪安特→基督·欧亚",
+   "claim": "首次交手塞拉明显放水，金标未收。",
+   "evidence": "L184:“她确实放了一把水”",
+   "proposed_fix": "补边 塞拉·雷迪安特 放水 基督·欧亚。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "对话与叙事中的“今天”是明确当日锚，金标只收了“隔了一次休息”，漏了“今天”。",
+   "evidence": "L4:“但今天的工作内容并没有什么变化”; L88:“总之今天我的活儿很快就做完了”",
+   "proposed_fix": "新增时间表述“今天”（L4、L88），kind=当日。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“一天二十四小时”是明确的频率/持续表述，金标未收。",
+   "evidence": "L120:“他们估计会一天二十四小时满世界追着我乱跑”",
+   "proposed_fix": "新增时间表述“一天二十四小时”，kind=频率/持续。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“这辈子”是长期时间表述，金标未收。",
+   "evidence": "L112:“不然这辈子我们都会追你到天涯海角”",
+   "proposed_fix": "新增时间表述“这辈子”，kind=长期/终身。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“下次”是未来相对锚，金标未收。",
+   "evidence": "L103:“下次要是让我遇到她”",
+   "proposed_fix": "新增时间表述“下次”，kind=未来相对锚。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“直到进入休息时间为止”与金标L81 deadline是不同表述，应补或合并。",
+   "evidence": "L82:“直到进入休息时间为止我都不得不在那种要把人生吞活剥的视线之下工作”",
+   "proposed_fix": "新增或与L81合并为休息deadline。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“先前”是过去事件锚，金标未收。",
+   "evidence": "L140:“先前，我打倒了令人类感到束手无策的缇达”",
+   "proposed_fix": "新增时间表述“先前”，kind=过去事件。",
+   "severity": "medium"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“在目前的时点上”是叙事当前锚，金标未收。",
+   "evidence": "L97:“在目前的时点上她依旧是位列我危险名单前几号的存在”",
+   "proposed_fix": "新增时间表述“在目前的时点上”。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“方才”两次出现，金标未收。",
+   "evidence": "L45:“我方才的反应”; L185:“我在脑中回忆起方才的场景”",
+   "proposed_fix": "新增时间表述“方才”，kind=近过去。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“如今”是当前锚，金标未收。",
+   "evidence": "L34:“我如今并不清楚来者究竟何意”",
+   "proposed_fix": "新增时间表述“如今”。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“直到事发为止”是事件锚，金标未收。",
+   "evidence": "L45:“直到事发为止都一直在和我交谈的克劳”",
+   "proposed_fix": "新增时间表述“直到事发为止”。",
+   "severity": "low"
+  },
+  {
+   "type": "漏标时间",
+   "target": "time_expressions",
+   "claim": "“接下来”是未来相对锚，金标未收。",
+   "evidence": "L168:“对接下来将不得不应对此前从未见过的次元魔法的她”",
+   "proposed_fix": "新增时间表述“接下来”。",
+   "severity": "low"
+  }
+ ],
+ "confidence_score": 78,
+ "usage": {
+  "prompt_tokens": 7842,
+  "completion_tokens": 32623,
+  "total_tokens": 40465,
+  "prompt_tokens_details": {
+   "cached_tokens": 7680
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 28188
+  },
+  "prompt_cache_hit_tokens": 7680,
+  "prompt_cache_miss_tokens": 162
+ },
+ "finish": "stop"
+}

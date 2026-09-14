@@ -1,0 +1,157 @@
+{
+ "round": 5,
+ "challenges": [
+  {
+   "type": "错标实体",
+   "target": "状态面板",
+   "claim": "实体名“状态面板”在切样中无字面依据，原文只有面板标题【状态】；以元描述当实体名会造成别名与实体边界混乱。",
+   "evidence": "L18:「【状态】」; L166:「【状态】状态：身体强化1.00」",
+   "proposed_fix": "实体名改为【状态】或注明“状态面板为元描述”；若保留，需在规则中定义面板类实体。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标实体",
+   "target": "塞拉·雷迪安特",
+   "claim": "金标 note 写“等级21”，但 L24 叙述明确“等级已臻20，是人类最高水准”，金标未记录或裁决该矛盾。",
+   "evidence": "L20:「等级21」; L24:「等级已臻20，是人类最高水准——看来弊店今天来了一位了不得的贵客。」",
+   "proposed_fix": "在 note 注明面板等级21 与叙述等级20 的冲突，或复核面板数据；若取面板，应标叙述为矛盾或笔误。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标关系",
+   "target": "基督·欧亚 留在家中 玛利亚",
+   "claim": "关系边 source=基督 target=玛利亚 relation=“留在家中”，读作“基督留在家中玛利亚”，语义方向不通，且未指向家或旅店。",
+   "evidence": "L3:「我将玛利亚留在家中，来到了酒馆。」",
+   "proposed_fix": "改为“基督 将 玛利亚 留在 家/旅店”或“玛利亚 被留在家中”，并把“家”与旅店实体对齐。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标关系",
+   "target": "天上之七骑士 所属国度 弗茨亚茨",
+   "claim": "“所属国度”方向反了；原文是七骑士隶属于弗茨亚茨，不是七骑士拥有弗茨亚茨作为国度。",
+   "evidence": "L39:「是隶属于弗茨亚茨的『天上之七骑士』的一员」",
+   "proposed_fix": "relation 改为“隶属于”，或“弗茨亚茨 拥有 天上之七骑士”。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标关系",
+   "target": "塞拉·雷迪安特 上门求决斗(敌对) 基督",
+   "claim": "“敌对”是编辑判断，原文只说她专程来决斗，未称敌对；且决斗尚未发生，claim=false 不精确。",
+   "evidence": "L39:「就是专程来找你决斗的。」",
+   "proposed_fix": "删除“敌对”，relation 改“上门求决斗”。",
+   "severity": "low"
+  },
+  {
+   "type": "错标关系",
+   "target": "基督·欧亚 接受决斗(规则:杀对方自动判负,降服才算胜)",
+   "claim": "把整条规则塞进 relation 名，违反关系谓词简洁可读，规则应入 note 或独立属性。",
+   "evidence": "L124:「作为接受决斗的条件，我要提出一个规则——要是把对方杀了就自动判负，只有让对方主动投降才算真正的胜利。」",
+   "proposed_fix": "拆为“基督 接受决斗”加规则 note 或独立边。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标关系",
+   "target": "拉丝缇娅拉 留信声称私奔(主角否认)",
+   "claim": "relation 名内嵌 claim 与否定，既不是可读谓词，也把“主张/否认”混入边标签；应拆分。",
+   "evidence": "L100:「在她留下的信里，写下了她要与你这厮、你这厮、私、私、私私奔——。」",
+   "proposed_fix": "建 claim=true 边“拉丝缇娅拉 声称 与 基督 私奔”，主角否认入 note。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标关系",
+   "target": "克劳 朋友(入职首日结识) 基督",
+   "claim": "relation 名内嵌时间“入职首日结识”，应把时间入 time 或 note，关系只留“朋友”。",
+   "evidence": "L12:「克劳是我第一天在这家店工作时便结下缘份的朋友。」",
+   "proposed_fix": "relation 改“朋友”，时间锚另记。",
+   "severity": "low"
+  },
+  {
+   "type": "错标关系",
+   "target": "基督·欧亚 决斗中使用 Dimension",
+   "claim": "原文咏唱的是『Dimension·决战演算』，不是单独 Dimension；边 target 应指向该别名或组合魔法，否则与原句不符。",
+   "evidence": "L151:「——魔法『Dimension·决战演算』、魔法『Foam』。」",
+   "proposed_fix": "target 改『Dimension·决战演算』或注明“使用别名形态”。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标实体",
+   "target": "『Dimension』",
+   "claim": "别名“Dimension·决战演算(组合形态)”里的“组合形态”无切样证据；原文只并列咏唱两个魔法名。",
+   "evidence": "L151:「——魔法『Dimension·决战演算』、魔法『Foam』。」",
+   "proposed_fix": "删去“(组合形态)”或注明为推断。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标时间",
+   "target": "time_expressions",
+   "claim": "L81 是塞拉威胁台词“小命儿到休息时间为止”，不是叙述层可挂靠的时间锚；金标 kind=当日deadline、anchorable=true，口径错误。",
+   "evidence": "L81:「呵呵，你的小命儿也就到休息时间为止了。做好觉悟吧。」",
+   "proposed_fix": "删除该时间条，或标为 claim=true 的台词威胁并注明非时间锚。",
+   "severity": "medium"
+  },
+  {
+   "type": "错标关系",
+   "target": "拉丝缇娅拉 在大圣堂日常念叨 基督",
+   "claim": "原文不是拉丝缇娅拉直接对基督念叨，而是塞拉说她在七骑士耳边念叨基督；target 应为七骑士或塞拉，且应 claim=true。",
+   "evidence": "L105:「都在我们七骑士耳边念叨着在迷宫偶然结识的你这厮是何种男人」",
+   "proposed_fix": "改为“拉丝缇娅拉 对 七骑士 谈论 基督”，claim=true。",
+   "severity": "medium"
+  },
+  {
+   "type": "口径质疑",
+   "target": "全局/type 枚举",
+   "claim": "type 字段混用“地点(国/势力)”“人物(迷宫怪物)”“技能魔法”等自造类型，未定义枚举，导致酒馆标组织、旅店标地点、弗茨亚茨标地点(国/势力)不可比。",
+   "evidence": "L3:「来到了酒馆」; L96:「我所居住的旅店」; L57:「这位来自弗茨亚茨的小姐」",
+   "proposed_fix": "在 annotation_rules 定义 type 枚举，统一场所、组织、国势力、种族。",
+   "severity": "medium"
+  },
+  {
+   "type": "口径质疑",
+   "target": "全局/claim 执行率",
+   "claim": "金标 19 条边仅 1 条 claim=true，但文本大量转述或指控未抽 claim：塞拉指控拐骗、藏匿、大圣堂念叨、出走等，导致故事线在图中消失。",
+   "evidence": "L98:「大小姐非但被你拐骗，竟然还受到如此羞辱！」; L107:「快老实招了吧！你这厮把大小姐藏哪儿了？」",
+   "proposed_fix": "按 R3 补 claim=true 边，至少覆盖拐骗、藏匿、出走、念叨。",
+   "severity": "high"
+  },
+  {
+   "type": "口径质疑",
+   "target": "全局/时间计数",
+   "claim": "时间表述 10 条中混入非时间词（L81 威胁、L120 事件名词），同时漏掉明确时间词“今天”（L4/L88），计数口径不可靠。",
+   "evidence": "L4:「但今天的工作内容并没有什么变化」; L88:「总之今天我的活儿很快就做完了」; L120:「特别是带着玛利亚升级的事」",
+   "proposed_fix": "重审时间表述：非时间词移出，补“今天”等明确锚。",
+   "severity": "high"
+  },
+  {
+   "type": "漏标关系",
+   "target": "基督·欧亚→旅店/家",
+   "claim": "金标有旅店实体且 note 称主角居所，但无“基督居住旅店/家”边；L3 留玛利亚在家、L113 来我家都指向该地点。",
+   "evidence": "L3:「我将玛利亚留在家中」; L113:「你们自己来我家看看吧」",
+   "proposed_fix": "补边 基督 居住 旅店/家，并与 L3 的“家”对齐。",
+   "severity": "medium"
+  }
+ ],
+ "strongest_defense": {
+  "most_feared_overturn": "provenance『只依据切样文本本身，未参考任何抽取器输出』被推翻——缇达 note 引用全语料 L2551-2614、1102次，缇亚 note 引用 L2572，均超出切样 L1-L185。",
+  "why": "一旦该条成立，缇达的 aliases『暗之理的盗窃者』『二十层守护者』、type『人物(迷宫怪物)』以及缇亚-缇达区分的核心依据全部失效；这不是单点错标，而是自定证据基础被破坏，评分者会质疑整册可信度。"
+ },
+ "most_vulnerable_spots": [
+  "缇达/缇亚 note 使用切样外行号，违反 provenance",
+  "L105 大圣堂念叨边 claim=false 且 target 错，违反 R3",
+  "时间表述 L81/L120 非时间词且漏 L4/L88『今天』，计数口径不可靠"
+ ],
+ "confidence_score": 55,
+ "usage": {
+  "prompt_tokens": 18534,
+  "completion_tokens": 21970,
+  "total_tokens": 40504,
+  "prompt_tokens_details": {
+   "cached_tokens": 7424
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 19680
+  },
+  "prompt_cache_hit_tokens": 7424,
+  "prompt_cache_miss_tokens": 11110
+ },
+ "finish": "stop"
+}
