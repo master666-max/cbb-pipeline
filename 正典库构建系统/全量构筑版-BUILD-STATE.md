@@ -19,7 +19,7 @@
 - U-A11 oh-story-claudecode | 状态=done | 判据=六节报告落盘 | 证据=全量构筑版-分析报告/oh-story-claudecode.md（拆文七阶段管道+长篇三件套：章节边界表单一切片真值/逐章子代理5-8批/降维聚合15KB章→≤8K回传→√N合并(914章61批实测)；别名四分类proper_name-nickname-descriptor-title+0.85门槛+存疑分开建=去重规则层最强(与neo4j算法层互补)；机械硬检查grep计数不依赖自报=R-018落地；timeline双视图reveal_chapter；append/revision事务分离；元文本防御缺口反面样本+1(章末求月票无过滤)；MIT极活跃；爬虫件ToS风险排除） | 幂等=报告快照型，重写走新版本
 - U-A12 sillytavern-skills | 状态=done | 判据=六节报告落盘 | 证据=全量构筑版-分析报告/sillytavern-skills.md（2技能小仓；CCv3双控制面=system_prompt持久契约vs post_history_instructions末轮转向+禁暗中对抗；lorebook激活参数族scan_depth/insertion_order/token_budget/selective+secondary_keys=X-RP下游导出字段语义；validate_card.py 160行轻量校验器；审查八节含Safety-Leakage独立节；无LICENSE=零复制只读参考；与PT-013互补=它格式侧我们内容侧） | 幂等=报告快照型，重写走新版本
 - U-A13 story-skills | 状态=done | 判据=六节报告落盘（Tier A 契约级精读+主线抽验4处全中） | 证据=全量构筑版-分析报告/story-skills.md（编译器哲学仓：三域分离validate-links-continuity统一{ok,errors,warnings}/关系逆类型12对+对称12项双向回链校验/契诃夫枪≥3章超期算法/P0-P3修复行动生成器每条附精确命令/章号三处一致强制/writeChanged内容不变不写+打包逐字节一致/写入安全围栏/可执行反例+100%覆盖门禁=工程纪律16仓最强;MIT;缺口=无JSON输出(R-020反面)/章号全序替代时间/无别名去重;勘误=CLI实为src三件套非单story.js,skills内3211行是打包产物） | 幂等=报告快照型，重写走新版本
-- U-A14 story-systems-template | 判据=六节报告 | 证据=- | 幂等=同上
+- U-A14 story-systems-template | 状态=done | 判据=六节报告落盘（双镜像去重=.claude为正本.gemini适配层） | 证据=全量构筑版-分析报告/story-systems-template.md（verified_against SHA漂移钩子+timestamp=最后验证时非编辑时+stale重验门=Record溯源三件套16仓最完备,多版本语料直接可用;四态canon-draft-provisional-cut(cut=墓碑态第四态裁决题);map-card引用不复述≤50行强制;Knowledge按场表;外观状态三件套ChainOfCustody/伤情演进/服装;findings强制Cites列;Wardrobe勘误=无独立模板折叠进character+prop;MIT;连续性语义纯提示词弱于story-skills） | 幂等=报告快照型，重写走新版本
 - U-A15 webnovel-writer | 判据=六节报告(GPL红旗复核) | 证据=- | 幂等=同上
 - U-A16 worldbook-skill | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A17 跨仓综合报告 | 判据=16详报汇总裁决→全量构筑版本体路线修订书(对照实验版重构/保留清单) | 证据=- | 幂等=同上
