@@ -20,7 +20,7 @@
 - U-A12 sillytavern-skills | 状态=done | 判据=六节报告落盘 | 证据=全量构筑版-分析报告/sillytavern-skills.md（2技能小仓；CCv3双控制面=system_prompt持久契约vs post_history_instructions末轮转向+禁暗中对抗；lorebook激活参数族scan_depth/insertion_order/token_budget/selective+secondary_keys=X-RP下游导出字段语义；validate_card.py 160行轻量校验器；审查八节含Safety-Leakage独立节；无LICENSE=零复制只读参考；与PT-013互补=它格式侧我们内容侧） | 幂等=报告快照型，重写走新版本
 - U-A13 story-skills | 状态=done | 判据=六节报告落盘（Tier A 契约级精读+主线抽验4处全中） | 证据=全量构筑版-分析报告/story-skills.md（编译器哲学仓：三域分离validate-links-continuity统一{ok,errors,warnings}/关系逆类型12对+对称12项双向回链校验/契诃夫枪≥3章超期算法/P0-P3修复行动生成器每条附精确命令/章号三处一致强制/writeChanged内容不变不写+打包逐字节一致/写入安全围栏/可执行反例+100%覆盖门禁=工程纪律16仓最强;MIT;缺口=无JSON输出(R-020反面)/章号全序替代时间/无别名去重;勘误=CLI实为src三件套非单story.js,skills内3211行是打包产物） | 幂等=报告快照型，重写走新版本
 - U-A14 story-systems-template | 状态=done | 判据=六节报告落盘（双镜像去重=.claude为正本.gemini适配层） | 证据=全量构筑版-分析报告/story-systems-template.md（verified_against SHA漂移钩子+timestamp=最后验证时非编辑时+stale重验门=Record溯源三件套16仓最完备,多版本语料直接可用;四态canon-draft-provisional-cut(cut=墓碑态第四态裁决题);map-card引用不复述≤50行强制;Knowledge按场表;外观状态三件套ChainOfCustody/伤情演进/服装;findings强制Cites列;Wardrobe勘误=无独立模板折叠进character+prop;MIT;连续性语义纯提示词弱于story-skills） | 幂等=报告快照型，重写走新版本
-- U-A15 webnovel-writer | 判据=六节报告(GPL红旗复核) | 证据=- | 幂等=同上
+- U-A15 webnovel-writer | 状态=done | 判据=六节报告落盘（GPL红旗复核=GPL-3.0确认,只读不抄铁案维持） | 证据=全量构筑版-分析报告/webnovel-writer.md（域内工程完成度最高同类系统:三库分立;state_changes时序回放重建任意章快照=event sourcing小说版;UNIQUE约束族=约束式去重SQLite完整实现;urgency公式三层级3.0-2.0-1.0+进度比+前3条注入=开环管理最完整工程实现;检索chapter时间闸防剧透;PreToolUse保护+命令白名单;memory四态含contradicted;短板=字符预算/无时间归一/记忆未入库/云依赖=CBB差异清单） | 幂等=报告快照型，重写走新版本
 - U-A16 worldbook-skill | 判据=六节报告 | 证据=- | 幂等=同上
 - U-A17 跨仓综合报告 | 判据=16详报汇总裁决→全量构筑版本体路线修订书(对照实验版重构/保留清单) | 证据=- | 幂等=同上
 
