@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "教会"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 595,
+   "quote": "于是我直接前往了与缇亚约好的汇合地点——教会。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 597,
+   "quote": "在这个世界里，向神献上祈祷的人非常多。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "祈祷之所：神父手持圣典颂祷（含升级咏唱）、各色人群祈祷（祈祷本身是升级的一环）；主角与缇亚的汇合点（L596-600）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0aab3ee323a3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

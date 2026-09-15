@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "缇达"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "HP补偿冻结与缇亚舍身",
+  "tick": 4,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 268,
+   "quote": "不够的MP会由命——、由最大HP来补偿。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 6,
+   "text": "MP枯竭后倾注冻结（MP0后由最大HP补偿——HP 削减近半冻僵缇达）；缇达昂扬中斩向主角脖颈之际，缇亚全身挡刀（撕裂+右手被斩）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b36d9981b3cf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

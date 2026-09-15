@@ -1,0 +1,50 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "悬影"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 756,
+   "quote": "怪物的名字叫悬影。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "如影子附壁的黑色液体生物：隐蔽处偷袭绞首、物理抗性高须魔法击毙、不常移动、掉落物固定（讨伐赌局之标的）"
+  },
+  {
+   "category": "atmosphere",
+   "chapter": 5,
+   "text": "临终哀嚎渐响且『在孕育着十分不详的什么东西』（主角直觉，未解）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-eac97e1b94fd",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

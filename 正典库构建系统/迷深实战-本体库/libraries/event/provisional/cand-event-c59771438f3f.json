@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "迪亚布罗·西斯"
+  ],
+  "instant": null,
+  "kind": "结盟",
+  "name": "以食结好与组队成立",
+  "tick": 2,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 567,
+   "quote": "「——我说，如果你愿意的话，要不要和我一起去迷宫？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "『维度』追踪其出迷宫受挫→巷中以剩饭设局伪装偶遇→晚饭获好评→诱导其主动邀约→互报姓名（基督/缇亚）→【队伍】成立（L525-591）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c59771438f3f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 5,
+  "fact": "这个世界存在奴隶（身戴镣铐者行走街头）；瓦尔德治安差区有避人耳目的奴隶拍卖场（深夜营业、专人接待、数十奴隶经洗浴化妆打扮提升商品格调）；国家默许其存在",
+  "name": "奴隶制度与拍卖场",
+  "tick": 3
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 343,
+   "quote": "果然是奴隶的拍卖场。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 5,
+   "text": "主角潜入亲察"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-1d5b7c12e325",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

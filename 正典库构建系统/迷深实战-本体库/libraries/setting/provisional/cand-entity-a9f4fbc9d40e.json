@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "中央广场"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 727,
+   "quote": "走了几分钟之后我就找到了中央广场。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "弗茨亚茨二十一区的广场（露天足球场大小，喷泉/石制长椅/看板与雕像）：看板揭载巨大地图与国家历史（L727-732）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a9f4fbc9d40e",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

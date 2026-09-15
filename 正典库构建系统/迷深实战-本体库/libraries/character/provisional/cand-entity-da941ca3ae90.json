@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "森之女王"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 39,
+   "quote": "距离瓦尔德的迷宫入口最近的是『森之女王』。",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 115,
+   "quote": "我见证了『火焰箭』贯穿森之女王的咽喉并将其击毙的瞬间。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "一层植被区Boss（距瓦尔德入口最近）：全长近五米、蝶翅+甲虫外壳二足步行、数匹眷属随侍；被狙射击毙于咽喉（原瞄准心脏，弹道上偏）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-da941ca3ae90",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

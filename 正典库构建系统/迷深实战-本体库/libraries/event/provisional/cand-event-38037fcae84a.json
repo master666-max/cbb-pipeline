@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "艾丽娅的发夹"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "露店淘宝与发夹赠礼",
+  "tick": 3,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 244,
+   "quote": "说着我为缇亚戴上了『艾丽娅的发夹』。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "缇亚湿身换装尴尬→道边露店橱窗购物（『表示』鉴定淘宝）→角落五铜币购得艾丽娅的发夹（实值一银币以上）→赠礼戴上；缇亚买书愿望（冒险/英雄谭）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-38037fcae84a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

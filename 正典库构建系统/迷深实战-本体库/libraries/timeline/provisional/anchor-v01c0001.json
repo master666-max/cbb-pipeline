@@ -1,0 +1,44 @@
+{
+ "canonical": {
+  "chapter_ref": 1,
+  "day_offset": 0,
+  "instant": null,
+  "kind": "pseudo",
+  "label": "第1章伪锚点",
+  "parent_anchor": null,
+  "precision": "day",
+  "pseudo_date": "2000-01-01",
+  "tick": 0
+ },
+ "evidence": [
+  {
+   "chapter": 1,
+   "line": 0,
+   "quote": "<<<CHAPTER 0001 | …>>>",
+   "vol": 1
+  }
+ ],
+ "library": "timeline",
+ "provenance": {
+  "extractor_confidence": 1.0,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "anchor-v01c0001",
+ "record_type": "anchor",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

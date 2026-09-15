@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "酒馆",
+  "rel_type": "常客",
+  "subject": "克劳"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 310,
+   "quote": "「小伙子挺不容易的吧。这家店净是麻烦的客人，当然也包括我在内就是了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 4,
+   "text": "自称『麻烦的客人（包括我在内）』，被店长怒骂仍谈笑"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-40bc8de28ee6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

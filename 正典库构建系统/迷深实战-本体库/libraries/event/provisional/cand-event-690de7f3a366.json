@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "组队连捷与MP管理",
+  "tick": 2,
+  "time_verbatim": "直到艳阳当空（L737）"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 737,
+   "quote": "在打倒了约三十匹怪物的时候，我的MP终于所剩不多。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "索敌+前卫+炮台战术无伤连杀约30匹（含蜘蛛形态怪物）；经验值平均分配；主角 MP5/缇亚 MP3 的低耗对比；正午前主角 MP 见底收队（L680-742）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-690de7f3a366",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

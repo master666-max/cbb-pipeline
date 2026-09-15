@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "魔法石",
+   "黑环萤"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "水攻与《冻结》击杀黑环萤",
+  "tick": 1,
+  "time_verbatim": "开始使用《维度》后过了十五分钟左右（L446）"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 374,
+   "quote": "【怪物】黑环萤：位阶2",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "隐形奇袭的『扭曲物』被『注视』揭名（位阶2）→洒水现形减速→《冻结》耗弱→剑击落，掉落十位魔法石（L350-383）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6d546754d57e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

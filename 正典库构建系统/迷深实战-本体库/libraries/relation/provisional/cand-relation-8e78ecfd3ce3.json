@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "黑环萤",
+  "rel_type": "击杀",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 379,
+   "quote": "黑环萤落到地面之后便随着一阵光芒消失了，剩下的只有一颗仄暗透明的结晶。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 3,
+   "text": "洒水致其现形减速+《冻结》耗弱+剑击落（L364-380）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8e78ecfd3ce3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

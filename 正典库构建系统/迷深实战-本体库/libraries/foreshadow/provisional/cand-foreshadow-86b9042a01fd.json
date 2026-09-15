@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "『表示』",
+   "缇亚",
+   "迪亚布罗·西斯"
+  ],
+  "name": "表示显示未来名之谜",
+  "note": "缇亚自报名与『表示』显示的迪亚布罗·西斯相异——表示疑提前显示将来会报出的名字（『表示』存在某种漏洞？）",
+  "payoff_chapter": null,
+  "setup_chapter": 4,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 581,
+   "quote": "再有就是他自己道出的名字也跟『表示』上显示的不同。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 4,
+   "text": "系统机制+身份之谜"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-86b9042a01fd",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

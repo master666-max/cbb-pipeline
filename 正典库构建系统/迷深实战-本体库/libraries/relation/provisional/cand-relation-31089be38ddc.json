@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迪亚布罗·西斯",
+  "rel_type": "自报名与表示名相异",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 579,
+   "quote": "我的名字叫缇亚，没有姓氏。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 581,
+   "quote": "再有就是他自己道出的名字也跟『表示』上显示的不同。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 4,
+   "text": "★自报『缇亚』（无姓氏）vs『表示』显示『迪亚布罗·西斯』；主角不认为其说谎，推测表示提前显示将来之名"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-31089be38ddc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

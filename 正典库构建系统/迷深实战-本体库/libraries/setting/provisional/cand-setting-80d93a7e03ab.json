@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 6,
+  "fact": "已见状态异常：混乱（补正递增）/精神污染/黑暗（习惯剥夺）/部位麻痹/出血/昂扬（战斗狂化技巧劣化）/沉默（夺言语）/恐惧/加护——精神系异常可经技能『？？？』部分解除；缇达为状态异常中心战斗型",
+  "name": "状态异常体系",
+  "tick": 4
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 215,
+   "quote": "状态：混乱5.30精神污染2.00黑暗1.00部位麻痹1.00出血0.31",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 6,
+   "text": "战斗系统观察"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-80d93a7e03ab",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

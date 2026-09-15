@@ -1,0 +1,56 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "守护者"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 45,
+   "quote": "「没错，就是出现在迷宫十层和二十层的大Boss。」",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 49,
+   "quote": "那可是聚集了联合国最强的探索者也没能击败的怪物啊。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "镇守迷宫第十层与第二十层的大Boss：知性超群、可自由穿行迷宫（低层也可能遭遇）；『聚集了联合国最强的探索者也没能击败』——遭遇即逃为铁则"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 5,
+   "text": "近年罕见现身，如探索者嘴边谈资（克劳）；正道铺设停滞与二十层后难度跃升相关"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-afa245c6198e",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

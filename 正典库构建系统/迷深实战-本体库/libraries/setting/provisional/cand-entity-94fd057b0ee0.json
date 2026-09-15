@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "【持有物品】"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 249,
+   "quote": "【持有物品】",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 263,
+   "quote": "异象陡生，空间扭曲着将肉干吞没。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "『表示』储物面板：带储存意念将物品伸向空中即被收纳（空间扭曲吞没）；尸体与大型生物放不进去；物品名自动显示（L250-282）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-94fd057b0ee0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

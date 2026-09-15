@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 3,
+  "fact": "主角日语被自动替换为当地语言、当地语言书籍/言语对主角自动呈日语；非日语人群无障碍理解其日语——『日语被翻译成了这种奇妙的语言，而这种奇妙的语言也被翻译成了日语』；主角恐惧：若非魔法则须对脑动手玩弄记忆人格",
+  "name": "语言自动翻译现象",
+  "tick": 1
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 758,
+   "quote": "日语被翻译成了这种奇妙的语言，而这种奇妙的语言也被翻译成了日语。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 3,
+   "text": "图书馆发现；机制未解"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-f2ee48226cfa",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 5,
+  "fact": "迷宫第十层与第二十层各镇守大Boss『守护者』：知性超群、可于迷宫自由穿行（低层亦可能遭遇）；聚集联合国最强探索者亦未能击败；近年罕见现身如谈资；正道铺设（至23层）途中试练未被完成、二十层后难度跃升致停滞",
+  "name": "守护者制度",
+  "tick": 3
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 45,
+   "quote": "「没错，就是出现在迷宫十层和二十层的大Boss。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 5,
+   "text": "克劳情报+酒馆听闻综合"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-388a4518ff90",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

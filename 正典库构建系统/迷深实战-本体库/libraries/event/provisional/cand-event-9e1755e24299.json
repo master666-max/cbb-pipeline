@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "《完全治愈》",
+   "拉丝缇娅拉",
+   "海因",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "相遇",
+  "name": "银铠组遭遇与拉丝缇娅拉治愈",
+  "tick": 1,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 612,
+   "quote": "「那就再见啦，相川涡波。啊，对了，我的名字是拉丝缇娅拉。你可要记好哦。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "藏身处被银铠四人组发现；海因等以骑士道待之；少女当众治愈主角并私下表露嫉妒狂气（仅主角可见）、言及『您的眼睛』能见混乱；自报姓名拉丝缇娅拉并宣告人情债（L522-631）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9e1755e24299",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

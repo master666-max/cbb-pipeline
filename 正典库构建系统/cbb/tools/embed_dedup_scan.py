@@ -78,11 +78,16 @@ def http_embed(api: str, texts: list[str], model: str, timeout: int = 120) -> li
 
 
 def probe(api: str) -> str | None:
-    """探活并取当前模型 id；服务不在/非嵌入模型 → None（调用方标 blocked）。"""
+    """探活并选嵌入模型 id（LM Studio /v1/models 列出全部可用模型而非仅载入者——
+    取首个 id 含 embed 者）；服务不在/无嵌入模型 → None（调用方标 blocked）。"""
     j = http_get(f"{api.rstrip('/')}/v1/models")
     if not j or not j.get("data"):
         return None
-    return j["data"][0].get("id")
+    for m in j["data"]:
+        mid = m.get("id", "")
+        if "embed" in mid.lower():
+            return mid
+    return None
 
 
 def collect_entity_names(cands: dict, store_root: Path) -> tuple[list[str], list[str]]:
@@ -123,12 +128,17 @@ def main(argv=None) -> int:
         return 2
     cands = json.loads(Path(args.cands).read_text(encoding="utf-8"))
     cand_names, lib_names = collect_entity_names(cands, Path(args.store))
+    # 同名项交给双轨/身份键（dual_track 职责）——嵌入扫描只找**异名近重**：
+    # 库侧剔除本批同名实体，否则已入库候选自匹配 1.0 造成 100% 假疑重（实测教训）
+    cand_set = set(cand_names)
+    lib_names = [n for n in lib_names if n not in cand_set]
     result = scan(cand_names, lib_names, lambda ts: http_embed(args.api, ts, model_id))
     result["status"] = "ok"
     result["model"] = model_id
     result["counts"] = {"candidates": len(cand_names), "library": len(lib_names),
                         "dup_suspect": len(result["dup_suspect"]), "uncertain": len(result["uncertain"])}
     if args.out:
+        Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         Path(args.out).write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(result["counts"], ensure_ascii=False))
     return 0

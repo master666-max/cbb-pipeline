@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "地点(国)",
+  "name": "法尼亚"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 34,
+   "quote": "满足上述条件的国家我记得有个叫『法尼亚』的。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 35,
+   "quote": "「那可是相当远啊。我是从法尼亚过来的，您知道吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "真实存在的遥远小国（兑换所店主知其方位但不详）；被主角选为假出身地的设定来源（L34-37）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-931446cebdb9",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

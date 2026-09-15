@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "【持有物品】",
+  "rel_type": "机制包含",
+  "subject": "『表示』"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 249,
+   "quote": "【持有物品】",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 3,
+   "text": "『表示』体系下的储物面板（意念收纳规则）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-606fe6152194",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

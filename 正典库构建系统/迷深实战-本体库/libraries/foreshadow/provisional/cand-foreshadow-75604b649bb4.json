@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "缇达",
+   "阿尔缇"
+  ],
+  "name": "阿尔缇的愿望",
+  "note": "缇达临终托付：『照着这个势头将阿尔缇的愿望』实现——愿望内容未言明（守护者有愿望本身即重大设定）",
+  "payoff_chapter": null,
+  "setup_chapter": 6,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 512,
+   "quote": "如果可能的话，我希望你们能照着这个势头将阿尔缇的——啊啊，就是说刚才那个驱使火焰的女孩子。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 6,
+   "text": "守护者心愿之谜（末章0557『阿尔缇与缇达的过去篇』之远因）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-75604b649bb4",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

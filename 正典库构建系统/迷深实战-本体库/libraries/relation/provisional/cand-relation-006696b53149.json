@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "法尼亚",
+  "rel_type": "谎称出身",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 35,
+   "quote": "「那可是相当远啊。我是从法尼亚过来的，您知道吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 4,
+   "text": "对兑换所店主虚构的出身设定（遥远小国法尼亚）——『做着一夜千金的梦从乡下前来挑战迷宫』人设配合"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-006696b53149",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

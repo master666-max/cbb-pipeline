@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 5,
+  "fact": "状态栏含职业位（缇亚=剑士）；职业疑在升级时提供属性加成（缇亚力量体力可圈可点之假说）；获得职业的明确条件不明——书上无载、酒馆被反问、缇亚曰『只要拿着剑就是剑士喽』",
+  "name": "职业制度",
+  "tick": 3
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 529,
+   "quote": "我的职业栏上什么都没有，而缇亚则是剑士。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 5,
+   "text": "主角调查未果"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-58862999e4ef",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

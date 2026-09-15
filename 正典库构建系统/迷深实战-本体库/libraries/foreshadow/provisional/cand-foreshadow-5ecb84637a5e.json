@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "迷宫"
+  ],
+  "name": "归还原来世界",
+  "note": "主角首要目的：为自己也為孤苦无依的妹妹必须回到原来的世界；手段=迷宫（实现任何愿望传说）或归还魔法（无线索）",
+  "payoff_chapter": null,
+  "setup_chapter": 4,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 245,
+   "quote": "我的首要目的是『归还』。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 4,
+   "text": "主线动机"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-5ecb84637a5e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

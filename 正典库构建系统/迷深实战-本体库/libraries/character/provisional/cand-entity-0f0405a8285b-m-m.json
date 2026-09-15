@@ -1,0 +1,107 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 86,
+   "quote": "「所以说，你口中的大小姐是谁，是缇亚吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 89,
+   "quote": "反正我也不相信缇亚说自己是男性的主张",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 579,
+   "quote": "「我知道了。我的名字叫缇亚，没有姓氏。仅仅只是缇亚而已，随便你怎么称呼都行。」",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 392,
+   "quote": "随着仰头的动作，她的金发从兜帽中倾露出来。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 416,
+   "quote": "「顺带一说我不是女孩子。所以用不着担心。」",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 521,
+   "quote": "姓名：迪亚布罗·西斯HP98/P631/631112M职业：剑士",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 271,
+   "quote": "「我的理由就简单了。我想要钱。」",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 613,
+   "quote": "这个梦想今天终于实现了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "被主角推测为塞拉所说大小姐的人选之一又被否认（L86/L90）"
+  },
+  {
+   "category": "interpretation",
+   "chapter": 14,
+   "text": "声称自己是男性而主角不相信该主张（L89）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 14,
+   "text": "主角曾从缇亚处看到过神圣魔法（L163）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 4.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-0f0405a8285b",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-0f0405a8285b-m",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0f0405a8285b-m-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-0f0405a8285b-m",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 3
+}

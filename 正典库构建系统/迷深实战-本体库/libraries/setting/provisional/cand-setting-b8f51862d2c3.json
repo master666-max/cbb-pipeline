@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 3,
+  "fact": "怪物死后随光芒消失（无亡骸）、掉落结晶（魔法石类）；结晶成色与怪物毛色相似（巨狼→翠色结晶）；虫系掉黑虫石（虫属性魔力）；主角经巨狼与黑环萤两例验证此推测",
+  "name": "迷宫怪物掉落机制",
+  "tick": 1
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 175,
+   "quote": "而在狼消失的地方则留有一颗闪耀着翠色光芒的结晶。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 3,
+   "text": "主角自证推测（自认确凿无疑，原文标注为推测）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-b8f51862d2c3",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "旅店",
+  "rel_type": "非法入侵",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 95,
+   "quote": "她不但非法入侵了我所居住的旅店",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 123,
+   "quote": "总之试着弹劾了下她非法入侵的行为。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 121,
+   "quote": "她正跨坐在我的腰上俯视着我。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "入侵主角居住的旅店（主角居所）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-3413252d0005",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3413252d0005-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-3413252d0005",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

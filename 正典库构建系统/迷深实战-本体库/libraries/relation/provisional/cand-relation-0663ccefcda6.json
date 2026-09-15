@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚·迪斯特拉斯",
+  "rel_type": "表示名(全名)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 367,
+   "quote": "姓名：玛利亚·迪斯特拉斯HP39/P35/3541M职业：奴隶",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 381,
+   "quote": "「……我叫玛利亚。我的名字是玛利亚。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 5,
+   "text": "★『表示』显示全名=玛利亚·迪斯特拉斯，自报『我叫玛利亚』——与缇亚/迪亚布罗·西斯同款双名结构；两实体经关系挂接待 R4 裁决"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0663ccefcda6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "奥兰（Oria）大剑",
+  "rel_type": "拾得(搜刮)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 281,
+   "quote": "肉干水袋油麻痹针解毒药奥兰（Oria）大剑皮袋皮制手套皮靴布衣木弓铁匕首没有印记的箭矢打火机智能手机石子树枝十位魔法石九位魔法石",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 3,
+   "text": "持有物品列表（搜刮死者）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-553c8eaf3c32",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

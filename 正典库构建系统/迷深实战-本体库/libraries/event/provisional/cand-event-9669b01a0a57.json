@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玲小姐",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "缇亚受嘲与斗殴风波",
+  "tick": 2,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 503,
+   "quote": "「啊，确实，能使用魔法是很了不起。不过，等级只有1级的话，可是比路边的小孩子还低的哦。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "组队招募被男女客人嘲笑（1级=比路边小孩还低/小少爷论）→稚拙斗殴→玲小姐惯常劝止；缇亚咂舌离店（L496-524）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9669b01a0a57",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

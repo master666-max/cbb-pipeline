@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "世界观动摇与？？？第四次暴走",
+  "tick": 3,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 318,
+   "quote": "【技能『？？？』暴走了】",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "缇亚之言令主角视作NPC的路人复苏为活人→现实感与非现实感界线崩坏→技能暴走镇压→『不存在什么NPC』的承认与恐惧"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ec79dd85558f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

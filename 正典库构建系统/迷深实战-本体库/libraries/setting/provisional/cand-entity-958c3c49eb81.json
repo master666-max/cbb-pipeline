@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "地点(迷宫层)",
+  "name": "第一百层"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 734,
+   "quote": "抵达迷宫的最深部，也就是第一百层的话，似乎就能『实现任何愿望』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "迷宫最深部；据宗教传承：跨越试练抵达即可『实现任何愿望』（看板记载，主角觉通关条件充满人为信息）（L734-737）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-958c3c49eb81",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

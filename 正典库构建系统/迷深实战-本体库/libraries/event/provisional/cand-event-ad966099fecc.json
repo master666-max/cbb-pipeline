@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚·迪斯特拉斯",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "潜入",
+  "name": "奴隶拍卖场潜入与玛利亚初遇",
+  "tick": 3,
+  "time_verbatim": "太阳已经落山（L404）"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 343,
+   "quote": "果然是奴隶的拍卖场。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "见戴镣铐奴隶→灵机：驱使才能奴隶攻略迷宫→『维度』追踪至避人耳目的拍卖场→扮客打探（深夜营业/几十奴隶打理）→迷路黑发少女入厅自报『我叫玛利亚』并凝视主角→主角失言自报基督"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ad966099fecc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

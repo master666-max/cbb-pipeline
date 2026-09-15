@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "阿尔肯"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 649,
+   "quote": "他是个9级的剑士，名叫阿尔肯。",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 680,
+   "quote": "如果你输了那就卖身来凑钱好了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "9级剑士（大剑背负，三人同行）：曾在酒馆嘲讽缇亚之人；五层再遇挑衅→设讨伐赌局（赌缇亚卖身）→败后毁约动武→数秒内被主角制服，誓言离国"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-95728e75ff0b",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

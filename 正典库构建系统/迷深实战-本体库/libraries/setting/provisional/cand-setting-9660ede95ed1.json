@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 3,
+  "fact": "迷宫内『管理领域之外』无规则、探索者可互相攻击（领队据此砍伤主角）；修缮道路（正道）属管理领域之内、人与人相安无事（主角推断并验证）",
+  "name": "管理领域内外规则",
+  "tick": 1
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 87,
+   "quote": "「这里可是迷宫，而且还是在『管理领域之外』的地方。你应该有所觉悟了吧，小鬼。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 3,
+   "text": "主角综合领队之言与正道见闻推断"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-9660ede95ed1",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "《冻结》"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 307,
+   "quote": "冰结魔法：冻结1.00寒冰1.00",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 369,
+   "quote": "「冰结魔法《冻结》。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "冰结魔法下属：周围温度缓缓下降；配合水攻致冷克制黑环萤（L325/369-373）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-07acc3e8d0da",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

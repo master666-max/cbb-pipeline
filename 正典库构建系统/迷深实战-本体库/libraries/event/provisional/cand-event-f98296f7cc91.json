@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "基督·欧亚",
+   "瓦尔德",
+   "相川涡波",
+   "酒馆"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "移居瓦尔德与酒馆就职",
+  "tick": 2,
+  "time_verbatim": "翌日（L236）"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 269,
+   "quote": "基督·欧亚（ChristEurasia）。这就是我在这个世界的名字。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "越境无手续（国境石墙有魔石线）→瓦尔德闲逛受雇酒馆（面试即过、日薪十铜币、宿阁楼）→启用假名基督·欧亚（L236-274/424-426）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f98296f7cc91",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

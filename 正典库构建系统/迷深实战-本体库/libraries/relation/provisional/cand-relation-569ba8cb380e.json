@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "强制升级(魔法)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 189,
+   "quote": "「我看看，升级的咏唱是、有了……『汝者，刮目自省而可也——」",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 192,
+   "quote": "「——在于吾身，在于汝身』，好了，这样就搞定了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 4,
+   "text": "咏唱『汝者，刮目自省而可也——在于吾身，在于汝身』强制将其 1→4 级；自称善意（『帮你消化积攒的经验值』）；主角被束缚无法反抗"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-569ba8cb380e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

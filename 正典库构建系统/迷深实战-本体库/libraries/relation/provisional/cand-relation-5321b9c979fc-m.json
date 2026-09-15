@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "基督·欧亚",
+  "rel_type": "使用假名",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 269,
+   "quote": "基督·欧亚（ChristEurasia）。这就是我在这个世界的名字。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 268,
+   "quote": "因为对报上真名感到害怕，所以我使用了这个西洋系的假名。",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 490,
+   "quote": "还不到相川涡波登场的时候，我要继续作为只考虑如何尽快回到原来世界的探索者基督·欧亚活下去。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 4,
+   "text": "★身份桥接：因惧真名暴露（已为拉丝缇娅拉所知）而启用西洋系假名『基督·欧亚（ChristEurasia）』并决定沿用——ch14 主角即此人；实体不并、R4 别名合并审计裁决"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-5321b9c979fc",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5321b9c979fc-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-5321b9c979fc",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

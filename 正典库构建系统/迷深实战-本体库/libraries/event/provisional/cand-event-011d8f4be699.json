@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "『表示』",
+   "【持有物品】",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "搜刮死者与『表示』规则习得",
+  "tick": 1,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 263,
+   "quote": "异象陡生，空间扭曲着将肉干吞没。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "搜尸体取装备物资；发现【Status】面板（英语→日语切换）与【Item】Empty；习得意念收纳规则并收纳全部物资（L182-284）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-011d8f4be699",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

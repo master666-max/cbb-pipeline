@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "【队伍】"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 590,
+   "quote": "迪亚布罗·西斯加入了队伍",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "『表示』组队面板：组队时显示『迪亚布罗·西斯加入了队伍』（L589-590）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-da6f57e4e16e",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

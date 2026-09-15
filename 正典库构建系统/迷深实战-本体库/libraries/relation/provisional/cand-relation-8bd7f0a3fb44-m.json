@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "酒馆",
+  "rel_type": "就职",
+  "subject": "玲小姐"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 132,
+   "quote": "一边干着服务员的工作，一边探听我和雷迪安特之间的对话的玲小姐对我招呼道",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 288,
+   "quote": "见我愣在原地不动，酒馆身材高挑的看板娘玲小姐出声催促。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "酒馆服务员，与店长一同工作（L3/L132）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-8bd7f0a3fb44",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8bd7f0a3fb44-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-8bd7f0a3fb44",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

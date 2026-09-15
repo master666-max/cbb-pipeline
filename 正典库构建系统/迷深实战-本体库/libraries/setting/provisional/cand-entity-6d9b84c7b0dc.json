@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『？？？』"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 103,
+   "quote": "【技能『？？？』暴走了】",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 104,
+   "quote": "以一定的感情为交换，使精神安定下来。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 302,
+   "quote": "后天技能：次元魔法5.00？？？：？？？？？？：？？？",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "神秘技能：暴走式发动——『以一定的感情为交换，使精神安定下来。混乱补正+1.00』；主角情感剧烈时触发，冷静取代恐惧（L103-109/762-768）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 3,
+   "text": "技能表有 3 个『？？？』槽位（L302）；发动条件疑与精神状态相关；主角对其异样表现不安：『这肯定不是正常的冷静，而是什么更为异样的东西』（L768-775）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-6d9b84c7b0dc",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "『表示』",
+   "相川涡波",
+   "阿尔文·科尔森"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "『注视』对人与技能常识观察",
+  "tick": 2,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 484,
+   "quote": "一般来说一个人的技能也就一两个而已。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "发现『注视』对人类有效（观察数十客人）；可附加显示条件；常识确认：常人技能1-2个、娴熟者3个、数值0-2区间（L452-486）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-747ae10b8c0e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "name": "候补之谜",
+  "note": "拉丝缇娅拉称主角为其重要的『候补』——候补什么/为何是主角",
+  "payoff_chapter": null,
+  "setup_chapter": 4,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 195,
+   "quote": "「你可是我很重要的『候补』啊",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 4,
+   "text": "夜袭升级的动机钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-ecd0e112597e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

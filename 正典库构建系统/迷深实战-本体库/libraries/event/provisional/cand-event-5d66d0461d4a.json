@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "泪洸",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "相遇",
+  "name": "闭店时遇露宿兜帽少年",
+  "tick": 2,
+  "time_verbatim": "入夜（L384 泪洸飘落）"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 416,
+   "quote": "「顺带一说我不是女孩子。所以用不着担心。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "『维度·多重展开』察觉门外有人：兜帽金发苍眼中性之『少女』因没钱露宿酒馆前；自称非女孩子；主角锁门未扰（L376-422）——翌日酒馆再见即缇亚"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5d66d0461d4a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

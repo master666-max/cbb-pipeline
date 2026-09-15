@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "魔法石"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 380,
+   "quote": "『表示』上说这个仄暗透明的结晶是『十位魔法石』。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 281,
+   "quote": "十位魔法石九位魔法石",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 20,
+   "quote": "「啊，是浅层的魔石吗。这些的价值一律是一枚铜币。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "怪物掉落的结晶类物品总称（主角推测并验证的掉落机制，L194-195）；见十位魔法石（黑环萤掉落）/九位魔法石（搜刮）（L281/380）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-90e30d4efce4",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-90e30d4efce4-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-90e30d4efce4",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

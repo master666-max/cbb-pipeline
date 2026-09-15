@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波"
+  ],
+  "name": "召唤信息之谜",
+  "note": "【召唤】欢迎回来，相川涡波——『欢迎回来』暗示非首次/召唤者不明；与智能手机时间差好几年可能同源",
+  "payoff_chapter": null,
+  "setup_chapter": 3,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 3,
+   "quote": "——【召唤】欢迎回来，相川涡波——",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 3,
+   "text": "开篇即抛：谁召唤/为何『回来』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-c56ecf6727a2",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "地点(国/势力)",
+  "name": "弗茨亚茨"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 38,
+   "quote": "是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 45,
+   "quote": "我不管你是弗茨亚茨的骑士还是什么的",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 665,
+   "quote": "毕竟在迷宫附近建有水渠的可只有这北面的『弗茨亚茨』一个啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 738,
+   "quote": "这是个将一名伟大的骑士尊奉为始祖，重视骑士道的，以贵族为核心的国家。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "塞拉与『天上之七骑士』的所属国度；来客行头与瓦尔德本地货色对比鲜明（L13/L38）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-1069ed274073",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-1069ed274073-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-1069ed274073",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

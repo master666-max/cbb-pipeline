@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "相川阳滝"
+  ],
+  "instant": null,
+  "kind": "回忆",
+  "name": "病房之梦（阳滝与誓约）",
+  "tick": 3,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 464,
+   "quote": "「嗯，我跟你约好了。我们会永远在一起。」",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 473,
+   "quote": "所以——无论如何，我都绝对要回去。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "梦=对过去记忆的清算：病房中与最爱的妹妹阳滝相对（顽疾/罪魁祸首是我/双亲由我们令之消失）；誓约『我们会永远在一起』——『相川涡波这个人的一切，都是为了守护那份约定而存在的』；梦醒决意：哪怕拼上性命也要回到原来的世界"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-bd17cc48a2ec",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

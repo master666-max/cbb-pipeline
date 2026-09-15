@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "酒馆"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 2,
+   "quote": "我将玛利亚留在家中，来到了酒馆。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 40,
+   "quote": "酒馆顿时一片哗然。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 147,
+   "quote": "由于我希望至少能够在没有外人的地方进行决斗，所以带着他们来到了酒馆的后方。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 256,
+   "quote": "——我选择在某个酒馆打工。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 261,
+   "quote": "都没对我的身份来历多做确认，酒馆就将我录用为了店员。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "主角打工处，店长经营、玲小姐同僚；瓦尔德城镇的营业场所（L3/L41/L57）"
+  },
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "本章事件主舞台：塞拉一行为决斗上门；决斗最终在酒馆后方进行（L147-149）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-13704979c18f",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-13704979c18f-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-13704979c18f",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

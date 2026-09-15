@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 5,
+  "fact": "在大国的『魔石线』上做出决斗宣言即于该国留下记录——违誓被定为毁约重犯遭通缉；迷宫『正道』上亦敷有魔石线可用；正道附近斗殴即时暴露（警备稽查再证）",
+  "name": "决斗宣誓与魔石线记录",
+  "tick": 3
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 740,
+   "quote": "如果在大国的『魔石线』上做出决斗的宣言的话，那就会在该国留下记录。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 5,
+   "text": "阿尔肯解说（该国常识）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-f34f72dcc3b3",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

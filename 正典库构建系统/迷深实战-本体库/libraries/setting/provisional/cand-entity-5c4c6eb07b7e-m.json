@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "【状态】"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 17,
+   "quote": "【状态】",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 165,
+   "quote": "【状态】状态：身体强化1.00",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 236,
+   "quote": "【状态】",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 237,
+   "quote": "姓名：相川涡波HP4/51MP72/72职业：",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "『注视』调出的状态面板：名字/HP/MP/职业/等级/六维数值/技能（L17-23）；强化状态亦经其显示（L165）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-5c4c6eb07b7e",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5c4c6eb07b7e-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-5c4c6eb07b7e",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "缇亚",
+   "阿雷亚斯家的宝剑"
+  ],
+  "name": "缇亚的过去",
+  "note": "故乡领主/私兵/奴隶陪侍的怨念；『阿雷亚斯家』（宝剑之家名）与缇亚关系未明",
+  "payoff_chapter": null,
+  "setup_chapter": 5,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 283,
+   "quote": "在我的故乡，金钱和力量在手的人就能恣意妄为。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 5,
+   "text": "出身与宝剑来历钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-ca46dd738801",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

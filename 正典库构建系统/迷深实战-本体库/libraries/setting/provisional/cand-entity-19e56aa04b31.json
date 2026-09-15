@@ -1,0 +1,56 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "次元魔法"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 302,
+   "quote": "后天技能：次元魔法5.00？？？：？？？？？？：？？？",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 308,
+   "quote": "次元魔法:维度1.00",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "主角后天技能（5.00，技能表最高）；下辖《维度》（L302/308）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 3,
+   "text": "疑与库内『Dimension』（ch14，别名表已含『次元魔法』）同指——R6 规则3 保留本章原文写法分立建，留 R4/嵌入扫描裁决，不静默合并"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-19e56aa04b31",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

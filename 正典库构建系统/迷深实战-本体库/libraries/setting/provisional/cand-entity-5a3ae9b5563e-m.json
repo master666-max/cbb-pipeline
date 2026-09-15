@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "剑术"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 22,
+   "quote": "后天技能：剑术2.12神圣魔法0.89",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 171,
+   "quote": "不过她好歹也是掌握着高水平的剑术之人",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 301,
+   "quote": "先天技能：剑术1.01冰结魔法2.00",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "塞拉的后天技能（2.12）；其实战水准极高——刹那间行云流水的后发制人（L22/L178）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-5a3ae9b5563e",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5a3ae9b5563e-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-5a3ae9b5563e",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

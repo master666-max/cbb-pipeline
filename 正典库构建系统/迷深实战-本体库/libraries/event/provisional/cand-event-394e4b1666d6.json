@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "余波",
+  "name": "生还与缇亚谵言",
+  "tick": 4,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 550,
+   "quote": "「我、我是缇亚……不是、西、斯……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 6,
+   "text": "火焰消失后抱缇亚沿『正道』脱出（异常轻的体重/失血濒死）；谵言含未知人名地名+『我是缇亚……不是、西、斯……』+『只要有基督在、我就……』——跨越第二十之试练生还"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-394e4b1666d6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

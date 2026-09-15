@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "旅店",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "夜袭",
+  "name": "拉丝缇娅拉夜袭强制升级",
+  "tick": 2,
+  "time_verbatim": "深夜（L125）"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 195,
+   "quote": "「你可是我很重要的『候补』啊",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "深夜闯入客房跨坐唤醒→拒其『好意』后决行硬来：锁门+隔音+束缚（淡紫色）→投技制压→咏唱升级魔法 1→4 级→自称『候补』宣言→阳台跳窗离去；主角动弹不得至天明（L108-236）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d75a100898ce",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

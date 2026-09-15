@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "《维度》"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 424,
+   "quote": "次元魔法的基础。根据术者的力量对空间观测进行辅助。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 429,
+   "quote": "半径十米左右的空间便彻底纳入了我的掌握之下",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 101,
+   "quote": "我释放出『维度·多重展开』",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 767,
+   "quote": "我已经熟练掌握了『维度』的用法，因此可以在一瞬间消费最少的MP获取广范围的信息。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "次元魔法的基础：消费 MP1，据术者力量辅助空间观测——五感敏锐+第六感拓展，半径十米空间尽掌（含死角）；可灌注 MP 强化（感知范围扩至五十倍，用于索敌/探听）（L422-430/478-488）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-7a40ad99f678",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7a40ad99f678-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-7a40ad99f678",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

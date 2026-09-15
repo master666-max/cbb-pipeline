@@ -1,0 +1,55 @@
+{
+ "canonical": {
+  "entities": [
+   "『维度·决战演算』",
+   "教会",
+   "相川涡波",
+   "缇亚",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "教会汇合与二次入迷宫",
+  "tick": 2,
+  "time_verbatim": "一大清早（L595）"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 635,
+   "quote": "而后发动了名为『维度·决战演算』的衍生魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "教会观祈祷（=升级体系）→入瓦尔德侧迷宫：『维度·决战演算』首战锯齿甲虫，缇亚『火焰箭』一击必杀（镭射实态令主角冷汗）（L595-676）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2f5553585759",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

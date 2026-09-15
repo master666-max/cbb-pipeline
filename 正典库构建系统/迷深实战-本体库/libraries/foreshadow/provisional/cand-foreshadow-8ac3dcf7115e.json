@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚"
+  ],
+  "name": "职业获得之谜",
+  "note": "主角职业栏空白而缇亚=剑士（疑职业附升级加成）——获得职业的明确条件不明",
+  "payoff_chapter": null,
+  "setup_chapter": 5,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 529,
+   "quote": "我的职业栏上什么都没有，而缇亚则是剑士。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 5,
+   "text": "系统机制钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-8ac3dcf7115e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

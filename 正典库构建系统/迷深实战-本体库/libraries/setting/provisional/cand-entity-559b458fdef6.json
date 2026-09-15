@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "阳祝日"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 537,
+   "quote": "店长跟我说阳祝日是休息日来着。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "休息日制度：酒馆每工作三天休一天，阳祝日为休息日（主角类比原世界星期日）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-559b458fdef6",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

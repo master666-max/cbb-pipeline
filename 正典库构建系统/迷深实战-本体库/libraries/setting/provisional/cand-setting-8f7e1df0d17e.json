@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 6,
+  "fact": "技能『？？？』可被主动诱发：反向加剧不安/恐惧即触发暴走（本章3次实战运用）；其『以一定的感情为交换』的代价结构由此确认；但不视『昂扬』为需消除的负面状态（不消除battle狂化）",
+  "name": "技能？？？反向诱发",
+  "tick": 4
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 256,
+   "quote": "那就反过来让不安加剧，借此诱发技能『？？？』便是。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 6,
+   "text": "主角对神秘技能的运用掌握"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-8f7e1df0d17e",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "中央广场",
+   "弗茨亚茨",
+   "相川涡波",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "见闻",
+  "name": "看板知国势与图书馆翻译之谜",
+  "tick": 1,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 734,
+   "quote": "抵达迷宫的最深部，也就是第一百层的话，似乎就能『实现任何愿望』。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 758,
+   "quote": "日语被翻译成了这种奇妙的语言，而这种奇妙的语言也被翻译成了日语。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "中央广场看板：五国同宗联合国攻略迷宫/第100层实现愿望/弗茨亚茨百区编号制；图书馆发现语言自动互译现象→恐惧→技能『？？？』第三次暴走，混乱达3.00（L727-781）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f5b112846241",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

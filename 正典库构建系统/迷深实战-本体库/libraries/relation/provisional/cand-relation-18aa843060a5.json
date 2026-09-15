@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "次元魔法",
+  "rel_type": "技能点强化",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 216,
+   "quote": "技能点我只分配了一点给次元魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 4,
+   "text": "升级获 3 技能点，投 1 点（5.05+0.10），余 2 点保留"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-18aa843060a5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

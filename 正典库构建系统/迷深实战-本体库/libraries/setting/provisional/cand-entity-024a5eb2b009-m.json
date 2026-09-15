@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "『魔石线』"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 149,
+   "quote": "最后，在互相对着『魔石线』起誓后，我们同时拔剑出鞘。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 428,
+   "quote": "一旦接触了『魔石线』立马就会被逮捕的哦。」看来铺设于街道各处的『魔石线』还有警备和稽查的效果。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 52,
+   "quote": "可是我在图书馆里获得的知识却只说它是『可以传递魔力的宝石炼制而成的线路』而已。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "决斗前双方共同起誓的对象（L149）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-024a5eb2b009",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-024a5eb2b009-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-024a5eb2b009",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

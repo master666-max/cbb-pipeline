@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "击杀(第二十之试练)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 495,
+   "quote": "接着我顺势挥剑让缇达的首级和胴体分了家。",
+   "vol": 1
+  },
+  {
+   "chapter": 6,
+   "line": 503,
+   "quote": "「——啊、a、是、是你们、赢了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 6,
+   "text": "冰结魔法冻僵+缇亚神圣魔法固化其身后：右手攥刃+『持有物品』换剑奇袭→斩首→断手足刺心脏——缇达承认可败并化光消散"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f86f381aa799",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "20层",
+  "rel_type": "自称镇守",
+  "subject": "缇达"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 894,
+   "quote": "【二十守护者】暗之理的盗窃者",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 898,
+   "quote": "我乃镇守二十层的守护者、暗之理的盗窃者缇达。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 5,
+   "text": "【二十守护者】暗之理的盗窃者——表示认证+自报双源"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-42fe8219d979",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

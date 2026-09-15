@@ -1,0 +1,2016 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 38,
+     "quote": "【十守护者】火之理的盗窃者",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 34,
+     "quote": "被缇达唤作阿尔缇的少女也散发着不负于他的压迫感。",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 79,
+     "quote": "「我就算了。我在这世上还有事要做……而且，我总觉得很快就能解消心中的那份疑念了。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "【十守护者】火之理的盗窃者（镇守第十层的守护者）：小个子赤发少女、缠满刻文字绷带、双脚为火焰（翠色火焰喷涌使她漂浮空中）"
+    },
+    {
+     "category": "trait",
+     "chapter": 6,
+     "text": "压迫感不负于缇达；冷淡少言（『禁止通行』）；自言『我在这世上还有事要做……总觉得很快就能解消心中的那份疑念了』"
+    },
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "以黑色火焰双壁封锁房间退路助缇达设试练场（火焰在『魔石线』上持续不久）后隐去"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-58af371f2bfb",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "缇达"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 89,
+     "quote": "而你二位，就请接受我这『第二十之试练』吧！」",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 186,
+     "quote": "我剥夺了你对黑暗的习惯。我的别名是暗之理的盗窃者。",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 503,
+     "quote": "「——啊、a、是、是你们、赢了。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "第二十之试练全战：变形战斗体（双刀→大锤→液化）＋精神魔法特化（自称『我擅长的、是操纵人内心的黑暗』）；可多次死亡复活（『我刚才死了两次了』）；被冻结的部分无法液化恢复"
+    },
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "败北消散：被冰结+神圣魔法固化后斩首；遗言承认战败（『是你们、赢了』）+临终托付：望二人照势头实现阿尔缇的愿望；化光消散掉落【守护者的魔石】"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 6,
+     "text": "评主角：『如此技量、如此速度，已经踏入人类20级（顶级）的领域』；与格连交手是几年前的事（『他倒是个好苗子，不过还是略显不足』）；毁灭主义者自认（『人类彼此舍身相救的景象实在是太美了』）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-2fd82720dbbf",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 407,
+     "quote": "缇亚的身体挡在了我和缇达之间",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 470,
+     "quote": "那是可以干涉所有魔力的光之魔法——『神圣魔法』。",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 550,
+     "quote": "「我、我是缇亚……不是、西、斯……」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 6,
+     "text": "舍身掩护主角：第一刀撕裂身体、第二刀斩断持剑右手，大量失血濒死"
+    },
+    {
+     "category": "evolution",
+     "chapter": 6,
+     "text": "神圣魔法狂乱觉醒：无视方向连发（紫苑→完全治愈→斯特拉斯领域→神圣箭）；回复魔法止住自己出血并治愈主角刀伤——『数值最高的技能、缇亚真正的魔法』；战后反作用倒地"
+    },
+    {
+     "category": "interpretation",
+     "chapter": 6,
+     "text": "谵言：『我、我是缇亚……不是、西、斯……』+从未听说的人名地名（致歉/嫉妒/怨恨交杂）——身份撕裂"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-c26ab7b5414b",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 268,
+     "quote": "不够的MP会由命——、由最大HP来补偿。",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 492,
+     "quote": "我用被砍伤的右手攥住了缇达的刀刃。",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 256,
+     "quote": "那就反过来让不安加剧，借此诱发技能『？？？』便是。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 6,
+     "text": "MP 枯竭下连续施法发现代价机制（HP 补偿）；终局右手被砍仍攥刃+『持有物品』换剑奇袭斩首；混乱值一度 8.61"
+    },
+    {
+     "category": "trait",
+     "chapter": 6,
+     "text": "情感战略化：主动加剧不安反向诱发技能『？？？』（3次）；『我不想孤身一人』之孤独恐惧的自认"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-17b6511bd331",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『哀哭之仔的黑暗』"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 178,
+     "quote": "「——呵、呵呵，魔法『哀哭之仔的黑暗』。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "缇达魔法：剥夺目标对黑暗的习惯——非物理黑暗而是精神黑暗（体感暗幕增幅，连『维度』信息也被拉上暗幕）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-7ca5236467af",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『黑骑兵之裹足』"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 206,
+     "quote": "……魔法『黑骑兵之裹足』。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "缇达魔法（泥侵蚀为前提的强效魔法）：剥夺双腿行动——神经指令不得落实（部位麻痹）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-6096610c0350",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『讴歌不平的叛逆者』"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 373,
+     "quote": "——魔法『讴歌不平的叛逆者』。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "缇达魔法：施加『昂扬』——兴奋高涨无法自制、战意沸腾却技巧束之高阁"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-a4145521856c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『紫苑』"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 456,
+     "quote": "「——神圣魔法『紫苑』。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "缇亚神圣魔法：光泡充满空间——无物理力但具阻碍魔力之效（扭曲了『维度』）；压制缇达并凝固其身体"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-828151f11a02",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『斯特拉斯领域』"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 473,
+     "quote": "「——神圣魔法『完全治愈』、神圣魔法『斯特拉斯领域』『神圣箭』『神圣箭』『神——」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "缇亚觉醒时连发的神圣魔法之一（狂乱无差别释放）（仅咏唱名，效果未详）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-93f80b451524",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『神圣箭』"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 473,
+     "quote": "「——神圣魔法『完全治愈』、神圣魔法『斯特拉斯领域』『神圣箭』『神圣箭』『神——」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "缇亚觉醒时连发的神圣魔法攻击（无差别乱射）（仅咏唱名，效果未详）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-fcb352c7c229",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品",
+    "name": "守护者的魔石"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 527,
+     "quote": "【守护者的魔石】",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 528,
+     "quote": "守护者缇达的魔力结晶",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "缇达消灭后掉落的黑色宝石：『守护者缇达的魔力结晶』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-bc01261ad594",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念(称号)",
+    "name": "洗涤黑暗之人"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 522,
+     "quote": "【获得了称号『洗涤黑暗之人』】",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 523,
+     "quote": "精神魔法补正+0.50",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 6,
+     "text": "通过第二十之试练获得：精神魔法补正+0.50"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-3ad88f290418",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "缇达",
+    "rel_type": "击杀(第二十之试练)",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 495,
+     "quote": "接着我顺势挥剑让缇达的首级和胴体分了家。",
+     "vol": 1
+    },
+    {
+     "chapter": 6,
+     "line": 503,
+     "quote": "「——啊、a、是、是你们、赢了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "冰结魔法冻僵+缇亚神圣魔法固化其身后：右手攥刃+『持有物品』换剑奇袭→斩首→断手足刺心脏——缇达承认可败并化光消散"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-f86f381aa799",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "缇达",
+    "rel_type": "协力击杀(神圣魔法固化)",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 470,
+     "quote": "那是可以干涉所有魔力的光之魔法——『神圣魔法』。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "光泡（紫苑）凝固其身体+乱射压制——『在冰结魔法和神圣魔法的影响下，缇达的身体完全固化了』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-28a46389962b",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "舍身掩护",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 407,
+     "quote": "缇亚的身体挡在了我和缇达之间",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "以整个身体挡下斩向主角脖颈的刀（撕裂身体+右手被斩断）——主角昂扬瞬间粉碎、『不能饶恕无法保护缇亚的自己』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-8edde6208c5e",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "神圣魔法",
+    "rel_type": "真魔法觉醒",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 471,
+     "quote": "同时也是缇亚数值最高的技能。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "濒死狂乱中觉醒：『数值最高的技能、缇亚真正的魔法』——干涉所有魔力的光之魔法；回复+攻击无差别连发"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-066b7628091d",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『紫苑』",
+    "rel_type": "使用(觉醒连发)",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 456,
+     "quote": "「——神圣魔法『紫苑』。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "首个觉醒魔法：光泡填满空间、凝固缇达"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-1f16e539ac5e",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『斯特拉斯领域』",
+    "rel_type": "使用(觉醒连发)",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 473,
+     "quote": "神圣魔法『斯特拉斯领域』",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "狂乱连发（效果未详）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-3586584a70bd",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『神圣箭』",
+    "rel_type": "使用(觉醒连发)",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 473,
+     "quote": "『神圣箭』『神圣箭』",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "狂乱连发×2（效果未详）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-f6b154f2b916",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『哀哭之仔的黑暗』",
+    "rel_type": "使用",
+    "subject": "缇达"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 178,
+     "quote": "「——呵、呵呵，魔法『哀哭之仔的黑暗』。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "精神黑暗剥夺（视觉暗幕+『维度』信息遮蔽）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-d27710777515",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『黑骑兵之裹足』",
+    "rel_type": "使用",
+    "subject": "缇达"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 206,
+     "quote": "……魔法『黑骑兵之裹足』。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "泥侵蚀后剥夺双腿（部位麻痹）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-039883c67070",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『讴歌不平的叛逆者』",
+    "rel_type": "使用",
+    "subject": "缇达"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 373,
+     "quote": "——魔法『讴歌不平的叛逆者』。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "施加昂扬（战斗狂化、技巧劣化）——缇达称『人类就应该这样才好』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-423bb9a008cd",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "阿尔缇",
+    "rel_type": "临终托付",
+    "subject": "缇达"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 512,
+     "quote": "如果可能的话，我希望你们能照着这个势头将阿尔缇的——啊啊，就是说刚才那个驱使火焰的女孩子。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "消散前对二人：『我希望你们能照着这个势头将阿尔缇的……愿望』实现——愿望内容未言明即液化失声"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-93f34173a865",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "缇达",
+    "rel_type": "封锁退路协助",
+    "subject": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 84,
+     "quote": "她在房间的出入口用黑色的火焰打造出了两道墙壁。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "黑色火焰双壁封房间（『这里毕竟是在「魔石线」上面，我的火焰持续不了太久』）；称缇达职务为掌管一至十层者对一至二十层者"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-59c83c25f2c1",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "洗涤黑暗之人",
+    "rel_type": "获得称号",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 522,
+     "quote": "【获得了称号『洗涤黑暗之人』】",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "通过第二十之试练（精神魔法补正+0.50）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-4c85357d63e1",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "守护者的魔石",
+    "rel_type": "获得(守护者掉落)",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 527,
+     "quote": "【守护者的魔石】",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "缇达消散后遗留的黑色宝石"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-6205e586189f",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『？？？』",
+    "rel_type": "技能持有(反向诱发)",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 256,
+     "quote": "那就反过来让不安加剧，借此诱发技能『？？？』便是。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 6,
+     "text": "★机制发现：主动加剧不安/恐惧即可诱发暴走（本章3次）；技能不视『昂扬』为需消除的负面状态"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-b5fec449643f",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "缇亚",
+     "缇达",
+     "阿尔缇"
+    ],
+    "instant": null,
+    "kind": "遭遇",
+    "name": "双守护者遭遇与试练开场",
+    "tick": 4,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 89,
+     "quote": "而你二位，就请接受我这『第二十之试练』吧！」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "缇达寻悬影异常狩猎而来→邀试练（第二十之试练从未有人敢试；格连亦未染指）→主角欲逃→阿尔缇火焰封路→『这为火焰所桎梏的空间便是二十层』一战不可避免（一次一人）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-c9c9387c3d3a",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『维度·决战演算』",
+     "相川涡波",
+     "缇亚",
+     "缇达"
+    ],
+    "instant": null,
+    "kind": "战斗",
+    "name": "缇达战·物理阶段",
+    "tick": 4,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 130,
+     "quote": "这是自我开始使用『维度』以来首次受到的攻击。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "缇达变形态（双刀/大锤/液化）：速度连『维度』都难追及；主角首次受创（大锤擦击全身冲击）——『对「维度」付诸的绝对信任产生了龟裂』；高密度演算（时间0.1秒/空间0.001米分解）大卸八块仍不死（『我刚才死了两次了』）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-deb82181b0c2",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『？？？』",
+     "相川涡波",
+     "缇亚",
+     "缇达"
+    ],
+    "instant": null,
+    "kind": "危机",
+    "name": "精神攻击地狱",
+    "tick": 4,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 196,
+     "quote": "状态：混乱5.29精神污染1.00黑暗1.00",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "哀哭之仔的黑暗（黑暗习惯剥夺）→黑骑兵之裹足（麻痹）→沉默施加于缇亚（夺其魔法二字）→讴歌不平的叛逆者（昂扬狂化）；主角精神污染2.00/昂扬2.01、混乱至8.61；以反向诱发技能『？？？』解围"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-24e2b1a56ceb",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "缇亚",
+     "缇达"
+    ],
+    "instant": null,
+    "kind": "转折",
+    "name": "HP补偿冻结与缇亚舍身",
+    "tick": 4,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 268,
+     "quote": "不够的MP会由命——、由最大HP来补偿。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "MP枯竭后倾注冻结（MP0后由最大HP补偿——HP 削减近半冻僵缇达）；缇达昂扬中斩向主角脖颈之际，缇亚全身挡刀（撕裂+右手被斩）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-b36d9981b3cf",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "守护者的魔石",
+     "相川涡波",
+     "缇亚",
+     "缇达",
+     "阿尔缇"
+    ],
+    "instant": null,
+    "kind": "决战",
+    "name": "缇达击杀与遗愿",
+    "tick": 4,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 512,
+     "quote": "我希望你们能照着这个势头将阿尔缇的",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "缇亚神圣魔法狂乱觉醒（紫苑等连发，凝固缇达）→主角攥刃+持有物品换剑奇袭斩首→缇达承认战败：『多谢了。我打得很尽兴』→临终托付阿尔缇的愿望→『啊、真是、愉、快——』化光，掉落守护者的魔石"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-3a61d4534b09",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "缇亚"
+    ],
+    "instant": null,
+    "kind": "余波",
+    "name": "生还与缇亚谵言",
+    "tick": 4,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 550,
+     "quote": "「我、我是缇亚……不是、西、斯……」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 6,
+     "text": "火焰消失后抱缇亚沿『正道』脱出（异常轻的体重/失血濒死）；谵言含未知人名地名+『我是缇亚……不是、西、斯……』+『只要有基督在、我就……』——跨越第二十之试练生还"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-394e4b1666d6",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "缇亚",
+     "缇达",
+     "阿尔缇"
+    ],
+    "name": "阿尔缇的愿望",
+    "note": "缇达临终托付：『照着这个势头将阿尔缇的愿望』实现——愿望内容未言明（守护者有愿望本身即重大设定）",
+    "payoff_chapter": null,
+    "setup_chapter": 6,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 512,
+     "quote": "如果可能的话，我希望你们能照着这个势头将阿尔缇的——啊啊，就是说刚才那个驱使火焰的女孩子。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 6,
+     "text": "守护者心愿之谜（末章0557『阿尔缇与缇达的过去篇』之远因）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-75604b649bb4",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "阿尔缇"
+    ],
+    "name": "阿尔缇的疑念",
+    "note": "『我在这世上还有事要做……总觉得很快就能解消心中的那份疑念了』——何事何念未明",
+    "payoff_chapter": null,
+    "setup_chapter": 6,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 79,
+     "quote": "「我就算了。我在这世上还有事要做……而且，我总觉得很快就能解消心中的那份疑念了。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 6,
+     "text": "十守护者动机钩子"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-98fc823e2bad",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "缇亚",
+     "迪亚布罗·西斯"
+    ],
+    "name": "缇亚的身份撕裂",
+    "note": "谵言『我是缇亚……不是、西、斯……』+未知人名地名（致歉/嫉妒/怨恨）——与表示未来名之谜（ch0004）同源加深",
+    "payoff_chapter": null,
+    "setup_chapter": 6,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 550,
+     "quote": "「我、我是缇亚……不是、西、斯……」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 6,
+     "text": "双名认同危机"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-1be2b65e618c",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 6,
+    "fact": "MP 枯竭后仍可继续施法：不足的 MP 由最大 HP 补偿（生命值随施法不断削减——『我的生命在不断削减着』）；主角以近乎自毁的冻结代价冻僵缇达",
+    "name": "MP超支的HP补偿机制",
+    "tick": 4
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 268,
+     "quote": "不够的MP会由命——、由最大HP来补偿。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 6,
+     "text": "战斗中实证的系统机制"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-3bb14025c3f4",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 6,
+    "fact": "技能『？？？』可被主动诱发：反向加剧不安/恐惧即触发暴走（本章3次实战运用）；其『以一定的感情为交换』的代价结构由此确认；但不视『昂扬』为需消除的负面状态（不消除battle狂化）",
+    "name": "技能？？？反向诱发",
+    "tick": 4
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 256,
+     "quote": "那就反过来让不安加剧，借此诱发技能『？？？』便是。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 6,
+     "text": "主角对神秘技能的运用掌握"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-8f7e1df0d17e",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 6,
+    "fact": "已见状态异常：混乱（补正递增）/精神污染/黑暗（习惯剥夺）/部位麻痹/出血/昂扬（战斗狂化技巧劣化）/沉默（夺言语）/恐惧/加护——精神系异常可经技能『？？？』部分解除；缇达为状态异常中心战斗型",
+    "name": "状态异常体系",
+    "tick": 4
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 215,
+     "quote": "状态：混乱5.30精神污染2.00黑暗1.00部位麻痹1.00出血0.31",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 6,
+     "text": "战斗系统观察"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-80d93a7e03ab",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 6,
+    "fact": "缇达型守护者：变形战斗体（双刀/大锤/液化自由转换）、可多次死亡复活（『死了两次』）、被冰冻部分无法液化恢复、精神魔法特化（操纵人内心的黑暗）；泥接触为强效魔法发动前提；对『冷静/假动作/判断力/观察力』评价高于蛮力",
+    "name": "守护者战斗特性",
+    "tick": 4
+   },
+   "evidence": [
+    {
+     "chapter": 6,
+     "line": 333,
+     "quote": "「虽然你的力量也不可小觑，但最棘手的还是那份『冷静』、『假动作』、『判断力』、『观察力』。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 6,
+     "text": "第二十之试练实证"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-ffee9a90d4e0",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★阿尔缇登场：【十守护者】火之理的盗窃者（赤发绷带+火焰双足少女）——ch14 仅提及者现形；ch14 记录已预 supersede 统一分类为 人物(迷宫生物)（同缇达先例，STATE 登记）",
+   "★第二十之试练通过：ch14『先前打倒了令人类束手无策的缇达』之本体战役；【守护者的魔石】获得",
+   "★缇亚神圣魔法觉醒：真魔法=『神圣魔法』（数值最高技能，ch0004 面板 3.78 之 corroborate）；咏唱『紫苑』『斯特拉斯领域』『神圣箭』",
+   "★谵言身份动摇：『我是缇亚……不是、西、斯……』——与 ch0004 表示未来名之谜直接呼应",
+   "译注处理（R6）：L70 面影译注（缇达无常人视觉）为注内信息不抽为事实，仅以正文『面相很好』为据"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=4→tick=4→2000-01-05。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行2554-3112（CHAPTER 0006，559行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C02 小队列 · CHAPTER 0006（第四章-二十层阶处，魍魉沉影池。盼求君临至，直至黯逝时。，摄入序4→tick4→伪锚点2000-01-05）"
+ }
+}

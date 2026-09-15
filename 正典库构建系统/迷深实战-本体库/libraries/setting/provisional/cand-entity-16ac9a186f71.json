@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "艾尔芬（Elfen）外套"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 242,
+   "quote": "装备：铁制单手剑异界的衣服艾尔芬（Elfen）外套皮制手套异界的鞋子附有咒印的投掷短刀",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 419,
+   "quote": "『艾尔芬外套』可以在低温和高温的环境中为身体提供保护",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "装备（搜刮自死者）：低温与高温环境中为身体提供保护；附攻防数值（L242/419）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-16ac9a186f71",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

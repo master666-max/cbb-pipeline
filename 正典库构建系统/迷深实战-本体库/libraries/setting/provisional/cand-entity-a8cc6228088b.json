@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "『表示』"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 217,
+   "quote": "——紧接着，我眼中又凭空浮现出这么一项『表示』。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 380,
+   "quote": "『表示』上说这个仄暗透明的结晶是『十位魔法石』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "游戏样系统界面：浮于视网膜、随视线不消、可对台词/语言反应（英语→日语切换，L217-246）；已见面板：【Status/状态】【Item/持有物品】【技能】【魔法】【怪物】【技能点的分配】【升级菜单】【黑虫石】【解毒药】【维度】等道具详情（L215-382/412-424）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a8cc6228088b",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

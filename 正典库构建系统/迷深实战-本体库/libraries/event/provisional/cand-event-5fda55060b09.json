@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "『管理领域之外』",
+   "巨狼",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "冒险者领队砍伤主角并以其为饵",
+  "tick": 1,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 87,
+   "quote": "「这里可是迷宫，而且还是在『管理领域之外』的地方。你应该有所觉悟了吧，小鬼。」",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 115,
+   "quote": "「很好，就是这个位置！攻击！把路堵死！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "未具名冒险者小队与巨狼缠斗；持细剑领队以『管理领域之外』为由砍伤求助的主角大腿，令其『埝背』作饵，众人借烈焰堵路脱身（L60-131）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5fda55060b09",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

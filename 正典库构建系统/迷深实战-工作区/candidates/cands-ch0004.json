@@ -1,0 +1,4309 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 202,
+     "quote": "名字：相川涡波HP119/121MP71/141职业：",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 269,
+     "quote": "基督·欧亚（ChristEurasia）。这就是我在这个世界的名字。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 4,
+     "text": "被拉丝缇娅拉强制升级：等级1→4（HP151/151 MP141/141 力量3.03 体力3.15 技巧4.07 敏捷5.05 贤能6.09 魔力8.08）；属性点3点全分HP、技能点1点给次元魔法（5.05+0.10）"
+    },
+    {
+     "category": "trait",
+     "chapter": 4,
+     "text": "情报.opsec 意识：隐藏『表示』与次元魔法（对外称故乡秘传），启用假名防真名暴露（拉丝缇娅拉已知其真名）"
+    },
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "首日：兑换所变现（百铜币+十银币）→弗茨亚茨旅店宿（遭夜袭升级）→翌日移居瓦尔德→酒馆就职店员（日薪十铜币，宿阁楼）→与缇亚组队"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-1915a07ba4ee",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "基督·欧亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 269,
+     "quote": "基督·欧亚（ChristEurasia）。这就是我在这个世界的名字。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 268,
+     "quote": "因为对报上真名感到害怕，所以我使用了这个西洋系的假名。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "相川涡波在酒馆启用的西洋系假名（本章首用）；对同乡识别有含义（救赎大陆之人）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-51a6b5a47dbb",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 119,
+     "quote": "声音的主人是我在迷宫遇到的那个可怕的少女拉丝缇娅拉。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 195,
+     "quote": "「你可是我很重要的『候补』啊，怎么能顶着1级这种开玩笑的级别到处游荡呢。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 173,
+     "quote": "这根本不是一个看上去体重不到五十公斤的少女能拥有的臂力。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "深夜非法入侵主角旅店客房：跨坐唤醒→锁门/隔音/束缚魔法（淡紫色光芒）→投技怪力（非五十公斤少女之臂力）→强制施升级魔法→自阳台跳窗离去（L108-199）"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "自称升级技能持有者（『只有运气不错的人持有相应的技能…而我就是前者』）；称主角为重要的『候补』"
+    },
+    {
+     "category": "trait",
+     "chapter": 4,
+     "text": "主角观感：披着人皮的怪物/眼神冷峻如践行残酷宣告的神灵（L156-157）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-7516e8502399",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 579,
+     "quote": "「我知道了。我的名字叫缇亚，没有姓氏。仅仅只是缇亚而已，随便你怎么称呼都行。」",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 392,
+     "quote": "随着仰头的动作，她的金发从兜帽中倾露出来。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 416,
+     "quote": "「顺带一说我不是女孩子。所以用不着担心。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "金发苍眼、样貌中性偏少女的少年（自称非女孩子，L416/586）；自报无姓氏；露宿街头、身无分文；初见当晚蹲在酒馆看板前"
+    },
+    {
+     "category": "status_change",
+     "chapter": 4,
+     "text": "【状态】（主角『注视』所见）：姓名=迪亚布罗·西斯 HP39/52 MP431/431 职业剑士 等级1 力量0.59 体力1.12 技巧0.92 敏捷0.88 贤能1.34 魔力23.25 素质5.00 加护1.00——先天九技能全超常（神圣魔法3.78 神之加护3.07 断罪2.00 集中收束2.02 属性魔法2.09 过捕护2.00 续命2.23 良机2.02），剑术0.09"
+    },
+    {
+     "category": "trait",
+     "chapter": 4,
+     "text": "执着剑术梦想（『我非剑不可』，被众人否定从未获赞成）；急需『力量』与『金钱』（目的未明）；对主角坦率信任（『总感觉听你的话不会有错』）"
+    },
+    {
+     "category": "evolution",
+     "chapter": 4,
+     "text": "与主角组队（【队伍】系统收录）；此前单人仅打倒过一只怪物"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-05630a33c8b4",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "迪亚布罗·西斯"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 476,
+     "quote": "迪亚布罗·西斯",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 582,
+     "quote": "他自己道出的名字也跟『表示』上显示的不同。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚在『表示』中显示的姓名（主角注视所见，L475-481/607）——与自报名不同；主角推测：可能是其将来会报出的名字而『表示』提前显示（『表示』存在某种漏洞？）"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "自报名『缇亚』与之相异但主角不认为其在说谎——两实体经关系留档关联，不合并"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-43aa55ba3673",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "阿尔文·科尔森"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 455,
+     "quote": "姓名：阿尔文·科尔森HP165/172MP0/0职业：剑士",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 466,
+     "quote": "先天技能：缝纫1.10",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "酒馆客人：脸有骇人伤疤的巨汉，剑士级别11（HP165/172 力量6.72…），先天技能缝纫1.10、后天剑术1.23（L453-468）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-bad242c2cd25",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "玲小姐"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 288,
+     "quote": "见我愣在原地不动，酒馆身材高挑的看板娘玲小姐出声催促。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 343,
+     "quote": "高挑的玲小姐摇着那与身材相得益彰的茶色长辫靠近过来问道",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "酒馆看板娘：身材高挑、茶色长辫；惯于应付斗殴、劝架利落（L515-520）；对主角印象好（『比之前那个人有毅力』）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-df7e6d0baf63",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "店长"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 305,
+     "quote": "这家店长原本是个非常有名的迷宫探索者",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 425,
+     "quote": "店长还说我可以住在酒馆里。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "酒馆经营者：原本是非常有名的迷宫探索者，对蛮横客人寸步不让（曾怒喷客人数次）；为玲小姐解围；凭面试印象拍板录用来历不明的主角并许其住阁楼"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-035148bc396b",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "克劳"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 317,
+     "quote": "「喂，克劳！你丫再纠缠我家新人不放的话，小心我揍飞你哦！」",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 318,
+     "quote": "看来这个被唤作克劳的人跟店长是相识。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "与店长相识的酒馆熟客（自称『麻烦的客人，当然也包括我在内』）；被店长怒骂也不以为意（L311-322）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-f0ab76b42310",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "兵蚁群"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 293,
+     "quote": "「可不是么，遇到兵蚁群的时候真是捏了把冷汗",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "探索者谈及的怪物（仅提及：遭遇时捏把冷汗但回报丰厚）（L293-294）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-9d7eed15735d",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点",
+    "name": "酒馆"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 256,
+     "quote": "——我选择在某个酒馆打工。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 261,
+     "quote": "都没对我的身份来历多做确认，酒馆就将我录用为了店员。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "瓦尔德的酒馆（主角打工处）：晚餐时段满座探索者、以迷宫话题为盛、信息源上乘；看板娘玲小姐+前著名探索者店长"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-88979be3ea5d",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点",
+    "name": "旅店"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 69,
+     "quote": "我直接前往了店主告诉我的留宿价格最便宜的旅店。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "弗茨亚茨留宿价格最便宜的旅店（兑换所店主指点，附早晚饭）；主角异世界第一晚宿处，拉丝缇娅拉夜袭之地"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-9e2eb477d75a",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点",
+    "name": "兑换所"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 6,
+     "quote": "我按照工作人员的指示抵达了兑换所。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 25,
+     "quote": "「……不，我没有那东西。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "弗茨亚茨设施（图书馆工作人员指点）：内部似古董屋；收购魔石/武具变现；无证明书须按手印（L6-27）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-3643cd2fc7bb",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点",
+    "name": "瓦尔德"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 237,
+     "quote": "依照当初的预定，我前往了东边的瓦尔德。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 243,
+     "quote": "且不说贫富差距更加显著，最明显的区别要数职业分层。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "弗茨亚茨东边的国家：治安差但适合迷宫探索、住宿便宜（几枚铜币即可）、贫富差距与职业分层显著、探索者打扮者遍地；迷宫入口破旧且无警备兵（对照弗茨亚茨整洁入口）（L51/237-244/626）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-3599cb724c28",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点(国/势力)",
+    "name": "弗茨亚茨"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 48,
+     "quote": "所以生活在弗茨亚茨的探索者都是高级别高收入的群体。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "生活成本极高（住宿几百铜币算便宜/公共住宿场所贵）；探索者皆高级别高收入群体；既景气治安又好（L40-50）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-41069ecdfc73",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点(国)",
+    "name": "法尼亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 34,
+     "quote": "满足上述条件的国家我记得有个叫『法尼亚』的。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 35,
+     "quote": "「那可是相当远啊。我是从法尼亚过来的，您知道吗？」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "真实存在的遥远小国（兑换所店主知其方位但不详）；被主角选为假出身地的设定来源（L34-37）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-931446cebdb9",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点",
+    "name": "迷宫"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 625,
+     "quote": "与弗茨亚茨那整洁的迷宫入口相比，瓦尔德的入口显得相对破旧",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 634,
+     "quote": "是锯齿甲虫。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "第二次挑战（与缇亚组队）：瓦尔德侧入口破旧无警备兵；一层昆虫系居多；离『正道』不远处即遇敌（L626-635）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-fd5dd899775b",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点",
+    "name": "教会"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 595,
+     "quote": "于是我直接前往了与缇亚约好的汇合地点——教会。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 597,
+     "quote": "在这个世界里，向神献上祈祷的人非常多。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "祈祷之所：神父手持圣典颂祷（含升级咏唱）、各色人群祈祷（祈祷本身是升级的一环）；主角与缇亚的汇合点（L596-600）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-0aab3ee323a3",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "『正道』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 634,
+     "quote": "离开入口附近的『正道』前进了一小会儿，我就感知到了它的存在。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "瓦尔德侧迷宫入口附近亦有（L635：『离开入口附近的「正道」前进了一小会儿』）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-f262792fde9a",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品",
+    "name": "『魔石线』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 428,
+     "quote": "一旦接触了『魔石线』立马就会被逮捕的哦。」看来铺设于街道各处的『魔石线』还有警备和稽查的效果。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 52,
+     "quote": "可是我在图书馆里获得的知识却只说它是『可以传递魔力的宝石炼制而成的线路』而已。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "图书馆知识：『可以传递魔力的宝石炼制而成的线路』；铺于街道各处与国境石墙；无『魔石线』处露宿、其上露宿被严禁；有警备稽查效果——做了坏事样貌被记住则一接触即被捕（L52-53/240/428）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-1e347c0258e6",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "『表示』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 452,
+     "quote": "如果说对怪物使用『注视』就能将它的情报『表示』出来的话，那么或许对人类使用『注视』也能获得同样的效果",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "新用法规避（详见 setting 记录）：对人类『注视』可显示其【状态】；可附加条件（只看姓名/等级/技能）；无性别识别功能（L452-463/586）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-a9812c19df79",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "【队伍】"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 590,
+     "quote": "迪亚布罗·西斯加入了队伍",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "『表示』组队面板：组队时显示『迪亚布罗·西斯加入了队伍』（L589-590）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-da6f57e4e16e",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『维度』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 328,
+     "quote": "再加上我无时无刻不施展着『维度』",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 724,
+     "quote": "「是在我的故乡秘传的魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "本章原文写法为『维度』（ch0003 面板写法《维度》——同指形变体，分立留 R4）；常驻使用（工作/探索全程）；主角对外谎称故乡秘传（L724）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-3580bb556dbd",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『维度·多重展开』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 377,
+     "quote": "「状态——，……嗯，能行。魔法『维度·多重展开』。」",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 379,
+     "quote": "顺带一说，这个『维度·多重展开』是『维度』的衍生魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "『维度』的衍生魔法：增 MP 消费扩大效果范围（主角自命名，招式名越长越有感觉）（L377-380）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-721c632bb6b0",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『维度·决战演算』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 635,
+     "quote": "而后发动了名为『维度·决战演算』的衍生魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 3,
+     "text": "『维度』的衍生魔法（近身战斗特化）：索敌范围缩小但接近战距离感与集中力加强（L636）；是魔法效果随想象改变的例证"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "ch14『Dimension』的别名 Dimension·决战演算 与之对应（形变体，R4 裁决）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-8e001ec7e1b0",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『火焰箭』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 651,
+     "quote": "「『火焰箭』！」",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 662,
+     "quote": "而被那道镭射击穿胴体的锯齿甲虫则是当场毙命",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚唯一无二的攻击魔法：名为火焰箭实为一道刹那白光（镭射），必中且一击必杀（锯齿甲虫被击穿当场毙命连灰不剩），仅耗 MP3（L649-663/687-688）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-a7064c8b3a4b",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "锯齿甲虫"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 634,
+     "quote": "是锯齿甲虫。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "瓦尔德一层常见敌（昆虫系居多）；组队首战对象，被缇亚『火焰箭』一击必杀（L634-662）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-ec0e84af925a",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "泪洸"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 384,
+     "quote": "顺便一提，这些白粒被唤作『泪洸』",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "瓦尔德夜空飘落的白粒：非雪——『积攒于空中的魔力的结晶』（图书馆信息，详情未明）（L384）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-39c78d7166ea",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念(货币)",
+    "name": "莱文（Reborn）"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 62,
+     "quote": "莱文（Reborn）银币莱文铜币铁匕首肉干水袋止血药油打火机智能手机石子树枝",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 424,
+     "quote": "今天的报酬则是十枚铜币。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "货币体系：莱文铜币/莱文银币（金币亦存在于口语）；十位魔法石=1铜币；附名武具+巨狼魔石≈9银币；主角日薪10铜币；弗茨亚茨住宿数百铜币起（L20-64/424）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-1f5de504f012",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品",
+    "name": "魔法石"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 20,
+     "quote": "「啊，是浅层的魔石吗。这些的价值一律是一枚铜币。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "兑换所称『浅层的魔石』（=十位魔法石类）一枚铜币；组队打怪掉落与缇亚对半分（本章口语作『魔石』——同指形变体）（L20/811-816）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-56e8557abf10",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "神之加护"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 3.07（L477-479）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-b9251bb957e9",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "断罪"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 2.00（L478）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-9d5b7b2bfa77",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "集中收束"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 2.02（L478）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-31061e7c95fd",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "属性魔法"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 2.09（L479）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-8ee8189ef5fb",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "过捕护"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 2.00（L479）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-2bafb0b34450",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "续命"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 2.23（L479）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-6276532b0e62",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "良机"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 2.02（L479）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-44cb13ba1323",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "神圣魔法"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚先天技能 3.78（远超常人 0-2 区间；ch14 塞拉后天技能 0.89 对照）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-58a7499f473c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "剑术"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 480,
+     "quote": "剑术0.09？？？：？？？",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "缇亚后天技能仅 0.09——但执意为剑士之梦（『我非剑不可』）；阿尔文·科尔森后天 1.23"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-1515d7a0dcfd",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "次元魔法"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 216,
+     "quote": "技能点我只分配了一点给次元魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 4,
+     "text": "技能点 1 点投入：5.05+0.10；效果微增（L216-217）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-b3327c549e36",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "基督·欧亚",
+    "rel_type": "使用假名",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 269,
+     "quote": "基督·欧亚（ChristEurasia）。这就是我在这个世界的名字。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 268,
+     "quote": "因为对报上真名感到害怕，所以我使用了这个西洋系的假名。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "★身份桥接：因惧真名暴露（已为拉丝缇娅拉所知）而启用西洋系假名『基督·欧亚（ChristEurasia）』并决定沿用——ch14 主角即此人；实体不并、R4 别名合并审计裁决"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.92,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-5321b9c979fc",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "法尼亚",
+    "rel_type": "谎称出身",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 35,
+     "quote": "「那可是相当远啊。我是从法尼亚过来的，您知道吗？」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "对兑换所店主虚构的出身设定（遥远小国法尼亚）——『做着一夜千金的梦从乡下前来挑战迷宫』人设配合"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-006696b53149",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "酒馆",
+    "rel_type": "就职店员",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 261,
+     "quote": "都没对我的身份来历多做确认，酒馆就将我录用为了店员。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 256,
+     "quote": "——我选择在某个酒馆打工。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "瓦尔德酒馆面试合格即录用（日薪制/宿阁楼）；ch14 基督·欧亚版就职关系之本源事件"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-1266050e5ec1",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "旅店",
+    "rel_type": "非法入侵",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 123,
+     "quote": "总之试着弹劾了下她非法入侵的行为。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 121,
+     "quote": "她正跨坐在我的腰上俯视着我。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "深夜闯入主角客房并跨坐唤醒（ch14 回忆所指事件的本体）；锁门/隔音/束缚三重魔法"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-2b814d6e84fd",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "强制升级(魔法)",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 189,
+     "quote": "「我看看，升级的咏唱是、有了……『汝者，刮目自省而可也——」",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 192,
+     "quote": "「——在于吾身，在于汝身』，好了，这样就搞定了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "咏唱『汝者，刮目自省而可也——在于吾身，在于汝身』强制将其 1→4 级；自称善意（『帮你消化积攒的经验值』）；主角被束缚无法反抗"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-569ba8cb380e",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "迪亚布罗·西斯",
+    "rel_type": "自报名与表示名相异",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 579,
+     "quote": "我的名字叫缇亚，没有姓氏。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 581,
+     "quote": "再有就是他自己道出的名字也跟『表示』上显示的不同。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "★自报『缇亚』（无姓氏）vs『表示』显示『迪亚布罗·西斯』；主角不认为其说谎，推测表示提前显示将来之名"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-31089be38ddc",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "神圣魔法",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "3.78（常人 0-2 区间外）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-3a385cc4e892",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "神之加护",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "3.07"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-e42aa069c164",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "断罪",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "2.00"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-4eeb26985661",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "集中收束",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 478,
+     "quote": "神圣魔法3.78神之加护3.07断罪2.00集中收束2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "2.02"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-ad9fdfad5889",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "属性魔法",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "2.09"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-da4744466164",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "过捕护",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "2.00"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-300cad3ed6b1",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "续命",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "2.23"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-37b66db1930f",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "良机",
+    "rel_type": "先天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 479,
+     "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "2.02"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-11105b081b74",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "剑术",
+    "rel_type": "后天技能拥有",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 480,
+     "quote": "剑术0.09？？？：？？？",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "0.09——与其剑士之梦严重失衡"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-2ec15c328974",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『？？？』",
+    "rel_type": "技能持有(？？？)",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 480,
+     "quote": "剑术0.09？？？：？？？",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "缇亚技能表亦有『？？？：？？？』槽位——与主角同持之谜"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-f3948e47984d",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『火焰箭』",
+    "rel_type": "使用(唯一攻击魔法)",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 652,
+     "quote": "火炎魔法『火焰箭』，就我事前听说的信息来看，这是一个射出伴有热量的箭矢的魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "火炎魔法基础位、缇亚唯一无二的攻击魔法——实态为镭射"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-55341f10da06",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "锯齿甲虫",
+    "rel_type": "击杀",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 662,
+     "quote": "而被那道镭射击穿胴体的锯齿甲虫则是当场毙命",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "『火焰箭』一击必杀（连灰不剩）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-e7dda9ed5627",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『维度·多重展开』",
+    "rel_type": "衍生",
+    "subject": "『维度』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 379,
+     "quote": "顺带一说，这个『维度·多重展开』是『维度』的衍生魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "增 MP 消费扩大效果范围"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-dac30d53dfe3",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "『维度·决战演算』",
+    "rel_type": "衍生(近战特化)",
+    "subject": "『维度』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 635,
+     "quote": "而后发动了名为『维度·决战演算』的衍生魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "效果向近身战斗特化：索敌范围缩、距离感与集中力加强"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-de2322378fb0",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "次元魔法",
+    "rel_type": "技能点强化",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 216,
+     "quote": "技能点我只分配了一点给次元魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "升级获 3 技能点，投 1 点（5.05+0.10），余 2 点保留"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-18aa843060a5",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "店长",
+    "rel_type": "相识",
+    "subject": "克劳"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 318,
+     "quote": "看来这个被唤作克劳的人跟店长是相识。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "被唤作克劳的人与店长相识（互怼不以为意）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-a15f5d6a756a",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "酒馆",
+    "rel_type": "常客",
+    "subject": "克劳"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 310,
+     "quote": "「小伙子挺不容易的吧。这家店净是麻烦的客人，当然也包括我在内就是了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "自称『麻烦的客人（包括我在内）』，被店长怒骂仍谈笑"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-40bc8de28ee6",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "酒馆",
+    "rel_type": "就职",
+    "subject": "玲小姐"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 288,
+     "quote": "见我愣在原地不动，酒馆身材高挑的看板娘玲小姐出声催促。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "看板娘/服务员；惯于应付酒馆斗殴（ch14 记录的跨章佐证）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-4ab39d229a2e",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "结伴组队",
+    "subject": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 567,
+     "quote": "「——我说，如果你愿意的话，要不要和我一起去迷宫？」",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 590,
+     "quote": "迪亚布罗·西斯加入了队伍",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "主角以料理卖人情钓其主动邀约（『要不要和我一起去迷宫？』）；【队伍】面板收录『迪亚布罗·西斯加入了队伍』；白天探索/夜晚主角酒馆打工的约定；魔石对半分约定"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-283514528e6a",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "【队伍】",
+    "rel_type": "机制包含",
+    "subject": "『表示』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 590,
+     "quote": "迪亚布罗·西斯加入了队伍",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "组队面板"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-087b01f2f4af",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "【状态】",
+    "rel_type": "机制包含",
+    "subject": "『表示』"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 452,
+     "quote": "那么或许对人类使用『注视』也能获得同样的效果",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 4,
+     "text": "对人『注视』显示状态（ch0003 记录的跨章佐证+新用法）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-24b52e687522",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "兑换所",
+     "法尼亚",
+     "相川涡波",
+     "莱文（Reborn）"
+    ],
+    "instant": null,
+    "kind": "见闻",
+    "name": "兑换所变现与情报收集",
+    "tick": 2,
+    "time_verbatim": "待到夕阳西下（L5）"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 63,
+     "quote": "——总计入手了差不多百枚铜币和十枚银币。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "图书馆半日读毕→兑换所以十位魔法石+装备变现（百铜币+十银币）；虚构法尼亚出身；获知弗茨亚茨物价与瓦尔德建议（L3-68）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-6af1f4940cce",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "旅店",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "夜袭",
+    "name": "拉丝缇娅拉夜袭强制升级",
+    "tick": 2,
+    "time_verbatim": "深夜（L125）"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 195,
+     "quote": "「你可是我很重要的『候补』啊",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "深夜闯入客房跨坐唤醒→拒其『好意』后决行硬来：锁门+隔音+束缚（淡紫色）→投技制压→咏唱升级魔法 1→4 级→自称『候补』宣言→阳台跳窗离去；主角动弹不得至天明（L108-236）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-d75a100898ce",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "基督·欧亚",
+     "瓦尔德",
+     "相川涡波",
+     "酒馆"
+    ],
+    "instant": null,
+    "kind": "转折",
+    "name": "移居瓦尔德与酒馆就职",
+    "tick": 2,
+    "time_verbatim": "翌日（L236）"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 269,
+     "quote": "基督·欧亚（ChristEurasia）。这就是我在这个世界的名字。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "越境无手续（国境石墙有魔石线）→瓦尔德闲逛受雇酒馆（面试即过、日薪十铜币、宿阁楼）→启用假名基督·欧亚（L236-274/424-426）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-f98296f7cc91",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "泪洸",
+     "相川涡波",
+     "缇亚"
+    ],
+    "instant": null,
+    "kind": "相遇",
+    "name": "闭店时遇露宿兜帽少年",
+    "tick": 2,
+    "time_verbatim": "入夜（L384 泪洸飘落）"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 416,
+     "quote": "「顺带一说我不是女孩子。所以用不着担心。」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "『维度·多重展开』察觉门外有人：兜帽金发苍眼中性之『少女』因没钱露宿酒馆前；自称非女孩子；主角锁门未扰（L376-422）——翌日酒馆再见即缇亚"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-5d66d0461d4a",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『表示』",
+     "相川涡波",
+     "阿尔文·科尔森"
+    ],
+    "instant": null,
+    "kind": "探索",
+    "name": "『注视』对人与技能常识观察",
+    "tick": 2,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 484,
+     "quote": "一般来说一个人的技能也就一两个而已。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "发现『注视』对人类有效（观察数十客人）；可附加显示条件；常识确认：常人技能1-2个、娴熟者3个、数值0-2区间（L452-486）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-747ae10b8c0e",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "玲小姐",
+     "缇亚"
+    ],
+    "instant": null,
+    "kind": "冲突",
+    "name": "缇亚受嘲与斗殴风波",
+    "tick": 2,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 503,
+     "quote": "「啊，确实，能使用魔法是很了不起。不过，等级只有1级的话，可是比路边的小孩子还低的哦。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "组队招募被男女客人嘲笑（1级=比路边小孩还低/小少爷论）→稚拙斗殴→玲小姐惯常劝止；缇亚咂舌离店（L496-524）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-9669b01a0a57",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "缇亚",
+     "迪亚布罗·西斯"
+    ],
+    "instant": null,
+    "kind": "结盟",
+    "name": "以食结好与组队成立",
+    "tick": 2,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 567,
+     "quote": "「——我说，如果你愿意的话，要不要和我一起去迷宫？」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "『维度』追踪其出迷宫受挫→巷中以剩饭设局伪装偶遇→晚饭获好评→诱导其主动邀约→互报姓名（基督/缇亚）→【队伍】成立（L525-591）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-c59771438f3f",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『维度·决战演算』",
+     "教会",
+     "相川涡波",
+     "缇亚",
+     "迷宫"
+    ],
+    "instant": null,
+    "kind": "探索",
+    "name": "教会汇合与二次入迷宫",
+    "tick": 2,
+    "time_verbatim": "一大清早（L595）"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 635,
+     "quote": "而后发动了名为『维度·决战演算』的衍生魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "教会观祈祷（=升级体系）→入瓦尔德侧迷宫：『维度·决战演算』首战锯齿甲虫，缇亚『火焰箭』一击必杀（镭射实态令主角冷汗）（L595-676）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-2f5553585759",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "缇亚",
+     "迷宫"
+    ],
+    "instant": null,
+    "kind": "探索",
+    "name": "组队连捷与MP管理",
+    "tick": 2,
+    "time_verbatim": "直到艳阳当空（L737）"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 737,
+     "quote": "在打倒了约三十匹怪物的时候，我的MP终于所剩不多。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "索敌+前卫+炮台战术无伤连杀约30匹（含蜘蛛形态怪物）；经验值平均分配；主角 MP5/缇亚 MP3 的低耗对比；正午前主角 MP 见底收队（L680-742）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-690de7f3a366",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "缇亚"
+    ],
+    "instant": null,
+    "kind": "冲突",
+    "name": "缇亚的剑术梦想之争",
+    "tick": 2,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 777,
+     "quote": "「可是，没有时间了啊。我必须要尽快得到『力量』和『金钱』才行……」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 4,
+     "text": "缇亚欲独行续探（『我必须要尽快得到「力量」和「金钱」才行』）→主角以战绩诘问（单人仅杀1只）→『我非剑不可』之梦吐露→主角心怀盘算摆出容许姿态并叮嘱其升级/装备/勿独行（L743-828）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-04e2bb5aa366",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "相川涡波"
+    ],
+    "name": "候补之谜",
+    "note": "拉丝缇娅拉称主角为其重要的『候补』——候补什么/为何是主角",
+    "payoff_chapter": null,
+    "setup_chapter": 4,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 195,
+     "quote": "「你可是我很重要的『候补』啊",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 4,
+     "text": "夜袭升级的动机钩子"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-ecd0e112597e",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "迷宫"
+    ],
+    "name": "归还原来世界",
+    "note": "主角首要目的：为自己也為孤苦无依的妹妹必须回到原来的世界；手段=迷宫（实现任何愿望传说）或归还魔法（无线索）",
+    "payoff_chapter": null,
+    "setup_chapter": 4,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 245,
+     "quote": "我的首要目的是『归还』。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 4,
+     "text": "主线动机"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-5ecb84637a5e",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『表示』",
+     "缇亚",
+     "迪亚布罗·西斯"
+    ],
+    "name": "表示显示未来名之谜",
+    "note": "缇亚自报名与『表示』显示的迪亚布罗·西斯相异——表示疑提前显示将来会报出的名字（『表示』存在某种漏洞？）",
+    "payoff_chapter": null,
+    "setup_chapter": 4,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 581,
+     "quote": "再有就是他自己道出的名字也跟『表示』上显示的不同。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 4,
+     "text": "系统机制+身份之谜"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-86b9042a01fd",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "缇亚"
+    ],
+    "name": "缇亚的力量与金钱动机",
+    "note": "『没有时间了』的紧迫感——为何急需力量与金钱",
+    "payoff_chapter": null,
+    "setup_chapter": 4,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 777,
+     "quote": "我必须要尽快得到『力量』和『金钱』才行",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 4,
+     "text": "角色动机钩子"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-327de9282763",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "缇亚"
+    ],
+    "name": "缇亚的性别之谜",
+    "note": "主角判定其为女孩子但绝不开口询问（好感度盘算）；『表示』无性别识别功能——ch14『声称自己是男性』的远因",
+    "payoff_chapter": null,
+    "setup_chapter": 4,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 806,
+     "quote": "我不禁推测缇亚其实是个女孩子。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 4,
+     "text": "长线角色谜题"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-6d4457de0527",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 4,
+    "fact": "等级概念公共知识（图书馆常见记载）；升级非自动：需①运气好持有相应技能者（如拉丝缇娅拉）或②信仰虔诚者多年修行（公共机关/教会神父）施行；祈祷本身是升级的一环（神父颂祷含升级咏唱）——故宗教把持升级、联合国由宗教指示建成（主角推断）；一般生活至其年龄应有3级左右",
+    "name": "升级与祈祷制度",
+    "tick": 2
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 137,
+     "quote": "「嗯，在这边这个世界，只有运气不错的人持有相应的技能。再有就是信仰虔诚的人经过多年的修行也能掌握相应的能力。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 598,
+     "quote": "这是因为祈祷本身是升级的一部分所致。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "ch0003 升级条件之谜的解明（该伏笔于本章兑现）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-0174fc431979",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 4,
+    "fact": "酒馆魔法使谈话：魔法的效果随想象改变——『维度·决战演算』即例证（近战特化的想象衍生）",
+    "name": "魔法效果随想象改变",
+    "tick": 2
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 636,
+     "quote": "在酒馆听魔法使聊天的时候，有谈到魔法的效果随想象改变的话题。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "魔法体系通则"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-081531b4a0c9",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 4,
+    "fact": "五国领地环绕迷宫建设，距迷宫越近国与国距离越短；国境建石墙（上敷魔石线）但越境无任何手续",
+    "name": "五国地理与国境",
+    "tick": 2
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 239,
+     "quote": "原来五国的领地是环绕迷宫建设的，所以距迷宫越近，五国之间的距离也就越短。",
+     "vol": 1
+    },
+    {
+     "chapter": 4,
+     "line": 240,
+     "quote": "但我注意到石墙上也有那个所谓的『魔石线』",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "主角越境亲历"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-69ab74530037",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 4,
+    "fact": "相川涡波在原世界无双亲、有一名『妹妹』；担忧自己消失后妹妹孤身留在家中——『归还』动机的感性支柱",
+    "name": "主角家庭背景",
+    "tick": 2
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 87,
+     "quote": "虽然没有双亲，不过我还有『妹妹』呢。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "妹妹未具名不立实体（R1）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-643d2402e3bd",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 4,
+    "fact": "酒馆店长原本是非常有名的迷宫探索者（对蛮横客人寸步不让、怒喷客人数次、为玲小姐解围）——故能在迷宫附近开店；录用不经详细确认、自称眼光不会出错",
+    "name": "店长背景",
+    "tick": 2
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 305,
+     "quote": "这家店长原本是个非常有名的迷宫探索者",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "主角对店长的信任评估：人可信赖/经营可疑"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-c25aa6df8f5a",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 4,
+    "fact": "『注视』对人类有效（显示【状态】：姓名/HP/MP/职业/等级/六维/技能），隐私视同无物；可心念附加显示条件（如只看姓名+等级+技能）；无性别识别功能",
+    "name": "『表示』对人使用与条件附加",
+    "tick": 2
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 462,
+     "quote": "我还发现在进行『表示』时可以附加相应的条件。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "能力边界扩展记录"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-b21b7036db01",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 4,
+    "fact": "组队讨伐经验值平均分配（募集同伴告示亦载分配惯例）；主角立『对半分』铁则以避纷争",
+    "name": "组队经验值分配常识",
+    "tick": 2
+   },
+   "evidence": [
+    {
+     "chapter": 4,
+     "line": 685,
+     "quote": "虽然是缇亚结果了敌人，但经验值却是平均分配的。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 4,
+     "text": "探索常识"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-7cef3f18c099",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。本章不新增别名登记（假名/真名关联走 relation 留档）。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★身份桥接实锤：基督·欧亚=相川涡波的西洋系假名（L268-270 直陈）——记 relation 不并实体，R4 别名合并审计裁决",
+   "★缇亚=迪亚布罗·西斯：『表示』显示名 vs 自报名（L476/L579/L582），表示疑提前显示将来之名——两实体分立+关联关系留档",
+   "译注/文库版段落处理（R6 边界裁决）：L265/L275/L286 为译注（翻译组公告=元文本）；被译注包裹的文库版假名『齐格菲·维吉托（SiegfriedVisitor）』为版本差异而非剧情内别名，不抽取；web版正文假名=基督·欧亚 为准（译注明言『以后在行文中沿用web版的假名』）",
+   "跨章重合实体（预期一致重复）：相川涡波/拉丝缇娅拉/基督·欧亚/缇亚/玲小姐/店长/克劳/酒馆/旅店/瓦尔德/弗茨亚茨/迷宫/『正道』/『魔石线』/『表示』/【状态】/【持有物品】/锯齿甲虫/神圣魔法/剑术/次元魔法/魔法石",
+   "表面形变体（分立建留 R4/嵌入扫描裁决）：《维度》(ch0003)↔『维度』(本章)；魔法石(ch0003)↔魔石(本章口语)；『维度·决战演算』(本章)↔ch14『Dimension』别名 Dimension·决战演算"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting 记录。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=2→tick=2→2000-01-03。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行814-1652（CHAPTER 0004，839行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C02 小队列 · CHAPTER 0004（第二章-迷宫联合国，摄入序2→tick2→伪锚点2000-01-03）"
+ }
+}

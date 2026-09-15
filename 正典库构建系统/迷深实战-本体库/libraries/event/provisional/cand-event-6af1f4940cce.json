@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "兑换所",
+   "法尼亚",
+   "相川涡波",
+   "莱文（Reborn）"
+  ],
+  "instant": null,
+  "kind": "见闻",
+  "name": "兑换所变现与情报收集",
+  "tick": 2,
+  "time_verbatim": "待到夕阳西下（L5）"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 63,
+   "quote": "——总计入手了差不多百枚铜币和十枚银币。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "图书馆半日读毕→兑换所以十位魔法石+装备变现（百铜币+十银币）；虚构法尼亚出身；获知弗茨亚茨物价与瓦尔德建议（L3-68）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6af1f4940cce",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "《冻结》",
+  "rel_type": "包含魔法",
+  "subject": "冰结魔法"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 307,
+   "quote": "冰结魔法：冻结1.00寒冰1.00",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 3,
+   "text": "魔法表：冰结魔法：冻结1.00"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-10590da0f45b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

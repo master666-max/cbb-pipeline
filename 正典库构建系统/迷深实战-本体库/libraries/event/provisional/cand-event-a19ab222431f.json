@@ -1,0 +1,55 @@
+{
+ "canonical": {
+  "entities": [
+   "公会",
+   "悬影",
+   "相川涡波",
+   "缇亚",
+   "阿尔肯"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "阿尔肯赌局（悬影竞赛）",
+  "tick": 3,
+  "time_verbatim": "一小时时限（L732）"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 788,
+   "quote": "我们就获得了十一个悬影的掉落物。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "缇亚受挑衅应赌局（输则卖身）→主角介入改条件（己方定时限一小时/对方赌全部财产）→『正道』魔石线宣誓→悬影讨伐竞赛：11:远不及→对方面如纸色"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a19ab222431f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

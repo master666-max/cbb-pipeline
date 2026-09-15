@@ -1,0 +1,56 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "旅店"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 95,
+   "quote": "她不但非法入侵了我所居住的旅店、一把将我扑倒、甚至还对我施加了魔法",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 69,
+   "quote": "我直接前往了店主告诉我的留宿价格最便宜的旅店。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "主角居所；曾被拉丝缇娅拉非法入侵（L95）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-ac1f5c7495e6",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ac1f5c7495e6-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-ac1f5c7495e6",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

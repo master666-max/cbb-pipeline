@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "大蛤"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 448,
+   "quote": "怪物的名字也单纯得不得了，就叫大蛤",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 450,
+   "quote": "结果让我陷入了『状态：中毒』的窘境。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "位阶1怪物：瓦砾下睡着不动的蛤，被主角一剑击毙；体液经伤口致『状态：中毒』（解毒药仅5%概率无效）（L446-459）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a17dcbe7ea55",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

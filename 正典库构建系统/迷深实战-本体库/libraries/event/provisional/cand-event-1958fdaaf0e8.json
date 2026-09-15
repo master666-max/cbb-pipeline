@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "开端",
+  "name": "主角苏醒于迷宫回廊",
+  "tick": 1,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 3,
+   "quote": "——【召唤】欢迎回来，相川涡波——",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 13,
+   "quote": "原来我正横卧在一栋石制的回廊里。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "【召唤】信息（欢迎回来，相川涡波）+异臭唤醒；醒来见石制回廊/风化祭坛（蜡烛残渣/兽皮毛/古韵箭簇）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1958fdaaf0e8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

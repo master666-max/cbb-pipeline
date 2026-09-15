@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "『火焰箭』",
+   "森之女王",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "Boss狙击日（三Boss）",
+  "tick": 3,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 166,
+   "quote": "【获得了称号『缭乱踏破』】",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "二层后新战术：『维度·多重展开』广域索敌→缇亚搭手狙击→火焰箭贯穿→回收掉落回避眷属；一日三Boss（森之女王/哥布林聚集地巨体/水黾状湿地Boss——缇亚湿地摔跤湿身）获称号×3"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-13b5511caa3c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

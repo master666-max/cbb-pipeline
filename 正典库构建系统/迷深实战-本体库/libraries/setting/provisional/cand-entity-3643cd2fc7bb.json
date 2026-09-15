@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "兑换所"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 6,
+   "quote": "我按照工作人员的指示抵达了兑换所。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 25,
+   "quote": "「……不，我没有那东西。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "弗茨亚茨设施（图书馆工作人员指点）：内部似古董屋；收购魔石/武具变现；无证明书须按手印（L6-27）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-3643cd2fc7bb",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

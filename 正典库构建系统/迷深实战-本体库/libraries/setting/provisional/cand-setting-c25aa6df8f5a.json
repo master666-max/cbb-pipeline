@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 4,
+  "fact": "酒馆店长原本是非常有名的迷宫探索者（对蛮横客人寸步不让、怒喷客人数次、为玲小姐解围）——故能在迷宫附近开店；录用不经详细确认、自称眼光不会出错",
+  "name": "店长背景",
+  "tick": 2
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 305,
+   "quote": "这家店长原本是个非常有名的迷宫探索者",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 4,
+   "text": "主角对店长的信任评估：人可信赖/经营可疑"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-c25aa6df8f5a",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

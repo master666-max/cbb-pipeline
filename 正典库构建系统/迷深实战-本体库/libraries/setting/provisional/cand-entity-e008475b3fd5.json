@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "『管理领域之外』"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 87,
+   "quote": "「这里可是迷宫，而且还是在『管理领域之外』的地方。你应该有所觉悟了吧，小鬼。」",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 493,
+   "quote": "我之前是走在『管理领域之外』，所以才会遭到人的攻击",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "迷宫中无规则区域：探索者可互相攻击（冒险者领队据此砍伤主角）；与之相对的『管理领域之内』（修缮道路/正道）人与人相安无事（L87-88/493-494）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-e008475b3fd5",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

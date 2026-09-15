@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "守护者",
+   "格连",
+   "缇达"
+  ],
+  "name": "守护者遭遇",
+  "note": "10/20层大Boss自由穿行、联合国最强未胜、遭遇即逃铁则——章末缇达现身即首次兑现预兆",
+  "payoff_chapter": null,
+  "setup_chapter": 5,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 49,
+   "quote": "那可是聚集了联合国最强的探索者也没能击败的怪物啊。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 5,
+   "text": "迷宫势力天花板"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-dd89a5cefe9d",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

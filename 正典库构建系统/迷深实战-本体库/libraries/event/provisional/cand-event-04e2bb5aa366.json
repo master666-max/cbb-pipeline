@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "缇亚的剑术梦想之争",
+  "tick": 2,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 777,
+   "quote": "「可是，没有时间了啊。我必须要尽快得到『力量』和『金钱』才行……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 4,
+   "text": "缇亚欲独行续探（『我必须要尽快得到「力量」和「金钱」才行』）→主角以战绩诘问（单人仅杀1只）→『我非剑不可』之梦吐露→主角心怀盘算摆出容许姿态并叮嘱其升级/装备/勿独行（L743-828）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-04e2bb5aa366",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

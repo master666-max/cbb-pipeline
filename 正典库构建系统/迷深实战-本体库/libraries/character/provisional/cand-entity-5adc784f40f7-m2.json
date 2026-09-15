@@ -1,0 +1,50 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "缇达"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 139,
+   "quote": "先前，我打倒了令人类感到束手无策的缇达。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "先前被主角打倒的存在，令人类感到束手无策（L139）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-5adc784f40f7",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5adc784f40f7-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-5adc784f40f7",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 4,
+  "fact": "组队讨伐经验值平均分配（募集同伴告示亦载分配惯例）；主角立『对半分』铁则以避纷争",
+  "name": "组队经验值分配常识",
+  "tick": 2
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 685,
+   "quote": "虽然是缇亚结果了敌人，但经验值却是平均分配的。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 4,
+   "text": "探索常识"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-7cef3f18c099",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

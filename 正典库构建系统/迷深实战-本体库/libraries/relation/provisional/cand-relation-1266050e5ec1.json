@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "酒馆",
+  "rel_type": "就职店员",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 261,
+   "quote": "都没对我的身份来历多做确认，酒馆就将我录用为了店员。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 256,
+   "quote": "——我选择在某个酒馆打工。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 4,
+   "text": "瓦尔德酒馆面试合格即录用（日薪制/宿阁楼）；ch14 基督·欧亚版就职关系之本源事件"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1266050e5ec1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

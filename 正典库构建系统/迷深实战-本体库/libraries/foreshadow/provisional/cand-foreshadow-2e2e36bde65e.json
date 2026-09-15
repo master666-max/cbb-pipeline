@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "相川阳滝"
+  ],
+  "name": "阳滝之病与誓约",
+  "note": "妹妹罹患顽疾+『罪魁祸首是我』+永远在一起的誓约——归还主线之根",
+  "payoff_chapter": null,
+  "setup_chapter": 5,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 445,
+   "quote": "而让她变成这样的罪魁祸首则是我。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 5,
+   "text": "罪与誓约未明，全部归还动机"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-2e2e36bde65e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

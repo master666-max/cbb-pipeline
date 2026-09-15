@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "概念(称号)",
+  "name": "胆怯之力"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 159,
+   "quote": "【获得了称号『胆怯之力』】",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "击杀哥布林聚集地巨型Boss获得：力量补正+0.05"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-30962bf11196",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

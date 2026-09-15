@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "《维度》",
+   "大蛤",
+   "相川涡波",
+   "解毒药"
+  ],
+  "instant": null,
+  "kind": "危机",
+  "name": "《维度》索敌探索与大蛤中毒危机",
+  "tick": 1,
+  "time_verbatim": "事态的恶化发生在三十分钟之后（L442）"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 450,
+   "quote": "结果让我陷入了『状态：中毒』的窘境。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "《维度》索敌（半径十米→五十倍强化）高效推进；大意杀睡蛤（位阶1）致体液入伤口中毒；解毒药仅5%概率全部用尽未中，HP 持续流失（L430-465）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c5646b669f79",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

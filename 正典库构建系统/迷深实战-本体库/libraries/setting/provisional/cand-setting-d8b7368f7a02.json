@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 3,
+  "fact": "迷宫北面骑士国家；五国中最有钱；迷宫旁水渠唯一；尊奉一位伟大骑士为始祖、重骑士道、以贵族为核心；土地分一百区编号、身份越高所居编号越小（主角位于二十一区，往前二十二区商店街、回走二十区公共机关/中介所）（警备兵与看板信息）",
+  "name": "弗茨亚茨国家概况",
+  "tick": 1
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 667,
+   "quote": "可不是么，骑士国家真不是白叫的。在环绕迷宫的五国当中，弗茨亚茨可是最有钱的。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 740,
+   "quote": "弗茨亚茨的土地被划分为了一百个区域，每个区域都有属于自己的编号。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 3,
+   "text": "来源：警备兵口述+中央广场看板"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-d8b7368f7a02",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

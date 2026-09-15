@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "阿雷亚斯家的宝剑"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 616,
+   "quote": "【阿雷亚斯家的宝剑】",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 617,
+   "quote": "攻击力5。攻击力享受装备者技巧20％的加成",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "缇亚之剑（外观历经沧桑大有来头）：攻击力5，攻击力享受装备者技巧20％加成——『那把剑上肯定倾注有缇亚的一份念想』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-6cab0ae70096",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

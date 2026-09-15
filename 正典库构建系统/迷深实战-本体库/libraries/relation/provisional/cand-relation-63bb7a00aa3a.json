@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "守护者",
+  "rel_type": "未能战胜",
+  "subject": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 551,
+   "quote": "即使是最强的探索者格连也未能战胜镇守迷宫第十层和第二十层的守护者",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 5,
+   "text": "据传最强探索者格连亦未胜十层/二十层守护者，处置搁置"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-63bb7a00aa3a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

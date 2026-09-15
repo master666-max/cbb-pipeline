@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "玲小姐"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 87,
+   "quote": "或许是店长和玲小姐考虑到我的特殊情况而特别照顾了一下吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 132,
+   "quote": "一边干着服务员的工作，一边探听我和雷迪安特之间的对话的玲小姐对我招呼道",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 288,
+   "quote": "见我愣在原地不动，酒馆身材高挑的看板娘玲小姐出声催促。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 343,
+   "quote": "高挑的玲小姐摇着那与身材相得益彰的茶色长辫靠近过来问道",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "酒馆员工（服务员）；在决斗前担心主角安危（L132-137）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-c9a06c49bbf8",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c9a06c49bbf8-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-c9a06c49bbf8",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 5,
+  "fact": "利害一致的探索者互助组织，形态多样（隶属国家至初心者自发）；大规模公会受国家定期委托退治棘手怪物（委托带时限）",
+  "name": "公会制度",
+  "tick": 3
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 667,
+   "quote": "国家定期就会像这样委托有实力的探索者退治怪物。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 5,
+   "text": "阿尔肯所属公会+酒馆情报"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-1ef186347e46",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

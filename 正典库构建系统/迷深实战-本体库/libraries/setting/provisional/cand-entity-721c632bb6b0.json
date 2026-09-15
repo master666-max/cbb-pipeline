@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『维度·多重展开』"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 377,
+   "quote": "「状态——，……嗯，能行。魔法『维度·多重展开』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 379,
+   "quote": "顺带一说，这个『维度·多重展开』是『维度』的衍生魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "『维度』的衍生魔法：增 MP 消费扩大效果范围（主角自命名，招式名越长越有感觉）（L377-380）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-721c632bb6b0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

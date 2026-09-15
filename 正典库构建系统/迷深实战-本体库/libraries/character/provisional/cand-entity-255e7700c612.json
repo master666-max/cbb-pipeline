@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "巨狼"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 63,
+   "quote": "这些穿着饱负幻想性的人们正在回廊的道中央与身长足足三米的巨狼上演着酣畅的武打戏。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 148,
+   "quote": "只听一道沉闷的声音，大剑嵌入了狼的首级。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 169,
+   "quote": "狼浑身散发着翠绿色的光芒消失了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "身长三米的巨狼（L64），迷宫初遇最强敌；与冒险者小队激战后重伤，被主角以大剑贯穿首级击杀（L148-169）"
+  },
+  {
+   "category": "evolution",
+   "chapter": 3,
+   "text": "死后浑身翠绿光芒消失（无亡骸），掉落翠色结晶（对应称号『深翠之始』来源）（L169-176）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-255e7700c612",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

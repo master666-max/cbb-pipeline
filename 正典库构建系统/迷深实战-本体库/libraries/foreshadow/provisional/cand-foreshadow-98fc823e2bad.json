@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entities": [
+   "阿尔缇"
+  ],
+  "name": "阿尔缇的疑念",
+  "note": "『我在这世上还有事要做……总觉得很快就能解消心中的那份疑念了』——何事何念未明",
+  "payoff_chapter": null,
+  "setup_chapter": 6,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 79,
+   "quote": "「我就算了。我在这世上还有事要做……而且，我总觉得很快就能解消心中的那份疑念了。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 6,
+   "text": "十守护者动机钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-98fc823e2bad",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

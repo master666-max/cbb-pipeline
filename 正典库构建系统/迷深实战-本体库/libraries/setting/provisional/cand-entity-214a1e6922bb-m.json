@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "瓦尔德"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 13,
+   "quote": "他们身上的行头与在瓦尔德烂大街的货色截然不同",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 49,
+   "quote": "「你这家伙，可别看不起瓦尔德啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 237,
+   "quote": "依照当初的预定，我前往了东边的瓦尔德。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 243,
+   "quote": "且不说贫富差距更加显著，最明显的区别要数职业分层。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "酒馆所在城镇（生面孔们的行头与瓦尔德烂大街货色对比，L13；常客护城镇之名，L49）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-214a1e6922bb",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-214a1e6922bb-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-214a1e6922bb",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "中央广场",
+   "弗茨亚茨",
+   "相川涡波",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "见闻",
+  "name": "出迷宫与警备兵情报",
+  "tick": 1,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 665,
+   "quote": "毕竟在迷宫附近建有水渠的可只有这北面的『弗茨亚茨』一个啊。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "沿『正道』几十分钟抵出口；未具名警备兵（佩剑/自称工作）指路水渠井并告知：水渠唯弗茨亚茨有/骑士国家/五国最有钱/中央广场看板有地图→国立图书馆/中介所/公会/教会（L639-685）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e4c730619190",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

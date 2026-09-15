@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "教会",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "成长",
+  "name": "升6级与深层突破",
+  "tick": 3,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 509,
+   "quote": "「基督！神父说我升到6级了呢！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "教会升级双方6级（素质7/5远超常人1.00以下——6级实力堪比10级）；沿正道一小时抵三层→飞鱼（缇亚首次剑杀）→攻略三四层→五层爪瑙蝎危机（主角近战解决）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0f5c61f000b0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

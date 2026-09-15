@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "阿尔文·科尔森"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 455,
+   "quote": "姓名：阿尔文·科尔森HP165/172MP0/0职业：剑士",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 466,
+   "quote": "先天技能：缝纫1.10",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "酒馆客人：脸有骇人伤疤的巨汉，剑士级别11（HP165/172 力量6.72…），先天技能缝纫1.10、后天剑术1.23（L453-468）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-bad242c2cd25",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

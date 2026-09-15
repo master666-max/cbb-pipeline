@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "相川涡波"
+  ],
+  "name": "技能？？？真身",
+  "note": "3个？？？槽位；情感换冷静/混乱补正递增；主角自认『不是正常的冷静而是异样的东西』",
+  "payoff_chapter": null,
+  "setup_chapter": 3,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 104,
+   "quote": "以一定的感情为交换，使精神安定下来。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 3,
+   "text": "技能真身与代价之谜"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-02368550259d",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

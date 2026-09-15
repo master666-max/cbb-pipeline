@@ -1,0 +1,56 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "迪亚布罗·西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 476,
+   "quote": "迪亚布罗·西斯",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 582,
+   "quote": "他自己道出的名字也跟『表示』上显示的不同。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "缇亚在『表示』中显示的姓名（主角注视所见，L475-481/607）——与自报名不同；主角推测：可能是其将来会报出的名字而『表示』提前显示（『表示』存在某种漏洞？）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 4,
+   "text": "自报名『缇亚』与之相异但主角不认为其在说谎——两实体经关系留档关联，不合并"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-43aa55ba3673",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

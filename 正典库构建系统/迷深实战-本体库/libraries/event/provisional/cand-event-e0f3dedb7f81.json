@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "《维度》",
+   "『正道』",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "强化《维度》发现修缮道路",
+  "tick": 1,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 483,
+   "quote": "那是一条经过修缮的回廊。地面被整备得十分平整",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 3,
+   "text": "牺牲余 MP 强化《维度》至五十倍感知→发现与荒废回廊迥异的修缮道路及其上的人类（MP 耗至个位数）（L478-495）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e0f3dedb7f81",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

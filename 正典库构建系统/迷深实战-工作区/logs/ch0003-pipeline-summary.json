@@ -1,0 +1,795 @@
+{
+ "unit": "ch0003",
+ "chapter": 3,
+ "ingestion_index": 1,
+ "title": "第一章-异世界迷宫",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 77,
+  "pass": 77,
+  "intercept": 0,
+  "admitted": 77,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 75,
+  "on-create": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-7bfeec89472b",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-186778453668",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-2b0d2b1a0571",
+   "type": "entity",
+   "name": "海因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2b0d2b1a0571",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-255e7700c612",
+   "type": "entity",
+   "name": "巨狼",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-255e7700c612",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-b9891da097d6",
+   "type": "entity",
+   "name": "黑环萤",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-b9891da097d6",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-c5f8db1423b7",
+   "type": "entity",
+   "name": "锯齿甲虫",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-c5f8db1423b7",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-a17dcbe7ea55",
+   "type": "entity",
+   "name": "大蛤",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a17dcbe7ea55",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-4903f824cb66",
+   "type": "entity",
+   "name": "迷宫",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3a2cc3d9b1a2-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-e008475b3fd5",
+   "type": "entity",
+   "name": "『管理领域之外』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f55682787d49",
+   "type": "entity",
+   "name": "『正道』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-9a38e9eec520-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-a50736aa7a99",
+   "type": "entity",
+   "name": "弗茨亚茨",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-1069ed274073-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-958c3c49eb81",
+   "type": "entity",
+   "name": "第一百层",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-958c3c49eb81",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-a9f4fbc9d40e",
+   "type": "entity",
+   "name": "中央广场",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a9f4fbc9d40e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-a8cc6228088b",
+   "type": "entity",
+   "name": "『表示』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a8cc6228088b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-ae0211b51ceb",
+   "type": "entity",
+   "name": "【状态】",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5c4c6eb07b7e-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-94fd057b0ee0",
+   "type": "entity",
+   "name": "【持有物品】",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-94fd057b0ee0",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-b40c8b5a638d",
+   "type": "entity",
+   "name": "冰结魔法",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-b40c8b5a638d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-f80fc9007460",
+   "type": "entity",
+   "name": "《寒冰》",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-f80fc9007460",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-07acc3e8d0da",
+   "type": "entity",
+   "name": "《冻结》",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-07acc3e8d0da",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-19e56aa04b31",
+   "type": "entity",
+   "name": "次元魔法",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-19e56aa04b31",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-7a40ad99f678",
+   "type": "entity",
+   "name": "《维度》",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7a40ad99f678",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-4e505490dad2",
+   "type": "entity",
+   "name": "剑术",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5a3ae9b5563e-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-6d9b84c7b0dc",
+   "type": "entity",
+   "name": "『？？？』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6d9b84c7b0dc",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-4ad5b64857de",
+   "type": "entity",
+   "name": "《完全治愈》",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4ad5b64857de",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-bbe79bd11ac5",
+   "type": "entity",
+   "name": "深翠之始",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-bbe79bd11ac5",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-16ac9a186f71",
+   "type": "entity",
+   "name": "艾尔芬（Elfen）外套",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-16ac9a186f71",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-755b166e419b",
+   "type": "entity",
+   "name": "奥兰（Oria）大剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-755b166e419b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-303c4b9a1dc8",
+   "type": "entity",
+   "name": "附有咒印的投掷短刀",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-303c4b9a1dc8",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-90e30d4efce4",
+   "type": "entity",
+   "name": "魔法石",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-90e30d4efce4",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-548cf38b70a3",
+   "type": "entity",
+   "name": "黑虫石",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-548cf38b70a3",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-73b1fb56905e",
+   "type": "entity",
+   "name": "解毒药",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-73b1fb56905e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-6465adaaa000",
+   "type": "entity",
+   "name": "智能手机",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6465adaaa000",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-35b96b9a06fc",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-35b96b9a06fc",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-5cf0b4c9ea6e",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-5cf0b4c9ea6e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-9de54b12d999",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-9de54b12d999",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-d28ba1521937",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-d28ba1521937",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-2d044c822a3c",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-2d044c822a3c",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-881ebfe90053",
+   "type": "relation",
+   "name": "冰结魔法",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-881ebfe90053",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-10590da0f45b",
+   "type": "relation",
+   "name": "冰结魔法",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-10590da0f45b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-d7403e5c33ac",
+   "type": "relation",
+   "name": "次元魔法",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-d7403e5c33ac",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-2e903da64b07",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-2e903da64b07",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-8e78ecfd3ce3",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b8302d34a603",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-b8302d34a603",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-84d765419b51",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-84d765419b51",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-a70cbffac129",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-a70cbffac129",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-c3a0c6504c4d",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-c3a0c6504c4d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-553c8eaf3c32",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-553c8eaf3c32",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-4644f148e1d8",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-4644f148e1d8",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-af4549391d18",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-af4549391d18",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-691ca15bf060",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-691ca15bf060",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-3c5e265aa1bf",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-3c5e265aa1bf",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-75ead89e5aca",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-75ead89e5aca",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-5b454bd13556",
+   "type": "relation",
+   "name": "海因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-5b454bd13556",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-87bbf2c580cf",
+   "type": "relation",
+   "name": "『表示』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-87bbf2c580cf",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-606fe6152194",
+   "type": "relation",
+   "name": "『表示』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-606fe6152194",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-1958fdaaf0e8",
+   "type": "event",
+   "name": "主角苏醒于迷宫回廊",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-1958fdaaf0e8",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-5fda55060b09",
+   "type": "event",
+   "name": "冒险者领队砍伤主角并以其为饵",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-5fda55060b09",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-91e1ba28d6d7",
+   "type": "event",
+   "name": "主角大剑击杀巨狼",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-91e1ba28d6d7",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-011d8f4be699",
+   "type": "event",
+   "name": "搜刮死者与『表示』规则习得",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-011d8f4be699",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-6d546754d57e",
+   "type": "event",
+   "name": "水攻与《冻结》击杀黑环萤",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-6d546754d57e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-98d57a4a5ec2",
+   "type": "event",
+   "name": "火焚击杀锯齿甲虫",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-98d57a4a5ec2",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-c5646b669f79",
+   "type": "event",
+   "name": "《维度》索敌探索与大蛤中毒危机",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-c5646b669f79",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-e0f3dedb7f81",
+   "type": "event",
+   "name": "强化《维度》发现修缮道路",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-e0f3dedb7f81",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-9e1755e24299",
+   "type": "event",
+   "name": "银铠组遭遇与拉丝缇娅拉治愈",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-9e1755e24299",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-e4c730619190",
+   "type": "event",
+   "name": "出迷宫与警备兵情报",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-e4c730619190",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-f5b112846241",
+   "type": "event",
+   "name": "看板知国势与图书馆翻译之谜",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-f5b112846241",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-c56ecf6727a2",
+   "type": "foreshadow",
+   "name": "召唤信息之谜",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-c56ecf6727a2",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-02368550259d",
+   "type": "foreshadow",
+   "name": "技能？？？真身",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-02368550259d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-3c5d709e0c04",
+   "type": "foreshadow",
+   "name": "升级条件未明",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-3c5d709e0c04",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-a35d3a9f9eb2",
+   "type": "foreshadow",
+   "name": "拉丝缇娅拉之眼",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-a35d3a9f9eb2",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-e381d6f8265e",
+   "type": "foreshadow",
+   "name": "拉丝缇娅拉的人情宣言",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-e381d6f8265e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-d8b7368f7a02",
+   "type": "setting",
+   "name": "弗茨亚茨国家概况",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-d8b7368f7a02",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-8d88344527f0",
+   "type": "setting",
+   "name": "五国联合国",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-8d88344527f0",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-425069d0e178",
+   "type": "setting",
+   "name": "迷宫外观",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-425069d0e178",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-f2ee48226cfa",
+   "type": "setting",
+   "name": "语言自动翻译现象",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-f2ee48226cfa",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-9660ede95ed1",
+   "type": "setting",
+   "name": "管理领域内外规则",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-9660ede95ed1",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-b8f51862d2c3",
+   "type": "setting",
+   "name": "迷宫怪物掉落机制",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-b8f51862d2c3",
+    "repeated": true
+   }
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 1,
+  "pseudo_date": "2000-01-02",
+  "track": "consistent-duplicate"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

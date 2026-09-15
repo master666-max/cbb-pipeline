@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "黑环萤"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 374,
+   "quote": "【怪物】黑环萤：位阶2",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 379,
+   "quote": "黑环萤落到地面之后便随着一阵光芒消失了，剩下的只有一颗仄暗透明的结晶。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "位阶2怪物：篮球大小、轮廓似虫的『扭曲物』，振翅浮空、可隐去身姿奇袭（L351/374/379）；弱水（被水浇湿现形减速），被主角以水+《冻结》耗弱后击杀，掉落『十位魔法石』（L364-381）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-b9891da097d6",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

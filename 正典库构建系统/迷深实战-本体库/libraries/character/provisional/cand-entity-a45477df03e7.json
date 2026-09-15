@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "爪瑙蝎"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 625,
+   "quote": "蝎子状的怪物、爪瑙蝎以灵活的动作将缇亚的攻击全数化解。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "五层蝎子状怪物：动作灵活、化解缇亚攻击；被主角以『维度·决战演算』近战刺贯"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a45477df03e7",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

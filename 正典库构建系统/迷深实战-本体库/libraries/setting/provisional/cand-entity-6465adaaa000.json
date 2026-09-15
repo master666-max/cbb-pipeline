@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "智能手机"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 282,
+   "quote": "不仅如此，手机上报示的时间也差了好几年",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "主角从原来世界带来的物品：打不通电话；报示时间与原世界差好几年（主角归因故障——存疑待证）（L282）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-6465adaaa000",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "概念(货币)",
+  "name": "莱文（Reborn）"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 62,
+   "quote": "莱文（Reborn）银币莱文铜币铁匕首肉干水袋止血药油打火机智能手机石子树枝",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 424,
+   "quote": "今天的报酬则是十枚铜币。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "货币体系：莱文铜币/莱文银币（金币亦存在于口语）；十位魔法石=1铜币；附名武具+巨狼魔石≈9银币；主角日薪10铜币；弗茨亚茨住宿数百铜币起（L20-64/424）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-1f5de504f012",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

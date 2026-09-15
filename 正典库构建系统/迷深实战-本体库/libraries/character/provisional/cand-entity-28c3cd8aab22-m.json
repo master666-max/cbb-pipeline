@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "店长"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 3,
+   "quote": "与店长和玲小姐他们打了个照面后",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 54,
+   "quote": "不知何时从厨房里走出来的店长正以仁王之姿站在我的身后。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 57,
+   "quote": "不愧是接近20级的男人，即使面对那来势汹汹的一行人，店长也不让寸分。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 305,
+   "quote": "这家店长原本是个非常有名的迷宫探索者",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 425,
+   "quote": "店长还说我可以住在酒馆里。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "无名（职务称呼，R6 条款2：固定出场且有关键行为可立实体）；酒馆经营者，实力接近20级"
+  },
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "冲突中隔着主角的脑袋向双方放话镇场，既劝住塞拉一方也安抚客人（L56-74）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-28c3cd8aab22",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-28c3cd8aab22-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-28c3cd8aab22",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

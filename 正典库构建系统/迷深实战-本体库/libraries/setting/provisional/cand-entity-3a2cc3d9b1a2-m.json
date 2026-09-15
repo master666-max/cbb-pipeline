@@ -1,0 +1,85 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "迷宫"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 95,
+   "quote": "虽然我在迷宫中受她相救也是事实",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 119,
+   "quote": "探索迷宫的时候恐怕也难逃一劫",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 153,
+   "quote": "和玛利亚一起潜入迷宫的时候",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 87,
+   "quote": "「这里可是迷宫，而且还是在『管理领域之外』的地方。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 686,
+   "quote": "迷宫本身是一座巨大而奇怪的遗迹。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 734,
+   "quote": "组成联合国进行攻略",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "分层迷宫：十三层湿地生态、十四层沙漠高温、十五层为『正道』直通目的层；主角与玛利亚曾潜入升级（L119/L153）"
+  },
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "主角曾在迷宫中受拉丝缇娅拉相救（L95）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-3a2cc3d9b1a2",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-3a2cc3d9b1a2-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-3a2cc3d9b1a2",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

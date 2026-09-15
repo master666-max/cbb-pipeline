@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "相川涡波",
+   "缇亚",
+   "缇达"
+  ],
+  "instant": null,
+  "kind": "危机",
+  "name": "精神攻击地狱",
+  "tick": 4,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 196,
+   "quote": "状态：混乱5.29精神污染1.00黑暗1.00",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 6,
+   "text": "哀哭之仔的黑暗（黑暗习惯剥夺）→黑骑兵之裹足（麻痹）→沉默施加于缇亚（夺其魔法二字）→讴歌不平的叛逆者（昂扬狂化）；主角精神污染2.00/昂扬2.01、混乱至8.61；以反向诱发技能『？？？』解围"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-24e2b1a56ceb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

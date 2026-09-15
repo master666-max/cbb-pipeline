@@ -1,0 +1,55 @@
+{
+ "canonical": {
+  "entities": [
+   "守护者的魔石",
+   "相川涡波",
+   "缇亚",
+   "缇达",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "决战",
+  "name": "缇达击杀与遗愿",
+  "tick": 4,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 512,
+   "quote": "我希望你们能照着这个势头将阿尔缇的",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 6,
+   "text": "缇亚神圣魔法狂乱觉醒（紫苑等连发，凝固缇达）→主角攥刃+持有物品换剑奇袭斩首→缇达承认战败：『多谢了。我打得很尽兴』→临终托付阿尔缇的愿望→『啊、真是、愉、快——』化光，掉落守护者的魔石"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3a61d4534b09",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 4,
+  "fact": "『注视』对人类有效（显示【状态】：姓名/HP/MP/职业/等级/六维/技能），隐私视同无物；可心念附加显示条件（如只看姓名+等级+技能）；无性别识别功能",
+  "name": "『表示』对人使用与条件附加",
+  "tick": 2
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 462,
+   "quote": "我还发现在进行『表示』时可以附加相应的条件。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 4,
+   "text": "能力边界扩展记录"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-b21b7036db01",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

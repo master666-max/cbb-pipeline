@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entities": [
+   "悬影"
+  ],
+  "name": "悬影哀嚎之不祥",
+  "note": "悬影临终哀嚎渐响，『叫声在孕育着十分不详的什么东西』——未解",
+  "payoff_chapter": null,
+  "setup_chapter": 5,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 787,
+   "quote": "我总觉得它们的叫声在孕育着十分不详的『什么东西』。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 5,
+   "text": "氛围级钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-8a02b9c35ba9",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

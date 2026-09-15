@@ -1,0 +1,56 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『寒冰·速成箭』"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 594,
+   "quote": "「——应用魔法『寒冰·速成箭』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 596,
+   "quote": "这是之前那个只能造出冰块的被我认为毫无价值的魔法『寒冰』的应用。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "《寒冰》的应用魔法（主角自创，据酒馆魔法使谈话设计）：想像锐利细长之冰箭（带冰制箭头）于手中生成——不能自射故为『速成箭』而非『冰结箭』，需手掷（『维度』辅助命中）"
+  },
+  {
+   "category": "technique",
+   "chapter": 5,
+   "text": "『重要的是想像力』——魔法效果随想像改变的又一例证"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7fb9befb20d9",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

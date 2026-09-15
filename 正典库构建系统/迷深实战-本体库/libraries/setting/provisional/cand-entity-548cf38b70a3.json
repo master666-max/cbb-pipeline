@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "黑虫石"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 410,
+   "quote": "『表示』上说这颗黑色的结晶名叫『黑虫石』。",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 413,
+   "quote": "与普通的魔法石不同，是由虫属性的魔力构成的魔法石。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "锯齿甲虫掉落：『与普通的魔法石不同，是由虫属性的魔力构成的魔法石。随便什么虫系的怪物都会掉落。』（L410-415）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-548cf38b70a3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

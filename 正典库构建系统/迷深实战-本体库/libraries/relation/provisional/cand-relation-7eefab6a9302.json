@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔肯",
+  "rel_type": "制服(决斗)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 846,
+   "quote": "首先用剑轻轻刺伤阿尔肯的惯用手",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 849,
+   "quote": "我想要的，是让侮辱了缇亚的你们再也不能出现在我们的面前。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 5,
+   "text": "毁约动武后数秒内以『维度·决战演算』伤其惯用手/双脚并制压全队（剑抵魔法使喉头）→迫其离国；条件=再不出现在二人面前（钱非目的）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7eefab6a9302",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

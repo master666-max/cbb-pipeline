@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "『维度·决战演算』",
+   "相川涡波",
+   "缇亚",
+   "缇达"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "缇达战·物理阶段",
+  "tick": 4,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 6,
+   "line": 130,
+   "quote": "这是自我开始使用『维度』以来首次受到的攻击。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 6,
+   "text": "缇达变形态（双刀/大锤/液化）：速度连『维度』都难追及；主角首次受创（大锤擦击全身冲击）——『对「维度」付诸的绝对信任产生了龟裂』；高密度演算（时间0.1秒/空间0.001米分解）大卸八块仍不死（『我刚才死了两次了』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-deb82181b0c2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

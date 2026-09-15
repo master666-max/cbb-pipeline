@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 4,
+  "fact": "五国领地环绕迷宫建设，距迷宫越近国与国距离越短；国境建石墙（上敷魔石线）但越境无任何手续",
+  "name": "五国地理与国境",
+  "tick": 2
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 239,
+   "quote": "原来五国的领地是环绕迷宫建设的，所以距迷宫越近，五国之间的距离也就越短。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 240,
+   "quote": "但我注意到石墙上也有那个所谓的『魔石线』",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 4,
+   "text": "主角越境亲历"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-69ab74530037",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

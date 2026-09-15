@@ -1,0 +1,698 @@
+{
+ "unit": "ch0004",
+ "chapter": 4,
+ "ingestion_index": 2,
+ "title": "第二章-迷宫联合国",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 89,
+  "pass": 89,
+  "intercept": 0,
+  "admitted": 89,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 67,
+  "consistent-duplicate": 22
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-1915a07ba4ee",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-51a6b5a47dbb",
+   "type": "entity",
+   "name": "基督·欧亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0ae5575ed143-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-7516e8502399",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-05630a33c8b4",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-43aa55ba3673",
+   "type": "entity",
+   "name": "迪亚布罗·西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-bad242c2cd25",
+   "type": "entity",
+   "name": "阿尔文·科尔森",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-df7e6d0baf63",
+   "type": "entity",
+   "name": "玲小姐",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-c9a06c49bbf8-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-035148bc396b",
+   "type": "entity",
+   "name": "店长",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-28c3cd8aab22-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-f0ab76b42310",
+   "type": "entity",
+   "name": "克劳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3ee856ee4181-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-9d7eed15735d",
+   "type": "entity",
+   "name": "兵蚁群",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-88979be3ea5d",
+   "type": "entity",
+   "name": "酒馆",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-13704979c18f-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-9e2eb477d75a",
+   "type": "entity",
+   "name": "旅店",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac1f5c7495e6-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-3643cd2fc7bb",
+   "type": "entity",
+   "name": "兑换所",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3599cb724c28",
+   "type": "entity",
+   "name": "瓦尔德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-214a1e6922bb-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-41069ecdfc73",
+   "type": "entity",
+   "name": "弗茨亚茨",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-1069ed274073-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-931446cebdb9",
+   "type": "entity",
+   "name": "法尼亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-fd5dd899775b",
+   "type": "entity",
+   "name": "迷宫",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3a2cc3d9b1a2-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-0aab3ee323a3",
+   "type": "entity",
+   "name": "教会",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f262792fde9a",
+   "type": "entity",
+   "name": "『正道』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-9a38e9eec520-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-1e347c0258e6",
+   "type": "entity",
+   "name": "『魔石线』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-024a5eb2b009-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-a9812c19df79",
+   "type": "entity",
+   "name": "『表示』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a8cc6228088b-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-da6f57e4e16e",
+   "type": "entity",
+   "name": "【队伍】",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3580bb556dbd",
+   "type": "entity",
+   "name": "『维度』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-721c632bb6b0",
+   "type": "entity",
+   "name": "『维度·多重展开』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-8e001ec7e1b0",
+   "type": "entity",
+   "name": "『维度·决战演算』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a7064c8b3a4b",
+   "type": "entity",
+   "name": "『火焰箭』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ec0e84af925a",
+   "type": "entity",
+   "name": "锯齿甲虫",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-39c78d7166ea",
+   "type": "entity",
+   "name": "泪洸",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-1f5de504f012",
+   "type": "entity",
+   "name": "莱文（Reborn）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-56e8557abf10",
+   "type": "entity",
+   "name": "魔法石",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-90e30d4efce4-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b9251bb957e9",
+   "type": "entity",
+   "name": "神之加护",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9d5b7b2bfa77",
+   "type": "entity",
+   "name": "断罪",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-31061e7c95fd",
+   "type": "entity",
+   "name": "集中收束",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-8ee8189ef5fb",
+   "type": "entity",
+   "name": "属性魔法",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2bafb0b34450",
+   "type": "entity",
+   "name": "过捕护",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6276532b0e62",
+   "type": "entity",
+   "name": "续命",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-44cb13ba1323",
+   "type": "entity",
+   "name": "良机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-58a7499f473c",
+   "type": "entity",
+   "name": "神圣魔法",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6d3f6ebee4e0-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-1515d7a0dcfd",
+   "type": "entity",
+   "name": "剑术",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5a3ae9b5563e-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b3327c549e36",
+   "type": "entity",
+   "name": "次元魔法",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-19e56aa04b31-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-5321b9c979fc",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-006696b53149",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1266050e5ec1",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-2b814d6e84fd",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-3413252d0005-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-569ba8cb380e",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-31089be38ddc",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3a385cc4e892",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e42aa069c164",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4eeb26985661",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ad9fdfad5889",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-da4744466164",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-300cad3ed6b1",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-37b66db1930f",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-11105b081b74",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-2ec15c328974",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f3948e47984d",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-55341f10da06",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e7dda9ed5627",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-dac30d53dfe3",
+   "type": "relation",
+   "name": "『维度』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-de2322378fb0",
+   "type": "relation",
+   "name": "『维度』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-18aa843060a5",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a15f5d6a756a",
+   "type": "relation",
+   "name": "克劳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-40bc8de28ee6",
+   "type": "relation",
+   "name": "克劳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4ab39d229a2e",
+   "type": "relation",
+   "name": "玲小姐",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-8bd7f0a3fb44-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-283514528e6a",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-087b01f2f4af",
+   "type": "relation",
+   "name": "『表示』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-24b52e687522",
+   "type": "relation",
+   "name": "『表示』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-87bbf2c580cf-m"
+   }
+  },
+  {
+   "record_id": "cand-event-6af1f4940cce",
+   "type": "event",
+   "name": "兑换所变现与情报收集",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d75a100898ce",
+   "type": "event",
+   "name": "拉丝缇娅拉夜袭强制升级",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f98296f7cc91",
+   "type": "event",
+   "name": "移居瓦尔德与酒馆就职",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5d66d0461d4a",
+   "type": "event",
+   "name": "闭店时遇露宿兜帽少年",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-747ae10b8c0e",
+   "type": "event",
+   "name": "『注视』对人与技能常识观察",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9669b01a0a57",
+   "type": "event",
+   "name": "缇亚受嘲与斗殴风波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c59771438f3f",
+   "type": "event",
+   "name": "以食结好与组队成立",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2f5553585759",
+   "type": "event",
+   "name": "教会汇合与二次入迷宫",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-690de7f3a366",
+   "type": "event",
+   "name": "组队连捷与MP管理",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-04e2bb5aa366",
+   "type": "event",
+   "name": "缇亚的剑术梦想之争",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ecd0e112597e",
+   "type": "foreshadow",
+   "name": "候补之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-5ecb84637a5e",
+   "type": "foreshadow",
+   "name": "归还原来世界",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-86b9042a01fd",
+   "type": "foreshadow",
+   "name": "表示显示未来名之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-327de9282763",
+   "type": "foreshadow",
+   "name": "缇亚的力量与金钱动机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-6d4457de0527",
+   "type": "foreshadow",
+   "name": "缇亚的性别之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-0174fc431979",
+   "type": "setting",
+   "name": "升级与祈祷制度",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-081531b4a0c9",
+   "type": "setting",
+   "name": "魔法效果随想象改变",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-69ab74530037",
+   "type": "setting",
+   "name": "五国地理与国境",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-643d2402e3bd",
+   "type": "setting",
+   "name": "主角家庭背景",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c25aa6df8f5a",
+   "type": "setting",
+   "name": "店长背景",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b21b7036db01",
+   "type": "setting",
+   "name": "『表示』对人使用与条件附加",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-7cef3f18c099",
+   "type": "setting",
+   "name": "组队经验值分配常识",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 2,
+  "pseudo_date": "2000-01-03",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}
