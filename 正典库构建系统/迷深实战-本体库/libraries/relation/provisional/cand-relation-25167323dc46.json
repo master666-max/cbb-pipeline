@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "弗茨亚茨",
+  "rel_type": "隶属于(国度)",
+  "subject": "天上之七骑士"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 38,
+   "quote": "是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "『隶属于弗茨亚茨的「天上之七骑士」』——骑士团从属于该国"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-25167323dc46",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

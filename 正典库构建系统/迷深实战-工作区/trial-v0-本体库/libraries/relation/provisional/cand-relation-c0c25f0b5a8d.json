@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-ccd0d3ece575"
+  ],
+  "object": "基督·欧亚",
+  "rel_type": "此前有接触",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 42,
+   "quote": "之前同那个叫帕林库洛的骑士的接触虽然让我有所预感。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "『之前同那个叫帕林库洛的骑士的接触』让主角有所预感；并经其交谈确认大小姐非芙兰琉莱"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c0c25f0b5a8d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-4fac374d05a2",
+   "cand-entity-c4d221e71ea0"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "塞拉指名基督决斗",
+  "tick": 10,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 38,
+   "quote": "此次前来所为无他，就是专程来找你决斗的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "塞拉带随从入店指名基督，自报弗茨亚茨天上之七骑士身份并要求决斗；克劳与常客出面庇护，店长镇场化解"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f0629b96ec04",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

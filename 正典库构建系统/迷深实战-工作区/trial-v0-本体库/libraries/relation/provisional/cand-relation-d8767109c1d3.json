@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-4784d2853c03",
+   "cand-entity-c4d221e71ea0"
+  ],
+  "object": "拉丝缇娅拉",
+  "rel_type": "欲夺回",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 58,
+   "quote": "以期将我们的大小姐夺回来。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "使命=『通过和站在那里的那个男人决斗，以期将我们的大小姐夺回来』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d8767109c1d3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

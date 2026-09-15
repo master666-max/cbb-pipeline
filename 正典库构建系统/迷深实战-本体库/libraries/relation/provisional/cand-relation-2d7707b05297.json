@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉·雷迪安特",
+  "rel_type": "接受决斗",
+  "subject": "基督·欧亚"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 121,
+   "quote": "我接受你的决斗。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "权衡后接受决斗，输则一五一十说出、并发誓帮忙寻找拉丝缇娅拉"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2d7707b05297",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

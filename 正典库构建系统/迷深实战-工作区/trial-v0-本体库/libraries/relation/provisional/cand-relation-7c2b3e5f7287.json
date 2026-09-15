@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-6ec55f218d59"
+  ],
+  "object": "玛利亚",
+  "rel_type": "将·留在家中",
+  "subject": "基督·欧亚"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 2,
+   "quote": "我将玛利亚留在家中，来到了酒馆。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "本章开篇：将玛利亚留在家（居所=旅店）后前往酒馆打工"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7c2b3e5f7287",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

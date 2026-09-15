@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『注视』"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 16,
+   "quote": "所以我特意使用『注视』观察了一番。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 141,
+   "quote": "我使用『注视』，比较自己和雷迪安特的数值。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "查看【状态】面板的技能：主角用于观察塞拉、比较双方数值、确认强化状态（L16/L141/L164）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-cf29d715835c",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

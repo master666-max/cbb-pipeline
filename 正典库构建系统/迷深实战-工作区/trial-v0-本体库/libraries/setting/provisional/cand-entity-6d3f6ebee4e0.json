@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "神圣魔法"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 22,
+   "quote": "后天技能：剑术2.12神圣魔法0.89",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 159,
+   "quote": "不过，既不是始祖的神圣魔法，架刀的姿势也是有形无神。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 163,
+   "quote": "和从缇亚那里看来的神圣魔法非常相似",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "塞拉的后天技能（0.89）；『始祖的神圣魔法』被奉为正统（L159）；与从缇亚处看来的魔法非常相似（L163）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-6d3f6ebee4e0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

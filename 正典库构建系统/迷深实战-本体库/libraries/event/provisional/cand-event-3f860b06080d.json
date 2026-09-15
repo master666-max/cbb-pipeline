@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "基督·欧亚",
+   "塞拉·雷迪安特"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "决斗首次交锋",
+  "tick": 10,
+  "time_verbatim": "这时候（L144）"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 176,
+   "quote": "可是，她不费吹灰之力便避开了我的进攻，并在躲避的同时反手挥剑直取我的脖颈。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 178,
+   "quote": "教科书般的后发制人。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "基督冲刺挥剑被塞拉不费吹灰之力避开并反手直取脖颈；基督侧身后拉距离化解；塞拉明显放了水"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3f860b06080d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

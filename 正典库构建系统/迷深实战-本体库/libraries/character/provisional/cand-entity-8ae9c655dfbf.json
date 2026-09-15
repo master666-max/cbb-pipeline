@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "芙兰琉莱"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 89,
+   "quote": "因为之前跟帕林库洛交谈的时候就确认了不是芙兰琉莱",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "仅提及；经帕林库洛交谈确认拉丝缇娅拉不是芙兰琉莱（L89-90）——否定性事实备案"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-8ae9c655dfbf",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

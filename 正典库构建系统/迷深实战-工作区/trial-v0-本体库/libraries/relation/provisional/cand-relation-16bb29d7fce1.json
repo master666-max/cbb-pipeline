@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-024a5eb2b009",
+   "cand-entity-0ae5575ed143"
+  ],
+  "object": "『魔石线』",
+  "rel_type": "对·起誓",
+  "subject": "基督·欧亚"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 149,
+   "quote": "最后，在互相对着『魔石线』起誓后，我们同时拔剑出鞘。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "决斗前与塞拉互相对『魔石线』起誓"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-16bb29d7fce1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-4fac374d05a2",
+   "cand-entity-c4d221e71ea0"
+  ],
+  "object": "天上之七骑士",
+  "rel_type": "隶属于",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 38,
+   "quote": "我的名字是塞拉·雷迪安特，是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "自报：『是隶属于弗茨亚茨的「天上之七骑士」的一员』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d273bc9a830e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

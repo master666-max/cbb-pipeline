@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-c4d221e71ea0"
+  ],
+  "object": "基督·欧亚",
+  "rel_type": "上门求决斗",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 38,
+   "quote": "此次前来所为无他，就是专程来找你决斗的。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 39,
+   "quote": "她一边说一边提住尚在鞘中的剑，以此表明战意。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "带随从到酒馆指名基督：『专程来找你决斗的』，并提剑表明战意"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4c7febc8ae67",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

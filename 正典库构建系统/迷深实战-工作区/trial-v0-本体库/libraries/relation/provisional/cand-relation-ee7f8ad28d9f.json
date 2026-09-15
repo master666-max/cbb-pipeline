@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-c4d221e71ea0"
+  ],
+  "object": "基督·欧亚",
+  "rel_type": "应约接受决斗条件",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 124,
+   "quote": "那就这样吧，先把你揍到再也不敢起邪心为止。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 127,
+   "quote": "不过，决斗的形式必须是一对一。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "规则：杀对方自动判负、令对方投降才算胜、点到为止、和平第一（L123）；报酬=胜者要求对方不再露脸（L126）；形式一对一（L127）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ee7f8ad28d9f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

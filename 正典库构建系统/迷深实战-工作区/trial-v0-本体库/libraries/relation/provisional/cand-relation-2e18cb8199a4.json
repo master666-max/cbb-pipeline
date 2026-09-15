@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-3be971ec494c"
+  ],
+  "object": "拉丝缇娅拉",
+  "rel_type": "发誓帮忙寻找",
+  "subject": "基督·欧亚"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 121,
+   "quote": "虽然我自己也不知道拉丝缇娅拉所在何处，但我发誓我会帮忙找的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "接受决斗时承诺：虽不知其所在，但发誓帮忙寻找"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2e18cb8199a4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-4784d2853c03",
+   "cand-entity-c4d221e71ea0"
+  ],
+  "name": "拉丝缇娅拉行踪",
+  "note": "信中私奔声称未证；主角否认并认为或只是离家出走找乐子；决斗败方约定一五一十说出并帮忙寻找",
+  "payoff_chapter": null,
+  "setup_chapter": 14,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 99,
+   "quote": "在她留下的信里，写下了她要与你这厮、你这厮、私、私、私私奔——。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 14,
+   "text": "开环：大小姐在哪/信的真相/私奔声称真伪均未解"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-54d74521d38a",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

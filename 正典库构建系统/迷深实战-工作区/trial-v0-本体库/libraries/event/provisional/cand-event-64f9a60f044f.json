@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entity_refs": [
+   "cand-entity-024a5eb2b009",
+   "cand-entity-0ae5575ed143",
+   "cand-entity-c4d221e71ea0"
+  ],
+  "instant": null,
+  "kind": "决斗",
+  "name": "酒馆后方决斗开始",
+  "tick": 10,
+  "time_verbatim": "休息的时候（L88）"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 149,
+   "quote": "最后，在互相对着『魔石线』起誓后，我们同时拔剑出鞘。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 150,
+   "quote": "「——魔法『Dimension·决战演算』、魔法『Foam』。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "双方对『魔石线』起誓后同时拔剑；基督咏唱『Dimension·决战演算』与『Foam』，塞拉咏唱『Growth』（身体强化1.00）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-64f9a60f044f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

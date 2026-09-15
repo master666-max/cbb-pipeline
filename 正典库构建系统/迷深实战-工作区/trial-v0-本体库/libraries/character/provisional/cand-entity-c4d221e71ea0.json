@@ -1,0 +1,83 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 18,
+   "quote": "名字：塞拉·雷迪安特",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 38,
+   "quote": "我的名字是塞拉·雷迪安特，是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 42,
+   "quote": "想必是对我方才的反应不太满意吧，雷迪安特的愤怒形于颜色",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 78,
+   "quote": "不过你看，骑士小姐是这么说的哦？",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "兽人女性骑士（狼耳狼尾、银发湛蓝、刘海左扎），随身佩剑、着最低限度银制防具"
+  },
+  {
+   "category": "trait",
+   "chapter": 14,
+   "text": "严厉容不得马虎，但本质理性与知性并存（L25/L60）"
+  },
+  {
+   "category": "status_change",
+   "chapter": 14,
+   "text": "【状态】面板：HP256/256 MP101/101 职业骑士 等级21 力量6.22 体力7.91 技巧8.89 敏捷10.02 智力5.60 魔力7.77 素质1.57；先天技能直感1.77；后天技能剑术2.12 神圣魔法0.89（L18-23）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 14,
+   "text": "原文自带矛盾备案：面板等级21（L19）与叙述『等级已臻20』（L23）并存——正典库标记不裁决（documented_variance）"
+  },
+  {
+   "category": "alias",
+   "chapter": 14,
+   "text": "别名：雷迪安特（L42）／骑士小姐（L78）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c4d221e71ea0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

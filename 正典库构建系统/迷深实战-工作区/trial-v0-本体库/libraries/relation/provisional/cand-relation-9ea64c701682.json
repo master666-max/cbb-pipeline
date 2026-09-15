@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "claim": false,
+  "entity_refs": [
+   "cand-entity-0ae5575ed143",
+   "cand-entity-3ee856ee4181"
+  ],
+  "object": "基督·欧亚",
+  "rel_type": "朋友",
+  "subject": "克劳"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 5,
+   "quote": "此时此刻，我正在与老朋友克劳交谈，打算从他的嘴里套点情报出来。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 11,
+   "quote": "克劳是我第一天在这家店工作时便结下缘份的朋友。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "『老朋友』；结识于主角入职首日（L11），工作日常客"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9ea64c701682",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

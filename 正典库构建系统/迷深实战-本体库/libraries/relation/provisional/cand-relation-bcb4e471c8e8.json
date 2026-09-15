@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "缇亚",
+  "rel_type": "声称自己是男性",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 89,
+   "quote": "反正我也不相信缇亚说自己是男性的主张",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "自指声称；主角不相信该主张"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bcb4e471c8e8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}
