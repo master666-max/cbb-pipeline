@@ -1,0 +1,100 @@
+{
+ "unit": "ch0031",
+ "chapter": 31,
+ "ingestion_index": 25,
+ "title": "第3.5卷",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 9,
+  "pass": 9,
+  "intercept": 0,
+  "admitted": 9,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 6,
+  "consistent-duplicate": 3
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-58d777b73662",
+   "type": "entity",
+   "name": "古尔亚德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-11b31d5058d0",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-01e45734fe11",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-165090eacb21",
+   "type": "entity",
+   "name": "塞拉·雷迪安特",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-c4d221e71ea0-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-075af264152b",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-36c416a44da5",
+   "type": "relation",
+   "name": "拉古涅·卡伊库欧拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e561ee740454",
+   "type": "event",
+   "name": "三人组逃亡与缇亚狂化危机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-567dfd82d211",
+   "type": "foreshadow",
+   "name": "基督和玛利亚夺还作战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-a362cfb66645",
+   "type": "foreshadow",
+   "name": "缇亚的自我认同危机",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 25,
+  "pseudo_date": "2000-01-26",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

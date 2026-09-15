@@ -1,0 +1,633 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "雷鲁·桑库斯"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 31,
+     "quote": "名字：雷鲁·桑库斯 HP312/322MP0/0职业：闘士",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 29,
+     "text": "劳拉维亚国直辖公会『史诗探索者』所属闘士（主角看守）：【状态】HP312/322 级别21 力量11.22 体力10.19 技巧6.79 速度4.02 智力6.60 魔力0 素质1.09；后天看破1.03；约四十岁疮疤坚毅男"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-4e6abd571844",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "组织",
+    "name": "史诗探索者"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 42,
+     "quote": "这里是位于劳拉维亚中央的建筑物、公会『史诗探索者』的本部。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 29,
+     "text": "劳拉维亚国直辖公会（本部位于劳拉维亚中央）：受国家之托拘束/研究主角与玛利亚（『实验动物』处置）；帕林库洛亦出没其中（『监视』着主角）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-04aaec848c6f",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点(国/势力)",
+    "name": "劳拉维亚"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 14,
+     "quote": "劳拉维亚——我记得这是个位于联合国西南部的国家。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 29,
+     "text": "联合国西南部的国家——帕林库洛口中『我反对迎入野蛮国家的骑士』之对象侧？；卷四舞台（主角被囚于此）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-15d82841d627",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『启蒙家的再调律』"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 74,
+     "quote": "魔法『启蒙家的再调律』",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 29,
+     "text": "帕林库洛的精神魔法（缇达系强化）：镇静/救命（洗刷负面感情）与改篡（摆弄精神方向性）双用途——『只是稍微改变一下方向性…施加点错觉』；对主角连用以救命+改篡"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-01f1701d7275",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 238,
+     "quote": "混乱达到了10.00，超过了技能『？？？』的极限",
+     "vol": 1
+    },
+    {
+     "chapter": 29,
+     "line": 389,
+     "quote": "混乱：7.29记忆改篡：2.00精神污染：2.00认知阻碍：2.00封印：4.00",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 29,
+     "text": "★技能？？？终局：混乱10.82 超 10.00 极限→『退还』机制发动（积存负面感情+利息强制返还——从初日绝望到恋慕全数涌回）→连环暴走濒死→帕林库洛救命+改篡（混乱7.29 记忆改篡2.00 精神污染2.00 认知阻碍2.00 封印4.00+技能？？？被封印）"
+    },
+    {
+     "category": "trait",
+     "chapter": 29,
+     "text": "黑暗反省会（败因自剖）：人际交往失败——不敞开心扉/只利用不帮助/看低同伴/不依赖他人；誓言：下次以相川涡波堂堂正正生存/打开心扉相信他人/不再说谎（『只要这份誓言尚在，这个故事就不会迎来终结』）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-546cd3cb776a",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "精神改篡(封印？？？)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 378,
+     "quote": "【技能『？？？』被封印了】",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 29,
+     "text": "救命（亡失的殉教者+启蒙家的再调律压制连环暴走）后改篡：记忆/认知/封印全施加+技能？？？封印——交换条件=帮助玛利亚（主角以杀他相威胁的誓约）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-a508adb3bca1",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "拉丝缇娅拉",
+    "rel_type": "战死(断后交换)",
+    "subject": "海因"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 179,
+     "quote": "「是啊，那个笨蛋以自己的命作交换让另外三个人逃走了。然后就那样死了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 29,
+     "text": "据帕林库洛宣告：以自己的命作交换让另外三人（拉丝缇娅拉/缇亚/雷迪安特）逃走后死亡；首级被其取来示现（『材料』宣言）——海因的棋子任务之终"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-3af1915dae02",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "史诗探索者",
+     "帕林库洛",
+     "相川涡波",
+     "雷鲁·桑库斯"
+    ],
+    "instant": null,
+    "kind": "清算",
+    "name": "拘束与审讯",
+    "tick": 23,
+    "time_verbatim": "圣诞祭后（第十四天后）"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 93,
+     "quote": "名唤基督·欧亚的这么一个少年，在十四天前，突如其来地从迷宫内现身了。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 29,
+     "text": "劳拉维亚拘束（三重魔力锁+五倍枷板）醒来；身份审讯（『从迷宫中现身』之谜/三十层守护者嫌疑/Connection 弃牌自证人类）；实验动物宣言（玛利亚=第一个与守护者融合的人类）；海因死讯+首级示现；英雄+半守护者=实验材料论+海因遗体材料论（超越拉丝缇娅拉的存在创造野心）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-28f67ec28ab7",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『？？？』",
+     "帕林库洛",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "崩坏",
+    "name": "技能？？？连环暴走与退还",
+    "tick": 23,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 240,
+     "quote": "——一·切·都·被·退·还·了·回·来。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 29,
+     "text": "海因首级→死亡恐惧→暴走→混乱超10.00→『退还』（积存负面感情+利息全数返还：初日绝望/孤独/恋慕等八重）→生不如死的激痛（自杀冲动）→连环暴走（退还不是温和返还——技能？？？是残次品的领悟）→帕林库洛精神魔法压制救命"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-73b86faa0d6a",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "终章",
+    "name": "黑暗反省会与誓言",
+    "tick": 23,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 441,
+     "quote": "———并·且，只·要·这·份·誓·言·尚·在，这·个·故·事·就·不·会·迎·来·终·结。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 29,
+     "text": "两周期限/二十四层成果/败因清算（人际交往失败——不敞心扉/只利用不帮助/不依赖）；誓言：以相川涡波之名堂堂正正生存+打开心扉相信他人+不再说谎；『只要这份誓言尚在，这个故事就不会迎来终结』+舞台转劳拉维亚+忘记愿望+试练牢笼=卷四预告"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-664cd5f3e98e",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "相川涡波"
+    ],
+    "name": "遗忘的誓言（车轮续转）",
+    "note": "誓言被改篡记忆覆盖（『恐怕我不会回忆起这份誓言』）——但从『基督·欧亚』到『相川涡波』的重头再来=卷四主角线（记忆恢复/誓言回收为最大长线钩）；『忘记了自己的愿望，被囚禁在试练的牢笼中——继续着』",
+    "payoff_chapter": null,
+    "setup_chapter": 29,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 448,
+     "quote": "舞台转换至劳拉维亚，忘记了自己的愿望，被囚禁在『试练』的牢笼中——继续着。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 29,
+     "text": "跨卷主角线总钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.92,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-4c29cdf89775",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "相川阳滝"
+    ],
+    "name": "黑暗中的声音",
+    "note": "主角坠落黑暗时回应其自嘲的『非常重要的声音』（无法分辨是谁但怀念）——呼唤者身份之谜（阳滝?妹妹线?）",
+    "payoff_chapter": null,
+    "setup_chapter": 29,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 407,
+     "quote": "然而，却感觉黑暗中传来了回应。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 29,
+     "text": "神秘呼唤钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-0f8073efbbcf",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 29,
+    "fact": "混乱≥10.00 超过技能极限→『退还』：积存的负面感情（+利息）强制返还——从发动日起的绝望/孤独/焦躁/屈辱/压力/被改篡不快/死亡恐惧/精神污染/恋慕全部一齐涌回；连环发动只增利息不减本金→技能？？？本质=残次品（有上限的感情置换装置）；被封印后终结",
+    "name": "技能？？？完全解（退还机制）",
+    "tick": 23
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 250,
+     "quote": "从那一天，刚来到这个异世界时茫然无措、在迷宫中彷徨、被人欺骗、要被狼吃掉的前一瞬间的精神开始，一直到今天为止的所有负面感情全都上门来讨债。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 29,
+     "text": "主角能力体系之最终谜底"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-2024b9f7ced3",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 29,
+    "fact": "主角（『英雄』）与玛利亚（『半守护者』）=实验动物/实验材料；海因遗体=创造超越拉丝缇娅拉存在的『材料』（头颅保存展示）；曾对阿尔缇与玛利亚施加过精神操作的自白（『类似于我对阿尔缇大姐和玛利亚小妹妹做过的事…再加上暗之理的盗窃者的力量』）——其实验/创造的最终目的仍未明言",
+    "name": "帕林库洛的材料观",
+    "tick": 23
+   },
+   "evidence": [
+    {
+     "chapter": 29,
+     "line": 211,
+     "quote": "只要活用这里的『材料』，创造出超越拉丝缇娅拉·弗茨亚茨的存在也不是梦话。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 29,
+     "text": "反派线全貌待卷四"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-ad9e2d34ffd8",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★卷三真正终章（主角败北线完结）：劳拉维亚拘束+海因之死（首级示现）+技能？？？混乱超10.00→『退还』机制全解（积存负面感情加倍返还）+连环暴走濒死+帕林库洛精神魔法救命再改篡（记忆改篡/精神污染/认知阻碍/封印4.00+技能？？？被封印）——『以相川涡波中途脱队为结』的清算",
+   "★誓言线：黑暗反省会（败因=人际交往失败/不敞开心扉/只利用不帮助）+誓言（下次以相川涡波堂堂正正生存/打开心扉/不再说谎）——『只要这份誓言尚在，这个故事就不会迎来终结』；舞台转劳拉维亚+忘记愿望+试练牢笼=卷四预定",
+   "★实验动物宣言：主角+玛利亚双囚（『英雄』与『半守护者』=实验材料）；海因遗体=『材料』（创造超越拉丝缇娅拉的存在之野心）；帕林库洛曾对阿尔缇/玛利亚做过同类精神操作的自白"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=23→tick=23→2000-01-24。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行12721-13171（CHAPTER 0029，451行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批3 · CHAPTER 0029（第三卷-第七章『清算』，摄入序23→tick23→伪锚点2000-01-24）"
+ }
+}

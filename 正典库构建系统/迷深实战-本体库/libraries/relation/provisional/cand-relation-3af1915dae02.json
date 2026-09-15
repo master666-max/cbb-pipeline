@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "拉丝缇娅拉",
+  "rel_type": "战死(断后交换)",
+  "subject": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 29,
+   "line": 179,
+   "quote": "「是啊，那个笨蛋以自己的命作交换让另外三个人逃走了。然后就那样死了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 29,
+   "text": "据帕林库洛宣告：以自己的命作交换让另外三人（拉丝缇娅拉/缇亚/雷迪安特）逃走后死亡；首级被其取来示现（『材料』宣言）——海因的棋子任务之终"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3af1915dae02",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

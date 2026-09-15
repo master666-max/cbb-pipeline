@@ -1,0 +1,135 @@
+{
+ "unit": "ch0037",
+ "chapter": 37,
+ "ingestion_index": 29,
+ "title": "第四卷-第一章-劳拉维亚国的全新物语",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 14,
+  "pass": 14,
+  "intercept": 0,
+  "admitted": 14,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 3,
+  "on-create": 11
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-35c7acb56908",
+   "type": "entity",
+   "name": "手环",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-0cd494fd698f",
+   "type": "entity",
+   "name": "缇莉·琉克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-b08a34f3cfb6",
+   "type": "entity",
+   "name": "波鲁扎克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-572e252a5e15",
+   "type": "entity",
+   "name": "史诗探索者",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-04aaec848c6f-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-783cd0b90fc4",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-3910a7f26162",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-d43a120caa97",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a6b457b452f8",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-af5b01a7e299",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b8e4c8d5bc9c",
+   "type": "event",
+   "name": "公会入会连场战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-01836da06d22",
+   "type": "foreshadow",
+   "name": "手环的破坏条件",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-13c6198661fa",
+   "type": "foreshadow",
+   "name": "帕林库洛的英雄剧本",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-1dc5a192a8b5",
+   "type": "setting",
+   "name": "记忆改篡的植入人格",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-258fa971de36",
+   "type": "setting",
+   "name": "振动通信魔法",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 29,
+  "pseudo_date": "2000-01-30",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

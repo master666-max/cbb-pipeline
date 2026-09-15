@@ -1,0 +1,35 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "波尔札克",
+   "library_match": "波鲁扎克",
+   "similarity": 0.8655
+  },
+  {
+   "candidate": "海因",
+   "library_match": "海因·赫勒比勒夏因",
+   "similarity": 0.8803
+  }
+ ],
+ "pairs": [
+  [
+   "波尔札克",
+   "波鲁扎克",
+   0.8655
+  ],
+  [
+   "海因",
+   "海因·赫勒比勒夏因",
+   0.8803
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 2,
+  "library": 194,
+  "dup_suspect": 0,
+  "uncertain": 2
+ }
+}

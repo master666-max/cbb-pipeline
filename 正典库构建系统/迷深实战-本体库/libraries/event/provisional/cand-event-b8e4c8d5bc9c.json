@@ -1,0 +1,55 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "斯诺·沃克",
+   "波鲁扎克",
+   "相川涡波",
+   "缇莉·琉克"
+  ],
+  "instant": null,
+  "kind": "就任",
+  "name": "公会入会连场战",
+  "tick": 29,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 37,
+   "line": 133,
+   "quote": "「——因为，涡波可是要成为『史诗探索者』的公会会长的啊。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 37,
+   "text": "帕林库洛宣告『涡波要成为公会会长』+连场战测试（伤到一下就重议的激将法）；少女剑士（挑飞武器）/缇莉（次元之冬压魔法）/波鲁扎克（Foam 附剑+故意受伤被识破自认完败）→全员无败就任；斯诺辞战（『根本赢不了的』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b8e4c8d5bc9c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

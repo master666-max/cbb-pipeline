@@ -1,0 +1,51 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.9502
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "缇亚",
+   "library_match": "缇达",
+   "similarity": 0.898
+  },
+  {
+   "candidate": "塞拉·雷迪安特",
+   "library_match": "缇娅拉·弗茨亚茨",
+   "similarity": 0.8574
+  }
+ ],
+ "pairs": [
+  [
+   "古尔亚德",
+   "艾尔多拉琉",
+   0.8216
+  ],
+  [
+   "缇亚",
+   "缇达",
+   0.898
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.9502
+  ],
+  [
+   "塞拉·雷迪安特",
+   "缇娅拉·弗茨亚茨",
+   0.8574
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 4,
+  "library": 192,
+  "dup_suspect": 1,
+  "uncertain": 2
+ }
+}

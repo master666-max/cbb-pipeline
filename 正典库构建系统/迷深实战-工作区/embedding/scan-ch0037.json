@@ -1,0 +1,55 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "缇莉·琉克",
+   "library_match": "缇娅拉·弗茨亚茨",
+   "similarity": 0.8955
+  },
+  {
+   "candidate": "波鲁扎克",
+   "library_match": "波尔札克",
+   "similarity": 0.8655
+  }
+ ],
+ "pairs": [
+  [
+   "手环",
+   "魔石戒指",
+   0.6639
+  ],
+  [
+   "缇莉·琉克",
+   "缇娅拉·弗茨亚茨",
+   0.8955
+  ],
+  [
+   "波鲁扎克",
+   "波尔札克",
+   0.8655
+  ],
+  [
+   "史诗探索者",
+   "守护者",
+   0.6472
+  ],
+  [
+   "斯诺·沃克",
+   "格连·沃克",
+   0.81
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 6,
+  "library": 190,
+  "dup_suspect": 0,
+  "uncertain": 2
+ }
+}

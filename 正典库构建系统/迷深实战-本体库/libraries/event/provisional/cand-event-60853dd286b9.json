@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "海因",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战死",
+  "name": "海因最期（瓦尔德郊外）",
+  "tick": 28,
+  "time_verbatim": "圣诞祭当日黄昏（承ch0026撤离）"
+ },
+ "evidence": [
+  {
+   "chapter": 34,
+   "line": 118,
+   "quote": "就这样，骑士海因这枚棋子倒下了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 34,
+   "text": "跳下狼背道别→生命削减狼烟引开包围→帕林库洛登场对话（咒术解放之谢/自解宣言/决斗受诺）→最后决斗（争取时间=胜）→刺胸战死（遗愿=帕林库洛的期望）——ch0029 死讯/ch0033 特典战斗的正典侧终笔"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-60853dd286b9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

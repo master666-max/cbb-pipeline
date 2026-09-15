@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉·雷迪安特",
+  "rel_type": "内应(反仪式派)",
+  "subject": "拉古涅·卡伊库欧拉"
+ },
+ "evidence": [
+  {
+   "chapter": 31,
+   "line": 242,
+   "quote": "「不必担心。说到底，拉古涅对仪式也持否定态度。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 31,
+   "text": "秘密会面提供情报（帕林库洛所在等）；对仪式持否定态度（大圣堂敌对立场是塞拉顾及她立场的指示）；友谊尚在"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-36c416a44da5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

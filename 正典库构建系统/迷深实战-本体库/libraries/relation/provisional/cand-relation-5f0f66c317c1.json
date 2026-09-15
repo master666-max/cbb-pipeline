@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "决斗致死",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 34,
+   "line": 109,
+   "quote": "在争取了充足的时间后，帕林库洛的剑刺穿了我的胸膛。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 34,
+   "text": "最后决斗：海因自解咒术后以必死决心争取时间→帕林库洛剑穿胸膛（其不取性命的战斗方式 vs 海因必死决心=胜因）；海因满足而死"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5f0f66c317c1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

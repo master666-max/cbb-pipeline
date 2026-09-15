@@ -1,0 +1,98 @@
+{
+ "unit": "ch0028",
+ "chapter": 28,
+ "ingestion_index": 22,
+ "title": "第三卷-第六章-圣诞祭结束",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 9,
+  "pass": 9,
+  "intercept": 0,
+  "admitted": 9,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 2,
+  "on-create": 7
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-2ebbb7320480",
+   "type": "entity",
+   "name": "『亡失的殉教者』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a119bcd0ae3d",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-5b8531bd5658",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-585f8d63a5f5",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f2283f9f50fa",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a3b863319800",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-041165842450",
+   "type": "event",
+   "name": "圣诞祭落幕之战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2286919e2923",
+   "type": "foreshadow",
+   "name": "帕林库洛的真计划",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-af7da79161e7",
+   "type": "foreshadow",
+   "name": "主角的黑暗坠落",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 22,
+  "pseudo_date": "2000-01-23",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

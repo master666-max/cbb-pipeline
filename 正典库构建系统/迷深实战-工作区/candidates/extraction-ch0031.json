@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "unit": "U-C03 批3 · CHAPTER 0031（第3.5卷·拉丝缇娅拉、缇亚、塞拉的逃亡，摄入序25→tick25→伪锚点2000-01-26）",
+    "source": {"path": "语料分析/corpus/clean_full.txt", "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb", "verified_at": "2026-09-16", "slice": "行13188-13480（CHAPTER 0031，293行）"},
+    "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+    "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+    "reference_time": "伪锚点 2000-01-01+i；本章摄入序=25→tick=25→2000-01-26。禁墙钟。拉丝缇娅拉 POV（3.5卷短篇）。",
+    "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+    "cross_chapter_notes": [
+      "★3.5卷（正典侧故事，非特典——章题无 NOISE 标记）：三人组逃亡线——古尔亚德落脚/缇亚基督狂化危机（『哪怕是为了「我（俺）」还能是我』的自我认同危机爆发）/旅馆墙壁破坏逃单喜剧/迷宫打工（无 MP 消耗 FlameArrow——阿尔缇授业成果）/拉古涅内应情报（帕林库洛=劳拉维亚『史诗探索者』庇护下）——『基督和玛利亚夺还作战』宣言（卷四对接）",
+      "★对账：ch0029 海因死讯+阿尔缇消灭由塞拉-拉古涅线确认；缇亚的危险性评价（拉丝缇娅拉观：一到基督的事就非难辨，危险性或超玛利亚）"
+    ],
+    "alias_policy": "同 STATE 固化决议。",
+    "confidence_calibration": "同 STATE 固化决议。",
+    "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。"
+  },
+  "candidates": [
+    {"type": "entity", "library": "character", "confidence": 0.88,
+     "canonical": {"name": "古尔亚德", "entity_type": "地点(国/势力)"},
+     "observations": [{"category": "summary", "text": "联合国南部的海洋国家（逃亡目的地实景）：越境后追兵锐减（无手续士兵不能擅自越境）；风潮自由的廉价旅馆街；有迷宫入口（与瓦尔德侧独立）", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 7, "quote": "抵达位于联合国南部的古尔亚德时，人数只剩计划中的一半。"}]},
+    {"type": "entity", "library": "character", "confidence": 0.9,
+     "canonical": {"name": "缇亚", "entity_type": "人物"},
+     "observations": [
+       {"category": "summary", "text": "逃亡线战力：无 MP 消耗的《FlameArrow》（阿尔缇授业——『接近冲击重视型，一成威力』控制射击）+无咏唱压倒性魔力+连射；近中距离毫无破绽（自我宣言）", "chapter": 31},
+       {"category": "trait", "text": "★基督狂化危机：帕林库洛背叛之怒+『哪怕是为了「我（俺）」还能是我，我也绝对要去救基督…不然我到底是为了什么才将「我（私）』』——自我认同危机爆发（第一人称混乱）；对拉丝缇娅拉近身火焰攻击未遂；拉丝缇娅拉评：一到基督的事就非难辨，危险性或超玛利亚", "chapter": 31}],
+     "evidence": [
+       {"vol": 1, "chapter": 31, "line": 70, "quote": "「是啊，我必须尽快行动……！哪怕是为了『我（俺）』还能是我，我也绝对要去救基督……！"},
+       {"vol": 1, "chapter": 31, "line": 196, "quote": "「话说回来，这火力真强啊。最厉害的是，刚才的魔法完全没有消耗MP啊。」"}]},
+    {"type": "entity", "library": "character", "confidence": 0.9,
+     "canonical": {"name": "拉丝缇娅拉", "entity_type": "人物"},
+     "observations": [{"category": "summary", "text": "逃亡线主导（治疗/情报整合/缇亚制止/作战立案）：FullCure 治疗+不放开任何人的手的生存方式宣言（『基督也好玛利亚也好海因也好大家都脱离了我的手，但我不会放开缇亚』）；剧场论缇亚说服（最先死的是被愤怒冲昏头的人）", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 102, "quote": "「我不想再放开任何人的手了！这就是我今后的生存方式！"}]},
+    {"type": "entity", "library": "character", "confidence": 0.9,
+     "canonical": {"name": "塞拉·雷迪安特", "entity_type": "人物"},
+     "observations": [{"category": "summary", "text": "逃亡线情报官：狼形超群听力筛酒馆闲谈；弗茨亚茨谍报第一人；与拉古涅秘密会面（内应）；报告海因死讯+阿尔缇消灭+帕林库洛所在（劳拉维亚史诗探索者庇护）；虔诚信徒对使徒的敬意", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 33, "quote": "身为狼形兽人的塞拉听力超群。"}]},
+    {"type": "relation", "library": "relation", "confidence": 0.88,
+     "canonical": {"subject": "帕林库洛", "rel_type": "庇护于(史诗探索者)", "object": "劳拉维亚", "claim": true},
+     "observations": [{"category": "relation", "text": "据塞拉-拉古涅情报：逃入弗茨亚茨最难出手的劳拉维亚（两国关系最险恶），回到过去所属的『史诗探索者』公会谋划某事——与 ch0029 拘束现场对账（帕林库洛在劳拉维亚本部出入）", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 267, "quote": "那家伙如今好像正处于劳拉维亚国的庇护之下。"}]},
+    {"type": "relation", "library": "relation", "confidence": 0.85,
+     "canonical": {"subject": "拉古涅·卡伊库欧拉", "rel_type": "内应(反仪式派)", "object": "塞拉·雷迪安特", "claim": false},
+     "observations": [{"category": "relation", "text": "秘密会面提供情报（帕林库洛所在等）；对仪式持否定态度（大圣堂敌对立场是塞拉顾及她立场的指示）；友谊尚在", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 242, "quote": "「不必担心。说到底，拉古涅对仪式也持否定态度。"}]},
+    {"type": "event", "library": "event", "confidence": 0.88,
+     "canonical": {"name": "三人组逃亡与缇亚狂化危机", "kind": "逃亡", "tick": 25, "instant": null, "time_verbatim": "圣诞祭后（两天后转移据点）"},
+     "entities_involved": ["拉丝缇娅拉", "缇亚", "塞拉·雷迪安特", "古尔亚德"],
+     "observations": [{"category": "event", "text": "古尔亚德廉价旅馆落脚→缇亚治疗完→救基督独断出遭拉丝缇娅拉近身制止（火焰反弹/旅馆墙壁两洞/逃单喜剧）→不放手宣言+剧场论说服→两天后经费用尽→迷宫三层打工（无MP FlameArrow 实演）→拉古涅情报（海因死+阿尔缇消灭+帕林库洛所在）→『基督和玛利亚夺还作战』宣言→向劳拉维亚进发", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 286, "quote": "「那么，『基督和玛利亚夺还作战』！开始！！」"}]},
+    {"type": "foreshadow", "library": "foreshadow", "confidence": 0.9,
+     "canonical": {"name": "基督和玛利亚夺还作战", "setup_chapter": 31, "payoff_chapter": null, "tier": "核心", "note": "三人组（+拉古涅内应）向劳拉维亚进发——与被囚改篡的主角线的交汇预定（卷四主线对接钩）"},
+     "entities_involved": ["拉丝缇娅拉", "缇亚", "塞拉·雷迪安特", "相川涡波", "玛利亚"],
+     "observations": [{"category": "foreshadowing", "text": "卷四开题", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 291, "quote": "为了能再一次握住基督和玛利亚的手——"}]},
+    {"type": "foreshadow", "library": "foreshadow", "confidence": 0.88,
+     "canonical": {"name": "缇亚的自我认同危机", "setup_chapter": 31, "payoff_chapter": null, "tier": "核心", "note": "『为了「我（俺）」还能是我』——救基督=保住少年自我认同的存在根据（与迪亚布罗·西斯之名的关系深化）；危险性超玛利亚之评"},
+     "entities_involved": ["缇亚", "迪亚布罗·西斯", "相川涡波"],
+     "observations": [{"category": "foreshadowing", "text": "缇亚线核心钩", "chapter": 31}],
+     "evidence": [{"vol": 1, "chapter": 31, "line": 70, "quote": "哪怕是为了『我（俺）』还能是我，我也绝对要去救基督……！"}]}
+  ]
+}

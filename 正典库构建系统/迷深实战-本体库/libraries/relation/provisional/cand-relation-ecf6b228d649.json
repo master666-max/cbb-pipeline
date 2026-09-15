@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "儿时玩伴(神童)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 34,
+   "line": 58,
+   "quote": "被称作赫勒比勒夏因家史上第一的骑士的我，不曾在他手上夺得一次胜利过。所以他才会是『神童』。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 34,
+   "text": "童年无数次决斗——赫家史上第一的海因从未真正赢过（『神童』之由）；海因视其为恩人+朋友+戏曲头号反派；最后决斗双方互认期望"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ecf6b228d649",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

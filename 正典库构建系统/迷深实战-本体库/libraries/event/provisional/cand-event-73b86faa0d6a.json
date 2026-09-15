@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "帕林库洛",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "崩坏",
+  "name": "技能？？？连环暴走与退还",
+  "tick": 23,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 29,
+   "line": 240,
+   "quote": "——一·切·都·被·退·还·了·回·来。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 29,
+   "text": "海因首级→死亡恐惧→暴走→混乱超10.00→『退还』（积存负面感情+利息全数返还：初日绝望/孤独/恋慕等八重）→生不如死的激痛（自杀冲动）→连环暴走（退还不是温和返还——技能？？？是残次品的领悟）→帕林库洛精神魔法压制救命"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-73b86faa0d6a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

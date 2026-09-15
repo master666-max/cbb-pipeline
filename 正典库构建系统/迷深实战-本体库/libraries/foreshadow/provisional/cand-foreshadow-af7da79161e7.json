@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "帕林库洛",
+   "相川涡波"
+  ],
+  "name": "主角的黑暗坠落",
+  "note": "双重『亡失的殉教者』+技能？？？感情再失+中途脱队——精神被侵染成黑色的主角将如何回归（『我坠向了深渊的底部』）",
+  "payoff_chapter": null,
+  "setup_chapter": 28,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 28,
+   "line": 138,
+   "quote": "因为帕林库洛的魔力，不仅是视野，就连大脑也被侵染成了黑色。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 28,
+   "text": "主角状态钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-af7da79161e7",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

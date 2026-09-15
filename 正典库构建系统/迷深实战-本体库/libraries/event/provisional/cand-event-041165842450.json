@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "决战终章",
+  "name": "圣诞祭落幕之战",
+  "tick": 22,
+  "time_verbatim": "大雨中（承接ch0027）"
+ },
+ "evidence": [
+  {
+   "chapter": 28,
+   "line": 145,
+   "quote": "就这样，以相川涡波这个异邦人中途脱队为结，许许多多人的愿望齐聚一堂的圣诞祭终于落下了帷幕——",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 28,
+   "text": "剑技对决（HP 削至极限）→吞石变身（属性翻倍）→亡失的殉教者精神干涉→主角主动发动？？？脱困（誓言背弃+感情再失）→玛利亚援护（雨天弱化炎蛇）→声东击西勒颈昏厥→玛利亚被俘→主角再中精神魔法坠黑——圣诞祭闭幕"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-041165842450",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

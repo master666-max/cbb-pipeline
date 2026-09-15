@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "相川阳滝"
+  ],
+  "name": "黑暗中的声音",
+  "note": "主角坠落黑暗时回应其自嘲的『非常重要的声音』（无法分辨是谁但怀念）——呼唤者身份之谜（阳滝?妹妹线?）",
+  "payoff_chapter": null,
+  "setup_chapter": 29,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 29,
+   "line": 407,
+   "quote": "然而，却感觉黑暗中传来了回应。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 29,
+   "text": "神秘呼唤钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-0f8073efbbcf",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

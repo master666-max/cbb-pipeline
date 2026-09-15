@@ -1,0 +1,476 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『亡失的殉教者』"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 83,
+     "quote": "「——魔法『亡失的殉教者』。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 28,
+     "text": "帕林库洛（继承缇达系）的精神干涉魔法：侵入大脑篡改精神——与缇达的暗系魔法同源感；两度施加于主角（第二次成功）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-2ebbb7320480",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 56,
+     "quote": "姓名帕林库洛·勒伽西HP501/512MP368/392 职业：无",
+     "vol": 1
+    },
+    {
+     "chapter": 28,
+     "line": 45,
+     "quote": "我能——不对，只有我才能继承缇达的意志。",
+     "vol": 1
+    },
+    {
+     "chapter": 28,
+     "line": 129,
+     "quote": "「这边也搞定了。如此一来小妹妹就到手了……」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 28,
+     "text": "★吞下缇达魔石继承守护者之力：【状态】HP501/512 MP368/392 职业=无 级别22 力量15.21 体力19.45 技巧12.12 敏捷18.22 贤能10.11 魔力13.99 素质4.89；先天观察眼1.46；后天剑术1.89 神圣魔法1.23 **精神魔法3.89** 体术1.87 **咒术2.54**——属性翻倍+魔法飞跃+缇达匹敌的速度"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 28,
+     "text": "魔石来源=主角卖出的缇达之石（『被你傻乎乎地卖掉的…到了我的手上』）；自称代理主持『第二十之试练』（『只有我才能继承缇达的意志』——阿尔缇缇达双认证亲和性）；终局独白：『到最后还站着的只有我一个。跟计划中一样』（懊悔语气）+『小妹妹就到手了』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-a119bcd0ae3d",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 26,
+     "quote": "HP62/284MP0/657",
+     "vol": 1
+    },
+    {
+     "chapter": 28,
+     "line": 88,
+     "quote": "我发动了曾发誓到死也不会选择去依靠的技能『？？？』。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 28,
+     "text": "极限续战至崩溃：HP 削至 52/275（最大HP累计削减近百=赔上一名娴熟探索者的命）；魔法构筑失败（身体先于数值到限）→被勒颈昏厥→再中『亡失的殉教者』坠入黑暗——『以相川涡波这个异邦人中途脱队为结』"
+    },
+    {
+     "category": "trait",
+     "chapter": 28,
+     "text": "誓言背弃：为抗精神干涉主动发动技能？？？（曾誓死不用）——再次失去各种感情（思念/誓言均淡薄化）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-5b8531bd5658",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "缇达",
+    "rel_type": "吞石继承(缇达之力)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 45,
+     "quote": "「没错，正是被你傻乎乎地卖掉的守护者的魔石。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 28,
+     "text": "吞下守护者缇达的魔石→继承意志与力量（代理第二十之试练主持权）——魔石经瓦尔德流转至其手（主角卖出的连锁后果）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-585f8d63a5f5",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "玛利亚",
+    "rel_type": "俘虏(扛走)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 132,
+     "quote": "结果正好看到帕林库洛夺去了玛利亚的意识。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 28,
+     "text": "夺去玛利亚意识扛于肩上带走（『小妹妹就到手了』——其目的与阳滝关联疑云）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-f2283f9f50fa",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "第二十之试练(代理主持)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 5,
+     "quote": "「什么叫二十层啊！缇达已经不在了，已经死了啊！」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 28,
+     "text": "『从现在起整个联合国就是二十层』之真试练——剑技+精神魔法双重压制至主角力尽"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-a3b863319800",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『？？？』",
+     "帕林库洛",
+     "玛利亚",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "决战终章",
+    "name": "圣诞祭落幕之战",
+    "tick": 22,
+    "time_verbatim": "大雨中（承接ch0027）"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 145,
+     "quote": "就这样，以相川涡波这个异邦人中途脱队为结，许许多多人的愿望齐聚一堂的圣诞祭终于落下了帷幕——",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 28,
+     "text": "剑技对决（HP 削至极限）→吞石变身（属性翻倍）→亡失的殉教者精神干涉→主角主动发动？？？脱困（誓言背弃+感情再失）→玛利亚援护（雨天弱化炎蛇）→声东击西勒颈昏厥→玛利亚被俘→主角再中精神魔法坠黑——圣诞祭闭幕"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-041165842450",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "玛利亚",
+     "相川阳滝"
+    ],
+    "name": "帕林库洛的真计划",
+    "note": "『到最后还站着的只有我一个。跟计划中一样』+『小妹妹就到手了』（玛利亚=妹妹的替代/或与阳滝直接关联?）+目的不可告人——其网的全貌（吞石/俘虏/精神魔法）待卷四揭晓",
+    "payoff_chapter": null,
+    "setup_chapter": 28,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 141,
+     "quote": "「这样一来圣诞祭就结束了吗。……到最后，还站着只有我一个。跟计划中一样，就我一个啊。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 28,
+     "text": "卷四主悬念"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.92,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-2286919e2923",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『？？？』",
+     "帕林库洛",
+     "相川涡波"
+    ],
+    "name": "主角的黑暗坠落",
+    "note": "双重『亡失的殉教者』+技能？？？感情再失+中途脱队——精神被侵染成黑色的主角将如何回归（『我坠向了深渊的底部』）",
+    "payoff_chapter": null,
+    "setup_chapter": 28,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 28,
+     "line": 138,
+     "quote": "因为帕林库洛的魔力，不仅是视野，就连大脑也被侵染成了黑色。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 28,
+     "text": "主角状态钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-af7da79161e7",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★卷三终章：帕林库洛吞下缇达魔石（主角当年卖出的那颗！）→继承缇达意志（力量/速度倍增+精神魔法3.89+咒术2.54）→『亡失的殉教者』精神干涉逼主角主动发动技能？？？脱困（誓言背弃）→勒颈昏厥→玛利亚被俘扛走→主角再中『亡失的殉教者』坠入黑暗——圣诞祭落幕",
+   "★跨卷大悬念：『小妹妹就到手了』（帕林库洛目标与阳滝有关?!）；『到最后还站着的只有我一个。跟计划中一样』——其真计划未明；语气带懊悔"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=22→tick=22→2000-01-23。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行12574-12720（CHAPTER 0028，147行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批3 · CHAPTER 0028（第三卷-第六章-圣诞祭结束，摄入序22→tick22→伪锚点2000-01-23）"
+ }
+}

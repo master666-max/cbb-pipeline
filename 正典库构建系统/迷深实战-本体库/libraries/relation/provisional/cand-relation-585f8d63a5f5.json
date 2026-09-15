@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "吞石继承(缇达之力)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 28,
+   "line": 45,
+   "quote": "「没错，正是被你傻乎乎地卖掉的守护者的魔石。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 28,
+   "text": "吞下守护者缇达的魔石→继承意志与力量（代理第二十之试练主持权）——魔石经瓦尔德流转至其手（主角卖出的连锁后果）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-585f8d63a5f5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

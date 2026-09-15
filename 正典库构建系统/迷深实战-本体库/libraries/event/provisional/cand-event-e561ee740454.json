@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "古尔亚德",
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "逃亡",
+  "name": "三人组逃亡与缇亚狂化危机",
+  "tick": 25,
+  "time_verbatim": "圣诞祭后（两天后转移据点）"
+ },
+ "evidence": [
+  {
+   "chapter": 31,
+   "line": 286,
+   "quote": "「那么，『基督和玛利亚夺还作战』！开始！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 31,
+   "text": "古尔亚德廉价旅馆落脚→缇亚治疗完→救基督独断出遭拉丝缇娅拉近身制止（火焰反弹/旅馆墙壁两洞/逃单喜剧）→不放手宣言+剧场论说服→两天后经费用尽→迷宫三层打工（无MP FlameArrow 实演）→拉古涅情报（海因死+阿尔缇消灭+帕林库洛所在）→『基督和玛利亚夺还作战』宣言→向劳拉维亚进发"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e561ee740454",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

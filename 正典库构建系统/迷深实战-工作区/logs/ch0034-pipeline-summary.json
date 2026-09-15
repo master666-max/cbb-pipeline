@@ -1,0 +1,89 @@
+{
+ "unit": "ch0034",
+ "chapter": 34,
+ "ingestion_index": 28,
+ "title": "海因与帕林库洛的战鬥",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 8,
+  "pass": 8,
+  "intercept": 0,
+  "admitted": 8,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 7,
+  "consistent-duplicate": 1
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-1b3fc9035d23",
+   "type": "entity",
+   "name": "波尔札克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-c9a04f7b70e2",
+   "type": "entity",
+   "name": "海因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2b0d2b1a0571-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-5bac1ec0d03f",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ecf6b228d649",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5f0f66c317c1",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-60853dd286b9",
+   "type": "event",
+   "name": "海因最期（瓦尔德郊外）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-91577abffe81",
+   "type": "foreshadow",
+   "name": "帕林库洛的期望（海因遗愿）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-eb82994dfdef",
+   "type": "setting",
+   "name": "《Zeitlos·Wind》分解魔法",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 28,
+  "pseudo_date": "2000-01-29",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

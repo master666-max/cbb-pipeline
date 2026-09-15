@@ -1,0 +1,704 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "物品",
+    "name": "手环"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 56,
+     "quote": "这是帕林库洛为作为『异邦人』的我们解决不便之处而准备的『手环』。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 37,
+     "text": "帕林库洛给『异邦人』兄妹的装饰品（对外的功能说明：适应环境/语言互通/稳定暴走魔力）——真身=精神魔法术式的关键（记忆改篡的锚点，斯诺劝即刻破坏，主角拒绝：『无论·如何都不能拿下来的最为重要的东西』之植入执念）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-35c7acb56908",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "缇莉·琉克"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 218,
+     "quote": "姓名：缇莉·琉克HP212/222MP201/205职业：魔法使",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 37,
+     "text": "史诗探索者队伍队长（魔法使）：【状态】HP212/222 MP201/205 等级19 力量4.41 体力5.15 技巧3.32 敏捷3.21 贤能7.21 魔力11.09 素质1.33；先天风魔法1.67 后天魔法战斗1.12——连场战第二场对手（次元之冬压制认输）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-0cd494fd698f",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "波鲁扎克"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 242,
+     "quote": "姓名：波鲁扎克·阿尔德HP340/351MP0/0职业：剑士",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 37,
+     "text": "史诗探索者最高级别剑士（队长）：【状态】HP340/351 等级20 力量10.40 体力5.85 技巧8.26 敏捷10.31 贤能7.09 魔力0 素质1.12；先天反骨1.21 后天剑术1.56——贤能高知性+善意（反对空降会长是为新人好）；Foam 战中自认完败；与格连/雷鲁/帕林库洛/海因同代儿时玩伴（ch0034 波尔札克实名对账）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-b08a34f3cfb6",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "组织",
+    "name": "史诗探索者"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 354,
+     "quote": "正如『史诗探索者/搜求英雄谭之人（EpicSeeker）』这个名字所示，这是个以探寻英雄为目的的公会。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 37,
+     "text": "劳拉维亚直辖公会『史诗探索者/搜求英雄谭之人（EpicSeeker）』：『为劳拉维亚探寻英雄』为国策方针（帕林库洛面试聚集的怪人集团——成员约三十人）；会长空席（三副会长分担：帕林库洛/雷鲁/斯诺）；连场战后主角空降就任会长（成员全员接纳=实力主义+英雄梦想集团的本质）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-572e252a5e15",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 390,
+     "quote": "她从六年前开始，就已经担任这个公会的副会长了。",
+     "vol": 1
+    },
+    {
+     "chapter": 37,
+     "line": 440,
+     "quote": "你在不久之前还不是什么『相川·涡波』，而是报上了『基督·欧亚』这一名字。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 37,
+     "text": "老牌副会长（六年前≈十岁就任——与帕林库洛/雷鲁比肩）；与主角年龄相仿；属性『无』与『火』"
+    },
+    {
+     "category": "technique",
+     "chapter": 37,
+     "text": "★振动魔法+通信技术：『纠缠性质的魔力』注入魔石+古代魔法再现声音=远距扩音通信（个人持有领先世界数阶段的技术——飞鸽传书世界中的手机）；与次元魔法结合=惊异武器（帕林库洛预言）"
+    },
+    {
+     "category": "event",
+     "chapter": 37,
+     "text": "忠告：识破手环=精神魔法术式关键+劝破坏（主角拒绝后不强逼：『我确实给过你忠告了…这一点你要记住』）；自称『基督·欧亚』之名『从你那里』听来"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-783cd0b90fc4",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 86,
+     "quote": "「好的，我的名字是相川·涡波。是14级的冰结属性魔法使。",
+     "vol": 1
+    },
+    {
+     "chapter": 37,
+     "line": 524,
+     "quote": "有什么地方不对劲。有什么东西被我忘掉了……",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 37,
+     "text": "★改篡后人格：记忆=兄妹迷失异世界+帕林库洛两次救命+火灾失忆（自报14级冰结属性魔法使/脸上烧伤痕迹自认火灾遗留）；植入执念（手环绝不可摘/向救命恩人报恩的责任感）；违和感持续（『有什么被我忘掉了』纽扣扣错感）——但与玛利亚同床时的幸福仍觉『无法接受』"
+    },
+    {
+     "category": "event",
+     "chapter": 37,
+     "text": "连场战全胜就任会长（少女剑士/缇莉/波鲁扎克+全员；Foam 附剑看破轨迹+故意受伤战术被波鲁扎克识破自认完败）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-3910a7f26162",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "玛利亚",
+    "rel_type": "兄妹(记忆植入)",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 36,
+     "quote": "这名黑发少女是我的妹妹啊。是比什么都重要的，我不惜牺牲生命也要予以守护的存在",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 37,
+     "text": "改篡植入的兄妹设定：玛利亚=妹妹/已故母亲所托守护对象/自幼体弱多病——『基督·欧亚时代的记忆全部被抹（她实际是他的所有物宣言对象）』；名字出口时头痛（改篡痕迹）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-d43a120caa97",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "救命恩人(植入记忆)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 9,
+     "quote": "他·是·我·的·救·命·恩·人帕林库洛·勒伽西。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 37,
+     "text": "改篡后认知：两次救命恩人（迷宫初遇+火灾）+手环/义眼供给者+公会介绍人——报恩责任感植入（实际=拘束+精神改篡者）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-a6b457b452f8",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "辅佐约定(手环忠告)",
+    "subject": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 463,
+     "quote": "「不用在意。但是，如果到了相信我刚才的话的时候，就破坏那个手环吧。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 37,
+     "text": "与帕林库洛的约定=以通信魔法辅助会长+其它随意；对主角的忠告=破坏手环取回自我（被拒后不强逼但要求记住忠告已给）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-af5b01a7e299",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "斯诺·沃克",
+     "波鲁扎克",
+     "相川涡波",
+     "缇莉·琉克"
+    ],
+    "instant": null,
+    "kind": "就任",
+    "name": "公会入会连场战",
+    "tick": 29,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 133,
+     "quote": "「——因为，涡波可是要成为『史诗探索者』的公会会长的啊。」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 37,
+     "text": "帕林库洛宣告『涡波要成为公会会长』+连场战测试（伤到一下就重议的激将法）；少女剑士（挑飞武器）/缇莉（次元之冬压魔法）/波鲁扎克（Foam 附剑+故意受伤被识破自认完败）→全员无败就任；斯诺辞战（『根本赢不了的』）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-b8e4c8d5bc9c",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 37,
+    "entities": [
+     "手环",
+     "斯诺·沃克",
+     "相川涡波"
+    ],
+    "name": "手环的破坏条件",
+    "note": "斯诺：『到了相信我的时候，就破坏那个手环吧。那样你就能取回自我』——记忆恢复的开关=手环破坏；违和感的积累与主角线的回归钩",
+    "payoff_chapter": null,
+    "setup_chapter": 37,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 463,
+     "quote": "就破坏那个手环吧。那样的话，我觉得你就能取回自我了。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 37,
+     "text": "卷四主角线总钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.92,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-01836da06d22",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 37,
+    "entities": [
+     "帕林库洛",
+     "格连",
+     "相川涡波",
+     "舞斗大会"
+    ],
+    "name": "帕林库洛的英雄剧本",
+    "note": "计划书：迷宫前人未至→正道延长→接格连最强→舞斗大会优胜→大陆威名→战争总大将——与 ch0023 弗茨亚茨的拉丝缇娅拉英雄谭计划同构（劳拉维亚版复刻？其真计划=在两国复制英雄?）；帕林库洛被强制召回本国（将官叙任）",
+    "payoff_chapter": null,
+    "setup_chapter": 37,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 367,
+     "quote": "于『舞斗大会』中获胜。大陆全土都被其威名震动",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 37,
+     "text": "反派计划复刻钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-13c6198661fa",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 37,
+    "fact": "帕林库洛改篡的具体形态：①兄妹设定（玛利亚=妹妹/体弱多病/母亲遗托）②救命恩人设定（迷宫初遇+火灾二次救命）③火灾失忆（无死者认知）④手环=绝对必要品的执念（术式锚点）⑤义眼供给（玛利亚失明由来的再解释）⑥基督·欧亚期记忆全抹——但违和感（纽扣扣错感）无法消除（相川涡波的核心未触：『我不会触及相川涡波的核心』ch0029 之兑现）",
+    "name": "记忆改篡的植入人格",
+    "tick": 29
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 455,
+     "quote": "「总而言之，那个手环是最奇怪的。那·个·时·候，你根本没有戴着这样的手环。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 37,
+     "text": "改篡全貌（与 ch0029 对账）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-1dc5a192a8b5",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 37,
+    "fact": "斯诺·沃克的技术：『纠缠性质的魔力』注入魔石+『古代魔法』声音再现=远距扩音通信（复数魔石同时发声如扩音器阵列）；领先世界数阶段的个人技术（魔石线只能传达魔力不能传声）；与次元魔法结合=惊异武器（帕林库洛评价）——辅佐会长的约定手段",
+    "name": "振动通信魔法",
+    "tick": 29
+   },
+   "evidence": [
+    {
+     "chapter": 37,
+     "line": 428,
+     "quote": "（没错。将我的『纠缠性质的魔力』注入魔石当中，再运用『古代魔法』将声音再现出来。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 37,
+     "text": "斯诺能力体系"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-258fa971de36",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★卷四开篇（改篡后世界观）：主角记忆被改篡——兄妹设定植入（玛利亚=妹妹！）、帕林库洛=救命恩人（两次救助）、火灾失忆、义眼/手环（术式关键）、14级冰结属性魔法使身份自报——ch0029 改篡的具体形态全展",
+   "★斯诺·沃克核心角色化：史诗探索者老牌副会长（六年前=约十岁就任）；『纠缠性质的魔力』+古代魔法=魔石扩音通信（领先世界数阶段的技术）；识破手环=精神魔法术式关键+劝破坏（主角拒绝）；『从你那里』听来基督·欧亚之名",
+   "★史诗探索者=『为劳拉维亚探寻英雄（EpicSeeker）』公会：帕林库洛面试聚集的怪人集团——空降会长全票通过之怪象的解释；连场战全胜就任",
+   "★帕林库洛剧本说：英雄计划书（迷宫攻略→正道延长→接格连最强→舞斗大会优胜→战争总大将）——与 ch0023 弗茨亚茨英雄谭计划同构（他的真计划复刻?）"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=29→tick=29→2000-01-30。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行13828-14387（CHAPTER 0037，560行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批3 · CHAPTER 0037（第四卷-第一章-劳拉维亚国的全新物语，摄入序29→tick29→伪锚点2000-01-30）"
+ }
+}

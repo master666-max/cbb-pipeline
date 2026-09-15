@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "地点(国/势力)",
+  "name": "古尔亚德"
+ },
+ "evidence": [
+  {
+   "chapter": 31,
+   "line": 7,
+   "quote": "抵达位于联合国南部的古尔亚德时，人数只剩计划中的一半。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 31,
+   "text": "联合国南部的海洋国家（逃亡目的地实景）：越境后追兵锐减（无手续士兵不能擅自越境）；风潮自由的廉价旅馆街；有迷宫入口（与瓦尔德侧独立）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-58d777b73662",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

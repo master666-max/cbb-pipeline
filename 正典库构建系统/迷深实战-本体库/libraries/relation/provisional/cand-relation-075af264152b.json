@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "劳拉维亚",
+  "rel_type": "庇护于(史诗探索者)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 31,
+   "line": 267,
+   "quote": "那家伙如今好像正处于劳拉维亚国的庇护之下。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 31,
+   "text": "据塞拉-拉古涅情报：逃入弗茨亚茨最难出手的劳拉维亚（两国关系最险恶），回到过去所属的『史诗探索者』公会谋划某事——与 ch0029 拘束现场对账（帕林库洛在劳拉维亚本部出入）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-075af264152b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

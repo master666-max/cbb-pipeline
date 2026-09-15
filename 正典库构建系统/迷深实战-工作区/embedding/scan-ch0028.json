@@ -1,0 +1,35 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.8522
+  }
+ ],
+ "pairs": [
+  [
+   "『亡失的殉教者』",
+   "『哀哭之仔的黑暗』",
+   0.7458
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛·勒伽西",
+   0.8522
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 3,
+  "library": 193,
+  "dup_suspect": 0,
+  "uncertain": 1
+ }
+}

@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "unit": "U-C03 批3 · CHAPTER 0034（海因与帕林库洛的战鬥，摄入序28→tick28→伪锚点2000-01-29）",
+    "source": {"path": "语料分析/corpus/clean_full.txt", "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb", "verified_at": "2026-09-16", "slice": "行13708-13827（CHAPTER 0034，120行）"},
+    "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+    "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且关系抽取中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+    "reference_time": "伪锚点 2000-01-01+i；本章摄入序=28→tick=28→2000-01-29。禁墙钟。海因 POV 终章。",
+    "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+    "cross_chapter_notes": [
+      "★海因之死完全版（ch0029 死讯/特典0033 战斗前置的正典侧终笔）：对少女的两份爱（异性爱慕+子女之爱更强——初遇时她刚出生）；『初恋/女儿/主君』三重定位；自我解除帕林库洛咒术（Zeitlos·Wind 分解魔法）以自身之力站立；决斗败因=帕林库洛不取性命 vs 海因必死决心；遗愿=帕林库洛的期望实现",
+      "★童年组全貌：海因×帕林库洛=儿时玩伴决斗无数次（海因从未真正赢过——『神童』帕林库洛）；格连/雷鲁/波尔扎克同代（『活着的男生全员到齐』——ch0029 雷鲁/劳拉维亚线的伏线人物波尔扎克首名）",
+      "★莱纳=海因的义弟！（赫勒比勒夏因家养子关系补完——ch0012 莱纳身世之谜半解）"
+    ],
+    "alias_policy": "同 STATE 固化决议。",
+    "confidence_calibration": "同 STATE 固化决议。",
+    "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。"
+  },
+  "candidates": [
+    {"type": "entity", "library": "character", "confidence": 0.88,
+     "canonical": {"name": "波尔札克", "entity_type": "人物"},
+     "observations": [{"category": "summary", "text": "海因-帕林库洛的儿时玩伴之一（『雷鲁那家伙既然有参加，那波尔札克应该也不会缺席』——追兵行列侧；与格连/雷鲁同代", "chapter": 34}],
+     "evidence": [{"vol": 1, "chapter": 34, "line": 52, "quote": "雷鲁那家伙既然有参加，那波尔札克应该也不会缺席。"}]},
+    {"type": "entity", "library": "character", "confidence": 0.9,
+     "canonical": {"name": "海因", "entity_type": "人物"},
+     "observations": [
+       {"category": "summary", "text": "★终战完全版：两份爱自白（异性爱慕+子女之爱更强——『我的初恋，我的女儿，我的主君』）；自我解除咒术（Zeitlos·Wind=分解对手魔法的高级风魔法）以自身之力站立——拒绝帕林库洛治疗；生命削减魔法（灵魂燃烧级狼烟）引开包围网", "chapter": 34},
+       {"category": "event", "text": "最后决斗：胜因单纯（帕林库洛不取性命 vs 自己必死决心）——阻挡数分钟=自己胜利；遗愿=帕林库洛的期望实现（『我还不够成熟，无法拯救帕林库洛这位朋友』）；『骑士海因这枚棋子倒下了』", "chapter": 34}],
+     "evidence": [
+       {"vol": 1, "chapter": 34, "line": 10, "quote": "我的初恋，我的女儿，我的主君——如果是为了拉斯缇亚拉大人，我就能战至海枯石烂。"},
+       {"vol": 1, "chapter": 34, "line": 117, "quote": "我希望『帕林库洛的期望』能实现，这便是我最后的愿望。"}]},
+    {"type": "relation", "library": "relation", "confidence": 0.88,
+     "canonical": {"subject": "莱纳", "rel_type": "义弟", "object": "海因", "claim": false},
+     "observations": [{"category": "relation", "text": "海因与义弟莱纳的相遇（赫勒比勒夏因家养子关系正面确认——ch0012 莱纳『被收养来的贵族』之谜解）", "chapter": 34}],
+     "evidence": [{"vol": 1, "chapter": 34, "line": 106, "quote": "接着是与义弟莱纳的相遇。与友人帕林库洛的相遇。"}]},
+    {"type": "relation", "library": "relation", "confidence": 0.88,
+     "canonical": {"subject": "帕林库洛", "rel_type": "儿时玩伴(神童)", "object": "海因", "claim": false},
+     "observations": [{"category": "relation", "text": "童年无数次决斗——赫家史上第一的海因从未真正赢过（『神童』之由）；海因视其为恩人+朋友+戏曲头号反派；最后决斗双方互认期望", "chapter": 34}],
+     "evidence": [{"vol": 1, "chapter": 34, "line": 58, "quote": "被称作赫勒比勒夏因家史上第一的骑士的我，不曾在他手上夺得一次胜利过。所以他才会是『神童』。"}]},
+    {"type": "relation", "library": "relation", "confidence": 0.9,
+     "canonical": {"subject": "帕林库洛", "rel_type": "决斗致死", "object": "海因", "claim": false},
+     "observations": [{"category": "relation", "text": "最后决斗：海因自解咒术后以必死决心争取时间→帕林库洛剑穿胸膛（其不取性命的战斗方式 vs 海因必死决心=胜因）；海因满足而死", "chapter": 34}],
+     "evidence": [{"vol": 1, "chapter": 34, "line": 109, "quote": "在争取了充足的时间后，帕林库洛的剑刺穿了我的胸膛。"}]},
+    {"type": "event", "library": "event", "confidence": 0.9,
+     "canonical": {"name": "海因最期（瓦尔德郊外）", "kind": "战死", "tick": 28, "instant": null, "time_verbatim": "圣诞祭当日黄昏（承ch0026撤离）"},
+     "entities_involved": ["海因", "帕林库洛", "拉丝缇娅拉", "莱纳"],
+     "observations": [{"category": "event", "text": "跳下狼背道别→生命削减狼烟引开包围→帕林库洛登场对话（咒术解放之谢/自解宣言/决斗受诺）→最后决斗（争取时间=胜）→刺胸战死（遗愿=帕林库洛的期望）——ch0029 死讯/ch0033 特典战斗的正典侧终笔", "chapter": 34}],
+     "evidence": [{"vol": 1, "chapter": 34, "line": 118, "quote": "就这样，骑士海因这枚棋子倒下了。"}]},
+    {"type": "foreshadow", "library": "foreshadow", "confidence": 0.88,
+     "canonical": {"name": "帕林库洛的期望（海因遗愿）", "setup_chapter": 34, "payoff_chapter": null, "tier": "核心", "note": "海因最后愿望=帕林库洛的期望实现——其真目的（材料创造/吞石/精神改篡背后的终极目标）被挚友托付式祝福——反派的救赎线钩"},
+     "entities_involved": ["帕林库洛", "海因"],
+     "observations": [{"category": "foreshadowing", "text": "反派线核心钩", "chapter": 34}],
+     "evidence": [{"vol": 1, "chapter": 34, "line": 117, "quote": "我希望『帕林库洛的期望』能实现，这便是我最后的愿望。"}]},
+    {"type": "setting", "library": "setting", "confidence": 0.85,
+     "canonical": {"name": "《Zeitlos·Wind》分解魔法", "fact": "海因的高级风魔法：分解对手魔法之力——用以自我解除帕林库洛的『咒术』（咒术=超越极限的辅助，解除则濒死者将倒——海因凭自身意志站立推翻此定数）；与 ch0016 之战中干扰Dimension的同名魔法为不同应用", "chapter": 34, "tick": 28},
+     "entities_involved": ["海因", "帕林库洛"],
+     "observations": [{"category": "knowledge", "text": "风魔法体系补完", "chapter": 34}],
+     "evidence": [{"vol": 1, "chapter": 34, "line": 66, "quote": "于是我用风之魔法将之解除。这个魔法是分解对手魔法的高级风魔法。"}]}
+  ]
+}
