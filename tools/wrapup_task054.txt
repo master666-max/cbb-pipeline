@@ -1,0 +1,17 @@
+import io, re
+
+base = r"D:\zcode专用！！！！危险！！！！！！！！！"
+p = base + r"\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+
+m = re.search(r"- 自最后反思以来 wrap-up 次数：(\d+)（", s)
+n = int(m.group(1)) + 1
+s = s.replace("wrap-up 次数：" + m.group(1) + "（", "wrap-up 次数：" + str(n) + "（", 1)
+s = s.replace("）\n- 最后反思：", "；" + str(n) + "①迷深实战指令链全量对账（task-054）：9/9 引用在位；逮状态残留两处（7687已监听已过时daemon关/评分器格式鸿沟未声明）→改探活条款+cbb/tools适配条款）\n- 最后反思：", 1)
+
+anchor_line = [l for l in s.splitlines() if "task-053-迷深实战工单v1.2资源整合" in l and l.startswith("- `")][0]
+t54 = "- `trajectories/2026-09-15/task-054-迷深实战指令链全量对账.md` — 三层对账：9/9 引用在位；修正两处状态残留（§0④ 7687 已监听→探活条款，daemon 关时辅助项 blocked 不阻塞主链；U-C00 补 score_tier1.py 全路径+Tier1 形态适配条款 cbb/tools，评分器金标不改，R-018）；教训=状态不写进指令文件，只写探活方法与降级路径"
+s = s.replace(anchor_line, anchor_line + "\n" + t54, 1)
+
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("index updated: count ->", n, "; task-054 line appended")
