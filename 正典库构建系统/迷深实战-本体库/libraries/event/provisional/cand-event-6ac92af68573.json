@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "斐勒卢托",
+   "海因"
+  ],
+  "instant": null,
+  "kind": "回忆",
+  "name": "海因与素体初遇",
+  "tick": 18,
+  "time_verbatim": "十八岁拔擢后没过多久（L7）"
+ },
+ "evidence": [
+  {
+   "chapter": 24,
+   "line": 7,
+   "quote": "十八岁那年，在刚被拔擢为『天上之七骑士』后没过多久，我与大小姐邂逅了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 24,
+   "text": "大圣堂地下石门内一根蜡烛一张床的房间：三个月大素体（肉体已十几岁）初见；斐勒卢托全交代（再诞魔法素体/教育指令/国家+莱文教+始祖遗言三重意志）；授名拉丝缇娅拉；『你为什么会露出如此悲伤的表情』之初始洞察"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6ac92af68573",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

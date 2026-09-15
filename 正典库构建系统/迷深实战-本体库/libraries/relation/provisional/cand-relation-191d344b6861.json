@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "施加诅咒(助力解放)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 24,
+   "line": 383,
+   "quote": "「……帕林库洛。……你这家伙、对我施加了魔法吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 24,
+   "text": "很久前开始施加的诅咒（力量增强+迷惘扫清+引导决意）；海因以背叛为欢喜（『多亏了你的魔法，我才终于将这句话说出了口』）——ch0023 灵魂代价既视感之谜的半面"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-191d344b6861",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

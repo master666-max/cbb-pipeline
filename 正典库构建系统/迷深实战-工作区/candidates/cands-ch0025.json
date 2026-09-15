@@ -1,0 +1,760 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "代价咏唱体系"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 277,
+     "quote": "即使没有MP也能释放魔法的方法。以记忆为代价的咏唱，以感情为代价的咏唱，以生命为代价的咏唱。",
+     "vol": 1
+    },
+    {
+     "chapter": 25,
+     "line": 268,
+     "quote": "将过去当做薪柴，令现在燃烧得更加旺盛。这正是火炎魔法的神髓。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 25,
+     "text": "阿尔缇传授的咏唱法则：咏唱台词本身即术式——以记忆为代价/以感情为代价/以生命为代价的咏唱（无MP亦能施法）；代价不限于失去，现有感情的增幅也是代价一环；『将过去当做薪柴，令现在燃烧得更加旺盛。这正是火炎魔法的神髓』"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 25,
+     "text": "高危：高位火炎魔法会在不知不觉中燃烧过去记忆（阿尔缇自身因使用过度发生过记忆障碍）——玛利亚的■■（故乡人名）已烧尽"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-ede8560e06d7",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "血传魔法"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 92,
+     "quote": "你需要直接饮用注满我魔法术式的血。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 25,
+     "text": "直接饮用注满魔法术式之血的传承法：与吞魔石本质相同（魔石生效更优）但生效条件极苛刻——给予方与接受方的共通性（同样的烦恼/相似的性格/酷似的人生经历）；此时代已无人问津；阿尔缇以之为玛利亚刻入全部火炎魔法"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-66f4b91ef241",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "玛利亚"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 20,
+     "quote": "既要干农活、又要忙着狩猎、还要帮忙做家务。虽然每一天都很忙碌，但是大家脸上都洋溢着笑容。",
+     "vol": 1
+    },
+    {
+     "chapter": 25,
+     "line": 371,
+     "quote": "能·待·在·主·人·身·边·的，不·是·拉·丝·缇·娅·拉·小·姐，而·是·我——！",
+     "vol": 1
+    },
+    {
+     "chapter": 25,
+     "line": 45,
+     "quote": "这些回忆都作为火·炎·魔·法·的·『代·价』·被·燃·烧·殆·尽·了。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 25,
+     "text": "★身世补完：法尼亚边境黑发黑目之族的村落——『眼睛』令其无所适从（农活/狩猎/家务皆被看破本质而无法继续）；军队驻扎→谏言参战→村毁（『眼睛』加速但村子地理位置注定毁灭）；■■（教其『眼睛是上天的礼物』者）面容已被代价烧尽"
+    },
+    {
+     "category": "trait",
+     "chapter": 25,
+     "text": "狂爱化全程：恋慕（想要与主人并肩的价值）→力量渴求（饮血/代价咏唱/连日修练至气绝）→黑炎感情（『能待在主人身边的不是拉丝缇娅拉而是我』）→自我否定摇摆→诱导主角『不喜欢她』宣言的心机→晨袭（ch0023 对账）→同化宣言（『只看着我活下去』）"
+    },
+    {
+     "category": "evolution",
+     "chapter": 25,
+     "text": "无咏唱技术习得（窍门即成，阿尔缇称需数年）；以感情为燃料的省魔力操作——多蛇同时操控"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-84bb5b98142d",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 860,
+     "quote": "「『过去的我（阿尔缇）』和『满面疮痍的英雄（涡波）』能够两人独处的机会，就只有今天而已……」",
+     "vol": 1
+    },
+    {
+     "chapter": 25,
+     "line": 300,
+     "quote": "「虽然我没有成功，但是如果你成功的话我的留恋就能扫清了。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 25,
+     "text": "★计划真相：利用玛利亚实现自己的『悲恋的实现』——『过去的我（阿尔缇）』与『满面疮痍的英雄（涡波）』一对一互角之局只在今天（拉丝缇娅拉无法行动时）；亲和性的真意=人生酷似（同为无果悲恋者）"
+    },
+    {
+     "category": "trait",
+     "chapter": 25,
+     "text": "对玛利亚的温柔中夹自嘲（『我也只是为了这一点才利用了玛利亚而已』）；对失败自认（『真想以玛利亚所期望的形式结束这一切…可是失败了』）；『结束方是开始』宣言；同化时悲戚笑容"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 25,
+     "text": "血传魔法/代价咏唱/无咏唱技术/火焰感知通信的授业者；自称『恋爱无果的少女们的同伴』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-bb0bba0c030f",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 518,
+     "quote": "这已经是我第三次遇到他了。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 25,
+     "text": "第三次接触玛利亚（奴隶市场/酒馆老友席/街口拦截）：断言主角『无论如何也无法对别人见死不救』+击溃玛利亚存在根基（『你一无所有』『只是出于怜悯』『搞不好连这个家都会被直接舍弃掉』）——黑炎决口的最后推手"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-19d6b6e166bc",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "玛利亚",
+    "rel_type": "血传魔法(全部火炎魔法)",
+    "subject": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 124,
+     "quote": "「这样一来我所持有的所有火炎魔法，就都刻在你的血中了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 25,
+     "text": "饮血刻术式（世界炎蛇/Flame·Flamberge 及全部火炎魔法）+代价咏唱法则+Firefly 变奏拓展——ch0016 亲授之源头侧"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-5217fe296f44",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "玛利亚",
+    "rel_type": "同化(悲恋实现)",
+    "subject": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 880,
+     "quote": "在引燃这一切的同时，我和阿尔缇络合在一起，理解了接下来应做之事。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 25,
+     "text": "意识与火焰交融、人生共感（亲和性真意）——玛利亚点燃一切与阿尔缇夙愿（悲恋的实现）合流；章末于燃烧之家共同迎主角"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-8907b59eafc1",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "玛利亚",
+    "rel_type": "言语击溃(加速决口)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 576,
+     "quote": "「是了，小妹妹你一无所有。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 25,
+     "text": "『你一无所有』论——与血传/代价咏唱合力将其推入业火同化"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-9662f6a663ae",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "玛利亚",
+     "阿尔缇"
+    ],
+    "instant": null,
+    "kind": "授业",
+    "name": "血传与代价咏唱修练",
+    "tick": 19,
+    "time_verbatim": "三天前起（L60）"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 60,
+     "quote": "我与『火之理的盗窃者』在真正意义上的邂逅，是在与主人他们一起参加祭典的那一天。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 25,
+     "text": "祭典归途独处=真正邂逅→恋爱相谈（阿尔缇『非常好』评价）→血传邀请（饮血刻全部火炎魔法）→世界炎蛇/FlameFlamberge 数小时习得→代价咏唱体系（记忆/感情/生命薪柴）→连日自主修练至气绝→无咏唱习得+感情燃料法→黑炎感情初萌（『不是拉丝缇娅拉而是我』的惊觉自我否定）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-2611fb3de8f1",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "拉丝缇娅拉",
+     "玛利亚",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "对账",
+    "name": "玛利亚侧对账（诀别与诱导）",
+    "tick": 19,
+    "time_verbatim": "圣诞祭前一日（L394-397）"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 407,
+     "quote": "那滴眼泪划过了脸颊，在落到地上之前，便化作一缕火焰消失了。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 25,
+     "text": "门外偷听诀别对话（拉丝缇娅拉恳求）→一滴黑炎泪→主角未能应答的安心→『我本以为主人你喜欢她』诱导（心机全解：预判其合理主义思维必答『不喜欢』并自我定型）→主角剥夺感情后大笑（炯眼初失效震惊）→帕林库洛街遇击溃（一无所有论）→阿尔缇安抚（明日确认说）→彻夜同墙修练（火与冰）→晨袭→目送"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-de26e28d0912",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "玛利亚",
+     "相川涡波",
+     "阿尔缇"
+    ],
+    "instant": null,
+    "kind": "决战开局",
+    "name": "点燃一切（业火宣言）",
+    "tick": 19,
+    "time_verbatim": "圣诞祭当天（L677-678）"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 920,
+     "quote": "「把主人、还给、我……还、给……」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 25,
+     "text": "主人携拉丝缇娅拉归来的时刻：燃烧之家+与阿尔缇同化（羁绊尽作燃料/踌躇机能早已烧尽）+业火宣言『把主人、还给、我』——焚毁一切以实现悲恋；章末悬崖"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-833ede5493aa",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "玛利亚",
+     "相川涡波",
+     "阿尔缇"
+    ],
+    "name": "业火决战",
+    "note": "同化玛利亚×阿尔缇 vs 归来的涡波×拉丝缇娅拉于燃烧之家——『纵使「眼睛」告诉我这样做会使所爱之人像■■一样化作灰烬消逝』（■■=悲恋终局暗示）；阿尔缇的悲恋实现=今日",
+    "payoff_chapter": null,
+    "setup_chapter": 25,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 925,
+     "quote": "因为只有这样做，才能实现我的悲恋啊……",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 25,
+     "text": "卷三终局"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.92,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-c9240b0382ce",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "玛利亚"
+    ],
+    "name": "玛利亚的燃烧记忆",
+    "note": "■■（教其眼睛知识者/故乡人名）已被代价烧尽——『想不起来』；纵使结局临头眼睛仍示警（所爱之人将如■■般化灰）——烧尽之名=悲恋结局的既视",
+    "payoff_chapter": null,
+    "setup_chapter": 25,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 926,
+     "quote": "纵使『眼睛』告诉我，这样做会使所爱之人像■■一样化作灰烬消逝，",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 25,
+     "text": "记忆代价之暗面"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-79bfd115fd5a",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "阿尔缇"
+    ],
+    "name": "阿尔缇的悲恋往事",
+    "note": "『我跟你一样呢』——守护者自身无果悲恋的过去（人生酷似=亲和性条件）；ch0007 恋爱愿望之底色",
+    "payoff_chapter": null,
+    "setup_chapter": 25,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 107,
+     "quote": "「也，也就是说、阿尔缇也经历过一段无果的恋爱……？」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 25,
+     "text": "守护者过去线"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-1ed5aa8da772",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 25,
+    "fact": "法尼亚边境乡下黑发黑目一族村落：农活/狩猎/家务的共同体生活；『眼睛』迫使看破一切本质而无所适从（根本性改良法浮现/传统狩猎无效率感）；战争流言→军队驻扎→玛利亚谏言参战→村毁——『眼睛』加速但村子地理位置注定毁灭（黑发黑目之族在这个时代注定毁灭的命运）；■■曾教其『那双眼睛是上天赠予你的礼物』（面容已烧忘）",
+    "name": "玛利亚身世（法尼亚边境）",
+    "tick": 19
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 35,
+     "quote": "村子的毁灭是它的命运。而我的『眼睛』确实导致了它加速毁灭。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 25,
+     "text": "ch0013 灭族说之完全版"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-ea4306918ca5",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "火焰感知通信"
+   },
+   "evidence": [
+    {
+     "chapter": 25,
+     "line": 190,
+     "quote": "曾几何时我也见过一样的光景。跟主人一起去迷宫第十层的时候，我也见过火焰像这样开口说话。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 25,
+     "text": "阿尔缇以火焰为感知器官的魔法（远距掌握主人动向/经厨房之火传话玛利亚）——『以后有机会我也会把这个魔法教给你的』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-457aeed934d0",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★玛利亚暗线全解：血传魔法真相（饮阿尔缇之血=刻全部火炎魔法）+代价咏唱体系（记忆/感情/生命为薪）+记忆燃烧（■■化之名——故乡/家族之名已烧尽想不起）+黑炎狂爱化+与阿尔缇同化（亲和性=人生酷似的真正意义：『过去的我（阿尔缇）』与『满面疮痍的英雄（涡波）』一对一之局）",
+   "★阿尔缇计划真相：利用玛利亚实现自身『悲恋的实现』——『如果选在今天，拉丝缇娅拉就会处于无法行动的状况』（拉离场后单挑涡波）；ch0023 狂化犯人=咏唱副作用（感情增幅），玛利亚自发——阿尔缇提供火种但自认失败（『真想以玛利亚所期望的形式结束』）",
+   "★ch0023 主角视角事件的玛利亚侧完全对账：诀别早餐/感情剥夺大笑（炯眼初失效）/帕林库洛街遇（第三次）/晨袭狂化/目送出发——全部同一时刻双视角；玛利亚诱导『我不喜欢她』宣言的心机自白",
+   "★玛利亚身世补完：法尼亚边境黑发黑目之族（战争流言→军队驻扎→谏言参战→村毁——『眼睛』加速但命运注定）；■■（教其技能知识者）面容已烧忘",
+   "章末悬崖：燃烧的家+业火宣言『把主人还给我』+主角携拉丝缇娅拉归来——卷三决战开局"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=19→tick=19→2000-01-20。禁墙钟。玛利亚 POV 章（含回忆段）。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行10130-11058（CHAPTER 0025，929行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批2 · CHAPTER 0025（第三卷-第三章『我』的圣诞祭的结束，摄入序19→tick19→伪锚点2000-01-20）"
+ }
+}

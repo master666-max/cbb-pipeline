@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entities": [
+   "阿尔缇"
+  ],
+  "name": "阿尔缇的悲恋往事",
+  "note": "『我跟你一样呢』——守护者自身无果悲恋的过去（人生酷似=亲和性条件）；ch0007 恋爱愿望之底色",
+  "payoff_chapter": null,
+  "setup_chapter": 25,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 25,
+   "line": 107,
+   "quote": "「也，也就是说、阿尔缇也经历过一段无果的恋爱……？」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 25,
+   "text": "守护者过去线"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-1ed5aa8da772",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

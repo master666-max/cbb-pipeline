@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "血传魔法(全部火炎魔法)",
+  "subject": "阿尔缇"
+ },
+ "evidence": [
+  {
+   "chapter": 25,
+   "line": 124,
+   "quote": "「这样一来我所持有的所有火炎魔法，就都刻在你的血中了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 25,
+   "text": "饮血刻术式（世界炎蛇/Flame·Flamberge 及全部火炎魔法）+代价咏唱法则+Firefly 变奏拓展——ch0016 亲授之源头侧"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5217fe296f44",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

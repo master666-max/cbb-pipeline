@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "偷袭斩伤",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 27,
+   "line": 35,
+   "quote": "「使徒西斯，你有点碍事啊——！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 27,
+   "text": "自下往上斩伤胴体（缇亚对帕林库洛无交情无提防的位置安排）+二击被海因挡下（海因侧腹被砍）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b0269001a1c2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

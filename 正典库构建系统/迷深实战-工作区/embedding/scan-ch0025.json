@@ -1,0 +1,55 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛利亚·迪斯特拉斯",
+   "similarity": 0.8547
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "阿尔肯",
+   "similarity": 0.8777
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.8522
+  }
+ ],
+ "pairs": [
+  [
+   "代价咏唱体系",
+   "神之加护",
+   0.5581
+  ],
+  [
+   "血传魔法",
+   "血术",
+   0.7353
+  ],
+  [
+   "玛利亚",
+   "玛利亚·迪斯特拉斯",
+   0.8547
+  ],
+  [
+   "阿尔缇",
+   "阿尔肯",
+   0.8777
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛·勒伽西",
+   0.8522
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 5,
+  "library": 182,
+  "dup_suspect": 0,
+  "uncertain": 3
+ }
+}

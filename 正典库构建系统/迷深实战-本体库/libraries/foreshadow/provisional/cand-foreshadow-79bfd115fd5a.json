@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚"
+  ],
+  "name": "玛利亚的燃烧记忆",
+  "note": "■■（教其眼睛知识者/故乡人名）已被代价烧尽——『想不起来』；纵使结局临头眼睛仍示警（所爱之人将如■■般化灰）——烧尽之名=悲恋结局的既视",
+  "payoff_chapter": null,
+  "setup_chapter": 25,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 25,
+   "line": 926,
+   "quote": "纵使『眼睛』告诉我，这样做会使所爱之人像■■一样化作灰烬消逝，",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 25,
+   "text": "记忆代价之暗面"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-79bfd115fd5a",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

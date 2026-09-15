@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "授业",
+  "name": "血传与代价咏唱修练",
+  "tick": 19,
+  "time_verbatim": "三天前起（L60）"
+ },
+ "evidence": [
+  {
+   "chapter": 25,
+   "line": 60,
+   "quote": "我与『火之理的盗窃者』在真正意义上的邂逅，是在与主人他们一起参加祭典的那一天。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 25,
+   "text": "祭典归途独处=真正邂逅→恋爱相谈（阿尔缇『非常好』评价）→血传邀请（饮血刻全部火炎魔法）→世界炎蛇/FlameFlamberge 数小时习得→代价咏唱体系（记忆/感情/生命薪柴）→连日自主修练至气绝→无咏唱习得+感情燃料法→黑炎感情初萌（『不是拉丝缇娅拉而是我』的惊觉自我否定）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2611fb3de8f1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

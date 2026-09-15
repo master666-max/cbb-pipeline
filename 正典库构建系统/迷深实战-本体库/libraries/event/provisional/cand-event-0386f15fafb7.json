@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "佩露修娜·库艾伽",
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "海因"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "海因的解放与单骑叛乱",
+  "tick": 18,
+  "time_verbatim": "还剩两天（L424）"
+ },
+ "evidence": [
+  {
+   "chapter": 24,
+   "line": 515,
+   "quote": "就算海因·赫勒比勒夏因这枚棋子会就此倾折也在所不惜——……",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 24,
+   "text": "夜访少女确认觉悟（『就算自己是被造物也没关系』之完全看破）→希望幻灭→帕林库洛诅咒下决意解放（『这种行径我绝不容许』）→全副武装二十层袭击（少女昏厥/少年抵挡超想定）→暗示现状后撤离→伪造任务徵调骑士→总长阻拦轰飞逃亡→潜伏待明日（棋子任务自认：为少年清扫剧场）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0386f15fafb7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

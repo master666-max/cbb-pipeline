@@ -1,0 +1,81 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.9502
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "斐勒卢托",
+   "library_match": "斐勒卢托·利奥斯",
+   "similarity": 0.9077
+  },
+  {
+   "candidate": "佩露修娜·库艾伽",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.8838
+  },
+  {
+   "candidate": "海因",
+   "library_match": "海因·赫勒比勒夏因",
+   "similarity": 0.8803
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.8522
+  },
+  {
+   "candidate": "塞拉·雷迪安特",
+   "library_match": "缇娅拉·弗茨亚茨",
+   "similarity": 0.8574
+  }
+ ],
+ "pairs": [
+  [
+   "斐勒卢托",
+   "斐勒卢托·利奥斯",
+   0.9077
+  ],
+  [
+   "佩露修娜·库艾伽",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.8838
+  ],
+  [
+   "海因",
+   "海因·赫勒比勒夏因",
+   0.8803
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.9502
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛·勒伽西",
+   0.8522
+  ],
+  [
+   "塞拉·雷迪安特",
+   "缇娅拉·弗茨亚茨",
+   0.8574
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 7,
+  "library": 180,
+  "dup_suspect": 1,
+  "uncertain": 5
+ }
+}

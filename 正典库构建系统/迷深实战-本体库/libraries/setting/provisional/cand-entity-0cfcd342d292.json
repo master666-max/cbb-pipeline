@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『次元之冬』"
+ },
+ "evidence": [
+  {
+   "chapter": 26,
+   "line": 166,
+   "quote": "「——魔法『次元之冬（Di·Winter）』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 26,
+   "line": 176,
+   "quote": "我将用于抑制分子运动的魔法延伸为了抑制敌人魔力运动的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 26,
+   "text": "主角新创大魔法（Dimension+Freeze 复合）：以己为中心直径五十米球域降临凛冬——冰结魔法性能飞跃+魔力运动抑制（术式偏差致敌魔法衰退/失败）+肉体动作迟滞（违和感级）——对百人骑士团歼灭性"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0cfcd342d292",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

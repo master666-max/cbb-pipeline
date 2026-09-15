@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『开辟之华炎』"
+ },
+ "evidence": [
+  {
+   "chapter": 27,
+   "line": 252,
+   "quote": "『开辟之华炎』！！」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 27,
+   "text": "炎花大范围魔法（咏唱『绽放吧诞炎』『原初原罪之万障圣火』）：百合状炎花倍增扩散+花芯播撒火粉再开花——鼠算式封锁"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-dcbeb7d93727",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

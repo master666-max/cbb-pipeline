@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "对账",
+  "name": "玛利亚侧对账（诀别与诱导）",
+  "tick": 19,
+  "time_verbatim": "圣诞祭前一日（L394-397）"
+ },
+ "evidence": [
+  {
+   "chapter": 25,
+   "line": 407,
+   "quote": "那滴眼泪划过了脸颊，在落到地上之前，便化作一缕火焰消失了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 25,
+   "text": "门外偷听诀别对话（拉丝缇娅拉恳求）→一滴黑炎泪→主角未能应答的安心→『我本以为主人你喜欢她』诱导（心机全解：预判其合理主义思维必答『不喜欢』并自我定型）→主角剥夺感情后大笑（炯眼初失效震惊）→帕林库洛街遇击溃（一无所有论）→阿尔缇安抚（明日确认说）→彻夜同墙修练（火与冰）→晨袭→目送"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-de26e28d0912",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

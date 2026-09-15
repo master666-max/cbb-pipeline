@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entities": [
+   "佩露修娜·库艾伽",
+   "侯普思·约克鲁",
+   "塞拉·雷迪安特",
+   "弗茨亚茨大圣堂",
+   "拉古涅·卡伊库欧拉",
+   "海因",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "突入",
+  "name": "大圣堂突破战",
+  "tick": 20,
+  "time_verbatim": "圣诞祭当天上午（仪式中午前）"
+ },
+ "evidence": [
+  {
+   "chapter": 26,
+   "line": 42,
+   "quote": "「没错！听好了，要·由·你·去救人！我给你断后！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 26,
+   "text": "吊桥海因断后（Sehr·Wind 开路+高地压制+不鸣警钟）→狼雷迪安特×拉古涅追击（香料克嗅觉/冰封魔剑投掷/四肢剑伤）→侯普思二重阵型二十秒自降（激励送行）→魔法骑士大队（次元之冬首战歼灭）→佩露修娜（过密真冬十秒制压）→帕林库洛门前接应"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-31e980470a68",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

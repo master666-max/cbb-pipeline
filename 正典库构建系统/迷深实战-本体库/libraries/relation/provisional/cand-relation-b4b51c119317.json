@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "倒戈(骑士敕封)",
+  "subject": "雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 26,
+   "line": 561,
+   "quote": "雷迪安特一边转身，一边朝拉古涅酱喊道。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 26,
+   "text": "追击中途被说倒戈（对黑骑士拔剑）+劝降拉古涅（做样子败退论）+狼化载二人逃亡"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b4b51c119317",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

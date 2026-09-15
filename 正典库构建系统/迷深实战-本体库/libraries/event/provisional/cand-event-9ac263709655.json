@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "斐勒卢托",
+   "海因",
+   "相川涡波",
+   "缇亚",
+   "雷琪"
+  ],
+  "instant": null,
+  "kind": "决战",
+  "name": "神殿演说与仪式拒绝",
+  "tick": 20,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 26,
+   "line": 449,
+   "quote": "直·到·成·为·英·雄·为·止的故事、才是我真正的梦想！是我一直以来的梦想！",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 26,
+   "text": "有缘人演出+契约重申演说（『堂堂正正说出你真正的梦想』）→缇亚魔力施压助阵→真梦想吐露+仪式拒绝宣言→雷琪结界压制被强行破除→自死敕命+四骑士敕封→斐勒卢托外援接连被拒（格连/剑圣皆旁观）→雷琪止损判断败局承认"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9ac263709655",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

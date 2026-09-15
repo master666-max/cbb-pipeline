@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "机制确认",
+  "name": "守护者消灭机制再实证",
+  "tick": 21,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 27,
+   "line": 619,
+   "quote": "阿尔缇是因为其它的某种留恋获得实现，从而导致自己消失的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 27,
+   "text": "亲和性崩溃（玛利亚断眼断同化）→力量骤衰；主角推察：留恋达成即失去力量消散——『恐怕连阿尔缇自己也不清楚那份留恋是什么，可能是她本人最无法认同的某种留恋吧』（真身=与玛利亚的羁绊本身?）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3f0cafb463fb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "斐勒卢托"
+ },
+ "evidence": [
+  {
+   "chapter": 23,
+   "line": 1029,
+   "quote": "负责主办这场仪式的，是代理宰相斐勒卢托，以及一个作为元老院代表的特使。",
+   "vol": 1
+  },
+  {
+   "chapter": 24,
+   "line": 16,
+   "quote": "他的名字是斐勒卢托·利奥斯——是担任这个国家代理宰相一职的壮年男性。",
+   "vol": 1
+  },
+  {
+   "chapter": 24,
+   "line": 46,
+   "quote": "让所有人都获得幸福就是你的工作。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 23,
+   "text": "弗茨亚茨代理宰相：圣诞祭仪式的主办者之一（与元老院代表特使共同）；若二人判断仪式无法继续则大小姐免死——海因示下的说服路线"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-7f748ea0f202",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7f748ea0f202-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-7f748ea0f202",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

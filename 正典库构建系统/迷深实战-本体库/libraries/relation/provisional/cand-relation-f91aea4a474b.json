@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "唆使倒戈(悲恋实现)",
+  "subject": "阿尔缇"
+ },
+ "evidence": [
+  {
+   "chapter": 27,
+   "line": 23,
+   "quote": "「没错。正是我唆使玛利亚倒向了我这边，并打造出了这于我有利的状况。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 27,
+   "text": "自认唆使玛利亚倒向己方并打造有利状况——第十之试练=让主角成为玛利亚所有物（含共死选项）的舞台"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f91aea4a474b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "恋爱戏剧计划(导演)",
+  "subject": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 24,
+   "line": 258,
+   "quote": "就是要让担任英雄角色的少年涡波，将少女那『作为女孩子的情感』捞出水面。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 24,
+   "text": "以恋爱为幌子的自由外出计划：七骑士车轮决斗+剧本式配合（塞拉暴走为安排/海因侯普思20层相遇为演出）；真实目的=培育少女的女孩子情感并撮合私奔结局"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9430bd82f3ed",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,61 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.9502
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "『次元之冬』",
+   "library_match": "『次元雪』",
+   "similarity": 0.9242
+  },
+  {
+   "candidate": "佩露修娜·库艾伽",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.8838
+  }
+ ],
+ "pairs": [
+  [
+   "『次元之冬』",
+   "『次元雪』",
+   0.9242
+  ],
+  [
+   "『过密次元的真冬』",
+   "『次元雪』",
+   0.7865
+  ],
+  [
+   "佩露修娜·库艾伽",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.8838
+  ],
+  [
+   "雷琪",
+   "缇娅拉·弗茨亚茨",
+   0.6903
+  ],
+  [
+   "格连",
+   "克劳",
+   0.7954
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.9502
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 6,
+  "library": 181,
+  "dup_suspect": 1,
+  "uncertain": 2
+ }
+}

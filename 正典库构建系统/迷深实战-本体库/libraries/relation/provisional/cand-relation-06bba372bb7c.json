@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔缇",
+  "rel_type": "挚友告别(互剜双目)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 27,
+   "line": 659,
+   "quote": "「这·样·我·们·两·个·就·一·样·了。——带我一起走吧，玛利亚。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 27,
+   "text": "『因为阿尔缇可是我的「挚友」啊』；手握手额贴额的最后告别；阿尔缇随之自剜双目（『这样我们两个就一样了』）——亲和性崩溃→阿尔缇消散"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-06bba372bb7c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

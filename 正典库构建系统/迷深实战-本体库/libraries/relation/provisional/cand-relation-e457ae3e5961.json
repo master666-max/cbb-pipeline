@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "总指挥",
+  "subject": "斐勒卢托"
+ },
+ "evidence": [
+  {
+   "chapter": 24,
+   "line": 14,
+   "quote": "「没错，她就是作为圣人缇娅拉大人留下的『再诞魔法』的素体（身体）而生的少女。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 24,
+   "text": "素体计划指令者：现人神地位赋予+教育者选任+仪式主办（与元老院特使共同）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e457ae3e5961",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

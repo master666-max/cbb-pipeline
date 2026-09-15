@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩露修娜·库艾伽",
+  "rel_type": "决斗胜(过密真冬)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 26,
+   "line": 277,
+   "quote": "刺得虽然不深，但足以对敌人的行动构成妨碍。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 26,
+   "text": "阶梯攻防：Growth强化+DivineWave 破魔法被过密真冬完全迟滞→刺隙冻甲→推落；约十秒制压"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-14c2a5f1aff6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

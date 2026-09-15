@@ -1,0 +1,549 @@
+{
+ "_meta": {
+  "unit": "U-C03 批2 · CHAPTER 0026（第三卷-第四章-玛利亚・■■■■■，摄入序20→tick20→伪锚点2000-01-21）",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "verified_at": "2026-09-16",
+   "slice": "行11059-11847（CHAPTER 0026，789行）"
+  },
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=20→tick=20→2000-01-21。禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★夺还作战全程：吊桥突破（海因断后）→雷迪安特+拉古涅追击（香料/冰封魔剑/剑伤四肢）→侯普思二重阵型（自降）→魔法骑士队长（次元之冬首战）→佩露修娜·库艾伽（最强骑士27级/黑剑/Growth/DivineWave——过密次元的真冬克制）→帕林库洛协助（解结界+清场+演技）→神殿演说（契约重申/真正的梦想吐露/仪式拒绝宣言/骑士敕封）→四人组逃亡（缇亚散花封门/屋顶行）",
+   "★拉丝缇娅拉真梦想吐露：『直到成为英雄为止的故事才是我真正的梦想』——成为缇娅拉非其梦想；仪式拒绝+『若我化身圣人缇娅拉便用剑刺穿我的心脏』之命",
+   "★新魔法：『次元之冬（Di·Winter）』（50m 球域凛冬：魔力运动抑制+动作迟滞）与『过密次元的真冬（Di·Overwinter）』（3m 过密域：单人完全迟滞）",
+   "★章末接 ch0025 悬崖：燃烧之家+阿尔缇×玛利亚迎击——主角方六人 vs 业火二人组",
+   "译注：本章无标注入正文（前章无遗留）"
+  ],
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『次元之冬』",
+    "entity_type": "技能魔法"
+   },
+   "aliases_to_register": [
+    "Di·Winter"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "主角新创大魔法（Dimension+Freeze 复合）：以己为中心直径五十米球域降临凛冬——冰结魔法性能飞跃+魔力运动抑制（术式偏差致敌魔法衰退/失败）+肉体动作迟滞（违和感级）——对百人骑士团歼灭性",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 166,
+     "quote": "「——魔法『次元之冬（Di·Winter）』！！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 176,
+     "quote": "我将用于抑制分子运动的魔法延伸为了抑制敌人魔力运动的魔法。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『过密次元的真冬』",
+    "entity_type": "技能魔法"
+   },
+   "aliases_to_register": [
+    "Di·Overwinter"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "次元之冬的一对一极致形态：领域缩至直径三米+魔力过剩投入——域内物体如陷凛冬暴雪般行动遭受迟滞（时间错乱错觉级）；主角自评=操纵次元与冷气的魔法使之真髓；代价=巨量魔力+大脑极负荷（短期决战限定）",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 266,
+     "quote": "「魔法『过密次元的真冬（Di·Overwinter）』啊啊啊——！！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 286,
+     "quote": "『过密次元的真冬』不仅要耗费大量的魔力，对大脑的负担也极重。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "佩露修娜·库艾伽",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "黑骑士全貌：【状态】HP421/434 MP105/105 等级27（七骑士最强）力量10.89 体力9.72 技巧8.25 敏捷10.09 贤能9.32 魔力6.65 素质1.56；先天无/后天剑术1.89 神圣魔法1.95——无小聪明无偏科万金油圣骑士型；重甲+黑巨剑",
+     "chapter": 26
+    },
+    {
+     "category": "event",
+     "text": "阶梯防守战：Growth 自强化+DivineWave 冲击波破局+不追击只守（经验老到）；被过密真冬迟滞→剑伤+冻伤+甲缝冻结→推落阶梯；终局让路（海因神殿崩毁威胁后叹气放行）",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 208,
+     "quote": "姓名：佩露修娜·库艾伽HP421/434MP105/105职业：骑士"
+    },
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 213,
+     "quote": "这个名唤佩露修娜·库艾伽的黑骑士，就是实力冠绝『天上之七骑士』全员的最强骑士——！"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "雷琪",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "元老院特使（仪式共同主办者）：结界系魔法（夺拉丝缇娅拉自由/争取数分钟）；冷静的败局判断（『在海因和帕林库洛背叛，那名少年毫发无损地出现在这里的瞬间，我们就已经输了』）+止损论（棋子回归可能论）",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 618,
+     "quote": "「真是厉害啊，这个『魔石人类』。能在那种状态下，强行破除了结界。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "格连",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "大圣堂宾客席首排（与斯诺·沃克同行——斯诺称其兄）；赤铜发无霸气男；拒绝斐勒卢托出手指令（『不好意思、这事儿我不干！』+责任转嫁顾虑）——最强之名改变盘面",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 578,
+     "quote": "「诶—、就算你跟我说他不是坏人……不过，既然斯诺都这么说了……」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "拉丝缇娅拉",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "★真梦想吐露：『直到成为英雄为止的故事、才是我真正的梦想』——对结果（圣人缇娅拉）的否定/对过程（自己的故事）的肯定；仪式拒绝+自死敕命（『若我化身圣人缇娅拉、便用你们手中的剑刺穿我的心脏』）；强行破除雷琪结界（魔石人类之力）",
+     "chapter": 26
+    },
+    {
+     "category": "knowledge",
+     "text": "骑士敕封：基督/海因/雷迪安特/帕林库洛四人被正名为『我的骑士』；仪式中桎梏已解（主角确认违和感）",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 448,
+     "quote": "并·不·是我的梦想！并不是！！我所憧憬的"
+    },
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 623,
+     "quote": "若我化身为圣人缇娅拉、便用你们手中的剑刺穿我的心脏！」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "决斗胜(过密真冬)",
+    "object": "佩露修娜·库艾伽",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "阶梯攻防：Growth强化+DivineWave 破魔法被过密真冬完全迟滞→刺隙冻甲→推落；约十秒制压",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 277,
+     "quote": "刺得虽然不深，但足以对敌人的行动构成妨碍。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "帕林库洛",
+    "rel_type": "作战协力(解结界+导演)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "大圣堂门前解障壁结界+清场+宾客衣装+『圣人缇娅拉的有缘人』谎言开道+背后押剑演出；事后自认条件达成真心协助",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 299,
+     "quote": "大圣堂的大门应声打开，而笼罩在大圣堂外面的魔力也云开雾散，似乎是某种术式遭到了解除。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "拉丝缇娅拉",
+    "rel_type": "敕封骑士",
+    "object": "海因",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "『我乃侍奉大小姐的骑士』之神殿宣言（『我是大小姐的骑士』含泪高喊）——ch0024 无资格自认之翻转",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 549,
+     "quote": "我·是·大·小·姐·的·骑·士！」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "雷迪安特",
+    "rel_type": "倒戈(骑士敕封)",
+    "object": "拉丝缇娅拉",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "追击中途被说倒戈（对黑骑士拔剑）+劝降拉古涅（做样子败退论）+狼化载二人逃亡",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 561,
+     "quote": "雷迪安特一边转身，一边朝拉古涅酱喊道。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "大圣堂突破战",
+    "kind": "突入",
+    "tick": 20,
+    "instant": null,
+    "time_verbatim": "圣诞祭当天上午（仪式中午前）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "海因",
+    "塞拉·雷迪安特",
+    "拉古涅·卡伊库欧拉",
+    "侯普思·约克鲁",
+    "佩露修娜·库艾伽",
+    "弗茨亚茨大圣堂"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "吊桥海因断后（Sehr·Wind 开路+高地压制+不鸣警钟）→狼雷迪安特×拉古涅追击（香料克嗅觉/冰封魔剑投掷/四肢剑伤）→侯普思二重阵型二十秒自降（激励送行）→魔法骑士大队（次元之冬首战歼灭）→佩露修娜（过密真冬十秒制压）→帕林库洛门前接应",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 42,
+     "quote": "「没错！听好了，要·由·你·去救人！我给你断后！」"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "神殿演说与仪式拒绝",
+    "kind": "决战",
+    "tick": 20,
+    "instant": null,
+    "time_verbatim": null
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "帕林库洛",
+    "缇亚",
+    "斐勒卢托",
+    "雷琪",
+    "海因"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "有缘人演出+契约重申演说（『堂堂正正说出你真正的梦想』）→缇亚魔力施压助阵→真梦想吐露+仪式拒绝宣言→雷琪结界压制被强行破除→自死敕命+四骑士敕封→斐勒卢托外援接连被拒（格连/剑圣皆旁观）→雷琪止损判断败局承认",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 449,
+     "quote": "直·到·成·为·英·雄·为·止的故事、才是我真正的梦想！是我一直以来的梦想！"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "四人组逃亡与归宅",
+    "kind": "撤离",
+    "tick": 20,
+    "instant": null,
+    "time_verbatim": null
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "缇亚",
+    "塞拉·雷迪安特",
+    "海因",
+    "帕林库洛"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "狼载二女+三男断后（Sehr·Wind 吹飞四骑士）→缇亚『FlameArrow·散花（FallFlower）』万千火矢封死大圣堂出入口→屋顶行越境（市民误作祭典节目）→古尔亚德路线宣言（海因同行/帕林库洛中途脱队）→六人队伍设想（Connection 轮换制）→山丘浓烟（ch0025 悬崖对接：燃烧之家+业火二人组）",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 684,
+     "quote": "『FlameArrow・散花（FallFlower）』"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "燃烧之家的对决",
+    "setup_chapter": 26,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "业火二人组（阿尔缇×玛利亚同化）vs 六人组（主角方）于焚毁的家前——『今天唯一一个对我造成伤害的正是玛利亚』之战栗预感；玛利亚的空虚眼神回归"
+   },
+   "entities_involved": [
+    "玛利亚",
+    "阿尔缇",
+    "相川涡波",
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "卷三决战终局",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 780,
+     "quote": "「把主人、还给、我……还、给……」"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "玛利亚・■■■■■",
+    "setup_chapter": 26,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "章题之名（燃烧殆尽的记忆■■）——她的真名/家族名或将揭晓；ch0027 煉狱十层决战"
+   },
+   "entities_involved": [
+    "玛利亚"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "章题钩",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 766,
+     "quote": "那熊熊燃烧着的，正·是·我·的·家。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "阿雷亚斯家与剑圣",
+    "setup_chapter": 26,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "剑圣=『阿雷亚斯家的老头子』（缇亚旧识/初老男/杀气交锋）——阿雷亚斯家（宝剑之家/缇亚弟之家?）线浮起；缇亚被称『小西斯』+『之前还是温顺贤淑的孩子』之旧谊"
+   },
+   "entities_involved": [
+    "缇亚",
+    "阿雷亚斯家的宝剑"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "缇亚身世线再钩",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 601,
+     "quote": "「说话真难听啊、阿雷亚斯家的老头子。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "大圣堂攻略战果",
+    "fact": "主角单骑突破五名七骑士防线（雷迪安特/拉古涅/侯普思/魔法队长/佩露修娜）+帕林库洛解结界；零死者零负伤；海因独挡其余五骑遍体鳞伤；逃亡战果=拉丝缇娅拉夺还+海因雷迪安特战力加入+缇亚归队（散花火力）——六人组+Connection 轮换制的迷宫探索计划",
+    "chapter": 26,
+    "tick": 20
+   },
+   "entities_involved": [
+    "相川涡波",
+    "海因",
+    "塞拉·雷迪安特",
+    "缇亚",
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "本章作战总结",
+     "chapter": 26
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 26,
+     "line": 721,
+     "quote": "一个人也没有落下、敌人也没有出现死者、拉丝缇娅拉也在这里。"
+    }
+   ]
+  }
+ ]
+}

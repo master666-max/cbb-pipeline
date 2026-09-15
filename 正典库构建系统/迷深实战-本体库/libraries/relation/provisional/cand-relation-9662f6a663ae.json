@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "言语击溃(加速决口)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 25,
+   "line": 576,
+   "quote": "「是了，小妹妹你一无所有。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 25,
+   "text": "『你一无所有』论——与血传/代价咏唱合力将其推入业火同化"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9662f6a663ae",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

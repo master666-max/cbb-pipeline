@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "雷琪"
+ },
+ "evidence": [
+  {
+   "chapter": 26,
+   "line": 618,
+   "quote": "「真是厉害啊，这个『魔石人类』。能在那种状态下，强行破除了结界。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 26,
+   "text": "元老院特使（仪式共同主办者）：结界系魔法（夺拉丝缇娅拉自由/争取数分钟）；冷静的败局判断（『在海因和帕林库洛背叛，那名少年毫发无损地出现在这里的瞬间，我们就已经输了』）+止损论（棋子回归可能论）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c86a35fed1d4",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

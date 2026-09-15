@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "相川涡波"
+  ],
+  "name": "消失的记忆（主角侧）",
+  "note": "世界冰蛇代价=『一份重要的记忆』消失（本人未辨明内容）+技能？？？历次剥夺的积累——记忆欠账终有清算",
+  "payoff_chapter": null,
+  "setup_chapter": 27,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 27,
+   "line": 379,
+   "quote": "于此同时，我意识到自己一份重要的记忆作为代价消失了。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 27,
+   "text": "主角暗线"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-11f3539ea80e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

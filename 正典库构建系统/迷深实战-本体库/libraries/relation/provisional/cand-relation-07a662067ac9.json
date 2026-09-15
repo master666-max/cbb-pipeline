@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "教育洗脑(三年)",
+  "subject": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 24,
+   "line": 111,
+   "quote": "遵照斐勒卢托的吩咐，为了不让少女感到痛苦而将她塑造为完美的『拉丝缇娅拉』。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 24,
+   "text": "斐勒卢托指令下的调整：英雄谭过剩讲授+自由概念+恋爱故事掺入（海因有意留的瑕疵）——诱导其毫无怨言接受仪式；同时海因单恋（自知无资格）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-07a662067ac9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

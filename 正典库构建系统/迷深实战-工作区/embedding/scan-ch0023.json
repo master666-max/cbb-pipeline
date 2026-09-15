@@ -1,0 +1,101 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.9502
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "斐勒卢托",
+   "library_match": "斐勒卢托·利奥斯",
+   "similarity": 0.9077
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.8522
+  },
+  {
+   "candidate": "海因",
+   "library_match": "海因·赫勒比勒夏因",
+   "similarity": 0.8803
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛利亚·迪斯特拉斯",
+   "similarity": 0.8547
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "缇达",
+   "similarity": 0.898
+  }
+ ],
+ "pairs": [
+  [
+   "魔石人类",
+   "魔石戒指",
+   0.7611
+  ],
+  [
+   "古尔亚德",
+   "艾尔多拉琉",
+   0.8216
+  ],
+  [
+   "莱文教圣经",
+   "莱文（Reborn）教",
+   0.6564
+  ],
+  [
+   "斐勒卢托",
+   "斐勒卢托·利奥斯",
+   0.9077
+  ],
+  [
+   "弗茨亚茨大圣堂",
+   "大圣堂",
+   0.8278
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛·勒伽西",
+   0.8522
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.9502
+  ],
+  [
+   "海因",
+   "海因·赫勒比勒夏因",
+   0.8803
+  ],
+  [
+   "玛利亚",
+   "玛利亚·迪斯特拉斯",
+   0.8547
+  ],
+  [
+   "缇亚",
+   "缇达",
+   0.898
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 11,
+  "library": 176,
+  "dup_suspect": 1,
+  "uncertain": 5
+ }
+}

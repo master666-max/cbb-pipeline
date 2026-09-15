@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "敕封骑士",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 26,
+   "line": 549,
+   "quote": "我·是·大·小·姐·的·骑·士！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 26,
+   "text": "『我乃侍奉大小姐的骑士』之神殿宣言（『我是大小姐的骑士』含泪高喊）——ch0024 无资格自认之翻转"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3f2974bc6185",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}
