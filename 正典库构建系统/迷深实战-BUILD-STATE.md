@@ -8,7 +8,7 @@
 
 单位清单（状态）：
 - U-C00 单章试车 | **done（2026-09-16）** | 判据=CHAPTER0014 亲抽端到端+金标 v5 自检 adjusted 实体 P≥0.70（预注册门槛,未达停单） | 证据=切样(行5516-5700,sha08cc9036f03ec9ee=金标同源)→77候选(34实体/38关系/4事件/1伏笔)→gate1 全过→store 76+锚点入库+1真隔离(low_confidence pending)；**评分 raw 实体 P=1.000(34TP/0FP/0FN)≥0.70 门槛通过**，adjusted 关系 38/38（评分/adjudication 件+score-adjusted 留档）；R6 全文内嵌 extraction _meta；幂等重放 76 consistent-duplicate 零增殖；十查留痕=工作区/logs/十查-U-C00-ch14-excerpt1.md | 幂等=双轨+游标
-- U-C01 边界表与锚点树 | todo | 判据=517 章边界+伪锚点树 v1 落盘+抽 5 章核对+cbb/tools 两件(嵌入查重/Neo4j增量导出)单测绿 | 证据=- | 幂等=版本化不覆盖
+- U-C01 边界表与锚点树 | **done（2026-09-16）** | 判据=517 章边界+伪锚点树 v1 落盘+抽 5 章核对+cbb/tools 两件(嵌入查重/Neo4j增量导出)单测绿 | 证据=boundary-table-v1.json(517章,30NOISE+1DUP[0347=OF 0346 行108516,内容哈希幂等自去重])+anchor-tree.v1.json(517锚点tick=摄入序)+抽查5/5过+embed_dedup_scan(10测试绿,实链blocked按设计:judge档在载)+neo4j_export(8测试绿,实链已通:容器拉起→34节点37边导出→重放58/37幂等)；留痕=工作区/logs/U-C01-留痕.md | 幂等=版本化不覆盖
 - U-C02 小队列 1-5 章 | 判据=0001 元文本章 R6 试金石+四章正常+抽检 2 条 | 证据=- | 幂等=同上
 - U-C03 主队列 6-102 | 判据=游标至 102+每批十查留痕 | 证据=- | 幂等=批游标+commit
 - U-C04 主队列 103-199 | 判据=游标至 199+十查留痕 | 证据=- | 幂等=同上
