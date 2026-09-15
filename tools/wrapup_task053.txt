@@ -1,0 +1,32 @@
+import io, re
+
+base = r"D:\zcode专用！！！！危险！！！！！！！！！"
+
+# 1) reflections.md 追加 R-023（append-only）
+r23 = """
+
+### R-023 / 2026-09-15 / 成本设计第一步是盘点存量而非询价新购
+- 洞察：迷深实战路线三天三改（v1.0 DeepSeek 付费约 50 元 → v1.1 GLM 亲抽 0 元 → v1.2 本地三模型+Neo4j+第三方抽检 5 元顶），每轮改判的驱动力都是用户指出"存量资产在闲置"：ZCode 闲时免费算力、LM Studio 里已加载的三个模型、已在跑的 Neo4j 容器、甚至临时 key 的残余额度。工程视角默认"为新任务询价新资源"，用户视角先盘点"我有什么"。**资源清单应先于方案设计**：把"本项目已有哪些可用算力/模型/服务/凭证"列为开工自举固定动作，能把边际成本压到零，还能暴露隐藏依赖——v1.1 砍掉 DeepSeek 后连 LM Studio 都不再需要：依赖是路线的函数，不是任务的属性。
+- 依据：trajectories/2026-09-15/task-051、task-052、task-053；迷深实战-工单.md v1.0~v1.2 变更链
+- 回写：迷深实战-工单 §0 资源整合条款+§4 付费例外条款（操作化）
+- 版本：v1
+- schema_version：3
+"""
+with io.open(base + r"\knowledge\reflections.md", "a", encoding="utf-8", newline="\n") as f:
+    f.write(r23)
+
+# 2) _index.md：计数清零+最后反思+轨迹行
+p = base + r"\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+s = re.sub(r"- 自最后反思以来 wrap-up 次数：\d+（[^）]*）",
+           "- 自最后反思以来 wrap-up 次数：0（2026-09-15 reflect R-023 后清零；上轮 5 次=①本体构筑全量验收 task-050 ②迷深实战工单固化 task-051 ③路线改判 GLM 亲抽 task-052（与 F3 线编号双占用）④F3 线 T1 两轻 task-052 ⑤工单 v1.2 存量资源整合 task-053）",
+           s, count=1)
+s = re.sub(r"- 最后反思：.*",
+           "- 最后反思：2026-09-15（R-023 成本设计第一步是盘点存量而非询价新购——依赖是路线的函数不是任务的属性）",
+           s, count=1)
+anchor_line = [l for l in s.splitlines() if "task-052-迷深实战改判免费亲抽路线" in l and l.startswith("- `")][0]
+t53 = "- `trajectories/2026-09-15/task-053-迷深实战工单v1.2资源整合.md` — 存量资源整合四条入工单（judge 锚定评分照红线/Embedding 批收口相似度扫描只提示不静默/Reranker 双探活失败降级/Neo4j 图层增量导出+Cypher 终审）+DeepSeek 第三方抽检 ¥5 硬顶（分歧→矛盾子类+Verdict）；全链一致性扫描逮到§0 残留矛盾（不走付费 API vs 抽检例外）已修"
+s = s.replace(anchor_line, anchor_line + "\n" + t53, 1)
+
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("reflections R-023 appended; index reset to 0 + trajectory line appended")
