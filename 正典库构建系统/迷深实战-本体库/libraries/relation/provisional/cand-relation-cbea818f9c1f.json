@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "军团蝠",
+  "rel_type": "击杀(小队)",
+  "subject": "芙兰琉莱"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 422,
+   "quote": "最后的Boss名为军团蝠。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 12,
+   "text": "九层Boss由小队合力解决（主角『Dimension』主导情报）；八层巨蜂型Boss由芙兰琉莱斩首"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cbea818f9c1f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

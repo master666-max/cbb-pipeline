@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波",
+   "迷宫",
+   "里约鹰"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "二十二·二十三层突破与制图",
+  "tick": 11,
+  "time_verbatim": "不足一个小时（L797）"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 952,
+   "quote": "这里就是终点了。总之今天的目标算是达成了吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 15,
+   "text": "Day2 二人队：狂怒者十数只割草→22层里约鹰一击脱离+求援战术（被Foam标记即逃）→跑→23层高温（24层岩浆说）+拉丝缇娅拉大量饮水→正道终点到达（人类极限线）→羊皮纸制图开始"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5b058b46d35f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "病房对话（精神剧变）",
+  "tick": 5,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 253,
+   "quote": "简直就像是中了什么魔法——就跟使用了『？？？』的我一样精神产生了剧变。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 312,
+   "quote": "——基督也好、基督的愿望也好，都由『我（私）』来守护。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 7,
+   "text": "自愈演示+隐瞒道歉+随时使用宣言；态度 180 度转变：『剑已经无所谓了』（眼中光芒尽失，主角违和感如见精神剧变）；金钱淡漠（存款全交基督）；勧告单飞+宝剑托付+发夹紧握；轻语『都由「我（私）」来守护』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-432ef99c0539",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

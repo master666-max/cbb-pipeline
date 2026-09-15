@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "训练",
+  "name": "夜间魔法训练",
+  "tick": 10,
+  "time_verbatim": "夜色已迟（L516）"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 512,
+   "quote": "我逐渐地可以在手掌上生成精致的冰雕了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "每日必修：冰结魔法完成度随想像力提升（掌上冰雕）；次元魔法难想像（原世界无对应物）仍探索新应用；『休息也是一场战斗』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5320113c9693",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

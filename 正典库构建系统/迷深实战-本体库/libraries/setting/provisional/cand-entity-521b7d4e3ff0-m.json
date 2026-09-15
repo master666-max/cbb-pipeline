@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "艾丽娅的发夹"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 215,
+   "quote": "【艾丽娅的发夹】",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 217,
+   "quote": "可以让持有者的魔力小幅上升",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 244,
+   "quote": "说着我为缇亚戴上了『艾丽娅的发夹』。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 323,
+   "quote": "那是日前我送给她的『艾丽娅的发夹』。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 326,
+   "quote": "就像是找到了可以替代剑在她心中的地位的什么东西一样，紧紧地——",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "光之魔石制成的有名字装饰品：持有者魔力小幅上升；露店角落五铜币淘得（实值≥一银币）；主角赠缇亚并亲手戴上（现为缇亚装备）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-521b7d4e3ff0",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-521b7d4e3ff0-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-521b7d4e3ff0",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

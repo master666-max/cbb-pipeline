@@ -1,0 +1,55 @@
+{
+ "canonical": {
+  "entities": [
+   "甲壳海妖",
+   "相川涡波",
+   "芙兰琉莱",
+   "莱纳",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "救援",
+  "name": "救援学院考试小队",
+  "tick": 8,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 179,
+   "quote": "【怪物】甲壳海妖：位阶7",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 12,
+   "text": "六层闻孩子般的惨叫→阿尔缇劝『救人就救到底』但不亲出手→主角单骑驰援：斩触手接少女、救倒吊少年莱纳、与阿尔缇暗焰合力斩杀甲壳海妖+歼灭眷属→自称基督"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c7dfdfb33b82",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

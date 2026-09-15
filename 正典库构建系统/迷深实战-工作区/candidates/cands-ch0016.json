@@ -1,0 +1,1761 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "人物(传说)",
+    "name": "圣人缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 311,
+     "quote": "「这次举办的是圣人缇娅拉·弗茨亚茨的圣诞祭。她是大陆家喻户晓的构建出魔法的基础的圣人——」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 341,
+     "quote": "而且她可是最先创造出魔法的人哦。另外，弗茨亚茨也是她缔造的。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "圣人缇娅拉·弗茨亚茨：大陆家喻户晓构建出魔法基础的圣人——最先创造出魔法者、九种属性魔法的创造者、弗茨亚茨的缔造者；本圣诞祭（前祭一周+大圣堂仪式）即其圣诞祭"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 16,
+     "text": "圣装游行=扮作神话中缇娅拉同伴的姿态祈祷无病无灾（越接近圣人诞辰圣人力量越强）；『拉丝缇娅拉』之名源自她（拉丝缇娅拉的肉体即缇娅拉本身的再造——经另条关系挂接）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-71e69da729d4",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "世界树"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 348,
+     "quote": "那棵树被称作世界树（Yggdrasill），而圣人听到的好像就是世界树的声音哦。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "生长于大陆中央（弗茨亚茨本国境内）之树；圣人听到的声音=世界树的声音——圣人以此获得这个世界所没有的知识、在大陆唤起奇迹；拉丝缇娅拉认为自己与主角『应该也能听到』"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-4dc53bfe8a2c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『世界炎蛇』"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 444,
+     "quote": "「——『璀璨星辰，无限远泛，饕餮殄灭』！『世界炎蛇』！！」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 465,
+     "quote": "可是玛利亚的『世界炎蛇』却在MP尚存的情况下夺去了她的HP。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "阿尔缇传授玛利亚的火炎魔法（输出最高）：咏唱『燃烧吧断炎』『我自衔尾，逡巡蹒跚，如梦似幻』『璀璨星辰，无限远泛，饕餮殄灭』——巨大炎蛇游走咬敌缠绕炙烤（十九层弥诺陶洛斯一击炭化）；★同时消耗HP与MP（MP尚存亦夺HP——以HP为必要条件的出离常轨魔法）；可操作性佳（可拐弯/可维持连续攻击）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-0f967aa475fc",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『FlameFlamberge』"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 550,
+     "quote": "「——『FlameFlamberge』！」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "阿尔缇传授的火炎魔法：手中喷焰瞬间凝缩成剑并延伸刺穿（咏唱『奔驰吧刻炎』）——威力逊于世界炎蛇但咏唱更短；同为HP+MP双耗"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-af2f0d13e5d6",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『Firefly·蜃气楼』"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 434,
+     "quote": "『Firefly·蜃气楼』是利用温度差影响光的折射扰乱对手距离感的魔法",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "Firefly 衍生：利用温度差影响光的折射扰乱对手距离感"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-07feee63bd93",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『Firefly·幻影』"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 434,
+     "quote": "『Firefly·幻影』是用火焰创造出人形幻影的魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "Firefly 衍生：以火焰创造人形幻影（可代打前卫吸引攻击）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-68a36355c38c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "火炎魔法"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 388,
+     "quote": "先天技能：炯眼1.45",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 389,
+     "quote": "后天技能：狩猎0.67料理1.08火·炎·魔·法1.00",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "玛利亚新获得的后天技能（1.00）——阿尔缇亲授+赠魔石；主角首次目击他人技能增加（技能增量=一辈子难得一见的珍稀品）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-22f06b84bfea",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "毒之火蜥蜴"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 652,
+     "quote": "【怪物】毒之火蜥蜴：位阶23",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "二十四层熔岩栖怪（位阶23）：岩浆中潜伏奇袭、毒息攻击、逃回岩浆（Dimension 难浸透岩浆故无法追踪）——熔岩地带的看门者"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-fa1c8c8f2656",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品",
+    "name": "魔石戒指"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 1084,
+     "quote": "【魔石『震风』的戒指】寄宿着『震风』的力量的戒指",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 1053,
+     "quote": "海因手上的一枚戒指应声碎裂，旋即便有一股浓郁的魔力化作一道暴风",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "海因的十枚戒指武具：各寄宿风之魔力（震风/散风/天风…）——发动即碎裂成一次性魔法（『Sehr·Wind』暴风击飞/『Zeitlos·Wind』柔风干扰Dimension/『Rays·Wind』扭曲之线斩击/『Wind』驱散）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-6e41f0a6a492",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "地点(迷宫层)",
+    "name": "二十四层"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 624,
+     "quote": "最值得一提的要数熔岩。沸腾的岩浆像河流一般流淌在二十四层。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "熔岩层：石柱林立洞窟状广阔空间（打破回廊规则）、岩浆如河、常人无法呼吸之高温、怪物极少；阶梯难寻（半径一公里索敌无果）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-342b1155c5fa",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 314,
+     "quote": "「这是当然的啊。因为圣人缇娅拉就是『我』啊。」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 758,
+     "quote": "「你了解得很清楚啊。确实，我已经无法掌握新的魔法了。我的血已经没有镌刻其它术式的余地了。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "★自白：圣人缇娅拉就是『我』——但非本人（缇娅拉早数百年），肉体是她的东西（缇娅拉本身·再造），精神完全不同；『我与缇娅拉』的详细关系以『告知玛利亚真名』为交易条件待兑"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 16,
+     "text": "魔法余白已满：『我的血已经没有镌刻其它术式的余地了』（阿尔缇评『她已经彻底完成了』）——无法掌握新魔法"
+    },
+    {
+     "category": "trait",
+     "chapter": 16,
+     "text": "祭典全程如孩童兴奋（初体验）；拟神之眼一眼看穿阿尔缇=强大Boss（战意释放后笑意握手）；自报年龄十六岁"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-ba4e521919bb",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "海因"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 1042,
+     "quote": "「那么，如果我赢了，就·请·你·和·大·小·姐·两·个·人·一·起·离·开·联·合·国。」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 1159,
+     "quote": "「少年……再这样下去的话，大·小·姐·她·会·死·的。待到圣诞祭结束的时候，她会从这个世上消失的。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "★真面目：单独全副武装埋伏二十层（双剑+十枚魔石戒指+护手），先礼后兵（和平收买提案被拒）→不宣而战的『真正的决斗』（暴力决胜·非魔石线宣誓制）"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 16,
+     "text": "赌注反转：胜则要求主角带拉丝缇娅拉离开联合国；动机自白：『再这样下去的话，大小姐她会死的。待到圣诞祭结束的时候，她会从这个世上消失的』——恳求带她逃走；自称塑造她的当事人之一（被造物说）；计划被打乱反露欣喜；精神不安定样相"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-22e3de1acda7",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "玛利亚"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 113,
+     "quote": "「我、我才不是小孩子！我已经十三岁了！」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 774,
+     "quote": "玛·利·亚·她·喜·欢·你·啊。我必须要为她的恋情提供协助才行。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 15,
+     "text": "十三岁；经阿尔缇亲授获火炎魔法（世界炎蛇/FlameFlamberge/Firefly衍生——HP+MP双耗体系）；★恋慕主角（阿尔缇断言+拉丝缇娅拉证实『百分百不会有错』）——主角拒绝以技能？？？强行消解（人伦抉择），决定待其亲口表白再答"
+    },
+    {
+     "category": "trait",
+     "chapter": 16,
+     "text": "战场觉悟：『反正我只要受到敌人的攻击就会当场牺牲，所以HP的多少并不需要特别在意』（效率优先的生死观）vs 主角『她并不是游戏中的人物』之反驳"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-fa6a9c49f5f3",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 820,
+     "quote": "「唔……也好吧，我会教缇亚的。毕竟我可是她们两个的师父啊。」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 789,
+     "quote": "玛利亚酱明明那么拼命地在隐藏自己的心意的说！",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "祭典同行（与学院朋友们游玩；野兽面具侧戴）；与拉丝缇娅拉互相看破身份后嫣然握手；水为其棘手物（火属性）"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 16,
+     "text": "★缇亚与玛利亚的师父：暗中与二人打好关系（曾访医院与缇亚交手——病房惨状全系缇亚自爆魔法，后和解；教缇亚 FlameArrow 火力调节+找回神圣魔法感觉）；断言玛利亚恋慕并宣言为其『恋爱的实现』提供协助；承诺传授熔岩驱除+耐高温魔法（指定玛利亚，驳回主角代案后追加缇亚）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-5415cdfcfe8c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "缇亚"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 910,
+     "quote": "「别来无恙，西斯。」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 927,
+     "quote": "「只、只是同乡而已！其实也不是那么熟啦！」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "病房遭阿尔缇探访时交手（自爆魔法毁病房赔修理费）后和解受教；★与拉丝缇娅拉旧识：被以敬语称『别来无恙，西斯』——慌乱误判为『带回』，以『只是同乡』掩饰（拉丝缇娅拉配合演出）；要求以缇亚之名相称（我（俺）自称）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-3676c9c423f3",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 123,
+     "quote": "「我应该是十六岁吧。」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 1197,
+     "quote": "不知为何，我就是有这种想法——在圣诞祭结束的时候，一·切·都·会得到清算。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 16,
+     "text": "十六岁；自报目的『归还』→海因：『你想要的是最深部的「奇迹」…？』（首度外泄）；海因战：Foam 被散风破解、决战演算被 Zeitlos 干扰、双剑持斗+小麦粉烟幕对策；人与人之拼杀的杀意迷惘（对怪物可杀对人无借口）"
+    },
+    {
+     "category": "trait",
+     "chapter": 16,
+     "text": "拒绝以技能？？？消解玛利亚恋慕（『因为这样胡扯的技能导致一个女孩子的恋情无疾而终，这是丧尽天良的行为』）；圣诞祭清算预感（『一切都会被清算』——包括我自己）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-2ef1367f6525",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "圣人缇娅拉",
+    "rel_type": "肉体源自(再造)",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 318,
+     "quote": "但我的肉体却是她的东西（缇娅拉本身）。精神就完全不同了。」",
+     "vol": 1
+    },
+    {
+     "chapter": 16,
+     "line": 320,
+     "quote": "就能打造出与曾经的圣人缇娅拉别无二致的肉体了。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 16,
+     "text": "★自白：肉体=缇娅拉本身（庞大资金+大量时间+巨大魔力打造的别无二致肉体）；精神完全不同；目的『有各种』但以神秘性为由拒详述（交易条件：主角告知玛利亚真名）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-eab9668bb510",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "相川涡波",
+    "rel_type": "恋慕(据阿尔缇言)",
+    "subject": "玛利亚"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 774,
+     "quote": "玛·利·亚·她·喜·欢·你·啊。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 16,
+     "text": "阿尔缇断言+拉丝缇娅拉证实（『我觉得她就是喜欢你不会有错哦，百分百的』）；玛利亚本人拼命隐藏（拉丝缇娅拉：『明明那么拼命地在隐藏自己的心意的说』）；主角决定待其亲口表明再答"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-2dcd729c70a5",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "玛利亚",
+    "rel_type": "师父(魔法亲授)",
+    "subject": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 395,
+     "quote": "「是的，是阿尔缇教我的。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 16,
+     "text": "火炎魔法亲授+魔石赠与（世界炎蛇/FlameFlamberge 等 HP+MP 双耗系）；为玛利亚『恋爱的实现』提供协助之宣言"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-bac4296d8363",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "缇亚",
+    "rel_type": "师父(魔法指导)",
+    "subject": "阿尔缇"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 903,
+     "quote": "比如说教会我调节『FlameArrow』的火力，还让我找回了驱使神圣魔法的感觉。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 16,
+     "text": "医院交手后和解：FlameArrow 火力调节+找回神圣魔法感觉；将再授熔岩驱除/耐高温魔法"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-e6e13aa03413",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "缇亚",
+    "rel_type": "旧识(同乡说掩饰)",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 910,
+     "quote": "「别来无恙，西斯。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 16,
+     "text": "敬语称呼『西斯』的相识关系；缇亚恐慌（误判带回）→『只是同乡』掩饰+拉丝缇娅拉配合；真实关系未明（主角不追问）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-31b69f501c73",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "真决斗(要求离境)",
+    "subject": "海因"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 1042,
+     "quote": "就·请·你·和·大·小·姐·两·个·人·一·起·离·开·联·合·国。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 16,
+     "text": "收买不成→戒指风魔法奇袭开战（无宣誓真决斗）；拉丝缇娅拉被暴风击飞断臂昏迷；主角双剑+烟幕抗衡至胶着；海因因拉丝缇娅拉将醒而收手撤走（计划乱而反喜）；胜负未决"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-5ec9754d18ee",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "拉丝缇娅拉",
+    "rel_type": "预言死期(恳求带离)",
+    "subject": "海因"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 1159,
+     "quote": "待到圣诞祭结束的时候，她会从这个世上消失的。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 16,
+     "text": "据海因：圣诞祭结束时她会从世上消失（死）——已无法说服她；其通透澄澈之言全为假他人之手塑造的『被造物』（表情/感情/思考方式）；恳求倾听『切实存在于那里的少女』的真心并带她逃离联合国"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-c84edadbebb6",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "玛利亚",
+     "相川涡波",
+     "阿尔缇"
+    ],
+    "instant": null,
+    "kind": "日常",
+    "name": "前祭游玩",
+    "tick": 12,
+    "time_verbatim": "前祭最高潮（圣诞祭四天后）"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 218,
+     "quote": "这个身着好几件厚实到让人看着都觉得热的衣服的少女，正是迷宫的守护者阿尔缇。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 16,
+     "text": "三人初祭典（射箭/抓鱼比试/黑发黑目边境谎言圆场）；阿尔缇加入同游（拉丝缇娅拉看破其Boss身份后握手）；年龄自报（16/16/13）；主角封杀『还想更多一起玩』的情感（与玛利亚时同型的不得己）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-15e36bb3aa94",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "世界树",
+     "圣人缇娅拉",
+     "拉丝缇娅拉",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "授业",
+    "name": "缇娅拉身世讲授",
+    "tick": 12,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 314,
+     "quote": "「这是当然的啊。因为圣人缇娅拉就是『我』啊。」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 16,
+     "text": "圣诞祭=缇娅拉圣诞祭（前祭一周+大圣堂仪式）；莱文教圣诞祭有三个+诸祭典；缇娅拉=魔法创造者/弗茨亚茨缔造者；圣人=听世界树声音者（以世界没有的知识唤起奇迹）；联合国=边陲殖民地（五国本土皆大陆大国且不接壤）；『我就是她』自白+真名交易约定"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-37de81cfbf9f",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "『世界炎蛇』",
+     "拉丝缇娅拉",
+     "玛利亚",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "试验",
+    "name": "玛利亚新魔法试炼",
+    "tick": 12,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 465,
+     "quote": "这是以消耗HP为必要条件的魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 16,
+     "text": "十九层弥诺陶洛斯试验（蜃气楼+幻影掩护→世界炎蛇一击炭化）；HP 锐减之异常确认；二十一层实战（抱玛利亚公主抱回避+连杀狂怒者×4）至精疲力竭——『还·不·行·呢』自弃归宅（苍白笑容）；续航力不足结论"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-404f555741b2",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "毒之火蜥蜴",
+     "相川涡波",
+     "迷宫"
+    ],
+    "instant": null,
+    "kind": "探索",
+    "name": "二十四层熔岩突破未遂",
+    "tick": 12,
+    "time_verbatim": null
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 652,
+     "quote": "【怪物】毒之火蜥蜴：位阶23",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 16,
+     "text": "二十三层制图无阶梯→多重展开发现→二十四层熔岩空间震撼；毒之火蜥蜴岩浆游击（拉丝缇娅拉中毒）→FullCure×2 解毒→撤退；攻略法=无视怪物跑过去；阿尔缇教学方案确定"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-ab19c2534058",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "海因",
+     "相川涡波",
+     "魔石戒指"
+    ],
+    "instant": null,
+    "kind": "决斗",
+    "name": "海因真决斗",
+    "tick": 12,
+    "time_verbatim": "翌日（L979）"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 1050,
+     "quote": "「——『Sehr·Wind』。」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 16,
+     "text": "和平提案（金钱名誉收买）被拒（主角只要最深部奇迹）→Sehr·Wind 奇袭（拉丝缇娅拉断臂昏迷）→风魔法压制（Foam 破/演算乱）→主角双剑近战+小麦粉烟幕逆转胶着→海因见拉丝缇娅拉将醒收剑：死期预言+被造物说+带离恳求→消失于阶梯"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-9fdc6aa66a38",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "海因"
+    ],
+    "name": "拉丝缇娅拉的死期",
+    "note": "海因预言：圣诞祭结束时她会从世上消失——与『仪式』『剩余时间』之演说呼应；还剩两天；主角清算预感（一切·包括我自己）",
+    "payoff_chapter": null,
+    "setup_chapter": 16,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 1159,
+     "quote": "待到圣诞祭结束的时候，她会从这个世上消失的。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 16,
+     "text": "主线最大时限钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.92,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-57c20eafdb52",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "海因"
+    ],
+    "name": "被造物与真心",
+    "note": "拉丝缇娅拉的表情/感情/思考方式=假他人之手塑造的『被造物』（海因=塑造当事人之一）vs『切实存在于那里的少女』的真心——辨别与倾听之题",
+    "payoff_chapter": null,
+    "setup_chapter": 16,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 1165,
+     "quote": "全都是假他人之手塑造而成的『被·造·物』。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 16,
+     "text": "存在结构级谜题"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-1ae25384b38d",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "缇亚"
+    ],
+    "name": "缇亚与拉丝缇娅拉的旧识",
+    "note": "『别来无恙，西斯』之敬称+同乡掩饰+带回恐慌——二人真实关系与缇亚身世（阿雷亚斯家？）之谜",
+    "payoff_chapter": null,
+    "setup_chapter": 16,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 927,
+     "quote": "「只、只是同乡而已！其实也不是那么熟啦！」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 16,
+     "text": "女主角间连线"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-dee96c02483d",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "玛利亚",
+     "相川涡波"
+    ],
+    "name": "真名告知交易",
+    "note": "拉丝缇娅拉：主角向玛利亚告知『涡波』真名⇔她告知『我与缇娅拉』的详细关系——双向揭秘开关（主角拖延中）",
+    "payoff_chapter": null,
+    "setup_chapter": 16,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 327,
+     "quote": "如果基督将自己是『涡波』的事告知玛利亚的话，我就会将『我与缇娅拉』的关系告诉你。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 16,
+     "text": "信息交换钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-0c9f177510e3",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 16,
+    "fact": "圣人=能听到大陆中央世界树（Yggdrasill）之声者，以此获得世界所没有的知识唤起奇迹；缇娅拉·弗茨亚茨=最先创造魔法者/九种属性魔法的创造者/弗茨亚茨的缔造者（本圣诞祭即其祭）；莱文教圣人众多（圣诞祭有三个+诸神祭典）；圣装游行=扮缇娅拉同伴祈无病无灾（越近诞辰圣人力量越强）；联合国五国=各自本土（大陆大国）的边陲殖民地，与本国互不接壤",
+    "name": "圣人缇娅拉与世界史",
+    "tick": 12
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 341,
+     "quote": "而且她可是最先创造出魔法的人哦。另外，弗茨亚茨也是她缔造的。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 16,
+     "text": "世界史地基（拉丝缇娅拉讲授）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-73e4a2288e0f",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 16,
+    "fact": "一人可掌握的魔法有限（血之术式余白）：主角=只有次元属性适性（其他魔法无法掌握——LittleSnow 未得之因）；拉丝缇娅拉=余白已满（『已经彻底完成了』）故无法习新；故二十四层对策（熔岩驱除+耐高温）只能教给玛利亚与缇亚",
+    "name": "魔法适性与余白",
+    "tick": 12
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 750,
+     "quote": "因为你只能掌握次元魔法，所以我也无可奈何。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 16,
+     "text": "习得体系限制三例"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-6e54f59a23f5",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 16,
+    "fact": "阿尔缇传授玛利亚的火炎魔法（世界炎蛇/FlameFlamberge）=同时消耗HP与MP之魔法（MP尚存亦夺HP；不减最大HP但单次即削）——与主角『MP枯竭后以最大HP补偿』（ch0006）机制不同源；玛利亚：反正被攻击就会当场牺牲故HP多少无所谓（效率主义生死观）",
+    "name": "HP代价魔法体系",
+    "tick": 12
+   },
+   "evidence": [
+    {
+     "chapter": 16,
+     "line": 470,
+     "quote": "「没错。阿尔缇教给我的两种魔法『世界炎蛇』『FlameFlamberge』是同时消耗HP和MP的魔法。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 16,
+     "text": "代价型魔法体系"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-0c5ec2aa223f",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★拉丝缇娅拉=圣人缇娅拉·弗茨亚茨之再造肉体（肉体=缇娅拉本身/精神另体/庞大资金+时间+魔力打造）——ch0015 圣诞祭仪式伏笔与 ch0004 候补宣言之根源侧；名字=圣人名（玛利亚点破·本人轻描淡写确认）",
+   "★海因死期预言：『待到圣诞祭结束的时候，她会从这个世上消失的』+被造物说（表情/感情/思考方式全为假他人之手塑造——海因自认为塑造当事人之一）——圣诞祭=主线清算点（还剩两天）",
+   "★玛利亚恋慕暴露（阿尔缇断言+拉丝缇娅拉证实『百分百』）；主角拒以技能？？？处理（人伦抉择）；玛利亚13岁/主角16岁/拉丝缇娅拉16岁（自称）",
+   "★缇亚与拉丝缇娅拉旧识（『别来无恙，西斯』敬称+同乡说掩饰+缇亚恐慌误认为带回）；缇亚曾与阿尔缇交手（病房惨状=缇亚自爆魔法）后和解",
+   "译注处理（R6）：L911（敬语注）/L1051·L1070（德语词源注）/L1166（被造物=作り物·行为主义vs存在主义主题注——正文词『被造物』『切实存在于那里的少女』照抽，注内主题论不抽）"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=12→tick=12→2000-01-13。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行7180-8385（CHAPTER 0016，1206行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批1 · CHAPTER 0016（第二卷-第五章-分岐点『前祭』，摄入序12→tick12→伪锚点2000-01-13）"
+ }
+}

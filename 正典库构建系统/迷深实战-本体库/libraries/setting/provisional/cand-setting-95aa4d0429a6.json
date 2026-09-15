@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 13,
+  "fact": "主角队伍（含玛利亚）经验值始终均等分配（与级别差无关）——他队=击杀者独得；分配极限距离约一百米；有『正道』类结界处极限距离变则；带人练级=一日可产熟练探索者（玛利亚3→7级/日）——被玛利亚评『犯规』；主角隐匿此能力（恐遭国家逮捕）",
+  "name": "主角队伍的经验值特例",
+  "tick": 9
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 649,
+   "quote": "『经验值的分配始终均等，与级别差无关』",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 13,
+   "text": "本章实验实证"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-95aa4d0429a6",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

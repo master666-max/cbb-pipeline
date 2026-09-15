@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "魔法屋"
+  ],
+  "instant": null,
+  "kind": "购物",
+  "name": "魔法屋购物与鉴定",
+  "tick": 9,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 892,
+   "quote": "是种非常稀有而且久远的属性。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 13,
+   "text": "水晶球鉴定：玛利亚=中坚魔力+火与无双重属性；主角=透明色次元属性（稀有久远·容量不可测·店员首见）；购 Firefly+Impulse（玛利亚）/Connection+Foam（次元目录仅二种全购）+LittleSnow（冰结不符服而未得——既有Freeze/Ice之矛盾留疑）；总耗不足两金币"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a596c88749d8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

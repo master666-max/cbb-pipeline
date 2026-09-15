@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "异邦人"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 831,
+   "quote": "「嗯？从我的角度来看，基督你的技能有五个，分别是『剑术』『冰结魔法』『次元魔法』『异邦人』和『？？？』，怎么了？」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 15,
+   "text": "主角技能之一（拉丝缇娅拉之眼可见的五个技能之一；主角自视该位为『？？？』——视觉等级差）；据拉丝缇娅拉：似称号类，『不属于这个世界的人』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-fe3e75ff6436",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

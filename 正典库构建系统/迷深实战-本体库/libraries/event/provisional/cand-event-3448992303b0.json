@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "瓦尔德",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "乱花钱租下新居",
+  "tick": 9,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 88,
+   "quote": "锁本身虽然很笨重很古风，但它确实可以牢固地关死房门。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 13,
+   "text": "压力乱消费：十枚金币年租独幢豪宅（4LDK/魔石线供能水洗烧水/浴缸/铁魔石门锁）——事后自省做过头（技能？？？一日未发的反动）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3448992303b0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

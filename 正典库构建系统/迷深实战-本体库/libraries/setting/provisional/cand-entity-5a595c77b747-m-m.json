@@ -1,0 +1,102 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『Foam』"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 150,
+   "quote": "「——魔法『Dimension·决战演算』、魔法『Foam』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 152,
+   "quote": "第一个打算尝试的魔法是『Foam』。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 154,
+   "quote": "其间，我注意到了『Foam』对『Dimension』有辅助效果。",
+   "vol": 1
+  },
+  {
+   "chapter": 13,
+   "line": 986,
+   "quote": "【Foam】",
+   "vol": 1
+  },
+  {
+   "chapter": 13,
+   "line": 987,
+   "quote": "次元魔法的基础能赋予次元·时空等概念",
+   "vol": 1
+  },
+  {
+   "chapter": 13,
+   "line": 1040,
+   "quote": "这个泡沫是·一·种·捩·转。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 213,
+   "quote": "我也成功将『Foam』的泡沫转移到了雷迪安特的剑上。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 216,
+   "quote": "这样一来便可以确定，『Foam』在与剑士的战斗中能发挥出超绝的作用。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "泡沫魔法：单独使用效果有限，与其他魔法并用方显真正威力；对『Dimension』有辅助效果（L155-157）"
+  },
+  {
+   "category": "technique",
+   "chapter": 14,
+   "text": "决斗中首次尝试：让『Dimension』寄宿于魔法泡沫以更确实地把握空间（L152-158）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 4.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-5a595c77b747",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-5a595c77b747-m",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5a595c77b747-m-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-5a595c77b747-m",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 3
+}

@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "缇达",
+   "过捕护"
+  ],
+  "instant": null,
+  "kind": "回忆",
+  "name": "缇亚的濒死抉择",
+  "tick": 5,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 153,
+   "quote": "梦想固然比生命更重要，但基督却比我的梦想还要重要啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 174,
+   "quote": "从现在开始，『我（私）』的一切都将献予基督——",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 7,
+   "text": "走马灯终点（缇亚视角）：断手濒死→『梦想远比生命更重要，但基督却比我的梦想还要重要』→解放弃绝的神圣魔法（紫苑）→技能『过捕护』暴走（特定感情强化）→『我（私）』的一切献予基督"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a4b05da71c9a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

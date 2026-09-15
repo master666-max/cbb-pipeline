@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "拟神之眼"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 285,
+   "quote": "武器战斗2.12剑术2.02拟神之眼1.00",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 496,
+   "quote": "而且明明没有颈环，职业却是、呵呵，职业却是。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "拉丝缇娅拉先天技能 1.00：疑为看穿人心/状态之眼（看破主角决斗算盘；察觉玛利亚『明明没有颈环，职业却是』奴隶——可见他人状态）；主角身边眼技强者连发（玛利亚炯眼/帕林库洛观察眼）之喟叹"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-80641e811df9",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

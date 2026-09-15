@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "缇亚",
+   "莱文（Reborn）教"
+  ],
+  "instant": null,
+  "kind": "回忆",
+  "name": "缇亚身世·使徒西斯篇",
+  "tick": 5,
+  "time_verbatim": "五岁…十岁（L15/L27）"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 7,
+   "quote": "这是因为在我诞生于世的时候，母亲因将我视作恶魔而恐惧不已，结果就没有赋予我名字的缘故。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 30,
+   "quote": "以当年少许的歉收为口实，我便被献给了国家。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 7,
+   "text": "无名诞生（母视其为恶魔，天生大量魔力+背后纤小羽翼=非纯正人类）→教会神父尊为『使徒』养育→五岁奇迹获西斯之名（双亲不复畏惧但不视骨肉）→十岁自我意识：钻研魔法正是孤独之囹圄→国家以歉收为口实将其征收→辗转领主/商人/贵族/国王座下献奇迹→初心确认之旅"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3f2c18f3e5bf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

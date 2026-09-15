@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『Firefly·蜃气楼』"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 434,
+   "quote": "『Firefly·蜃气楼』是利用温度差影响光的折射扰乱对手距离感的魔法",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 16,
+   "text": "Firefly 衍生：利用温度差影响光的折射扰乱对手距离感"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-07feee63bd93",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

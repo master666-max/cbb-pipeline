@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "军团蝠"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 422,
+   "quote": "最后的Boss名为军团蝠。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 12,
+   "text": "九层Boss：黑暗中复数蝙蝠融合回复（致命伤亦可经融合恢复）；学院课程最终要点=维持照明处理复数怪物——被主角小队短时间内解决"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-b3cf15cddc2f",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

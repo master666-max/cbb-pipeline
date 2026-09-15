@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "迷宫",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "缇亚右手回收失败",
+  "tick": 8,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 118,
+   "quote": "「被『迷宫』吞噬的。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 12,
+   "text": "五层旧战场搜寻缇亚断右手无果——阿尔缇：『被「迷宫」吞噬的』（Boss隶属者的权威判断）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-de252910fe36",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

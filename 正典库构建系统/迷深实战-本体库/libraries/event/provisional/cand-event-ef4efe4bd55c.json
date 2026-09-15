@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "『Foam』",
+   "塞拉·雷迪安特",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "决斗",
+  "name": "决斗后半·Foam战术制胜",
+  "tick": 10,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 226,
+   "quote": "「这样就算是我赢了吧？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "塞拉剑技艺术级（主角险被迷住）；Foam 泡沫转移+决战演算强化→刹那烙印剑迹→三回合内剑封其喉；信息不对称=胜负手；塞拉认负撤队+预告再派他骑"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ef4efe4bd55c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

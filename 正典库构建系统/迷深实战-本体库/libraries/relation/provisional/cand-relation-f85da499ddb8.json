@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "买入解放",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 446,
+   "quote": "挥出的剑刃精准无误地在不伤及玛利亚的情况下切断了她脖子上的颈环。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 13,
+   "text": "四枚金币经帕林库洛代拍购得；当场以宝剑切断颈环（未缔约可破坏）；『想逃的话也随便你』——玛利亚未逃（逃无可逃+心中桎梏自认奴隶）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f85da499ddb8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

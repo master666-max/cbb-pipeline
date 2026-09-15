@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "沙鼠"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 31,
+   "quote": "通过『注视』，我得知怪物的名字叫做沙鼠",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 12,
+   "text": "外型似鼠的动作迅捷怪物（位阶低速度快，肉眼难捕捉）——阿尔缇炎剑一击之敌（仅提及级）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d12cc6927f3c",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

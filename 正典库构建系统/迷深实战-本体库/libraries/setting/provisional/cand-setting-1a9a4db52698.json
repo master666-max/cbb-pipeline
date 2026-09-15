@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 7,
+  "fact": "存在同型代价结构技能：以一定的感情为交换触发暴走——技能『？？？』（使精神安定/混乱补正+1.00，主角持有）与技能『过捕护』（将特定的感情予以强化，缇亚持有）——二者暴走格式完全同型（【技能『＊＊＊』暴走了】+代价说明）；触发与情感的关联为共性",
+  "name": "技能暴走体系",
+  "tick": 5
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 173,
+   "quote": "以一定的感情为交换，将特定的感情予以强化",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 7,
+   "text": "系统机制横向发现"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-1a9a4db52698",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

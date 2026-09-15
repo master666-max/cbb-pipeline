@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "name": "帕林库洛的我主心仪之人",
+  "note": "帕林库洛跟踪主角之因：『听说你是我主心仪之人』——其主为何人未明言（主角猜芙兰琉莱被否）；ch14 帕林库洛与主角『此前有接触』之源",
+  "payoff_chapter": null,
+  "setup_chapter": 13,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 311,
+   "quote": "「因为听说你是我主心仪之人。所以我就抢着来看看你。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 13,
+   "text": "身份线大钩（指向拉丝缇娅拉的候补宣言）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-f2eaa3f951b0",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

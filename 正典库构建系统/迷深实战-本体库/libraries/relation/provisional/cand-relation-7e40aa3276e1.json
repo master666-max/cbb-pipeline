@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "侯普思·约克鲁",
+  "rel_type": "决斗胜",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 317,
+   "quote": "没过多久，侯普思在我凌厉的攻势下败下阵来，我手中的剑抵在了他的颈边。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 15,
+   "text": "镜像剑士跟不上速度差（不慌不忙提速→剑抵颈边）；赌大小姐归属的正道决斗②"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7e40aa3276e1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

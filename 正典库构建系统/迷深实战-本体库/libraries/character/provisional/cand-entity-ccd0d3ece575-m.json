@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 42,
+   "quote": "之前同那个叫帕林库洛的骑士的接触虽然让我有所预感。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 89,
+   "quote": "因为之前跟帕林库洛交谈的时候就确认了不是芙兰琉莱",
+   "vol": 1
+  },
+  {
+   "chapter": 13,
+   "line": 291,
+   "quote": "「我的名字是帕林库洛·勒伽西。是联合国北部的弗茨亚茨的骑士。别看我这样，我姑且也有『天上之七骑士（CelestialKnights）』这么个了不起的职位。」",
+   "vol": 1
+  },
+  {
+   "chapter": 13,
+   "line": 296,
+   "quote": "姓名：帕林库洛·勒伽西HP301/312MP59/62职业：骑士",
+   "vol": 1
+  },
+  {
+   "chapter": 13,
+   "line": 311,
+   "quote": "「因为听说你是我主心仪之人。所以我就抢着来看看你。」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "骑士，此前与主角有过接触（仅提及，L42/L89-90）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-ccd0d3ece575",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ccd0d3ece575-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-ccd0d3ece575",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

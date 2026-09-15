@@ -1,0 +1,131 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.9502
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "世界树",
+   "library_match": "Yggdrasill",
+   "similarity": 0.859
+  },
+  {
+   "candidate": "二十四层",
+   "library_match": "十四层",
+   "similarity": 0.9043
+  },
+  {
+   "candidate": "海因",
+   "library_match": "海因·赫勒比勒夏因",
+   "similarity": 0.8803
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛利亚·迪斯特拉斯",
+   "similarity": 0.8547
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "阿尔肯",
+   "similarity": 0.8777
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "缇达",
+   "similarity": 0.898
+  }
+ ],
+ "pairs": [
+  [
+   "圣人缇娅拉",
+   "缇娅拉·弗茨亚茨",
+   0.7958
+  ],
+  [
+   "世界树",
+   "Yggdrasill",
+   0.859
+  ],
+  [
+   "『世界炎蛇』",
+   "『火焰箭』",
+   0.6735
+  ],
+  [
+   "『FlameFlamberge』",
+   "『火焰箭』",
+   0.7718
+  ],
+  [
+   "『Firefly·蜃气楼』",
+   "『Firefly』",
+   0.7647
+  ],
+  [
+   "『Firefly·幻影』",
+   "『Firefly』",
+   0.7854
+  ],
+  [
+   "火炎魔法",
+   "『火焰箭』",
+   0.7617
+  ],
+  [
+   "毒之火蜥蜴",
+   "爪瑙蝎",
+   0.7135
+  ],
+  [
+   "魔石戒指",
+   "守护者的魔石",
+   0.7748
+  ],
+  [
+   "二十四层",
+   "十四层",
+   0.9043
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.9502
+  ],
+  [
+   "海因",
+   "海因·赫勒比勒夏因",
+   0.8803
+  ],
+  [
+   "玛利亚",
+   "玛利亚·迪斯特拉斯",
+   0.8547
+  ],
+  [
+   "阿尔缇",
+   "阿尔肯",
+   0.8777
+  ],
+  [
+   "缇亚",
+   "缇达",
+   0.898
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 16,
+  "library": 150,
+  "dup_suspect": 1,
+  "uncertain": 6
+ }
+}

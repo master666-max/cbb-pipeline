@@ -1,0 +1,55 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "玲小姐",
+   "相川涡波",
+   "芙兰琉莱",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "酒馆四人桌（魔法知识讲座）",
+  "tick": 9,
+  "time_verbatim": "午餐时分"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 771,
+   "quote": "基本上来说，只有通过将先人的睿智刻入血中的方式，才能习得魔法。魔法是不可能无中生有的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 13,
+   "text": "阿尔缇火焰定位带芙兰琉莱拼桌；阿尔缇知晓次元魔法+空间转移（旧识之谜）+『创造魔法才是常识』时代错位；玛利亚+芙兰琉莱授魔法习得正论（服魔石/血记忆/家系先天/创造=童话）；主人公与阿尔缇意见一致成少数派"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2957bc820ab8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

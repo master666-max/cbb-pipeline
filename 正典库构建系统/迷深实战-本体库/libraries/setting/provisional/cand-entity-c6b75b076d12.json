@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物(传说)",
+  "name": "使徒西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 15,
+   "quote": "据说传说中的使徒西斯是从天而降的神之使者，并为穷苦的人带来了奇迹。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 7,
+   "text": "村中自古传说：从天而降的神之使者（使徒），为穷苦人带来奇迹；结局与某个英雄结婚，其子孙即村中村民——缇亚五岁行奇迹后被村民依此传说冠以西斯之名"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c6b75b076d12",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

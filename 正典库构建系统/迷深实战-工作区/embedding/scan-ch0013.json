@@ -1,0 +1,105 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.8522
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛利亚·迪斯特拉斯",
+   "similarity": 0.8547
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "阿尔肯",
+   "similarity": 0.8777
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "缇达",
+   "similarity": 0.898
+  }
+ ],
+ "pairs": [
+  [
+   "帕林库洛",
+   "帕林库洛·勒伽西",
+   0.8522
+  ],
+  [
+   "玛利亚",
+   "玛利亚·迪斯特拉斯",
+   0.8547
+  ],
+  [
+   "阿尔缇",
+   "阿尔肯",
+   0.8777
+  ],
+  [
+   "芙兰琉莱",
+   "拉丝缇娅拉",
+   0.8457
+  ],
+  [
+   "『Connection』",
+   "『Growth』",
+   0.8046
+  ],
+  [
+   "『Foam』",
+   "『Growth』",
+   0.7934
+  ],
+  [
+   "『Firefly』",
+   "『Firefly·幻影』",
+   0.7854
+  ],
+  [
+   "『Impulse』",
+   "『Growth』",
+   0.8093
+  ],
+  [
+   "圣诞祭",
+   "阳祝日",
+   0.6436
+  ],
+  [
+   "跃犬",
+   "巨狼",
+   0.7064
+  ],
+  [
+   "魔法屋",
+   "魔法石",
+   0.7846
+  ],
+  [
+   "舞斗大会",
+   "兜牢宫",
+   0.5372
+  ],
+  [
+   "缇亚",
+   "缇达",
+   0.898
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 14,
+  "library": 152,
+  "dup_suspect": 0,
+  "uncertain": 4
+ }
+}

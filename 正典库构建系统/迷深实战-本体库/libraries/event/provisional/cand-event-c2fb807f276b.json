@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "医院",
+   "相川涡波",
+   "缇亚",
+   "魔力生成匮乏"
+  ],
+  "instant": null,
+  "kind": "见闻",
+  "name": "医院诊断",
+  "tick": 5,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 195,
+   "quote": "首先是被切断的右手，想要复原基本是不可能了。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 181,
+   "quote": "因为纯度比人类已知的最高级魔石还要高，所以这笔交易可谓是前所未有。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 7,
+   "text": "瓦尔德最大医院：右手不可复原（断后迟处+粗糙自愈）/胴体大疤/魔力生成匮乏（一周）/义肢与平衡、剑用、魔力构筑受创——职业冲击；缇达魔石纯度超已知最高级→国家高层亲自交涉变现巨款付清费用"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c2fb807f276b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

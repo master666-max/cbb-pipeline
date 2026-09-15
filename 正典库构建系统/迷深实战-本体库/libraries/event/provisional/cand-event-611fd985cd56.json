@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "回忆",
+  "name": "少年之旅与泪洸之夜",
+  "tick": 5,
+  "time_verbatim": "寒冷的夜晚（L119）"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 92,
+   "quote": "我决心以一个少年而非使徒西斯的身份开始一段冒险。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 111,
+   "quote": "我遇到了那个脸上有火伤痕迹的黑发黑目的少年。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 7,
+   "text": "决意以少年身份活过（弃神圣魔法执剑入迷宫）→旅途尽毁（盗贼/带路骗/商人骗卖/怪物/散财）→心死蹲坐泪洸之夜→遇脸有火伤的黑发少年（ch0004 相遇之缇亚侧）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-611fd985cd56",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

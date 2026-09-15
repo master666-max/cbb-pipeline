@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "莱纳",
+   "赫勒比勒夏因家"
+  ],
+  "name": "莱纳的家庭环境",
+  "note": "养子身份+自贬（垃圾中之渣滓）+『隐约窥见极其复杂的家庭环境』——主角刻意回避的话题",
+  "payoff_chapter": null,
+  "setup_chapter": 12,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 344,
+   "quote": "像我这种被收养来的贵族，也就只有保护姐姐大人这点儿价值了。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 12,
+   "text": "贵族家内幕钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-b28c1a74ca4d",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

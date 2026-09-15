@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 54,
+   "quote": "来讲讲联合国『最强』的探索者格连与守护者战斗的故事吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 549,
+   "quote": "目前，『正道』的铺设一直到二十三层为止",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 551,
+   "quote": "即使是最强的探索者格连也未能战胜镇守迷宫第十层和第二十层的守护者",
+   "vol": 1
+  },
+  {
+   "chapter": 15,
+   "line": 933,
+   "quote": "当然啊，那可是大名人。就是格连·沃克了，被称为最强探索者的家伙。」",
+   "vol": 1
+  },
+  {
+   "chapter": 15,
+   "line": 943,
+   "quote": "我只能用可怜来形容他就是了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "联合国『最强』的探索者（克劳语）：将『正道』铺设至二十三层的功臣（据说）；但未能战胜镇守第十层与第二十层的守护者（传闻）；与守护者战斗的故事为探索者间传说"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-7d375a26a456",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7d375a26a456-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-7d375a26a456",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

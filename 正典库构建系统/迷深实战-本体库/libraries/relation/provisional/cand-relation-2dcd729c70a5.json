@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "恋慕(据阿尔缇言)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 774,
+   "quote": "玛·利·亚·她·喜·欢·你·啊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 16,
+   "text": "阿尔缇断言+拉丝缇娅拉证实（『我觉得她就是喜欢你不会有错哦，百分百的』）；玛利亚本人拼命隐藏（拉丝缇娅拉：『明明那么拼命地在隐藏自己的心意的说』）；主角决定待其亲口表明再答"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2dcd729c70a5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

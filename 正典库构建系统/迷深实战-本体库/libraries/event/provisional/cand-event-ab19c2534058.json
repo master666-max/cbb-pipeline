@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "毒之火蜥蜴",
+   "相川涡波",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "二十四层熔岩突破未遂",
+  "tick": 12,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 652,
+   "quote": "【怪物】毒之火蜥蜴：位阶23",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 16,
+   "text": "二十三层制图无阶梯→多重展开发现→二十四层熔岩空间震撼；毒之火蜥蜴岩浆游击（拉丝缇娅拉中毒）→FullCure×2 解毒→撤退；攻略法=无视怪物跑过去；阿尔缇教学方案确定"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ab19c2534058",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

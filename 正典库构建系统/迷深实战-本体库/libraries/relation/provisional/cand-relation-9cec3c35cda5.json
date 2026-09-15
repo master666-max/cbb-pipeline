@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "店长",
+  "rel_type": "交涉(先斩后奏)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 689,
+   "quote": "我去拜托店长，让他安排基督在安定下来之前都可以不用来上班。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 15,
+   "text": "泪眼演技骗得无限期休假（主角酒馆工作暂停）+提议玛利亚代役情报收集——被主角数落但出发点为善意"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9cec3c35cda5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 12,
+  "fact": "死在迷宫中的怪物不留尸体只留魔石；迷宫具自净能力（吞噬遗留物——如缇亚断手被迷宫吞噬不可回收，或有以垃圾秽物为食的怪物）；眷属不因Boss死亡而消失（狂怒袭来）",
+  "name": "迷宫中部的自净与掉落",
+  "tick": 8
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 35,
+   "quote": "死在迷宫之中的怪物并不会留下尸体，会留下的只有被唤作魔石的矿石罢了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 12,
+   "text": "迷宫生态常识"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-c95ccf9bb566",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

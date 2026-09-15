@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "相川涡波"
+  ],
+  "name": "混乱10.00门槛",
+  "note": "主角预感：混乱数值达十位数『或许会满足什么条件』——技能？？？与混乱的临界机制",
+  "payoff_chapter": null,
+  "setup_chapter": 12,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 567,
+   "quote": "数值达到十位数或许会满足什么条件，我总有这种预感。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 12,
+   "text": "系统临界钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-52959aab52af",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

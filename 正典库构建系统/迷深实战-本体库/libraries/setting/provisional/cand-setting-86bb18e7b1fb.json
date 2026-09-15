@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 15,
+  "fact": "怪物『位阶』（Rank）≈『足够与之交战的等级』（Level）；等级之外『素质』决定成长速度——素质不足者（玛利亚1.52/格连）等级越高与规格外者（涡波7.00/缇亚5.00/拉丝缇娅拉4.00）差距越大；『数值无法表现的数值』高者（拉古涅）另当别论",
+  "name": "位阶与素质论",
+  "tick": 11
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 160,
+   "quote": "我发现所谓『位阶』（Rank）的意思差不多相当于「足够与之交战的等级（Level）」。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 15,
+   "text": "战力体系总则"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-86bb18e7b1fb",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

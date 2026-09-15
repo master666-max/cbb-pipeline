@@ -1,0 +1,56 @@
+{
+ "canonical": {
+  "entity_type": "组织",
+  "name": "莱文（Reborn）教"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 13,
+   "quote": "根据这个大陆的主要宗教莱文（Reborn）教的传承，所谓『使徒』乃是神的代行者。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 12,
+   "quote": "教会的神父将我唤作『使徒』并无比尊崇。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 7,
+   "text": "大陆的主要宗教：传承称『使徒』为神的代行者；教会神父据其教义养育缇亚并尊崇为使徒（与 ch0003 五国联合国『信奉同一宗教』之说相接——国教位格推断待证）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 7,
+   "text": "与货币『莱文（Reborn）』同名异指（宗教/货币两类实体分立，同源关系文中未言明）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a7bf73a6fa53",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

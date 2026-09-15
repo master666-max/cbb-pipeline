@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "迷宫",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "十级单飞与阿尔缇拦路",
+  "tick": 5,
+  "time_verbatim": "太阳还未升起的大清早（L336）"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 366,
+   "quote": "在我身后、在我行走的这条道路上有一团燃烧的火焰。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 7,
+   "text": "缇亚经验值直升10级（混乱8.59）；大清早独至迷宫门前（避人）→凭空火焰开口说话→绷带化衣现阿尔缇人形；对守护者作战计划全盘瘫痪"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c0f80c813c26",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

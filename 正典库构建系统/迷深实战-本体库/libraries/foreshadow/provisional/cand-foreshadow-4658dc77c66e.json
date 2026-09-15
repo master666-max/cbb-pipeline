@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "弗茨亚茨",
+   "拉丝缇娅拉",
+   "海因"
+  ],
+  "name": "圣诞祭仪式",
+  "note": "海因：『大小姐您应该也没有让那个仪式功亏一篑的打算』——拉丝缇娅拉必归的『仪式』为何（圣诞祭=ch0013 缇亚出院日重合）",
+  "payoff_chapter": null,
+  "setup_chapter": 15,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 340,
+   "quote": "况且大小姐您应该也没有让那个仪式功亏一篑的打算，没错吧？",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 15,
+   "text": "圣线核心钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-4658dc77c66e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "地点(迷宫层)",
+  "name": "十层"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 479,
+   "quote": "这里正所谓是我的体内。说整个十层就是我本人之写照也不为过。」",
+   "vol": 1
+  },
+  {
+   "chapter": 12,
+   "line": 477,
+   "quote": "能在迷宫里安全地调度火焰的地方可只有这里哦？而且怪物也不会出现在这里。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 12,
+   "text": "阿尔缇的阶层：充满火焰的明亮空间（火焰不炙身）——『这里正所谓是我的体内。说整个十层就是我本人之写照也不为过』；无怪物、可安全调度火焰（唯一处）、贵重休息区；正道结界内无火焰"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-f405a40b175c",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

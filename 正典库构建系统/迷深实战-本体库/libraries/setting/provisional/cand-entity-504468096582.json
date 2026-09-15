@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "圣诞祭"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 39,
+   "quote": "为了纪念和称颂创建了联合国的英雄们，每年都会举办祭典。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 13,
+   "text": "联合国年度祭典：纪念称颂创建联合国的英雄们；前几日弗茨亚茨举国欢庆、当天弗茨亚茨大圣堂举办盛大仪式——缇亚出院日恰逢之（约定同游）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-504468096582",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

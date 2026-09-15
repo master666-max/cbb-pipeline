@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "地点(迷宫层)",
+  "name": "二十四层"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 624,
+   "quote": "最值得一提的要数熔岩。沸腾的岩浆像河流一般流淌在二十四层。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 16,
+   "text": "熔岩层：石柱林立洞窟状广阔空间（打破回廊规则）、岩浆如河、常人无法呼吸之高温、怪物极少；阶梯难寻（半径一公里索敌无果）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-342b1155c5fa",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 12,
+  "fact": "迷宫西侧国家艾尔多拉琉：魔法文化发达、勤勉、教学机构众多、迷宫旁大陆最大学院；一级探索者资格考试=收集一至十层Boss掉落品+于十层采集『不会消失的火焰』（排名竞争制；最高水平学生中仅少数有权挑战；光靠家族权柄无法取得）",
+  "name": "艾尔多拉琉与一级探索者考试",
+  "tick": 8
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 258,
+   "quote": "光靠家族的权柄是无法取得一级探索者的资格的。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 12,
+   "text": "西侧国家+教育体系"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-1ce2fc29c986",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

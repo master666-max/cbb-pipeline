@@ -1,0 +1,56 @@
+{
+ "canonical": {
+  "entities": [
+   "军团蝠",
+   "斯诺·沃克",
+   "相川涡波",
+   "艾尔娜",
+   "芙兰琉莱",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "护卫",
+  "name": "护送考试至十层",
+  "tick": 8,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 438,
+   "quote": "斯诺取出一个瓶子将火焰纳入其中。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 12,
+   "text": "两枚金币受雇：八层巨蜂（芙兰琉莱斩首被接）→九层军团蝠（教科书式攻略）→十层斯诺采集不会消失的火焰；五人+α的压力倍于独战；主角谢绝护送回宅之邀（自称尚要去十层以下）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ba2a954f6b39",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

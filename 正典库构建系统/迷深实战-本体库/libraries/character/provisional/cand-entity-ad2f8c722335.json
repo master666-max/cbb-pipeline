@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "跃犬"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 1115,
+   "quote": "这是位阶8的怪物，跃犬。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 13,
+   "text": "八层四足兽类怪物（位阶8，一般需数名7级探索者合力）：速度突出——被玛利亚以狩猎+炯眼单杀（断肌腱/灼烧/刺心）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ad2f8c722335",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

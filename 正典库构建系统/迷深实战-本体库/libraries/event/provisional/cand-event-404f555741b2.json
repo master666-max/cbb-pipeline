@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "『世界炎蛇』",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "试验",
+  "name": "玛利亚新魔法试炼",
+  "tick": 12,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 465,
+   "quote": "这是以消耗HP为必要条件的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 16,
+   "text": "十九层弥诺陶洛斯试验（蜃气楼+幻影掩护→世界炎蛇一击炭化）；HP 锐减之异常确认；二十一层实战（抱玛利亚公主抱回避+连杀狂怒者×4）至精疲力竭——『还·不·行·呢』自弃归宅（苍白笑容）；续航力不足结论"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-404f555741b2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

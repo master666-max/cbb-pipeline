@@ -1,0 +1,61 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.9502
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "塞拉·雷迪安特",
+   "library_match": "缇娅拉·弗茨亚茨",
+   "similarity": 0.8574
+  }
+ ],
+ "pairs": [
+  [
+   "拉丝缇娅拉",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.9502
+  ],
+  [
+   "天剑诺亚",
+   "缇亚",
+   0.5356
+  ],
+  [
+   "拟神之眼",
+   "悬影",
+   0.6388
+  ],
+  [
+   "血术",
+   "剑术",
+   0.6842
+  ],
+  [
+   "塞拉·雷迪安特",
+   "缇娅拉·弗茨亚茨",
+   0.8574
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ],
+  [
+   "『Foam』",
+   "『Growth』",
+   0.7934
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 7,
+  "library": 159,
+  "dup_suspect": 1,
+  "uncertain": 1
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "魔力生成匮乏"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 202,
+   "quote": "接下来是因为失血导致的『魔力生成匮乏』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 7,
+   "text": "大量失血导致的病症（魔力与血关系密切）：MP 回复变慢，专门摄食调节+魔法器具可治，约一周痊愈"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-952e0e0cd227",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

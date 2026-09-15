@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『次元雪』",
+  "rel_type": "组合技",
+  "subject": "『Foam』"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 176,
+   "quote": "这便是『Foam』和『Freeze』的组合技。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 15,
+   "text": "Foam（容器）+Freeze（寒气）=次元雪（陷阱型冻结弹）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d6c56a00a77b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

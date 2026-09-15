@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波",
+   "缇达",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "实验",
+  "name": "二十层Connection设置成功",
+  "tick": 11,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 378,
+   "quote": "果不其然，客厅和第二十层的空间完美地连接在了一起。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 15,
+   "text": "缇达房间（无魔力残留如阿尔缇预测）设门成功——自宅客厅↔二十层直通（通勤革命）；拉丝缇娅拉贪玩折腾坏门→重开耗MP近半；维持成本=上限200MP"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e514ba7e4bac",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "甲壳海妖",
+  "rel_type": "击杀",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 179,
+   "quote": "【怪物】甲壳海妖：位阶7",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 12,
+   "text": "斩触手救人→知觉器官逐一击溃→贯首纵劈（阿尔缇火焰暗中助阵）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-61d8fae4aff5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "迷宫"
+  ],
+  "instant": null,
+  "kind": "实验",
+  "name": "练级实验日",
+  "tick": 9,
+  "time_verbatim": "不到三十分钟（L578）"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 649,
+   "quote": "『经验值的分配始终均等，与级别差无关』『分配的极限距离在一百米左右』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 13,
+   "text": "背玛利亚疾驰至五层（敏捷近10验证/体力三十分钟即耗——『体力』与持久力不直接挂钩）；放置她独猎：结论=经验值始终均分（与级别差无关）/分配极限距离约百米/正道结界处距离变则——『犯规』级带人练级能力（隐匿动机：恐被国家逮捕）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5da2e7a36e4c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

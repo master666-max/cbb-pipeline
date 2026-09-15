@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "地点(国/势力)",
+  "name": "艾尔多拉琉"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 255,
+   "quote": "据芙兰琉莱所言，她们似乎是迷宫西侧的国家艾尔多拉琉的学生。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 12,
+   "text": "迷宫西侧的国家：魔法文化非常发达、以勤勉闻名；教学机构众多，迷宫附近建有大陆规模最大的学院（艾尔多拉琉学院）；学生为一级探索者资格挑战收集1-10层Boss掉落品+『不会消失的火焰』的考试（排名竞争制）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ffcc6be1c6ac",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

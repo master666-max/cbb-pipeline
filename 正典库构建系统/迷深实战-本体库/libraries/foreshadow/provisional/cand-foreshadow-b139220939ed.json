@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "守护者",
+   "缇达",
+   "阿尔缇"
+  ],
+  "name": "守护者消失机制",
+  "note": "留恋实现→弱化→愿望成真即消失（阿尔缇自述，缇达死因佐证）——攻略迷宫最深部/不战破守护者的关键机制",
+  "payoff_chapter": null,
+  "setup_chapter": 7,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 444,
+   "quote": "待到愿望成真的时候，我们便会消失。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 7,
+   "text": "世界底层规则级情报"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-b139220939ed",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "狂怒者"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 468,
+   "quote": "大型怪物是全身上下都长满了黑色体毛的、四手四脚的异形大猩猩·狂怒者。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 15,
+   "text": "二十一层主力怪：黑色体毛四手四脚异形大猩猩（动作迟缓但复数手脚棘手）；群体聚集性（闻同伴惨叫蜂拥而至）；狂暴模式"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0fd57f50c857",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

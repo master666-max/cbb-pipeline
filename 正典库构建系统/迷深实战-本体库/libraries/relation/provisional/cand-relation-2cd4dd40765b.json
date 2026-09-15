@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾丽娅的发夹",
+  "rel_type": "珍握(替代剑)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 326,
+   "quote": "就像是找到了可以替代剑在她心中的地位的什么东西一样，紧紧地——",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 7,
+   "text": "病榻上紧握发夹如替代剑之地位之物（右手丧失后）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2cd4dd40765b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

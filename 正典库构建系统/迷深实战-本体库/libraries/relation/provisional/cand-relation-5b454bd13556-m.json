@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "护卫同行",
+  "subject": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 565,
+   "quote": "「等、等一下，您应当避免与其他探索者的接触！」",
+   "vol": 1
+  },
+  {
+   "chapter": 15,
+   "line": 279,
+   "quote": "我们肩负着看好大小姐，不让她胡来的使命，万万不可掉以轻心。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 3,
+   "text": "银铠四人组护卫『大小姐』；海因为主角说情并提醒大小姐避免与探索者接触（L551/565）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-5b454bd13556",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5b454bd13556-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-5b454bd13556",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

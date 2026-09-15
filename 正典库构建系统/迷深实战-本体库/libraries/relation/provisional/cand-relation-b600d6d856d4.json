@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "隐瞒道歉(神圣魔法)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 229,
+   "quote": "「抱歉，基督。我之前一直对你隐瞒了这个魔法……」",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 236,
+   "quote": "「不，我随时都会运用它的。从今往后一直如此。我已经决定好了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 7,
+   "text": "病房中自愈演示『完全治愈』并为一直隐瞒道歉；宣言今后随时使用；主角早知其天赋并不介意"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b600d6d856d4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

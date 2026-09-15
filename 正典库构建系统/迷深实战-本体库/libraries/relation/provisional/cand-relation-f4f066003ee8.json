@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "弗茨亚茨",
+  "rel_type": "冠国名之姓(王称名权贵)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 433,
+   "quote": "以国名为姓氏的话，那就意味着你身上流淌着王室之血咯？",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 435,
+   "quote": "在这里光是以王称名的权贵就达百余名之多哦？政事也是通过为数众多的王共同研究决定的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "姓氏与国名完全一致——主角问『意味着你身上流淌着王室之血咯？』答『虽然你说的没错』；联合国中以王称名的权贵达百余名（政事由众多王共同研究决定）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f4f066003ee8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

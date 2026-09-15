@@ -1,0 +1,358 @@
+{
+ "unit": "ch0007",
+ "chapter": 7,
+ "ingestion_index": 5,
+ "title": "第五章『我（私）』是迪亚布罗・西斯",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 33,
+  "pass": 33,
+  "intercept": 0,
+  "admitted": 33,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 32,
+  "on-create": 1
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-a7bf73a6fa53",
+   "type": "entity",
+   "name": "莱文（Reborn）教",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a7bf73a6fa53",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-c6b75b076d12",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-c6b75b076d12",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-9c4318d54856",
+   "type": "entity",
+   "name": "医院",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-9c4318d54856",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-952e0e0cd227",
+   "type": "entity",
+   "name": "魔力生成匮乏",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-952e0e0cd227",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-e6f87d2b66a5",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-59129146540d",
+   "type": "entity",
+   "name": "阿尔缇",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-cf424c2d1f29-m2-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-cdc86e4f6679",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6cab0ae70096-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-1d3a904ca547",
+   "type": "entity",
+   "name": "艾丽娅的发夹",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-521b7d4e3ff0-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-48536ebc4d1d",
+   "type": "entity",
+   "name": "过捕护",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2bafb0b34450-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-8c869b9a59c9",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-9783b2e6c438",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-9783b2e6c438",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-c7858eb1c430",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-c7858eb1c430",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-b8e6b09a5513",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-b8e6b09a5513",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-2cd4dd40765b",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-2cd4dd40765b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-6ee06d212e9e",
+   "type": "relation",
+   "name": "阿尔缇",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-6ee06d212e9e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-b600d6d856d4",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-b600d6d856d4",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-08ef1c6e9633",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3f2c18f3e5bf",
+   "type": "event",
+   "name": "缇亚身世·使徒西斯篇",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-3f2c18f3e5bf",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-a85a2b18cad4",
+   "type": "event",
+   "name": "归乡创伤与我（私）之死",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-a85a2b18cad4",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-611fd985cd56",
+   "type": "event",
+   "name": "少年之旅与泪洸之夜",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-611fd985cd56",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-a4b05da71c9a",
+   "type": "event",
+   "name": "缇亚的濒死抉择",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-a4b05da71c9a",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-c2fb807f276b",
+   "type": "event",
+   "name": "医院诊断",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-c2fb807f276b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-432ef99c0539",
+   "type": "event",
+   "name": "病房对话（精神剧变）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-432ef99c0539",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-c0f80c813c26",
+   "type": "event",
+   "name": "十级单飞与阿尔缇拦路",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-c0f80c813c26",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-4bf5c6c95fb0",
+   "type": "event",
+   "name": "阿尔缇的愿望与守护者真相",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-4bf5c6c95fb0",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-d48745f439c7",
+   "type": "foreshadow",
+   "name": "缇亚的精神剧变",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-d48745f439c7",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-b139220939ed",
+   "type": "foreshadow",
+   "name": "守护者消失机制",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-b139220939ed",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-cf562fb26e7f",
+   "type": "foreshadow",
+   "name": "阿尔缇的恋爱愿望",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-cf562fb26e7f",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-4837d5e54709",
+   "type": "foreshadow",
+   "name": "缇亚的弟弟",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-4837d5e54709",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-93ccca889a39",
+   "type": "setting",
+   "name": "缇亚的名字谱系",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-93ccca889a39",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-fcc39a146d01",
+   "type": "setting",
+   "name": "缇亚的身世",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-fcc39a146d01",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-1a9a4db52698",
+   "type": "setting",
+   "name": "技能暴走体系",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-1a9a4db52698",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-58054db33d90",
+   "type": "setting",
+   "name": "魔法医疗水平",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-58054db33d90",
+    "repeated": true
+   }
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 5,
+  "pseudo_date": "2000-01-06",
+  "track": "consistent-duplicate"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

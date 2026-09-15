@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "加入队伍",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 394,
+   "quote": "【拉丝缇娅拉·弗茨亚茨加入了队伍】",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 397,
+   "quote": "这样一来我的队伍人数就增加到四人了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 14,
+   "text": "【拉丝缇娅拉·弗茨亚茨加入了队伍／队伍队长是相川涡波】——两天内队伍增至四人（缇亚/玛利亚/拉丝缇娅拉各以为自己与主角单独组队）；条件=轻举妄动即踢出+维持恋人设定挡追兵；以自家为据点同住"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2eb9a2b97b60",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

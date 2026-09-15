@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "真决斗(要求离境)",
+  "subject": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 1042,
+   "quote": "就·请·你·和·大·小·姐·两·个·人·一·起·离·开·联·合·国。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 16,
+   "text": "收买不成→戒指风魔法奇袭开战（无宣誓真决斗）；拉丝缇娅拉被暴风击飞断臂昏迷；主角双剑+烟幕抗衡至胶着；海因因拉丝缇娅拉将醒而收手撤走（计划乱而反喜）；胜负未决"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5ec9754d18ee",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

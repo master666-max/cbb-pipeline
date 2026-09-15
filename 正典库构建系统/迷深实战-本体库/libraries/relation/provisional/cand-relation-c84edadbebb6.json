@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "拉丝缇娅拉",
+  "rel_type": "预言死期(恳求带离)",
+  "subject": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 1159,
+   "quote": "待到圣诞祭结束的时候，她会从这个世上消失的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 16,
+   "text": "据海因：圣诞祭结束时她会从世上消失（死）——已无法说服她；其通透澄澈之言全为假他人之手塑造的『被造物』（表情/感情/思考方式）；恳求倾听『切实存在于那里的少女』的真心并带她逃离联合国"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c84edadbebb6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

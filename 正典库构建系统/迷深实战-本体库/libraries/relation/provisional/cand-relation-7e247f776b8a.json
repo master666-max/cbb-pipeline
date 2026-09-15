@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "芙兰琉莱",
+  "rel_type": "受雇护卫",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 302,
+   "quote": "所以报酬再翻一倍怎么样。超赚的哦~，两枚金币哦~。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 12,
+   "text": "两枚金币佣兵护卫至十层（艾尔娜恳请翻倍报酬）；『基督大人成为守护我的骑士了呢』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7e247f776b8a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

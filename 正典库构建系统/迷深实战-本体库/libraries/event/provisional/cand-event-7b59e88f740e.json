@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "新家三人晚宴",
+  "tick": 10,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 442,
+   "quote": "玛利亚还在家里等着我。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "玛利亚两餐份家宴→让餐危机→共享提案连环→最终拉×玛同食同房；主角『机智如我』独享；难搞之处相互抵消论"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7b59e88f740e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "魔石戒指"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 1084,
+   "quote": "【魔石『震风』的戒指】寄宿着『震风』的力量的戒指",
+   "vol": 1
+  },
+  {
+   "chapter": 16,
+   "line": 1053,
+   "quote": "海因手上的一枚戒指应声碎裂，旋即便有一股浓郁的魔力化作一道暴风",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 16,
+   "text": "海因的十枚戒指武具：各寄宿风之魔力（震风/散风/天风…）——发动即碎裂成一次性魔法（『Sehr·Wind』暴风击飞/『Zeitlos·Wind』柔风干扰Dimension/『Rays·Wind』扭曲之线斩击/『Wind』驱散）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-6e41f0a6a492",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

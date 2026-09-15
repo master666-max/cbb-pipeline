@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "name": "真名告知交易",
+  "note": "拉丝缇娅拉：主角向玛利亚告知『涡波』真名⇔她告知『我与缇娅拉』的详细关系——双向揭秘开关（主角拖延中）",
+  "payoff_chapter": null,
+  "setup_chapter": 16,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 327,
+   "quote": "如果基督将自己是『涡波』的事告知玛利亚的话，我就会将『我与缇娅拉』的关系告诉你。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 16,
+   "text": "信息交换钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-0c9f177510e3",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

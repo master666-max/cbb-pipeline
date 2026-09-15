@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "天上之七骑士",
+  "rel_type": "隶属于",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 291,
+   "quote": "我姑且也有『天上之七骑士（CelestialKnights）』这么个了不起的职位。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 13,
+   "text": "自报『天上之七骑士（CelestialKnights）』职位（ch14 记录之跨章佐证+全名补强）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-713169a96bdf",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

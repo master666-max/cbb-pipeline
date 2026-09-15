@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "奴隶市场再访与玛利亚竞拍",
+  "tick": 9,
+  "time_verbatim": "入夜（非法时段）"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 215,
+   "quote": "「——主持人，我出双倍。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 13,
+   "text": "尾随奴隶车至另一非法市场：以数值作业自持→十三号法尼亚出身黑发黑目少女=玛利亚→情感代入决堤→『主持人，我出双倍』竞价战→帕林库洛代拍（三金币余成交+耍赖收四金币）转交"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-dfdf2be0b673",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

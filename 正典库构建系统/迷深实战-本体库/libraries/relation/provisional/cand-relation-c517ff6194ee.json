@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "跟踪观察(自称我主心仪之人)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 311,
+   "quote": "「因为听说你是我主心仪之人。所以我就抢着来看看你。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 13,
+   "text": "据其自述：『因为听说你是我主心仪之人。所以我就抢着来看看你』——其主为何人未明言（主角猜芙兰琉莱被否）；个人兴趣先行打探"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c517ff6194ee",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

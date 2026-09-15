@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 3,
+   "line": 551,
+   "quote": "你真啰嗦啊，海因。我们现在不就应该加强戒备才对么？",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 551,
+   "quote": "「别太为难一个孩子了。这有悖我们的骑士道。」",
+   "vol": 1
+  },
+  {
+   "chapter": 3,
+   "line": 565,
+   "quote": "「等、等一下，您应当避免与其他探索者的接触！」",
+   "vol": 1
+  },
+  {
+   "chapter": 15,
+   "line": 231,
+   "quote": "姓名：海因·赫勒比勒夏因HP321/333MP34/102职业：骑士",
+   "vol": 1
+  },
+  {
+   "chapter": 15,
+   "line": 347,
+   "quote": "——大小姐就拜托你了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 3,
+   "text": "银铠四人组成员（疑身高最高、为人真诚的男子，L534），为主角说情『这有悖我们的骑士道』；提醒大小姐避免与探索者接触（L551/565）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-2b0d2b1a0571",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-2b0d2b1a0571-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-2b0d2b1a0571",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

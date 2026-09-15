@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entities": [
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "回忆",
+  "name": "归乡创伤与我（私）之死",
+  "tick": 5,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 42,
+   "quote": "那孩子是我的弟弟。在我不知道的情况下，我居然有弟弟了。",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 50,
+   "quote": "「那我呢？」",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 73,
+   "quote": "这一瞬间，便是『我（私）』人生的终点。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 7,
+   "text": "归乡见双亲如沐春风牵着一无所知的弟弟（爱剑想做剑士，父允授剑术，满门宠爱语录）→『那我呢？』→母亲打断介绍『这位乃是西斯大人』→想死与烧尽一切之冲动→『我（私）』人生终点=『我（俺）』诞生→叛逃国家"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a85a2b18cad4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

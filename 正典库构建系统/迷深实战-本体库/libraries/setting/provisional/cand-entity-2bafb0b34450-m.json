@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "过捕护"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 479,
+   "quote": "属性魔法2.09过捕护2.00续命2.23良机2.02",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 172,
+   "quote": "【技能『过捕护』暴走了】",
+   "vol": 1
+  },
+  {
+   "chapter": 7,
+   "line": 173,
+   "quote": "以一定的感情为交换，将特定的感情予以强化",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "缇亚先天技能 2.00（L479）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-2bafb0b34450",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-2bafb0b34450-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-2bafb0b34450",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

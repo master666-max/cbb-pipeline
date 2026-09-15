@@ -1,0 +1,50 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "侯普思·约克鲁"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 237,
+   "quote": "姓名：侯普思・约克鲁HP253/282MP0/0职业：骑士",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 15,
+   "text": "黑白发壮年骑士：【状态】HP253/282 MP0/0 等级20 力量4.41 体力6.25 技巧11.72 敏捷8.21 贤能13.41 魔力0.00 素质1.12；先天武器战斗1.89 工作1.45；后天剑术0.78 神圣魔法0.00"
+  },
+  {
+   "category": "trait",
+   "chapter": 15,
+   "text": "镜像剑士（完美跟随对手动作寻反击之机，无自身独到剑术）；自嘲『正面对决大叔完全不是对手』；轻浮但具职业责任感"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7d29d91c920f",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

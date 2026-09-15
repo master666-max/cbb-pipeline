@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "托付保管",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 304,
+   "quote": "「嗯，当然。在我不在的时候，如果它能替我守护基督，我也会很开心的。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 7,
+   "text": "住院期间托于主角：『如果它能替我守护基督，我也会很开心的』——寄宿其念想之剑的让渡"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c7858eb1c430",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

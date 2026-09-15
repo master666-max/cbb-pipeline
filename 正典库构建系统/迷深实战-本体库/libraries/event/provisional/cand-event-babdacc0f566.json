@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "关系确立",
+  "name": "颈环切断与首夜对话",
+  "tick": 9,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 466,
+   "quote": "我就是个为了攻略迷宫而存在的奴隶啊。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 13,
+   "text": "泡澡+晚餐（不知泡澡为何物/奴隶传闻=一天内咬舌自尽）→炯眼看破主角（温柔得过分）→主角自认奴隶计划失败→『愿你晚安……我的主人……』；主角自嘲『我就是个为了攻略迷宫而存在的奴隶啊』（主人是谁？迷宫？机制？）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-babdacc0f566",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

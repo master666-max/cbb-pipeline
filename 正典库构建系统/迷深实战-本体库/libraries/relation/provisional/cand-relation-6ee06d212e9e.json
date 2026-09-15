@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "自愿随行(求信任)",
+  "subject": "阿尔缇"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 416,
+   "quote": "不管要用上多少天，无论要经过多少年，我都会在你身边帮你的忙。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 7,
+   "text": "迷宫门前拦单飞的主角：自称无敌意→宣言成为同伴（Boss『跟砍瓜切菜一样』，仅限正道结界外）→『不管要用上多少天，无论要经过多少年，我都会在你身边』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6ee06d212e9e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

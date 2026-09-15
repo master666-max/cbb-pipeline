@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 7,
+  "fact": "立足于魔法的医疗颇为先进（魔法器具辅助治疗）；但断肢再接极难（最好环境+最高魔法亦困难，断后处置迟+粗糙自愈则无从处理）；失血致魔力生成匮乏（专门摄食+器具，约一周）；义肢可备但影响平衡/剑用/魔力构筑",
+  "name": "魔法医疗水平",
+  "tick": 5
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 207,
+   "quote": "虽然我们这边会准备义肢，但对剑的使用和魔力的构筑毫无疑问会产生不良的影响。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 7,
+   "text": "医疗体系常识"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-58054db33d90",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

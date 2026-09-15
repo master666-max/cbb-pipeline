@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "芙兰琉莱",
+  "rel_type": "选定观察对象",
+  "subject": "阿尔缇"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 551,
+   "quote": "「就是那个叫芙兰琉莱的孩子啦。我蛮喜欢那种稚拙的恋之火的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 12,
+   "text": "『我蛮喜欢那种稚拙的恋之火的』——凭依守望计划的实施对象（主角默许：麻烦人物怎样都好）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-90e0e3459efb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

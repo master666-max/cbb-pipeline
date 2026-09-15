@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波"
+  ],
+  "name": "玛利亚与最重要之物的相似",
+  "note": "主角自认无法转卖玛利亚之因：『她实·在·是·过·于·相·似·了』——与自己最重要之物（正文不点名）相似",
+  "payoff_chapter": null,
+  "setup_chapter": 13,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 378,
+   "quote": "最重要的是，她实在是过·于·相·似·了",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 13,
+   "text": "主角内心线钩子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-1fd651e13819",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

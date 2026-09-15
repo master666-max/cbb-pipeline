@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "报酬交涉",
+  "tick": 9,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 1252,
+   "quote": "玛利亚最后用十分无语的表情从我手里接过了五十枚铜币",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 13,
+   "text": "日入数月生活费（变现震撼）；主角欲分半被拒（『我是属于主人的东西』）→玩笑式抬价交指定格五十铜币；主角赴酒馆打工被玛利亚最无语表情注视"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0c4104f247e7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

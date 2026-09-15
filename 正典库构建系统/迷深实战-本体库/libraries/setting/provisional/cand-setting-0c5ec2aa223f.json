@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 16,
+  "fact": "阿尔缇传授玛利亚的火炎魔法（世界炎蛇/FlameFlamberge）=同时消耗HP与MP之魔法（MP尚存亦夺HP；不减最大HP但单次即削）——与主角『MP枯竭后以最大HP补偿』（ch0006）机制不同源；玛利亚：反正被攻击就会当场牺牲故HP多少无所谓（效率主义生死观）",
+  "name": "HP代价魔法体系",
+  "tick": 12
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 470,
+   "quote": "「没错。阿尔缇教给我的两种魔法『世界炎蛇』『FlameFlamberge』是同时消耗HP和MP的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 16,
+   "text": "代价型魔法体系"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-0c5ec2aa223f",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

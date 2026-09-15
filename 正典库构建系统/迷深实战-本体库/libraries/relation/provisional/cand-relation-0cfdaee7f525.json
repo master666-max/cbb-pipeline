@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "决斗投降",
+  "subject": "拉古涅·卡伊库欧拉"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 1079,
+   "quote": "「啊，已经没有赢的可能了。这可能是我第一次占据了如此有利的条件还输掉对决了吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 15,
+   "text": "决斗③：最初一招固体魔力刃被化解→连击尽挡→速降投降；主角新条件=不许再带其他骑士来（获胜报酬追加）——拉古涅以骑士之名永誓"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0cfdaee7f525",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "阿尔缇随行与善意试探",
+  "tick": 8,
+  "time_verbatim": "今天早上（L48）"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 82,
+   "quote": "因为阿尔缇的突击，我得以从怪物的攻击中脱身。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 12,
+   "text": "得知愿望细节（无钟情对象/不能自恋/求介绍守望）→主角设局：暗中偏袒怪物令己陷险测其恶意——阿尔缇纯粹舍身相救（绷带撕裂流血仍先问安否）；主角愧疚依计划佯装信任；攻略2-5层"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-205019e5d7b1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

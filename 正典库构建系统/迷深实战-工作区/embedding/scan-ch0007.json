@@ -1,0 +1,80 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "莱文（Reborn）教",
+   "library_match": "莱文（Reborn）",
+   "similarity": 0.8853
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "缇达",
+   "similarity": 0.898
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "阿尔肯",
+   "similarity": 0.8777
+  }
+ ],
+ "pairs": [
+  [
+   "莱文（Reborn）教",
+   "莱文（Reborn）",
+   0.8853
+  ],
+  [
+   "使徒西斯",
+   "迪亚布罗·西斯",
+   0.7243
+  ],
+  [
+   "医院",
+   "旅店",
+   0.6215
+  ],
+  [
+   "魔力生成匮乏",
+   "属性魔法",
+   0.6718
+  ],
+  [
+   "缇亚",
+   "缇达",
+   0.898
+  ],
+  [
+   "阿尔缇",
+   "阿尔肯",
+   0.8777
+  ],
+  [
+   "阿雷亚斯家的宝剑",
+   "奥兰（Oria）大剑",
+   0.797
+  ],
+  [
+   "艾丽娅的发夹",
+   "艾尔娜",
+   0.7367
+  ],
+  [
+   "过捕护",
+   "守护者",
+   0.6244
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 10,
+  "library": 156,
+  "dup_suspect": 0,
+  "uncertain": 3
+ }
+}

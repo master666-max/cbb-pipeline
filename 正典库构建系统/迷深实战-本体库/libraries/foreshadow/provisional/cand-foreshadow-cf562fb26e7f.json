@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "阿尔缇"
+  ],
+  "name": "阿尔缇的恋爱愿望",
+  "note": "ch0006 遗愿托付的内容兑现：『我想要成就一段恋爱』——但依守护者机制实现即死；对象未明；为此不惜年月随行主角求信任",
+  "payoff_chapter": null,
+  "setup_chapter": 7,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 453,
+   "quote": "「——我想要成就一段恋爱。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 7,
+   "text": "愿望与死亡绑定的矛盾"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-cf562fb26e7f",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

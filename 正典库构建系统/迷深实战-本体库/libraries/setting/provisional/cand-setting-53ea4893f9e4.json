@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 15,
+  "fact": "①一人战斗他人摸鱼亦均分经验；②最大有效距离2-3人无差（约百米，正道结界变则）；③多人队伍经验值微衰减；④分配方式均分不变——加『Connection』维持成本=最大MP上限-200（家↔二十层常设门）",
+  "name": "组队系统细则",
+  "tick": 11
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 7,
+   "quote": "光是维持一个就令我可调度的MP上限下降了一百点左右。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 15,
+   "text": "本章实验四规则+维持成本实测"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-53ea4893f9e4",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "医院"
+ },
+ "evidence": [
+  {
+   "chapter": 7,
+   "line": 177,
+   "quote": "为了保证医疗水平，我选定了瓦尔德规模最大的一家医院。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 7,
+   "text": "瓦尔德规模最大的医院（主角选定以保证医疗水平）：木构建筑+魔法器具辅助治疗（魔法医疗颇为先进）；缇亚住院一周疗养处"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-9c4318d54856",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

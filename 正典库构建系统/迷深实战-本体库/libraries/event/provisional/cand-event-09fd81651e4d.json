@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "『次元雪』",
+   "深红弥诺陶洛斯",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "弥诺陶洛斯战与次元雪开发",
+  "tick": 11,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 139,
+   "quote": "【怪物】深红弥诺陶洛斯位阶：20",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 15,
+   "text": "位阶20精英（Rank≈Level 对应律发现）：Foam 附着→次元雪冻足→刺瞎放血至力竭；经验7122/只；掉落准三位炎魔法石（宿愤怒·上乘魔石说明文更多）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-09fd81651e4d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

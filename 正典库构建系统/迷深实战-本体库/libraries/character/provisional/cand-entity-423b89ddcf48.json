@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "艾尔娜"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 286,
+   "quote": "她的名字是艾尔娜。",
+   "vol": 1
+  },
+  {
+   "chapter": 12,
+   "line": 315,
+   "quote": "「我是兽人艾尔娜，是个战士。这边这位不怎么开口的女孩子是斯诺。是斥候哦。」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 12,
+   "text": "兽人战士（兜帽下疑猫耳——喵口癖）：腰挎大剑；彻头彻尾利己主义（只在自己有余裕时搭手、行动基于利弊计算）；惜命但通人情（求主角留下时几乎哭出来）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-423b89ddcf48",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}
