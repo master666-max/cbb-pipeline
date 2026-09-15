@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "锻冶受托",
+  "subject": "艾利巴茨·利拜斯"
+ },
+ "evidence": [
+  {
+   "chapter": 38,
+   "line": 426,
+   "quote": "我比较想以白色为基调制造朴素的直剑。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 38,
+   "text": "新佩剑订造（白色基调朴素直剑+银制细工+宝石刻字[苍蓝色]左右对称——外形争论妥协）；破损武器修理+新月线形石涂层；外聘锻冶师加速"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-837f791b9845",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

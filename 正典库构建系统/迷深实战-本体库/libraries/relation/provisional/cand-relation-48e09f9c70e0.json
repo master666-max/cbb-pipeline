@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "组合运营(Dimension×通信)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 38,
+   "line": 139,
+   "quote": "这导致公会陷入了运作效率比往常加快了七倍的异常事态。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 38,
+   "text": "公会七倍效率体制：主角城市全况观测+多线程处理（一周份文件一日清+全员委托一周份完成）+斯诺魔石传话中继——帕林库洛的组合技设计兑现"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-48e09f9c70e0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

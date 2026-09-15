@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『Ice·锁』"
+ },
+ "evidence": [
+  {
+   "chapter": 38,
+   "line": 218,
+   "quote": "只有作为施法者的我能够将之溶解并正常使用。——名字就叫魔法『Ice·锁』吧。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 38,
+   "text": "主角新创：在不破坏 Connection 的前提下封冻之门（强行溶解=门毁；唯施法者可溶开使用）——Connection 防盗保护"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-65930afa27f7",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

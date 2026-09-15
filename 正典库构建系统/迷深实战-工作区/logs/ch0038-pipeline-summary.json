@@ -1,0 +1,133 @@
+{
+ "unit": "ch0038",
+ "chapter": 38,
+ "ingestion_index": 30,
+ "title": "第四卷-第二章-为了得不到报偿的你",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 14,
+  "pass": 14,
+  "intercept": 0,
+  "admitted": 14,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 12,
+  "consistent-duplicate": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-16db8c35eeb2",
+   "type": "entity",
+   "name": "艾利巴茨·利拜斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-77f870bd4cf1",
+   "type": "entity",
+   "name": "LineSquitter",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-b03fc345192c",
+   "type": "entity",
+   "name": "新月线形石",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-65930afa27f7",
+   "type": "entity",
+   "name": "『Ice·锁』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-7822ff7fda25",
+   "type": "entity",
+   "name": "辉线疾走",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-b561e2c791a5",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6cab0ae70096-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-fc9a0a42aa6c",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-48e09f9c70e0",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-837f791b9845",
+   "type": "relation",
+   "name": "艾利巴茨·利拜斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-10c4ce45f0aa",
+   "type": "event",
+   "name": "公会运营首日与迷宫再开",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-b56bf1adb683",
+   "type": "foreshadow",
+   "name": "破损的宝剑之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c880741fcb58",
+   "type": "foreshadow",
+   "name": "十层的空虚感",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f599f6f88d0f",
+   "type": "setting",
+   "name": "阿雷亚斯家（剑圣名门）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-2e41568bce71",
+   "type": "setting",
+   "name": "会（主）长（人）称呼",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 30,
+  "pseudo_date": "2000-01-31",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

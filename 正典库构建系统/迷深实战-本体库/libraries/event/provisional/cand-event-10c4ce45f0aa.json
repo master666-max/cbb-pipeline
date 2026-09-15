@@ -1,0 +1,55 @@
+{
+ "canonical": {
+  "entities": [
+   "史诗探索者",
+   "斯诺·沃克",
+   "波鲁扎克",
+   "相川涡波",
+   "缇莉·琉克"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "公会运营首日与迷宫再开",
+  "tick": 30,
+  "time_verbatim": "公会生活第一~二天"
+ },
+ "evidence": [
+  {
+   "chapter": 38,
+   "line": 122,
+   "quote": "「啊、嗯。但是，与其说是今天的工作，不如说是七天的工作都结束了啊……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 38,
+   "text": "文件一周份一日清+缇莉队逃犯逮捕+波鲁扎克强盗捕获（六十七区）；Day2 迷宫再开（十层空虚感/Connection 重设+Ice·锁）→LineSquitter 陷阱捕获→锻冶工房订剑→教会升级15级（属性点魔力）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-10c4ce45f0aa",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

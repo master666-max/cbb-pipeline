@@ -1,0 +1,696 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "艾利巴茨·利拜斯"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 329,
+     "quote": "「艾利巴茨·利拜斯。真愧你记得呢。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 38,
+     "text": "史诗探索者专属锻冶师：【技能】先天神圣魔法1.34；后天属性魔法0.23 锻冶0.89 剑术0.07——一线级魔力+战斗出身（脸伤溃目缺耳——因伤收手转行推察）；外形至上主义者（『比性能更重要的是美』——史诗探索者式怪人）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-16db8c35eeb2",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "LineSquitter"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 232,
+     "quote": "LineSquitter：位阶1",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 38,
+     "text": "十四层高速稀有怪（位阶1！）：发蓝光小耗子，速度远超十四层水准且在主角之上——奖励怪级；被水洼+次元雪陷阱捕获击杀；掉落新月线形石+称号『辉线疾走』（敏捷补正+0.05）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-77f870bd4cf1",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品",
+    "name": "新月线形石"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 267,
+     "quote": "【新月线形石】",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 38,
+     "text": "稀有掉落魔石：【如闪光般奔驰的魔力的集合体/从身负比谁都要快的诅咒的怪物处得到的稀有掉落品】——市面一年难见一次（卖掉可随意玩乐三年）；剑身涂层强化/魔法道具双用途"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-b03fc345192c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『Ice·锁』"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 218,
+     "quote": "只有作为施法者的我能够将之溶解并正常使用。——名字就叫魔法『Ice·锁』吧。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 38,
+     "text": "主角新创：在不破坏 Connection 的前提下封冻之门（强行溶解=门毁；唯施法者可溶开使用）——Connection 防盗保护"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-65930afa27f7",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念(称号)",
+    "name": "辉线疾走"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 264,
+     "quote": "【获得了称号『辉线疾走』】",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 38,
+     "text": "击杀 LineSquitter 获得：敏捷补正+0.05"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-7822ff7fda25",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品",
+    "name": "阿雷亚斯家的宝剑"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 350,
+     "quote": "【破损的阿雷亚斯家的宝剑】",
+     "vol": 1
+    },
+    {
+     "chapter": 38,
+     "line": 378,
+     "quote": "不，我觉得还是拿着比较好。虽然我修不了，但是拿去给弗茨亚茨的锻冶师的话，说不定还有点希望。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 38,
+     "text": "★下落线：持物品中发现【破损的阿雷亚斯家的宝剑】（剑刃偏折古旧/剑身如插岩浆融解/攻击力1）——改篡后主角无印象（『想必是迷宫捡的』）；铭文难辨（曾刻『阿雷亚斯』）；艾利巴茨判弗茨亚茨锻冶师或可修；材质特殊不可熔——主角欲熔时背后寒意（核心记忆的抵抗）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-b561e2c791a5",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 46,
+     "quote": "「……呜……但麻烦就是麻烦。",
+     "vol": 1
+    },
+    {
+     "chapter": 38,
+     "line": 199,
+     "quote": "「……确实很厉害。但是，我觉得反正肯定是涡波干的。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "trait",
+     "chapter": 38,
+     "text": "怠惰哲学：『处理完不会被发火的量』为办事基准/极度厌恶麻烦（望天晒太阳癖好）；战斗力（龙人加成臂力+超大双武器暴力打法——武器损耗惨重）——十九层赤之弥诺陶洛斯单杀"
+    },
+    {
+     "category": "summary",
+     "chapter": 38,
+     "text": "改篡线视角：『不久之前还是一片火海…十层的守护者已经死了…我觉得反正肯定是涡波干的』（故意说给主角听的推断）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-fc9a0a42aa6c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "斯诺·沃克",
+    "rel_type": "组合运营(Dimension×通信)",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 139,
+     "quote": "这导致公会陷入了运作效率比往常加快了七倍的异常事态。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 38,
+     "text": "公会七倍效率体制：主角城市全况观测+多线程处理（一周份文件一日清+全员委托一周份完成）+斯诺魔石传话中继——帕林库洛的组合技设计兑现"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-48e09f9c70e0",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "锻冶受托",
+    "subject": "艾利巴茨·利拜斯"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 426,
+     "quote": "我比较想以白色为基调制造朴素的直剑。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 38,
+     "text": "新佩剑订造（白色基调朴素直剑+银制细工+宝石刻字[苍蓝色]左右对称——外形争论妥协）；破损武器修理+新月线形石涂层；外聘锻冶师加速"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-837f791b9845",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "史诗探索者",
+     "斯诺·沃克",
+     "波鲁扎克",
+     "相川涡波",
+     "缇莉·琉克"
+    ],
+    "instant": null,
+    "kind": "日常",
+    "name": "公会运营首日与迷宫再开",
+    "tick": 30,
+    "time_verbatim": "公会生活第一~二天"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 122,
+     "quote": "「啊、嗯。但是，与其说是今天的工作，不如说是七天的工作都结束了啊……」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 38,
+     "text": "文件一周份一日清+缇莉队逃犯逮捕+波鲁扎克强盗捕获（六十七区）；Day2 迷宫再开（十层空虚感/Connection 重设+Ice·锁）→LineSquitter 陷阱捕获→锻冶工房订剑→教会升级15级（属性点魔力）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-10c4ce45f0aa",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 38,
+    "entities": [
+     "相川涡波",
+     "缇亚",
+     "阿雷亚斯家的宝剑"
+    ],
+    "name": "破损的宝剑之谜",
+    "note": "阿雷亚斯家的宝剑=缇亚之剑（火山熔毁态）在持物品中被发现——改篡主角的无印象+熔解寒意反应=核心记忆抵抗的实证；『剑圣阿雷亚斯家』贵族名门说（艾利巴茨）；弗茨亚茨锻冶师修理线",
+    "payoff_chapter": null,
+    "setup_chapter": 38,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 378,
+     "quote": "我背后突然涌起一股寒意。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 38,
+     "text": "记忆恢复媒介钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-b56bf1adb683",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 38,
+    "entities": [
+     "相川涡波",
+     "阿尔缇"
+    ],
+    "name": "十层的空虚感",
+    "note": "记忆不存而情感残留（火焰消失的伤感/『那炽烈而桀骜的火焰再也见不到』）——改篡的盲点=感情层（与手环忠告呼应的回归线索）",
+    "payoff_chapter": null,
+    "setup_chapter": 38,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 208,
+     "quote": "那炽烈而桀骜的火焰，已经再也没机会见到了。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 38,
+     "text": "情感残留钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-c880741fcb58",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 38,
+    "fact": "据艾利巴茨：阿雷亚斯=优秀剑士辈出的贵族名门、『那位剑圣』所在的一族家名——ch0026 剑圣『阿雷亚斯家的老头子』（缇亚旧识）之设定侧补完；缇亚之剑的家名铭文",
+    "name": "阿雷亚斯家（剑圣名门）",
+    "tick": 30
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 372,
+     "quote": "提到阿雷亚斯肯定会想到那个贵族名门喽。这可是优秀剑士辈出的、那位剑圣所在的一族的家名啊。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 38,
+     "text": "锻冶师口述"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-f599f6f88d0f",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 38,
+    "fact": "斯诺对会长的称呼实为 Master（译注明示）——『被你这样的女孩子如此称呼有点瘆得慌』→改称名字；斯诺自身意志淡薄（温驯+怠惰双面）的性格档案补充",
+    "name": "会（主）长（人）称呼",
+    "tick": 30
+   },
+   "evidence": [
+    {
+     "chapter": 38,
+     "line": 35,
+     "quote": "真不愧是会（主）长（人）……",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 38,
+     "text": "角色关系细节"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-2e41568bce71",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切样文件行号-1）。",
+  "cross_chapter_notes": [
+   "★改篡后日常线：公会运营（Dimension 城市全况观测+斯诺魔石传话=七倍效率）——帕林库洛组合技设计的兑现；会（主）长（人）称呼（Master 译注——正文事实可抽）",
+   "★十层见闻：火焰消失后的空虚感（阿尔缇之死的余韵——记忆不存而情感残留）；斯诺『反正肯定是涡波干的』（她的推测线）",
+   "★LineSquitter 稀有怪+新月线形石（稀有掉落）+称号『辉线疾走』；新魔法『Ice·锁』（Connection 封冻保护）",
+   "★艾利巴茨·利拜斯（专属锻冶师）登场+破损的阿雷亚斯家的宝剑发现（缇亚之剑的下落！改篡后主角无印象——剑圣阿雷亚斯家=优秀剑士辈出的贵族名门之说）——寒意反应=核心记忆的抵抗"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=30→tick=30→2000-01-31。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行14388-14831（CHAPTER 0038，444行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批4 · CHAPTER 0038（第四卷-第二章-为了得不到报偿的你，摄入序30→tick30→伪锚点2000-01-31）"
+ }
+}
