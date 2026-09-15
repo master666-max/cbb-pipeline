@@ -1,0 +1,18 @@
+import io
+
+p = r"D:\zcode专用！！！！危险！！！！！！！！！\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+
+old = "+alias_map 采纳落地滞后项关闭）"
+new = "+alias_map 采纳落地滞后项关闭；⑥迷深实战路线改判（task-052 编号与 F3 线双占用，R-015 再现，文件名区分）：用户裁决单路线 GLM 亲抽——闲时免费算力=抽取引擎+隔离兜底（Tier1 adjusted 达标背书），DeepSeek/嵌入/Neo4j 依赖全线移除零服务零成本，U-C00 金标自检预注册门槛 P≥0.70）"
+assert old in s, "count anchor not found"
+s = s.replace("wrap-up 次数：3", "wrap-up 次数：4", 1)
+s = s.replace(old, new, 1)
+
+anchor_line = [l for l in s.splitlines() if "task-051-迷深实战工单与发车件" in l and l.startswith("- `")][0]
+t52 = "- `trajectories/2026-09-15/task-052-迷深实战改判免费亲抽路线.md` — **与 F3 线 task-052 编号双占用（R-015 再现，文件名区分）**。用户裁决单路线 GLM 亲抽（工单 v1.1）：闲时免费算力=抽取引擎（Tier1 GLM adjusted 达标背书+隔离兜底），DeepSeek/graphiti/嵌入全线移除=零服务零成本，库=cbb jsonl 本体库（Neo4j 导出阶段四）；U-C00=CHAPTER0014 金标 v5 自检预注册门槛 adjusted P≥0.70；教训=别替用户保留他已放弃的选项"
+assert anchor_line in s, "trajectory anchor not found"
+s = s.replace(anchor_line, anchor_line + "\n" + t52, 1)
+
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("index updated: count 3->4, task-052 line appended (dual-occupancy noted)")
