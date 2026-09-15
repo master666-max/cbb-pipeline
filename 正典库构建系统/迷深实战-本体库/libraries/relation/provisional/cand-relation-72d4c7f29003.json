@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "营救协力宣言",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 23,
+   "line": 725,
+   "quote": "「——让·我·来给拉丝缇娅拉救出来吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 23,
+   "text": "轰塌大圣堂+问真心+共逃古尔亚德之计划（被主角接棒自任主犯）；『既然她是一个能让基督决心帮助的同伴，那她当然也是我应该不遗余力地帮助的同伴』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-72d4c7f29003",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "弗茨亚茨大圣堂",
+   "相川涡波",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "侦察",
+  "name": "大圣堂侦察与阿尔缇确认",
+  "tick": 17,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 23,
+   "line": 798,
+   "quote": "「呵呵呵，还差一点了啊……还差一点就……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 23,
+   "text": "要塞侦察（唯一吊桥/数十骑士）；阿尔缇现身确认动机——答『不是爱而是看不过眼被任意调整』；阿尔缇静观+点火援助承诺（『还差一点了啊……』的颤抖喜悦——谜）；新冰结魔法开发至足迹生冰柱"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-225d158317d6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,352 @@
+{
+ "unit": "ch0023",
+ "chapter": 23,
+ "ingestion_index": 17,
+ "title": "第三卷-第一章-用以辨明狂气的理智的焼却",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 33,
+  "pass": 33,
+  "intercept": 0,
+  "admitted": 33,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 3,
+  "consistent-duplicate": 30
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-7c36b1d22d29",
+   "type": "entity",
+   "name": "魔石人类",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-02fffe4676ef",
+   "type": "entity",
+   "name": "古尔亚德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-485901a69008",
+   "type": "entity",
+   "name": "莱文教圣经",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-485901a69008",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-7f748ea0f202",
+   "type": "entity",
+   "name": "斐勒卢托",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7f748ea0f202",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-f51d9d5a697f",
+   "type": "entity",
+   "name": "弗茨亚茨大圣堂",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f306f97e0d4f",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-a5e5d38825b1",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-edf4b9c46bec",
+   "type": "entity",
+   "name": "海因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2b0d2b1a0571-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-3b05a2f5df46",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-a905517205be",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-1b2c7f4ebe11",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-7d9a96dd90fe",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-7d9a96dd90fe",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-beec13f5212e",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-beec13f5212e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-ad4307901916",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-ad4307901916",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-47f8b77d1c68",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-47f8b77d1c68",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-c348462bc91b",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-c348462bc91b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-72d4c7f29003",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-72d4c7f29003",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-f10c1429daaa",
+   "type": "event",
+   "name": "海因战余波与拉丝缇娅拉归宅",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-f10c1429daaa",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-97b6638f97d8",
+   "type": "event",
+   "name": "十五层刷怪与教会升级",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-97b6638f97d8",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-f2afb4bc3c2e",
+   "type": "event",
+   "name": "帕林库洛教会密谈",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-f2afb4bc3c2e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-2cfab4a8cf77",
+   "type": "event",
+   "name": "诀别早餐与感情剥夺",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-2cfab4a8cf77",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-ee118d7cf495",
+   "type": "event",
+   "name": "缇亚身世坦白与营救同盟",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-ee118d7cf495",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-225d158317d6",
+   "type": "event",
+   "name": "大圣堂侦察与阿尔缇确认",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-225d158317d6",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-5822939d5352",
+   "type": "event",
+   "name": "海因共赴与记忆走马灯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-5822939d5352",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-647083ad7777",
+   "type": "foreshadow",
+   "name": "圣诞祭活祭执行",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-647083ad7777",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-398f2fe661b4",
+   "type": "foreshadow",
+   "name": "恋慕剥夺与代价体系",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-398f2fe661b4",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-765499f3ae24",
+   "type": "foreshadow",
+   "name": "海因的记忆走马灯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-765499f3ae24",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-58f614d6036d",
+   "type": "foreshadow",
+   "name": "灵魂代价的怀旧感",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-58f614d6036d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-cdf6362902ba",
+   "type": "foreshadow",
+   "name": "玛利亚狂化之谜",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-cdf6362902ba",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-5a5996e74861",
+   "type": "foreshadow",
+   "name": "帕林库洛的必至预言",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-5a5996e74861",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-2a4426046031",
+   "type": "setting",
+   "name": "弗茨亚茨的英雄谭计划",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-2a4426046031",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-7f3641fc4361",
+   "type": "setting",
+   "name": "精神魔法控制与解除窗口",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-7f3641fc4361",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-55261c339c0f",
+   "type": "setting",
+   "name": "创造魔法者=一部分人",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-55261c339c0f",
+    "repeated": true
+   }
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 17,
+  "pseudo_date": "2000-01-18",
+  "track": "consistent-duplicate"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

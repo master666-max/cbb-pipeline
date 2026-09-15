@@ -1,0 +1,52 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "阿尔缇"
+  ],
+  "name": "玛利亚狂化之谜",
+  "note": "火焰催发混乱说（犯人嫌疑指向阿尔缇？但目的不明）；家执念/嫉妒/平凡欲求的爆发；知情报者仅三人——妨碍营救说浮起",
+  "payoff_chapter": null,
+  "setup_chapter": 23,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 23,
+   "line": 960,
+   "quote": "难道说制造出这种情况的犯人的目的，就是为了妨碍我救出拉丝缇娅拉吗？",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 23,
+   "text": "角色暗线钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-cdf6362902ba",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

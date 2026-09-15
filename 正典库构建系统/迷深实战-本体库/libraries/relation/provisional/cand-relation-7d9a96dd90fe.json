@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "煽动操纵",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 23,
+   "line": 207,
+   "quote": "他之所以那么做，是·因·为·我·从·旁·煽·动·的·缘·故。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 23,
+   "text": "自白以吹风点燃海因忧愤推其入狂乱（海因暴走事件元凶）；此前唆使主角买奴隶亦其手笔"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7d9a96dd90fe",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

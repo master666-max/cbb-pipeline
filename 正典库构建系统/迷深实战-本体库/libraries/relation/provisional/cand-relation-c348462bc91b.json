@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "炎剑袭击(混乱狂化)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 23,
+   "line": 909,
+   "quote": "与此同时，一股烈焰从玛利亚体内喷涌而出。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 23,
+   "text": "圣诞祭晨狂化袭击（混乱4.23：嫉妒/家执念/平凡安稳欲求）；主角空手+Freeze 冷却擒压平息；犯人疑云（火焰催发说→阿尔缇嫌疑？目的不明）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c348462bc91b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}
