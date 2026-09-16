@@ -1,0 +1,14 @@
+import io, re
+
+base = r"D:\zcode专用！！！！危险！！！！！！！！！"
+p = base + r"\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+m = re.search(r"- 自最后反思以来 wrap-up 次数：(\d+)（", s)
+n = int(m.group(1)) + 1
+s = s.replace("wrap-up 次数：" + m.group(1) + "（", "wrap-up 次数：" + str(n) + "（", 1)
+s = s.replace("）\n- 最后反思：", "；" + str(n) + "①架构漂移全量审计+零缺口修正（task-060）：U-A17迁移30/30零漂移+B1-B6全实证；真漂移2（Graph Store降级/graphiti_edge消失=v1.1夹带）+弱化4（judge未考/QA补抽缺/EDC/三阈值）；用户裁决零质量缺口→六项全机制闭环（强制图层+债务台账/graph_edge回归/judge补考前置/召回探针/EDC等效映射/三阈值），工单v1.4+决策补记录）\n- 最后反思：", 1)
+anchor_line = [l for l in s.splitlines() if "task-058-迷深实战v1.3调度员编排" in l and l.startswith("- `")][0]
+t60 = "- `trajectories/2026-09-16/task-060-架构漂移审计与零缺口修正.md` — 三层对账（v1.0基线/U-A17/cbb实装）：迁移30/30零漂移+B公理全实证；真漂移2（Graph Store/graphiti_edge，根因=v1.1审核线夹带存储变更未提请裁决）+弱化4；用户裁决零质量缺口→六项机制闭环（决策补记录+工单v1.4：强制图层+债务台账/graph_edge回归/judge补考/召回探针/EDC等效/三阈值）；自查逮三处指令文件残留同步修；教训=架构变更不得夹带进成本裁决+机制才闭环排期不闭环"
+s = s.replace(anchor_line, anchor_line + "\n" + t60, 1)
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("index updated: count ->", n, "; task-060 line appended")
