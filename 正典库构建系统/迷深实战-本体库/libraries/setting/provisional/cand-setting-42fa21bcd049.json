@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 41,
+  "fact": "据诅咒书所载（涡波评可信性低——千年前事难以正确流传/出自地方神话）：千年前人类与怪物大战中，一体'诅咒'突然出现于进军骑士团中心残杀大量士兵（剑与魔法无效/如雾消散再现背后）；最终某无名骑士与死神同归于尽——唯一消灭法=逆着它从死角处发来的攻击施以回击（以自己的首级做交换）；此后名为'死神'的诅咒再未出现",
+  "name": "死神的千年前初例记载",
+  "tick": 33
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 78,
+   "quote": "据记载，对『死神』这一『诅咒』的最初确认是在千年前的某个战场上。",
+   "vol": 1
+  },
+  {
+   "chapter": 41,
+   "line": 84,
+   "quote": "无名的骑士以自己的首级做交换，斩落了『死神』的首级。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 41,
+   "text": "死神系谱（据古籍，可信性存疑）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-42fa21bcd049",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

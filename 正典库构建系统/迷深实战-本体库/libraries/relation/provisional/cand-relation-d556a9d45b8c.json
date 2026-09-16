@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "单方面宣战(竞争)",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 629,
+   "quote": "「相川涡波，我绝对不会输给你……这点你记好了……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 40,
+   "text": "危机中承认涡波实力与指挥（'感谢你的协助'）但告别时私人宣言'我绝对不会输给你'——承认当日败北的再战预告；此前嫌其谦逊无威严'我跟你是合不来'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d556a9d45b8c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "安心源依赖",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 229,
+   "quote": "「……跟那没关系。我觉得跟涡波待在一起比较好。」",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 253,
+   "quote": "到头来斯诺以身体和精神双层面都疲惫不堪的状态回到了我身边。这个事实让我意识到，她虽然表面放得开，但本质上还是个脆弱的人。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 40,
+   "text": "希达尔克前累瘫后固执请求同列（'虽然麻烦还是麻烦，但是心里会觉得平和，能让我安心'）；缇莉点破'斯诺现在这种时候一定更希望得到你的庇护'；本质脆弱的侧证（'表面放得开，但本质上还是个脆弱的人'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-709bb8923cf8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

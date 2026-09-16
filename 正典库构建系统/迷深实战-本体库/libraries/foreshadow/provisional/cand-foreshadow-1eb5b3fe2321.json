@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 41,
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "name": "瓦尔法拉后的围堵",
+  "note": "接待员预告：拉丝缇娅拉在大会结束离开瓦尔法拉瞬间将遭全部警备人员围堵；她预信'涡波会为我做些什么'——赌约的兑现方向与涡波的抉择待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 41,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 532,
+   "quote": "「嗯，没事的，到了那个时候涡波会为我做些什么的，所以也不用担心。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 41,
+   "text": "赌约兑现钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-1eb5b3fe2321",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "火犬"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 447,
+   "quote": "火犬：位阶17",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 443,
+   "quote": "数量近百的怪物们仍然健在。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 40,
+   "text": "十八层怪（位阶17）：赤色毛发的犬类群居怪；群体近百匹级袭击；火弱点（TidalWave 水攻重创但攻击力不足以全歼——残存站起反扑）；混战中被涡波'只伤不杀'的削韧战术+各精锐终结"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0e98f42838c6",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

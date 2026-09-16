@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "情报交易(守护者讨伐↔真相)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 350,
+   "quote": "「如果你打倒了三十层的守护者，我就告诉你。『基督』的事情、还有你今天遇到的少女们的事情，全都告诉你。——这就是交换条件了。",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 408,
+   "quote": "「总之只要干脆利落地把三十层的守护者打倒就解决了。别看那样，帕林库洛毕竟是个不会毁约的人啊。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "条件=打倒三十层守护者→告知『基督』之事+少女们之事全部；涡波以『帕林库洛交易不毁约（公会周知）』为由接受，自觉掌上跳舞仍以三十层为目标"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6a01c6d6af06",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

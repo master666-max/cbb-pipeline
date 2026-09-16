@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "技能『魔力物质化』"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 300,
+   "quote": "「……这个，我记得是叫技能『魔力物质化』？」",
+   "vol": 1
+  },
+  {
+   "chapter": 42,
+   "line": 302,
+   "quote": "「诶？嗯，我好像是知道……咦？我是在哪里知道的来着。那个……」",
+   "vol": 1
+  },
+  {
+   "chapter": 42,
+   "line": 305,
+   "quote": "在『魔力物质化』的加持下，剑身被延长了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 42,
+   "text": "阿雷亚斯流奥义：魔力覆盖剑身表面凝固为实际物质形态、遵从意志任意伸缩（射程延长斩击）；需『无』属性的沉静纯粹魔力固化（诺文如清水/涡波激流混次元杂质故无法复现——赌上人生才能掌握的技能）；涡波似曾相识（『我是在哪里知道的来着』——记忆残留钩）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c34ebaf9fb5d",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

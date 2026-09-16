@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "诅咒施加(深层心理写入)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 638,
+   "quote": "这是有关过去的梦。是我曾经败北的记忆。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 42,
+   "text": "梦中揭示（涡波败北记忆）：手环优先度=比生命重要+与妹妹相川阳滝同等；试练完成指令（第二十/第三十）；'施加点错觉/不会触及核心'的谎；不可饶恕判定（梦中自我）——败北→被施诅咒的过去事件全貌"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-24645842ffb2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

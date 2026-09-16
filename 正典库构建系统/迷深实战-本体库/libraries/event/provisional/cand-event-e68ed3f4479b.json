@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entities": [
+   "『新月琉璃制直剑』",
+   "漩涡蚁狮",
+   "珍珠鱼",
+   "相川涡波",
+   "艾利巴茨·利拜斯",
+   "虹之格雷姆"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "新剑受领与二十六至二十九层Solo突破",
+  "tick": 32,
+  "time_verbatim": "次日（斯诺被传唤日）"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 699,
+   "quote": "今天最重要的目的是测试『新月琉璃制直剑』的锋利度。",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 851,
+   "quote": "于是，我钻进了这个洞穴，坠入了三十层的空间。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 40,
+   "text": "工房受领直剑+护身符→solo二十六层结晶格雷姆一击两半（测试目的达成）→二十七层风卷残云（硬度优势丧尽）→二十八层虹色回廊（虹之格雷姆墙壁奇袭化解/矿石采集土产/Dimension无法浸透）→二十九层沙海（珍珠鱼过密真冬一秒两断/漩涡蚁狮投剑口杀）→蚁狮消失沙崩→为回收坠落的直剑顺势潜入三十层"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e68ed3f4479b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

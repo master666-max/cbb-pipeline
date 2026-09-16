@@ -1,0 +1,1565 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "技能魔法(流派)",
+    "name": "『阿雷亚斯流剑术』"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 199,
+     "quote": "「是啊，到『舞斗大会』开始之前，你就把我的阿·雷·亚·斯流剑术精进到大师的水平吧。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 35,
+     "quote": "换言之，就是挥剑时要将时间、重心移动、轨迹的误差全部缩小至亿分之一以下。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "阿雷亚斯家家传剑术（第三代当主诺文·阿雷亚斯=自评世界第一）：毫厘无多余的极致人体运用（时间/重心/轨迹误差缩至亿分之一以下——凌驾艺术的境界）；基础+奥义（『魔力物质化』剑身延长）+最终奥义（『感应』心之技艺）；涡波一日内基础至奥义精进到大师级（决战演算全信息收集+过目再现）；师徒构想=舞斗大会决赛师徒对决"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-ecae583ac8e2",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "技能『魔力物质化』"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 300,
+     "quote": "「……这个，我记得是叫技能『魔力物质化』？」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 302,
+     "quote": "「诶？嗯，我好像是知道……咦？我是在哪里知道的来着。那个……」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 305,
+     "quote": "在『魔力物质化』的加持下，剑身被延长了。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "阿雷亚斯流奥义：魔力覆盖剑身表面凝固为实际物质形态、遵从意志任意伸缩（射程延长斩击）；需『无』属性的沉静纯粹魔力固化（诺文如清水/涡波激流混次元杂质故无法复现——赌上人生才能掌握的技能）；涡波似曾相识（『我是在哪里知道的来着』——记忆残留钩）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-c34ebaf9fb5d",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "技能『感应』"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 355,
+     "quote": "「没错，本来它是没有名字的……但是有人将此称呼为技能『感应』……这才是我的实力的秘密。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 374,
+     "quote": "——这就是技能『感应』。据人说它似乎是经由空气和魔力，感知这个世界上的一切事物的力量。",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 402,
+     "quote": "「是啊，正因为什么都不做，所以才什么都能明白。这并非是身体的技艺，而是心之技艺。看来涡波虽然能够很好地模仿表象的东西，但是内在的却不行啊。……可能是你心用的不够吧。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "阿雷亚斯流最终奥义（'本来没有名字…有人将此称呼为技能感应'）：经由空气和魔力感知世界一切事物——不消费MP的Dimension级犯规力（比睁眼更准）；偏本能的心之技艺（依据感觉理解世界的『理』与『流向』vs次元魔法的理性掌握）；无心之技（'正因为什么都不做所以什么都能明白'）；可诊断人心（读出涡波'支离破碎+多重坚固之锁'）；人类极致/近似悟道之境；涡波不可习得（表象可模仿内在不行）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-a57ea7d34f88",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "技能『魔力冰结化』"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 337,
+     "quote": "「——叫技能『魔力冰结化』比较好吧？」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 335,
+     "quote": "我跟诺文一样挥剑，用冰刃斩落了本来无法触及的花。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "涡波自创（魔力物质化的替代技）：以惯用的『冰』属性魔力包裹剑身+吸收空中水分冻结=『固态化的魔力』替代品→剑身任意延长/缩短（停止分子运动溶冰缩剑）；完成度勉强、硬度锋利不及原版（诺文评'完全变成别的技能/更接近魔法'——含Ice与Freeze的术式）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-d9bb4c8aedfd",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "诺文"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 214,
+     "quote": "「呼，好吧。阿雷亚斯家第三代当主，诺文·阿雷亚斯于此宣誓。将相川涡波确立为我阿雷亚斯家的『剑之后继者』！」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 43,
+     "quote": "「——差不多是全盛期的三成吧。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 73,
+     "quote": "「嗯——我记得被告知过自己会在千年后受到召唤……那么我所在到的过去应该就是千年前了。既然过去了一千年，那么世界当然也会变化了。看到连天空的颜色都变了，我真是大吃一惊啊。……千年前是个战火纷飞的非常无聊的时代。在那样的时代里壮志未成身先死的一名骑士，那就是鄙人啦。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "全名诺文·阿雷亚斯——阿雷亚斯家第三代当主（涡波推：这个时代的剑圣之家同姓，'诺文搞不好是那一家的祖先'）；世界第一剑士自评（21层狂怒者四臂细线落地级神技='差不多是全盛期的三成'——守护者强度固定机制所致）；千年前战火时代的骑士（壮志未成身先死/与莉帕大眼瞪小眼时被魔法阵吞没召唤）"
+    },
+    {
+     "category": "trait",
+     "chapter": 42,
+     "text": "剑术观：全部赌在剑上（魔力贫乏故无法构筑成型魔法）；佯动大师（不用Dimension却能骗过决战演算——身心一致异常之高）；'最强的剑士'自觉与荣光执念；同龄挚友=涡波人生第一个（'朋友什么的根本就是奢望'的悲戚）；传授=留恋偿还加速→魔力稀薄化（背影飘摇/'真是一段充实的时间啊'）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-77d4f09a8599",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 154,
+     "quote": "「那、那样的话，我没有多余的技能不是很奇怪吗？我现在持有的技能就只有『次元魔法』『冰结魔法』『剑术』三个而已。如果能那么容易就学会的话，我现在应该持有更多的技能才对啊？」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 615,
+     "quote": "刺骨的恶寒以及对即将丧失比生命都重要的东西的恐惧。",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 622,
+     "quote": "思考被加以镣铐，纵使想要前进也会受到锁的钳制。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "剑术全传一日达成（次元魔法使的技能拷贝特性+过目不忘记忆力——'一旦记住就不会再忘'）；现有技能三枚（次元魔法/冰结魔法/剑术）；异世界无败记录被诺文打破（相当不甘）→'即使如此我也想用剑战胜诺文'的孩子气欲求（『最强的剑士』语感攫住其心——液晶电视另一侧挥剑主人公的幼少憧憬）"
+    },
+    {
+     "category": "trait",
+     "chapter": 42,
+     "text": "身心诊断：感应读出'支离破碎+很多重坚固而不自由的锁'；伸手取手环即全身血液倒流/刺骨恶寒/僵直（诅咒的生理封锁）；思考上锁镣铐感（'明明没有过分熟思脑袋却沉得不得了'）；梦中=过去意识的残留视角（观看着曾经的记忆）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-f7b7d363d9ae",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 642,
+     "quote": "「就把这个『手环』设定为比生命还重要的东西好了。要是不最优先守护这东西的话我可就困扰了啊。我就把它写进深层心理中去了哦？」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 645,
+     "quote": "「嗯——对了，优先度就设定为跟『妹妹相川阳滝』同等好了。那样就可以放心了。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 653,
+     "quote": "「这个『手环』正是涡波小哥接下来要守护的对象。你就戴着它完成『第二十之试练』和『第三十之试练』吧。我相信涡波小哥肯定是能做到的哦？」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "梦中揭示（涡波败北记忆）：施加诅咒——将手环写进深层心理设定为比生命重要+优先度与『妹妹相川阳滝』同等；'戴着它完成第二十之试练和第三十之试练'的指令；'施加点错觉而已/不会触及核心'的欺瞒话术；边施邪恶魔力边云淡风轻——涡波梦中自我绝对无法饶恕"
+    },
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "现状（据雷鲁）：被迪亚布罗·西斯袭击后已离开联合国前往劳拉维亚本国（比预定早/一边窃笑一边逃走）；交易实质转交雷鲁负责；曾狠狠砍了迪亚布罗·西斯一剑（旧怨）；在国家层面有职务（推荐书门路）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-a7b9c38126e9",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(知性魔法)",
+    "name": "莉帕"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 673,
+     "quote": "『不得摆弄他人的命运』！『绝不可容许谎言』！『不能混淆自己的愿望』！",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 675,
+     "quote": "然后再将这份意志重新传达给我！拜托了！！",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "意志中继者定位：梦中涡波（过去意识）将激愤经纹样『联结』传达给她——三重意志『不得摆弄他人的命运』『绝不可容许谎言』『不能混淆自己的愿望』+'请再将这份意志重新传达给我'（'有点靠不住的小家伙，但总比无法传达给任何人要好'）；留守地上与斯诺编织玩耍线"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-464c1837548c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "雷鲁·桑库斯"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 472,
+     "quote": "别墅崩毁了。",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 536,
+     "quote": "「只要戴着那个手环，你和妹妹就能幸福。这点我向你保证。为了实现这一点，我制定了完美的计划，足以让你成为劳拉维亚的英雄，并让你的妹妹得到幸福。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "劳拉维亚山麓别墅被迪亚布罗·西斯泄愤摧毁（遗址现场指挥重建/脸上旧伤无数）；承接帕林库洛的『讨伐守护者』交易；真相说明者立场（Dimension 测谎：体温心跳无说谎迹象）；对涡波善意（'值得信任'——与帕林库洛对照）；制定'劳拉维亚英雄+玛利亚幸福'的完美计划"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-88a27d34c279",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "迪亚布罗·西斯"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 490,
+     "quote": "「是啊，就一个女孩子。在一个名为迪亚布罗·西斯的女孩子手下，这里简直要被夷为平地了，不得了啊。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 504,
+     "quote": "「我听说是帕林库洛曾经狠狠地砍了迪亚布罗·西斯一剑。应该是因为这个原因吧，肯定的。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 42,
+     "text": "据雷鲁：对帕林库洛抱恨的刺客——暗杀失败（帕轻易逃脱）后为·了·泄·愤将雷鲁别墅夷为平地；动机=帕林库洛曾狠狠砍了她一剑（据闻）；战力评估=单人对建筑物级破坏"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-b96071c01885",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "师徒(剑之后继者宣言)",
+    "subject": "诺文"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 214,
+     "quote": "「呼，好吧。阿雷亚斯家第三代当主，诺文·阿雷亚斯于此宣誓。将相川涡波确立为我阿雷亚斯家的『剑之后继者』！」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 42,
+     "text": "阿雷亚斯家第三代当主正式宣言：将相川涡波确立为阿雷亚斯家的『剑之后继者』；全技艺一日传授（基础+奥义+替代技）；决赛师徒对决构想（输了也作为优胜者之师获得荣光——皆传台词妄想）；'同龄挚友'的独占宣言（涡波=其人生第一个同龄朋友）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-bc175db0d39f",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "雷鲁·桑库斯",
+    "rel_type": "泄愤袭击(别墅摧毁)",
+    "subject": "迪亚布罗·西斯"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 500,
+     "quote": "「是啊，一开始是那么回事。但是因为帕林库洛轻而易举地逃掉了，所以迪亚布罗·西斯为·了·泄·愤而将整栋别墅给摧毁殆尽，之后就回去了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 42,
+     "text": "据雷鲁所述：刺客暗杀帕林库洛失败→为泄愤摧毁整栋别墅后离去；连带效应=帕林库洛提前离境+交易转交雷鲁"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-b70585eb9295",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "迪亚布罗·西斯",
+    "rel_type": "旧怨(砍其一剑)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 504,
+     "quote": "「我听说是帕林库洛曾经狠狠地砍了迪亚布罗·西斯一剑。应该是因为这个原因吧，肯定的。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 42,
+     "text": "据雷鲁所闻：帕林库洛曾狠狠砍了迪亚布罗·西斯一剑——其袭击泄愤的动机根源"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-d63d59409991",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "诅咒施加(深层心理写入)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 638,
+     "quote": "这是有关过去的梦。是我曾经败北的记忆。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 42,
+     "text": "梦中揭示（涡波败北记忆）：手环优先度=比生命重要+与妹妹相川阳滝同等；试练完成指令（第二十/第三十）；'施加点错觉/不会触及核心'的谎；不可饶恕判定（梦中自我）——败北→被施诅咒的过去事件全貌"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-24645842ffb2",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "莉帕",
+    "rel_type": "意志中继(纹样联结)",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 672,
+     "quote": "通过脖子上的纹样，我的意志流入了少女那边。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 42,
+     "text": "梦中过去意识经脖子纹样的『联结』向莉帕流入意志：三重呐喊+回传请求——醒来必忘循环的唯一对外通路；'不同于我的其他人'的期待"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-891b57601968",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "交易承接与真相条件",
+    "subject": "雷鲁·桑库斯"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 543,
+     "quote": "「在我们看来，对三十层守护者的讨伐是一个节点。如果涡波的身心成长到能够打倒那个存在的话——如果涡波在将守护者打倒后仍然想要改变现状的话——到时候，我们会心甘情愿地将真相对你和盘托出。这就是这个『交易』的本质了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 42,
+     "text": "帕林库洛离境后交易实质转交雷鲁；真相条件=三十层守护者讨伐为节点→打倒后仍想改变现状→'心甘情愿地将真机和盘托出'——交易本质自白；知悉守护者非怪物=联合国机密"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-6c56f5ade618",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "莉帕",
+     "诺文"
+    ],
+    "instant": null,
+    "kind": "修行",
+    "name": "阿雷亚斯流剑术全传",
+    "tick": 34,
+    "time_verbatim": "迷宫日（数小时）"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 29,
+     "quote": "正因为『Dimension』把握到了这一剑中蕴藏的技艺，才让我为它的异常感到畏惧。能够予以形容的，除神技外无它。",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 345,
+     "quote": "「话说你真的在一天之内就将所有的东西都精进到大师级了啊……这样我能教你的就只剩下最终奥义了……」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 42,
+     "text": "21层狂怒者四臂神技演示（全盛期三成/强度固定说明）→三十层花田特训：决战演算全信息收集（魔力颤动/心跳/血压/出汗/眼光）→基础全传（一小时前剑技分毫不差仿效——'素质恐怖'）→奥义魔力物质化（『无』属性纯粹魔力固化——涡波杂质不可复现→自创『魔力冰结化』冰属性替代）→最终奥义『感应』（闭目接剑/脑瓜崩二连/心之技艺不可学）→师徒宣言+决赛构想→训练剑戟交错（无败记录被破/『最强剑士』的憧憬）→诺文魔力稀薄化（留恋偿还加速）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-f0c4cc397b5e",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "相川涡波",
+     "迪亚布罗·西斯",
+     "雷鲁·桑库斯"
+    ],
+    "instant": null,
+    "kind": "转折",
+    "name": "雷鲁别墅遗址访问与真相说明",
+    "tick": 34,
+    "time_verbatim": "同日（迷宫探索后）"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 524,
+     "quote": "「一个一个说吧……首先，那个手环确实有『守护涡波在异世界的生活』的作用，这一点并不假。如果失去了那个东西，你目前所有的幸福都会消逝。这个毋·庸·置·疑。所以说，守护住那个手环也是为你好。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 567,
+     "quote": "——妹·妹·的·名·字·有·蹊·跷。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 42,
+     "text": "斯诺告知的路线→山麓别墅遗址（迪亚布罗·西斯泄愤摧毁）→雷鲁说明：手环=守护异世界生活（失去=幸福消逝毋庸置疑）/掩藏的都是不幸记忆=暧昧处理=治疗论/双子之事不能说（重负/苦难道路）/『那一天的大火灾』=悲惨事件（玛利亚极其痛苦的遭遇）/交易本质=三十层节点→和盘托出/劳拉维亚英雄计划；Dimension 测谎通过；归途推理链（基督假名→玛利亚亦假名？→妹·妹·的·名·字·有·蹊·跷→大火灾失明推测→'我也有被封印的理由？'→全員温和配置的安逸自觉）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-d607d102316b",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "玛利亚",
+     "相川涡波",
+     "莉帕"
+    ],
+    "instant": null,
+    "kind": "核心",
+    "name": "深层之梦与三重意志传达",
+    "tick": 34,
+    "time_verbatim": "同夜（入眠后）"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 663,
+     "quote": "我明白的，想必自己每天晚上都会在梦中看到这段『曾经的记忆』。",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 664,
+     "quote": "可一旦醒来，我就会把这一切都忘掉。这·是·注·定·的。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 42,
+     "text": "手环伸手→恶寒僵直→倒床→梦中回到败北记忆：帕林库洛施加诅咒全程（手环=比生命重要+优先度与妹妹相川阳滝同等+试练指令+'施加点错觉'谎）→'每晚都会在梦中看到曾经的记忆/醒来必忘'的机制自觉→血拳铭记'绝对不可饶恕'→意志经纹样联结流向莉帕（三重呐喊+回传请求）——醒来后记忆注定流失"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-53671be1b290",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "entities": [
+     "帕林库洛",
+     "玛利亚",
+     "相川阳滝"
+    ],
+    "name": "妹妹的真名（玛利亚=相川阳滝）",
+    "note": "梦中帕林库洛原话：手环优先度'跟『妹妹相川阳滝』同等'——玛利亚=假名说的梦境实证（涡波醒前自推：基督与玛利亚皆假名/为在异世界寻找自己世界的人/妹妹的名字有蹊跷）；库内 ch5 相川阳滝与 ch14 玛利亚 两实体的对应合并归 R4+审核线；真名揭示的剧情兑现待回收",
+    "payoff_chapter": null,
+    "setup_chapter": 42,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 645,
+     "quote": "「嗯——对了，优先度就设定为跟『妹妹相川阳滝』同等好了。那样就可以放心了。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 42,
+     "text": "主线最大真名钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-e74b5bff1b87",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "entities": [
+     "帕林库洛",
+     "相川涡波",
+     "莉帕"
+    ],
+    "name": "三重意志与莉帕的回传",
+    "note": "『不得摆弄他人的命运』『绝不可容许谎言』『不能混淆自己的愿望』——梦中过去意识托莉帕'再将这份意志重新传达给我'；醒来必忘循环的唯一突破口；莉帕何时/如何回传=后续主线开关",
+    "payoff_chapter": null,
+    "setup_chapter": 42,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 676,
+     "quote": "——莉·帕！！",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 42,
+     "text": "意志回传钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-35f123b74123",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "entities": [
+     "相川涡波",
+     "诺文"
+    ],
+    "name": "诺文的急速弱化",
+    "note": "传授剑技=留恋偿还加速（'比想像的还要愉快很多'）→魔力质稀薄化+背影飘摇——'实现愿望的门槛太低/一个不小心就会让他从这个世界上消失'；消失时点与舞斗大会的先后=时限钩",
+    "payoff_chapter": null,
+    "setup_chapter": 42,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 455,
+     "quote": "恐怕到了一个不小心就会让他从这个世界上消失的地步。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 42,
+     "text": "守护者消失时限钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-59a425397837",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "entities": [
+     "拉丝缇娅拉",
+     "相川涡波",
+     "诺文"
+    ],
+    "name": "涡波的心之锁（感应诊断）",
+    "note": "感应读出：身心支离破碎+很多重'坚固而不自由的锁'；诺文判断'拉丝缇娅拉说的话有可能是真的…相川涡波的精神状态并不正常'（但拒绝多言——行将消失者的建言边界）；感应不可习得=内在技术拷贝的极限；锁的解除=改篡的最终对峙预兆",
+    "payoff_chapter": null,
+    "setup_chapter": 42,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 416,
+     "quote": "「不仅支离破碎，在其上似乎还加了很多重锁的样子……坚固而不自由的锁……」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 434,
+     "quote": "「是啊，没错。我的技能『感应』判断相川涡波的精神状态并不正常。……只是，除此之外我也不会多言。因为我是行将消失的存在，话虽然能说两句，但没法帮你这个忙。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 42,
+     "text": "精神诊断钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-1ff6bfd75623",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "entities": [
+     "技能『魔力物质化』",
+     "相川涡波"
+    ],
+    "name": "魔力物质化的记忆残留",
+    "note": "涡波初见即知技能名却想不起习得来源（'我是在哪里知道的来着'）——基督时代技能知识的残留泄露（与火焰飓风记忆/Freeze共鸣同族证据群）",
+    "payoff_chapter": null,
+    "setup_chapter": 42,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 302,
+     "quote": "「诶？嗯，我好像是知道……咦？我是在哪里知道的来着。那个……」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 42,
+     "text": "记忆残留钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-ccc5e9c46dca",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "fact": "守护者被赋予实现留恋的机会+使命=将人类引导至一百层；一百层寄存异常的『力量』（实现任何愿望的传闻）——守护它还是转让它诺文亦不知；守护者强度固定=与所在阶层相符（'三十层的boss不符合三十层该有的强度人类会很困扰'）；迷宫对人类很体贴=由『一个很体贴的人』创造（'不能说是谁创造的『规则』'——诺文识得创造者：'这不合那个人的风格'）；守护者向探索者提供情报有『规则』限度；状态栏与技能概念=千年前诺文死前不久才流传开来；『技巧』『素质』数值与技能习得相关（数值高则掌握易）",
+    "name": "守护者的使命与迷宫根源（诺文证言）",
+    "tick": 34
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 60,
+     "quote": "「这个嘛，我也不是特别了解。我知道的，就只有自己被赋予了实现留恋的机会，同时作为交换，我有将人类引导至一百层的使命。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 51,
+     "quote": "「是啊，迷宫对人类很体贴的哦。因为它好像就是由一个很体贴的人创造的来着。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 47,
+     "quote": "「是啊，还是慢的很呢。但是这也没办法，既然我作为三十层的守护者被召唤来，自然就要被固定在与三十层相符的强度上了啊……」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 144,
+     "quote": "「嗯，有关系的。话虽然这么说，但其实我也不是非常了解，所以没办法给你解释。毕竟状态栏啊技能啊这一类的东西，是在我死前不久的时候才流传开来的……」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 42,
+     "text": "迷宫根源核心证言（据守护者本人，部分受规则限制）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-104b32e6b986",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "fact": "诺文揭示：次元属性的魔法使长于观察——用次元魔法仔细观察+记忆持有技能者的行动，仅此即可将技能纳为己有；配合涡波的骇人信息获取+全分析理解+精准仿效才能=能学会世上所有技能（'毫无阻碍…轻而易举'）；推翻'人生技能只增一到两个'的世界常识；涡波此前仅持三技能是因'没有尝试去学/无意识视作难掌握之物'",
+    "name": "次元魔法使的技能拷贝特性",
+    "tick": 34
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 158,
+     "quote": "「你听好，只要满足了条件的话就是很简单的。次元属性的魔法使长于观察。使用你的次元魔法仔细地去观察、记忆持有技能的人的行动。仅仅如此你就能把技能纳为己有了。涡波你能够获取数量骇人的信息，同时还具备将其全部分析理解的能力。在此之上，你还有准确地将之仿效出来的才能。所以你一定能再现我的剑技。」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 157,
+     "quote": "在一个人的人生中，技能往往只会增加一到两个。那既是这个世界的常识，也是我被灌输的知识。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 42,
+     "text": "主角特性核心（据诺文）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-9a2f78bfe805",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "fact": "帕林库洛在涡波败北后施加的『诅咒』：手环被设定为比生命还重要的东西（写进深层心理）+最优先守护；优先度=与『妹妹相川阳滝』同等；指令='戴着它完成第二十之试练和第三十之试练'；话术='施加点错觉而已/不会触及核心'；效果=伸手即恶寒僵直+思考上锁镣铐；记忆机制=每晚梦中重放曾经记忆但醒来必忘（血拳为 nightly 遗迹）",
+    "name": "手环的深层心理写入（梦中揭示）",
+    "tick": 34
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 642,
+     "quote": "「就把这个『手环』设定为比生命还重要的东西好了。要是不最优先守护这东西的话我可就困扰了啊。我就把它写进深层心理中去了哦？」",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 655,
+     "quote": "说什么「施加点错觉而已」啊，什么叫「不会触及核心」啊。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 42,
+     "text": "主线核心机制揭示（梦中记忆）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-5606f5e39927",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "fact": "据雷鲁（Dimension测谎通过）：手环=守护涡波异世界生活（失去=所有幸福消逝毋庸置疑）；双子之事'为了你好不能告诉你'（知道会成为重负/走苦难道路/失去幸福——'那条路不是你这样善良的孩子该走的'）；记忆操作定性=被掩藏的都是『不幸』的记忆+暧昧处理='为了治疗'；『那一天的大火灾』=悲惨事件（玛利亚极其痛苦的遭遇——推测失明时点）；完美计划=让涡波成为劳拉维亚英雄+玛利亚得到幸福；交易本质=三十层讨伐节点→仍想改变现状→和盘托出真相（否则放弃全盘计划切入下一计划）",
+    "name": "雷鲁的真相说明（治疗论与幸福计划）",
+    "tick": 34
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 530,
+     "quote": "——也不置可否。但是有一点希望你不要误会。被掩藏的都是『不幸』的记忆。是为了让你们能幸福地生活而对不必要的记忆作了暧昧的处理。要说的话，这都是为了治疗。",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 534,
+     "quote": "「你或多或少也察觉到了吧？『那一天的大火灾』是非常悲惨的事件。对你妹妹而言，那是一起极其痛苦的遭遇。如果回忆起那件事的话，你的妹妹就不得不再一次面对那痛苦难耐的现实了。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 42,
+     "text": "真相侧情报（据雷鲁陈述）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-502f002eb10a",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 42,
+    "fact": "雷鲁说明后的自主推理：基督=假名（既知）→玛利亚亦假名？('玛利亚这个名字也是假名，只是我没有注意到那一点？因为这个手环的缘故？'）→妹·妹·的·名·字·有·蹊·跷→流向推测：异世界迷来的兄妹+假名迷宫探索+同伴=拉丝缇娅拉与缇亚→多重不幸复合→『那一天的大火灾』→队伍支离破碎→兄妹被史诗探索者保护→玛利亚失明于其时；难解点=为何连涡波的记忆也封印（'我也有堪比玛利亚失去视力那样的不幸的记忆吗'）；全员温和（无人抱恶意/过于安逸的配置）自觉",
+    "name": "涡波的推理链（假名说与大火灾推测）",
+    "tick": 34
+   },
+   "evidence": [
+    {
+     "chapter": 42,
+     "line": 560,
+     "quote": "首先，我和玛利亚迷失到了这个异世界，然后我报上了『基督』这一假名开始进行迷宫探索。那时候的同伴则是拉丝缇娅拉和缇亚。然而，多重不幸复合在一起，最终招致了『那一天的大火灾』。",
+     "vol": 1
+    },
+    {
+     "chapter": 42,
+     "line": 592,
+     "quote": "这个配置、这个状况、对我来说实在是过于安逸了。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 42,
+     "text": "主角侧推理（当章文本）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-5e61964fc3ff",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。本批登记：诺文·阿雷亚斯→诺文。玛利亚↔相川阳滝 不登记（对证事实入 setting，合并归 R4）。",
+  "confidence_calibration": "同 STATE 固化决议；雷鲁转述类 0.85-0.88。",
+  "coordinate_line_note": "evidence.line=章内物理行（=文件行号-17530）。",
+  "cross_chapter_notes": [
+   "★主线总爆发章：梦中揭示帕林库洛诅咒全程——手环被写进深层心理=比生命重要+优先度与『妹妹相川阳滝』同等（妹妹真名！玛利亚=假名说的梦境实证）+『戴着它完成第二十之试练和第三十之试练』；每夜梦中重放但醒来必忘——唯一突破口=经纹样联结向莉帕传达三重意志（不得摆弄他人的命运/绝不可容许谎言/不能混淆自己的愿望）",
+   "★诺文全传=阿雷亚斯家第三代当主诺文·阿雷亚斯：世界第一剑士（自评/全盛期三成秒杀狂怒者）；阿雷亚斯流全技艺一日大师级传授（基础+奥义魔力物质化→涡波自创替代『魔力冰结化』+最终奥义『感应』不可习得）；『剑之后继者』宣言；传授=留恋偿还→魔力稀薄化（消失临近）",
+   "★迷宫根源证言（诺文）：守护者使命=引导人类至一百层；一百层寄存异常力量（守护or转让未知）；守护者强度固定=与阶层相符；迷宫由『很体贴的人』创造（'不合那个人的风格'——诺文识得创造者）；状态栏/技能概念千年前诞生；技巧/素质与技能习得相关",
+   "★次元魔法使特性揭示：技能拷贝（用次元魔法观察记忆持有技能者行动即可纳为己有）；涡波现有技能仅三个（次元魔法/冰结魔法/剑术）→一日满级流派；『技能一生增1-2』常识被推翻",
+   "★雷鲁别墅遗址：迪亚布罗·西斯泄愤摧毁（帕林库洛曾砍她一剑/帕逃本国窃笑）；雷鲁真相说明（手环=守护异世界生活/掩藏的都是不幸记忆=治疗论/双子=不能说的重负/交易本质=三十层讨伐节点→仍想改变→和盘托出/劳拉维亚英雄+玛利亚幸福的完美计划）",
+   "★感应诊断：涡波身心支离破碎+多重坚固之锁（诺文）；'拉丝缇娅拉说的话有可能是真的'",
+   "【待确认】玛利亚=相川阳滝 对应关系（库内两实体：ch5 相川阳滝/ch14 玛利亚）——本批只落梦境事实，实体合并归 R4 别名合并审计+审核线裁决"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_decision": {
+   "deterministic_check": "无译注无残留标记",
+   "reason": "雷鲁说明=当事人陈述（Dimension 测谎无谎言迹象）；梦中帕林库洛台词=过去记忆回放",
+   "verdict": "正文正常抽取；雷鲁口述与梦中独白均按文本事实抽取（雷鲁部分标声称）"
+  },
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=34→tick=34→2000-02-04。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行17530-18207（CHAPTER 0042，678行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批4 · CHAPTER 0042（第四卷-第六章-最强的剑士，摄入序34→tick34→伪锚点2000-02-04）"
+ }
+}

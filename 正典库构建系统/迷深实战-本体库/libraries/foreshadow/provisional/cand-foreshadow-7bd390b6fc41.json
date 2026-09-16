@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 40,
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "诺文"
+  ],
+  "name": "诺文的愿望与第三十之试练",
+  "note": "交易=实现愿望（骑士扬名/剑展现给世人/名誉荣光）→诺文死亡（留恋完成即消失）；与帕林库洛三十层交易的嵌套（任务链）；涡波盘算友军化（其强足以对付少女二人组）；'心跳停止→怪物化→打倒=第三十之试练完成'的机制待验证",
+  "payoff_chapter": null,
+  "setup_chapter": 40,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 1185,
+   "quote": "我希望得到名誉和荣光。希望得到许许多多人的赞赏。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 40,
+   "text": "三十层主线核心钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-7bd390b6fc41",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

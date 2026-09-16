@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "entities": [
+   "公会『绝世』",
+   "斯诺·沃克",
+   "相川涡波",
+   "缇莉·琉克",
+   "艾尔米拉德·希达尔克"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "正道工事与怪物群危机接管",
+  "tick": 32,
+  "time_verbatim": "工事日（连续二十小时级行军）"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 69,
+   "quote": "「说来很简单，就是经由劳拉维亚之手，对数日前变为普通房间的迷宫第十层和第二十层的『正道』进行整备。」",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 544,
+   "quote": "「太好了，谁都没有死……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 40,
+   "text": "绝世委托→十层结界整备（细魔石线肉眼可见扩展）→十六层虫群遭FlameBlast全歼（MP榨干）→十八层火犬群TidalWave不殆（近百残存/领队行动不能）→涡波接管：次元之冬·终霜逐点救援+削韧战术+全员指名指挥（行军路记全员名字+状态栏全把握）→零牺牲全灭+十八九层行军指挥+赤之弥诺陶洛斯迎击阵→二十层工事完成；归途斯诺接希达尔克家传唤；希达尔克宣战后离场"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-694097e4a0e6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

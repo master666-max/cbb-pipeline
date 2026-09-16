@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 39,
+  "fact": "据斯诺（学院知识）：迷宫=将大地积攒的魔力和过去集中收束再退返大陆的循环器；会掉落过去的道具（『想起收束（Drop）』）；绝大多数探索者无法触及的二十三层以下，这类物品因未被取用而残留（祭坛+剑=过去的遗物/可能是过去的名剑）",
+  "name": "迷宫的想起收束（Drop）机制",
+  "tick": 31
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 528,
+   "quote": "「……那个恐怕是迷·宫·本·身·的·掉·落·品。」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 530,
+   "quote": "「归根究底，这里本就是将过去的遗产退返回大陆的地方。迷宫担当着将大地积攒起来的魔力和过去集中收束起来再退返的循环器的作用。——如此如此、这是我在学院那边获悉的。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 39,
+   "text": "迷宫机制扩展（学院冷知识）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-21816fca64ab",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "雷鲁·桑库斯",
+  "rel_type": "泄愤袭击(别墅摧毁)",
+  "subject": "迪亚布罗·西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 500,
+   "quote": "「是啊，一开始是那么回事。但是因为帕林库洛轻而易举地逃掉了，所以迪亚布罗·西斯为·了·泄·愤而将整栋别墅给摧毁殆尽，之后就回去了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 42,
+   "text": "据雷鲁所述：刺客暗杀帕林库洛失败→为泄愤摧毁整栋别墅后离去；连带效应=帕林库洛提前离境+交易转交雷鲁"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b70585eb9295",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

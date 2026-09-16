@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entities": [
+   "Rokh·Bringer",
+   "斯诺·沃克",
+   "水晶蚂蚁",
+   "相川涡波",
+   "结晶格雷姆",
+   "艾利巴茨·利拜斯"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "迷宫20-27层攻略与魔剑销毁",
+  "tick": 31,
+  "time_verbatim": "数日后迷宫日（确认数天无公会工作后）"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 411,
+   "quote": "在确认过数天内公会都不会有什么工作后，我们来到了迷宫的第二十层。",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 765,
+   "quote": "今天的成果是将迷宫攻略到了二十七层。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 39,
+   "text": "办公室 Connection 抄近路至二十层→23层正道末端轻松推进（21层狂怒者数秒杀/15级）；24层熔岩地带（Freeze过共鸣/次元之冬岩浆透视/猛毒火蜥蜴一击杀）+Rokh·Bringer 祭坛回收（精神污染危机→Shock救场→Ice封印→折断销毁）；25层热水河雾层<1小时；26层结晶格雷姆初战（ImpulseBreak 龟裂终结/破损5剑武器危机）；27层水晶回廊侦察（水晶蚂蚁群聚+敏捷水晶怪群）→武器枯竭撤退（Connection）；艾利巴茨工房（魂之水晶鉴定/新月线形石剑明晚完工/木棒100根采购）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1537e1e4d33a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

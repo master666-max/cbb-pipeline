@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "魔力供给(诅咒纹样联结)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 936,
+   "quote": "仔细一看会发现少女额头上不知何时也浮现出了类似的纹样，两个纹样在我们之间创建了『联结』般的某种东西。",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 1084,
+   "quote": "只要这样，少女的魔力供给就被掐断了，更进一步的，如果我有那个意思，连反过来吸取她的魔力都做得到。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 40,
+   "text": "颈部黑色纹样↔莉帕额纹样创建『联结』：持续细微抽取涡波魔力驱动莉帕身体（涡波可掐断供给/反吸——次元之冬抑制振动阻遏流动）；莉帕评涡波魔力'甜美的苹果'相性绝佳，'就算被我抽走一部分也没有大碍'——维持其存在级别的储量"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-037800970dd9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

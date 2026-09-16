@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 39,
+  "fact": "据斯诺自述：曾是干劲满满怀梦的少女（幼年任副会长）→『失败了·一·次·又·一·次』后认定努力太傻→怠惰慵懒随波逐流（对结婚/人生皆『无可奈何』式放弃）；认定与涡波有同族意识（同类惨痛失败者）；提及失败时面容扭曲=初见认真表情",
+  "name": "斯诺的怠惰成因（反复失败史）",
+  "tick": 31
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 73,
+   "quote": "「……那个时候，我还只经历过一次失败，所以充满了希望。可是在失·败·了·一·次·又·一·次之后，就觉得努力实在太傻了。于是我就变·成·这·样·了。仅此而已，就这么简单。」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 83,
+   "quote": "「……嗯，我觉得这可能是出于同族意识吧。因为我知道涡波跟我一样都是经历过惨痛的失败的人。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 39,
+   "text": "角色核心创伤自述"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-c4ef24f99e93",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

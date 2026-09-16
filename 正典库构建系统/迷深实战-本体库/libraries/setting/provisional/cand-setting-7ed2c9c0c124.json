@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 41,
+  "fact": "据图书馆诅咒书：远古盛行诅咒类魔法→圣人缇亚拉构建魔法基础后走向荒废（代价：不仅耗MP还削HP/损害身体/削减寿命/致病/失败即殒命/常招反噬——双刃剑）；人们自然排斥之",
+  "name": "诅咒魔法的代价与衰退史",
+  "tick": 33
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 72,
+   "quote": "据上面说，在遥远的过去盛行许多『诅咒』类的魔法。不过在圣人缇亚拉这么一个人物构建出魔法的基础后，诅咒这一类的魔法似乎就走向了荒废。",
+   "vol": 1
+  },
+  {
+   "chapter": 41,
+   "line": 75,
+   "quote": "如果这个说明是正确的话，那么『慕影死神』的术者是我，而对象则是诺文。也就是说，『慕影死神』是不仅会杀死诺文，同时还是有可能杀死我的『诅咒』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 41,
+   "text": "魔法体系史（据古籍）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-7ed2c9c0c124",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

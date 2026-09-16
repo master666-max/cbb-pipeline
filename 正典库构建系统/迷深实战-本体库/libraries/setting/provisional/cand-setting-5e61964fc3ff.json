@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 42,
+  "fact": "雷鲁说明后的自主推理：基督=假名（既知）→玛利亚亦假名？('玛利亚这个名字也是假名，只是我没有注意到那一点？因为这个手环的缘故？'）→妹·妹·的·名·字·有·蹊·跷→流向推测：异世界迷来的兄妹+假名迷宫探索+同伴=拉丝缇娅拉与缇亚→多重不幸复合→『那一天的大火灾』→队伍支离破碎→兄妹被史诗探索者保护→玛利亚失明于其时；难解点=为何连涡波的记忆也封印（'我也有堪比玛利亚失去视力那样的不幸的记忆吗'）；全员温和（无人抱恶意/过于安逸的配置）自觉",
+  "name": "涡波的推理链（假名说与大火灾推测）",
+  "tick": 34
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 560,
+   "quote": "首先，我和玛利亚迷失到了这个异世界，然后我报上了『基督』这一假名开始进行迷宫探索。那时候的同伴则是拉丝缇娅拉和缇亚。然而，多重不幸复合在一起，最终招致了『那一天的大火灾』。",
+   "vol": 1
+  },
+  {
+   "chapter": 42,
+   "line": 592,
+   "quote": "这个配置、这个状况、对我来说实在是过于安逸了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 42,
+   "text": "主角侧推理（当章文本）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-5e61964fc3ff",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

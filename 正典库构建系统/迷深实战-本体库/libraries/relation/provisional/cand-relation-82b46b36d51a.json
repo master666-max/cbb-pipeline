@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "姐妹称呼(同居照料)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 244,
+   "quote": "「我觉得没有问题哦，只要我成为姐姐的妹妹就行了。那样的话，姐姐的哥哥，就是我的哥哥了不是！？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 41,
+   "text": "称玛利亚为姐姐（'我年龄比较小嘛'）→同居妹妹房间+绘本共读；化解'重罪'危机（'不能太欺负大哥哥哦'）；'我成为姐姐的妹妹就行了。那样的话，姐姐的哥哥，就是我的哥哥了'的推论被玛利亚慌乱接受"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-82b46b36d51a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

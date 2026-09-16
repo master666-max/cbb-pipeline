@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "兄妹(崩坏看护)",
+  "subject": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 326,
+   "quote": "「总、总之，如果是涡波的话，我就能放心把妹妹托付给你了。仔细观察、交流过之后，我能够肯定，你是个好人。绝对不会错了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 43,
+   "text": "惯于斯诺的崩坏状态（'恐怕格连已经不是第一次看到斯诺进入这种状态了'——熟练扶起+让她坐下调整呼吸）；'只有跟斯诺你打招呼的时候才是我的休息时间'；托付宣言（'如果是涡波的话，我就能放心把妹妹托付给你了'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7a51024361d5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

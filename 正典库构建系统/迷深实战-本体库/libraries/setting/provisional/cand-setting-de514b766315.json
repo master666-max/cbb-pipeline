@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 39,
+  "fact": "经验法则（未出过错）：迷宫地形与怪物生态对应——河流→水栖怪物/森林→昆虫怪物/热气→火焰怪物；二十七层水晶回廊=水晶系怪物栖息之印证（透明水晶质墙壁硬度超一般水晶=变异矿物）",
+  "name": "迷宫地形与生态对应原则",
+  "tick": 31
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 673,
+   "quote": "基本上来说迷宫的地形与怪物的生态都是互相对应的。有河流的话就是水栖怪物、有森林则是昆虫怪物、热气则是火焰怪物、虽然是经验之谈，但这个经验还没出过什么错。",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 662,
+   "quote": "这里一反二十五层前后那种熔岩地带，变回了凉爽的回廊。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 39,
+   "text": "探索经验法则"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-de514b766315",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

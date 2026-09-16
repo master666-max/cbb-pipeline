@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "门客护卫(滞留)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 22,
+   "quote": "「我信。我认为他值得信任。——诺文接下来要作为『史诗探索者』的门客滞留在我们这里，各方面的事情就有劳你多关照了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 41,
+   "text": "以'修行流浪剑士'人设作为门客滞留公会+担任涡波护卫（对付少女二人组的战力安置）；对成员自我介绍被顺畅接受（'招待国外的客人对公会的运营来说是常有的事'）；屋顶石像宿营警戒"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ad1e8ecb43c5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 40,
+  "entities": [
+   "斯诺·沃克",
+   "艾尔米拉德·希达尔克"
+  ],
+  "name": "希达尔克家的传唤",
+  "note": "斯诺被传唤拘束一日的家事（两家同意的婚约框架下的安排）；涡波识破其借会长否决回绝的企图；次日展开待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 40,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 604,
+   "quote": "「……涡波，我接到了希达尔克家的传唤。似乎明天一整天都要被拘束在那儿的样子。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 40,
+   "text": "婚约线支线钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-7590be6664f1",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,236 @@
+{
+ "unit": "ch0043",
+ "chapter": 43,
+ "ingestion_index": 35,
+ "title": "第四卷-第七章-于是，崩壊",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 25,
+  "pass": 25,
+  "intercept": 0,
+  "admitted": 25,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 8,
+  "on-create": 17
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-2a52facd1f0f",
+   "type": "entity",
+   "name": "康纳·塔利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-5ca6dea0a170",
+   "type": "entity",
+   "name": "斯诺的义母",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-01bab51bce51",
+   "type": "entity",
+   "name": "格连",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7d375a26a456-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-0797306ddac7",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-9ed363ea9a34",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-4ff934c536cd",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-200f9ab21858",
+   "type": "entity",
+   "name": "艾尔米拉德·希达尔克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6010c4590776-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-db5221e3c9ec",
+   "type": "entity",
+   "name": "诺文",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-38664d360d49-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-1d9a7ab8afd3",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-0205f4aaf031",
+   "type": "entity",
+   "name": "沃克家",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2b4f4560fd55-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-ad0876bc80c6",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-02ce17bcbfc3",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-99556a2a1adf",
+   "type": "relation",
+   "name": "斯诺的义母",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-baec1ad86859",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-7a51024361d5",
+   "type": "relation",
+   "name": "格连",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-02e2d7319ebd",
+   "type": "event",
+   "name": "劳拉维亚社交舞会",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-4eebbb86d8f4",
+   "type": "event",
+   "name": "格连初会与斯诺的崩坏",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-0260a1f2ef02",
+   "type": "foreshadow",
+   "name": "斯诺的顿悟与'那个人'",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-04b75611a5bb",
+   "type": "foreshadow",
+   "name": "舞斗大会=试练的期限",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1e5064a87372",
+   "type": "foreshadow",
+   "name": "格连的'那个时候'与假货自称",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-b78e5f85dd35",
+   "type": "foreshadow",
+   "name": "莉帕×诺文的舞斗大会组队",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-31e92248391a",
+   "type": "setting",
+   "name": "英雄的社交经济学",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-de429713117b",
+   "type": "setting",
+   "name": "斯诺的精神构造（本心暴露实录）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-5fd5f126e354",
+   "type": "setting",
+   "name": "帕林库洛的试练设计（舞会章自觉）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4cea4d702667",
+   "type": "setting",
+   "name": "格连状态栏（ch43实测）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 35,
+  "pseudo_date": "2000-02-05",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 10,
+   "library": 221,
+   "dup_suspect": 0,
+   "uncertain": 2
+  },
+  "neo4j": {
+   "nodes": 208,
+   "edges": 237,
+   "batches": 3,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 226,
+    "edges": 237
+   }
+  }
+ }
+}

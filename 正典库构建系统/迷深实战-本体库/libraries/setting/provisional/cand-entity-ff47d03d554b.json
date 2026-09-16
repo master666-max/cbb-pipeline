@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『ImpulseBreak』"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 621,
+   "quote": "「——『ImpulseBreak』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 639,
+   "quote": "既然已经出现了不由斯诺给予最后一击就无法打倒的怪物，我便需要避免自己一个人前进。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 39,
+   "text": "斯诺的魔力增幅钝击技（大斧/振动魔法系）：打击冲击经魔法增幅产生更大破坏力——对付结晶格雷姆/水晶系特效（涡波直击无效的局面由斯诺最后一击终结）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ff47d03d554b",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,1972 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "组织(贵族家门)",
+    "name": "沃克家"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 44,
+     "quote": "「是这样吗，那个、我记得沃克家是劳拉维亚的大贵族来着？」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 43,
+     "quote": "「……我和哥哥都是被收养的。沃克家有将优秀的血脉引入自身的传统。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 49,
+     "quote": "「最近这阵子一直在啰嗦着要我结婚什么的。在我不知情的时候，替我跟不是很熟悉的人订下了婚约。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "劳拉维亚大贵族：有将优秀的血脉引入自身的传统（收养义子义女以发扬家门声誉——明言收养即为此目的）；格连与斯诺皆为其养子养女；近期向斯诺施压婚事（本人不知情时与陌生人订下政治婚约）；因哥哥（格连）与帕林库洛的名声压力稍减"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-2b4f4560fd55",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品(魔剑)",
+    "name": "Rokh·Bringer"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 541,
+     "quote": "【Rokh·Bringer】",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 542,
+     "quote": "攻击力7。精神污染+2.00",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 558,
+     "quote": "对了，最重要的是，如果这漆黑的剑身能浸润在真正的鲜血中的话，该是多么美——",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 600,
+     "quote": "在极近距离内承受了振动魔法的『Rokh·Bringer』立马就断成了两截。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "二十四层岩浆环簇祭坛上的魔剑（迷宫掉落品=过去的遗物）：攻击力7/精神污染+2.00；漆黑剑身缠紫色魔力（魔力量≈中坚魔法使）；近距接触发精神污染（涡波产生'浸润鲜血之美'联想）被斯诺『Shock』打断；经『次元之冬』压制+『Ice』封冻回收后，由斯诺振动魔法近距折断销毁（凶恶魔力沉寂）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-3da08b924538",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "结晶格雷姆"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 615,
+     "quote": "让我们这趟顺利的迷宫探索蒙上阴影的，就是出现在二十六层中部位置的怪物，结晶格雷姆。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 624,
+     "quote": "虽然是钝系打击，但是对付这个结晶格雷姆则很有效。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "二十六层出产的水晶石像怪：水晶硬度极高（涡波+斯诺直击无龟裂）+魔法防御特高（无决定性打击手段）；唯钝系魔力增幅打击（斯诺『ImpulseBreak』）可令其龟裂破碎；行动迟缓可规避；成群出现；魔石=魂之水晶"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-ac6ff84baba2",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "水晶蚂蚁"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 692,
+     "quote": "水晶蚂蚁：位阶26",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 706,
+     "quote": "斯诺立马展开追击，将水晶蚂蚁给打碎击毙了。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "二十七层怪（位阶26，全长一米）：防御略逊结晶格雷姆（涡波全力剑击可致裂/大斧一击致裂）；尖叫声呼叫同伴群聚（同二十一层群袭型习性）；小型水晶系怪（鸟蝶蚁蛛）皆硬且敏捷——二十七层撤退主因"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-d3f6e5f45b86",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(迷宫生物)",
+    "name": "猛毒火蜥蜴"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 498,
+     "quote": "「作为可以潜藏在岩浆中的代价，这个怪物的基本能力很低呢。只用一击就能打倒了。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "二十四层岩浆潜伏型蜥蜴怪：藏于岩浆偷袭背后——潜岩浆的代价=基本能力极低（涡波掷剑一击即杀）；『次元之冬』可透视岩浆内动向"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-2a4234c3ec00",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "物品(矿物)",
+    "name": "魂之水晶"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 734,
+     "quote": "「我记得它是在西边很远处的灵山那里出现的怪物来着。这矿物的级别相当高，名字叫『魂之水晶』。嘿~，原来在迷宫里也能入手这个东西啊。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 739,
+     "quote": "「使用你之前委托打造的那把剑就能斩断的。『新月线形石』作为矿物比『魂之水晶』要更为优秀。寄宿的魔力量大有不同。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "结晶格雷姆魔石之构成矿物（据艾利巴茨：西边远处灵山出产的同名怪物掉落，矿物级别相当高）；矿物级别逊于新月线形石（魔力量大有不同）——新月线形石剑可斩断之"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-d2e828d34831",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "技能魔法",
+    "name": "『ImpulseBreak』"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 621,
+     "quote": "「——『ImpulseBreak』！」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 639,
+     "quote": "既然已经出现了不由斯诺给予最后一击就无法打倒的怪物，我便需要避免自己一个人前进。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "斯诺的魔力增幅钝击技（大斧/振动魔法系）：打击冲击经魔法增幅产生更大破坏力——对付结晶格雷姆/水晶系特效（涡波直击无效的局面由斯诺最后一击终结）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-ff47d03d554b",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 190,
+     "quote": "「——嗯，我们是你的同伴啊。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 203,
+     "quote": "「嗯，事情我差不多弄明白了。因·为·我·能·看··到·嘛。所以，我问的不是基督，而是涡波，我问你，玛利亚她怎么样了？」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 245,
+     "quote": "「哈啊……话是这么说，碍事的太多实在有点不利啊。基督的能力值居然比之前更强了，这可是在预料之外的。本来要在留意各种各样的事情的同时解开基督身上的魔法就很困难了，气急败坏的缇亚如果认真起来还会使这一带都夷为平地呢。嗯——，怎么办才好呢……」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 255,
+     "quote": "「多亏了基督，我成为了我自己……这让我很开心哦……所以这一次，不由其他任何人，我一定会亲自将你救出来……」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "trait",
+     "chapter": 39,
+     "text": "现时间线初登场外形：三股辫金银双色发丝交互络合+金瞳+黄金比例身材——『美得让人害怕』（艺术品级）；对斯诺旧识（『有罪』判决调笑：利用涡波谋福利后偷懒）"
+    },
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "小巷对峙冷静派：手刀打晕失控缇亚公主抱撤离（ roofs 跃迁逃走→古尔亚德方向，涡波追踪至极限）；自称与涡波是同伴+点名玛利亚；目标=解开基督身上的魔法（评涡波能力值变强=预料外）；『多亏了基督，我成为了我自己』+独立救援宣言"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-13b8d7b4f957",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "迪亚布罗·西斯"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 145,
+     "quote": "「是基督吗！？是我、缇亚啊！！」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 158,
+     "quote": "「咦、咦？基督……我的剑呢……？」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 177,
+     "quote": "「呜、呜嘶、诶？又、又·一·次……？我、呜啊、我又被抛弃了……？」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 249,
+     "quote": "「唔、唔咕、吡库、呜呜……呐、拉丝缇娅拉……基督只是被人操纵了对吧？刚才那些话全都是假的对吧？是那样的吧？那、那么、既然这样，就必须救他！不救基督的话！『我（俺）』不救他的话，『我（私）』就痛苦得受不了啊！啊、啊啊、基督……不管怎么样，不管付出怎么样的代价，我都要救——」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "trait",
+     "chapter": 39,
+     "text": "现时间线初登场外形：齐肩短发+一束后束发（中性美少年风）；追问公会成员『带我去见帕林库洛』（目的明确）；精神极脆弱——被否认后当场嚎哭（素质5.00与精神余裕的反差）；自称在俺/私间摇摆（剧变后人格不稳）"
+    },
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "认涡波为基督（『是我、缇亚啊』『为什么没有来古尔亚德』）；见涡波持剑僵住连问『我的剑呢』（剑之认领）；又被抛弃发作（『不救基督的话我就痛苦得受不了』）→被拉丝缇娅拉手刀打晕带回"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-40885a95d7f3",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "格连"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 34,
+     "quote": "斯诺·沃克的哥哥，亦即人类最强的迷宫探索者格连·沃克。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 469,
+     "quote": "看来最强的探索者格连·沃克也曾来到过这一层。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "斯诺之兄确认（沃克家养子，与斯诺无血缘）；『人类最强的迷宫探索者』称号正文确认；妹妹评『非常废物』『关系没那么好』（尽是妹妹提醒其窝囊处）；到过二十四层熔岩地带（斯诺的阶层知识源之一）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-4f19419f358c",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 73,
+     "quote": "「……那个时候，我还只经历过一次失败，所以充满了希望。可是在失·败·了·一·次·又·一·次之后，就觉得努力实在太傻了。于是我就变·成·这·样·了。仅此而已，就这么简单。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 83,
+     "quote": "「……嗯，我觉得这可能是出于同族意识吧。因为我知道涡波跟我一样都是经历过惨痛的失败的人。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 563,
+     "quote": "「……不是，我看你被剑给迷惑了。所以不管那么多想着先把你揍飞让你恢复原状来着。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 436,
+     "quote": "「……二十层。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "trait",
+     "chapter": 39,
+     "text": "身世披露：沃克家养女（无血缘收养）+政治联姻压力（不知情订婚）+反复失败史→放弃人生式的怠惰（『就算努力，也是徒劳』）；同族意识——视涡波为同样经历惨痛失败者故肯袒露心境；Rokh·Bringer 危机果断『Shock』救场+坚持销毁（罕见的执拗不安）"
+    },
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "迷宫实力底细：最深二十层止步（本人）；阶层知识来自学院学生身份+哥哥格连；魔剑销毁后微弱干劲复燃（『那么，继续前进吧』）；对拉丝缇娅拉显著畏惧"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-2980aafc9c25",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 344,
+     "quote": "「……果然没法接受吗。还是老样子，涡波的抵·抗·力真强啊……」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 350,
+     "quote": "「如果你打倒了三十层的守护者，我就告诉你。『基督』的事情、还有你今天遇到的少女们的事情，全都告诉你。——这就是交换条件了。你也知道，我是得不到好处就不会有所行动的人，不过我会做交易。如果你有想知道的事情，那就准备好相应的筹码吧，涡波。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 339,
+     "quote": "「行了，这样一来问题就解决了。好了，我也得准备准备赶回劳拉维亚本国了。不抓紧点的话，那几个不能遇上的家伙就要找上门来了。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "trait",
+     "chapter": 39,
+     "text": "精神影响能力实证：断言式说服时『有『什么东西』涌入』涡波体内（被其抵抗力驱出）+『还是老样子，涡波的抵·抗·力真强啊』（暗示非首次）；幸福感劝退话术（『涡波和玛利亚的愿望已经实现了』）"
+    },
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "三十层守护者交易开价（打倒守护者↔告知基督与少女们全部真相）；交易从不毁约人设（公会周知）；离场语『那几个不能遇上的家伙就要找上门来了』+赶回劳拉维亚本国"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-b7615c17cf05",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "艾利巴茨·利拜斯"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 741,
+     "quote": "「依靠现有的预算和目前动员的人数，到明天晚上就能完工了。我一定会让它顺利完工的。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 760,
+     "quote": "「还有的话……对了，你去哪里买点木棒带着比较好。算是给斯诺使用的武器。反正给她用的迟早都会损毁，使用木棒战斗比较经济。并且听你说的，对付水晶系的怪物打击似乎很有效的样子。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "工房增员赶工（多名外聘锻冶师）；新月线形石剑明晚完工承诺；鉴定结晶格雷姆魔石=魂之水晶（灵山出产知识）；提案火属性魔石项链+水中适应道具；斯诺武器木棒经济学（迟早损毁故用木棒最经济+水晶系钝击有效）；个人层面想听会长迷宫故事（协作深化）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-10a71eeba154",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 425,
+     "quote": "之前来这边的时候我只有12级，如今我已经15级了。所有的能力值都上升了一个段位，只消数秒狂怒者便被我击毙。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 317,
+     "quote": "「——就算是这样，如果这当中存在一丝虚假，我也必须将之探明不可。『谎言不会带来任何救赎』。虽然说不清理由，但我就是有这种感觉……就算揭露谎言之后会失去先前的幸福，我也会重新寻找新的幸福……所以，我想要知道真相……」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 472,
+     "quote": "魔·力·的·流·通·效·果·好·过·头·了。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "trait",
+     "chapter": 39,
+     "text": "15级（教会加点后全能力上升一档，21层狂怒者数秒击杀）；冰结魔法过共鸣（『魔力的流通效果好过头了』/对热理解驾轻就熟——既有经验残留疑）；精神污染抵抗力双实证（Rokh·Bringer 近侵蚀被斯诺打断+帕林库洛暗示驱出）"
+    },
+    {
+     "category": "summary",
+     "chapter": 39,
+     "text": "本能宣言『谎言不会带来任何救赎』（拒绝善意谎言幸福论——遵从本能的爽快感=答案无误之证）；Freeze+Dimension并用=弱化次元之冬（岩浆内透视）；武器危机管理（破损5剑后改用大斧/采购木棒100根）；对双少女『必有一战』预感"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-aa64a4071ec9",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "格连",
+    "rel_type": "养兄妹(沃克家收养,无血缘)",
+    "subject": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 34,
+     "quote": "斯诺·沃克的哥哥，亦即人类最强的迷宫探索者格连·沃克。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 43,
+     "quote": "「……我和哥哥都是被收养的。沃克家有将优秀的血脉引入自身的传统。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "同为沃克家收养（无血缘）；妹妹评价关系不睦：哥哥『非常废物』、尽是妹妹提醒其窝囊处——但涡波指出敢这么评说明关系其实不错"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-84c0f06d25eb",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "斯诺·沃克",
+    "rel_type": "政治联姻压力",
+    "subject": "沃克家"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 49,
+     "quote": "「最近这阵子一直在啰嗦着要我结婚什么的。在我不知情的时候，替我跟不是很熟悉的人订下了婚约。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "不知情时与不熟之人订下婚约；拒绝会招来其它麻烦→斯诺选择搁置（『不管怎么做都会很麻烦……那还是什么都不做算了』——放弃式人生观的一环）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-de124d6d7d73",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "相川涡波",
+    "rel_type": "同伴自称(单方宣称)",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 190,
+     "quote": "「——嗯，我们是你的同伴啊。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 245,
+     "quote": "「哈啊……话是这么说，碍事的太多实在有点不利啊。基督的能力值居然比之前更强了，这可是在预料之外的。本来要在留意各种各样的事情的同时解开基督身上的魔法就很困难了，气急败坏的缇亚如果认真起来还会使这一带都夷为平地呢。嗯——，怎么办才好呢……」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "据拉丝缇娅拉声称：初次见面即宣言『我们是你的同伴』且真挚无迷茫；知晓被秘藏的玛利亚并称其为重要同伴；实际目的=解开基督身上的魔法"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-b51119a07167",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "相川涡波",
+    "rel_type": "旧主误认(基督=涡波)",
+    "subject": "迪亚布罗·西斯"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 145,
+     "quote": "「是基督吗！？是我、缇亚啊！！」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 177,
+     "quote": "「呜、呜嘶、诶？又、又·一·次……？我、呜啊、我又被抛弃了……？」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "据迪亚布罗·西斯言行：认涡波为基督，要求『一起回去』『为什么没有来古尔亚德』；被否认后又被抛弃感发作嚎哭——精神剧变的现行"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-fcce8429c4a8",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "阿雷亚斯家的宝剑",
+    "rel_type": "剑之所有主张",
+    "subject": "迪亚布罗·西斯"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 158,
+     "quote": "「咦、咦？基督……我的剑呢……？」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 168,
+     "quote": "迪亚布罗·西斯以空洞的眼神执拗地接连质问我道。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "据迪亚布罗·西斯言行：见涡波持剑威慑即僵住，指剑连问『我的剑呢』『你给扔掉了吗』——ch38 破损的阿雷亚斯家的宝剑=缇亚之剑的直接对证（记忆恢复媒介线强化）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-5e0e32049398",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "情报交易(守护者讨伐↔真相)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 350,
+     "quote": "「如果你打倒了三十层的守护者，我就告诉你。『基督』的事情、还有你今天遇到的少女们的事情，全都告诉你。——这就是交换条件了。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 408,
+     "quote": "「总之只要干脆利落地把三十层的守护者打倒就解决了。别看那样，帕林库洛毕竟是个不会毁约的人啊。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "条件=打倒三十层守护者→告知『基督』之事+少女们之事全部；涡波以『帕林库洛交易不毁约（公会周知）』为由接受，自觉掌上跳舞仍以三十层为目标"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-6a01c6d6af06",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "斯诺·沃克",
+    "rel_type": "旧识警戒",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 219,
+     "quote": "「斯诺？斯诺·沃克？你为什么在这里？」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 232,
+     "quote": "不行，有罪。反正你肯定是利用着涡波给自己谋福利然后跑去一边偷懒了吧。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "相识关系（拉丝缇娅拉直呼其名+『有罪』判决调笑/斯诺显著畏惧后退）；斯诺曾在涡波入会首夜讲过与拉丝缇娅拉同口径的『基督/被帕林库洛操纵』说——两信息源同源"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-85a8a0909b7f",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "锻冶协作深化",
+    "subject": "艾利巴茨·利拜斯"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 741,
+     "quote": "「依靠现有的预算和目前动员的人数，到明天晚上就能完工了。我一定会让它顺利完工的。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 754,
+     "quote": "「原来如此。在那个熔岩地带中获得了火属性的魔石啊。如果对炎热的环境感到困扰的话，我帮你做个针对火属性的魔法道具好了。所幸炎属性的魔石有不少。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 39,
+     "text": "新月线形石剑明晚完工+破损武器修理+魔剑解体相谈+火属性/水中道具提案+木棒采购建议（战斗顾问化）；主动求闻会长迷宫故事（情报交换+个人敬意）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-bde3f1043752",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "史诗探索者",
+     "斯诺·沃克",
+     "沃克家",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "日常",
+    "name": "舞斗大会警备日与斯诺身世披露",
+    "tick": 31,
+    "time_verbatim": "警备日（公会轮番负责，中午到晚上）"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 5,
+     "quote": "「……『舞斗大会』差不多要开始了。因为这个，有不少三教九流涌进了劳拉维亚，这可能会导致治安恶化，所以我们正好帮忙维持治安。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 71,
+     "quote": "「以前那时候，我还是个很可爱的女孩子来着。对公会的工作干劲满满的、每天都很开心。因为那个时候的我还怀抱着梦想。」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 39,
+     "text": "舞斗大会临近致三教九流涌入劳拉维亚→公会轮番警备（当日中午-晚上）；办公室闲时斯诺自述：沃克家养女/政治联姻/反复失败史→怠惰人生观（放弃人生本身式的随波逐流）；同族意识告白（涡波=同类惨痛失败者）；涡波胸口刺痛+体内『什么东西』咆哮着否定其消极人生态度"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-2e7e0447995a",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "拉丝缇娅拉",
+     "斯诺·沃克",
+     "玛利亚",
+     "相川涡波",
+     "迪亚布罗·西斯"
+    ],
+    "instant": null,
+    "kind": "冲突",
+    "name": "金砂双少女遭遇与基督误认",
+    "tick": 31,
+    "time_verbatim": "警备日当日"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 136,
+     "quote": "「——别管那么多、总之快带我去见帕林库洛！」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 268,
+     "quote": "在两名少女抵达东南方的国家古尔亚德附近时，我的远超追踪也迎来了极限。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 39,
+     "text": "Dimension 检测异常→小巷对峙（双少女缠公会成员要见帕林库洛）；缇亚认涡波为基督（剑之认领/又被抛弃发作/嚎哭）；拉丝缇娅拉『我们是同伴』+点名玛利亚+评涡波能力值增强出预料；魔力对峙（涡波切换决战演算；公会成员赶到形成包围）→拉丝缇娅拉手刀打晕缇亚公主抱撤离（屋顶跃走→东南方古尔亚德方向，追踪极限）；涡波『必有一战』预感"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-a00831a142a1",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "玛利亚",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "转折",
+    "name": "帕林库洛的幸福感劝与三十层交易成立",
+    "tick": 31,
+    "time_verbatim": "警备日当日傍晚"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 307,
+     "quote": "——在当下这个时间点，涡·波·和·玛·利·亚·的·愿·望·已·经·实·现·了，这点毋庸置疑。即使如此，涡波你仍然要探寻真实与否吗？",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 383,
+     "quote": "「那么，拉丝缇娅拉·弗茨亚茨、迪亚布罗·西斯。听到这些名字你有想到什么吗？」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 39,
+     "text": "帕林库洛幸福论劝退（玛利亚恢复/会长受尊敬/愿望已实现）→涡波本能拒绝『谎言不会带来任何救赎』；帕林库洛断言式暗示（『什么东西』涌入体内）被涡波抵抗力驱出（『还是老样子』）；交易成立=三十层守护者↔基督与少女全部真相；离场预告『不能遇上的家伙要找上门来』；事后玛利亚确认：头痛仍续+对双少女名字无印象（同型症状判断）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-88d0a0a269c8",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "Rokh·Bringer",
+     "斯诺·沃克",
+     "水晶蚂蚁",
+     "相川涡波",
+     "结晶格雷姆",
+     "艾利巴茨·利拜斯"
+    ],
+    "instant": null,
+    "kind": "探索",
+    "name": "迷宫20-27层攻略与魔剑销毁",
+    "tick": 31,
+    "time_verbatim": "数日后迷宫日（确认数天无公会工作后）"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 411,
+     "quote": "在确认过数天内公会都不会有什么工作后，我们来到了迷宫的第二十层。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 765,
+     "quote": "今天的成果是将迷宫攻略到了二十七层。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 39,
+     "text": "办公室 Connection 抄近路至二十层→23层正道末端轻松推进（21层狂怒者数秒杀/15级）；24层熔岩地带（Freeze过共鸣/次元之冬岩浆透视/猛毒火蜥蜴一击杀）+Rokh·Bringer 祭坛回收（精神污染危机→Shock救场→Ice封印→折断销毁）；25层热水河雾层<1小时；26层结晶格雷姆初战（ImpulseBreak 龟裂终结/破损5剑武器危机）；27层水晶回廊侦察（水晶蚂蚁群聚+敏捷水晶怪群）→武器枯竭撤退（Connection）；艾利巴茨工房（魂之水晶鉴定/新月线形石剑明晚完工/木棒100根采购）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-1537e1e4d33a",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "entities": [
+     "帕林库洛",
+     "相川涡波"
+    ],
+    "name": "帕林库洛的三十层守护者交易",
+    "note": "真相的交换条件=打倒三十层守护者（前人未至领域）；帕林库洛拖延话术（『很快你就会知道了』）+『不能遇上的家伙』追兵预告；涡波自觉在他人掌心上跳舞仍以此为目标——通往 U-C03 末段三十层线的主驱动",
+    "payoff_chapter": null,
+    "setup_chapter": 39,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 350,
+     "quote": "「如果你打倒了三十层的守护者，我就告诉你。『基督』的事情、还有你今天遇到的少女们的事情，全都告诉你。——这就是交换条件了。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 39,
+     "text": "主线驱动钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-e5d12816740d",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "entities": [
+     "相川涡波",
+     "迪亚布罗·西斯",
+     "阿雷亚斯家的宝剑"
+    ],
+    "name": "缇亚的剑认领（宝剑归属对证）",
+    "note": "缇亚见涡波持剑僵住连问『我的剑呢』『你给扔掉了吗』——ch38 破损的阿雷亚斯家的宝剑（熔毁态）=缇亚之剑的直接对证；剑=记忆恢复媒介线的实证强化；归还/真相揭示待回收",
+    "payoff_chapter": null,
+    "setup_chapter": 39,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 158,
+     "quote": "「咦、咦？基督……我的剑呢……？」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 39,
+     "text": "ch38 伏笔的对证事件"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-1de19f96a4d5",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "entities": [
+     "帕林库洛",
+     "相川涡波"
+    ],
+    "name": "帕林库洛的精神暗示与涡波抵抗力",
+    "note": "断言式说服伴随『什么东西』涌入体内（被驱出）；『还是老样子，涡波的抵抗力真强』=非首次+惯用手段暗示——帕林库洛参与改篡维护的嫌疑强化；涡波侧抵抗力=改篡的裂缝（与记忆抵抗躯体证据群同族）",
+    "payoff_chapter": null,
+    "setup_chapter": 39,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 337,
+     "quote": "我动摇了，与此同时我感觉到有『什么东西』涌入了自己体内。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 344,
+     "quote": "「……果然没法接受吗。还是老样子，涡波的抵·抗·力真强啊……」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 39,
+     "text": "改篡维护者嫌疑钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-68e2209caf39",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "entities": [
+     "帕林库洛"
+    ],
+    "name": "「不能遇上的家伙」",
+    "note": "帕林库洛赶回劳拉维亚本国之由——追兵在途的模糊预告（身份未明）；与拉丝缇娅拉『在这里打起来就中了帕林库洛的计』之说互证帕林库洛的局势操纵",
+    "payoff_chapter": null,
+    "setup_chapter": 39,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 339,
+     "quote": "「行了，这样一来问题就解决了。好了，我也得准备准备赶回劳拉维亚本国了。不抓紧点的话，那几个不能遇上的家伙就要找上门来了。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 39,
+     "text": "追兵预告钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-3b97fc17e071",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "entities": [
+     "拉丝缇娅拉",
+     "相川涡波",
+     "迪亚布罗·西斯"
+    ],
+    "name": "拉丝缇娅拉的独立救援宣言",
+    "note": "『不由其他任何人，我一定会亲自将你救出来』+『多亏了基督，我成为了我自己』（自我成形之谜/笼中出身的延伸）+『相当生气/缇亚任性一百遍』预告——她的救援行动与动机待回收",
+    "payoff_chapter": null,
+    "setup_chapter": 39,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 255,
+     "quote": "「多亏了基督，我成为了我自己……这让我很开心哦……所以这一次，不由其他任何人，我一定会亲自将你救出来……」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 260,
+     "quote": "「嘛，这个先不说，今天的事你可给我记好了哦。等一切结束之后，缇亚的任性你不听上个一百遍可不算完。而且我也是、相~当~地生气呢……那么今天就先到这里啦，拜~拜~。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 39,
+     "text": "女主线行动预告钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-51f6dff7b354",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "据斯诺（学院知识）：迷宫=将大地积攒的魔力和过去集中收束再退返大陆的循环器；会掉落过去的道具（『想起收束（Drop）』）；绝大多数探索者无法触及的二十三层以下，这类物品因未被取用而残留（祭坛+剑=过去的遗物/可能是过去的名剑）",
+    "name": "迷宫的想起收束（Drop）机制",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 528,
+     "quote": "「……那个恐怕是迷·宫·本·身·的·掉·落·品。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 530,
+     "quote": "「归根究底，这里本就是将过去的遗产退返回大陆的地方。迷宫担当着将大地积攒起来的魔力和过去集中收束起来再退返的循环器的作用。——如此如此、这是我在学院那边获悉的。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "迷宫机制扩展（学院冷知识）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-21816fca64ab",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "经验法则（未出过错）：迷宫地形与怪物生态对应——河流→水栖怪物/森林→昆虫怪物/热气→火焰怪物；二十七层水晶回廊=水晶系怪物栖息之印证（透明水晶质墙壁硬度超一般水晶=变异矿物）",
+    "name": "迷宫地形与生态对应原则",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 673,
+     "quote": "基本上来说迷宫的地形与怪物的生态都是互相对应的。有河流的话就是水栖怪物、有森林则是昆虫怪物、热气则是火焰怪物、虽然是经验之谈，但这个经验还没出过什么错。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 662,
+     "quote": "这里一反二十五层前后那种熔岩地带，变回了凉爽的回廊。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "探索经验法则"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-de514b766315",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "据涡波推论：迷宫非天然形成，经某人之手在某种目的下制造——依据=难度梯级设计对人类有所关照（正道铺设等）；『到底是谁制造了这个迷宫』为持续追问的悬案",
+    "name": "迷宫人造说（涡波推论）",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 537,
+     "quote": "这个迷宫一定是经·某·人·之·手在某种目的下制造出来的。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "世界核心谜题之一（据主角推论）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-5f4a030d0f69",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "等级16/职业无：HP708/709 MP325/325；力量11.73 体力11.12 技巧7.14 敏捷8.40 贤能12.98 魔力9.13 素质4.00；先天技能：武器战斗2.14 剑术2.03 拟神之眼1.00 魔法战斗2.27 血术5.00 神圣魔法1.03；后天：读书0.52 素体1.00——拟神之眼=其『能看到』能力的技能名侧证",
+    "name": "拉丝缇娅拉状态栏（ch39实测）",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 105,
+     "quote": "姓名：拉丝缇娅拉·弗茨亚茨HP708/709MP325/325职业：无",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 110,
+     "quote": "武器战斗2.14剑术2.03拟神之眼1.00",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "状态栏实测数据"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-e43ac51598c2",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "等级11/职业剑士：HP179/182 MP821/831；力量6.32 体力5.39 技巧3.02 敏捷3.18 贤能9.99 魔力45.12 素质5.00；状态：加护1.00；先天技能：神圣魔法3.80 神之加护3.08 断罪2.00 集中收束2.05 属性魔法2.10 过捕护2.12 续命2.24 良机2.03；后天：剑术0.10；？？？：？？？（状态栏底行未知项）——魔力45.12 异常高+魔力远超HP承载规格",
+    "name": "迪亚布罗·西斯状态栏（ch39实测）",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 115,
+     "quote": "名字：迪亚布罗·西斯HP179/182 MP821/831职业：剑士",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 123,
+     "quote": "？？？：？？？",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "状态栏实测数据"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-320a4ab16db7",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "据斯诺自述：曾是干劲满满怀梦的少女（幼年任副会长）→『失败了·一·次·又·一·次』后认定努力太傻→怠惰慵懒随波逐流（对结婚/人生皆『无可奈何』式放弃）；认定与涡波有同族意识（同类惨痛失败者）；提及失败时面容扭曲=初见认真表情",
+    "name": "斯诺的怠惰成因（反复失败史）",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 73,
+     "quote": "「……那个时候，我还只经历过一次失败，所以充满了希望。可是在失·败·了·一·次·又·一·次之后，就觉得努力实在太傻了。于是我就变·成·这·样·了。仅此而已，就这么简单。」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 83,
+     "quote": "「……嗯，我觉得这可能是出于同族意识吧。因为我知道涡波跟我一样都是经历过惨痛的失败的人。」",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "角色核心创伤自述"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-c4ef24f99e93",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "①涡波保有『12级单独打倒二十三层火焰飓风Boss』的记忆但自我怀疑其真实性；②24层Freeze流通过好（『魔力的流通效果好过头了』）+对热/火焰理解驾轻就熟（『以前曾抑制过更甚热量的什么东西』的体感）——与ch38持剑寒意同族=核心记忆残留/抵抗的躯体层证据群（译注所述web/文库情节混杂不入库）",
+    "name": "记忆抵抗的躯体证据（火焰飓风疑点与Freeze共鸣）",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 452,
+     "quote": "我有自己在二十三层打败了那个叫火焰飓风的Boss的记忆。只是，我对此有些怀疑。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 483,
+     "quote": "就好像我以前曾抑制过比这个阶层的热量更甚的什么东西一样……莫名的驾轻就熟。",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 472,
+     "quote": "魔·力·的·流·通·效·果·好·过·头·了。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "改篡记忆裂缝证据"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-27b8fce25134",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 39,
+    "fact": "玛利亚身体恢复顺利可正常行动，但头痛仍续；对拉丝缇娅拉·弗茨亚茨/迪亚布罗·西斯二名无印象；涡波判断『搞不好玛利亚的头痛跟我的症状是同种类型』（改篡副作用的同型性）——解纵横字谜式的接近感",
+    "name": "玛利亚的持续头痛（同型症状）",
+    "tick": 31
+   },
+   "evidence": [
+    {
+     "chapter": 39,
+     "line": 381,
+     "quote": "「头痛是吗？确实、还有一些……」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 384,
+     "quote": "「突然之间是怎么了……？我没什么印象……」",
+     "vol": 1
+    },
+    {
+     "chapter": 39,
+     "line": 388,
+     "quote": "但她的头痛仍在继续，搞不好玛利亚的头痛跟我的症状是同种类型。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 39,
+     "text": "改篡副作用侧证"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-39f0d5a43245",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。拉丝缇娅拉·弗茨亚茨/格连·沃克 已在 aliases.jsonl 登记（勿重复）；本批新登记：剧毒火蜥蜴→猛毒火蜥蜴、水晶蚁→水晶蚂蚁。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=文件行号-14833）。",
+  "cross_chapter_notes": [
+   "★金砂双少女现时间线初登场（拉丝缇娅拉/迪亚布罗·西斯状态栏全公开——迪亚布罗 魔力45.12/素质5.00/状态加护1.00/？？？：？？？）；缇亚认涡波为基督+见剑僵住『我的剑呢』=ch38 破损阿雷亚斯宝剑归属的直接对证",
+   "★帕林库洛精神暗示实证（『什么东西』涌入体内被驱出+『抵抗力真强』）+三十层守护者交易成立（真相的交换条件）——改篡维护者嫌疑强化",
+   "★斯诺身世全披露：沃克家养女（无血缘）+政治联姻压力+反复失败史→怠惰人生观；同族意识（视涡波为同类失败者）",
+   "★迷宫机制扩展：想起收束（Drop）=迷宫循环器掉落过去遗物（Rokh·Bringer 祭坛魔剑，精神污染+2.00，回收后折断销毁）；涡波迷宫人造推论；26层结晶格雷姆/27层水晶回廊武器耗损危机",
+   "★涡波记忆抵抗躯体证据群：23层火焰飓风单独讨伐记忆存疑（12级Solo）+Freeze流通过好/对热理解驾轻就熟——与ch38持剑寒意同族；玛利亚头痛同型判断",
+   "【待确认】帕林库洛『赶回劳拉维亚本国』措辞与警备章『三教九流涌进了劳拉维亚』的地理口径（公会所在地=劳拉维亚城 vs 联合国）暂按原文引用不判读，U-C09 对账复核"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_decision": {
+   "deterministic_check": "译注前缀'（译注：'全文仅此两处",
+   "reason": "行452 译注（web版45话/文库版删减的火焰飓风情节说明）与行161 译注（缇亚自称变化）为翻译组注=元文本，其内容不入库；正文行为事实照抽",
+   "verdict": "正文正常抽取；两处译注按元文本排除"
+  },
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=31→tick=31→2000-02-01。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行14833-15600（CHAPTER 0039，768行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批4 · CHAPTER 0039（第四卷-第三章-再会，摄入序31→tick31→伪锚点2000-02-01）"
+ }
+}

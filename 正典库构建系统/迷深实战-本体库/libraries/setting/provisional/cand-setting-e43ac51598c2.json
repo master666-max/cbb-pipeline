@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 39,
+  "fact": "等级16/职业无：HP708/709 MP325/325；力量11.73 体力11.12 技巧7.14 敏捷8.40 贤能12.98 魔力9.13 素质4.00；先天技能：武器战斗2.14 剑术2.03 拟神之眼1.00 魔法战斗2.27 血术5.00 神圣魔法1.03；后天：读书0.52 素体1.00——拟神之眼=其『能看到』能力的技能名侧证",
+  "name": "拉丝缇娅拉状态栏（ch39实测）",
+  "tick": 31
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 105,
+   "quote": "姓名：拉丝缇娅拉·弗茨亚茨HP708/709MP325/325职业：无",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 110,
+   "quote": "武器战斗2.14剑术2.03拟神之眼1.00",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 39,
+   "text": "状态栏实测数据"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-e43ac51598c2",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

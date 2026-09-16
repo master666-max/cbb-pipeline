@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "同伴自称(单方宣称)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 190,
+   "quote": "「——嗯，我们是你的同伴啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 245,
+   "quote": "「哈啊……话是这么说，碍事的太多实在有点不利啊。基督的能力值居然比之前更强了，这可是在预料之外的。本来要在留意各种各样的事情的同时解开基督身上的魔法就很困难了，气急败坏的缇亚如果认真起来还会使这一带都夷为平地呢。嗯——，怎么办才好呢……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "据拉丝缇娅拉声称：初次见面即宣言『我们是你的同伴』且真挚无迷茫；知晓被秘藏的玛利亚并称其为重要同伴；实际目的=解开基督身上的魔法"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b51119a07167",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entities": [
+   "史诗探索者",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "莉帕",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "诺文门客化与莉帕地化",
+  "tick": 33,
+  "time_verbatim": "三十层归来当夜~次日晨"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 19,
+   "quote": "「只要作为一个骑士取得成就的话，诺文好像就会死掉了，所以我打算协助他。看来守护者们只要实现了留恋就会消失哦。这比跟他战斗要安全多了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 41,
+   "line": 267,
+   "quote": "「——多么美丽的光芒！这就是太阳！？这就是『青空』！？啊啊，这是何等、何等的美啊！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 41,
+   "text": "Connection 归来→斯诺介绍诺文（门客+护卫决定/'实现了留恋就会消失'的正当化说明）；诺文屋顶石像宿营（化石系统/窗户=出入口误会）；玛利亚初会莉帕（重罪危机→姐姐融化→绘本共读同眠）；翌晨诺文青空欢呼骚动（Freeze 镇压）→成员介绍顺畅接受；莉帕留守办公室由斯诺读绘本"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d1adab66d25f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

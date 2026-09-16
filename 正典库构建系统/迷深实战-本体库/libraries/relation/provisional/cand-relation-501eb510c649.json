@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "婚约(两家同意)",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 178,
+   "quote": "「震惊！她们两个其实是彼此的婚约者哦！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 599,
+   "quote": "「这肯定是希达尔克和沃克两家都了解和同意的事情吧……但是，艾尔你觉得那样好吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 40,
+   "text": "据缇莉爆料：彼此的婚约者（'这肯定是希达尔克和沃克两家都了解和同意的事情'——斯诺语）；希达尔克个人欢迎斯诺；次日斯诺被希达尔克家传唤拘束一日"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-501eb510c649",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

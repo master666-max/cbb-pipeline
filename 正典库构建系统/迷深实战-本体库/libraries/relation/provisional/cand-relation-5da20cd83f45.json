@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "正道工事委托",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 69,
+   "quote": "「说来很简单，就是经由劳拉维亚之手，对数日前变为普通房间的迷宫第十层和第二十层的『正道』进行整备。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 40,
+   "text": "经希达尔克之手委托（补劳拉维亚国计划缺额）：十层·二十层正道整备（结界强化+魔石线扩展）；报酬事后送抵本部；史诗探索者派出涡波/斯诺/缇莉（波鲁扎克未赶上）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5da20cd83f45",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

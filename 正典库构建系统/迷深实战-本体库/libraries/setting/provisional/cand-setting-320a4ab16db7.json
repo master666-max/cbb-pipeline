@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 39,
+  "fact": "等级11/职业剑士：HP179/182 MP821/831；力量6.32 体力5.39 技巧3.02 敏捷3.18 贤能9.99 魔力45.12 素质5.00；状态：加护1.00；先天技能：神圣魔法3.80 神之加护3.08 断罪2.00 集中收束2.05 属性魔法2.10 过捕护2.12 续命2.24 良机2.03；后天：剑术0.10；？？？：？？？（状态栏底行未知项）——魔力45.12 异常高+魔力远超HP承载规格",
+  "name": "迪亚布罗·西斯状态栏（ch39实测）",
+  "tick": 31
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 115,
+   "quote": "名字：迪亚布罗·西斯HP179/182 MP821/831职业：剑士",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 123,
+   "quote": "？？？：？？？",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 39,
+   "text": "状态栏实测数据"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-320a4ab16db7",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

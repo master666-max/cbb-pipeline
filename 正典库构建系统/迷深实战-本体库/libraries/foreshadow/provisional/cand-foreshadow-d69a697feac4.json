@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 40,
+  "entities": [
+   "相川涡波",
+   "诺文"
+  ],
+  "name": "诺文的约定与名字反应",
+  "note": "召唤混乱中'那家伙跟我约好了——然后、然后——'的记忆断片；闻'相川涡波'之名大感震惊（对名字有头绪却立即镇定）——守护者的记忆/约定与涡波名字的关联待解",
+  "payoff_chapter": null,
+  "setup_chapter": 40,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 866,
+   "quote": "「——对，没错。我是守护者。这一点我是明白的。唯有这点是不会错的。可是、可是那个时候、那家伙跟我约好了——，然后、然后——！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 952,
+   "quote": "「你、你说你叫相川涡波！？」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 40,
+   "text": "守护者记忆钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-d69a697feac4",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

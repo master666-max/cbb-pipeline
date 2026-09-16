@@ -1,0 +1,260 @@
+{
+ "unit": "ch0042",
+ "chapter": 42,
+ "ingestion_index": 34,
+ "title": "第四卷-第六章-最强的剑士",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 29,
+  "pass": 29,
+  "intercept": 0,
+  "admitted": 29,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 6,
+  "on-create": 23
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-ecae583ac8e2",
+   "type": "entity",
+   "name": "『阿雷亚斯流剑术』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-c34ebaf9fb5d",
+   "type": "entity",
+   "name": "技能『魔力物质化』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a57ea7d34f88",
+   "type": "entity",
+   "name": "技能『感应』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d9bb4c8aedfd",
+   "type": "entity",
+   "name": "技能『魔力冰结化』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-77d4f09a8599",
+   "type": "entity",
+   "name": "诺文",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-38664d360d49-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-f7b7d363d9ae",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-a7b9c38126e9",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-464c1837548c",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-88a27d34c279",
+   "type": "entity",
+   "name": "雷鲁·桑库斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4e6abd571844-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b96071c01885",
+   "type": "entity",
+   "name": "迪亚布罗·西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-43aa55ba3673-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-bc175db0d39f",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b70585eb9295",
+   "type": "relation",
+   "name": "迪亚布罗·西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d63d59409991",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-24645842ffb2",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-891b57601968",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6c56f5ade618",
+   "type": "relation",
+   "name": "雷鲁·桑库斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f0c4cc397b5e",
+   "type": "event",
+   "name": "阿雷亚斯流剑术全传",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d607d102316b",
+   "type": "event",
+   "name": "雷鲁别墅遗址访问与真相说明",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-53671be1b290",
+   "type": "event",
+   "name": "深层之梦与三重意志传达",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-e74b5bff1b87",
+   "type": "foreshadow",
+   "name": "妹妹的真名（玛利亚=相川阳滝）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-35f123b74123",
+   "type": "foreshadow",
+   "name": "三重意志与莉帕的回传",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-59a425397837",
+   "type": "foreshadow",
+   "name": "诺文的急速弱化",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1ff6bfd75623",
+   "type": "foreshadow",
+   "name": "涡波的心之锁（感应诊断）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ccc5e9c46dca",
+   "type": "foreshadow",
+   "name": "魔力物质化的记忆残留",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-104b32e6b986",
+   "type": "setting",
+   "name": "守护者的使命与迷宫根源（诺文证言）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9a2f78bfe805",
+   "type": "setting",
+   "name": "次元魔法使的技能拷贝特性",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-5606f5e39927",
+   "type": "setting",
+   "name": "手环的深层心理写入（梦中揭示）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-502f002eb10a",
+   "type": "setting",
+   "name": "雷鲁的真相说明（治疗论与幸福计划）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-5e61964fc3ff",
+   "type": "setting",
+   "name": "涡波的推理链（假名说与大火灾推测）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 34,
+  "pseudo_date": "2000-02-04",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 10,
+   "library": 219,
+   "dup_suspect": 0,
+   "uncertain": 2
+  },
+  "neo4j": {
+   "nodes": 206,
+   "edges": 232,
+   "batches": 3,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 224,
+    "edges": 232
+   }
+  }
+ }
+}

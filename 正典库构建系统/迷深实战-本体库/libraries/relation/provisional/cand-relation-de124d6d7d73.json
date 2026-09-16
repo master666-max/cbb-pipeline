@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "政治联姻压力",
+  "subject": "沃克家"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 49,
+   "quote": "「最近这阵子一直在啰嗦着要我结婚什么的。在我不知情的时候，替我跟不是很熟悉的人订下了婚约。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "不知情时与不熟之人订下婚约；拒绝会招来其它麻烦→斯诺选择搁置（『不管怎么做都会很麻烦……那还是什么都不做算了』——放弃式人生观的一环）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-de124d6d7d73",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

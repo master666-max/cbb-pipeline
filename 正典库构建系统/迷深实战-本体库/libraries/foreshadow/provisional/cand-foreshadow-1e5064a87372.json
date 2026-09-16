@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 43,
+  "entities": [
+   "帕林库洛",
+   "格连",
+   "相川涡波"
+  ],
+  "name": "格连的'那个时候'与假货自称",
+  "note": "'从·那·个·时·候开始，我就一直是你的粉丝'——格连知晓基督时代事迹（具体时点未明）；'跟我这样不值一提的假货不同，你才是真正的英雄'的假货自称（最强称号的自贬——与'某起事件'的关联候选）；'感觉跟我从帕林库洛那儿听说的完全不一样'（帕林库洛对涡波的描述存在）",
+  "payoff_chapter": null,
+  "setup_chapter": 43,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 314,
+   "quote": "「嘿~，感觉跟我从帕林库洛那儿听说的完全不一样啊……哎呀，是在好的意义上哦？不要会错意了哦？我不是在说你的坏话哦？你可别生气哦？」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 43,
+   "text": "格连信息差钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-1e5064a87372",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

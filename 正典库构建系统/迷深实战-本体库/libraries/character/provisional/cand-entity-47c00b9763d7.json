@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫生物)",
+  "name": "漩涡蚁狮"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 801,
+   "quote": "漩涡蚁狮：位阶29",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 828,
+   "quote": "那个洞跟下一层连接在一起，而填补那个洞的漩涡蚁狮的消失使得沙子一口气崩塌到下面去了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 40,
+   "text": "二十九层怪（位阶29）：巨大蜘蛛形但特性为蚁狮——六脚+魔力操纵沙地制造流沙漩涡吞噬猎物（甲壳硬似矿石）；被投剑入口中击杀；其消失=沙下大洞失塞→沙崩直通三十层（阶层构造联动）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-47c00b9763d7",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

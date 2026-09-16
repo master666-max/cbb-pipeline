@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "格连",
+  "rel_type": "养兄妹(沃克家收养,无血缘)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 34,
+   "quote": "斯诺·沃克的哥哥，亦即人类最强的迷宫探索者格连·沃克。",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 43,
+   "quote": "「……我和哥哥都是被收养的。沃克家有将优秀的血脉引入自身的传统。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "同为沃克家收养（无血缘）；妹妹评价关系不睦：哥哥『非常废物』、尽是妹妹提醒其窝囊处——但涡波指出敢这么评说明关系其实不错"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-84c0f06d25eb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

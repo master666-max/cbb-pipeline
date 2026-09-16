@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "友情确立",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 709,
+   "quote": "「诶，因为啦，诺文跟我是敌人不是？」",
+   "vol": 1
+  },
+  {
+   "chapter": 41,
+   "line": 730,
+   "quote": "而是以同样身为人类的伙伴的关系，协助实现诺文的心愿，送他离去。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 41,
+   "text": "围巾事件（诺文无份被莉帕'敌人'论一刀两断→涡波织围巾之约）→'靠得住的只有朋友'的友情确认；涡波心境：'再把诺文当做守护者——当做怪物来对待，已经是很难了吧'——以人的伙伴关系协助实现心愿送他离去；但'怎么也无法拭去心底的不安'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b1b53f2b65f7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

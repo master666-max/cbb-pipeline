@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entities": [
+   "康纳·塔利亚",
+   "斯诺·沃克",
+   "斯诺的义母",
+   "沃克家",
+   "相川涡波",
+   "艾尔米拉德·希达尔克"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "劳拉维亚社交舞会",
+  "tick": 35,
+  "time_verbatim": "舞斗大会前三天（王族驾临日）"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 21,
+   "quote": "内容是邀请我参加劳拉维亚举办的『舞会』。",
+   "vol": 1
+  },
+  {
+   "chapter": 43,
+   "line": 28,
+   "quote": "「我反而忐忑得很。看样子，这回之所以找我参加，是因为我受到了劳拉维亚王族的注意……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 43,
+   "text": "劳拉维亚对涡波个人的舞会邀请（王族注意所致；社交版=角力大会的代位产物）→沃克家马车赴城（身份数重检查/王族警备）→商家照面苦行（康纳·塔利亚的金币人情/长龙队列/耳饰进言）→义母会面（婚约陈情被回绝）→希达尔克婚约炒作围攻→涡波一言止场解围→阳台休憩（最美笑容/依靠劝告/栖身之所）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-02e2d7319ebd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

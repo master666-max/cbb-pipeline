@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "格连",
+  "rel_type": "婚事委托(斯诺×涡波促成)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 345,
+   "quote": "「要说斯诺跟涡波的婚事，我可是超级赞成的啊。毕竟能让我憧憬的涡波成为自己的义弟，真是没有什么能比这更让人高兴的了。我和帕林库洛都举荐你为斯诺·沃克的婚约者！不管有什么困难，我们都一定会让你们两个成婚的！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 43,
+   "text": "据格连转述：帕林库洛托其'一起促成这一对儿'——斯诺×涡波婚约布局的操盘；格连+帕林库洛双举荐涡波为斯诺·沃克的婚约者（'不管有什么困难都一定会让你们成婚'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ad0876bc80c6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品(矿物)",
+  "name": "魂之水晶"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 734,
+   "quote": "「我记得它是在西边很远处的灵山那里出现的怪物来着。这矿物的级别相当高，名字叫『魂之水晶』。嘿~，原来在迷宫里也能入手这个东西啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 739,
+   "quote": "「使用你之前委托打造的那把剑就能斩断的。『新月线形石』作为矿物比『魂之水晶』要更为优秀。寄宿的魔力量大有不同。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 39,
+   "text": "结晶格雷姆魔石之构成矿物（据艾利巴茨：西边远处灵山出产的同名怪物掉落，矿物级别相当高）；矿物级别逊于新月线形石（魔力量大有不同）——新月线形石剑可斩断之"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d2e828d34831",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

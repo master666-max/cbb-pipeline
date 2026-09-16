@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "组织(贵族家门)",
+  "name": "沃克家"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 44,
+   "quote": "「是这样吗，那个、我记得沃克家是劳拉维亚的大贵族来着？」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 43,
+   "quote": "「……我和哥哥都是被收养的。沃克家有将优秀的血脉引入自身的传统。」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 49,
+   "quote": "「最近这阵子一直在啰嗦着要我结婚什么的。在我不知情的时候，替我跟不是很熟悉的人订下了婚约。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 39,
+   "text": "劳拉维亚大贵族：有将优秀的血脉引入自身的传统（收养义子义女以发扬家门声誉——明言收养即为此目的）；格连与斯诺皆为其养子养女；近期向斯诺施压婚事（本人不知情时与陌生人订下政治婚约）；因哥哥（格连）与帕林库洛的名声压力稍减"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-2b4f4560fd55",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "创造目的(杀死诺文)与共存",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 968,
+   "quote": "没错，那是单纯为了杀死我而被创造出来的诅咒之魔法。以童话为创作核心，魔法名也顺势起作了『慕影死神』。一边回顾那个童话一边战斗吧！",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 1141,
+   "quote": "「不、不行啊，诺文。诺文必须由我来杀掉才行！所以那种死法我绝对不认可！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 40,
+   "text": "为杀死诺文而被创造的诅咒魔法（术者已死仍执着'必须由我来杀'）；被诺文技量碾压（无技术反复突击vs洗练回避）；如亲友般斗嘴（'枯巴巴的干货'vs'我这种程度的才正常'）；诺文忧其将来如哥哥忧妹妹——教她'活着要自己决定'；战终黑雾化入涡波体内"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-97f03dfa90a8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

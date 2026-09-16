@@ -1,0 +1,1316 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "设施(移动剧场)",
+    "name": "『瓦尔法拉』"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 410,
+     "quote": "『舞斗大会』的举办地是流经劳拉维亚国和艾尔多拉琉国的运河。比赛会在浮在运河上的巨型移动剧场『瓦尔法拉』里进行。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 412,
+     "quote": "也就是说，要在不属于任何一个国家的地方举办，自然也不适用于任何国家的法律。犯罪者们也就可以不用在乎自己的罪名参加大会了。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "浮于流经劳拉维亚国与艾尔多拉琉国的运河上的巨型移动剧场（舞斗大会会场）；比赛期间落碇于两国国境线上——不属于任何国家→任何法律不适用（犯罪者可参赛的法理空隙）；大会后离开瓦尔法拉的瞬间参赛罪人会被全部警备人员围堵（拉丝缇娅拉的状况预告）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-a0475b30c54a",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "概念",
+    "name": "舞斗大会"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 328,
+     "quote": "「是『一之月联合国综合骑士团舞会』的参加者是吧。那么，请在这里签字。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 379,
+     "quote": "「那是偶数月份举办的大会。一月的是『骑士团』向的，也就是组成三人小队进行淘汰战的模式。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 429,
+     "quote": "『舞斗大会』正选期间的发言，全都会被正式化。因为是在大量的权力者列席的大会上作出的宣言，因此就等同于决斗的宣誓。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "正式名『一之月联合国综合骑士团舞会』（一月=骑士团向：三人小队淘汰战/一人常同时对战三人——重礼节对手或以一对一连战；偶数月=个人赛大会）；种子=各国代表队+实力佣兵与犯罪者；五国专业警备（闹事=五国份罪状/风险五倍/历年无事故）；正选期间发言=正式化（决斗宣誓级）→求婚/工作强制/财产决斗陷阱常见；'全大陆最盛大的就职活动场所'+结婚活动盛行"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-0845bdaf01e9",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "诺文"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 176,
+     "quote": "伴随着一阵石头互相撞击的声音，他的双臂化为了水晶。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 271,
+     "quote": "「这个天空！这就是那所谓的『青空』吗……！这正是大家为之奋斗的光景……啊啊，太好了。这个世界成功取回了『青空』啊……」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 388,
+     "quote": "「是啊，没错……但是，有种不好的预感。避开强敌取得优胜的话，不清楚我到底会不会消失……可能连我自己都无法认同……」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 720,
+     "quote": "「非常感谢，涡波。果然，靠得住的只有朋友啊……」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "门客化：以'为修行流浪的剑士'设定滞留『史诗探索者』做涡波护卫（对付少女二人组的战力安置）；怪物性质=混合了化石系统的怪物（双臂化水晶/石像状态宿营屋顶警戒）"
+    },
+    {
+     "category": "trait",
+     "chapter": 41,
+     "text": "青空感动：初见朝阳与青空热泪盈眶——'这正是大家为之奋斗的光景…这个世界成功取回了『青空』啊'（记忆中的天空=淤塞不堪——守护者时代世界观线索）；好战性格（大战之前跃跃欲试/'优胜已是我的囊中之物'）；非魔力压迫感（魔力量不多却释放不明底细的压力——与拉丝缇娅拉对瞪）"
+    },
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "大会报名：拒绝与涡波组队（避开强敌取胜可能无法完成留恋/连自己都无法认同）→单独参赛争名誉；与拉丝缇娅拉初见即异常合得来；围巾无份（'诺文跟我是敌人'）→涡波约定织围巾相赠——'靠得住的只有朋友'"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-f70422e350e3",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(知性魔法)",
+    "name": "莉帕"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 122,
+     "quote": "「不知怎么，大哥哥的话能够浸透到我的体内。是因为跟那个人的魔力一样的缘故吗。非常能触动我的心。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 99,
+     "quote": "「真，真的不好意思。不过不行啊。因为这是我的规·则来的。……已经不早了，你也回家吧。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 50,
+     "quote": "「嗯，还不到一年吧？」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "trait",
+     "chapter": 41,
+     "text": "地化日常：全黑大外套（魔力构成服装/魔力供给可构成着装）；初识图书馆（tushuguan 音译复述）；与陌生小女孩追逐玩耍（黑雾逗趣）但拒绝牵手——'因为这是我的规·则来的'；'乖孩子'回应；诞生未满一年；绘本爱好者"
+    },
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "术式特性实证：能理解术者（涡波）之言、不能理解诺文之言（'大哥哥的话能够浸透到我的体内。是因为跟那个人的魔力一样的缘故吗'）——推测为创造者写入（听从术者/不被攻击对象打动）；此设定令涡波涌起渗血怒火；'大哥哥'称呼无理由（'就是感觉吧'）；与玛利亚：喊姐姐→同居妹妹房间"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-8ed7c704d29d",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 479,
+     "quote": "「你又跟守护者相处得这么融洽了？真是老样子呢，基督你啊。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 526,
+     "quote": "「没，没问题吗……？以弗茨亚茨本国发出第一级逮捕令的名字报名参加什么的……」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 545,
+     "quote": "具体来说的话——就是我跟拉丝缇娅拉很合·得·来。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "第二次邂逅（solo；'情绪不安定的缇亚现在正跟塞拉一起分头行动中'）：以本名报名舞斗大会（弗茨亚茨本国第一级逮捕令在身——'我这个人根本不会报上假名'）；与涡波赌约（赌输方听从任何要求）；宣言目的='夺回我们的同伴'+'摧毁手环'"
+    },
+    {
+     "category": "trait",
+     "chapter": 41,
+     "text": "称涡波为基督并知其旧事（'你又跟守护者相处得这么融洽了？真是老样子呢，基督你啊'——知晓基督与守护者的关系史）；自称直接战斗专精+'被灌输了一整个英雄份量的战斗理论'；与涡波'很合·得·来'（节奏默契/胸口高鸣）；胁迫要领（'这样的威胁对涡波来说是相当管用的'）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-b62187c77557",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 577,
+     "quote": "就·像·被·诅·咒·了·一·样，我没有办法认真地去思考那方面的事情。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 588,
+     "quote": "『妹妹就在身边这个事实』是比什么都要重要的。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 360,
+     "quote": "「‘我这种人’什么的……真的就跟传闻中一样呢。面带烧伤痕迹的美男子。虽然很有本事，但缺点是气度不够大。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 401,
+     "quote": "我应该就是这个联合国中实力最强的人了。有了抵达三十层的实绩，我有自己不会输给号称人类最强探索者的格连的自信。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "手环假说与拒斥：综合暧昧过去/持续头痛/缺乏整合性记忆/来由不明经验/帕林库洛态度/斯诺话语/双子存在得出'一个假设'——但'可能性终究是可能性…不可能是事实的，绝对'；'就·像·被·诅·咒·了·一·样'无法认真思考（手环对思考的封锁感）；泥泞束缚/心脏被捆错觉；'妹妹就在身边这个事实比什么都重要'的绝对不让步"
+    },
+    {
+     "category": "trait",
+     "chapter": 41,
+     "text": "劳拉维亚传闻像：'面带烧伤痕迹的美男子。虽然很有本事，但缺点是气度不够大'（接待员转述）；已被帕林库洛推荐书国家报名（本人不知情）；自认联合国最强（'有自己不会输给号称人类最强探索者的格连的自信'）；对拉丝缇娅拉的孩子气胜负欲（'发自心底地想要比拉丝缇娅拉这名少女更强'）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-a364df26cc7a",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "玛利亚"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 226,
+     "quote": "「那么，这跟你自己选择了被称呼为‘欧尼酱’是一样的。——此乃重罪。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 255,
+     "quote": "因年龄最小这一立场而遭遇的种种，因落后于年龄的迟缓发育而使她经常被人看做小孩子什么的，诸如此类的问题积压至今，让她因难得有机会被人称呼为「姐姐」而开心不已。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 701,
+     "quote": "玛利亚的眼睛看不见，在她眼眶中的只是义眼。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "莉帕初会'重罪'危机（被称大哥哥未制止='此乃重罪'/无懈可击笑容的重压）；被'姐姐'称呼瞬间融化——'很难抗拒妹妹这一存在'（因年龄最小立场与落后年龄的迟缓发育常被当小孩的积压）；义眼（眼眶中只是义眼）却编织水平完美；压力凌驾于诺文和拉丝缇娅拉；'之后我们可得好好谈一谈'保留追究"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-3bf0a54de087",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 672,
+     "quote": "「……因为这个是我除了战斗以外唯一马马虎虎拿得出手的东西。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 685,
+     "quote": "「……因为我不会觉得冷嘛。多余的。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 161,
+     "quote": "「……而且涡波眼中的坏人，跟我眼中的坏人，一定也不一样。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "编织特长披露：'除了战斗以外唯一马马虎虎拿得出手的东西'（实际市场级水平——条纹+方格围巾两日两条）；龙人体质不需围巾（'因为我不会觉得冷嘛。多余的'——撇脸害羞赠送）；受托给莉帕读绘本（推不掉的责任感）；对诺文：'这世上可没有看上去不像坏人就一定不是坏人的道理'+'我在意的是别的事情'（未明言的保留）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-abbd9bdd49ab",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(传说)",
+    "name": "圣人缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 72,
+     "quote": "据上面说，在遥远的过去盛行许多『诅咒』类的魔法。不过在圣人缇亚拉这么一个人物构建出魔法的基础后，诅咒这一类的魔法似乎就走向了荒废。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 452,
+     "quote": "「是啊，联合国五国的国教莱文教有流传下来的『预言』。——今年是‘始祖缇娅拉再诞之年’，‘剑与剑交错之际，『真·正·的·英·雄』现身’，许许多多的信徒都相信着这些『预言』哦。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 41,
+     "text": "据图书馆诅咒书+接待员：构建魔法基础之人（此后诅咒类魔法因代价高昂走向荒废）；莱文教『预言』中'始祖缇娅拉再诞之年'（今年）——圣诞祭'圣人缇娅拉再临'预言落空致信众失望→期待转向舞斗大会"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-bb24cd12879e",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "史诗探索者",
+    "rel_type": "门客护卫(滞留)",
+    "subject": "诺文"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 22,
+     "quote": "「我信。我认为他值得信任。——诺文接下来要作为『史诗探索者』的门客滞留在我们这里，各方面的事情就有劳你多关照了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 41,
+     "text": "以'修行流浪剑士'人设作为门客滞留公会+担任涡波护卫（对付少女二人组的战力安置）；对成员自我介绍被顺畅接受（'招待国外的客人对公会的运营来说是常有的事'）；屋顶石像宿营警戒"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-ad1e8ecb43c5",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "赌约(舞斗大会)",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 540,
+     "quote": "「哦~，上钩了呢~，涡波。那么，赌输的一方就要听从另一方的任何要求哦。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 602,
+     "quote": "「嗯。在那里以手环为赌注吧。很简单的规则不是吗？」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 41,
+     "text": "'赌输的一方就要听从另一方的任何要求'——起因：拉丝缇娅拉预信涡波会为她对抗全体警备员（涡波自赌不会行动）；实质=以手环为赌注的正面对决约定（大会期间五国胶着谁都不能插手）；缇亚万全状态+无人可插手状况为解除手环的必要准备"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-106696efa158",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "拉丝缇娅拉",
+    "rel_type": "情报传递(手环关键)",
+    "subject": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 559,
+     "quote": "「看上去那个东西是关键来着。而且斯诺先前也用眼神交流告诉过我了呢。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 41,
+     "text": "'斯诺先前也用眼神交流告诉过我了呢'——手环=关键道具的情报源（初遇当晚口径的延续：涡波被帕林库洛操纵说/手环论）；斯诺在双方之间的情报桥梁位置再证"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-002c9ac92b7a",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "推荐书报名(国家推荐)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 372,
+     "quote": "「不会，应该不是那样的……那个，推荐人写的是帕林库洛·勒伽西来着。你从这个人那里没有得到什么消息吗？」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 41,
+     "text": "劳拉维亚国家层面推荐书（推荐人署名帕林库洛·勒伽西）——涡波本人未同意即已被报名参加一之月大会；'帕林库洛在国家那边也是有职务的'的门路运用；涡波'听到这个名字我就全懂了'"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-6cbaf9fcccd7",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "玛利亚",
+    "rel_type": "姐妹称呼(同居照料)",
+    "subject": "莉帕"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 244,
+     "quote": "「我觉得没有问题哦，只要我成为姐姐的妹妹就行了。那样的话，姐姐的哥哥，就是我的哥哥了不是！？」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 41,
+     "text": "称玛利亚为姐姐（'我年龄比较小嘛'）→同居妹妹房间+绘本共读；化解'重罪'危机（'不能太欺负大哥哥哦'）；'我成为姐姐的妹妹就行了。那样的话，姐姐的哥哥，就是我的哥哥了'的推论被玛利亚慌乱接受"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-82b46b36d51a",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "友情确立",
+    "subject": "诺文"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 709,
+     "quote": "「诶，因为啦，诺文跟我是敌人不是？」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 730,
+     "quote": "而是以同样身为人类的伙伴的关系，协助实现诺文的心愿，送他离去。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 41,
+     "text": "围巾事件（诺文无份被莉帕'敌人'论一刀两断→涡波织围巾之约）→'靠得住的只有朋友'的友情确认；涡波心境：'再把诺文当做守护者——当做怪物来对待，已经是很难了吧'——以人的伙伴关系协助实现心愿送他离去；但'怎么也无法拭去心底的不安'"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-b1b53f2b65f7",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "史诗探索者",
+     "斯诺·沃克",
+     "玛利亚",
+     "相川涡波",
+     "莉帕",
+     "诺文"
+    ],
+    "instant": null,
+    "kind": "日常",
+    "name": "诺文门客化与莉帕地化",
+    "tick": 33,
+    "time_verbatim": "三十层归来当夜~次日晨"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 19,
+     "quote": "「只要作为一个骑士取得成就的话，诺文好像就会死掉了，所以我打算协助他。看来守护者们只要实现了留恋就会消失哦。这比跟他战斗要安全多了。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 267,
+     "quote": "「——多么美丽的光芒！这就是太阳！？这就是『青空』！？啊啊，这是何等、何等的美啊！！」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 41,
+     "text": "Connection 归来→斯诺介绍诺文（门客+护卫决定/'实现了留恋就会消失'的正当化说明）；诺文屋顶石像宿营（化石系统/窗户=出入口误会）；玛利亚初会莉帕（重罪危机→姐姐融化→绘本共读同眠）；翌晨诺文青空欢呼骚动（Freeze 镇压）→成员介绍顺畅接受；莉帕留守办公室由斯诺读绘本"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-d1adab66d25f",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "莉帕",
+     "诺文"
+    ],
+    "instant": null,
+    "kind": "调查",
+    "name": "图书馆死神调查",
+    "tick": 33,
+    "time_verbatim": "同日黄昏（闭馆前）"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 68,
+     "quote": "这个童话的传承十分悠久，因此非常深入人心，甚至到了在这个世界提起童话的话，第一个就会想到『慕影死神』的地步。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 83,
+     "quote": "消灭『死神』的方法只有一个。就是逆着它从死角处发来的攻击施以回击。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 41,
+     "text": "『慕影死神』童话速读（世界最著名童话——'从视界外发动袭击的死神'仅此而已/无弱点无解法）→诅咒书调研（代价体系/圣人缇亚拉后衰退/慕影死神=可能弑术者的双刃诅咒）→千年前战场初例记载（无名骑士同归于尽/唯一消灭法=逆死角回击）；馆外莉帕与小女孩玩耍（规则拒触）；借绘本归途'像一对兄妹'的既视感（'就好像回到了过去的日子'）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-806c8916b871",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "拉丝缇娅拉",
+     "相川涡波",
+     "诺文"
+    ],
+    "instant": null,
+    "kind": "转折",
+    "name": "舞斗大会报名与拉丝缇娅拉再会",
+    "tick": 33,
+    "time_verbatim": "次日（报名日，期限将近）"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 557,
+     "quote": "「嗯，要跟涡波在没有妨碍的情况下进行对决哦。然后，我要将你手上那个奇怪的手环给摧毁掉。」",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 566,
+     "quote": "——暧昧不清的过去，持续不断的头痛。缺乏整合性的记忆，来由不明的经验。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 41,
+     "text": "报名会场（多国籍武者/杀伐之气）→正式名与细则得知（三人小队制/瓦尔法拉/无法律地带/就职+结婚/开场白陷阱）→涡波发现自己已被帕林库洛推荐书报名；诺文拒绝组队单独参赛（留恋基准的情感性）；拉丝缇娅拉现身（屋顶/称基督/知守护者旧事）→以逮捕令在身的本名报名+赌约成立+手环摧毁宣言（斯诺情报源/自杀术式风险/大会=五国胶着的对决场）；涡波假说成形但拒斥（'被诅咒一样'）；诺文×拉丝缇娅拉对瞪（非魔力压迫vs凶暴魔力）后三人莞尔；归途编织场景（围巾互赠）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-event-cb2156fd369e",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "entities": [
+     "手环",
+     "拉丝缇娅拉",
+     "相川涡波",
+     "迪亚布罗·西斯"
+    ],
+    "name": "手环对决与自杀术式",
+    "note": "ch37『手环的破坏条件』的正面对决化：舞斗大会以手环为赌注（拉丝缇娅拉赌上自身安全参加）；'随便下手的话，如果里面写上了自杀的术式'的解除风险；解除要件=缇亚万全+谁都不能插手的状况；涡波侧'像被诅咒一样'的思考封锁+'妹妹在身边比什么都重要'的绝对拒斥——冲突双方立场固化",
+    "payoff_chapter": null,
+    "setup_chapter": 41,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 594,
+     "quote": "「放心吧。我现在什么都没打算对你做。随便下手的话，如果里面写上了自杀的术式，那我可就困扰了。要取下手环的时候，必须要做好万全的准备……」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 41,
+     "text": "主线最大对决战钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-c44f48ffd988",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "entities": [
+     "圣人缇娅拉",
+     "玛利亚",
+     "相川涡波"
+    ],
+    "name": "始祖缇娅拉再诞预言",
+    "note": "莱文教预言（据接待员）：今年='始祖缇娅拉再诞之年'+'剑与剑交错之际真正的英雄现身'；圣诞祭再临预言已落空（信众失望）→期待集束于舞斗大会；预言的真伪与'再诞'所指（玛利亚？缇亚？）待解",
+    "payoff_chapter": null,
+    "setup_chapter": 41,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 452,
+     "quote": "「是啊，联合国五国的国教莱文教有流传下来的『预言』。——今年是‘始祖缇娅拉再诞之年’，‘剑与剑交错之际，『真·正·的·英·雄』现身’，许许多多的信徒都相信着这些『预言』哦。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 41,
+     "text": "宗教预言主线钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-94ee5e018021",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "entities": [
+     "莉帕"
+    ],
+    "name": "莉帕的'规则'",
+    "note": "与小女孩玩耍时拒绝牵手——'因为这是我的规·则来的'（规则内容未明：不可触碰术者对象之外的人？存在维持条件？）；'乖孩子'响应与纯真孩童性；术式特性（只听术者之言）的边界待深挖",
+    "payoff_chapter": null,
+    "setup_chapter": 41,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 99,
+     "quote": "「真，真的不好意思。不过不行啊。因为这是我的规·则来的。……已经不早了，你也回家吧。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 41,
+     "text": "角色规则谜题钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-fd8342cbdd7c",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "entities": [
+     "拉丝缇娅拉",
+     "相川涡波"
+    ],
+    "name": "瓦尔法拉后的围堵",
+    "note": "接待员预告：拉丝缇娅拉在大会结束离开瓦尔法拉瞬间将遭全部警备人员围堵；她预信'涡波会为我做些什么'——赌约的兑现方向与涡波的抉择待回收",
+    "payoff_chapter": null,
+    "setup_chapter": 41,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 532,
+     "quote": "「嗯，没事的，到了那个时候涡波会为我做些什么的，所以也不用担心。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 41,
+     "text": "赌约兑现钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-1eb5b3fe2321",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "entities": [
+     "莉帕",
+     "诺文"
+    ],
+    "name": "诺文的青空记忆",
+    "note": "诺文初见青空热泪——'这正是大家为之奋斗的光景…这个世界成功取回了『青空』'+'那个淤塞不堪的天空'（与莉帕对话）——守护者时代的记忆中天空曾是淤塞状态：世界曾被何物笼罩/如何取回的世界史线索",
+    "payoff_chapter": null,
+    "setup_chapter": 41,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 282,
+     "quote": "「我也是同感啊，莉帕。那个淤塞不堪的天空跟这比起来简直判若云泥。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 41,
+     "text": "守护者时代世界观钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-foreshadow-3f5552e5e5b2",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "fact": "据图书馆诅咒书：远古盛行诅咒类魔法→圣人缇亚拉构建魔法基础后走向荒废（代价：不仅耗MP还削HP/损害身体/削减寿命/致病/失败即殒命/常招反噬——双刃剑）；人们自然排斥之",
+    "name": "诅咒魔法的代价与衰退史",
+    "tick": 33
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 72,
+     "quote": "据上面说，在遥远的过去盛行许多『诅咒』类的魔法。不过在圣人缇亚拉这么一个人物构建出魔法的基础后，诅咒这一类的魔法似乎就走向了荒废。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 75,
+     "quote": "如果这个说明是正确的话，那么『慕影死神』的术者是我，而对象则是诺文。也就是说，『慕影死神』是不仅会杀死诺文，同时还是有可能杀死我的『诅咒』。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 41,
+     "text": "魔法体系史（据古籍）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-7ed2c9c0c124",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "fact": "据诅咒书所载（涡波评可信性低——千年前事难以正确流传/出自地方神话）：千年前人类与怪物大战中，一体'诅咒'突然出现于进军骑士团中心残杀大量士兵（剑与魔法无效/如雾消散再现背后）；最终某无名骑士与死神同归于尽——唯一消灭法=逆着它从死角处发来的攻击施以回击（以自己的首级做交换）；此后名为'死神'的诅咒再未出现",
+    "name": "死神的千年前初例记载",
+    "tick": 33
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 78,
+     "quote": "据记载，对『死神』这一『诅咒』的最初确认是在千年前的某个战场上。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 84,
+     "quote": "无名的骑士以自己的首级做交换，斩落了『死神』的首级。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 41,
+     "text": "死神系谱（据古籍，可信性存疑）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-42fa21bcd049",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 41,
+    "fact": "莉帕能理解术者（涡波）之言却不能理解诺文之言（'大哥哥的话能够浸透到我的体内…跟那个人的魔力一样的缘故'）；推测=创造者写入的术式（听从术者指示/不被攻击对象的话打动）——具备意识的攻击魔法的合理设计；该设定令涡波涌起渗血级怒火（对莉帕被物化待遇的愤怒）",
+    "name": "莉帕的术式特性（术者言语理解）",
+    "tick": 33
+   },
+   "evidence": [
+    {
+     "chapter": 41,
+     "line": 124,
+     "quote": "这很有可能是她被创造者赋予的一种特性。",
+     "vol": 1
+    },
+    {
+     "chapter": 41,
+     "line": 127,
+     "quote": "内心深处涌起了一股令我自己都感到吃惊的怒火，不觉间攥紧的拳头甚至渗出了鲜血。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 41,
+     "text": "魔法机制（主角推论）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-setting-b7fc9c87cb75",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。本批登记：一之月联合国综合骑士团舞会→舞斗大会（正文另有'一之月联盟国综合骑士团舞会'变体拼写，原文并存不加判读）。",
+  "confidence_calibration": "同 STATE 固化决议；接待员转述类 0.85。",
+  "coordinate_line_note": "evidence.line=章内物理行（=文件行号-16793）。",
+  "cross_chapter_notes": [
+   "★手环线正面对决化：拉丝缇娅拉宣言'摧毁手环'+斯诺眼神情报源+涡波假说成形（暧昧过去/持续头痛/缺乏整合性记忆/帕林库洛态度/双子存在→一个假设）但情绪性拒斥（'就像被诅咒一样无法思考'/'妹妹在身边这个事实比什么都重要'）；舞斗大会=以手环为赌注的正面对决场（五国胶着谁都不能动）",
+   "★舞斗大会全貌：正式名『一之月联合国综合骑士团舞会』（一月=骑士团向三人小队淘汰战/偶数月=个人赛）；会场=运河巨型移动剧场『瓦尔法拉』（落碇两国国境线=无法律地带→犯罪者可参赛/五国警备五倍罪状）；就职+结婚双活动（正选发言=决斗宣誓/开场白陷阱）；涡波已被劳拉维亚推荐书报名（推荐人=帕林库洛·勒伽西，本人不知）",
+   "★圣人缇娅拉预言：今年='始祖缇娅拉再诞之年'+'剑与剑交错之际真正的英雄现身'（莱文教流传/圣诞祭预言落空后大会期待集束）",
+   "★死神调研：慕影死神=世界最著名童话（从视界外袭击的死神）；诅咒魔法衰退史（圣人缇亚拉构建魔法基础→诅咒荒废：削MP+HP/损身减寿/失败殒命/反噬）；千年前战场初例（无名骑士同归于尽/唯一消灭法=逆死角回击）；涡波=现术者（诅咒可能同时杀死术者与对象）",
+   "★诺文门客化（护卫/化石系统怪物：双臂化水晶/石像警戒宿营/'这个世界成功取回了青空'的守护者时代记忆）；莉帕地化（大哥哥称呼/'我的规则'拒触/术式特性=只理解术者之言→涡波渗血怒火）；玛利亚'重罪'危机+姐姐渴望融化+义眼编织",
+   "★三人围巾编织结尾：斯诺编织特长（市场级/龙人不冷）；诺文无份（'诺文跟我是敌人'）→涡波友情织围巾之约"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_decision": {
+   "deterministic_check": "无译注无残留标记",
+   "reason": "接待员转述（大会细则/求婚前例/预言）=文本内声称，照 R6 规则4 标注'据接待员所述'",
+   "verdict": "正文正常抽取；接待员口述的传闻/前例按声称类抽取（fact 标注出处）"
+  },
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=33→tick=33→2000-02-03。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行16793-17529（CHAPTER 0041，737行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批4 · CHAPTER 0041（第四卷-第五章-三十层的守护者，摄入序33→tick33→伪锚点2000-02-03）"
+ }
+}

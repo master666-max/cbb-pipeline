@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『Dimension·黑泡沫（Nightmare）』"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 1003,
+   "quote": "——魔法『Dimension·黑泡沫（Nightmare）』！",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 40,
+   "text": "莉帕的领域魔法：与涡波『Dimension』同系统（同名前缀+附加词风格相似）；涌生无数黑色泡沫——泡沫内藏瞬移魔法（类次元雪用法）+妨碍视线（支配空间同时制造死角）；被涡波逐个解析（百泡以上）后失效"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-faa6c6caade7",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

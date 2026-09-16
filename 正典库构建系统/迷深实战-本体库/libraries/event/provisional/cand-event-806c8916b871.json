@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莉帕",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "调查",
+  "name": "图书馆死神调查",
+  "tick": 33,
+  "time_verbatim": "同日黄昏（闭馆前）"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 68,
+   "quote": "这个童话的传承十分悠久，因此非常深入人心，甚至到了在这个世界提起童话的话，第一个就会想到『慕影死神』的地步。",
+   "vol": 1
+  },
+  {
+   "chapter": 41,
+   "line": 83,
+   "quote": "消灭『死神』的方法只有一个。就是逆着它从死角处发来的攻击施以回击。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 41,
+   "text": "『慕影死神』童话速读（世界最著名童话——'从视界外发动袭击的死神'仅此而已/无弱点无解法）→诅咒书调研（代价体系/圣人缇亚拉后衰退/慕影死神=可能弑术者的双刃诅咒）→千年前战场初例记载（无名骑士同归于尽/唯一消灭法=逆死角回击）；馆外莉帕与小女孩玩耍（规则拒触）；借绘本归途'像一对兄妹'的既视感（'就好像回到了过去的日子'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-806c8916b871",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 42,
+  "entities": [
+   "技能『魔力物质化』",
+   "相川涡波"
+  ],
+  "name": "魔力物质化的记忆残留",
+  "note": "涡波初见即知技能名却想不起习得来源（'我是在哪里知道的来着'）——基督时代技能知识的残留泄露（与火焰飓风记忆/Freeze共鸣同族证据群）",
+  "payoff_chapter": null,
+  "setup_chapter": 42,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 302,
+   "quote": "「诶？嗯，我好像是知道……咦？我是在哪里知道的来着。那个……」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 42,
+   "text": "记忆残留钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-ccc5e9c46dca",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "锻冶协作深化",
+  "subject": "艾利巴茨·利拜斯"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 741,
+   "quote": "「依靠现有的预算和目前动员的人数，到明天晚上就能完工了。我一定会让它顺利完工的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 754,
+   "quote": "「原来如此。在那个熔岩地带中获得了火属性的魔石啊。如果对炎热的环境感到困扰的话，我帮你做个针对火属性的魔法道具好了。所幸炎属性的魔石有不少。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "新月线形石剑明晚完工+破损武器修理+魔剑解体相谈+火属性/水中道具提案+木棒采购建议（战斗顾问化）；主动求闻会长迷宫故事（情报交换+个人敬意）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bde3f1043752",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

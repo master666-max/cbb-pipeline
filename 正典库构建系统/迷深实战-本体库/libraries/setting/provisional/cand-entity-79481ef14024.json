@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "物品(武器)",
+  "name": "『新月琉璃制直剑』"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 658,
+   "quote": "【新月琉璃制直剑】",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 659,
+   "quote": "攻击力4。将装备者敏捷的10％补加为攻击力。",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 706,
+   "quote": "在结晶格雷姆刚挥出拳头的瞬间，我就用剑横向对它的身体施以斩击。仅仅凭此一击，结晶格雷姆就被切成两半，上半身咣当一声掉落到地面。手感有如切断了一块塑料泡沫。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 40,
+   "text": "艾利巴茨自信作（白色剑身+青色纹样+成套剑鞘）：攻击力4；装备者敏捷的10%补加为攻击力；敌敏捷超过持有者时+30%敏捷；极轻而坚固（工房内任何东西无法伤及）；实战：结晶格雷姆一击两半（塑料泡沫手感）/剑身零磨损/26-28层探索速度提升两倍以上；咒失风险：随流沙坠三十层后寻回"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-79481ef14024",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

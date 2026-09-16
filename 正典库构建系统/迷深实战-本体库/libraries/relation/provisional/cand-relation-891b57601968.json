@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "意志中继(纹样联结)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 672,
+   "quote": "通过脖子上的纹样，我的意志流入了少女那边。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 42,
+   "text": "梦中过去意识经脖子纹样的『联结』向莉帕流入意志：三重呐喊+回传请求——醒来必忘循环的唯一对外通路；'不同于我的其他人'的期待"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-891b57601968",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

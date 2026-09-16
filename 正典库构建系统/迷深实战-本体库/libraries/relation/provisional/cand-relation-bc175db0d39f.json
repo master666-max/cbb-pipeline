@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "师徒(剑之后继者宣言)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 214,
+   "quote": "「呼，好吧。阿雷亚斯家第三代当主，诺文·阿雷亚斯于此宣誓。将相川涡波确立为我阿雷亚斯家的『剑之后继者』！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 42,
+   "text": "阿雷亚斯家第三代当主正式宣言：将相川涡波确立为阿雷亚斯家的『剑之后继者』；全技艺一日传授（基础+奥义+替代技）；决赛师徒对决构想（输了也作为优胜者之师获得荣光——皆传台词妄想）；'同龄挚友'的独占宣言（涡波=其人生第一个同龄朋友）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bc175db0d39f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

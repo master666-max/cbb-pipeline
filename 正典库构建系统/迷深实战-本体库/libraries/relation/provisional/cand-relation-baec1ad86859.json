@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "当众解围",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 248,
+   "quote": "「就算是最有望的婚约者，但他们二人的婚事尚无定论。既然还没有决定，就请诸位克制一下这些会让斯诺小姐感到困扰的发言。」",
+   "vol": 1
+  },
+  {
+   "chapter": 43,
+   "line": 277,
+   "quote": "那表情就好像她在人生中第一次找到了栖身之所一样。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 43,
+   "text": "婚约话题围攻中一言止场（'既然还没有决定，就请诸位克制一下这些会让斯诺小姐感到困扰的发言'）+牵手离场至阳台；'难受的时候就试着去依靠别人'劝告→斯诺'人生中第一次找到了栖身之所'的表情+相遇以来最美笑容"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-baec1ad86859",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

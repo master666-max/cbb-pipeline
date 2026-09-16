@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 42,
+  "fact": "守护者被赋予实现留恋的机会+使命=将人类引导至一百层；一百层寄存异常的『力量』（实现任何愿望的传闻）——守护它还是转让它诺文亦不知；守护者强度固定=与所在阶层相符（'三十层的boss不符合三十层该有的强度人类会很困扰'）；迷宫对人类很体贴=由『一个很体贴的人』创造（'不能说是谁创造的『规则』'——诺文识得创造者：'这不合那个人的风格'）；守护者向探索者提供情报有『规则』限度；状态栏与技能概念=千年前诺文死前不久才流传开来；『技巧』『素质』数值与技能习得相关（数值高则掌握易）",
+  "name": "守护者的使命与迷宫根源（诺文证言）",
+  "tick": 34
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 60,
+   "quote": "「这个嘛，我也不是特别了解。我知道的，就只有自己被赋予了实现留恋的机会，同时作为交换，我有将人类引导至一百层的使命。」",
+   "vol": 1
+  },
+  {
+   "chapter": 42,
+   "line": 51,
+   "quote": "「是啊，迷宫对人类很体贴的哦。因为它好像就是由一个很体贴的人创造的来着。」",
+   "vol": 1
+  },
+  {
+   "chapter": 42,
+   "line": 47,
+   "quote": "「是啊，还是慢的很呢。但是这也没办法，既然我作为三十层的守护者被召唤来，自然就要被固定在与三十层相符的强度上了啊……」",
+   "vol": 1
+  },
+  {
+   "chapter": 42,
+   "line": 144,
+   "quote": "「嗯，有关系的。话虽然这么说，但其实我也不是非常了解，所以没办法给你解释。毕竟状态栏啊技能啊这一类的东西，是在我死前不久的时候才流传开来的……」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 42,
+   "text": "迷宫根源核心证言（据守护者本人，部分受规则限制）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-104b32e6b986",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

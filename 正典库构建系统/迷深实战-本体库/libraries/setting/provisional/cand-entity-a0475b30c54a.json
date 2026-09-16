@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "设施(移动剧场)",
+  "name": "『瓦尔法拉』"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 410,
+   "quote": "『舞斗大会』的举办地是流经劳拉维亚国和艾尔多拉琉国的运河。比赛会在浮在运河上的巨型移动剧场『瓦尔法拉』里进行。",
+   "vol": 1
+  },
+  {
+   "chapter": 41,
+   "line": 412,
+   "quote": "也就是说，要在不属于任何一个国家的地方举办，自然也不适用于任何国家的法律。犯罪者们也就可以不用在乎自己的罪名参加大会了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 41,
+   "text": "浮于流经劳拉维亚国与艾尔多拉琉国的运河上的巨型移动剧场（舞斗大会会场）；比赛期间落碇于两国国境线上——不属于任何国家→任何法律不适用（犯罪者可参赛的法理空隙）；大会后离开瓦尔法拉的瞬间参赛罪人会被全部警备人员围堵（拉丝缇娅拉的状况预告）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a0475b30c54a",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

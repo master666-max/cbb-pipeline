@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "推荐书报名(国家推荐)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 41,
+   "line": 372,
+   "quote": "「不会，应该不是那样的……那个，推荐人写的是帕林库洛·勒伽西来着。你从这个人那里没有得到什么消息吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 41,
+   "text": "劳拉维亚国家层面推荐书（推荐人署名帕林库洛·勒伽西）——涡波本人未同意即已被报名参加一之月大会；'帕林库洛在国家那边也是有职务的'的门路运用；涡波'听到这个名字我就全懂了'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6cbaf9fcccd7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

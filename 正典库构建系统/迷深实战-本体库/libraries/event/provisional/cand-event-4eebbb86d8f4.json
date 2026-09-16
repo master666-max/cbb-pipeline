@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "斯诺·沃克",
+   "格连",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "格连初会与斯诺的崩坏",
+  "tick": 35,
+  "time_verbatim": "同夜（舞会后段·阳台）"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 360,
+   "quote": "「啊啊，终于……终于！我终于明白了……！」",
+   "vol": 1
+  },
+  {
+   "chapter": 43,
+   "line": 443,
+   "quote": "——到『舞斗大会』开始还有两天，还有两天一切都将做出了断。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 43,
+   "text": "格连登场（状态栏/懒散性格/粉丝发言/假货自称）→婚事委托披露（帕林库洛操盘）→斯诺顿悟（随我喜欢怎样都行→帕林库洛也做了一样的→终于明白）→因轻松求婚→拒绝→自责崩坏（那个人掳走发言/注视无异常=本心）→格连熟练看护→涡波试练自觉（帕林库洛设计/泪决堤威胁vs英雄幸福论/舞斗大会=期限/守护誓言）——'还有两天一切都将做出了断'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-4eebbb86d8f4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

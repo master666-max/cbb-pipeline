@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "求婚(因轻松)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 370,
+   "quote": "「因为啊，只要我跟涡波结婚的话一切就都解决了！对沃克家的义务只要由作为丈夫的涡波来完成的话，一切就都解决了啊！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 43,
+   "text": "'只要我跟涡波结婚的话一切就都解决了'（沃克家义务由丈夫完成的解法/处分式他嫁的回避/最自由生活）——'不是因为喜欢，而是因为会轻松'；被涡波拒绝（'这种理由的告白没法接受'）但承诺帮助其获得自由选择权"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-02ce17bcbfc3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

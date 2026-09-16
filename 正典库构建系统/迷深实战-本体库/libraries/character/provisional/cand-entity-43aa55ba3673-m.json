@@ -1,0 +1,85 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "迪亚布罗·西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 476,
+   "quote": "迪亚布罗·西斯",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 582,
+   "quote": "他自己道出的名字也跟『表示』上显示的不同。",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 145,
+   "quote": "「是基督吗！？是我、缇亚啊！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 158,
+   "quote": "「咦、咦？基督……我的剑呢……？」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 177,
+   "quote": "「呜、呜嘶、诶？又、又·一·次……？我、呜啊、我又被抛弃了……？」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 249,
+   "quote": "「唔、唔咕、吡库、呜呜……呐、拉丝缇娅拉……基督只是被人操纵了对吧？刚才那些话全都是假的对吧？是那样的吧？那、那么、既然这样，就必须救他！不救基督的话！『我（俺）』不救他的话，『我（私）』就痛苦得受不了啊！啊、啊啊、基督……不管怎么样，不管付出怎么样的代价，我都要救——」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "缇亚在『表示』中显示的姓名（主角注视所见，L475-481/607）——与自报名不同；主角推测：可能是其将来会报出的名字而『表示』提前显示（『表示』存在某种漏洞？）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 4,
+   "text": "自报名『缇亚』与之相异但主角不认为其在说谎——两实体经关系留档关联，不合并"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-43aa55ba3673",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-43aa55ba3673-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-43aa55ba3673",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

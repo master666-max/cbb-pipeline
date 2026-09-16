@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 43,
+  "entities": [
+   "帕林库洛",
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "name": "舞斗大会=试练的期限",
+  "note": "两天内必须做出选择否则'就·又·是·我·的·败·北'（败北 repeat 的自觉）；试练起点回溯='那一天，我第一次见到斯诺的时候'；'为·了·守·护·那·个·誓·言'（ch5 病房之梦（阳滝与誓约）的呼应候选）——与手环对决/三重意志回传/莉帕回传线在大会聚合",
+  "payoff_chapter": null,
+  "setup_chapter": 43,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 435,
+   "quote": "那个『试·练』开始了。不对，在更早之前，那一天，我第一次见到斯诺的时候，它恐怕就已经开始了。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 43,
+   "text": "主线时限钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-04b75611a5bb",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

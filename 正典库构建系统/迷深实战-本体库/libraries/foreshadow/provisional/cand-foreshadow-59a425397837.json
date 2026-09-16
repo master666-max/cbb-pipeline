@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 42,
+  "entities": [
+   "相川涡波",
+   "诺文"
+  ],
+  "name": "诺文的急速弱化",
+  "note": "传授剑技=留恋偿还加速（'比想像的还要愉快很多'）→魔力质稀薄化+背影飘摇——'实现愿望的门槛太低/一个不小心就会让他从这个世界上消失'；消失时点与舞斗大会的先后=时限钩",
+  "payoff_chapter": null,
+  "setup_chapter": 42,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 455,
+   "quote": "恐怕到了一个不小心就会让他从这个世界上消失的地步。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 42,
+   "text": "守护者消失时限钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-59a425397837",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

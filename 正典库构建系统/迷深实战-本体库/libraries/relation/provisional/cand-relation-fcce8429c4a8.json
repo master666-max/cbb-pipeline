@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "旧主误认(基督=涡波)",
+  "subject": "迪亚布罗·西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 145,
+   "quote": "「是基督吗！？是我、缇亚啊！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 177,
+   "quote": "「呜、呜嘶、诶？又、又·一·次……？我、呜啊、我又被抛弃了……？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "据迪亚布罗·西斯言行：认涡波为基督，要求『一起回去』『为什么没有来古尔亚德』；被否认后又被抛弃感发作嚎哭——精神剧变的现行"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fcce8429c4a8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

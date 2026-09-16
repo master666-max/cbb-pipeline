@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "史诗探索者",
+   "斯诺·沃克",
+   "沃克家",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "舞斗大会警备日与斯诺身世披露",
+  "tick": 31,
+  "time_verbatim": "警备日（公会轮番负责，中午到晚上）"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 5,
+   "quote": "「……『舞斗大会』差不多要开始了。因为这个，有不少三教九流涌进了劳拉维亚，这可能会导致治安恶化，所以我们正好帮忙维持治安。」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 71,
+   "quote": "「以前那时候，我还是个很可爱的女孩子来着。对公会的工作干劲满满的、每天都很开心。因为那个时候的我还怀抱着梦想。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 39,
+   "text": "舞斗大会临近致三教九流涌入劳拉维亚→公会轮番警备（当日中午-晚上）；办公室闲时斯诺自述：沃克家养女/政治联姻/反复失败史→怠惰人生观（放弃人生本身式的随波逐流）；同族意识告白（涡波=同类惨痛失败者）；涡波胸口刺痛+体内『什么东西』咆哮着否定其消极人生态度"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2e7e0447995a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

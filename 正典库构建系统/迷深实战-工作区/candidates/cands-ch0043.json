@@ -1,0 +1,1294 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "康纳·塔利亚"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 96,
+     "quote": "「哦哦，竟然是……！恕我失礼了。在下是塔利亚家的当主、康纳·塔利亚。说到『史诗探索者』的话，难不成您是那个——」",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 111,
+     "quote": "『Dimension』告知我自己现在正握着几枚金币。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "劳拉维亚相当有势力的商家塔利亚家当主：畏惧沃克家又不得不套近乎（高度紧张中勉强装亲切）；借吹捧『英雄』寻求商机；握手夹带金币（'寥表敬意'的人情投资）；被涡波解围打断后怒目而视"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-2a52facd1f0f",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "斯诺的义母"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 154,
+     "quote": "然而两人却完全不像，那是一名金发艳丽，眼若饥鹰，威风凛凛的女性。尽管身着的礼服有相似之处，但两人在性格上着实是完全相悖的。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 158,
+     "quote": "「说的很好……你就是为此才存在的。切记不要搞错了这一点……」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "沃克家本家的妙龄女性（金发艳丽/眼若饥鹰/威风凛凛——与斯诺性格完全相悖）；工具化教育者：'你就是为此才存在的。切记不要搞错了这一点'；对斯诺婚约陈情冷淡回绝（'区区一介公会的名誉，不值一提'）——言及于此即转身"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-entity-5ca6dea0a170",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "格连"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 299,
+     "quote": "姓名：格连·沃克 HP331/342 MP92/92职业：斥候",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 319,
+     "quote": "「嗯~嗯~，真不错。果然你很不错！从那·个·时·候开始，我就一直是你的粉丝了啊。哎呀，那个做的真是漂亮啊。跟我这样不值一提的假货不同，你才是『真正的英雄』啊！」",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 308,
+     "quote": "才能和等级理所当然都很高。但属性与我想像中的却有一些偏差。似乎是以丰富的技能为长处，而不是从正面硬碰硬的那类人。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "初登场（赤铜色短发/表情柔和/懒洋洋）：状态栏=斥候28级（HP331/342 MP92/92；力量7.22 体力8.55 技巧11.78 敏捷13.79 贤能10.01 魔力5.26 素质2.19；先天幸运1.02+厄运2.75；后天地魔法/武器战斗/探索/匿踪/药师/盗窃）——技能型而非正面硬碰型（涡波：'搞不好其实斯诺比他要……'）"
+    },
+    {
+     "category": "trait",
+     "chapter": 43,
+     "text": "性格反转（vs『最强』称号想象）：老好人/超级自来熟/看妹妹脸色道歉的弟弟气质；对涡波好感异常（'从·那·个·时·候开始，我就一直是你的粉丝了'——知晓基督时代事迹/'跟我这样不值一提的假货不同，你才是『真正的英雄』'）；惯于处理斯诺的崩坏状态（不是第一次）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-01bab51bce51",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 191,
+     "quote": "斯诺·沃克放弃了人生的一切。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 178,
+     "quote": "「……是啊。涡波你不谙世事啊。但是，也正因如此，我觉得你说的一定才是正确的吧……可是，我不能那么做。我害怕自己做选择。害怕担起责任。害怕把事情搞砸。所以，无可奈何了。」",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 402,
+     "quote": "「咦、咦？为什么……？明明都能将那个人掳走……却不肯将我也……？为什么会这样？又是我做错了什么吗……？果然，是因为我不好……？」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "舞会全程：大小姐模式（浅茶色蕾丝礼服/营业式完美笑容/应对商家经验深厚）；耳饰=魔石振动传声道具（向涡波实时进言）；义母会面（陈情婚约延迟被回绝）；被婚约话题围攻时涡波解围"
+    },
+    {
+     "category": "trait",
+     "chapter": 43,
+     "text": "崩坏全貌：放弃人生的一切（害怕选择/害怕担责/害怕搞砸的三连害怕）；逞强装出的从容（余裕尽失时极度脆弱——义母与上流阶级面前尤其）；epiphany（'只·要·随·我·喜·欢·怎·样·都·行…帕林库洛也做了一样的…？'→'我终于明白了'）；因'轻松'求婚被拒→自责崩坏（'又是我做错了什么吗…是因为我不好…？'——注视无异常=本心）；'明明都能将那个人掳走却不肯将我也…'"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-0797306ddac7",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 428,
+     "quote": "如果相川涡波把在劳拉维亚的谎言揭穿了，那么面前这个着迷于你的少女的泪水便会决堤——那家伙如此威胁道。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 437,
+     "quote": "『舞·斗·大·会』就是『期限』，在那之前，如果我仍然没有做出选择的话，就·又·是·我·的·败·北。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 440,
+     "quote": "——为·了·守·护·那·个·誓·言。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "舞会初体验（商家照面苦行/人情-怨恨交际论的受教育/英雄经济学领悟——'医疗费级收入已到手'的不安）；为斯诺当众解围（'不要多管闲事'宣言+牵手离场——'为了帮助斯诺没必要计较立场和钱'）"
+    },
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "试练自觉：此状况=帕林库洛早已设计（回想其言→斯诺剧变的因果）；威胁结构看清（揭穿谎言→斯诺泪水决堤/全员不幸 vs 英雄选择→全员幸福）；『舞·斗·大·会』=『期限』（两天内必须选择否则'就·又·是·我·的·败·北'）；'为·了·守·护·那·个·誓·言'的本能嘶吼；Dimension 已锤炼至测谎仪级微情感觉知"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-9ed363ea9a34",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 341,
+     "quote": "「怪了？帕林库洛一直都这么说的来着啊？是他跟我说‘我找到了能配得上斯诺·沃克的夫婿了哦。拜托你喽，格连，来跟我一起促成这一对儿怎么样？’来着啊。」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "幕后设计曝光（格连披露）：委托格连'促成斯诺×涡波婚事'（'我找到了能配得上斯诺·沃克的夫婿了哦'）——婚约布局的操盘手；涡波自觉：斯诺的剧变源于回想其言；勒伽西家当主身份（据商家传闻：'得到了勒伽西家当主帕林库洛·勒伽西的认可擢升为会长'）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-4ff934c536cd",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "艾尔米拉德·希达尔克"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 230,
+     "quote": "「这个啊，差不多吧。因为她的才华，斯诺确实有不少候补的婚约者，但目前的确是我的优势最大。是这样吧，斯诺？」",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "舞会再会：对涡波无敌意（'跟我说话的时候不再带一点憎恶的感觉的话，我这边不是就打不起斗争心了嘛'——对话陷阱自认式斗嘴）；公开炒作婚约（'目前的确是我的优势最大'/'目前还是得等到『舞斗大会』结束之后'——大会后正式化预告）；主动介绍商家（科菲尔德家的凯因等）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-200f9ab21858",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物",
+    "name": "诺文"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 17,
+     "quote": "我时不时还会注意到附近的孩子们称呼诺文为「师父」。仅仅如此，诺文的魔力就会变得更加稀薄，真希望这都是我的错觉。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 16,
+     "quote": "诺文的欲求之浅令我大为惊讶。没准只要几十人鼓掌为他献上称赞，诺文就会消失。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "消失临界加速：被孩子们称「师父」即魔力更稀薄；'人们恬淡的幸福也是诺文的一个追求'（市民笑面相迎时的目眩憧憬）；欲求之浅（'没准只要几十人鼓掌为他献上称赞，诺文就会消失'）；预选全胜+娇惯莉帕（不把她看做死神/诅咒——地上平稳生活改变其认识）；与莉帕组队参加舞斗大会"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-db5221e3c9ec",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "人物(知性魔法)",
+    "name": "莉帕"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 39,
+     "quote": "莉帕似乎要跟诺文一起参加『舞斗大会』。虽然她给出的理由是如果诺文出了什么意外死掉了，自己会觉得很困扰，但她的真正意图并不明朗。",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "与诺文组队参加舞斗大会（自述理由=诺文意外死掉会困扰，真意不明）；『杀意按耐不住』的危险台词（与诺文独处时）；等级维持论（涡波等级升高→维持其存在更轻松）；留在地上与斯诺/编织线"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-1d9a7ab8afd3",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "组织(贵族家门)",
+    "name": "沃克家"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 374,
+     "quote": "「嗯。被沃克家收为养子的人，有让沃克家的名声壮大的义务。不像格连哥哥这样拼命的话，那帮家伙是没法接受的。他们没法接受将身为龙人末裔的斯诺给收养下来却没有回报。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 43,
+     "text": "本家侧实体化：养子义务=让沃克家名声壮大的义务（'没法接受将身为龙人末裔的斯诺给收养下来却没有回报'——斯诺=龙人末裔再证）；义母的工具化统治（'你就是为此才存在的'）；婚事=处分式的他嫁安排；马车豪华度=四大贵族实力冰山一角"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-0205f4aaf031",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "格连",
+    "rel_type": "婚事委托(斯诺×涡波促成)",
+    "subject": "帕林库洛"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 345,
+     "quote": "「要说斯诺跟涡波的婚事，我可是超级赞成的啊。毕竟能让我憧憬的涡波成为自己的义弟，真是没有什么能比这更让人高兴的了。我和帕林库洛都举荐你为斯诺·沃克的婚约者！不管有什么困难，我们都一定会让你们两个成婚的！」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 43,
+     "text": "据格连转述：帕林库洛托其'一起促成这一对儿'——斯诺×涡波婚约布局的操盘；格连+帕林库洛双举荐涡波为斯诺·沃克的婚约者（'不管有什么困难都一定会让你们成婚'）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-ad0876bc80c6",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "求婚(因轻松)",
+    "subject": "斯诺·沃克"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 370,
+     "quote": "「因为啊，只要我跟涡波结婚的话一切就都解决了！对沃克家的义务只要由作为丈夫的涡波来完成的话，一切就都解决了啊！」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 43,
+     "text": "'只要我跟涡波结婚的话一切就都解决了'（沃克家义务由丈夫完成的解法/处分式他嫁的回避/最自由生活）——'不是因为喜欢，而是因为会轻松'；被涡波拒绝（'这种理由的告白没法接受'）但承诺帮助其获得自由选择权"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-02ce17bcbfc3",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "斯诺·沃克",
+    "rel_type": "工具化统治(婚约强制)",
+    "subject": "斯诺的义母"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 162,
+     "quote": "「……没错。……区区一介公会的名誉，不值一提。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 43,
+     "text": "'你就是为此才存在的'的存在定义强加；婚约延迟陈情的冷淡回绝（'区区一介公会的名誉，不值一提'）；母女间距离遥不可及"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-99556a2a1adf",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "斯诺·沃克",
+    "rel_type": "当众解围",
+    "subject": "相川涡波"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 248,
+     "quote": "「就算是最有望的婚约者，但他们二人的婚事尚无定论。既然还没有决定，就请诸位克制一下这些会让斯诺小姐感到困扰的发言。」",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 277,
+     "quote": "那表情就好像她在人生中第一次找到了栖身之所一样。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 43,
+     "text": "婚约话题围攻中一言止场（'既然还没有决定，就请诸位克制一下这些会让斯诺小姐感到困扰的发言'）+牵手离场至阳台；'难受的时候就试着去依靠别人'劝告→斯诺'人生中第一次找到了栖身之所'的表情+相遇以来最美笑容"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-baec1ad86859",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "斯诺·沃克",
+    "rel_type": "兄妹(崩坏看护)",
+    "subject": "格连"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 326,
+     "quote": "「总、总之，如果是涡波的话，我就能放心把妹妹托付给你了。仔细观察、交流过之后，我能够肯定，你是个好人。绝对不会错了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 43,
+     "text": "惯于斯诺的崩坏状态（'恐怕格连已经不是第一次看到斯诺进入这种状态了'——熟练扶起+让她坐下调整呼吸）；'只有跟斯诺你打招呼的时候才是我的休息时间'；托付宣言（'如果是涡波的话，我就能放心把妹妹托付给你了'）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-7a51024361d5",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "康纳·塔利亚",
+     "斯诺·沃克",
+     "斯诺的义母",
+     "沃克家",
+     "相川涡波",
+     "艾尔米拉德·希达尔克"
+    ],
+    "instant": null,
+    "kind": "日常",
+    "name": "劳拉维亚社交舞会",
+    "tick": 35,
+    "time_verbatim": "舞斗大会前三天（王族驾临日）"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 21,
+     "quote": "内容是邀请我参加劳拉维亚举办的『舞会』。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 28,
+     "quote": "「我反而忐忑得很。看样子，这回之所以找我参加，是因为我受到了劳拉维亚王族的注意……」",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 43,
+     "text": "劳拉维亚对涡波个人的舞会邀请（王族注意所致；社交版=角力大会的代位产物）→沃克家马车赴城（身份数重检查/王族警备）→商家照面苦行（康纳·塔利亚的金币人情/长龙队列/耳饰进言）→义母会面（婚约陈情被回绝）→希达尔克婚约炒作围攻→涡波一言止场解围→阳台休憩（最美笑容/依靠劝告/栖身之所）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-02e2d7319ebd",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entities": [
+     "帕林库洛",
+     "斯诺·沃克",
+     "格连",
+     "相川涡波"
+    ],
+    "instant": null,
+    "kind": "转折",
+    "name": "格连初会与斯诺的崩坏",
+    "tick": 35,
+    "time_verbatim": "同夜（舞会后段·阳台）"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 360,
+     "quote": "「啊啊，终于……终于！我终于明白了……！」",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 443,
+     "quote": "——到『舞斗大会』开始还有两天，还有两天一切都将做出了断。",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 43,
+     "text": "格连登场（状态栏/懒散性格/粉丝发言/假货自称）→婚事委托披露（帕林库洛操盘）→斯诺顿悟（随我喜欢怎样都行→帕林库洛也做了一样的→终于明白）→因轻松求婚→拒绝→自责崩坏（那个人掳走发言/注视无异常=本心）→格连熟练看护→涡波试练自觉（帕林库洛设计/泪决堤威胁vs英雄幸福论/舞斗大会=期限/守护誓言）——'还有两天一切都将做出了断'"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-4eebbb86d8f4",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "entities": [
+     "帕林库洛",
+     "斯诺·沃克",
+     "相川涡波"
+    ],
+    "name": "斯诺的顿悟与'那个人'",
+    "note": "顿悟内容未明示（'只·要·随·我·喜·欢·怎·样·都·行，说的是这个意思？也就是说，帕林库洛也做了一样的……？'→彻底明白）——帕林库洛手段的同构性察觉；崩坏中'明明都能将那个人掳走却不肯将我也…'的'那个人'身份（基督线人物?）待解；本心暴露=注视无异常的天然崩坏",
+    "payoff_chapter": null,
+    "setup_chapter": 43,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 357,
+     "quote": "「只·要·随·我·喜·欢·怎·样·都·行，说的是这个意思？也就是说，帕林库洛也做了一样的……？」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 43,
+     "text": "角色顿悟内容钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-0260a1f2ef02",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "entities": [
+     "帕林库洛",
+     "斯诺·沃克",
+     "相川涡波"
+    ],
+    "name": "舞斗大会=试练的期限",
+    "note": "两天内必须做出选择否则'就·又·是·我·的·败·北'（败北 repeat 的自觉）；试练起点回溯='那一天，我第一次见到斯诺的时候'；'为·了·守·护·那·个·誓·言'（ch5 病房之梦（阳滝与誓约）的呼应候选）——与手环对决/三重意志回传/莉帕回传线在大会聚合",
+    "payoff_chapter": null,
+    "setup_chapter": 43,
+    "tier": "核心"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 435,
+     "quote": "那个『试·练』开始了。不对，在更早之前，那一天，我第一次见到斯诺的时候，它恐怕就已经开始了。",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 43,
+     "text": "主线时限钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-04b75611a5bb",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "entities": [
+     "帕林库洛",
+     "格连",
+     "相川涡波"
+    ],
+    "name": "格连的'那个时候'与假货自称",
+    "note": "'从·那·个·时·候开始，我就一直是你的粉丝'——格连知晓基督时代事迹（具体时点未明）；'跟我这样不值一提的假货不同，你才是真正的英雄'的假货自称（最强称号的自贬——与'某起事件'的关联候选）；'感觉跟我从帕林库洛那儿听说的完全不一样'（帕林库洛对涡波的描述存在）",
+    "payoff_chapter": null,
+    "setup_chapter": 43,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 314,
+     "quote": "「嘿~，感觉跟我从帕林库洛那儿听说的完全不一样啊……哎呀，是在好的意义上哦？不要会错意了哦？我不是在说你的坏话哦？你可别生气哦？」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 43,
+     "text": "格连信息差钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-1e5064a87372",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "entities": [
+     "莉帕",
+     "诺文"
+    ],
+    "name": "莉帕×诺文的舞斗大会组队",
+    "note": "莉帕软磨硬泡组队参赛（自述理由=诺文死了会困扰，真意不明）+『杀意按耐不住』独处台词；'如果莉帕做得太过火我会介入'的诺文看护方针——大会上死神实战的预感",
+    "payoff_chapter": null,
+    "setup_chapter": 43,
+    "tier": "支线"
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 35,
+     "quote": "「又来了吗，我说啊，我可是因为你说无论如何都要参加才答应跟你组队的哦。要是你敢做奇怪的事，我就把你赶出队伍了啊。」",
+     "vol": 1
+    }
+   ],
+   "library": "foreshadow",
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 43,
+     "text": "大会参战线钩"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.85,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-foreshadow-b78e5f85dd35",
+   "record_type": "foreshadow",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "fact": "舞会=打个照面就能催生上千枚金币的利益场+一个照面延伸过千人脉+一份契约拯救千生命的战场价值（斯诺论）；金币握手=人情投资（回绝则人情没了甚至结怨恨——『英雄』被敬而远之的传闻影响）；『英雄』对国家有利可图故被捧起牟利；涡波初次照面所得已够玛利亚医疗费级——'不觉间已踏进没法回头的地方'",
+    "name": "英雄的社交经济学",
+    "tick": 35
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 128,
+     "quote": "「……这里可是打个照面就能催生上千枚金币的利益的地方。也是只要结识一个人就可以延伸出过千的人脉的地方。在这里订下一份契约或许就会在某处的战场上拯救过千的生命。因此这也是对劳拉维亚有益的出色的工作。」",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 130,
+     "quote": "也就是说，『英雄』这一存在对国家来说是有利可图的。所以要将我这样的新星捧成『英雄』牟利。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 43,
+     "text": "社交界机制（据舞会实录+斯诺进言）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-31e92248391a",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "fact": "斯诺·沃克放弃了人生的一切：异常脆弱的心灵使她将一切选择托付给别人（只选最轻松的流向）；三连害怕（做选择/担责任/搞砸）→'无可奈何'式放弃；平时的从容=逞强伪装（余裕尽失即崩坏——义母/上流阶级面前尤其）；崩坏形态=自责自问（'又是我做错了什么吗…因为我不好…?'）+注视无异常（非精神攻击=本心）；'轻易说不来会演变成无法挽回的事态，所以只能暧昧'",
+    "name": "斯诺的精神构造（本心暴露实录）",
+    "tick": 35
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 192,
+     "quote": "她只是也只能，顺着轻松的流向生活着。因为异常脆弱的心灵，使她将一切选择都托付给了别人。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 408,
+     "quote": "也就是说，这是斯诺的本心。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 43,
+     "text": "角色核心心理（本章实录）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-de429713117b",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "fact": "涡波自觉：斯诺剧变=回想帕林库洛之言所致——'这个状况是帕林库洛在很早之前就已经设计好了的'；威胁结构：揭穿劳拉维亚的谎言→着迷于涡波的少女（斯诺）泪水决堤+涡波/玛利亚/斯诺全员不幸 vs 选择成为联合国『英雄』→全员得到『幸福』；此难关=帕林库洛预告的更严苛『试·练』（起点=初见斯诺那一天）；期限=舞斗大会（两天）——败北 repeat 的恐惧与'为·了·守·护·那·个·誓·言'",
+    "name": "帕林库洛的试练设计（舞会章自觉）",
+    "tick": 35
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 424,
+     "quote": "也就是说，这个状况是帕林库洛在很早之前就已经设计好了的。",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 429,
+     "quote": "自己（涡波）也好，妹妹（玛利亚）也罢，连同那边那名少女（斯诺）在内，所有人都会变得不幸。那样真的好吗——如此这般地在我耳边嚅嗫。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 43,
+     "text": "主线博弈结构（主角自觉）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-5fd5f126e354",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 43,
+    "fact": "等级28/职业斥候：HP331/342 MP92/92；力量7.22 体力8.55 技巧11.78 敏捷13.79 贤能10.01 魔力5.26 素质2.19；先天技能：幸运1.02+厄运2.75（双稀有先天）；后天地魔法1.22 武器战斗1.17 探索1.11 匿踪1.56 药师1.10 盗窃1.66——技能丰富型斥候build（非正面硬碰）；涡波观感：'搞不好其实斯诺比他要……'（魔力素质对优于格连）",
+    "name": "格连状态栏（ch43实测）",
+    "tick": 35
+   },
+   "evidence": [
+    {
+     "chapter": 43,
+     "line": 299,
+     "quote": "姓名：格连·沃克 HP331/342 MP92/92职业：斥候",
+     "vol": 1
+    },
+    {
+     "chapter": 43,
+     "line": 300,
+     "quote": "等级：28",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 43,
+     "text": "状态栏实测数据"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-4cea4d702667",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。本批无新别名登记（格连·沃克/诺文·阿雷亚斯等已在库）。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=文件行号-18208）。",
+  "cross_chapter_notes": [
+   "★格连·沃克初登场（状态栏全公开：斥候/28级/幸运+厄运双先天/盗窃1.66——技能型非正面硬碰型；'搞不好斯诺比他还要…'暗示）；性格反转：懒洋洋老好人+超级自来熟+'从·那·个·时·候开始我就一直是你的粉丝'（知晓基督时代）+自称'不值一提的假货'",
+   "★帕林库洛婚事委托曝光：'我找到了能配得上斯诺·沃克的夫婿'——格连+帕林库洛双举荐涡波为婚约者；斯诺由此顿悟（'只·要·随·我·喜·欢·怎·样·都·行…帕林库洛也做了一样的…？'→'我终于明白了'）→因'轻松'向涡波求婚→被拒→自责崩坏（'明明都能将那个人掳走却不肯将我也…'——'那个人'身份钩）",
+   "★斯诺的义母（沃克家本家）：'你就是为此才存在的'工具化教育+婚约陈情回绝（'区区一介公会的名誉，不值一提'）；龙人末裔收养回报论（养子义务=壮大名声/处分式嫁人）",
+   "★涡波试练自觉：此状况=帕林库洛早已设计；揭穿谎言→斯诺泪水决堤威胁 vs 英雄选择→全员幸福；『舞·斗·大·会』=『期限』（两天）+'就·又·是·我·的·败·北'+'为·了·守·护·那·个·誓·言'（与 ch5 病房之梦誓约呼应）",
+   "★英雄经济学（舞会=打个照面催生上千金币的利益场/人情与怨恨的交际论/国家牟利捧英雄——医疗费级收入已到手）；斯诺耳饰=魔石振动传声小道具；Dimension 锤炼至测谎仪级微情感觉知",
+   "★诺文消失临界加速（孩子们称师父→魔力更稀薄；'几十人鼓掌就可能消失'）；莉帕×诺文组队参加舞斗大会（真意不明）+最终预选"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。",
+  "r6_decision": {
+   "deterministic_check": "（译注： 仅此一处",
+   "reason": "译注为翻译组注；正文称谓事实不受影响",
+   "verdict": "正文正常抽取；行152 译注（读作母亲写作义母）按元文本排除，义母称呼本身照抽"
+  },
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=35→tick=35→2000-02-05。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行18208-18655（CHAPTER 0043，448行）",
+   "verified_at": "2026-09-16"
+  },
+  "unit": "U-C03 批4 · CHAPTER 0043（第四卷-第七章-于是，崩壊，摄入序35→tick35→伪锚点2000-02-05）"
+ }
+}

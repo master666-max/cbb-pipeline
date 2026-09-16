@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "剑之所有主张",
+  "subject": "迪亚布罗·西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 158,
+   "quote": "「咦、咦？基督……我的剑呢……？」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 168,
+   "quote": "迪亚布罗·西斯以空洞的眼神执拗地接连质问我道。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "据迪亚布罗·西斯言行：见涡波持剑威慑即僵住，指剑连问『我的剑呢』『你给扔掉了吗』——ch38 破损的阿雷亚斯家的宝剑=缇亚之剑的直接对证（记忆恢复媒介线强化）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5e0e32049398",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 43,
+  "fact": "等级28/职业斥候：HP331/342 MP92/92；力量7.22 体力8.55 技巧11.78 敏捷13.79 贤能10.01 魔力5.26 素质2.19；先天技能：幸运1.02+厄运2.75（双稀有先天）；后天地魔法1.22 武器战斗1.17 探索1.11 匿踪1.56 药师1.10 盗窃1.66——技能丰富型斥候build（非正面硬碰）；涡波观感：'搞不好其实斯诺比他要……'（魔力素质对优于格连）",
+  "name": "格连状态栏（ch43实测）",
+  "tick": 35
+ },
+ "evidence": [
+  {
+   "chapter": 43,
+   "line": 299,
+   "quote": "姓名：格连·沃克 HP331/342 MP92/92职业：斥候",
+   "vol": 1
+  },
+  {
+   "chapter": 43,
+   "line": 300,
+   "quote": "等级：28",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 43,
+   "text": "状态栏实测数据"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-4cea4d702667",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

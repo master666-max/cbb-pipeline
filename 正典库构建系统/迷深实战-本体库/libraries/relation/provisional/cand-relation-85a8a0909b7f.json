@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "旧识警戒",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 219,
+   "quote": "「斯诺？斯诺·沃克？你为什么在这里？」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 232,
+   "quote": "不行，有罪。反正你肯定是利用着涡波给自己谋福利然后跑去一边偷懒了吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 39,
+   "text": "相识关系（拉丝缇娅拉直呼其名+『有罪』判决调笑/斯诺显著畏惧后退）；斯诺曾在涡波入会首夜讲过与拉丝缇娅拉同口径的『基督/被帕林库洛操纵』说——两信息源同源"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-85a8a0909b7f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}
