@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "基督·欧亚",
+  "rel_type": "原初搭档",
+  "subject": "迪亚布罗·西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 1024,
+   "quote": "「家人？没有，我听说涡波是一个人从很远的地方来到联合国的来着？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 50,
+   "text": "据缇亚自述：与基督在迷宫第一层同吃苦头、同心协力探索——'最初的同伴也是最棒的伙伴'；基督只身一人从很远的地方来到联合国（无家人同行——玛利亚不在身边的旁证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-364f9176daf5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

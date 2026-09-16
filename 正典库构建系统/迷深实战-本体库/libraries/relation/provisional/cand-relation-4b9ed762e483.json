@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "警戒协助(有条件)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 2064,
+   "quote": "「但是大哥哥你在警戒着诺文的奇袭对吧？这个的话我是能帮你的忙的哦？我就是为了这个才来到这艘大船上的。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 50,
+   "text": "拒绝斯诺后向涡波提供诺文奇袭警戒（'我自那之后变得更强了'）；条件=拉丝缇娅拉队存续的利益（魔法专家人情）+妨碍狭隘的诺文；深层感情存疑（'隐藏在深层心理中的感情跟好意相去甚远'——涡波仍愿帮助）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4b9ed762e483",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

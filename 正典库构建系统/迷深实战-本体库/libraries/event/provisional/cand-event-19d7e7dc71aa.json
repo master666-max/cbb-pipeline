@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "entities": [
+   "Rokh·Bringer",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莱纳",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "莱纳夜袭与诺文介入",
+  "tick": 40,
+  "time_verbatim": "大会第二日深夜"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 1305,
+   "quote": "「……我也实在不是骗你，但是海因·赫勒比勒夏因喜欢我这名少女。并且，他也喜欢著名叫基督的少年。所以，他为这对少年少女献出了自己的性命。不是作为一名骑士，而是以一个人的身份——」",
+   "vol": 1
+  },
+  {
+   "chapter": 50,
+   "line": 1483,
+   "quote": "诺文给他的是魔剑『Rokh·Bringer』——这把剑经由诺文的魔力很好地重新接合了。跟平时的『魔力物质化』不一样，我从中感知到了地属性的魔力。似乎是使用了特殊的魔法进行修复的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 50,
+   "text": "魔石线失效区的蓄谋夜袭：海因完美论复仇宣言→自毁特攻（Ex·Wind 乱用/零距爆破/手脚为代价）→涡波 Foam 诱饵+终霜冻池+头球制压→诺文介入（红色魔力剑投掷/与莱纳利害一致同盟/单手战拉丝缇娅拉余裕/Rokh·Bringer 地属性修复授予）→涡波十指尽折仍破莱纳双剑→诺文携莱纳撤退（'还没得到的东西价值无法判明'）→对策：不告发诺文/由芙兰琉莱说服莱纳；海因真相宣告（'以一个人的身份献出了性命'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-19d7e7dc71aa",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

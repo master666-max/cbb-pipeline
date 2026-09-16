@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "生前所用认领",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 49,
+   "line": 302,
+   "quote": "看到『阿雷亚斯家的宝剑』和『Rokh·Bringer』后，诺文惊呼了一声。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 49,
+   "text": "'这把宝剑，我在生前曾经用过。是绝对不会认错的'——家传宝剑的当主级所有权证言（与 ch39 缇亚'我的剑呢'认领并存——剑的流转史关键节点）；两剑由涡波赠予诺文（Rokh·Bringer 亦生前交手过——'真是奇妙的命运…又有它们聚齐的时候'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9750883806c0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "屠龙策划(名声制造)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 49,
+   "line": 373,
+   "quote": "「嗯……现在在劳拉维亚拥有『屠龙』称号的就只有格连哥哥了。我认为这个对涡波你也是必要的。只要杀了这头龙的话，就可以一跃成名了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 49,
+   "text": "急推屠龙委托的操盘（'现在在劳拉维亚拥有屠龙称号的就只有格连哥哥…只要杀了这头龙就可以一跃成名'）；村宴高声宣传（'他正是屠龙的英雄！向我们的英雄献上喝彩'）；'涡波更有英雄的样子一些，这也是为了大家哦'——与诺文双推英雄化"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6d92fcce11eb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

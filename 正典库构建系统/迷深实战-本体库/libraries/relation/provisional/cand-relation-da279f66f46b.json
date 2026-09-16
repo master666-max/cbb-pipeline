@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "内应忠告",
+  "subject": "拉古涅·卡伊库欧拉"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 1164,
+   "quote": "总长一定会在话里设套，试图从你这里套个口实出来。在变成那样之前，请你果断地做出什么都不赌的宣言。无论有什么万一，不管遇到怎样的挑衅，希望你都不要上钩……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 50,
+   "text": "赛前密语：规则预设（三对一+击落武器）+绝不赌任何东西的警告（弗茨亚茨带走涡波指示）——'在作为七骑士以前首先是小姐和塞拉前辈的朋友'的立场；赛后传话委托（对拉丝缇娅拉与塞拉的持续友情）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-da279f66f46b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

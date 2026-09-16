@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 12,
+   "line": 314,
+   "quote": "「我是莱纳。基督先生，有劳你了。",
+   "vol": 1
+  },
+  {
+   "chapter": 12,
+   "line": 344,
+   "quote": "像我这种被收养来的贵族，也就只有保护姐姐大人这点儿价值了。",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 107,
+   "quote": "姓名：莱纳·赫勒比勒夏因HP142/172MP23/50职业：骑士",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 104,
+   "quote": "在她身后，穿着执事服的少年也大感震惊。只是他的震惊跟少女的吃惊并不是同种类型。少年在短暂的惊讶过后，表露了刺人的敌意。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 12,
+   "text": "芙兰琉莱之弟（被收养来的贵族）：金发稍黯、小号制服；险被甲壳海妖吞食获救；自称『像我这种被收养来的贵族，也就只有保护姐姐大人这点儿价值了』——复杂家庭环境"
+  },
+  {
+   "category": "trait",
+   "chapter": 12,
+   "text": "劝姐姐弃考归家不遂；愿为姐姐当盾；自贬垃圾中之渣滓（主角避谈其家事）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-3982f65529a8",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-3982f65529a8-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-3982f65529a8",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

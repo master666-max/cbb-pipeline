@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 50,
+  "fact": "本章两处极限实证：①无法干涉写在魔法道具之中的已经完成的魔法（魔石散炎戒指等碾碎施放型——对策=物理回避/冰膜护胸花）；②浸透到身体内部的强化魔法（Growth 身体强化0.70）无法施加干扰；既有极限=对自由构筑中的咏唱魔法有效（衰减/抹消/错开）——'次元之冬'的作用域边界明确化",
+  "name": "次元之冬的极限（魔法道具与浸透魔法）",
+  "tick": 40
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 633,
+   "quote": "『次元之冬』无法干涉写在魔法道具之中的已经完成的魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 50,
+   "line": 1728,
+   "quote": "使用者是佩露修娜·库艾伽。因为是浸透到身体内部的魔法，所以无法施加干扰。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 50,
+   "text": "魔法系统边界（本章实测）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-2f5b8c23fc6b",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

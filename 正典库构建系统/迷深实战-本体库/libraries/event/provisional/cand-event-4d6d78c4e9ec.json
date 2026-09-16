@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "屋顶对话与涡波的答案",
+  "tick": 39,
+  "time_verbatim": "讨伐当夜（宴会中）"
+ },
+ "evidence": [
+  {
+   "chapter": 49,
+   "line": 891,
+   "quote": "——我·的·妹·妹·不·在·这·个·异·世·界。",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 898,
+   "quote": "不回去不行。哪怕是拼·上·这·条·命，唯有妹妹，我必须让她幸福。即使拼上性命，也必须要让妹妹幸福不可。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 49,
+   "text": "避人群上屋顶遇沉思莉帕→'英雄'问答（莉帕否定论）→'被赋予的使命'论点破三人同构→莉帕决意宣言（和被赋予的使命抗争/不混淆愿望/拒绝协助'这是我自己的问题'）→涡波自省（依赖年幼者的羞愧/自己一直在逃避手环问题）→三重意志回味（'就好像自己亲口所说…远比之前任何时候都要真实'）→共誓→答案结晶：幸福枷锁自觉→帕林库洛=敌人→『我的妹妹不在这个异世界』（名为玛利亚的女孩子不是我的妹妹）→'哪怕是拼上这条命唯有妹妹必须让她幸福'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-4d6d78c4e9ec",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

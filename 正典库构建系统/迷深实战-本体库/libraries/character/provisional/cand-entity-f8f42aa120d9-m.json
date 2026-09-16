@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "拉古涅·卡伊库欧拉"
+ },
+ "evidence": [
+  {
+   "chapter": 15,
+   "line": 1000,
+   "quote": "姓名：拉古涅·卡伊库欧拉HP152/153MP34/34职业：骑士",
+   "vol": 1
+  },
+  {
+   "chapter": 15,
+   "line": 1068,
+   "quote": "相对的是从她空着的另一只手上伸出了一把固体化的魔力之刃。",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 71,
+   "quote": "姓名：拉古涅·卡伊库欧拉HP158/161MP36/36职业：骑士",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 81,
+   "quote": "「诶？我们怎么可能会认错基督大哥哥啊？被那样一边倒地给干掉之后，已经是连做梦都能梦到的地步了啊。哎呀~那个时候没有机会跟你说来着，但是下次我可不打算输给你了哦？」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 15,
+   "text": "『天上之七骑士』之一（侯普思转告而来）：【状态】HP152/153 MP34/34 等级16 力量3.22 体力3.91 技巧11.23 敏捷5.22 贤能7.12 魔力1.52 素质1.12；先天魔力操作2.11；短裙束腰少女（被前辈赶鸭子上架感）"
+  },
+  {
+   "category": "technique",
+   "chapter": 15,
+   "text": "固体化魔力之刃（空手发出·十米外如镭射枪连击）——拉丝缇娅拉评『数值无法表现的数值』很高者；『最初的一招』最具意外性"
+  },
+  {
+   "category": "event",
+   "chapter": 15,
+   "text": "决斗速降：判明攻击模式后举双手投降（『又温柔又帅』）；翻译塞拉狼语；以骑士之名发誓永不再带骑士来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-f8f42aa120d9",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-f8f42aa120d9-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-f8f42aa120d9",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 50,
+  "entities": [
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "name": "斯诺的'我——'未竟之言",
+  "note": "甲板别离时'涡波，那个，我——'的欲言又止（表情几变后选择道别）；监听持续宣言（'我会一直听着的'）；准决赛前她的未言内容（忏悔?计划?告别?）待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 50,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 2048,
+   "quote": "『那、那就再见了……涡波……』",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 50,
+   "text": "角色悬置线"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-9f8a7a0626cd",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

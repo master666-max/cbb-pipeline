@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 49,
+  "fact": "弱点实证：特化对人战斗+缺乏魔法攻击应对（龙之风/尾巴反应不及——'连黯淡之龙那种程度的攻击都反应不过来，实在奇怪'）；差点死→『怪物化』恐惧全暴露（'一旦怪物化会丧失理性…大家都会被我——'）；后悔使留恋加重→力量回复（幸福消留恋vs后悔增留恋的双向paradox——'诺文现在是如此后悔，以至于连留恋都在不断加重'）；衰弱程度远超涡波想象",
+  "name": "诺文的怪物化恐惧与留恋波动",
+  "tick": 39
+ },
+ "evidence": [
+  {
+   "chapter": 49,
+   "line": 720,
+   "quote": "也就是说，诺文现在是如此后悔,以至于连留恋都在不断加重——",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 722,
+   "quote": "「不对,这是致命性的失态！我的『怪物化』，并不是我自己一个人的问题！如果陷·入·了『怪物化』的状态，我会丧失理性的。会变得与怪物无异。如果在这种地方『怪物化』了，那简直不堪设想！」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 49,
+   "text": "守护者机制新层（本章实录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-e42d63a20434",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

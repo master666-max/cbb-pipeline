@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "复仇袭击(三人敌视)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 1281,
+   "quote": "「——不可饶恕、不可饶恕不可饶恕不可饶恕……！啊啊，绝对不可饶恕，基督·欧亚、拉丝缇娅拉·弗茨亚茨……！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 50,
+   "text": "敌视对象=基督·欧亚+拉丝缇娅拉·弗茨亚茨+帕林库洛三人（海因之死归责）；夜袭实战（双剑+风魔法特攻）；由诺文救场扛走；后续=姐姐芙兰琉莱说服线+'知道那一天'之谜"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5928d7ee391d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

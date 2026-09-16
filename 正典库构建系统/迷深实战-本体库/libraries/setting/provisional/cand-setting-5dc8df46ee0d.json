@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 50,
+  "fact": "涡波亲试：①自主切断——剑至手环前手自动失力（无关意志）；②怪物破坏——防御瞬间恐惧支配大脑→身体擅自拔剑杀敌（'将手环看得跟妹妹同等重要'的感情被写入）；③被动挨打——任由殴打身体仍回避保护手环（'像保护比自己生命还重要的东西'）；强行尝试伴随呕吐感倦怠感恶化——'有某种东西操弄了我的感情'；愤怒记忆触发三重意志共鸣（'不许摆弄他人的命运'）",
+  "name": "手环的感情操纵实证（三法全败）",
+  "tick": 40
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 10,
+   "quote": "原因很简单，在剑即将切断『手环』的一瞬间，我使剑的手突然没了力气。",
+   "vol": 1
+  },
+  {
+   "chapter": 50,
+   "line": 35,
+   "quote": "在『手环』即将被破坏的一瞬间，恐惧支配了我的大脑，那是一种对即将失去无比重要之物的恐惧。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 50,
+   "text": "诅咒机制实证"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-5dc8df46ee0d",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

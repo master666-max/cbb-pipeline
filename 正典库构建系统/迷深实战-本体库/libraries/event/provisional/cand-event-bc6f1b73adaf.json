@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "相川涡波",
+   "莉帕",
+   "诺文",
+   "黯淡之龙"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "黯淡之龙讨伐（屠龙）",
+  "tick": 39,
+  "time_verbatim": "舞会次日（半日西行+当日讨伐）"
+ },
+ "evidence": [
+  {
+   "chapter": 49,
+   "line": 642,
+   "quote": "「——大哥哥，诺文！把视线从我这里移开！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 629,
+   "quote": "龙的头部被大斧劈中，头盖骨碎裂。脖颈吃下了诺文一剑，大量鲜血喷涌而出。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 49,
+   "text": "斯诺急策划（沃克家包办手续/西部村庄委托）→废城御殿战：龙之风被次元之冬错开（诺文被吹飞——魔法应对短板）；四人连携（莉帕瞬移骚扰+Foam·深渊/斯诺魔法杭ImpulseBreak 木棒投掷/双剑魔力延长斩）→重伤龙反击（斯诺龙人体质无碍/诺文吐血濒死）→莉帕断腿瞬移救援（涡波解除Dimension让舞台）→涡波 Freeze 穿火+冰盾变形（魔力冰结化特有）+跃空斩首；龙遗言未达（斯诺截断'这条杂种龙不配奢求救助之手'）；村民宴会+屠龙英雄宣传；诺文怪物化恐惧→留恋加重→力量回复异变"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-bc6f1b73adaf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

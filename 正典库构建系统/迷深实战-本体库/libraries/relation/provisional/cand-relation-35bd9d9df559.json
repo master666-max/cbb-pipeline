@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "使命转换(杀→助)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 49,
+   "line": 696,
+   "quote": "「为·什·么？……诺文不是告诉过我吗。『要自己去决定』来着。所以，我决定了。从今往后，无论发生什么，我都要帮助诺文。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 49,
+   "text": "否决『抹杀诺文』的被强加使命→自定'帮助诺文'新使命（'这是我的决定'）；以断右腿为代价瞬移救护濒死的诺文；'因为诺文是跟我一起玩耍的重要的朋友'；杀人冲动抑制的持续痛苦"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-35bd9d9df559",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

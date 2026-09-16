@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "七骑士末席招募(被拒)",
+  "subject": "佩露修娜·库艾伽"
+ },
+ "evidence": [
+  {
+   "chapter": 49,
+   "line": 137,
+   "quote": "「作为『天上之七骑士』的总长，我可以推荐你填补这最后的空席。毕竟难得有机会，不邀请就浪费了。……不知意下如何？」",
+   "vol": 1
+  },
+  {
+   "chapter": 49,
+   "line": 157,
+   "quote": "「呼，那就等到『舞斗大会』的时候再劝你好了。『天上之七骑士』有来自弗茨亚茨的推荐书。我们很可能与拥有劳拉维亚的推荐书的你同台相竞。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 49,
+   "text": "总长以海因意志继承者定位推荐涡波填补最后空席；斯诺代为回绝（'涡波是我的会长，是我的搭档'）；'那就等到舞斗大会的时候再劝'（七骑士持弗茨亚茨推荐书参赛——大会对决预告）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d78fd5e1343e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

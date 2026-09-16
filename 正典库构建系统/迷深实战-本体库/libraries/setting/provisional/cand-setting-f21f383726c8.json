@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 50,
+  "fact": "标准规则=『击落胸花』或『击落武器』二选一；对战方式与赌注由双方商讨定（耗时过长由主持人裁标准规则）；种子队制（劳拉维亚代表涡波初战免除）；四区各竞技船（原巨型战舰改造圆筒竞技场/魔石线+麦克风魔石扩声）+中央剧场船；告发袭击可致退场逐出瓦尔法拉；魔石线监控存在失效区（莱纳手脚）",
+  "name": "舞斗大会规则细则（实战版）",
+  "tick": 40
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 318,
+   "quote": "「作为劳拉维亚国的代表，相川·涡波大人的初战被免除了。也就是种子队的待遇。因此，请您于下午前往北区的竞技场。」",
+   "vol": 1
+  },
+  {
+   "chapter": 50,
+   "line": 1598,
+   "quote": "「咦、咦？什么记录都没留下……？不对，这是『魔石线』的机能没有发挥作用……？」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 50,
+   "text": "大会规则（本章实录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-f21f383726c8",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

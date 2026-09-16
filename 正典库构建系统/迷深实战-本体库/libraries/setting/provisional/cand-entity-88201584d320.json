@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品(武具)",
+  "name": "【黑铠艾尔芬里德】"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 1698,
+   "quote": "【黑铠艾尔芬里德】",
+   "vol": 1
+  },
+  {
+   "chapter": 50,
+   "line": 1700,
+   "quote": "装备者的敏捷-10％",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 50,
+   "text": "佩露修娜的漆黑全身铠：防御力6/对魔力7/装备者敏捷-10%——世界最高等级武具（普通剑伤都伤不到）；唯一弱点=铠甲缝隙（涡波执拗攻击右臂缝隙获胜）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-88201584d320",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}

@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "entities": [
+   "手环",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "手环破坏尝试与双拒绝",
+  "tick": 40,
+  "time_verbatim": "大会前日晨"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 40,
+   "quote": "换言之，这是无关乎我自己意志的行为，也就是说，有某种东西操弄了我的感情。",
+   "vol": 1
+  },
+  {
+   "chapter": 50,
+   "line": 57,
+   "quote": "就像是在保护比自己的生命还重要的事物一样，擅自行动着。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 50,
+   "text": "三法全败实证（剑切失力/怪物破坏被身体反杀/被动挨打唯手环回避——'将手环看得跟妹妹同等重要'的感情操纵+呕吐倦怠诅咒反应）；求诺文→拒（雷鲁情报+'所有人幸福'论+真实动机=取回记忆的涡波可能不实现其愿望+'等舞斗大会结束'）；求斯诺→崩（'跟我一起被欺骗下去吧'+英雄论否定+被抛弃感+自责自闭——'斯诺连一步都迈不出'的依存确证）；玛利亚告别（同状态手环/不凭一己判断）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5870322a779c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 1
+}
