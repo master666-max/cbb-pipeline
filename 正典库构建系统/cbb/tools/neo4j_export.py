@@ -13,6 +13,7 @@ Cypher 走 Neo4j HTTP 端点（stdlib urllib，零驱动依赖）。探活降级
 """
 import argparse
 import base64
+import hashlib
 import json
 import subprocess
 import sys
@@ -25,6 +26,21 @@ BATCH = 250
 
 CONSTRAINT_CYPHER = ("CREATE CONSTRAINT entity_name_unique IF NOT EXISTS "
                      "FOR (e:Entity) REQUIRE e.name IS UNIQUE")
+
+
+def edge_id_for(subject: str, rel_type: str, object: str) -> str:
+    """D2：确定性边 id（三元组内容哈希）——MERGE 世界里同一 (s,r,o) 恒同 id，回填可 join。"""
+    h = hashlib.sha256(f"{subject}|{rel_type}|{object}".encode("utf-8")).hexdigest()[:12]
+    return f"e-{h}"
+
+
+def _edge_temporals(rec: dict) -> dict:
+    """D1：valid_at/invalid_at ← 证据 chapter / supersede 态映射。
+    valid_at=证据最早章（无可判证据→null）；invalid_at=活版本恒 null（开放区间=仍有效；
+    collect_graph 只导出活版本，superseded 旧版本的失效章由后继版本 valid_at 承担）。"""
+    ev = rec.get("evidence") or []
+    chapters = [e.get("chapter") for e in ev if isinstance(e.get("chapter"), int)]
+    return {"valid_at": min(chapters) if chapters else None, "invalid_at": None}
 
 
 def collect_graph(store_root: Path) -> dict:
@@ -46,10 +62,14 @@ def collect_graph(store_root: Path) -> dict:
                           "record_id": rec.get("record_id"), "version": rec.get("version", 1)})
         elif rec.get("record_type") == "relation" and all(canon.get(k) for k in ("subject", "rel_type", "object")):
             obs = rec.get("observations") or []
+            tmp = _edge_temporals(rec)
             edges.append({"subject": canon["subject"], "rel_type": canon["rel_type"],
                           "object": canon["object"], "claim": bool(canon.get("claim")),
                           "fact": (obs[0].get("text", "") if obs and obs[0].get("text") else canon["rel_type"]),
-                          "record_id": rec.get("record_id")})
+                          "record_id": rec.get("record_id"),
+                          "edge_id": edge_id_for(canon["subject"], canon["rel_type"], canon["object"]),
+                          "valid_at": tmp["valid_at"], "invalid_at": tmp["invalid_at"],
+                          "evidence": rec.get("evidence") or []})
     return {"nodes": nodes, "edges": edges}
 
 
@@ -62,12 +82,65 @@ def node_statement(n: dict) -> dict:
 
 
 def edge_statement(e: dict) -> dict:
+    edge_id = e.get("edge_id") or edge_id_for(e["subject"], e["rel_type"], e["object"])
     return {"statement": ("MERGE (s:Entity {name:$subject}) "
                           "MERGE (o:Entity {name:$object}) "
                           "MERGE (s)-[r:REL {rel_type:$rel_type}]->(o) "
-                          "SET r.claim=$claim, r.fact=$fact"),
+                          "SET r.claim=$claim, r.fact=$fact, r.edge_id=$edge_id, "
+                          "r.valid_at=$valid_at, r.invalid_at=$invalid_at"),
             "parameters": {"subject": e["subject"], "object": e["object"], "rel_type": e["rel_type"],
-                           "claim": e["claim"], "fact": e["fact"]}}
+                           "claim": e["claim"], "fact": e["fact"],
+                           "edge_id": edge_id,
+                           "valid_at": e.get("valid_at"), "invalid_at": e.get("invalid_at")}}
+
+
+def evidence_edge_backfill(graph: dict) -> list[dict]:
+    """D2：证据链→图边回填（导出后调用）。每条关系记录的每条证据挂
+    graph_edge{edge_id, valid_at, invalid_at}，形如 evidence[].graph_edge 契约位。
+    侧车输出（jsonl，键级去重），不改库内记录文件——旧件字节不动。"""
+    out = []
+    for e in graph.get("edges", []):
+        if not e.get("evidence"):
+            continue
+        edge_id = e.get("edge_id") or edge_id_for(e["subject"], e["rel_type"], e["object"])
+        ev_out = []
+        for i, ev in enumerate(e["evidence"]):
+            ev_out.append({"idx": i, "vol": ev.get("vol"), "chapter": ev.get("chapter"),
+                           "line": ev.get("line"), "quote": ev.get("quote"),
+                           "graph_edge": {"edge_id": edge_id,
+                                          "valid_at": e.get("valid_at"),
+                                          "invalid_at": e.get("invalid_at")}})
+        out.append({"record_id": e.get("record_id"),
+                    "triple": {"subject": e["subject"], "rel_type": e["rel_type"],
+                               "object": e["object"]},
+                    "edge_id": edge_id,
+                    "valid_at": e.get("valid_at"), "invalid_at": e.get("invalid_at"),
+                    "evidence": ev_out})
+    return out
+
+
+def append_backfill_sidecar(path: Path, entries: list[dict]) -> dict:
+    """回填侧车落盘：jsonl 追加，键级去重（record_id+edge_id+quote+line 重复不追加）。"""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    seen = set()
+    if path.exists():
+        for ln in path.read_text(encoding="utf-8").splitlines():
+            if ln.strip():
+                r = json.loads(ln)
+                seen.add((r.get("record_id"), r.get("edge_id"),
+                          tuple((e.get("quote"), e.get("line")) for e in r.get("evidence", []))))
+    added = 0
+    with path.open("a", encoding="utf-8") as f:
+        for r in entries:
+            k = (r.get("record_id"), r.get("edge_id"),
+                 tuple((e.get("quote"), e.get("line")) for e in r.get("evidence", [])))
+            if k in seen:
+                continue
+            f.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
+            seen.add(k)
+            added += 1
+    return {"sidecar": str(path), "total_lines": len(seen), "added": added}
 
 
 def chunks(seq, n):
@@ -154,6 +227,7 @@ def main(argv=None) -> int:
     ap.add_argument("--user", default="neo4j")
     ap.add_argument("--password", default="")
     ap.add_argument("--out")
+    ap.add_argument("--backfill-out", help="D2：证据→图边回填侧车 jsonl 路径（导出成功后回填，键级去重追加）")
     ap.add_argument("--no-start", action="store_true")
     args = ap.parse_args(argv)
     if not ensure_server(args.base, allow_start=not args.no_start):
@@ -190,6 +264,9 @@ def main(argv=None) -> int:
             data = json.loads(r.read().decode("utf-8"))
         counts[label] = data["results"][0]["data"][0]["row"][0]
     report.update({"status": "ok", "graph_counts_after": counts})
+    if args.backfill_out:  # D2：导出成功后回填证据链→图边（侧车，键级去重追加）
+        bf = append_backfill_sidecar(Path(args.backfill_out), evidence_edge_backfill(graph))
+        report["backfill"] = bf
     if args.out:
         Path(args.out).write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False))

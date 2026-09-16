@@ -1,0 +1,414 @@
+{
+ "exam": "W1-m-prometheus-上岗考试",
+ "date": "2026-09-17",
+ "model": "m-prometheus-14b.i1",
+ "threshold": "separation>=0.70",
+ "n_base": 12,
+ "n_calls": 56,
+ "parse_failure_rate": 0.0,
+ "separation": 0.5455,
+ "pass": false,
+ "good_mean": 80.0,
+ "bad_mean": 50.68,
+ "separation_by_variant": {
+  "char_swap": 0.3636,
+  "mismatch": 0.9167,
+  "fabricated": 0.6667,
+  "punct_mut": 0.1111
+ },
+ "decision_rule": "考过→judge 评分上岗；考不过→评分停用，低分路由改保守默认（可疑候选全入隔离）",
+ "trace": [
+  {
+   "base": "cand-relation-25167323dc46",
+   "variant": "char_swap",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-17d3d3599701",
+   "variant": "good",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-13ac2b5ec704",
+   "variant": "mismatch",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-28c3cd8aab22",
+   "variant": "fabricated",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-0ae5575ed143",
+   "variant": "punct_mut",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-1069ed274073",
+   "variant": "fabricated",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-024a5eb2b009",
+   "variant": "char_swap",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-17d3d3599701",
+   "variant": "fabricated",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-28c3cd8aab22",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-13704979c18f",
+   "variant": "char_swap",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-13704979c18f",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-024a5eb2b009",
+   "variant": "punct_mut",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-0f0405a8285b",
+   "variant": "char_swap",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-214a1e6922bb",
+   "variant": "good",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-0f0405a8285b",
+   "variant": "punct_mut",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-16bb29d7fce1",
+   "variant": "good",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-0ae5575ed143",
+   "variant": "char_swap",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-214a1e6922bb",
+   "variant": "char_swap",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-0ae5575ed143",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-13ac2b5ec704",
+   "variant": "fabricated",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-25167323dc46",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-0f0405a8285b",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-13704979c18f",
+   "variant": "punct_mut",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-relation-24f4401954ae",
+   "variant": "char_swap",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-24f4401954ae",
+   "variant": "punct_mut",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-28c3cd8aab22",
+   "variant": "char_swap",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-214a1e6922bb",
+   "variant": "fabricated",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-0f0405a8285b",
+   "variant": "fabricated",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-relation-24f4401954ae",
+   "variant": "good",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-16bb29d7fce1",
+   "variant": "punct_mut",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-0f0405a8285b",
+   "variant": "good",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-16bb29d7fce1",
+   "variant": "char_swap",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-0ae5575ed143",
+   "variant": "good",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-1069ed274073",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-13ac2b5ec704",
+   "variant": "punct_mut",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-024a5eb2b009",
+   "variant": "good",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-13ac2b5ec704",
+   "variant": "good",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-17d3d3599701",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-13704979c18f",
+   "variant": "fabricated",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-25167323dc46",
+   "variant": "fabricated",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-1069ed274073",
+   "variant": "char_swap",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-24f4401954ae",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-relation-16bb29d7fce1",
+   "variant": "mismatch",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-relation-16bb29d7fce1",
+   "variant": "fabricated",
+   "score": 0,
+   "verbatim": false,
+   "supports": false
+  },
+  {
+   "base": "cand-relation-25167323dc46",
+   "variant": "punct_mut",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-28c3cd8aab22",
+   "variant": "good",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-13704979c18f",
+   "variant": "good",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-relation-24f4401954ae",
+   "variant": "fabricated",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-024a5eb2b009",
+   "variant": "fabricated",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-relation-17d3d3599701",
+   "variant": "char_swap",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-0ae5575ed143",
+   "variant": "fabricated",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-214a1e6922bb",
+   "variant": "mismatch",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-entity-1069ed274073",
+   "variant": "good",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-024a5eb2b009",
+   "variant": "mismatch",
+   "score": 40.0,
+   "verbatim": true,
+   "supports": false
+  },
+  {
+   "base": "cand-relation-25167323dc46",
+   "variant": "good",
+   "score": 100,
+   "verbatim": true,
+   "supports": true
+  },
+  {
+   "base": "cand-entity-1069ed274073",
+   "variant": "punct_mut",
+   "score": 70.0,
+   "verbatim": true,
+   "supports": true
+  }
+ ]
+}

@@ -20,7 +20,17 @@
           "chapter": { "type": "integer", "minimum": 0 },
           "line": { "type": "integer", "minimum": 0 },
           "quote": { "type": "string", "minLength": 1 },
-          "file": { "type": "string", "minLength": 1, "description": "源文件路径（author-toolkit location 三元组之 file 位；可选，坐标 vol/chapter/line 已可定位时省略）" }
+          "file": { "type": "string", "minLength": 1, "description": "源文件路径（author-toolkit location 三元组之 file 位；可选，坐标 vol/chapter/line 已可定位时省略）" },
+          "graph_edge": {
+            "type": "object",
+            "description": "证据链→图边回填位（v1.4 漂移修正 D2；语义同基线 graphiti_edge，改名因 graphiti 运行时旁路、由导出器回填）。可选：记录层导出前自洽，导出后证据链闭合到图",
+            "required": ["edge_id", "valid_at", "invalid_at"],
+            "properties": {
+              "edge_id": { "type": "string", "minLength": 1, "description": "导出器派生的确定性边 id（三元组内容哈希）" },
+              "valid_at": { "type": ["integer", "null"], "minimum": 0, "description": "边生效章（←证据最早 chapter；null=不可判）" },
+              "invalid_at": { "type": ["integer", "null"], "minimum": 0, "description": "边失效章（supersede 时=后继生效章；活版本 null=开放区间仍有效）" }
+            }
+          }
         }
       }
     },
@@ -83,5 +93,5 @@
     "version": { "type": "integer", "minimum": 1 },
     "supersedes": { "type": ["string", "null"], "description": "前一版 record_id | null" }
   },
-  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3 契约层修订）：①evidence[].quote 即 author-toolkit location(file/line/quote) 三元组之原文引用位（v1.0 已有，v2.0 增可选 file 位成四锚）；②verified_against=story-systems 溯源三件套 path+SHA+验证时（必填，drift hook）；③observations=分类词表（basic-memory 15 类照录：summary/event/tone/technique/quote/significance/foreshadowing/arc/trait/manifestation/evolution/appearance/interpretation/atmosphere/example + CBB 自增 4 类：status_change/relation/alias/knowledge，分别对应状态债务/graphify 关系与知情双清单/别名归一吸收项）。状态仍二态 confirmed/provisional——用户裁决 2026-09-15 不增设第四态：cut 以 supersedes+归档覆盖，quarantine 走隔离区，candidate 仍为入库前状态（B1 纪律不变）。"
+  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3 契约层修订）：①evidence[].quote 即 author-toolkit location(file/line/quote) 三元组之原文引用位（v1.0 已有，v2.0 增可选 file 位成四锚）；②verified_against=story-systems 溯源三件套 path+SHA+验证时（必填，drift hook）；③observations=分类词表（basic-memory 15 类照录：summary/event/tone/technique/quote/significance/foreshadowing/arc/trait/manifestation/evolution/appearance/interpretation/atmosphere/example + CBB 自增 4 类：status_change/relation/alias/knowledge，分别对应状态债务/graphify 关系与知情双清单/别名归一吸收项）。状态仍二态 confirmed/provisional——用户裁决 2026-09-15 不增设第四态：cut 以 supersedes+归档覆盖，quarantine 走隔离区，candidate 仍为入库前状态（B1 纪律不变）。④（追加，v1.4 漂移修正 D2，2026-09-17）evidence[].graph_edge 可选回填位：导出器导出后回填边 id+valid_at/invalid_at，记录层导出前自洽——纯追加字段，旧记录零改动，评分器与金标零改动。"
 }

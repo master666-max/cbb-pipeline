@@ -33,8 +33,24 @@ import cbb_contracts  # noqa: E402
 from cbb_quarantine import QuarantineZone  # noqa: E402
 
 # Part XI 名义阈值（P2 由置信度校准器标定取代）
+# —— v1.4 漂移修正 W4（2026-09-17，U-C03.5）：三档显式化 + B3 再校准挂钩 ——
+# 语义（三档两边界，宁滥勿漏）：
+#   τ_confirmed  = 0.97：confirmed 参考带顶（B1：confirmed 永不因置信度单独达成，
+#                  须门2b/人工通道；此常量只作校准报告的带顶基准，不驱动路由晋级）；
+#   τ_provisional= 0.85：provisional 带地板（≥ 于此值入库 provisional）；
+#   τ_quarantine = 0.85：quarantine 边界（< 于此值路由隔离区 low_confidence）。
+#   τ_quarantine 与 τ_provisional 同值=设计决定（B1 保守：两带之间无灰区；
+#   调整属审核线裁决，B3 校准报告只呈建议，不自动改）。
 TAU_CONFIRMED = 0.97
 TAU_PROVISIONAL = 0.85
+TAU_QUARANTINE = 0.85
+THRESHOLDS = {
+    "tau_confirmed": TAU_CONFIRMED,
+    "tau_provisional": TAU_PROVISIONAL,
+    "tau_quarantine": TAU_QUARANTINE,
+    "corroboration_bump": 2.0,
+    "note": "confirmed 永不因置信度单独达成（B1）；调整=审核线建议制（W4/B3）",
+}
 CORROBORATION_BUMP = 2.0  # 一致重复每见一次独立佐证的置信度上调步长（CBB 定约，封顶 100）
 
 LIBRARIES = ("event", "character", "timeline", "relation", "setting", "foreshadow")
@@ -49,10 +65,15 @@ UNIQUE_CONSTRAINTS = (
 
 
 def route_by_confidence(confidence: float) -> str:
-    """置信度路由：confirmed 永不因置信度单独达成（门2b/人工通道缺席时的 B1 保守纪律）。"""
+    """三档显式路由（W4）：≥τ_provisional → provisional；<τ_quarantine → quarantine。
+    confirmed 永不因置信度单独达成（门2b/人工通道缺席时的 B1 保守纪律）。
+    τ_quarantine..τ_provisional 之间当前不可达（两阈值同值=设计决定）；若审核线
+    日后拉开两阈值，该区间的保守路由=隔离（宁滥勿漏）。"""
     if confidence >= TAU_PROVISIONAL:
         return "provisional"
-    return "quarantine"
+    if confidence < TAU_QUARANTINE:
+        return "quarantine"
+    return "quarantine"  # 灰区保守：隔离（当前不可达分支，W4 留位）
 
 
 def identity_key(record: dict) -> tuple:
@@ -434,15 +455,65 @@ class ThreeStateStore:
                 out["libraries"][lib] = counts
         return out
 
+    # ---- W4/B3 校准报告（段收口钩子；建议制，不自动改阈值） ----
+    def calibration_report(self) -> dict:
+        """库内置信分布+隔离区分布 vs 三阈值假设：
+        ① 分布：≥τ_confirmed / provisional 带 / 库内 <τ_quarantine 遗存计数；
+        ② 隔离：pending 按 group/subclass 计数（矛盾/低置信/超期各归其位=十查⑥输入）；
+        ③ 假设核对与机械建议（建议制呈报审核线，阈值不自动改）。"""
+        confs = []
+        for r in self.iter_records():
+            c = (r.get("provenance") or {}).get("extractor_confidence")
+            if isinstance(c, (int, float)) and not isinstance(c, bool):
+                confs.append(float(c))
+        dist = {
+            "records_with_confidence": len(confs),
+            "ge_tau_confirmed": sum(1 for c in confs if c >= TAU_CONFIRMED),
+            "provisional_band": sum(1 for c in confs if TAU_PROVISIONAL <= c < TAU_CONFIRMED),
+            "below_tau_quarantine_in_library": sum(1 for c in confs if c < TAU_QUARANTINE),
+            "min": min(confs) if confs else None,
+            "max": max(confs) if confs else None,
+            "mean": round(sum(confs) / len(confs), 4) if confs else None,
+        }
+        q_group = self.zone.by_group()
+        q_sub = self.zone.by_subclass()
+        checks, suggestions = [], []
+        if dist["below_tau_quarantine_in_library"]:
+            checks.append(f"库内存在 {dist['below_tau_quarantine_in_library']} 条 <τ_quarantine 置信记录"
+                          "（合并上调/历史口径遗存）——U-C09 R1 对账项")
+        total_q = sum(q_group.values())
+        if dist["records_with_confidence"]:
+            ratio = total_q / (total_q + dist["records_with_confidence"])
+            checks.append(f"隔离/入库比={ratio:.3f}（pending {total_q} vs 库内 "
+                          f"{dist['records_with_confidence']}）")
+            if ratio > 0.5:
+                suggestions.append("隔离占比>50%：若持续，建议审核线复核 τ_quarantine 或抽取规范置信校准表")
+        if dist["min"] is not None and dist["min"] >= TAU_PROVISIONAL and q_group.get("low_confidence"):
+            checks.append("路由边界执行一致：库内置信全部 ≥τ_provisional，低置信候选均已在隔离区")
+        return {
+            "thresholds": THRESHOLDS,
+            "library_confidence_distribution": dist,
+            "quarantine_by_group": q_group,
+            "quarantine_by_subclass": q_sub,
+            "assumption_checks": checks,
+            "suggestions": suggestions,
+            "decision_rule": "阈值调整=审核线建议制呈报，不自动改（W4/B3）",
+        }
+
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="CBB 三态+双轨合并存储（本体版 v2）")
     ap.add_argument("--root", required=True, help="库根目录")
     ap.add_argument("--stats", action="store_true", help="打印库统计")
+    ap.add_argument("--calibration", action="store_true",
+                    help="打印 W4/B3 校准报告（置信/隔离分布 vs 三阈值假设，建议制）")
     args = ap.parse_args(argv)
     store = ThreeStateStore(Path(args.root))
     if args.stats:
         print(json.dumps(store.stats(), ensure_ascii=False, indent=1))
+        return 0
+    if args.calibration:
+        print(json.dumps(store.calibration_report(), ensure_ascii=False, indent=1))
         return 0
     ap.print_help()
     return 0
