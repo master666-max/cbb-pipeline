@@ -364,6 +364,14 @@ def render_entrypoint(level: str) -> str:
 - 体检：`engine doctor --lib .`（memory/audit/ledger 三方对账，差异只报告）
 - 变异守卫：`guard --diff <候选> --lib .`（触碰基准黑名单即否决）；`guard --snapshot`/`--anchor` 锚定对账
 - 预演：`engine shadow --lib . --text "<变更描述>"`（只记日志不改状态——公理 G）
+
+## 演化授权（两轴模型 v1：L 能力轴 × E 信任轴）
+- E0 禁演（L0–L2 及一切无金标评测库）：law_params 只许人工调整。
+- E1 受限（L3–L5，需金标尺+人侧锚定+预算账本）：仅 law_params 演化+停摆监控。
+- E2 受控（L6–L7）：+链接重组（参数稳定门）+实测重要度（采纳日志过冷启动门槛）。
+- E3 半自主（L8）：变异引擎循宪章运行，`--yes` 人类令牌=元层签名。
+- E4 全栈（L9+三尺分离+锚定集）：内省信号作行层数据源（盲评隔离，不进 judge）；整理用真值标准。
+- 本库档位 L9 → 对应授权档与前提详见 `references/两轴模型与演化授权-v1.md`；超授权动作需人侧裁决并经 `guard`。
 """
 
 def render_skill_wrapup() -> str:

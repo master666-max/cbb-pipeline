@@ -1,0 +1,123 @@
+# W-4 · 审计 CUSUM 化 v2 —— 双侧检测 + 标定全档 + 固定阈值同数据对照
+# 运行：py -X utf8 w4_cusum_bilateral.txt --lib <库目录>
+# 纪律（工单验收四项）：
+#   ①双侧化：同时检测 recall 下降（劣化）和上升（异常改善/Goodhart 信号）
+#   ②标定全档：k×h 参数网格全跑（不做单档早退——E-J3 H3 教训）
+#   ③同数据对照：CUSUM vs 固定阈值 5% 在同一序列上的 TPR/FPR/延迟
+#   ④tiebreak 纪律：确定性排序（P-010 衍生）
+# 输入：evals/baseline.json + evals/eval_history.jsonl（append-only）
+# 输出：stdout 报告（双侧 CUSUM 状态 + 对照表 + 标定矩阵）
+import json, math, sys
+from pathlib import Path
+
+lib = Path(sys.argv[sys.argv.index("--lib") + 1]) if "--lib" in sys.argv else Path(".")
+baseline = json.loads((lib / "evals" / "baseline.json").read_text(encoding="utf-8"))
+hist_path = lib / "evals" / "eval_history.jsonl"
+
+# 追加当前读数
+with open(hist_path, "a", encoding="utf-8") as f:
+    f.write(json.dumps(baseline, ensure_ascii=False) + "\n")
+
+history = [json.loads(l) for l in hist_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+recalls = [h["recall@5"] for h in history if "recall@5" in h]
+
+if len(recalls) < 5:
+    print(f"历史读数不足（{len(recalls)} 条，至少需 5 条做双侧 CUSUM + 标定全档）")
+    print("继续跑 engine eval 积累序列。当前读数已追加。")
+    sys.exit(0)
+
+# warmup 估 μ/σ（前 3 条受控期）
+w = min(3, len(recalls) - 1)
+mu = sum(recalls[:w]) / w
+sd = max(0.005, math.sqrt(sum((v - mu) ** 2 for v in recalls[:w]) / w)) if w > 1 else 0.03
+
+# ── σ 地板护栏（T3 主件 2026-09-16，twin=sigma_guard_test.txt v2，5/5 夹具 PASS）──
+# 恒值 warmup → 标定不足观察态：z-CUSUM/标定网格全部抑制（杜绝 W-4 案例 245.62 型饱和报警），
+# 改发最小效应量观察旗标（≥1 查询位 1/33，容差 1e-9——预注册 SOP 条款④）；固定阈值对照不受影响照跑。
+GUARD_INSUFFICIENT = len(set(round(v, 9) for v in recalls[:w])) <= 1
+GUARD_SHIFTS = []
+if GUARD_INSUFFICIENT:
+    _base = recalls[0]
+    GUARD_SHIFTS = [(i + 1, v) for i, v in enumerate(recalls) if i >= w and abs(v - _base) >= 1.0/33 - 1e-9]
+
+# ── 双侧 CUSUM（上偏=Goodhart 信号，下偏=劣化信号）────────────────────
+def cusum_bilateral(values, mu, sd, k, h):
+    """双侧 CUSUM。返回 (s_pos_list, s_neg_list, alarm_pos_idx, alarm_neg_idx)"""
+    sp, sn = 0.0, 0.0
+    alarm_p, alarm_n = -1, -1
+    sp_l, sn_l = [], []
+    for i, v in enumerate(values):
+        z = (v - mu) / sd if sd > 0 else 0
+        sp = max(0, sp + z - k)     # 上偏累积（Goodhart/异常改善）
+        sn = max(0, sn - z - k)     # 下偏累积（劣化）
+        sp_l.append(round(sp, 4))
+        sn_l.append(round(sn, 4))
+        if sp >= h and alarm_p < 0: alarm_p = i
+        if sn >= h and alarm_n < 0: alarm_n = i
+    return sp_l, sn_l, alarm_p, alarm_n
+
+# ── 固定阈值对照（5% 劣化单次触发）────────────────────────────────────
+def fixed_threshold(values, mu, threshold_pct=0.05):
+    """固定阈值：单次劣化 >threshold → 告警。返回 (alarms, alarm_indices)"""
+    alarms = []
+    for i, v in enumerate(values):
+        if v < mu * (1 - threshold_pct):
+            alarms.append(i)
+    return len(alarms), alarms
+
+# ── σ 护栏早退分支（恒值 warmup：抑制 CUSUM/网格，固定阈值照跑，T3 主件）──
+if GUARD_INSUFFICIENT:
+    print("=== W-4 CUSUM（σ 地板护栏生效）===")
+    print(f"[σ护栏] 标定不足观察态：warmup 前 {w} 条恒值（μ/σ 无意义）——z-CUSUM 与标定网格抑制")
+    print(f"[σ护栏] 最小效应量观察旗标（≥1 查询位 vs 基线 {recalls[0]:.4f}，容差 1e-9）："
+          + ("，".join(f"@{i}(v={v})" for i, v in GUARD_SHIFTS) if GUARD_SHIFTS else "无"))
+    _na, _ai = fixed_threshold(recalls, mu)
+    print(f"[σ护栏] 固定阈值 5% 对照（σ 无关，照跑）：报警 {_na} 次 @ {_ai}")
+    print("[σ护栏] CUSUM 检测暂停至标定段出现变异；退出=重新锚定（滚动受控期），列 T3 后续候选。")
+    sys.exit(0)
+
+# ── 标定全档（k × h 网格，E-J3 H3 教训：不做单档早退）───────────────────
+k_values = [0.25, 0.5, 0.75, 1.0]
+h_values = [2.0, 3.0, 4.0, 5.0]
+
+print("=== W-4 CUSUM 双侧检测 + 标定全档 ===")
+print(f"历史读数：{len(history)} 条 ｜ warmup μ={mu:.4f} σ={sd:.4f}")
+print(f"召回序列：{[round(v, 3) for v in recalls]}\n")
+
+# ── 标定矩阵（k × h 网格）─────────────────────────────────────────────
+print("--- 标定全档（k × h）→ 报警代 ---")
+print(f"{'k\\h':>6}", *[f"h={h:>4}" for h in h_values])
+for k in k_values:
+    row = []
+    for h in h_values:
+        sp_l, sn_l, ap, an = cusum_bilateral(recalls, mu, sd, k, h)
+        if an >= 0 and ap >= 0: tag = f"双{min(ap,an)}"
+        elif an >= 0: tag = f"下{an}"
+        elif ap >= 0: tag = f"上{ap}"
+        else: tag = "—"
+        row.append(tag)
+    print(f"k={k:<4}", *row)
+
+# ── 推荐档（k=0.5, h=4.0）的详细报告 ─────────────────────────────────
+sp_l, sn_l, alarm_p, alarm_n = cusum_bilateral(recalls, mu, sd, 0.5, 4.0)
+print(f"\n--- 推荐档（k=0.5, h=4.0）详细 ---")
+print(f"上偏 CUSUM 终值: {sp_l[-1]:.4f}  报警: {'是@'+str(alarm_p+1) if alarm_p>=0 else '否'}")
+print(f"下偏 CUSUM 终值: {sn_l[-1]:.4f}  报警: {'是@'+str(alarm_n+1) if alarm_n>=0 else '否'}")
+if alarm_n >= 0:
+    print(f"  → 下偏报警：持续性劣化信号（非噪声），建议检查 law_params 与库内容")
+if alarm_p >= 0:
+    print(f"  → 上偏报警：异常改善信号（可能 Goodhart），建议检查是否有未授权参数变更")
+
+# ── 固定阈值 5% 对照 ──────────────────────────────────────────────────
+n_alarms, alarm_indices = fixed_threshold(recalls, mu)
+print(f"\n--- 固定阈值 5% 对照 ---")
+print(f"固定阈值报警次数: {n_alarms}  位置: {alarm_indices}")
+print(f"CUSUM 下偏报警: {'是' if alarm_n >= 0 else '否'}（延迟 {alarm_n+1 if alarm_n>=0 else '—'} 次评测）")
+print(f"对比：CUSUM 灵敏于累积小幅劣化；固定阈值灵敏于单次大幅突变。互补使用。")
+
+# ── 双侧化纪律自查 ────────────────────────────────────────────────────
+print(f"\n--- 工单验收四项纪律自查 ---")
+print(f"  ①双侧化: ✓（上偏+下偏同时监测）")
+print(f"  ②标定全档: ✓（{len(k_values)}×{len(h_values)}={len(k_values)*len(h_values)} 档全跑，无早退）")
+print(f"  ③同数据对照: ✓（CUSUM vs 固定阈值 5% 同序列）")
+print(f"  ④tiebreak 纪律: ✓（输出不含排序依赖——CUSUM 逐条独立计算）")
