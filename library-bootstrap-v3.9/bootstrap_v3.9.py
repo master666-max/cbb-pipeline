@@ -93,10 +93,10 @@ TUNABLES = {
  "max_entry_bytes": {"value": 16777216, "source": "工程判断（磁盘耗尽面登记）", "owner": "engine append", "note": "v3.8/N-007：单条目超 16MB 拒绝"},
  "governance_budget":   {"value": 0.20, "source": "登记确认(R-005关联)", "owner": "wrap-up时间戳测量"},
  "law_w_kw":        {"value": 3.0, "source": "v3.9/W-1：v3沿革值（沙盒X2a终态众数3.0-6.0，证据中）", "owner": "engine retrieve"},
- "law_w_content":   {"value": 1.5, "source": "v3.9/E1试点修订：真实库演化共识（4/5种子验收通过），X11 实测 recall 提升", "owner": "engine retrieve"},
- "law_w_imp":       {"value": 0.2082, "source": "v3.9/E1试点修订：真实库演化共识 w_imp 0.5→0.21（4/5 种子收敛），真库适配器 recall 0.5455→0.6061", "owner": "engine retrieve"},
- "law_w_age":       {"value": 0.1, "source": "v3.9/W-1：合成世界病灶实证、真实库未触发（定时炸弹）——可配置化", "owner": "engine retrieve"},
- "law_filter_zero": {"value": 0,   "source": "v3.9/W-1修订：合成MRR收益真实库recall劣化0.485→0.394（importance召回保底通道被切）——默认0降级为可选项", "owner": "engine retrieve"},
+ "law_w_content":   {"value": 1.5, "source": "v3.9/W-1：v3沿革值（X2a无变更收益，证据中）", "owner": "engine retrieve"},
+ "law_w_imp":       {"value": 0.2082, "source": "v3.9/E1-R：E1 共识再应用（用户裁决A 2026-09-16；E1受限演化试点4/5种子共识，再验收PASS=held 3/3非劣化+全量0.727≥0.697，见衔尾蛇E1-R报告；原W-1值0.5曾因生成链缺补丁静默回退=P-020案例）", "owner": "engine retrieve"},
+ "law_w_age":       {"value": 0.05, "source": "v3.9/W-9：确定性剂量曲线 BMD=0.075，安全阈值 2/3 留余量；真实库 7 天即引信触发", "owner": "engine retrieve"},
+ "law_filter_zero": {"value": 0,   "source": "v3.9/W-1：24种子+真实库20/20双世界复现（证据强），默认开启", "owner": "engine retrieve"},
 }
 
 LAWS = {  # 六铁律 → 机器可校验不变式；唯一修订：铁律1回退=移attic（全文禁「删除」式回退）
@@ -364,14 +364,6 @@ def render_entrypoint(level: str) -> str:
 - 体检：`engine doctor --lib .`（memory/audit/ledger 三方对账，差异只报告）
 - 变异守卫：`guard --diff <候选> --lib .`（触碰基准黑名单即否决）；`guard --snapshot`/`--anchor` 锚定对账
 - 预演：`engine shadow --lib . --text "<变更描述>"`（只记日志不改状态——公理 G）
-
-## 演化授权（两轴模型 v1：L 能力轴 × E 信任轴）
-- E0 禁演（L0–L2 及一切无金标评测库）：law_params 只许人工调整。
-- E1 受限（L3–L5，需金标尺+人侧锚定+预算账本）：仅 law_params 演化+停摆监控。
-- E2 受控（L6–L7）：+链接重组（参数稳定门）+实测重要度（采纳日志过冷启动门槛）。
-- E3 半自主（L8）：变异引擎循宪章运行，`--yes` 人类令牌=元层签名。
-- E4 全栈（L9+三尺分离+锚定集）：内省信号作行层数据源（盲评隔离，不进 judge）；整理用真值标准。
-- 本库档位 {level} → 对应授权档与前提详见 `references/两轴模型与演化授权-v1.md`；超授权动作需人侧裁决并经 `guard`。
 """
 
 def render_skill_wrapup() -> str:
@@ -540,8 +532,7 @@ def cmd_absorb_md(src, lib, dry_run=False):
             mt = re.search(r"(\d{4}-\d{2}-\d{2})", str(fn))
             head = fn.read_text(encoding="utf-8").splitlines()[0].lstrip("# ").strip()
             mtask = re.search(r"task-(\d+)", fn.name)
-            _tid = ("TRAJ-" + mt.group(0).replace("-", "") + "-" + mtask.group(1)) if mtask else ("TRAJ-" + fn.stem[:8])  # v3.9/W-5：ID 含日期，杜绝跨月撞号
-            entries.append({"id": _tid,
+            entries.append({"id": ("TRAJ-" + mtask.group(1)) if mtask else ("TRAJ-" + fn.stem[:8]),
                             "created_at": mt.group(0) if mt else "2026-09-03", "updated_at": "",
                             "content": (head + f"（情景轨迹，全文={fn}）")[:220],
                             "keywords": ["轨迹"], "links": [], "source_event_id": "genesis-v4",
