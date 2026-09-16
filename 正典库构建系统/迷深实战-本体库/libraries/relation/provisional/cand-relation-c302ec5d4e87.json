@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "身份同一指认(涡波记忆统合)",
+  "subject": "玛利亚·迪斯特拉斯"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1086,
+   "quote": "玛利亚是我的妹妹！？我怎么能没去怀疑，怎么能没察觉到啊！？我对妹妹(阳滝)的心意就只有这种程度吗！啊啊、啊啊啊、我这是何等的不堪！给两人的身份搞错也太对不起她们了吧！！",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 1119,
+   "quote": "但『现实』却是，我和妹妹(阳滝)分别，夺走了搭档(缇亚)的梦想，没能帮到自己的同伴(拉丝缇娅拉)，未能和守护者(阿尔缇)还有玛利亚互相理解而敌对，没有和任何人结成相互信任的关系……",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "涡波记忆统合后惊呼玛利亚=妹妹并自责两人身份搞错；梦的世界记为妹妹(玛利亚)vs现实分别记为妹妹(阳滝)——双名不自动合并（判例1），实体合并归 R4+审核线（STATE【待确认】①正证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c302ec5d4e87",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

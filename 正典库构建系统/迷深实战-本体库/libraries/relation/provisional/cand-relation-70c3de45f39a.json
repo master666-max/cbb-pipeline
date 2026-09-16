@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "芬里尔·阿雷亚斯",
+  "rel_type": "战胜后身份揭露",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 489,
+   "quote": "「在战胜了『剑圣』芬里尔·阿雷亚斯之后，他自己堂堂正正地作出了宣言。」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 522,
+   "quote": "诺文在较早的时点上就能跟作为『最强』的格连以及『剑圣』对决。并且他现在已经将那两人都打倒，取胜晋级了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "胜『剑圣』后主动堂堂正正宣言揭露身份（非濒死怪物化）——胜『最强』格连+超『剑圣』双达成即弃掩藏"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-70c3de45f39a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

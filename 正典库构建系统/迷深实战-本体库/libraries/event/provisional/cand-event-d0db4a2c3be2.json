@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "entities": [
+   "古尔亚德国",
+   "拉丝缇娅拉",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "过去回想",
+  "name": "拉丝缇娅拉战前流亡与修行",
+  "tick": 42,
+  "time_verbatim": "圣诞祭后～舞斗大会前（口述）"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 12,
+   "quote": "圣诞祭那天魔力丧失殆尽，还要一边治疗负伤的缇亚一边逃亡。甩掉弗茨亚茨和瓦尔德两国派出的追兵，潜伏于南方的古尔亚德国。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 52,
+   "text": "圣诞祭魔力丧失+治疗负伤缇亚+逃亡→甩掉弗茨亚茨与瓦尔德两国追兵→潜伏南方古尔亚德→竭力阻止追帕林库洛的缇亚+把握涡波动向→迷宫修行→千钧一发报名大会——基本无喘息空暇，代价残留体内"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d0db4a2c3be2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

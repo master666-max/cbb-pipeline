@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 52,
+  "entities": [
+   "帕林库洛",
+   "相川涡波"
+  ],
+  "name": "涡波的秘密计划(防她察觉)",
+  "note": "对帕林库洛计划内容不明：跟谁也不能说·连深入考虑也不行（被她注意到的可能/她有冷酷牺牲斯诺与玛利亚的觉悟/帕林库洛打造的『牢狱』不天真/斯诺莉帕诺文三人会挡在面前）——决赛=计划第一步",
+  "payoff_chapter": null,
+  "setup_chapter": 52,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1230,
+   "quote": "「──那不能说。抱歉，拉丝缇娅拉。」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 1233,
+   "quote": "因为无论哪个都有被·她·注·意·到的可能。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 52,
+   "text": "密令已传达给拉丝缇娅拉但内容未向读者揭示"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-7dee42b3976e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

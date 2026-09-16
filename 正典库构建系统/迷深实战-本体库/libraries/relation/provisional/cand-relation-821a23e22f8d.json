@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "动机诱导(妹妹触发参战)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 586,
+   "quote": "「——你·最·重·要·的·妹·妹·怎·么·办？」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 583,
+   "quote": "「大哥哥，还差一点了哦。所以再加把劲。把你最后的力量全都使出来。如果你这时候不参赛的话，记忆就回不来了哦？就回不到原来的世界了哦？这样好吗？如果不回去的话——」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "弃权危机耳边低语：不参赛记忆回不来/回不到原来的世界/『你·最·重·要·的·妹·妹·怎·么·办？』+送别叮嘱『不是为了任何人，而是为了自己的妹妹参加比赛』——以妹妹为操纵杠杆"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-821a23e22f8d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

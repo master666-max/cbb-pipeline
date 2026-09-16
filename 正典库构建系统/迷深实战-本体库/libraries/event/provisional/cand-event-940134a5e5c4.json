@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "『诅咒』",
+   "手环",
+   "暗魔法『不罚的大英雄』",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "机制发动",
+  "name": "诅咒最终防卫发动(不罚的大英雄)",
+  "tick": 42,
+  "time_verbatim": "准决赛Checkmate瞬间"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 748,
+   "quote": "唯一的方向，那就是，",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 749,
+   "quote": "——守·护·这·个·手·环。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 765,
+   "quote": "『——好了，这样条件就凑齐了。来吧，涡波小哥。为了你最爱的妹妹，去把面前的敌人给打倒吧？』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 52,
+   "text": "暗属性魔力自手环泄露浸透脊髓→自问自答收束『守·护·这·个·手·环』→童年病床誓言闪回（消毒液/最爱的她）→全部术式集中认识阻碍+10.00→手环龟裂（代用品本质/发动不可阻止）；黑暗深处愉悦声音煽动『为了你最爱的妹妹，去把面前的敌人给打倒吧…就连世界也一并葬送！』（说话者未点名，疑似帕林库洛）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-940134a5e5c4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

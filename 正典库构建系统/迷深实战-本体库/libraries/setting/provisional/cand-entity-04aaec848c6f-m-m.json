@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entity_type": "组织",
+  "name": "史诗探索者"
+ },
+ "evidence": [
+  {
+   "chapter": 29,
+   "line": 42,
+   "quote": "这里是位于劳拉维亚中央的建筑物、公会『史诗探索者』的本部。",
+   "vol": 1
+  },
+  {
+   "chapter": 37,
+   "line": 354,
+   "quote": "正如『史诗探索者/搜求英雄谭之人（EpicSeeker）』这个名字所示，这是个以探寻英雄为目的的公会。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 5,
+   "quote": "「——那么，从西面登场的、乃是公会『史诗探索者』队伍！以内行人都认识的那位传说中的少女、斯诺·沃克为领队，是一支非常万能安定的队伍！",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 19,
+   "quote": "以副会长斯诺·沃克为首，身边伴以百战不殆的战士和魔法使。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 29,
+   "text": "劳拉维亚国直辖公会（本部位于劳拉维亚中央）：受国家之托拘束/研究主角与玛利亚（『实验动物』处置）；帕林库洛亦出没其中（『监视』着主角）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 4.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-04aaec848c6f",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-04aaec848c6f-m",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-04aaec848c6f-m-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-04aaec848c6f-m",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 3
+}

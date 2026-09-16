@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "相川涡波",
+   "舞斗大会",
+   "艾尔米拉德·希达尔克"
+  ],
+  "instant": null,
+  "kind": "对决",
+  "name": "涡波vs艾尔米拉德北区第四轮对决",
+  "tick": 41,
+  "time_verbatim": "舞斗大会第三天·北区第四轮（准准决赛）"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 166,
+   "quote": "「那、那个，也就是说要将『英雄的名誉』和『跟斯诺大人之间的婚约权』作为赌注进行一对一的战斗是吗？现在就开始并且无规则？」",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 169,
+   "quote": "『一之月联合国综合骑士团舞会』北区第四轮比赛，现在开始！！",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 51,
+   "text": "赌注=英雄的名誉+斯诺婚约权的无规则一对一：艾尔米拉德魔法剑技一体（冰桩/紫电/强风/水/火矢/Impulse 道具连携）vs 涡波耐久硬吃战术（左手捏碎火矢）→断剑丢剑→互殴→涡波生命削减发动『过密次元的真冬』→下巴一击终结；主持宣言开赛"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-02f29d9482a9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

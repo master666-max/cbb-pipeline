@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "状态",
+  "name": "涡波身体恶化至极限",
+  "tick": 41,
+  "time_verbatim": "舞斗大会第三天朝"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 13,
+   "quote": "「……糟透了。又想吐头又痛，还天旋地转的。意识也很模糊，感觉什么都搞不懂了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 15,
+   "quote": "视觉机能几乎作废，我现在的视野有如淹没在水中。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 51,
+   "text": "彻夜 Dimension 代班+连战累积：想吐头痛天旋地转/视野如水中至深海/平衡丧失/意识时断时续；自评昨天比赛开始时点已达极限"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9db276f407b1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

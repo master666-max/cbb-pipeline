@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "沃克家",
+  "rel_type": "逃离失败(追兵连环阴谋)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 271,
+   "quote": "「……事情很单纯。一开始就没有能成功逃离的可能。在这世上，一个人的力量什么都做不到。沃克家派出的追兵让我连喘口气的空暇都没有。在金钱的支持下一连串的阴谋接连袭来。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 275,
+   "quote": "「在那所谓不放弃的过程中，你知道死了多少人吗！？敌人也好同伴也好，哗啦哗啦地死了一大片一大片啊……？因为我很强所以死不了。虽然我死不了……但是跟我一起出逃的朋友，带着善意来帮忙的人，都轻易地死掉了！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "过去出逃史口述：一开始就没有成功可能/追兵不给喘息/金钱支持下的连环阴谋/一起出逃的朋友与善意帮忙者轻易死掉/『因为我很强所以死不了』→被悲惨形式带回（一两年前格连向拉丝缇娅拉提及）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9ff97911ddc2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

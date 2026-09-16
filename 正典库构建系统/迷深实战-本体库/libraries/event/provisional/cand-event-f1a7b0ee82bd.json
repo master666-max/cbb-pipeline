@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "『过密次元的真冬』",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "状态自觉",
+  "name": "涡波初次目视自身HP削减表示",
+  "tick": 41,
+  "time_verbatim": "第四轮对决中"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 246,
+   "quote": "第一次看到的表示。某人的最大HP在削减。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 250,
+   "quote": "但是，我的身体却明白这是什么意思。我现在是在削减自己的生命使用魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 51,
+   "text": "生命削减发动中状态栏表示初次可见（HP102/3160→95→89…某人的最大HP在削减）；成因不引译注，正文仅记『第一次看到的表示』与自我理解=削减生命使用魔法"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f1a7b0ee82bd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

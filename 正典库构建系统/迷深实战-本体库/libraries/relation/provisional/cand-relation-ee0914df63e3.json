@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "败北(精神攻防护送昏厥)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 461,
+   "quote": "「好嘞~胜利~！！虽然是个比较卑鄙的胜利就是了！」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 482,
+   "quote": "听说并没有下杀手，但是将斯诺打成重伤送进医院了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "限定龙化全开vs加护丧失拉丝缇娅拉：恋爱自觉动摇瞬间膝击+锁颈昏厥——『比较卑鄙的胜利』（精神攻击防夜袭+束缚行动）；ch50 结婚赌约兑现拉丝缇娅拉胜；斯诺重伤入院未下杀手"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ee0914df63e3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

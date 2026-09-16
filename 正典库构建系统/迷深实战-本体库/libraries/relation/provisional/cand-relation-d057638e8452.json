@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "圣人缇娅拉",
+  "rel_type": "容器身份丧失(加护补正解除)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 14,
+   "quote": "心中也有不安。因为圣诞祭的仪式，束缚着我的大量魔法都被解除了。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 15,
+   "quote": "这同时也意味着我丧失了大量的『加护』和『补正』。举例而言，如今的我没有办法像以前一样无视恐惧心理进行战斗了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "圣诞祭仪式解除束缚她的大量魔法→丧失大量『加护』与『补正』（例：无法再无视恐惧心理战斗）——战力刻度重大变更"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d057638e8452",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

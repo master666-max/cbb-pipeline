@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 51,
+  "entities": [
+   "『龙之咆哮』",
+   "拉丝缇娅拉",
+   "斯诺·沃克"
+  ],
+  "name": "西区斯诺龙化激战(下章回收)",
+  "note": "龙之咆哮余波=斯诺vs拉丝缇娅拉队激战进行中（能产生这等余波）——ch0052『拉丝缇娅拉・弗茨亚茨的战斗』直接回收；缇亚误射致死风险+下杀手选项均在位",
+  "payoff_chapter": null,
+  "setup_chapter": 51,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 310,
+   "quote": "这也就意味着，现在双方正在进行能产生出这等余波的激战。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 51,
+   "text": "章末悬念：余波级咆哮意味着西区正在进行超规格激战"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-8c231326948d",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

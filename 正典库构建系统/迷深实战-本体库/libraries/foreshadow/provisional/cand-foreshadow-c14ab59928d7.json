@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 52,
+  "entities": [
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "name": "斯诺重伤后的动向",
+  "note": "回复魔法无法一朝一夕痊愈的重伤+拉丝缇娅拉说服生效（老实不少/能一个人解决自己的烦恼）vs 精神攻击束缚必要论（战败自暴自弃夜袭可能性）——斯诺线下一节点待回收；涡波欲亲谈被莉帕否定",
+  "payoff_chapter": null,
+  "setup_chapter": 52,
+  "tier": "次要"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 513,
+   "quote": "「嗯——我觉得还是不要想着跟斯诺姐姐谈话比较好哦？就凭大哥哥现在这种状态，不可能好好对话的啊。而且斯诺姐姐因为拉丝缇娅拉姐姐的说服，已经老实了不少哦……？说服的效果好到放着她不管她也能一个人解决自己的烦恼的地步了。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 52,
+   "text": "涡波『要是斯诺来接触了，我去跟她说…说不定能互相理解』vs 莉帕『不要想着跟斯诺姐姐谈话比较好』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-c14ab59928d7",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "密令传达(计划内容不明)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1269,
+   "quote": "「接下来我说的话请你好好听清楚，拉丝缇娅拉。为了能平安闯过『舞斗大会』，有不少事希望你去做。」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 1231,
+   "quote": "因为无论哪个都有被·她·注·意·到的可能。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "对帕林库洛秘密计划：跟谁也不能说·连深入考虑也不行（被她察觉可能/她有牺牲斯诺玛利亚的觉悟）；拉丝缇娅拉主张立刻追讨帕林库洛被涡波以不重蹈阿尔缇覆辙劝止——『拜托你相信我。因为我也相信着你』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a057712f0cca",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

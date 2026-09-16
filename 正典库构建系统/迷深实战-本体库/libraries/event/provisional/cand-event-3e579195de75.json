@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "『诅咒』",
+   "手环",
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "双手环同时破碎与诅咒消失",
+  "tick": 42,
+  "time_verbatim": "准决赛终局"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1016,
+   "quote": "碎片飞舞，涡波露出得意的笑容。但他的『手环』下场也一样。我挥下的重拳连同他的左臂一起重创，『手环』被砸的粉碎。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 1023,
+   "quote": "此时此刻，所有苦难的源头终于被粉碎。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 52,
+   "text": "空中互掐坠落摔地：涡波握碎拉丝缇娅拉手环（肌肉崩裂也不停）与拉丝缇娅拉最后一击砸碎涡波手环（连同左臂）几乎同时；涡波胜利笑容转绝望；紫色魔力消散；拟神之眼确认诅咒消失=所有苦难源头被粉碎"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3e579195de75",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

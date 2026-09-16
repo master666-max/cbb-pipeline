@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 52,
+  "entities": [
+   "技能『???』",
+   "相川涡波"
+  ],
+  "name": "技能『???』隐患存续",
+  "note": "封印消失但混乱7.48残留→技能『???』隐患还在（未发动原因=无生命危险或精神卫生必要判定）；MP空/HP充足/体力与HP无关确认——状态异常雷未拆",
+  "payoff_chapter": null,
+  "setup_chapter": 52,
+  "tier": "次要"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1141,
+   "quote": "只不过，『封印』虽然消失，但『混乱』还留着，应该认为技能『???』的隐患还在。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 52,
+   "text": "拉丝缇娅拉判断当前涡波『可能接下来马上就要投入战斗』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-732da650daa8",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

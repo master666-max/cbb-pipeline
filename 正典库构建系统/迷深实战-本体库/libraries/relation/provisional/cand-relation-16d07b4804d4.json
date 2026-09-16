@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "误射致死风险(拉丝缇娅拉评估)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 33,
+   "quote": "「讲道理，会让斯诺毙命的场合，肯定就是缇亚没拿捏好的情况啊。在我下达指示之前你可千万不要用全力释放魔法打过去哦。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "会让斯诺毙命的场合=缇亚没拿捏好；指示前禁止全力释放魔法（迪亚布罗·西斯火力刻度侧证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-16d07b4804d4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

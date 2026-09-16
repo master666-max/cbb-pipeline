@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "自我定位(同伴兼搭档)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 284,
+   "quote": "「……我不是『英雄』。我能满怀自信地断言的，顶多只有我是斯诺的同伴兼搭档而已。所以，我能做到的就只有作为搭档待在斯诺的身边罢了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "对艾尔米拉德自白：『我能满怀自信地断言的，顶多只有我是斯诺的同伴兼搭档而已』（拒英雄身份）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a4396064f298",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

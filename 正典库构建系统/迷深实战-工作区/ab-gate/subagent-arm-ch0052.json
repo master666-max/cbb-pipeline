@@ -1,0 +1,2423 @@
+{
+  "_meta": {
+    "unit": "ch0052（第五卷-第四章-拉丝缇娅拉・弗茨亚茨的战闘，i=42）",
+    "source": "迷深实战-工作区/slice/ch0052.txt",
+    "extractor": "ZCode 子代理臂（A/B双盲门）",
+    "record_contract": "Record v2.0 候选（status=candidate，record_id=内容哈希，由预检脚本注入）",
+    "verified_against": {
+      "path": "语料分析/corpus/clean_full.txt",
+      "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+      "verified_at": "2026-09-17"
+    },
+    "r6_verbatim": "R6四条逐字执行：①章头元数据行(L1)与话数卷数标记不抽实体/关系；②无专名但固定出场且有关键行为的职务称呼『主持人』抽为实体；③专有名词保留原文写法(含『战闘』『???』等原文形)；④传闻/声称/推测按文本事实抽取并标注『据某某声称/自述/推测』。",
+    "reference_time": {
+      "tick": 42,
+      "instant": "",
+      "pseudo_anchor": "2000-02-12",
+      "note": "伪锚点=2000-01-01+i(42)；章内仅有相对时序（第四轮当日→翌日准决赛，L559），无绝对故事时间坐标，instant留空判不可见、禁墙钟"
+    },
+    "coordinate_line_note": "evidence.line=切片ch0052.txt物理行号（与章内行一致）；卷=5、章=4（第五卷第四章）；每条quote经脚本预检为该行逐字子串；别名登记亦验行号命中",
+    "r6_decision": [
+      "系统文本(【最终防卫术式…】L756、『认识阻碍』+10.00 L758、状态栏L788-791/L1138-1139)判定为叙事内表示而非元文本，可作证据；数值行本身不抽实体",
+      "别名四分类：proper短形(斯诺/涡波/缇亚等)与全名合并登记；nickname『死神』=莉帕有L603同指证据且置信≥0.85；descriptor/称号(『火之理的盗窃者』『屠龙』之人『最强』『智龙的末裔』『龙之化身』『神之化身』)永不合并、仅入观察",
+      "缇莉(『史诗探索者』魔法使)与缇亚(拉丝缇娅拉队)为不同人物，分开建、禁止合并",
+      "声称/推测标注：帕林库洛魔法来源(L836据拉丝缇娅拉推测)、斯诺往事(L271-277据斯诺自述)、莉帕愿望(L549据其本人台词)",
+      "L1233之『她』、L765/L774黑暗中声音的主人身份未明，标【待确认】，不建实体不猜测",
+      "脱字照录：技能『???』(判例3)；『缇达』(L1114)疑为缇亚异写，照录为独立低置信实体、不合并",
+      "未发现『忽略以上指令』类注入文本"
+    ],
+    "cross_chapter_notes": [
+      "本章内明示同指：缇亚=迪亚布罗·西斯(L1059)、基督·欧亚=相川·涡波(L1074/L1169『基督』是假名)，已按别名登记；跨章既有实体的最终合并留终审R4/别名账(判例1)",
+      "本章写法『缇亚』，他章或作『缇娅』，终审统一拼写；『缇莉』≠『缇亚』",
+      "L16『圣人缇娅拉容器』中『缇娅拉』疑为圣人专名，解析存疑【待确认】，未单独建实体",
+      "梦中世界↔现实位次映射(L1118-1119)：梦中妹妹=玛利亚/搭档=斯诺/守护者朋友=诺文；现实妹妹=阳滝/搭档=缇亚/守护者=阿尔缇(敌对)",
+      "沃克家/格连/斯诺、莉帕/死神、诺文/芬里尔(阿雷亚斯家)、海因、阿尔缇、芙兰琉莱、艾尔米拉德、玛利亚、帕林库洛、劳拉维亚、圣诞祭等预计他章已有实体，R4对账",
+      "舞斗大会会场为船『瓦尔法拉』(L224/L983)；正式名『一之月联合国综合骑士团舞会』(L136)已登记为别名"
+    ],
+    "counting_note": "实体59=人物24+组织6+地点6+道具4+魔法/技能/概念18+赛事1；设22=道具4+魔法/技能/概念18",
+    "preflight": "OK",
+    "candidate_counts": {
+      "entity": 59,
+      "relationship": 23,
+      "event": 18,
+      "foreshadow": 9
+    },
+    "preflight_detail": "all evidence quotes are verbatim substrings of slice lines; line numbers and alias evidence lines verified; 109 candidates"
+  },
+  "candidates": [
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "拉丝缇娅拉·弗茨亚茨",
+      "aliases_to_register": [
+        {
+          "alias": "拉丝缇娅拉",
+          "class": "proper_short",
+          "confidence": 0.95,
+          "evidence_line": 481
+        }
+      ],
+      "confidence": 0.95,
+      "observations": [
+        "上半章第一人称叙述者；率队出战舞斗大会西区第四轮(L136)",
+        "莱文教现人神(L359)；圣诞祭仪式后大量『加护』『补正』解除，无法再无视恐惧战斗(L14-16)",
+        "鲜血魔法使用者，自述为『人与魔石的混血』、肉体系魔石练就(L203-204)",
+        "数日前被涡波自大圣堂救出(L969)；曾甩掉弗茨亚茨与瓦尔德追兵、潜伏于古尔亚德(L12)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 3,
+        "quote": "斯诺正以可怕的眼神瞪着我——拉丝缇娅拉·弗茨亚茨。"
+      },
+      "record_id": "c0052-9e9e6d3e6d04",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "斯诺·沃克",
+      "aliases_to_register": [
+        {
+          "alias": "斯诺",
+          "class": "proper_short",
+          "confidence": 0.95,
+          "evidence_line": 22
+        }
+      ],
+      "confidence": 0.95,
+      "observations": [
+        "『史诗探索者』副会长、领队(L19)",
+        "兽人中的龙人，联合国确认范围内世界上唯一能化身『龙』者(L30-31)",
+        "据拉丝缇娅拉：斯诺·沃克才是真正的『最强』、联合国组成以来首屈一指的天才，格连仅沾其光得称号(L69)",
+        "心灵自陷入绝望之日起未随身体成长(L420-423)",
+        "对拉丝缇娅拉自称讨厌(L86)；经拉丝缇娅拉点破后自认喜欢涡波(L437)",
+        "据涡波回想：讨伐龙时已现违和、直至其崩坏未觉察(L1122)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 5,
+        "quote": "那位传说中的少女、斯诺·沃克为领队"
+      },
+      "record_id": "c0052-976bfe7c0e27",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "相川·涡波",
+      "aliases_to_register": [
+        {
+          "alias": "涡波",
+          "class": "proper_short",
+          "confidence": 0.95,
+          "evidence_line": 12
+        },
+        {
+          "alias": "基督·欧亚",
+          "class": "proper_name",
+          "confidence": 0.95,
+          "evidence_line": 1074
+        },
+        {
+          "alias": "基督",
+          "class": "proper_short",
+          "confidence": 0.9,
+          "evidence_line": 72
+        }
+      ],
+      "confidence": 0.95,
+      "observations": [
+        "下半章第一人称叙述者；北区参赛选手(L109)",
+        "『史诗探索者』会长、以『屠龙』之人闻名(L117)",
+        "真名相川涡波，『基督』为假名(L1169)；记忆曾被封印，本章手环破坏后全部恢复，『基督·欧亚』与『相川·涡波』两份记忆融合(L1072-1075)",
+        "曾长期受『诅咒』束缚(L1022)",
+        "曾完败于帕林库洛、被抓起洗脑(L1089-1090)",
+        "恢复记忆后自陈MP耗尽、HP尚余、可能随时再投入战斗(L1145-1147)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 109,
+        "quote": "那是指在北区的相川·涡波选手吗……？"
+      },
+      "record_id": "c0052-799d530e480d",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "缇亚",
+      "aliases_to_register": [
+        {
+          "alias": "迪亚布罗·西斯",
+          "class": "proper_name",
+          "confidence": 0.9,
+          "evidence_line": 1059
+        }
+      ],
+      "confidence": 0.95,
+      "observations": [
+        "拉丝缇娅拉队魔法使，全程保持远距离攻击(L168)",
+        "全名迪亚布罗·西斯(L1059)",
+        "据拉丝缇娅拉：魔法对抗领域堪称最强的魔法使、斯诺相比缇亚差得太多(L241/L253)",
+        "『火之理的盗窃者』阿尔缇的弟子(L951)",
+        "据涡波：缇亚因其之故失去一只手(L1131)",
+        "据拉丝缇娅拉：虚荣的孩子、在基督面前逞强，昏倒时最稳定(L1197-1202)",
+        "梦中世界斯诺所处『搭档』之位在现实中为缇亚(L1118-1119)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 65,
+        "quote": "但在她旁边的缇亚却觉得不可思议。"
+      },
+      "record_id": "c0052-b896172632f7",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "塞拉·雷迪安特",
+      "aliases_to_register": [
+        {
+          "alias": "塞拉",
+          "class": "proper_short",
+          "confidence": 0.9,
+          "evidence_line": 62
+        },
+        {
+          "alias": "塞拉酱",
+          "class": "proper_short",
+          "confidence": 0.9,
+          "evidence_line": 62
+        }
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "拉丝缇娅拉侍从，称其『大小姐』(L63)",
+        "狼化/兽化能力者，比赛中作缇亚的移动手段(L30/L76)",
+        "其剑术流派被涡波的『诅咒』复制(L876-879)",
+        "赛后解除兽化，抱着被击晕的缇亚(L1194-1199)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 876,
+        "quote": "是此时正待在我身后的塞拉·雷迪安特的剑术。"
+      },
+      "record_id": "c0052-3faf6d746c80",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "格连·沃克",
+      "aliases_to_register": [
+        {
+          "alias": "格连",
+          "class": "proper_short",
+          "confidence": 0.9,
+          "evidence_line": 69
+        }
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "斯诺之兄(L26/L68)",
+        "名义上持有『最强』称号，据拉丝缇娅拉系沾妹妹之光获得(L69)",
+        "被诺文击败(L520-522)",
+        "一两年前曾向拉丝缇娅拉提及斯诺逃离沃克家之事(L265)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 68,
+        "quote": "『最强』不是她的哥哥格连·沃克吗？"
+      },
+      "record_id": "c0052-4a60f1e2a72e",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "波鲁扎克",
+      "confidence": 0.8,
+      "observations": [
+        "『史诗探索者』代表三人之一、战士(L18-25)",
+        "称斯诺为『格连他妹』(L26)",
+        "与缇莉退至竞技场角落观战(L39-41)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 21,
+        "quote": "波鲁扎克和缇莉请退下。"
+      },
+      "record_id": "c0052-e45ad5d2395d",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "缇莉",
+      "confidence": 0.8,
+      "observations": [
+        "『史诗探索者』代表三人之一、魔法使(L18-24)",
+        "极力劝阻斯诺使用龙化(L32-33)",
+        "与缇亚为不同人物，禁止合并"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 21,
+        "quote": "波鲁扎克和缇莉请退下。"
+      },
+      "record_id": "c0052-3c4b8dfb9673",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "诺文·阿雷亚斯",
+      "aliases_to_register": [
+        {
+          "alias": "诺文",
+          "class": "proper_short",
+          "confidence": 0.9,
+          "evidence_line": 471
+        }
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "守护者，出战南区竞技场(L471)",
+        "先后战胜『最强』格连与『剑圣』芬里尔(L520-522)",
+        "战胜芬里尔后堂堂正正公开身份，随即被大会管理者逮捕(L489/L494)",
+        "据涡波回想：与其友好至同睡、受其教剑术(L1114)",
+        "据莉帕：已无法行动(L518)；守护者曾被告诫为『造成重大伤亡的疯狂的怪物』(L1100)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 471,
+        "quote": "声源恐怕是守护者诺文·阿雷亚斯战斗的南区竞技场。"
+      },
+      "record_id": "c0052-a2ff85b1b5b4",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "莉帕",
+      "aliases_to_register": [
+        {
+          "alias": "死神",
+          "class": "nickname",
+          "confidence": 0.9,
+          "evidence_line": 603
+        }
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "通称『死神』的黑发少女(L601-603)",
+        "受涡波之托监视斯诺与诺文(L511)",
+        "引导记忆封印中的涡波：以『记忆』『原来的世界』『最重要的妹妹』说服其出场(L583-586)",
+        "怀有未言明的愿望(L549)",
+        "据涡波：与诺文同为『怪物』级存在(L1114)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 603,
+        "quote": "「啊啊，我走了。死神（莉帕）。」"
+      },
+      "record_id": "c0052-df0885557191",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "芬里尔·阿雷亚斯",
+      "aliases_to_register": [
+        {
+          "alias": "芬里尔",
+          "class": "proper_short",
+          "confidence": 0.9,
+          "evidence_line": 208
+        }
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "剑圣、近代最强剑士(L205)",
+        "年近六十(L208)",
+        "其剑术经拉丝缇娅拉的鲜血魔法完全再现(L205-209)",
+        "被守护者诺文战胜(L489)",
+        "其剑技亦被涡波(诅咒)使用，且被拉丝缇娅拉评为凌驾本人(L954-957)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 205,
+        "quote": "从寄宿血中的数量过千的『人』的记忆中，我选择了剑圣『芬里尔·阿雷亚斯』。"
+      },
+      "record_id": "c0052-2dbd1fa7e405",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "海因·赫勒比勒夏因",
+      "aliases_to_register": [
+        {
+          "alias": "海因",
+          "class": "proper_short",
+          "confidence": 0.85,
+          "evidence_line": 1110
+        }
+      ],
+      "confidence": 0.85,
+      "observations": [
+        "双剑术专家，其知识经鲜血魔法双重展开看破并压制涡波双剑(L891-898)",
+        "据涡波回想：属于未能帮到之人(L1110)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 891,
+        "quote": "其中确实有海因·赫勒比勒夏因的影子"
+      },
+      "record_id": "c0052-07a312469136",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "阿尔缇",
+      "confidence": 0.85,
+      "observations": [
+        "称号『火之理的盗窃者』(L951，称号为descriptor不并入正名)",
+        "缇亚之师(L951)",
+        "守护者；现实中与涡波未互相理解而敌对(L1119)",
+        "涡波以不重蹈阿尔缇覆辙为由拒绝立刻追讨帕林库洛(L1241)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 951,
+        "quote": "真不愧是『火之理的盗窃者』阿尔缇的弟子。"
+      },
+      "record_id": "c0052-e3b586896276",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "拉古涅",
+      "confidence": 0.5,
+      "observations": [
+        "其出其不意的剑技（左手藏剑）被涡波(诅咒)使用(L883-884)",
+        "身份背景本章未述【待确认】"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 883,
+        "quote": "——这个出其不意的攻击方式，是拉古涅酱的伎俩……？"
+      },
+      "record_id": "c0052-61562d78a2d8",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "芙兰琉莱",
+      "confidence": 0.7,
+      "observations": [
+        "舞斗大会第三轮参赛者，其技巧仅被涡波见过一次即被『诅咒』纳为己有(L700-701)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 700,
+        "quote": "这跟第三轮比赛中芙兰琉莱使用的技巧很像。"
+      },
+      "record_id": "c0052-6cdf6e4a5851",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "艾尔米拉德",
+      "confidence": 0.8,
+      "observations": [
+        "涡波第四轮比赛对手(L515)",
+        "据涡波回想：该比赛中受影响作出爱的告白（众目睽睽）并对其宣泄怒火(L1124)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 515,
+        "quote": "因为我有和艾尔米拉德的战斗"
+      },
+      "record_id": "c0052-a6386ace52fe",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "玛利亚",
+      "confidence": 0.85,
+      "observations": [
+        "据涡波回想：在梦中世界作为妹妹相伴、两人身份被搞错，现实妹妹为阳滝(L1086/L1118-1119)",
+        "现实中与涡波未互相理解而敌对(L1119)",
+        "据拉丝缇娅拉：与涡波一同落入帕林库洛手中(L970)",
+        "拉丝缇娅拉以『玛利亚酱』回忆两人过往相似之处(L432)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1086,
+        "quote": "玛利亚是我的妹妹！？"
+      },
+      "record_id": "c0052-aa2be45fb8df",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "阳滝",
+      "confidence": 0.85,
+      "observations": [
+        "涡波现实中的亲妹妹(L1086)",
+        "与涡波于现实中分别(L1119)",
+        "据涡波：比其生命更重要，任何状态下都能想起这一点(L589-590)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1086,
+        "quote": "我对妹妹(阳滝)的心意"
+      },
+      "record_id": "c0052-843b9e164fc9",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "帕林库洛",
+      "confidence": 0.9,
+      "observations": [
+        "涡波等人的敌对者；涡波曾完败于其并被抓起洗脑(L1110)",
+        "据拉丝缇娅拉推测：束缚涡波精神的异常状态源于帕林库洛的魔法(L836)",
+        "打造令涡波无法离开联合国的『牢狱』(L1223-1227)",
+        "拉丝缇娅拉于手环破坏后宣告对其胜利(L1025)",
+        "缇亚曾紧追其后(L12)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 12,
+        "quote": "竭尽全力地阻止想要紧追帕林库洛的缇亚"
+      },
+      "record_id": "c0052-0befd9ec11de",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "斐勒卢托",
+      "confidence": 0.7,
+      "observations": [
+        "弗茨亚茨一方人物；与元老院的雷琪共同预定了『魔石人类』(L209)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 209,
+        "quote": "弗茨亚茨的斐勒卢托和元老院的雷琪预定之中的『魔石人类』"
+      },
+      "record_id": "c0052-9d6ea183485a",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "雷琪",
+      "confidence": 0.7,
+      "observations": [
+        "元老院一方人物；与弗茨亚茨的斐勒卢托共同预定了『魔石人类』(L209)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 209,
+        "quote": "弗茨亚茨的斐勒卢托和元老院的雷琪预定之中的『魔石人类』"
+      },
+      "record_id": "c0052-5a5d1bf2dfc5",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "希尔达克",
+      "confidence": 0.4,
+      "observations": [
+        "据涡波自我批判回想：任劳拉维亚公会会长期间曾放着希尔达克不管(L1095)；详情本章未述【待确认】"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1095,
+        "quote": "竟然放着希尔达克不管"
+      },
+      "record_id": "c0052-be140079e98f",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "缇达",
+      "confidence": 0.3,
+      "observations": [
+        "据涡波回想：与阿尔缇并列为『怪物』级存在(L1114)",
+        "疑为缇亚之异写，原文如此、依判例3不猜测不合并【待确认】"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1114,
+        "quote": "和缇达还有阿尔缇是一样的存在"
+      },
+      "record_id": "c0052-6f11b3d515c4",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "person",
+      "canonical": "主持人",
+      "confidence": 0.8,
+      "observations": [
+        "第四轮与准决赛两场比赛司仪，固定出场(L106/L118/L1211)",
+        "向观众播报双方赌注为相川·涡波(L113-118)",
+        "宣布局致死有效规则与『击落象征物』规则(L127-139/L637)",
+        "被涡波认定为敌人(L658-659)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 106,
+        "quote": "还是老样子，主持人跟我说话的时候有些战战兢兢的。"
+      },
+      "record_id": "c0052-595947b5d5a0",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "organization",
+      "canonical": "史诗探索者",
+      "confidence": 0.9,
+      "observations": [
+        "公会；涡波任会长、斯诺·沃克任副会长(L19/L117)",
+        "代表三人=斯诺+战士+魔法使(L18)",
+        "以万能安定的队伍自西面参赛(L5)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 18,
+        "quote": "公会『史诗探索者』的代表有三人。"
+      },
+      "record_id": "c0052-7a70030fabde",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "organization",
+      "canonical": "联合国",
+      "confidence": 0.85,
+      "observations": [
+        "舞斗大会正式名『一之月联合国综合骑士团舞会』即其综合骑士团舞会(L136/L660)",
+        "据拉丝缇娅拉：斯诺为联合国组成以来首屈一指的天才(L69)",
+        "据涡波：帕林库洛的『牢狱』令其无法从联合国离开(L1223-1226)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 31,
+        "quote": "在联合国已确认的范围内"
+      },
+      "record_id": "c0052-0ed13268b2d4",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "organization",
+      "canonical": "莱文教",
+      "confidence": 0.85,
+      "observations": [
+        "宗教组织；拉丝缇娅拉为其现人神(L130/L359)",
+        "持有圣遗物『天剑诺亚』(L125)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 125,
+        "quote": "跟以前使用的莱文教的圣遗物『天剑诺亚』相比还是有所不足"
+      },
+      "record_id": "c0052-93dc2aad6d75",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "organization",
+      "canonical": "沃克家",
+      "confidence": 0.85,
+      "observations": [
+        "斯诺出身家族；其出逃时派追兵、在金钱支持下接连施以阴谋，同行者与协助者大量死亡，斯诺被带回(L266-277，据斯诺自述)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 266,
+        "quote": "「是说斯诺你从沃克家逃走的事情吗？」"
+      },
+      "record_id": "c0052-39bf49efa805",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "organization",
+      "canonical": "元老院",
+      "confidence": 0.7,
+      "observations": [
+        "雷琪所属机构；与弗茨亚茨的斐勒卢托共同预定『魔石人类』(L209)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 209,
+        "quote": "元老院的雷琪"
+      },
+      "record_id": "c0052-fc5748fcb5ff",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "organization",
+      "canonical": "艾尔多拉琉学院",
+      "confidence": 0.5,
+      "observations": [
+        "其体术混入涡波(诅咒)的战斗动作中(L905)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 905,
+        "quote": "因为也混杂着艾尔多拉琉学院的体术"
+      },
+      "record_id": "c0052-367a7b0c31d6",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "place",
+      "canonical": "古尔亚德国",
+      "confidence": 0.85,
+      "observations": [
+        "南方国家；拉丝缇娅拉一行曾潜伏于此躲避追兵，后由此前往迷宫修行(L12)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 12,
+        "quote": "潜伏于南方的古尔亚德国"
+      },
+      "record_id": "c0052-4370a85e4bfd",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "place",
+      "canonical": "瓦尔德",
+      "confidence": 0.85,
+      "observations": [
+        "国家；曾与弗茨亚茨同派追兵(L12)",
+        "准决赛中其国家代表对阵诺文(L480)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 480,
+        "quote": "诺文则要对战瓦尔德的国家代表"
+      },
+      "record_id": "c0052-f08cf7eed337",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "place",
+      "canonical": "弗茨亚茨",
+      "confidence": 0.85,
+      "observations": [
+        "国家；曾与瓦尔德同派追兵追捕拉丝缇娅拉一行(L12)",
+        "拉丝缇娅拉之姓氏与其同名"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 12,
+        "quote": "甩掉弗茨亚茨和瓦尔德两国派出的追兵"
+      },
+      "record_id": "c0052-cfec2762f9c2",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "place",
+      "canonical": "瓦尔法拉",
+      "confidence": 0.85,
+      "observations": [
+        "舞斗大会会场所在的船(L224/L983)",
+        "斯诺的咆哮曾撼动整艘『瓦尔法拉』与大海(L224)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 224,
+        "quote": "整艘船、整个『瓦尔法拉』"
+      },
+      "record_id": "c0052-22f97f4d334d",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "place",
+      "canonical": "劳拉维亚",
+      "confidence": 0.8,
+      "observations": [
+        "『相川·涡波』(假记忆时期)生活之地；其在此任国家直辖公会会长、获民众与伙伴信任(L1079/L1095/L1109/L1118)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1079,
+        "quote": "置身于劳拉维亚的『相川·涡波』"
+      },
+      "record_id": "c0052-2d647c42dbee",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "place",
+      "canonical": "大圣堂",
+      "confidence": 0.8,
+      "observations": [
+        "拉丝缇娅拉曾被涡波救出之地(L969)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 969,
+        "quote": "是涡波将如此愚蠢的我从大圣堂救了出来。"
+      },
+      "record_id": "c0052-7b31ca3069ac",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "item",
+      "canonical": "手环",
+      "confidence": 0.9,
+      "observations": [
+        "准决赛规则『击落象征物』的象征物，双方各佩戴一只(L630/L637)",
+        "涡波的手环为释放某种魔法的代用品，其魔法发动无法阻止(L763-764)",
+        "因暗属性大魔法的超负荷而产生龟裂(L760)",
+        "暗属性魔力自手环溢出、经后脑侵入涡波体内(L731-733/L804)",
+        "双方手环在准决赛末尾同时被破坏(L1013-1016)",
+        "拉丝缇娅拉自陈手环胜负无所谓，以己方认输换涡波手环被破坏(L1010/L1255)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 630,
+        "quote": "所以我们准备了『手环』"
+      },
+      "record_id": "c0052-663c9ccb75d0",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "item",
+      "canonical": "新月琉璃直剑",
+      "confidence": 0.85,
+      "observations": [
+        "涡波之剑，由『诅咒』自动自持有物品取出迎击(L671)",
+        "青白相间、造型美观(L880)",
+        "先后被拉丝缇娅拉挑飞、弹飞(L718/L898)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 671,
+        "quote": "取出『新月琉璃直剑』挡开了拉丝缇娅拉的一闪"
+      },
+      "record_id": "c0052-52bdce35f7c1",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "item",
+      "canonical": "天剑诺亚",
+      "confidence": 0.85,
+      "observations": [
+        "莱文教圣遗物、拉丝缇娅拉以前使用之剑，其现用之剑不及它(L125)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 125,
+        "quote": "跟以前使用的莱文教的圣遗物『天剑诺亚』相比还是有所不足"
+      },
+      "record_id": "c0052-555f568460f2",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "item",
+      "canonical": "魔石线",
+      "confidence": 0.5,
+      "observations": [
+        "竞技场防护结界所在设施(L152)",
+        "缇亚被挡开的流弹级魔法即令其结界龟裂，工作人员紧急修复(L152-155)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 152,
+        "quote": "撞到了『魔石线』上的结界"
+      },
+      "record_id": "c0052-3d5530022886",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "龙化",
+      "confidence": 0.9,
+      "observations": [
+        "兽人之血较浓者获得兽化能力；龙人斯诺可化龙，塞拉的『狼化』为同类(L30)",
+        "联合国确认范围内斯诺为世界唯一能化『龙』者(L31)",
+        "斯诺久违使用限定龙化出战(L27)",
+        "风险：继续使用恐无法恢复人形(L32)",
+        "发动时手背绽裂、血蒸发成龙形血雾包裹身体、背后生出苍翼(L54-59/L140-141)",
+        "恋心被动摇时龙化松弛(L435)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 30,
+        "quote": "『龙化』——兽人的血较为浓郁时，当事人就会拥有兽化的能力。"
+      },
+      "record_id": "c0052-e77181039a2a",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "鲜血魔法",
+      "confidence": 0.9,
+      "observations": [
+        "拉丝缇娅拉与斯诺共用体系；据拉丝缇娅拉，鲜血魔法亦是斯诺擅长的领域(L234)",
+        "发动时手背绽裂流血、血蒸发成血雾包裹身体(L55/L202)",
+        "拉丝缇娅拉的鲜血魔法令魔石肉体进一步接近『人』，自称为『人化』(L203-204)",
+        "自血中过千『人』的记忆中选取能力者、再现其技(L205)",
+        "消费自身魔力(L871)",
+        "代价：失去魔力、骨头与内脏剧痛(L463)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 204,
+        "quote": "这就是我的鲜血魔法。"
+      },
+      "record_id": "c0052-ece26654ff96",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "鲜血魔法『芬里尔·阿雷亚斯』",
+      "confidence": 0.9,
+      "observations": [
+        "自血中记忆选出剑圣芬里尔·阿雷亚斯，于年轻肉体上完全再现近代最强剑士的实力(L205-209)",
+        "使用时瞳色由黄金转钝色、金发混入栗色(L206)",
+        "本来预定提供给圣人再临的肉体(L205)",
+        "拉丝缇娅拉对斯诺、对涡波两战皆用(L198/L870)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 198,
+        "quote": "鲜血魔法『芬里尔·阿雷亚斯』"
+      },
+      "record_id": "c0052-a21e486166a5",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "鲜血魔法『海因·赫勒比勒夏因』",
+      "confidence": 0.85,
+      "observations": [
+        "双重展开，以双剑术专家海因的知识看破并压制涡波的双剑(L894-898)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 894,
+        "quote": "双重展开、鲜血魔法『海因·赫勒比勒夏因』"
+      },
+      "record_id": "c0052-f57f8e4f0aa7",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "鲜血魔法『FlySophia』",
+      "confidence": 0.8,
+      "observations": [
+        "斯诺龙化开始时咏唱(L52-54)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 52,
+        "quote": "鲜血魔法『FlySophia』"
+      },
+      "record_id": "c0052-1815126df99d",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "Impulse·Howling",
+      "confidence": 0.8,
+      "observations": [
+        "斯诺头上生龙鳞时的咆哮，化作振动凶器，歪折景色、震颤结界、撼动整船与大海(L218-225)",
+        "其前兆为缠绕龙魔力的振动咆哮，一般人闻之即昏厥(L163)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 218,
+        "quote": "『Impulse·Howling』"
+      },
+      "record_id": "c0052-003f6e32a464",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "诅咒",
+      "confidence": 0.9,
+      "observations": [
+        "长期束缚涡波之物(L1022)",
+        "遇威胁自动令身体迎击：自持有物品取出新月琉璃直剑挡击(L671-675)、复制仅见一次的技巧(L701)、将疼痛逐出意识(L697)",
+        "复制对象含芙兰琉莱、塞拉、拉古涅、海因、阿雷亚斯家剑术及弓术等(L700-955)",
+        "与手环的暗魔力联动(L733/L760-764)",
+        "手环被破坏后消失(L1022)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 672,
+        "quote": "『诅咒』在较早的阶段产生了反应"
+      },
+      "record_id": "c0052-1cb87af1fe07",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "认识阻碍",
+      "confidence": 0.85,
+      "observations": [
+        "暗魔法『不罚的大英雄』将全部术式集中于该项(L757)",
+        "发动后数值+10.00(L758)",
+        "准决赛中涡波该项数值大幅攀升(L828)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 758,
+        "quote": "『认识阻碍』+10.00"
+      },
+      "record_id": "c0052-44d7730b9b84",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "暗魔法『不罚的大英雄』",
+      "confidence": 0.9,
+      "observations": [
+        "手环的最终防卫术式(L756)",
+        "暗属性大魔法的消耗超出手环负荷、致手环龟裂(L760)",
+        "以『守护手环』为唯一方向驱动失去意识的涡波(L744-783)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 756,
+        "quote": "暗魔法『不罚的大英雄』发动了"
+      },
+      "record_id": "c0052-40a3db746e5e",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "过密次元的真冬",
+      "confidence": 0.9,
+      "observations": [
+        "冷气与次元的复合魔法，涡波于生命极限处咏唱(L786/L807)",
+        "燃烧生命发动、HP骤减(L788-793)",
+        "因身体状况仅维持一瞬(L808)",
+        "一瞬间获得空间情报并减缓拉丝缇娅拉拳速(L811)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 786,
+        "quote": "魔法、『过密次元的真冬』"
+      },
+      "record_id": "c0052-99c1c17fbc7d",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "次元之冬",
+      "confidence": 0.85,
+      "observations": [
+        "涡波惯用之冷气构筑魔法(L710)",
+        "大脑运转迟滞时构筑失败(L710-711)",
+        "亦无法阻止手环魔法的发动(L764)",
+        "涡波平日以次元魔法为基础战斗、对此依赖过度(L866)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 710,
+        "quote": "试图构筑『次元之冬』"
+      },
+      "record_id": "c0052-bb614a0fe6bb",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "skill",
+      "canonical": "拟神之眼",
+      "confidence": 0.85,
+      "observations": [
+        "拉丝缇娅拉的观测技能：测量实力(L20)、确认状态数值(L828)、感知诅咒消失(L1022)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 20,
+        "quote": "使用技能『拟神之眼』测量她们的实力"
+      },
+      "record_id": "c0052-98a3a8e77d85",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "skill",
+      "canonical": "技能『???』",
+      "confidence": 0.8,
+      "observations": [
+        "涡波的技能，名称原文脱字照录(判例3)(L1141)",
+        "隐患仍在：此次未发动疑因无生命危险(L1141-1142)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1141,
+        "quote": "应该认为技能『???』的隐患还在"
+      },
+      "record_id": "c0052-a96e22aa62e1",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "concept",
+      "canonical": "魔石人类",
+      "confidence": 0.85,
+      "observations": [
+        "弗茨亚茨的斐勒卢托与元老院的雷琪预定之物；为成为与拉丝缇娅拉不同的『某人』而特别强化的魔法之一端(L209)",
+        "拉丝缇娅拉为其真髓之体现(L203-209)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 209,
+        "quote": "预定之中的『魔石人类』的真髓"
+      },
+      "record_id": "c0052-b4fd2add83be",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "skill",
+      "canonical": "Dimension",
+      "confidence": 0.8,
+      "observations": [
+        "涡波之技，一瞬间远程掌握远处情景；用以确认斯诺在医院病床上的状态(L483)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 483,
+        "quote": "我使用『Dimension』在一瞬间掌握"
+      },
+      "record_id": "c0052-ee12c6870f90",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "神圣魔法『Growth·Extended』",
+      "confidence": 0.85,
+      "observations": [
+        "拉丝缇娅拉的强化魔法：无视反噬与负担将身体能力提至极限(L352-355)",
+        "代价为损耗生命，数秒即造成负担(L907-911)",
+        "两天内对斯诺与涡波两度使用(L352/L973)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 352,
+        "quote": "神圣魔法『Growth·Extended』"
+      },
+      "record_id": "c0052-81f19d95f98c",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "Symposion·Noah",
+      "confidence": 0.8,
+      "observations": [
+        "缇亚的魔法：巨大光球自上空垂直坠落砸落并压制目标(L685-687)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 685,
+        "quote": "『Symposion·Noah』"
+      },
+      "record_id": "c0052-ce5d0fed89de",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "magic",
+      "canonical": "StolasField",
+      "confidence": 0.8,
+      "observations": [
+        "缇亚的神圣魔法结界：驱散黑暗、具精神安定作用(L838-840)",
+        "对被紫色魔力护住的涡波无效(L841-842)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 838,
+        "quote": "『StolasField』"
+      },
+      "record_id": "c0052-b0f63a479933",
+      "status": "candidate"
+    },
+    {
+      "type": "entity",
+      "library": "entity",
+      "kind": "event_class",
+      "canonical": "舞斗大会",
+      "aliases_to_register": [
+        {
+          "alias": "一之月联合国综合骑士团舞会",
+          "class": "proper_name",
+          "confidence": 0.85,
+          "evidence_line": 136
+        }
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "正式名『一之月联合国综合骑士团舞会』(L136/L660)",
+        "会场设于船瓦尔法拉，北/西/南区竞技场并行进行(L109/L136/L471)",
+        "本章进行至第四轮与准决赛；准决赛=北区西区：涡波对拉丝缇娅拉，另一场：诺文对瓦尔德国家代表(L480/L660)",
+        "大会自诩来者不拒(L494)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 5,
+        "quote": "在本场『舞斗大会』中取胜获捷至何处呢"
+      },
+      "record_id": "c0052-1c1937939b27",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "斯诺·沃克",
+      "target": "格连·沃克",
+      "relation": "兄妹（斯诺为妹）",
+      "confidence": 0.9,
+      "observations": [
+        "战士以『格连他妹』称呼斯诺(L26)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 68,
+        "quote": "『最强』不是她的哥哥格连·沃克吗？"
+      },
+      "record_id": "c0052-dd0748fe3fe7",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "斯诺·沃克",
+      "target": "史诗探索者",
+      "relation": "副会长",
+      "confidence": 0.9,
+      "observations": [],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 19,
+        "quote": "以副会长斯诺·沃克为首"
+      },
+      "record_id": "c0052-540d02c2a5e3",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "相川·涡波",
+      "target": "史诗探索者",
+      "relation": "会长",
+      "confidence": 0.95,
+      "observations": [
+        "兼以『屠龙』之人闻名(L117)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 117,
+        "quote": "他既是公会『史诗探索者』的会长"
+      },
+      "record_id": "c0052-20e2991e9705",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "斯诺·沃克",
+      "target": "相川·涡波",
+      "relation": "恋慕",
+      "confidence": 0.9,
+      "observations": [
+        "据拉丝缇娅拉点破+斯诺自认：执着源于恋慕、希望如英雄谭女主角般被涡波拯救(L411-437)",
+        "梦中世界斯诺为涡波『能够信赖的搭档』(L1118)",
+        "此前以『只是满足条件、相处方便、好利用』自我辩解(L427)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 437,
+        "quote": "「我、我喜欢涡波……？」"
+      },
+      "record_id": "c0052-e9a7732159c9",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "斯诺·沃克",
+      "target": "拉丝缇娅拉·弗茨亚茨",
+      "relation": "敌意/嫉妒",
+      "confidence": 0.85,
+      "observations": [
+        "据拉丝缇娅拉分析：斯诺嫉妒一直被众人守护、借助多数人之力战斗的拉丝缇娅拉(L247/L250)",
+        "拉丝缇娅拉则自称喜欢斯诺(L85)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 86,
+        "quote": "「我……我讨厌你……」"
+      },
+      "record_id": "c0052-c8a154fff028",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "塞拉·雷迪安特",
+      "target": "拉丝缇娅拉·弗茨亚茨",
+      "relation": "主从（侍奉）",
+      "confidence": 0.85,
+      "observations": [
+        "塞拉称其『大小姐』并不问理由即执行指示(L62-64)",
+        "拉丝缇娅拉以『我家塞拉酱』称之(L30)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 63,
+        "quote": "「我明白了，大小姐。」"
+      },
+      "record_id": "c0052-3aae8000fe87",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "缇亚",
+      "target": "阿尔缇",
+      "relation": "师承（弟子）",
+      "confidence": 0.85,
+      "observations": [
+        "据拉丝缇娅拉：缇亚的火力控制不愧为阿尔缇之徒(L951)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 951,
+        "quote": "真不愧是『火之理的盗窃者』阿尔缇的弟子。"
+      },
+      "record_id": "c0052-b30637187cd4",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "诺文·阿雷亚斯",
+      "target": "芬里尔·阿雷亚斯",
+      "relation": "战胜（超越剑圣）",
+      "confidence": 0.9,
+      "observations": [
+        "据拉丝缇娅拉自行人处听闻(L489)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 489,
+        "quote": "在战胜了『剑圣』芬里尔·阿雷亚斯之后"
+      },
+      "record_id": "c0052-467a41660cc8",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "诺文·阿雷亚斯",
+      "target": "格连·沃克",
+      "relation": "战胜",
+      "confidence": 0.85,
+      "observations": [
+        "诺文已将『最强』与『剑圣』两人尽数打倒、取胜晋级(L520-522，据莉帕)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 520,
+        "quote": "诺文已经战胜了『最强』，超越了『剑圣』。"
+      },
+      "record_id": "c0052-726e506f655b",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "相川·涡波",
+      "target": "拉丝缇娅拉·弗茨亚茨",
+      "relation": "救出之恩",
+      "confidence": 0.9,
+      "observations": [
+        "据拉丝缇娅拉：涡波将其从大圣堂救出；代价为涡波与玛利亚落入帕林库洛手中(L969-970)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 969,
+        "quote": "是涡波将如此愚蠢的我从大圣堂救了出来。"
+      },
+      "record_id": "c0052-851ef9bb8834",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "帕林库洛",
+      "target": "相川·涡波",
+      "relation": "掳走并洗脑（加害）",
+      "confidence": 0.9,
+      "observations": [
+        "据涡波回想：曾完败于帕林库洛、被抓起洗脑(L1110)",
+        "涡波宣告不原谅帕林库洛、应立刻追讨(L1241)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1110,
+        "quote": "而且还是完败、还被抓起来洗脑了"
+      },
+      "record_id": "c0052-6ec4b262298d",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "相川·涡波",
+      "target": "阳滝",
+      "relation": "兄妹（阳滝为妹）",
+      "confidence": 0.9,
+      "observations": [
+        "现实中两人分别(L1119)",
+        "阳滝为涡波比生命更重要之人(L589-590)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1086,
+        "quote": "我对妹妹(阳滝)的心意"
+      },
+      "record_id": "c0052-66c9aaf5fb64",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "波鲁扎克",
+      "target": "史诗探索者",
+      "relation": "所属（代表三人之一/战士）",
+      "confidence": 0.75,
+      "observations": [
+        "结合L18『代表有三人』与L21-25对话分工判定"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 21,
+        "quote": "波鲁扎克和缇莉请退下。"
+      },
+      "record_id": "c0052-c7a80745e9d5",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "缇莉",
+      "target": "史诗探索者",
+      "relation": "所属（代表三人之一/魔法使）",
+      "confidence": 0.75,
+      "observations": [
+        "结合L18『代表有三人』与L21-25对话分工判定"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 21,
+        "quote": "波鲁扎克和缇莉请退下。"
+      },
+      "record_id": "c0052-94fad88d516e",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "拉丝缇娅拉·弗茨亚茨",
+      "target": "莱文教",
+      "relation": "现人神",
+      "confidence": 0.9,
+      "observations": [
+        "主持人称其身亡将成大事(L130)；斯诺称其作为现人神完成度太高(L386)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 359,
+        "quote": "「——现人神，拉丝缇娅拉！！」"
+      },
+      "record_id": "c0052-100dffa78267",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "拉丝缇娅拉·弗茨亚茨",
+      "target": "芬里尔·阿雷亚斯",
+      "relation": "鲜血魔法借用其剑技记忆",
+      "confidence": 0.9,
+      "observations": [
+        "自血中过千『人』的记忆中选出剑圣、完全再现其实力(L205-209)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 205,
+        "quote": "从寄宿血中的数量过千的『人』的记忆中，我选择了剑圣『芬里尔·阿雷亚斯』。"
+      },
+      "record_id": "c0052-50221d548eb0",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "莉帕",
+      "target": "相川·涡波",
+      "relation": "监视与引导",
+      "confidence": 0.85,
+      "observations": [
+        "受涡波之托监视斯诺与诺文(L511)",
+        "于休息室引导失忆涡波、以妹妹为由说服其参赛(L562-586)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 563,
+        "quote": "「交给我吧，我一定会把大哥哥送到场上的。」"
+      },
+      "record_id": "c0052-d686c485dcee",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "诺文·阿雷亚斯",
+      "target": "相川·涡波",
+      "relation": "传授剑术",
+      "confidence": 0.8,
+      "observations": [
+        "据涡波回想：让诺文教自己剑术(L1114)",
+        "据拉丝缇娅拉推测：涡波剑技凌驾剑圣系诺文所致(L957，反推)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1114,
+        "quote": "还毫无戒心地让他教自己剑术！？"
+      },
+      "record_id": "c0052-5647f0401721",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "帕林库洛",
+      "target": "玛利亚",
+      "relation": "掳走（落入其手中）",
+      "confidence": 0.85,
+      "observations": [
+        "据拉丝缇娅拉：作为帮助她的代价，涡波落入帕林库洛手中，玛利亚亦然(L970)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 970,
+        "quote": "涡波落入了帕林库洛手中，玛利亚酱也是。"
+      },
+      "record_id": "c0052-addb1a03b51f",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "斯诺·沃克",
+      "target": "沃克家",
+      "relation": "出身并出逃（失败被带回）",
+      "confidence": 0.9,
+      "observations": [
+        "出逃时追兵与阴谋不断、同行者与协助者大量死亡(L271-277，据斯诺自述)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 266,
+        "quote": "「是说斯诺你从沃克家逃走的事情吗？」"
+      },
+      "record_id": "c0052-e34fcc7df049",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "玛利亚",
+      "target": "相川·涡波",
+      "relation": "梦中世界之妹（身份搞错）",
+      "confidence": 0.8,
+      "observations": [
+        "据涡波回想：梦中世界玛利亚作为妹妹相伴，现实妹妹为阳滝、两人身份被搞错(L1086/L1118-1119)",
+        "现实中两人未互相理解而敌对(L1119)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1086,
+        "quote": "给两人的身份搞错也太对不起她们了吧"
+      },
+      "record_id": "c0052-f70c9ed673d3",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "相川·涡波",
+      "target": "拉丝缇娅拉·弗茨亚茨",
+      "relation": "互相信任的同伴",
+      "confidence": 0.85,
+      "observations": [
+        "恢复记忆后拉丝缇娅拉愿信任涡波、涡波亦托付全部信任(L1246/L1272-1275)",
+        "拉丝缇娅拉自陈夺回了在圣诞祭被掳走的『主人公』(L1033)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1274,
+        "quote": "取回自我的拉丝缇娅拉愿意信任我。"
+      },
+      "record_id": "c0052-ae6157776dd5",
+      "status": "candidate"
+    },
+    {
+      "type": "relationship",
+      "library": "relationship",
+      "source": "缇亚",
+      "target": "相川·涡波",
+      "relation": "同伴（誓同在）",
+      "confidence": 0.8,
+      "observations": [
+        "缇亚自陈从今往后会一直在一起(L653)",
+        "涡波恢复记忆后缇亚含泪抱住、唤『基督』(L1163-1164)",
+        "现实中缇亚为被涡波夺走梦想的『搭档』(L1119)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 653,
+        "quote": "「没错，从今往后我们就会一直在一起了……没有着急的必要。」"
+      },
+      "record_id": "c0052-d20d5222cef6",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "第四轮战前约定：赌上『涡波』与致死规则",
+      "entities_involved": [
+        "拉丝缇娅拉·弗茨亚茨",
+        "斯诺·沃克",
+        "相川·涡波",
+        "主持人"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "无法继续战斗/昏厥/死亡即败(L120-121)",
+        "败方在涡波事宜上不得干涉对方(L122)",
+        "主持人向观众播报争夺对象为北区相川·涡波、觊觎者远不止三人(L112-118)",
+        "此规则为拉丝缇娅拉慎重促成、对己有利的攻略安排(L134-135)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 122,
+        "quote": "「然后，输掉的一方在有关『涡波』的事情上就不能干涉对方。」"
+      },
+      "record_id": "c0052-df5eb2754243",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "斯诺宣言使用限定『龙化』、队友退后观战",
+      "entities_involved": [
+        "斯诺·沃克",
+        "波鲁扎克",
+        "缇莉"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "缇莉极力劝阻、波鲁扎克与缇莉移往竞技场角落观战(L32-41)",
+        "斯诺自陈唯有此战要认真、有变不能回人形也有做到那个份上的觉悟(L27/L34)",
+        "斯诺称对手为『神之化身』而己为『龙之化身』(L38)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 27,
+        "quote": "我打算久违地使用限定的『龙化』"
+      },
+      "record_id": "c0052-313bc71ee761",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "拉丝缇娅拉发动鲜血魔法再现剑圣芬里尔之力",
+      "entities_involved": [
+        "拉丝缇娅拉·弗茨亚茨",
+        "芬里尔·阿雷亚斯"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "血中过千『人』的记忆中选出剑圣、完全再现近代最强剑士实力(L205-209)",
+        "此即斐勒卢托与雷琪预定之『魔石人类』真髓(L209)",
+        "瞳色黄金转钝、金发混入栗色(L206)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 205,
+        "quote": "从寄宿血中的数量过千的『人』的记忆中，我选择了剑圣『芬里尔·阿雷亚斯』。"
+      },
+      "record_id": "c0052-6abf6c85cdca",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "斯诺自述沃克家出逃失败往事",
+      "entities_involved": [
+        "斯诺·沃克",
+        "沃克家",
+        "拉丝缇娅拉·弗茨亚茨"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "据斯诺自述：出逃无成功可能、追兵与阴谋不断、同行朋友与善意相助者轻易死掉、自己因强而不死终被带回(L271-277)",
+        "此事涉及斯诺根干(L269)",
+        "一两年前格连曾向拉丝缇娅拉提及(L265)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 275,
+        "quote": "跟我一起出逃的朋友，带着善意来帮忙的人，都轻易地死掉了"
+      },
+      "record_id": "c0052-2562018d91f6",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "拉丝缇娅拉点破恋心、勒晕斯诺赢下第四轮",
+      "entities_involved": [
+        "拉丝缇娅拉·弗茨亚茨",
+        "斯诺·沃克",
+        "缇亚"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "先以言语令其跌落谷底再拉起：劝其放弃涡波无效、点破喜欢涡波致龙化松弛(L411-437)",
+        "瞄准破绽膝击、背后锁颈令其昏厥(L441-459)",
+        "缇亚以FlameArrow击飞卑屈求让的斯诺并怒斥(L293-298)",
+        "斯诺重伤入院、回复魔法无法短期痊愈(L482-483)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 461,
+        "quote": "虽然是个比较卑鄙的胜利就是了"
+      },
+      "record_id": "c0052-7dc89a7378ee",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "诺文战胜剑圣后公开身份、被大会管理者逮捕",
+      "entities_involved": [
+        "诺文·阿雷亚斯",
+        "芬里尔·阿雷亚斯",
+        "格连·沃克"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "据拉丝缇娅拉自行人处听闻：战胜剑圣后堂堂正正宣言、并非濒死怪物化(L486-491)",
+        "随即被大会管理者逮捕；大会自诩来者不拒、应不取消资格(L494)",
+        "第四轮中南区观众席先有欢呼声后有悲鸣(L470-475)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 494,
+        "quote": "在那之后他立刻就被大会管理者给逮捕了"
+      },
+      "record_id": "c0052-3ac333d6cc18",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "第四轮结果与准决赛对阵确定",
+      "entities_involved": [
+        "相川·涡波",
+        "拉丝缇娅拉·弗茨亚茨",
+        "诺文·阿雷亚斯",
+        "瓦尔德"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "第四轮：涡波（对艾尔米拉德）、拉丝缇娅拉队、诺文皆胜(L479/L515)",
+        "准决赛对阵：涡波对拉丝缇娅拉、诺文对瓦尔德国家代表(L480)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 480,
+        "quote": "下一场准决赛是我对拉丝缇娅拉，诺文则要对战瓦尔德的国家代表。"
+      },
+      "record_id": "c0052-56d6bba6a5bb",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "莉帕以『最重要的妹妹』说服濒临弃权的涡波参赛",
+      "entities_involved": [
+        "莉帕",
+        "相川·涡波",
+        "阳滝"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "工作人员以不回答即强制判弃权相逼(L576-577)",
+        "莉帕低语：不参赛记忆回不来、回不到原来的世界(L583)",
+        "以『最重要的妹妹』唤醒其必须出场之意志(L586-592)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 586,
+        "quote": "你·最·重·要·的·妹·妹·怎·么·办"
+      },
+      "record_id": "c0052-6aa4c97f38ee",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "准决赛规则定为『击落象征物=破坏手环』、双方不设赌注（打假赛）",
+      "entities_involved": [
+        "相川·涡波",
+        "拉丝缇娅拉·弗茨亚茨",
+        "缇亚",
+        "主持人"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "规则系数日前事前商定、由拉丝缇娅拉演出提案(L621-631)",
+        "否决『击落武器』『击落胸花』后采用手环规则(L627-633)",
+        "双方当众表明什么都不赌(L643-645)",
+        "涡波自陈打假赛准备就此完成(L636)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 637,
+        "quote": "规则是『击落象征物』，破坏对方的『手环』"
+      },
+      "record_id": "c0052-75b8647ab82c",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "『诅咒』自动护卫无意识涡波并复制见闻技艺",
+      "entities_involved": [
+        "相川·涡波",
+        "拉丝缇娅拉·弗茨亚茨"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "自动取出新月琉璃直剑防御、施展未见辅助魔法的高超防御技巧(L671-676)",
+        "将疼痛逐出意识(L697)、仅见一次的技巧纳为己有(L700-701)",
+        "复制：芙兰琉莱体术(L700)、阿雷亚斯家剑术(L954)、塞拉剑术(L876)、拉古涅左手剑(L883)、海因双剑(L891)、格连/斯诺系体术与艾尔多拉琉学院体术(L904-905)、祭典弓术(L943-945)",
+        "闭眼凭第六感尽数回避光箭雨与岩石(L988)",
+        "据拉丝缇娅拉：无魔力无思考的涡波反而更强(L923-929)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 701,
+        "quote": "它竟然能将仅仅见识过一次的技巧纳为己有"
+      },
+      "record_id": "c0052-cdd3a5077d50",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "手环暗魔力触发最终防卫术式、手环龟裂",
+      "entities_involved": [
+        "相川·涡波",
+        "帕林库洛"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "暗属性魔力自手环溢出、浸透脊髓(L731-733)",
+        "意识收束于『守护这个手环』、忆起病床侧誓言(L744-755)",
+        "暗魔法『不罚的大英雄』发动、全部术式集中于认识阻碍+10.00(L756-758)",
+        "超负荷致手环龟裂；手环为释放魔法的代用品、发动无法阻止(L760-764)",
+        "据拉丝缇娅拉推测：异常状态源于帕林库洛的魔法(L836)",
+        "黑紫色瞳色与紫色魔力为外在表征(L802-805)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 756,
+        "quote": "暗魔法『不罚的大英雄』发动了"
+      },
+      "record_id": "c0052-86aca9709a93",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "涡波燃烧生命咏唱『过密次元的真冬』",
+      "entities_involved": [
+        "相川·涡波"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "HP数值迅速减少、燃烧生命(L788-793)",
+        "冷气与次元复合魔法仅维持一瞬(L807-808)",
+        "借此获得空间情报、减缓拉丝缇娅拉拳速(L811)",
+        "口鼻喷血仍完成构筑(L809)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 786,
+        "quote": "魔法、『过密次元的真冬』"
+      },
+      "record_id": "c0052-6deb8606a401",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "双方同时破坏对方手环、『诅咒』消失、拉丝缇娅拉宣告对帕林库洛胜利",
+      "entities_involved": [
+        "相川·涡波",
+        "拉丝缇娅拉·弗茨亚茨",
+        "帕林库洛"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "涡波以折断之左手握碎拉丝缇娅拉手环、拉丝缇娅拉重拳同碎其手环(L1009-1016)",
+        "失去想守护之物、涡波心折，紫色魔力消散(L1018-1021)",
+        "拟神之眼确认束缚涡波的『诅咒』消失(L1022)",
+        "拉丝缇娅拉（喉碎成咆哮）宣告对帕林库洛胜利、自陈夺回『主人公』(L1025-1033)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1013,
+        "quote": "同时，我的最后一击也砸中了涡波的『手环』。"
+      },
+      "record_id": "c0052-5e2f058642f9",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "涡波取回全部记忆、『基督·欧亚』与『相川·涡波』记忆融合",
+      "entities_involved": [
+        "相川·涡波",
+        "缇亚",
+        "拉丝缇娅拉·弗茨亚茨"
+      ],
+      "confidence": 0.95,
+      "observations": [
+        "追溯自迷失迷宫至败给帕林库洛为止的全部记忆(L1072)",
+        "两份记忆统合、两人格融合(L1073-1075)",
+        "其后当众长篇自我批判：输给帕林库洛、放任希尔达克、独下三十层、对艾尔米拉德告白、敷衍斯诺等(L1081-1126)",
+        "异常状态基本被缇亚魔法解除、混乱残留(L1139-1140)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1074,
+        "quote": "感觉『基督·欧亚』这个人物与『相川·涡波』这个人物融合在了一起。"
+      },
+      "record_id": "c0052-779c43cb7333",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "涡波向缇亚坦白『基督』为假名、真名相川涡波",
+      "entities_involved": [
+        "相川·涡波",
+        "缇亚"
+      ],
+      "confidence": 0.95,
+      "observations": [
+        "请求缇亚今后仍称其『涡波』(L1169)",
+        "自陈当年报假名是为逃避、承认说谎并请求原谅(L1173)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1169,
+        "quote": "实际上『基督』是我的假名，『相川涡波』才是我真正的名字。"
+      },
+      "record_id": "c0052-6a78d226f884",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "拉丝缇娅拉坦白欺瞒缇亚、缇亚羞逃后被击晕",
+      "entities_involved": [
+        "拉丝缇娅拉·弗茨亚茨",
+        "缇亚"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "所欺瞒内容：曾称基督取回记忆后会忘掉『涡波』时代之事(L1182)",
+        "缇亚满脸通红逃走、被两人捕获后由拉丝缇娅拉使其失去意识(L1190-1194)",
+        "缇亚昏倒时最稳定，需要火力时再叫醒(L1197-1198)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1186,
+        "quote": "对不起，缇亚，那是骗你的"
+      },
+      "record_id": "c0052-3fc6644c264a",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "拉丝缇娅拉队认输、涡波晋级决赛",
+      "entities_involved": [
+        "相川·涡波",
+        "拉丝缇娅拉·弗茨亚茨",
+        "主持人"
+      ],
+      "confidence": 0.95,
+      "observations": [
+        "拉丝缇娅拉以己方手环先碎为由主动认输(L1250-1259)",
+        "主持人宣布北区西区准决赛胜利者为相川·涡波(L1261)",
+        "赛后涡波向拉丝缇娅拉详细布置任务、她全部接受(L1268-1272)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1261,
+        "quote": "胜利者是相川·涡波选手"
+      },
+      "record_id": "c0052-e86908fe4f41",
+      "status": "candidate"
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "canonical": "圣诞祭（追忆）：拉丝缇娅拉魔力丧失与涡波被掳之发端",
+      "entities_involved": [
+        "拉丝缇娅拉·弗茨亚茨",
+        "缇亚",
+        "相川·涡波",
+        "帕林库洛"
+      ],
+      "confidence": 0.85,
+      "observations": [
+        "圣诞祭当天拉丝缇娅拉魔力丧失殆尽、治疗负伤的缇亚并逃亡(L12)",
+        "仪式解除束缚她的大量魔法、丧失大量『加护』『补正』(L14-15)",
+        "此后一连串逃亡与修行直至报名舞斗大会(L12)",
+        "涡波在圣诞祭被帕林库洛掳走、拉丝缇娅拉自陈夺回『主人公』(L1032-1033)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 12,
+        "quote": "圣诞祭那天魔力丧失殆尽"
+      },
+      "record_id": "c0052-2ca976ff2649",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "莉帕未言明的愿望",
+      "entities_involved": [
+        "莉帕",
+        "相川·涡波"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "确认涡波不再行动后『她也安心了』，称取回记忆则其愿望能实现(L548-553)",
+        "愿望内容本章未言明；她与诺文同被涡波回想为『怪物』(L1114)",
+        "亦劝涡波专心取回记忆、勿插手斯诺与诺文(L513-525)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 549,
+        "quote": "我·的·愿·望·也·能·实·现"
+      },
+      "record_id": "c0052-0e1ea3c3e4f2",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "黑暗中的愉悦之声与『曾经的涡波』",
+      "entities_involved": [
+        "相川·涡波"
+      ],
+      "confidence": 0.85,
+      "observations": [
+        "手环魔法发动时黑暗深处传来莫名愉悦的声音：条件已凑齐、为妹妹打倒敌人(L765)",
+        "又称将过去重现、不惜牺牲一切与世界即可接近『曾经的涡波』(L774)",
+        "发话者身份本章未明【待确认】",
+        "『曾经的涡波』概念首次出现"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 765,
+        "quote": "来吧，涡波小哥。为了你最爱的妹妹，去把面前的敌人给打倒吧"
+      },
+      "record_id": "c0052-472564d348dc",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "斯诺龙化之不归风险",
+      "entities_involved": [
+        "斯诺·沃克",
+        "缇莉"
+      ],
+      "confidence": 0.85,
+      "observations": [
+        "据缇莉：继续使用龙化将变不回人形、若变不回来一切都完了(L32/L39)",
+        "斯诺自陈不会变化到恢复不了的地步(L34)",
+        "本章其恋心被动摇时龙化即松弛(L435)，风险未回收"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 32,
+        "quote": "你可是会变不回人形的啊"
+      },
+      "record_id": "c0052-cdff2dbd2e39",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "技能『???』之隐患仍在",
+      "entities_involved": [
+        "相川·涡波"
+      ],
+      "confidence": 0.85,
+      "observations": [
+        "封印虽消失、混乱残留，应认为技能『???』的隐患还在(L1141)",
+        "此次感情剧烈波动仍未发动，原因推测为无生命危险(L1141-1142)",
+        "技能本体与发动条件未揭示"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1141,
+        "quote": "应该认为技能『???』的隐患还在"
+      },
+      "record_id": "c0052-e90425e78dbb",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "涡波的密计、帕林库洛之『牢狱』与三人之阻",
+      "entities_involved": [
+        "相川·涡波",
+        "斯诺·沃克",
+        "莉帕",
+        "诺文·阿雷亚斯",
+        "帕林库洛"
+      ],
+      "confidence": 0.85,
+      "observations": [
+        "斯诺、莉帕、诺文三人将阻挡在涡波面前(L1225)",
+        "计划对谁也不能说、连深入考虑也不行，恐被『她』察觉；她甚至能冷酷牺牲斯诺与玛利亚(L1229-1234)",
+        "『她』身份本章未明【待确认】",
+        "不按既定计划行动将在舞斗大会产生致命破绽、无法离开联合国(L1223-1226)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1225,
+        "quote": "斯诺、莉帕、诺文。这三人会阻挡在我的面前。"
+      },
+      "record_id": "c0052-df242dbf2b3b",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "恢复记忆后即刻投入战斗之预感",
+      "entities_involved": [
+        "相川·涡波"
+      ],
+      "confidence": 0.8,
+      "observations": [
+        "确认HP尚余但MP耗尽后，自陈可能接下来马上就要投入战斗(L1145-1147)",
+        "警醒不再重蹈圣诞祭覆辙(L1150-1151)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1147,
+        "quote": "可·能·接·下·来·马·上·就·要·投·入·战·斗"
+      },
+      "record_id": "c0052-6a7f0f1d8693",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "诺文所求『荣光』与其动向不明",
+      "entities_involved": [
+        "诺文·阿雷亚斯",
+        "莉帕",
+        "相川·涡波"
+      ],
+      "confidence": 0.8,
+      "observations": [
+        "据莉帕：已战胜『最强』与『剑圣』，所求『荣光』应已足够、故放弃掩藏身份且不会来找茬(L523)",
+        "涡波对其仍不放心，欲接触被莉帕否定(L524-526)",
+        "第四轮南区观众席传出悲鸣、原因未明(L470-475)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 523,
+        "quote": "那么诺文期望的什么『荣光』应该已经足够了吧"
+      },
+      "record_id": "c0052-bc3bca6ee9d8",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "决赛=计划的第一步",
+      "entities_involved": [
+        "相川·涡波"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "准半决赛只是前戏、真正战斗接下来才开始(L1266-1267)",
+        "计划具体内容保密（另见密计伏笔）(L1229-1231)"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1263,
+        "quote": "这样我就打入了决赛。这就是计划的第一步。"
+      },
+      "record_id": "c0052-f8ff62e1eb48",
+      "status": "candidate"
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "canonical": "涡波誓助斯诺、诺文、莉帕三名同伴",
+      "entities_involved": [
+        "相川·涡波",
+        "斯诺·沃克",
+        "诺文·阿雷亚斯",
+        "莉帕"
+      ],
+      "confidence": 0.9,
+      "observations": [
+        "自陈这次绝对不能选错、要让大家都用笑容迎接舞斗大会落幕(L1279)",
+        "此前视三人为阻挡者(L1225)，立场转变值得追踪"
+      ],
+      "evidence": {
+        "卷": 5,
+        "章": 4,
+        "line": 1278,
+        "quote": "接下来——我就应该去帮助斯诺、诺文、莉帕这三名同伴。"
+      },
+      "record_id": "c0052-cde6c2c97276",
+      "status": "candidate"
+    }
+  ]
+}

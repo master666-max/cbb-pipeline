@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "舞斗大会",
+   "芬里尔·阿雷亚斯",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "身份揭露",
+  "name": "诺文南区身份揭露与被捕",
+  "tick": 42,
+  "time_verbatim": "舞斗大会第三天·南区第四轮（余波可闻）"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 470,
+   "quote": "从南面很远处传来了古怪的声音。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 480,
+   "quote": "下一场准决赛是我对拉丝缇娅拉，诺文则要对战瓦尔德的国家代表。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 52,
+   "text": "胜剑圣后主动宣言→立即被大会管理者逮捕；大会来者不拒应不取消资格；南区观众席悲鸣远传（拉丝缇娅拉超常听力捕捉）；翌日准决赛对手=瓦尔德国家代表"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-aa7b19878af7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

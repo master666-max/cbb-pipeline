@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "entities": [
+   "『龙之咆哮』",
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "激战征兆",
+  "name": "西区龙之咆哮余波",
+  "tick": 41,
+  "time_verbatim": "北区第四轮终了时"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 304,
+   "quote": "是夹带着魔力的——『龙之咆哮』。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 308,
+   "quote": "拉丝缇娅拉她们正在跟斯诺比赛。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 51,
+   "text": "摇动整座竞技场的生物咆哮自西区传来，全场堵耳；涡波独辨真面目=龙之咆哮、音源=斯诺（对拉丝缇娅拉队激战之余波）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e2d3606355f5",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

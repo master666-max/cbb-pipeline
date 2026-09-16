@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "格连",
+   "莱纳",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "名声",
+  "name": "诺文胜格连后被群众包围",
+  "tick": 41,
+  "time_verbatim": "舞斗大会第三天朝"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 7,
+   "quote": "这是因为他在昨天的比赛中对战拥有『最强』之名的格连·沃克并取得了胜利所致。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 8,
+   "quote": "因此很多人将诺文视为下一任的『最强』而心怀期待。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 51,
+   "text": "胜『最强』格连后被大量人群包围抽不开身：粉丝+各怀鬼胎的投机者；被很多人视为下一任『最强』而期待（涡波联想到舞会中的自己）；未未雨绸缪换住处"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7fc60f037a1b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

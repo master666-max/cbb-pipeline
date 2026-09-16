@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "entities": [
+   "手环",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "缇亚",
+   "舞斗大会"
+  ],
+  "instant": null,
+  "kind": "共谋对决",
+  "name": "准决赛打假赛(手环互破坏规则)",
+  "tick": 42,
+  "time_verbatim": "舞斗大会第四天·北西区准决赛"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 630,
+   "quote": "「所以我们准备了『手环』。而涡波选手也戴着类似的『手环』。对这个『手环』的争夺——或者说以破坏对方的手环为目标是不是就显得公平了些呢。这样如何？」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 636,
+   "quote": "这样一来，打假赛的准备就大功告成了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 52,
+   "text": "拉丝缇娅拉事前设计规则（击落象征物=手环互破坏/否决击落武器与胸花规则）+涡波按既定台词应和；无赌注；涡波极限状态连战（Growth 强化/Symposion·Noah 光球/手臂肘折断/次元之冬构筑失败）——按计划 Checkmate 收束"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-459320524db1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

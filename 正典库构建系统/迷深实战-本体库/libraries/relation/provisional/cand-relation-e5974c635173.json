@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔缇",
+  "rel_type": "弟子(火之理盗窃者)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 951,
+   "quote": "威力调整的很好。预测结界的强度，将周围的受害程度压至最低，同时又对涡波相当有效。真不愧是『火之理的盗窃者』阿尔缇的弟子。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "『真不愧是『火之理的盗窃者』阿尔缇的弟子』——缇亚威力控制（预测结界强度/受害最小化）获师承评价"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e5974c635173",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

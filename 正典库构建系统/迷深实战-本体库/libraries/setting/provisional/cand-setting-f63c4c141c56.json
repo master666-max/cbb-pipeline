@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 51,
+  "fact": "浑然一体的柔软剑技+高速释放魔法（一切行动经理论打磨无多余）：Ice·Phalanx（捏碎佩饰道具发射冰桩）/LightingLine（紫电）/WindBurst（无咏唱强风）/AquaSpread（席卷地面水魔法）/FlameArrow（火矢）/Impulse（脚尖道具振动魔法）；等级20·骑士·魔力18.10·敏捷7.29；被夺剑后转体术打击战；魔法道具连携=其即发魔法的实体载体",
+  "name": "艾尔米拉德的魔法剑技一体战术",
+  "tick": 41
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 192,
+   "quote": "艾尔米拉德的强大就在于他那浑然一体的柔软剑技和高速释放的魔法。一切的行动都经过了理论的打磨，丝毫没有多余。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 175,
+   "quote": "艾尔米拉德理所当然地准备好了对策。他捏碎了身上戴着的魔法道具，将已经完成的冰结魔法射向我。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 159,
+   "quote": "力量4.79体力2.82技巧4.12敏捷7.29贤能7.19魔力18.10素质1.67",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "technique",
+   "chapter": 51,
+   "text": "状态栏：HP198/201 MP280/299 职业:骑士 等级20 力量4.79 体力2.82 技巧4.12 敏捷7.29 贤能7.19 魔力18.10 素质1.67 先天技能:属性魔法1.93 后天技能:魔法战斗1.89 剑术0.89"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-f63c4c141c56",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 51,
+  "entities": [
+   "相川涡波",
+   "艾尔米拉德·希达尔克"
+  ],
+  "name": "艾尔米拉德言行或为激发演技(推测)",
+  "note": "涡波推测：其像准备好了的台词或全为让我认真起来的演技——甚至希达尔克家长男的一切表现都是（反推，待后续印证）",
+  "payoff_chapter": null,
+  "setup_chapter": 51,
+  "tier": "次要"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 281,
+   "quote": "说不定，他那些像是准备好了的台词，全部都是为了让我认真起来的演技。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 282,
+   "quote": "不对，岂止如此，说不定他身为希达尔克家的长男的一切表现都是——",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 51,
+   "text": "赛前挑衅与赛后托付的态度反差构成推测基础"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-b0f66fcd7551",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

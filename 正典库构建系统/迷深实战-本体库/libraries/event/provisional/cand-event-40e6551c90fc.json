@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "entities": [
+   "手环",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "作战部署",
+  "name": "第三天作战部署(手环破坏重申)",
+  "tick": 41,
+  "time_verbatim": "舞斗大会第三天开赛前"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 38,
+   "quote": "「现在就是关键时刻了。涡波要比诺文更快地结束比赛，跟我们汇合。我们则要好好地修理斯诺一顿。然后在不会有任何人妨碍的准决赛中破坏掉『手环』。——上吧！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 51,
+   "text": "拉丝缇娅拉总结：涡波速胜→汇合→修理斯诺→在无人妨碍的准决赛破坏『手环』；缇亚/塞拉参战全力以赴"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-40e6551c90fc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

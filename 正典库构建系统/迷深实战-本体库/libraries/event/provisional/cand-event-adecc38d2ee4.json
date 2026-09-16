@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "人物揭示",
+  "name": "缇亚真性暴露与打晕稳定化",
+  "tick": 42,
+  "time_verbatim": "准决赛后"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1186,
+   "quote": "「啊~那个啊。是有说过呢。对不起，缇亚，那是骗你的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 1194,
+   "quote": "幸好缇亚的身体能力不高，她很快就被我和拉丝缇娅拉捕获，并就这样借拉丝缇娅拉之手让她失去了意识。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 52,
+   "text": "拉丝缇娅拉谎言暴露（曾骗缇亚：基督取回记忆就会忘掉涡波时的事——缇亚因此隐忍穿那件衣服）；缇亚满脸通红逃走被捕获，由拉丝缇娅拉使其失去意识；『缇亚大人在晕倒的时候是最稳定的』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-adecc38d2ee4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

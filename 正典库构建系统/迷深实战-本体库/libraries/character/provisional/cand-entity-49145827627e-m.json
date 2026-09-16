@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "芬里尔·阿雷亚斯"
+ },
+ "evidence": [
+  {
+   "chapter": 50,
+   "line": 290,
+   "quote": "另一个人选是冠以『剑圣』之名的男人，芬里尔·阿雷亚斯。",
+   "vol": 1
+  },
+  {
+   "chapter": 50,
+   "line": 291,
+   "quote": "他跟格连在一个地方。乍一看下是个初老的长者，但身体全无衰老的迹象。哪怕不用『Dimension』，他的装着呈现的身体线条也诉说着肌肉的厚实。眼锐如鹰的他令许多贵族敬畏三分，应当是个不输格连的强者。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 489,
+   "quote": "「在战胜了『剑圣』芬里尔·阿雷亚斯之后，他自己堂堂正正地作出了宣言。」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 50,
+   "text": "冠以『剑圣』之名的男人（当代阿雷亚斯家剑圣——ch26『阿雷亚斯家的老头子』对应候选）：初老长者但身体全无衰老迹象（肌肉厚实/眼锐如鹰）；令许多贵族敬畏三分；与格连同在瓦尔法拉大厅被贵族环绕——涡波评估'不输格连的强者'但无从接近（地位+护卫），助破手环无望"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-49145827627e",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-49145827627e-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-49145827627e",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

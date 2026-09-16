@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "认输(打假赛合意)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1255,
+   "quote": "「啊啊，那个的话，我想是我们的手环更早被破坏掉的。不过因为几乎是同时被破坏的，所以我们就讨论了一下到底谁胜谁负。结果就是我们队伍认输了。虽然很遗憾，但我们输了呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 637,
+   "quote": "「双方都同意了。那就决定了。规则是『击落象征物』，破坏对方的『手环』！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "手环互破坏规则（击落象征物）=事前计划；同时破坏后拉丝缇娅拉对主持人主张认输（我方手环更早破坏论）→涡波入决赛=计划第一步；涡波密令任务内容不明"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4e64a3866635",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

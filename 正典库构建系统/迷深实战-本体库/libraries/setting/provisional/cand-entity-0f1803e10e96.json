@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "概念",
+  "name": "技能『???』"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1141,
+   "quote": "只不过，『封印』虽然消失，但『混乱』还留着，应该认为技能『???』的隐患还在。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 52,
+   "text": "涡波状态栏不可视名的技能（隐患存续）：记忆统合后未发动——判定原因=无生命危险或精神卫生上被判定为必要；混乱7.48残留下须视为仍在"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0f1803e10e96",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

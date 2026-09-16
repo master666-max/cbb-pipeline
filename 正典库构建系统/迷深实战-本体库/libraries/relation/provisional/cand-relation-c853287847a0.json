@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "英雄憧憬(胜涡波即英雄)",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 120,
+   "quote": "「啊啊，这样就好……！这样一来，只要赢过你的话，我就能成为『英雄』——！」",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 273,
+   "quote": "「好不甘心啊。啊啊，我想要战胜『英雄』。……我真的好想赢。从很久以前我就一直在等待了啊，我相信着自己能做到而坚持锻炼至今……",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "『只要赢过你的话，我就能成为「英雄」』；见涡波认真态惊呼何等魔力威压感=英雄；败北后仍以看英雄的眼神仰望+纯真笑容——自述从很久以前就相信能赢而锻炼至今"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c853287847a0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

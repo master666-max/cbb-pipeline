@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "基督·欧亚",
+  "rel_type": "记忆统合(假名告白)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 1074,
+   "quote": "感觉『基督·欧亚』这个人物与『相川·涡波』这个人物融合在了一起。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 1169,
+   "quote": "取回记忆的我和『基督·欧亚』确实是同一个人，可是我还是希望你像至今一样叫我『涡波』。实际上『基督』是我的假名，『相川涡波』才是我真正的名字。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "两份记忆统合（从迷宫迷失到败给帕林库洛的全部时间回想）；亲口告白『基督』是假名『相川涡波』才是真名，请缇亚仍称涡波"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d82d3097c7b8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

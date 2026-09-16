@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "婚约(两家同意)",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 40,
+   "line": 178,
+   "quote": "「震惊！她们两个其实是彼此的婚约者哦！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 40,
+   "line": 599,
+   "quote": "「这肯定是希达尔克和沃克两家都了解和同意的事情吧……但是，艾尔你觉得那样好吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 56,
+   "quote": "他在每一场比赛中都会进行为婚约者献上爱之誓约，将胜利献给所爱之女性的演出!看来是打算在『舞斗大会』之后，于本月末兴办婚事！而其对象，竟是那沃克家的千金斯诺大人！",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 69,
+   "quote": "斯诺因为那种能力肯定反复听过很多次了吧。在这场『舞斗大会』之前，类似的事情就发生过很多次了吗。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 40,
+   "text": "据缇莉爆料：彼此的婚约者（'这肯定是希达尔克和沃克两家都了解和同意的事情'——斯诺语）；希达尔克个人欢迎斯诺；次日斯诺被希达尔克家传唤拘束一日"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-501eb510c649",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-501eb510c649-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-501eb510c649",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

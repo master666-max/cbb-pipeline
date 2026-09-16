@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "守护同盟(自我 exposing 说服)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 383,
+   "quote": "「既然你这么想要一个人守护你的话！那么我·会·做斯诺的『英雄』来救你！」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 404,
+   "quote": "「为什么……？为、为什么呢？我、我更想被『涡波』所救。不想被拉丝缇娅拉大人，而是想被『涡波』……但、但是，为什么呢？为什么我会想要『涡波』——？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "说服弧：你不弱到非人守护/联合国最强级评→『我就不行吗』『我·会·做斯诺的『英雄』来救你』『让我把你从沃克家拐走…代价就是你成为我的东西』——斯诺拒绝（不是『真·正·的·英·雄』/没法信任/更想被涡波救）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-878a67a7c0a1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

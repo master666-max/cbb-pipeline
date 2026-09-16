@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "芬里尔·阿雷亚斯",
+  "rel_type": "剑技借用(鲜血魔法记忆)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 205,
+   "quote": "从寄宿血中的数量过千的『人』的记忆中，我选择了剑圣『芬里尔·阿雷亚斯』。本来预定要提供给圣人再临的肉体，完全再现出了近代最强的剑士的实力。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "血中千余『人』记忆中选取剑圣——世界最高峰老练剑术降临年轻肉体；对斯诺战与准决赛两用（准决赛另双重展开海因·赫勒比勒夏因）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9fa130ec430a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

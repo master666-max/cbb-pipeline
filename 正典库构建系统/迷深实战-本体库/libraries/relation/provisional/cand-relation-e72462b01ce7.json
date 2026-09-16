@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "下杀手回避委托",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 29,
+   "quote": "「……斯诺她只是被逼的太紧了而已。可能的话，只有下杀手这一点希望你能避免。拜托了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 36,
+   "quote": "但是，如果缇亚酱有生命危险，那么拉丝缇娅拉还是会对斯诺下杀手的吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "涡波拜托拉丝缇娅拉避免对斯诺下杀手；拉丝缇娅拉未承诺（缇亚生命危险时仍会下杀手——涡波读出的优先顺序）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e72462b01ce7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

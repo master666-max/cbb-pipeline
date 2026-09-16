@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "鲜血魔法『芬里尔·阿雷亚斯』"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 205,
+   "quote": "从寄宿血中的数量过千的『人』的记忆中，我选择了剑圣『芬里尔·阿雷亚斯』。本来预定要提供给圣人再临的肉体，完全再现出了近代最强的剑士的实力。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 208,
+   "quote": "如今年龄已近六十的剑圣芬里尔。他那世界最高峰的老练的剑术，如今降临在了世界最高峰的年轻肉体上。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 52,
+   "text": "拉丝缇娅拉从血中千余『人』的记忆中选取剑圣芬里尔·阿雷亚斯（年近六十·近代最强剑士）的剑术——瞳色金转钝灰、发混入栗色、未学过的剑术经验染及全身；『本预定提供给圣人再临的肉体』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ab4fa4041f4d",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,25 @@
+{
+ "_meta": {
+  "unit": "U-C03 批5 · CHAPTER 0053（第五卷-后记，摄入序43）",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "verified_at": "2026-09-17",
+   "slice": "行23758-23775（CHAPTER 0053）"
+  },
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.2 §0）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注『据某某声称』。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=43→tick43→伪锚点 2000-02-12。禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行；本章零候选。",
+  "r6_decision": {
+   "verdict": "作者后记：封面主角莉帕感言/六卷三十层守护者战（第二次清算）预告/标题欺诈自嘲/谢辞——R6 规则1 作者杂谈零抽取（六卷预告=作者级剧透，同 ch0044 斯诺剧透先例不入库）",
+   "reason": "R6 规则1 作者杂谈+平台出版宣传；『第二次清算』『最想书籍化部分』均为出版侧元评论",
+   "deterministic_check": "清洗版 NOISE 标记+boundary noise=true（ch0053）"
+  },
+  "cross_chapter_notes": [],
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "observations_policy": "实体 observations 仅首入库存活。"
+ },
+ "candidates": []
+}

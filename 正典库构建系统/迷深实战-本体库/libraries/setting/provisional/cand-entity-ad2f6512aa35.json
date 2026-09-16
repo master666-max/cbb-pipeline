@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "组织(贵族家门)",
+  "name": "希达尔克家"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 54,
+   "quote": "他既是那个希达尔克家的长男，同时又是艾尔多拉琉学院的主席骑士、也是精锐云集的公会『绝世』的会长！",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 92,
+   "quote": "「并且，这对我来说也一样。身为希达尔克家的长男，我有着承受任何苦难的义务。为了希达尔克家，不管要踏上多么艰辛的道路我都不会犹豫。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 51,
+   "text": "贵族家门（艾尔米拉德所属）：长男负有承受任何苦难的家族义务（'为了希达尔克家，不管要踏上多么艰辛的道路我都不会犹豫'）；家族繁荣路线=以斯诺·沃克婚约为棋局长期卷入战斗；家族期望下连『英雄』也会以之为目标"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ad2f6512aa35",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "鲜血魔法"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 202,
+   "quote": "跟斯诺『龙化』那时一样，我的手背绽裂流出鲜血。血液又蒸发变成血雾将我的身体包裹起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 204,
+   "quote": "这具用魔石练就的肉体，进一步接近了『人』。这就是我的鲜血魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 52,
+   "text": "手背绽裂出血→血液蒸发成血雾包裹身体的变身系魔法：拉丝缇娅拉版=『人化』（人与魔石混血，魔石肉体接近『人』，可从血中千余『人』的记忆选取能力）；斯诺版=『龙化』介质；斯诺擅长的领域之一"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-39828242d129",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『过密次元的真冬』",
+  "rel_type": "生命削减发动(HP代魔力)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 250,
+   "quote": "但是，我的身体却明白这是什么意思。我现在是在削减自己的生命使用魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 255,
+   "quote": "虽然做的事情和刚才相同，但是我的反射神经和动态视力的水平比刚才跃升了几十倍。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "MP 枯竭下确信仍能发动——状态栏首次可见并显示最大HP持续削减（102/3160→89/30…）；反射神经与动态视力跃升几十倍+减缓艾尔米拉德动作；伴随脑细胞灼烧感与死亡味道"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-498cee229c0b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

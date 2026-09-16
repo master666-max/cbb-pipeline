@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "成员不信任(强度差)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 47,
+   "quote": "「但是，只靠『史诗探索者』的大家是不够的。因为大家肯定会很容易就死掉了啊……」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 49,
+   "quote": "因其自身的强大，斯诺不信任『史诗探索者』的任何人。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "『只靠『史诗探索者』的大家是不够的。因为大家肯定会很容易就死掉了啊』——诀别意味；因其自身强大不信任任何队员"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a4488c95a275",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

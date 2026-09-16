@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『龙之咆哮』",
+  "rel_type": "咆哮源头(龙之化身)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 303,
+   "quote": "它跟我几天前在西边的废城中听到的那种声音如出一辙。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 307,
+   "quote": "这阵咆哮，确实是从西区那边传来的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "西区传来的咆哮=与西边废城黯淡之龙如出一辙的龙之咆哮；涡波念出音源人名斯诺——龙之化身称号首次实态化征兆"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3c51f5bcf241",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

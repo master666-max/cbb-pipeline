@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 52,
+  "fact": "手环=为了释放某种魔法的代用品（与涡波见识过的魔法道具就是一样的）——魔法的发动无法被阻止（『次元之冬』也阻止不了）；暗属性大魔法消耗超负荷→龟裂→破碎；破碎=诅咒消失条件",
+  "name": "手环的代用品本质",
+  "tick": 42
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 763,
+   "quote": "这个『手环』就是为了释放某种魔法的代用品。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 764,
+   "quote": "因此，魔法的发动是无法被阻止的。就算是『次元之冬』也阻止不了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 52,
+   "text": "『试遍千方百计也未能破坏』的既往不可破坏性与最终防卫术式负荷的自我瓦解"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-10e641d0b6e9",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

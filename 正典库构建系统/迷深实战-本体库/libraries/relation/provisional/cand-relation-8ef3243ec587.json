@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "斯诺·沃克",
+  "rel_type": "婚约候补(格连推荐,大会宣称)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 76,
+   "quote": "「——接着，造化弄人，如今站在这里的两位全都是同一名女性的婚约者！涡波选手也是由格连·沃克大人推荐的斯诺大人的婚约者！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "据大会主持人宣称：涡波亦为由格连·沃克推荐的斯诺婚约者——与艾尔米拉德并称『同一名女性的两位婚约者』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8ef3243ec587",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

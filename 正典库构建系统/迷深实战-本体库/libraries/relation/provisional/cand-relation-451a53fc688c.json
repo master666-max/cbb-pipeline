@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "护婚宣誓(胜我先行)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 143,
+   "quote": "「——我在此宣誓！斯诺·沃克本人希望同我结为连理！其人之爱寄存于我，因而若想与斯诺·沃克完婚之人，势必先行战胜于我！不然，倘此剑高悬，则斯诺·沃克便永无成婚之理！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 145,
+   "quote": "伴随着我的叫喊，膨胀了数倍的轰鸣声响起。感觉自己一冲动做了什么无法挽回的事情。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "竞技场当众宣誓：斯诺本人希望同我结为连理，欲完婚者须先胜过我——对贵族婚约棋局的正面宣战（自认冲动做了无法挽回的事）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-451a53fc688c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

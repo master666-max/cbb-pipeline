@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "愿望实现宣言(安心态)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 548,
+   "quote": "确认到我不再行动之后，她·也·安·心·了。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 549,
+   "quote": "「——我·的·愿·望·也·能·实·现。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "确认涡波不再行动后『她·也·安·心·了』+『——我·的·愿·望·也·能·实·现。』——ch50 慕影死神线的直接推进（涡波麻木接受未深思）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1dbe68eb5951",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

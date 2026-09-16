@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『龙之咆哮』"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 304,
+   "quote": "是夹带着魔力的——『龙之咆哮』。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 300,
+   "quote": "出离常理的叫声如地震一般撼动了整个世界。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 51,
+   "text": "夹带魔力的龙类咆哮（音波如地震撼动整座竞技场，全场堵耳）——涡波辨识：与西边废城黯淡之龙的咆哮如出一辙；本章西区余波音源=斯诺·沃克（龙之化身）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-57f5605a8396",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

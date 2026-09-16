@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "希达尔克家",
+  "rel_type": "长男义务(家族繁荣)",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 92,
+   "quote": "「并且，这对我来说也一样。身为希达尔克家的长男，我有着承受任何苦难的义务。为了希达尔克家，不管要踏上多么艰辛的道路我都不会犹豫。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 95,
+   "quote": "「艾尔米拉德·希达尔克为了自己家族的繁荣，要将斯诺·沃克卷入漫长而痛苦的战斗之中。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "承受任何苦难的义务宣言；自认将斯诺·沃克卷入漫长痛苦战斗而无踌躇后悔"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a9642c5e6623",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

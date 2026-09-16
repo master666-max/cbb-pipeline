@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "嫉妒(被众人守护)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 52,
+   "line": 250,
+   "quote": "「……你一直、一直都被别人守护着。一直都是，一直都是！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 247,
+   "quote": "随着战斗的进行，我逐渐理解了她的这份感情。斯诺应该是在嫉妒着借助多数人的力量战斗的我。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 52,
+   "text": "『你一直、一直都被别人守护着』——嫉妒借助多数人力量战斗的拉丝缇娅拉（战斗中逐渐理解的感情）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e93763adcc46",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

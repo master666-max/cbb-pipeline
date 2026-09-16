@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾尔米拉德·希达尔克",
+  "rel_type": "击败(北区第四轮互殴)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 51,
+   "line": 258,
+   "quote": "头部、手臂、胸部统统一顿胖揍，最终，作为最后一击，我的拳头揍向艾尔米拉德的下巴。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 263,
+   "quote": "他使出了自己的全力，最后终于倒下了。根据『注视』获得的情报，我明白他站不起来了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 51,
+   "text": "无规则一对一（赌注=英雄的名誉+斯诺婚约权）：互殴终结以下巴一击告终；艾尔米拉德败北宣言+完全投降姿势；涡波自评『赢了比赛输了战斗』（须以言语战胜）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e745331eb37e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

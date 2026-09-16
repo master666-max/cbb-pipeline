@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "玛利亚·迪斯特拉斯"
+ },
+ "evidence": [
+  {
+   "chapter": 5,
+   "line": 367,
+   "quote": "姓名：玛利亚·迪斯特拉斯HP39/P35/3541M职业：奴隶",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 381,
+   "quote": "「……我叫玛利亚。我的名字是玛利亚。」",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 371,
+   "quote": "先天技能：炯眼1.43",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 1118,
+   "quote": "在那『梦的世界』里，妹妹(玛利亚)脸上挂着笑容，有能够信赖的搭档(斯诺)，我和守护者(诺文)还有莉帕都成为了朋友，作为国家直辖的公会会长得到了民众和伙伴们的信任……",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 5,
+   "text": "奴隶拍卖场的黑发少女：双目无神、身体消瘦、仅着布衣（未打理态）；【状态】：职业奴隶 等级3 力量0.89 体力2.01 技巧1.23 速度0.73 贤能1.07 魔力1.91 素质1.52；先天技能炯眼1.43、后天狩猎0.67 料理1.07（才能平均之上，三技能少见）"
+  },
+  {
+   "category": "event",
+   "chapter": 5,
+   "text": "迷路徘徊至门厅时遇见主角，无神双目恢复色彩、气若游丝自报『我叫玛利亚』并始终注视主角——眼神中寄宿着某种愿望（主角不愿推测）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 5,
+   "text": "与 ch14 玛利亚（基督家中同伴）疑同指——经『表示名(全名)』关系挂接，R4 别名合并审计裁决"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-f74320ac9140",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-f74320ac9140-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-f74320ac9140",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}
