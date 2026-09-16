@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『炽天之纤炎』"
+ },
+ "evidence": [
+  {
+   "chapter": 27,
+   "line": 202,
+   "quote": "『炽天之纤炎』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 765,
+   "quote": "「『燃炽吧闪炎』，『衔尾之蛇，以彼纤纤，吞天噬地』。——『炽天之纤炎』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 768,
+   "quote": "玛利亚使用了跟阿尔缇一样的火炎魔法，锐利的火焰切断了黑暗，如同切断了空间一样驰来。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 27,
+   "text": "阿尔缇白炎魔法（咏唱『燃炽吧闪炎』『衔尾之蛇，以彼纤纤，吞天噬地』）：火焰凝练成细线贯穿空间/地面下穿梭奇袭——一击必杀级；负面感情为牲铸就（解析令大脑淤塞）；主角以掌心过密真冬驱散（代价MP-200）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-15cb10409ffb",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-15cb10409ffb-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-15cb10409ffb",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

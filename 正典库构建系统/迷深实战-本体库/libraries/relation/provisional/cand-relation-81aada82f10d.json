@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "弟子指导(剑术第二号)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 153,
+   "quote": "「是我剑术的第二号弟子。虽然现在还不成熟，但他一定会变强的。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 59,
+   "text": "几天前救下的少年讲究地来探望（无法见面礼送回）；『能教他的都教了，能留给他的也都留给他了，之后就是涡波他们的问题了』——第一号弟子隐含=涡波（反推）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-81aada82f10d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

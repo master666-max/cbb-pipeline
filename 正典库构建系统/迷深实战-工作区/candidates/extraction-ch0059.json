@@ -1,0 +1,752 @@
+{
+ "_meta": {
+  "unit": "U-C03 批6 · CHAPTER 0059（第六卷-第二章-梦的始点，摄入序47→tick47→伪锚点2000-02-16）",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "verified_at": "2026-09-17",
+   "slice": "行25093-25339（CHAPTER 0059，247行）"
+  },
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.4 §0；A/B 回落后亲抽模式）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=47→tick47→2000-02-16。禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行（=文件行号-25092）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取（诺文视角前史章：梦境回忆+被捕拘束中的当下对话）；无译注/元文本",
+   "reason": "全章连续剧情正文（第一人称=诺文·阿雷亚斯）",
+   "deterministic_check": "无（译注）括注、无作者杂谈"
+  },
+  "cross_chapter_notes": [
+   "★慕影死神诞生缘起（L88-99）：千年前南北战争——诺文=南军『死神』，北军打出传说级魔法使『始祖』，其最高杰作=只为杀死诺文的『魔法』刺客『慕影死神』（少女形态/知性/自有意志）——ch44 死神系谱的源头补全",
+   "★诺文前史（L3-80）：阿雷亚斯家旧宅孤独童年（唯剑与家名/禁见山下孩子/最强剑士家训）→战场死神（世人称怪物不称英雄/杀害友军初体验/人质全灭）→圣女大人近卫骑士；荣光=诅咒论（'一旦入手便会永远纠缠在身'）",
+   "★称号谱系补全（L158-164/L193-210）：格连战胜前就有意让出『最强』；诺文胜格连→联合国待遇剧变（贵族舞会包围/眼神死=涡波同款）；胜芬里尔=胜自己子孙（公开怪物身份的动机被格连解读为守护剑圣家名，诺文否认）",
+   "★莱纳·赫勒比勒夏因全名+诺文弟子关系（L150-153）：『我剑术的第二号弟子』——第一号=涡波（隐含）；决赛资格=格连以性命担保+芬里尔协助",
+   "★诺文的愿望（L227-246）：排除法接近答案只差一步；想三人（莉帕/涡波）一起得到答案笑着迎来结局；若二人不来则孤独消失——决赛章（ch0060）回收位"
+  ],
+  "alias_policy": "同 STATE 固化决议+判例4。莱纳·赫勒比勒夏因=莱纳 全名登记别名。",
+  "confidence_calibration": "同 STATE 固化决议：0.90=直接命名+行为事实；0.85~0.88=verbatim 提及/声称类/解读；<0.85 隔离。",
+  "observations_policy": "实体 observations 仅首入库存活——跨章事实一律走 relation/event/setting。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『始祖』",
+    "entity_type": "人物(传说)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 59,
+     "text": "千年前北军的传说级魔法使：为讨伐南军死神诺文，创造只为此存在的『魔法』刺客『慕影死神』（其最高杰作）——不屑与剑士正面交锋"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 89,
+     "quote": "被唤作『始祖』的传说级魔法使负责处理我的威胁。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 93,
+     "quote": "她是『始祖』的最高杰作，是和我一样特化了杀人性能的存在。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.86,
+   "canonical": {
+    "name": "圣女大人",
+    "entity_type": "人物(传说)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 59,
+     "text": "千年前诺文入宫觐见后仕奉的对象（其近卫骑士时期）——与圣人缇娅拉（莱文教）是否同体系待考"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 53,
+     "quote": "我记得自己曾入宫觐见，还成为了圣女大人的近卫骑士。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "诺文",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [
+    "诺文·阿雷亚斯"
+   ],
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 59,
+     "text": "前史揭示：阿雷亚斯家旧宅童年（唯剑与家名）→千年前战争死神（怪物待遇/杀害友军初体验）→生前终点=圣女近卫骑士；死后再成怪物；现=拘束中决赛参赛者（格连担保出场）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 15,
+     "quote": "住在宅邸中的少年诺文·阿雷亚斯——我在『阿雷亚斯家』中握着『剑』。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 81,
+     "quote": "——至此为止，都是我生前的故事。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "格连",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [
+    "格连·沃克"
+   ],
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 59,
+     "text": "暗杀术大成的不负最强之名者（窝囊外表为伪装）；有意让出最强称号给诺文；决赛前受托监视+以性命担保其出场；与芬里尔共鸣协力"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 136,
+     "quote": "虽然外表给人以窝囊软弱的印象，但他实际上是个集暗杀术之大成于一身的狠角色。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 190,
+     "quote": "「放心吧。就算你是怪物也没关系。以我格连·沃克的性命担保，我一定会让你参加决赛的。」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "莱纳",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [
+    "莱纳·赫勒比勒夏因"
+   ],
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 59,
+     "text": "全名揭示=莱纳·赫勒比勒夏因；诺文剑术的第二号弟子（第一号隐含=涡波）；探望被拒仍担心其安危；惯于应付贵族场合（陪诺文突围舞会）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 150,
+     "quote": "「哈哈……真不愧是你啊。果然我在这里也没什么意义啊……」"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 153,
+     "quote": "「是我剑术的第二号弟子。虽然现在还不成熟，但他一定会变强的。」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "弟子指导(剑术第二号)",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "几天前救下的少年讲究地来探望（无法见面礼送回）；『能教他的都教了，能留给他的也都留给他了，之后就是涡波他们的问题了』——第一号弟子隐含=涡波（反推）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 153,
+     "quote": "「是我剑术的第二号弟子。虽然现在还不成熟，但他一定会变强的。」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "最强称号继受(格连有意让出)",
+    "object": "格连",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "赛前格连特来见面表示称号与诺文更相配；胜后诺文待遇一夕剧变（无名剑士→英雄）：群众围堵/贵族舞会邀请/勋章爵位人生规划——眼神死=涡波同款（荣光幻影觉悟）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 164,
+     "quote": "格连对此岂止是并不挂怀，他甚至从最初看到我的时候就有意让出称号了。在比赛之前，他特地来见了我一面，并表示我与这个称号更相配。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 168,
+     "quote": "首先是在结束比赛回去的路上，我被大量素未谋面的人团团围住。好不容易从中脱身后，贵族们又络绎不绝地到我的住处登门拜访，他们马不停蹄地邀请我参加在『瓦尔法拉』中央举办的舞会，在那儿详尽地打探我的经历和出身。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "子孙对战(压胜)",
+    "object": "芬里尔·阿雷亚斯",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "芬里尔=诺文的子孙；和平时代剑圣与杀伐时代死神不可同日而语（时代鸿沟）；诺文自述公开怪物身份非为守护家名（格连解读为让世人明白败给先祖——保护剑圣名誉），芬里尔仍感谢+为决赛资格奔走"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 196,
+     "quote": "在与格连之后的比赛中，我与自己的子孙芬里尔·阿雷亚斯战斗，并取得了压倒性的胜利。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 194,
+     "quote": "「那是你考虑到双方的立场才不得已而为之的吧。是你为了阿雷亚斯家当主、『剑圣』芬里尔着想才那么做的不是吗？你希望让世人明白，他并不是败给了一个无名的剑士，而是败给了自己的先祖对吧？想要守护家名的这种做法，我也不是不能理解。」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "莉帕",
+    "rel_type": "创造(始祖最高杰作)",
+    "object": "『始祖』",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "慕影死神=北军始祖为讨伐南军死神诺文创造的最高杰作（只为杀死诺文的魔法刺客/少女形态/知性自有意志）——与她战斗=其生存方式与交流手段"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 91,
+     "quote": "他的选择是创造出一个只为了杀死我而存在的『魔法』当做刺客。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 92,
+     "quote": "那个魔法的名字叫『慕影死神』。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "宿敌玩伴(厮杀即交流)",
+    "object": "莉帕",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "她从不撇开视线/眼眸不被恐惧支配；反复挑战不退；『真不愧是我的宿敌』赞赏让诺文世界焕然一新（记忆不再全黑红）；战斗中途手下留情→厮杀=双方交流手段；持续到世界崩坏被大陆吞没"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 112,
+     "quote": "「呵呵呵！好强啊！真不愧是我的宿敌！！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 126,
+     "quote": "直至忘记了时间，被大陆吞没为止，一直、一直——"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "近卫骑士(生前)",
+    "object": "圣女大人",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "数解王族性命/一击斩龙山般巨大首级/一人歼上万敌军/斩名将首级百个——仍无英雄实感（世人称怪物）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 56,
+     "quote": "我曾数次解救王族的性命。曾用一击斩落了山一般巨大的龙的首级。也以一人之力将上万的敌军杀了个片甲不留。有名武将的首级，我应该也斩获了不下百个。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "决赛对愿望(格连芬里尔共识)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "格连转达两人共识：接受了最强与剑圣称号的诺文应与相川涡波战斗——与诺文本愿完全一致；『我的心愿比任何人都真挚』"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 210,
+     "quote": "「——我们的愿望只有一个、就是希望接受了我们的『最强』与『剑圣』的称号的诺文·阿雷亚斯，能够与相川·涡波战斗。」"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "诺文的童年起点(阿雷亚斯家旧宅)",
+    "kind": "前史",
+    "tick": 47,
+    "instant": null,
+    "time_verbatim": "千年前（梦境回忆）"
+   },
+   "entities_involved": [
+    "诺文",
+    "阿雷亚斯家（剑圣名门）"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 59,
+     "text": "无人居住的宽敞破宅=人生原点：与身高等长直剑日日挥剑（雨雪寒暑发烧不断）/禁见山下同龄孩子/唯剑与家名/最强剑士家训（母告知）——被世界拒绝无任何牵绊"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 14,
+     "quote": "这栋宅邸才是我的『家』。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 23,
+     "quote": "一直一个人、持续不停地挥剑。剑就是自己的全部。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "千年前死神战争生涯",
+    "kind": "前史",
+    "tick": 47,
+    "instant": null,
+    "time_verbatim": "千年前（梦境回忆）"
+   },
+   "entities_involved": [
+    "诺文",
+    "莉帕",
+    "『始祖』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 59,
+     "text": "南军死神（黑红色记忆/尸山/友军发狂袭击→初杀友军/守护对象全灭为人质）vs 北军始祖牌=慕影死神刺客；与莉帕以厮杀为玩耍直到世界崩坏被大陆吞没"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 50,
+     "quote": "不消多久，我便在战场上被冠以『死神』之名，令人闻风丧胆。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 88,
+     "quote": "为了讨伐南军的『死神』，当时的北军打出了最强的一张牌。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "诺文拘束与决赛资格保全",
+    "kind": "拘束",
+    "tick": 47,
+    "instant": null,
+    "time_verbatim": "决赛前日"
+   },
+   "entities_involved": [
+    "诺文",
+    "格连",
+    "舞斗大会"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 59,
+     "text": "作为怪物被拘束（武装男众监视+格连受托看守）；格连以性命担保出场+芬里尔奔走协助（参赛权利作保）；莱纳探望被礼送回"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 140,
+     "quote": "虽然甚少有家具和装饰品，但这里是个非常宽敞的房间。只可惜，难得有如此广阔的空间，却挤满了一大群全副武装的男人，很是杀风景。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 193,
+     "quote": "在与格连之后的比赛——与芬里尔·阿雷亚斯的比赛中，我公开了自己怪物的身份。我知道格连自那之后就一直在东奔西走，为我的参赛权利作保。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "诺文的真正愿望(排除法一步)",
+    "setup_chapter": 59,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "荣光尽头=绝望+千年后阿雷亚斯家已非（家训剑风截然不同/想守护的家不复存在）→渐渐接近答案只差一步；决赛章回收位；『不是英雄也不是最强……无论如何也不对』（涡波同感）",
+    "chapter": 59
+   },
+   "entities_involved": [
+    "诺文",
+    "阿雷亚斯家（剑圣名门）"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 59,
+     "text": "荣光=诅咒论：一旦入手便永远纠缠在身，岂止不能带来幸福"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 228,
+     "quote": "接下来只要用排除法去思考，我就能摸清自己『真正的愿望』了吧。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 182,
+     "quote": "我不得不承认，它岂止不能带来幸福，甚至近乎于一种『诅咒』。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "三人同得答案的愿望(孤独消失恐惧)",
+    "setup_chapter": 59,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "诺文想见莉帕与涡波——三人一起得到『答案』笑着迎来结局；反之『如果他们两个不来的话，我就会孤独地消失』（过于寂寞/没有报偿）；从破宅漫步时起就在等朋友——与莉帕『诺文在等我』（ch58）镜像",
+    "chapter": 59
+   },
+   "entities_involved": [
+    "诺文",
+    "莉帕",
+    "相川涡波"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 59,
+     "text": "莉帕在生气应该不会来/涡波取回记忆后我的问题是次要的——两不安"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 231,
+     "quote": "或许这是一份奢侈的心愿，但我希望到最后能三个人一起得到『答案』，然后三个人一起笑着迎来结局。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 246,
+     "quote": "诺文·阿雷亚斯就一直在等待朋友的现身。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "诺文生前史(阿雷亚斯家旧貌与死神生涯)",
+    "fact": "生前阿雷亚斯家：破宅独居童年+最强剑士家训+禁见山下孩子（家名一体教育）→战场死神（黑红色连杀记忆/世人恐惧不赞/舞会一次未参加过/友军发狂初杀）→圣女近卫骑士（无英雄实感）→死后成只求荣光名誉斩敌的怪物；千年前南军死神=诺文、北军牌=始祖之慕影死神",
+    "chapter": 59,
+    "tick": 47
+   },
+   "entities_involved": [
+    "诺文",
+    "阿雷亚斯家（剑圣名门）",
+    "圣女大人",
+    "『始祖』"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 59,
+     "text": "与库内既有『死神的千年前初例记载』互证（该件为他人视角记载，本章为本人前史）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 61,
+     "quote": "世人并没有称我为『英雄』，而是将我称为了『怪物』。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 37,
+     "quote": "就这样，少年恪守着血亲的遗言，成长为一名希冀阿雷亚斯家繁荣的青年，从来不曾背弃家训，成为了一名不使用魔法的剑士。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "千年后的阿雷亚斯家变质",
+    "fact": "诺文所知的阿雷亚斯家与千年后相比脱胎换骨：血脉联系尚在，但家训与剑术风格大相径庭、旧家远比今家优异——『我想要守护的家在千年后的世界里已经不复存在』→绝望与恐怖的孤独感；胜芬里尔时唯一想法=尽快逃离称赞现场",
+    "chapter": 59,
+    "tick": 47
+   },
+   "entities_involved": [
+    "诺文",
+    "阿雷亚斯家（剑圣名门）",
+    "芬里尔·阿雷亚斯"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 59,
+     "text": "和平时代剑圣 vs 杀伐时代死神的时代鸿沟论"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 200,
+     "quote": "可是两者无论是家训还是剑术风格都大相径庭。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 202,
+     "quote": "换句话说，我想要守护的『家』，在千年后的世界里已经不复存在了。这让我深感绝望，并受到一阵恐怖的孤独感侵扰。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "荣光的诅咒性(英雄幻影论·诺文版)",
+    "fact": "荣光=一旦入手便永远纠缠在身之物（近乎诅咒）：接近英雄后迎来的是贵族派阀钻营/勋章爵位人生设计/眼神死的应对——涡波与斯诺先于诺文领会（舞会体验）故忌讳英雄；斯诺因此想把英雄身份推给他人承担；诺文自认追寻的是虚无缥缈的幻影",
+    "chapter": 59,
+    "tick": 47
+   },
+   "entities_involved": [
+    "诺文",
+    "相川涡波",
+    "斯诺·沃克"
+   ],
+   "observations": [
+    {
+     "category": "interpretation",
+     "chapter": 59,
+     "text": "『眼神已经死了』的诺文很快意识到这正是彼时涡波的眼神"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 181,
+     "quote": "可是现实并没有如此甜蜜。而想要从那份『荣光』的阴翳下逃走又是不可能的。它是一旦入手便会永远纠缠在身的东西。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 178,
+     "quote": "斯诺肯定也是知道的。所以她才想将『英雄』的身份强推给他人承担。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "家训使命(最强剑士)",
+    "object": "阿雷亚斯家（剑圣名门）",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 59,
+     "text": "出身阿雷亚斯家者必须学剑（母告知）；为阿雷亚斯家夙愿成最强剑士→以剑士出人头地得荣光名誉→被认可融入贵族（童年交换逻辑）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 27,
+     "quote": "我没有任何怨言，一心只为了实现阿雷亚斯家的夙愿、成为『最强的剑士』而努力。"
+    },
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 29,
+     "quote": "那样我就能够融入为贵族的一员，堂堂正正地走进山下那些精致的宅邸，加入开心玩耍的孩子们的行列。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "阿雷亚斯家（剑圣名门）",
+    "entity_type": "组织"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 59,
+     "text": "旧貌补全：山上破宅（诺文）+山下精致宅邸（不许来往的孩子）同属；千年前家训=最强剑士/血亲遗言"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 59,
+     "line": 25,
+     "quote": "并且我也知道，山下的宅邸也和这里一样同属于阿雷亚斯家。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "追讨共识(七人同心)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 62,
+   "line": 116,
+   "quote": "「我想我和他必有一战……而在那场战斗中——」",
+   "vol": 1
+  },
+  {
+   "chapter": 62,
+   "line": 119,
+   "quote": "「我希望大家能助我一臂之力。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 62,
+   "text": "六人各自应诺：拉丝缇娅拉（一人去会生气）/缇亚（一剑之仇）/玛利亚（约好不再分开）/斯诺（搭档互助+帕也是我敌人）/莉帕（感觉超坏）/塞拉（为了大小姐）；涡波领悟=没有必要独自战斗"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e8be5a06d375",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

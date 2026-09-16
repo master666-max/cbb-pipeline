@@ -1,0 +1,36 @@
+{
+ "thresholds": {
+  "tau_confirmed": 0.97,
+  "tau_provisional": 0.85,
+  "tau_quarantine": 0.85,
+  "corroboration_bump": 2.0,
+  "note": "confirmed 永不因置信度单独达成（B1）；调整=审核线建议制（W4/B3）"
+ },
+ "library_confidence_distribution": {
+  "records_with_confidence": 1276,
+  "ge_tau_confirmed": 286,
+  "provisional_band": 990,
+  "below_tau_quarantine_in_library": 0,
+  "min": 0.85,
+  "max": 54.9,
+  "mean": 2.6983
+ },
+ "quarantine_by_group": {
+  "unresolved_time": 0,
+  "missing_anchor": 0,
+  "ambiguous_reference": 9,
+  "entity_unalignable": 65,
+  "low_confidence": 3
+ },
+ "quarantine_by_subclass": {
+  "contradiction_pending": 65,
+  "extrapolation_unverified": 12,
+  "overdue_omission": 0
+ },
+ "assumption_checks": [
+  "隔离/入库比=0.057（pending 77 vs 库内 1276）",
+  "路由边界执行一致：库内置信全部 ≥τ_provisional，低置信候选均已在隔离区"
+ ],
+ "suggestions": [],
+ "decision_rule": "阈值调整=审核线建议制呈报，不自动改（W4/B3）"
+}

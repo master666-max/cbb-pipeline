@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "诅咒解放(杀死诺文完成)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 669,
+   "quote": "「还记得我们初次相遇，互相厮杀的那天吗？真是漫长啊……我们的玩耍，这样一来也结束了。我会消失，你会留下。这样就是你赢了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 683,
+   "quote": "如今，经由完成了『杀死诺文』这一『诅咒』，莉帕从『不存在于彼方』的『诅咒』中得到了解放。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "完成『杀死诺文』诅咒→从『不存在于彼方』诅咒解放：被诺文看着却未失去实体（诞生以来首次）+被抚摸头（感应+并列思考导出的答案）；『这样就是你赢了』——千年玩耍终局"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fa8ce5251930",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

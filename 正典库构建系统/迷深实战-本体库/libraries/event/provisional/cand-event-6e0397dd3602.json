@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "天上之七骑士",
+   "拉古涅·卡伊库欧拉",
+   "斐勒卢托",
+   "斯诺·沃克",
+   "沃克家",
+   "艾尔米拉德·希达尔克",
+   "芙兰琉莱",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "混战",
+  "name": "赛后大混乱与魔石争夺",
+  "tick": 49,
+  "time_verbatim": "决赛直后"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 808,
+   "quote": "「——果然，不管是怎样的权力机关，在这『瓦尔法拉』之内都不好使！警备兵的诸位请逮捕少年骑士！还有要搞事的人也一并抓起来！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 818,
+   "quote": "「啧，『天上之七骑士』也混进来了吗……！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 61,
+   "text": "莱纳夺魔石（元老院/斐勒卢托）→缇亚追击→拉古涅打落→感应恶寒→艾尔米拉德 WaterWire 夺取经斯诺归还；并行政局：七骑士（佩露修娜/侯普思）夺还大小姐+使徒/沃克家当主抓斯诺/格连芬里尔倒戈护卫；大会运营拒介入（瓦尔法拉之内权力不好使）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6e0397dd3602",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

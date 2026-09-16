@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "相川涡波",
+   "缇莉·琉克"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "斯诺病房对谈与自立",
+  "tick": 46,
+  "time_verbatim": "准决赛翌日·西区医疗船"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 240,
+   "quote": "「斯诺你『真正的愿望』并不是『活在沃克家』，而是『逃离沃克家』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 364,
+   "quote": "「——接下来，我要去同沃克家诀别……！涡波要跟我一起来吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 58,
+   "text": "放弃态（龙化侵蚀缠身/『我要放弃』）→涡波替她定愿（真正的愿望=逃离沃克家）→真心互灌咆哮→恋爱告白→自立宣言；缇莉门前辩护+三次龙化悲剧史口述"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0c262badc113",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

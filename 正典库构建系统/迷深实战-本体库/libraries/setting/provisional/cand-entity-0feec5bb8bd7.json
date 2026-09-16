@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『次元之夜（The·Night）』"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 730,
+   "quote": "——『次元之夜（The·Night）』。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 731,
+   "quote": "——这个魔法就是用黑夜统治世界的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 58,
+   "text": "莉帕的黑暗统治魔法：遮断世界全部光芒、黑幕成唯一主宰；『次元之冬』的同位魔法（冬=隆冬统治/夜=黑夜统治）；黑暗内一切认识任其摆布=领域内不败宣言"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0feec5bb8bd7",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

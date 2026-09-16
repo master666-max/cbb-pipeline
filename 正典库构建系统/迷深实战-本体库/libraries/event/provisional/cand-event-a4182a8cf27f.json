@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "斯诺的义母",
+   "沃克家",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "对峙",
+  "name": "沃克家诀别宣战(当主对峙)",
+  "tick": 46,
+  "time_verbatim": "准决赛翌日·瓦尔法拉中央最高级船顶层"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 377,
+   "quote": "斯诺的义母优雅地坐在房间中央的椅子上。在她周围，守候着众多侍从和身强力壮的警卫。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 437,
+   "quote": "「如果你打算违背斯诺的意愿把她抓起来的话，我就要叫人了。虽说斯诺在比赛中战败，但是她仍然是『舞斗大会』的参赛者。她的人身自由由联合国保障。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 58,
+   "text": "当主+侍从警卫+麾下猛者阵容；斯诺直面宣言+振动咆哮震退众人；涡波规则盾（大会参赛者人身自由/五国争端牌）挡抓捕威胁；当主让步寄放+低喃最强英雄执念"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a4182a8cf27f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,201 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.9502
+  },
+  {
+   "candidate": "『新月琉璃制直剑』",
+   "library_match": "『新月琉璃直剑』",
+   "similarity": 0.9813
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "『次元之夜（The·Night）』",
+   "library_match": "『次元之冬』",
+   "similarity": 0.8575
+  },
+  {
+   "candidate": "『世界炎蛇』",
+   "library_match": "『世界冰蛇』",
+   "similarity": 0.8659
+  },
+  {
+   "candidate": "『Firefly·阳炎』",
+   "library_match": "『Firefly·幻影』",
+   "similarity": 0.863
+  },
+  {
+   "candidate": "莉帕",
+   "library_match": "格林·莉姆·莉帕",
+   "similarity": 0.9285
+  },
+  {
+   "candidate": "玛利亚·迪斯特拉斯",
+   "library_match": "玛利亚",
+   "similarity": 0.8547
+  },
+  {
+   "candidate": "缇莉·琉克",
+   "library_match": "缇娅拉·弗茨亚茨",
+   "similarity": 0.8955
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.8522
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "阿尔肯",
+   "similarity": 0.8777
+  },
+  {
+   "candidate": "技能『感应』",
+   "library_match": "技能『魔力物质化』",
+   "similarity": 0.9174
+  },
+  {
+   "candidate": "『ImpulseBreak』",
+   "library_match": "『Impulse』",
+   "similarity": 0.9373
+  }
+ ],
+ "pairs": [
+  [
+   "『次元之夜（The·Night）』",
+   "『次元之冬』",
+   0.8575
+  ],
+  [
+   "深渊次元的真夜（TheRiverineTonight）",
+   "『过密次元的真冬』",
+   0.7106
+  ],
+  [
+   "『次元之联结（Deny·Entia）』",
+   "『次元之冬』",
+   0.8201
+  ],
+  [
+   "鲜血魔法『威尔·琉克』",
+   "鲜血魔法",
+   0.8137
+  ],
+  [
+   "威尔·琉克",
+   "威尔",
+   0.8069
+  ],
+  [
+   "『世界炎蛇』",
+   "『世界冰蛇』",
+   0.8659
+  ],
+  [
+   "『Firefly·阳炎』",
+   "『Firefly·幻影』",
+   0.863
+  ],
+  [
+   "『炽天之纤炎』",
+   "『开辟之华炎』",
+   0.7979
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ],
+  [
+   "莉帕",
+   "格林·莉姆·莉帕",
+   0.9285
+  ],
+  [
+   "斯诺·沃克",
+   "格连·沃克",
+   0.81
+  ],
+  [
+   "玛利亚·迪斯特拉斯",
+   "玛利亚",
+   0.8547
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.9502
+  ],
+  [
+   "缇莉·琉克",
+   "缇娅拉·弗茨亚茨",
+   0.8955
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛·勒伽西",
+   0.8522
+  ],
+  [
+   "阿尔缇",
+   "阿尔肯",
+   0.8777
+  ],
+  [
+   "诺文",
+   "诺文·阿雷亚斯",
+   0.7781
+  ],
+  [
+   "手环",
+   "魔石戒指",
+   0.6639
+  ],
+  [
+   "格连",
+   "克劳",
+   0.7954
+  ],
+  [
+   "斯诺的义母",
+   "艾尔娜",
+   0.6251
+  ],
+  [
+   "技能『感应』",
+   "技能『魔力物质化』",
+   0.9174
+  ],
+  [
+   "『ImpulseBreak』",
+   "『Impulse』",
+   0.9373
+  ],
+  [
+   "『新月琉璃制直剑』",
+   "『新月琉璃直剑』",
+   0.9813
+  ],
+  [
+   "『Connection』",
+   "『Growth』",
+   0.8046
+  ],
+  [
+   "舞斗大会",
+   "火犬",
+   0.5498
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 25,
+  "library": 252,
+  "dup_suspect": 2,
+  "uncertain": 10
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "沃克家",
+  "rel_type": "诀别宣战(当面宣言)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 385,
+   "quote": "「——很抱歉，义母大人。我要离开沃克家。」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 409,
+   "quote": "「就算愚蠢，我也要无数次重复下去！请不要小看了我这不堪的个性，沃克家当主（义母大人）！！就算我会愚蠢地重复同样的失败，我也要用我的方式一直逃下去！直到让你们接受为止、无数次、无数次！！这一回我绝对不会再放弃！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "对义母当面宣言离开沃克家+振动咆哮震退众侍卫；『就算我一直后悔个不停，我也要从这里逃走』；儿时愿望=离开龙人聚落到广阔世界冒险（荣光无用论）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ff9cbbb6c263",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

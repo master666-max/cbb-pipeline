@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚·迪斯特拉斯",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "出航",
+  "name": "LivingLegend号黎明出航(本土)",
+  "tick": 50,
+  "time_verbatim": "黎明"
+ },
+ "evidence": [
+  {
+   "chapter": 62,
+   "line": 149,
+   "quote": "「——大家，出发吧！就这样一路向『本土』进发！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 62,
+   "line": 152,
+   "quote": "在这个异世界中，我不再以基督·欧亚，而是以相川涡波的身份继续生活。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 62,
+   "text": "七人队伍首航（此前最多三人队）；Dimension 辅助航海+沿海岸线航行；身份收束：不再以基督·欧亚而以相川涡波身份生活——『迷失于异世界的相川涡波真正的冒险——此时此刻，终于开始了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fd50ad2c9651",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

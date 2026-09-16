@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莉帕",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "临终幻视",
+  "name": "诺文的临终梦(庭院的朋友们)",
+  "tick": 51,
+  "time_verbatim": "消失途中的一瞬间"
+ },
+ "evidence": [
+  {
+   "chapter": 63,
+   "line": 15,
+   "quote": "「好厉害啊！」「真努力啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 63,
+   "line": 24,
+   "quote": "之所以一直在挥剑，都是为了这个——",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 63,
+   "text": "梦的延续：破宅召集朋友（平民孩子们非贵族——没打进贵族圈却得到更出色的朋友）；木枝代剑游戏少年技术第一；赞扬声中含两名黑发挚友——『之所以一直在挥剑，都是为了这个』；与挚友道别后独留宅邸迎来世界终结，满足入睡"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d4f9bede3cfb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

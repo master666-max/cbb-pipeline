@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "守护决斗(人情偿还)",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 876,
+   "quote": "「——没有那个必要，涡波。正好让我把之前的人情还上。你放心休息就好。」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 889,
+   "quote": "「这行为可不优雅啊，弗茨亚茨的骑士们。居然做出这种事，如此行径简直闻所未闻啊？你们难道没看到刚才的比赛吗？『英雄』涡波与『剑圣』诺文以剑为赌注进行战斗，而涡波出色地战胜了『剑圣』。也就是说，这把剑是涡波的东西。居然要夺走胜者的战利品，真是让人不敢苟同啊。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "决赛续赛声援（夺麦宣言+绝世结界铜墙铁壁保证）+赛后 WaterWire 夺剑经斯诺归还真所有者+希达尔克家·绝世对沃克家阻止宣言（同为贵族不能坐视不仁不义）——『正好让我把之前的人情还上』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-eee2f07b3f0d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

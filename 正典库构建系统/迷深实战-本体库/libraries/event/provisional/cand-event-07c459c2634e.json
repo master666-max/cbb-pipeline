@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莉帕",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "终局",
+  "name": "诺文败北与消失开始(莉帕袭击)",
+  "tick": 48,
+  "time_verbatim": "决赛终盘"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 1159,
+   "quote": "结果便是『新月琉璃制直剑』抵在了他心脏的正后方。",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 1186,
+   "quote": "他还有最后一个牵挂存在。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 60,
+   "text": "剑抵心脏正后方=胜负已分；冬之世界放晴+五日最大欢呼（英雄胜怪物=观众想要的一幕）；诺文生涯初败自省（锻炼过头/谁也没能追上）；身体轮廓摇晃开始消失（比阿尔缇时浓些=留恋复数·最后牵挂仍在）→黑发少女黑镰贯穿其胸口"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-07c459c2634e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

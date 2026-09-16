@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "情报告知(试练报酬)",
+  "subject": "雷鲁·桑库斯"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 1014,
+   "quote": "「如果你要去追那家伙的话，他肯定是在西大陆——在『本土』那边。……帕林库洛在做着将你孕育成『斗争的火种』的打算。因为那家伙是秘密主义者，所以详情我也不清楚。但是事情闹得越大，那家伙肯定越高兴。要是去追他的话，你一定要小心。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "打倒地之理盗窃者+魔石为证→按约定告知：帕林库洛在西大陆『本土』；计划=将涡波培育成『斗争的火种』（秘密主义详情不明）；『事情闹得越大那家伙越高兴』；只说一遍搁内心角落"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5ed3e3100309",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

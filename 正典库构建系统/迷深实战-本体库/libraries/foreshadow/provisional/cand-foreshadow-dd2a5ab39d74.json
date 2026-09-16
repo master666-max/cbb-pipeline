@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 58,
+  "entities": [
+   "相川涡波",
+   "莉帕",
+   "诺文"
+  ],
+  "name": "莉帕的决赛恳求(无法实现的愿望)",
+  "note": "败北后唯一翻盘路=在决赛恳求诺文不要消失（真心诚意）——『正因为知道无法实现所以才没这么做而选择了与我战斗』；围巾和解后接受同赴；守护者留恋消失论（缇达阿尔缇皆如此）vs 莉帕抗拒",
+  "payoff_chapter": null,
+  "setup_chapter": 58,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 1052,
+   "quote": "「也是啊……我要翻盘的话也只能那样了呢……除了恳求诺文之外已经别无他法了。我要求他不要消失……真心诚意地……」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 58,
+   "text": "『那也就意味着诺文会死』——莉帕拒绝的正是守护者存在的消解"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-dd2a5ab39d74",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

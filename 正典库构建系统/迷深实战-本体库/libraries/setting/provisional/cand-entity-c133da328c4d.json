@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品(魔剑)",
+  "name": "『阿雷亚斯家的宝剑诺文』"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 706,
+   "quote": "【阿雷亚斯家的宝剑诺文】",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 704,
+   "quote": "本来由我转交给诺文的『阿雷亚斯家的宝剑』如今换了一副姿态，剑柄处镶着一颗赤色魔石的宝剑，庄严地矗立着。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 61,
+   "text": "诺文消失处遗留之剑：凝聚水晶匠意的神圣宝剑（剑柄镶赤色魔石）——原转交之阿雷亚斯家宝剑换了姿态，被赋予名『诺文』；=守护者的魔石（元老院/莱纳争夺对象）；感应警示绝不能交给拉古涅"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c133da328c4d",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

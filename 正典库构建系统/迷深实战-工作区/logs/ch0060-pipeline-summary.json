@@ -1,0 +1,240 @@
+{
+ "unit": "ch0060",
+ "chapter": 60,
+ "ingestion_index": 48,
+ "title": "第六卷-第三章『一之月联合国综合骑士团舞会』决赛",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 29,
+  "pass": 29,
+  "intercept": 0,
+  "admitted": 29,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 26,
+  "consistent-duplicate": 3
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-a883d740e6fd",
+   "type": "entity",
+   "name": "『亡灵一闪（Von·A·Wraith）』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-339aa521d0ff",
+   "type": "entity",
+   "name": "『冬之异世界（Wintry·Dimension）』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-0c40697f166c",
+   "type": "entity",
+   "name": "『次元之冬·歪冰世界』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-790df9efc6e3",
+   "type": "entity",
+   "name": "【修坏的阿雷亚斯家宝剑】",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-cf58e490859a",
+   "type": "entity",
+   "name": "中央剧场船",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6df7303953f1",
+   "type": "entity",
+   "name": "诺文",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-38664d360d49-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-3bfca391426d",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-e2384b77f315",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-c26bb2931318",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-13cf27dfc111",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-097dc0a7be25",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d943bb9796eb",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a67f7ff5b328",
+   "type": "relation",
+   "name": "莉帕",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d77e2dcfd088",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-031e9ac61274",
+   "type": "event",
+   "name": "决赛第一阶段(师徒剑术对决)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ced7771e9817",
+   "type": "event",
+   "name": "决赛第二阶段(冬之异世界vs怪物化)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8f7f60b02956",
+   "type": "event",
+   "name": "诺文得到答案(我就是我宣言)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-07c459c2634e",
+   "type": "event",
+   "name": "诺文败北与消失开始(莉帕袭击)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ba7b9972847f",
+   "type": "foreshadow",
+   "name": "守护者邀请者之谜(原初记忆走马灯)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-02c283bc9229",
+   "type": "foreshadow",
+   "name": "莉帕的不认输(三人战斗继续)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-4df6c78af6e7",
+   "type": "foreshadow",
+   "name": "诺文的最后牵挂(留恋复数)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-37080520a4f1",
+   "type": "setting",
+   "name": "亡灵一闪的魔法原理(无魔力咏唱)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c4876a7a205a",
+   "type": "setting",
+   "name": "雪与魔力结晶(冬之异世界的物证)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3a2d5e748490",
+   "type": "setting",
+   "name": "决赛观众席全景(声援结构)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b94b61e492d0",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3ba9b832ffcc",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a9ab4e5bd2f9",
+   "type": "relation",
+   "name": "艾利巴茨",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-caba424267b6",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-290364c81a57",
+   "type": "event",
+   "name": "决赛前晨景(女孩子们的对峙)",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 48,
+  "pseudo_date": "2000-02-18",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "姐姐立场(阻止莱纳)",
+  "subject": "芙兰琉莱"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 850,
+   "quote": "「就是因为明白才这么做啊！正因如此，我现在不是作为『天上之七骑士』，而是作为芙兰琉莱·赫勒比勒夏因站在这里的！莱纳！你从头到尾什么都没跟我说过！是了，什么都没说过！你要是想再往前走的话，就不要站在谁家的看门狗的立场上，而必须用你自己的话说服我这个姐姐才行！不然的话，我是绝对不会容忍你这种不诚实的行为的！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "不以七骑士身份而以芙兰琉莱·赫勒比勒夏因身份拦弟弟：『必须用你自己的话说服我这个姐姐才行』；拉古涅以朋友立场助姐姐（打落宝剑）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dbcedde04e17",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

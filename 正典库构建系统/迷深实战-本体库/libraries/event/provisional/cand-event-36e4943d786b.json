@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "格连",
+   "舞斗大会",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "拘束",
+  "name": "诺文拘束与决赛资格保全",
+  "tick": 47,
+  "time_verbatim": "决赛前日"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 140,
+   "quote": "虽然甚少有家具和装饰品，但这里是个非常宽敞的房间。只可惜，难得有如此广阔的空间，却挤满了一大群全副武装的男人，很是杀风景。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 193,
+   "quote": "在与格连之后的比赛——与芬里尔·阿雷亚斯的比赛中，我公开了自己怪物的身份。我知道格连自那之后就一直在东奔西走，为我的参赛权利作保。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 59,
+   "text": "作为怪物被拘束（武装男众监视+格连受托看守）；格连以性命担保出场+芬里尔奔走协助（参赛权利作保）；莱纳探望被礼送回"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-36e4943d786b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

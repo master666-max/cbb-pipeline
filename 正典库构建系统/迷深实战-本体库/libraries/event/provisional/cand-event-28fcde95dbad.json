@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "诺文",
+   "阿雷亚斯家（剑圣名门）"
+  ],
+  "instant": null,
+  "kind": "前史",
+  "name": "诺文的童年起点(阿雷亚斯家旧宅)",
+  "tick": 47,
+  "time_verbatim": "千年前（梦境回忆）"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 14,
+   "quote": "这栋宅邸才是我的『家』。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 23,
+   "quote": "一直一个人、持续不停地挥剑。剑就是自己的全部。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 59,
+   "text": "无人居住的宽敞破宅=人生原点：与身高等长直剑日日挥剑（雨雪寒暑发烧不断）/禁见山下同龄孩子/唯剑与家名/最强剑士家训（母告知）——被世界拒绝无任何牵绊"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-28fcde95dbad",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

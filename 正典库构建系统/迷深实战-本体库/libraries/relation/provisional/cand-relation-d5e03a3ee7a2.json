@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺的义母",
+  "rel_type": "最强英雄执念(不放弃宣言)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 452,
+   "quote": "「唉……既然这样，斯诺就先寄放在你那里便是。不过，斯诺是沃克家的英雄（东西）。我迟早有一天会让你还回来的。别给我忘了……」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 463,
+   "quote": "「我是不会放弃的哦……威尔，格连……因为她跟你们不一样，是真正的『最强』。是我发现的希望……是我的『最强的英雄』啊……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "当主威胁（大会结束即围堵/追到天涯海角/斯诺必屈服）被涡波以舞斗大会规则盾挡回（参赛者人身自由由联合国保障/另四国争端牌）；低喃不放弃：『她跟你们（威尔格连）不一样，是真正的『最强』。是我发现的希望……是我的『最强的英雄』』；寄放宣言=迟早要还回来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d5e03a3ee7a2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

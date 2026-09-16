@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『ImpulseBreak』"
+ },
+ "evidence": [
+  {
+   "chapter": 39,
+   "line": 621,
+   "quote": "「——『ImpulseBreak』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 39,
+   "line": 639,
+   "quote": "既然已经出现了不由斯诺给予最后一击就无法打倒的怪物，我便需要避免自己一个人前进。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 942,
+   "quote": "「——『ImpulseBreak』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 945,
+   "quote": "正面吃下了斯诺连人带惯性劈下的一剑，黑暗因为冲击和振动被整个掀飞了，于是莉帕褪下黑暗的外衣现出了身影。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 39,
+   "text": "斯诺的魔力增幅钝击技（大斧/振动魔法系）：打击冲击经魔法增幅产生更大破坏力——对付结晶格雷姆/水晶系特效（涡波直击无效的局面由斯诺最后一击终结）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-ff47d03d554b",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ff47d03d554b-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-ff47d03d554b",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

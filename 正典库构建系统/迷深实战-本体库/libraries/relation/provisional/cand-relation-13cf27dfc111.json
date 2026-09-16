@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "剑圣称号受让(史上最强宣言)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 680,
+   "quote": "「——第一阶段胜负已分！我承认自己在『击落武器』一战中的败北！在剑术对决上，相川涡波并非诺文·阿雷亚斯之敌手！置身于此的诺文方是大陆全土、史上最强的『剑圣』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 696,
+   "quote": "「——……果然，不是这个啊。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "第一阶段胜后涡波当众宣言：『在剑术对决上，相川涡波并非诺文·阿雷亚斯之敌手！置身于此的诺文方是大陆全土、史上最强的『剑圣』』——观众由不满到全场高呼剑圣诺文（荣光实现瞬间=『果然，不是这个啊』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-13cf27dfc111",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

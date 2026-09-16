@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "手环",
+  "rel_type": "手环破坏(自火熔解)",
+  "subject": "玛利亚·迪斯特拉斯"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 876,
+   "quote": "「为了以防万一而没有消除我火炎魔法的经验是你们的失算呢。我的火炎魔法是以过去为燃料的魔法。因为这个原因，我失去了家人所有的记忆。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "拒绝虚假家人记忆：火炎魔法以过去为燃料→『我能有家人的记忆反而是怪事』→世界炎蛇烧熔手环；记忆篡改/感情修改『早已习惯』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1dde287bd346",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

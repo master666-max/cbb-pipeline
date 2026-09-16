@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『阿雷亚斯家的宝剑诺文』",
+  "rel_type": "魔石危险警示(感应警报)",
+  "subject": "拉古涅·卡伊库欧拉"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 866,
+   "quote": "伴着如同遇到憧憬之人的心荡神驰的表情，她伸出手指抚摸剑身。",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 869,
+   "quote": "给谁都行，但是无论如何也不能把魔石交给拉古涅·卡伊库欧拉，直觉如此警示道。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "拉古涅被剑光辉迷住抚摸剑身→涡波感应警报大作+直觉恶寒『无论如何也不能把魔石交给拉古涅·卡伊库欧拉』——未解之谜（R4/后续复核）；她自称违反命令不是一两次/这次以朋友身份不参加捕获作战"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-10a84f6aa096",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

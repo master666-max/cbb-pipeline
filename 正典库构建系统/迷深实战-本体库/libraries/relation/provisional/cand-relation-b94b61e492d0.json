@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "斯诺·沃克",
+  "rel_type": "雪之骑士(主持人冠名)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 982,
+   "quote": "这就是『英雄』相川·涡波!正所谓斯诺(snow)大人的骑士!支配着幻境之冬的『雪之骑士』！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "据主持人实况：支配幻境之冬的『雪之骑士』（snow 双关）——观众接受了该称号高呼涡波；附带传闻大杂烩（屠龙英雄/沃克家婚约者/与拉丝缇娅拉+西斯私奔传闻）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b94b61e492d0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "守护(先祖所托)",
+  "subject": "芬里尔·阿雷亚斯"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 950,
+   "quote": "「毕竟在比赛之后被先祖大人拜托了啊……就让我这原剑圣使出全力，支持相川·涡波和他的同伴们吧……」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 955,
+   "quote": "「——我乃芬里尔·阿雷亚斯。既为阿雷亚斯家现任当主，亦是破除万魔之剑。身负『剑圣』诺文末裔之荣耀，立于尔等面前！若有想要超越我阿雷亚斯之剑的勇者就放马过来。纵使是千军万马，今日也休想向前一步。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "比赛后受诺文（先祖）拜托守护使徒——拔剑守护缇亚；破除万魔之剑宣誓（阿雷亚斯家现任当主/剑圣末裔荣耀/千军万马休想向前）；全力迎击斩断骑士们之剑"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-deb470a73d25",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

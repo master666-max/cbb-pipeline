@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『始祖』",
+  "rel_type": "创造(始祖最高杰作)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 91,
+   "quote": "他的选择是创造出一个只为了杀死我而存在的『魔法』当做刺客。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 92,
+   "quote": "那个魔法的名字叫『慕影死神』。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 59,
+   "text": "慕影死神=北军始祖为讨伐南军死神诺文创造的最高杰作（只为杀死诺文的魔法刺客/少女形态/知性自有意志）——与她战斗=其生存方式与交流手段"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a3c618527a34",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

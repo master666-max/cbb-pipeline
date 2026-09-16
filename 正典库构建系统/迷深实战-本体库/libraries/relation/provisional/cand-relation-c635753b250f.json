@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家（剑圣名门）",
+  "rel_type": "家训使命(最强剑士)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 27,
+   "quote": "我没有任何怨言，一心只为了实现阿雷亚斯家的夙愿、成为『最强的剑士』而努力。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 29,
+   "quote": "那样我就能够融入为贵族的一员，堂堂正正地走进山下那些精致的宅邸，加入开心玩耍的孩子们的行列。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 59,
+   "text": "出身阿雷亚斯家者必须学剑（母告知）；为阿雷亚斯家夙愿成最强剑士→以剑士出人头地得荣光名誉→被认可融入贵族（童年交换逻辑）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c635753b250f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

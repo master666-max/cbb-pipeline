@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『世界炎蛇』"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 444,
+   "quote": "「——『璀璨星辰，无限远泛，饕餮殄灭』！『世界炎蛇』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 16,
+   "line": 465,
+   "quote": "可是玛利亚的『世界炎蛇』却在MP尚存的情况下夺去了她的HP。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 893,
+   "quote": "「——『将我一饮而尽』！『世界炎蛇』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 898,
+   "quote": "肩膀以下的衣袖被烧成灰烬，手臂的肌肤也被烧焦——火焰将『手环』熔解了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 16,
+   "text": "阿尔缇传授玛利亚的火炎魔法（输出最高）：咏唱『燃烧吧断炎』『我自衔尾，逡巡蹒跚，如梦似幻』『璀璨星辰，无限远泛，饕餮殄灭』——巨大炎蛇游走咬敌缠绕炙烤（十九层弥诺陶洛斯一击炭化）；★同时消耗HP与MP（MP尚存亦夺HP——以HP为必要条件的出离常轨魔法）；可操作性佳（可拐弯/可维持连续攻击）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-0f967aa475fc",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0f967aa475fc-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-0f967aa475fc",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

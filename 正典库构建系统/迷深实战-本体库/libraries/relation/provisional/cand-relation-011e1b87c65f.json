@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "芬里尔·阿雷亚斯",
+  "rel_type": "子孙对战(压胜)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 196,
+   "quote": "在与格连之后的比赛中，我与自己的子孙芬里尔·阿雷亚斯战斗，并取得了压倒性的胜利。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 194,
+   "quote": "「那是你考虑到双方的立场才不得已而为之的吧。是你为了阿雷亚斯家当主、『剑圣』芬里尔着想才那么做的不是吗？你希望让世人明白，他并不是败给了一个无名的剑士，而是败给了自己的先祖对吧？想要守护家名的这种做法，我也不是不能理解。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 59,
+   "text": "芬里尔=诺文的子孙；和平时代剑圣与杀伐时代死神不可同日而语（时代鸿沟）；诺文自述公开怪物身份非为守护家名（格连解读为让世人明白败给先祖——保护剑圣名誉），芬里尔仍感谢+为决赛资格奔走"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-011e1b87c65f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

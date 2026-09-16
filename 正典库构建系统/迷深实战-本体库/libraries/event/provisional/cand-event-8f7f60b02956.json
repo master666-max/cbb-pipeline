@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "孤儿院的孩子们",
+   "相川涡波",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "诺文得到答案(我就是我宣言)",
+  "tick": 48,
+  "time_verbatim": "决赛中盘"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 1058,
+   "quote": "「——我就是我！诺文·阿雷亚斯！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 1105,
+   "quote": "「我真正想要的既不是『英雄』也不是『最强』之类的虚名，更不是阿雷亚斯家的繁荣！对我来说『荣光』不过是过眼云烟！我想要的是更『微小的光』啊！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 60,
+   "text": "孩子们的声援+涡波『给诺文加油的人，这里还有一个』→『我就是我！诺文·阿雷亚斯！！』水晶粉尘消散/发色复原/身心合一（比之前更强·此状态才是诺文的最强）；真愿=『更微小的光』（一声加油即足够）非荣光非虚名非家名；传剑即实现留恋（弱化瞬间=传授剑技时——对我的执着全无必要）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8f7f60b02956",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

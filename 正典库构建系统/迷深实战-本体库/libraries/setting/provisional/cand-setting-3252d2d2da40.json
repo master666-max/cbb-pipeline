@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 62,
+  "fact": "联合国南端·唯一临海国（港口众多）——七人逃亡首站与出海基地",
+  "name": "古尔亚德国的地理定位",
+  "tick": 50
+ },
+ "evidence": [
+  {
+   "chapter": 62,
+   "line": 3,
+   "quote": "古尔亚德国位于联合国的南端。",
+   "vol": 1
+  },
+  {
+   "chapter": 62,
+   "line": 4,
+   "quote": "因为古尔亚德是联合国中唯一临海的国家，故而港口众多。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 62,
+   "text": "与 ch52 拉丝缇娅拉流亡潜伏地一致"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-3252d2d2da40",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

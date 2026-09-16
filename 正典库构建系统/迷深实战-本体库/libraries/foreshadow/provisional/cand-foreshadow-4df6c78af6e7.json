@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 60,
+  "entities": [
+   "莉帕",
+   "诺文"
+  ],
+  "name": "诺文的最后牵挂(留恋复数)",
+  "note": "『诺文的『留恋』是复数。他还有最后一个牵挂存在。即便如此，诺文还是想要就此消失』——内容未揭示（对莉帕的挂念？）；消失浓度比阿尔缇时『还是浓了些』的观测在案",
+  "payoff_chapter": null,
+  "setup_chapter": 60,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 1185,
+   "quote": "诺文的『留恋』是复数。",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 1187,
+   "quote": "即便如此，诺文还是想要就此消失。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 60,
+   "text": "涡波为制止他而打算搭话——被莉帕袭击打断"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-4df6c78af6e7",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

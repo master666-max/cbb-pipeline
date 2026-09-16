@@ -1,0 +1,193 @@
+{
+ "candidates": [
+  {
+   "canonical": {
+    "entities": [
+     "相川涡波",
+     "莉帕",
+     "诺文"
+    ],
+    "instant": null,
+    "kind": "临终幻视",
+    "name": "诺文的临终梦(庭院的朋友们)",
+    "tick": 51,
+    "time_verbatim": "消失途中的一瞬间"
+   },
+   "evidence": [
+    {
+     "chapter": 63,
+     "line": 15,
+     "quote": "「好厉害啊！」「真努力啊！」",
+     "vol": 1
+    },
+    {
+     "chapter": 63,
+     "line": 24,
+     "quote": "之所以一直在挥剑，都是为了这个——",
+     "vol": 1
+    }
+   ],
+   "library": "event",
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 63,
+     "text": "梦的延续：破宅召集朋友（平民孩子们非贵族——没打进贵族圈却得到更出色的朋友）；木枝代剑游戏少年技术第一；赞扬声中含两名黑发挚友——『之所以一直在挥剑，都是为了这个』；与挚友道别后独留宅邸迎来世界终结，满足入睡"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-event-d4f9bede3cfb",
+   "record_type": "event",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-17"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "chapter": 63,
+    "fact": "临终梦揭示真愿最终形态：每日修练的报偿=孩子们的赞扬（好厉害/真努力）+挚友在场——非荣光非家名；愿望实现/报偿得到/留恋消失→人生最幸福笑容的道别与安眠；『这个微笑就是他的人生并非没有意义的证明』（千年时光后终得报偿）",
+    "name": "诺文梦的报偿结构(赞扬即真愿)",
+    "tick": 51
+   },
+   "evidence": [
+    {
+     "chapter": 63,
+     "line": 49,
+     "quote": "这个微笑就是他的人生并非没有意义的证明。",
+     "vol": 1
+    },
+    {
+     "chapter": 63,
+     "line": 50,
+     "quote": "经过了千年的时光、栗发的少年诺文·阿雷亚斯得到了报偿。",
+     "vol": 1
+    }
+   ],
+   "library": "setting",
+   "observations": [
+    {
+     "category": "interpretation",
+     "chapter": 63,
+     "text": "与 ch60『微小的光』宣言/ch61 消失辞完全同构——三层收束"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.9,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-setting-0429f8604b53",
+   "record_type": "setting",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-17"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": false,
+    "object": "相川涡波",
+    "rel_type": "临终道别(黑发挚友们)",
+    "subject": "诺文"
+   },
+   "evidence": [
+    {
+     "chapter": 63,
+     "line": 19,
+     "quote": "两名黑发的挚友。千真万确地可以称作挚友的存在就在这里。",
+     "vol": 1
+    },
+    {
+     "chapter": 63,
+     "line": 33,
+     "quote": "所以他能用人生最幸福的笑容同两人道别。",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 63,
+     "text": "梦中黑发二挚友（涡波与莉帕）在赞扬者之中；人生最幸福笑容的最棒『再见』——守护下的消解完成"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.88,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": [
+     {
+      "by": "promotion",
+      "from": "candidate",
+      "to": "provisional"
+     }
+    ]
+   },
+   "record_id": "cand-relation-7eef20dfef00",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-17"
+   },
+   "version": 1
+  }
+ ],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行（=文件行号-27786）。",
+  "cross_chapter_notes": [
+   "★诺文临终梦=真愿的最终具象：破宅庭院+平民孩子们（非贵族）+木枝代剑+『好厉害啊！真努力啊！』的赞扬（千年前未得之物）+黑发二挚友在场道别→世界终结中满足入睡——『这个微笑就是他的人生并非没有意义的证明』"
+  ],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.4 §0）",
+  "observations_policy": "实体 observations 仅首入库存活。",
+  "r6_decision": {
+   "deterministic_check": "无译注/元文本",
+   "reason": "全章连续剧情正文（第三人称终章）",
+   "verdict": "正文正常抽取（诺文临终幻视=剧情内事实，作 event/setting 提取）"
+  },
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=51→tick51→2000-02-20。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行27787-27840（CHAPTER 0063，54行）",
+   "verified_at": "2026-09-17"
+  },
+  "unit": "U-C03 批6 · CHAPTER 0063（第六卷-第六章-梦的尾声，摄入序51→tick51→2000-02-20）"
+ }
+}

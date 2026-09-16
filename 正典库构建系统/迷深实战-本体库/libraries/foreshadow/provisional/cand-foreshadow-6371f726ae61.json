@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 59,
+  "entities": [
+   "诺文",
+   "阿雷亚斯家（剑圣名门）"
+  ],
+  "name": "诺文的真正愿望(排除法一步)",
+  "note": "荣光尽头=绝望+千年后阿雷亚斯家已非（家训剑风截然不同/想守护的家不复存在）→渐渐接近答案只差一步；决赛章回收位；『不是英雄也不是最强……无论如何也不对』（涡波同感）",
+  "payoff_chapter": null,
+  "setup_chapter": 59,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 228,
+   "quote": "接下来只要用排除法去思考，我就能摸清自己『真正的愿望』了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 182,
+   "quote": "我不得不承认，它岂止不能带来幸福，甚至近乎于一种『诅咒』。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 59,
+   "text": "荣光=诅咒论：一旦入手便永远纠缠在身，岂止不能带来幸福"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-6371f726ae61",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

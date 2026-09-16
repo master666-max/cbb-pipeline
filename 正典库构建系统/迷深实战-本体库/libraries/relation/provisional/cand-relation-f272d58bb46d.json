@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "退会宣言(与斯诺)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 1025,
+   "quote": "「……大家，请听我说！接下来是我作为公会会长对『史诗探索者』的成员做出的宣言！我跟斯诺·沃克将从此刻起退出公会！」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 1028,
+   "quote": "「接下来的事情就交给雷鲁和缇莉还有波鲁扎克三个人了！作为副会长来说这三个人是理想的人选。并且公会会长的位置就又回到空白状态了。我觉得大概一直都会是空缺的吧。因为与公会会长相应的『英雄』什么的，是根本不存在的啊。哪里都不存在……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "公会会长宣言退出+斯诺同退；后任=雷鲁/缇莉/波鲁扎克；会长位回归空缺（与公会会长相应的『英雄』根本不存在论）；成员们早已预见（帕林库洛带来的有望青年全中途退出先例）温情送别"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f272d58bb46d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

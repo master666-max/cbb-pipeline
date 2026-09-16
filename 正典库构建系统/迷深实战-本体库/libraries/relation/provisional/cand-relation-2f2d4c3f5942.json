@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "恋爱告白(自立宣言)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 321,
+   "quote": "「正如拉丝缇娅拉大人所言，我·是·真·的·喜·欢·着·涡·波·啊。就是因为我喜欢着你，所以才那么想和你结婚啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 360,
+   "quote": "「我终于明白了……谢谢你，涡波。既不是『英雄』，也不是『我的英雄（东西）』的、『我喜欢的人』……！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "病房对谈终局：『我之所以不想和涡波分开，是因为我喜欢涡波』+接受拒绝+『为了我喜欢的涡波，我要努力一下』；自我定位=『我喜欢的人』（非英雄非东西）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2f2d4c3f5942",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

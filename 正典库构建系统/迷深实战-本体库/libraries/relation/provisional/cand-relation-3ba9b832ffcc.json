@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "撒娇依赖(谄媚缇亚)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 324,
+   "quote": "「噫。非、非常抱歉，西斯大人……我有点得意忘形了……」",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 337,
+   "quote": "「我们是同伴。已经是对等的关系了，所以不会单方面地帮助你了哦。涡波没跟你说吗？……啊，还有，那个敬语。赶紧停了吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "观众席丑态：对缇亚谄媚求庇护（西斯大人→遵命缇亚大人）；拉丝缇娅拉契约过期论（英雄契约有时限/对等同伴不单方面帮/宠禁明言）——斯诺瞬间举白旗；目的=希望得到缇亚庇护（性格有点恶化[涡波评]）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3ba9b832ffcc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

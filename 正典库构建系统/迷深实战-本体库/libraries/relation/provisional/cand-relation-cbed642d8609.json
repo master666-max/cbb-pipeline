@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "搭档关系(对等互助)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 288,
+   "quote": "「我不想做什么『英雄』，而想做斯诺的搭档。我不想单方面地帮助你。我会成为斯诺的力量，但是斯诺也要成为我的助力。我觉得我们肯定能构建这样对等的关系。」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 309,
+   "quote": "「如果我希望的话，会跟我结婚吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "涡波提议：非英雄非单方面守护，互相依靠互相扶持；斯诺三连确认（一直在一起/绝不会死/会来帮我）后应诺；结婚请求被摇头拒绝"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cbed642d8609",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

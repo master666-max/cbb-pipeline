@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "逆流输血(魔力记忆感情)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 473,
+   "quote": "「诺文的事情的话，我非常了解！所以咏唱就交给我来做！大哥哥你负责挥剑！请用剑跟诺文战斗到最后吧！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 482,
+   "quote": "「毕竟我也是诺文的『挚友』啊！所以我要和大哥哥一起实现诺文的愿望！这就是我『真正真实的愿望』！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "MP 枯竭时纹章发光逆流：输送魔力（MP2→582/炽热魔力）+人生记忆感情（诺文的日日夜夜/诺文眼中的诺文→咏唱最后拼图）；『毕竟我也是诺文的『挚友』啊！所以我要和大哥哥一起实现诺文的愿望！这就是我『真正真实的愿望』』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3504b4313d3b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

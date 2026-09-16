@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "感应师承(身心一致条件)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 795,
+   "quote": "在去迷宫修行的时候，诺文跟我说过，他说我「身与心不一致」。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 810,
+   "quote": "它是感受充斥于异世界的魔力的流向——也就是感知这个『异世界的理』的力量。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "『身与心不一致』所以无法习得奥义→记忆统合后达成→技能『感应』觉醒（不依五感用心感受魔力流向=感知异世界的理）；暴走时『咒术』已用过的经验复现"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-08d2bfe170c3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

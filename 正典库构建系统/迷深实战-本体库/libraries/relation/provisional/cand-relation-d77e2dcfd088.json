@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "孤儿院的孩子们",
+  "rel_type": "孩子们声援(留恋实现)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 1012,
+   "quote": "正是被诺文传授过剑技的孤儿院的孩子们。孩子们正和孤儿院的监护者一起坐在观众席的一隅。",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 1016,
+   "quote": "无关乎什么守护者什么怪物。跟『剑圣』与『最强』亦无关系,他们单纯是在给诺文·阿雷亚斯这个人加油。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "观众一边倒恐惧怪物化时唯一声援：受剑技传授的孩子们+监护者坐观众席一角呼喊师父——无关守护者怪物剑圣最强，纯为诺文·阿雷亚斯加油；诺文听声=答案（微小的光）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d77e2dcfd088",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

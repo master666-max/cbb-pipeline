@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "中央剧场船"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 116,
+   "quote": "它的入口宛如一道城门，城门周围则建有好几十个塔状建筑。跟其它的船只不同，它不是经由战舰修改而成，而是从一开始就作为剧场船建造的。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 60,
+   "text": "瓦尔法拉规模冠绝的决赛会场：非战舰改建而是原生剧场船（城门式入口+数十塔状建筑+数千人大厅+三倍观众席+塔状座席）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-cf58e490859a",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

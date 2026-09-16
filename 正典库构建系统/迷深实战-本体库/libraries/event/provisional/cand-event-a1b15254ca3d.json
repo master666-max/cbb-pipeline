@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "『始祖』",
+   "莉帕",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "前史",
+  "name": "千年前死神战争生涯",
+  "tick": 47,
+  "time_verbatim": "千年前（梦境回忆）"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 50,
+   "quote": "不消多久，我便在战场上被冠以『死神』之名，令人闻风丧胆。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 88,
+   "quote": "为了讨伐南军的『死神』，当时的北军打出了最强的一张牌。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 59,
+   "text": "南军死神（黑红色记忆/尸山/友军发狂袭击→初杀友军/守护对象全灭为人质）vs 北军始祖牌=慕影死神刺客；与莉帕以厮杀为玩耍直到世界崩坏被大陆吞没"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a1b15254ca3d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

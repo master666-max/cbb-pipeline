@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "愿望对立(守护诺文)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 47,
+   "quote": "莉帕的愿望是『守护诺文』。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 576,
+   "quote": "「——正因如此，你还是背叛诺文的期待吧，大哥哥。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "『唯有守护诺文这份心意绝无虚假』→推涡波远离诺文（其有可消灭诺文的力量）；要求背叛诺文期待；战败后改恳求诺文不消失（明知无法实现）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dc05d8728b2b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "击败(番外战冰结固定)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 977,
+   "quote": "我的剑毫不留情地砍断了莉帕的右脚。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 983,
+   "quote": "我用对战缇达那时的要领，将虚实无常的莉帕固定化。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "四对一阵型（前卫涡波斯诺+机动拉丝缇娅拉护玛利亚）；诺文剑技几十回合压制（莉帕赢不了诺文公式）+Ice 冰结固定（斩右脚/刺穿钉地/对缇达要领）；玛利亚火焰先重创其右臂"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5c70a02ad26b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

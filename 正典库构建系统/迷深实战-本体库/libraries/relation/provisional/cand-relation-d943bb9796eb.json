@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "剑赌注(决赛)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 285,
+   "quote": "「以剑为赌注吧。输掉的一方，要把佩剑交给对方。」",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 271,
+   "quote": "「我可是一字不差地记得哦。‘在『舞斗大会』的决赛上，师徒二人将一决雌雄。随着阿雷亚斯流的剑翩翩起舞，无数人纷纷为那华美的剑闘而倾心’什么的呢。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "输者交出佩剑：诺文押修复的缇亚之剑（艾利巴茨共同杰作/胜则免费奉还），涡波押新月琉璃制直剑；师徒对决旧约（决赛师徒一决雌雄）兑现"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d943bb9796eb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

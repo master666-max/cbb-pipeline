@@ -1,0 +1,98 @@
+{
+ "unit": "ch0062",
+ "chapter": 62,
+ "ingestion_index": 50,
+ "title": "第六卷-第五章Epilogue",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 9,
+  "pass": 9,
+  "intercept": 0,
+  "admitted": 9,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 2,
+  "on-create": 7
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-d80cf779a6b0",
+   "type": "entity",
+   "name": "『LivingLegend号』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f271658345dc",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e8be5a06d375",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-de5637e8dba1",
+   "type": "event",
+   "name": "古尔亚德港深夜购船",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-fd50ad2c9651",
+   "type": "event",
+   "name": "LivingLegend号黎明出航(本土)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-05c9e8018a84",
+   "type": "foreshadow",
+   "name": "本土追讨与三十层后探索双线",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3252d2d2da40",
+   "type": "setting",
+   "name": "古尔亚德国的地理定位",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ced7653db654",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-8cd5eda115d9",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 50,
+  "pseudo_date": "2000-02-20",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

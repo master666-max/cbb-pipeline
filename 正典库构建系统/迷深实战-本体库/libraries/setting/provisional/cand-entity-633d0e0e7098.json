@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "技能『魔力风刃化』"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 751,
+   "quote": "他用的并不是技能『魔力物质化』。一定要说的话，就跟我的『魔力冰结化』很像。",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 753,
+   "quote": "要给这取名的话，就叫技能『魔力风刃化』好了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 61,
+   "text": "莱纳用风之魔力伸长剑身的技能（与涡波魔力冰结化同构、非魔力物质化）——Rokh·Bringer 轻易切开大会结界"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-633d0e0e7098",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "概念(称号)",
+  "name": "称号『彷徨于地上之人』"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 699,
+   "quote": "【获得称号『彷徨于地上之人』】",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 700,
+   "quote": "地魔法补正+0.50",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 61,
+   "text": "诺文消失时涡波获得：地魔法补正+0.50——与『一把剑一直在地上彷徨的他』的存在呼应（涡波自认成为其存在过的证明）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ea6b8265802c",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

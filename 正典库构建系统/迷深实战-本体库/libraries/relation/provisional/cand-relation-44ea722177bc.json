@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "同行出逃(七人)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 911,
+   "quote": "「缇亚大人！！此剑、成功夺回来啦！将之夺回的人正是我、斯诺！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 1055,
+   "quote": "「——虽然对不住了但是斯诺就让我先带走吧！她说想要去外面看看！我也想帮她实现这个心愿！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "剑经手归还缇亚（艾尔米拉德引路白瞎喜剧）+对沃克家告别礼+七人逃亡成员；『一路走好，斯诺……』（缇莉代表送别）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-44ea722177bc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

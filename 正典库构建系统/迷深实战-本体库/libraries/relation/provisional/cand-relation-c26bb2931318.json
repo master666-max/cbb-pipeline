@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "击败(决赛死斗)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 1159,
+   "quote": "结果便是『新月琉璃制直剑』抵在了他心脏的正后方。",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 1171,
+   "quote": "「这么一想来，这是我第一次败北啊……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "两阶段：剑术战负（亡灵一闪击落武器）→探索者战法胜（歪冰世界骗过亡灵一闪+Connection 绕后剑抵心脏正后方）；诺文生涯初败（『要是能早一点败北的话，可能就会走上不同的人生了』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c26bb2931318",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

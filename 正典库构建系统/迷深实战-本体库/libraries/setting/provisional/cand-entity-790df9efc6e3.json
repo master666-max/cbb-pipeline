@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品(魔剑)",
+  "name": "【修坏的阿雷亚斯家宝剑】"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 289,
+   "quote": "【修坏的阿雷亚斯家宝剑】攻击力2",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 291,
+   "quote": "这把剑经由艾利巴茨之手得到了修缮。被熔解的刀身由新月线形石弥补，剑柄用水晶做了颇具匠心的改良。但因为强行修复的缘故，剑的锋利度并没有恢复。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 60,
+   "text": "缇亚之剑经艾利巴茨修复：熔解刀身以新月线形石弥补+水晶剑柄改良（攻击力2/锋利度未复）——诺文决赛赌注（涡波若胜免费奉还缇亚）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-790df9efc6e3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

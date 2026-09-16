@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "千年夜话(第一个朋友)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 1001,
+   "quote": "「……一千年前，在最后一天的夜里，我也是这样和诺文一起度过的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 1004,
+   "quote": "「诺文他明明拥有能杀死我的力量……但看到我的样子后却收住了手中的剑……他很温柔……诺文他是陪我一直玩耍到最后一刻的，我的第一个朋友……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 58,
+   "text": "一千年前最后一天的夜里同度；诺文拥有能杀死她的力量却收剑——『陪我一直玩耍到最后一刻的，我的第一个朋友』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8ae0a83298fa",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 59,
+  "entities": [
+   "相川涡波",
+   "莉帕",
+   "诺文"
+  ],
+  "name": "三人同得答案的愿望(孤独消失恐惧)",
+  "note": "诺文想见莉帕与涡波——三人一起得到『答案』笑着迎来结局；反之『如果他们两个不来的话，我就会孤独地消失』（过于寂寞/没有报偿）；从破宅漫步时起就在等朋友——与莉帕『诺文在等我』（ch58）镜像",
+  "payoff_chapter": null,
+  "setup_chapter": 59,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 231,
+   "quote": "或许这是一份奢侈的心愿，但我希望到最后能三个人一起得到『答案』，然后三个人一起笑着迎来结局。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 246,
+   "quote": "诺文·阿雷亚斯就一直在等待朋友的现身。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 59,
+   "text": "莉帕在生气应该不会来/涡波取回记忆后我的问题是次要的——两不安"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-ae790696621e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

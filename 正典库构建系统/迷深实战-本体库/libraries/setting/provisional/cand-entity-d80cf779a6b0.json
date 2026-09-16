@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "设施(魔导船)",
+  "name": "『LivingLegend号』"
+ },
+ "evidence": [
+  {
+   "chapter": 62,
+   "line": 67,
+   "quote": "「那么，这艘船的名字就叫『LivingLegend号』了！没问题吧！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 62,
+   "line": 26,
+   "quote": "「确实是这样……可是，它是要耗费几百名魔法使的魔力才能一度出海的东西，相当的不省油哦？之所以会贱价出售，正是因为无人问津。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 62,
+   "text": "七人新据点：大量魔石建造不仰赖风浪的魔导船（失败作贱价出售/需几百名魔法使级魔力出航=缇亚一人即可/易燃易爆火种多）；拉丝缇娅拉命名（塞拉捍卫品味）；设 Connection 后船旅途中可随时往迷宫探索"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d80cf779a6b0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

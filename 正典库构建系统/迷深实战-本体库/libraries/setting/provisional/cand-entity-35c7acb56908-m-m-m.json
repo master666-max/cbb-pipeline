@@ -1,0 +1,84 @@
+{
+ "canonical": {
+  "entity_type": "物品",
+  "name": "手环"
+ },
+ "evidence": [
+  {
+   "chapter": 37,
+   "line": 56,
+   "quote": "这是帕林库洛为作为『异邦人』的我们解决不便之处而准备的『手环』。",
+   "vol": 1
+  },
+  {
+   "chapter": 51,
+   "line": 38,
+   "quote": "「现在就是关键时刻了。涡波要比诺文更快地结束比赛，跟我们汇合。我们则要好好地修理斯诺一顿。然后在不会有任何人妨碍的准决赛中破坏掉『手环』。——上吧！」",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 763,
+   "quote": "这个『手环』就是为了释放某种魔法的代用品。",
+   "vol": 1
+  },
+  {
+   "chapter": 52,
+   "line": 760,
+   "quote": "与此同时，这个试遍千方百计也未能破坏的『手环』产生了龟裂。恐怕是暗属性大魔法的消耗超出了『手环』的负荷。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 898,
+   "quote": "肩膀以下的衣袖被烧成灰烬，手臂的肌肤也被烧焦——火焰将『手环』熔解了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 37,
+   "text": "帕林库洛给『异邦人』兄妹的装饰品（对外的功能说明：适应环境/语言互通/稳定暴走魔力）——真身=精神魔法术式的关键（记忆改篡的锚点，斯诺劝即刻破坏，主角拒绝：『无论·如何都不能拿下来的最为重要的东西』之植入执念）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 6.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-35c7acb56908",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-35c7acb56908-m",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-35c7acb56908-m-m",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-35c7acb56908-m-m-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-35c7acb56908-m-m",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 4
+}

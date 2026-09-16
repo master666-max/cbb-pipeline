@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "格连",
+  "rel_type": "最强称号继受(格连有意让出)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 164,
+   "quote": "格连对此岂止是并不挂怀，他甚至从最初看到我的时候就有意让出称号了。在比赛之前，他特地来见了我一面，并表示我与这个称号更相配。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 168,
+   "quote": "首先是在结束比赛回去的路上，我被大量素未谋面的人团团围住。好不容易从中脱身后，贵族们又络绎不绝地到我的住处登门拜访，他们马不停蹄地邀请我参加在『瓦尔法拉』中央举办的舞会，在那儿详尽地打探我的经历和出身。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 59,
+   "text": "赛前格连特来见面表示称号与诺文更相配；胜后诺文待遇一夕剧变（无名剑士→英雄）：群众围堵/贵族舞会邀请/勋章爵位人生规划——眼神死=涡波同款（荣光幻影觉悟）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c1136a06023d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

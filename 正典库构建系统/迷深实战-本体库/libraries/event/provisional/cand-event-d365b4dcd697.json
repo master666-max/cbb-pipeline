@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "技能『感应』",
+   "相川涡波",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "觉醒",
+  "name": "技能感应觉醒(黑暗中)",
+  "tick": 46,
+  "time_verbatim": "番外战·魔力枯竭后"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 799,
+   "quote": "我已经领会了阿雷亚斯流的奥义、技能『感应』真正的法门——",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 816,
+   "quote": "我成功地在毫厘之间避开了这一击。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 58,
+   "text": "次元魔法被迫解除视野漆黑中觉醒：条件=身心一致（记忆统合）+暴走时咒术使用经验；本质=感知异世界的理（魔力流向）；毫厘回避莉珀连击"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d365b4dcd697",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

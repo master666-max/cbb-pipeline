@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "玛利亚·迪斯特拉斯",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "约定",
+  "name": "围巾约定兑现(织围巾和解)",
+  "tick": 46,
+  "time_verbatim": "番外战终局后·决赛前夜"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 1086,
+   "quote": "眼前的状况不禁让我回想起了那曾经的每一天。这三个人曾在一起其乐融融地织过围巾。但如今却可谓时移世易，恐怕三人间的氛围再也不复当初了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 1104,
+   "quote": "看到织好的围巾，莉帕笑了，我也一样。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 58,
+   "text": "曾同住史诗探索者檐下的三人（织围巾往事）——涡波拜托斯诺取编织道具短时间织成；围巾前不再有纠葛=互相理解一点点；莉帕因此接受同赴决赛"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-58b500f6c7ca",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

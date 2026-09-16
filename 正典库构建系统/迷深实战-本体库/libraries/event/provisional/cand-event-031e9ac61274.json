@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "『新月琉璃制直剑』",
+   "相川涡波",
+   "舞斗大会",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "对决",
+  "name": "决赛第一阶段(师徒剑术对决)",
+  "tick": 48,
+  "time_verbatim": "舞斗大会决赛·正午后"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 492,
+   "quote": "缇亚拙劣的剑技、在酒馆学到的异世界剑术知识、从迷宫探索者们身上偷学的技术、缇达强硬的刚剑——明明是将我在迷宫中的经验全部络合升华而出的『剑术』，但是诺文仍然完全地防御下来。",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 629,
+   "quote": "无法回避的剑终究还是将我的剑击飞了，『新月琉璃制直剑』此刻正飞舞在空中。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 60,
+   "text": "感应vs感应对等剑舞：涡波动用全异世界剑术鸡尾酒（缇亚/酒馆/探索者/缇达/塞拉/拉古涅/侯普思/赫勒比勒夏因/佩露修娜/波鲁扎克/艾尔米拉德/斯诺/拉丝缇娅拉+自创流）尽被化解；诺文魔力物质化伸剑对抗；亡灵一闪（人生代价·不可认知一闪）击落涡波剑"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-031e9ac61274",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,258 @@
+{
+ "unit": "ch0061",
+ "chapter": 61,
+ "ingestion_index": 49,
+ "title": "第六卷-第四章-鍊狱三十，亲友至矣。孤高之剑，择卿为主",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 31,
+  "pass": 31,
+  "intercept": 0,
+  "admitted": 31,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 26,
+  "consistent-duplicate": 5
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-e369456a2b8e",
+   "type": "entity",
+   "name": "魔法『致亲爱的一闪』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-c133da328c4d",
+   "type": "entity",
+   "name": "『阿雷亚斯家的宝剑诺文』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-633d0e0e7098",
+   "type": "entity",
+   "name": "技能『魔力风刃化』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3f94dd4fee34",
+   "type": "entity",
+   "name": "神圣魔法『Inviolable·Field』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ea6b8265802c",
+   "type": "entity",
+   "name": "称号『彷徨于地上之人』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-25f51139ce10",
+   "type": "entity",
+   "name": "诺文",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-38664d360d49-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-63375d4defa8",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-c51d21df88f5",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b1863a0da019",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-91e72177c1b4",
+   "type": "entity",
+   "name": "雷鲁·桑库斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4e6abd571844-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-a0d2c62b219a",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fa8ce5251930",
+   "type": "relation",
+   "name": "莉帕",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3504b4313d3b",
+   "type": "relation",
+   "name": "莉帕",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d7f9d2970dc6",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0d883400ddf6",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-eee2f07b3f0d",
+   "type": "relation",
+   "name": "艾尔米拉德·希达尔克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4232a1102faa",
+   "type": "relation",
+   "name": "格连",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-deb470a73d25",
+   "type": "relation",
+   "name": "芬里尔·阿雷亚斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-dbcedde04e17",
+   "type": "relation",
+   "name": "芙兰琉莱",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-10a84f6aa096",
+   "type": "relation",
+   "name": "拉古涅·卡伊库欧拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5ed3e3100309",
+   "type": "relation",
+   "name": "雷鲁·桑库斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3a6d42fc43cb",
+   "type": "event",
+   "name": "第三十之试练(瓦尔法拉=三十层再现)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-539996824f37",
+   "type": "event",
+   "name": "诺文消失(千年生涯终焉)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-6e0397dd3602",
+   "type": "event",
+   "name": "赛后大混乱与魔石争夺",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-76165d7eded5",
+   "type": "event",
+   "name": "七人大逃亡(Connection 闭幕)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2d218781dc0a",
+   "type": "foreshadow",
+   "name": "帕林库洛的斗争火种计划(本土决战)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-0ecbc5482dc6",
+   "type": "foreshadow",
+   "name": "拉古涅与魔石的禁忌感应",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-88330f07ceae",
+   "type": "setting",
+   "name": "地之理的盗窃者之理(矿物不伤)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f3f29f777616",
+   "type": "setting",
+   "name": "咏唱改写原理(致亲爱的一闪的诞生)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f272d58bb46d",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-44ea722177bc",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 49,
+  "pseudo_date": "2000-02-19",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "最后留恋(挚友告白)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 32,
+   "quote": "「——我最后的『留恋』就·是·你·啊，莉帕。」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 37,
+   "quote": "「比起你想要守护我的心情，我想要守护你的感情更甚啊……我最棒的『挚友』、莉帕。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "『我最后的『留恋』就·是·你·啊，莉帕』+初称挚友（平时只在我面前露忧态）+杀人冲动苦楚知晓故隐感情速消失→隐瞒反效果真心告白；贯穿心脏=力量回复的真相"
+  },
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "守护感情：『比起你想要守护我的心情，我想要守护你的感情更甚啊……我最棒的『挚友』』——与其对妹妹的思念同型（涡波评）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a0d2c62b219a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

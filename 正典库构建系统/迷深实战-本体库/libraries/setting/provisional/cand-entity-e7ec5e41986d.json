@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『Firefly·阳炎』"
+ },
+ "evidence": [
+  {
+   "chapter": 58,
+   "line": 919,
+   "quote": "「——『Firefly·阳炎』。这样就能看清楚了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 920,
+   "quote": "不光是我们，玛利亚也能看得一清二楚。虽然她的双眼只是义眼，但可以利用火焰收集周围的信息。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 58,
+   "text": "玛利亚的光源魔法：火焰如无数蝴蝶点亮训练场——破解次元之夜的视野封锁（义眼可借火焰收集周围信息）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-e7ec5e41986d",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

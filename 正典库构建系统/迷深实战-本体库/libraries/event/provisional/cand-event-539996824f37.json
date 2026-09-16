@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "孤儿院的孩子们",
+   "相川涡波",
+   "莉帕",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "消解",
+  "name": "诺文消失(千年生涯终焉)",
+  "tick": 49,
+  "time_verbatim": "决赛终盘"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 660,
+   "quote": "察觉到这一点，观众们缓缓开始鼓掌。",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 697,
+   "quote": "断断续续的台词说到最后，诺文便从世界上消失了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 61,
+   "text": "留恋全部实现（孩子们赞美/观众畏惧转憧憬雷鸣喝彩/与莉帕互道挚友）→身体化光消失；遗留宝剑诺文+涡波获称号彷徨于地上之人；『不如弟子们的声音……但是万雷的喝彩也不坏』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-539996824f37",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

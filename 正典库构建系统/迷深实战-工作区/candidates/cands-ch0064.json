@@ -1,0 +1,25 @@
+{
+ "candidates": [],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行；本章零候选。",
+  "cross_chapter_notes": [],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.4 §0）",
+  "observations_policy": "实体 observations 仅首入库存活。",
+  "r6_decision": {
+   "deterministic_check": "清洗版 NOISE 标记+boundary noise=true（ch0064）",
+   "reason": "R6 规则1 作者杂谈+下卷出版预告",
+   "verdict": "作者后记：舞斗大会篇完结感言/书名自嘲/第七卷预告（迷宫探索主轴·七人队伍·航海与本土）+卡牌游戏兴趣谈+致谢——R6 规则1 作者杂谈零抽取（七卷预告=出版侧元评论不入库）"
+  },
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=50→tick50→伪锚点 2000-02-20。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行27841-27855（CHAPTER 0064）",
+   "verified_at": "2026-09-17"
+  },
+  "unit": "U-C03 批6 · CHAPTER 0064（第六卷-后记，摄入序50）"
+ }
+}

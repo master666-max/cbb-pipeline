@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "围巾交付(约定完成)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 170,
+   "quote": "「给你，围巾。咱们约好的那个。」",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 862,
+   "quote": "接着，他将系在手腕上的围巾绑在脖子上，用剑指向我。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "入场后掷围巾（ch58 织成之约）——诺文右肩卷好道谢『真守约啊』；赛中系于脖颈（雪之怀旧）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-caba424267b6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

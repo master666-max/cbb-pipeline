@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『地之理的盗窃者』",
+  "rel_type": "亡者自白(留恋驱动)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 224,
+   "quote": "更何况这里已经不存在名叫『诺文·阿雷亚斯』的男人了。那个人已经不在了，莉帕。在和你相遇的更早之前，在订下名为『地之理的盗窃者』的契约之际，诺文·阿雷亚斯就从这个世上消失了。在这里的只是凭借『留恋』驱动身体的『亡者』——只是『地之理的盗窃者（怪物）』而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 220,
+   "quote": "「——『拥有最强之名的英雄』格连·沃克让我知道自己追逐的目标不过是个幻想。『拥有剑圣之名的英雄』芬里尔·阿雷亚斯让我知晓了自己的阿雷亚斯家已经不复存在。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "『在和你相遇的更早之前，在订下名为『地之理的盗窃者』的契约之际，诺文·阿雷亚斯就从这个世上消失了。在这里的只是凭借『留恋』驱动身体的『亡者』；格连教未来（目标是幻想）/芬里尔教现在（阿雷亚斯家已不存在）→向涡波求过去之答案"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-097dc0a7be25",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "锻造(决赛双剑)",
+  "subject": "艾利巴茨"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 359,
+   "quote": "正是『史诗探索者』的铁匠艾利巴茨。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "决赛双方佩剑皆出其手（新月琉璃=会长佩剑/秘银=诺文）；修复阿雷亚斯家宝剑（与诺文共同杰作·花了不少钱）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a9ab4e5bd2f9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

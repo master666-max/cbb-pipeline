@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "临终道别(黑发挚友们)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 63,
+   "line": 19,
+   "quote": "两名黑发的挚友。千真万确地可以称作挚友的存在就在这里。",
+   "vol": 1
+  },
+  {
+   "chapter": 63,
+   "line": 33,
+   "quote": "所以他能用人生最幸福的笑容同两人道别。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 63,
+   "text": "梦中黑发二挚友（涡波与莉帕）在赞扬者之中；人生最幸福笑容的最棒『再见』——守护下的消解完成"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7eef20dfef00",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

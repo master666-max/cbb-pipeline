@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "倒戈护卫(称号交棒后)",
+  "subject": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 961,
+   "quote": "「『最强』的称号已经顺利地交到了涡波君的手上，斯诺那边似乎也不用担心了，虽然已经没什么可做的了……但这一次就来当拉丝缇娅拉酱的伙伴好啦。」",
+   "vol": 1
+  },
+  {
+   "chapter": 61,
+   "line": 969,
+   "quote": "「——作为交换，斯诺的事今后就拜托了哦？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "无视当主抓斯诺指令→『最强』称号已交涡波+来当拉丝缇娅拉伙伴；短刀使（系绳短刀独特架势）挡弗茨亚茨骑士+七骑士；交换条件=『斯诺的事今后就拜托了哦』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4232a1102faa",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

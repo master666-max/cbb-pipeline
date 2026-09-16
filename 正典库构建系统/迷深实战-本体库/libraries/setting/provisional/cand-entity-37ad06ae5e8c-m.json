@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『Connection』"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 983,
+   "quote": "【Connection】",
+   "vol": 1
+  },
+  {
+   "chapter": 13,
+   "line": 984,
+   "quote": "上级次元魔法能根据术者的力量连接次元",
+   "vol": 1
+  },
+  {
+   "chapter": 58,
+   "line": 627,
+   "quote": "「尽快吧，涡波。不赶紧去『史诗探索者』那边的话，你妹妹会有危险的哦？不能用涡波的『Connection』直接去『史诗探索者』吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 13,
+   "text": "上级次元魔法（消费MP100）：『能根据术者的力量连接次元』——成对的淡紫色『门』，两门相通（单门推不开）；解除以想像行之；归还不可用（需在原世界设门）；正道结界内保形困难、十层因魔力奔流固定失败——缇达房间（20层，无主）或可行"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-37ad06ae5e8c",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-37ad06ae5e8c-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-37ad06ae5e8c",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

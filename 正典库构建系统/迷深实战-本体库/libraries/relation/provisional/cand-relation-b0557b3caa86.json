@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "圣女大人",
+  "rel_type": "近卫骑士(生前)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 56,
+   "quote": "我曾数次解救王族的性命。曾用一击斩落了山一般巨大的龙的首级。也以一人之力将上万的敌军杀了个片甲不留。有名武将的首级，我应该也斩获了不下百个。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 59,
+   "text": "数解王族性命/一击斩龙山般巨大首级/一人歼上万敌军/斩名将首级百个——仍无英雄实感（世人称怪物）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b0557b3caa86",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

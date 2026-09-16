@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『阿雷亚斯家的宝剑诺文』",
+  "rel_type": "夺剑袭击(元老院指示)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 61,
+   "line": 801,
+   "quote": "「搅乱大会秩序实在万分抱歉！但是这也是为了莱文教教团的夙愿！请务必网开一面放过少年骑士莱纳·赫勒比勒夏因！确保守护者诺文·阿雷亚斯的魔石是来自我们弗茨亚茨本国元老院的指示！如果有问题的话请直接跟那边说！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 61,
+   "text": "目标=守护者魔石（弗茨亚茨本国元老院指示/斐勒卢托背后操纵）；大会运营拒绝介入后强行执行；被拉古涅打落又被艾尔米拉德 WaterWire 夺走"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0d883400ddf6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

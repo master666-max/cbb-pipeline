@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "古尔亚德国",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "交易",
+  "name": "古尔亚德港深夜购船",
+  "tick": 50,
+  "time_verbatim": "决赛逃亡当夜"
+ },
+ "evidence": [
+  {
+   "chapter": 62,
+   "line": 24,
+   "quote": "我现在是真的累得够呛，至于原因，那自然是拉丝缇娅拉所谓的「随便一赚」了，这些买船的钱都是她逼我去赚来的。我是真的想不到，自己居然会在和诺文的比赛之后跑去赌场，甚至使用技能『感应』在里面赚钱。",
+   "vol": 1
+  },
+  {
+   "chapter": 62,
+   "line": 43,
+   "quote": "缇亚将庞大的魔力灌进了船内。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 62,
+   "text": "市价两倍现金非正规交易；资金=拉丝缇娅拉逼涡波赛后赌场用技能『感应』所赚；缇亚触船灌魔力启动（余波撼动海面/商人无言）；涡波+莉帕 Dimension 速读资料掌舵"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-de5637e8dba1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

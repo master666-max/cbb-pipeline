@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物(传说)",
+  "name": "『始祖』"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 89,
+   "quote": "被唤作『始祖』的传说级魔法使负责处理我的威胁。",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 93,
+   "quote": "她是『始祖』的最高杰作，是和我一样特化了杀人性能的存在。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 59,
+   "text": "千年前北军的传说级魔法使：为讨伐南军死神诺文，创造只为此存在的『魔法』刺客『慕影死神』（其最高杰作）——不屑与剑士正面交锋"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-1c5cf8850f40",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

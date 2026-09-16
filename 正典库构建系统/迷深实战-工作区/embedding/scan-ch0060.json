@@ -1,0 +1,75 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "『冬之异世界（Wintry·Dimension）』",
+   "library_match": "『次元之冬』",
+   "similarity": 0.857
+  },
+  {
+   "candidate": "『次元之冬·歪冰世界』",
+   "library_match": "『次元之冬』",
+   "similarity": 0.8966
+  },
+  {
+   "candidate": "【修坏的阿雷亚斯家宝剑】",
+   "library_match": "阿雷亚斯家的宝剑",
+   "similarity": 0.8915
+  },
+  {
+   "candidate": "莉帕",
+   "library_match": "格林·莉姆·莉帕",
+   "similarity": 0.9285
+  }
+ ],
+ "pairs": [
+  [
+   "『亡灵一闪（Von·A·Wraith）』",
+   "『次元之冬·终霜（Di·Winter·Frost）』",
+   0.6994
+  ],
+  [
+   "『冬之异世界（Wintry·Dimension）』",
+   "『次元之冬』",
+   0.857
+  ],
+  [
+   "『次元之冬·歪冰世界』",
+   "『次元之冬』",
+   0.8966
+  ],
+  [
+   "【修坏的阿雷亚斯家宝剑】",
+   "阿雷亚斯家的宝剑",
+   0.8915
+  ],
+  [
+   "中央剧场船",
+   "中央广场",
+   0.6617
+  ],
+  [
+   "诺文",
+   "诺文·阿雷亚斯",
+   0.7781
+  ],
+  [
+   "相川涡波",
+   "相川阳滝",
+   0.8357
+  ],
+  [
+   "莉帕",
+   "格林·莉姆·莉帕",
+   0.9285
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 8,
+  "library": 269,
+  "dup_suspect": 0,
+  "uncertain": 4
+ }
+}

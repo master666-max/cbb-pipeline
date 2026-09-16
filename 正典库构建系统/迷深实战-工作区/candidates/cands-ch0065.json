@@ -1,0 +1,25 @@
+{
+ "candidates": [],
+ "meta": {
+  "alias_policy": "同 STATE 固化决议。",
+  "confidence_calibration": "同 STATE 固化决议。",
+  "coordinate_line_note": "evidence.line=章内物理行；本章零候选。",
+  "cross_chapter_notes": [],
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.4 §0）",
+  "observations_policy": "实体 observations 仅首入库存活。",
+  "r6_decision": {
+   "deterministic_check": "清洗版 NOISE 标记+boundary noise=true（ch0065）",
+   "reason": "R6 规则1 封面美术说明=作品侧元评论；剧透内容不入库",
+   "verdict": "封面注释：核心主题引诺文外传（宅邸少年仰望青空/英雄荣光信条）+构图象征解读（遗剑=退场/颠茄=莉帕诅咒与留恋消解/彼岸花/三途川与守渡人/桥=心意相通）——作者级象征解读整章排除，ch0054 同判；外传引文不作正典证据"
+  },
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；本章摄入序=51→tick51→伪锚点 2000-02-21。禁墙钟。",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "slice": "行27856-27883（CHAPTER 0065）",
+   "verified_at": "2026-09-17"
+  },
+  "unit": "U-C03 批6 · CHAPTER 0065（第六卷-封面说明（内含剧透），摄入序51）"
+ }
+}

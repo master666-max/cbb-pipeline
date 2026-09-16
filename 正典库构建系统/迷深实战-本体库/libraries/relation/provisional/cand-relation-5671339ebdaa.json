@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "宿敌玩伴(厮杀即交流)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 59,
+   "line": 112,
+   "quote": "「呵呵呵！好强啊！真不愧是我的宿敌！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 59,
+   "line": 126,
+   "quote": "直至忘记了时间，被大陆吞没为止，一直、一直——",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 59,
+   "text": "她从不撇开视线/眼眸不被恐惧支配；反复挑战不退；『真不愧是我的宿敌』赞赏让诺文世界焕然一新（记忆不再全黑红）；战斗中途手下留情→厮杀=双方交流手段；持续到世界崩坏被大陆吞没"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5671339ebdaa",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "贯穿袭击(不认输)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 60,
+   "line": 1193,
+   "quote": "紧接着，镰刀的刀刃贯穿了诺文的胸口。",
+   "vol": 1
+  },
+  {
+   "chapter": 60,
+   "line": 1198,
+   "quote": "这也是当然的啊。因为莉帕同样『不会混淆自己的愿望』。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 60,
+   "text": "诺文败北开始消失（留恋复数·最后牵挂仍在）之际黑镰贯穿其胸口心脏大洞——泪流不止仍无法认可尘埃落定；『莉帕同样『不会混淆自己的愿望』』→下章三人战斗继续"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a67f7ff5b328",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 1
+}
