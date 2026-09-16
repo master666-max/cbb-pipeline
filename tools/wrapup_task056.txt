@@ -1,0 +1,14 @@
+import io, re
+
+base = r"D:\zcode专用！！！！危险！！！！！！！！！"
+p = base + r"\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+m = re.search(r"- 自最后反思以来 wrap-up 次数：(\d+)（", s)
+n = int(m.group(1)) + 1
+s = s.replace("wrap-up 次数：" + m.group(1) + "（", "wrap-up 次数：" + str(n) + "（", 1)
+s = s.replace("）\n- 最后反思：", "；" + str(n) + "①迷深实战中断接收与根因（task-056）：单次执行时长上限到点回队（03:44干净commit边界停，零残留零报错），接收=U-C00~C02 done+主队列至位置30游标31库766现役，非缺陷零损失，续跑=等窗口或重贴发车件）\n- 最后反思：", 1)
+anchor_line = [l for l in s.splitlines() if "task-054-迷深实战指令链全量对账" in l and l.startswith("- `")][0]
+t56 = "- `trajectories/2026-09-16/task-056-迷深实战中断接收与根因.md` — 接收清单（U-C00金标P=1.000/C01边界表517/C02 R6试金石过/主队列游标31/库766现役+775盘面含supersede留档）；根因=单次执行时长上限到点回队非缺陷；续跑指引与速度校准（~12章/小时，余487章≈4-6夜窗）"
+s = s.replace(anchor_line, anchor_line + "\n" + t56, 1)
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("index updated: count ->", n, "; task-056 line appended")
