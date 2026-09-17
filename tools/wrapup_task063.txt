@@ -1,0 +1,14 @@
+import io, re
+
+base = r"D:\zcode专用！！！！危险！！！！！！！！！"
+p = base + r"\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+m = re.search(r"- 自最后反思以来 wrap-up 次数：(\d+)（", s)
+n = int(m.group(1)) + 1
+s = s.replace("wrap-up 次数：" + m.group(1) + "（", "wrap-up 次数：" + str(n) + "（", 1)
+s = s.replace("）\n- 最后反思：", "；" + str(n) + "①通报单回执+反向包吸收（task-063）：通报两项知悉/请求①八条已全裁附出处纠正信息滞后/请求②AB门FAIL回落亲抽；反向包五件验货→工单v1.5吸收条款（账本哈希链+指纹四元组=U-C03.6立即采禁直拷，DC-3待数据/锚点v2一行/三载体挂终审/CUSUM挂阶段四），规范补脏树不作锚）\n- 最后反思：", 1)
+anchor_line = [l for l in s.splitlines() if "task-060-架构漂移审计与零缺口修正" in l and l.startswith("- `")][0]
+t63 = "- `trajectories/2026-09-17/task-063-通报单回执与反向包吸收.md` — 通报单回执（八条已全裁附出处纠正审计区信息滞后；AB门FAIL回落亲抽放量未发生）；反向输出包五件验货→工单v1.5吸收条款：U-C03.6账本哈希链+指纹四元组立即采（契约改写禁直拷）、DC-3待主队列过半、锚点v2入十查⑨、三载体挂U-C09可选臂、CUSUM挂阶段四"
+s = s.replace(anchor_line, anchor_line + "\n" + t63, 1)
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("index updated: count ->", n, "; task-063 line appended")
