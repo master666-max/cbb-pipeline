@@ -1,0 +1,93 @@
+{
+ "canonical": {
+  "entities": [
+   "世界冰蛇",
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "次元之冬",
+   "海莉·维斯普洛佩",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "遭遇/战斗",
+  "name": "35层阶梯海莉遭遇战",
+  "tick": 71,
+  "time_verbatim": "同日·35层阶梯前（145~146话）"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 684,
+   "quote": "出现在面前的一名未曾见过的女孩子。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 729,
+   "quote": "使用『阿雷亚斯家的宝剑诺文』接下双剑的攻击，我开始探查少女剑术的本源。这种似曾相识的战斗方式，毫无疑问是赫勒比勒夏因家的剑术。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 738,
+   "quote": "「你了解得真清楚呢，少年……！但是，你猜错了！——『Dimension』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 757,
+   "quote": "「——那个混蛋（帕林库洛）！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 854,
+   "quote": "「——『GrowthExtended』！鲜血魔法『海因·赫勒比勒夏因』！再加上『CannonSehr』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 913,
+   "quote": "「『IceMesh』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 932,
+   "quote": "少女使用『持有物品』，取出了魔石打算吞入口中。就跟帕林库洛获得守护者的力量那时候采取的行动一样。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 71,
+   "text": "35层阶梯浸水、全员不会游泳决意撤退，涡波造『Connection』之际纯白少女水中裸体现身；既视感（面容/声音/风魔法SehrWind/赫勒比勒夏因家双剑剑术）；涡波猜'海因'被否（'你猜错了！——『Dimension』！'海因不会次元魔法）；『注视』鉴定出姓名海莉·维斯普洛佩→涡波推断'那个混蛋（帕林库洛）'的造物；SehrWind·Madness暴风领域战（涡波以『过密次元的真冬』对抗/MP消耗战）；拉丝缇娅拉咏唱'『GrowthExtended』！鲜血魔法『海因·赫勒比勒夏因』！再加上『CannonSehr』'冲锋参战、莉帕以『深渊次元的真夜』裹暴风均被化解；涡波再发『世界冰蛇』×拉丝缇娅拉『IceMesh』冰网夹击，被双重展开的『CannonSehr·Madness』抵消；海莉HP代替MP燃烧生命+魔力暴走自爆式迎击；力竭大量咳血、取魔石欲吞被涡波踢飞、拉丝缇娅拉回复魔法救治（HP恢复一半）后带回船"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-720ee2c00a9a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

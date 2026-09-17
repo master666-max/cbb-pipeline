@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛的部下",
+  "rel_type": "上司部下",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 25,
+   "quote": "他就是『南方联盟』分配给我的一名优秀的部下。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "南方联盟分配给帕林库洛的优秀直属部下（同款士官制服、军阶较低）；如信赖同僚般交谈；坦白使徒秘密的对象；对其任性要求（先回去）无抵触遵从"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ffb3e43ae1d2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

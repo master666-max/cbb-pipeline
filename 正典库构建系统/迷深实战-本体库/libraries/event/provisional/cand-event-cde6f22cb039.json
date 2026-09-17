@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "35层水中区域突破探索（第四次）",
+  "tick": 72,
+  "time_verbatim": "休假结束次日（151话）"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 50,
+   "quote": "「好了，那今天我就和斯诺和莉帕还有缇亚四个人去一趟。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 193,
+   "quote": "就这样，小小翼翼地探索35层到最后，终于找到了前往36层的阶梯。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 244,
+   "quote": "「……不，今天就先到这里吧。把握了35层和36层的路就已经足够了。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 72,
+   "text": "晨：拉丝缇娅拉升级（点数全点魔力）+涡波确认自身20级；玛利亚留守LivingLegend号（涡波嘱其让来接触者安稳回去）；涡波携被捕获的斯诺+莉帕+缇亚四人经『Connection』入30层→35层：出发前定阵（涡波打头/莉帕殿后/斯诺经木制义手牵缇亚）→脱外衣携最低限度武器泳装跳水→水中以『Dimension』索敌（范围1/10以下）+空气皮袋补氧→鱼型怪物群（鲟鱼样扁平/体侧如刀刃）之战：斯诺振动魔法『Impulse』震慑令其失衡、涡波轻易斩杀四只+援军三只（振动魔法水中掩护效果显著/斯诺经振动回应探敌+直接作用鼓膜水中发声）→35层中心无水横穴休息（『某人』推定手笔）→穿过漩涡阶梯入36层浅滩（斯诺担缇亚莉帕双人行进）→37层阶梯全浸水→涡波检查全员状态栏后决定今日到此为止（准备更多空气皮袋+昨日教训），经『Connection』回船——归见火海（海盗船被烧）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-cde6f22cb039",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

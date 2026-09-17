@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 77,
+  "entities": [
+   "帕林库洛·勒伽西",
+   "相川涡波"
+  ],
+  "name": "千年前的传说——『英雄』与『怪物』们的战斗",
+  "note": "卷末句：帕林库洛『梦见那千年前的传说。那『英雄』与『怪物』们的战斗』——呼应其『现在这个世界上的一切，皆起因于千年前』遗产论；千年前真相（英雄/怪物/使徒们）为卷八背景大钩；『英雄』（涡波）与『怪物』（谁？帕林库洛/使徒/其他——原文未点名，存疑）的成对结构待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 77,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 149,
+   "quote": "梦见那千年前的传说。那『英雄』与『怪物』们的战斗。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 116,
+   "quote": "现在这个世界上的一切，皆起因于千年前。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 77,
+   "text": "千年前真相背景钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-a2ac54cba7b8",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

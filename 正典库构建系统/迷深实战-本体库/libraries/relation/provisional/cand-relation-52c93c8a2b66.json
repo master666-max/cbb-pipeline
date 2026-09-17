@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "水中守护(义手相牵)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 66,
+   "quote": "「——很好，准备完毕。基本上是我打头阵，莉帕殿后，缇亚要一直牵住斯诺的手。……斯诺，你可是守护缇亚的关键。可不要划水哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 78,
+   "quote": "似乎让她得到卖缇亚一个人情的机会了。斯诺开始讨好缇亚。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 224,
+   "quote": "「那你们两个人坐到我肩膀上。平衡可能不太好，你们在上面尽量稳住哦。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "探索阵型：缇亚一直牵住斯诺的手（木制义手联结/一旦松手关系到缇亚生死）——斯诺=守护缇亚的关键；斯诺因此得到卖缇亚一个人情的机会、开始讨好缇亚；36层起改以肩膀担载缇亚莉帕省体力"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-52c93c8a2b66",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "使徒勒伽西",
+  "rel_type": "继承使徒之力(约十年前·后被夺)",
+  "subject": "西娅·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 82,
+   "quote": "「就是这样，那位使徒的力量在大约十年前由我的侄女西娅继承了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 92,
+   "quote": "没法放任成为了『再诞』容器的侄女不管啊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "勒伽西家千年使命的执行环节：约十年前西娅作为『再诞』容器继承使徒勒伽西之力（据帕林库洛自述）；现该力量据称已归帕林库洛"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-69cd25a5c6da",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

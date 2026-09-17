@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 72,
+  "entities": [
+   "LivingLegend号",
+   "柯尔库",
+   "相川涡波"
+  ],
+  "name": "联合国悬赏与行踪暴露风险",
+  "note": "审讯海盗获悉：被联合国冠上赏金+航路上海盗众多→与莉帕商定绕远路；帮助奴隶+对付海盗致乘船信息恐已泄露→藏船于人迹罕至海崖（大型船难一直隐藏，抓到帕林库洛前数日只能指望好运）；柯尔库战时警备（身份调查→联合国罪行暴露逮捕风险）为后续行动制约",
+  "payoff_chapter": null,
+  "setup_chapter": 72,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 673,
+   "quote": "就像我们预想的那样，我们正航行的路线上似乎有不少海盗在活动。不仅如此，我们还被联合国冠上了赏金。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 889,
+   "quote": "考虑到之前帮助过奴隶以及对付过海盗，我们乘着这艘船的情报很可能已经泄露了。因此才选择了这样人迹罕至而不是正常的港口当做停靠地点。但毕竟是一艘相当大型的船只，可能没办法一直隐藏起来吧。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 72,
+   "text": "身份暴露风险钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-66163ac7a7bd",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,81 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "缇亚性别公开（泳装事件）",
+  "tick": 71,
+  "time_verbatim": "同日午后·甲板（148话）"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1180,
+   "quote": "「涡波……这个，不是女式的么……」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1203,
+   "quote": "「迪亚布罗·西斯是女孩子哦，涡波先生。不会有错，毕竟我跟她一起洗浴的时候确认过了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1212,
+   "quote": "「因、因为，涡波你是因为觉得我是男孩子才邀请我做同伴的不是吗？一想到涡波是为了拥有一个同性同龄的伙伴才这么做，我就没办法表明自己的性别是假的了呀……就算是为了涡波我也要继续女扮男装下去，不然不是会让涡波感到困扰的么……所以我才……！」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1213,
+   "quote": "「不不，其实我一开始就没相信缇亚是男孩子来着？」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1252,
+   "quote": "「缇亚『姐姐』！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 71,
+   "text": "涡波分发八件手制泳衣→缇亚因女式泳衣僵住坚称男性（'男扮女装'辩解：大圣堂礼服与劳拉维亚女装皆'神官他们的兴趣'）→玛利亚证言共浴确认'迪亚布罗·西斯是女孩子'→涡波点破'我一开始就没相信缇亚是男孩子'（初遇『Dimension』看破风帽下长发）→缇亚自白女扮男装动机（误以为涡波需要同性同龄伙伴）→全员一致证实女性→缇亚'名为缇亚的少年是伪物…也会称呼我为缇亚吗'→涡波'缇亚就是缇亚'→缇亚接受、换装参加泳训（不会游泳）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-60d15eab5510",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

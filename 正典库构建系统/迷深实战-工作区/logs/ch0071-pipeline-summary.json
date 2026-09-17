@@ -1,0 +1,384 @@
+{
+ "unit": "ch0071",
+ "chapter": 71,
+ "ingestion_index": 57,
+ "title": "相当于第七卷第三章143~150流星校对版",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 48,
+  "pass": 48,
+  "intercept": 0,
+  "admitted": 48,
+  "quarantined": 0
+ },
+ "tracks": {
+  "contradiction": 1,
+  "consistent-duplicate": 7,
+  "on-create": 40
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-256088535941",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-9f20c60c6ae3",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-243d885d989c",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-982e84ba754a",
+   "type": "entity",
+   "name": "塞拉·雷迪安特",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-598dc0bdb125"
+   }
+  },
+  {
+   "record_id": "cand-entity-8e0743a0106e",
+   "type": "entity",
+   "name": "海莉·维斯普洛佩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-014d6d3aed35",
+   "type": "entity",
+   "name": "西娅·勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-1f4926be69cc-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-db4db2740eb2",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-a58ca3588d4f",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-cbb2b67a49fb",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b6c57d95931f",
+   "type": "entity",
+   "name": "伽鲁夫纳多杰里",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f87e47356b9e",
+   "type": "entity",
+   "name": "赫勒比勒夏因之神圣双剑·片翼",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-0c5f1fe34912",
+   "type": "entity",
+   "name": "魔石『门』的戒指",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f845dfd624b9",
+   "type": "entity",
+   "name": "『LivingLegend号』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d1f1a3b7e062",
+   "type": "entity",
+   "name": "世界冰蛇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-039d7ac18b00",
+   "type": "entity",
+   "name": "次元之冬",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-7932c6090c1e",
+   "type": "entity",
+   "name": "技能『魔力冰结化』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-d2d15212ad9b",
+   "type": "setting",
+   "name": "迷宫31~35层环境与深层之水（ch71）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-a71560d40562",
+   "type": "setting",
+   "name": "深层祭坛与诅咒武具（ch71）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-05c476531707",
+   "type": "setting",
+   "name": "魔石人类（JewelCross）病理与『再诞』仪式（ch71·据称）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f9566c92be24",
+   "type": "setting",
+   "name": "『血』与『魂』人格观（ch71·据拉丝缇娅拉/玛利亚）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-d9c23103cdab",
+   "type": "setting",
+   "name": "『LivingLegend号』航路（ch71）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-8e3eff849cc5",
+   "type": "setting",
+   "name": "法尼亚（玛利亚故乡）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-164491edf188",
+   "type": "setting",
+   "name": "『表示』（状态显示系统）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f956dc4a7cfd",
+   "type": "setting",
+   "name": "冰结魔法（涡波初始体系）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a00c18db4de1",
+   "type": "relation",
+   "name": "海莉·维斯普洛佩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-34f6e1bf012c",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-341dc2bf1210",
+   "type": "relation",
+   "name": "基督·欧亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-cff0cfa63963",
+   "type": "relation",
+   "name": "海莉·维斯普洛佩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-01d30f3f2d2c",
+   "type": "relation",
+   "name": "西娅·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8d457eb90f3b",
+   "type": "relation",
+   "name": "海莉·维斯普洛佩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-baa9f800f71c",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3dd3733e145c",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-54dcec995033",
+   "type": "relation",
+   "name": "塞拉·雷迪安特",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-747d314075cb",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-26d7ddafd9da",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5cf5f890c497",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c8d1b25d5557",
+   "type": "event",
+   "name": "二号队伍31~33层探索与祭坛搜寻",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f8aa624b07dc",
+   "type": "event",
+   "name": "34层伽鲁夫纳多杰里Boss战：洪水、渡氧之吻与技能『？？？』第二次暴走",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-720ee2c00a9a",
+   "type": "event",
+   "name": "35层阶梯海莉遭遇战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c56587fa1e20",
+   "type": "event",
+   "name": "海莉身世揭示（船上对谈）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-60d15eab5510",
+   "type": "event",
+   "name": "缇亚性别公开（泳装事件）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a277b74940c7",
+   "type": "event",
+   "name": "西娅·勒伽西登场与海莉离船",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3eb1bc03ac71",
+   "type": "event",
+   "name": "涡波梦中记忆回放：妹妹阳滝与求医无果",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c4a09fb6fd05",
+   "type": "foreshadow",
+   "name": "深层空祭坛的'某人'",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ba5bcaff0f26",
+   "type": "foreshadow",
+   "name": "技能『？？？』第二次暴走与感情的无限循环",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-9755d0049be9",
+   "type": "foreshadow",
+   "name": "梦中启示：黑暗之声与千年前的契约景象",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-418c3189339d",
+   "type": "foreshadow",
+   "name": "海莉的谜言行与隐瞒",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-aeb6ab61c81e",
+   "type": "foreshadow",
+   "name": "缇亚的异常征兆",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 57,
+  "pseudo_date": "2000-02-27",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

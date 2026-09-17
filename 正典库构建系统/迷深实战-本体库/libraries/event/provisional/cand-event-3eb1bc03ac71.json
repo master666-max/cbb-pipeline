@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "相川阳滝"
+  ],
+  "instant": null,
+  "kind": "回忆(梦)",
+  "name": "涡波梦中记忆回放：妹妹阳滝与求医无果",
+  "tick": 71,
+  "time_verbatim": "当夜·梦中（150话末）"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1723,
+   "quote": "我不可能认错——她就是我的妹妹相川阳滝。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1744,
+   "quote": "因·为·我·的·错，妹妹受了苦。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1758,
+   "quote": "我寻找着能够对医治『相川阳滝』一事点头的人——",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1831,
+   "quote": "到最后，我不停寻找、寻找、寻找——结果什么也没找到。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1865,
+   "quote": "抵达迷宫的最深部，与阳滝相会。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 71,
+   "text": "梦中记忆整理：与海莉（余命半年）重叠浮现同样患绝症的乌黑长发少女=妹妹相川阳滝；'因·为·我·的·错，妹妹受了苦'→发誓为赎罪而活→离开双亲与妹妹二人生活（家务/打工/辗转医院）→'寻找着能够对医治『相川阳滝』一事点头的人'至寻找之路终点——但涡波真实记忆是'结果什么也没找到'→曾与妹妹共誓到生命尽头都要努力生存；醒后重申'抵达迷宫的最深部，与阳滝相会'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3eb1bc03ac71",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

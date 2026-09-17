@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅·勒伽西",
+  "rel_type": "探索竞争(对手意识)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 9,
+   "quote": "今天也要进行迷宫探索。跟以往不同，在出现了西娅·勒伽西队伍这一对手之后，必须要提高探索的效率才行。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 809,
+   "quote": "「祭坛上的道具又没了……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "西娅·勒伽西队伍的出现使涡波队有了对手（提高探索效率的动机）；39层祭坛道具被取疑其队伍所为（与海莉同队/或另有伙伴）；涡波推定相遇当日海莉很可能已抵39层甚至40层之外"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7223770c26ec",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

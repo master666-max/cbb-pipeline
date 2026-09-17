@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "海因·赫勒比勒夏因",
+  "rel_type": "再诞身体材料(据海莉称)",
+  "subject": "海莉·维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1363,
+   "quote": "「你也差不多察觉到了吧？答案很简单。为了制造我而用到的材料，就是海因·赫勒比勒夏因的身体。我是被用于海因·赫勒比勒夏因的『再诞』而制造的存在，但是结果却失败了。因此我才或多或少地跟海因有些相似，又或多或少地了解海因的事情。仅此而已。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 729,
+   "quote": "使用『阿雷亚斯家的宝剑诺文』接下双剑的攻击，我开始探查少女剑术的本源。这种似曾相识的战斗方式，毫无疑问是赫勒比勒夏因家的剑术。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "据海莉自述：'为了制造我而用到的材料，就是海因·赫勒比勒夏因的身体。我是被用于海因·赫勒比勒夏因的『再诞』而制造的存在，但是结果却失败了'；其剑术经涡波实战探查确认为赫勒比勒夏因家剑术（非声称部分）；'那个男人的事你还是忘了比较好。毕竟是已死之人'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a00c18db4de1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

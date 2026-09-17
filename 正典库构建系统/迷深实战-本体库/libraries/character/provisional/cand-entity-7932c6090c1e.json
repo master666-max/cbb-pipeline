@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "技能",
+  "name": "技能『魔力冰结化』"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 551,
+   "quote": "技能『魔力冰结化』延长剑身，在冰沙中舞动，将袭来的触手全部切断，伤口在冰沙的影响下又被瞬间冻结。冻伤一并剥夺了伽鲁夫纳多杰里的再生能力。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 71,
+   "text": "涡波技能：34层Boss战决战一环——在『冬之异世界·四重奏』冰沙环境中延长剑身、斩断伽鲁夫纳多杰里全部袭来触手；伤口受冰沙影响瞬间冻结，冻伤一并剥夺其再生能力"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7932c6090c1e",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

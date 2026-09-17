@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "斯特鲁",
+   "斯诺·沃克",
+   "海莉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "39层狩场化与40层大草原抵达（第五次探索）",
+  "tick": 72,
+  "time_verbatim": "说明回次日午后（155话）"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 797,
+   "quote": "我于是确信了39层是很方便用来狩猎的猎场。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 809,
+   "quote": "「祭坛上的道具又没了……」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 839,
+   "quote": "只靠目视就能从这一端望到尽头。但是40层守护者却并没有出现。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 842,
+   "quote": "「看来果然是海莉已经将守护者唤醒了呢」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 72,
+   "text": "午后再捕获斯诺连行（成员=涡波/拉丝缇娅拉/斯诺/莉帕）；准备万全（状态提升+空气倍增）悠闲通过37层水中（仅多水栖植物妨碍）→38层植物层（回避最易）→39层森林：斯特鲁初战（花粉被识破屏息/三方向斩击/碎至百块化光）→确信39层为狩场（拟态奇袭型对『注视』『表示』无效/打倒不聚集/风险低）→边填地图边狩猎（Boss以『Dimension』避开——拉丝缇娅拉亦因伽鲁夫纳多杰里留阴影）→发现多个祭坛但道具已被取（疑海莉队）→决意入40层（斯诺莉帕对守护者不安→拉丝缇娅拉鼓气+涡波「没有任何人在的可能性很高」）→40层=大草原：守护者未出现/草原长草→推定海莉已将守护者唤醒且其还活着；涡波「只是去最深部没有非打倒所有守护者的必要/能推给她们那边的队伍反而轻松」+预感「实现守护者留恋的使命终究属于我们/大草原的主人必须由我来迎接」→返39层狩猎至饿肚（斯诺强烈主张终止）→夜归船（玛利亚担心等候）；拉丝缇娅拉与斯诺升上20级；莉帕确认明日一早靠岸"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-83dd9272d0d7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

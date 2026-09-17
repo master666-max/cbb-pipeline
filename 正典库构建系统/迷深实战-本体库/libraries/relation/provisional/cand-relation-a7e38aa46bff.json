@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "义手制作(探索装备)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 68,
+   "quote": "顺带一提斯诺握着的是木制的义手。是我为了这次探索专门制造的能够让缇亚跟斯诺紧紧联结起来的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "为35层水中探索专门制造的木制义手——能让缇亚跟斯诺紧紧联结起来；设计成跟斯诺的手尺寸完全匹配的钩状、不会轻易脱离（缇亚的义肢）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a7e38aa46bff",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

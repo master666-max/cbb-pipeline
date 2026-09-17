@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "chapter": 71,
+  "entities": [
+   "海莉·维斯普洛佩",
+   "缇亚",
+   "莱文教"
+  ],
+  "name": "缇亚的异常征兆",
+  "note": "晕船+最近莫名困倦（谈话中睡着/没听清/脸色差）；'是啊……『我』是不必向你道歉的啊……'的奇妙人称发言；离场瞬间白翼微微颤动（平时被涡波当装饰）；生来白翼被『莱文教』视作再临的使徒——与梦中使徒西斯形象（'简直就是长大后的缇亚'）及海莉临别专门瞥视形成三重呼应，意图未明",
+  "payoff_chapter": null,
+  "setup_chapter": 71,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1632,
+   "quote": "「是啊……『我』是不必向你道歉的啊……」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1636,
+   "quote": "我之前告知自己身世的时候，也从缇亚那里了解到了一些『使徒』的事情。因为缇亚生来背后长有白翼，所以就被『莱文教』视作了再临的使徒。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1638,
+   "quote": "不过，在缇亚的身影消失在船舱的一瞬间，我视作装饰的白翼似乎微微颤动了一下。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 71,
+   "text": "缇亚身世/状态钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-aeb6ab61c81e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

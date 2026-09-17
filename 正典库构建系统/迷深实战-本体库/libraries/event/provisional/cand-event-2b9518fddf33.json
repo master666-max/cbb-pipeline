@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "事件",
+  "name": "留守组烧毁海盗船事件",
+  "tick": 72,
+  "time_verbatim": "151话当日（探索队归船时）"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 280,
+   "quote": "「那艘船一开始是假扮成商船来跟我们交涉的……但是船员的代表一看到我们都是小孩子，态度就豹变，袭击过来了啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 285,
+   "quote": "早上袭击过来的对手，她用火胁迫给人赶回去了。但是，到了中午又有别的海盗船跑来了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 252,
+   "quote": "回到了船上——不过，面前等待着我们的却是一片火海。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 72,
+   "text": "留守中一艘船假扮商船来交涉→船员代表见全员是小孩态度豹变袭击→玛利亚以火胁迫将其赶回（遵守涡波约定）；被赶跑者泄露位置，中午别的海盗船再袭（船员只有三个女孩子被当美味猎物）→拉丝缇娅拉擅自许可「烧成灰」→陌生船只被烧得将沉；探索队归船目睹火海（涡波心灵创伤场景再现、心脏不安狂跳）→怒吼二人→听闻原委（玛利亚慌张解释/拉丝缇娅拉演戏口吻自满展示成果并暗批涡波误判）→涡波自认天真判断失误道歉（自傲省察）→玛利亚制止拉丝缇娅拉过激言辞→双方各自反省（烧船确实过头）→汇报迷宫进度（明日或一口气到39层）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2b9518fddf33",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

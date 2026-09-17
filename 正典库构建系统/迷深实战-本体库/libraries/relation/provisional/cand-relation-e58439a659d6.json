@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "勒伽西家",
+  "rel_type": "出身",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 16,
+   "quote": "我所出身的勒伽西家，在贵族当中也是位高权重的家系，是优秀军人辈出的武门世家。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "帕林库洛出身勒伽西家：位高权重的武门世家，男子自幼受强制性报国教育；父/祖父/曾祖父皆战死沙场；『凡是出生于勒伽西家的男子，从幼年开始就会强制性地接受以『精忠报国、为民服务』为核心的一系列教育』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e58439a659d6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "背负潜行(翻墙要求)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 991,
+   "quote": "「换人。这回我要涡波先生背我。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 999,
+   "quote": "忍耐着最近有些习惯的胃痛，我们移动到警备薄弱的地方，然后我背起玛利亚。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "潜入柯尔库时原定拉丝缇娅拉背玛利亚，玛利亚以缠绕热气胁迫「换人。这回我要涡波先生背我」；涡波明白其心思、忍耐最近有些习惯的胃痛背她翻墙（对她抱有好意但同时胃痛/不肯做出选择的愧疚感）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-62ed8fd14daa",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

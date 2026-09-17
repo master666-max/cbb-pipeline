@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "缇娅拉",
+  "rel_type": "引导(传承口径)",
+  "subject": "西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 78,
+   "quote": "那是指引导了圣人缇娅拉的使徒西斯大人呢？",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "莱文教传承：使徒西斯引导了圣人缇娅拉（部下信徒口径转述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-72416c458704",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "迪普拉库拉",
+  "rel_type": "讨伐(传说)",
+  "subject": "使徒西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 396,
+   "quote": "「接着，以世界的崩坏为目的的敌对方的『使徒』先生，最后被正义的『使徒』西斯还有圣人缇亚拉给收拾掉了。这样战争也宣告结束喽。可喜可贺可喜可贺~。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 462,
+   "quote": "「——就这样，将挡在路上的敌人们变为了同伴的圣人『缇娅拉』连连击退『北方』的军队。最后打败了狂王，还说服了背叛的使徒『迪普拉库拉』。——到最后都是和平主义者呢，这个人。不过，背叛的使徒死不知悔改，以自己的性命为代价发动了足以毁灭整个大陆的凶恶的『魔法阵』。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "据传说：以世界崩坏为目的的敌方『使徒』（迪普拉库拉）最后被正义的『使徒』西斯与圣人缇娅拉收拾掉（西斯与缇娅拉协同作战）——迪普拉库拉败后被说服、以性命为代价发动毁灭大陆的『魔法阵』，战争就此结束"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-921ada1e1e72",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

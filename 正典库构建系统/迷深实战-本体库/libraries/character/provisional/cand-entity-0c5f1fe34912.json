@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "物品(魔石道具)",
+  "name": "魔石『门』的戒指"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1484,
+   "quote": "【魔石『门』的戒指】寄宿着『门』的力量的戒指",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1496,
+   "quote": "在我的目送下，海莉使用仅有的魔力捏碎了戒指。接着，一连串的魔法构筑便造出了魔法门。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 71,
+   "text": "海莉从『持有物品』取出的戒指（'寄宿着『门』的力量的戒指'）；灌注魔力后捏碎→构筑出魔法门（Connection类传送）；海莉以此返程（门为翡翠色）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0c5f1fe34912",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

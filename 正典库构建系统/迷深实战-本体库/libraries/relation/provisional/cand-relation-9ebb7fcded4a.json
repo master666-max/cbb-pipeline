@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "烧船许可(代理指示)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 288,
+   "quote": "「看到一心遵守涡波的吩咐的玛利亚很困扰。我就擅自做出许可喽。跟她说‘接下来还敢过来的家伙，就给他们的船烧成灰吧’来着！杀鸡儆猴嘛！当时正被扰得心烦的玛利亚对我的提议是再支持不过了。然后就变成这样喽——！」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 292,
+   "quote": "而塞拉也觉得比起我的指示还是拉丝缇娅拉的更正确吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "玛利亚严格遵守涡波「让来接触的对手安稳地回去」之约陷困境→拉丝缇娅拉擅自做出许可「接下来还敢过来的家伙，就给他们的船烧成灰」（杀鸡儆猴）——被扰得心烦的玛利亚再支持不过；塞拉亦觉得拉丝缇娅拉的指示比涡波的更正确"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9ebb7fcded4a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

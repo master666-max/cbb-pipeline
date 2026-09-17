@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 71,
+  "fact": "此世界的状态显示系统：呈现状态栏（姓名/HP/MP/职业/等级/属性/技能与数值/称号）与物品描述——『注视』所见祭坛武具描述即其载体（'『表示』上的描述实在是再危险不过'，诅咒/精神污染数值载于其上）；新技能习得由『表示』认可（新增『缝纫』'现在又有了『表示』认可自己的才能'）；西娅'根据『表示』来看她什么才能都没有'技能栏空空如也；缇亚'『表示』上HP没有变化'但体力大量消耗——显示值与实际体力存在偏差",
+  "name": "『表示』（状态显示系统）",
+  "tick": 71
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 209,
+   "quote": "『表示』上的描述实在是再危险不过。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1135,
+   "quote": "现在又有了『表示』认可自己的才能，超感动。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1538,
+   "quote": "确实正如海莉所说，根据『表示』来看她什么才能都没有。技能栏更是空空如也。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1629,
+   "quote": "虽然『表示』上HP没有变化，但是体力似乎消耗了很多。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 71,
+   "text": "状态显示系统（本章用例实录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-164491edf188",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

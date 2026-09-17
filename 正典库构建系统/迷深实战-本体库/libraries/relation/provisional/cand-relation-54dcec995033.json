@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "主从护卫(女仆·称大小姐)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 16,
+   "quote": "「我就专心保护大小姐和莉帕吧。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 366,
+   "quote": "「我明白的。我会以大小姐的——不，以所有人的安全为最优先考虑。我这『兽化』就是为此才存在的。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "自述职责'我就专心保护大小姐和莉帕吧'/'我会以大小姐的——不，以所有人的安全为最优先考虑。我这『兽化』就是为此才存在的'；事事以大小姐为先（泳衣配不上大小姐之怒、大圣堂丝绸之叹）；被拉丝缇娅拉亲脸颊后大混乱"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-54dcec995033",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

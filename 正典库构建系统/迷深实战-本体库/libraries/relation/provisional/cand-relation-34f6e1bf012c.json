@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "海莉·维斯普洛佩",
+  "rel_type": "再诞制造后舍弃(据海莉称)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 757,
+   "quote": "「——那个混蛋（帕林库洛）！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1399,
+   "quote": "「好了好了，涡波你乖乖坐好~。……也就是说帕林库洛想要让海因『再诞』呢。通过模仿圣人缇娅拉『再诞』的仪式。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1414,
+   "quote": "「现在的我是探索者、探索者海莉。在被帕林库洛舍弃之后，我就发誓要为自己新交到的朋友而活。为此现在正以迷宫的最深部为目标进发中。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "据海莉/拉丝缇娅拉：帕林库洛欲令友人海因『再诞』（模仿圣人缇娅拉仪式）造出海莉、'作为海因的友人，帕林库洛为自己的失败而叹息'；海莉'在被帕林库洛舍弃之后'发誓为新朋友而活；涡波初见海莉即推断'那个混蛋（帕林库洛）'带来的礼物"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-34f6e1bf012c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

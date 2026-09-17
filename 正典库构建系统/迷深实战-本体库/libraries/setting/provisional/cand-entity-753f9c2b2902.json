@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "地点(国家)",
+  "name": "瓦尔德本国"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 365,
+   "quote": "「……我们接下来将抵达的『本土』是这个世界上最大的大陆。在那里以『北方』和『南方』为界，正进行着世界上最大规模的战争。而瓦尔德本国就处于这场战争的最前线。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 888,
+   "quote": "为了隐藏『LivingLegend号』，我们将它停靠在本土东北部瓦尔德本国东端的海崖下。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 72,
+   "text": "处于『境界战争』最前线（警戒等级高）；东部有港口城市柯尔库；本土东北部东端的海崖下=LivingLegend号藏身处（涡波队从海崖翻悬崖登陆）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-753f9c2b2902",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

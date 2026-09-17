@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "莉帕",
+   "菲洛·艾尔巴特"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "涡波只身迎击七艘海盗船队",
+  "tick": 72,
+  "time_verbatim": "说明回当日（153话末~154话）"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 529,
+   "quote": "——竟然冻住了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 512,
+   "quote": "我凝练出超越人类规格的魔力，缠绕着冷气，在海上奔跑起来，去阻挡比自己的身体大上几百倍的物体的运动。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 670,
+   "quote": "总之先破坏了船舵，夺去了所有的物资就那样任它们漂流了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 673,
+   "quote": "就像我们预想的那样，我们正航行的路线上似乎有不少海盗在活动。不仅如此，我们还被联合国冠上了赏金。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 72,
+   "text": "否决玛利亚「一把火燎了」方案（船中有非战斗人员与刚捕获的奴隶）→涡波只身从甲板跃下、凝练超人类规格魔力缠冷气于海上奔驰（联想千年前的战斗/自觉正向『怪物』领域迈进）→冰结海面令七艘船队完全停滞（将庞大推进力冲减为零）→逐船登船：柔和挥水晶剑化解所有箭矢魔法、尽数破坏武器、以冰之魔法锁无伤拘束全员（不杀人的慈爱被菲洛视为亵渎）→与最高战力菲洛一战（一眼看破/劝降/击溃其全力一剑与全部魔法/爆发冷气裹住船内）→破坏七船船舵、夺取所有物资任其漂流→审讯海盗（袭击造成阴影后丝毫不隐瞒）：航路上海盗众多+被联合国冠上赏金→与莉帕商定绕远路"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d960c2b8fe34",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

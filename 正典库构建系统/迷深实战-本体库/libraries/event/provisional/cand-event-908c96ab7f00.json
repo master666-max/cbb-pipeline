@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "北方同盟",
+   "南方联盟",
+   "帕林库洛·勒伽西"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "境界战争前线小胜（北方同盟撤退）",
+  "tick": 77,
+  "time_verbatim": "本章当日（城墙散步当下）"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 8,
+   "quote": "将视线挪往北方定睛一看，便可观察到正在撤退当中的『北方同盟』的大军。而在充当我散步场所的要塞之下，则是因这场战术性胜利而欢呼雀跃的『南方联盟』的士兵。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 39,
+   "quote": "「喂喂，才那种程度的小胜就让你得意忘形了吗？敌人很快又会反扑的。……可别大意了哦，不然我可就操心了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 11,
+   "quote": "当然，我说的进展顺利并不是指方才带领『南方联盟』的军队小胜『北方同盟』这件事。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 77,
+   "text": "帕林库洛率南方联盟军小胜北方同盟：北方大军正在撤退、南方士兵在要塞下因战术性胜利欢呼雀跃；帕林库洛对得意部下戒告『敌人很快又会反扑的…可别大意了』（否则『我的辛苦就白费了』）；自言此胜非其『个人计划』所指"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-908c96ab7f00",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

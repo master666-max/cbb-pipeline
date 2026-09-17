@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "北之王",
+  "rel_type": "致使疯狂(传承口径)",
+  "subject": "迪普拉库拉"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 78,
+   "quote": "还是致使北之王疯狂的使徒迪普拉库拉呢？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "莱文教传承：使徒迪普拉库拉致使北之王疯狂（部下信徒口径转述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-49d179f6c2f8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

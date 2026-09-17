@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "女仆(劝谏无力)",
+  "subject": "塞拉"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 273,
+   "quote": "「不是、她们要放火的时候我是有阻止过的……不过这也要看对象不是么……我也没办法用太激烈的言辞劝大小姐，所以，呐……？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "塞拉称拉丝缇娅拉为大小姐；其要放火时有阻止过但无法用太激烈的言辞劝谏（涡波评：面对拉丝缇娅拉时完全派不上用场）；想同行被说服后留守"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8fb47029fea0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

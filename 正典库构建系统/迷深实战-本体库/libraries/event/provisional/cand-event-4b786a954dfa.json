@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "柯尔库",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "潜入",
+  "name": "抵达本土与柯尔库潜入",
+  "tick": 72,
+  "time_verbatim": "第五次探索次日晨（155话末）"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 888,
+   "quote": "为了隐藏『LivingLegend号』，我们将它停靠在本土东北部瓦尔德本国东端的海崖下。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 939,
+   "quote": "「总而言之，要跟涡波一起去本土的也就我和玛利亚还有缇亚而已了。这样就漂亮地4对3了呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 956,
+   "quote": "「就是这样，我们要以4人小队行动喽。队伍名就叫『干死帕林库洛小队』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 1003,
+   "quote": "在确认过墙对面也没有人之后，我和拉丝缇娅拉同时奔跑起来。用致命的加速度在平原上奔跑，像猫一样灵活地在大地上跃动。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 72,
+   "text": "LivingLegend号藏于本土东北部瓦尔德本国东端海崖下（乘船信息恐已泄露）→分组：潜入组=涡波/拉丝缇娅拉/玛利亚/缇亚（4对3；队名『干死帕林库洛小队』）、留守组=莉帕/塞拉/斯诺（斯诺摇「一路顺风」小旗送行）→缇亚睡过头（涡波入室唤醒：异常沉睡+梦呓基督）→帕林库洛战术讨论（精神魔法警告→围攻方针）→拉丝缇娅拉背玛利亚跳悬崖被换人为涡波背玛利亚、涡波背缇亚→翻绝壁入森林（以剑开路半刻）→换旅行者装束（藏烧伤黑发）→抵达柯尔库见戒备森严（五米墙+武装士兵+身份调查风险）→翻墙潜入（魔石线无反应）成功"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-4b786a954dfa",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

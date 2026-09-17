@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "预定决战对手(等待英雄)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 32,
+   "quote": "「其实有一位『英雄』不久将抵达『境界战争』的战场。我在等他。」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 132,
+   "quote": "「为了与我战斗，你会来到这个魔法阵——『世界奉还阵』之中……」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 126,
+   "quote": "「『英雄』即将到来……为了打倒『怪物』……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "帕林库洛在境界战争战场等待『英雄』（其熟人）抵达：『我在等他』；预定在其自筑的『世界奉还阵』中与涡波决战；自认堂堂正正交战赢不了，但『足以击垮你心灵的负债可谓无穷无尽』、准备足以导向（完）胜；称之为『涡波小哥』、视此战为游戏；『为了打倒『怪物』』的英雄使命设定出自其口"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a6c9f2ec5374",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

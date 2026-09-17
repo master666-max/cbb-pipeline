@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 71,
+  "fact": "沙海上的台形祭坛（削去上半部的金字塔状）插剑式；30层之外联合国探索者不曾涉足故保存完好；祭坛武具基本带『精神污染』诅咒（Raked·Blade：攻5/精污+1.50；CallOuter：防6/精污+1.20；AllConfess：防4/耐魔1/精污+0.50/混乱+1.00；BloodSword：攻4/吸血暂增攻/精污+0.50/兴奋+1.00）；无诅咒装饰品皆无魔力无效；诅咒无法解除→涡波以『注视』鉴定后一律破坏（无污染威胁的碎片冻结回收备二次利用）；24层祭坛曾出『Rokh·Bringer』（与斯诺探索时）",
+  "name": "深层祭坛与诅咒武具（ch71）",
+  "tick": 71
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 201,
+   "quote": "祭坛的形状大概就是沙漠中的金字塔被削去了上半部分一样呈台形。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 204,
+   "quote": "【Raked·Blade】攻击力5精神污染+1.50",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 268,
+   "quote": "基本上都是带有诅咒的东西，『精神污染』这个描述可以说是必有的。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 196,
+   "quote": "在跟斯诺一起进行迷宫探索的时候，我在24层的祭坛上找到了『Rokh·Bringer』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 71,
+   "text": "祭坛生态与诅咒物品谱（本章实录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-a71560d40562",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

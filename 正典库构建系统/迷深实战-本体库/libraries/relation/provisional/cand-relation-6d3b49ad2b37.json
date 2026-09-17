@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "莉帕",
+  "rel_type": "创造者(赋予杀诺文使命)",
+  "subject": "『次元之理的盗窃者』"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 436,
+   "quote": "创造出莉帕这一『诅咒』的次元魔法使。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 437,
+   "quote": "那也就是说，他是决定莉帕的命运——杀死诺文这一使命的人。对这样一个人，我实在是拿不出什么好印象。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 431,
+   "quote": "「人家一被制造出来就立马被丢到诺文身边去了呢。所以真的什么都不知道哟。抱歉啦，大哥哥。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "据莉帕口述：创造出莉帕这一『诅咒』的次元魔法使＝决定其命运（杀死诺文使命）之人；千年前以『次元之理的盗窃者』之名称之；莉帕一被制造出来就被丢到诺文身边"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6d3b49ad2b37",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

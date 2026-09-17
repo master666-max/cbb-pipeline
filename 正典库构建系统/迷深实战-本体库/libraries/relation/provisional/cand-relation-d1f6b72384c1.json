@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "南方联盟",
+  "rel_type": "将军供职",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 6,
+   "quote": "穿着漂亮的军服，又被授以将军之类的了不起的军衔，还能指挥着成千上万的士兵，在作为『境界战争』最前线的要塞城墙上迈步。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 120,
+   "quote": "「……帕林库洛长官。差不多该回去了吧。其他几位将军在等您。再怎么说身为功臣的您不在，接下来的事情也不好推进。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "帕林库洛被南方联盟授以将军军衔、指挥成千上万士兵，驻『境界战争』最前线要塞；本章身为功臣被其他将军等候议事"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d1f6b72384c1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

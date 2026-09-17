@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅·勒伽西",
+  "rel_type": "协助领队(欠人情)",
+  "subject": "海莉·维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1541,
+   "quote": "「我正在协助西娅前往最深部。毕竟我们不但是合得来的好朋友，而且我还欠了她很多的人情呢。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "海莉自称'我正在协助西娅前往最深部。毕竟我们不但是合得来的好朋友，而且我还欠了她很多的人情呢'；对'领队'态度草率（'西娅你不用认识也无所谓'）引发西娅不满"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8d457eb90f3b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

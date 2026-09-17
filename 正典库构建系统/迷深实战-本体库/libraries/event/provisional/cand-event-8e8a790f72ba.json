@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛·勒伽西",
+   "帕林库洛的部下"
+  ],
+  "instant": null,
+  "kind": "坦白/对话",
+  "name": "城墙坦白（最后的独白）",
+  "tick": 77,
+  "time_verbatim": "本章当日（小胜后·天色转阴前）"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 61,
+   "quote": "一切早都已经结束了。而我面前的人，也不过是一具迟早要死的尸体。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 102,
+   "quote": "「我问你。如果我说现在使徒大人就在我的身体里，你真的会相信吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 105,
+   "quote": "「……我相信。因为您确实给予了我们这样的希望。在这座要塞之内，已经没有任何人怀疑您的力量了。我们都将您视作了拯救世界的使徒，无比尊崇。」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 120,
+   "quote": "「……帕林库洛长官。差不多该回去了吧。其他几位将军在等您。再怎么说身为功臣的您不在，接下来的事情也不好推进。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 77,
+   "text": "帕林库洛以『最后的独白，此时不做更待何时』心态向部下坦白勒伽西家最大秘密：三使徒说/千年继承使命/西娅继承与篡夺/『现在使徒大人就在我的身体里』；部下不要求证据选择相信、代表要塞口径（无人怀疑其力量）；坦白的内在口径=『一切早都已经结束了。而我面前的人，也不过是一具迟早要死的尸体』；随后以功臣身份被其他将军召回"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8e8a790f72ba",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

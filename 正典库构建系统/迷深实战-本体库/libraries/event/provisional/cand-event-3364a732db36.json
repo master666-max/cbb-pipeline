@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛·勒伽西",
+   "格连",
+   "海因",
+   "雷鲁"
+  ],
+  "instant": null,
+  "kind": "关系断绝(过去事件·自述)",
+  "name": "幼年好友关系断绝",
+  "tick": 77,
+  "time_verbatim": "帕林库洛侄女出生五年之后（据其自述）"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 76,
+   "quote": "而与那些友人的关系断绝的时间点，是在我的侄女出生五年之后。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 20,
+   "quote": "当然了，曾经一同发誓要来到这里的青梅竹马们，如今已是没有一人在我身边。我抛下了一切，只为了自己，站在这里。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 77,
+   "text": "曾同誓共赴此地的青梅竹马们（雷鲁·桑库斯/格连·沃克/海因·赫勒比勒夏因）与帕林库洛的友情断绝；『如今已是没有一人在我身边。我抛下了一切，只为了自己，站在这里』；断绝时点与其侄女出生挂钩（≈仪式前后）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3364a732db36",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

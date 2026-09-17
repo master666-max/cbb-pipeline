@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "缇娅拉",
+   "莉帕",
+   "迪普拉库拉"
+  ],
+  "instant": null,
+  "kind": "说明",
+  "name": "海盗晨袭与千年前说明回",
+  "tick": 72,
+  "time_verbatim": "火烧海盗船事件的第二天（153话·天未亮起）"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 339,
+   "quote": "在天还没亮的时间里，我们之所以就起了床（斯诺除外），那就是因为海盗们跑来偷袭，还朝我们射出了炮弹。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 340,
+   "quote": "无可奈何之下，睡眼惺忪的我和拉丝缇娅拉就要去击退袭击过来的海盗船。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 355,
+   "quote": "『战争』在我不擅长应付的单词里是排第二位的。只要跟这个扯上关系，必然会见到排行第一位的『奴隶』一词，所以在用『Dimension』收集信息的时候我都有意给过滤掉了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 483,
+   "quote": "拓展『Dimension』，我发现了远处的船队。数量为七。来了一群。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 72,
+   "text": "海盗天未亮来偷袭并射出炮弹→睡眼惺忪的涡波与拉丝缇娅拉击退（斯诺除外全员被吵醒/拉丝缇娅拉撒气趴桌）；红茶时间→涡波以初级问题起头（『战争』为其不擅长单词第二位/第一位『奴隶』——用『Dimension』收集信息时有意过滤）→玛利亚讲境界战争一般常识→拉丝缇娅拉透露国家机密+千年前战争概说（九成死者/魔法阵）→涡波历史篡改疑→莱文教优劣论→莉帕问询（千年前后四名无印象/被制造即被丢到诺文身边/创造者『次元之理的盗窃者』情报——假面引涡波血气上涌=昨日梦中类似人物）→拉丝缇娅拉完整讲述弗茨亚茨传说（使徒/狂王/魔法阵/缇娅拉缔造莱文教）→涡波对『怪物』化的不安（积攒经验值或与传说伟人同级）→雷鸣炮声：远处七艘船队来袭水柱腾起→决意抓捕审讯（问其执着袭击的理由）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7e4827340aa9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

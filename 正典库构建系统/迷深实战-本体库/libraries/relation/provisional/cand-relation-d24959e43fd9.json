@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "幼年好友(已断绝)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 75,
+   "quote": "以及弗茨亚茨的海因·赫勒比勒夏因。尽管是因为大贵族的身世而获得的关系，但小时候的我们是货真价实的好友。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "弗茨亚茨的海因·赫勒比勒夏因为帕林库洛幼年好友；断绝时点=帕林库洛侄女出生五年之后"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d24959e43fd9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

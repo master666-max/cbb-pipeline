@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "帕林库洛·勒伽西",
+  "rel_type": "寄宿(据称·现持有其力)",
+  "subject": "使徒勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 102,
+   "quote": "「我问你。如果我说现在使徒大人就在我的身体里，你真的会相信吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 105,
+   "quote": "「……我相信。因为您确实给予了我们这样的希望。在这座要塞之内，已经没有任何人怀疑您的力量了。我们都将您视作了拯救世界的使徒，无比尊崇。」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 112,
+   "quote": "「回到正题吧，我就是依靠使徒勒伽西的力量构筑出了覆盖大陆的魔法阵。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "据帕林库洛自称：『现在使徒大人就在我的身体里』，并以使徒勒伽西之力构筑覆盖大陆的魔法阵；部下代表要塞全员表示相信（视其为拯救世界的使徒）；帕林库洛自嘲『我在他人眼里似乎真的被看作了使徒』——构成其『存在理由和战斗理由』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1afd2a2adeea",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

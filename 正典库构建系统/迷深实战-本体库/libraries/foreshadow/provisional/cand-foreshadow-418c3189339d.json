@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "chapter": 71,
+  "entities": [
+   "海莉·维斯普洛佩",
+   "相川涡波",
+   "缇亚"
+  ],
+  "name": "海莉的谜言行与隐瞒",
+  "note": "'你又·做·出·了土里土气的东西了呢'之'又'（初见却似曾做过）；'一定……曾在梦中见过这一幕吧……'（'谁的梦'未听清）；对涡波明言'说不定的话，也·有·一·直·保·持·现·状——这样幸运的未来啊'——涡波之惑：'如果是海莉对寿命不长的自己说还有续命的可能性的话，我还能理解。但是她对我说「一直保持现状」是什么意思呢'（续命/现状维持指向未明）；临别瞥缇亚一眼意图不明+否定涡波成长发言；涡波直觉'总觉得她的微笑中带有一丝谎言的味道…觉·得·她·有·所·隐·瞒'、判其情报可信度暧昧——'相爱相杀'戏码自述与余命半年线并走待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 71,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1335,
+   "quote": "「呵呵，你又·做·出·了土里土气的东西了呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1351,
+   "quote": "「一定……曾在梦中见过这一幕吧……」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1409,
+   "quote": "不过，不知道为什么，总觉得她的微笑中带有一丝谎言的味道。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1477,
+   "quote": "「说不定的话，也·有·一·直·保·持·现·状——这样幸运的未来啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1481,
+   "quote": "如果是海莉对寿命不长的自己说还有续命的可能性的话，我还能理解。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 71,
+   "text": "海莉言行谜团钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-418c3189339d",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

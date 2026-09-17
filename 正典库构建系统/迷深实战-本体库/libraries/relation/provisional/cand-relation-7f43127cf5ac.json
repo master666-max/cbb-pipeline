@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "水中探索专责指定(强制连行)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 57,
+   "quote": "在那之后所有人一致决定水中区域就由斯诺负责了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 97,
+   "quote": "果然斯诺在水中探索是必要的角色。并且我也决定要让她在从今往后的探索活动里全勤上岗了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 747,
+   "quote": "在那之后，来回逃窜的斯诺，在我和莉帕的合力下遭到捕获，并被拉去了迷宫探索。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "教会游泳后发现斯诺最上手（水龙血统）→全员一致决定水中区域由斯诺负责（隐藏水性被揭穿故无否决权）；涡波决定其今后探索全勤上岗；屡次事先捕获绑来（第四次/第五次均被涡波与莉帕合力捕获拉去探索）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7f43127cf5ac",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

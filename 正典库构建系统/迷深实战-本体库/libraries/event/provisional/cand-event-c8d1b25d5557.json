@@ -1,0 +1,81 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "水晶蚁",
+   "相川涡波",
+   "砂上漂",
+   "莉帕",
+   "赫勒比勒夏因之神圣双剑·片翼"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "二号队伍31~33层探索与祭坛搜寻",
+  "tick": 71,
+  "time_verbatim": "特训次日·迷宫31~33层（143话）"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 19,
+   "quote": "【怪物】水晶蚁：位阶26",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 56,
+   "quote": "「嗯~，直接用剑砍不是更快吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 81,
+   "quote": "【怪物】砂上漂位阶32",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 274,
+   "quote": "【赫勒比勒夏因之神圣双剑·片翼】",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 300,
+   "quote": "然而这座祭坛却留下了有人来过的痕迹。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 71,
+   "text": "涡波拉丝以后卫魔法（FlameArrow/QuartzParallax→连射FlameCutter/QuartzBullet）勉强击杀位阶26水晶蚁→莉帕'直接用剑砍不是更快吗'→改阵型（莉帕骑兽化塞拉前卫索敌收割/压倒位阶32砂上漂）→转入以寻找祭坛为主线的探索（31/32/33层），诅咒武具全数破坏；33层发现无诅咒的『赫勒比勒夏因之神圣双剑·片翼』，而另一把所在祭坛已被'某人'先行取走（详见伏笔）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c8d1b25d5557",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛·勒伽西",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "通报",
+  "name": "舞斗大会结果快马送达",
+  "tick": 77,
+  "time_verbatim": "昨日（快马送达，帕林库洛独白中回溯）"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 129,
+   "quote": "昨天快马已经送来了在联合国的『舞斗大会』的结果。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 36,
+   "quote": "估计他本人会表示否定，但是从他赢得『舞斗大会』冠军的那一刻起，他就无法逃离这份使命了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 77,
+   "text": "昨日快马送来联合国『舞斗大会』的结果；帕林库洛由此确认：涡波夺冠→『从他赢得『舞斗大会』冠军的那一刻起，他就无法逃离这份使命了』（英雄身份坐实）；『英雄』不久将抵达境界战争战场作为增援（对南方联盟而言毫无疑问是英雄）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-247a12e467b3",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

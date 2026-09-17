@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉·维斯普洛佩",
+  "rel_type": "救治看护",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 945,
+   "quote": "拉丝缇娅拉立马就对本来是敌人的少女施展回复魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 953,
+   "quote": "「暂且是没问题了。因为我已经习惯治疗这个症状了啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 960,
+   "quote": "拉丝缇娅拉一边给少女膝枕，一边抚摸她的脸颊，忧心忡忡地说道。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "对敌对少女分秒必争施回复魔法（'因为我已经习惯治疗这个症状了'）；持续神圣魔法+鲜血魔法治疗、膝枕看护并诊断（余命半年/魔石人类特有症状/本就身体状况不佳）；'我会尽我所能来救治她，因为我也有想问的事情'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5cf5f890c497",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

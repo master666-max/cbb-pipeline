@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 72,
+  "entities": [
+   "『某人』",
+   "相川涡波",
+   "诺文"
+  ],
+  "name": "迷宫建造者『某人』的体贴设计",
+  "note": "35层空气休息空间=『某人』为挑战者特制的『休息地点』（水压气压平衡难为自然）；诺文证言（体贴的『某人』以不合风格做法打造迷宫/规则限制不告知身份）；涡波现态度「是谁都无所谓」——只取诺文所保证的最深部『奇迹』与「越前进探索者越强」；建造者身份长线谜题持续开环",
+  "payoff_chapter": null,
+  "setup_chapter": 72,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 164,
+   "quote": "『某人』为了挑战35层的探索者特地准备了这个空间——",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 168,
+   "quote": "虽然因为规则的限制，到最后他也没告诉我这个『某人』是谁，但是从他的说辞看来打造出迷宫的人是确实存在的。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 72,
+   "text": "迷宫元设计谜题钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-232d11a18b3e",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

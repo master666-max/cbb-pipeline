@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "塞拉",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "事件",
+  "name": "奴隶解放与西斯误认骚动",
+  "tick": 72,
+  "time_verbatim": "迎击海盗船队后（154话末）"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 676,
+   "quote": "我们让被海盗抓住的人乘上了抢来的第七条船。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 677,
+   "quote": "被海盗们捕获的奴隶们所有人都没有受伤。作战真是完美到让我都想夸奖自己一番的地步。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 702,
+   "quote": "原奴隶中的一名男子，冲着在远处旁观事态发展的缇亚说着。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 689,
+   "quote": "「……谢谢你，大哥哥。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 72,
+   "text": "被海盗捕获的奴隶近20人全员无伤→乘上夺来的第七条船（已用『Dimension』确认航线无危险、教以航向大陆的航线）；怯生少女初惧涡波（目击战斗/或视其『怪物』）→涡波声颤宽慰后少女上前道谢「谢谢你，大哥哥」→众人逐一道谢；临别时莱文教信徒男子冲向缇亚认其为西斯大人再临（跪拜级拜谒/信徒们围拢膜拜）→缇亚否认无效、困扰下决定改回男装并缺席午后探索（不快感溢出）→强行让信徒停止膜拜送上另一船费了一番功夫→太阳升起时目送出航"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fa5cef587900",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

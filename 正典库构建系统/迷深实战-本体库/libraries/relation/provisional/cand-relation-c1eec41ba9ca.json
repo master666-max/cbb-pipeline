@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱文教",
+  "rel_type": "力挺辩护(受害经历者立场)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 409,
+   "quote": "拉丝缇娅拉曾经为莱文教所迫险些失去性命。即使如此她也愿意在我面前力挺这个宗教，就说明莱文教确实是『很优秀的宗教』了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 408,
+   "quote": "「不如说就因为是自家人所以我才能做出严格的判定啦。别看它这样，跟大陆其他的宗教比起来，还是挺干净的了哦。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "曾为莱文教所迫险些失去性命，仍愿在涡波面前力挺该宗教（『很优秀的宗教』）；「就因为是自家人所以才能做出严格的判定/跟大陆其他的宗教比起来还是挺干净的」；请涡波不要把信徒的历史信仰批判得太狠"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c1eec41ba9ca",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫怪物·Boss)",
+  "name": "伽鲁夫纳多杰里"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 359,
+   "quote": "【怪物】伽鲁夫纳多杰里位阶35——",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 413,
+   "quote": "但是，它那被切断的身体和触手的断面蠢动着，瞬间就完成了修复。看来作为防御力不足的补充，它有相当强大的再生能力。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 430,
+   "quote": "也就是说伽鲁夫纳多杰里的鸣叫声中含有呼唤远方之水的魔力。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 71,
+   "text": "34层Boss：身长3米灰色水母、近百只触手（位阶35）、眷属鱼群随行；防御力低但再生力强（断面瞬间修复）；核心=体内发光石头；咆哮含呼唤远方之水的魔力→引洪水灌满回廊至天花板（强制水中战/人类无法呼吸）；被『冬之异世界·四重奏』冰沙化剥夺再生后核心被涡波一刀两断"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-b6c57d95931f",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

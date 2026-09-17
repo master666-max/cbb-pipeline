@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "chapter": 72,
+  "entities": [
+   "拉丝缇娅拉",
+   "海莉",
+   "相川涡波",
+   "西娅·勒伽西"
+  ],
+  "name": "40层守护者与海莉队的进度竞争",
+  "note": "40层大草原守护者未出现+草原长草→推定「海莉已经将守护者唤醒」且守护者仍活着（若被打倒则寸草不生）；涡波推定相遇当日海莉或已抵39层甚至40层之外；39层祭坛道具被取；涡波预感「实现守护者留恋的使命终究还是属于我们/这片大草原的主人必须由我来迎接才行——最初聆听其愿望的人应该是我」；拉丝缇娅拉担心守护者的魔石落入他人之手",
+  "payoff_chapter": null,
+  "setup_chapter": 72,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 842,
+   "quote": "「看来果然是海莉已经将守护者唤醒了呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 815,
+   "quote": "——说到底，在我们相遇的那一天，海莉很可能就已经抵达39层了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 857,
+   "quote": "这片大草原的主人，必须由我来迎接才行。最初聆听其愿望的人，应该是我才对。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 72,
+   "text": "守护者进度与『迎接』预感钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-dc3e7813f16b",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

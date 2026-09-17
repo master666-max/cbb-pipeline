@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "西娅·勒伽西",
+  "rel_type": "篡夺使徒之力(据帕林库洛自述)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 89,
+   "quote": "「算了，就像你所说的，西娅她就是杂鱼而已。杂鱼中的杂鱼。当然，也失去了使徒的力量了。毕竟力量被我篡夺了呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 92,
+   "quote": "没法放任成为了『再诞』容器的侄女不管啊。于是，看着西娅一天天地变得不再是自己认识的那个西娅了，我的愤怒最终达到了极点。简直就像是英雄谭里登场的少年一样，将那个使徒的力量全部夺走了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "据帕林库洛自述：西娅继承使徒之力后日渐『不再是自己认识的那个西娅』，其愤怒达到极点，『将那个使徒的力量全部夺走了』——西娅保持弱小与纯真并失去使徒之力；部下一脸理所当然地相信，但其本人以『是真是假由听的人决定』悬置真伪"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9828295da589",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

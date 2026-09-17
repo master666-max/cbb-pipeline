@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "复仇宣言(回礼预备)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 959,
+   "quote": "「很不错的队伍名呢。确实，我还有一份回礼留着给那位骑士先生享用一番呢。呵呵，呵呵呵……」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 961,
+   "quote": "是杀气腾腾的玛利亚和缇亚。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "对『干死帕林库洛小队』队名狞笑夸赞：「我还有一份回礼留着给那位骑士先生享用一番」（杀气腾腾）——涡波：一遇到帕林库洛她们二话不说就会释放魔法"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7e15dff563cf",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

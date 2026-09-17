@@ -1,0 +1,359 @@
+{
+ "unit": "ch0077",
+ "chapter": 77,
+ "ingestion_index": 61,
+ "title": "第八卷第一章流星校对版",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 45,
+  "pass": 45,
+  "intercept": 0,
+  "admitted": 45,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 4,
+  "on-create": 39,
+  "contradiction": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-a29d16db9478",
+   "type": "entity",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-da591604ef55",
+   "type": "entity",
+   "name": "帕林库洛的部下",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-03fd5cb5571a",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-6d5f9146f36e",
+   "type": "entity",
+   "name": "西娅·勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-1f4926be69cc-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-6c930aff2557",
+   "type": "entity",
+   "name": "使徒勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9f9ff3d7f976",
+   "type": "entity",
+   "name": "西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-c89bc2c3012d",
+   "type": "entity",
+   "name": "迪普拉库拉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d90c9d07d1d7"
+   }
+  },
+  {
+   "record_id": "cand-entity-770df2a37021",
+   "type": "entity",
+   "name": "缇娅拉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-28b99b8dd697"
+   }
+  },
+  {
+   "record_id": "cand-entity-db6de89c7476",
+   "type": "entity",
+   "name": "北之王",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ca32d6fd1e61",
+   "type": "entity",
+   "name": "雷鲁",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-57ab2ff4429f",
+   "type": "entity",
+   "name": "格连",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7d375a26a456-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-e26e3bc86420",
+   "type": "entity",
+   "name": "海因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2b0d2b1a0571-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-dc3f7d135f8a",
+   "type": "entity",
+   "name": "勒伽西家",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-0013930c15ba",
+   "type": "entity",
+   "name": "北方同盟",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-637e12c0b615",
+   "type": "entity",
+   "name": "南方联盟",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b22a85c141fa",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9828295da589",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-69cd25a5c6da",
+   "type": "relation",
+   "name": "西娅·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f9ab3a1f7187",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f5f3f3036996",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d24959e43fd9",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e58439a659d6",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ed622b7280a1",
+   "type": "relation",
+   "name": "勒伽西家",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1afd2a2adeea",
+   "type": "relation",
+   "name": "使徒勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-72416c458704",
+   "type": "relation",
+   "name": "西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-49d179f6c2f8",
+   "type": "relation",
+   "name": "迪普拉库拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-29ed5ed9e66a",
+   "type": "relation",
+   "name": "联合国",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d1f6b72384c1",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a6c9f2ec5374",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ffb3e43ae1d2",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9721f8376d6b",
+   "type": "event",
+   "name": "使徒勒伽西之力篡夺（『再诞』仪式）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3364a732db36",
+   "type": "event",
+   "name": "幼年好友关系断绝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-908c96ab7f00",
+   "type": "event",
+   "name": "境界战争前线小胜（北方同盟撤退）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8e8a790f72ba",
+   "type": "event",
+   "name": "城墙坦白（最后的独白）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-247a12e467b3",
+   "type": "event",
+   "name": "舞斗大会结果快马送达",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-5228c598ea2c",
+   "type": "foreshadow",
+   "name": "世界奉还阵决战（英雄vs帕林库洛）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-cc700eb70491",
+   "type": "foreshadow",
+   "name": "涡波的诅咒级重负与心灵击溃计划",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ec74200bca40",
+   "type": "foreshadow",
+   "name": "帕林库洛的『留恋』与个人计划",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-a2ac54cba7b8",
+   "type": "foreshadow",
+   "name": "千年前的传说——『英雄』与『怪物』们的战斗",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-d81c10c4b2bf",
+   "type": "setting",
+   "name": "拜伦西斯大陆（第八卷新舞台）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-97bf1bfec08d",
+   "type": "setting",
+   "name": "境界战争",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c36473cb6628",
+   "type": "setting",
+   "name": "世界奉还阵（大陆级魔法阵）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-20ce5cdb98d6",
+   "type": "setting",
+   "name": "三使徒体系与莱文教传承（ch77更新）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-6b524d662104",
+   "type": "setting",
+   "name": "千年前遗产论（帕林库洛史观）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-14f91d534225",
+   "type": "setting",
+   "name": "『○之理的盗窃者』召唤体系",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 61,
+  "pseudo_date": "2000-03-02",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

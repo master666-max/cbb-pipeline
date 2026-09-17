@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entities": [
+   "『LivingLegend号』",
+   "帕林库洛·勒伽西",
+   "海莉·维斯普洛佩",
+   "相川涡波",
+   "缇亚",
+   "西娅·勒伽西"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "西娅·勒伽西登场与海莉离船",
+  "tick": 71,
+  "time_verbatim": "同日日落前后·甲板（149话末~150话）"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1516,
+   "quote": "「她·是·我·们·队·伍·的·领·队，西娅·勒伽西。听名字你们可能就知道了，她是帕林库洛的侄女。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1523,
+   "quote": "姓名：西娅·勒伽西HP23/23MP17/17职业：探索者",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1559,
+   "quote": "「不过，xiangchuan·wobo这名字真是稀奇啊~。Xiangchuan什么的，真是相当罕见的名字……嗯？xi、xiangchuang……？啊，诶、相川·涡波？真的假的？」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1574,
+   "quote": "海莉转过身，看着我——接着，又瞥了缇亚一眼。虽然她瞥向缇亚几乎只是一瞬间的事，但是我的动态视力并没有看漏这一点。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1596,
+   "quote": "「……那么我先告辞了。不过，我们是以瓦尔德本土为据点活动的，所以跟正在追寻帕林库洛的大小姐一行，应该还会有见面的机会吧。那时候也请多多关照了呢。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 71,
+   "text": "海莉捏碎『门』的戒指开翡翠色门返程→门初不开、随后洞开现出小个子少女西娅——海莉介绍'我们队伍的领队西娅·勒伽西…帕林库洛的侄女'→涡波因勒伽西血脉心口刺痛、以『注视』确认其等级3全技能无（'正因如此才让人恐惧'）→西娅活泼自介探索者/念出'相川·涡波'后表情凝固匆忙告辞→海莉临别瞥缇亚一眼+否定涡波成长发言后过门离去（翡翠色Connection化光消失；两队据点皆瓦尔德本土'还会有见面的机会'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a277b74940c7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

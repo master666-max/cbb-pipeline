@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "阿雷亚斯家",
+  "rel_type": "剑法同源(被菲洛辨认)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 591,
+   "quote": "一眼看去他的剑招似乎很迟缓，但那其中却蕴含着精练到极致的『技艺』。多亏曾是骑士之身我才明白。那是『剑圣』辈出的阿雷亚斯家的剑法。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "据菲洛（原骑士）辨认：涡波的剑招蕴含精练到极致的『技艺』——那是『剑圣』辈出的阿雷亚斯家的剑法；但比其见过的任何一个骑士都沉着优美（胜过闻名一国的剑术家/剑术大赛优胜者/阿雷亚斯家贵族骑士）；冰之粒子轨迹尽数破坏敌人武器"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fb4d15d407fc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

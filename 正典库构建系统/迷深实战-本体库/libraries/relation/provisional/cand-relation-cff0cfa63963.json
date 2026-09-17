@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "竞争对手(不互相厮杀约定)",
+  "subject": "海莉·维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 765,
+   "quote": "「正因为都是探索者，才要战斗啊！因为能够抵达最深部的只能有一个人，只有一个人而已啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1461,
+   "quote": "「我不可能做出那么不堪的行径。到那时候的话。要么与你交涉，要么就寻找别的手段。就算是在迷宫探索上输给了你，我到最后也不会放弃自己的愿望的。……话虽如此，我反正根本就不打算输给你就是了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1474,
+   "quote": "「我们是竞争谁先抵达最深部的对手关系。不会互相厮杀。就这样好了。——这之外的事看来是没戏了呢。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "海莉曾宣示'能够抵达最深部的只能有一个人'（知涡波愿望=回原来的世界故不相容）；涡波邀同行被拒；终局约定'我们是竞争谁先抵达最深部的对手关系。不会互相厮杀'；涡波宣言'就算是在迷宫探索上输给了你，我到最后也不会放弃自己的愿望的'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cff0cfa63963",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

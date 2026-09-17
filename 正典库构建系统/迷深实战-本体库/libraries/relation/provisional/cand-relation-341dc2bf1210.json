@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "海莉·维斯普洛佩",
+  "rel_type": "血液材料补充(据海莉称)",
+  "subject": "基督·欧亚"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1400,
+   "quote": "「是了，正如你所言。不过，因为意料之外的问题，我们失败了。从因为尸体的材料不足而补充了『基督·欧亚』的血开始，一切就失控了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1402,
+   "quote": "为了补充而不得不少许添加些『基督·欧亚』的血",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "据海莉：海因之血流失过多，因尸体材料不足而补充『基督·欧亚』的血后一切失控；添加后海莉身体向女性性征转变（原因至今不明，亦非海因之血输给基督·欧亚之血的样子）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-341dc2bf1210",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

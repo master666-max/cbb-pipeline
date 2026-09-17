@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "『某人』",
+  "rel_type": "证言(迷宫建造者存在)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 167,
+   "quote": "那时候，诺文说过「对人类很体贴的『某人』，用不合风格的做法打造出了迷宫」。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 168,
+   "quote": "虽然因为规则的限制，到最后他也没告诉我这个『某人』是谁，但是从他的说辞看来打造出迷宫的人是确实存在的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "据诺文过去所言：「对人类很体贴的『某人』，用不合风格的做法打造出了迷宫」；因规则限制到最后也没告知『某人』是谁——但从其说辞看来打造出迷宫的人确实存在（涡波据此确信35层休息空间为『某人』手笔）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5f3ba9381d20",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

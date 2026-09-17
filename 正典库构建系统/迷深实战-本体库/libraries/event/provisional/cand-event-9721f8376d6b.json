@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒勒伽西",
+   "帕林库洛·勒伽西",
+   "西娅·勒伽西"
+  ],
+  "instant": null,
+  "kind": "转折(过去事件·自述)",
+  "name": "使徒勒伽西之力篡夺（『再诞』仪式）",
+  "tick": 77,
+  "time_verbatim": "约十年前（据帕林库洛自述）"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 82,
+   "quote": "「就是这样，那位使徒的力量在大约十年前由我的侄女西娅继承了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 92,
+   "quote": "没法放任成为了『再诞』容器的侄女不管啊。于是，看着西娅一天天地变得不再是自己认识的那个西娅了，我的愤怒最终达到了极点。简直就像是英雄谭里登场的少年一样，将那个使徒的力量全部夺走了。因此西娅保持了她的弱小与纯真，我则变成了这样一个喜好阴险魔法的可疑男子了。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 95,
+   "quote": "「啊~，这个嘛……我平时不是总说么。是真是假由听的人决定。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 77,
+   "text": "勒伽西家千年使命的执行：侄女西娅成为『再诞』容器继承使徒勒伽西之力→日渐『不再是自己认识的那个西娅』→帕林库洛愤怒达到极点，『简直就像是英雄谭里登场的少年一样，将那个使徒的力量全部夺走了』→西娅保持弱小与纯真，帕林库洛变为『喜好阴险魔法的可疑男子』；部下质疑其省略，帕林库洛以『是真是假由听的人决定』悬置（R6-4 声称类）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9721f8376d6b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "chapter": 77,
+  "entities": [
+   "帕林库洛·勒伽西"
+  ],
+  "name": "帕林库洛的『留恋』与个人计划",
+  "note": "『自己的计划进展如此顺利』且明言非指战况=『更加自私自利的我个人的计划』（内容未明）；『一切早都已经结束了』『我面前的人，也不过是一具迟早要死的尸体』（死亡/终局预感暗示——存疑）；『这场战斗结束的话，那份『留恋』也能够实现了吧』（『留恋』与其个人计划/愉悦的真面目待回收）；『已经没有能阻止我的人了。一个也没有』",
+  "payoff_chapter": null,
+  "setup_chapter": 77,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 11,
+   "quote": "而是更加自私自利的我个人的计划。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 61,
+   "quote": "一切早都已经结束了。而我面前的人，也不过是一具迟早要死的尸体。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 140,
+   "quote": "这场战斗结束的话，那份『留恋』也能够实现了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 77,
+   "line": 22,
+   "quote": "没错，已经没有能阻止我的人了。一个也没有……",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 77,
+   "text": "反派动机未明钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-ec74200bca40",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

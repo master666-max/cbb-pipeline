@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "帕林库洛·勒伽西",
+  "rel_type": "侄女(据海莉称)",
+  "subject": "西娅·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1516,
+   "quote": "「她·是·我·们·队·伍·的·领·队，西娅·勒伽西。听名字你们可能就知道了，她是帕林库洛的侄女。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1528,
+   "quote": "名为西娅，姓跟帕林库洛一样都是勒伽西。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "海莉介绍'她是帕林库洛的侄女'；'名为西娅，姓跟帕林库洛一样都是勒伽西'；涡波因勒伽西血脉而心口刺痛、无法信任其天真外表（'仅仅是待在这个向日葵一般的少女身旁就让我镇静不下来'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-01d30f3f2d2c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

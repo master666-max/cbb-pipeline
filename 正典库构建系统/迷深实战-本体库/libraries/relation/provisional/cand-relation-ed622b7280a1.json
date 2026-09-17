@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "使徒勒伽西",
+  "rel_type": "千年继承使命",
+  "subject": "勒伽西家"
+ },
+ "evidence": [
+  {
+   "chapter": 77,
+   "line": 77,
+   "quote": "「勒伽西家拥有其他贵族所没有的使命。那是『在一千年后的未来，继承一位使徒的力量』这一使命。我的改变，可能就始于仪式的那一天吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 77,
+   "text": "勒伽西家拥有其他贵族没有的使命：『在一千年后的未来，继承一位使徒的力量』（据帕林库洛；其人生转变始于仪式当天）——继承对象即第三使徒勒伽西"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ed622b7280a1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}
