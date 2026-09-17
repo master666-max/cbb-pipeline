@@ -1,0 +1,35 @@
+import io, re
+
+base = r"D:\zcode专用！！！！危险！！！！！！！！！"
+
+# 1) reflections.md 追加 R-026（reflect：计数已满 5）
+r26 = """
+
+### R-026 / 2026-09-18 / 排期不闭环——修正必须以"当下生效的机制"交付；备而不用，用而无备即伪
+- 洞察：连续两轮裁决确立同一原则的两个方向。正向（task-060 零质量缺口）：漂移修正不允许"挂 P2"——排期不是修正，机制才是（债务台账/补考前置/召回探针/三阈值全部当下生效）。反向（task-065 graphiti 就绪层）：需求未到的增强不预支实施成本，但**接口端口与哨兵先备**——把未来启用成本压缩为一次配置（"加个 LLM 就能用"），并用触发器哨兵让"需要"本身可观测（GREEN/AMBER/RED）。合题=资源与需求的接口协议：**宁可备而不用，不可用而无备；宁可无备而明说（计划内缺席并披露），不可假装已有**。配套纪律：架构级变更必须单独裁决不得夹带（v1.1 教训）；仪器身份随证据（R-025）。
+- 依据：trajectories/2026-09-16/task-060、2026-09-18/task-065；决策补记录-架构漂移修正.md；迷深实战-工单.md v1.4~v1.8 变更链
+- 回写：迷深实战-工单 §0 graphiti 就绪层条款+四触发器哨兵（操作化）
+- 版本：v1
+- schema_version：3
+"""
+with io.open(base + r"\knowledge\reflections.md", "a", encoding="utf-8", newline="\n") as f:
+    f.write(r26)
+
+# 2) _index.md：计数清零（reflect R-026）+ 最后反思行 + 轨迹行
+p = base + r"\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+s = re.sub(r"- 自最后反思以来 wrap-up 次数：\d+（[^）]*）",
+           "- 自最后反思以来 wrap-up 次数：0（2026-09-18 reflect R-026 后清零）",
+           s, count=1)
+s = re.sub(r"- 最后反思：.*",
+           "- 最后反思：2026-09-18（R-026 排期不闭环——修正以当下机制交付；备而不用，接口端口+哨兵先备，可用性靠触发器观测）",
+           s, count=1)
+anchor_line = [l for l in s.splitlines() if "task-063-通报单回执与反向包吸收" in l and l.startswith("- `")][0]
+# 在 task-063 行后可能已有 task-064 行；锚到其末尾追加（找 task-064 行）
+t64_line = [l for l in s.splitlines() if "task-064-上下文包编排v1.6" in l and l.startswith("- `")]
+t65 = "- `trajectories/2026-09-18/task-065-graphiti就绪层v1.8.md` — 用户裁决接口端口先备：工单v1.8 U-C03.7 graphiti_bridge（LLMConfig双预设DeepSeek/本地5.3flash+嵌入已知档+ingest桥复用build_episode_kwargs）+graphiti_ready一键自检+四触发器哨兵（A全局归纳/B多版本/C按章回溯/D隔离积压>50或滞后>14天）随段收口校准报告GREEN/AMBER/RED；启用=三步（配LLM环境变量→自检→ingest）"
+target = t64_line[0] if t64_line else anchor_line
+s = s.replace(target, target + "\n" + t65, 1)
+
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print("R-026 appended; index reflect-reset + task-065 line appended")
