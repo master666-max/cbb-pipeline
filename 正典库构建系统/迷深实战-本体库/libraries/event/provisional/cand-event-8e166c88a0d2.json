@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "古尔亚德",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕",
+   "魔石船『LivingLegend』号"
+  ],
+  "instant": null,
+  "kind": "旅程",
+  "name": "魔石船LivingLegend号启航（船旅开始）",
+  "tick": 69,
+  "time_verbatim": "出航首日（自古尔亚德离港后）"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 33,
+   "quote": "离开古尔亚德的港口，我们总算摆脱追兵得到了自由的时间。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 34,
+   "quote": "在我和莉帕将船的航行稳定下来之后，我们在拉丝缇娅拉的主导下分配好了各自的房间。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 35,
+   "quote": "大家各自前往私室，休养因『舞斗大会』而疲惫的身心。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 69,
+   "text": "自古尔亚德港离港摆脱追兵；涡波与莉帕稳定航行、拉丝缇娅拉主导分配房间，全员休养『舞斗大会』疲劳；航程驶向本土一帆风顺，但涡波因连日劳顿疲惫不堪（回想送别诺文+因拉丝缇娅拉的赌场折腾）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8e166c88a0d2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

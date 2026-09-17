@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "chapter": 69,
+  "fact": "圣诞祭前夜确定的『最喜欢拉丝缇娅拉』的感情被技能『？？？』分解和重塑、丧失原样（心留愤怒，爱慕不复存在，只剩扭曲感情的残骸）；恋爱感情激化即接近发动条件：拥抱后『箭在弦上』、告白级爱意超出承受界限（技能两度以死亡警告否决缇亚商谈与直接告白）；预测：若交往深化，发作将使涡波丧失爱情只留拉丝缇娅拉一人；涡波决定冻结告白『直到解决技能『？？？』为止』（至少到击败帕林库洛·勒伽西/与妹妹重逢）",
+  "name": "技能『？？？』的恋爱干涉（ch69实证）",
+  "tick": 69
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 342,
+   "quote": "因为那份感情被技能『？？？』给分解和重塑，现在已经丧失了原样。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 501,
+   "quote": "因为技能『？？？』已经是箭在弦上了。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 601,
+   "quote": "我摸清了技能『？？？』对于恋爱可以承受的界限。看来会发展到告白程度的爱意是不行的。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 748,
+   "quote": "——技能『？？？』的发作就会让我丧失那份爱情，只留下拉丝缇娅拉一人。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 763,
+   "quote": "——直到解决技能『？？？』为止。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 69,
+   "text": "技能机制+涡波感情状态主线更新"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-3ec305a665ff",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

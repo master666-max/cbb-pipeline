@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "fact": "涡波『注视』级别高于拉丝缇娅拉『拟神之眼』（'之前还以为是反过来的'）：涡波可显示至小数点后两位、装备物品与道具可见；拉丝缇娅拉看不到小数点、装备物品不可见、怪物情报部分可见、无机物情报完全不可得；『持有物品』被推测为次元魔法+古代魔法的应用（据拉丝缇娅拉）；涡波自游戏经验定名注视（Analyze）/持有物品（The·Pouch）",
+  "name": "『注视』与『拟神之眼』性能差",
+  "tick": 70
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 149,
+   "quote": "「然后就是涡波能力的事了呢……感觉涡波的『注视』，要比我的『拟神之眼』级别更高啊……」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 152,
+   "quote": "就我来说，能够将属性的数值一直表示到小数点后两位。但是拉丝缇娅拉则根本看不到小数点。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 240,
+   "quote": "就定为『注视（Analyze）』以及『持有物品（The·Pouch）』了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 70,
+   "text": "分析系能力性能比较+定名"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-291730ec9502",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

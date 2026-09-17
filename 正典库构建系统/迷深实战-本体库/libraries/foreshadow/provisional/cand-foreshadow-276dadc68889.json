@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "chapter": 69,
+  "entities": [
+   "相川涡波"
+  ],
+  "name": "白发少女之谜",
+  "note": "『与说是最大烦恼也不为过的少女的相遇』：莫名眼熟/一头白发/皮肤白皙/飘渺感；『毕竟构成她的材料正是——』悬断（材料构成说暗示其出身，与莉帕类存在的构成呼应待验证）",
+  "payoff_chapter": null,
+  "setup_chapter": 69,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 30,
+   "quote": "——与说是最大烦恼也不为过的少女的相遇。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 31,
+   "quote": "让我莫名眼熟、一头白发、皮肤白皙、给人以飘渺之感的少女。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 32,
+   "quote": "不过，我会觉得眼熟也是当然的。毕竟构成她的材料正是——",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 69,
+   "text": "卷七悬念少女钩（未名实体不另立）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-276dadc68889",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "兄妹(无血缘·叙述)",
+  "subject": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1296,
+   "quote": "明明完全没有血缘关系，这兄妹俩却莫名的相像。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1201,
+   "quote": "据说以前格连就是『史诗探索者』的成员。身为兄长的他从那时候起就一直在身后守护着斯诺了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "涡波叙述：'明明完全没有血缘关系，这兄妹俩却莫名的相像'；'据说以前格连就是『史诗探索者』的成员。身为兄长的他从那时候起就一直在身后守护着斯诺了'；格连以'义兄'自居催婚。【存疑：与二人同姓'沃克'（沃克家）并存，宗族结构（过继/改姓等）原文未明——按原文记录待R4核实】"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-057ab55b0e27",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

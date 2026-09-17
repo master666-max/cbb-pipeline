@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "共鸣魔法共同开发",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 539,
+   "quote": "「——但是，这是个好机会。我有些想尝试的东西，缇亚你把耳朵凑过来点。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 574,
+   "quote": "「真没办法，缇亚。瞄准和诱导就用我的火焰魔法来辅助，你就专注于威力和速度好了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 777,
+   "quote": "「正是拉丝缇娅拉你们守护在我们身边，才能让我们安心地释放魔法啊。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "轨迹：火力调节争论→玛利亚'有些想尝试的东西'耳语密谋→反复失败练习→完成（'反复练习失败的最后终于得到完成的共鸣魔法，让两人的力量坚如磐石'）；分工=玛利亚火焰辅助瞄准诱导/缇亚专注威力速度；对剑士组的安抚话术（'正是拉丝缇娅拉你们守护在我们身边，才能让我们安心地释放魔法啊'）；由涡波命名Flame·Aegis"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-79eff234eeeb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

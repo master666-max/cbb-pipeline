@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "新月琉璃制直剑",
+  "rel_type": "武器出借",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 408,
+   "quote": "顺带一说我把『新月琉璃』借给她用了。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 477,
+   "quote": "拉丝缇娅拉像是表演一样挥动着『新月琉璃』，华丽地收剑入鞘。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "因拉丝缇娅拉爱剑『诺亚』滞留大圣堂而出借；实战居中劈开珍珠鱼（'从珍珠鱼的正中间劈过'）；拉丝缇娅拉'像表演一样挥动'频繁耍帅（'又坚固又轻便，还很锋利'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3fc2a0938a5b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

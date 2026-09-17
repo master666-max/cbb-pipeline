@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "等级调整支援",
+  "subject": "拉丝缇娅拉·弗茨亚茨"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 724,
+   "quote": "拉丝缇娅拉照着玛利亚说的帮她升级。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 585,
+   "quote": "因为要给玛利亚和缇亚升级，所以确认了周围的安全之后就开始进行升级作业。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "'那么升级就拜托你了呢，拉丝缇娅拉'——照玛利亚要求为她与缇亚执行升级作业（探索中反复实施；经验源=31层高经验怪物）；本话缇亚14→18/玛利亚10→17/拉丝缇娅拉17→19/涡波18→19"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-00b77974cb8f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

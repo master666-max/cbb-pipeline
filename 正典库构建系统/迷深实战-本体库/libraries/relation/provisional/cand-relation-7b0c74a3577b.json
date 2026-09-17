@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "恋慕(告白冻结)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 341,
+   "quote": "拉丝缇娅拉·弗茨亚茨曾·经·是我最喜欢的人。这一点在圣诞祭前夜已经确定了。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 535,
+   "quote": "果然，我应该是喜欢拉丝缇娅拉的。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 540,
+   "quote": "也就是说，这可能是两情相悦。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 755,
+   "quote": "告白这件事先压下不做好了。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 813,
+   "quote": "——就这样，我们两人选择走上一条过于严酷的道路。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "涡波自答最喜欢的人=拉丝缇娅拉（『曾经是我最喜欢的人』于圣诞祭前夜确定，后经技能『？？？』分解重塑）；拥抱后感情死灰复燃，判断『可能是两情相悦』并一度计划直接告白；因技能发动界限+三岁年龄+回原世界前提而冻结，静观其变至击败帕林库洛/解决技能；两人事后以『不算数』清算，表面恢复如常（『选择走上一条过于严酷的道路』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7b0c74a3577b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔缇",
+  "rel_type": "未互相理解之后悔",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 130,
+   "quote": "与诺文不同，我与阿尔缇到最后也没能互相理解。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 132,
+   "quote": "那个到最后都态度高傲的少女，一定一直都——",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "『与诺文不同，我与阿尔缇到最后也没能互相理解。事到如今，这让我无比后悔』；由玛利亚的性格联想阿尔缇也应是同类女孩（悬断：『那个到最后都态度高傲的少女，一定一直都——』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c95075d25d8f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

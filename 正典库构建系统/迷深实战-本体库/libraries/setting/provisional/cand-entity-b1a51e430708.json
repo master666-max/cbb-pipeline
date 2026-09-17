@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "系统机能(状态栏表示)",
+  "name": "表示"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 152,
+   "quote": "就我来说，能够将属性的数值一直表示到小数点后两位。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 444,
+   "quote": "即是状态栏上所无法『表示』的『数值无法表现的数值』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 70,
+   "text": "属性数值的表示精度：涡波侧可表示至小数点后两位（拉丝缇娅拉侧则根本看不到小数点）；守护者战斗经验带来的成长为状态栏无法『表示』的『数值无法表现的数值』（本章魔力渗透较前通畅的根源）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-b1a51e430708",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

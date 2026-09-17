@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "fact": "与诺文分别后『不存在于彼处的诅咒』已解除，但『联结』能力留存（其他魔法仍可用）；因记忆过度流入危险只维持最小限度；现联结对象仅涡波一人（'思考较理性'；他人因介意隐私回避）；莉帕自身不喜欢作为死神的能力；此联结即首探方案中涡波魔力补给（'依靠莉帕将魔力分给我进行补充'）的通道",
+  "name": "莉帕的『联结』现状（ch70）",
+  "tick": 70
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 258,
+   "quote": "顺带一说，莉帕的『联结』这一能力还留存着。经过与诺文的分别，『不存在于彼处的诅咒』虽然已经解除，但仍然能使用其他的魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 260,
+   "quote": "现在跟莉帕之间有联结的只有思考较理性的我一个人而已。其他人都因为介意隐私问题而回避了『联结』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 70,
+   "text": "联结机制现状更新"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-a90be849c991",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

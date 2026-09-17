@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "挚友与引导",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 622,
+   "quote": "现在你要是轻易采取什么行动的话，真的会死掉的哦？",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 675,
+   "quote": "我视如己出的小小挚友，竟然用纯真的眼神说出这种不得了的话。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 781,
+   "quote": "「没关系的。我跟大哥哥是好朋友不是嘛？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "莉帕以『我跟大哥哥是好朋友不是嘛』定位关系；深夜介入以死亡警告截断危险行动（商谈缇亚/直接告白）并引导冷静（后宫提案→被否→静观其变）；涡波郑重道谢（『帮大忙了』）；涡波视其为视如己出的小小挚友"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ea6de88d2bd0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

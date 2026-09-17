@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "拉丝缇娅拉房间的拥抱事件",
+  "tick": 69,
+  "time_verbatim": "出航首夜（斯诺来访后）"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 428,
+   "quote": "「——那么，你给我个拥抱好了？」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 463,
+   "quote": "「这样一来，终于……不会再寂寞了呢……」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 470,
+   "quote": "「啊啊，终于……这样一来我的物语的第一章就迎来HappyEnd了呢……」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 501,
+   "quote": "因为技能『？？？』已经是箭在弦上了。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 519,
+   "quote": "她就那样夺窗而出。接着灵巧地在船的侧面逃个不停。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 69,
+   "text": "涡波守候手记执笔→圣诞祭谢罪被拒（契约=让我过得开心）→拉丝缇娅拉以失忆期『说什么都照做』约定+瓦尔法拉打赌胜利要求拥抱（英雄谭参考）→拥抱中吐露『不会再寂寞了』『我的物语的第一章就迎来HappyEnd』→事后两人同时羞愤、拉丝缇娅拉拒绝接触夺窗而逃（船侧面逃窜）；涡波因技能『？？？』箭在弦上动弹不得（为守护夺回的感情火种）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d155c374def0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

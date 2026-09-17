@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "魔石同化(强化)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 285,
+   "quote": "「顺带一说帕林库洛那家伙现在跟守护者缇达的魔石同化了。应该变得相当强了，所以战斗的时候会强制你参战的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 288,
+   "quote": "「呜呜，只有守护者、可能的话还是不想与之扯上关系的啊~。缇达吗~，持有那个缇达的魔石吗~，帕林库洛……那个笨蛋……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "据涡波：帕林库洛已同化守护者缇达的魔石、变得相当强，战斗时会强制斯诺参战；斯诺听闻后动摇（『持有那个缇达的魔石吗~，帕林库洛……那个笨蛋……』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4a5221a3241f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

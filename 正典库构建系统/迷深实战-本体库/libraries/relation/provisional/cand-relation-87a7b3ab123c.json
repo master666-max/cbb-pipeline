@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "技能『感应』继承",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 569,
+   "quote": "佩在腰间的『阿雷亚斯家的宝剑诺文』闪耀着。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 571,
+   "quote": "那是一幅『浑身是血的我，与熊熊燃烧的船一同沉没』的光景。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 572,
+   "quote": "从挚友身上继承而来的技能『感应』，告诉我说「去了的话，你小子就完犊子了」。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "『从挚友身上继承而来的技能『感应』』随『阿雷亚斯家的宝剑诺文』佩于涡波腰间；宝剑闪耀时感应超越『理』预测未来（本章预知：去缇亚处=浑身是血与燃烧的船一同沉没）——剑士的直觉在平常日子发觉死亡威胁"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-87a7b3ab123c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

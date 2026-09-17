@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "旧同伴(义理)",
+  "subject": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1283,
+   "quote": "「但是，我跟帕林库洛曾是同伴啊。我有那份义理。没错，义理……」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1280,
+   "quote": "「不不，我讨厌那家伙的哟？话说，根本不会有喜欢那家伙的人吧？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "'我跟帕林库洛曾是同伴啊。我有那份义理'（怀念表情）；同时自称'我讨厌那家伙的哟？根本不会有喜欢那家伙的人吧'；拒绝加入涡波队伍的资格论即以此为据"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-44744360b013",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

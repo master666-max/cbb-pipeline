@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "chapter": 69,
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "name": "船上死亡包围网",
+  "note": "莉帕警告：接下来旅程随时与死亡相伴（非帕林库洛亦非怪物，而是姐姐们）；船的平衡勉强维持、一旦崩溃后果严重（『无论是谁都不会接受』）；涡波预想连锁反应（玛利亚火上浇油/拉丝缇娅拉煽风点火/缇亚不悦/塞拉失控发言/莉帕避嫌→火药库沉船；『并列思考』结论=这样下去死定了）",
+  "payoff_chapter": null,
+  "setup_chapter": 69,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 244,
+   "quote": "整艘船就会成为没有保险的火药库——到那时候，只要一眨眼，这艘船就会沉入汪洋。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 613,
+   "quote": "技能『并列思考』，告诉我说「这样下去的话你小子就死定了」。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 652,
+   "quote": "无论是谁，都不会接受大哥哥与别人在一起的事实的。毫无疑问。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 69,
+   "text": "船旅全程的人际平衡钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-e8c2c8a1f761",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

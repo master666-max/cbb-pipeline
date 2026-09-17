@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 69,
+  "entities": [
+   "帕林库洛",
+   "斯诺·沃克",
+   "缇达"
+  ],
+  "name": "斯诺与守护者缇达的对决宣言",
+  "note": "斯诺过去因缇达有惨痛经历→『如果与守护者缇达有关的话，自己不能再去逃避了』；帕林库洛持缇达魔石且战斗时强制参战——斯诺参战意志与缇达魔石的碰撞待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 69,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 285,
+   "quote": "「顺带一说帕林库洛那家伙现在跟守护者缇达的魔石同化了。应该变得相当强了，所以战斗的时候会强制你参战的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 295,
+   "quote": "「——但是，果然我还是要努力一下。我觉得如果与守护者缇达有关的话，自己不能再去逃避了。不然的话，是没法继续前进的。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 69,
+   "text": "决战配置钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-bb8c8d31203d",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

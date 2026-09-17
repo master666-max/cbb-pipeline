@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "手环",
+   "海因",
+   "相川涡波",
+   "艾利巴茨·利拜斯",
+   "莱纳",
+   "赛莉"
+  ],
+  "instant": null,
+  "kind": "技能习得/制作",
+  "name": "锻冶速习与戒指『晶盾』打造",
+  "tick": 70,
+  "time_verbatim": "同日（历时数小时）"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1398,
+   "quote": "「——『Dimension·多重展开』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1430,
+   "quote": "检查了一下自己的状态栏，看到上面确实多了『锻冶』这一项。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1460,
+   "quote": "「我是专门搞魔法道具的，所以教授你这方面的知识也最容易……好嘞，搞一发怎么样？形状要做个怎样的？手环这样的饰品随便挑，项链呀发夹之类的也都没问题。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1499,
+   "quote": "接着，使用『Quartz』对钻石进行干涉，再依靠『Dimension』规避误差，将魔石和戒指结合起来，我费尽心力打造的魔法道具就完工了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 70,
+   "text": "装备收集动机（同行半数童装尺寸/欲求黑铠级/联合国通缉无法访名匠——'被沃克家之类的发现的话会很麻烦'）→自『魔法战斗』习得法复现：『Dimension·多重展开』俯瞰劳拉维亚全工房+赛莉翻页并行读书+实践修正→状态栏实增『锻冶』（0.69；中坚级手腕数十分钟达成）→魔法道具制作：魔术式（地魔法）镌刻魔石+『Quartz』干涉钻石+『Dimension』规避误差+艾利巴茨戒台（引线术式）→戒指『晶盾』完工（'一国内堪称顶尖水平'据艾利巴茨）；外观仿双亲婚戒"
+  },
+  {
+   "category": "event",
+   "chapter": 70,
+   "text": "形制选定：艾利巴茨提示魔法道具可选手环/项链/发夹/戒指（'戒指是最小的所以应该最快吧'）；涡波闻'戒指'忆起海因之弟莱纳的戒指系道具偏好"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7174ac9e5e82",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

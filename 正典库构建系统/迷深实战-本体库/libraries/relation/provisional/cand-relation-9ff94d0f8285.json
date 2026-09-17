@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "回归动机(不弃妹妹)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 135,
+   "quote": "「不行。我不能置妹妹阳滝于不顾」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 144,
+   "quote": "「是的，我觉得兄妹感情就是这样。所以，我想要回去。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "拒绝斯诺'留在这个世界生活'提案：'不行。我不能置妹妹阳滝于不顾'；'我觉得兄妹感情就是这样。所以，我想要回去'（玛利亚评'非常了不得的兄妹爱'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9ff94d0f8285",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

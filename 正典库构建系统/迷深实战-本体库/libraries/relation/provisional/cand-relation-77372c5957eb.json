@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "兄弟(弟)",
+  "subject": "海因"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1464,
+   "quote": "听到这个单词，我回想起了海因。他弟弟莱纳也喜欢戒指系的道具来着。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "涡波闻'戒指'一词回想：'听到这个单词，我回想起了海因。他弟弟莱纳也喜欢戒指系的道具来着'——莱纳=海因之弟及其戒指系道具偏好（本章唯一出场，提及级实据，无行为描写）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-77372c5957eb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

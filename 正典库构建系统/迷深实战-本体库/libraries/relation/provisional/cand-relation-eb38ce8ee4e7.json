@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "杂务分派(收支核算)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1723,
+   "quote": "首先就照波鲁扎克拜托的那样，让她处理收支核算的工作去。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "依波鲁扎克所托将让斯诺负责收支核算（'说实话，这些数字我是不会忘记的所以并没有做的必要，但是即使如此也要让她做'——纠正其娇惯的教育意图）；此前多次现场抓捕偷懒（揪后颈/Dimension定位喊话，斯诺拔腿逃跑找缇亚当挡箭牌）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-eb38ce8ee4e7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

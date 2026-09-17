@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "对话",
+  "name": "莉帕的介入与后宫提案",
+  "tick": 69,
+  "time_verbatim": "出航首夜（告白冻结决断前后）"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 622,
+   "quote": "现在你要是轻易采取什么行动的话，真的会死掉的哦？",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 652,
+   "quote": "无论是谁，都不会接受大哥哥与别人在一起的事实的。毫无疑问。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 668,
+   "quote": "「——唔嗯~。要不然就把大家都迎娶为妻吧。你选一个喽。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 735,
+   "quote": "「我绝对要贯彻纯爱……所·谓·的·人，必·须·跟·唯·一·的·命·运·之·人·结·合……」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 774,
+   "quote": "「直到刚才为止都一直在船头啊哇啊哇地窜来窜去。现在变得很决绝了呢。看来，她也冷静下来了。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 69,
+   "text": "死亡警告+揭穿缇亚恋情堵死商谈路→『无论是谁都不会接受』断言→全员迎娶（后宫）提案（联合国不少国家一夫多妻通行）→涡波以日本人身份/憧憬纯爱否决→冷静化处理：告白压后、『明天开始一如往常』；莉帕通报拉丝缇娅拉近况（船头乱窜→冷静下来、正走来）后从窗退场"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a32a77f5268e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

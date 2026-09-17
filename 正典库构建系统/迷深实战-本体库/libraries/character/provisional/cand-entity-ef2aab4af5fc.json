@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "怪物",
+  "name": "石英巨蟹"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 489,
+   "quote": "石英巨蟹位阶31",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 496,
+   "quote": "和螃蟹的习性一样，石英巨蟹是横向行走的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 502,
+   "quote": "然而破碎的只有石英巨蟹的蟹钳而已。『阿雷亚斯家的宝剑诺文』毫发无损。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 70,
+   "text": "位阶31的形态扭曲螃蟹型水晶怪物（一次出现两只）；横向行走但速度异常快；强化破坏武器属性——关节异常扭曲夹剑'用力掰折'（蟹钳反碎于宝剑超常硬度）；31层新怪"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ef2aab4af5fc",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

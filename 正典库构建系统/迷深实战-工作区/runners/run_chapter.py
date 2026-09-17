@@ -102,7 +102,10 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
                           "violations": it["check"]["violations"]} for it in result["intercepted"]]},
         ensure_ascii=False, indent=1), encoding="utf-8")
 
-    store = cbb_store.ThreeStateStore(STORE_ROOT)
+    # U-C03.6：账本哈希链包装（_append 汇聚点自动入账，行为等价——test_ledger_chain 绿）
+    sys.path.insert(0, str(CBB / "tools"))
+    import ledger_chain as _lc
+    store = _lc.LedgedStore(STORE_ROOT)
     admits, quarantined = [], []
     for chk in result["passed"]:
         rec = next(r for r in cands if r["record_id"] == chk["record_id"])

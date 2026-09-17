@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉·弗茨亚茨",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "特训",
+  "name": "涡波×拉丝缇娅拉特训",
+  "tick": 70,
+  "time_verbatim": "首探当日午后至日薄西山"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 846,
+   "quote": "「——好、好嘞，来特训吧！」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 926,
+   "quote": "魔法使对决以拉丝缇娅拉的胜利告终了。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 957,
+   "quote": "拉丝缇娅拉和我都学会了一个新技能。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 70,
+   "text": "边缘化冲击驱动（'领队和副领队就变成吃软饭的了'）→魔法特训：共鸣仿造『Ice·Aegis（守护冰）』成功（威力精度劣于原版/'连飞鸟的一根羽毛都拔不下来'）+魔法使对决（阵地线规则）——拉丝缇娅拉以『IceBatteringRam』正面碾碎『世界冰蛇』并逼出阵地获胜；新技能获得=涡波魔法战斗0.72/拉丝缇娅拉集中收束0.21；剑术传授（诺文流+鲜血魔法芬里尔·阿雷亚斯→白银化超限）；期间堆雪人打雪仗；约定定期训练"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0dd7db85c4f7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

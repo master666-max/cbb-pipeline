@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "锻冶协力(师匠)",
+  "subject": "艾利巴茨·利拜斯"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1433,
+   "quote": "「你都释放出跟『舞斗大会』那时候一样的魔力了，我怎么能拒绝呢。不如说，这可是会长命令，本来就没得拒绝哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1522,
+   "quote": "你订制的东西，等下次来之前我这边会做好的。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "提供工房/锻冶书籍/戒台（预刻引线术式）；容纳涡波'窃取'技术（'你都释放出跟舞斗大会那时候一样的魔力了，我怎么能拒绝呢'）；评'几十分钟练就中坚锻冶师的手腕'；受托打造全员装备（'你订制的东西，等下次来之前我这边会做好的'）；另评价晶盾'一国内堪称顶尖水平'并激赏婚戒式设计"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-411c9d1424df",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

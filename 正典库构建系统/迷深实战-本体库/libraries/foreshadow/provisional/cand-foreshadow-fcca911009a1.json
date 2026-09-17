@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "entities": [
+   "拉丝缇娅拉·弗茨亚茨",
+   "相川涡波",
+   "缇亚"
+  ],
+  "name": "莱文教关系者的违和（注视/持有物品）",
+  "note": "论及『注视』『持有物品』时拉丝缇娅拉脸色很差、缇亚亦然——'在莱文教关系者看来似乎有什么不对劲的地方'，随即强行转移话题至固有技能；技能侧无反应故涡波未追问；与'异邦人=超出理之外的来访者'传承互为表里的未言明点待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 70,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 160,
+   "quote": "然而不知为何，欲言又止的拉丝缇娅拉的脸色很差。仔细一看，身旁的缇亚也一样。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 163,
+   "quote": "让人在意的，不如说是固有技能那边吧。底细不明的技能『？？？』还有技能『异邦人』这两个。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 70,
+   "text": "莱文教视角能力违和钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-fcca911009a1",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

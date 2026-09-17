@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "涡波的恋爱自答与告白冻结",
+  "tick": 69,
+  "time_verbatim": "出航首夜（拥抱事件后深夜）"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 341,
+   "quote": "拉丝缇娅拉·弗茨亚茨曾·经·是我最喜欢的人。这一点在圣诞祭前夜已经确定了。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 571,
+   "quote": "那是一幅『浑身是血的我，与熊熊燃烧的船一同沉没』的光景。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 596,
+   "quote": "拥有数度救我一命的功绩的技能『？？？』，告诉我说「你小子敢去的话就会死翘翘」。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 601,
+   "quote": "我摸清了技能『？？？』对于恋爱可以承受的界限。看来会发展到告白程度的爱意是不行的。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 755,
+   "quote": "告白这件事先压下不做好了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 69,
+   "text": "答案=最喜欢拉丝缇娅拉（感情经技能『？？？』分解重塑）→判断两情相悦可能→缇亚商谈计划被『感应』死亡预知否决（去则沉船之死）→直接告白计划被技能『？？？』否决（摸清恋爱承受界限）→原拟尽快解决恋爱骚动的计划转为静观其变（至少到击败帕林库洛·勒伽西/解决技能）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3efedc400b32",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

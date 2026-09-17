@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉·弗茨亚茨",
+  "rel_type": "定期共同特训(约定)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1033,
+   "quote": "「从今往后我们定期进行训练怎么样。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 897,
+   "quote": "「——站在这条线上，然后用魔法互怼。使用魔法之外的手段迎击、以及离开站位就算输。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "共鸣魔法冲击下的对等互助：魔法使对决（画阵地线/魔法互怼/离位即负规则——拉丝缇娅拉提案）+剑术比拼双向进行；'从今往后我们定期进行训练怎么样'成约；双方自述均为初次'为了变强而努力'（'都是多亏缇亚和玛利亚的福'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c4560c7b4f11",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

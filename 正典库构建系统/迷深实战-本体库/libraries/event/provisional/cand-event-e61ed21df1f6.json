@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "格连",
+   "波鲁扎克",
+   "相川涡波",
+   "缇莉·琉克"
+  ],
+  "instant": null,
+  "kind": "访问/委托",
+  "name": "史诗探索者访问（宝石变现委托）",
+  "tick": 70,
+  "time_verbatim": "同日上午（'与此同时，史诗探索者那边'）"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1210,
+   "quote": "「这要是传出去，本土的大人物们估计要激眼了。这种力量被把持在个人手中的话，国家的存在都会被轻易撼动的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1215,
+   "quote": "「我知道了，要把这些宝石变现是吗。没关系，我来帮你。这单子『史诗探索者』接了。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1276,
+   "quote": "「……这个做不到啊。你的队伍，换言之不就是帕林库洛的受害者群体吗？我没有那个资格啊。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 70,
+   "text": "『Connection』直抵本部办公室遇缇莉（文案接管者/永久保留口径/传说扩散说明——瓦尔法拉戏剧）；格连波鲁扎克应召而来——格连一眼看破'诺文魔石的力量'并警示'国家的存在都会被轻易撼动'；宝石清点+变现委托承接（'这单子『史诗探索者』接了'）；涡波入队邀请被拒（'帕林库洛的受害者群体'论→义理论→涡波旧情自认）；波鲁扎克托付斯诺杂务安排；涡波留下处理舞斗大会遗留文书"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e61ed21df1f6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

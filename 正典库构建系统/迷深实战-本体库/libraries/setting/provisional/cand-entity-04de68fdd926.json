@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 69,
+  "fact": "莉帕自述：自己的感情经由大哥哥（涡波）的记忆和感情培育而成（『所以我跟大哥哥大概看法一致』）；知识经由与劳拉维亚国民的联结获取（含『后宫』『花花公子』等词汇——非特定人教授）",
+  "name": "莉帕的感情与知识来源",
+  "tick": 69
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 697,
+   "quote": "毕竟我跟劳拉维亚的国民都有联结嘛。入手了各式各样的知识",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 718,
+   "quote": "「我的感情可都是经由大哥哥的记忆和感情培育出来的呢~。所以我跟大哥哥大概看法一致吧？即使如此，还是要我说出来吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 69,
+   "text": "知性魔法存在构成+联结知识面"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-04de68fdd926",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

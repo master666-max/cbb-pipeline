@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "fact": "Lv14/15/16三次状态栏快照：神圣魔法3.81／神之加护3.08（状态栏另示'加护1.00'）／断罪2.00／集中收束2.05→2.06／属性魔法2.10／过捕护2.45→2.20／续命2.24／良机2.03；后天剑术0.11；另有掩码行『？？？？？？』；对比注：拉丝缇娅拉先天亦有神圣魔法1.03——涡波怼语'你要这么说的话，缇亚也能用神圣魔法不是嘛'",
+  "name": "迪亚布罗·西斯（缇亚）先天技能栏（ch70快照）",
+  "tick": 70
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 413,
+   "quote": "状态：加护1.00",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 415,
+   "quote": "神圣魔法3.81神之加护3.08断罪2.00集中收束2.05",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 416,
+   "quote": "属性魔法2.10过捕护2.45续命2.24良机2.03",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 732,
+   "quote": "神圣魔法3.81神之加护3.08断罪2.00集中收束2.06",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 405,
+   "quote": "魔法战斗2.27血术5.00神圣魔法1.03",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 837,
+   "quote": "「你要这么说的话，缇亚也能用神圣魔法不是嘛！」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 70,
+   "text": "技能数值快照（剑术停滞/过捕护2.45→2.20回落/集中收束2.05→2.06等偏斜，按原文数值照录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-91879299ba63",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

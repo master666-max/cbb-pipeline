@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "entities": [
+   "帕林库洛",
+   "拉丝缇娅拉·弗茨亚茨",
+   "相川涡波"
+  ],
+  "name": "40层守护者封印方针",
+  "note": "'总方针是在与帕林库洛做出了断之前，不要唤醒40层的守护者'；涡波以'当做诱饵留在迷宫+解除全部Connection'威胁拉丝缇娅拉勿擅入40层；另'要是像诺文那样的守护者的话甚至能够好好谈一谈'——40层守护者身份、帕林库洛决着与其联动待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 70,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 317,
+   "quote": "「目标首先定为39层。总方针是在与帕林库洛做出了断之前，不要唤醒40层的守护者！」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 319,
+   "quote": "变成那样的话到时候会把你当做诱饵留在迷宫里的所以没问题。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 70,
+   "text": "探索主线约束钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-8e8052aac925",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

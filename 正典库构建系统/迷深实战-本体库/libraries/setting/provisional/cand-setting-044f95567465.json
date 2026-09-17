@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "fact": "30层=水晶花田消失、变无机质辽阔石质空间（'换了一副面貌'）；31层=沙海（格雷姆与鱼形怪物游荡/水晶披甲难对付；怪物经验值高——一只约1000点）；32层=复归走廊状+天花板异常高+走廊内流小河（水晶河底），飞行系怪物增多（唤起22层里约鹰苦战记忆）；33层=河流浅滩为主、水栖系怪物增多（矿物系高防减少）；34层=本话首探终点",
+  "name": "迷宫30-34层地理（ch70更新）",
+  "tick": 70
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 372,
+   "quote": "30层也是换了一副面貌。原本的水晶花田不见了踪影，只剩下了无机质的辽阔石质空间。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 376,
+   "quote": "沙海无限远泛。格雷姆与鱼形怪物在沙漠中游荡着。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 611,
+   "quote": "当然，也存在跟之前不一样的地方。天花板异常得高，走廊内流着小河。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 756,
+   "quote": "33层的构造大多是河流和浅滩，顺应着这一变化，敌人的种类也不一样了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 70,
+   "text": "阶层环境变化记录"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-044f95567465",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

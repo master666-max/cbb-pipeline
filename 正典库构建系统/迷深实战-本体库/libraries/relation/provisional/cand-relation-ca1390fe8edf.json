@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "物语主人公与契约",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 398,
+   "quote": "作为我的物语的『主人公』还是很努力了哦。涡波让我认识到了『我是我自己』这一点。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 400,
+   "quote": "「——契约的内容是『让我过得开心』。并没有要你做什么『英雄』哦。不如说，那是我要扮演的角色，可不要抢戏呀。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 463,
+   "quote": "「这样一来，终于……不会再寂寞了呢……」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 470,
+   "quote": "「啊啊，终于……这样一来我的物语的第一章就迎来HappyEnd了呢……」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 511,
+   "quote": "「别、别看我！涡波，不要看这边！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "契约内容=『让我过得开心』（英雄由她扮演，涡波是她的物语的『主人公』——『涡波让我认识到了『我是我自己』这一点』）；拒绝涡波对圣诞祭未能保护她的谢罪（『并不是英雄』）；以失忆期『说什么都照做』约定+瓦尔法拉打赌胜利要求拥抱，拥抱中吐露『不会再寂寞了』『我的物语的第一章就迎来HappyEnd』；事后羞愤拒绝接触（『别看我！』）夺窗而逃并主张不算数"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ca1390fe8edf",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

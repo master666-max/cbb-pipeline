@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "名誉会长安置(名号借用)",
+  "subject": "缇莉·琉克"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1156,
+   "quote": "「你说什~么呢。史诗探索者的会长一职永久保留。它永远都是属于涡波君的东西哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1158,
+   "quote": "「被人认为我们公会背地里的实际支配者是涡波君的话，我们办起事来也会方便不少嘛。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1191,
+   "quote": "「你说的没错哦。……并且，我们『史诗探索者（斯诺粉丝应援会）』的会长，就是你、涡波君。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "'史诗探索者的会长一职永久保留。它永远都是属于涡波君的东西'；对外以'背地里的实际支配者是涡波君'口径办事（名号借用）；强加'斯诺粉丝应援会会长'头衔（'无法退出'）；涡波自嘲'只是个没有任何权限的摆设'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3d365cc3aba4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

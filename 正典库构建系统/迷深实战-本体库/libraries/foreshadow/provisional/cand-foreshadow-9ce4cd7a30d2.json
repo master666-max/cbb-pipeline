@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "entities": [
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "name": "魔石同化者的国级经济战力",
+  "note": "'守护者的魔石与使用者之间稍微有点亲和性就有这种程度的力量'→'与魔石同化的玛利亚和帕林库洛应该也具有同级别的力量'（'可以颠覆一国经济水平的实力'）——玛利亚实力底牌与帕林库洛对决规模的上限暗示；'接下来将与之一决雌雄的敌人，以及将力量借给自己的同伴'双指待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 70,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1118,
+   "quote": "那么与魔石同化的玛利亚和帕林库洛，应该也具有同级别的力量。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1119,
+   "quote": "这两个人身上，都蕴藏着可以颠覆一国经济水平的实力。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 70,
+   "text": "实力天花板推论钩（反推类低置信）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-9ce4cd7a30d2",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

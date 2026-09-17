@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "保护关切(兄长范)",
+  "subject": "波鲁扎克"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1251,
+   "quote": "「格连他妹自己估计不会主动说，所以我就替她讲好了……别看她那样子，其实她挺擅长核算和文案整理的工作。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1255,
+   "quote": "「毕竟周围人都是这副模样。那丫头从小就是被娇惯大的。就算是为了她好，给她点儿事做吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "'波鲁扎克比亲哥哥还有哥哥范儿地拜托我'——托涡波给斯诺安排杂务（'那丫头从小就是被娇惯大的。就算是为了她好，给她点儿事做吧'）；揭其擅长核算文案的旧事；涡波感受其'感情不怎么外露'却相当关心斯诺"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-338bf175e6ac",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

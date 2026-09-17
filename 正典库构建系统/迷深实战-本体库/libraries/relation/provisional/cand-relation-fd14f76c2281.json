@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉·弗茨亚茨",
+  "rel_type": "剑术传授(诺文流)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 969,
+   "quote": "「剑……？啊，原来如此。要把诺文·阿雷亚斯的剑技传授给我吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1004,
+   "quote": "然而诺文的剑术却是以这艘船这么大的怪物为假想敌挥剑的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1010,
+   "quote": "她的秀发发出五颜六色的光芒，最后演变为白银色。看来是借用了更多人的经验。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "以宝剑'装备者仿行诺文剑术'能力为教材实战传授（'应该立马就能派上用场'）；拉丝缇娅拉借鲜血魔法『芬里尔·阿雷亚斯』起步、后超限驱动至白银发色追赶；她评价诺文剑术'以这艘船这么大的怪物为假想敌……只用剑战斗的技艺太异常了'；涡波后续计划=将剑术与自身次元魔法结合进化"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fd14f76c2281",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "fact": "魔术式=以文字形式再现魔法构造、注入魔力即发动（使用者理解与相性重要；市售镌刻术式魔石高价=凝结匠人时间气力；最高级例=玛利亚服下的『Firefly』『Impulse』魔石）；涡波速习法=『Dimension·多重展开』俯瞰劳拉维亚全工房锻冶师动作+赛莉协力并行读书+实践修正（『Dimension』毫米级动作调整）——数小时得锻冶0.69（'几十分钟练就中坚锻冶师手腕'据艾利巴茨）；代价=MP体力骤减/体温骤升；此法复现自昨日特训习得『魔法战斗』（'只要再重复这个行为就行了'）；魔法与魔术式是两个领域（擅长魔法≠擅长魔术式）",
+  "name": "魔术式与锻冶速习机制",
+  "tick": 70
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1472,
+   "quote": "那是指以文字的形式将人们使用的魔法构造再现出来的事情。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1473,
+   "quote": "像这种镌刻了魔术式的最高级魔石，就包括之前玛利亚服下的『Firefly』和『Impulse』的魔石。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1399,
+   "quote": "在劳拉维亚的所有工房的位置，以及哪里有优秀的锻冶师，这些我都已经知道了。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1443,
+   "quote": "「然而我家的会长，只用几十分钟就练就了中坚锻冶师的手腕呢……」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 70,
+   "text": "技能速习法+魔术式体系"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-69f32295009c",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

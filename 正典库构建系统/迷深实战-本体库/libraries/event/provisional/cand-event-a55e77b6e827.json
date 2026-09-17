@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "相川涡波",
+   "莉帕",
+   "诺文",
+   "阿雷亚斯家的宝剑诺文"
+  ],
+  "instant": null,
+  "kind": "能力觉醒",
+  "name": "水晶魔法『Quartz』觉醒",
+  "tick": 70,
+  "time_verbatim": "特训次日晨"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1094,
+   "quote": "「——水晶魔法『Quartz』——」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1097,
+   "quote": "我得到了『窃夺世界之理』的一部分力量。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1099,
+   "quote": "普通的石头变成了宝石，沙子变成了金砂",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1115,
+   "quote": "通过炼金，我甚至能够左右一个国家的物价，根据情况来使用的话，这东西甚至称得上战略性攻击魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 70,
+   "text": "冻结海面赴岛采沙约10kg→先修地属性基础魔法『Earth』（强用无法使用之属性致魔力反噬躯体悲鸣）→恳求'诺文，请把你的力量借给我'→剑内人声（'我自己也不擅长这方面的事啊'）+栗发青年幻视许可→次元魔力经宝剑转换为『地之理的盗窃者』魔力——'水晶魔法Quartz'成立（'我得到了『窃夺世界之理』的一部分力量'）；沙石→宝石/金砂任意矿物转化（全凭意志）；斯诺'炼金'狂喜（'以后再也不用为钱发愁了'）；涡波自评=可崩市场物价的战略级能力→引出魔石同化者同级推论与宝石变现议题"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a55e77b6e827",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "婚约者主张(决斗誓言)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 227,
+   "quote": "「——唔~嗯。……夫、夫君怎么样？」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 232,
+   "quote": "「你看，怎么说我也是涡波的婚约者啊。就算那么叫也没什么关系吧？」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 234,
+   "quote": "「但是在你跟艾尔米拉德的决斗中，可是做了与之同等的事情哦。夫君。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 251,
+   "quote": "「不可能是骗你的啦。我就跟玛利亚一样，爱涡波爱得要死哦。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 258,
+   "quote": "「……抱歉，斯诺。虽然很对不住，但是在我最首要的目的达成之前，我想是无法接受你这份心意的。我现在没有那么从容啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 265,
+   "quote": "「但是，这也就是说，要是我比涡波更早抵达最深部的话，涡波就会成我的东西了对吧？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "斯诺主张『怎么说我也是涡波的婚约者』并要求『夫君』称呼（涡波只求得免用这一词）；依据=艾尔米拉德决斗中所做的同等之事（决斗誓言，撤回困难）；再告白『爱涡波爱得要死』；涡波答复：最首要目的（真正的妹妹/迷宫最深部）达成前无法接受；斯诺并以『比涡波更早抵达最深部则涡波归她』继续主张"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2b3fbe17686f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

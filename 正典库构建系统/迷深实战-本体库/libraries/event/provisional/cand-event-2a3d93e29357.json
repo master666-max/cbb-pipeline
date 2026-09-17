@@ -1,0 +1,93 @@
+{
+ "canonical": {
+  "entities": [
+   "圣诞祭",
+   "拉丝缇娅拉·弗茨亚茨",
+   "玛利亚",
+   "珍珠鱼",
+   "相川涡波",
+   "石英巨蟹",
+   "缇亚",
+   "过密次元的真冬"
+  ],
+  "instant": null,
+  "kind": "探索/战斗",
+  "name": "首次迷宫探索（30-34层）",
+  "tick": 70,
+  "time_verbatim": "乘船第二天（洗衣日风波后当日）"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 249,
+   "quote": "圣诞祭那天从大圣堂出逃的时候我就感受到了，将一大群伙伴编组成一个个队伍这种事，仅仅是思考的过程就让人很愉快。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 458,
+   "quote": "之前我迫于其迅速，使用了『过密次元的真冬』来迎击。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 455,
+   "quote": "就这样，『LivingLegend小队（暂定）』的初阵——首次探索活动拉开了帷幕。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 502,
+   "quote": "然而破碎的只有石英巨蟹的蟹钳而已。『阿雷亚斯家的宝剑诺文』毫发无损。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 785,
+   "quote": "我们抱着后卫二人组的大腿，在33层势如破竹。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 822,
+   "quote": "仅仅几个小时就完成了目标的一半，还得到了大量的经验值，级别的平均化也堪称完美，不仅如此还没有任何人受伤。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 70,
+   "text": "原案（A/B队轮换制）因斯诺/莉帕/塞拉拒入+洗衣日流产（'初次迷宫探索胎死腹中'）→改四人队（涡波/拉丝缇娅拉/缇亚/玛利亚）；经『Connection』直达30层；初阵珍珠鱼（涡波斩鳍→拉丝缇娅拉居中劈两半）；31层石英巨蟹二只（夹剑掰折反毁蟹钳/玛利亚焰障+拉丝挡钳+缇亚FlameArrow轰飞三人总攻）；拉丝缇娅拉执行升级作业（缇亚14→18/玛利亚10→17/涡波→19/拉丝→19）；共鸣魔法成立后剑士组全程无战斗仅捡魔石（'我们抱着后卫二人组的大腿，在33层势如破竹'）；成果='仅仅几个小时完成目标一半/无人受伤'；玛利亚MP耗尽（23/1065）要求归船"
+  },
+  {
+   "category": "event",
+   "chapter": 70,
+   "text": "编组乐趣自觉萌芽于圣诞祭大圣堂出逃时（'仅仅是思考的过程就让人很愉快'）；追述：此前珍珠鱼之迅速曾迫使涡波使用『过密次元的真冬』迎击，本次仅以『感应』『剑术』应对（成长对照）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2a3d93e29357",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

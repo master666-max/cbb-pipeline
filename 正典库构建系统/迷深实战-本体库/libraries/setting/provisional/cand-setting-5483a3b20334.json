@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "fact": "消除=不可能（'消除技能这种事前所未闻'）；封印=不可能（据拉丝缇娅拉：帕林库洛用了魔法+『咒术』并借『暗之理的盗窃者』缇达之力）；现行对策='只能尽力不让它发动'+混乱超过8.00禁止涡波战斗（10.00即发狂；本话涡波混乱6.98）；改名『？？？（IllWill）』由拉丝缇娅拉主导（涡波亦自定『注视（Analyze）』『持有物品（The·Pouch）』）；拉丝缇娅拉视其为'削减涡波情感上限/会消除对某人的思慕'的敌对技能——涡波对同伴隐瞒'被消除的是对谁的感情'",
+  "name": "技能『？？？（IllWill）』对策规约",
+  "tick": 70
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 205,
+   "quote": "「封印应该也做不到吧。恐怕，帕林库洛那家伙不仅仅用了魔法，还使用了『咒术』吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 209,
+   "quote": "「总而言之，混乱超过8.00的话涡波就不许战斗了呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 213,
+   "quote": "「这不是当然的嘛。到了10.00的话就会发狂了。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 190,
+   "quote": "至于被消除的是对谁的感情我没有说。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 70,
+   "text": "技能管理规约成立（本章坦白会产物）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-5483a3b20334",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

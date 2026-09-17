@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 70,
+  "fact": "据缇莉声称：涡波现称号集合=『最强』『英雄』『剑圣』『守护者杀手』（另『天然英雄』）；舞斗大会战绩被吟游诗人讴歌、剧场船『瓦尔法拉』上演其活跃戏剧且受众渐增；劳拉维亚子民视其为'拯救囚禁公主的白马王子'（『史诗探索者』积极推广此传闻）；对外口径=公会背地里的实际支配者、会长一职永久保留（名号借用）；涡波本人自述'在联合国基本都是通缉状态'、盘算改名回基督；文书积压=舞斗大会夺冠后出走所致",
+  "name": "涡波传说扩散与立场（据缇莉声称）",
+  "tick": 70
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1163,
+   "quote": "现在的你可是『最强』的『英雄』，同时还是『剑圣』以及『守护者杀手』。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1163,
+   "quote": "在那之后剧场船『瓦尔法拉』还上演了讲述你这段活跃经历的戏剧",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1156,
+   "quote": "「你说什~么呢。史诗探索者的会长一职永久保留。它永远都是属于涡波君的东西哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1384,
+   "quote": "「但是，我在联合国，基本都是通缉状态……",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 70,
+   "text": "社会名声层（传闻类，据声称）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-66351d2efc5d",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

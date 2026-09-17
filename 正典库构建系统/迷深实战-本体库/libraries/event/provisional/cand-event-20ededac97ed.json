@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "相川涡波",
+   "艾尔米拉德"
+  ],
+  "instant": null,
+  "kind": "对话",
+  "name": "斯诺的深夜来访与『夫君』骚动",
+  "tick": 69,
+  "time_verbatim": "出航首夜（玛利亚离开后）"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 194,
+   "quote": "「……抱歉，涡波。你跟玛利亚的谈话，我都听到了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 227,
+   "quote": "「——唔~嗯。……夫、夫君怎么样？」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 251,
+   "quote": "「不可能是骗你的啦。我就跟玛利亚一样，爱涡波爱得要死哦。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 300,
+   "quote": "「交给我吧，涡波。我们从今以后，就是对等的伙伴了啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 324,
+   "quote": "相川涡波到底喜欢谁，必须让这一点大白于天下。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 69,
+   "text": "（疑似以振动魔法）偷听玛利亚谈话后来访，就『所有物』问题陷入自我厌恶被安抚→主张婚约者地位要求『夫君』称呼（艾尔米拉德决斗誓言）→再告白被以最首要目的为由婉拒→指摘涡波急躁劝其放松→听闻帕林库洛同化缇达魔石→宣言不再逃避守护者→以对等伙伴握手作结；涡波独思后决心尽快解决恋爱骚动（给出明确答复）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-20ededac97ed",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

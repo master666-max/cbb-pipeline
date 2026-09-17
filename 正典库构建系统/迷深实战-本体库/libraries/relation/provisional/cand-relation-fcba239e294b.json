@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "扭曲恋慕(据莉帕揭穿)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 626,
+   "quote": "缇亚姐姐她可是连做梦都在叫着大哥哥的名字哦？",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 641,
+   "quote": "缇亚应该是喜欢着我的吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 564,
+   "quote": "圣诞祭的前夜，我就是因为同缇亚商量过才决心营救拉丝缇娅拉的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "据莉帕所言：缇亚也喜欢着大哥哥（连做梦都满面春风叫名字），故绝不能去找她商量其他女孩子的事；涡波亦自认『缇亚应该是喜欢着我的吧』且『到了相当扭曲的地步』；既往实绩：圣诞祭前夜与缇亚商量后决心营救拉丝缇娅拉；失忆期曾与缇亚约会（她一刻未松手）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fcba239e294b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

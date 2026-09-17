@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "结婚安排(设计)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 221,
+   "quote": "帕林库洛安排的结婚对象是斯诺真是太好了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 69,
+   "text": "帕林库洛安排的（与涡波的）结婚对象是斯诺；涡波庆幸对方是不懂男人心思的斯诺——『如果是个再稍微懂点男人心思的对手，恐怕在那个幸福甜蜜的世界中的我就会输给他了吧』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b961bed3a8c8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "旧情自认(失忆期)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1290,
+   "quote": "我确确实实，曾经喜欢过他这个人……",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1286,
+   "quote": "如果，在圣诞祭那天，帕林库洛没有背叛，而是与我一起攻略迷宫的话——就那样在一起度过一段年月，我应该也会说出跟格连一样的话。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "由格连义理论触发的内心确认：'没错。我确确实实，曾经喜欢过他这个人……'（指失去记忆期间对帕林库洛的好感）；反设注：'如果，在圣诞祭那天，帕林库洛没有背叛，而是与我一起攻略迷宫的话——就那样在一起度过一段年月，我应该也会说出跟格连一样的话'；现立场延续ch49敌人重分类——'在与帕林库洛做出了断之前'为探索总方针前提"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-91be73b875b7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

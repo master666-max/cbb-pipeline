@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "玛利亚的深夜谢罪与告白",
+  "tick": 69,
+  "time_verbatim": "出航首夜（分房后）"
+ },
+ "evidence": [
+  {
+   "chapter": 69,
+   "line": 66,
+   "quote": "「那一天，我背叛了涡波先生。恩将仇报，甚至要夺走你的性命……」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 87,
+   "quote": "玛利亚拒绝了契约。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 118,
+   "quote": "本人玛利亚最喜欢的人就是相川·涡波。",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 160,
+   "quote": "「玛利亚……到了明天，我会将自己的一切和盘托出。」",
+   "vol": 1
+  },
+  {
+   "chapter": 69,
+   "line": 182,
+   "quote": "在这一刻，我与玛利亚在真正的意义上成为了同伴。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 69,
+   "text": "玛利亚来访就圣诞祭夜同阿尔缇与涡波战斗之事相互谢罪（玛利亚自认背叛/夺命/烧家；涡波自认以钱买下奴隶当自我满足道具）→玛利亚拒绝『成为你的东西』契约（因相信而拒绝）→相互不再隐瞒之誓→玛利亚告白+『妹妹等同视之』回应（被接受为近乎最高级好意）→约定明日全员坦白→离别语『我·的·所·有·人』；涡波确认『在真正的意义上成为了同伴』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a780a65c2ad4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}
