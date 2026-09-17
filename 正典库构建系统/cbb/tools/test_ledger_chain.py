@@ -120,6 +120,41 @@ def test_instrument_fingerprint():
     assert f4["fingerprint"] == f1["fingerprint"]
 
 
+
+
+def test_zone_writes_ledgered():
+    """隔离区写入入账：admit(quarantine) 走 zone.register → items.jsonl 入链。"""
+    with tempfile.TemporaryDirectory() as tmp:
+        ls = _fresh(tmp)
+        rec = {"record_id": "cand-relation-zz01", "record_type": "relation",
+               "library": "relation", "status": "candidate",
+               "canonical": {"subject": "A", "rel_type": "敌对", "object": "B"},
+               "observations": [], "evidence": [{"vol": 1, "chapter": 9, "line": 1, "quote": "q"}],
+               "verified_against": {"path": "t.txt", "sha": "a" * 40, "verified_at": "2026-09-18"},
+               "provenance": {"extractor_confidence": 0.9, "extractor": "t", "gate_trace": [],
+                              "precedent_refs": [], "status_history": []},
+               "version": 1, "supersedes": None}
+        ls.admit(rec, "quarantine", quarantine_group="low_confidence", quarantine_detail="测试")
+        rows = [r for r in ls.ledger._rows()
+                if r["target"] == "quarantine-zone/items.jsonl" and r["op"] == "append"]
+        assert rows, "zone 写入必须入账"
+        r = ls.ledger.verify(Path(tmp) / "store")
+        assert r["ok"], r
+
+
+def test_rebaseline_idempotent():
+    with tempfile.TemporaryDirectory() as tmp:
+        store = Path(tmp) / "store"
+        store.mkdir()
+        (store / "quarantine-zone").mkdir()
+        (store / "quarantine-zone" / "items.jsonl").write_text('{"item_id": "q-1"}' + chr(10), encoding="utf-8")
+        led = lc.LedgerChain(store / "ledger.jsonl")
+        led.record_genesis("quarantine-zone/items.jsonl", "b" * 64)  # 过时基线
+        assert led.record_rebaseline("quarantine-zone/items.jsonl", lc._sha256_file(store / "quarantine-zone" / "items.jsonl"))
+        assert led.record_rebaseline("quarantine-zone/items.jsonl", lc._sha256_file(store / "quarantine-zone" / "items.jsonl")) is None
+        assert led.verify(store)["ok"]
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted({k: v for k, v in globals().items()

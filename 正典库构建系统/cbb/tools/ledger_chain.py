@@ -95,6 +95,14 @@ class LedgerChain:
         return self._append_row("genesis", target, f"__genesis__:{target}",
                                 EMPTY_SHA, sha, n_appended=0, collision_total=0)
 
+    def record_rebaseline(self, target: str, sha: str) -> dict | None:
+        """基线重登记（接线修复后一次性对齐真实 sha；同 sha 幂等）。"""
+        if any(r["op"] in ("rebaseline", "genesis", "append")
+               and r["target"] == target and r["sha_after"] == sha for r in self._rows()):
+            return None
+        return self._append_row("rebaseline", target, f"__rebaseline__:{target}:{sha[:12]}",
+                                EMPTY_SHA, sha, n_appended=0, collision_total=0)
+
     def collision_count(self, target: str | None = None) -> int:
         return sum(r.get("collision_total", 0) for r in self._rows()
                    if r["op"] == "skip" and (target is None or r["target"] == target))
@@ -116,7 +124,7 @@ class LedgerChain:
             store_root = Path(store_root)
             last = {}
             for r in rows:
-                if r["op"] in ("append", "genesis"):
+                if r["op"] in ("append", "genesis", "rebaseline"):
                     last[r["target"]] = r["sha_after"]
             for target, sha in sorted(last.items()):
                 actual = _sha256_file(store_root / target)
@@ -147,6 +155,7 @@ class LedgedStore(cbb_store.ThreeStateStore):
         super().__init__(root)
         self.ledger = LedgerChain(ledger_path or Path(root) / "ledger.jsonl")
         self._skip_counts: dict[str, int] = {}
+        self._wrap_zone()
 
     def _append(self, name: str, obj: dict) -> None:
         target = Path(self.root) / name
@@ -159,6 +168,25 @@ class LedgedStore(cbb_store.ThreeStateStore):
         sha_before = _sha256_file(target)
         super()._append(name, obj)
         self.ledger.record_append(name, key, sha_before, _sha256_file(target))
+
+    def _wrap_zone(self) -> None:
+        """隔离区写入入账：QuarantineZone._append 直写 items/adjudications，
+        不经 store._append 汇聚点——实例级包装补此缺口（zone.register 自带
+        item_id 查重，链上碰撞跳过=第二层）。"""
+        zone = self.zone
+        orig = zone._append
+        root = Path(self.root)
+        ledger = self.ledger
+
+        def zappend(path, obj, _orig=orig, _ledger=ledger):
+            rel = str(Path(path).relative_to(root)).replace("\\", "/")
+            key = idempotency_key_of(obj)
+            if _ledger.has_key(rel, key):
+                return  # 幂等：register/adjudicate 已在册
+            sha_before = _sha256_file(path)
+            _orig(path, obj)
+            _ledger.record_append(rel, key, sha_before, _sha256_file(path))
+        zone._append = zappend
 
 
 def instrument_fingerprint(ranker: str, criterion: str, sort: str,
