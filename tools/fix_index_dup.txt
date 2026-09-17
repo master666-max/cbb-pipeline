@@ -1,0 +1,25 @@
+import io, re
+
+base = r"D:\zcode专用！！！！危险！！！！！！！！！"
+p = base + r"\knowledge\_index.md"
+s = io.open(p, encoding="utf-8").read()
+
+# 1) 计数 6 -> 5（第二次运行是误触发）
+s = s.replace("wrap-up 次数：6（", "wrap-up 次数：5（", 1)
+
+# 2) 去重 task-064 索引行（保留第一处）
+lines = s.splitlines()
+seen = False
+out = []
+removed = 0
+for l in lines:
+    if "task-064-上下文包编排v1.6" in l and l.startswith("- `"):
+        if seen:
+            removed += 1
+            continue
+        seen = True
+    out.append(l)
+s = "\n".join(out) + ("\n" if s.endswith("\n") else "")
+
+io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+print(f"fixed: count 6->5, removed {removed} duplicate line(s)")
