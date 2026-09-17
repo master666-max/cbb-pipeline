@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "海莉",
+  "rel_type": "再诞施术者(据莱纳声称)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 300,
+   "quote": "「你在那里太好了个什么劲啊，根本就不好！确实事情的经过我是听说了，但是你不要以为我就原谅你们了啊！说到底，那个『魔石人类』到底有没有正确继承海因兄长的记忆这一点就是个问题！我可没有相信哦！毕竟施术者可是那个帕林库洛啊！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "据莱纳声称：海莉是否正确继承海因记忆存疑，理由是『毕竟施术者可是那个帕林库洛啊』——海莉（魔石人类/再诞）的施术者=帕林库洛。莱纳因此不轻信圣诞祭经过之说"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e299410a3001",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

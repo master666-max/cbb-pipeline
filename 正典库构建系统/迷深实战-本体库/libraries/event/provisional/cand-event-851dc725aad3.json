@@ -1,0 +1,101 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛·勒伽西",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "撤离",
+  "name": "士兵死守掩护帕林库洛撤离（涡波杀意萌生）",
+  "tick": 80,
+  "time_verbatim": "同日（西斯逃走前后）"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 740,
+   "quote": "朝我袭来的是一支铁箭。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 747,
+   "quote": "「——帕林库洛长官！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 748,
+   "quote": "那是一名作为军人来说显得有些年轻的男子。尽管跟我比起来倒是年长，但是跟其他人相比就年轻得多。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 753,
+   "quote": "「参谋阁下！请快走！您对这场战争来说是必不可少的！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 759,
+   "quote": "就算你这人再怎么卑鄙外道，也是我们不可缺少的人啊",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 764,
+   "quote": "这时，已经有数十名精锐士兵从四面八方向我发动了舍身攻击。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 818,
+   "quote": "与其放任帕林库洛逃走，不如现在杀掉这些士兵更好不是吗。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 821,
+   "quote": "如果是守护帕林库洛·勒伽西的士兵的话——不，如果是守护使徒的士兵的话，那就杀无赦，伴随着这样的想法，我的身体擅自行动开来。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 823,
+   "quote": "我利用『魔力冰结化』伸长水晶剑，然后——",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 80,
+   "text": "铁箭（打断涡波致命袈裟斩）+青年军人（呼『帕林库洛长官』）的熊叫舍身攻击+弩手（工匠心血魔法道具弩）掩护；士兵齐呼参谋阁下对战争必不可少；全数兵力投入舍身掩护（愿献生命的死士气魄）；涡波因MP接近枯竭无法强行突破（以『次元之冬』抹消其魔法+剑柄击晕应对/越来越不爽）；对军人自然涌现杀意（守护使徒的士兵就杀无赦——思考感情变化自认异常）、欲以魔力冰结化伸长水晶剑屠戮之际被海莉乱入打断"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-851dc725aad3",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

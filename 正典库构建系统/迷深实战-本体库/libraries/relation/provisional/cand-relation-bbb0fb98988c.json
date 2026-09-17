@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "身体顾忌与同伴呼唤",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 784,
+   "quote": "而玛利亚因为是缇亚的身体而有所顾虑，没能制住西斯的舍身行动让她成功跳出了压制。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 718,
+   "quote": "「缇亚你也、给我看好了！不要一直纠结于基督这个名字，去好好看看存在于那里的那个人！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "玛利亚因西斯所占为缇亚之身而有所顾虑，未能制住西斯舍身行动致其逃脱（事后与涡波互相谢罪）；呼唤缇亚勿纠结基督之名、去看存在于那里的人并与之共同压制西斯"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bbb0fb98988c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

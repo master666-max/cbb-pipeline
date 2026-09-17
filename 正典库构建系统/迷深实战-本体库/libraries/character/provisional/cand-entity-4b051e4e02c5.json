@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "魔法(防壁)",
+  "name": "DivineShield"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 24,
+   "quote": "「——Di、『DivineShield』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 25,
+   "quote": "随即诞生的魔法防壁在毫厘之间挡下了我的双手。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 30,
+   "quote": "虽然这股魔力的密度惊人，但这也表示西斯丧失了从容。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 80,
+   "text": "西斯在千钧一发之际编织出的白色魔法防壁（咏唱带慌乱结巴『Di、』），于毫厘之间挡下涡波伸向西斯脖子的双手；遭涡波以『过密次元的真冬』直接碰触干涉，因灌注异常大量魔力而将干涉弹开——魔力密度惊人，西斯为避免肉搏拼命捍卫此防壁（丧失从容/开始流汗）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-4b051e4e02c5",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

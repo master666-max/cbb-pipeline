@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "魔法(转移门)",
+  "name": "Connection"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 665,
+   "quote": "「——『Connection』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 971,
+   "quote": "留下这句话，海莉便咏唱出『Connection』离开了。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 981,
+   "quote": "使用熟练的动作驾车出发后，我立刻使用了『Connection』。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 80,
+   "text": "打造魔法门的转移魔法：莉帕抱起塞拉与拉丝缇娅拉汇合后咏唱、携二人撤出战场（明断救险）；海莉离场时亦咏唱『Connection』离开；涡波马车载行途中同样使用（以忙碌不给同伴插话空暇）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-73714c449cd3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

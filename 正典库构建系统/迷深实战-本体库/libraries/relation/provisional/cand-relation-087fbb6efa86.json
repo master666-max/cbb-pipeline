@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "能力借用(同类守护者)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 589,
+   "quote": "「啊啊，这个是缇达的能力来着哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 730,
+   "quote": "「缇达！！这对手不得了！帮我一把——！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 828,
+   "quote": "他的姿态在接近着曾经的缇达。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "据帕林库洛自述：怪物尸体接触吸收修复身体=『缇达的能力来着』；玛利亚全力一击时呼缇达之名求助、黑液化暗夜大盾应对；其完死体姿态『接近着曾经的缇达』（二十层守护者同型）；冰结断再生推测亦基于与缇达同型身体"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-087fbb6efa86",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

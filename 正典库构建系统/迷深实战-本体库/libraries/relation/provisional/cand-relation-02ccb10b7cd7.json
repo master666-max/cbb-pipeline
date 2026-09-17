@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "莱纳",
+  "rel_type": "遗托(三人幸福)",
+  "subject": "海因·赫勒比勒夏因"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 36,
+   "quote": "不好意思，那都是过去式了。我被兄长拜托了你口中这三人的幸福。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 115,
+   "quote": "过去，因为自己的软弱，我害死了兄长。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 120,
+   "quote": "兄长的遗物，那并不是徒具形式的贵族家系。也不是弗茨亚茨的骑士这种立场，更不是高价的宝剑和奢华的制服。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "据莱纳转述：受兄长拜托了帕林库洛/基督/拉丝缇娅拉'三人的幸福'，故放弃杀三仇人的旧目标。莱纳并自述旧悔（据莱纳自述）：'因为自己的软弱，我害死了兄长''我跟众人一样，坐视他走向毁灭'，此次决意'不会再重蹈覆辙''守护兄长留下的事物'——且认定兄长的遗物并非贵族家系/'弗茨亚茨的骑士'立场/宝剑制服，而是基督·欧亚本人。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-02ccb10b7cd7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

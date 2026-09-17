@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "chapter": 82,
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "相川阳滝",
+   "莱纳"
+  ],
+  "name": "世界奉还阵失控与『最后的声音』",
+  "note": "帕林库洛死后阵仍暴走不止（其『自己也无法停止』的说辞被验证非谎言）、大陆遭神话级扭曲、远处凶暴大型怪物吼声逼近；涡波失去意识前『最后总觉得听到了什么人的声音』——来者身份与救援/终局待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 82,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1551,
+   "quote": "即使这样帕林库洛也没有摆出打算停止『世界奉还阵』的样子。看来他那自己也停止不了的说辞并不是谎言。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1647,
+   "quote": "最后总觉得听到了什么人的声音。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 82,
+   "text": "终局悬置：阵失控+昏迷+不明人声"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-f64a74fd6424",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

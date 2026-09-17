@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "fact": "据海莉声称：等级初始化是『魔石人类』典型特征；所有魔石人类均有技能『素体』（身份证明）；异常之高的『素质』以自身寿命为代价；涡波是千年前的传说中被创造的唯一『魔石人类』——为始祖『相川涡波』的『再诞』准备的『容器』，制造用了相当多的人做材料（旁证：使用少年之血后海莉出现性别转变等问题）、其16年记忆极可能是事前准备的『调整』；技能『？？？』的效果即是对他的调整（不丧命/不崩溃/能一直前进）；其现有症状=留存于容器之中的始祖涡波的血渐渐活化。以上为海莉推测+自证；涡波保留违和感（帕林库洛主导海莉诞生，其认识或被动手脚、拦截或为陷阱）。",
+  "name": "魔石人类的特征与『容器』说（海莉论）",
+  "tick": 79
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 986,
+   "quote": "等级的初始化是『魔石人类』的典型特征。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 984,
+   "quote": "为了制造出少年这一『容器』，恐怕用了相当多的人做材料。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 993,
+   "quote": "应该是为了让你对自己是『相川涡波』这一点不产生任何怀疑而做的『调整』吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 997,
+   "quote": "是数周前刚刚诞生于迷宫之中的『魔石人类』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 79,
+   "text": "魔石人类机制+容器假说（据海莉声称）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-3d078cac3e2b",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "fact": "城市警戒与情报传递设施：潜入克拉布布布布布布布布布布布布布布尔时需要注意的只有『魔石线』（在『Dimension』面前其余防卫形同虚设）；经魔石线传递情报的速度比涡波的行进还快——涡波推测城堡守军或借此先知其动向（初以为城堡混乱系己身林中行动所致，后查明实为西斯艾德先袭）。",
+  "name": "魔石线（城市警戒与情报传递网）",
+  "tick": 79
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 764,
+   "quote": "需要注意的只有『魔石线』",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 845,
+   "quote": "如果利用『魔石线』的话，情报传递的速度会比我的行进还要快。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 79,
+   "text": "城市警戒/情报网机制（本章补充观察）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-71e42a6b6319",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

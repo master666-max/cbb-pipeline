@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(精神魔法)",
+  "name": "心异（Variable）·解放（Burst）"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 435,
+   "quote": "「将我的一切赌在这一刻！命中吧！——魔法『心异（Variable）·解放（Burst）』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 439,
+   "quote": "我如『中毒』般呼吸困难，如『沉默』般有口难言，如『麻痹』般身体麻痹，并且，明明因『恐惧』而瑟瑟发抖，却还因『昂扬』而身体燥热。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "帕林库洛赌上性命发动的精神魔法（利用『世界奉还阵』以自身为『代价』削减生命）——效果：视野拉上暗幕（同缇达付与的状态异常『黑暗』）、如『中毒』『沉默』『麻痹』『恐惧』『昂扬』般的多重状态异常并发、打乱认知与脑海优先顺序、蚀灭逞强意志；并诱发/叠加于技能『？？？』的暴走与『退还』连锁（两次发动逼出连续暴走）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-25d22a3dfc5a",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

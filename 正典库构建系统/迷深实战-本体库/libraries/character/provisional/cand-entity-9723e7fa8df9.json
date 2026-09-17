@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entity_type": "地点(城堡·迷宫第66层里侧)",
+  "name": "魔王城"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 190,
+   "quote": "欢迎你回到我们的『魔王城』",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 192,
+   "quote": "这个还是涡涡命名的呢",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 178,
+   "quote": "这座古堡的外貌呈圆锥状，里面有着森林一般广大的庭院。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 32,
+   "quote": "走廊很长，大量摆放着各种古色古香的家具",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 84,
+   "text": "涡波苏醒所在的古城＝罗德口中『我们的魔王城』；结构：石结构房间+蛇腹般多弯长廊（大量古色古香家具、无数房间、空无一人）+城堡最上层的了望台；外貌圆锥状、内含森林一般广大的庭院、被大河环绕且仅一座桥连接城外（攻城唯有走桥）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-9723e7fa8df9",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "救助誓言(不依赖帕林库洛)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 895,
+   "quote": "「不对……我没有搞错……！确实原本是别人的东西，确实可能是把它错当成了自己的愿望！但是，事到如今这份愿望已经被我接受了！我发自真心地想要予『阳滝』这一存在以救赎！这份愿望，已经变成真实的了！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 933,
+   "quote": "因为只有那份记忆，只有那在原来的世界生活的记忆，才能给我一丝温暖啊！！",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1359,
+   "quote": "「就算不依靠你，我也会亲自找到阳滝……！！就算她真的死了，我也绝对不会依靠你……！因为你是我的敌人，是我的敌人啊！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "愿望主体性自辩：『确实原本是别人的东西……但是，事到如今这份愿望已经被我接受了！我发自真心地想要予『阳滝』这一存在以救赎！』；拒绝再诞提案——『就算不依靠你，我也会亲自找到阳滝……！因为你是我的敌人』；被给予的记忆亦愿意相信（唯一温暖来源）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6328a368c458",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

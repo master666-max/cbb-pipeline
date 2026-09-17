@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "entities": [
+   "始祖涡波",
+   "支配之王",
+   "相川涡波",
+   "艾德"
+  ],
+  "name": "与支配之王的相遇记忆（遮蔽中）",
+  "note": "四人抵北方后与『支配之王（Lord/罗德）』相遇、假面男子与其交谈——但记忆扭曲如发花电视屏幕，看不清少女面貌与谈话内容；解明条件：『想要让这份记忆变得更加鲜明的话，就必须更接近这名假面男子才可以。也就是说，必须进一步升级才可以』；另有『狂王』一名（西斯更正前称呼）。待回收：升级后的记忆解锁、支配之王身份与二人会谈内容。",
+  "payoff_chapter": null,
+  "setup_chapter": 79,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 128,
+   "quote": "即使知道假面男子在跟『支配之王』交谈，却无法看清少女的面貌，也不知谈话的内容。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 129,
+   "quote": "想要让这份记忆变得更加鲜明的话，就必须更接近这名假面男子才可以。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 130,
+   "quote": "也就是说，必须进一步升级才可以。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 79,
+   "text": "记忆解锁条件钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-3102f4f4e256",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

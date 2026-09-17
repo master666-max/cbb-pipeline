@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "艾德",
+   "莱纳",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "莱纳与艾德的一对一交锋（小树枝对双剑）",
+  "tick": 83,
+  "time_verbatim": "同夜战场"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 65,
+   "quote": "「——『Growth·Extended』！『SenseBless』『BranchWoodShell』！！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 69,
+   "quote": "仅仅一个小树枝居然能跟宝剑交锋，甚至迸发出火光，这是何等异样的光景。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 71,
+   "quote": "一下子就看穿我状况不佳的艾德打算放着我不管强行冲过我身边。看来他想要回避战斗，只打算回收作为目标的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 83,
+   "text": "艾德施放辅助魔法『Growth·Extended』『SenseBless』『BranchWoodShell』自我强化后，持袖中小树枝迎战莱纳双剑；小树枝与宝剑交锋迸发火光；艾德看穿莱纳力竭，'打算放着我不管强行冲过我身边'以回避战斗、只回收目标物。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d76207b57b56",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

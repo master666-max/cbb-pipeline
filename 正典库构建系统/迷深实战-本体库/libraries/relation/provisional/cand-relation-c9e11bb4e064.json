@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉",
+  "rel_type": "骑乘协力(攻城)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 1221,
+   "quote": "玛利亚坐在兽化的塞拉身上，剩下四个人经过一段长距离的助跑后相继飞越了城墙。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "攻城开始的队形分工：玛利亚乘坐兽化的塞拉（空中路线），其余四人经长距离助跑相继飞越城墙"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c9e11bb4e064",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

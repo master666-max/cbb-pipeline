@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "制造再诞容器(据海莉声称)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 975,
+   "quote": "少年你、是作为始祖的『相川涡波』为自己的『再诞』而准备的『魔石人类』。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1120,
+   "quote": "那么海莉的认识被下了什么手脚的可能性就不小。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "海莉论：现世『少年』是始祖『相川涡波』为自己的『再诞』而准备的『魔石人类』容器——与拉丝缇娅拉（缇娅拉容器）、缇亚（西斯容器）同构；记忆为事前调整；涡波另持保留：海莉由帕林库洛主导诞生、其认识或被动手脚、拦截本身或为陷阱"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6fbefa6e87c2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

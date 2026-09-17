@@ -1,0 +1,95 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛·勒伽西",
+   "相川涡波",
+   "相川阳滝"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "帕林库洛完死体化与精神攻击·涡波崩溃",
+  "tick": 81,
+  "time_verbatim": "玛利亚昏倒后（二人独处）"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 818,
+   "quote": "接着，他用化作黑色液体的手腕刺穿了自己的胸口。这已经超越了自残行为，是彻底的自杀了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 830,
+   "quote": "这副模样可以称得上是『完死体（Monster）』了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 837,
+   "quote": "二十守护者（TwentyGuardian）暗之理的盗窃者",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 839,
+   "quote": "『表示』也将帕林库洛确认为怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 907,
+   "quote": "「嘛啊，说来也是。你说的有道理。正如你所说。记忆什么的，不过是暧昧的东西，不值得信任对吧？那么啊，我说，难道不能这样去想吗？说到底，根本就不存在什么叫阳滝的少女？这样的」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 989,
+   "quote": "「少年，你在流泪哦……？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1055,
+   "quote": "但是，因为技能『？？？』的缘故，我就连死都不被允许。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1077,
+   "quote": "「——啊啊，我来救你」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 81,
+   "text": "帕林库洛以黑液手腕刺胸捏碎心脏——『彻底的尸体』；『注视』Status乱码、『表示』认定为怪物：二十守护者（TwentyGuardian）暗之理的盗窃者；兽足+双野太刀形态舍身连击（物理无效如斩瀑布/野兽与骑士架势切换）；剑斗中三段精神攻击：愿望主体性否定（救阳滝=始祖涡波的愿望）→相川阳滝千年前死亡→阳滝与『原来的世界』不存在论；涡波并列思考暴走、思考力剩不到十分之一、流泪；因技能『？？？』连死都不被允许、反复独白『救救我』；帕林库洛以『——啊啊，我来救你』收容并宣告结束"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e16668645087",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

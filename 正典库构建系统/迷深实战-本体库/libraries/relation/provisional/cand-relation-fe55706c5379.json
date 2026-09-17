@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "Impulse",
+  "rel_type": "混合魔法融合运用(Flame+Impulse)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 1282,
+   "quote": "「——『Flame』！『Impulse』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1283,
+   "quote": "我将拓展开的『Dimension』收束起来，把目标锁定为帕林库洛一人。怀里的玛利亚同时释放出攻击魔法，并将放出两个魔法融合到一起。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1294,
+   "quote": "玛利亚的一击将守护帕林库洛的士兵统统震飞到十米之外。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "决斗场突入时玛利亚与涡波的『Dimension·决战演算』同时咏唱、将『Flame』与『Impulse』两个魔法融合为一（无属性冲击混入爆炎/流星落地般轰鸣）——一击将守护帕林库洛的士兵震飞十米之外，为分断作战的火力担当"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fe55706c5379",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

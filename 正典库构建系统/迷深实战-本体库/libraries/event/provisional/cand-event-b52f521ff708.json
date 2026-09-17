@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "基督·欧亚",
+   "帕林库洛·勒伽西",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战后/灾害",
+  "name": "帕林库洛之战落幕与世界奉还阵暴走崩坏",
+  "tick": 83,
+  "time_verbatim": "帕林库洛·勒伽西之战直后（战场）"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 4,
+   "quote": "——与帕林库洛·勒伽西的战斗终于落幕。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 6,
+   "quote": "『世界奉还阵』现在的暴走确实在孕育着这样的凶兆",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 94,
+   "quote": "看向周围，已经根本不存在什么平原和荒野了。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 96,
+   "quote": "『世界奉还阵』打算吞没留在战场上的一切。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 83,
+   "text": "战后'根本不存在什么胜利者，所有人都会死的'——无数地裂重合、能称作平地的地方消失；战场地形变为'山谷连绵不绝的的黑色山脉'；'『世界奉还阵』打算吞没留在战场上的一切'；莱纳判断基督身体随时可能掉进谷底。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b52f521ff708",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

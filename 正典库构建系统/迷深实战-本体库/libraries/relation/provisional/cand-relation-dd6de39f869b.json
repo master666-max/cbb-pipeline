@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "始祖涡波",
+  "rel_type": "召唤躯壳(灌毒+唆使)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1145,
+   "quote": "亦即帕林库洛没能成功驱使自己那已经被封印的魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1168,
+   "quote": "『始祖涡波』的躯壳！我想你也知道的，这家伙的体内可没有灵魂！",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1201,
+   "quote": "感觉到了没有，你的妹妹就在离你不远的地方！你妹妹『阳滝』的身体和魔石就在那里！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1392,
+   "quote": "「啧！我明明把自己能收集起来的『毒』全都灌进去了，结果只用那么一颗魔石就给全吸收掉了吗！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "魔力封印下自爆右臂（皮肤绽裂/血管炸开）以物理接触『魔石线』祈愿——无魔力触发却引动世界奉还阵（不可能之现象）；召唤出遗弃于『最深部』的无魂躯壳；自陈曾把能收集的『毒』全部灌入、欲其维持怪物姿态多肆虐一会儿；唆使『你妹妹『阳滝』的身体和魔石就在那里』驱其夺魔石；自称此为打造『世界奉还阵』的真正目的与其计划的终曲"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dd6de39f869b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

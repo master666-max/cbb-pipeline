@@ -1,0 +1,83 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "帕林库洛·勒伽西",
+   "拉丝缇娅拉·弗茨亚茨",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "艾德",
+   "莉帕",
+   "迪亚布罗·西斯"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "城堡中庭奇袭（压制西斯）",
+  "tick": 80,
+  "time_verbatim": "奇袭当日白天（追至瓦尔德本土北部城堡）"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 13,
+   "quote": "西斯连忙形成白色羽翼打算逃走。但是不及她起飞，我的踢击就命中了她的双翼。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 57,
+   "quote": "根据迪亚布罗·西斯的Status来看，再过30秒，西斯的MP就会变成0.",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 66,
+   "quote": "「你们可不要出手哦。这帮人相当不妙。擅动者性命不保」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 78,
+   "quote": "「……哈啊，本以为总算得救了，结果是涡波小哥你们来了啊。我不过就是写了封信给侄女而已诶？怎么就搞成这样了啊我的天」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 110,
+   "quote": "在我们与西斯对峙的期间，三对六转变为二对六了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 80,
+   "text": "六人全员奇袭：涡波炮弹式着弹踢碎西斯白翼→魔力比拼+玛利亚火焰+呼唤缇亚的3对1压制（西斯MP经表示可见、推定30秒耗尽）；塞拉+斯诺拦截帕林库洛、莉帕拉丝缇娅拉游走；艾德举手中立投降步行退场（三对六转二对六）；帕林库洛自称不过写了封信给侄女、以『擅动者性命不保』制止士兵；其着装为将军阶级军服、统率力依旧很高"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2115f927f643",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 78,
+  "fact": "据拉丝缇娅拉：帕林库洛=擅长辅助魔法的骑士、『天上的七骑士』时代战力老是吊车尾（仿真战一次都没赢过塞拉）、绝不会堂堂正正战斗、定会对涡波玩弄手段释放精神魔法；据西娅：现任『南方』总大将的参谋、在最前线指挥军队、位置距柯尔库稍偏北；涡波在劳拉维亚时已闻其作为将领被召回本土；数日前致信西娅（书信本章为涡波所得）",
+  "name": "帕林库洛的战时动向",
+  "tick": 78
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 69,
+   "quote": "「没错。在『天上的七骑士』时代，基本上他的战斗能力老是吊车尾哦。仿真战里一次都没赢过塞拉呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 447,
+   "quote": "我在劳拉维亚的时候，就听说过帕林库洛作为将领被召回了本土这件事，果然那家伙目前正处于战争的中心。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 450,
+   "quote": "「知道的！就在前几天才收到他的来信，里面有提到的。正好我们队伍也要赶去他身边！」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 78,
+   "text": "讨伐对象动向汇总（转述级）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-3cf2f4e2f642",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

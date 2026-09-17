@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "海莉",
+   "玛利亚",
+   "相川涡波",
+   "艾德",
+   "莱纳",
+   "西娅",
+   "诺瓦露",
+   "阿尔缇",
+   "露洁"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "艾德的鉴定与两队分离",
+  "tick": 78,
+  "time_verbatim": "同夜终局"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 1205,
+   "quote": "「——虽然不是很擅长，但是也只得一用了啊。咒·术『注视鉴定』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1221,
+   "quote": "「虽说是光辉照人的原石，但是这样是没法做『后备之王』的。实在是太过扭曲了……要说有这个资格的，就只有这位盲眼的少女而已了吗——」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1245,
+   "quote": "「——那么我们赶紧去帕林库洛·勒伽西那边吧。不赶紧一点的话就赶不上了——」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1254,
+   "quote": "「——太好了。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 78,
+   "text": "艾德以咒术『注视鉴定』视涡波内心、接受结果并下决意；断言『这只是让你们回归到应有的姿态…这就是涡波大人的真实』；判定涡波太过扭曲不堪做『后备之王』、唯一有资格者为『盲眼的少女』（玛利亚）但以『不要重蹈覆辙』放弃；解除全部魔法、称此为治疗副作用不久消退；指示露洁诺瓦露带走西娅海莉、率队急赴帕林库洛（『不赶紧一点的话就赶不上了』）；留别言点名阿尔缇（后备之王/思慕之人）；涡波失血、视野漆黑前听见不明归属的『——太好了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-77dc191f7358",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

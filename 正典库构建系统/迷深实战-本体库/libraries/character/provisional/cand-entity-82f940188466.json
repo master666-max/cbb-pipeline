@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "道具(剑)",
+  "name": "阿雷亚斯家的宝剑"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 761,
+   "quote": "离开了座位的我，从『持有物品』中拔出了『阿雷亚斯家的宝剑诺文』。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 805,
+   "quote": "将魔力送进『阿雷亚斯家的宝剑诺文』，强行将剑的形状转变为盾牌。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 78,
+   "text": "本章以『阿雷亚斯家的宝剑诺文』之名出场（诺文之名冠于剑——判例4近名处理：沿用库内名+登记别名）。由涡波从『持有物品』拔出应战；被以水晶魔法『Quartz』送入魔力强行变形为盾牌抵御重力系魔法轰击（攻击手段因此减少）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-82f940188466",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

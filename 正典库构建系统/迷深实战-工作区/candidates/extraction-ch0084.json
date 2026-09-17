@@ -1,0 +1,735 @@
+{
+ "_meta": {
+  "unit": "工单 v1.8 §0 并发放量批次 · CHAPTER 0084（第八卷；切片章头标注『相当于第八卷第七章186流星校对版』与工单章序不一致，章头按元文本处理）",
+  "source": {
+   "path": "语料分析/corpus/clean_full.txt",
+   "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+   "verified_at": "2026-09-18",
+   "slice": "迷深实战-工作区/slice/ch0084.txt（CHAPTER 0084，207行短章）"
+  },
+  "extractor": "ZCode 代理亲抽（GLM-5.3，工单 v1.8 §0）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+i；工单未给出本章摄入序 i，event/setting 的 tick 暂记 84（=章号），主代理如需按摄入序校正请覆盖。禁墙钟。",
+  "coordinate_line_note": "evidence.line=切片内行号（CHAPTER 标记行=第0行，即文件行号−1）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；切片首行『相当于第八卷第七章186流星校对版』与『186话序章新的启程之地』『第七章存盘点『迷宫孤岛』』为卷话数/校对/章题类元文本排除——章题中的『迷宫孤岛』未作别名登记，移交主代理斟酌",
+   "reason": "R6 规则1（话数卷数/翻译组校对注）；判例2/3 不适用",
+   "deterministic_check": "『186话』『流星校对版』仅章头出现"
+  },
+  "alias_policy": "罗德→罗德·缇缇（本人自报名）；国王酱→罗德·缇缇（本人自荐称呼，nickname，同指证据直接）；涡涡→相川涡波（罗德专称）；阳滝→相川阳滝；新月琉璃→新月琉璃制直剑（判例4近名并入）；阿雷亚斯家的宝剑诺文→阿雷亚斯家的宝剑（判例4近名并入，与人物诺文同名之由【存疑】）。『风之理的盗窃者』『支配之王（Lord）』『五十守护者（FiftyGuardian）』为称号类不合并（descriptor/title 永不合并）。",
+  "confidence_calibration": "0.90=直接命名+行为事实；0.85~0.88=verbatim提及/声称转述类（罗德转述设定、回想人物、别名并入）；0.80=反推类（莱纳×罗德相识线索）。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章/主线级事实（涡波弱化、迷宫66层里侧、阳滝复活确信、命名者归属等）一律走 event/relation/setting/foreshadow。",
+  "density_note": "207行短章，候选29条（新角色登场+舞台大揭示章，密度锚从宽、如实抽取）",
+  "chapter_summary": "涡波在世界奉还阵后苏醒于无名古城；五十守护者罗德·缇缇（千年前支配之王）接触并带路；望台揭示此处为迷宫66层里侧——始祖涡波以次元魔法重现北方王国的魔王城；涡波自觉变弱、记忆缺失。",
+  "cross_chapter_notes": [
+   "★新角色罗德·缇缇：五十守护者（FiftyGuardian）＝『风之理的盗窃者』，本人承认即千年前『支配之王（Lord）』；据其自述被『世界奉还阵』吞噬后成为守护者、已几百年未管理50层；对涡波亲昵（『和以前一样』/禁敬语/自荐『被封印起来的姐姐』称呼/确认现涡波无记忆）；魔力压迫感匹敌实力全开的诺文或玛利亚；Zeitlos·Wind 以『魔法相杀』轻描淡写化解 Dimension（此前海因同魔法仅能妨碍）",
+   "★舞台大揭示：此地＝迷宫第66层『里侧』（正确来说『另一侧』）＝罗德口中『涡涡为人家特别制造出的空间』——(始祖)涡波以次元魔法将过去存在的『北方』王国重现而成的『魔王城』（『这个还是涡涡命名的呢』——命名者指现涡波或始祖涡波待确认）；古堡圆锥状含森林庭院+环河一桥+繁荣城邑，其外漆黑虚无如漂浮黑暗中；非迷宫联合国非大陆本土；在此『想起』比较容易",
+   "★涡波状态：世界奉还阵吞没后抵达『第三种可能性』生还；被罗德近距离速度压制（双腕被制无法挣脱）；自觉较『始祖涡波』/『持有阳滝魔石的我』弱了不少，罗德归因『既然没有记忆，那也是当然的』；醒来第一反应寻找阳滝",
+   "★主线钩：涡波以灵魂层面直觉确信世界奉还阵中『复活』的阳滝绝对不是假货（尽管那是帕林库洛的策略之一）；回想确认在莱纳和海莉帮助下已完美达成复仇",
+   "★存疑：『阿雷亚斯家的宝剑诺文』——宝剑称谓带『诺文』之名与人物诺文同名，关系待确认；章题『存盘点迷宫孤岛』为元文本未抽"
+  ]
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德·缇缇",
+    "entity_type": "人物(迷宫五十层守护者)"
+   },
+   "aliases_to_register": ["罗德", "国王酱"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "破窗飞入涡波苏醒房间的少女：翠绿色长发单马尾（近绿宝石的浅绿色）、眼角一颗泪痣、抵及下巴的高领毛衣状衣着、背后一对可收拢的翠绿羽翼（大到足以包住一个成年人、可飞行）；以亲昵称呼打招呼；自称『人家』、人生信条『爱与和平』；对涡波无敌意、回答问题并主动拉近距离（心的与物理的）；禁止涡波使用敬语，自荐称呼『国王酱』或『被封印起来的姐姐』",
+     "chapter": 84
+    },
+    {
+     "category": "trait",
+     "text": "战力：魔力庞大（压迫感足以匹敌实力全开的诺文或玛利亚——涡波观感）；速度压倒性（次元魔法千真万确把握其动作仍无法反应，瞬间贴近制住涡波双腕、令其无法挣脱）；魔法为其最大长处——Zeitlos·Wind 以『魔法相杀』轻描淡写化解涡波的 Dimension（涡波评：如果罗德成了敌人恐怕没有任何胜算）",
+     "chapter": 84
+    },
+    {
+     "category": "trait",
+     "text": "言行线索：称与涡波『和以前一样』相识（『防御还是一如既往的坚固啊』）、『涡涡永远都是涡涡』；确认现涡波『没有记忆这回事是真的』并称其变弱是当然（『既然没有记忆』）；自述已有几百年没有去管50层；自称已无任何支配对象；带涡波步行参观（要求用自己的脚走、用自己的眼睛看）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 93, "quote": "罗德·缇缇？或者说，和以前一样，放轻松叫人家『国王酱』也可以哦。"},
+    {"vol": 1, "chapter": 84, "line": 59, "quote": "【五十守护者（FiftyGuardian）】风之理的盗窃者"},
+    {"vol": 1, "chapter": 84, "line": 48, "quote": "那头有着梦幻般色彩的翠绿色长发"},
+    {"vol": 1, "chapter": 84, "line": 49, "quote": "那眼角下的一颗泪痣"},
+    {"vol": 1, "chapter": 84, "line": 53, "quote": "她的背后长着一对和头发一样颜色的翠绿色翅膀。而那对翅膀大到足以令我确信她可以使用它来飞行。"},
+    {"vol": 1, "chapter": 84, "line": 86, "quote": "她的魔力十分的庞大。给人的压迫感足以和实力全开的诺文或玛利亚匹敌。"},
+    {"vol": 1, "chapter": 84, "line": 133, "quote": "次元魔法千真万确地把握了她的动作。但是，她的速度却快到让人无法反应，罗德就这样迅速贴近并制住了我的双腕。"},
+    {"vol": 1, "chapter": 84, "line": 119, "quote": "「吵架是不好的喔。爱与和平是人家的人生信条哦！」"},
+    {"vol": 1, "chapter": 84, "line": 115, "quote": "「就是这样。但是，已经有几百年没有去管50层了耶。」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": ["涡波", "涡涡"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "世界奉还阵吞没后苏醒于无名古城：醒来第一反应呼喊并寻找阳滝（房间无他人）；自报家门『初次见面……我是相川涡波』礼貌应对守护者（以往经验：与守护者交谈比敌对有效）；自称只有一个家人故拒绝『姐姐』称呼；被罗德以速度压制后老实跟随参观",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 68, "quote": "「初、初次见面……我是相川涡波……」"},
+    {"vol": 1, "chapter": 84, "line": 96, "quote": "「虽然很可惜，因为我只有一个家人，所以姐姐是不可能的……」"},
+    {"vol": 1, "chapter": 84, "line": 24, "quote": "意外地抵达了第三种可能性"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "相川阳滝",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": ["阳滝"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未在场：涡波苏醒后第一个呼喊并四处寻找的名字（房间没有任何其他人或生物）；回想中作为『比自己的生命更为重要的家人』『人生最终目标的妹妹』于世界奉还阵中『复活』出现——非假货确信见伏笔条",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 6, "quote": "「――阳滝！！」"},
+    {"vol": 1, "chapter": 84, "line": 20, "quote": "阳滝的『复活』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "新月琉璃制直剑",
+    "entity_type": "道具(剑)"
+   },
+   "aliases_to_register": ["新月琉璃"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "因『阿雷亚斯家的宝剑诺文』不在，涡波从『持有物品』取出握持应战的剑（本章称『新月琉璃』——判例4近名检索命中库内『新月琉璃制直剑』，并入旧名并登记别名）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 45, "quote": "我拿出了『新月琉璃』。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "阿雷亚斯家的宝剑",
+    "entity_type": "道具(剑)"
+   },
+   "aliases_to_register": ["阿雷亚斯家的宝剑诺文"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章不在涡波身边（『由于『阿雷亚斯家的宝剑诺文』不在』）——称谓中出现『诺文』之名，与人物诺文同名（关联待确认【存疑】）；判例4近名检索命中库内『阿雷亚斯家的宝剑』，并入旧名并登记别名",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 45, "quote": "由于『阿雷亚斯家的宝剑诺文』不在"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "Zeitlos·Wind",
+    "entity_type": "魔法(风)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "罗德施放的风魔法：柔和的风吹来，令涡波的『Dimension』因『魔法相杀』被化解——封禁其知觉范围外延（『那·个·行·为也禁止哦』）；构筑灵巧又致密令涡波战栗（魔法才是罗德最大的长处）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 162, "quote": "「啊，那·个·行·为也禁止哦。『Zeitlos·Wind』。」"},
+    {"vol": 1, "chapter": 84, "line": 163, "quote": "柔和的风吹了过来，『Dimension』因『魔法相杀』而被化解。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "Dimension",
+    "entity_type": "魔法(次元魔法)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章用法：『多重展开』扩大魔法感知收集情报（确认时间、地点与他人存在；整座城堡涵盖在内仍未见到一人）；遇袭时切换『决战演算』准备迎击；苏醒后欲以知觉范围脱离罗德钳制",
+     "chapter": 84
+    },
+    {
+     "category": "trait",
+     "text": "首次被完整『魔法相杀』：罗德的 Zeitlos·Wind 轻描淡写化解——涡波自评其完成度非常高、恐怕地上根本没有人能用魔法相杀化解（此前海因使用同样的魔法充其量只能做到妨碍）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 29, "quote": "「――『Dimension·多重展开』。」"},
+    {"vol": 1, "chapter": 84, "line": 131, "quote": "我将『Dimension‧多重展开』切换成『Dimension‧决战演算』，并准备迎击。"},
+    {"vol": 1, "chapter": 84, "line": 163, "quote": "柔和的风吹了过来，『Dimension』因『魔法相杀』而被化解。"},
+    {"vol": 1, "chapter": 84, "line": 169, "quote": "即使是之前的海因，使用同样的魔法时，充其量也只能做到妨碍罢了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "魔王城",
+    "entity_type": "地点(城堡·迷宫第66层里侧)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波苏醒所在的古城＝罗德口中『我们的魔王城』；结构：石结构房间+蛇腹般多弯长廊（大量古色古香家具、无数房间、空无一人）+城堡最上层的了望台；外貌圆锥状、内含森林一般广大的庭院、被大河环绕且仅一座桥连接城外（攻城唯有走桥）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 190, "quote": "欢迎你回到我们的『魔王城』"},
+    {"vol": 1, "chapter": 84, "line": 192, "quote": "这个还是涡涡命名的呢"},
+    {"vol": 1, "chapter": 84, "line": 178, "quote": "这座古堡的外貌呈圆锥状，里面有着森林一般广大的庭院。"},
+    {"vol": 1, "chapter": 84, "line": 32, "quote": "走廊很长，大量摆放着各种古色古香的家具"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.86,
+   "canonical": {
+    "name": "『北方』王国",
+    "entity_type": "地点(过去王国·于迷宫66层里侧重现)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "据罗德：过去存在的王国；在这个什么都没有的领域中由『涡涡』用次元魔法『就那样做了出来』；涡波本人无此记忆、推断有能力做到者只会是一千年前的『始祖涡波』；在此『想起』比较容易",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 202, "quote": "涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来。"},
+    {"vol": 1, "chapter": 84, "line": 204, "quote": "那么，有能力做出这种事的人只会是一千年前的『始祖涡波』。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "罗德·缇缇",
+    "rel_type": "同一人(本人承认)",
+    "object": "支配之王",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波由名字推断其为一千年前的王『支配之王（Lord）』，罗德即时承认（『——哈哈，正是如此。即使没有了记忆，你仍然看得透本质啊』）；她同时主张已无任何支配对象",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 104, "quote": "「你是一千年前的王、『支配之王（Lord）』没错吧？」"},
+    {"vol": 1, "chapter": 84, "line": 108, "quote": "即使没有了记忆，你仍然看得透本质啊"},
+    {"vol": 1, "chapter": 84, "line": 111, "quote": "「可是，人家已经没有任何支配的对象就是了！」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "罗德·缇缇",
+    "rel_type": "五十层守护者(数百年未在岗)",
+    "object": "迷宫",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "注视获知状态栏【五十守护者（FiftyGuardian）】风之理的盗窃者；本人确认『也确实守护着50层』但『已经有几百年没有去管50层了』——守护者在岗异常（涡波对『几百年』『不管』感到违和）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 59, "quote": "【五十守护者（FiftyGuardian）】风之理的盗窃者"},
+    {"vol": 1, "chapter": 84, "line": 115, "quote": "「就是这样。但是，已经有几百年没有去管50层了耶。」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.86,
+   "canonical": {
+    "subject": "罗德·缇缇",
+    "rel_type": "吞噬→守护者化(据本人自述)",
+    "object": "世界奉还阵",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据罗德自述：由于种种原因被『世界奉还阵』给吞噬并成为了守护者——与涡波本次被吞经历同源；成因细节（种种原因）未说明",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 114, "quote": "「然后，由于种种原因被『世界奉还阵』给吞噬，并成为了守护者？」"},
+    {"vol": 1, "chapter": 84, "line": 115, "quote": "「就是这样。但是，已经有几百年没有去管50层了耶。」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.86,
+   "canonical": {
+    "subject": "罗德·缇缇",
+    "rel_type": "亲昵旧交自称(禁敬语/姐姐自称)",
+    "object": "相川涡波",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据罗德自述与主张：以『涡~涡』亲昵称呼开场；『姐姐我和涡涡之间的关系很好』故禁止敬语（瞬间魔力剧烈膨胀威慑）；『和以前一样』可叫『国王酱』、亦可用『被封印起来的姐姐』称呼；现涡波以『只有一个家人』回应拒绝",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 56, "quote": "「早~上好啊，涡~涡。」"},
+    {"vol": 1, "chapter": 84, "line": 78, "quote": "所以呢，禁止你使用敬语哦，因为姐姐我和涡涡之间的关系很好嘛。"},
+    {"vol": 1, "chapter": 84, "line": 93, "quote": "罗德·缇缇？或者说，和以前一样，放轻松叫人家『国王酱』也可以哦。"},
+    {"vol": 1, "chapter": 84, "line": 94, "quote": "「那么请多多关照，罗德。如果可以的话用涡波来称呼我就可以了。」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.86,
+   "canonical": {
+    "subject": "始祖涡波",
+    "rel_type": "次元魔法空间构筑(据罗德转述+涡波推断)",
+    "object": "『北方』王国",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据罗德转述：66层里侧是『涡涡为人家特别制造出的空间』——『涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来』（『在这里的话『想起』是比较容易的，涡涡是这么说的来着』）；现涡波无记忆，推断唯千年前的『始祖涡波』能为之（转述中的『涡涡』指始祖——据涡波推断，存疑边界已注明）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 200, "quote": "这里是涡涡为人家特别制造出的空间哦"},
+    {"vol": 1, "chapter": 84, "line": 202, "quote": "涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来。"},
+    {"vol": 1, "chapter": 84, "line": 204, "quote": "那么，有能力做出这种事的人只会是一千年前的『始祖涡波』。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "相识/情报线索(据罗德引言反推)",
+    "object": "罗德·缇缇",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "罗德对涡波不知她一事回应『跟莱纳说的一样呢』——莱纳曾向罗德谈及涡波（相识途径与时机未明，反推类低置信）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 70, "quote": "「嘿~，还真的不清楚人家的事情啊。跟莱纳说的一样呢。」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "取出使用",
+    "object": "新月琉璃制直剑",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "感知到巨大魔力聚合体高速接近时欲从『持有物品』取剑；因『阿雷亚斯家的宝剑诺文』不在而取出『新月琉璃』握持警戒",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 45, "quote": "我连忙想从『持有物品』中取出剑。由于『阿雷亚斯家的宝剑诺文』不在，我拿出了『新月琉璃』。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "涡波苏醒与记忆回溯（世界奉还阵后）",
+    "kind": "苏醒/状况确认",
+    "tick": 84,
+    "instant": null,
+    "time_verbatim": "与帕林库洛决战力竭失去意识、被『世界奉还阵』吞没后的翌朝（罗德：早~上好）"
+   },
+   "entities_involved": ["相川涡波", "相川阳滝", "帕林库洛", "莱纳", "海莉", "世界奉还阵"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "从梦中清醒→第一反应呼喊阳滝并寻找（惨淡石结构房间仅一张床、无任何其他人或生物）→记忆回溯：与帕林库洛在黑暗中恶战后耗尽所有力量失去意识；在莱纳和海莉的帮助下完美达成复仇；目击阳滝『复活』（帕林库洛的策略之一，但灵魂直觉确信非假货）→推测被『世界奉还阵』吞没，本以为死亡或被吞噬二选一却抵达第三种可能性→『Dimension·多重展开』扩大感知扫描，整座古城空无一人",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 6, "quote": "「――阳滝！！」"},
+    {"vol": 1, "chapter": 84, "line": 15, "quote": "我是和帕林库洛在黑暗中进行了一场恶战"},
+    {"vol": 1, "chapter": 84, "line": 16, "quote": "然后，在莱纳和海莉的帮助下，我应该已经完美的达到了复仇的目的。"},
+    {"vol": 1, "chapter": 84, "line": 23, "quote": "恐怕我在之后是被『世界奉还阵』吞没了。"},
+    {"vol": 1, "chapter": 84, "line": 38, "quote": "最后即使整座城堡都被涵盖在『Dimension』里面，我还是连一个人都没见到。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "五十守护者罗德初遇",
+    "kind": "遭遇",
+    "tick": 84,
+    "instant": null,
+    "time_verbatim": "涡波苏醒当朝"
+   },
+   "entities_involved": ["相川涡波", "罗德·缇缇"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "过于巨大的魔力聚合体空中高速逼近→少女伴随破碎声破窗飞入（高速急停暴风席卷房间）→涡波握剑『注视』获知【五十守护者】风之理的盗窃者→礼貌自报家门；罗德讶异其不知情（『跟莱纳说的一样』）→确认『风之理的盗窃者』兼50层守护者身份+禁敬语令（刹那间魔力剧烈膨胀威慑）→涡波像对待阿尔缇和诺文那样套话，由名字推断其为千年前『支配之王（Lord）』获本人承认（初战缇达型战斗狂除外，其余守护者未突然袭击的既往经验）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 46, "quote": "一个少女从窗外飞进了房间"},
+    {"vol": 1, "chapter": 84, "line": 59, "quote": "【五十守护者（FiftyGuardian）】风之理的盗窃者"},
+    {"vol": 1, "chapter": 84, "line": 68, "quote": "「初、初次见面……我是相川涡波……」"},
+    {"vol": 1, "chapter": 84, "line": 102, "quote": "我像对待阿尔缇和诺文的时候一样。"},
+    {"vol": 1, "chapter": 84, "line": 104, "quote": "「你是一千年前的王、『支配之王（Lord）』没错吧？」"},
+    {"vol": 1, "chapter": 84, "line": 108, "quote": "即使没有了记忆，你仍然看得透本质啊"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德制服涡波（速度压制）",
+    "kind": "接触战",
+    "tick": 84,
+    "instant": null,
+    "time_verbatim": "初遇对话中（涡波欲离开打听情报之际）"
+   },
+   "entities_involved": ["相川涡波", "罗德·缇缇"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波称与其打听不如找他人探听现况→罗德佯装要哭催生破绽，大喊『休想――逃！』飞扑；『Dimension·多重展开』切换『决战演算』迎击仍来不及——次元魔法千真万确把握其动作但速度快到无法反应，双腕被制且如被钳住般无法挣脱；罗德窥视瞳孔察觉『好像稍微变弱了一点』；随后以『现在是人家比较强』单方面宣布带路参观、不许拒绝",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 129, "quote": "「休想――逃！」"},
+    {"vol": 1, "chapter": 84, "line": 131, "quote": "我将『Dimension‧多重展开』切换成『Dimension‧决战演算』，并准备迎击。"},
+    {"vol": 1, "chapter": 84, "line": 133, "quote": "次元魔法千真万确地把握了她的动作。但是，她的速度却快到让人无法反应，罗德就这样迅速贴近并制住了我的双腕。"},
+    {"vol": 1, "chapter": 84, "line": 150, "quote": "「就让人家一边带你参观一边解释情况好了。不许你拒绝哦，因为看起来现在是人家比较强呢。嘿嘿~。」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "城内带路与Dimension封禁",
+    "kind": "移动/压制",
+    "tick": 84,
+    "instant": null,
+    "time_verbatim": "制服事件后至抵达望台前（步行数分钟）"
+   },
+   "entities_involved": ["相川涡波", "罗德·缇缇", "Zeitlos·Wind"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "沿蛇腹般多弯长廊与长阶梯步行（罗德主张『好好的用自己的脚走，好好的用自己的眼睛去看』）；涡波欲至少以『Dimension』让知觉范围逃离钳制→罗德『Zeitlos·Wind』以『魔法相杀』化解并禁止该行为；涡波为其灵巧致密的构筑战栗（魔法才是罗德最大的长处），判断『如果罗德成了敌人，我恐怕没有任何胜算』→老实跟随",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 162, "quote": "「啊，那·个·行·为也禁止哦。『Zeitlos·Wind』。」"},
+    {"vol": 1, "chapter": 84, "line": 163, "quote": "柔和的风吹了过来，『Dimension』因『魔法相杀』而被化解。"},
+    {"vol": 1, "chapter": 84, "line": 169, "quote": "即使是之前的海因，使用同样的魔法时，充其量也只能做到妨碍罢了。"},
+    {"vol": 1, "chapter": 84, "line": 170, "quote": "如果罗德成了敌人，我恐怕没有任何胜算。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "望台揭示：魔王城=迷宫66层里侧",
+    "kind": "转折/揭示",
+    "tick": 84,
+    "instant": null,
+    "time_verbatim": "步行数分钟后（到达城堡最上层的了望台）"
+   },
+   "entities_involved": ["相川涡波", "罗德·缇缇", "魔王城", "『北方』王国"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "望台俯瞰全貌（圆锥古堡/森林庭院/环河一桥/繁荣城邑/外缘虚无漂浮之景）→罗德『欢迎回到我们的魔王城』（『这个还是涡涡命名的呢。因为是支配着魔人们的王』）→揭示『这里』是迷宫里面＝『第六十六层的里侧』（正确来说好像是『另一侧』）＝『涡涡为人家特别制造出的空间』（次元魔法将过去存在的『北方』王国做出、在此『想起』容易）→涡波并无那样的记忆，推断有能力做到者只会是一千年前的『始祖涡波』，对此全新领域头疼不已",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 175, "quote": "位于城堡最上层的了望台。"},
+    {"vol": 1, "chapter": 84, "line": 190, "quote": "欢迎你回到我们的『魔王城』"},
+    {"vol": 1, "chapter": 84, "line": 197, "quote": "「『这·里』是·迷·宫·里·面·哦。」"},
+    {"vol": 1, "chapter": 84, "line": 200, "quote": "这里是涡涡为人家特别制造出的空间哦"},
+    {"vol": 1, "chapter": 84, "line": 202, "quote": "涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来。"},
+    {"vol": 1, "chapter": 84, "line": 204, "quote": "那么，有能力做出这种事的人只会是一千年前的『始祖涡波』。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "阳滝『复活』非假货的确信",
+    "setup_chapter": 84,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "世界奉还阵再现的阳滝『复活』虽是帕林库洛的策略之一，涡波以自灵魂层面传来的直觉确信她『绝对不是假货』、作为人生最终目标的妹妹确实出现了——真阳滝存续/再会主线钩（承接ch80记忆再现场面）",
+    "chapter": 84
+   },
+   "entities_involved": ["相川阳滝", "相川涡波", "帕林库洛", "世界奉还阵"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "主线确信钩",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 20, "quote": "尽管那只是帕林库洛的策略之一，但是作为我人生最终目标的妹妹，她确实在那里出现了。"},
+    {"vol": 1, "chapter": 84, "line": 21, "quote": "那是自灵魂层面传来的直觉，我敢确信她绝对不是假货。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "罗德与『以前』的涡波／被封印起来的『姐姐』",
+    "setup_chapter": 84,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "罗德言行多处指向与（始祖）涡波旧识：『和以前一样』的『国王酱』、『防御还是一如既往的坚固』、『涡涡永远都是涡涡』、自荐『被封印起来的姐姐』称呼（『被封印』所指不明）；现涡波以『只有一个家人』防御——千年前关系与『姐姐』封印之谜待回收",
+    "chapter": 84
+   },
+   "entities_involved": ["罗德·缇缇", "相川涡波", "始祖涡波"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "旧交与称呼之谜钩",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 93, "quote": "罗德·缇缇？或者说，和以前一样，放轻松叫人家『国王酱』也可以哦。"},
+    {"vol": 1, "chapter": 84, "line": 95, "quote": "因为涡涡永远都是涡涡，所以这个请求可做不到呢。如果不喜欢『国王酱』的话，用被封印起来的『姐姐』称呼也行哦。"},
+    {"vol": 1, "chapter": 84, "line": 97, "quote": "虽然没有记忆这回事是真的，防御还是一如既往的坚固啊"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『几百年』『不管』的违和感与空城之谜",
+    "setup_chapter": 84,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "50层守护者数百年未履责＋巨城（含繁荣城邑却）空无一人（Dimension全城扫描无人）——守护者/迷宫管理体制异常与『人都去哪了』的疑问，涡波明确感到违和但未解",
+    "chapter": 84
+   },
+   "entities_involved": ["罗德·缇缇", "相川涡波", "迷宫"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "管理体制异常钩",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 117, "quote": "『几百年』、『不管』――我从她的话语中感到了些许违和感。"},
+    {"vol": 1, "chapter": 84, "line": 38, "quote": "最后即使整座城堡都被涵盖在『Dimension』里面，我还是连一个人都没见到。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『想起』容易的空间",
+    "setup_chapter": 84,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "66层里侧是『在这里的话『想起』是比较容易的』之地（罗德转述『涡涡是这么说的来着』）——为记忆回溯而设的空间用途，与现涡波记忆缺失/弱化的关联待展开",
+    "chapter": 84
+   },
+   "entities_involved": ["相川涡波", "始祖涡波", "『北方』王国"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "记忆回收场域钩",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 202, "quote": "在这里的话『想起』是比较容易的"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "守护者体系更新：五十守护者（ch84）",
+    "fact": "50层守护者＝『风之理的盗窃者』，状态栏标注【五十守护者（FiftyGuardian）】；本体名罗德·缇缇（千年前『支配之王（Lord）』，本人承认）；据其自述因种种原因被『世界奉还阵』吞噬后成为守护者，但已有几百年没有去管50层；守护者＝以守护对应层为目的被召唤的怪物（涡波认知口径）；涡波既往经验：除初战的缇达（战斗狂）外其余三名守护者均未突然袭击；面对守护者时交谈比敌对有效",
+    "chapter": 84,
+    "tick": 84
+   },
+   "entities_involved": ["罗德·缇缇", "缇达", "世界奉还阵", "迷宫"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "守护者体系更新（50层）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 59, "quote": "【五十守护者（FiftyGuardian）】风之理的盗窃者"},
+    {"vol": 1, "chapter": 84, "line": 87, "quote": "但这也是理所当然的。她也是守护者——是以守护50层为目的被召唤的怪物。"},
+    {"vol": 1, "chapter": 84, "line": 115, "quote": "「就是这样。但是，已经有几百年没有去管50层了耶。」"},
+    {"vol": 1, "chapter": 84, "line": 99, "quote": "除了初战的缇达是个战斗狂之外，其他三个人都没有突然地袭击过来。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.86,
+   "canonical": {
+    "name": "迷宫第66层『里侧（另一侧）』（ch84）",
+    "fact": "据罗德：『这里』是迷宫里面；以阶层数表示＝『第六十六层的里侧』，正确来说好像是『另一侧』；此地为『涡涡为人家（罗德）特别制造出的空间』——在什么都没有的领域中用次元魔法将过去存在的『北方』王国就那样做了出来（据罗德转述，『涡涡是这么说的来着』）；在此『想起』比较容易；涡波排除法确认非迷宫联合国也非大陆本土；现涡波推断有能力做到者只会是一千年前的『始祖涡波』",
+    "chapter": 84,
+    "tick": 84
+   },
+   "entities_involved": ["迷宫", "『北方』王国", "始祖涡波", "罗德·缇缇", "相川涡波", "迷宫联合国", "大陆本土"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "迷宫新领域设定（据罗德口述）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 197, "quote": "「『这·里』是·迷·宫·里·面·哦。」"},
+    {"vol": 1, "chapter": 84, "line": 200, "quote": "就是『第六十六层的里侧』呢。"},
+    {"vol": 1, "chapter": 84, "line": 202, "quote": "涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来。"},
+    {"vol": 1, "chapter": 84, "line": 195, "quote": "『这里』不是迷宫联合国，也不是大陆本土。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "魔王城与城邑的漂浮地理（ch84）",
+    "fact": "古堡外貌圆锥状、内含森林一般广大的庭院；被大河环绕（规模大到令涡波想起劳拉维亚的法芙拉河），仅一座桥连接城外（进攻唯有走桥）；河外围城邑辽阔至地平线、人潮如织、可确信是繁荣国家；但城邑之外：一片漆黑的天空＋地平线附近被截断的大地＋平原海洋皆无的一片虚无——看起来就像城堡和整座城市正在一片黑暗中漂浮；此即涡波被世界奉还阵吞没后抵达的『第三种可能性』之地；『魔王城』之名出自『涡涡命名』（因为是支配着魔人们的王）——命名者指现涡波或始祖涡波待确认",
+    "chapter": 84,
+    "tick": 84
+   },
+   "entities_involved": ["魔王城", "劳拉维亚", "法芙拉河", "相川涡波"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "新舞台地理（本章望台直接观察＋罗德命名口径）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 180, "quote": "是条大到足以令我想起劳拉维亚的法芙拉河的河流"},
+    {"vol": 1, "chapter": 84, "line": 184, "quote": "在那里的是一片漆黑的天空，以及地平线附近被·截·断的大地。"},
+    {"vol": 1, "chapter": 84, "line": 188, "quote": "看起来就像是这座城堡和整座城市正在一片黑暗中漂浮一样。"},
+    {"vol": 1, "chapter": 84, "line": 24, "quote": "意外地抵达了第三种可能性"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "涡波的力量弱化与记忆缺失（ch84）",
+    "fact": "罗德近距离制住涡波后指出『怎么好像稍微变弱了一点』；涡波自认与『始祖涡波』或『持有阳滝魔石的我』相比弱了不少、且在罗德面前如此无力太过异常（双手被制完全动弹不得）；罗德归因『既然没有记忆，那也是当然的』；另：睡过头身体迟钝但对魔法构筑没有影响——记忆缺失与力量水平的关联成为主线疑点",
+    "chapter": 84,
+    "tick": 84
+   },
+   "entities_involved": ["相川涡波", "罗德·缇缇", "始祖涡波", "阳滝"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "主角状态变化（身体变化类主线事实，走setting轨道）",
+     "chapter": 84
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 84, "line": 138, "quote": "「嗯？奇怪……？涡涡，怎么好像稍微变弱了一点？」"},
+    {"vol": 1, "chapter": 84, "line": 145, "quote": "确实，现在的我与『始祖涡波』或『持有阳滝魔石的我』相比弱了不少。但是，在对方面前如此无力也太过异常了。"},
+    {"vol": 1, "chapter": 84, "line": 146, "quote": "「嗯~，既然没有记忆，那也是当然的吗。」"},
+    {"vol": 1, "chapter": 84, "line": 28, "quote": "但对于魔法的构筑并没有任何影响。"}
+   ]
+  }
+ ]
+}

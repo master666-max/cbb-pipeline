@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "师事(魔石人类们的老师)",
+  "subject": "露洁"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 550,
+   "quote": "「对了！好不容易有一位英雄来我们这里，去把艾德老师叫过来好了。这事可难得，他一定会很高兴的~。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 992,
+   "quote": "「诶、诶诶诶，这是什么？强化魔法居然能达到这种程度吗……？这难道就是特化了辅助能力的魔法使能够抵达的究极水平……！？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "露洁与诺瓦露同称『艾德老师』、主动唤其来见英雄；受其三重强化（Growth/SensePress/BranchwoodSheild）后惊叹『这难道就是特化了辅助能力的魔法使能够抵达的究极水平』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d23c127329cc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

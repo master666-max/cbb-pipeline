@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "王之器",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "撤退/带走",
+  "name": "艾德撤退并回收王之器少女",
+  "tick": 83,
+  "time_verbatim": "Quartz阻路后（战场）"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 84,
+   "quote": "就先确保王之器好了。反正对鄙人的计划来说涡波大人本来就不是必要的呢。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 86,
+   "quote": "他构筑出新的木属性魔法，接着一根巨树便从地上钻出。巨树的根干开裂，将女孩子和艾德裹进去。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 87,
+   "quote": "「那么，让我们下次再会吧，莱纳大人。话是这么说，那也要看您能否活下来了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 90,
+   "quote": "二人的气息从战场上彻底消除了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 83,
+   "text": "艾德放弃抽取基督魔石，改言'就先确保王之器好了'；走近远处少女，构筑木属性魔法生出巨树，'将女孩子和艾德裹进去'，巨树随即缩回地下、'二人的气息从战场上彻底消除了'；离别语'那么，让我们下次再会吧，莱纳大人。话是这么说，那也要看您能否活下来了'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e1a68f64041e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

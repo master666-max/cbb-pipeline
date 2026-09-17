@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "魔法(冲击)",
+  "name": "Impulse"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 1282,
+   "quote": "「——『Flame』！『Impulse』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1291,
+   "quote": "在这股爆炎之内还混入了无属性的冲击魔法。混合魔法就如投入湖中的石子一般在大地上激荡出波纹。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1294,
+   "quote": "玛利亚的一击将守护帕林库洛的士兵统统震飞到十米之外。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 80,
+   "text": "玛利亚的无属性冲击魔法：与『Flame』同时释放并融合为一（爆炎中混入冲击魔法/带有流星落地般的轰鸣）——决斗场着地一击将守护帕林库洛的士兵尽数震飞至十米之外（分断作战组成）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-cb57e6e5c644",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

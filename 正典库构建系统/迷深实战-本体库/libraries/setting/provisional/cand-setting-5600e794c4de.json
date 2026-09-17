@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "fact": "千年前城堡大厅中，始祖涡波（假面男子）与圣人缇娅拉在魔法阵上精炼体内魔力、失败即反复分解构筑并将术式记录成书；开发『魔力变换（Levelup）』与『变换结果（Status）』——命名取自始祖原世界常见词汇；目标是推广到全体国民，使无人再称『魔力』为『毒』；始祖自述上次成果并非『魔法』而是『咒术』，此次要创造不需要那么多代价之物。此即『传承中的「魔法」的起源』、据称由始祖创造的魔法的基础。",
+  "name": "魔法起源：魔力变换与变换结果的开发（千年前）",
+  "tick": 79
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 21,
+   "quote": "在魔法阵上精炼体内的魔力，因为失败而不断地重复着分解与构筑，再将结果一个接一个地记录在书籍上。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 34,
+   "quote": "从今往后就再也不会有人将『魔力』称为『毒』了",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 55,
+   "quote": "『魔力变换』是『升级（Levelup）』，『变换结果』叫『属性（Status）』？",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 50,
+   "quote": "这就是传承中的『魔法』的起源吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 51,
+   "quote": "据称由始祖创造的魔法的基础。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 79,
+   "text": "魔法体系起源（千年前梦证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-5600e794c4de",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

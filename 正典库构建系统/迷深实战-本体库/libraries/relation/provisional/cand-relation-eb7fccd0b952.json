@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛·勒伽西",
+  "rel_type": "同僚(自述)",
+  "subject": "塞拉"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 1196,
+   "quote": "「那个愚蠢的同僚就交给我好了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1199,
+   "quote": "在船上旅行的时候就探讨过对『暗之理的盗窃者』的对策",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "塞拉自请对战帕林库洛：『那个愚蠢的同僚就交给我好了』——以『同僚』相称；船上已探讨过对『暗之理的盗窃者』的对策，拖延时间应能胜任"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-eb7fccd0b952",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

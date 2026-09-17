@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 82,
+  "fact": "技能『？？？』暴走：以一定的感情为交换令精神安定（混乱补正+1.00/所有状态异常被转换为混乱）；混乱达10.00超过技能极限时，将积存的混乱变回原来的感情予以『退还』——加足利息后一切（绝望、孤独、焦躁、屈辱、压力、不快、恐惧、污染乃至『恋心』）连同负面感情与记忆一并返还（超越致死量的感情集合/足以使心灵坏死）；连续发动将陷入由绝望连锁构成的通往死亡的单行道式恶性循环；本章对抗法：自身意志主动发动+完全解放『并列思考』进行感情处理（超越极限/脑神经迸火花/滴鼻血）；最终解：克服过去后以命名升华的技能『退还』感情（混乱-1.00）而非废弃",
+  "name": "混乱与『退还』机制（技能『？？？』）",
+  "tick": 82
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 488,
+   "quote": "【技能『？？？』暴走了】",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 499,
+   "quote": "混乱达到了10.00，超过了技能『？？？』的极限。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 502,
+   "quote": "在加足了利息之后，一切都被退还给了我，积存的负面感情与记忆——绝望、孤独、焦躁、屈辱、压力、不快、恐惧、污染——乃至『恋心』，都回到了我的心中。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 519,
+   "quote": "那是由绝望的连锁构建成的通往死亡的单行道。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 82,
+   "text": "技能机制全账：暴走/混乱值/10.00退还/恶性循环/三段对抗"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-5c8c88f2bdbf",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "海莉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "援军",
+  "name": "海莉乱入救援与城堡镇压",
+  "tick": 80,
+  "time_verbatim": "同日（紧接着杀意萌生）"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 824,
+   "quote": "「——不行，少年。『Sehr·Wind』」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 831,
+   "quote": "此间海莉的风魔法也没有停歇。她将士兵们一个接一个地吹飞到城墙上，通过撞击让他们失去意识。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 832,
+   "quote": "「冷静下来。你好不容易才坚持保持自我到现在。请千万不要大意。一定要保持冷静」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 846,
+   "quote": "越来越多的士兵们冲到了现场与我们交战。但是将他们全部击晕只花了几分钟的时间。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 849,
+   "quote": "帕林库洛和西斯。我们没能抓住身为目标的二者中的任何一人。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 80,
+   "text": "海莉以『Sehr·Wind』强大风魔法吹飞士兵（撞墙失神）抹消涡波杀意；牵斯诺之手自城墙现身（涡波迎击姿态解除——其眼中无 敌意/作为援军）；劝涡波冷静保持自我；数分钟击晕后续全部士兵完胜镇压（四人站着）；但奇袭作战总体失败——帕林库洛与西斯两个目标皆未能抓住"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0c40c341c3bb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

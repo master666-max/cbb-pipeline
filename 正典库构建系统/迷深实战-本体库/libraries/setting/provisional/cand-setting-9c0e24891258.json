@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 78,
+  "fact": "与开拓地东部大陆相对、被称作『本土』的大陆基本经由人手开发，存在十余个大国、到处是历史悠久的市镇；瓦尔德本国位于其上、距战场最近故警戒等级高；涡波一行将LivingLegend号停靠在本土东北部瓦尔德本国东端的海崖下隐匿（防止帮助奴隶/对付海盗的船情报泄露）",
+  "name": "本土（大陆）概况",
+  "tick": 78
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 5,
+   "quote": "我们终于抵达了『本土』。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 6,
+   "quote": "跟身为开拓地的东部大陆不同，被称作『本土』的大陆基本上都经由人手开发过了。这里存在着十余个大国，到处都是历史悠久的市镇。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 7,
+   "quote": "为了隐藏『LivingLegend号』，我们将它停靠在本土东北部瓦尔德本国东端的海崖下。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 78,
+   "text": "地理概况（本章亲历）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-9c0e24891258",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

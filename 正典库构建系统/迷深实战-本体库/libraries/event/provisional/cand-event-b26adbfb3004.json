@@ -1,0 +1,108 @@
+{
+ "canonical": {
+  "entities": [
+   "DeepDurahan",
+   "帕林库洛·勒伽西",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "缇达",
+   "诺文",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "战斗/转折",
+  "name": "玛利亚全魔力解放·闪耀吧炎剑扫讨与力竭昏倒",
+  "tick": 81,
+  "time_verbatim": "怪物军势战后（战场溶解中）"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 652,
+   "quote": "「要做的话必须得我来做！如果要削减生命的话，就让我来吧！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 681,
+   "quote": "「你给我回想一下缇亚最后说的话啊！你给我回想一下离别前拉丝缇娅拉的表情啊！你给我回想一下在城堡战斗的斯诺的姿态啊！大家，全都是为了你，为了涡波先生你啊！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 684,
+   "quote": "「就算涡波先生不叫涡波，我们也不在乎的。属于我们的涡波先生，就是现在存在于此的『你』啊。千年前也好，魔石人类也罢。我们喜欢的，就是现在存活在这里的你。大家，都是为了帮上你的忙，才会这么努力的哦！你快给我明白过来！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 716,
+   "quote": "『Flamberge』连同『耐性』这个『理（Rule）』也一并烧尽了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 721,
+   "quote": "在周围好几平方公里的范围内被召唤出的数量过万的怪物们已经全灭了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 740,
+   "quote": "剑芯从白色转为白金色，由白金色化为近乎透明的圣光。最终变成了一把如太阳般闪耀的，可以驱散一切黑暗的光明圣剑。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 798,
+   "quote": "名字帕林库洛·勒伽西HP0/512MP392/392职业——无",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 762,
+   "quote": "看了下玛利亚的Status，发现她不仅MP已经枯竭，连最大HP也削减了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 774,
+   "quote": "以这句话为最后，玛利亚失去了意识。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 81,
+   "text": "玛利亚烧涡波右脸喝止其代偿（『不要再摆出那副开心的表情了』）、斥其自暴自弃（对照海莉）；回忆同伴演讲（回想缇亚最后的话/拉丝缇娅拉的表情/斯诺的姿态；『就算涡波先生不叫涡波，我们也不在乎』）；全魔力解放：『闪耀吧炎剑』→逆十字巨剑→『Flame·火焰之剑·将地平线一同斩裂』→『Flame』『Flamberge』连耐性之理一并烧尽——过万怪物全灭、地面熔岩化赤色荒野；对帕林库洛：呼缇达成暗夜大盾vs呼阿尔缇成圣光剑——魔法对拼完胜（HP0/512/心跳停止仍活动）；代价=MP枯竭+最大HP削减、留言『你是无可替代的』后昏倒；涡波自认其热情传不到自己心中（隔阂）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b26adbfb3004",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

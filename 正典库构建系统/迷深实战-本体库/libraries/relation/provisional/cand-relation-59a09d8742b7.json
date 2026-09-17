@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "决斗(相刺/败死)",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 49,
+   "quote": "但是与之同时，帕林库洛的刃也穿过了海莉的胸口。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 55,
+   "quote": "直到最后一刻，我都要说哦。我啊，就是我自己。所以呢，帕林库洛——就像我就是我自己一样，你也是你自己啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 59,
+   "quote": "「在你我幼少之时，被唤作『神童』的你曾经是我的憧憬……",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 64,
+   "quote": "「你看啊，果然是这样……果然，无论赫勒比勒夏因几度得生，都必定会选择同样的死法不是么……？",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "以身体溶解为代价入阵汲取魔力、携怒涛风魔法压打帕林库洛；终局互贯一剑（两人均已液化/丧失实态故无血）；抚其脸颊劝『就像我就是我自己一样，你也是你自己啊』；问出幼少时被唤作『神童』的他曾是自己的憧憬；帕林库洛胜而动摇后退逃走（自咒『无论赫勒比勒夏因几度得生都必定会选择同样的死法/正因如此我才要疏远你』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-59a09d8742b7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

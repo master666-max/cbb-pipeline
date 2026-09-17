@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "新月琉璃制直剑",
+  "rel_type": "取出使用",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 45,
+   "quote": "我连忙想从『持有物品』中取出剑。由于『阿雷亚斯家的宝剑诺文』不在，我拿出了『新月琉璃』。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 84,
+   "text": "感知到巨大魔力聚合体高速接近时欲从『持有物品』取剑；因『阿雷亚斯家的宝剑诺文』不在而取出『新月琉璃』握持警戒"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f1a7aacdd2be",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

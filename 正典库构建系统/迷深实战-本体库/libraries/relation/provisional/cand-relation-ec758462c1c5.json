@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迪亚布罗·西斯",
+  "rel_type": "体内共存反抗",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 53,
+   "quote": "看来西斯所言不虚，缇亚确实还在她这娇小的身体里生存着。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 54,
+   "quote": "继续维持这样2对1——不对，3对1的态势的话我们就能赢。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "涡波与玛利亚的呼唤使西斯白色魔力减弱（判断为缇亚在西斯体内反抗）；西斯前言不虚——缇亚确实还在其娇小身体里生存；此反抗使态势被计入3对1"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ec758462c1c5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,86 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉·弗茨亚茨",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "编制",
+  "name": "队伍分派（四人离队/斯诺任领队）",
+  "tick": 80,
+  "time_verbatim": "同日黄昏（马车载行途中）"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 995,
+   "quote": "「——所以我和玛利亚接下来要去跟帕林库洛决战」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1007,
+   "quote": "「不行，拉丝缇娅拉。你现在这幅状态哪还能战斗。再说，以帕林库洛为对手你的相性太差了」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1042,
+   "quote": "「塞拉，拉丝缇娅拉的事就拜托你了」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1055,
+   "quote": "「这样吗……那么斯诺，大家就都拜托你了。我想，你应该是最适合做领队的人」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1061,
+   "quote": "「在我不在的这段时间里，就拜托你保护好船上的大家了」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1071,
+   "quote": "当初离开劳拉维亚的时候，本来还以为没有人能敌得过LivingLegend队伍。结果不知不觉间队伍就陷入了崩坏的状态。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 80,
+   "text": "涡波在马车内宣布与玛利亚二人赴帕林库洛决战（因世界奉还阵危险改变优先顺序）；莉帕自陈魔法阵中派不上用场致歉；拉丝缇娅拉恳求被拒（状态/相性太差——其魔石人类诞生渊源与帕林库洛有关、弱点尽知）经约定与安抚后由塞拉护送返船；斯诺被任命领队（胆小本就不是坏事、不急躁是长处）+莉帕辅助；七人队伍终只剩二人（自认当初以为无人能敌LivingLegend队伍、从未顺利打赢过几仗）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-13a7b8344aa7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

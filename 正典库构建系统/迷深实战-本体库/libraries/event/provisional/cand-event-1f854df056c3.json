@@ -1,0 +1,84 @@
+{
+ "canonical": {
+  "entities": [
+   "『北方』王国",
+   "相川涡波",
+   "罗德·缇缇",
+   "魔王城"
+  ],
+  "instant": null,
+  "kind": "转折/揭示",
+  "name": "望台揭示：魔王城=迷宫66层里侧",
+  "tick": 84,
+  "time_verbatim": "步行数分钟后（到达城堡最上层的了望台）"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 175,
+   "quote": "位于城堡最上层的了望台。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 190,
+   "quote": "欢迎你回到我们的『魔王城』",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 197,
+   "quote": "「『这·里』是·迷·宫·里·面·哦。」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 200,
+   "quote": "这里是涡涡为人家特别制造出的空间哦",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 202,
+   "quote": "涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 204,
+   "quote": "那么，有能力做出这种事的人只会是一千年前的『始祖涡波』。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 84,
+   "text": "望台俯瞰全貌（圆锥古堡/森林庭院/环河一桥/繁荣城邑/外缘虚无漂浮之景）→罗德『欢迎回到我们的魔王城』（『这个还是涡涡命名的呢。因为是支配着魔人们的王』）→揭示『这里』是迷宫里面＝『第六十六层的里侧』（正确来说好像是『另一侧』）＝『涡涡为人家特别制造出的空间』（次元魔法将过去存在的『北方』王国做出、在此『想起』容易）→涡波并无那样的记忆，推断有能力做到者只会是一千年前的『始祖涡波』，对此全新领域头疼不已"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1f854df056c3",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

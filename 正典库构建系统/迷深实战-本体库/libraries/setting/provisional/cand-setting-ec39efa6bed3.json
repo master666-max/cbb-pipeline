@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 81,
+  "fact": "据涡波以『注视』评估海莉Status后的判断：其当前身体状况（世界奉还阵中溶解进行时）『一定比在柯尔库那时还要痛苦』——柯尔库为海莉既往承受痛苦之地",
+  "name": "柯尔库",
+  "tick": 81
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 1404,
+   "quote": "HP和MP的残量也不容乐观。恐怕她身体状况的恶化也没有好转。现在的她一定比在柯尔库那时还要痛苦……",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 81,
+   "text": "海莉既往痛苦经历地（本章比较提及）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-ec39efa6bed3",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

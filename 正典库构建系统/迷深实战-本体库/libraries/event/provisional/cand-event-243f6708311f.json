@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德·缇缇"
+  ],
+  "instant": null,
+  "kind": "接触战",
+  "name": "罗德制服涡波（速度压制）",
+  "tick": 84,
+  "time_verbatim": "初遇对话中（涡波欲离开打听情报之际）"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 129,
+   "quote": "「休想――逃！」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 131,
+   "quote": "我将『Dimension‧多重展开』切换成『Dimension‧决战演算』，并准备迎击。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 133,
+   "quote": "次元魔法千真万确地把握了她的动作。但是，她的速度却快到让人无法反应，罗德就这样迅速贴近并制住了我的双腕。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 150,
+   "quote": "「就让人家一边带你参观一边解释情况好了。不许你拒绝哦，因为看起来现在是人家比较强呢。嘿嘿~。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 84,
+   "text": "涡波称与其打听不如找他人探听现况→罗德佯装要哭催生破绽，大喊『休想――逃！』飞扑；『Dimension·多重展开』切换『决战演算』迎击仍来不及——次元魔法千真万确把握其动作但速度快到无法反应，双腕被制且如被钳住般无法挣脱；罗德窥视瞳孔察觉『好像稍微变弱了一点』；随后以『现在是人家比较强』单方面宣布带路参观、不许拒绝"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-243f6708311f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "下一轮回候选(点名)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 182,
+   "quote": "下一个就挑斯诺或者艾德试试看好了！？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "据帕林库洛宣言：历史重演计划中少年（涡波）不行就再去做新的『英雄』与『怪物』——点名斯诺与艾德为下一个候选（未遂：帕林库洛本章败亡）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-488d42cb07f0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

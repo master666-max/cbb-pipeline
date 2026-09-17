@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "地名",
+  "name": "弗茨亚茨"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 175,
+   "quote": "这里的住宿条件跟弗茨亚茨那边一样，都提供伙食",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 177,
+   "quote": "食堂的装潢跟以前在弗茨亚茨住过的旅店也很像。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 298,
+   "quote": "如果不是从斐勒卢托或者弗茨亚茨的神官之类的可疑人物",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 78,
+   "text": "对照级提及×3：柯尔库旅店的住宿条件与弗茨亚茨那边一样提供伙食（高消费故服务好）、食堂装潢与以前在弗茨亚茨住过的旅店也很像（涡波一行曾宿于弗茨亚茨）；其神官被涡波与斐勒卢托并列归为『可疑人物』级情报源（对照拥有当事人记忆的海莉）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a52d4e92e13c",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

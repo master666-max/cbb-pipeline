@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "救出质询与目的确认",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 122,
+   "quote": "「帕林库洛，换一个问题。你知道将使徒从缇亚体内逼出来的办法吗？还是说，如果实现了使徒西斯的留恋的话，那家伙也会消失呢？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1017,
+   "quote": "——第二个目的，救出提亚的事。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "向帕林库洛求问将使徒自缇亚体内逼出之法（留恋实现是否使其消失）——被索另付代价未获答；崩溃后自列目的时确认『救出提亚的事（帮助同伴）』为第二目的（切片该处拼写作『提亚』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1cfdff8479cc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

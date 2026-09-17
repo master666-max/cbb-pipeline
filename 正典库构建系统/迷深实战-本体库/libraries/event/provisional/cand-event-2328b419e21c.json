@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entities": [
+   "世界奉还阵",
+   "帕林库洛",
+   "海莉",
+   "相川涡波",
+   "相川阳滝",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "苏醒/状况确认",
+  "name": "涡波苏醒与记忆回溯（世界奉还阵后）",
+  "tick": 84,
+  "time_verbatim": "与帕林库洛决战力竭失去意识、被『世界奉还阵』吞没后的翌朝（罗德：早~上好）"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 6,
+   "quote": "「――阳滝！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 15,
+   "quote": "我是和帕林库洛在黑暗中进行了一场恶战",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 16,
+   "quote": "然后，在莱纳和海莉的帮助下，我应该已经完美的达到了复仇的目的。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 23,
+   "quote": "恐怕我在之后是被『世界奉还阵』吞没了。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 38,
+   "quote": "最后即使整座城堡都被涵盖在『Dimension』里面，我还是连一个人都没见到。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 84,
+   "text": "从梦中清醒→第一反应呼喊阳滝并寻找（惨淡石结构房间仅一张床、无任何其他人或生物）→记忆回溯：与帕林库洛在黑暗中恶战后耗尽所有力量失去意识；在莱纳和海莉的帮助下完美达成复仇；目击阳滝『复活』（帕林库洛的策略之一，但灵魂直觉确信非假货）→推测被『世界奉还阵』吞没，本以为死亡或被吞噬二选一却抵达第三种可能性→『Dimension·多重展开』扩大感知扫描，整座古城空无一人"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2328b419e21c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

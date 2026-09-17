@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "重新钉入的楔子(阻止牵手·要求逞强)",
+  "subject": "海莉·维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 1196,
+   "quote": "「如果你牵上那只手，就是帕林库洛的胜利了哟，少年。战斗还远远没有结束。你万万不可输给他的诱惑」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1318,
+   "quote": "「——少年也是一样的哦！我根本不觉得你是什么『始祖涡波』！更不是什么『涡波』或『基督』！少年就是少年！我也好莱纳也好，还有倒在那边的少女也一样，我们都是这样认为的！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1328,
+   "quote": "纵使数量过万的『楔子』灰飞烟灭，同伴们的『楔子』也纷纷被拔除，我的心中依旧还留着一根旧时的楔子。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1344,
+   "quote": "「——我现在好想看看啊，看看那·时·候没能看到的少年那帅气的模样。那既是我的留恋，也是我好不容易得到的重要的心愿」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "介入阻止牵手（『如果你牵上那只手，就是帕林库洛的胜利了哟』）；以身作则要求涡波再逞强（『你可以为了我再逞一会儿强吗』）；直告『我根本不觉得你是什么『始祖涡波』！更不是什么『涡波』或『基督』！少年就是少年！』；请求在其身后见证最后的战斗——涡波心中『旧时的楔子』（帕林库洛无法触及的已死之人留下的楔子）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b0d9ec1bf077",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

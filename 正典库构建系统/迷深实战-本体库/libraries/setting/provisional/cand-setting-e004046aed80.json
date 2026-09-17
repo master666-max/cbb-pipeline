@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 81,
+  "fact": "据帕林库洛对南军士兵声称：世界奉还阵发动致战争终结『一切尽如莱文教的传承所言』——莱文教传承中载有与阵及战争终结相合的内容（士兵期望的背书；声称按文本事实抽取）",
+  "name": "莱文教",
+  "tick": 81
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 360,
+   "quote": "「啊啊，没错，这样战争就结束了。一切尽如莱文教的传承所言」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 81,
+   "text": "莱文教传承与终战说（据帕林库洛声称）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-e004046aed80",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

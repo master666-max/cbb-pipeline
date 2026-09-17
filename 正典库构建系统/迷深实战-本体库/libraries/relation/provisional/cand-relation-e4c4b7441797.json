@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "问罪预约(依回答一战)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 457,
+   "quote": "「关于海莉的身世，还有兄长大人的问题，我有话要问他。根据回答，我可能会跟帕林库洛一战。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1245,
+   "quote": "「——那么我们赶紧去帕林库洛·勒伽西那边吧。不赶紧一点的话就赶不上了——」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "莱纳的首要目标自寻仇涡波转向帕林库洛：『关于海莉的身世，还有兄长大人的问题，我有话要问他。根据回答，我可能会跟帕林库洛一战』；随艾德一行赶赴其处（『我们赶紧去帕林库洛·勒伽西那边吧』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e4c4b7441797",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

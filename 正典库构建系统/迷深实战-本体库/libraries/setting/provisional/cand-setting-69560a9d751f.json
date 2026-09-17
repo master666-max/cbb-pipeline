@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "fact": "梦中缇娅拉构筑的魔法被涡波认出是『神圣魔法』——完成度异样地低、术式不完善，但确为原形；照此顺利进化下去，迟早会变成涡波所认识的『神圣魔法』。神圣魔法源于千年前缇娅拉之手。",
+  "name": "神圣魔法的原形（缇娅拉开发）",
+  "tick": 79
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 45,
+   "quote": "这是『神圣魔法』。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 47,
+   "quote": "不过，这个魔法确实是『神圣魔法』的原形。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 48,
+   "quote": "尽管现在还很拙劣，但就照这样顺利地进化下去，迟早有一天会变成我所认识的『神圣魔法』吧。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 79,
+   "text": "神圣魔法起源（千年前梦证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-69560a9d751f",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

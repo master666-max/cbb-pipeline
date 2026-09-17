@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "chapter": 84,
+  "entities": [
+   "始祖涡波",
+   "相川涡波",
+   "罗德·缇缇"
+  ],
+  "name": "罗德与『以前』的涡波／被封印起来的『姐姐』",
+  "note": "罗德言行多处指向与（始祖）涡波旧识：『和以前一样』的『国王酱』、『防御还是一如既往的坚固』、『涡涡永远都是涡涡』、自荐『被封印起来的姐姐』称呼（『被封印』所指不明）；现涡波以『只有一个家人』防御——千年前关系与『姐姐』封印之谜待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 84,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 93,
+   "quote": "罗德·缇缇？或者说，和以前一样，放轻松叫人家『国王酱』也可以哦。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 95,
+   "quote": "因为涡涡永远都是涡涡，所以这个请求可做不到呢。如果不喜欢『国王酱』的话，用被封印起来的『姐姐』称呼也行哦。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 97,
+   "quote": "虽然没有记忆这回事是真的，防御还是一如既往的坚固啊",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 84,
+   "text": "旧交与称呼之谜钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-26e7a433ebb1",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "基督·欧亚",
+   "莱纳",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "转折/决战终结",
+  "name": "水晶玉封存与坠入大陆底部（世界奉还阵之战终结）",
+  "tick": 83,
+  "time_verbatim": "艾德撤退后（战场崩坏中）"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 100,
+   "quote": "因此，我要做的就是榨出魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 102,
+   "quote": "MP枯竭之后还要使用魔法的话，代价就是将生命当做薪柴。恐怕这就是我今天使用的最后的魔法了。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 112,
+   "quote": "矿石就像生物一样蠢动着，覆盖上我和基督的身体。大量的水晶将我们固定得像雕像一般。接着外层又构筑出更厚实的防御壁，变成了一块圆形的水晶玉。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 130,
+   "quote": "落向大陆底部的底部，深处的深处。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 131,
+   "quote": "这一次，我们在『世界奉还阵』的战斗终于在彻底的意义上，迎来了终结。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 83,
+   "text": "莱纳自认无力带基督逃离，决意榨出魔力（MP枯竭后以生命为薪柴）；握基督之手再咏唱Quartz，周围土转换为矿石，'覆盖上我和基督的身体'并外构更厚防御壁成'圆形的水晶玉'封存二人；随后被黑色大地吞没，'落向大陆底部的底部，深处的深处'——'我们在『世界奉还阵』的战斗终于在彻底的意义上，迎来了终结'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9828eabd8773",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

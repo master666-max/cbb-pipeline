@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "材料与身体让渡",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 963,
+   "quote": "我的话，成为材料的人和骑士海因一直在互相让渡身体的所有权……",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 955,
+   "quote": "现在在海莉心中还存在另一份人格和记忆。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 951,
+   "quote": "「不知道自己是不是真的活着，也不知道自己是不是真的死了！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "海莉自述：『成为材料的人和骑士海因一直在互相让渡身体的所有权』；其体内存在另一份人格与记忆，『我』与『她（我）』是不一样的人、互相劝对方解脱——『所以「我」才一直在求死』；『海莉』为混杂两者的共用称呼"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c91055939569",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "魔法(强化·辅助)",
+  "name": "Growth"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 987,
+   "quote": "把魔法的效果进一步增强吧。——『Growth』『SensePress』『BranchwoodSheild』。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 988,
+   "quote": "一口气就构筑出了三道魔法。接着祖母绿色的魔力便浸透了二人的身体。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 78,
+   "text": "艾德参战时对露洁与诺瓦露一口气构筑的三道强化魔法之首（与『SensePress』『BranchwoodSheild』同发）：祖母绿魔力浸透二人身体，强化被抬至『超越理』级别（身体强化24.77/魔力强化30.98/魔法障壁3.28——数十倍级），被二人自叹为『特化了辅助能力的魔法使能够抵达的究极水平』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-147c2bc1a772",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

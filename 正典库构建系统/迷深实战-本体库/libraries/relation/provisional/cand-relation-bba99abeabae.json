@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迷宫",
+  "rel_type": "五十层守护者(数百年未在岗)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 59,
+   "quote": "【五十守护者（FiftyGuardian）】风之理的盗窃者",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 115,
+   "quote": "「就是这样。但是，已经有几百年没有去管50层了耶。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 84,
+   "text": "注视获知状态栏【五十守护者（FiftyGuardian）】风之理的盗窃者；本人确认『也确实守护着50层』但『已经有几百年没有去管50层了』——守护者在岗异常（涡波对『几百年』『不管』感到违和）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bba99abeabae",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

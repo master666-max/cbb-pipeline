@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能(魔法)",
+  "name": "次元斩裂剑"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 371,
+   "quote": "要使用的魔法是『Foam』。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 374,
+   "quote": "「——『次元斩裂剑』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 388,
+   "quote": "这个魔法『次元斩裂剑』并没有攻击力。只是将空间错位，改变所看到物体的位置罢了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "涡波为牵引『第三个魔石』之力、仅释放次元属性魔力、以『Foam』覆盖剑身想象以新『理』侵蚀世界而创出的新魔法——青色冰刃化为淡紫色剑刃、扭曲世界；并无攻击力，仅令空间错位改变所见物体的位置（次元魔法中的低位魔法）；被斩断的黑刃漂浮空中无法修复（帕林库洛惊愕于『空间的错位』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-836b54880ce0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

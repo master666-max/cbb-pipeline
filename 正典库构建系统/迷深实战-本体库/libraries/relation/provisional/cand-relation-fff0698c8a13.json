@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅",
+  "rel_type": "队长救出与护卫",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 425,
+   "quote": "他牵着西娅的力度，紧到仿佛担心一松开她又会迷路的程度。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 436,
+   "quote": "「别被骗了啊、基督。别看她这样，但是队伍里最麻烦的就是她。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 418,
+   "quote": "「别给我死心接受什么奴隶生活啊！你要是不在了，回去遭罪的可是我啊！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "莱纳以新人身份『尽到作为队伍成员最低限度的义务』救出被贩运的队长（『你要是不在了，回去遭罪的可是我啊』）；牵手力度『紧到仿佛担心一松开她又会迷路』。评价：『别看她这样，但是队伍里最麻烦的就是她』『就是因为看不出来所以她才麻烦』；被西娅回评『很温柔』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fff0698c8a13",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

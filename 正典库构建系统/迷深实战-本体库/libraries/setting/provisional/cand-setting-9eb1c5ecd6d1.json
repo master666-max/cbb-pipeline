@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 78,
+  "fact": "据艾德被『Dimension』窃听的自语（其对涡波『初次见面』的震惊反应）：『也就是说，涡波大人不仅是『魔法阵』和『迷宫』，就连『再诞』也失败了？所有人的『夙愿』都没能实现？所以对守护者的规则才会这样不完善？要是这样的话，在那之后世界到底变成什么样了——』；又言『忘掉你诓骗了我等的王这件事好了』（涡波〔或其前世〕曾欺骗艾德等之王）；初见涡波时曾疑其为『水之理的盗窃者』——守护者侧流传的千年前史观；与涡波本章记忆闪回互为内外印证（均声称级）",
+  "name": "千年前的喃喃：魔法阵·迷宫·再诞（据艾德）",
+  "tick": 78
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 673,
+   "quote": "「——怎、怎么会这样？也就是说，涡波大人不仅是『魔法阵』和『迷宫』，就连『再诞』也失败了？所有人的『夙愿』都没能实现？所以对守护者的规则才会这样不完善？要是这样的话，在那之后世界到底变成什么样了——！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 686,
+   "quote": "「是了，没错，正是如此。一切都已经结束了。因此就忘掉你诓骗了我等的王这件事好了。都是过去的事情了，已经与现在无关了啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 656,
+   "quote": "「难、难道说，您是相川涡波大人……？不、不对，但是这有点奇怪。难道您是『水之理的盗窃者』……？」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 78,
+   "text": "千年前史观（艾德独白+窃听实录，声称级）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-9eb1c5ecd6d1",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

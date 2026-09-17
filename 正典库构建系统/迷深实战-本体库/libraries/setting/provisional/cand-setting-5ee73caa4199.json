@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "fact": "人类在等级和属性方面的上限为20级；涡波超出20级越多，千年前『假面男子』的记忆流入越多——跨越某种界限时记忆就会流入脑中；每次做梦，新记忆便多侵蚀他一分（记忆/感情/身体）；此前曾于诺文『亡灵一闪』时经历同类记忆回放并借此挡下攻击；记忆觉醒钥匙推测=守护者相遇+『并列思考』+升级属性提高+艾德魔法等全部叠加；深层心理如迷宫般错综复杂，『感觉都是为了将我诱往最深部』。",
+  "name": "20级上限与记忆流入机制",
+  "tick": 79
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 917,
+   "quote": "从至今为止的趋势上看，就是人类在等级和属性方面的上限——20级，我超出20级越多，记忆的流入就越多。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 916,
+   "quote": "当我跨越了某·种·界·限时，那个『假面男子』的记忆就会流入我的脑中。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 915,
+   "quote": "那是在诺文使出『亡灵一闪』的时候。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 117,
+   "quote": "是因为与守护者的相遇吗、还是『并列思考』的推理能力呢？",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 79,
+   "text": "升级-记忆侵蚀机制（本章确立）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.87,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-5ee73caa4199",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

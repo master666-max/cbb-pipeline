@@ -1,0 +1,83 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛·勒伽西",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "介入",
+  "name": "两军会战与决斗场介入",
+  "tick": 80,
+  "time_verbatim": "次日（日出启程→两军接触→突发暴雨）"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 1202,
+   "quote": "原本分散着部队被整合到一起，南北双方都组织了上万的大军。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1248,
+   "quote": "当我产生疑问的时候，雨势越来越强。不一会儿就变成暴雨，笼罩在整个战场之上。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1294,
+   "quote": "玛利亚的一击将守护帕林库洛的士兵统统震飞到十米之外。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1298,
+   "quote": "「——『Flame·决战炎域』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1300,
+   "quote": "接着火圈演变成把包括帕林库洛在内的三人与周围隔离开的障壁。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1316,
+   "quote": "「火焰障壁，还有大雨吗……再加上在场的这三个人。哈哈，有点怀念啊。圣诞祭那天，也是这样的状况。那一天，只有我留到了最后啊。我说，少年。你觉得今天留到最后的会是谁呢？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 80,
+   "text": "南北双方各组织上万大军会战（箭雨魔法夺命/涡波将牺牲数字化旁观）；突发暴雨成介入东风（玛利亚火焰不灭于雨）；涡波抱玛利亚快马突入南军阵（士兵反应如撞见高级别怪物）；以『Dimension·决战演算』锁定帕林库洛+玛莉亚Flame/Impulse混合魔法着地吹飞护卫（震飞十米外）；『Flame·决战炎域』火圈将三人（涡波/玛利亚/帕林库洛）与战场隔离成无观众席决斗场；帕林库洛以『一日不见』相迎、点出与圣诞祭同状况（火焰障壁+大雨+三人、那日只有他留到最后）；此前玛利亚据唇语情报判断北军因帕林库洛负伤情报开始行动、选定次日混战时机"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-347a7899d853",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

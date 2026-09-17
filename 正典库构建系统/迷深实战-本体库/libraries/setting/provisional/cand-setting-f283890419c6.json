@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 81,
+  "fact": "战场地面隐隐发光的线路——世界奉还阵于战场铺展的可视构成；帕林库洛指其言『无论如何，都非今天不可啊。为了这个东西啊』（出兵日与阵绑定）；南军士兵以其为『之前提到的那个『魔法阵』』（计划当中之物）相认并欢庆——信息不对称的实物载体",
+  "name": "魔石线",
+  "tick": 81
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 319,
+   "quote": "「别那么说嘛。无论如何，都非今天不可啊。为了这个东西啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 320,
+   "quote": "帕林库洛看向了发着淡淡光芒的『魔石线』。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 321,
+   "quote": "「……这是、难道是之前提到的那个『魔法阵』吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 322,
+   "quote": "「啊啊，就是那个计划当中的。就在刚才，我成功发动了」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 81,
+   "text": "世界奉还阵的地上发光线路（本章发动实录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-f283890419c6",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

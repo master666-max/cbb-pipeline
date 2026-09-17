@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "Zeitlos·Wind",
+   "相川涡波",
+   "罗德·缇缇"
+  ],
+  "instant": null,
+  "kind": "移动/压制",
+  "name": "城内带路与Dimension封禁",
+  "tick": 84,
+  "time_verbatim": "制服事件后至抵达望台前（步行数分钟）"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 162,
+   "quote": "「啊，那·个·行·为也禁止哦。『Zeitlos·Wind』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 163,
+   "quote": "柔和的风吹了过来，『Dimension』因『魔法相杀』而被化解。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 169,
+   "quote": "即使是之前的海因，使用同样的魔法时，充其量也只能做到妨碍罢了。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 170,
+   "quote": "如果罗德成了敌人，我恐怕没有任何胜算。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 84,
+   "text": "沿蛇腹般多弯长廊与长阶梯步行（罗德主张『好好的用自己的脚走，好好的用自己的眼睛去看』）；涡波欲至少以『Dimension』让知觉范围逃离钳制→罗德『Zeitlos·Wind』以『魔法相杀』化解并禁止该行为；涡波为其灵巧致密的构筑战栗（魔法才是罗德最大的长处），判断『如果罗德成了敌人，我恐怕没有任何胜算』→老实跟随"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9c3ce52576a0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

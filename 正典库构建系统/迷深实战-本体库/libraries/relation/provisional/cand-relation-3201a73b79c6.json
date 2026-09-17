@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "置换/夺舍(共用身体)",
+  "subject": "使徒西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 403,
+   "quote": "千年前的『使徒西斯』也利用缇亚的身体复活了。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 361,
+   "quote": "这是该称作『置换』的现象。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 437,
+   "quote": "现在西斯和缇亚是共同拥有身体的。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 423,
+   "quote": "「……是缇亚吗。这『技能』还挺令人怀念。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "缇亚魔力完成转换后『正在变成不是缇亚的某种存在』，西斯显现——涡波断定『千年前的「使徒西斯」也利用缇亚的身体复活了』；现象称『置换』；两者现共用一具身体；体内缇亚仍在抵抗（其技能令西斯光之手扭曲——西斯：『是缇亚吗。这「技能」还挺令人怀念』）；西斯转述缇亚对送勒伽西归西『没有反对意见』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3201a73b79c6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "艾德",
+   "莱纳",
+   "西娅",
+   "诺瓦露",
+   "露洁"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "艾德的『面试』：涡波1对4",
+  "tick": 78,
+  "time_verbatim": "同夜（别墅客厅至庭院）"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 746,
+   "quote": "「——『Sleep』。姑且先让领队像海莉大人一样先睡下吧。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 797,
+   "quote": "这是对『重力』——或者说是操纵某种与之类似东西的魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 808,
+   "quote": "双脚被轻而易举地推离地面，我被轰到了后面的墙壁上。老化的木制墙壁顷刻间被撞碎。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 854,
+   "quote": "「——冰结魔法『世界冰蛇』！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 78,
+   "text": "艾德以『Sleep』强制睡眠领队西娅、命莱纳交战逼涡波入绝境（面试）；涡波拔『阿雷亚斯家的宝剑诺文』应战；露洁诺瓦露共鸣魔法『Gravity·Greed』（空间上下颠倒+数十人份超重）由诺瓦露引爆轰击——涡波以『Quartz』将剑变形为盾硬接、被轰穿墙跌入庭院；『Gravity·Daemon』不可视某物+泡沫双重包围、莱纳双剑+清风干涉Dimension封路；涡波以『世界冰蛇』升空化作冰之烟火为约定信号"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f6cee020f1fc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

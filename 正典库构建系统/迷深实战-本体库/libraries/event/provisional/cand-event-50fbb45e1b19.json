@@ -1,0 +1,81 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "帕林库洛·勒伽西",
+   "海因·赫勒比勒夏因",
+   "玛利亚",
+   "相川涡波",
+   "相川阳滝",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "阳滝再诞提案与涡波拒绝",
+  "tick": 81,
+  "time_verbatim": "涡波崩溃收容后（海莉介入前）"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 1103,
+   "quote": "——就让你见到『相川阳滝』怎样？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1115,
+   "quote": "「字面意思。凭借我的力量，是可以让相川阳滝复活的。这样一来少年你那未来永劫的战斗便可以告终了」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1151,
+   "quote": "少年你就报上『基督（救世主）』的名字，在一旁守护不幸的相川兄妹让他们得到幸福便是。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1161,
+   "quote": "「你大可放心，使徒西斯就由我来打倒，然后救出那个叫缇亚的孩子。就算过程中出现了什么牺牲，我也会统统将其复活。所以说你完全不用担心」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1182,
+   "quote": "待到手与手相触之际，我的故事便会落幕吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 81,
+   "text": "提案内容：凭其力量复活相川阳滝（例证=海因再诞『成功』·血绕过魂论）；替代案=相川兄妹双双复活、涡波报『基督（救世主）』之名在一旁守护使其幸福；附赠承诺=打倒西斯救出缇亚、牺牲者全部复活、终有一日备妥归返原来的世界+隐居；对『你不是相川涡波』疑虑以『相貌完全一致』消解；涡波伸手在即——被海莉介入打断，终以『因为你是我的敌人』拒绝"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-50fbb45e1b19",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

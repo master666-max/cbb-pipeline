@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "西娅"
+  ],
+  "instant": null,
+  "kind": "战斗/救援",
+  "name": "西娅夺还作战",
+  "tick": 78,
+  "time_verbatim": "同日午后（追已出港贩奴船）"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 318,
+   "quote": "「在港口哦。……好像正要被贩卖到国外去。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 403,
+   "quote": "「是啊！——『既临风王玉座，其人永无他路可行』魔法『Wind·放浪者』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 414,
+   "quote": "以能够在海上自由行动的我和莱纳为对手，船员们根本没有还手之力。于是成功营救了西娅的我们，现在正在远离港口的街上跟西娅面对面。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 78,
+   "text": "西娅在治安恶劣的港口一角被黑恶势力绑上船、即将被贩卖到国外；船只已出港——莱纳以『Wind·放浪者』（咏唱『既临风王玉座，其人永无他路可行』）于海上疾走、涡波以冰结魔法同行追击；船员无还手之力、营救成功；西娅道谢并许诺回礼（『那些传闻果然是骗人的呀』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3294e794e244",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

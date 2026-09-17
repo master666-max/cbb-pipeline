@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "逼境鉴定(面试)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 656,
+   "quote": "「难、难道说，您是相川涡波大人……？不、不对，但是这有点奇怪。难道您是『水之理的盗窃者』……？」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 717,
+   "quote": "「——莱纳大人。请您同涡波大人交战，并将他逼入绝境。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1217,
+   "quote": "「那是您的误解，涡波大人。鄙人真的只是让你们回归到应有的姿态罢了。这就是涡波大人的真实。……您的内心，鄙人确实看到了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "初见涡波惊惧交加（知其名/疑其为『水之理的盗窃者』/因『初次见面』而混乱自语）；命莱纳与涡波交战将其逼入绝境——『人只有被逼入绝境才会显露出本性…这是一场面试』，自言『绝对不想再被您欺骗第二次』。战后以咒术『注视鉴定』断言：『我只是让你们回归到应有的姿态罢了。这就是涡波大人的真实…您的内心，鄙人确实看到了』；结论=太过扭曲不堪做『后备之王』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e71fd243ac02",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

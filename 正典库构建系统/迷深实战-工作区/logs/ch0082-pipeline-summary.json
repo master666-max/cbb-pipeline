@@ -1,0 +1,770 @@
+{
+ "unit": "ch0082",
+ "chapter": 82,
+ "ingestion_index": 66,
+ "title": "相当于第八卷第五章178~184流星校对版",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 75,
+  "pass": 75,
+  "intercept": 0,
+  "admitted": 75,
+  "quarantined": 0
+ },
+ "tracks": {
+  "contradiction": 11,
+  "consistent-duplicate": 64
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-70cd653a23ec",
+   "type": "entity",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2719634011-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-d558c1cd9b91",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-a94cccfdad84",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-828276ecc52e",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-4cfdc6d16807",
+   "type": "entity",
+   "name": "相川阳滝",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-c0fd6198ef84"
+   }
+  },
+  {
+   "record_id": "cand-entity-116c90e1a71b",
+   "type": "entity",
+   "name": "始祖涡波",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d261916e9471"
+   }
+  },
+  {
+   "record_id": "cand-entity-d4ae79f506d4",
+   "type": "entity",
+   "name": "缇娅拉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-0826c4e263e5"
+   }
+  },
+  {
+   "record_id": "cand-entity-2f7cd9a63082",
+   "type": "entity",
+   "name": "勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-106ade3052f4-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-f3f0d9780a57",
+   "type": "entity",
+   "name": "缇达",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d5ab2af5fcdd"
+   }
+  },
+  {
+   "record_id": "cand-entity-a84d6ca5cb8e",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-703290d3a1eb",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-bc27225a1498",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-214b03b99d39",
+   "type": "entity",
+   "name": "艾德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-178bae46dfe1"
+   }
+  },
+  {
+   "record_id": "cand-entity-9d89f73918da",
+   "type": "entity",
+   "name": "海因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2b0d2b1a0571-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-72210acfe0d2",
+   "type": "entity",
+   "name": "格连",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7d375a26a456-m-m-m-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-2b5832ab2287",
+   "type": "entity",
+   "name": "雷鲁",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ca32d6fd1e61-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-41db7c557cc8",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-bd4de9c2dea5"
+   }
+  },
+  {
+   "record_id": "cand-entity-6a1aa7276792",
+   "type": "entity",
+   "name": "塞拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-9ae559226b4d-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-31f922c52752",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-56aa77950a24",
+   "type": "entity",
+   "name": "诺文",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-4547709ee7f6"
+   }
+  },
+  {
+   "record_id": "cand-entity-088ea3ddecfe",
+   "type": "entity",
+   "name": "最深部之誓约者",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-088ea3ddecfe",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-8812b0be573c",
+   "type": "entity",
+   "name": "次元之冬",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-30b0093e4fca"
+   }
+  },
+  {
+   "record_id": "cand-entity-0db1b01e379b",
+   "type": "entity",
+   "name": "SehrWind",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0db1b01e379b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-95e9bbb4d2b1",
+   "type": "entity",
+   "name": "ExWind",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-95e9bbb4d2b1",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-6204d8473af8",
+   "type": "entity",
+   "name": "Dimension·决战演算",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6204d8473af8",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-836b54880ce0",
+   "type": "entity",
+   "name": "次元斩裂剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-836b54880ce0",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-e119d3ff930d",
+   "type": "entity",
+   "name": "冰结剑·冰刃",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-e119d3ff930d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-25d22a3dfc5a",
+   "type": "entity",
+   "name": "心异（Variable）·解放（Burst）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-25d22a3dfc5a",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-08d3ef99af80",
+   "type": "entity",
+   "name": "QuartzBlade·Size",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-08d3ef99af80",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-21adb7eacc20",
+   "type": "entity",
+   "name": "新月琉璃制直剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-cbe61ea8bc6b-m",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-e86929ad53ff",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-71344066701e"
+   }
+  },
+  {
+   "record_id": "cand-entity-a74dc5c187a1",
+   "type": "entity",
+   "name": "Rokh·Bringer",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-cffc42a30fc7"
+   }
+  },
+  {
+   "record_id": "cand-entity-66746983bd89",
+   "type": "entity",
+   "name": "Dimension",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-66746983bd89",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-79dbff52aed0",
+   "type": "entity",
+   "name": "世界冰蛇",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-79dbff52aed0",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-0bc4cc0db598",
+   "type": "entity",
+   "name": "表示",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-56bf35349243"
+   }
+  },
+  {
+   "record_id": "cand-entity-4aa069dc5866",
+   "type": "entity",
+   "name": "感应",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4aa069dc5866",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-59a09d8742b7",
+   "type": "relation",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-59a09d8742b7",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-5e5163e0c532",
+   "type": "relation",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-5e5163e0c532",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-21dc45facc95",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-21dc45facc95",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-77fe24e525de",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-77fe24e525de",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-84100052e3c3",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-84100052e3c3",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-cd735eed5fa6",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-cd735eed5fa6",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-8cba2422df50",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-8cba2422df50",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-dd6de39f869b",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-dd6de39f869b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-6516d66dae4d",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-6516d66dae4d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-447164696403",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-447164696403",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-8a830639489e",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-8a830639489e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-a1b9e11491f5",
+   "type": "relation",
+   "name": "缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-a1b9e11491f5",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-a09aba0b8223",
+   "type": "relation",
+   "name": "勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-a09aba0b8223",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-a52ee98ebd85",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-a52ee98ebd85",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-488d42cb07f0",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-488d42cb07f0",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-677a4ed231fc",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-677a4ed231fc",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-5a1a833ecc32",
+   "type": "relation",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-5a1a833ecc32",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-98891f3deb3a",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-98891f3deb3a",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-e2c723a8d86f",
+   "type": "relation",
+   "name": "缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-e2c723a8d86f",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-177acd204f31",
+   "type": "event",
+   "name": "海莉之死（决斗落幕与消散）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-177acd204f31",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-b0fdd45d654e",
+   "type": "event",
+   "name": "莱纳继承升级（真LevelUp）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-b0fdd45d654e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-d177773e56e7",
+   "type": "event",
+   "name": "帕林库洛怪物化与『第二十之试炼』开幕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-d177773e56e7",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-7b7832b4461d",
+   "type": "event",
+   "name": "涡波呼唤阳滝与记忆之旅",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-7b7832b4461d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-00a0e052bb8e",
+   "type": "event",
+   "name": "千年前真相：救阳滝计划与勒伽西背叛（记忆之旅）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-00a0e052bb8e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-4f4b5b8f431a",
+   "type": "event",
+   "name": "技能『？？？』命名『最深部之誓约者』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-4f4b5b8f431a",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-a4127134bef7",
+   "type": "event",
+   "name": "始祖涡波躯壳召唤",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-a4127134bef7",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-91753295d47d",
+   "type": "event",
+   "name": "阳滝魔石被夺与兄妹身魂颠倒",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-91753295d47d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-da2c19d92945",
+   "type": "event",
+   "name": "最终剑斗：帕林库洛败亡与战场崩溃",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-da2c19d92945",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-d274260d14a0",
+   "type": "foreshadow",
+   "name": "阳滝苏醒与兄妹身魂归位",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-d274260d14a0",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-f64a74fd6424",
+   "type": "foreshadow",
+   "name": "世界奉还阵失控与『最后的声音』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-f64a74fd6424",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-d89dbfd58745",
+   "type": "foreshadow",
+   "name": "缇达魔石（黑剑）遗落战场",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-d89dbfd58745",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-5dec8b606f1d",
+   "type": "foreshadow",
+   "name": "海莉『就在他之中』的残响与三人之约",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-5dec8b606f1d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-d332190863c1",
+   "type": "setting",
+   "name": "世界奉还阵（第八卷终战状态）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-d332190863c1",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-6882f0c6646a",
+   "type": "setting",
+   "name": "魔力变换（LevelUp）真相",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-6882f0c6646a",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-00ffe8bf841e",
+   "type": "setting",
+   "name": "迷宫创立真相（救阳滝计划）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-00ffe8bf841e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-6e317a0c1303",
+   "type": "setting",
+   "name": "水之理的盗窃者（阳滝魔石）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-6e317a0c1303",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-9bd73b151787",
+   "type": "setting",
+   "name": "魂优先于肉体法则",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-9bd73b151787",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-5c8c88f2bdbf",
+   "type": "setting",
+   "name": "混乱与『退还』机制（技能『？？？』）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-5c8c88f2bdbf",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-310d0885102a",
+   "type": "setting",
+   "name": "『魔石人类』谎言的揭穿",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-310d0885102a",
+    "repeated": true
+   }
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 66,
+  "pseudo_date": "2000-03-07",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

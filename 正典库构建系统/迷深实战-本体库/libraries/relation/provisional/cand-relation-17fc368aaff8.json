@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "敌对(复仇)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 1200,
+   "quote": "「嘿诶~，那个守护者也在啊。那正好。让我一雪昨日之耻。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1202,
+   "quote": "一边表示绝对不会再蹈覆辙，她对艾德的复仇心也熊熊燃烧中。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "攻城分工中自请对付守护者艾德：『那个守护者也在啊。那正好。让我一雪昨日之耻』——对艾德的复仇心熊熊燃烧、表示绝对不会再蹈覆辙（昨日之战的身体损耗已恢复）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-17fc368aaff8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "海莉",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗/死亡",
+  "name": "海莉之死（决斗落幕与消散）",
+  "tick": 82,
+  "time_verbatim": "第八卷终局战场·世界奉还阵上（178话·接ch0081中心决战）"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 48,
+   "quote": "海莉的剑精准地刺穿了帕林库洛的胸膛。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 123,
+   "quote": "在海莉跟帕林库洛战斗的期间，雨势渐衰。乌云褪去，缕缕阳光透过云层射来。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 126,
+   "quote": "留下这句话，海莉彻底变成光消失了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 82,
+   "text": "海莉燃命压打帕林库洛（借阵魔力/怒涛风魔法/一往无前）→互贯一剑定胜负（败北与死亡为注定结局的宣告）→遗言三支点+抚颊劝辞帕林库洛+与莱纳道别→战斗期间雨势渐衰乌云褪去，望云层外碧蓝『苍天』→彻底变成光从这个世界上消失"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-177acd204f31",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entity_type": "技能(冰结魔法)",
+  "name": "世界冰蛇"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 250,
+   "quote": "「『世界冰蛇』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1262,
+   "quote": "「都到这一步了怎么能就这么输掉！更何况对手还是自己！！——『世界冰蛇』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1263,
+   "quote": "『始祖涡波』释放出了手掌大小的魔力，我则从手臂中释放出一条冰之巨蟒。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1270,
+   "quote": "两者方一接触，冰蛇便遭到捩转扭曲，一瞬间便破碎、四散开来。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "涡波的冰结魔法：本章两度使用——突破怪物封锁时冻住右前方独眼巨鬼；对撞『始祖涡波』的『捩菖蒲』透明之花时自手臂释放冰之巨蟒（尺寸上天壤之别但魔力密度完全相反），冰蛇一触即遭捩转扭曲、瞬间破碎四散（小花毫发无损立于原处）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-79dbff52aed0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

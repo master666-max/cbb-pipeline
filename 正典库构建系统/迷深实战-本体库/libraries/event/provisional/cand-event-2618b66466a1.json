@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "艾德",
+   "莱纳",
+   "诺瓦露",
+   "露洁"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "增援合流与战局扩大",
+  "tick": 78,
+  "time_verbatim": "同夜（信号后即时）"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 906,
+   "quote": "「『FlameArrow·散花（FallFlower）』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 971,
+   "quote": "玛利亚打造出火炎行进的管道，缇亚的火矢则经由这条道路射出。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 997,
+   "quote": "【状态】身体强化24.77魔力强化30.98魔法障壁3.28",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1002,
+   "quote": "被践踏的不成样子的大地上再次生出小小的生命之芽。这些嫩芽迅速地成长壮大，变成了茂盛的草木。被折腾的天翻地覆的庭院摇身一变成了大草原。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 78,
+   "text": "拉丝缇娅拉抱缇亚玛利亚跃屋顶而至、以共鸣火魔法（Flame·Ageis+FlameArrow·散花）火雨瞬灭包围网；玛利亚缇亚请求杀人许可被涡波以『只是一场测试』劝止；『Sion』+『Flame·Flameberge』与『Flame·决战演算』+『FlameArrow』两度粉碎Gravity·Daemon（手下留情）；拉丝缇娅拉踢飞阻拦的莱纳（无援时一对一差得远）；露洁诺瓦露丧失战意（『超越了海莉姐的怪物』）；艾德以Growth/SensePress/BranchwoodSheild究极强化二人（身体强化24.77/魔力强化30.98/障壁3.28）并展开CarefulField/StrengthField/RemoveField将庭院化为草原（似迷宫第四十层）执意续战"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2618b66466a1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

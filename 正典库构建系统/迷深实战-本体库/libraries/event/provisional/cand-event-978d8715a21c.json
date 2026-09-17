@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "迪亚布罗·西斯"
+  ],
+  "instant": null,
+  "kind": "逃走",
+  "name": "西斯逃走（左脚烧失）",
+  "tick": 80,
+  "time_verbatim": "同日（涡波崩溃脱力后）"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 537,
+   "quote": "西斯没有错失这个机会，挣脱了我的拘束。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 782,
+   "quote": "即使左脚已经被烧成灰烬不复存在，还是坚持使用白翼浮在空中。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 784,
+   "quote": "而玛利亚因为是缇亚的身体而有所顾虑，没能制住西斯的舍身行动让她成功跳出了压制。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 790,
+   "quote": "一飞冲天的西斯已经消失在了云层之中。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 80,
+   "text": "涡波脱力松手西斯挣脱拘束；八炎蛇捆缚光之障壁中舍身（左脚被烧成灰烬）以白翼浮空；玛利亚因顾忌缇亚之身未能制止、指挥炎蛇追击不及；西斯留话（不愿再与玛利亚战斗）飞入云层消失；玛利亚跺地谢罪、涡波自责松手——两人互谢、自觉天真造就失败、须更加冷酷"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-978d8715a21c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

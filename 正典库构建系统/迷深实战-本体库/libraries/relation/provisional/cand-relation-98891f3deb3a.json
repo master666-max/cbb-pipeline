@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "同门(诺文剑术/共鸣剑术)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 315,
+   "quote": "风刃与冰刃以心传心地描绘出一道轨迹。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 317,
+   "quote": "这是只有我们两人才能使出的剑技，是只有使用相同的『剑术』才能实现的同调，是只有以同一个人为师才能做到的共鸣。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 318,
+   "quote": "「——阿雷亚斯流共鸣剑术！『雪风』！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "二人共持诺文所授『剑术』——即兴达到可被唤作『技』之领域的同调；非共鸣魔法而可称共鸣剑术（相同『剑术』+以同一个人为师的共鸣）；涡波当场命名『阿雷亚斯流共鸣剑术！『雪风』！！』（莱纳被吓到；涡波自辩是给自己打强心剂）；配合实例：涡波右冰封巨鬼/莱纳左风轰蝙蝠、对千米蜈蚣与帕林库洛两度『雪风』齐斩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-98891f3deb3a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

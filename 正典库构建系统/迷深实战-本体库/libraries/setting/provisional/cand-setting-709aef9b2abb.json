@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 81,
+  "fact": "瓦尔法拉竞技场=封闭空间——全域级冰结魔法（『次元之冬·歪冰世界』级）在彼处可发动；本章战场为开阔地形，发动同类魔法『绝非易事』且无疑将削减最大HP（涡波比较）",
+  "name": "瓦尔法拉",
+  "tick": 81
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 642,
+   "quote": "这次跟瓦尔法拉竞技场那种封闭空间不同，在开阔地形下要想成功发动这个魔法绝非易事。就算Status有所提升，但毫无疑问我的最大HP会遭到削减。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 81,
+   "text": "封闭空间魔法发动环境（本章地形对照提及）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-709aef9b2abb",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

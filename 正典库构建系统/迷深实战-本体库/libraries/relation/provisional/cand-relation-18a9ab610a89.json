@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "世界奉还阵",
+  "rel_type": "吞噬→守护者化(据本人自述)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 114,
+   "quote": "「然后，由于种种原因被『世界奉还阵』给吞噬，并成为了守护者？」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 115,
+   "quote": "「就是这样。但是，已经有几百年没有去管50层了耶。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 84,
+   "text": "据罗德自述：由于种种原因被『世界奉还阵』给吞噬并成为了守护者——与涡波本次被吞经历同源；成因细节（种种原因）未说明"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-18a9ab610a89",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

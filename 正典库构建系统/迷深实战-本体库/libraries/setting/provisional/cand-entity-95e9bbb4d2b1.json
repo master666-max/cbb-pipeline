@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(风魔法)",
+  "name": "ExWind"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 4,
+   "quote": "「爆裂吧，『ExWind』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 5,
+   "quote": "缠绕经由魔法生成的暴风，海莉化作最速之利箭奔驰而出。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "海莉的风魔法：『爆裂吧，ExWind』咏唱——缠绕经由魔法生成的暴风、化作最速之利箭奔驰出击（本章海莉决斗开场技）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-95e9bbb4d2b1",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

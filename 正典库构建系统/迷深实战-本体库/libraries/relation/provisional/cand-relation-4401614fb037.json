@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "联结继续(感情共有)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 183,
+   "quote": "「因为我和莉帕是好朋友啊。只是共有一部分感情而已，没问题啦。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 190,
+   "quote": "既然我跟诺文约定过会好好守护莉帕，那就绝对不能漏过任何她可能遇到的危机。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "拉丝缇娅拉已因隐私自行切断联结，涡波拒绝仿效：『因为我和莉帕是好朋友啊。只是共有一部分感情而已』。保留理由=迷宫探索便利+与诺文的守护约定（不容漏过任何危机/必要时分力量给她）；代价=丧失部分隐私，自认无所谓。旁人（拉丝缇娅拉/缇亚/玛利亚）一致视为异常"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4401614fb037",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

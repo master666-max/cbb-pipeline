@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "斩痕复仇",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 79,
+   "quote": "「哈哈，哈哈哈哈。被那个混蛋砍的伤痕现在还隐隐作痛呢。虽然在劳拉维亚给他逃了，但是这一次可没那么容易。绝对要弄死他。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "『被那个混蛋砍的伤痕现在还隐隐作痛呢。虽然在劳拉维亚给他逃了，但是这一次可没那么容易。绝对要弄死他』——旧伤（劳拉维亚逃走）基础上的杀意宣言"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-960db7484171",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

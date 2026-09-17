@@ -1,0 +1,293 @@
+{
+ "unit": "ch0083",
+ "chapter": 83,
+ "ingestion_index": 67,
+ "title": "相当于第八卷第六章185流星校对版",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 35,
+  "pass": 35,
+  "intercept": 0,
+  "admitted": 35,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 27,
+  "contradiction": 1,
+  "consistent-duplicate": 7
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-ebd227d28836",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-25586e117918",
+   "type": "entity",
+   "name": "艾德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-825863e3a864"
+   }
+  },
+  {
+   "record_id": "cand-entity-4c265b7ab0d1",
+   "type": "entity",
+   "name": "基督·欧亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0ae5575ed143-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-fb3cfd113d56",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-83bc45daf42a",
+   "type": "entity",
+   "name": "诺文",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-38664d360d49-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-d871524a7d0f",
+   "type": "entity",
+   "name": "海因·赫勒比勒夏因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4cd68e1d3308-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-2b740f6abe23",
+   "type": "entity",
+   "name": "王之器",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a7cfa1a6ed57",
+   "type": "entity",
+   "name": "帕林库洛·勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a29d16db9478-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-3fab2fc29644",
+   "type": "entity",
+   "name": "拉丝缇娅拉·弗茨亚茨",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-2a7e2bdde4fe-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-fed8c85f9d14",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a32f16bfdcb0",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d3898ad6aba6",
+   "type": "relation",
+   "name": "海因·赫勒比勒夏因",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-02ccb10b7cd7",
+   "type": "relation",
+   "name": "海因·赫勒比勒夏因",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-55af101a16f7",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-2227d61af5d2",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-90c8407a35a6",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-51a242657737",
+   "type": "relation",
+   "name": "基督·欧亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b52f521ff708",
+   "type": "event",
+   "name": "帕林库洛之战落幕与世界奉还阵暴走崩坏",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-76b5c96570c0",
+   "type": "event",
+   "name": "艾德战后现身独白与魔石回收企图",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-16cc6be64c9a",
+   "type": "event",
+   "name": "莱纳起身宣战与双剑对峙",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d76207b57b56",
+   "type": "event",
+   "name": "莱纳与艾德的一对一交锋（小树枝对双剑）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5ad9ef2cd222",
+   "type": "event",
+   "name": "水晶魔法Quartz护住基督",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e1a68f64041e",
+   "type": "event",
+   "name": "艾德撤退并回收王之器少女",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9828eabd8773",
+   "type": "event",
+   "name": "水晶玉封存与坠入大陆底部（世界奉还阵之战终结）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ff8947e8737d",
+   "type": "foreshadow",
+   "name": "艾德的'棋子集齐/我王'计划",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-951a4481aac9",
+   "type": "foreshadow",
+   "name": "被带走的'王之器'少女",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-feb841ec3ec0",
+   "type": "foreshadow",
+   "name": "缇达魔石回收中断",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2d10d513275d",
+   "type": "foreshadow",
+   "name": "莱纳燃烧生命后的生死悬置",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-18f89e99ec89",
+   "type": "setting",
+   "name": "世界奉还阵暴走（ch83）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4553efe4665b",
+   "type": "setting",
+   "name": "守护者艾德的战斗形态（ch83）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-e24cf327bc5a",
+   "type": "setting",
+   "name": "诺文水晶的特性（据艾德）与Quartz应用",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-29e7947a4e7b",
+   "type": "setting",
+   "name": "MP枯竭后的生命代价规则",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-22e165813f93",
+   "type": "setting",
+   "name": "三仇人素质论（莱纳转述，据海莉）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-957b5b4e87a7",
+   "type": "setting",
+   "name": "亲和（概念增强）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f5911f3bb2ee",
+   "type": "setting",
+   "name": "艾德的'我王'与王之器资质论（据艾德）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 67,
+  "pseudo_date": "2000-03-08",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

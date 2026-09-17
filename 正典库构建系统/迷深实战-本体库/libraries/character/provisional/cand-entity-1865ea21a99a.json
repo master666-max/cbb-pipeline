@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "设施(情报收集场所)",
+  "name": "公会"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 153,
+   "quote": "首先是要去酒馆或者公会收集情报吗！？",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 219,
+   "quote": "太好了，幸好没去什么酒馆和公会收集情报……",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 78,
+   "text": "与酒馆并举的情报收集去处（拉丝缇娅拉眼中的冒险王道剧情，柯尔库语境）；被涡波以『Dimension』索敌替代而拒绝前往；后发现莱纳正在最近酒馆打听西娅下落，涡波庆幸『幸好没去什么酒馆和公会收集情报』（避免遭遇生事）。公会本体未入场"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-1865ea21a99a",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

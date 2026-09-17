@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "海莉",
+  "rel_type": "记忆传承(海莉知识本源·据其自陈)",
+  "subject": "海因·赫勒比勒夏因"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 922,
+   "quote": "那是我的——不对，是海因·赫勒比勒夏因的推测。他那与帕林库洛之间长年交往下来的记忆是如此推测的」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 870,
+   "quote": "是多亏了海因记忆的缘故吗，海莉比我还要清楚斯诺的过去。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "海莉自陈勒伽西宿主推测并非己出、而是海因·赫勒比勒夏因与帕林库洛长年交往记忆所作的推测；其超越涡波的对斯诺过去/世界奉还阵等知识的来源亦被归因于海因记忆（涡波观察推断）——海莉与海因的存在关系本章未直陈【待确认】，留R4裁量"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f4c8c2f1e363",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

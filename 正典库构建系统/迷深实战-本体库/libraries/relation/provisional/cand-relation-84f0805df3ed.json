@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "始祖涡波",
+  "rel_type": "盟友与千年契约",
+  "subject": "使徒西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 360,
+   "quote": "自盟友向『迪亚布罗·西斯』报上『涡波』之名时起，此间一切已是注定。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 406,
+   "quote": "再一次，同我结伴而行如何，将一切重新来过如何，相川涡波！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "西斯称对方『盟友』（千年前与现世一致）；契约之理（西斯自述）：自盟友向『迪亚布罗·西斯』报上『涡波』之名时起一切已注定，哪怕肉体腐朽作灰、无论既经几世，魂与魂也必将再度联结——不可动摇、不可改篡，此乃世界之『理』；现世再邀请：『再一次，同我结伴而行如何，将一切重新来过如何，相川涡波！』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-84f0805df3ed",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

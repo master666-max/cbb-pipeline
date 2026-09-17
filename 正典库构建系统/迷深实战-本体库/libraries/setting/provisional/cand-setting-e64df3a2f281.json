@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 84,
+  "fact": "50层守护者＝『风之理的盗窃者』，状态栏标注【五十守护者（FiftyGuardian）】；本体名罗德·缇缇（千年前『支配之王（Lord）』，本人承认）；据其自述因种种原因被『世界奉还阵』吞噬后成为守护者，但已有几百年没有去管50层；守护者＝以守护对应层为目的被召唤的怪物（涡波认知口径）；涡波既往经验：除初战的缇达（战斗狂）外其余三名守护者均未突然袭击；面对守护者时交谈比敌对有效",
+  "name": "守护者体系更新：五十守护者（ch84）",
+  "tick": 84
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 59,
+   "quote": "【五十守护者（FiftyGuardian）】风之理的盗窃者",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 87,
+   "quote": "但这也是理所当然的。她也是守护者——是以守护50层为目的被召唤的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 115,
+   "quote": "「就是这样。但是，已经有几百年没有去管50层了耶。」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 99,
+   "quote": "除了初战的缇达是个战斗狂之外，其他三个人都没有突然地袭击过来。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 84,
+   "text": "守护者体系更新（50层）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-e64df3a2f281",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "支配之王",
+  "rel_type": "同一人(本人承认)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 104,
+   "quote": "「你是一千年前的王、『支配之王（Lord）』没错吧？」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 108,
+   "quote": "即使没有了记忆，你仍然看得透本质啊",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 111,
+   "quote": "「可是，人家已经没有任何支配的对象就是了！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 84,
+   "text": "涡波由名字推断其为一千年前的王『支配之王（Lord）』，罗德即时承认（『——哈哈，正是如此。即使没有了记忆，你仍然看得透本质啊』）；她同时主张已无任何支配对象"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-752a016999f0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

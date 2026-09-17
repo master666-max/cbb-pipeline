@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "始祖涡波",
+  "rel_type": "背叛(背刺)",
+  "subject": "勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 857,
+   "quote": "——『诶诶，正如你察觉到的，数年之后，使徒勒伽西背叛，并与涡波战斗了。他用狡猾的手段骗过了存活到最后的缇娅拉和阿尔缇两人，并与涡波决裂』",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 868,
+   "quote": "眼看『迷宫』即将完成计划就要启动，涡波却遭到了勒伽西的背刺。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 875,
+   "quote": "作为核心的『迷宫』的『规则』就这样漂亮地被拔除了。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 879,
+   "quote": "一切都是勒伽西为了在千年后再跟我一起玩。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "（记忆内·据海莉说明）迷宫完成前夕背刺始祖——彼时始祖所有力量都用于抽出自身『魔石（魂）』转移而无抵抗之力；潜伏长久/准备万全/时机最佳；以狡猾手段骗过存活到最后的缇娅拉与阿尔缇；致始祖被吞入不完全的『迷宫』、核心『规则』被漂亮拔除——一切只为千年后『再跟涡波一起玩』（打造不安定的『重新来过』状况）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a09aba0b8223",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

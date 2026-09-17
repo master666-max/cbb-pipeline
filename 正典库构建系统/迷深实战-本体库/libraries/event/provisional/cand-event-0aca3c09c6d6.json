@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entities": [
+   "海莉",
+   "艾德",
+   "莱纳",
+   "西娅",
+   "诺瓦露",
+   "露洁"
+  ],
+  "instant": null,
+  "kind": "阵营动向",
+  "name": "艾德一行动向（北上兴国/莱纳被捕）",
+  "tick": 80,
+  "time_verbatim": "同日镇压后（海莉转述）"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 886,
+   "quote": "「艾德老师他带着西娅和露洁还有诺瓦露一起前往『北方』去了。说是为了兴建国家而要招笼人才来着。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 893,
+   "quote": "「他找帕林库洛复仇结果被反杀了，之后就被关进了牢房里」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 80,
+   "text": "据海莉转述：艾德带西娅、露洁、诺瓦露前往『北方』为兴建国家招揽人才（西娅与之目的不同但利害一致——迷宫探索需强力协助）；莱纳因独执帕林库洛之事退出队伍、单独寻仇被反杀后关入军牢（涡波感叹其脱离西娅队伍属实）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0aca3c09c6d6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德·缇缇"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "五十守护者罗德初遇",
+  "tick": 84,
+  "time_verbatim": "涡波苏醒当朝"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 46,
+   "quote": "一个少女从窗外飞进了房间",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 59,
+   "quote": "【五十守护者（FiftyGuardian）】风之理的盗窃者",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 68,
+   "quote": "「初、初次见面……我是相川涡波……」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 102,
+   "quote": "我像对待阿尔缇和诺文的时候一样。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 104,
+   "quote": "「你是一千年前的王、『支配之王（Lord）』没错吧？」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 108,
+   "quote": "即使没有了记忆，你仍然看得透本质啊",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 84,
+   "text": "过于巨大的魔力聚合体空中高速逼近→少女伴随破碎声破窗飞入（高速急停暴风席卷房间）→涡波握剑『注视』获知【五十守护者】风之理的盗窃者→礼貌自报家门；罗德讶异其不知情（『跟莱纳说的一样』）→确认『风之理的盗窃者』兼50层守护者身份+禁敬语令（刹那间魔力剧烈膨胀威慑）→涡波像对待阿尔缇和诺文那样套话，由名字推断其为千年前『支配之王（Lord）』获本人承认（初战缇达型战斗狂除外，其余守护者未突然袭击的既往经验）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9f6fabd4b4bc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

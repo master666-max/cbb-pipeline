@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能(风魔法)",
+  "name": "SehrWind"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 10,
+   "quote": "「『SehrWind』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 307,
+   "quote": "「——『SehrWind·Madness』！！我的攻击手段也不光有剑而已！艾德老师的教导，加上海莉的力量，我现在的风魔法正可谓是赫勒比勒夏因家的最强！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 391,
+   "quote": "「粉碎他的四肢！——『SehrWind·Madness』！！」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "海莉与莱纳使用的暴风系风魔法：海莉之『SehrWind』（暴风炸裂声如战炮势如飞弹/途经之处森罗万物尽皆粉碎）；莱纳之『SehrWind·Madness』（莱纳自称攻击手段不光有剑/吹飞重量超过十吨的怪物/自评赫勒比勒夏因家最强的风魔法——艾德老师的教导加海莉之力）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0db1b01e379b",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

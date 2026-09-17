@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 78,
+  "entities": [
+   "海莉",
+   "玛利亚",
+   "艾德"
+  ],
+  "name": "玛利亚的正体：半守护者·盲眼少女·后备之王",
+  "note": "双重第三方称谓：据海莉『大小姐和半守护者妹妹都多亏了你的帮助安定下来了』（玛利亚=半守护者妹妹）；据艾德『要说有这个资格的，就只有这位盲眼的少女而已了吗』（言毕瞥玛利亚）+『不要重蹈覆辙』随即放弃。旁证：艾德回复领域中全队唯一无受害者、缠不逊于守护者的魔力——玛利亚的守护者侧血统/失明/王格待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 78,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 607,
+   "quote": "「大小姐和半守护者妹妹都多亏了你的帮助安定下来了。毫无疑问。正因如此，我才会对另外的你们两人的崩溃感到不安。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1221,
+   "quote": "「虽说是光辉照人的原石，但是这样是没法做『后备之王』的。实在是太过扭曲了……要说有这个资格的，就只有这位盲眼的少女而已了吗——」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 78,
+   "text": "玛利亚身世钩（两处声称级证据+免疫旁证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-bec534746e07",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

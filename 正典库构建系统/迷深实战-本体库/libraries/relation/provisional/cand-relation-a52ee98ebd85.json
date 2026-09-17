@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "呼称(旧友)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 173,
+   "quote": "被雷鲁和格连，以及海因称作朋友的——名为帕林库洛的少年此时就存在于我们面前。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 336,
+   "quote": "就是这么回事对吧，海因！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "剥落一切立场的自我宣言末尾直呼『就是这么回事对吧，海因！！』；神童时代被雷鲁、格连与海因称作朋友——失去冷静的神童之姿被涡波视为真正的帕林库洛"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a52ee98ebd85",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "愿望性敌对(无条件为敌)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 109,
+   "quote": "「所以说，到最后的最后为止，我都必须作为少年的敌人跟你战斗。并不是因为有敌对的理由才与你为敌。只是因为作为你的敌人这点就是我们的愿望罢了」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 351,
+   "quote": "只要能跟我两人独处的话，纵使将大陆上所有生灵送入地狱也在所不惜，他是认真的。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1371,
+   "quote": "就这样我们两个人在将自己所有的话语都倾吐给彼此之后——诀别了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "无敌对理由的敌对宣言：『并不是因为有敌对的理由才与你为敌。只是因为作为你的敌人这点就是我们的愿望罢了』；只要能两人独处纵使大陆生灵尽入地狱也在所不惜；最终二人倾吐所有话语后『诀别』、再战"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b2f172da3785",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(冰结魔法)",
+  "name": "冰结剑·冰刃"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 296,
+   "quote": "「——『冰结剑·冰刃』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 299,
+   "quote": "我利用非物质形态的冷气之刃，斩杀了接近过来的气体状怪鸟。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "涡波顺气势模仿莱纳行为冠以的新冰结魔法名（自评挺酷/战意昂扬的体现）：伸长冰剑的同时延伸非物质形态的冷气之刃——以此斩杀接近的气体状怪鸟（本应无实体的怪物遭到冻结坠地）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-e119d3ff930d",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

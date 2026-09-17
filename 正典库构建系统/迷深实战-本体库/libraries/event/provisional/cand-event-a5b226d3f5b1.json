@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "莱纳",
+   "西娅"
+  ],
+  "instant": null,
+  "kind": "情报",
+  "name": "帕林库洛位置情报与书信入手",
+  "tick": 78,
+  "time_verbatim": "同日（救出西娅后至别墅）"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 445,
+   "quote": "「我知道哦！叔父大人的话，在距离这边稍微偏北的方向。据说他现在正在最前线指挥军队来着！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 471,
+   "quote": "「基督，她不可能把那么细节性的东西记得一清二楚的，你就放弃吧。如果你想知道的话，就跟我们去别墅那边好了。看到留在那里的书信的话，立马就知道了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 771,
+   "quote": "我一边将西娅给我的书信收进『持有物品』，一边用『Dimension』规划逃走的路线。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 78,
+   "text": "西娅口述叔父方位（稍偏北/最前线/南方总大将参谋）却记不住准确地名；莱纳建议赴勒伽西家别墅取信（『看到留在那里的书信的话，立马就知道了』）；涡波以直接阅读来信信用度更高而接受；书信最终收入『持有物品』——寻找帕林库洛的目的达成；同时判明西娅队伍亦将赴帕林库洛处"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a5b226d3f5b1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

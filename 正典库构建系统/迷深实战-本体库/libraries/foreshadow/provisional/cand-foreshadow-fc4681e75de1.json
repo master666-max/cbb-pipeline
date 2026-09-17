@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "chapter": 80,
+  "entities": [
+   "勒伽西",
+   "帕林库洛·勒伽西",
+   "海莉"
+  ],
+  "name": "帕林库洛（勒伽西）的意图与诱敌",
+  "note": "行动无连贯性（本想妨碍弗茨亚茨→却在劳拉维亚史诗探索者造英雄→作为南军将领同时谋划南北同归于尽）；海莉推测=实现勒伽西的愿望（海因记忆推断）；涡波疑其自泄负伤情报诱北军、为在『中心』迎战而故意犯险（顺利得不自然）；『写了封信给侄女』的布局作用未明——真实目的待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 80,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 913,
+   "quote": "本以为是想妨碍弗茨亚茨，结果又在劳拉维亚的『史诗探索者』里打造英雄。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 916,
+   "quote": "「在我看来，这可能不是帕林库洛而是那个名为勒伽西的存在的意志」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1164,
+   "quote": "不够，这么凑巧的状况，给人一种对方故意引诱我们的感觉。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1192,
+   "quote": "虽然昨天就有想过，不过现在看来这状况实在是顺利的不自然。看上去就像是帕林库洛为了在『中心』迎战我们才故意犯险的。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 80,
+   "text": "反派意图钩（勒伽西意志/诱敌布局）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-fc4681e75de1",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "抽魂保全(假死救存)",
+  "subject": "缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 753,
+   "quote": "「——也就是说，『魂』的抽出成功了吗……？按照你的说法，那个魔石就是阳滝对吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 757,
+   "quote": "「话是这么说，但『水之理的盗窃者』的魔石（魂）仍然处于睡眠状态。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 800,
+   "quote": "「没关系。阳滝的身体由我来驱使。由我带着她的身体前往世界的『最深部』。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "（记忆内）心脏被师父刺穿仍以假死状态存命；缇娅拉于该状态下仅将『魔石（魂）』单独抽出成功（伟业获始祖感激）；魂与身体分离保存成为救阳滝计划的前提（身体由始祖驱使前往最深部）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e2c723a8d86f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

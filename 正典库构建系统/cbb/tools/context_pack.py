@@ -108,19 +108,21 @@ def build(store: Path, alias_seed: Path | None, rolling: Path | None) -> str:
     n_prec = len(re.findall(r"^\d+\. ", prec.read_text(encoding="utf-8"), re.M)) if prec.exists() else 0
     sec4 = [f"- cbb/tools/判例.md（当前 {n_prec} 条，连读《抽取规范.md》）"]
 
-    def render(s2, s1):
+    def render(s2, s1, s3):
         parts = [HEADER, "## ① 主要人物册（频次排序）\n" + ("\n".join(s1) if s1 else "（空）")]
         parts.append("## ② 活跃伏笔/开环\n" + ("\n".join(s2) if s2 else "（空）"))
-        parts.append("## ③ 最近章提要\n" + "\n".join(sec3))
+        parts.append("## ③ 最近章提要\n" + "\n".join(s3))
         parts.append("## ④ 判例指针\n" + "\n".join(sec4))
         return "\n\n".join(parts) + "\n"
 
-    text = render(sec2, sec1)
-    # 预算裁剪（确定性顺序：②尾部→①尾部）
+    text = render(sec2, sec1, sec3)
+    # 预算裁剪（确定性顺序：②尾部→①尾部→③旧章行）
     while len(text) > BUDGET_CHARS and len(sec2) > 0:
-        sec2.pop(); text = render(sec2, sec1)
+        sec2.pop(); text = render(sec2, sec1, sec3)
     while len(text) > BUDGET_CHARS and len(sec1) > 0:
-        sec1.pop(); text = render(sec2, sec1)
+        sec1.pop(); text = render(sec2, sec1, sec3)
+    while len(text) > BUDGET_CHARS and len(sec3) > 1:
+        sec3.pop(0); text = render(sec2, sec1, sec3)
     return text
 
 

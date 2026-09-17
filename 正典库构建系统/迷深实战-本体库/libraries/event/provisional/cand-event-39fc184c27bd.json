@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒勒伽西",
+   "帕林库洛·勒伽西",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "战斗/对话",
+  "name": "半死体帕林库洛十秒败北与坦白问答",
+  "tick": 81,
+  "time_verbatim": "中心决战第二回合（承接前章帕林库洛半死体化）"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 22,
+   "quote": "「——冰结魔法『耶梦加得之霜』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 50,
+   "quote": "正好经历了十秒左右的攻防。战斗就这样宣告结束了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 75,
+   "quote": "足以打倒30层守护者的实力以及诺文的魔石。在这两样东西面前，帕林库洛无可奈何地愿意向我坦白——看上去是这么回事。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 106,
+   "quote": "「不，那是办不到的。因为你已经在帮忙了啊。在千年前的舞台上上演的，就是一场纯粹以血洗血的杀戮剧。是『使徒』、『始祖』、『圣人』、『理的盗窃者』们互相残杀的盛宴——只要将之重现，对我们而言就足够了。也就是，我们要的就是现在这个状况啊。这场斗争，就是『我们（勒伽西）』的愿望本身」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 98,
+   "quote": "不过仔细想来，缇达和诺文的留恋也都差不多。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 81,
+   "text": "第二回合：黑液散弹全数回避→冰结魔法『耶梦加得之霜』吞噬液体并袭敌→帕林库洛名剑被击飞→『次元之冬——…终霜』衍生的无名冰枪封其全身（『已经不是『次元之冬·终霜』而是完全不一样的新魔法』）——十秒将军；坦白对价=打倒30层守护者实力+诺文的魔石（限『记忆的事』）；问答确认：世界奉还阵=勒伽西愿望的千年前重现装置、无敌对理由的敌对、选择涡波=勒伽西『想跟涡波玩』；涡波不问自己记忆而问『你们』的记忆；缇亚救出质询被转为索取代价；玛利亚施压催促了结"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-39fc184c27bd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

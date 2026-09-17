@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entity_type": "技能(感知系)",
+  "name": "感应"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 86,
+   "quote": "技能『感应』则处于想用也用不了的状态。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1020,
+   "quote": "取回了『感应』之后，重新恢复了与诺文交战时的实力。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1292,
+   "quote": "我只能将『感应』的力量发挥到最大，通过预测敌人的动作来防御。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1413,
+   "quote": "后天技能：体术1.56次元魔法5.26+0.10感应3.56",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "本章状态轨迹：海莉遗言时点处于『想用也用不了的状态』；命名『最深部之誓约者』后取回，恢复与诺文交战时的实力；对『始祖涡波』将感应发挥到最大、预测其遵从本能的动作以防御；阳滝魔石剥离后仍留存于技能栏（感应3.56）——与消失的『冰结魔法』『并列思考』对照，属涡波自身的才能"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-4aa069dc5866",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

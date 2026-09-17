@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "基督·欧亚",
+   "支配之王",
+   "王之器",
+   "相川涡波",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "艾德战后现身独白与魔石回收企图",
+  "tick": 83,
+  "time_verbatim": "世界奉还阵暴走中（战场）"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 9,
+   "quote": "「……呵呵，想不到计划进展的居然如此顺利。」",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 15,
+   "quote": "「这样一来棋子就集齐了！而且还是不亚于千年前的阵容！这样终于——」",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 19,
+   "quote": "再这样下去的话，王之器就危险了",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 28,
+   "quote": "「看您的表情，是听到我的话了吗……看来我因为兴奋而大意了呢……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 83,
+   "text": "艾德于战场独白（据艾德声称）：'计划进展的居然如此顺利''这样一来棋子就集齐了！而且还是不亚于千年前的阵容'；言'王之器就危险了''所有的魔石都是为了我王而存在的'，欲先抽取涡波大人的魔石；被莱纳听见后自知'因为兴奋而大意了'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-76b5c96570c0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "使徒勒伽西",
+  "rel_type": "愿望代行(体内使徒)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 90,
+   "quote": "「冀求吗。往大了说的话……确实算是吧。我是为了实现在我体内的使徒勒伽西的愿望而行动的」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 106,
+   "quote": "这场斗争，就是『我们（勒伽西）』的愿望本身",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "据帕林库洛自述：为实现体内使徒勒伽西的愿望而行动——扰乱国家平稳、在大陆铺展世界奉还阵、准备合适的『英雄』与『怪物』皆为重现千年前舞台；斗争本身即勒伽西愿望（『想一起玩耍』的留恋）；涡波判断其『确实没有说谎』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-11d2dd69edb6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

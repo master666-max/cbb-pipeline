@@ -1,0 +1,85 @@
+{
+ "canonical": {
+  "entities": [
+   "LivingLegend号",
+   "使徒西斯",
+   "塞拉",
+   "帕林库洛·勒伽西",
+   "拉丝缇娅拉",
+   "斯诺",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "艾德",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "战斗(开始)",
+  "name": "全员集结与攻城开始",
+  "tick": 79,
+  "time_verbatim": "辩论后即刻（城堡数公里外→城墙）"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 1187,
+   "quote": "「没什么时间了我简单地说一下。最重要的不是打倒帕林库洛，而是夺回缇亚。这一点绝对不要搞错了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1190,
+   "quote": "首先，捕获缇亚的任务由我和玛利亚负责。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1216,
+   "quote": "不管我是人类也好，是『怪物』也好，是『魔石人类』也罢，还是『相川涡波』都无妨。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 861,
+   "quote": "差不多可以用『Connection』将在LivingLegend号上待机的同伴们叫来了。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1221,
+   "quote": "玛利亚坐在兽化的塞拉身上，剩下四个人经过一段长距离的助跑后相继飞越了城墙。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 79,
+   "text": "涡波于平原上开启『Connection』，LivingLegend号待机全员现身（拉丝缇娅拉率先、松口气红脸牵手；玛利亚严肃就绪；斯诺颤抖鼓劲；莉帕塞拉随后）；行动纲领：最优先夺回缇亚而非打倒帕林库洛；分工——涡波+玛利亚捕获西斯（唤回缇亚意识为关键、玛利亚之声更易传达）、塞拉+斯诺拖住帕林库洛（船行时已探讨对『暗之理的盗窃者』对策）、拉丝缇娅拉对艾德复仇、莉帕机动补位；对艾德『姑且还不是敌对关系、先瞪着他牵制住』；涡波自陈『一天不睡的我状态是最好的』；内心决意『不管我是人类也好，是「怪物」也好，是「魔石人类」也罢，还是「相川涡波」都无妨』——仅莉帕察觉并皱眉；袭击开始：玛利亚骑兽化塞拉、四人长助跑飞越城墙"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e061fc0ccbaf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

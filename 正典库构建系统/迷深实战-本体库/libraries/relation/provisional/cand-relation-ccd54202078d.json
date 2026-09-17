@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "『北方』王国",
+  "rel_type": "次元魔法空间构筑(据罗德转述+涡波推断)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 200,
+   "quote": "这里是涡涡为人家特别制造出的空间哦",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 202,
+   "quote": "涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 204,
+   "quote": "那么，有能力做出这种事的人只会是一千年前的『始祖涡波』。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 84,
+   "text": "据罗德转述：66层里侧是『涡涡为人家特别制造出的空间』——『涡涡用次元魔法，将过去存在的『北方』王国，就那样做了出来』（『在这里的话『想起』是比较容易的，涡涡是这么说的来着』）；现涡波无记忆，推断唯千年前的『始祖涡波』能为之（转述中的『涡涡』指始祖——据涡波推断，存疑边界已注明）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ccd54202078d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

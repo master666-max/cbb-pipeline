@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "西娅"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "涡波与莱纳的柯尔库和解",
+  "tick": 78,
+  "time_verbatim": "同日午间（旅店午餐索敌发现）"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 245,
+   "quote": "虽说是在找人，但是名字并不是我们。如果我读唇正确的话，他在说的是『栗色的头发』『个头小但是吵人』『西娅·勒伽西』。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 383,
+   "quote": "「哈啊……果然基督·欧亚，并不是什么坏人啊。你还是跟我们第一次见面那时一样……」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 390,
+   "quote": "「是啊……我一定会搞清楚的，绝对会。不靠任何人的一家之言，而是用我自己的眼睛——」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 78,
+   "text": "Dimension索敌发现莱纳在邻近酒馆打听『栗色的头发』『个头小但是吵人』『西娅·勒伽西』——目标非涡波一行；涡波留金币独身接触；手铐话题（捆绑兴趣队友所戴/除其本人取不下）；互吐队伍苦水（涡波：一有事就是大火伺候/被窃听/可能被背后捅刀）；莱纳敌意消解（『果然基督·欧亚，并不是什么坏人啊』）并誓言以自己的眼睛查明真相；和解但误会未尽"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-05a92ed3d58e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

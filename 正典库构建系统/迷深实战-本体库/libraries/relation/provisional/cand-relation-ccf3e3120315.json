@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "涉嫌长期隐瞒(技能名)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 1017,
+   "quote": "「等、等等。那个技能不是叫『异邦人』吗……？」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1031,
+   "quote": "——因为拉丝缇娅拉是这么说的。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1035,
+   "quote": "这也就是说，她们两人当中有一个人说了谎？",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1174,
+   "quote": "就算、就算她真的撒了谎，那也是为了我好。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "海莉指涡波技能栏第二个『？？？』下实为『素体』；涡波原以为该技能叫『异邦人』——『因为拉丝缇娅拉是这么说的』；『她们两人当中有一个人说了谎？』——涡波不认为海莉会为伤害他人说谎，故怀疑拉丝缇娅拉『为了不伤害到我』而说谎（若属实则自相遇起持续至今）；但涡波决意继续信任：『就算她真的撒了谎，那也是为了我好』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ccf3e3120315",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

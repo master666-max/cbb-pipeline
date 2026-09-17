@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "圣人缇娅拉",
+  "rel_type": "再诞容器(推断)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 403,
+   "quote": "就像千年前的『圣人缇娅拉』使用拉丝缇娅拉的身体要进行『再诞』一样，千年前的『使徒西斯』也利用缇亚的身体复活了。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 975,
+   "quote": "就像大小姐是『圣人缇娅拉』再诞的容器、缇亚是『使徒西斯』再临的容器一样",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "涡波本章推论：『就像千年前的「圣人缇娅拉」使用拉丝缇娅拉的身体要进行「再诞」一样，千年前的「使徒西斯」也利用缇亚的身体复活了』——以西斯置换缇亚为旁证反推拉丝缇娅拉的容器身份（与海莉『大小姐是「圣人缇娅拉」再诞的容器』口径互证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-eb238b96c9b5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

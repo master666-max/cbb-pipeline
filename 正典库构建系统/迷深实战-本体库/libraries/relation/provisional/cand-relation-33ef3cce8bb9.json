@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "次元之理的盗窃者",
+  "rel_type": "欺骗与实验利用",
+  "subject": "迪亚布罗·西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 312,
+   "quote": "「看来『水之理的盗窃者』没能成为容器啊……虽然很让人伤感，但这也无可奈何。盟友也不要哭了。替代品的话还是有的……」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 341,
+   "quote": "「理论上来说确实能治好啊！我也是想治好她的啊！",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 349,
+   "quote": "「你利用了我们啊，西斯！你竟敢把阳滝当成了实验的材料！我绝不会原谅你！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "千年前记忆中（帕林库洛展示的记忆内容）：西斯自称理论上确实能治好阳滝/也是想治好她的（结果不尽如人意）；男子指控其利用了自己、把阳滝当成实验的材料；西斯称『水之理的盗窃者』没能成为容器、替代品还是有的；以『为了拯救世界必须有人献身尝试/阳滝是最适合的人』辩护"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-33ef3cce8bb9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

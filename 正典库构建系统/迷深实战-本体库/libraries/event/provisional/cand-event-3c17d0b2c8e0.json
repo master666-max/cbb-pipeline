@@ -1,0 +1,88 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "帕林库洛·勒伽西",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "良机",
+   "艾德",
+   "西娅"
+  ],
+  "instant": null,
+  "kind": "行军(追逐)",
+  "name": "强夺军马与昼夜疾走",
+  "tick": 79,
+  "time_verbatim": "当日至次日黎明（柯尔库→克拉布布城→战场森林→城堡前平原）"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 685,
+   "quote": "「卫兵一共有二十七人。……就去袭击北边那批吧。跟我来。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 725,
+   "quote": "「——『FlameSphere』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 761,
+   "quote": "我们抵达了一座名叫克拉布布布布布布布布布布布布布布布尔的新城市。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 782,
+   "quote": "然后六人合力在万全的状态下制服帕林库洛与使徒。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 838,
+   "quote": "根据西娅给我的书信，帕林库洛就在这当中规模最大的那座城堡里。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 858,
+   "quote": "如果要发动奇袭，现在正是良机。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 79,
+   "text": "目的地与西斯飞行方向一致（帕林库洛所在）；柯尔库卫兵二十七人围宅，三人突袭北边六人（半数昏迷半数倒地）、强夺军马（涡波自省『在原来的世界中养成的道德观念在一点点地丧失』）；玛利亚FlameSphere轰飞北关城门、掷刀+拉丝缇娅拉风魔法压制卫兵，突破出城；采纳玛利亚建议入城换马，黄昏抵克拉布布布布布布布布布布布布布布布尔（石垛代墙的小城、需注意魔石线；市内仅宅邸与旅店亮灯）；涡波购得军马后令玛利亚与拉丝缇娅拉经Connection回LivingLegend号休整，独自夜行；计划接触帕林库洛前全员集结『六人合力在万全的状态下制服帕林库洛与使徒』；穿越南北交战地带森林一夜，黎明抵战场平原，依西娅书信锁定帕林库洛的最大城堡并展开Dimension侦察；远观中庭三名魔力异常者缠斗、帕林库洛以一敌二落于不利，判定奇袭『良机』，放缓马速准备召集同伴"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3c17d0b2c8e0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "亲昵旧交自称(禁敬语/姐姐自称)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 56,
+   "quote": "「早~上好啊，涡~涡。」",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 78,
+   "quote": "所以呢，禁止你使用敬语哦，因为姐姐我和涡涡之间的关系很好嘛。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 93,
+   "quote": "罗德·缇缇？或者说，和以前一样，放轻松叫人家『国王酱』也可以哦。",
+   "vol": 1
+  },
+  {
+   "chapter": 84,
+   "line": 94,
+   "quote": "「那么请多多关照，罗德。如果可以的话用涡波来称呼我就可以了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 84,
+   "text": "据罗德自述与主张：以『涡~涡』亲昵称呼开场；『姐姐我和涡涡之间的关系很好』故禁止敬语（瞬间魔力剧烈膨胀威慑）；『和以前一样』可叫『国王酱』、亦可用『被封印起来的姐姐』称呼；现涡波以『只有一个家人』回应拒绝"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-abe6d3c71f38",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

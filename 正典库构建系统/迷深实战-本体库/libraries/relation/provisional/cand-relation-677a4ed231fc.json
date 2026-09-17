@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "勒伽西",
+  "rel_type": "体内同居(愿望蒙蔽)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 341,
+   "quote": "「勒伽西之流已经不能再迷惑我，对缇达的义理也已经尽到了！",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1073,
+   "quote": "「……完败吗。……这样你们满足了吗。缇达、勒伽西。」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1460,
+   "quote": "因为一直被勒伽西和缇达他们所谓想尽情玩耍之类的愿望蒙蔽了双眼让我现在才注意到！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "完败时向体内缇达与勒伽西问满足与否（『感到满足的只有我体内的同居人罢了』）；自认清算『勒伽西之流已经不能再迷惑我』；自认真正愿望（想赢涡波）曾被勒伽西与缇达『想尽情玩耍』之类的愿望蒙蔽至今"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-677a4ed231fc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

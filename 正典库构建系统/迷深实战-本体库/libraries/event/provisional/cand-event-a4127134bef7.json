@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "始祖涡波",
+   "帕林库洛",
+   "相川涡波",
+   "缇达"
+  ],
+  "instant": null,
+  "kind": "战斗/转折",
+  "name": "始祖涡波躯壳召唤",
+  "tick": 82,
+  "time_verbatim": "帕林库洛魔力封印后（183话）"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1145,
+   "quote": "亦即帕林库洛没能成功驱使自己那已经被封印的魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1168,
+   "quote": "『始祖涡波』的躯壳！我想你也知道的，这家伙的体内可没有灵魂！",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1188,
+   "quote": "当我确认完那串模糊不清的名字时，假面男子的假面如同风化崩溃的沙尘一样散落而去。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1201,
+   "quote": "感觉到了没有，你的妹妹就在离你不远的地方！你妹妹『阳滝』的身体和魔石就在那里！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1209,
+   "quote": "「——A啊■■啊、a啊■■■，——yang、阳■、啊a，■滝阳滝——！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 82,
+   "text": "帕林库洛自爆右臂接触『魔石线』→魔力物质化成像为『人形』→无魂躯壳登场：与涡波同貌同发（假面崩落露出与涡波一模一样的脸）、缺右眼右臂左腿的怪物姿态、吐露非人之声的怨嗟→帕林库洛灌毒+唆使（阳滝的身体和魔石就在那里）→躯壳呼喊『阳滝』扑向涡波；其无色魔剑纵劈轰破涡波架势（左手魔石因此脱手）；涡波确认其状态栏乱码（等级46/次元魔法9.23+无数技能）并放弃言诱——唯杀之一途"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a4127134bef7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

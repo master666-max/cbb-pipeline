@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "兄妹(阳滝即其一切)",
+  "subject": "次元之理的盗窃者"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 301,
+   "quote": "男子的怀中抱着一名少女的身体。少女名为『相川阳滝』……——应该是这样的。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 331,
+   "quote": "「这世上不存在阳滝的代替品！她是我仅有的亲人！是唯一的、不可替代的亲人啊！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "男子怀抱异形化的阳滝恸哭；宣言阳滝是仅有的唯一不可替代亲人、其一切（复仇与救世的动机全系于她：听说能治好阳滝的病才走到今天/救了不想救的人却害死了想拯救的人）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-309b36a0ca72",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

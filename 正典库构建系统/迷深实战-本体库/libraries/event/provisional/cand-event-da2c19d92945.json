@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "相川阳滝",
+   "缇达",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗/终局",
+  "name": "最终剑斗：帕林库洛败亡与战场崩溃",
+  "tick": 82,
+  "time_verbatim": "躯壳再诞后至章末（183~184话）"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1058,
+   "quote": "「——给我冻住吧，帕林库洛！——『冰结剑』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1542,
+   "quote": "只有帕林库洛的黑剑被挑飞，在白色的日轮中舞动。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1584,
+   "quote": "帕林库洛就连一点骨灰也不剩地被『世界奉还阵』吞噬了。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1616,
+   "quote": "这早已超过了地震的级别。是神话等级的大灾难。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1648,
+   "quote": "但是，没能理解到是谁的声音，我便彻底失去了意识——",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 82,
+   "text": "冰结收束：涡波唤阳滝之名驱使水之理冷气冻住强化黑刃的液体+莱纳水晶双剑碎裂黑刃（莱纳力竭倒地）→『冰结剑』斜斩直封帕林库洛身体核心（冷气连同空间时间魔力一并冻住/魔力无法运转=胜算全无）→不甘咒怨中缇达魔石分离→躯壳召唤与魔石易手（见前两条事件）→双方力竭纯剑斗互角→涡波以『最深部之誓约者』取回感情、次元魔法特化后升华『先谭』完全预测其动作→黑剑被挑飞刺入远处大地=决斗告终→帕林库洛被『世界奉还阵』溶解吞噬（至死爬向黑剑未弃）→阵仍失控暴走、大陆遭神话级扭曲→涡波欲回收阳滝/莱纳/缇达魔石而身体不动，爬行后彻底失去意识（最后听到不明人声）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-da2c19d92945",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "战友(称『基督』)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 161,
+   "quote": "莱纳将我唤作『基督』。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 162,
+   "quote": "在他眼中，我既不是『始祖』的『魔石人类』也不是『异邦人』。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 579,
+   "quote": "「还远远没有结束吧！都装模作样到现在了，才打算弃权吗！让『她』看到你这副丢人现眼的样子真的好吗！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 596,
+   "quote": "不对，它原本就是为·你·而·生·的·『魔·法·阵』·不·是·吗！？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "称涡波『基督』——在其眼中涡波既非『始祖』的『魔石人类』也非『异邦人』、不在其上亦不在其下；自任见证者（『我会见证到最后一刻的。所以，把你的逞强坚持到最后去战斗』）；化作『楔子』钉紧涡波；于涡波精神崩坏时以怒骂斥起（『你是男人吧』/『让『她』看到你这副丢人现眼的样子真的好吗』）并提点其使用『世界奉还阵』（『它原本就是为你而生的魔法阵』）；涡波为此感到欣喜"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-77fe24e525de",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉·维斯普洛佩",
+  "rel_type": "接受其选择的结局",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 1309,
+   "quote": "「——兄长大人他并不在这里。而她则是一个命不久矣的、名叫海莉的『魔石人类』」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1416,
+   "quote": "「就依她喜欢吧，基督」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1420,
+   "quote": "莱纳对海莉的珍惜，一定在我百倍之上。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "以一句话为海莉作证（『兄长大人他并不在这里』→海莉称『莱纳已经给出证明了』）；全程沉默随行；接受其赴死选择——『就依她喜欢吧，基督』；被涡波评价『莱纳对海莉的珍惜，一定在我百倍之上』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8384c5c443ce",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "『动手』之约",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 298,
+   "quote": "「如果『缇亚』完全消失了的话……到那个时候，玛利亚、你要将我……」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 299,
+   "quote": "「……我明白的。到了那个时候，我会动手的。我向你保证。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 288,
+   "quote": "多亏了玛利亚的建议才撑到今天，但是看来已经不行了……",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "缇亚托付：『如果「缇亚」完全消失了的话……到那个时候，玛利亚、你要将我……』；玛利亚应诺：『到了那个时候，我会动手的。我向你保证』；此前玛利亚的建议使缇亚撑到今天（两人曾一起洗澡时的事）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cd1ed4f4ce8f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

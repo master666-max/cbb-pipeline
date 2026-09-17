@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "艾德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "善后",
+  "name": "守护者离去与别墅善后",
+  "tick": 79,
+  "time_verbatim": "与守护者战斗结束后的清晨"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 247,
+   "quote": "「守护者对我们失去了兴趣，就那样离开了。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 249,
+   "quote": "「已经不受魔法的影响了。那家伙说的没错，作用只是暂时的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 246,
+   "quote": "「太好了……那么，那之后莱纳他们怎么样了？」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 231,
+   "quote": "床边还靠着『阿雷亚斯家的宝剑诺文』。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 79,
+   "text": "战斗结束后：守护者对众人失去兴趣离开；其魔法对涡波的作用仅为暂时、已不受影响（对同伴们产生的那种来历不明的感情也消失了）；众人安置于勒伽西家别墅三间屋休息；玛利亚照护，见涡波平安喜极而泣；涡波问及莱纳他们状况；床边被回收的『阿雷亚斯家的宝剑诺文』收回持有物品"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ca90b1bf1d3e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

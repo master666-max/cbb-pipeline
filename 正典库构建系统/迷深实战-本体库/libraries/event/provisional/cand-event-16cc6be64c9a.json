@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "基督·欧亚",
+   "艾德",
+   "莱纳",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "对峙",
+  "name": "莱纳起身宣战与双剑对峙",
+  "tick": 83,
+  "time_verbatim": "紧接艾德独白（战场）"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 24,
+   "quote": "将『阿雷亚斯家的宝剑诺文』当做手杖，我摇摇晃晃地站起身。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 34,
+   "quote": "我也不再用麻烦的敬语，将两把剑横举挡在基督的身前。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 59,
+   "quote": "右手握着『诺文』，左手握着『Rokh·Bringer』，我向前迈出一步。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 83,
+   "text": "莱纳以『阿雷亚斯家的宝剑诺文』为手杖起身喝止艾德，宣告'守护者艾德，你是我的敌人'；弃用敬语，'将两把剑横举挡在基督的身前'——右手『诺文』左手『Rokh·Bringer』。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-16cc6be64c9a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "entities": [
+   "使徒西斯",
+   "帕林库洛·勒伽西",
+   "艾德",
+   "迪普拉库拉"
+  ],
+  "name": "西斯的『使徒只剩一个』计划（封印勒伽西）",
+  "note": "西斯先赴帕林库洛处『送他归西』、拟如迪普拉库拉般封印之——『使徒就只剩我一个。这样一来我就能为世界带来和平与安宁了』；自称『正规的使徒只有我一个/正义的使徒』；又言『现在的我有迪亚布罗在。既是「使徒」又是「人类」的我就可以去挑战了。事到如今，已经不再需要替角』——所挑战之事未明。待回收：封印是否实现、迪普拉库拉先例详情、『挑战』目标。",
+  "payoff_chapter": null,
+  "setup_chapter": 79,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 454,
+   "quote": "这样就完美了，使徒就只剩我一个。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 440,
+   "quote": "既是『使徒』又是『人类』的我就可以去挑战了。事到如今，已经不再需要替角。」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 79,
+   "text": "西斯行动线钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-4ef6133e35d1",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

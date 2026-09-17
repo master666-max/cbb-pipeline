@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "移动/潜入",
+  "name": "本土上陆与柯尔库潜入",
+  "tick": 78,
+  "time_verbatim": "抵达本土当日晨（出海两日后）"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 7,
+   "quote": "为了隐藏『LivingLegend号』，我们将它停靠在本土东北部瓦尔德本国东端的海崖下。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 58,
+   "quote": "「总而言之，要跟涡波一起去本土的也就我和玛利亚还有缇亚而已了。这样就漂亮地4对3了呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 106,
+   "quote": "「不不，不会有间谍有我们这样的本事的哦……只要在一瞬间翻过城墙的话，『魔石线』是不会有反应的。顶多只是觉得是鸟这类小动物飞过去了而已。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 124,
+   "quote": "就这样，我们成功地侵入了港口城市柯尔库。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 78,
+   "text": "藏『LivingLegend号』于本土东北部瓦尔德本国东端海崖下（防船情报泄露）；分组=出发组4人（涡波/拉丝缇娅拉/玛利亚/缇亚）与留守组3人（莉帕/塞拉/斯诺）；拉丝缇娅拉背玛利亚、涡波背缇亚翻越悬崖穿越森林抵平原；柯尔库战时警备森严（五米城墙+全副武装士兵、无凭信即拘留）→从警备薄弱处瞬间翻墙侵入（『魔石线』无反应）；全员换旅行者装束、涡波藏烧伤与黑发打头"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-df67abbccd65",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "道具(剑)",
+  "name": "新月琉璃制直剑"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 45,
+   "quote": "我拿出了『新月琉璃』。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 84,
+   "text": "因『阿雷亚斯家的宝剑诺文』不在，涡波从『持有物品』取出握持应战的剑（本章称『新月琉璃』——判例4近名检索命中库内『新月琉璃制直剑』，并入旧名并登记别名）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-dcd964d993df",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

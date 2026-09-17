@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 82,
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "缇达"
+  ],
+  "name": "缇达魔石（黑剑）遗落战场",
+  "note": "缇达魔石化的黑剑被挑飞后刺入远处扭曲大地；涡波昏迷前将其列为必须回收的胜利报酬（『不然的话坚持战斗到最后的意义何在』）——魔石回收与去向待后续",
+  "payoff_chapter": null,
+  "setup_chapter": 82,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1542,
+   "quote": "只有帕林库洛的黑剑被挑飞，在白色的日轮中舞动。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1607,
+   "quote": "需要回收的不光是他们两人。可能的话在远处的缇达的魔石也要回收。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 82,
+   "text": "道具线开环：暗之理魔石待回收"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-d89dbfd58745",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

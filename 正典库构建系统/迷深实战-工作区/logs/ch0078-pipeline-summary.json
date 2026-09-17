@@ -1,0 +1,551 @@
+{
+ "unit": "ch0078",
+ "chapter": 78,
+ "ingestion_index": 62,
+ "title": "相当于第八卷第二章155~159流星校对版",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 70,
+  "pass": 70,
+  "intercept": 0,
+  "admitted": 67,
+  "quarantined": 3
+ },
+ "tracks": {
+  "on-create": 53,
+  "contradiction": 3,
+  "consistent-duplicate": 11
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-43aa892f43d2",
+   "type": "entity",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-c8e47d826536",
+   "type": "entity",
+   "name": "露洁",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f40781b2ad95",
+   "type": "entity",
+   "name": "诺瓦露",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-e5f338843bf1",
+   "type": "entity",
+   "name": "阿尔缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-97707a380140"
+   }
+  },
+  {
+   "record_id": "cand-entity-e8c988c69936",
+   "type": "entity",
+   "name": "支配之王",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-13974ba88dee",
+   "type": "entity",
+   "name": "西娅",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3ddfb6ae7c84",
+   "type": "entity",
+   "name": "海莉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-e79994e7c1e1"
+   }
+  },
+  {
+   "record_id": "cand-entity-86f5cca5e7aa",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-bda77a9f1549",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-f86ae56714e9",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-3a87ecad59e2",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-7a092adbab0b",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-36891caaa12c",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-2e163700ffa9",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b0ac7347f50b",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-bde5a6024ee7",
+   "type": "entity",
+   "name": "塞拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-9ae559226b4d-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-fb60dd43b4f1",
+   "type": "entity",
+   "name": "诺文",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-38664d360d49-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-82f940188466",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-8ebe05424b14",
+   "type": "entity",
+   "name": "Rokh·Bringer",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2243563f1a1e",
+   "type": "entity",
+   "name": "Foam",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-147c2bc1a772",
+   "type": "entity",
+   "name": "Growth",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9043c2420c83",
+   "type": "entity",
+   "name": "次元之冬",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-94942481522d"
+   }
+  },
+  {
+   "record_id": "cand-entity-1865ea21a99a",
+   "type": "entity",
+   "name": "公会",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a52d4e92e13c",
+   "type": "entity",
+   "name": "弗茨亚茨",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9a1dd180f288",
+   "type": "entity",
+   "name": "新月琉璃",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-94dfe3d7be7f",
+   "type": "entity",
+   "name": "芙兰琉莱",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-8ae9c655dfbf-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-cea78fa62f4f",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fff0698c8a13",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ed06ea579b14",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-865c396beb0c",
+   "type": "relation",
+   "name": "西娅",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e4c4b7441797",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f5b039669add",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-960db7484171",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4401614fb037",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e71fd243ac02",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e0890beb5ca1",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6c44891a56cd",
+   "type": "relation",
+   "name": "诺瓦露",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4314dc5aa4c3",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a351430e2e46",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8464e27c49dd",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d23c127329cc",
+   "type": "relation",
+   "name": "露洁",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e299410a3001",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-df67abbccd65",
+   "type": "event",
+   "name": "本土上陆与柯尔库潜入",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-05a92ed3d58e",
+   "type": "event",
+   "name": "涡波与莱纳的柯尔库和解",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3294e794e244",
+   "type": "event",
+   "name": "西娅夺还作战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a5b226d3f5b1",
+   "type": "event",
+   "name": "帕林库洛位置情报与书信入手",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-704552aa5daf",
+   "type": "event",
+   "name": "别墅会合与海莉的警告",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f6cee020f1fc",
+   "type": "event",
+   "name": "艾德的『面试』：涡波1对4",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2618b66466a1",
+   "type": "event",
+   "name": "增援合流与战局扩大",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b57a5f337255",
+   "type": "event",
+   "name": "『应有的姿态』暴露：自相残杀危机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-77dc191f7358",
+   "type": "event",
+   "name": "艾德的鉴定与两队分离",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-bec534746e07",
+   "type": "foreshadow",
+   "name": "玛利亚的正体：半守护者·盲眼少女·后备之王",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-83b9e580d590",
+   "type": "foreshadow",
+   "name": "缇亚的真正姿态",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-729077bf025f",
+   "type": "foreshadow",
+   "name": "涡波的记忆片断与身上魔法的解除",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-5295e4e5b389",
+   "type": "foreshadow",
+   "name": "支配之王的归来与『后备之王』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-7c7ccc358fbb",
+   "type": "foreshadow",
+   "name": "海莉的未完警告",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-563a6371645e",
+   "type": "foreshadow",
+   "name": "西娅队伍急赴帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9c0e24891258",
+   "type": "setting",
+   "name": "本土（大陆）概况",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3a23cdd9e671",
+   "type": "setting",
+   "name": "柯尔库（港口城市）与魔石线",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-abf6de9da055",
+   "type": "setting",
+   "name": "分组与『干死帕林库洛小队』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3cf2f4e2f642",
+   "type": "setting",
+   "name": "帕林库洛的战时动向",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b59d6b6fded1",
+   "type": "setting",
+   "name": "西娅·勒伽西队伍的构成",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-551b35b1b671",
+   "type": "setting",
+   "name": "魔石人类与研究院",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c8000118a59c",
+   "type": "setting",
+   "name": "艾德（木之理的盗窃者）的能力体系",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9eb1c5ecd6d1",
+   "type": "setting",
+   "name": "千年前的喃喃：魔法阵·迷宫·再诞（据艾德）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f1795d36306a",
+   "type": "setting",
+   "name": "诺文的剑化与守护约定",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9729ea915968",
+   "type": "setting",
+   "name": "重力系共鸣魔法（露洁×诺瓦露）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-c2fc2fcd6e7d",
+   "type": "entity",
+   "name": "斐勒卢托",
+   "item_id": "q-67e13c647e1f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-618ec3c65f89",
+   "type": "relation",
+   "name": "艾德",
+   "item_id": "q-759794e1f35a",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-585fa758ea3e",
+   "type": "foreshadow",
+   "name": "阿尔缇之谜",
+   "item_id": "q-3dfdad6ef56b",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 62,
+  "pseudo_date": "2000-03-03",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": null,
+  "neo4j": null
+ }
+}

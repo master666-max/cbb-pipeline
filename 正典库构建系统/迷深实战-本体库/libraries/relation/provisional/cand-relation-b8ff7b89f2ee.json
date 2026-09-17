@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "南军高官",
+  "rel_type": "悲愿欺瞒与牺牲",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 334,
+   "quote": "士兵们坚信『魔法阵』是什么好东西。而不知道它其实是在过去的战争中导致大陆九成生命死亡的『世界奉还阵』。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 348,
+   "quote": "「——哈哈，会怎么样都跟我无关啦。对我来说，只要能剩下我和少年两个人就行，其他人怎么样都无所谓」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 448,
+   "quote": "「你一开始就打算牺牲我们吗……！？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "对全军：坐视士兵把『魔法阵』当悲愿庆贺（信息不对称——实为致大陆九成生命死亡之世界奉还阵）、谎言维持人体形、以『客人』名义庇护涡波玛利亚；对高官『一开始就打算牺牲我们』的质问全部应『啊啊』；自白『只要能剩下我和少年两个人就行，其他人怎么样都无所谓』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b8ff7b89f2ee",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

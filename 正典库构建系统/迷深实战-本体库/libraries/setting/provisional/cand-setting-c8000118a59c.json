@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 78,
+  "fact": "四十守护者（FortyGuardian）·木之理的盗窃者（位阶四十守护者）——被海莉们解放后随队、被称『艾德老师』。能力全在辅助/回复侧：自称『只要人还没死就续得过来…治疗领域无人可出鄙人之右』、不会任何攻击魔法（至多用回复光干扰注意力）、辅助魔法只对真正的人类效果最好；对露洁诺瓦露的究极强化=Growth/SensePress/BranchwoodSheild（身体强化24.77/魔力强化30.98/魔法障壁3.28——数十倍级、『超越理的魔法』）；领域=CarefulField/StrengthField/RemoveField（广域回复+辅助、庭院化为草原、似迷宫第四十层）；另有『Sleep』与咒术『注视鉴定』。回复魔法的本质=『切断一切障害，让事物恢复到应有的姿态』/『在一段时间去除一切外在要因、面对真正的自己』",
+  "name": "艾德（木之理的盗窃者）的能力体系",
+  "tick": 78
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 641,
+   "quote": "四十守护者（FortyGuardian）木之理的盗窃者",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 937,
+   "quote": "「无须在意，涡波大人。鄙人的魔法，只要人还没死就续得过来。在治疗这一领域，无人可出鄙人艾德之右。请尽情地、没错、请您尽·情·地战斗吧！然后请您展现给我看、将您的内心——！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 997,
+   "quote": "【状态】身体强化24.77魔力强化30.98魔法障壁3.28",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1239,
+   "quote": "「没错，鄙人对客人们施加的是在一段时间去除一切外在要因、面对真正的自己这么一种魔法。只是使用了让人从状态异常中回复过来的魔法罢了。当然，效果是特制的最高等级就是了。」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 78,
+   "text": "守护者能力档案（本章实测）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-c8000118a59c",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

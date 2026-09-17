@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "圣人缇娅拉",
+  "rel_type": "师徒(师父)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 27,
+   "quote": "「我说，师父。是这种感觉吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 30,
+   "quote": "「嗯，做得不错，缇娅拉。……但是这还不算完哦。变换效率还不高，『变换结果（Status）』的漏洞也不少。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 38,
+   "quote": "「……别这么说嘛。师父你也很厉害哦。毕竟是师父引导了我啊。是你告诉我一起来创造出能让所有人幸福的『魔法』的啊。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "梦中缇娅拉始终称呼假面男子『师父』，不安地确认魔法成果；始祖点评并指导其变换效率与属性漏洞；缇娅拉：『毕竟是师父引导了我啊。是你告诉我一起来创造出能让所有人幸福的「魔法」的啊』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e7ca90cb5f01",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

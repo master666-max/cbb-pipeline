@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 80,
+  "fact": "千年前记忆所示：男子受使徒等唆使创造出『咒术』——即LevelUP/Status体系（『什么LevelUP啊！什么Status啊！真是滑稽不堪』）；缇娅拉称其想出的『变换』术式拯救无数人、使其成为英雄乃至救世主（结果=散布在天空的魔力聚集到一处、拯救世界）；男子自嘲到头来全如使徒所想、自己不过掌心跳梁小丑、『咒术就是咒术，诅咒就是诅咒』——体系的诅咒性与创造者记述待主线回收（据记忆再生内容+人物台词）",
+  "name": "LevelUP/Status体系=千年前男子所创『咒术』『变换』",
+  "tick": 80
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 363,
+   "quote": "「师父，等等！再这样下去你会失去自我的！如果『变换』再继续下去，师父你的身体也会变成那样的！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 375,
+   "quote": "什么『LevelUP』啊！什么『Status』啊！真是滑稽不堪！",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 378,
+   "quote": "「但是多亏了师父你想出的『变换』术式，无数人才能得救啊！师父已经成为了英雄，不，你成为了救世主啊！？",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 379,
+   "quote": "这样一来散布在天空的魔力就能聚集到一处了是吧！太好了啊！这样就能拯救世界了呀！",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 80,
+   "text": "世界体系起源设定（记忆再生所示/声称态）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-1b8334002b4a",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

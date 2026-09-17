@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "营救计划",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 891,
+   "quote": "「我打算去救出被军队关押起来的莱纳。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 893,
+   "quote": "「他找帕林库洛复仇结果被反杀了，之后就被关进了牢房里」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "据海莉：莱纳找帕林库洛复仇被反杀后关进军队牢房；海莉借涡波队奇袭查清其位置，宣言去救出他后与涡波道别（莱纳此前因独执帕林库洛之事退出艾德队伍）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c2057ae1dc44",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

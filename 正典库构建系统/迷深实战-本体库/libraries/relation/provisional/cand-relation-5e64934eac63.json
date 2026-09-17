@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔缇",
+  "rel_type": "实力追赶(火焰)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 693,
+   "quote": "无限升温的剑芯颜色也开始由红转白。颜色就跟阿尔缇曾用过的火焰一样。作为后进者的玛利亚，正渐渐地追上阿尔缇的实力。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 736,
+   "quote": "「阿尔缇！！把力量借给我！给我足以将那个男人烧成灰烬的火焰——！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "剑芯白炎『跟阿尔缇曾用过的火焰一样』；『作为后进者的玛利亚，正渐渐地追上阿尔缇的实力』；全力一击时呼阿尔缇之名借力（炎剑化圣光）——据帕林库洛视角另有回收大姐『魔石』之计划提及"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5e64934eac63",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "支配之王",
+  "rel_type": "臣从(待其归来)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 694,
+   "quote": "「——鄙人要再次打造一个王国，等待『支配之王（lord/洛德）』的归来。她必将于不远的将来从『那里』脱身吧。而这一次，胜利将紧握于『支配之王』手中。势必要经由我们的双手，为·大·陆·带·来·和·平·与·安·宁——！没错，因为这才是王的心愿，亦是鄙人的心愿——！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 691,
+   "quote": "「但是这并不意味着鄙人放弃了哦。鄙人的战斗，这次依然要继续。这一次绝对要扫清千年前的遗憾！鄙人要、鄙人要——」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "据艾德：誓再造王国、为王网罗优秀臣子、等待『支配之王（lord/洛德）』自『那里』脱身归来；此次要扫清千年前的遗憾、胜利握于支配之王手中、经由其手为大陆带来和平安宁（『王的心愿，亦是鄙人的心愿』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e0890beb5ca1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "亲和崩溃分离",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1073,
+   "quote": "「……完败吗。……这样你们满足了吗。缇达、勒伽西。」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1109,
+   "quote": "「——哈？不不，等等，怎么回事？缇、缇达分离出去了？难道说，是亲和崩溃了？",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1121,
+   "quote": "本来那就是涡波小哥的东西来着。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "魔石自其胸口脱落分离——初判『是亲和崩溃了？』后自解『正因为是这个时候，缇达才跟我分离了吗……正·因·为·是·现·在，才·终·于……』并放缓全身力气；称魔石『本来那就是涡波小哥的东西来着』任涡波取走；完败时向体内『缇达、勒伽西』问满足与否（『感到满足的只有我体内的同居人罢了』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cd735eed5fa6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

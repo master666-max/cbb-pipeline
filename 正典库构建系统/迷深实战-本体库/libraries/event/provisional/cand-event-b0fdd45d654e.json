@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "海莉",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "莱纳继承升级（真LevelUp）",
+  "tick": 82,
+  "time_verbatim": "海莉消散当场（178话末）"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 130,
+   "quote": "「——怎能就这样把她交给你（世界）！若要支付『代价』我自会清偿！",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 151,
+   "quote": "——莱·纳『LevelUp（升·级）』了。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 156,
+   "quote": "我确确实实地目睹了证明其神圣性的灵魂之光。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 82,
+   "text": "莱纳向世界（而非涡波）高声索取：『怎能就这样把她交给你（世界）！若要支付『代价』我自会清偿』→展开双臂吸尽海莉光粒→咏唱中自报『我乃赫勒比勒夏因最后之光/莱纳·赫勒比勒夏因』→灵魂格段上升至更高次元（级别升至30多级/非经验值积攒的真LevelUp）→拔出双剑『Rokh·Bringer』代海莉站到涡波身旁；涡波确信目睹了证明其神圣性的灵魂之光"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b0fdd45d654e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

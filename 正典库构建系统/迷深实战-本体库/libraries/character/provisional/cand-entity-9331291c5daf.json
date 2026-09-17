@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(物品收纳)",
+  "name": "持有物品"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 332,
+   "quote": "这种能力跟我的『持有物品』没什么差别。果然那是他开发的某种魔法吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1144,
+   "quote": "我从『持有物品』中取出纸张和羽毛笔，画出了兵力的分布。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 80,
+   "text": "涡波具备的收纳技能：千年前男子从空无一物处拔剑的能力被其评价为『跟我的『持有物品』没什么差别』（推测为男子开发的某种魔法）；本章用于取出纸张羽毛笔与各地区地图、向玛利亚实时传达军队调动"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-9331291c5daf",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

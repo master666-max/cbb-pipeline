@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(魔力干涉)",
+  "name": "魔法相杀"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 29,
+   "quote": "理所当然的，我的『魔法相杀』没有这么容易就成功。灌注了异常大量魔力的光之墙将我的干涉弹开了。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 812,
+   "quote": "不过我现在除了『魔法相杀』之外也用不了别的魔法，同时还要保护身体能力不强的玛利亚。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 80,
+   "text": "涡波的魔力干涉能力：对西斯防壁的相杀未轻易成功（被灌注异常大量魔力的光之墙弹开）；士兵围攻战时自陈MP近枯竭下『除了『魔法相杀』之外也用不了别的魔法』（同时需保护身体能力不强的玛利亚）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-638fa26005f8",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 78,
+  "fact": "露洁/诺瓦露系自『某个研究院』救出的魔石人类（海莉以『跟我一样』为由收留）；二人因『材料』相似而相貌声线相同（非双胞胎）；战斗会减少体内魔石（二人以此为由谎称感冒避战）；莱纳：『反正都是不久于人世的人』——其至今已送别许多魔石人类；二人=先天星魔法+属性魔法+血术的特殊属性魔法使（后天素体）；涡波由此推断国家进行的魔石人类研究是不人道行径；西娅状态栏无『素体』却给人相似的异样感",
+  "name": "魔石人类与研究院",
+  "tick": 78
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 561,
+   "quote": "「是从某个研究院里面把她们救出来的。海莉说是‘因为跟我一样’什么的，所以也没办法喽。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 557,
+   "quote": "「不是什么双胞胎。只是制造她们的『材料』相似罢了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 565,
+   "quote": "「你不用记住她们的样子也无所谓。反正都是不久于人世的人。只有两个人还算是少的了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 481,
+   "quote": "尽管给我一种与『魔石人类』相似的异样感，但是她的状态栏上并没有『素体』二字。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 78,
+   "text": "魔石人类制度新层（本章披露）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-551b35b1b671",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

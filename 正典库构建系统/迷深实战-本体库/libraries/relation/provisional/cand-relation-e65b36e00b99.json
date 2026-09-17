@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因·赫勒比勒夏因",
+  "rel_type": "好友·再诞成败争讼",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 1237,
+   "quote": "「好好看看在你面前的我就明白了。他就连自己的朋友都没能成功复活不是么。明明有那么新鲜的尸体，他还是没做到」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1244,
+   "quote": "「——你在复活海因这件事上失败了」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1252,
+   "quote": "「那么，第一次看到我的姿态的时候，你又为什么要露出那样悲伤的神情呢……？明明好不容易才能跟好友再会了，你的表情却那样悲伤……果然不还是因为你失败了吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1300,
+   "quote": "「——即使如此，作为海因的友人，我也要断言存在于此的『魔石人类』就是海因·赫勒比勒夏因！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "友人关系双方口径一致（帕林库洛：『作为自己好友的海因』；海莉：『他就连自己的朋友都没能成功复活』）；成败争讼——帕林库洛主张再诞成功（血绕过魂论/抛弃出于善意），海莉主张失败（抛弃=逃避失败/『第一次看到我的姿态的时候，你又为什么要露出那样悲伤的神情』）；帕林库洛遭怒涛质问逼至罕见无言（自辩『我那时候是因为成功了才感到悲伤』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e65b36e00b99",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

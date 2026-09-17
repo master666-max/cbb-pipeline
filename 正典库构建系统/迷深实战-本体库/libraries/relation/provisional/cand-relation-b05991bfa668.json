@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "救济之手(提出与被拒)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 1063,
+   "quote": "回想起来，来到异世界之后，只有帕林库洛给予了我『幸福』『安宁』『救赎』。从来没有一个同伴能够给予我的这些东西，他全都赐予我了。就算是假货，也确实给了我。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1077,
+   "quote": "「——啊啊，我来救你」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1182,
+   "quote": "待到手与手相触之际，我的故事便会落幕吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1356,
+   "quote": "我终于还是没有牵起帕林库洛向我伸出的救济之手。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "涡波崩溃之际以『——啊啊，我来救你』收容、宣告『是你输了。然后，一切都结束了』并免除其逞强；继以阳滝再诞提案引出救济之手（『待到手与手相触之际，我的故事便会落幕吧』）；被海莉喝止、终被涡波拒绝——『我终于还是没有牵起帕林库洛向我伸出的救济之手』；涡波自认：来异世界后只有帕林库洛给予过『幸福』『安宁』『救赎』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b05991bfa668",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

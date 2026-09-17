@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "短暂回收(得而复失)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1118,
+   "quote": "「……喂，帕林库洛。缇达我可就收走了哦。」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1318,
+   "quote": "他回收了我刚才脱手的缇达的魔石，将之变成了一把黑剑向我发动了攻击。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1607,
+   "quote": "需要回收的不光是他们两人。可能的话在远处的缇达的魔石也要回收。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "以劝降书式宣告『缇达我可就收走了哦』获帕林库洛颔首；拾取后与躯壳交战时左手魔石脱手；被帕林库洛回收干涉化为黑剑反袭；终局黑剑被挑飞刺入远处大地（涡波昏迷前仍列其为必须回收的胜利报酬之一）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8cba2422df50",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,84 @@
+{
+ "canonical": {
+  "entities": [
+   "南军高官",
+   "帕林库洛·勒伽西",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折/灾难",
+  "name": "世界奉还阵完全发动与战场生命溶解",
+  "tick": 81,
+  "time_verbatim": "中心决战中段（第二咏唱完成后）"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 261,
+   "quote": "「——是以，『在此宣誓』。『苍穹既失，必由吾夺还』，『苍穹既逝』『必由吾复苏』。『除天地之戾气，还世界以晴天』——」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 267,
+   "quote": "「咒术构筑完毕——『世界奉还阵』启动」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 341,
+   "quote": "可以说是象征着该人物人生本身的『Level』——堪称是其人生命本身的『最大HP』——像是被刨子一点点刨除一样减少着。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 377,
+   "quote": "不存在任何能抵御『世界奉还阵』的生物。不论是怪物，还是人，亦或是野兽昆虫，一律平等地遭到分解。再这样下去，超过数百万人，乃至数亿的生物都会迎来死亡。——唯一的例外就是持有『理的盗窃者』魔石的人。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 456,
+   "quote": "以这名男子为最后，我们周围已经没有站着的士兵了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 755,
+   "quote": "投身战争的数万士兵已经灰飞烟灭，整个战场也被摧毁到一大堆地图要作废的程度。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 81,
+   "text": "中心故咏唱更短、咒术构筑完毕启动；光之天幕吞没火焰、玛利亚火焰障壁被阵吸收消失→战场开放；士兵误认北军攻击→得知『魔法阵』发动举军欢庆（信息不对称）；随即Level/最大HP被刨除、生命无差别分解为魔力粒子（唯理的盗窃者魔石持有者例外）、三分之一跪倒→哀嚎地狱；高官诀别质问而死；数十秒间喧闹战场仅余涡波玛利亚帕林库洛三人；最终数万士兵灰飞烟灭、战争迎来终焉"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9d23d7fa356e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

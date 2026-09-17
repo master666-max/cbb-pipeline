@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "基督·欧亚",
+   "艾德",
+   "莱纳",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "战斗/防御",
+  "name": "水晶魔法Quartz护住基督",
+  "tick": 83,
+  "time_verbatim": "交锋中（战场）"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 73,
+   "quote": "「——水晶魔法『Quartz』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 75,
+   "quote": "水晶就像苔藓一样覆盖地面，并裹住了倒在我身后的基督。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 76,
+   "quote": "艾德的袖中伸出藤蔓打算接触基督，但是却被水晶给挡下了。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 77,
+   "quote": "「这是诺文大人的水晶！？那不是什么人都无法击碎的东西吗！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 83,
+   "text": "莱纳咏唱'水晶魔法『Quartz』'，将剑刺入黑色大地生成水晶——'水晶就像苔藓一样覆盖地面，并裹住了倒在我身后的基督'，挡下艾德袖中伸出的藤蔓；艾德认出'这是诺文大人的水晶'且'什么人都无法击碎'（据艾德），未尝试击碎即飞身后退。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5ad9ef2cd222",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

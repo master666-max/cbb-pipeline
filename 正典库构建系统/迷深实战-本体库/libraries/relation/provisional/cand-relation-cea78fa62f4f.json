@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "敌意解消(和解)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 383,
+   "quote": "「哈啊……果然基督·欧亚，并不是什么坏人啊。你还是跟我们第一次见面那时一样……」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 225,
+   "quote": "「我不要。我绝对要让莱纳成为同伴。之前在『瓦尔法拉』唆使他来本土就是为了这一步布的局。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 387,
+   "quote": "「但是你可不要搞错了！在搞清一切的真相之前，我可没有和你们打成一片的打算哦！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 279,
+   "quote": "就状态栏上表示出来的实力差而言，根本没有任何危险。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "柯尔库重逢：涡波以Dimension发现莱纳所寻为西娅而非己方，独身接触；劝其入伙做『商谈对象』、互吐队伍苦境（『只有他能够跟我同甘苦共患难』）。莱纳自评『果然基督·欧亚，并不是什么坏人啊』——互相厮杀关系转为前辈后辈般的谈笑；但『在搞清一切的真相之前，我可没有和你们打成一片的打算』。涡波自曝曾在『瓦尔法拉』唆使其来本土布局；以状态栏所示实力差自评制服莱纳太容易、故不带敌意接近"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cea78fa62f4f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

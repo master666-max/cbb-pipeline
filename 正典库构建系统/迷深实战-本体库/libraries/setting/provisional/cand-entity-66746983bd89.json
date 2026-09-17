@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能(次元魔法)",
+  "name": "Dimension"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 17,
+   "quote": "他指明了原因后，我开始使用『Dimension』探查魔力的流向。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 437,
+   "quote": "由『Dimension』得到的信息被拉上了一道暗幕",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 601,
+   "quote": "我发动了次元魔法『Dimension』，然后模仿海莉，打算让身体溶解，从而将魔力注入到『世界奉还阵』当中。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 82,
+   "text": "涡波的基础次元魔法（感知/探查系）：海莉战中用以探查魔力流向（确认其并非使用自身体内魔力）；被帕林库洛『心异·解放』拉上暗幕致信息遮断（效果同缇达付与的状态异常『黑暗』）；终局发动它模仿海莉溶解身体注入魔力，试图完全理解『世界奉还阵』的构造（触及连接『最深部』的阵下世界）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-66746983bd89",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

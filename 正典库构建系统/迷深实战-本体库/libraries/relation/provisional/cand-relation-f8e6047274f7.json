@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "缇达魔石持有(涡波要求交出)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 1323,
+   "quote": "「帕林库洛，现在马上给我交出缇达的魔石」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 587,
+   "quote": "这一变化就跟缇达一样。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "涡波向帕林库洛下最后通牒『现在马上给我交出缇达的魔石』（持有为其宣战前提）；帕林库洛右臂黑液变化被描述为同缇达、涡波等人事前知晓与缇达战斗时的细节（血液/液体危险）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f8e6047274f7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "chapter": 81,
+  "entities": [
+   "帕林库洛·勒伽西",
+   "海因·赫勒比勒夏因",
+   "海莉·维斯普洛佩",
+   "相川阳滝"
+  ],
+  "name": "再诞技术真相（海因复活成败争讼）",
+  "note": "帕林库洛主张海因再诞成功（『只要有『血』的话就可以绕过『魂』』）并据此自信能实现阳滝再诞且『做得更完美』；海莉/莱纳主张失败（『名为海因的男人并没有复活！现在存在于此的是『再诞』失败的劣质品』）；涡波内心仍认为『她就是复苏的海因』——技术真相直接决定阳滝救援路线真伪与海莉自我认同；『抛弃被复活者』的动机（成功故悲伤说）亦未决",
+  "payoff_chapter": null,
+  "setup_chapter": 81,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 1135,
+   "quote": "「虽然确实混进了杂质，但是，那毫无疑问是海因·赫勒比勒夏因本人。我成功实现了海因的复活。而且这次我有自信做得更完美」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1281,
+   "quote": "「不对！你就是海因·赫勒比勒夏因！不光有记忆，连性格也一样！虽然因为少年的原因，让你的性别产生了变化，但是那个笨蛋的精神确确实实地在你之中！我已经证明了只要有『血』的话就可以绕过『魂』这一点了！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1282,
+   "quote": "名为海因的男人并没有复活！现在存在于此的是『再诞』失败的劣质品，海莉·维斯普洛佩！",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 81,
+   "text": "核心技术争讼钩：复活之真伪"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-79bf76346b63",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

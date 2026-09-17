@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 81,
+  "fact": "得意伎俩=一边战斗一边谈话、揪住他人内心的缝隙操弄精神——『偏离了常轨的『咒术』』（海莉解说）；实测效果：涡波状态=混乱7.87/精神污染1.22/认识阻碍0.23（涡波自认与平时无异程度之轻亦自注）；魔法与精神状态紧密相连——受攻者丧失构筑精密魔法的余裕（『Dimension』基础都难保）；可用神圣魔法调整治疗（莱纳执行）；海莉评『你还是一如既往地擅长精神攻击呢，帕林库洛。但是，只在自己处于优势的时候才予人恩惠这种做法，恰恰是卑鄙小人的做法』",
+  "name": "帕林库洛的咒术（精神攻击）",
+  "tick": 81
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 914,
+   "quote": "魔法跟精神状态是紧密相连的。至此，我已经完全丧失了构筑精密魔法的余裕。就连作为次元魔法基础的『Dimension』都要保不住了。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1203,
+   "quote": "「你还是一如既往地擅长精神攻击呢，帕林库洛。但是，只在自己处于优势的时候才予人恩惠这种做法，恰恰是卑鄙小人的做法」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1392,
+   "quote": "——状态：混乱7.87精神污染1.22认识阻碍0.23——",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1394,
+   "quote": "「这是帕林库洛的得意伎俩。一边谈话一边揪住别人内心的缝隙，操弄他人的精神。是偏离了常轨的『咒术』」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 81,
+   "text": "精神攻击机制与解除路径（本章解说+实测）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-e56d76cdda65",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

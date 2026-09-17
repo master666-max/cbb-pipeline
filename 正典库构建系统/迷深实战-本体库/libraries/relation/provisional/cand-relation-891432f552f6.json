@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛·勒伽西",
+  "rel_type": "敌对(先行击杀·封印)",
+  "subject": "使徒西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 445,
+   "quote": "接下来『我们』要先行一步，送他归西。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 450,
+   "quote": "但是，正规的使徒只有我一个。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 857,
+   "quote": "现在是帕林库洛一人迎战使徒西斯和守护者艾德两人。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "西斯宣言先行一步『送他归西』；称其（使徒勒伽西）『一定才是世界和平的最大敌人…不得不打倒的敌人』（西斯主张）；计划如迪普拉库拉般将其封印——『这样就完美了，使徒就只剩我一个』；面对涡波『帕林库洛·勒伽西跟你一样都是使徒吗』之问，答『姑且算是吧。但是，正规的使徒只有我一个』；抵达后与艾德联手围攻其城堡，帕林库洛以一敌二陷入不利"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-891432f552f6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "愧疚(诱至迷宫之失)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 889,
+   "quote": "曾几何时，我将缇亚诱至迷宫，害她失去了梦想和右手。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 330,
+   "quote": "因为我的错，缇亚失去了本能伸出的右手。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 886,
+   "quote": "「这我不管。无论如何，我必须救回缇亚。拜托了，海莉。我已经不想再让缇亚因为我而失去什么了，所以……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "『曾几何时，我将缇亚诱至迷宫，害她失去了梦想和右手』；置换前缇亚本能伸出的右手已失——『因为我的错，缇亚失去了本能伸出的右手。我的手能碰触到的，只有空气罢了』；对海莉自陈『我已经不想再让缇亚因为我而失去什么了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-59bec3ec16db",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entity_type": "技能(鉴定/察知)",
+  "name": "注视"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 649,
+   "quote": "我一边跑一边对状态剧变的塞拉使用『注视』。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 650,
+   "quote": "接着，我注意到了她的异常。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1375,
+   "quote": "我使用『注视』详细地鉴定剑的水准。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1377,
+   "quote": "虽说不如『阿雷亚斯家的宝剑诺文』但是确实是大陆最高级的名剑。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 80,
+   "text": "涡波的鉴定/察知技能：对状态剧变的塞拉使用以察觉其异常（Status『表示』不安定/各项数值可见减少）；对决斗中帕林库洛的新佩剑使用以鉴定剑之水准（结论：不如阿雷亚斯家的宝剑诺文、但确为大陆最高级名剑）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7d8070f21df8",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

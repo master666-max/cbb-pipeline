@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "勒伽西",
+  "rel_type": "双重记忆宿主(勒伽西)",
+  "subject": "帕林库洛·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 918,
+   "quote": "「就像缇亚大人持有『使徒西斯』的记忆。少年你拥有『始祖涡波』的记忆一样，帕林库洛也拥有双重的记忆。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 922,
+   "quote": "「我认为帕林库洛是为了实现使徒勒伽西的愿望而行动的。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1332,
+   "quote": "「我之所以不杀你，是为了让你把知道的事全吐出来。据海莉所说，你的体内现在有一名使徒的存在。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "据海莉（海因长年交往记忆之推测）：帕林库洛拥有第三使徒勒伽西的双重记忆、或为实现其愿望而行动；涡波以『据海莉所说你的体内现在有一名使徒的存在』为由，要求其吐露该使徒知晓的一切作为不杀条件之一"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0ca875d45edd",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

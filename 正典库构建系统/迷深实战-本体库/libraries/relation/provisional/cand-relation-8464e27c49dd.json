@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "好意直球(独自守护)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 110,
+   "quote": "「换人。这回我要涡波先生背我。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 1112,
+   "quote": "「绝不会再让你们为所欲为。再敢靠近一步，就将你们焚烧殆尽。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 916,
+   "quote": "「涡波先生，我可以将这些人杀掉吗？请下达许可。现在立刻。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "好意的直接表现：胁迫拉丝缇娅拉换成『这回我要涡波先生背我』；涡波『对我抱有好意让我感到开心，但同时也很胃痛…都怪自己不肯做出选择的愧疚感』。危机中唯一无恙者挡在最前（『绝不会再让你们为所欲为。再敢靠近一步，就将你们焚烧殆尽』）并向涡波请求杀人许可"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8464e27c49dd",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

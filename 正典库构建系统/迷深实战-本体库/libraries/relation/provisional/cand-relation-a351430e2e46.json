@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "观察兴趣(最不安定警告)",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 588,
+   "quote": "「那可不行。观察少年可是我的兴趣呀。」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 605,
+   "quote": "「没错，正如你所说。因为在那当中，你们两个人是最不安定的。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "拒静养的理由：『观察少年可是我的兴趣呀』；以『注视』读出涡波变强。预警：涡波与缇亚是『最不安定的』两人、担忧二人崩溃（『你们两人已经、变得跟我一样了』未完警告）；对照『大小姐和半守护者妹妹都多亏了你的帮助安定下来了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a351430e2e46",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

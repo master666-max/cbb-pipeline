@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "前卫后卫搭档",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 516,
+   "quote": "我为前卫，玛利亚为后卫，仅由组合的破坏力来看，这个形式在整个队伍中是最顶级的。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 515,
+   "quote": "她似乎擅自认为我与玛利亚关系恶劣，可事实并非如此。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "『我为前卫，玛利亚为后卫，仅由组合的破坏力来看，这个形式在整个队伍中是最顶级的』；西斯误判二人关系恶劣，涡波否认；捕获西斯的任务亦由二人组承担"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-14c621611a5a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

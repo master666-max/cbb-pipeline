@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "fact": "置换初时（剑士职业）：HP293/293 MP1202/1202，职业剑士，等级20，力量10.01 体力8.31 技巧4.80 敏捷4.94 贤能16.67 魔力70.34 素质5.00；『名字还是迪亚布罗·西斯。状态依旧只有「加护」』。西斯嫌咒术『集中收束』存在莫名的龃龉、属性偏重力量不合其近战定位，宣言『重·置·吧』——重置后：HP142/142 MP1489/1672，职业：使徒，等级20，力量0.21 体力0.41 技巧0.24 敏捷0.44 贤能1.00 魔力112.67 素质5.00；身体能力降至日常生活堪忧水平，魔力特化超过100.00；其白色魔力密度不逊于守护者、单就质量更胜一筹——『毫无迷茫与留恋的魔力』。",
+  "name": "迪亚布罗·西斯状态栏（置换前后）",
+  "tick": 79
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 377,
+   "quote": "姓名：迪亚布罗·西斯HP293/293MP1202/1202职业剑士",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 379,
+   "quote": "力量10.01体力8.31技巧4.80敏捷4.94贤能16.67魔力70.34素质5.00",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 380,
+   "quote": "名字还是迪亚布罗·西斯。状态依旧只有『加护』，属性也跟最后一次升级时一样。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 526,
+   "quote": "姓名：迪亚布罗·西斯HP142/142MP1489/1672职业：使徒",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 528,
+   "quote": "力量0.21体力0.41技巧0.24敏捷0.44贤能1.00魔力112.67素质5.00",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 538,
+   "quote": "不，单就质量而言，这种白色魔力还要更胜一筹。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 79,
+   "text": "状态栏实录+属性重置机制（本章）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-9eddf0b8aab1",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

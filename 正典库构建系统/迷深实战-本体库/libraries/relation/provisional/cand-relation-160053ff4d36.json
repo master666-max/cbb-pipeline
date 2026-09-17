@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "追踪营救",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 882,
+   "quote": "「——这我做不到。我现在分秒必争。虽然我也有账要和帕林库洛算，但最首要的目的是使徒西斯。如果不能赶在她逃走前过去，我就救不回同伴了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 648,
+   "quote": "「我明白了。这样的话，就让我帮你到最后吧。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1187,
+   "quote": "最重要的不是打倒帕林库洛，而是夺回缇亚。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "西斯携缇亚之体飞离后涡波决意追击：『无论如何，我必须救回缇亚』；明知前方有帕林库洛·勒伽西与守护者仍坚持（玛利亚确认后表态『就让我帮你到最后吧』）；行动纲领：『最重要的不是打倒帕林库洛，而是夺回缇亚』；出发动机自省=对缇亚的愧疚"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-160053ff4d36",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

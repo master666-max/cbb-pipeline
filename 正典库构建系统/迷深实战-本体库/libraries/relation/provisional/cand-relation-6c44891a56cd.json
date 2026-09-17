@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "主人侍奉志愿",
+  "subject": "诺瓦露"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 739,
+   "quote": "「是了，是了。看上去确实很了不起呢，这位英雄大人。请务必要成为我们的伙伴……不，可能的话，希望你能成为我的主人，呵呵、呵呵呵，成为我所侍奉的主人——！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "战斗兴奋状态下的表白：『请务必要成为我们的伙伴……不，可能的话，希望你能成为我的主人…成为我所侍奉的主人——』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6c44891a56cd",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

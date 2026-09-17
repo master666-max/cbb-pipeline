@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "遗言托付(呼唤/使用所有技能)",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 83,
+   "quote": "——请·使·用·你·所·有·的·技·能。」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 97,
+   "quote": "你仅仅只是去找，却没有试过呼唤『她』不是吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 100,
+   "quote": "「接下来你只要去呼唤就可以了……仅仅如此，涡波君就一定能够找到自己的妹妹……",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 104,
+   "quote": "「虽然我就要在这里退场了，不过还是会一直在身旁看着你的哦。——就在他之中。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "遗言三支点：①宣告涡波并非『魔石人类』（得『她』的记忆后确信/『你的器尚未崩坏，果然是命运的安排』）②不要只去『寻找』而要去『呼唤』『她』——兄弟姐妹既非通过『契约』也非通过『血』而是『爱』紧密相连、根本不需要帕林库洛③『请·使·用·你·所·有·的·技·能』埋头向前；抚涡波脸颊（『既似兄长一般温柔，又如妹妹一般温暖』）；预告式退场宣言『还是会一直在身旁看着你的哦。——就在他之中』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5e5163e0c532",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

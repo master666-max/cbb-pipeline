@@ -1,0 +1,90 @@
+{
+ "canonical": {
+  "entities": [
+   "DeepDurahan",
+   "帕林库洛·勒伽西",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "帕林库洛无限魔力怪物军势召唤",
+  "tick": 81,
+  "time_verbatim": "世界奉还阵发动后（战场溶解进行中）"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 510,
+   "quote": "「这个『世界奉还阵』在同我联结着。换句话说，我现在的MP是无限的。不仅如此，现在我就连这种事都做得到哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 520,
+   "quote": "WindLever Rank35——",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 535,
+   "quote": "木躯的双头犬，ツリーダイダス。飞在空中的大型蜥蜴，リザードフライ。雕首的巨人，ピッドジャイアント。独眼并长有两对翅膀的蝙蝠，ムーンレスフォウ。内部空荡却活动自如的铠甲，アンコンケラブル——不管哪一个都是Rank在30上下的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 536,
+   "quote": "但是，不知为何它们全都无视了我的存在，冲玛利亚那边——",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 555,
+   "quote": "「我把话说在前面，少年要是敢过来，我就会舍弃所有防御狂怼玛利亚妹妹哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 640,
+   "quote": "不用出曾经拿来对付诺文的『次元之冬·歪冰世界』这种等级的魔法的话，肯定拿这个量级的敌人没办法。",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 571,
+   "quote": "「喂喂，真的要把小妹妹一个人抛下不管吗？这场战役南方的兵力可有将近两万。北军也有一万五千左右。袭向小妹妹的怪物大军数量迟早会达到三万哦」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 81,
+   "text": "阵与自身联结=MP无限；士兵肉体+大地魔力→『想起收束』生成怪物（WindLever Rank35/五体Rank30上下+DarkCloth黑铠强化）；怪物全部无视涡波专攻玛利亚（贯彻『少年敢过来就弃防狂怼玛利亚』宣言）；倍增量产+战场全域召唤（数万~过万）；DeepDurahan（Rank45/高火耐性/据称曾杀大姐一次）量产三匹+数十匹混系——玛利亚濒临极限；涡波欲以『次元之冬·歪冰世界』级魔法代偿最大HP被玛利亚阻止"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e07cc9a54ca9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

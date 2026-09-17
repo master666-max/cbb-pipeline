@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "斯诺"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 1181,
+   "quote": "「终、终于还是到了这一天了呢……加油啊我，要上了……」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 1197,
+   "quote": "「我也去对付帕林库洛吧……我不去做的话，总觉得今后也无法前进。」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 79,
+   "text": "集结参战：身体颤抖却不逃（『终、终于还是到了这一天了呢……加油啊我，要上了……』）；自告奋勇对帕林库洛——『我不去做的话，总觉得今后也无法前进』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-4d649382f5e1",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

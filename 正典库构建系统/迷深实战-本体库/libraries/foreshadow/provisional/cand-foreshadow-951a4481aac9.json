@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 83,
+  "entities": [
+   "支配之王",
+   "王之器",
+   "艾德"
+  ],
+  "name": "被带走的'王之器'少女",
+  "note": "本章未点名的少女被艾德以巨树裹走、去向不明；据艾德称其'正可谓是这个世界至高的宝石。是有资格暂代我等的『支配之王』的存在'——身份（【待确认】，先验提示或为西娅，未证实不合并）与用途待回收。",
+  "payoff_chapter": null,
+  "setup_chapter": 83,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 12,
+   "quote": "现在的她正可谓是这个世界至高的宝石。是有资格暂代我等的『支配之王』的存在……！",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 88,
+   "quote": "宣告了离别的台词之后，二人便被巨树吞了进去。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 83,
+   "text": "被掳角色身份/去向钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-951a4481aac9",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

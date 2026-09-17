@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗/转折",
+  "name": "帕林库洛怪物化与『第二十之试炼』开幕",
+  "tick": 82,
+  "time_verbatim": "海莉消散后（178~179话之交）"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 208,
+   "quote": "「——『盗窃了暗之理的罪人将迎来第二度的死亡』，『只因我乃背负一次死亡亦无法偿清之罪孽的大罪人』——」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 218,
+   "quote": "这·里、这『魔·法·阵·的·中·心』便·是·二·十·层！暗之理的盗窃者帕林库洛的阶层！",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 229,
+   "quote": "「将暴走中的『世界奉还阵』给『完全解放』——，同时进行『同化』——！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 235,
+   "quote": "不过，新的怪物们跟方才召唤的那些相比样子有些不同。之前尽是些中等体型的怪物，而现在出现的全都是比大型还大型的、超大型怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 258,
+   "quote": "「没错，我已经没法对怪物们进行制御了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 82,
+   "text": "黑暗咏唱（『盗窃了暗之理的罪人将迎来第二度的死亡』）→世界被涂成黑色、唯余白日轮高悬→宣言『魔法阵中心=二十层/暗之理的盗窃者帕林库洛的阶层』并开始『第二十之试炼』问答→『完全解放』+『同化』世界奉还阵→地震扭曲中怪物自地面源源诞生（蜈蚣/树精/气体怪鸟/独眼巨鬼/蝙蝠群/八眼巨狼/千米巨躯）——超大型高等级怪物远超此前（阵范围囊括本土一半/变换对象几十万活物=库存）→帕林库洛与八眼巨狼同化得四足（怪物制御已不可能/以不死身特性当自爆战术）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d177773e56e7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

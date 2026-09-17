@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 79,
+  "fact": "涡波夜穿战场地带所见：非纠集大部队互角的打法，主战场之外别动队间频繁小规模交锋；步兵彻底分散行动（推测：因魔法存在，聚集易成攻击目标，或此世独特战术）；交战士兵等级无超过十者；他骑行长驱直入——箭矢以剑挡、魔法以『次元之冬』化解，均不构成威胁。",
+  "name": "南北境界战争形态（别动队小规模交锋）",
+  "tick": 79
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 816,
+   "quote": "在主战场之外，别动队之间进行着频繁的小规模交锋。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 818,
+   "quote": "步兵没有聚集在一起，而是彻底地分散行动。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 825,
+   "quote": "不过交战中的士兵没有等级超过十的",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 79,
+   "text": "战争形态观察（本章行军实录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-664fd99f5ee6",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

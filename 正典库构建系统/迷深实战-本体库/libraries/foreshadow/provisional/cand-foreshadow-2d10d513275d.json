@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 83,
+  "entities": [
+   "基督·欧亚",
+   "艾德",
+   "莱纳"
+  ],
+  "name": "莱纳燃烧生命后的生死悬置",
+  "note": "莱纳自言'恐怕这就是我今天使用的最后的魔法了'；艾德离别语'那也要看您能否活下来了'；二人坠向'大陆底部的底部'后状态未知。",
+  "payoff_chapter": null,
+  "setup_chapter": 83,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 87,
+   "quote": "「那么，让我们下次再会吧，莱纳大人。话是这么说，那也要看您能否活下来了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 102,
+   "quote": "MP枯竭之后还要使用魔法的话，代价就是将生命当做薪柴。恐怕这就是我今天使用的最后的魔法了。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 83,
+   "text": "短程生死悬念钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-2d10d513275d",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

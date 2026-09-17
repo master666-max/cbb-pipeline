@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 83,
+  "fact": "据莱纳自述（作为既有知识陈述）：'MP枯竭之后还要使用魔法的话，代价就是将生命当做薪柴'——榨出魔力的代价是燃烧生命（'我能感觉到自己的生命正在燃烧'）。",
+  "name": "MP枯竭后的生命代价规则",
+  "tick": 83
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 101,
+   "quote": "我能感觉到自己的生命正在燃烧。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 102,
+   "quote": "MP枯竭之后还要使用魔法的话，代价就是将生命当做薪柴。恐怕这就是我今天使用的最后的魔法了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 83,
+   "text": "魔法代价规则（据莱纳陈述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-29e7947a4e7b",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}
