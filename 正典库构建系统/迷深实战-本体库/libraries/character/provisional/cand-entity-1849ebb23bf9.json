@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能",
+  "name": "技能『锻冶』"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 75,
+   "quote": "只要在这里，从现在开始，与锻冶技术的专家们比试一番，学会技能『锻冶』就行了。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 108,
+   "quote": "编织1.07诈术1.34魔法战斗0.72锻冶0.69",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 112,
+   "quote": "但是，确认了自己的状态之后，确实看到了『锻冶』这一项的增加。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 122,
+   "text": "本章习得（初值0.69）：『维度・多重展开』观察锻冶师群＋并行读锻冶书＋半小时实习三管齐下，数小时完成；涡波感想'真是深奥啊，锻冶这东西'——铸造与锻造之别对其为'完全未知的世界'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-1849ebb23bf9",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

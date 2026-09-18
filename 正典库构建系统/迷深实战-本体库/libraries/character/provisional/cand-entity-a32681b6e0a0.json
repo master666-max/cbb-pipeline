@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『维度·决战演算』"
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 149,
+   "quote": "这次也是很浪费地使用着魔力。因为战斗中不再使用『维度・决战演算』而是以技能『感应』为中心作战，所以MP还有很多。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 151,
+   "quote": "『维度・决战演算』。给这个魔法命名的创造者就是我。但是直到游戏通关──抵达迷宫最深部为止，可能都不会再使用到『维度・决战演算』了吧，这让我心中有些不忍。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 152,
+   "quote": "思考着要不要把技能『感应』袭名为技能『感应・决战演算』，索敌行动结束了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 118,
+   "text": "命名者=涡波自述（'给这个魔法命名的创造者就是我'）；本章战斗不再使用（改以技能『感应』为中心）故MP剩余多；自述'直到游戏通关──抵达迷宫最深部为止，可能都不会再使用到『维度・决战演算』了吧，这让我心中有些不忍'；随口考虑把技能『感应』袭名为『感应・决战演算』"
+  },
+  {
+   "category": "alias",
+   "chapter": 118,
+   "text": "跨版本写法：WEB版全角『维度・决战演算』、库内实体名半角『维度·决战演算』——canonical从库内，本批登记全角别名"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a32681b6e0a0",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

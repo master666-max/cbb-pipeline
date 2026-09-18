@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "共同特训伙伴(队长副队长)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 130,
+   "quote": "我们互相击掌，确认对方的意愿。",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 181,
+   "quote": "对，如果构筑没有破绽的话我就用不了这招了。注意这一点，你就多加改良吧",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 207,
+   "quote": "今天的经验在以后的魔法对决中能够起到不小的作用。以后多跟拉丝缇娅拉进行这样的训练也不错。",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 230,
+   "quote": "于是我用一如既往的方式跟拉丝缇娅拉击掌庆祝。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 119,
+   "text": "两人以击掌确认特训意愿、以击掌庆祝新技能习得；共同开发仿造共鸣魔法、互相建言改良魔法构筑、进行魔法使对决训练；叙述者计划以后多进行这样的训练"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-08fb5604c4b3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "劳拉维亚",
+  "rel_type": "本部位于",
+  "subject": "史诗探索者"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 3,
+   "quote": "离开联合国南部的海面，我来到了劳拉维亚。",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 4,
+   "quote": "穿过『连接』抵达的，是我曾经待过的房间。也就是位于史诗探索者本部的办公室了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "涡波抵达劳拉维亚后经『连接』落入的旧办公室即'位于史诗探索者本部的办公室'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ba204ea52818",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

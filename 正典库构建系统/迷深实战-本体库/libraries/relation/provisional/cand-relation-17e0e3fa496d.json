@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "冻结魔法",
+  "rel_type": "技能持有(冻结魔法·血中多数)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 139,
+   "quote": "次元魔术太小众了，以至于没有登录进我的血中啊。冻结魔法倒是有不少的说⋯⋯",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 185,
+   "quote": "魔力总量是我比较强。但是拉丝缇娅拉的血中记录着多种多样的魔法和经验。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 119,
+   "text": "据拉丝缇娅拉自述：次元魔术'太小众了，以至于没有登录进我的血中'，但'冻结魔法倒是有不少'；另叙述者注其血中记录着多种多样的魔法和经验"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-17e0e3fa496d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

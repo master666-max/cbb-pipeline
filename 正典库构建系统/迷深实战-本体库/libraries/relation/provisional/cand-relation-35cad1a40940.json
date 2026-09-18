@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "战斗规制(混乱8.00禁战斗)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 209,
+   "quote": "「总而言之，混乱超过8.00的话涡波就不许战斗了呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 213,
+   "quote": "「这不是当然的嘛。到了10.00的话就会发狂了。本来的话不是0.00我甚至都不愿意让你外出的哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 217,
+   "quote": "「也是呢⋯⋯⋯大概会跟你说一样的话吧。我知道了，就遵从拉丝缇娅拉的判断好了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 116,
+   "text": "单方面宣布并使涡波接受：混乱超8.00即禁止战斗、10.00会发狂（'本来的话不是0.00我甚至都不愿意让你外出的'）；涡波以'站在相反的立场'反问被论破，'就遵从拉丝缇娅拉的判断好了'；其他同伴皆视之为理所当然"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-35cad1a40940",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

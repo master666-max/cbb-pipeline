@@ -1,0 +1,85 @@
+{
+ "canonical": {
+  "entities": [
+   "『维度・多重展开』",
+   "技能『锻冶』",
+   "相川涡波",
+   "艾利巴茨·利拜斯",
+   "赛莉"
+  ],
+  "instant": null,
+  "kind": "修行",
+  "name": "锻冶速习：观察+并行读书",
+  "tick": 122,
+  "time_verbatim": "同日（数小时）"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 82,
+   "quote": "──『维度・多重展开』",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 84,
+   "quote": "我心里默默地念着「打扰了」，便开始观察所有锻冶师的动作。并将他们的所有动作都把握，记忆下来。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 97,
+   "quote": "赛莉酱还是打起精神接过这些书",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 98,
+   "quote": "经历了3次同守护者的战斗，级别和状态都得以提升，我的处理能力也强了不少。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 103,
+   "quote": "因为把『维度』和『并列思考』全开的缘故，MP和体力以惊人的势头削减着。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 112,
+   "quote": "但是，确认了自己的状态之后，确实看到了『锻冶』这一项的增加。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 122,
+   "text": "『维度・多重展开』同时把握劳拉维亚全体锻冶师动作并记忆；借出工房全部锻冶书籍，赛莉翻页＋魔法并读（'就像是有几个自己同时存在一样'）；庞大信息处理致体温骤升、MP与体力骤减；数小时后踉跄，状态栏确认『锻冶』一项增加（0.69）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d6d9a5a903eb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

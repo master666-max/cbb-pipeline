@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "所属(魔法使)",
+  "subject": "缇莉・琉克"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 11,
+   "quote": "是『史诗探索者』的魔法使缇莉・琉克小姐。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "『史诗探索者』所属魔法使；涡波离开后接手公会文案工作（据叙述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-17d24db2c3a3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

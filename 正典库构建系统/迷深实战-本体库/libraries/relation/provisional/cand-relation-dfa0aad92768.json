@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "所属(末席·暂留)",
+  "subject": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 58,
+   "quote": "「基本上来说，斯诺她搞出来的问题，事后都是我来处理的。现在我失去了『最强』这个名号，也有了不少空闲。这段时间里，姑且要以『史诗探索者』末席的身份叨扰一下了」",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 61,
+   "quote": "据说以前格连就是『史诗探索者』的成员。身为兄长的他从那时候起就一直在身后守护着斯诺了。虽说当事人完全没注意到就是了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "失去『最强』名号后空闲增加，'姑且要以『史诗探索者』末席的身份叨扰一下'；据叙述（'据说'）：以前就是该会成员——老会员回归"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dfa0aad92768",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

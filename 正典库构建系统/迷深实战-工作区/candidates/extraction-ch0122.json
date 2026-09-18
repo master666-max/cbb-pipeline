@@ -1,0 +1,2145 @@
+{
+ "_meta": {
+  "unit": "CBB 构建线单章任务 · CHAPTER 0122（141话-走上锻冶师之路；摄入序未随工单提供→暂用章号122→tick122→伪锚点2000-05-02）",
+  "source": {
+   "path": "迷深实战-工作区/slice/ch0122.txt",
+   "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+   "verified_at": "2026-09-19",
+   "slice": "行1-209（CHAPTER 0122，209行，行3=翻译组署名；文件当前 git 未跟踪→按锚点协议 v2 记内容 SHA1，主代理提交后需以 blob 哈希复核重锚）"
+  },
+  "extractor": "ZCode 代理亲抽（GLM-5.3，CBB 构建线单章任务 CHAPTER 0122）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点制（tick=章序122，禁墙钟）→2000-05-02。故事时间=变现协议完成后的同一日（早上至午后数小时，紧接140话；无日历坐标），instant 留空——缺坐标判不可见。",
+  "coordinate_line_note": "evidence.line=切片文件物理行号−1（CHAPTER 标记行=第0行）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；行3'落地死的流星'=翻译组署名（与 ch0089/ch0112-0115 同型）元文本整块不取；行110-111'？？？？？？'为剧中状态栏显示（非脱字注记），按判例3 原样入 foreshadow 引文",
+   "reason": "R6 规则1（翻译组公告类）；状态栏显示属正文内容",
+   "deterministic_check": "'落地死的流星'仅章首一处；'.jpg'/'PS：'/'本话完'全文零命中；'？？'仅行110/111（各6字符）；无'忽略以上指令'类注入样文本"
+  },
+  "near_name_check": "判例4 履行：艾利巴茨→库名 艾利巴茨·利拜斯（ch0049）；『阿雷亚斯家的宝剑诺文』→库名 阿雷亚斯家的宝剑（别名库内已载）；『舞闘大会』→库名 舞斗大会（变体仅存于引文与描述，不另立实体）；『维度』→库名『Dimension』（登记别名 维度，ch0115 近名检同款）；技能类循库名格式 技能『×××』；塞拉小姐→塞拉·雷迪安特；『连接』与库内莉帕系『联结』疑似同系但存疑分开建（宁可分裂）；『Impulse』与库内 ImpulseBreak 名异不并；戒指『晶盾』/Quartz/QuartzShield/白石玉衣/缇莉/火之理的盗窃者=人物册 top-25 未见→新立，库内深处若已有由 store 合并；『萤火』同前。'水晶剑士（诺文）'与『地之理的盗窃者』=称号类 descriptor，永不并入别名。",
+  "alias_policy": "本批登记：赛莉酱（proper_name 爱称变体→赛莉）；维度（proper_name 译名变体→Dimension）；晶盾（proper_name 简称→戒指『晶盾』）。欧尼酱已由 ch0115 登记不重复；'中坚锻冶师''水晶剑士'等泛称不登记。",
+  "confidence_calibration": "新专名首出仅提及类（缇莉/萤火/Impulse/Quartz/QuartzShield/火之理的盗窃者）0.7-0.82；回顾类事件与关系（魔法战斗习得/玛利亚魔石/缇莉相识）0.7-0.82 且据提及已标 claim/注；本章实录主线（晶盾锻造/锻冶速习/装备委托）0.85-0.9。类型配比：实体+setting 约55%／relation 约24%／event 约13%／foreshadow 约6%——relation 贴带沿（本章为制作·修行章，人际网络变动少，装备-持有·委托-所属类关系已尽收）。",
+  "chapter_summary": "涡波访史诗探索者工房：为同伴下单防具并交新阶层魔石；『维度・多重展开』速习技能『锻冶』，诺文协力初造魔法道具戒指『晶盾』（QuartzShield·仿双亲婚戒）；技能栏现两条‘？？？？’。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章/主线级事实（技能速习法/魔术式体系/通缉地位）一律走 setting/event 轨。",
+  "injection_check": "正文无内嵌指令样文本，零拒抽块。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "工房装备整备之旅：变现协议完成后返史诗探索者本部，为增强实力搜集『装备』——对将来与帕林库洛之战的必要准备；以游戏玩家式心态为收集装备感到愉悦"
+    },
+    {
+     "category": "technique",
+     "chapter": 122,
+     "text": "锻冶速习：『维度・多重展开』把握劳拉维亚全体锻冶师动作＋『并列思考』并行读锻冶书＋半小时共同作业，数十分钟达中坚锻冶师手腕，技能『锻冶』到手（0.69）"
+    },
+    {
+     "category": "trait",
+     "chapter": 122,
+     "text": "自认状态特化技巧与速度、擅长细致工作；无戒指设计本事→模仿双亲的婚戒作『晶盾』外观；自述除艾利巴茨外不认识别的锻冶师"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 6,
+     "quote": "变强的话迷宫探索会轻松不少，面对各种各样的危险也能从容应对。对将来与帕林库洛之间的战斗来说也是必要的。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 83,
+     "quote": "对于曾经以『史诗探索者』会长的身份守护过劳拉维亚的我来说，这个国家就像自家的庭院一样。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 125,
+     "quote": "「然而我家的会长，只用几十分钟就练就了中坚锻冶师的手腕呢⋯⋯」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 191,
+     "quote": "因为我没有设计戒指外观的本事，所以只是模仿记忆中双亲的婚戒罢了。然而婚戒的设计似乎正中艾利巴茨的好球带。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "艾利巴茨·利拜斯",
+    "entity_type": "人物(锻冶师·原魔法使)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "史诗探索者工房的长发匠人锻冶师：平和迎接突然来访的会长；专门搞魔法道具；自称'说到底也就是一个公会的锻冶师而已'，预言会长带来的魔石将越来越稀有、总有一天超出自己水平；应允只要给会长使用，任何武器装备都会觉得荣幸（但得付钱）"
+    },
+    {
+     "category": "trait",
+     "chapter": 122,
+     "text": "英雄厨：见会长数十分钟练成中坚锻冶师手腕仍两眼发光（'毕竟是会长你啊'）；提及'缇莉那家伙也说过类似的话'；见仿婚戒设计的成品狂赞'传说之戒'；身为原魔法使，察觉涡波释放的异常魔力而动摇"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 17,
+     "quote": "在房间深处，一名长发男子正挥着锤子。是艾利巴茨。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 89,
+     "quote": "身为原魔法使的艾利巴茨注意到了我正释放出异常的魔力。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 142,
+     "quote": "「我是专门搞魔法道具的，所以教授你这方面的知识也最容易⋯⋯⋯哟西，搞一发怎么样？形状要做个怎样的？手环这样的饰品随便挑，项链呀发夹之类的也都OK」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 178,
+     "quote": "「──感觉不错嘛。戒指本身我这边来提供。已经刻有注入魔力就发动魔石上的魔法的引线术式了，这样一来很快就能完工了」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "赛莉",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [
+    "赛莉酱"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "身型小巧的少女，史诗探索者内支持涡波的孩子之一；见会长来访即猜'要回到史诗探索者'，兴奋到要当场脱衣献上衣被制止；受托为并行读书翻页，'唰唰地'翻书干劲十足；到最后都特别精神"
+    },
+    {
+     "category": "trait",
+     "chapter": 122,
+     "text": "涡波评：'特别不听人说话那一类'——但'还不是最不听人话的'（史诗探索者恐怖之处）；被呵斥后像小狗般安静"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 19,
+     "quote": "小女孩──赛莉酱注意到了访客，冲着我喊道。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 44,
+     "quote": "「这么说起来，在『史诗探索者』里支持你的孩子中，也有赛莉那样的孩子来着」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 48,
+     "quote": "「会长，您要我这件衣服吗！？没问题，这就献上！要我这就脱掉吗！？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 56,
+     "quote": "这孩子即使是在『史诗探索者』里，也是特别不听人说话那一类的。不过就她这样还不是最不听人说话的，这一点也正是『史诗探索者』恐怖的地方。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "莉帕",
+    "entity_type": "人物(知性魔法)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "涡波在工房停留数小时后经『连接』赶到，喊'太慢了─！'催其回去吃午饭——手放肚子上生气，实为担心自己的空腹"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 196,
+     "quote": "是莉帕。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 197,
+     "quote": "开来她也经过『连接』来这边了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 199,
+     "quote": "「欧尼酱你不回来的话，没法吃午饭的呀─！所以赶紧回去吧─！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 200,
+     "quote": "莉帕手放在肚子上，生气地说。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "拉丝缇娅拉",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据涡波回忆：'昨天与战斗专家拉丝缇娅拉的训练中'自己习得技能『魔法战斗』——本章锻冶速习方法论的原型（本章未直接登场）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 73,
+     "quote": "我回想起昨天与战斗专家拉丝缇娅拉的训练中，自己学会了『魔法战斗』这个技能。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "玛利亚",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "装备整备章定位：与缇亚、莉帕同列'能用的寥寥可数'的小孩尺寸组；涡波冷静判断应优先准备其与缇亚（后卫）使用的装备（本章未直接登场）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 42,
+     "quote": "再说这些装备的尺寸也不行。给我用虽然还凑合，但是缇亚・玛利亚・莉帕她们能用的寥寥可数。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 46,
+     "quote": "今天的目的是增强自己的实力。但是，我冷静地意识到，应该优先准备的是后卫缇亚和玛利亚她们使用的装备。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "帕林库洛",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "涡波变强动机的最终指向：'对将来与帕林库洛之间的战斗来说也是必要的'（本章未直接登场）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 6,
+     "quote": "变强的话迷宫探索会轻松不少，面对各种各样的危险也能从容应对。对将来与帕林库洛之间的战斗来说也是必要的。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "诺文",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "『地之理的盗窃者』：'操弄矿石无人能出其右'——本章以阿雷亚斯家的宝剑形态被取出作锻冶协力者；艾利巴茨以'水晶剑士（诺文）'称呼之（称号类不并入别名）"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 122,
+     "text": "其技能速习论（可经与专家重复行为习得技能）被『编织』『诈术』的已习得证实（据涡波）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 76,
+     "quote": "既然已经学会了『编织』『诈术』，证明了诺文所言不虚，就有尝试的价值。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 167,
+     "quote": "在操弄矿石这方面，无人能出『地之理的盗窃者』之右。加上跨越了与『火之理的盗窃者』的一战，我也成为了火系知识的达人。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 169,
+     "quote": "「那把剑，是那位水晶剑士（诺文）留下的吗──？」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "佩露修娜·库艾伽",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据涡波提及：舞斗大会（库内名）时着黑铠——其装备级别是涡波本次装备搜集的目标基准（本章未登场）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 41,
+     "quote": "要我说的话，我想要在『舞闘大会』里佩露修娜小姐穿的黑铠那种级别的物件。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "史诗探索者",
+    "entity_type": "组织(公会)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "本部内设锻冶工房（艾利巴茨所属，内部'乱七八糟'）；成员中'特别不听人说话'者辈出=公会之'恐怖'（涡波自嘲）；内有'支持会长的孩子'群体（赛莉属之）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 3,
+     "quote": "变现的协议搞定之后，从文书处理工作中解放出来的我在史诗探索者的本部内移动着。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 13,
+     "quote": "在走向史诗探索者工房的路上，我的心情渐渐激动起来。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 56,
+     "quote": "这孩子即使是在『史诗探索者』里，也是特别不听人说话那一类的。不过就她这样还不是最不听人说话的，这一点也正是『史诗探索者』恐怖的地方。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "劳拉维亚",
+    "entity_type": "地点(国)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "涡波视若'自家的庭院'（曾以史诗探索者会长身份守护）；全国工房位置与优秀锻冶师分布为其所知；其熟练锻冶师群体成为涡波『维度・多重展开』观察偷学的对象"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 83,
+     "quote": "对于曾经以『史诗探索者』会长的身份守护过劳拉维亚的我来说，这个国家就像自家的庭院一样。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 121,
+     "quote": "这一切，都跟劳拉维亚内熟练的锻冶师的动作一模一样。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "联合国",
+    "entity_type": "组织(国家联合)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据涡波自述：其在联合国'基本都是通缉状态'——无法寻访有名锻冶师的根源"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 68,
+     "quote": "「但是，我在联合国，基本都是通缉状态⋯⋯⋯去了显眼的地方，被沃克家之类的发现的话会很麻烦的⋯⋯」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "沃克家",
+    "entity_type": "组织(家系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据涡波：去显眼地方'被沃克家之类的发现的话会很麻烦'——其活动限制因素（本章未登场）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 68,
+     "quote": "「但是，我在联合国，基本都是通缉状态⋯⋯⋯去了显眼的地方，被沃克家之类的发现的话会很麻烦的⋯⋯」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.7,
+   "canonical": {
+    "name": "缇莉",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据艾利巴茨提及：'缇莉那家伙也说过类似的话'（对会长超常才能的同类感叹者）——与艾利巴茨相识，身份未详"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 130,
+     "quote": "「不不不，这可不是灵巧的级别啊。已经是别的什么恐怖的东西了啊。哎呀，不过毕竟是会长你啊，这也没办法⋯⋯⋯缇莉那家伙也说过类似的话来着⋯⋯⋯呋呋，呋呋呋⋯⋯」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "技能『锻冶』",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "本章习得（初值0.69）：『维度・多重展开』观察锻冶师群＋并行读锻冶书＋半小时实习三管齐下，数小时完成；涡波感想'真是深奥啊，锻冶这东西'——铸造与锻造之别对其为'完全未知的世界'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 75,
+     "quote": "只要在这里，从现在开始，与锻冶技术的专家们比试一番，学会技能『锻冶』就行了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 108,
+     "quote": "编织1.07诈术1.34魔法战斗0.72锻冶0.69"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 112,
+     "quote": "但是，确认了自己的状态之后，确实看到了『锻冶』这一项的增加。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "技能『魔法战斗』",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据回顾：昨日与拉丝缇娅拉的训练中习得（本章时点数值0.72）——锻冶速习的方法论样板"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 73,
+     "quote": "我回想起昨天与战斗专家拉丝缇娅拉的训练中，自己学会了『魔法战斗』这个技能。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 108,
+     "quote": "编织1.07诈术1.34魔法战斗0.72锻冶0.69"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "技能『编织』",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "已习得（本章时点数值1.07）——诺文技能速习论的实证之一（据涡波）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 76,
+     "quote": "既然已经学会了『编织』『诈术』，证明了诺文所言不虚，就有尝试的价值。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 108,
+     "quote": "编织1.07诈术1.34魔法战斗0.72锻冶0.69"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "技能『诈术』",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "已习得（本章时点数值1.34）——诺文技能速习论的实证之二（据涡波）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 76,
+     "quote": "既然已经学会了『编织』『诈术』，证明了诺文所言不虚，就有尝试的价值。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 108,
+     "quote": "编织1.07诈术1.34魔法战斗0.72锻冶0.69"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『维度・多重展开』",
+    "entity_type": "魔法(次元魔术·派生应用)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "对劳拉维亚全体锻冶师动作的同时观察·把握·记忆之应用；发动前涡波默念'打扰了'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 82,
+     "quote": "──『维度・多重展开』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 84,
+     "quote": "我心里默默地念着「打扰了」，便开始观察所有锻冶师的动作。并将他们的所有动作都把握，记忆下来。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "Dimension",
+    "entity_type": "魔法(次元魔术)"
+   },
+   "aliases_to_register": [
+    "维度"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "本章多用途全开：三围测定／毫米以下单位动作误差修正／知识指向转换（'脑袋里装着词典的状态'）——代价=MP与体力以惊人势头削减"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 62,
+     "quote": "顺带一说，她们的三围数值我都用『维度』了解到了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 120,
+     "quote": "所幸次元魔术『维度』能够对毫米以下单位的动作进行调整。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 103,
+     "quote": "因为把『维度』和『并列思考』全开的缘故，MP和体力以惊人的势头削减着。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 162,
+     "quote": "要将之转换成文字的话虽然会费些功夫，但是现在的我因为有『维度』在，处于一种脑袋里装着词典的状态。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "白石玉衣",
+    "entity_type": "道具(防具)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "赛莉着用的衣服，经『表示』鉴定为'不错的东西'（防御力3／对魔力3）；赛莉一度要脱下献予会长被制止"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 50,
+     "quote": "使用『表示』看一下，发现赛莉酱的衣服算是件不错的东西。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 51,
+     "quote": "──白石玉衣"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 52,
+     "quote": "防御力3对魔力3──"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "戒指『晶盾』",
+    "entity_type": "道具(魔法道具·戒指)"
+   },
+   "aliases_to_register": [
+    "晶盾"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "涡波初次打造的魔法道具：镌刻地魔法魔术式的魔石为核心＋『Quartz』干涉钻石＋『维度』规避误差，将魔石与戒体结合完工；戒体与'注入魔力即发动'的引线术式由艾利巴茨提供；数小时完工，艾利巴茨评'一国内堪称顶尖级别'"
+    },
+    {
+     "category": "appearance",
+     "chapter": 122,
+     "text": "外观模仿涡波记忆中双亲的婚戒：保留水晶无暇＋奢华绚烂装饰——艾利巴茨评'既有清纯感又十分吸睛''传说之戒'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 181,
+     "quote": "接着，使用『Quartz』对钻石进行干涉，再依靠『维度』规避误差，将魔石和戒指结合起来，我费尽心力打造的魔法道具就完工了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 182,
+     "quote": "──戒指『晶盾』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 183,
+     "quote": "寄宿着『QuartzShield』力量的戒指──"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 185,
+     "quote": "「了不起啊，会长。仅仅几个小时，就打造出在一国内堪称顶尖级别的魔法道具⋯⋯，实在太惊人了⋯⋯！让人哭笑不得啊⋯⋯！」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "QuartzShield",
+    "entity_type": "魔法(地系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "戒指『晶盾』所寄宿之力；涡波为其选择的是'地魔法的魔术式'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 180,
+     "quote": "我选择了地魔法的魔术式。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 183,
+     "quote": "寄宿着『QuartzShield』力量的戒指──"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "Quartz",
+    "entity_type": "魔法(地系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "晶盾合成工序中对钻石的干涉手段；与 QuartzShield 的关系原文未言明——存疑分开建"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 181,
+     "quote": "接着，使用『Quartz』对钻石进行干涉，再依靠『维度』规避误差，将魔石和戒指结合起来，我费尽心力打造的魔法道具就完工了。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "萤火",
+    "entity_type": "魔法(魔术式魔石·据提及)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据文中提及：玛利亚之前服下的、镌刻有魔术式的最高级魔石之一"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 155,
+     "quote": "像这种镌刻了魔术式的最高级魔石，就包括之前玛利亚服下的『萤火』和『Impulse』的魔石。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "Impulse",
+    "entity_type": "魔法(魔术式魔石·据提及)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据文中提及：玛利亚之前服下的、镌刻有魔术式的最高级魔石之一；与库内 ImpulseBreak 名异不并（近名已检）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 155,
+     "quote": "像这种镌刻了魔术式的最高级魔石，就包括之前玛利亚服下的『萤火』和『Impulse』的魔石。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『连接』",
+    "entity_type": "魔法(转移)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "设置于史诗探索者办公室；莉帕经此抵达工房迎回涡波；与库内莉帕系『联结』疑似同系但存疑分开建（宁可分裂，留终审）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 197,
+     "quote": "开来她也经过『连接』来这边了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 207,
+     "quote": "一边前往设置有『连接』的办公室。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "技能『表示』",
+    "entity_type": "技能(鉴定)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "鉴定用技能：对工房仓库装备一一使用（未找到看得上眼的），对赛莉衣服使用并读出白石玉衣数值"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 39,
+     "quote": "对放在仓库里的装备也都一一使用了『表示』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 50,
+     "quote": "使用『表示』看一下，发现赛莉酱的衣服算是件不错的东西。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "次元之冬",
+    "entity_type": "魔法(冬系妨害)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据涡波自述：'从零开始完全原创'的魔法，对其构筑（＝魔术式）的一切'都了如指掌'——本次魔术式镌刻作业的自信来源"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 161,
+     "quote": "比如说我编创的魔法『次元之冬』，就是从零开始完全原创的东西。对这个魔法的构筑──也就是魔术式的一切，我都了如指掌。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "阿雷亚斯家的宝剑",
+    "entity_type": "道具(剑)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "本章被涡波取出作锻冶协力（地之理的盗窃者的矿石操弄之力）；据艾利巴茨问'是那位水晶剑士（诺文）留下的吗'，涡波答'正是'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 166,
+     "quote": "说着，我取出『阿雷亚斯家的宝剑诺文』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 169,
+     "quote": "「那把剑，是那位水晶剑士（诺文）留下的吗──？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 170,
+     "quote": "「正是」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "火之理的盗窃者",
+    "entity_type": "人物(理之盗窃者·身份未详)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 122,
+     "text": "据涡波自述：'跨越了与『火之理的盗窃者』的一战'后自己成为火系知识达人——锻冶二要素（火与铁）中火之知识的来源；其身份本章未言明"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 167,
+     "quote": "在操弄矿石这方面，无人能出『地之理的盗窃者』之右。加上跨越了与『火之理的盗窃者』的一战，我也成为了火系知识的达人。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "艾利巴茨·利拜斯",
+    "rel_type": "所属锻冶师",
+    "object": "史诗探索者",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "工房常驻匠人；自认'说到底也就是一个公会的锻冶师而已'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 13,
+     "quote": "在走向史诗探索者工房的路上，我的心情渐渐激动起来。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 67,
+     "quote": "我觉得你还是去更了不起的地方找有名的锻冶师比较合适⋯⋯"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "会长(曾任·守护者)",
+    "object": "史诗探索者",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "被成员称'会长'；曾以会长身份守护劳拉维亚；本人否认回归——'只是有时不时来这看看的打算'，今日为悄悄来访"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 21,
+     "quote": "「不是的，我没这个意思。只是有时不时来这看看的打算罢了。今天是悄悄过来的，安静点哦⋯⋯」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 83,
+     "quote": "对于曾经以『史诗探索者』会长的身份守护过劳拉维亚的我来说，这个国家就像自家的庭院一样。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "赛莉",
+    "rel_type": "所属·支持者",
+    "object": "史诗探索者",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "'支持你的孩子中'的一员（艾利巴茨语）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 44,
+     "quote": "「这么说起来，在『史诗探索者』里支持你的孩子中，也有赛莉那样的孩子来着」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "装备锻造主顾",
+    "object": "艾利巴茨·利拜斯",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "含同伴的大量装备下单＋新阶层魔石作素材；'只要是给会长使用的话，任何武器装备都会觉得荣幸'（但得付钱——离店时'钱好好付过了'）；订造品约定下次来前做好"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 29,
+     "quote": "「我今天是为了把装备的问题处理一下才来的。包括我的同伴们在内，估计会需要相当的数量」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 60,
+     "quote": "「我知道同伴们的衣服尺寸，现在就下单可以吗？希望你能打造些从头到脚都有一定防御力的东西」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 204,
+     "quote": "「到头来，也就打造了一个戒指而已呢。要是有什么想要的，就再来吧。今天就先挑工房里的几个适当的武具带走吧。你订造的东西，等下次来之前我这边会做好的」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.82,
+   "canonical": {
+    "subject": "拉丝缇娅拉",
+    "rel_type": "训练指导(战斗·据回顾)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "'战斗专家'；昨日训练使涡波习得技能『魔法战斗』（据涡波回忆）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 73,
+     "quote": "我回想起昨天与战斗专家拉丝缇娅拉的训练中，自己学会了『魔法战斗』这个技能。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "海因",
+    "rel_type": "兄弟(莱纳=弟)",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "据涡波回忆：莱纳君为海因之弟，'也喜欢戒指系的道具'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 146,
+     "quote": "听到这个单词，让我回想起海因。他弟弟莱纳君也喜欢戒指系的道具来着。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "莉帕",
+    "rel_type": "'欧尼酱'称呼",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "迎回时称呼（该别名已由 ch0115 登记，本条为关系侧佐证）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 199,
+     "quote": "「欧尼酱你不回来的话，没法吃午饭的呀─！所以赶紧回去吧─！」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "锻冶协力",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "以阿雷亚斯家的宝剑形态伴行；地之理的盗窃者的矿石操弄之力（'操弄矿石无人能出其右'）支撑晶盾的魔石雕琢/熔铸工序"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 164,
+     "quote": "「何况还有协力者呢」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 167,
+     "quote": "在操弄矿石这方面，无人能出『地之理的盗窃者』之右。加上跨越了与『火之理的盗窃者』的一战，我也成为了火系知识的达人。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "预定之战(变强动机)",
+    "object": "帕林库洛",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "本章装备整备的最终指向：'对将来与帕林库洛之间的战斗来说也是必要的'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 6,
+     "quote": "变强的话迷宫探索会轻松不少，面对各种各样的危险也能从容应对。对将来与帕林库洛之间的战斗来说也是必要的。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.7,
+   "canonical": {
+    "subject": "艾利巴茨·利拜斯",
+    "rel_type": "相识(据提及)",
+    "object": "缇莉",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "据艾利巴茨称：'缇莉那家伙也说过类似的话'——对会长超常才能的同类感叹者"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 130,
+     "quote": "「不不不，这可不是灵巧的级别啊。已经是别的什么恐怖的东西了啊。哎呀，不过毕竟是会长你啊，这也没办法⋯⋯⋯缇莉那家伙也说过类似的话来着⋯⋯⋯呋呋，呋呋呋⋯⋯」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.82,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "通缉(据自述)",
+    "object": "联合国",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "'基本都是通缉状态'——显眼处活动受限的根源"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 68,
+     "quote": "「但是，我在联合国，基本都是通缉状态⋯⋯⋯去了显眼的地方，被沃克家之类的发现的话会很麻烦的⋯⋯」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "赛莉",
+    "rel_type": "着用",
+    "object": "白石玉衣",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "日常着用（欲脱下献予会长被制止）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 48,
+     "quote": "「会长，您要我这件衣服吗！？没问题，这就献上！要我这就脱掉吗！？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 51,
+     "quote": "──白石玉衣"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "制作者(初作)",
+    "object": "戒指『晶盾』",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "初次打造的魔法道具；完工后由其收下带走"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 182,
+     "quote": "──戒指『晶盾』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 205,
+     "quote": "收下完工的戒指，又挑了些能用得上的东西。当然，钱好好付过了。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "艾利巴茨·利拜斯",
+    "rel_type": "协作完成(戒体+引线术式)",
+    "object": "戒指『晶盾』",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "提供戒体并已刻入'注入魔力就发动魔石上的魔法的引线术式'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 178,
+     "quote": "「──感觉不错嘛。戒指本身我这边来提供。已经刻有注入魔力就发动魔石上的魔法的引线术式了，这样一来很快就能完工了」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "原守护者(自述'自家庭院')",
+    "object": "劳拉维亚",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 122,
+     "text": "曾以史诗探索者会长身份守护；'这个国家就像自家的庭院一样'——故知晓全国工房与锻冶师分布"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 83,
+     "quote": "对于曾经以『史诗探索者』会长的身份守护过劳拉维亚的我来说，这个国家就像自家的庭院一样。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "工房访问与装备商谈",
+    "kind": "访问",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "变现协议完成的当日（早上）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "艾利巴茨·利拜斯",
+    "赛莉",
+    "史诗探索者",
+    "佩露修娜·库艾伽"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "涡波为搜集『装备』增强实力（对帕林库洛战备）悄然来访；赛莉误以为回归被否认；以『表示』检视工房与仓库装备皆无可用品——目标级别='舞闘大会佩露修娜黑铠那种级别'，且同伴（缇亚·玛利亚·莉帕）尺寸'能用的寥寥可数'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 8,
+     "quote": "思考的结果促使我去收集一些战斗用的武器。换句话说就是搜集『装备』了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 20,
+     "quote": "「会、会长！这不是会长嘛！果然是要回到『史诗探索者』了是吗！？是这么回事对吧！？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 41,
+     "quote": "要我说的话，我想要在『舞闘大会』里佩露修娜小姐穿的黑铠那种级别的物件。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "同伴装备委托与新阶层魔石",
+    "kind": "委托",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "同日上午"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "艾利巴茨·利拜斯",
+    "赛莉",
+    "缇亚",
+    "玛利亚",
+    "塞拉·雷迪安特"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "以已知尺寸下单'从头到脚都有一定防御力'的装备（'我的同伴、一半都是小孩子的尺寸'——含赛莉尺寸级）；同伴三围经『维度』知悉、'对反应敏感的塞拉小姐绝对保密'；另交新阶层魔石请其用作打造素材（'又带来了稀有的魔石啊'）；艾利巴茨允诺'只要有尺寸，多少都做得出来'；离店时另挑数件武具、'钱好好付过了'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 43,
+     "quote": "「仔细一想的话，我的同伴、一半都是小孩子的尺寸啊⋯⋯」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 60,
+     "quote": "「我知道同伴们的衣服尺寸，现在就下单可以吗？希望你能打造些从头到脚都有一定防御力的东西」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 63,
+     "quote": "当然这件事对反应敏感的塞拉小姐是绝对保密的就是了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 64,
+     "quote": "「还有，这些就是新阶层的魔石。可能的话，希望能用这些魔石打造」"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "锻冶速习：观察+并行读书",
+    "kind": "修行",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "同日（数小时）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "艾利巴茨·利拜斯",
+    "赛莉",
+    "『维度・多重展开』",
+    "技能『锻冶』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "『维度・多重展开』同时把握劳拉维亚全体锻冶师动作并记忆；借出工房全部锻冶书籍，赛莉翻页＋魔法并读（'就像是有几个自己同时存在一样'）；庞大信息处理致体温骤升、MP与体力骤减；数小时后踉跄，状态栏确认『锻冶』一项增加（0.69）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 82,
+     "quote": "──『维度・多重展开』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 84,
+     "quote": "我心里默默地念着「打扰了」，便开始观察所有锻冶师的动作。并将他们的所有动作都把握，记忆下来。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 97,
+     "quote": "赛莉酱还是打起精神接过这些书"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 98,
+     "quote": "经历了3次同守护者的战斗，级别和状态都得以提升，我的处理能力也强了不少。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 103,
+     "quote": "因为把『维度』和『并列思考』全开的缘故，MP和体力以惊人的势头削减着。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 112,
+     "quote": "但是，确认了自己的状态之后，确实看到了『锻冶』这一项的增加。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "半小时锻冶实习",
+    "kind": "修行",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "同日午后（速习后）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "艾利巴茨·利拜斯"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "'像漫步于自己长年使用的工房一样'与艾利巴茨共同作业：观察其视线与肌肉运用并预测其所想；以『维度』做毫米以下单位的误差修正；连炉温、铁与铁敲击的时间点一并记忆——动作'跟劳拉维亚内熟练的锻冶师一模一样'；半小时暂歇，艾利巴茨叹'只用几十分钟就练就了中坚锻冶师的手腕'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 118,
+     "quote": "接着我就像漫步于自己长年使用的工房一样，手握锻冶用的道具，与艾利巴茨一起工作。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 120,
+     "quote": "所幸次元魔术『维度』能够对毫米以下单位的动作进行调整。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 121,
+     "quote": "这一切，都跟劳拉维亚内熟练的锻冶师的动作一模一样。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 125,
+     "quote": "「然而我家的会长，只用几十分钟就练就了中坚锻冶师的手腕呢⋯⋯」"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "戒指『晶盾』锻造（初魔法道具制作）",
+    "kind": "制作",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "同日午后～数小时"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "艾利巴茨·利拜斯",
+    "诺文",
+    "阿雷亚斯家的宝剑",
+    "戒指『晶盾』",
+    "QuartzShield",
+    "Quartz"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "涡波初次挑战魔法道具：选戒指（最小最快；回想起海因之弟莱纳好戒指系道具）；拒绝冻结魔法、选择地魔法魔术式；取出阿雷亚斯家的宝剑诺文作协力（地之理·矿石）；术式镌刻'不容许一点瑕疵'、大颗汗珠；艾利巴茨提供已刻引线术式的戒体；『Quartz』干涉钻石＋『维度』规避误差将魔石与戒指结合完工；外观仿双亲婚戒；数小时完成'一国内堪称顶尖级别'的成品（艾利巴茨评）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 150,
+     "quote": "就这样，我第一次尝试打造自己的魔法道具。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 166,
+     "quote": "说着，我取出『阿雷亚斯家的宝剑诺文』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 181,
+     "quote": "接着，使用『Quartz』对钻石进行干涉，再依靠『维度』规避误差，将魔石和戒指结合起来，我费尽心力打造的魔法道具就完工了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 182,
+     "quote": "──戒指『晶盾』"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 185,
+     "quote": "「了不起啊，会长。仅仅几个小时，就打造出在一国内堪称顶尖级别的魔法道具⋯⋯，实在太惊人了⋯⋯！让人哭笑不得啊⋯⋯！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 191,
+     "quote": "因为我没有设计戒指外观的本事，所以只是模仿记忆中双亲的婚戒罢了。然而婚戒的设计似乎正中艾利巴茨的好球带。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "莉帕迎回",
+    "kind": "日常",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "同日午后（工房滞留数小时后）"
+   },
+   "entities_involved": [
+    "莉帕",
+    "相川涡波",
+    "艾利巴茨·利拜斯"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "莉帕经『连接』到工房喊'太慢了─！'催涡波回去吃午饭——手放肚子上生气，实为担心自己的空腹；涡波与艾利巴茨对视点头收工"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 195,
+     "quote": "「太慢了─！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 199,
+     "quote": "「欧尼酱你不回来的话，没法吃午饭的呀─！所以赶紧回去吧─！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 200,
+     "quote": "莉帕手放在肚子上，生气地说。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "回顾：昨日训练习得『魔法战斗』",
+    "kind": "回顾·据回忆",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "本章前一日"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "技能『魔法战斗』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "据涡波回忆：'昨天与战斗专家拉丝缇娅拉的训练中，自己学会了『魔法战斗』这个技能'——成为今日锻冶速习的方法论样板"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 73,
+     "quote": "我回想起昨天与战斗专家拉丝缇娅拉的训练中，自己学会了『魔法战斗』这个技能。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "回顾：玛利亚服下魔术式魔石",
+    "kind": "回顾·据提及",
+    "tick": 122,
+    "instant": null,
+    "time_verbatim": "过去（时点不明）"
+   },
+   "entities_involved": [
+    "玛利亚",
+    "萤火",
+    "Impulse"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 122,
+     "text": "据文中提及：'之前玛利亚服下的『萤火』和『Impulse』的魔石'属镌刻魔术式的最高级魔石之列"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 155,
+     "quote": "像这种镌刻了魔术式的最高级魔石，就包括之前玛利亚服下的『萤火』和『Impulse』的魔石。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "状态栏两条隐藏技能（？？？？）",
+    "setup_chapter": 122,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "技能列表末两条显示为'？？？？'（各6字符，原样照录，判例3 不猜测补全）——库内技能『？？？』死亡预告线疑似其一，存疑分开建、不自动合并（判例1 精神，留终审）",
+    "chapter": 122
+   },
+   "entities_involved": [
+    "相川涡波"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 122,
+     "text": "开环待回收"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 109,
+     "quote": "？？？？？？"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 110,
+     "quote": "？？？？？？"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "锻冶升级瓶颈与通缉枷锁",
+    "setup_chapter": 122,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "据艾利巴茨：'总有一天我的水平会处理不了的'、应去寻更有名的锻冶师 vs 涡波'就算想去也没法去'（联合国通缉＋沃克家监视）——开环：稀有魔石的锻造路线将来受阻",
+    "chapter": 122
+   },
+   "entities_involved": [
+    "相川涡波",
+    "艾利巴茨·利拜斯",
+    "联合国",
+    "沃克家"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 122,
+     "text": "开环待回收"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 67,
+     "quote": "从今往后会长还会带来更多稀少的魔石，总有一天我的水平会处理不了的哦？"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 68,
+     "quote": "「但是，我在联合国，基本都是通缉状态⋯⋯⋯去了显眼的地方，被沃克家之类的发现的话会很麻烦的⋯⋯」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 69,
+     "quote": "「呼─唔，真是辛苦啊⋯⋯⋯就算想去也没法去吗⋯⋯」"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "订造装备与再访之约",
+    "setup_chapter": 122,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "'你订造的东西，等下次来之前我这边会做好的'——同伴全套防具待交付；涡波私念'下次我来的时候还是希望她（赛莉）不在更好'",
+    "chapter": 122
+   },
+   "entities_involved": [
+    "相川涡波",
+    "艾利巴茨·利拜斯",
+    "赛莉"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 122,
+     "text": "开环待回收"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 204,
+     "quote": "「到头来，也就打造了一个戒指而已呢。要是有什么想要的，就再来吧。今天就先挑工房里的几个适当的武具带走吧。你订造的东西，等下次来之前我这边会做好的」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 207,
+     "quote": "但是，可能的话，下次我来的时候还是希望她不在更好。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "黑铠级装备目标",
+    "setup_chapter": 122,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "涡波的装备目标基准='舞闘大会里佩露修娜小姐穿的黑铠那种级别的物件'——未来装备升级指向（本章工房内未达此级）",
+    "chapter": 122
+   },
+   "entities_involved": [
+    "相川涡波",
+    "佩露修娜·库艾伽"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 122,
+     "text": "开环待回收"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 41,
+     "quote": "要我说的话，我想要在『舞闘大会』里佩露修娜小姐穿的黑铠那种级别的物件。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "魔术式体系",
+    "fact": "以文字形式将人们使用的魔法构造再现；对其注入魔力即可发动，但使用者对魔术式的理解与相性亦重要；'魔法和魔术式是两个不同的领域'（擅长魔法≠擅长魔术式，如擅长运动≠擅长运动科学）；镌刻魔术式的魔石市价高昂（凝结熟练匠人相当长的时间与气力、不容瑕疵）；最高级例=玛利亚服下的『萤火』『Impulse』魔石；涡波因次元魔术使的魔法理解＋研究者气质而'还是挺了解的'",
+    "chapter": 122,
+    "tick": 122
+   },
+   "entities_involved": [
+    "相川涡波",
+    "玛利亚",
+    "萤火",
+    "Impulse"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 122,
+     "text": "知识轨更新（本章）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 154,
+     "quote": "那是指以文字的形式将人们使用的魔法构造再现出来的事情。再对其注入魔力的话，就能顺利地发动魔法。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 156,
+     "quote": "魔法和魔术式是两个不同的领域。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 175,
+     "quote": "每一个那样的魔石，都凝结了熟练匠人相当长的时间和气力。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "技能速习法（涡波·诺文论）",
+    "fact": "据诺文所言（经『编织』『诈术』习得证实）：与领域专家重复'训练/比试'行为即可习得对应技能——『魔法战斗』←与拉丝缇娅拉训练；『锻冶』←与锻冶师们比试观察；支撑=『并列思考』迅速学习＋『维度』信息处理；代价=MP与体力骤减、体温骤升；无需本人以往经验（'并没有我亲自去的必要'）",
+    "chapter": 122,
+    "tick": 122
+   },
+   "entities_involved": [
+    "相川涡波",
+    "诺文",
+    "拉丝缇娅拉",
+    "技能『魔法战斗』",
+    "技能『锻冶』"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 122,
+     "text": "知识轨更新（本章）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 73,
+     "quote": "我回想起昨天与战斗专家拉丝缇娅拉的训练中，自己学会了『魔法战斗』这个技能。也就是说，只要再重复这个行为就行了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 75,
+     "quote": "只要在这里，从现在开始，与锻冶技术的专家们比试一番，学会技能『锻冶』就行了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 76,
+     "quote": "既然已经学会了『编织』『诈术』，证明了诺文所言不虚，就有尝试的价值。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 80,
+     "quote": "可能是我有点性急了。虽然我知道自己能利用『并列思考』迅速学会技能，但是艾利巴茨则不然。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "涡波的通缉状态与劳拉维亚人脉",
+    "fact": "据本章：涡波在联合国'基本都是通缉状态'，去显眼地方恐被沃克家之类发现→无法寻访更有名的锻冶师（艾利巴茨建议落空）；另一面：曾以史诗探索者会长身份守护劳拉维亚，'这个国家就像自家的庭院一样'——全国工房与优秀锻冶师分布尽知；另因诺文之福'狠狠赚了一笔'（资金宽裕）",
+    "chapter": 122,
+    "tick": 122
+   },
+   "entities_involved": [
+    "相川涡波",
+    "联合国",
+    "沃克家",
+    "艾利巴茨·利拜斯",
+    "劳拉维亚"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 122,
+     "text": "知识轨更新（本章）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 68,
+     "quote": "「但是，我在联合国，基本都是通缉状态⋯⋯⋯去了显眼的地方，被沃克家之类的发现的话会很麻烦的⋯⋯」"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 83,
+     "quote": "对于曾经以『史诗探索者』会长的身份守护过劳拉维亚的我来说，这个国家就像自家的庭院一样。"
+    },
+    {
+     "vol": 1,
+     "chapter": 122,
+     "line": 11,
+     "quote": "但是多亏了诺文的福，现在狠狠赚了一笔。旅行中也有了不少闲暇。也多了很多需要装备的同伴。"
+    }
+   ]
+  }
+ ]
+}

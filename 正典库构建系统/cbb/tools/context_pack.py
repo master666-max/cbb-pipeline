@@ -60,9 +60,12 @@ def entity_roster(store: Path, alias_seed: Path | None) -> list[str]:
     id2name = {r["record_id"]: r["canonical"]["name"] for r in _load_records("character", store)}
     lib_alias: dict[str, set[str]] = {}
     for a in _load_jsonl(store / "aliases.jsonl"):
+        al = a.get("alias")
+        if not isinstance(al, str):  # 历史脏行防御（2026-09-19 勘误：5 条 dict 型 alias 留档不删，干净行已补录）
+            continue
         nm = id2name.get(a.get("entity_id"))
         if nm:
-            lib_alias.setdefault(nm, set()).add(a["alias"])
+            lib_alias.setdefault(nm, set()).add(al)
     seed: dict[str, list[str]] = {}
     if alias_seed and Path(alias_seed).exists():
         raw = json.loads(Path(alias_seed).read_text(encoding="utf-8"))

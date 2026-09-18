@@ -1,0 +1,97 @@
+{
+ "canonical": {
+  "entity_type": "设施(魔导船)",
+  "name": "『LivingLegend号』"
+ },
+ "evidence": [
+  {
+   "chapter": 62,
+   "line": 67,
+   "quote": "「那么，这艘船的名字就叫『LivingLegend号』了！没问题吧！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 62,
+   "line": 26,
+   "quote": "「确实是这样……可是，它是要耗费几百名魔法使的魔力才能一度出海的东西，相当的不省油哦？之所以会贱价出售，正是因为无人问津。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 226,
+   "quote": "虽然不是一艘大船，不过，装饰过剩，使用了各种各样的魔石，一眼就能看出一艘高级船。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 236,
+   "quote": "「诶诶，的确是这么回事⋯但是，这艘船可是需要数百个魔法使注入魔力才能进行一次航海的完全不省油的玩意哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 243,
+   "quote": "用《Dimension》确认后我知道这艘船的做工很优秀。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 291,
+   "quote": "用大量魔石建造的『LivingLegend号』，有着不需依靠风与海浪的动力。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 125,
+   "quote": "就这样，『LivingLegend号』本应值得纪念的初次迷宫探索胎死腹中了。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 78,
+   "quote": "只要把『连接』全部解除的话，就算是守护者也追不到这艘船上来",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 62,
+   "text": "七人新据点：大量魔石建造不仰赖风浪的魔导船（失败作贱价出售/需几百名魔法使级魔力出航=缇亚一人即可/易燃易爆火种多）；拉丝缇娅拉命名（塞拉捍卫品味）；设 Connection 后船旅途中可随时往迷宫探索"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 4.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-d80cf779a6b0",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-d80cf779a6b0-m",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d80cf779a6b0-m-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-d80cf779a6b0-m",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 3
+}

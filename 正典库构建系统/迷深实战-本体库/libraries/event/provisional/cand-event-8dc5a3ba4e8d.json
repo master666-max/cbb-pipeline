@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "佩露修娜·库艾伽",
+   "史诗探索者",
+   "相川涡波",
+   "艾利巴茨·利拜斯",
+   "赛莉"
+  ],
+  "instant": null,
+  "kind": "访问",
+  "name": "工房访问与装备商谈",
+  "tick": 122,
+  "time_verbatim": "变现协议完成的当日（早上）"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 8,
+   "quote": "思考的结果促使我去收集一些战斗用的武器。换句话说就是搜集『装备』了。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 20,
+   "quote": "「会、会长！这不是会长嘛！果然是要回到『史诗探索者』了是吗！？是这么回事对吧！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 41,
+   "quote": "要我说的话，我想要在『舞闘大会』里佩露修娜小姐穿的黑铠那种级别的物件。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 122,
+   "text": "涡波为搜集『装备』增强实力（对帕林库洛战备）悄然来访；赛莉误以为回归被否认；以『表示』检视工房与仓库装备皆无可用品——目标级别='舞闘大会佩露修娜黑铠那种级别'，且同伴（缇亚·玛利亚·莉帕）尺寸'能用的寥寥可数'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8dc5a3ba4e8d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

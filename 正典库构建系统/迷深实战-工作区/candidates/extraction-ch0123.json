@@ -1,0 +1,1824 @@
+{
+ "_meta": {
+  "unit": "CBB 构建线单章任务 · CHAPTER 0123（142话-一不小心就修罗场；摄入序未随工单提供→暂用章号123→tick123→伪锚点2000-05-03）",
+  "source": {
+   "path": "迷深实战-工作区/slice/ch0123.txt",
+   "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+   "verified_at": "2026-09-19",
+   "slice": "行1-204（CHAPTER 0123，204行，行3=翻译组署名；文件当前 git 未跟踪→按锚点协议 v2 记内容 SHA（git blob），主代理提交后需以 blob 哈希复核重锚）"
+  },
+  "extractor": "ZCode 代理亲抽（GLM-5.3，CBB 构建线单章任务 CHAPTER 0123）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点制（tick=章序123，禁墙钟）→2000-05-03。故事时间=141话锻冶完成后的同一日（晶盾授予→午餐→午后第二次迷宫探索出发；无日历坐标），instant 留空——缺坐标判不可见。",
+  "coordinate_line_note": "evidence.line=切片文件物理行号−1（CHAPTER 标记行=第0行）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；行3'落地死的流星'=翻译组署名（与 ch0089/ch0112-0122 同型）元文本整块不取；无脱字块/状态栏块",
+   "reason": "R6 规则1（翻译组署名类）",
+   "deterministic_check": "'落地死的流星'仅章首一处；'.jpg'/'PS：'/'本话完'全文零命中；'？？'零命中（仅！？/？！形）；无'忽略以上指令'类注入样文本"
+  },
+  "overlap_note": "周回/版本重叠警示：本章（WEB142话）场景含于 ch0070 切片（第七卷-第二章·WEB135-142话）——'魔法道具赠与(戒指)''午餐戒指修罗场''第二次迷宫探索出发（新阵容）''振动魔法窃听(持续)'等 ch0070 已抽。本批沿用 ch0070/ch0118 既有 canonical 与 rel_type/event 名以便 store 合并去重；译名差异：本切片作『维度』/『维度・决战演算』，ch0070 同位置作『Dimension』——终审 R4 需注意同场景双源证据归并。",
+  "near_name_check": "判例4 履行：『维度・决战演算』→库名『维度·决战演算』（ch0118，别名表已含・点形）；『次元之冬・歪冰世界』→库名『次元之冬·歪冰世界』（ch0060 已立）；『维度』（行168）→库名 Dimension（ch0122 已登记别名 维度）；鲜血魔法→库内同名实体已存在（ch0070 另立体系名『血术』，同指与否存疑留 R4，不并行立新）；拉丝缇娅拉→库内显示名（ch0070 曾用全名 拉丝缇娅拉·弗茨亚茨，别名互备）；『阿雷亚斯家的宝剑诺文』→库名 阿雷亚斯家的宝剑（别名库内已载）；塞拉小姐→塞拉·雷迪安特；斯诺→斯诺·沃克；技能类循库名格式 技能『×××』；『LivingLegend号』带『』照录。'做出新娘志愿宣言的龙人'（行60/153）原文未点名（疑指拉丝缇娅拉），不落实体不挂关系——存疑分开建。",
+  "alias_policy": "本批无新增必要别名（『维度・决战演算』・点变体 ch0118 已登；欧尼酱 ch0115 已登；维度 ch0122 已登）。'玛利亚酱''缇亚大人''塞拉小姐''欧尼酱'等称呼/descriptor 与'中坚锻冶师'式泛称均不登记。",
+  "confidence_calibration": "提及类（诺文/艾利巴茨/波鲁扎克/阿雷亚斯家的宝剑/『次元之冬·歪冰世界』/『连接』/鲜血魔法）0.7-0.78；据言类（晶盾封入诺文魔法·辩称语境/缇亚委托·据塞拉言/斯诺回绝·据玛利亚暗示+涡波推断/波鲁扎克核算委托·据涡波回顾）0.72-0.8；本章实录主线（晶盾授予/感应三重警报/修罗场辩解/代役编成/出航）0.85-0.92。类型配比：实体+setting 约45%／relation 约28%／event 约17%／foreshadow 约11%（均在参考带内）。",
+  "chapter_summary": "涡波将晶盾赠莉帕恰合左手无名指；戒指落桌引发修罗场，以'武器说+全员赠衣'辩解蒙混；斯诺拒洗衣仍Vibration窃听逃责；玛利亚缇亚托莉帕塞拉代役，涡波率拉丝缇娅拉莉帕塞拉二次探索出航。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章/主线级事实（死亡预告线/装备赠答主线/周回双源对照）一律走 event/relation/setting/foreshadow 轨。",
+  "injection_check": "正文无内嵌指令样文本，零拒抽块。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "晶盾授予与修罗场应对：赠莉帕戒指恰合左手无名指；午餐桌上三度『感应』警报，反射救援反而暴露戒指，以'武器说+全员赠衣'辩解获同伴接受"
+    },
+    {
+     "category": "technique",
+     "chapter": 123,
+     "text": "无咏唱发动『维度・决战演算』达成反射行动（'超越了思考，达到了反射性行动的领域'）；『并列思考』极限运转自评'大脑急速掉头媲美电脑演算'创以往最高速度记录"
+    },
+    {
+     "category": "trait",
+     "chapter": 123,
+     "text": "跨文化敏感：明知本世界无该指位习俗仍'觉得有些异样的羞耻'、不忍壞莉帕好心情未劝换指；'重游戏性的思考'忧队伍前卫偏重；为赠答义务胃痛"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 22,
+     "quote": "虽然知道这边没有那个习俗，但是还是觉得有些异样的羞耻。但是我实在不忍心壊了莉帕的好心情，所以也没说换个手指戴。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 71,
+     "quote": "我那身经百战的身体立刻采取了行动。这已经超越了思考，达到了反射性行动的领域了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 101,
+     "quote": "大脑的急速掉头甚至到了媲美电脑演算的级别。毫无疑问，今天这次的速度创造了以往以来的最高记录。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 192,
+     "quote": "在我重游戏性的思考下，对队伍平衡的失调感到了些许的担心。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "莉帕",
+    "entity_type": "人物(知性魔法)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "获赠晶盾试戴：'这边的话能轻易戴上'恰为左手无名指；依涡波指示将戒指收进外套口袋避人目；后受玛利亚之托与塞拉一同代役参加迷宫探索"
+    },
+    {
+     "category": "appearance",
+     "chapter": 123,
+     "text": "身着30层出现时以魔力生成的类外套黑色宽大衣服（本人喜爱常穿）；外套过宽致身体前倾时口袋中戒指险些滑出"
+    },
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "餐桌前倾险掉戒指被涡波反射按回，红着脸道谢"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 12,
+     "quote": "啊，这边的话能轻易戴上！"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 21,
+     "quote": "莉帕开心地观赏着戴在自己左手无名指上的水晶戒指。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 68,
+     "quote": "就是那个在30层出现时使用魔力生成的类似外套的黑色衣服（莉帕很喜欢所以一直穿着）。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 36,
+     "quote": "莉帕老实地点了点头，把戒指收进了外套小腹侧边位置的口袋里。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "玛利亚",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "甲板午餐主持：不怨涡波迟到温柔邀座；察觉其观望异食后主动挑分馅饼料理（'那就让我挑好再给你吃好了'）"
+    },
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "闹别扭点破涡波手滞莉帕衣内且'莉帕的衣服里面，可是裸体的'；今日不参加探索（'毕竟有好多要洗的东西'），已委托莉帕与塞拉代役；驾驶舱晾衣、交谈中不怠慢手上工作"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 47,
+     "quote": "玛利亚没对迟来的我埋怨什么，温柔地邀我入座。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 57,
+     "quote": "原来是这样啊。明明不用这么在意也行的。⋯⋯那就让我挑好再给你吃好了"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 86,
+     "quote": "莉帕的衣服里面，可是裸体的"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 159,
+     "quote": "那个，虽然很抱歉，但是我今天不去哦？还有缇亚也是"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 190,
+     "quote": "玛利亚手脚麻利地铺展要晾干的衣物。即使在交谈的过程中也不怠慢手上的工作，真了不起。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "拉丝缇娅拉",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "tone",
+     "chapter": 123,
+     "text": "对涡波迟到'丝毫不隐藏自己的不高兴'；探索前自信满满（被涡波腹诽'期待远足的幼女'、'TooYoung'）"
+    },
+    {
+     "category": "technique",
+     "chapter": 123,
+     "text": "宣言展示'鲜血魔法的真正价值'，浑身散发红雾邪笑（涡波按'实际上就是浪费MP'之讥对演）；实则吃完午饭不收拾即跑来候场"
+    },
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "提议与涡波二人转后卫以检验魔法特训成果，促成新战术尝试"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 48,
+     "quote": "拉丝缇娅拉倒是丝毫不隐藏自己的不高兴，对此我一边说「抱歉回来晚了」一边坐下。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 140,
+     "quote": "本小姐今天就给你展示一下，鲜血魔法的真正价值"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 141,
+     "quote": "拉丝缇娅拉浑身散发着红雾邪笑着。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 194,
+     "quote": "等等，涡波！好不容易做了魔法特训，今天就让我们两个来做后卫不就好了嘛！？"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "斯诺·沃克",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "午餐饱餐不给玛利亚帮忙；戒指落桌后目光紧盯追问；辩解被接受后坦言'比起衣服更想要戒指'（契约之证感）而被涡波无视带过"
+    },
+    {
+     "category": "trait",
+     "chapter": 123,
+     "text": "拒洗衣代行（据玛利亚暗示+涡波推断）；以震动魔法『Vibration』听取『维度』发动宣言后装望天逃责，被点名后吓绿脸逃向缇亚寻挡箭牌；事后把汗一擦'一脸得意地漫步在船内'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 61,
+     "quote": "顺带一说，斯诺正饱餐着美味的料理，给脸都吃得鼓鼓的，完全没有给玛利亚帮忙的意思。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 117,
+     "quote": "我比起衣服更想要戒指耶？戒指不是更有一种像契约之证那样的感觉吗"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 171,
+     "quote": "估计是用震动魔法『Vibration』听到我『维度』的发动宣言了吧。然后为了逃避责任装成是在望天儿的样子。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 175,
+     "quote": "斯诺一下子吓得脸都绿了，拔腿就跑。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 200,
+     "quote": "斯诺把这段交流全部听进耳中，把汗一擦便一脸得意地漫步在船内。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "缇亚",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "甲板午餐在列，与玛利亚一同呼应'戒指'惊呼围观；今日与玛利亚一同不参加迷宫探索；探索出发时已入睡，被逃跑的斯诺选作挡箭牌目标"
+    },
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "据塞拉自述：与玛利亚共同委托其代役参加迷宫探索（'受到缇亚大人和玛利亚的委托了啊'）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 105,
+     "quote": "拉丝缇娅拉高兴地叫着，缇亚和玛利亚随即呼应。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 159,
+     "quote": "那个，虽然很抱歉，但是我今天不去哦？还有缇亚也是"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 177,
+     "quote": "斯诺径直冲着已经入睡的缇亚跑过去。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "塞拉·雷迪安特",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "受缇亚与玛利亚委托代役参加迷宫探索；'穿着女仆装却兴高采烈'陪莉帕玩骑脖子"
+    },
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "与除涡波外全体成员构筑良好关系；据涡波推测'要是我去拜托的话，估计塞拉小姐是不会答应参加迷宫探索的吧'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 184,
+     "quote": "受到缇亚大人和玛利亚的委托了啊。就让我参加吧"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 185,
+     "quote": "不知为何，穿着女仆装却兴高采烈的塞拉小姐在陪莉帕玩着骑脖子。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 186,
+     "quote": "看样子在我不知道的时候队伍成员们深化了彼此间的交流。并且塞拉小姐与除了我之外的所有成员都构筑了良好的关系。不错不错。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "诺文",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "被涡波当众称'挚友'并共演'友情Power'彩排；据涡波向同伴辩称晶盾'封进了诺文的魔法'（掩饰性说辞语境，真实性未证）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 145,
+     "quote": "就让你看看，我和挚友诺文的友情Power好了"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 109,
+     "quote": "那里面封进了诺文的魔法，所以就给了跟诺文亲近的莉帕啦。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "艾利巴茨·利拜斯",
+    "entity_type": "人物(锻冶师·原魔法使)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 123,
+     "text": "备料考量：知涡波队伍装备规格较小而特制小号戒指，但未获手指具体数值（致莉帕左手无名指恰合）；被涡波用作'武器说'辩解中的共作人与师承来源"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 14,
+     "quote": "虽然艾利巴茨知道我的队伍成员要用的装备规格较小，因此特地准备了小一点的戒指，但是手指大小的具体数值我没有告诉他。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 109,
+     "quote": "那个是从艾利巴茨那儿学来的，跟艾利巴茨一起打造的东西。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.7,
+   "canonical": {
+    "name": "波鲁扎克",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "据涡波回顾'照波鲁扎克拜托的那样'曾托收支核算工作——涡波拟以此课派斯诺"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 199,
+     "quote": "首先就照波鲁扎克拜托的那样，让她处理收支核算的工作去。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "戒指『晶盾』",
+    "entity_type": "道具(魔法道具·戒指)"
+   },
+   "observations": [
+    {
+     "category": "appearance",
+     "chapter": 123,
+     "text": "凝聚着跟订婚戒指一样精巧设计，太阳光下闪耀（涡波自嘲'宣告我至今的全部努力打了水漂的无情光辉'）"
+    },
+    {
+     "category": "status_change",
+     "chapter": 123,
+     "text": "由涡波携行转为赠莉帕着用（左手无名指恰合）；因暴露风险改为莉帕收纳于外套口袋；餐桌上意外落桌暴露于全员前"
+    },
+    {
+     "category": "knowledge",
+     "chapter": 123,
+     "text": "涡波判断'就这么戴着它的话会很危险的'（被看见即诱发修罗场）；据涡波辩称其内'封进了诺文的魔法'（掩饰语境，存疑标注）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 6,
+     "quote": "我张开手，方便她仔细打量戒指『晶盾』"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 15,
+     "quote": "这导致莉帕正好适合戒指的那根手指是──左手的无名指。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 31,
+     "quote": "就这么戴着它的话会很危险的"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 93,
+     "quote": "凝聚着跟订婚戒指一样精巧设计的戒指在太阳光的照射下闪耀着。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 94,
+     "quote": "这是宣告我至今的全部努力打了水漂的无情光辉。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "技能『感应』",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "manifestation",
+     "chapter": 123,
+     "text": "本章三度警报：①晶盾着用暴露之危（'不停地嘶吼着这么下去会死翘翘'）②莉帕前倾戒指将滑出③手滞莉帕衣内之局；戒指收纳后'警报也停止作响了'"
+    },
+    {
+     "category": "technique",
+     "chapter": 123,
+     "text": "千钧一发规避依赖：'就算能在千钧一发之际依靠技能『感应』察觉到最糟的情况并进行规避，但是还是很辛苦'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 23,
+     "quote": "正当我打算就这样保持沉默地穿过设置在办公室的『连接』的时候──技能『感应』敲响了警报。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 24,
+     "quote": "警报声甚大，不停地嘶吼着这么下去会死翘翘。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 37,
+     "quote": "与此同时，技能『感应』的警报也停止作响了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 129,
+     "quote": "就算能在千钧一发之际依靠技能『感应』察觉到最糟的情况并进行规避，但是还是很辛苦。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "技能『并列思考』",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "technique",
+     "chapter": 123,
+     "text": "餐桌危机实时推演：'确认着状况，并推导出最合适的理由'；危机时'发挥到极限'致大脑急速掉头（涡波自评创最高速度记录）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 81,
+     "quote": "我使用『并列思考』确认着状况，并推导出最合适的理由。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 100,
+     "quote": "我立刻将『并列思考』发挥到极限。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『维度·决战演算』",
+    "entity_type": "技能魔法"
+   },
+   "observations": [
+    {
+     "category": "technique",
+     "chapter": 123,
+     "text": "无咏唱发动（本切片译名作『维度・决战演算』）：电流唤醒全身细胞、世界运转慢镜头化，右手缓伸精准掐住将坠戒指推回"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 75,
+     "quote": "无咏唱下发动了『维度・决战演算』"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 77,
+     "quote": "觉醒的意识使世界的运转速度在我眼中像慢镜头般缓慢。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "鲜血魔法",
+    "entity_type": "魔法(血术)"
+   },
+   "observations": [
+    {
+     "category": "evolution",
+     "chapter": 123,
+     "text": "据拉丝缇娅拉宣言：特训后'进化'，今日将展示'鲜血魔法的真正价值'（散发红雾）——展示待兑现"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 140,
+     "quote": "本小姐今天就给你展示一下，鲜血魔法的真正价值"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『LivingLegend号』",
+    "entity_type": "载具(船)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 123,
+     "text": "本章舞台：甲板长桌全员午餐；驾驶舱晾衣、船内房间（斯诺独处藏身处）；经由设于办公室的『连接』警戒穿行归船"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 42,
+     "quote": "接着，我保持着跟前往挑战守护者的阶层同级别的警戒，穿过『连接』回到了『LivingLegend号』上。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 45,
+     "quote": "甲板上摆着一张挺大的桌子，上面摆满了各种各样的料理。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 152,
+     "quote": "在驾驶舱上晾衣服的玛利亚用关怀Zz的表情看着我们。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.72,
+   "canonical": {
+    "name": "阿雷亚斯家的宝剑",
+    "entity_type": "道具(剑)"
+   },
+   "observations": [
+    {
+     "category": "manifestation",
+     "chapter": 123,
+     "text": "探索前彩排出鞘'在空中散布水晶粒子'，与拉丝缇娅拉红雾对演（原文全称『阿雷亚斯家的宝剑诺文』）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 144,
+     "quote": "我拔出『阿雷亚斯家的宝剑诺文』，在空中散布水晶粒子，然后沐浴着闪闪发光的水晶，我也壊笑起来。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.7,
+   "canonical": {
+    "name": "『次元之冬·歪冰世界』",
+    "entity_type": "技能魔法"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 123,
+     "text": "据涡波自况夸饰：全技能总动员之气势下'就连『次元之冬・歪冰世界』的构筑恐怕都不在话下'（本切片译名作・点形）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 107,
+     "quote": "技能『感应』『并列思考』『维度』──不仅如此，我将自己持有的所有技能总动员。就凭我现在这股气势，就连『次元之冬・歪冰世界』的构筑恐怕都不在话下。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.72,
+   "canonical": {
+    "name": "『连接』",
+    "entity_type": "魔法(转移)"
+   },
+   "observations": [
+    {
+     "category": "manifestation",
+     "chapter": 123,
+     "text": "设于办公室的转移门：涡波携莉帕以'跟前往挑战守护者的阶层同级别的警戒'穿行归船"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 23,
+     "quote": "正当我打算就这样保持沉默地穿过设置在办公室的『连接』的时候──技能『感应』敲响了警报。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 42,
+     "quote": "接着，我保持着跟前往挑战守护者的阶层同级别的警戒，穿过『连接』回到了『LivingLegend号』上。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "左手无名指戒指习俗的跨世界差异",
+    "fact": "左手无名指=婚约指位之习俗仅涡波原世界存在（'那个习俗应该只存在于我的世界里'）；本世界无该指位习俗，但戒指本身仍用于结婚仪式——故赠戒给女孩会诱发误会反应（'把那种东西送给女孩子，当然会诱发这种反应'）",
+    "chapter": 123,
+    "tick": 123
+   },
+   "entities_involved": [
+    "相川涡波",
+    "莉帕"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 123,
+     "text": "知识轨更新（本章）：涡波独觉异样未提醒换指；事后反省'至少打造个手环也好啊'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 17,
+     "quote": "那个习俗应该只存在于我的世界里。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 123,
+     "quote": "虽说左手无名指戴戒指是只有我那个世界才有的习俗，但是戒指本身仍然被使用于这边的结婚仪式中。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.72,
+   "canonical": {
+    "name": "异世界饮食（无酱油·柚子汁代味）",
+    "fact": "本世界无酱油类调味料，食鱼配'一种类似柚子的果实汁液'代味；存在馅饼状等涡波初见特色料理（礼仪观望后再模仿食用法）",
+    "chapter": 123,
+    "tick": 123
+   },
+   "entities_involved": [
+    "相川涡波"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 123,
+     "text": "知识轨更新（本章）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 51,
+     "quote": "这边没有酱油之类的调味料，取而代之就配上一种类似柚子的果实汁液吃鱼。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 52,
+     "quote": "但是面对以前没见过的异世界特色料理，我有些难以下手。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "魔法道具赠与(戒指)",
+    "object": "莉帕",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "'这戒指就给你好了。本来就是为了交给谁才打造出来的'——莉帕当众复述'是欧尼酱刚才送给人家的'（与 ch0070 同场景双源）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 11,
+     "quote": "当然没问题。不如说，这戒指就给你好了。本来就是为了交给谁才打造出来的"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 97,
+     "quote": "诶，这个？是欧尼酱刚才送给人家的"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "莉帕",
+    "rel_type": "着用(左手无名指)→收纳",
+    "object": "戒指『晶盾』",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "尺寸恰合左手无名指（艾利巴茨按小规格备料而未告知指围）；警报后依嘱改收纳于外套口袋"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 15,
+     "quote": "这导致莉帕正好适合戒指的那根手指是──左手的无名指。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 36,
+     "quote": "莉帕老实地点了点头，把戒指收进了外套小腹侧边位置的口袋里。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.72,
+   "canonical": {
+    "subject": "戒指『晶盾』",
+    "rel_type": "封入魔法(据涡波辩称)",
+    "object": "诺文",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "据涡波向同伴辩称（掩饰语境）：'那里面封进了诺文的魔法，所以就给了跟诺文亲近的莉帕啦'——真实性未证"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 109,
+     "quote": "那里面封进了诺文的魔法，所以就给了跟诺文亲近的莉帕啦。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "挚友('友情Power'自称)",
+    "object": "诺文",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "对拉丝缇娅拉宣言'让你看看，我和挚友诺文的友情Power'——当众自称"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 145,
+     "quote": "就让你看看，我和挚友诺文的友情Power好了"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "定期共同特训(约定)",
+    "object": "拉丝缇娅拉",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+      "chapter": 123,
+     "text": "'怎么说也是一起特训的伙伴嘛'——魔法特训伙伴关系延续至探索编成讨论（与 ch0070 同关系轨）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 143,
+     "quote": "但是没办法，我也配合她一下好了。怎么说也是一起特训的伙伴嘛。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "振动魔法窃听(持续)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "以震动魔法『Vibration』听取『维度』发动宣言后装望天；涡波断言其'完全没有停止日常生活中的窃听行为的意思'（与 ch0070 同关系轨）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 171,
+     "quote": "估计是用震动魔法『Vibration』听到我『维度』的发动宣言了吧。然后为了逃避责任装成是在望天儿的样子。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 172,
+     "quote": "完全没有停止日常生活中的窃听行为的意思不是嘛"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.75,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "回绝(洗衣代行)",
+    "object": "玛利亚",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "据玛利亚'要是斯诺小姐能做的话我倒是想让就是了'及涡波推断'去拜托过却被斯诺回绝了是吗'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 165,
+     "quote": "要是斯诺小姐能做的话我倒是想让就是了"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 167,
+     "quote": "也就是说，去拜托过却被斯诺回绝了是吗。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.82,
+   "canonical": {
+    "subject": "玛利亚",
+    "rel_type": "迷宫探索代役委托",
+    "object": "莉帕",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "'我已经拜托莉帕和塞拉小姐代替我们参加迷宫探索了'（与缇亚联名，'我们'）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 181,
+     "quote": "我已经拜托莉帕和塞拉小姐代替我们参加迷宫探索了"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.82,
+   "canonical": {
+    "subject": "玛利亚",
+    "rel_type": "迷宫探索代役委托",
+    "object": "塞拉·雷迪安特",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "玛利亚自述已托塞拉代役；塞拉自认受托（'受到缇亚大人和玛利亚的委托了啊'）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 181,
+     "quote": "我已经拜托莉帕和塞拉小姐代替我们参加迷宫探索了"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 184,
+     "quote": "受到缇亚大人和玛利亚的委托了啊。就让我参加吧"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.75,
+   "canonical": {
+    "subject": "缇亚",
+    "rel_type": "迷宫探索代役委托(据塞拉言)",
+    "object": "塞拉·雷迪安特",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "据塞拉自述：'受到缇亚大人和玛利亚的委托了啊'——缇亚为共同委托人（本人在场证据为玛利亚转述语境）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 184,
+     "quote": "受到缇亚大人和玛利亚的委托了啊。就让我参加吧"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "杂务分派(收支核算)",
+    "object": "斯诺·沃克",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "惩处方针：'照波鲁扎克拜托的那样，让她处理收支核算的工作去'——涡波自认数字不会忘无做必要仍强派（与 ch0070 同关系轨）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 199,
+     "quote": "首先就照波鲁扎克拜托的那样，让她处理收支核算的工作去。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "莉帕",
+    "rel_type": "'欧尼酱'称呼",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "本章继续以'欧尼酱'称涡波（'怎样，欧尼酱，合适吗？''谢，谢谢你⋯⋯，欧尼酱'）（ch0115 已登记别名，不重复）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 19,
+     "quote": "怎样，欧尼酱，合适吗？"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 83,
+     "quote": "谢，谢谢你⋯⋯，欧尼酱"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.72,
+   "canonical": {
+    "subject": "波鲁扎克",
+    "rel_type": "收支核算工作委托(据涡波回顾)",
+    "object": "相川涡波",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 123,
+     "text": "据涡波回顾'照波鲁扎克拜托的那样'——受托内容=船上收支核算；对象=涡波（船团负责人）系推断"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 199,
+     "quote": "首先就照波鲁扎克拜托的那样，让她处理收支核算的工作去。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "晶盾授予与试戴（回程路上）",
+    "kind": "赠与",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "锻冶完成后的同一日（归船路上）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "莉帕",
+    "戒指『晶盾』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "归船路上出示晶盾并赠莉帕；'这边的话能轻易戴上'恰为左手无名指——涡波独觉异样未提醒换指"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 5,
+     "quote": "这个？这是我打造的魔法道具"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 11,
+     "quote": "当然没问题。不如说，这戒指就给你好了。本来就是为了交给谁才打造出来的"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 12,
+     "quote": "啊，这边的话能轻易戴上！"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 21,
+     "quote": "莉帕开心地观赏着戴在自己左手无名指上的水晶戒指。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『感应』首发警报与晶盾收纳",
+    "kind": "危机规避",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "同日（穿『连接』前）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "莉帕",
+    "技能『感应』",
+    "戒指『晶盾』",
+    "『连接』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "穿『连接』前警报嘶吼'会死翘翘'；涡波定位问题源=莉帕手上晶盾（'就这么戴着它的话会很危险的'），请其收入外套口袋后警报止"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 24,
+     "quote": "警报声甚大，不停地嘶吼着这么下去会死翘翘。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 30,
+     "quote": "正是莉帕无名指上的戒指。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 32,
+     "quote": "啊，这个，不好意思。莉帕，虽然有点抱歉，但是你能先把那个戒指收起来吗？"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 37,
+     "quote": "与此同时，技能『感应』的警报也停止作响了。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "LivingLegend号甲板午餐会",
+    "kind": "会餐",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "同日午间"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "玛利亚",
+    "拉丝缇娅拉",
+    "斯诺·沃克",
+    "缇亚",
+    "莉帕",
+    "『LivingLegend号』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "全员空腹候涡波归船开餐；海鱼主体豪华大餐（斯诺等所钓）刺身至烤鱼俱全；玛利亚察觉涡波观望异食而挑分馅饼料理照料"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 47,
+     "quote": "玛利亚没对迟来的我埋怨什么，温柔地邀我入座。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 50,
+     "quote": "午饭是以新鲜的海鱼为主体的豪华大餐。应该是用斯诺她们钓上来的鱼做的吧，从刺身到烤鱼应有尽有。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 59,
+     "quote": "玛利亚端起小盘子，为我挑选起类似馅饼的料理。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "午餐戒指修罗场",
+    "kind": "骚动",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "同日午餐中"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "莉帕",
+    "玛利亚",
+    "斯诺·沃克",
+    "拉丝缇娅拉",
+    "缇亚",
+    "戒指『晶盾』",
+    "『维度·决战演算』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "莉帕前倾致口袋中晶盾将坠→涡波无咏唱『维度・决战演算』反射按回→玛利亚点破其手滞莉帕衣内（衣内裸体）→慌忙抽手时戒指落桌→拉丝缇娅拉/缇亚/玛利亚惊呼围观→涡波以'武器说（艾利巴茨共作+封诺文魔法）+全员赠衣'辩解，玛利亚率先接受带动全员（与 ch0070 同场景双源，译名『维度』/『Dimension』差异）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 70,
+     "quote": "因为莉帕身体过度前倾的缘故，过于宽大的外套也随着她前倾。这导致刚才刚好塞进外套的戒指，马上就快要从莉帕的怀里掉出来了！"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 75,
+     "quote": "无咏唱下发动了『维度・决战演算』"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 86,
+     "quote": "莉帕的衣服里面，可是裸体的"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 93,
+     "quote": "凝聚着跟订婚戒指一样精巧设计的戒指在太阳光的照射下闪耀着。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 102,
+     "quote": "「说是戒指哦！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 105,
+     "quote": "拉丝缇娅拉高兴地叫着，缇亚和玛利亚随即呼应。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 109,
+     "quote": "没错，那个不是戒指，是武器。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 113,
+     "quote": "被我的气势引导，首先是玛利亚表示了接受。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "装备赠答承诺与愿望听取",
+    "kind": "约定",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "同日午餐后"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "玛利亚",
+    "拉丝缇娅拉",
+    "斯诺·沃克",
+    "缇亚",
+    "莉帕"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "'结果就因为这点不小心，导致我不得不给所有人都送件衣服'；午餐后听取并记下全员愿望、须作礼物兑现——'朴素的、重视性能的装备'初衷作废"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 125,
+     "quote": "结果就因为这点不小心，导致我不得不给所有人都送件衣服。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 131,
+     "quote": "在这之后，我听取并记下所有人想要的，而且将来必须要将这些做好并作为礼物送给她们。我本来只是想搞点朴素的、重视性能的装备而已，但是这个想法恐怕是没法实现的吧。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "鲜血魔法宣言与双后卫提案（探索前彩排）",
+    "kind": "宣言",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "同日午后（探索准备中）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "玛利亚",
+    "阿雷亚斯家的宝剑"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "拉丝缇娅拉散发红雾邪笑宣言'鲜血魔法的真正价值'；涡波拔阿雷亚斯家的宝剑诺文散水晶粒子对演'友情Power'；遭驾驶舱晾衣的玛利亚吐槽；二人邀玛同往探索被婉拒（洗衣），拉丝缇娅拉转而提案二人转后卫"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 140,
+     "quote": "本小姐今天就给你展示一下，鲜血魔法的真正价值"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 144,
+     "quote": "我拔出『阿雷亚斯家的宝剑诺文』，在空中散布水晶粒子，然后沐浴着闪闪发光的水晶，我也壊笑起来。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 151,
+     "quote": "涡波先生，拉丝缇娅拉小姐，你们到底在做什么"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 194,
+     "quote": "等等，涡波！好不容易做了魔法特训，今天就让我们两个来做后卫不就好了嘛！？"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "斯诺窃听暴露与逃亡",
+    "kind": "日常骚动",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "同日午后"
+   },
+   "entities_involved": [
+    "斯诺·沃克",
+    "相川涡波",
+    "玛利亚",
+    "缇亚"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "涡波发『维度』锁定船内斯诺→其以Vibration察觉后装望天（'诶嘿嘿～'）→被喊名吓绿脸逃跑，冲向已入睡的缇亚寻挡箭牌；涡波欲'去把斯诺那丫头抓过来'，玛利亚称已托莉帕塞拉代役无须如此"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 169,
+     "quote": "我找到船内的斯诺。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 170,
+     "quote": "一个人待在房间里的斯诺，肩膀猛地一抖，接着甩了甩脑袋，然后看向天空「诶嘿嘿～」地笑着打算跟我装没事儿人。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 175,
+     "quote": "斯诺一下子吓得脸都绿了，拔腿就跑。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 177,
+     "quote": "斯诺径直冲着已经入睡的缇亚跑过去。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 181,
+     "quote": "我已经拜托莉帕和塞拉小姐代替我们参加迷宫探索了"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "第二次迷宫探索出发（新阵容）",
+    "kind": "出发",
+    "tick": 123,
+    "instant": null,
+    "time_verbatim": "同日午后（午餐后）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "莉帕",
+    "塞拉·雷迪安特",
+    "玛利亚",
+    "缇亚",
+    "斯诺·沃克"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 123,
+     "text": "成员=涡波/拉丝缇娅拉/莉帕/塞拉（玛利亚缇亚留守洗衣、斯诺拒务）；涡波'感觉全是前卫'忧编成→拉丝缇娅拉提案二人后卫检验特训成果；对斯诺立誓'总有一天，就算是强拉我也要给她带进迷宫去'后踏上第二次探索（与 ch0070 同场景双源）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 188,
+     "quote": "「也就是说，今天的成员是我，拉丝缇娅拉，莉帕，塞拉？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 192,
+     "quote": "在我重游戏性的思考下，对队伍平衡的失调感到了些许的担心。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 201,
+     "quote": "这丫头今天也是一副要尽情享受自由的嘴脸。总有一天，就算是强拉我也要给她带进迷宫去。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 202,
+     "quote": "如此发誓后，我踏上了第二次迷宫探索的路。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "全员装备赠答的修罗场再演预告",
+    "setup_chapter": 123,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "装备/衣服赠答被同伴视为异性送的礼物——'恐怕到了送装备的时候，还要像今天这样累个人仰马翻'；联动恋爱骚动主线（涡波'最喜欢的人'答复未决，ch113）",
+    "chapter": 123
+   },
+   "entities_involved": [
+    "相川涡波",
+    "玛利亚",
+    "拉丝缇娅拉",
+    "斯诺·沃克",
+    "缇亚",
+    "莉帕",
+    "塞拉·雷迪安特"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 123,
+     "text": "开环待回收（愿望清单已听取，兑现即触发）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 127,
+     "quote": "照这个模样，恐怕到了送装备的时候，还要像今天这样累个人仰马翻吧。就算对我而言只是为了强化队伍的实力，但是对她们来说，这可是异性送的礼物啊。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "斯诺的戒指愿望（契约之证）",
+    "setup_chapter": 123,
+    "payoff_chapter": null,
+    "tier": "常规",
+    "note": "'我比起衣服更想要戒指耶？戒指不是更有一种像契约之证那样的感觉吗'——被涡波无视带过；关联玛利亚拒契约择相信线（ch0112）",
+    "chapter": 123
+   },
+   "entities_involved": [
+    "斯诺·沃克",
+    "相川涡波"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 123,
+     "text": "开环待回收"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 117,
+     "quote": "我比起衣服更想要戒指耶？戒指不是更有一种像契约之证那样的感觉吗"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 118,
+     "quote": "感觉斯诺说了什么，但是把她无视掉。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "拉丝缇娅拉'鲜血魔法真正价值'展示",
+    "setup_chapter": 123,
+    "payoff_chapter": null,
+    "tier": "常规",
+    "note": "'尽情期待进化后的我的实力吧'——特训进化后实力与鲜血魔法真正价值待探索中兑现（发色变化机制参见 ch120 实证）",
+    "chapter": 123
+   },
+   "entities_involved": [
+    "拉丝缇娅拉",
+    "相川涡波",
+    "鲜血魔法"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 123,
+     "text": "开环待回收（本章已出发探索，近期兑现概率高）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 140,
+     "quote": "本小姐今天就给你展示一下，鲜血魔法的真正价值"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 194,
+     "quote": "等等，涡波！好不容易做了魔法特训，今天就让我们两个来做后卫不就好了嘛！？"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "餐桌死亡危机与'噩梦'（技能全体感知）",
+    "setup_chapter": 123,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "'一直盘旋在脑海中的那场噩梦就会变成现实。我的所有技能都认为现在这个餐桌上缠绕着此等危险'——技能全体将修罗场判定为致死级危机；联动船旅死亡预告线（ch115 莉帕：'接下来的旅程中，你要随时与死亡相伴'）与技能《？？？》恋爱界限线；本章三次警报触发体均涉莉帕+戒指",
+    "chapter": 123
+   },
+   "entities_involved": [
+    "相川涡波",
+    "莉帕",
+    "玛利亚",
+    "技能『感应』"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 123,
+     "text": "开环待回收（死亡预告线强化信号）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 90,
+     "quote": "一直盘旋在脑海中的那场噩梦就会变成现实。我的所有技能都认为现在这个餐桌上缠绕着此等危险。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.75,
+   "canonical": {
+    "name": "斯诺核算分派与'强拉进迷宫'誓言",
+    "setup_chapter": 123,
+    "payoff_chapter": null,
+    "tier": "常规",
+    "note": "收支核算分派（照波鲁扎克拜托）+'总有一天，就算是强拉我也要给她带进迷宫去'——斯诺待遇线开环",
+    "chapter": 123
+   },
+   "entities_involved": [
+    "相川涡波",
+    "斯诺·沃克",
+    "波鲁扎克"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 123,
+     "text": "开环待回收"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 199,
+     "quote": "首先就照波鲁扎克拜托的那样，让她处理收支核算的工作去。"
+    },
+    {
+     "vol": 1,
+     "chapter": 123,
+     "line": 201,
+     "quote": "这丫头今天也是一副要尽情享受自由的嘴脸。总有一天，就算是强拉我也要给她带进迷宫去。"
+    }
+   ]
+  }
+ ]
+}

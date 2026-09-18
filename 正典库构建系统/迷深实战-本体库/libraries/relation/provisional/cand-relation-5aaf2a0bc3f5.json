@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "应援(结婚推动)",
+  "subject": "缇莉・琉克"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 29,
+   "quote": "「那么你是为了什么回来的？终于打算跟斯诺结婚了是吗？啊，要是你们俩生了小宝宝，能让我给孩子起名吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 51,
+   "quote": "「你说的没错哦。⋯⋯并且，我们『史诗探索者（斯诺粉丝应援会）』的会长，就是你、涡波君」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "以'斯诺粉丝'立场持续推动斯诺与涡波结婚（求孩子命名权/反对斯诺做杂务'要是让她那双美丽的手生出什么瑕疵'）；与格连一唱一和构想'还没演完的戏'；据其自称公会即'斯诺粉丝应援会'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5aaf2a0bc3f5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

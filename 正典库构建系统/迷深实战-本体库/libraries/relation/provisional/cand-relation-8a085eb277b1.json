@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "同行育成·能力飞越",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 117,
+   "line": 173,
+   "quote": "成长最迅速的就是缇亚了。在跟拉丝缇娅拉一同行动的期间，能力值飞越了好几个格段。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 173,
+   "quote": "力量超过了身为最强的格连，体力也在『史诗探索者』的巨汉波鲁扎克之上。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 117,
+   "text": "'在跟拉丝缇娅拉一同行动的期间，能力值飞越了好几个格段'——力量超格连/体力超波鲁扎克，唯剑术停滞"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8a085eb277b1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0117.txt",
+  "sha": "8fbdee9d926f08def4be0631edabc980143e4a15",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

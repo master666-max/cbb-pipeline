@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "会长(名义·永久保留·无权限)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 15,
+   "quote": "「⋯⋯我已经不是会长了，所以那个称呼就免了吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 53,
+   "quote": "「无法退出」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "涡波自称'已经不是会长了'，但据缇莉宣布：会长一职永久保留、'永远都是属于涡波君的东西'；实为无任何权限的摆设且'无法退出'；名号同时被公会借用为'背地里的实际支配者'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ba28b402baa3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

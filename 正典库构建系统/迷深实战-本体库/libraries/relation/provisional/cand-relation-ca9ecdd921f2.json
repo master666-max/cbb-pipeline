@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "拉丝缇娅拉",
+  "rel_type": "职能重叠(索敌·据拉丝缇娅拉)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 110,
+   "quote": "但是，玛利亚酱不是一样能索敌的嘛！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 119,
+   "text": "据拉丝缇娅拉（互相伤害拌嘴中）：'玛利亚酱不是一样能索敌的嘛'——前卫索敌职能被后卫覆盖之争"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ca9ecdd921f2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

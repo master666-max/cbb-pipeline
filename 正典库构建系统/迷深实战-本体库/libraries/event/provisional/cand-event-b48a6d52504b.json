@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "会议",
+  "name": "LivingLegend号探索方针会议（计划半毁改案）",
+  "tick": 117,
+  "time_verbatim": "船旅白天·甲板（午餐沙拉时开讲）"
+ },
+ "evidence": [
+  {
+   "chapter": 117,
+   "line": 14,
+   "quote": "「首先，A队伍暂定为斯诺，缇亚，塞拉小姐。B队伍为拉丝缇娅拉，玛利亚，还有莉帕。这个组合的平衡性应该是最好的」",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 16,
+   "quote": "就依靠莉帕将魔力分给我进行补充",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 70,
+   "quote": "「呜呼呼，进入迷宫之前队伍就半毁了呢。事事不如意呀！真让人受不了呐！」",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 74,
+   "quote": "基本就以我，拉丝缇娅拉，缇亚，玛利亚4人进行探索",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 117,
+   "text": "涡波提案=基本4人队伍轮换制（A队=斯诺/缇亚/塞拉，B队=拉丝缇娅拉/玛利亚/莉帕；上午涡波+A探索，MP不足经『连接』换班并由莉帕补魔，下午涡波+B攻略）→三连离脱：斯诺'我就留在船上等着'、莉帕'没什么兴趣'离席钓鱼、塞拉'我不会听从你的命令进入迷宫'→拉丝缇娅拉幸灾乐祸'进入迷宫之前队伍就半毁了'→改案：'基本就以我，拉丝缇娅拉，缇亚，玛利亚4人进行探索'+随机应变换班；目标39层+40层守护者封存方针"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b48a6d52504b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0117.txt",
+  "sha": "8fbdee9d926f08def4be0631edabc980143e4a15",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

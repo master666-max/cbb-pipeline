@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "异世界",
+  "rel_type": "传承记载(异世界存在)",
+  "subject": "莱文教"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 109,
+   "quote": "「我的话，只要看到了『异邦人』这个显示就没什么需要怀疑的了呢。不管怎么说，与莱文教有不浅关系的人，一定程度上都是知道异世界的存在的」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 112,
+   "quote": "「嗯，有的。在莱文教的传承中，有暗示异世界存在的文献⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 115,
+   "quote": "即使在弗茨亚茨的图书馆里也没有得到这份情报。因为她们都是莱文教中地位甚高之人，所说的话可信性不低。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 116,
+   "text": "据拉丝缇娅拉：莱文教传承中有暗示异世界存在的文献；与莱文教关系匪浅者一定程度上知晓异世界存在；该情报弗茨亚茨图书馆未藏"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7f22643c70a9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

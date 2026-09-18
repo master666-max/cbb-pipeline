@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "鲜血魔法『芬里尔・阿雷亚斯』"
+  ],
+  "instant": null,
+  "kind": "状态变化",
+  "name": "拉丝缇娅拉超限发挥鲜血魔法：发色变白银、剑技再升",
+  "tick": 120,
+  "time_verbatim": "船旅第二日特训途中"
+ },
+ "evidence": [
+  {
+   "chapter": 120,
+   "line": 44,
+   "quote": "拉丝缇娅拉将鲜血魔法的力量发挥超限。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 45,
+   "quote": "她的秀发发出五颜六色的光芒，最后演变为白银色。看来是借用了更多人的经验。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 49,
+   "quote": "拉丝缇娅拉剑术的水准又提高了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 120,
+   "text": "'不得不也胡来一番'——将鲜血魔法的力量发挥超限，秀发五颜六色后变白银色，'借用了更多人的经验'，剑术水准又提高"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d8f7b09bd4f8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0120.txt",
+  "sha": "d4dc8f52b15e4264db4a652311ced60782eec1ec",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

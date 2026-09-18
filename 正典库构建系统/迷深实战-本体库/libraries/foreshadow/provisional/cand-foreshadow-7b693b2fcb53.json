@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "chapter": 116,
+  "entities": [
+   "技能『所有物』",
+   "技能『表示』",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "缇亚"
+  ],
+  "name": "拉丝缇娅拉与缇亚对涡波技能的异样沉默",
+  "note": "转述『表示』『所有物』时二人面色转严肃——'看来在莱文教关系者眼中察觉到了什么东西'；随后强行转题至固有技能（'很明显地是强行转移话题'）；涡波判其为'只是为我着想的忧虑'且技能『感应』无反应故未追问——莱文教知识层所见之物与忧虑内容待回收（与技能/异邦人本质的关联嫌疑）",
+  "payoff_chapter": null,
+  "setup_chapter": 116,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 160,
+   "quote": "然而不知为何，继续说下去的拉丝缇娅拉的脸色变得严肃起来。仔细一看，身旁的缇亚也一样。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 161,
+   "quote": "看来在莱文教关系者眼中察觉到了什么东西。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 164,
+   "quote": "很明显地是强行转移话题。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 116,
+   "text": "莱文教关系者的沉默钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-7b693b2fcb53",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

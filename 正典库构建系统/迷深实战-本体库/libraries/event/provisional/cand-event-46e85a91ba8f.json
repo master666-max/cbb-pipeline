@@ -1,0 +1,69 @@
+{
+ "canonical": {
+  "entities": [
+   "『LivingLegend号』",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "会餐",
+  "name": "LivingLegend号甲板午餐会",
+  "tick": 123,
+  "time_verbatim": "同日午间"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 47,
+   "quote": "玛利亚没对迟来的我埋怨什么，温柔地邀我入座。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 50,
+   "quote": "午饭是以新鲜的海鱼为主体的豪华大餐。应该是用斯诺她们钓上来的鱼做的吧，从刺身到烤鱼应有尽有。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 59,
+   "quote": "玛利亚端起小盘子，为我挑选起类似馅饼的料理。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 123,
+   "text": "全员空腹候涡波归船开餐；海鱼主体豪华大餐（斯诺等所钓）刺身至烤鱼俱全；玛利亚察觉涡波观望异食而挑分馅饼料理照料"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-46e85a91ba8f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

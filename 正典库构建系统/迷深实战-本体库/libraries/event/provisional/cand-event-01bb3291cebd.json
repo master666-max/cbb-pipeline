@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "日常骚动",
+  "name": "斯诺窃听暴露与逃亡",
+  "tick": 123,
+  "time_verbatim": "同日午后"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 169,
+   "quote": "我找到船内的斯诺。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 170,
+   "quote": "一个人待在房间里的斯诺，肩膀猛地一抖，接着甩了甩脑袋，然后看向天空「诶嘿嘿～」地笑着打算跟我装没事儿人。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 175,
+   "quote": "斯诺一下子吓得脸都绿了，拔腿就跑。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 177,
+   "quote": "斯诺径直冲着已经入睡的缇亚跑过去。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 181,
+   "quote": "我已经拜托莉帕和塞拉小姐代替我们参加迷宫探索了",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 123,
+   "text": "涡波发『维度』锁定船内斯诺→其以Vibration察觉后装望天（'诶嘿嘿～'）→被喊名吓绿脸逃跑，冲向已入睡的缇亚寻挡箭牌；涡波欲'去把斯诺那丫头抓过来'，玛利亚称已托莉帕塞拉代役无须如此"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-01bb3291cebd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

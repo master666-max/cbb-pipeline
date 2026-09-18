@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "『所有物』",
+   "相川涡波",
+   "魔法『冻结』"
+  ],
+  "instant": null,
+  "kind": "准备",
+  "name": "涡波冻结海面赴小岛采沙约10公斤",
+  "tick": 120,
+  "time_verbatim": "特训次日清晨"
+ },
+ "evidence": [
+  {
+   "chapter": 120,
+   "line": 81,
+   "quote": "──魔法『冻结』",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 83,
+   "quote": "我将海面冻住，在海上跑起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 86,
+   "quote": "然后将海岸上的沙子和石头装进了袋子，之后收回了『所有物』中。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 87,
+   "quote": "到手了10公斤左右的沙子后，我回到船上。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 120,
+   "text": "自甲板跳到海上、瞬间展开冻结魔法冻住海面奔跑；于附近小岛海岸将沙石装袋收入『所有物』，得10公斤左右沙子"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-48e423a52c08",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0120.txt",
+  "sha": "d4dc8f52b15e4264db4a652311ced60782eec1ec",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

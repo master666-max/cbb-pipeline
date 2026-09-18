@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "兄长般关心(代言杂务)",
+  "subject": "波鲁扎克"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 111,
+   "quote": "其实她挺擅长核算和文案整理的工作。说是擅长，不如说是做习惯了吧",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 127,
+   "quote": "虽然感情不怎么外露，但是波鲁扎克他也相当地关心斯诺。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "'比亲哥哥还有哥哥范儿'：替不擅开口的斯诺代言其长处、建议给她事做；因关心其成长（'从小就是被娇惯大的'）而宁可被两位斯诺厨斥责；在涡波受围攻时以搭肩与'拜托你了哦，会长'表达托付"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ad2404711743",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

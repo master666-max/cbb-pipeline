@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "说话方式感染(模仿)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 105,
+   "quote": "她的说话方式总觉得有点像诺文。可能是看到了他作为『剑圣』和『守护者』的宣誓之后，受到感染了吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 118,
+   "text": "'她的说话方式总觉得有点像诺文。可能是看到了他作为『剑圣』和『守护者』的宣誓之后，受到感染了吧'（涡波观察）；'3岁孩子的话常这么做'——幼态模仿期表现"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-65b2a9850803",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

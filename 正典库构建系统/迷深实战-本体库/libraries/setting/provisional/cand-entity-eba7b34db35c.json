@@ -1,0 +1,45 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "冻结魔法『利特尔降雪』"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 144,
+   "quote": "我服下了冻结魔法『利特尔降雪』的魔石，但是没有发生任何变化。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 119,
+   "text": "冻结魔法之一；涡波叙述回顾曾服下其魔石但'没有发生任何变化'——作为其魔法学习界限的反证"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-eba7b34db35c",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "chapter": 116,
+  "entities": [
+   "技能『？？？』",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "name": "涡波对技能『？？？』消除对象的隐瞒",
+  "note": "全员公开中唯一的保留：仅说明'会将一部分感情消除'、隐去对象是谁（'说了的话，就会让昨天的事情变得更复杂的'）；自觉'明明发誓要信赖同伴，却无法完全实践'——对象（拉丝缇娅拉）与斯诺窃听内容并存，真相公开时的反噬待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 116,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 189,
+   "quote": "顺道一说，仅仅在技能『？？？』的问题是我有所保留。为了大事化小，我只说明它会将一部分感情消除而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 190,
+   "quote": "至于被消除的是对谁的感情我没有说。说了的话，就会让昨天的事情变得更复杂的。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 191,
+   "quote": "虽说这是无奈之举，但是心里还是过意不去。明明发誓要信赖同伴，却无法完全实践。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 116,
+   "text": "部分坦白保留钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-d2bf10faeb59",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

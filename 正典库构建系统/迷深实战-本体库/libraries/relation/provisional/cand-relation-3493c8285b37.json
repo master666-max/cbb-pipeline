@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "组合魔法搭档(职责分割)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 121,
+   "quote": "「真没办法，缇亚。瞄准和诱导就用我的火焰魔法来辅助，你就专注于威力和速度好了」",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 115,
+   "quote": "「缇亚，不是光压缩魔力就行的。再仔细一点」",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 122,
+   "quote": "「完全将职责分割开了呢。确实，那么做可能更容易成功吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 203,
+   "quote": "不对，说到底，『萤火』和『炎之矢』就不是这样的魔法。这已经是升华到另一种境界的两个魔法互相络合，进一步升华为更高级的别种魔法了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 118,
+   "text": "提案→指导→分工确立：耳语提案组合尝试；指导构筑（'不是光压缩魔力就行的。再仔细一点'/火候论/想像的平衡）；分工='瞄准和诱导就用我的火焰魔法来辅助，你就专注于威力和速度'；实战中玛利亚造枪身引导缇亚的『炎之矢』——两人组合被涡波评为超越常规共鸣的'络合升华为更高级的别种魔法'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3493c8285b37",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

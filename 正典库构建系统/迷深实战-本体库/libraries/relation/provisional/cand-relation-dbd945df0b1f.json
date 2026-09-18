@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "所属锻冶师",
+  "subject": "艾利巴茨·利拜斯"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 13,
+   "quote": "在走向史诗探索者工房的路上，我的心情渐渐激动起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 67,
+   "quote": "我觉得你还是去更了不起的地方找有名的锻冶师比较合适⋯⋯",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 122,
+   "text": "工房常驻匠人；自认'说到底也就是一个公会的锻冶师而已'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dbd945df0b1f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

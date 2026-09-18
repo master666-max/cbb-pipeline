@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "会长(曾任·守护者)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 21,
+   "quote": "「不是的，我没这个意思。只是有时不时来这看看的打算罢了。今天是悄悄过来的，安静点哦⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 83,
+   "quote": "对于曾经以『史诗探索者』会长的身份守护过劳拉维亚的我来说，这个国家就像自家的庭院一样。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 122,
+   "text": "被成员称'会长'；曾以会长身份守护劳拉维亚；本人否认回归——'只是有时不时来这看看的打算'，今日为悄悄来访"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-282b73960cad",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

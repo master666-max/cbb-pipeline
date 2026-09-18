@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "劳拉维亚",
+   "史诗探索者",
+   "相川涡波",
+   "缇莉・琉克",
+   "连接"
+  ],
+  "instant": null,
+  "kind": "移动/回归",
+  "name": "涡波经『连接』回归史诗探索者本部",
+  "tick": 121,
+  "time_verbatim": "早晨（「早上好」）；与船旅众人「与此同时」的并行时段"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 3,
+   "quote": "离开联合国南部的海面，我来到了劳拉维亚。",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 4,
+   "quote": "我打算半永久地保持留在这个房间里的『连接』",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 8,
+   "quote": "「早，早上好～⋯⋯⋯还是该说我回来了比较好吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 121,
+   "text": "自联合国南部海面（船旅途中）经『连接』抵达劳拉维亚本部旧办公室，计划在该房间半永久保持『连接』；房间已从煞风景空屋变为资料文件堆积状态；发现缇莉・琉克瘫倒旧办公桌（涡波离开后文案由她负责）——'都那么潇洒地告别了，才过几天就大摇大摆地跑回来'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a385dc5467f0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

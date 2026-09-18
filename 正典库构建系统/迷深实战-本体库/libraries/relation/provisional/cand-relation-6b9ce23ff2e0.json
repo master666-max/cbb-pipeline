@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "技能『？？？』",
+  "rel_type": "敌视与命名(IllWill)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 179,
+   "quote": "「嗯～，姆姆─，呜～嗯。⋯⋯Unknown？不行，总觉得是带有恶意的技能⋯⋯，那就恶意（ILLWILL）？就叫技能『？？？（IllWill）』怎么样！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 187,
+   "quote": "「不不，明显就是恶意的集合体啊这东西。就因为这东西的存在，导致涡波的感情的上限被削减了不是吗？都到了会消除对某人的思慕的地步了不是吗？那种事绝不允许。毫无疑问这个是不好的技能哦」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 192,
+   "quote": "但是即使如此，拉丝缇娅拉还是将这无形的技能视为了敌人。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 116,
+   "text": "'将这无形的技能视为了敌人'：怒斥其为'恶意的集合体'——削减涡波感情上限、'会消除对某人的思慕'、'那种事绝不允许'；主动命名『？？？（IllWill）』并获涡波采纳（其他同伴表情皆不算好，斯诺仅附和倒卖人情）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6b9ce23ff2e0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

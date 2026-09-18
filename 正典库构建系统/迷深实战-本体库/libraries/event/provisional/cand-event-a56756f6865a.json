@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "『炎之矢』",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "石英巨蟹",
+   "缇亚",
+   "阿雷亚斯家的宝剑"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "石英巨蟹初遭遇战（涡波单杀+三人连携）",
+  "tick": 118,
+  "time_verbatim": "31层，进发32层路上"
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 33,
+   "quote": "路上遭遇了一种第一次见到的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 48,
+   "quote": "水晶发出竹子断折般的清脆声音破碎了。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 65,
+   "quote": "玛利亚的火焰阻碍了石英巨蟹的视野，拉丝缇娅拉挡开蟹钳的攻击。接着缇亚射出『炎之矢』，将石英巨蟹吹飞。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 66,
+   "quote": "然后三个人一起对丧失平衡的石英巨蟹发动总攻。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 118,
+   "text": "两匹遭遇：涡波自称初见该怪、以『并列思考』预置『次元之冬・终霜』后独对一匹——蟹钳异常扭曲夹剑掰折、水晶高音后碎的是蟹钳（宝剑毫发无损），涡波趁机挥剑断体化光；另一匹三人连携：玛利亚火焰遮其视野→拉丝缇娅拉挡开蟹钳→缇亚『炎之矢』吹飞→三人总攻、拉丝缇娅拉终结一击后照例pose；涡波确认缇亚玛利亚在30层探索战力充足而安心"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a56756f6865a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

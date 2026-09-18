@@ -1,0 +1,1857 @@
+{
+ "_meta": {
+  "unit": "CBB 构建线单章任务 · CHAPTER 0119（138话-33层、34层）",
+  "source": {
+   "path": "迷深实战-工作区/slice/ch0119.txt",
+   "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+   "verified_at": "2026-09-19",
+   "slice": "行1-238（CHAPTER 0119，238行，正文至行237；文件当前 git 未跟踪→按锚点协议 v2 记 git blob 内容哈希，主代理提交后需以 blob 哈希复核重锚）"
+  },
+  "extractor": "ZCode 代理亲抽（GLM-5.3，CBB 构建线单章任务 CHAPTER 0119）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点制（tick=章序119，禁墙钟）→2000-01-01+119d=2000-04-29。故事时间=一日（迷宫33→34层数小时+归船后甲板特训至MP见底；无日历坐标），instant 留空——缺坐标判不可见。",
+  "coordinate_line_note": "evidence.line=切片文件物理行号−1（CHAPTER 标记行=第0行）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；行1 CHAPTER 标记与行3'落地死的流星'（翻译组署名，与 ch0089/ch0112-0115 同型）为元文本整块不取；行234 文内括注（3岁）为作者吐槽式括注，含该括注之句引文截断至括注前；状态面板'？？？？？？'脱字段按判例3 原样立证不猜补",
+   "reason": "R6 规则1（话数卷数/翻译组署名类）；判例3（脱字原样）",
+   "deterministic_check": "'落地死的流星'仅行3一处；'？？？？？？'两处（行15/行222-223）均按判例3 原样引用；文内括注两处（行234（3岁）/行213（汗水））均避开引文；无插图文件名行；无'忽略以上指令'类注入样文本"
+  },
+  "near_name_check": "判例4 履行：①迪亚波罗・西斯（本章状态栏写法）→库内名 迪亚布罗·西斯（ch0004），登记别名不另立；②『Flame・Aegis（守护炎）』→ch0070 设定内既见写法『Flame·Aegis（守护炎）』（涡波命名，Aegis=其世界守护之意），登记别名；近名 守护炎（Egis）（ch0090 玛利亚个人技实体）与本章共鸣魔法组合技层级不同，存疑不合、留终审 R4；③『冰・Aegis（守护冰）』→ch0070 既见写法『Ice·Aegis（守护冰）』，登记别名；④冻结魔法（本章面板/对话写法）vs 库内 冰结魔法（ch0003 实体名）——近名不另立，留 R4；⑤阿雷亚斯家的宝剑诺文=库内名 阿雷亚斯家的宝剑（ch0005）之既有别名，照用不重复登记；⑥『次元之冬』『魔法相杀』『LivingLegend号』=库内名照用；⑦魔法『冰之矢』『次元・雪』『耶梦加得之霜』『冰BatteringRam（冰霜破城槌）』『利特尔降雪』全库检索无命中，新立",
+  "alias_policy": "本批登记：迪亚波罗・西斯（proper_name 变体→迪亚布罗·西斯）；『Flame・Aegis』『Flame·Aegis（守护炎）』『Aegis』（→共鸣魔法『Flame・Aegis（守护炎）』）；『Ice·Aegis（守护冰）』（→共鸣魔法『冰・Aegis（守护冰）』）；『冰BatteringRam』（→『冰BatteringRam（冰霜破城槌）』）；『利特尔降雪』（→冻结魔法『利特尔降雪』）；『魔法相杀』带『』写法（→魔法相杀，库内 ch0080 名无括号）。descriptor/title 类无合并；存疑项（守护炎（Egis）/冻结魔法vs冰结魔法）分开建不登记。",
+  "confidence_calibration": "状态面板/叙事直陈 0.88-0.9；对话声称类 relation claim=true 且 0.85（据拉丝缇娅拉/据涡波）；命名者归属（玛利亚定全名）依称呼形式反推标'反推'，E1 置 0.85；新技能具体名对照 ch0109 面板属跨文件比对，E8 置 0.8 并标【待确认】。类型配比：实体+setting 20/42（48%）／relation 11/42（26%）／event 8/42（19%）／foreshadow 3/42（7%）——密度锚参考带内。",
+  "chapter_summary": "33-34层探索：玛利亚缇亚共鸣魔法获名『Flame・Aegis（守护炎）』无双清场，涡波拉丝缇娅拉沦为捡魔石；归船甲板特训仿造出『冰・Aegis』，魔法使对决拉丝缇娅拉胜，两人各习得新技能；章末涡波掏出阿雷亚斯家的宝剑诺文。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章事实（迪亚布罗·西斯=缇亚表示名/33层地形与 ch0071 冲突/周回再演命名/职业栏变化对照）一律入 _meta.cross_chapter_notes 与 setting 轨，不入实体 observations。",
+  "cross_chapter_notes": [
+   "★迪亚布罗·西斯=缇亚表示名：本章状态栏两现（级别16→18/MP182/1107），判例1 不自动合并；ch0004'表示显示未来名之谜'伏笔续开，终审 R4 处理",
+   "★33层地形冲突：本章'33层的构造大多是河流和浅滩'（行35）vs ch0071 记录'33层祭坛群；34层转为石制回廊、表层覆水及膝'——不合，疑周回后迷宫变貌或资料层差，存疑留终审【待确认】",
+   "★周回再演实证：共鸣魔法命名同型（ch0070 亦为涡波命名『Flame·Aegis（守护炎）』、Aegis=其世界守护之意）；冰仿造版亦 ch0070 既存（Ice·Aegis）——本章为新周回重演，名字沿承",
+   "★恋爱线：涡波'控制住自己的感情。不能对她太动情'（行230）理由本章未言明；其与技能《？？？》临界（ch114-115）之关联为先验推断，不入候选正文，仅此留痕",
+   "★面板职业变化：拉丝缇娅拉职业栏=骑士（库内 ch0014=英雄/ch0039=无）——status_change 已入 S2 setting 轨",
+   "★新技能比对：涡波后天技能'魔法战斗0.72'为对照 ch0109 快照之新增项；拉丝缇娅拉新技能候项两说（魔法战斗2.27（先天）/集中收束0.21（后天））【待确认】"
+  ],
+  "injection_check": "正文无内嵌指令样文本，零拒抽块。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "33-34层探索中前卫职责被架空、仅拾捡魔石；自认队长，决意特训以拿出比『Flame・Aegis』更有效率的战法；与拉丝缇娅拉开发仿造共鸣魔法、进行魔法使对决（告负）；章末依『并列思考』结论掏出『阿雷亚斯家的宝剑诺文』预告下一项特训"
+    },
+    {
+     "category": "trait",
+     "chapter": 119,
+     "text": "自述'对冒険有所憧憬的思春期男孩子'、第一次组成四人队伍时对战斗经历抱有期待；初次体验努力（挥汗）训练，称感觉新鲜"
+    },
+    {
+     "category": "manifestation",
+     "chapter": 119,
+     "text": "面对拉丝缇娅拉兴奋凑近时自我约束：'控制住自己的感情。不能对她太动情'（理由本章未述）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 72,
+     "quote": "在这过程中，我和拉丝缇娅拉做的，只有捡魔石罢了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 73,
+     "quote": "但也是个对冒険有所憧憬的思春期男孩子。第一次组成了四人队伍"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 114,
+     "quote": "自己好歹也是领导大家的队长。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 120,
+     "quote": "哟，哟西，来特训吧！"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 213,
+     "quote": "「这感觉真新鲜啊⋯⋯」"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 229,
+     "quote": "看到这一幕，我控制住自己的感情。不能对她太动情。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 236,
+     "quote": "利用『并列思考』得到的结论，促使我掏出『阿雷亚斯家的宝剑诺文』"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "拉丝缇娅拉",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "自陈'作为升级和回复角色还是有必要的''作为索敌角色也是派得上用场'以保住队伍位置；与涡波共同特训（仿造共鸣魔法、堆雪人打雪仗、提案并战胜魔法使对决、摆V字胜利Pose）；自述'打出生就是剑术体术还有魔法的大师'，本章为变强而努力系初次体验；习得一个新技能后面露喜色"
+    },
+    {
+     "category": "technique",
+     "chapter": 119,
+     "text": "魔法使对决中短时间彻底改变魔法构筑方式、超越无咏唱将构筑时间极限缩短，从四面八方施展不同属性魔法并用假动作隐蔽弹道——叙述者评'在战斗方面天赋异禀'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 106,
+     "quote": "人、人人人人家作为升级和回复角色还是有必要的来着⋯⋯？"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 108,
+     "quote": "我，我作为索敌角色也是派得上用场的说⋯⋯！"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 114,
+     "quote": "拉丝缇娅拉也有作为副队长的自觉。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 187,
+     "quote": "果然，拉丝缇娅拉在战斗方面天赋异禀。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 188,
+     "quote": "在这么短的时间内，就彻底改变了自己的魔法构筑方式。超越了无咏唱，将魔法的构筑时间极限缩短。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 211,
+     "quote": "我的话，打出生就是剑术体术还有魔法的大师了。根本就打不起什么努力的劲头捏"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 233,
+     "quote": "恐怕她以前从来没有像这样通过努力学会什么吧"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "玛利亚",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "后卫魔法使之一（本章级别15→17）；掌管升级操作委托与MP管理，MP将尽时指示涡波开启『连接』归船；探索结束后称'要回去做家务'；据拉丝缇娅拉亦具索敌能力"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 3,
+     "quote": "那么升级就拜托你了呢，拉丝缇娅拉"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 5,
+     "quote": "拉丝缇娅拉照着玛利亚说的帮她升级。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 77,
+     "quote": "差不多MP要用光了。拜托你使用『连接』了，涡波先生"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 93,
+     "quote": "玛利亚HP159／264MP23／1065职业：无"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 100,
+     "quote": "那么辛苦大家了。我接下来要回去做家务了"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "缇亚",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "后卫魔法使之一，光线贯穿蒸发河流中潜伏怪物；自述'被玛利亚肆意驱使了一番，累死了'而回房休息；据涡波亦能使用神圣魔法"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 42,
+     "quote": "在河流中潜伏着的怪物，顷刻间就被缇亚的光线贯穿了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 101,
+     "quote": "我要回房间休息⋯⋯⋯被玛利亚肆意驱使了一番，累死了"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 111,
+     "quote": "你要这么说的话，缇亚也能用神圣魔法不是嘛！"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "迪亚布罗·西斯",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [
+    "迪亚波罗・西斯"
+   ],
+   "observations": [
+    {
+     "category": "status_change",
+     "chapter": 119,
+     "text": "本章状态面板两现：职业剑士；级别16→18；HP220/244→220/269；MP629/1030→182/1107（探索后近枯竭）；状态栏示'加护1.00'；先天技能=神圣魔法3.81/神之加护3.08/断罪2.00/集中收束2.06/属性魔法2.10/过度捕获2.20/续命2.24/锐眼2.03，后天技能=剑术0.11；面板末行有'？？？？？？'脱字段"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 7,
+     "quote": "名字：迪亚波罗・西斯HP220／244MP629／1030职业：剑士"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 10,
+     "quote": "状态：加护1.00"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 11,
+     "quote": "先天技能：神圣魔法3.81神之加护3.08断罪2.00集中收束2.06"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 14,
+     "quote": "？？？？？？"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 90,
+     "quote": "迪亚波罗・西斯HP220／269MP182／1107职业：剑士"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "共鸣魔法『Flame・Aegis（守护炎）』",
+    "entity_type": "技能魔法"
+   },
+   "aliases_to_register": [
+    "『Flame・Aegis』",
+    "『Flame·Aegis（守护炎）』",
+    "『Aegis』"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "玛利亚×缇亚反复练习失败后完成的共鸣魔法；本章经涡波提案语源名『Aegis』（其世界'象征着守护某人'之意）而定名；实战中遍及回廊的火焰瞬间全数蒸发闯入领域之怪物，令前卫二人无事可做；涡波评：与『次元之冬』同例，'只要有个好点子就能发挥出基础魔法的几十倍威力'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 32,
+     "quote": "这个魔法是为了守护涡波先生的魔法。──那就叫它共鸣魔法『Flame・Aegis（守护炎）』好了"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 39,
+     "quote": "共鸣魔法『Flame・Aegis』"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 66,
+     "quote": "遍及回廊的火焰来回激荡，闯进领域内的怪物们一瞬间就被全数蒸发了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 134,
+     "quote": "就像我的复合魔法『次元之冬』和玛利亚她们的共鸣魔法『Flame・Aegis』一样，只要有个好点子就能发挥出基础魔法的几十倍威力。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "共鸣魔法『冰・Aegis（守护冰）』",
+    "entity_type": "技能魔法"
+   },
+   "aliases_to_register": [
+    "『Ice·Aegis（守护冰）』"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "涡波×拉丝缇娅拉对『Flame・Aegis』的仿造共鸣魔法（组件=冰之结界+『次元・雪』+冰之矢）；两人在甲板上宣言咏唱后模仿成功，但威力与精度远逊原版——以移动物为靶'连飞鸟的一根羽毛都拔不下来'，判定面对30层以下怪物无实战价值"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 151,
+     "quote": "共鸣魔法『冰・Aegis（守护冰）』"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 153,
+     "quote": "甲板上张开冰之结界，『次元・雪』于结界中飞舞。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 155,
+     "quote": "模仿成功了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 156,
+     "quote": "作为尝试挑了个移动物当靶子，结果就连飞鸟的一根羽毛都拔不下来。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔法『冰之矢』",
+    "entity_type": "技能魔法"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "拉丝缇娅拉释放的冰箭魔法；在共鸣魔法练习中于涡波『次元・雪』精制的雪道引导下贯穿天空；魔法使对决开场再度使用"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 149,
+     "quote": "魔法『冰之矢』"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 154,
+     "quote": "拉丝缇娅拉释放的冰箭则在我精制的雪道引导下贯穿天空。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 175,
+     "quote": "那么搞起～。──『冰之矢』！"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『次元・雪』",
+    "entity_type": "技能魔法"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "涡波的魔法（次元魔术系）；于冰之结界中飞舞，并可精制为引导拉丝缇娅拉冰箭的雪道"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 150,
+     "quote": "魔法『次元之冬』、『次元・雪』"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 153,
+     "quote": "甲板上张开冰之结界，『次元・雪』于结界中飞舞。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 154,
+     "quote": "拉丝缇娅拉释放的冰箭则在我精制的雪道引导下贯穿天空。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『耶梦加得之霜』",
+    "entity_type": "技能魔法"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "涡波在魔法使对决中改变战法后释放的大招，凝成冰蛇；被拉丝缇娅拉『冰BatteringRam』从正面碾作齑粉"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 194,
+     "quote": "『耶梦加得之霜』！！"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 198,
+     "quote": "她释放出的巨型冰槌从正面将我精制的冰蛇碾作齑粉。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『冰BatteringRam（冰霜破城槌）』",
+    "entity_type": "技能魔法"
+   },
+   "aliases_to_register": [
+    "『冰BatteringRam』"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "拉丝缇娅拉在魔法使对决中趁『魔法相杀』松缓一瞬间释放的巨型冰槌大招；从正面碾碎涡波的冰蛇并将其逼出阵地，锁定胜局"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 195,
+     "quote": "『冰BatteringRam（冰霜破城槌）』！！"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 198,
+     "quote": "她释放出的巨型冰槌从正面将我精制的冰蛇碾作齑粉。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 199,
+     "quote": "接着『冰BatteringRam』乘势将我逼出了自己的阵地。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "冻结魔法『利特尔降雪』",
+    "entity_type": "技能魔法"
+   },
+   "aliases_to_register": [
+    "『利特尔降雪』"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "冻结魔法之一；涡波叙述回顾曾服下其魔石但'没有发生任何变化'——作为其魔法学习界限的反证"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 144,
+     "quote": "我服下了冻结魔法『利特尔降雪』的魔石，但是没有发生任何变化。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『LivingLegend号』",
+    "entity_type": "设施(魔导船)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 119,
+     "text": "一行经『连接』穿门回到船上；首次迷宫探索后在甲板确认成果并进行特训（冰结界、雪人雪仗、魔法使对决划线阵地战）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 82,
+     "quote": "我们就这样回到了『LivingLegend号』上。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 83,
+     "quote": "首次迷宫探索结束，我们在甲板上确认这次探索的成果。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 170,
+     "quote": "拉丝缇娅拉用脚在白雪皑皑的甲板上划出一条线。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "玛利亚",
+    "rel_type": "共鸣魔法搭档(后卫二人组)",
+    "object": "缇亚",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "两人共演共鸣魔法『Flame・Aegis（守护炎）』清场；叙述者直言'只要有缇亚和玛利亚两个人就足够了'；探索后一同回船内休息"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 21,
+     "quote": "明明级别比怪物低了一半多，我们的魔法使们却将敌人尽情蹂躏了一番。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 51,
+     "quote": "说实话，只要有缇亚和玛利亚两个人就足够了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 102,
+     "quote": "任务完成的玛利亚和缇亚两人一起消失在船内。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "前卫依赖(抱大腿/被架空)",
+    "object": "玛利亚",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "本四角关系之事实轴：只要玛利亚×缇亚的『Flame・Aegis』在场，怪物无法接近前卫二人，涡波与拉丝缇娅拉在33层全程仅捡魔石——叙述自评'就算说是寄生在她们身上都不为过''抱着后卫二人组的大腿'；二人为保骄傲与自尊无法说破"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 52,
+     "quote": "这么一来，就算说是寄生在她们身上都不为过。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 59,
+     "quote": "简直就像是在安抚吃软饭的小白脸一样。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 63,
+     "quote": "我们抱着后卫二人组的大腿，在33层势如破竹。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 115,
+     "quote": "但是，这么下去的话，领队和副领队就变成吃软饭的了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 118,
+     "quote": "玛利亚和缇亚变强这点我没有什么意见。虽然没意见，但是这么下去可不行。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "共同特训伙伴(队长副队长)",
+    "object": "拉丝缇娅拉",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "两人以击掌确认特训意愿、以击掌庆祝新技能习得；共同开发仿造共鸣魔法、互相建言改良魔法构筑、进行魔法使对决训练；叙述者计划以后多进行这样的训练"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 130,
+     "quote": "我们互相击掌，确认对方的意愿。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 181,
+     "quote": "对，如果构筑没有破绽的话我就用不了这招了。注意这一点，你就多加改良吧"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 207,
+     "quote": "今天的经验在以后的魔法对决中能够起到不小的作用。以后多跟拉丝缇娅拉进行这样的训练也不错。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 230,
+     "quote": "于是我用一如既往的方式跟拉丝缇娅拉击掌庆祝。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "探索指挥听命",
+    "object": "玛利亚",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "探索行程与MP管理由玛利亚主导，涡波自陈按吩咐作出『连接』、'已经是完全听命于玛利亚的状态了'（自我调侃语气）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 77,
+     "quote": "差不多MP要用光了。拜托你使用『连接』了，涡波先生"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 79,
+     "quote": "我按照吩咐，作出『连接』。已经是完全听命于玛利亚的状态了。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "拉丝缇娅拉",
+    "rel_type": "技能持有(冻结魔法·血中多数)",
+    "object": "冻结魔法",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "据拉丝缇娅拉自述：次元魔术'太小众了，以至于没有登录进我的血中'，但'冻结魔法倒是有不少'；另叙述者注其血中记录着多种多样的魔法和经验"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 139,
+     "quote": "次元魔术太小众了，以至于没有登录进我的血中啊。冻结魔法倒是有不少的说⋯⋯"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 185,
+     "quote": "魔力总量是我比较强。但是拉丝缇娅拉的血中记录着多种多样的魔法和经验。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "技能持有(冻结魔法仅两种)",
+    "object": "冻结魔法",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "涡波自述会使用的冻结魔法很少，'只有『冻结』和『冰』两个'；据其回顾服『利特尔降雪』魔石无效，自断'我能学会的魔法只有次元魔术而已'（推断）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 140,
+     "quote": "反而我会使用的冻结魔法很少。只有『冻结』和『冰』两个"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 144,
+     "quote": "恐怕，我能学会的魔法只有次元魔术而已。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "刻意压抑感情",
+    "object": "拉丝缇娅拉",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "见其新技能喜色后'控制住自己的感情。不能对她太动情'；其兴奋凑近时独白'你贴这么近我要控制不住自己的感情了'——压抑动作为本章实录，理由未言明（恋爱线，另见 _meta.cross_chapter_notes）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 229,
+     "quote": "看到这一幕，我控制住自己的感情。不能对她太动情。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 234,
+     "quote": "拉丝缇娅拉一脸兴奋地凑过来。你贴这么近我要控制不住自己的感情了，高抬贵手啊啊啊。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "劣位(魔力操作精度·据拉丝缇娅拉)",
+    "object": "玛利亚",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "据拉丝缇娅拉（练习后自评）：'魔力操作的精度上，涡波不如玛利亚酱'——仿造共鸣魔法失败原因分析之一"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 158,
+     "quote": "魔力操作的精度上，涡波不如玛利亚酱，魔法的威力我则逊于缇亚"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "拉丝缇娅拉",
+    "rel_type": "劣位(魔法威力·据拉丝缇娅拉)",
+    "object": "缇亚",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "据拉丝缇娅拉自评：'魔法的威力我则逊于缇亚'，因'没办法像缇亚那样进行魔力收束'（即集中收束），故威力很低"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 158,
+     "quote": "魔力操作的精度上，涡波不如玛利亚酱，魔法的威力我则逊于缇亚"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 162,
+     "quote": "因为我没办法像缇亚那样进行魔力收束，所以威力很低"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "玛利亚",
+    "rel_type": "职能重叠(索敌·据拉丝缇娅拉)",
+    "object": "拉丝缇娅拉",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "据拉丝缇娅拉（互相伤害拌嘴中）：'玛利亚酱不是一样能索敌的嘛'——前卫索敌职能被后卫覆盖之争"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 110,
+     "quote": "但是，玛利亚酱不是一样能索敌的嘛！"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "缇亚",
+    "rel_type": "职能重叠(神圣魔法·据涡波)",
+    "object": "拉丝缇娅拉",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 119,
+     "text": "据涡波（拌嘴中反驳）：'缇亚也能用神圣魔法不是嘛'——前卫回复职能亦被覆盖之争"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 111,
+     "quote": "你要这么说的话，缇亚也能用神圣魔法不是嘛！"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "共鸣魔法定名『Flame・Aegis（守护炎）』",
+    "kind": "日常",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "迷宫探索中（33层推进前后）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "玛利亚",
+    "缇亚",
+    "共鸣魔法『Flame・Aegis（守护炎）』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "玛利亚们问名于缇亚、缇亚荐由涡波决定（'涡波不是自创了很多魔法来着'）；涡波提案『Aegis』并释语源'在我的世界中，象征着守护某人的意思'；随后定名共鸣魔法『Flame・Aegis（守护炎）』（定名台词者以称呼形式'涡波先生'反推为玛利亚【反推】）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 27,
+     "quote": "让涡波来决定吧？涡波不是自创了很多魔法来着"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 31,
+     "quote": "『Aegis』怎么样？在我的世界中，象征着守护某人的意思"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 32,
+     "quote": "这个魔法是为了守护涡波先生的魔法。──那就叫它共鸣魔法『Flame・Aegis（守护炎）』好了"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "33层至34层无双推进（前卫无事可做）",
+    "kind": "探索",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "当日，数小时（'仅仅几个小时就完成了目标的一半'）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "玛利亚",
+    "缇亚",
+    "共鸣魔法『Flame・Aegis（守护炎）』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "玛利亚×缇亚以『Flame・Aegis』与光线将水栖怪物瞬间蒸发，涡波与拉丝缇娅拉拔剑警戒却轮不到挥剑、全程仅拾捡魔石，'势如破竹'抵达34层再向35层进发——叙述自评战斗变成'跳关一样的行为'、'单纯的虐杀──完全化作了一种单调的作业'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 43,
+     "quote": "不过就是点水，在压倒性的热量面前没有任何意义。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 46,
+     "quote": "在我们驾着剑站着的时候，战斗就结束了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 63,
+     "quote": "我们抱着后卫二人组的大腿，在33层势如破竹。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 70,
+     "quote": "带着玛利亚和缇亚一起前进。仅仅如此，跟怪物之间的战斗就变成了跳关一样的行为。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 71,
+     "quote": "到头来，我就连敌人的身影都没看到，便平安无事地抵达了34层。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "MP枯竭与『连接』归船",
+    "kind": "移动",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "34层前往35层途中"
+   },
+   "entities_involved": [
+    "玛利亚",
+    "相川涡波",
+    "拉丝缇娅拉",
+    "『LivingLegend号』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "玛利亚宣告'差不多MP要用光了'（面板实证MP23/1065），请涡波使用『连接』；涡波作出『连接』，二人蹑手蹑脚走过、穿门见辽阔青空回到『LivingLegend号』"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 77,
+     "quote": "差不多MP要用光了。拜托你使用『连接』了，涡波先生"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 80,
+     "quote": "蹑手蹑脚地走过『连接』。怀疑人生的拉丝缇娅拉也一样跟在我后面。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 82,
+     "quote": "我们就这样回到了『LivingLegend号』上。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "首次迷宫探索成果确认",
+    "kind": "日常",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "归船后甲板"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "玛利亚",
+    "缇亚"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "数小时完成目标一半、大量经验值、级别平均化完美、无人受伤（级别：涡波19/拉丝缇娅拉19/迪亚布罗·西斯18/玛利亚17）；涡波自评即其梦寐以求的『割草一样的探索』，但前卫二人无法释怀"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 83,
+     "quote": "首次迷宫探索结束，我们在甲板上确认这次探索的成果。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 96,
+     "quote": "仅仅几个小时就完成了目标的一半，还得到了大量的经验值，级别的平均化也堪称完美，不仅如此还没有任何人受伤。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 98,
+     "quote": "今天的探索就是我曾经梦寐以求的『割草一样的探索』。没毛病。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "涡波拉丝缇娅拉决意特训",
+    "kind": "日常",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "归船当日，探索后（体力和MP尚有余）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "二人先互争'升级回复角色/索敌角色'存在意义、互相伤害（动摇之证）；涡波以'领队和副领队就变成吃软饭的了'为由做出决断'来特训吧'，拉丝缇娅拉以'英雄谭的王道发展'应和；共同结论=必须学会'摆得上台面的范围魔法'"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 112,
+     "quote": "不知为何，我们俩开始互相伤害起来。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 117,
+     "quote": "这可不行。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 122,
+     "quote": "对啊对啊！特训，来特训吧！这也是英雄谭的王道发展啊！！"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 128,
+     "quote": "魔法⋯⋯！我们两个，也得会使用摆得上台面的范围魔法才行⋯⋯！"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 124,
+     "quote": "就这样，脸色发青的我们两个开始了特训。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "仿造共鸣魔法开发与冰Aegis完成",
+    "kind": "训练",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "归船当日，甲板"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "共鸣魔法『冰・Aegis（守护冰）』",
+    "魔法『冰之矢』",
+    "『次元・雪』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "以冻结魔法『冻结』『冰』为首各种结合尝试，绝大多数失败、唯一成功=对『Flame・Aegis』的仿造（即『冰・Aegis（守护冰）』）；威力精度远逊（拔不下飞鸟羽毛）；二人分别定改进方向=提高魔力操作水平/彻底改变魔法构筑方式；其间堆雪人打雪仗解闷"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 146,
+     "quote": "姑且就先从简单的冻结魔法开始吧。一开始先模仿玛利亚她们的做法比较合适"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 147,
+     "quote": "绝大多数都以失败告终，成功的只有对『Flame・Aegis』的仿造魔法一个而已。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 161,
+     "quote": "没办法。首先还是试着去提高自己魔力的操作水平好了"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 162,
+     "quote": "我也必须彻底改变魔法构筑的方式才行呀"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 165,
+     "quote": "后来为了解闷我俩还用魔法生成的雪堆起了雪人，堆完还打了一波雪仗，打得双方都浑身是雪。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "魔法使对决：拉丝缇娅拉胜涡波",
+    "kind": "训练",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "归船当日，甲板（至双方MP见底）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "魔法相杀",
+    "『耶梦加得之霜』",
+    "『冰BatteringRam（冰霜破城槌）』"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "依拉丝缇娅拉提案的对决规则对峙：涡波以『次元之冬』展开'魔法相杀'妨碍其构筑，拉丝缇娅拉渐习惯后破绽收窄、多维施法反占优势；涡波改变战法开大『耶梦加得之霜』，正中拉丝缇娅拉下怀——其『冰BatteringRam（冰霜破城槌）』正面碾碎冰蛇并将其逼出阵地获胜；涡波认输称'很讲道理，我喜欢'，双方确认训练有意义"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 177,
+     "quote": "我展开魔法之冬，妨碍拉丝缇娅拉的魔法构筑，让冰箭雾散。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 191,
+     "quote": "毫无疑问，这场魔法对决，我正处于劣势。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 195,
+     "quote": "『冰BatteringRam（冰霜破城槌）』！！"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 199,
+     "quote": "接着『冰BatteringRam』乘势将我逼出了自己的阵地。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 200,
+     "quote": "魔法使对决以拉丝缇娅拉的胜利告终了。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "特训成果：两人各习得一个新技能",
+    "kind": "训练",
+    "tick": 119,
+    "instant": null,
+    "time_verbatim": "对决后（MP见底状态）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "chapter": 119,
+     "text": "叙述直陈'拉丝缇娅拉和我都学会了一个新技能'（数值尚低）；本章面板：涡波先天技能含剑术4.89/冻结魔法2.58＋1.10、后天技能含魔法战斗0.72（对照库内 ch0109 快照为新增项）；拉丝缇娅拉面板先天含武器战斗2.20/剑术2.12/拟神之眼1.00/魔法战斗2.27/血术5.00/神圣魔法1.03、后天含读书0.52/素体1.00/集中收束0.21——其新技能为魔法战斗（先天）抑或集中收束（后天）原文未明【待确认】"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 219,
+     "quote": "后天技能：体术1.56次元魔术5.25＋0.10感应3.56并列思考1.47"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 220,
+     "quote": "编织1.07诈术1.34魔法战斗0.72"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 223,
+     "quote": "先天技能：武器战斗2.20剑术2.12拟神之眼1.00"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 225,
+     "quote": "后天技能：读书0.52素体1.00集中收束0.21"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 226,
+     "quote": "拉丝缇娅拉和我都学会了一个新技能。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "33层地形与怪物构成（ch119）",
+    "fact": "33层构造大多是河流和浅滩；与之联动敌人种类变化：矿物系高防怪物减少、水栖系怪物变多；涡波预期'水系的怪物对火焰的耐性应该很强'被实战推翻——'不过就是点水，在压倒性的热量面前没有任何意义'，接触光线瞬间即被彻底蒸发，水栖矿物无异。※与库内 ch0071 记录（33层祭坛群/34层石制回廊覆水及膝）不合，存疑留终审",
+    "chapter": 119,
+    "tick": 119
+   },
+   "entities_involved": [],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 119,
+     "text": "迷宫层地形-怪物联动规则与火热量对水栖怪的压制实例"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 34,
+     "quote": "33层的构造大多是河流和浅滩，顺应着这一变化，敌人的种类也不一样了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 35,
+     "quote": "矿物系的高防怪物减少，水栖系的怪物变多了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 37,
+     "quote": "水系的怪物对火焰的耐性应该很强。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 43,
+     "quote": "不过就是点水，在压倒性的热量面前没有任何意义。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "四人状态面板快照（ch119·探索前后）",
+    "fact": "章首拉丝缇娅拉受玛利亚所托为二人操作升级（面板先后示迪亚波罗・西斯级别16/玛利亚级别15）；探索后甲板确认：相川涡波=探索者·级别19·HP301/331·MP366/849－400·素质7.00；拉丝缇娅拉・弗茨亚茨=骑士·级别19·HP735/783·MP338/353·素质4.00（职业栏'骑士'为库内新见，对照 ch0014 英雄/ch0039 无）；迪亚波罗・西斯=剑士·级别18·HP220/269·MP182/1107；玛利亚=无职业·级别17·HP159/264·MP23/1065。经验值来源=歼灭大量高级别怪物",
+    "chapter": 119,
+    "tick": 119
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "迪亚布罗·西斯",
+    "玛利亚"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 119,
+     "text": "探索前后两时点面板对照：迪亚布罗·西斯16→18、玛利亚15→17（MP近枯竭）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 6,
+     "quote": "因为歼灭了大量高级别的怪物，经验值积攒了很多。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 84,
+     "quote": "相川涡波HP301／331MP366／849－400职业：探索者"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 87,
+     "quote": "名字：拉丝缇娅拉・弗茨亚茨HP735／783MP338／353职业：骑士"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 90,
+     "quote": "迪亚波罗・西斯HP220／269MP182／1107职业：剑士"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 93,
+     "quote": "玛利亚HP159／264MP23／1065职业：无"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "魔法使对决规则（划线阵地战）",
+    "fact": "据拉丝缇娅拉（'突然想起来'的魔法使间决斗规则）：先画好阵地（用脚在地面划线）、站在线上用魔法互怼；'使用魔法之外的手段迎击、以及离开站位就算输'；涡波评'是个不错的训练方式'并照划",
+    "chapter": 119,
+    "tick": 119
+   },
+   "entities_involved": [
+    "拉丝缇娅拉",
+    "相川涡波"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 119,
+     "text": "魔法使社会既存的决斗规则（据其口述），本章转用为训练法"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 169,
+     "quote": "说到魔法使之间进行决斗的规则嘛⋯⋯，就要像这样，先画好阵地"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 170,
+     "quote": "拉丝缇娅拉用脚在白雪皑皑的甲板上划出一条线。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 171,
+     "quote": "──站在这条线上，然后用魔法互怼。使用魔法之外的手段迎击、以及离开站位就算输"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "涡波的魔法学习界限与仿造法则（ch119）",
+    "fact": "涡波能使用的冻结魔法很少（仅『冻结』『冰』两个），'能使用的魔法面真是窄'（据拉丝缇娅拉）；曾服冻结魔法『利特尔降雪』魔石无任何变化→自断'我能学会的魔法只有次元魔术而已'（推断）；另'具体想像对魔法的影响举足轻重。我的魔法基本上也都是仿造的'（涡波自述）",
+    "chapter": 119,
+    "tick": 119
+   },
+   "entities_involved": [
+    "相川涡波",
+    "冻结魔法『利特尔降雪』"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 119,
+     "text": "魔石服用习得路线对涡波无效的实证+仿造系魔法成长路径"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 140,
+     "quote": "反而我会使用的冻结魔法很少。只有『冻结』和『冰』两个"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 142,
+     "quote": "涡波能使用的魔法面真是窄啊⋯⋯"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 144,
+     "quote": "我服下了冻结魔法『利特尔降雪』的魔石，但是没有发生任何变化。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 148,
+     "quote": "果然，具体想像对魔法的影响举足轻重。我的魔法基本上也都是仿造的。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "拉丝缇娅拉的魔法底力（血中记录·ch119）",
+    "fact": "次元魔术未登录其血中（据其自述'太小众'）；冻结魔法不少；血中记录多种多样魔法与经验并活用于强化构筑；对决中短时间彻底改变构筑方式、超越无咏唱极限缩短构筑时间、手脚并用施法并用假动作隐蔽弹道、从四面八方施展不同属性魔法——叙述评'在战斗方面天赋异禀'；自断无法像缇亚那样魔力收束故威力低",
+    "chapter": 119,
+    "tick": 119
+   },
+   "entities_involved": [
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 119,
+     "text": "血术系'血中登录'习得机制再证实+构筑进化实录"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 139,
+     "quote": "次元魔术太小众了，以至于没有登录进我的血中啊。冻结魔法倒是有不少的说⋯⋯"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 185,
+     "quote": "魔力总量是我比较强。但是拉丝缇娅拉的血中记录着多种多样的魔法和经验。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 188,
+     "quote": "在这么短的时间内，就彻底改变了自己的魔法构筑方式。超越了无咏唱，将魔法的构筑时间极限缩短。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 189,
+     "quote": "拉丝缇娅拉从四面八方施展出不同属性的魔法。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『魔法相杀』效果节制律（ch119）",
+    "fact": "'『魔法相杀』的效果，受见没见过对象魔法的节制很大'——对第一次看到的魔法以『次元之冬』妨碍较难；对手渐习惯后构筑破绽收窄、可乘间隙反打；若构筑无破绽则相杀不可用（涡波语：'如果构筑没有破绽的话我就用不了这招了'）",
+    "chapter": 119,
+    "tick": 119
+   },
+   "entities_involved": [
+    "魔法相杀",
+    "相川涡波",
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 119,
+     "text": "相杀技的成立条件与克制路径（见识依赖+构筑精密化）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 179,
+     "quote": "还不是你的魔法构筑太嫩的锅。这个对决规则的话，我用『魔法相杀』不是合情合理的么"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 190,
+     "quote": "对第一次看到的魔法使用『次元之冬』妨碍会比较难。加上拉丝缇娅拉渐渐习惯了『魔法相杀』，魔法构筑的破绽越来越小。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 206,
+     "quote": "『魔法相杀』的效果，受见没见过对象魔法的节制很大。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『连接』往返机制（迷宫↔船）",
+    "fact": "玛利亚MP将尽时请涡波'使用『连接』'，涡波'作出『连接』'后众人走过即穿过门、见辽阔青空回到『LivingLegend号』甲板——『连接』为连接迷宫与魔导船的通行手段，由涡波应请发动（其本体归属魔法抑或船之机能本章未明【待确认】）",
+    "chapter": 119,
+    "tick": 119
+   },
+   "entities_involved": [
+    "相川涡波",
+    "玛利亚",
+    "『LivingLegend号』"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "chapter": 119,
+     "text": "船-迷宫往返后勤机制的运作实录（承接 ch0109 特殊船'船内『连接』'伏笔）"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 77,
+     "quote": "差不多MP要用光了。拜托你使用『连接』了，涡波先生"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 79,
+     "quote": "我按照吩咐，作出『连接』。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 81,
+     "quote": "穿过了门就看到了辽阔的青空。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 82,
+     "quote": "我们就这样回到了『LivingLegend号』上。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "章末钩：掏出『阿雷亚斯家的宝剑诺文』",
+    "setup_chapter": 119,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "拉丝缇娅拉追问'还有什么别的要特训的咩'，涡波'利用『并列思考』得到的结论，促使我掏出『阿雷亚斯家的宝剑诺文』'——下一项特训内容（剑?诺文相关?）未述即章终；与库内'缇亚的过去/阿雷亚斯家与缇亚关系未明'（ch0005）潜在交联",
+    "chapter": 119
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "阿雷亚斯家的宝剑"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 119,
+     "text": "特训章末悬念钩：训练对象转向家传宝剑"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 232,
+     "quote": "呐～，涡波。还有什么别的要特训的咩？"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 235,
+     "quote": "让我想想，还有什么呢⋯⋯"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 236,
+     "quote": "利用『并列思考』得到的结论，促使我掏出『阿雷亚斯家的宝剑诺文』"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "前卫二人战力证明危机（领队副领队吃软饭问题）",
+    "setup_chapter": 119,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "'只要我们拿不出比『Flame・Aegis』更有效率的战法，就永远轮不到我们上场'；'领队和副领队就变成吃软饭的了''会变成抱比自己还小的女孩子们大腿的队伍'——涡波与拉丝缇娅拉以特训回应（冰Aegis仿造初步失败：'面对30层以下的怪物还是没戏唱'），开环待回收：二人能否拿出独立战法",
+    "chapter": 119
+   },
+   "entities_involved": [
+    "相川涡波",
+    "拉丝缇娅拉",
+    "玛利亚",
+    "缇亚",
+    "共鸣魔法『Flame・Aegis（守护炎）』"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 119,
+     "text": "队伍内职能失衡驱动的成长线开环"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 61,
+     "quote": "但是，现实就是如此残酷。只要我们拿不出比『Flame・Aegis』更有效率的战法，就永远轮不到我们上场。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 115,
+     "quote": "但是，这么下去的话，领队和副领队就变成吃软饭的了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 116,
+     "quote": "会变成抱比自己还小的女孩子们大腿的队伍的。"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 160,
+     "quote": "那样或许能拔根鸟毛下来，但是面对30层以下的怪物还是没戏唱。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "状态面板『？？？？？？』脱字段再现（ch119两例）",
+    "setup_chapter": 119,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "迪亚布罗·西斯面板末行（行15）与涡波技能栏（行222-223）各现'？？？？？？'脱字段；按判例3 原样不猜补——是否对应库内技能《？？？》（涡波例）/未知隐藏技能（迪亚布罗·西斯例，关联 ch0004'表示显示未来名之谜'）存疑，留终审",
+    "chapter": 119
+   },
+   "entities_involved": [
+    "迪亚布罗·西斯",
+    "相川涡波"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "chapter": 119,
+     "text": "面板脱字段双例并现的隐藏信息钩"
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 14,
+     "quote": "？？？？？？"
+    },
+    {
+     "vol": 1,
+     "chapter": 119,
+     "line": 221,
+     "quote": "？？？？？？"
+    }
+   ]
+  }
+ ]
+}

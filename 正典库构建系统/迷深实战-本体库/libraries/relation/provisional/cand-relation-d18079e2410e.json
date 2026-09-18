@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔缇",
+  "rel_type": "魔石继承·视觉代偿",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 117,
+   "line": 181,
+   "quote": "但是得到了阿尔缇的魔石之后，魔力和素质大幅提高。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 182,
+   "quote": "玛利亚失去了双目，但是却通过阿尔缇的魔法，获得了可以代替眼睛作用的空间认识能力。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 117,
+   "text": "'得到了阿尔缇的魔石之后，魔力和素质大幅提高'（'进入了另一个次元'）；失去的双目由阿尔缇的魔法赋予的空间认识能力代偿（取得时点系既往事件，本章为实态追述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d18079e2410e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0117.txt",
+  "sha": "8fbdee9d926f08def4be0631edabc980143e4a15",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

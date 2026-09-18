@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "阿雷亚斯家的宝剑"
+  ],
+  "instant": null,
+  "kind": "宣言",
+  "name": "鲜血魔法宣言与双后卫提案（探索前彩排）",
+  "tick": 123,
+  "time_verbatim": "同日午后（探索准备中）"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 140,
+   "quote": "本小姐今天就给你展示一下，鲜血魔法的真正价值",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 144,
+   "quote": "我拔出『阿雷亚斯家的宝剑诺文』，在空中散布水晶粒子，然后沐浴着闪闪发光的水晶，我也壊笑起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 151,
+   "quote": "涡波先生，拉丝缇娅拉小姐，你们到底在做什么",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 194,
+   "quote": "等等，涡波！好不容易做了魔法特训，今天就让我们两个来做后卫不就好了嘛！？",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 123,
+   "text": "拉丝缇娅拉散发红雾邪笑宣言'鲜血魔法的真正价值'；涡波拔阿雷亚斯家的宝剑诺文散水晶粒子对演'友情Power'；遭驾驶舱晾衣的玛利亚吐槽；二人邀玛同往探索被婉拒（洗衣），拉丝缇娅拉转而提案二人转后卫"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-92aec5136560",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

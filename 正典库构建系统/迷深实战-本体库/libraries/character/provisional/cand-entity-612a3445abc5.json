@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "道具(防具)",
+  "name": "白石玉衣"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 50,
+   "quote": "使用『表示』看一下，发现赛莉酱的衣服算是件不错的东西。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 51,
+   "quote": "──白石玉衣",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 52,
+   "quote": "防御力3对魔力3──",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 122,
+   "text": "赛莉着用的衣服，经『表示』鉴定为'不错的东西'（防御力3／对魔力3）；赛莉一度要脱下献予会长被制止"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-612a3445abc5",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

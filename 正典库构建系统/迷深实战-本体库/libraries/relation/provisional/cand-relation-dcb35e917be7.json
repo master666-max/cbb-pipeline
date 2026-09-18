@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "共鸣魔法搭档(后卫二人组)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 21,
+   "quote": "明明级别比怪物低了一半多，我们的魔法使们却将敌人尽情蹂躏了一番。",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 51,
+   "quote": "说实话，只要有缇亚和玛利亚两个人就足够了。",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 102,
+   "quote": "任务完成的玛利亚和缇亚两人一起消失在船内。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 119,
+   "text": "两人共演共鸣魔法『Flame・Aegis（守护炎）』清场；叙述者直言'只要有缇亚和玛利亚两个人就足够了'；探索后一同回船内休息"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dcb35e917be7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "前卫/后卫·阵型分工",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 117,
+   "line": 187,
+   "quote": "阵型是我打先锋，后卫则由拉丝缇娅拉守护。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 185,
+   "quote": "「哟西，一遍警戒一遍前进吧。拉丝缇娅拉，她们两个就拜托你了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 117,
+   "text": "31层行进阵型：涡波打先锋，后卫由拉丝缇娅拉守护——缇亚与玛利亚（'她们两个'）被托付其守护"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c461a4a0e10b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0117.txt",
+  "sha": "8fbdee9d926f08def4be0631edabc980143e4a15",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

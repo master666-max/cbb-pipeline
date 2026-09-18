@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "戒指『晶盾』",
+  "rel_type": "着用(左手无名指)→收纳",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 15,
+   "quote": "这导致莉帕正好适合戒指的那根手指是──左手的无名指。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 36,
+   "quote": "莉帕老实地点了点头，把戒指收进了外套小腹侧边位置的口袋里。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 123,
+   "text": "尺寸恰合左手无名指（艾利巴茨按小规格备料而未告知指围）；警报后依嘱改收纳于外套口袋"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6bc92f9a9ee2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

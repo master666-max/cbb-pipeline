@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "『连接』",
+   "戒指『晶盾』",
+   "技能『感应』",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "危机规避",
+  "name": "『感应』首发警报与晶盾收纳",
+  "tick": 123,
+  "time_verbatim": "同日（穿『连接』前）"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 24,
+   "quote": "警报声甚大，不停地嘶吼着这么下去会死翘翘。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 30,
+   "quote": "正是莉帕无名指上的戒指。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 32,
+   "quote": "啊，这个，不好意思。莉帕，虽然有点抱歉，但是你能先把那个戒指收起来吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 37,
+   "quote": "与此同时，技能『感应』的警报也停止作响了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 123,
+   "text": "穿『连接』前警报嘶吼'会死翘翘'；涡波定位问题源=莉帕手上晶盾（'就这么戴着它的话会很危险的'），请其收入外套口袋后警报止"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-33db636cb698",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

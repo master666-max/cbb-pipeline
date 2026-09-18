@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能",
+  "name": "技能『魔法战斗』"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 73,
+   "quote": "我回想起昨天与战斗专家拉丝缇娅拉的训练中，自己学会了『魔法战斗』这个技能。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 108,
+   "quote": "编织1.07诈术1.34魔法战斗0.72锻冶0.69",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 122,
+   "text": "据回顾：昨日与拉丝缇娅拉的训练中习得（本章时点数值0.72）——锻冶速习的方法论样板"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0d4a95768a85",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

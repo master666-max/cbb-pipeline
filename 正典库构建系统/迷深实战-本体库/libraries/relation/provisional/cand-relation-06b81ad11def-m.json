@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "魔法道具赠与(戒指)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 1535,
+   "quote": "「当然没问题。不如说，这戒指就给你好了。本来就是为了交给谁才打造出来的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1539,
+   "quote": "这导致莉帕正好适合戒指的那根手指是——左手的无名指。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1633,
+   "quote": "没错，那个不是戒指，是武器。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 11,
+   "quote": "当然没问题。不如说，这戒指就给你好了。本来就是为了交给谁才打造出来的",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 97,
+   "quote": "诶，这个？是欧尼酱刚才送给人家的",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "'这戒指就给你好了。本来就是为了交给谁才打造出来的'；左手无名指正合戴（该戴法仅涡波原世界习俗——涡波知情后选择沉默不提醒）；午餐掉落暴露后以'武器说'超速蒙混（'那里面封进了诺文的魔法，所以就给了跟诺文亲近的莉帕啦'）；感应警报判定'就这么戴着它会很危险'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-06b81ad11def",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-06b81ad11def-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-06b81ad11def",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

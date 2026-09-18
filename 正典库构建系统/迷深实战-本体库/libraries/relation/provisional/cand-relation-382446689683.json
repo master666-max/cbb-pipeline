@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "冻结魔法",
+  "rel_type": "技能持有(冻结魔法仅两种)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 140,
+   "quote": "反而我会使用的冻结魔法很少。只有『冻结』和『冰』两个",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 144,
+   "quote": "恐怕，我能学会的魔法只有次元魔术而已。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 119,
+   "text": "涡波自述会使用的冻结魔法很少，'只有『冻结』和『冰』两个'；据其回顾服『利特尔降雪』魔石无效，自断'我能学会的魔法只有次元魔术而已'（推断）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-382446689683",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

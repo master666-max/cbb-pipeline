@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "出发",
+  "name": "第二次迷宫探索出发（新阵容）",
+  "tick": 123,
+  "time_verbatim": "同日午后（午餐后）"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 188,
+   "quote": "「也就是说，今天的成员是我，拉丝缇娅拉，莉帕，塞拉？」",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 192,
+   "quote": "在我重游戏性的思考下，对队伍平衡的失调感到了些许的担心。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 201,
+   "quote": "这丫头今天也是一副要尽情享受自由的嘴脸。总有一天，就算是强拉我也要给她带进迷宫去。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 202,
+   "quote": "如此发誓后，我踏上了第二次迷宫探索的路。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 123,
+   "text": "成员=涡波/拉丝缇娅拉/莉帕/塞拉（玛利亚缇亚留守洗衣、斯诺拒务）；涡波'感觉全是前卫'忧编成→拉丝缇娅拉提案二人后卫检验特训成果；对斯诺立誓'总有一天，就算是强拉我也要给她带进迷宫去'后踏上第二次探索（与 ch0070 同场景双源）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-08404a9fc694",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "曾经喜欢(失忆期间·自认)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 148,
+   "quote": "毕竟失去记忆时的我，是喜欢他这个人的。",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 150,
+   "quote": "我确确实实，曾经喜欢过他这个人⋯⋯⋯",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 146,
+   "quote": "如果是，在圣诞祭那天，帕林库洛没有背叛，而是与我一起攻略迷宫的话──就那样在一起度过一段年月，我应该也会说出跟格连一样的话。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "涡波内心确认：'毕竟失去记忆时的我，是喜欢他这个人的'、'我确确实实，曾经喜欢过他这个人'——限定于失忆期间的对人好感（非恋慕定性未言明）；并推想若圣诞祭未被背叛而共同攻略迷宫度过年月，自己也会说出与格连一样的话"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-453b9437d5b6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

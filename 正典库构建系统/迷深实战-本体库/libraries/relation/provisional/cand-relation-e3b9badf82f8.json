@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "同伴(义理·自称讨厌其人)",
+  "subject": "格连"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 143,
+   "quote": "「但是，我跟帕林库洛是同伴啊。我有那份义理。没错，义理⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 140,
+   "quote": "「不不，我讨厌那家伙的哟？话说，根本不会有喜欢那家伙的人吧？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 121,
+   "text": "格连当面自认：'我跟帕林库洛是同伴啊。我有那份义理'（说此话时'露出了十分怀念的表情'）；同时自称'我讨厌那家伙的哟？根本不会有喜欢那家伙的人吧'——人德否定与义理并存；涡波由此联想到雷鲁先生"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e3b9badf82f8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

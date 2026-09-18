@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "芬里尔・阿雷亚斯",
+  "rel_type": "鲜血魔法借取其技术",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 120,
+   "line": 19,
+   "quote": "总之『芬里尔』也记录在我的血里，借用下他的技术学起来会不会更快呢？",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 22,
+   "quote": "剑技就与身为元『剑圣』的阿雷亚斯家现任当主芬里尔・阿雷亚斯的全盛期同等了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 120,
+   "text": "咏唱鲜血魔法『芬里尔・阿雷亚斯』借其技术，剑技与芬里尔全盛期同等；据拉丝缇娅拉称『芬里尔』记录在她的血里"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-95db9a137f45",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0120.txt",
+  "sha": "d4dc8f52b15e4264db4a652311ced60782eec1ec",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

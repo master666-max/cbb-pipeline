@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "持用(剑术再现)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 10,
+   "quote": "与诺文的剑速相比，简直就跟静止不动没两样。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 63,
+   "quote": "我与诺文携手，轻松地讨伐了敌人。接下来就是确认身后的三人的配合到底怎样了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 118,
+   "text": "以技能『感应』+『剑术』经宝剑再现诺文剑术（'我与诺文携手，轻松地讨伐了敌人'）；剑微微一闪即令宝石鱼如被吸入般与剑交错；31层怪速与诺文剑速相比'跟静止不动没两样'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-069a501a8089",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

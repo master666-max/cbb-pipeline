@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "chapter": 120,
+  "entities": [
+   "『史诗探索者』",
+   "相川涡波",
+   "联合国",
+   "魔法『连接』"
+  ],
+  "name": "宝石处理之途：赴联合国/『史诗探索者』本部（近期钩）",
+  "note": "宝石量超出处理能力、超个人交易范畴；涡波已穿门赴『史诗探索者』本部找人商量（章末动作即钩）——预期下章兑现；莉帕'其实她是想去联合国看看'留同行可能",
+  "payoff_chapter": null,
+  "setup_chapter": 120,
+  "tier": "次要"
+ },
+ "evidence": [
+  {
+   "chapter": 120,
+   "line": 157,
+   "quote": "但是欧尼酱、这么多的水晶和黄金，你打算怎么办呢？",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 159,
+   "quote": "所以我打算去找人商量下。你要一起来吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 161,
+   "quote": "就算拿到换钱的地方，这些也超过了个人交易的资金范畴了。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 174,
+   "quote": "对象不再是迷宫，而是『史诗探索者』的本部。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 120,
+   "text": "宝石处理线近期钩（章末已出发）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-da4f55df47dc",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0120.txt",
+  "sha": "d4dc8f52b15e4264db4a652311ced60782eec1ec",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

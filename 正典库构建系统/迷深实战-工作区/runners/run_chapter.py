@@ -37,6 +37,9 @@ TAU = cbb_store.TAU_PROVISIONAL
 SUBCLASS_GROUP = {"contradiction_pending": "entity_unalignable",
                   "extrapolation_unverified": "low_confidence",
                   "overdue_omission": "low_confidence"}
+# 调度层机械归一（2026-09-19，先例=批9-10 ch0079/ch0121 手工修正；确定性零裁量，每次改写计入 summary 留痕）
+LIBRARY_NORMALIZE = {"organization": "character", "location": "setting",
+                     "item": "setting", "magic": "setting", "skill": "setting"}
 
 
 def boundary(chapter_no: int) -> dict:
@@ -57,12 +60,17 @@ def core_id(rec_type, canonical, evidence):
 
 
 def normalize(raw: dict, verified: dict) -> list[dict]:
-    out = []
+    out, remaps = [], []
     for c in raw["candidates"]:
         canonical = dict(c["canonical"])
+        lib = c["library"]
+        lib = c["library"]
+        if lib not in cbb_store.LIBRARIES and lib in LIBRARY_NORMALIZE:
+            remaps.append((c["type"], c["canonical"].get("name") or c["canonical"].get("subject"), lib, LIBRARY_NORMALIZE[lib]))
+            lib = LIBRARY_NORMALIZE[lib]
         rec = {
             "record_id": core_id(c["type"], canonical, c["evidence"]),
-            "record_type": c["type"], "library": c["library"], "status": "candidate",
+            "record_type": c["type"], "library": lib, "status": "candidate",
             "canonical": canonical, "observations": c.get("observations", []),
             "evidence": c["evidence"], "verified_against": verified,
             "provenance": {"extractor_confidence": c["confidence"],
@@ -74,6 +82,8 @@ def normalize(raw: dict, verified: dict) -> list[dict]:
             rec["canonical"]["entities"] = sorted(set(c["entities_involved"]))
         cbb_contracts.validate_record(rec, allow_candidate=True)
         out.append(rec)
+    if remaps:
+        print(json.dumps({"library_normalized": [list(r) for r in remaps]}, ensure_ascii=False))
     return out
 
 
@@ -134,6 +144,11 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
 
     for c in raw["candidates"]:
         for alias in c.get("aliases_to_register", []):
+            # 结构化别名防御（2026-09-19 ch0121 勘误：子代理交 dict{name,kind,confidence}→取 name 串）
+            if isinstance(alias, dict):
+                alias = alias.get("name") or alias.get("alias")
+                if not isinstance(alias, str):
+                    continue
             ent = next(r for r in cands if r["record_type"] == "entity"
                        and r["canonical"]["name"] == c["canonical"]["name"])
             store.register_alias(alias, ent["record_id"], c["canonical"]["entity_type"])

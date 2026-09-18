@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能",
+  "name": "技能『诈术』"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 76,
+   "quote": "既然已经学会了『编织』『诈术』，证明了诺文所言不虚，就有尝试的价值。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 108,
+   "quote": "编织1.07诈术1.34魔法战斗0.72锻冶0.69",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 122,
+   "text": "已习得（本章时点数值1.34）——诺文技能速习论的实证之二（据涡波）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-76fa133cc906",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

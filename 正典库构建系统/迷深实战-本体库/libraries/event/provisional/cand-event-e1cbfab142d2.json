@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "劳拉维亚",
+   "瓦尔法拉",
+   "相川涡波",
+   "联合国",
+   "舞闘大会"
+  ],
+  "instant": null,
+  "kind": "传闻扩散",
+  "name": "涡波英雄传说大流传（舞闘大会后）",
+  "tick": 121,
+  "time_verbatim": "舞闘大会后至本章（「此时此刻」仍在扩散）"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 23,
+   "quote": "现在的你可是『最强』的『英雄』，同时还是『剑圣』以及『守护者杀手』。",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 23,
+   "quote": "在那之后演剧船『瓦尔法拉』还上演了讲述你这段活跃经历的戏剧",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 25,
+   "quote": "新英雄相川涡波的传说在联合国之地冉冉升起",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 121,
+   "text": "据缇莉声称：涡波现被冠『最强』『英雄』『剑圣』『守护者杀手』『天然英雄』名号，'备受探索者和冒险者的憧憬'、'绝对会名留青史成为打造百年传承不绝的传说'；口径含：单枪匹马剑挑舞闘大会、正面击破'联合国最大的敌人、守护者'、迷倒莱文教使徒与现人神、钓到四大贵族家千金、迷住原『最强』『剑圣』与『大贵族嫡子』后出逃（涡波自评'充斥着夸张和误解还有偏见'）；演剧船『瓦尔法拉』上演其戏剧、吟游诗人四处讴歌；劳拉维亚民众视其为'有理由和内情'的人气明星且公会积极推广'白马王子'解读；涡波因厌恶考虑改名回基督"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e1cbfab142d2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

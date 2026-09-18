@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "《维度》"
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 148,
+   "quote": "对后卫两人的HP成长感到放心，我将『维度』浸透到32层。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 209,
+   "quote": "我的『维度』也做出了一样的判断，虽然具体没法把握，但是玛利亚的索敌能力不亚于『维度』",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 248,
+   "quote": "几分钟后就出现了新的怪物，『维度』捕捉到了接近我们的怪物的身影。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 118,
+   "text": "索敌运用（WEB版标记『维度』）：休息后将『维度』浸透32层（'很浪费地使用着魔力'——因战斗改以『感应』为中心故MP有余）；敌接近感知（数分钟后捕捉新怪、3方向接近警报）；与玛利亚火焰索敌同判断互证——'玛利亚的索敌能力不亚于『维度』'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5665520f5751",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

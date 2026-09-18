@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "约定",
+  "name": "装备赠答承诺与愿望听取",
+  "tick": 123,
+  "time_verbatim": "同日午餐后"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 125,
+   "quote": "结果就因为这点不小心，导致我不得不给所有人都送件衣服。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 131,
+   "quote": "在这之后，我听取并记下所有人想要的，而且将来必须要将这些做好并作为礼物送给她们。我本来只是想搞点朴素的、重视性能的装备而已，但是这个想法恐怕是没法实现的吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 123,
+   "text": "'结果就因为这点不小心，导致我不得不给所有人都送件衣服'；午餐后听取并记下全员愿望、须作礼物兑现——'朴素的、重视性能的装备'初衷作废"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b97ce210b03a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

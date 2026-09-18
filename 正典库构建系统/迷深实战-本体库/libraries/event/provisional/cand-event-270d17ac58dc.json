@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "戒指『晶盾』",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "赠与",
+  "name": "晶盾授予与试戴（回程路上）",
+  "tick": 123,
+  "time_verbatim": "锻冶完成后的同一日（归船路上）"
+ },
+ "evidence": [
+  {
+   "chapter": 123,
+   "line": 5,
+   "quote": "这个？这是我打造的魔法道具",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 11,
+   "quote": "当然没问题。不如说，这戒指就给你好了。本来就是为了交给谁才打造出来的",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 12,
+   "quote": "啊，这边的话能轻易戴上！",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 21,
+   "quote": "莉帕开心地观赏着戴在自己左手无名指上的水晶戒指。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 123,
+   "text": "归船路上出示晶盾并赠莉帕；'这边的话能轻易戴上'恰为左手无名指——涡波独觉异样未提醒换指"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-270d17ac58dc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0123.txt",
+  "sha": "3fdd5539095be5f29d0369ea69af20f8c751450f",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

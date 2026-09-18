@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "刻意压抑感情",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 229,
+   "quote": "看到这一幕，我控制住自己的感情。不能对她太动情。",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 234,
+   "quote": "拉丝缇娅拉一脸兴奋地凑过来。你贴这么近我要控制不住自己的感情了，高抬贵手啊啊啊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 119,
+   "text": "见其新技能喜色后'控制住自己的感情。不能对她太动情'；其兴奋凑近时独白'你贴这么近我要控制不住自己的感情了'——压抑动作为本章实录，理由未言明（恋爱线，另见 _meta.cross_chapter_notes）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-889d13c8f585",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

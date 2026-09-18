@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "缇亚",
+  "rel_type": "劣位(魔法威力·据拉丝缇娅拉)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 158,
+   "quote": "魔力操作的精度上，涡波不如玛利亚酱，魔法的威力我则逊于缇亚",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 162,
+   "quote": "因为我没办法像缇亚那样进行魔力收束，所以威力很低",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 119,
+   "text": "据拉丝缇娅拉自评：'魔法的威力我则逊于缇亚'，因'没办法像缇亚那样进行魔力收束'（即集中收束），故威力很低"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b30320a1e03e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

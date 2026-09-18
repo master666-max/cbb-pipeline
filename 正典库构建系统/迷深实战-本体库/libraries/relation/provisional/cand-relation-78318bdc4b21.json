@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "传授诺文剑技",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 120,
+   "line": 3,
+   "quote": "要把诺文・阿雷亚斯的剑技传授给我吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 4,
+   "quote": "我觉得拉丝缇娅拉你应该是掌握得了的",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 23,
+   "quote": "好喽，首先来试着切磋几下吧。一边看一边学",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 26,
+   "quote": "我们便把握着分寸用剑开始训练。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 120,
+   "text": "船旅第二日甲板特训：涡波仿效诺文以实战形式教学，'一边看一边学'；切磋获胜；约定今后定期互相精进"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-78318bdc4b21",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0120.txt",
+  "sha": "d4dc8f52b15e4264db4a652311ced60782eec1ec",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

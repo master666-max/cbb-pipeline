@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "白石玉衣",
+  "rel_type": "着用",
+  "subject": "赛莉"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 48,
+   "quote": "「会长，您要我这件衣服吗！？没问题，这就献上！要我这就脱掉吗！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 51,
+   "quote": "──白石玉衣",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 122,
+   "text": "日常着用（欲脱下献予会长被制止）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2415fd322d93",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "格连",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "邀请/拒绝",
+  "name": "涡波邀请格连入队被拒",
+  "tick": 121,
+  "time_verbatim": "同日（清点结束后，临别前）"
+ },
+ "evidence": [
+  {
+   "chapter": 121,
+   "line": 133,
+   "quote": "「格连，姑且一问。⋯⋯你要不要也加入我的队伍？」",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 136,
+   "quote": "「⋯⋯这个做不到啊。你的队伍，换言之不就是帕林库洛的受害者群体吗？我没有那个资格啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 121,
+   "line": 135,
+   "quote": "性格姑且不论，格连的才能是绝对OK的。而且性别也是最棒的，能够缓和我现在身边的男女比例。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 121,
+   "text": "涡波向'曾经冠以『最强』之名的男人'发出入队邀请（认可其才能，且'性别也是最棒的，能够缓和我现在身边的男女比例'）；格连拒绝：'你的队伍，换言之不就是帕林库洛的受害者群体吗？我没有那个资格啊'；涡波站在第三者角度认可该定性，并反向意识到队伍'也算是因为帕林库洛而得到了稳定的联系'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-00323187975d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0121.txt",
+  "sha": "ad0781f68d5916a135abc6c98bdd6b708d13b1ddec53b276defd29e2e50bcecf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "振动魔法窃听(持续)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 70,
+   "line": 20,
+   "quote": "「嗯……稍微有点在意，就用振动魔法听了下……」",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 49,
+   "quote": "这丫头，绝对不会收手的……",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1695,
+   "quote": "估计是用震动魔法『Vibration』听到我『Dimension』的发动宣言了吧。然后为了逃避责任装成是在望天儿的样子。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 171,
+   "quote": "估计是用震动魔法『Vibration』听到我『维度』的发动宣言了吧。然后为了逃避责任装成是在望天儿的样子。",
+   "vol": 1
+  },
+  {
+   "chapter": 123,
+   "line": 172,
+   "quote": "完全没有停止日常生活中的窃听行为的意思不是嘛",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 70,
+   "text": "以振动魔法窃听涡波×拉丝缇娅拉交谈；涡波当面劝诫戒掉窃听（'大家都有不想被别人听到的隐私'）无效——'这丫头，绝对不会收手的'；日常生活中以『Vibration』监听Dimension发动宣言并装望天逃避责任"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-e516c21e4ec7",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e516c21e4ec7-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-e516c21e4ec7",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "『次元・雪』",
+   "共鸣魔法『冰・Aegis（守护冰）』",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "魔法『冰之矢』"
+  ],
+  "instant": null,
+  "kind": "训练",
+  "name": "仿造共鸣魔法开发与冰Aegis完成",
+  "tick": 119,
+  "time_verbatim": "归船当日，甲板"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 146,
+   "quote": "姑且就先从简单的冻结魔法开始吧。一开始先模仿玛利亚她们的做法比较合适",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 147,
+   "quote": "绝大多数都以失败告终，成功的只有对『Flame・Aegis』的仿造魔法一个而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 161,
+   "quote": "没办法。首先还是试着去提高自己魔力的操作水平好了",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 162,
+   "quote": "我也必须彻底改变魔法构筑的方式才行呀",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 165,
+   "quote": "后来为了解闷我俩还用魔法生成的雪堆起了雪人，堆完还打了一波雪仗，打得双方都浑身是雪。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 119,
+   "text": "以冻结魔法『冻结』『冰』为首各种结合尝试，绝大多数失败、唯一成功=对『Flame・Aegis』的仿造（即『冰・Aegis（守护冰）』）；威力精度远逊（拔不下飞鸟羽毛）；二人分别定改进方向=提高魔力操作水平/彻底改变魔法构筑方式；其间堆雪人打雪仗解闷"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a6b774d6f1b8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

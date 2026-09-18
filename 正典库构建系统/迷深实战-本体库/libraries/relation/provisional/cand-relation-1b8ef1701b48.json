@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "装备",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 117,
+   "line": 143,
+   "quote": "装备：阿雷亚斯家的宝剑诺文",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 117,
+   "text": "ch117状态栏装备首位（表记'阿雷亚斯家的宝剑诺文'）——迷宫远征期的佩剑实态"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1b8ef1701b48",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0117.txt",
+  "sha": "8fbdee9d926f08def4be0631edabc980143e4a15",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

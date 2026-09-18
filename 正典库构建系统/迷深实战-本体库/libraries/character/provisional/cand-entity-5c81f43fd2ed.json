@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "怪物(迷宫·鱼形)",
+  "name": "宝石鱼"
+ },
+ "evidence": [
+  {
+   "chapter": 117,
+   "line": 203,
+   "quote": "宝石鱼级别29──",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 204,
+   "quote": "是在29层就有的大型七色鱼。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 206,
+   "quote": "是在沙地里游动的鱼形怪物，速度快还耐打，多加留意",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 117,
+   "text": "级别29怪物，'在29层就有的大型七色鱼'；于31层沙地游动的鱼形怪物，'速度快还耐打'——被涡波选为试手对象，『LivingLegendParty（暂定）』初战对手（战斗始于章末，经过未载）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5c81f43fd2ed",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0117.txt",
+  "sha": "8fbdee9d926f08def4be0631edabc980143e4a15",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

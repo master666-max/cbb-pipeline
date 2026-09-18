@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "振动魔法",
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "斯诺窃听发觉与清晨对质",
+  "tick": 116,
+  "time_verbatim": "乘船第二天清晨·船内走廊"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 11,
+   "quote": "这时候我察觉到了异常。技能『感应』发现了危险，促使我赶紧采取措施。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 18,
+   "quote": "「啊，那个－⋯⋯，昨天那事被你听到了吗⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 19,
+   "quote": "「嗯⋯⋯⋯稍微有点在意，就用振动魔法听了下⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 26,
+   "quote": "「⋯⋯没什么大不了的。都是同伴。昨天只是情况不大好，我并没有特别在意拉丝缇娅拉的事哦」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 52,
+   "quote": "「──啊，等等！我接下来有话要在甲板上说！你遇到其他人的话，就把大家都叫过去！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 116,
+   "text": "涡波噩梦惊醒→技能『感应』报危→展开『维度』探得斯诺（阴沉冷笑）→确认其振动魔法窃听昨晚与拉丝缇娅拉的交谈→涡波温柔否认'特别在意拉丝缇娅拉'安抚→斯诺不放弃宣言→摸头（忆莉帕『花花公子』『不得好死』台词即收手）→劝戒窃听被敷衍（'绝对不会收手的'预感）→托其召集全员赴甲板"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0266cedfb298",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

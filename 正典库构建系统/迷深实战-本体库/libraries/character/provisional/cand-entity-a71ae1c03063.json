@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能(涡波固有)",
+  "name": "技能『感应』"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 11,
+   "quote": "这时候我察觉到了异常。技能『感应』发现了危险，促使我赶紧采取措施。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 101,
+   "quote": "我遵从技能『感应』的直觉，尽量在不触犯塞拉小姐的情况下推进对话。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 165,
+   "quote": "但是，这其中并没有什么恶意。似乎只是为我着想的忧虑而已。技能感应也没有什么反应，所以我觉得不是什么重要的问题也就什么都没说。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 116,
+   "text": "清晨发觉斯诺魔力潜藏的危险源头（促使采取措置）；甲板谈话中涡波遵其直觉避免触犯塞拉小姐；对拉丝缇娅拉强行转移话题一事'技能感应也没有什么反应'故未深究；系诺文所授"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.87,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a71ae1c03063",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

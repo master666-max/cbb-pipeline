@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "LivingLegendParty（暂定）",
+   "宝石鱼",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "LivingLegendParty（暂定）首次探索出发·宝石鱼初战开始",
+  "tick": 117,
+  "time_verbatim": "同日洗衣晾衣后（经『连接』转送）"
+ },
+ "evidence": [
+  {
+   "chapter": 117,
+   "line": 130,
+   "quote": "通过『连接』，我们一口气来到了预先设置好出口的30层。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 136,
+   "quote": "我用『维度』警戒着周遭，同时对状态进行最后的确认。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 201,
+   "quote": "路上找到了一匹合适的怪物，我故意前去与之接触。这是为了在较早的阶段能够好好确认下队伍的实力。",
+   "vol": 1
+  },
+  {
+   "chapter": 117,
+   "line": 208,
+   "quote": "于是，『LivingLegendParty（暂定）』的初战──首次探索行动开始了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 117,
+   "text": "涡波穿过『连接』一行'一口气来到了预先设置好出口的30层'（30层已变貌）→进入31层沙海（哥雷姆与鱼形怪物游荡）→以『维度』警戒并作状态最终确认（四章状态栏）→前卫涡波/后卫拉丝缇娅拉阵型推进→涡波故意与'一匹合适的怪物'接触以早期确认队伍实力→『LivingLegendParty（暂定）』对宝石鱼初战开始（战斗经过本章未载）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-bb09ae640022",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0117.txt",
+  "sha": "8fbdee9d926f08def4be0631edabc980143e4a15",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

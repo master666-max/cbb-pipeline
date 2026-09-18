@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "地魔法『Earth』",
+   "相川涡波",
+   "阿雷亚斯家的宝剑诺文"
+  ],
+  "instant": null,
+  "kind": "试错",
+  "name": "涡波经宝剑强启地魔法『Earth』操沙遭反噬",
+  "tick": 120,
+  "time_verbatim": "特训次日晨，甲板"
+ },
+ "evidence": [
+  {
+   "chapter": 120,
+   "line": 104,
+   "quote": "然而流入脑海中的却全都是『剑术』的知识。从始至终都是彻头彻尾的『剑术』",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 110,
+   "quote": "──地魔法『Earth』",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 112,
+   "quote": "沙子就像被磁铁吸引的铁砂一样，开始吸附到剑上。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 117,
+   "quote": "强行使用自己本无法使用的魔法，反噬着身体发出悲鸣。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 120,
+   "text": "闭眼集中后流入脑海的全是『剑术』知识；转而想象地属性基础魔法『Earth』——沙吸附剑上、结土块升空；但魔力消耗巨大、身体反噬悲鸣，'没有得到剑的同意'疑为最大原因"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8251ae82d555",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0120.txt",
+  "sha": "d4dc8f52b15e4264db4a652311ced60782eec1ec",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

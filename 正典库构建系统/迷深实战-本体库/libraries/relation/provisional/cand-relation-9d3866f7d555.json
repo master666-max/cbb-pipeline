@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "戒指『晶盾』",
+  "rel_type": "协作完成(戒体+引线术式)",
+  "subject": "艾利巴茨·利拜斯"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 178,
+   "quote": "「──感觉不错嘛。戒指本身我这边来提供。已经刻有注入魔力就发动魔石上的魔法的引线术式了，这样一来很快就能完工了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 122,
+   "text": "提供戒体并已刻入'注入魔力就发动魔石上的魔法的引线术式'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9d3866f7d555",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

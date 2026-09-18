@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾利巴茨·利拜斯",
+  "rel_type": "装备锻造主顾",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 122,
+   "line": 29,
+   "quote": "「我今天是为了把装备的问题处理一下才来的。包括我的同伴们在内，估计会需要相当的数量」",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 60,
+   "quote": "「我知道同伴们的衣服尺寸，现在就下单可以吗？希望你能打造些从头到脚都有一定防御力的东西」",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 204,
+   "quote": "「到头来，也就打造了一个戒指而已呢。要是有什么想要的，就再来吧。今天就先挑工房里的几个适当的武具带走吧。你订造的东西，等下次来之前我这边会做好的」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 122,
+   "text": "含同伴的大量装备下单＋新阶层魔石作素材；'只要是给会长使用的话，任何武器装备都会觉得荣幸'（但得付钱——离店时'钱好好付过了'）；订造品约定下次来前做好"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b3fc2e04aa26",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0122.txt",
+  "sha": "787bfdbfa138cef7a1ce44b7273a564e16b491b3",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

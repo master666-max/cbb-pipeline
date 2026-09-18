@@ -1,0 +1,99 @@
+{
+ "canonical": {
+  "entities": [
+   "『Firefly』",
+   "『Flame·决战炎域』",
+   "『FlmaeArrow・散花』",
+   "『炎之矢』",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "32层飞行怪歼灭战（组合魔法确立）",
+  "tick": 118,
+  "time_verbatim": "32层水晶走廊（当日至抵达33层前）"
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 175,
+   "quote": "「──我的眼睛，也看见了。缇亚，按照预定动手。──魔法『Flame・决战炎域』、『萤火』」",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 184,
+   "quote": "缇亚的魔法的『路径』──不对，是在空中造出了『枪身』",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 191,
+   "quote": "在压倒性的热量下，敌人坚硬的水晶躯体被熔出一个大洞。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 234,
+   "quote": "然而所有的怪物，都在一刹那间，被闪光群击中，化作光芒消失了。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 241,
+   "quote": "去确认状态的话，这两人的MP减少不超过十位数。对她们来说，刚才那只是一场热身运动而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 243,
+   "quote": "经验值也得到了一大把。这效率是我和拉丝缇娅拉拼命奔走也比不上的。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 254,
+   "quote": "怪物连脸都没露，就被消灭了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 118,
+   "text": "飞行怪袭来→玛利亚'我的眼睛，也看见了'并发动『Flame・决战炎域』『萤火』：火玉（具维度级机能）列轮成火轮/炎之筒为枪身；缇亚全收束『炎之矢』经枪身镭射化贯穿远怪（鸟怪'甚至都没进入我们的视野'即坠）；二番战：缇亚白炎火矢群+玛利亚短枪身+火之反光板＝『FlmaeArrow・散花』多重偏折光线群瞬灭十匹以上；半径1公里一时无怪；二人MP减少不超十位数（'只是一场热身运动'）；其后3方向来袭怪'连脸都没露'即灭、回收一匹魔石；涡波拉丝缇娅拉双双受冲击懵立"
+  },
+  {
+   "category": "event",
+   "chapter": 118,
+   "text": "战果定位：涡波评'货真价实的歼灭'、经验值效率'我和拉丝缇娅拉拼命奔走也比不上'；'过于完美，以至于都不需要我的索敌和拉丝缇娅拉的攻击力了'；因迎击过早拉丝缇娅拉连敌影都看不到——此后无一怪进入肉眼可见范围，全队连水晶鸟型怪的名字都不知道便抵达33层"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3a4a1c1f7be2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

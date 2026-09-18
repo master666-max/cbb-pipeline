@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 118,
+  "fact": "31层为沙海阶层：宝石鱼自沙中隆起处以背鳍外露方式接近（WEB版怪名）；怪物经验值很高——'只要打倒一匹，就能让玛利亚获得1000点左右的经验值'；10级以下的必要经验值'基本上也就几万'，级别平衡耗时短；本次探索主要目的=将级别平衡（先拔高玛利亚级别）",
+  "name": "迷宫31层：沙海环境与经验值经济",
+  "tick": 118
+ },
+ "evidence": [
+  {
+   "chapter": 118,
+   "line": 3,
+   "quote": "沙海中的一处隆起。宝石鱼像鲨鱼一样露出背鳍向我们逼近。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 111,
+   "quote": "所幸，31层的怪物经验值很高。只要打倒一匹，就能让玛利亚获得1000点左右的经验值。10级以下的必要经验值基本上也就几万，花不了多少时间。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 118,
+   "text": "阶层环境+经济设定（WEB版）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-f8d9f39695fc",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0118.txt",
+  "sha": "a3d39c3db53158bb836d86c47894796a0cfd349c",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

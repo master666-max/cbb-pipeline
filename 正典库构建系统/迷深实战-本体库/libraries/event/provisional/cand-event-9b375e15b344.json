@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "『地之理的盗窃者』",
+   "『窃夺世界之理』",
+   "水晶魔法『Quartz』",
+   "相川涡波",
+   "阿雷亚斯家的宝剑诺文"
+  ],
+  "instant": null,
+  "kind": "能力获得",
+  "name": "水晶魔法『Quartz』显现：沙石化为宝石金砂、甲板宝石长河",
+  "tick": 120,
+  "time_verbatim": "特训次日晨，魔法反转后"
+ },
+ "evidence": [
+  {
+   "chapter": 120,
+   "line": 129,
+   "quote": "──水晶魔法『Quartz』──",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 131,
+   "quote": "转换成了操纵水晶的『地之理的盗窃者』的魔力，侵蚀着飞舞的沙粒。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 132,
+   "quote": "我得到了『窃夺世界之理』的一部分力量。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 134,
+   "quote": "普通的石头变成了宝石，沙子变成了金砂，各种各样的东西纷纷转化为各种各样的矿物。全都由我的意志来决定。",
+   "vol": 1
+  },
+  {
+   "chapter": 120,
+   "line": 136,
+   "quote": "此时甲板上生成了熠熠生辉的宝石长河。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 120,
+   "text": "次元魔术魔力经宝剑转换为『地之理的盗窃者』魔力；沙化为水晶、普通石头变宝石、沙变金砂，皆由其意志决定；魔法结束后矿物落地，甲板生成宝石长河——涡波自称得到『窃夺世界之理』的一部分力量"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9b375e15b344",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0120.txt",
+  "sha": "d4dc8f52b15e4264db4a652311ced60782eec1ec",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}
