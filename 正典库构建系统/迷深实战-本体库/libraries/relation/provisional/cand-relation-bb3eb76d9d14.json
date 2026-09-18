@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "契约《让我过得开心》",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 114,
+   "line": 68,
+   "quote": "契约的内容是《让我过得开心》。并没有要你做什么《英雄》哦。不如说，那是我要扮演的角色可不要抢戏呀",
+   "vol": 1
+  },
+  {
+   "chapter": 114,
+   "line": 66,
+   "quote": "作为我的物语的《主人公》还是很努力了哦。涡波让我认识到了《我是我自己》这一点。",
+   "vol": 1
+  },
+  {
+   "chapter": 114,
+   "line": 75,
+   "quote": "作为同伴的话互相帮助是理所当然的，道歉反而让人困扰。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 114,
+   "text": "据拉丝缇娅拉：契约内容=《让我过得开心》，涡波无须做《英雄》（'那是我要扮演的角色可不要抢戏呀'）；她定位涡波为'我的物语的《主人公》'并感激他让自己认识到《我是我自己》；她的思考方式：同伴互相帮助理所当然、道歉反而让人困扰（故拒收圣诞祭谢罪）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bb3eb76d9d14",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0114.txt",
+  "sha": "32922a81bc34cb0005679f4ab551707b5bd96bcc",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

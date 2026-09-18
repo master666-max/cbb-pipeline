@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折·宣言",
+  "name": "涡波宣告明晨全员公开身份与技能",
+  "tick": 115,
+  "time_verbatim": "新旅程首日夜（涡波房间；紧接133话同夜，莉帕观察缇亚已入眠）"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 290,
+   "quote": "至今为止只有你一个人知道我的身份吧。那个，我不打算再隐瞒下去了",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 298,
+   "quote": "实际上其他方面还有很多隐藏起来的事。技能呀魔法呀之类的",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 300,
+   "quote": "借这个机会，我打算全部讲清楚",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 302,
+   "quote": "明天早上，我打算把大家集合起来一起讲，所以你看到大家之后记得通知一声",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 308,
+   "quote": "仅仅是让人际关系恶化那种程度还好。但是，会造成伤亡的话，就是另一码事了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 115,
+   "text": "宣布不再隐瞒'我是来自异世界的那个'，另'技能呀魔法呀之类'隐藏事项'打算全部讲清楚'；预定'明天早上，我打算把大家集合起来一起讲'；托拉丝缇娅拉见到大家后通知；动机=继续隐瞒='为了自保而欺骗女孩子'、恐'会造成伤亡'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c850836b166b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

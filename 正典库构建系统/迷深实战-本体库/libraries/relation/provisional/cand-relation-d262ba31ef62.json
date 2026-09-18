@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔缇",
+  "rel_type": "教诲受承(火之理)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 110,
+   "line": 327,
+   "quote": "从『火之理的盗窃者阿尔缇』和『地之理的盗窃者诺文』身上学到了数不清的东西。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 10,
+   "quote": "回想起自己直到最后都否定着阿尔缇，将她逼向死亡时的事情，稳定了心神。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 110,
+   "text": "（跨章事实走关系轨道）从『火之理的盗窃者阿尔缇』身上学到数不清的东西（与诺文并列为力量来源）；另：涡波回想自己直到最后都否定她、将她逼向死亡——以该自责稳定心神（据涡波回想自述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d262ba31ef62",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0110.txt",
+  "sha": "9fc0790550d49f0be562deb4d677eef25593d2b8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

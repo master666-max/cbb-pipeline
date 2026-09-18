@@ -1,0 +1,219 @@
+{
+ "unit": "ch0114",
+ "chapter": 114,
+ "ingestion_index": 85,
+ "title": "133话-子供以下恋爱",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 25,
+  "pass": 25,
+  "intercept": 0,
+  "admitted": 18,
+  "quarantined": 7
+ },
+ "tracks": {
+  "consistent-duplicate": 3,
+  "on-create": 15
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-29ed2be32d3d",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-fde189b12b03",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-dd7379bf925c",
+   "type": "entity",
+   "name": "？？？",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-bba083f94a9f-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-5504183a54d7",
+   "type": "entity",
+   "name": "拉丝缇娅拉的手记",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6a57ca0b9e31",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ff7b06e4eb5f",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-bb3eb76d9d14",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-92dfe2a9b881",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e1d95a4a72aa",
+   "type": "relation",
+   "name": "？？？",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-04b702c6804b",
+   "type": "event",
+   "name": "涡波决意检验心意并夜访拉丝缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f67b00d4b2c3",
+   "type": "event",
+   "name": "圣诞祭谢罪与拉丝缇娅拉的宽慰",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-10fe339bc042",
+   "type": "event",
+   "name": "口头约定兑现·拥抱（物语第一章HappyEnd宣言）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9452ddf93e45",
+   "type": "event",
+   "name": "尴尬时间·拉丝缇娅拉暴走夺窗逃跑与心意确认完成",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ac3809ac103b",
+   "type": "foreshadow",
+   "name": "技能《？？？》箭在弦上的发动危机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-f4c136dcd07a",
+   "type": "foreshadow",
+   "name": "拉丝缇娅拉的心意暴走（'这不对'）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-2ba5bd094a33",
+   "type": "setting",
+   "name": "技能《？？？》对涡波感情的作用机制（ch114）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b9e5a426ffb2",
+   "type": "setting",
+   "name": "拉丝缇娅拉的消耗（圣诞祭后连续战斗）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-101ada8fce4c",
+   "type": "setting",
+   "name": "涡波与拉丝缇娅拉的契约与角色分工（ch114重申）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-1e79d653464c",
+   "type": "entity",
+   "name": "持有物品",
+   "item_id": "q-854b7b1f94be",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-7ff93e44c552",
+   "type": "entity",
+   "name": "瓦尔法拉",
+   "item_id": "q-4c6dc353af3f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-342736fbe8de",
+   "type": "entity",
+   "name": "『Dimension』",
+   "item_id": "q-20c775172089",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-02e6b8aa22a8",
+   "type": "relation",
+   "name": "弗茨亚茨",
+   "item_id": "q-15c33347f537",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-619849808ff3",
+   "type": "relation",
+   "name": "相川阳滝",
+   "item_id": "q-beb4aa1e95fe",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-82ab2e4bc0e4",
+   "type": "foreshadow",
+   "name": "拉丝缇娅拉的英雄谭执笔之梦",
+   "item_id": "q-ad52ab9e9431",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-a13b66c3af5a",
+   "type": "setting",
+   "name": "船上生活（同乘第一天）",
+   "item_id": "q-65bafa35d7ee",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 85,
+  "pseudo_date": "2000-03-26",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

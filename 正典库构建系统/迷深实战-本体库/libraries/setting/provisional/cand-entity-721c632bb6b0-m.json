@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『维度·多重展开』"
+ },
+ "evidence": [
+  {
+   "chapter": 4,
+   "line": 377,
+   "quote": "「状态——，……嗯，能行。魔法『维度·多重展开』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 379,
+   "quote": "顺带一说，这个『维度·多重展开』是『维度』的衍生魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 28,
+   "quote": "「没办法，用『Dimension・多重展开』来找些能收留他们的好地方吧。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 90,
+   "quote": "「──『Dimension多重展开』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 91,
+   "quote": "与『感应』混合，我驱使着大量魔力发动了《Dimension》",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 4,
+   "text": "『维度』的衍生魔法：增 MP 消费扩大效果范围（主角自命名，招式名越长越有感觉）（L377-380）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-721c632bb6b0",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-721c632bb6b0-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-721c632bb6b0",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

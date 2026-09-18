@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "行程",
+  "name": "舞闘大会后逃亡·赌场筹钱开始",
+  "tick": 109,
+  "time_verbatim": "『舞闘大会』逃亡后数小时（同日至当夜）"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 58,
+   "quote": "距从『舞闘大会』逃亡只过了几小时。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 56,
+   "quote": "于是拉丝缇娅拉对我说着「稍微去赌场大闹一番赚个痛快吧。啊，绝对不准输哦。」便把我和塞拉小姐扔到了这里。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 59,
+   "quote": "不过，只要入手了船的话，休息多长时间都可以。我在心中如此重复强调，驱使着疲惫的身体继续行动。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 109,
+   "text": "『舞闘大会』结束后数小时，一行逃离劳拉维亚南下古利亚德，因无法直接出海停步；为购几人可开动的特殊船（船内设置『连接』），被拉丝缇娅拉以『绝对不准输』派往赌场；涡波以『只要入手了船的话，休息多长时间都可以』自我说服、驱使疲惫身体行动"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b51ec4326d14",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

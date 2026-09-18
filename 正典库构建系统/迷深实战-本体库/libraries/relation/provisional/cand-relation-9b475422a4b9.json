@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "信赖(大小姐认同)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 152,
+   "quote": "塞拉小姐浅笑着否定了。接着，她将她信赖的拉丝缇娅拉作为引子──",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 153,
+   "quote": "「⋯⋯我只不过是觉得，那位大小姐认同的你，不可能会输给这种货色而已」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 109,
+   "text": "塞拉将『她信赖的拉丝缇娅拉』作为引子——『那位大小姐认同的你，不可能会输给这种货色』：拉丝缇娅拉的认同=塞拉判断基准"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9b475422a4b9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

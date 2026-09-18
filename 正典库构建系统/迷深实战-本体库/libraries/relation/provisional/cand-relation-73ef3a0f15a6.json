@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『LivingLegend号』",
+  "rel_type": "魔力驱动(一人启动失败作)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 110,
+   "line": 254,
+   "quote": "「唔嗯，拜托～因为我们之中还是蒂娅的魔力最高嘛。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 259,
+   "quote": "一般人的话会因为那魔力的波动而一屁股摔在地上吧，不过他以商人的气魄咬紧牙关，总算抑制住了声音。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 110,
+   "text": "（ch0062 同型重演）需数百魔法使级魔力的失败作魔导船由其一人注入魔力启动——魔力波动令一般人会一屁股摔在地上（商人以气魄勉强忍住惨叫）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-73ef3a0f15a6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0110.txt",
+  "sha": "9fc0790550d49f0be562deb4d677eef25593d2b8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

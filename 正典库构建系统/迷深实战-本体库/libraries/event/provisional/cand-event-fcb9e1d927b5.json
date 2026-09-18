@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "菲伊？厄鲁斯"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "塞拉赤手空拳镇压菲伊的护卫",
+  "tick": 109,
+  "time_verbatim": "同日·别间（赌局高潮破产后即刻）"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 291,
+   "quote": "塞拉小姐撕开自己的长裙，赤手空拳地走上前，面对着筋肉隆隆的男人们。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 293,
+   "quote": "──紧接着，一个肌肉男便被击飞，撞到墙上。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 295,
+   "quote": "拥有兽人的腕力补正，并且锻炼至人类最高水平的塞拉小姐的拳头，只是打向肌肉男的面门，就使体重百公斤以上的男人们飞在空中。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 297,
+   "quote": "菲伊？厄鲁斯准备的男人们的确都很强，大部分的战士都会被压制住吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 109,
+   "text": "涡波询问『需不需要用剑』、塞拉以『现在我可是穿着礼服的啊？你自己搞定』推脱后仍亲自动手：撕开长裙赤手空拳上前——一拳将肌肉男击飞撞墙；抓住上前扭打者手腕齐摔地面、颇有余力；菲伊准备的男人们『的确都很强，大部分的战士都会被压制』但全员瘫倒"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fcb9e1d927b5",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

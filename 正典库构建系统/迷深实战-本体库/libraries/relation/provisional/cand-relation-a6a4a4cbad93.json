@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "劳拉维亚",
+  "rel_type": "国民级联结",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 170,
+   "quote": "毕竟我跟劳拉维亚的国民都有联结嘛。入手了各式各样的知识，脑袋里塞的有些乱七八糟的就是了",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 115,
+   "text": "据莉帕自述：'我跟劳拉维亚的国民都有联结'并由此入手各式知识（含'后宫''花花公子'等词——'脑袋里塞的有些乱七八糟'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a6a4a4cbad93",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

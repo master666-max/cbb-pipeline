@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛·勒伽西",
+   "技能『？？？』",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "决断",
+  "name": "告白延期·静观其变决断（三条件）",
+  "tick": 115,
+  "time_verbatim": "新旅程首日夜（涡波房间；紧接133话同夜，莉帕观察缇亚已入眠）"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 233,
+   "quote": "至少，到我能够对自己的心意抱有自信之前，先静观其变好了",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 234,
+   "quote": "也对啊。再等一等为好。知道欧尼酱与妹妹重逢……、或者说，至少也得等到击败帕林库洛·勒伽西为止呢",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 236,
+   "quote": "——直到解决技能《？？？》为止。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 115,
+   "text": "压下告白、'到我能够对自己的心意抱有自信之前，先静观其变'；莉帕附加条件=与妹妹重逢、'至少也得等到击败帕林库洛·勒伽西为止'；涡波内心自加第三条件'——直到解决技能《？？？》为止'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ae0b80beee36",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

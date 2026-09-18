@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "菲伊？厄鲁斯",
+  "rel_type": "赌局碾压·全财产剥夺",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 255,
+   "quote": "男人失去了绝大部分的财产，我持有的金币增加了数倍。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 307,
+   "quote": "现在菲伊？厄鲁斯亏了大钱。并且，我知道他是个商人。那损失并不仅止于他的个人财产，已经到了会影响他今后行商的程度了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 305,
+   "quote": "「请坐到座位上，菲伊先生，我并没有听到你说游戏结束了哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 319,
+   "quote": "半刻之后，菲伊？厄鲁斯便失去了全财产。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 109,
+   "text": "反千拉平→演出弱者诱导其押上今夜最高金额→一局夺其绝大部分财产→暴力破产后以惨状诱导其回桌续赌（『我并没有听到你说游戏结束了哦』/赌上全部也许逆转的许诺『全是谎言』）→半刻后使其失去全财产；损失大到影响其今后行商（涡波明知而故意为之）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fbcaf7f01939",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "家人定位(视为妹妹)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 112,
+   "line": 143,
+   "quote": "我对玛利亚，我也喜欢你啊。……但是，那不是指异性之间的爱。",
+   "vol": 1
+  },
+  {
+   "chapter": 112,
+   "line": 143,
+   "quote": "还是将玛利亚与妹妹视为一谈了吧]",
+   "vol": 1
+  },
+  {
+   "chapter": 112,
+   "line": 147,
+   "quote": "她知道。我口中的[跟妹妹视为一谈]是接近最高级的表示好意的言辞。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 112,
+   "text": "涡波回应告白：'我对玛利亚，我也喜欢你啊。……但是，那不是指异性之间的爱'——'将玛利亚与妹妹视为一谈'；玛利亚知晓此语'是接近最高级的表示好意的言辞'并满足接受（'这样就足够了'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-001df93e41e1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0112.txt",
+  "sha": "a24d19ef4f161ecc68a8a040cb6d16fe449eb51f34f17272aa8c480245ff6030",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

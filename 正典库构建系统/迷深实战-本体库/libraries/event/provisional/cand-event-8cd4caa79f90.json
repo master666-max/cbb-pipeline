@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "相川涡波",
+   "菲伊・厄鲁斯"
+  ],
+  "instant": null,
+  "kind": "清算",
+  "name": "菲伊・厄鲁斯全财产剥夺与驱逐",
+  "tick": 110,
+  "time_verbatim": "赌局直后（Epilogue下篇开篇·赌场隐蔽房间）"
+ },
+ "evidence": [
+  {
+   "chapter": 110,
+   "line": 4,
+   "quote": "「──金额不足的部分要用别的东西来支付哦。这也是理所当然的吧？随身物品、马车上的货物、契约书、各种各样的物品都要拿来抵账。我们这边也没什么时间，就不客气地收下了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 5,
+   "quote": "我夺走了菲伊・厄鲁斯的全部，将他驱逐。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 18,
+   "quote": "这里是赌场准备的隐蔽房间。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 110,
+   "text": "金额不足部分以物品抵账（随身物品/马车货物/契约书）→留最低限金钱驱逐；塞拉彻底摘除论被涡波悔改论说服；赌场方爽快协助有钱人（隐蔽房间处理金币与契约书）；涡波咀嚼破壊他人人生的事实——时代适应的精神修炼动因"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8cd4caa79f90",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0110.txt",
+  "sha": "9fc0790550d49f0be562deb4d677eef25593d2b8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

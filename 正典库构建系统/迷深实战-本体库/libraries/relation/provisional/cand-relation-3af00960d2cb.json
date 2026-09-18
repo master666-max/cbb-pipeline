@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "菲伊・厄鲁斯",
+  "rel_type": "赌局清算·全财产剥夺(驱逐)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 110,
+   "line": 4,
+   "quote": "「──金额不足的部分要用别的东西来支付哦。这也是理所当然的吧？随身物品、马车上的货物、契约书、各种各样的物品都要拿来抵账。我们这边也没什么时间，就不客气地收下了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 5,
+   "quote": "我夺走了菲伊・厄鲁斯的全部，将他驱逐。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 16,
+   "quote": "然而我却不停诉说着对方悔改的可能性，勉勉强强让她接受了。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 198,
+   "quote": "剩下的菲伊・厄鲁斯的财产处理工作被拉丝缇娅拉和玛利亚简单粗暴地解决了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 110,
+   "text": "抵账范围=随身物品/马车货物/契约书等各种物品；留最低限金钱+驱逐；塞拉主张彻底摘除报复可能性，被涡波以悔改可能性说服放弃；剩余财产处理由拉丝缇娅拉和玛利亚简单粗暴解决；赌场方爽快协助（提供隐蔽房间）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3af00960d2cb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0110.txt",
+  "sha": "9fc0790550d49f0be562deb4d677eef25593d2b8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

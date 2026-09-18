@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "高级赌场"
+  ],
+  "instant": null,
+  "kind": "赌局",
+  "name": "轮盘ALL-IN连胜与赌场禁用",
+  "tick": 109,
+  "time_verbatim": "逃亡当日·赌场（酒场谈话前）"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 30,
+   "quote": "「『阳』的三之二⋯⋯ALL-IN的这位客人，您赢得了72倍的赌金⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 39,
+   "quote": "从游戏的后半段开始就一直盯着赢个不停的我看着的店员们低下了头。恐怕是想找出我出千的证据，却什么都没看出来吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 41,
+   "quote": "然后被赌场方告知不能继续使用赌场设施。我没有多做纠缠便同意了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 109,
+   "text": "无魔力轮盘『阳』三之二 ALL-IN 命中72倍、筹码无止境倍增引庄家恐怖、围观者看戏；店员全程监视查无出千证据；VIP别间被善意告知禁用赌场设施，涡波无纠缠即接受（本就料到）；转战以个人为对象的赌局"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-01d9cbe47ce6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

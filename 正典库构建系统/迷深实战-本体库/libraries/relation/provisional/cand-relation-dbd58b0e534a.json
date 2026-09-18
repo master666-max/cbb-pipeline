@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "对决正式开始",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 113,
+   "line": 42,
+   "quote": "对我个人而言，与帕林库洛的对决这才算正式开始呢。",
+   "vol": 1
+  },
+  {
+   "chapter": 113,
+   "line": 105,
+   "quote": "这样下去，视野会越来越狭窄，又会重蹈失败的覆辙了。",
+   "vol": 1
+  },
+  {
+   "chapter": 113,
+   "line": 155,
+   "quote": "与帕林库洛战斗时，会被狙击的内心间隙也能减少。全是好事。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 113,
+   "text": "涡波个人认知：与帕林库洛的对决『这才算正式开始』；自省成天只考虑帕林库洛之事致视野狭窄、恐重蹈失败覆辙（经斯诺劝告调整）；预想战斗时将强制斯诺参战、并预计恋爱骚动早解决可减少『与帕林库洛战斗时被狙击的内心间隙』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dbd58b0e534a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0113.txt",
+  "sha": "9a03171c20f0f112750abadde4f10ed58a508132",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

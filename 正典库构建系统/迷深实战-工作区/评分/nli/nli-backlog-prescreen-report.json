@@ -1,0 +1,1262 @@
+{
+ "generated": "2026-09-19",
+ "judge": "GLM-5.3 子代理三分（上岗小考 separation=1.0/exact=1.0 后首班）",
+ "n_judged": 138,
+ "n_pairs_total": 144,
+ "routing": {
+  "contradicts→人工裁决队列置顶": 80,
+  "neutral→挂起待第二意见": 33,
+  "entails→转双轨 confidence 流程（建议，不静默合并）": 25
+ },
+ "discipline": "预筛只分流不裁决（B6：隔离区一等公民，本清单只读留痕，不改隔离区状态）",
+ "routes": {
+  "contradicts": [
+   {
+    "pair_id": "pair-q-36f227e4246c",
+    "item_id": "q-36f227e4246c",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿尔缇的实体类型为人物(迷宫生物)",
+    "hypothesis": "阿尔缇的实体类型为人物",
+    "reason": "同主体类型粒度冲突：人物(迷宫生物)与人物。"
+   },
+   {
+    "pair_id": "pair-q-c07694b5f4c7",
+    "item_id": "q-c07694b5f4c7",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇达的实体类型为人物",
+    "reason": "同主体类型粒度冲突：人物(迷宫生物)与人物。"
+   },
+   {
+    "pair_id": "pair-q-82663a676f52",
+    "item_id": "q-82663a676f52",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "冰结魔法的实体类型为技能魔法",
+    "hypothesis": "冰结魔法的实体类型为魔法体系",
+    "reason": "同主体类型值不同：技能魔法与魔法体系。"
+   },
+   {
+    "pair_id": "pair-q-8e05585043f9",
+    "item_id": "q-8e05585043f9",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "沃克家的实体类型为组织(贵族家门)",
+    "hypothesis": "沃克家的实体类型为家门(贵族家系)",
+    "reason": "同主体类型值不同：组织(贵族家门)与家门(贵族家系)。"
+   },
+   {
+    "pair_id": "pair-q-28b99b8dd697",
+    "item_id": "q-28b99b8dd697",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇娅拉的实体类型为人物(传说·圣人/莱文教缔造者)",
+    "hypothesis": "缇娅拉的实体类型为人物(圣人)",
+    "reason": "同主体限定粒度不同：(传说·圣人/缔造者)与(圣人)。"
+   },
+   {
+    "pair_id": "pair-q-e79994e7c1e1",
+    "item_id": "q-e79994e7c1e1",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "海莉的实体类型为人物",
+    "hypothesis": "海莉的实体类型为人物(魔石人类)",
+    "reason": "同主体类型粒度冲突：人物与人物(魔石人类)。"
+   },
+   {
+    "pair_id": "pair-q-52dee2bb8cc8",
+    "item_id": "q-52dee2bb8cc8",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "圣人缇娅拉的实体类型为人物(传说)",
+    "hypothesis": "圣人缇娅拉的实体类型为人物(千年前·圣人)",
+    "reason": "同主体限定不同：(传说)与(千年前·圣人)。"
+   },
+   {
+    "pair_id": "pair-q-bd481594ec6e",
+    "item_id": "q-bd481594ec6e",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "迪普拉库拉的实体类型为人物(传说·背叛的使徒)",
+    "hypothesis": "迪普拉库拉的实体类型为人物(使徒)",
+    "reason": "同主体限定粒度不同：(传说·背叛的使徒)与(使徒)。"
+   },
+   {
+    "pair_id": "pair-q-75f21aa4a57e",
+    "item_id": "q-75f21aa4a57e",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "火炎魔法的实体类型为技能魔法",
+    "hypothesis": "火炎魔法的实体类型为魔法(火炎)",
+    "reason": "同主体类型值不同：技能魔法与魔法(火炎)。"
+   },
+   {
+    "pair_id": "pair-q-989ff44778b6",
+    "item_id": "q-989ff44778b6",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾德的实体类型为人物(四十守护者)",
+    "hypothesis": "艾德的实体类型为人物(守护者)",
+    "reason": "同主体粒度冲突：(四十守护者)与(守护者)。"
+   },
+   {
+    "pair_id": "pair-q-825863e3a864",
+    "item_id": "q-825863e3a864",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾德的实体类型为人物(四十守护者)",
+    "hypothesis": "艾德的实体类型为人物",
+    "reason": "同主体有无限定冲突：(四十守护者)与人物。"
+   },
+   {
+    "pair_id": "pair-q-7b0148b54119",
+    "item_id": "q-7b0148b54119",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇达的实体类型为人物(守护者)",
+    "reason": "同主体限定不同：(迷宫生物)与(守护者)。"
+   },
+   {
+    "pair_id": "pair-q-d261916e9471",
+    "item_id": "q-d261916e9471",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "始祖涡波的实体类型为人物(千年前·始祖)",
+    "hypothesis": "始祖涡波的实体类型为人物(千年前始祖/无魂躯壳)",
+    "reason": "同主体限定不同，假设新增无魂躯壳。"
+   },
+   {
+    "pair_id": "pair-q-178bae46dfe1",
+    "item_id": "q-178bae46dfe1",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾德的实体类型为人物(四十守护者)",
+    "hypothesis": "艾德的实体类型为人物(守护者)",
+    "reason": "同主体粒度冲突：(四十守护者)与(守护者)。"
+   },
+   {
+    "pair_id": "pair-q-30b0093e4fca",
+    "item_id": "q-30b0093e4fca",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "次元之冬的实体类型为魔法(复合魔法)",
+    "hypothesis": "次元之冬的实体类型为技能(共鸣魔法)",
+    "reason": "同主体类型值不同：魔法(复合)与技能(共鸣)。"
+   },
+   {
+    "pair_id": "pair-q-56bf35349243",
+    "item_id": "q-56bf35349243",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "表示的实体类型为系统机能(状态栏表示)",
+    "hypothesis": "表示的实体类型为技能(情报系/状态表示)",
+    "reason": "同主体类型值不同：系统机能与技能。"
+   },
+   {
+    "pair_id": "pair-q-f89eec3c0cac",
+    "item_id": "q-f89eec3c0cac",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "次元之冬的实体类型为魔法(冬系妨害)",
+    "hypothesis": "次元之冬的实体类型为技能(次元魔法)",
+    "reason": "同主体类别冲突：魔法与技能。"
+   },
+   {
+    "pair_id": "pair-q-0484fbca5844",
+    "item_id": "q-0484fbca5844",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾尔芬里斯的实体类型为怪物(风龙)",
+    "hypothesis": "艾尔芬里斯的实体类型为人物(迷宫66层Boss·自由风龙)",
+    "reason": "同主体类别冲突：怪物与人物。"
+   },
+   {
+    "pair_id": "pair-q-e2181cb1e1cd",
+    "item_id": "q-e2181cb1e1cd",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "过密次元的真冬的实体类型为魔法(次元系)",
+    "hypothesis": "过密次元的真冬的实体类型为技能(次元魔法)",
+    "reason": "同主体类别冲突：魔法与技能。"
+   },
+   {
+    "pair_id": "pair-q-869b06c98a42",
+    "item_id": "q-869b06c98a42",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾德的实体类型为人物(四十守护者)",
+    "hypothesis": "艾德的实体类型为人物(守护者)",
+    "reason": "同主体粒度冲突：(四十守护者)与(守护者)。"
+   },
+   {
+    "pair_id": "pair-q-4ee35a5d630c",
+    "item_id": "q-4ee35a5d630c",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿尔缇的实体类型为人物(迷宫生物)",
+    "hypothesis": "阿尔缇的实体类型为人物(守护者)",
+    "reason": "同主体限定不同：(迷宫生物)与(守护者)。"
+   },
+   {
+    "pair_id": "pair-q-07adb633195f",
+    "item_id": "q-07adb633195f",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "新月琉璃制直剑的实体类型为道具(剑)",
+    "hypothesis": "新月琉璃制直剑的实体类型为物品(剑)",
+    "reason": "同主体类型用词不同：道具与物品需归一。"
+   },
+   {
+    "pair_id": "pair-q-193a1a3ce4af",
+    "item_id": "q-193a1a3ce4af",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "始祖涡波的实体类型为人物(千年前·始祖)",
+    "hypothesis": "始祖涡波的实体类型为人物(千年前之身)",
+    "reason": "同主体限定不同：(千年前·始祖)与(千年前之身)。"
+   },
+   {
+    "pair_id": "pair-q-68aa80944ee5",
+    "item_id": "q-68aa80944ee5",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "新月琉璃制直剑的实体类型为道具(剑)",
+    "hypothesis": "新月琉璃制直剑的实体类型为物品(剑)",
+    "reason": "同主体类型用词不同：道具与物品需归一。"
+   },
+   {
+    "pair_id": "pair-q-82632d4d6c80",
+    "item_id": "q-82632d4d6c80",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "莱纳的实体类型为人物",
+    "hypothesis": "莱纳的实体类型为人物(骑士)",
+    "reason": "同主体粒度冲突：人物与人物(骑士)。"
+   },
+   {
+    "pair_id": "pair-q-98e80b32412c",
+    "item_id": "q-98e80b32412c",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "『Connection』的实体类型为技能魔法",
+    "hypothesis": "『Connection』的实体类型为魔法(转送阵)",
+    "reason": "同主体类型值不同：技能魔法与魔法(转送阵)。"
+   },
+   {
+    "pair_id": "pair-q-de4cfebc168e",
+    "item_id": "q-de4cfebc168e",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『新月琉璃制直剑』的实体类型为物品(武器)",
+    "hypothesis": "『新月琉璃直剑』的实体类型为物品(武具)",
+    "reason": "同一武器，武器与武具粒度值不同需归一"
+   },
+   {
+    "pair_id": "pair-q-8e92c8d3b8b1",
+    "item_id": "q-8e92c8d3b8b1",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "古尔亚德的实体类型为地点(国/势力)",
+    "hypothesis": "古尔亚德的实体类型为地点(港口)",
+    "reason": "同主体古尔亚德，国势力与港口值不同"
+   },
+   {
+    "pair_id": "pair-q-637a18953675",
+    "item_id": "q-637a18953675",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "珍珠鱼的实体类型为人物(迷宫生物)",
+    "hypothesis": "珍珠鱼的实体类型为怪物",
+    "reason": "同主体珍珠鱼，人物与怪物值冲突"
+   },
+   {
+    "pair_id": "pair-q-33220df43c95",
+    "item_id": "q-33220df43c95",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "火炎魔法的实体类型为技能魔法",
+    "hypothesis": "火炎魔法的实体类型为魔法体系",
+    "reason": "同主体火炎魔法，技能魔法与魔法体系冲突"
+   },
+   {
+    "pair_id": "pair-q-53886480577e",
+    "item_id": "q-53886480577e",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "『魔石线』的实体类型为物品",
+    "hypothesis": "『魔石线』的实体类型为设施(城市警备)",
+    "reason": "同主体魔石线，物品与设施值不同"
+   },
+   {
+    "pair_id": "pair-q-598dc0bdb125",
+    "item_id": "q-598dc0bdb125",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "塞拉·雷迪安特的实体类型为人物",
+    "hypothesis": "塞拉·雷迪安特的实体类型为人物(女仆骑士)",
+    "reason": "同主体塞拉，人物与人物括注粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-94942481522d",
+    "item_id": "q-94942481522d",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "次元之冬的实体类型为魔法(冬系妨害)",
+    "hypothesis": "次元之冬的实体类型为魔法(次元魔法·妨害)",
+    "reason": "同主体次元之冬，冬系与次元魔法括注不同"
+   },
+   {
+    "pair_id": "pair-q-0b3a4c2ecf98",
+    "item_id": "q-0b3a4c2ecf98",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾德的实体类型为人物(四十守护者)",
+    "hypothesis": "艾德的实体类型为人物(守护者)",
+    "reason": "同主体艾德，四十守护者与守护者粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-1e55784cca4f",
+    "item_id": "q-1e55784cca4f",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "莉帕的实体类型为人物(知性魔法)",
+    "hypothesis": "莉帕的实体类型为人物",
+    "reason": "同主体莉帕，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-b478473d6a6d",
+    "item_id": "q-b478473d6a6d",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "迪亚布罗·西斯的实体类型为人物",
+    "hypothesis": "迪亚布罗·西斯的实体类型为人物(使徒)",
+    "reason": "同主体迪亚布罗，人物与人物括注粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-42661e288bdd",
+    "item_id": "q-42661e288bdd",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇娅拉的实体类型为人物(传说·圣人/莱文教缔造者)",
+    "hypothesis": "缇娅拉的实体类型为人物(千年前)",
+    "reason": "同主体缇娅拉，括注值不同构成冲突"
+   },
+   {
+    "pair_id": "pair-q-ee366dcd66f0",
+    "item_id": "q-ee366dcd66f0",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "海莉·维斯普洛佩的实体类型为人物(魔石人类)",
+    "hypothesis": "海莉·维斯普洛佩的实体类型为人物",
+    "reason": "同主体海莉，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-b598a57013e2",
+    "item_id": "q-b598a57013e2",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "使徒西斯的实体类型为人物(传说·正义的使徒)",
+    "hypothesis": "使徒西斯的实体类型为人物(使徒)",
+    "reason": "同主体使徒西斯，括注粒度冲突需归一"
+   },
+   {
+    "pair_id": "pair-q-0826c4e263e5",
+    "item_id": "q-0826c4e263e5",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇娅拉的实体类型为人物(传说·圣人/莱文教缔造者)",
+    "hypothesis": "缇娅拉的实体类型为人物",
+    "reason": "同主体缇娅拉，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-bd4de9c2dea5",
+    "item_id": "q-bd4de9c2dea5",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "莉帕的实体类型为人物(知性魔法)",
+    "hypothesis": "莉帕的实体类型为人物",
+    "reason": "同主体莉帕，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-71344066701e",
+    "item_id": "q-71344066701e",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿雷亚斯家的宝剑的实体类型为物品",
+    "hypothesis": "阿雷亚斯家的宝剑的实体类型为道具(宝剑)",
+    "reason": "同主体宝剑，物品与道具括注值不同"
+   },
+   {
+    "pair_id": "pair-q-95f56da39844",
+    "item_id": "q-95f56da39844",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "诺文的实体类型为人物",
+    "hypothesis": "诺文的实体类型为人物(守护者·地之理的盗窃者)",
+    "reason": "同主体诺文，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-ba7b005e5187",
+    "item_id": "q-ba7b005e5187",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "新月琉璃制直剑的实体类型为道具(剑)",
+    "hypothesis": "新月琉璃制直剑的实体类型为道具(武器)",
+    "reason": "同主体直剑，剑与武器粒度包含冲突"
+   },
+   {
+    "pair_id": "pair-q-1b24826259da",
+    "item_id": "q-1b24826259da",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇达的实体类型为人物(守护者)",
+    "reason": "同主体缇达，迷宫生物与守护者值不同"
+   },
+   {
+    "pair_id": "pair-q-2b9ff38611e4",
+    "item_id": "q-2b9ff38611e4",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "雷纳尔多的实体类型为人物",
+    "hypothesis": "雷纳尔多的实体类型为人物(佩艾希亚锻冶师)",
+    "reason": "同主体雷纳尔多，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-117c7e85605a",
+    "item_id": "q-117c7e85605a",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇娅拉的实体类型为人物(传说·圣人/莱文教缔造者)",
+    "hypothesis": "缇娅拉的实体类型为人物",
+    "reason": "同主体缇娅拉，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-5e802ebd82b0",
+    "item_id": "q-5e802ebd82b0",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "使徒西斯的实体类型为人物(传说·正义的使徒)",
+    "hypothesis": "使徒西斯的实体类型为人物(使徒)",
+    "reason": "同主体使徒西斯，括注粒度冲突需归一"
+   },
+   {
+    "pair_id": "pair-q-645cec57b0e5",
+    "item_id": "q-645cec57b0e5",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿雷亚斯家的宝剑的实体类型为物品",
+    "hypothesis": "阿雷亚斯家的宝剑的实体类型为物品(剑)",
+    "reason": "同主体宝剑，物品与物品括注粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-437d65716cfd",
+    "item_id": "q-437d65716cfd",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "莱纳的实体类型为人物",
+    "hypothesis": "莱纳的实体类型为人物(风属性骑士)",
+    "reason": "同主体莱纳，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-8fbece27c793",
+    "item_id": "q-8fbece27c793",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "罗德·缇缇的实体类型为人物(迷宫五十层守护者)",
+    "hypothesis": "罗德·缇缇的实体类型为人物(五十守护者·风之理的盗窃者)",
+    "reason": "同主体罗德·缇缇，括注表述不同构成冲突"
+   },
+   {
+    "pair_id": "pair-q-44dc21eb8d7f",
+    "item_id": "q-44dc21eb8d7f",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "雷纳尔多的实体类型为人物",
+    "hypothesis": "雷纳尔多的实体类型为人物(千年前·将军)",
+    "reason": "同主体雷纳尔多，括注粒度差异构成冲突"
+   },
+   {
+    "pair_id": "pair-q-cff4d330e5ee",
+    "item_id": "q-cff4d330e5ee",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "『Dimension』的实体类型为技能魔法",
+    "hypothesis": "『Dimension』的实体类型为魔法(次元系·涡波)",
+    "reason": "同主体Dimension，技能魔法与魔法括注冲突"
+   },
+   {
+    "pair_id": "pair-q-3562a76141ac",
+    "item_id": "q-3562a76141ac",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇达的实体类型为人物(迷宫守护者)",
+    "reason": "同主体同字段，迷宫生物与迷宫守护者粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-7703fbbe5aba",
+    "item_id": "q-7703fbbe5aba",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "诺文的实体类型为人物",
+    "hypothesis": "诺文的实体类型为人物(守护者·故人)",
+    "reason": "同主体，人物与人物(守护者·故人)粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-84ea34ccbfc7",
+    "item_id": "q-84ea34ccbfc7",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "『LivingLegend号』的实体类型为设施(魔导船)",
+    "hypothesis": "『LivingLegend号』的实体类型为载具(船)",
+    "reason": "同主体同字段，设施与载具类别赋值不同"
+   },
+   {
+    "pair_id": "pair-q-ed4229e92cda",
+    "item_id": "q-ed4229e92cda",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "血术的实体类型为技能魔法",
+    "hypothesis": "血术的实体类型为魔法体系",
+    "reason": "同主体同字段，技能魔法与魔法体系赋值不同"
+   },
+   {
+    "pair_id": "pair-q-d90c9d07d1d7",
+    "item_id": "q-d90c9d07d1d7",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "迪普拉库拉的实体类型为人物(传说·背叛的使徒)",
+    "hypothesis": "迪普拉库拉的实体类型为人物(使徒)",
+    "reason": "同主体，使徒与传说·背叛的使徒粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-97707a380140",
+    "item_id": "q-97707a380140",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿尔缇的实体类型为人物(迷宫生物)",
+    "hypothesis": "阿尔缇的实体类型为人物(身份未判明)",
+    "reason": "同主体，迷宫生物与身份未判明赋值不同"
+   },
+   {
+    "pair_id": "pair-q-25a250f874fd",
+    "item_id": "q-25a250f874fd",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "使徒西斯的实体类型为人物(传说·正义的使徒)",
+    "hypothesis": "使徒西斯的实体类型为人物(使徒)",
+    "reason": "同主体，使徒与传说·正义的使徒粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-d6f6166db392",
+    "item_id": "q-d6f6166db392",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "支配之王的实体类型为人物(千年前之王·据艾德)",
+    "hypothesis": "支配之王的实体类型为人物(千年前·北方)",
+    "reason": "同主体，据艾德与北方等括注值不同"
+   },
+   {
+    "pair_id": "pair-q-997c0e59eaa2",
+    "item_id": "q-997c0e59eaa2",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "劳拉维亚的实体类型为地点(国/势力)",
+    "hypothesis": "劳拉维亚的实体类型为地点",
+    "reason": "同主体同字段，地点(国/势力)与地点粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-ae0ad588c1cc",
+    "item_id": "q-ae0ad588c1cc",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "莉帕的实体类型为人物(知性魔法)",
+    "hypothesis": "莉帕的实体类型为人物",
+    "reason": "同主体同字段，人物(知性魔法)与人物粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-2b1e4193ad61",
+    "item_id": "q-2b1e4193ad61",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "次元之冬的实体类型为魔法(冬系妨害)",
+    "hypothesis": "次元之冬的实体类型为魔法(次元系)",
+    "reason": "同主体，冬系妨害与次元系括注值不同"
+   },
+   {
+    "pair_id": "pair-q-d4ed59570d88",
+    "item_id": "q-d4ed59570d88",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿尔缇的实体类型为人物(迷宫生物)",
+    "hypothesis": "阿尔缇的实体类型为人物",
+    "reason": "同主体同字段，人物(迷宫生物)与人物粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-c0fd6198ef84",
+    "item_id": "q-c0fd6198ef84",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "相川阳滝的实体类型为人物",
+    "hypothesis": "相川阳滝的实体类型为人物(涡波之妹/魂沉睡)",
+    "reason": "同主体，人物与人物(涡波之妹/魂沉睡)粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-d5ab2af5fcdd",
+    "item_id": "q-d5ab2af5fcdd",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇达的实体类型为人物(守护者/魔石)",
+    "reason": "同主体，迷宫生物与守护者/魔石括注值不同"
+   },
+   {
+    "pair_id": "pair-q-4547709ee7f6",
+    "item_id": "q-4547709ee7f6",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "诺文的实体类型为人物",
+    "hypothesis": "诺文的实体类型为人物(守护者/剑中导师)",
+    "reason": "同主体，人物与人物(守护者/剑中导师)粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-cffc42a30fc7",
+    "item_id": "q-cffc42a30fc7",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "Rokh·Bringer的实体类型为物品(魔剑)",
+    "hypothesis": "Rokh·Bringer的实体类型为道具(魔剑/双剑)",
+    "reason": "同主体同字段，物品与道具类别赋值不同"
+   },
+   {
+    "pair_id": "pair-q-61329ac8b9c9",
+    "item_id": "q-61329ac8b9c9",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇达的实体类型为人物(守护者)",
+    "reason": "同主体，迷宫生物与守护者括注值不同"
+   },
+   {
+    "pair_id": "pair-q-f9af02d35b41",
+    "item_id": "q-f9af02d35b41",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿雷亚斯家的宝剑诺文的实体类型为道具(剑)",
+    "hypothesis": "阿雷亚斯家的宝剑诺文的实体类型为道具(武器)",
+    "reason": "同主体，剑与武器存在包含粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-5b78099214c5",
+    "item_id": "q-5b78099214c5",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "阿尔缇的实体类型为人物(迷宫生物)",
+    "hypothesis": "阿尔缇的实体类型为人物",
+    "reason": "同主体同字段，人物(迷宫生物)与人物粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-23c85a0c2fbc",
+    "item_id": "q-23c85a0c2fbc",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾尔芬里斯的实体类型为怪物(风龙)",
+    "hypothesis": "艾尔芬里斯的实体类型为人物(迷宫66层风龙)",
+    "reason": "同主体，怪物与人物类别赋值冲突"
+   },
+   {
+    "pair_id": "pair-q-f4334bbb29cf",
+    "item_id": "q-f4334bbb29cf",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇达的实体类型为人物",
+    "reason": "同主体同字段，人物(迷宫生物)与人物粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-0da1517d1b38",
+    "item_id": "q-0da1517d1b38",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "诺文的实体类型为人物",
+    "hypothesis": "诺文的实体类型为人物(守护者)",
+    "reason": "同主体，人物与人物(守护者)粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-5099edbeb4ad",
+    "item_id": "q-5099edbeb4ad",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "次元之冬的实体类型为魔法(复合魔法)",
+    "hypothesis": "次元之冬的实体类型为技能(次元魔法)",
+    "reason": "同主体，魔法与技能类别及括注赋值不同"
+   },
+   {
+    "pair_id": "pair-q-42e887186242",
+    "item_id": "q-42e887186242",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "贝丝的实体类型为人物(兽人·猫耳少女)",
+    "hypothesis": "贝丝的实体类型为人物(佩艾希亚居民)",
+    "reason": "同主体，兽人·猫耳少女与佩艾希亚居民赋值不同"
+   },
+   {
+    "pair_id": "pair-q-0a8237c15421",
+    "item_id": "q-0a8237c15421",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "诺斯菲的实体类型为人物(迷宫六十层守护者)",
+    "hypothesis": "诺斯菲的实体类型为人物(六十守护者·光之理的盗窃者)",
+    "reason": "同主体，两括注表述不同含粒度差异需归一"
+   },
+   {
+    "pair_id": "pair-q-030bfb11a648",
+    "item_id": "q-030bfb11a648",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "艾德的实体类型为人物(四十守护者)",
+    "hypothesis": "艾德的实体类型为人物(四十守护者·罗德之弟)",
+    "reason": "同主体，四十守护者与四十守护者·罗德之弟粒度冲突"
+   },
+   {
+    "pair_id": "pair-q-b23f0945e35f",
+    "item_id": "q-b23f0945e35f",
+    "family": "dual_track_conflict",
+    "recovery": "full",
+    "premise": "佩艾希亚的实体类型为地点(迷宫里侧再现都市)",
+    "hypothesis": "佩艾希亚的实体类型为地点(迷宫66层里侧之国)",
+    "reason": "同主体，再现都市与里侧之国括注值不同"
+   }
+  ],
+  "neutral": [
+   {
+    "pair_id": "pair-q-9973e53d1c33",
+    "item_id": "q-9973e53d1c33",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "十四层的实体类型为地点(迷宫层)",
+    "hypothesis": "第一百层的实体类型为地点(迷宫层)",
+    "reason": "十四层与第一百层主体不同。"
+   },
+   {
+    "pair_id": "pair-q-4c10dd7f598e",
+    "item_id": "q-4c10dd7f598e",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『神圣箭』的实体类型为技能魔法",
+    "hypothesis": "『火焰箭』的实体类型为技能魔法",
+    "reason": "神圣箭与火焰箭为不同技能。"
+   },
+   {
+    "pair_id": "pair-q-63d1fa4eb3ba",
+    "item_id": "q-63d1fa4eb3ba",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『神圣箭』的实体类型为技能魔法",
+    "hypothesis": "『寒冰·速成箭』的实体类型为技能魔法",
+    "reason": "神圣箭与寒冰·速成箭为不同技能。"
+   },
+   {
+    "pair_id": "pair-q-c87bae42ebff",
+    "item_id": "q-c87bae42ebff",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "十五层的实体类型为地点(迷宫层)",
+    "hypothesis": "十层的实体类型为地点(迷宫层)",
+    "reason": "十五层与十层主体不同。"
+   },
+   {
+    "pair_id": "pair-q-e98b00524f99",
+    "item_id": "q-e98b00524f99",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "莱文（Reborn）的实体类型为概念(货币)",
+    "hypothesis": "莱文（Reborn）教的实体类型为组织",
+    "reason": "莱文货币与莱文教为主体不同的实体。"
+   },
+   {
+    "pair_id": "pair-q-b3388b54f990",
+    "item_id": "q-b3388b54f990",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『次元雪』的实体类型为技能魔法",
+    "hypothesis": "『次元之冬』的实体类型为技能魔法",
+    "reason": "次元雪与次元之冬为不同魔法。"
+   },
+   {
+    "pair_id": "pair-q-44bc682ecbd8",
+    "item_id": "q-44bc682ecbd8",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "塞拉·雷迪安特的实体类型为人物",
+    "reason": "缇娅拉·弗茨亚茨与塞拉·雷迪安特主体不同。"
+   },
+   {
+    "pair_id": "pair-q-e88d4816ff36",
+    "item_id": "q-e88d4816ff36",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇亚的实体类型为人物",
+    "reason": "缇达与缇亚主体不同。"
+   },
+   {
+    "pair_id": "pair-q-553d8d11e9c0",
+    "item_id": "q-553d8d11e9c0",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "塞拉·雷迪安特的实体类型为人物",
+    "hypothesis": "艾尔米拉德·希达尔克的实体类型为人物",
+    "reason": "塞拉·雷迪安特与艾尔米拉德主体不同。"
+   },
+   {
+    "pair_id": "pair-q-6df36a85615f",
+    "item_id": "q-6df36a85615f",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "雷鲁·桑库斯的实体类型为人物",
+    "reason": "帕林库洛与雷鲁·桑库斯主体不同。"
+   },
+   {
+    "pair_id": "pair-q-b9846cf9dcdf",
+    "item_id": "q-b9846cf9dcdf",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "佩露修娜·库艾伽的实体类型为人物",
+    "reason": "拉丝缇娅拉与佩露修娜主体不同。"
+   },
+   {
+    "pair_id": "pair-q-82764d7fa9ec",
+    "item_id": "q-82764d7fa9ec",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "艾尔米拉德·希达尔克的实体类型为人物",
+    "hypothesis": "塞拉·雷迪安特的实体类型为人物",
+    "reason": "艾尔米拉德与塞拉主体不同。"
+   },
+   {
+    "pair_id": "pair-q-163c8b8d75b7",
+    "item_id": "q-163c8b8d75b7",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "阿尔缇的实体类型为人物(迷宫生物)",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "阿尔缇与拉丝缇娅拉主体不同，值同不冲突"
+   },
+   {
+    "pair_id": "pair-q-f6da51560c50",
+    "item_id": "q-f6da51560c50",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "阿尔缇的实体类型为人物(迷宫生物)",
+    "hypothesis": "阿尔肯的实体类型为人物",
+    "reason": "阿尔缇与阿尔肯为不同人物，主体不同"
+   },
+   {
+    "pair_id": "pair-q-c2bd729dfeeb",
+    "item_id": "q-c2bd729dfeeb",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "塞拉·雷迪安特的实体类型为人物",
+    "reason": "缇娅拉与塞拉主体不同，不构成冲突"
+   },
+   {
+    "pair_id": "pair-q-71875feb348e",
+    "item_id": "q-71875feb348e",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "阿尔肯的实体类型为人物",
+    "hypothesis": "阿尔缇的实体类型为人物(迷宫生物)",
+    "reason": "阿尔肯与阿尔缇主体不同，值同不冲突"
+   },
+   {
+    "pair_id": "pair-q-1f358e43c8a2",
+    "item_id": "q-1f358e43c8a2",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "佩露修娜·库艾伽的实体类型为人物",
+    "reason": "拉丝缇娅拉与佩露修娜为不同人物"
+   },
+   {
+    "pair_id": "pair-q-267ca7c0be75",
+    "item_id": "q-267ca7c0be75",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇亚的实体类型为人物",
+    "reason": "缇达与缇亚主体不同，依协议示例判中性"
+   },
+   {
+    "pair_id": "pair-q-2684cbc6ebbb",
+    "item_id": "q-2684cbc6ebbb",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "缇莉·琉克的实体类型为人物",
+    "reason": "缇娅拉与缇莉·琉克主体不同"
+   },
+   {
+    "pair_id": "pair-q-1292ef76d065",
+    "item_id": "q-1292ef76d065",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『Impulse』的实体类型为技能魔法",
+    "hypothesis": "『ImpulseBreak』的实体类型为技能魔法",
+    "reason": "Impulse与ImpulseBreak为不同技能，值同"
+   },
+   {
+    "pair_id": "pair-q-0e637bb98d99",
+    "item_id": "q-0e637bb98d99",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『次元之冬』的实体类型为技能魔法",
+    "hypothesis": "『次元之冬·终霜（Di·Winter·Frost）』的实体类型为技能魔法",
+    "reason": "终霜为衍生变体技能，主体不同值同不冲突"
+   },
+   {
+    "pair_id": "pair-q-cbada9c3d785",
+    "item_id": "q-cbada9c3d785",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "佩露修娜·库艾伽的实体类型为人物",
+    "reason": "拉丝缇娅拉与佩露修娜为不同人物"
+   },
+   {
+    "pair_id": "pair-q-720b83919820",
+    "item_id": "q-720b83919820",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇亚的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "主体不同：缇亚与拉丝缇娅拉为不同实体名"
+   },
+   {
+    "pair_id": "pair-q-aa9182bdf145",
+    "item_id": "q-aa9182bdf145",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇亚的实体类型为人物",
+    "reason": "主体不同：缇达与缇亚名称不同"
+   },
+   {
+    "pair_id": "pair-q-193f23f67aab",
+    "item_id": "q-193f23f67aab",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "守护者的魔石的实体类型为物品",
+    "hypothesis": "守护者的实体类型为概念",
+    "reason": "主体不同：守护者的魔石与守护者为不同实体"
+   },
+   {
+    "pair_id": "pair-q-a696ba68d763",
+    "item_id": "q-a696ba68d763",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "十四层的实体类型为地点(迷宫层)",
+    "hypothesis": "二十四层的实体类型为地点(迷宫层)",
+    "reason": "主体不同：十四层与二十四层为不同地点"
+   },
+   {
+    "pair_id": "pair-q-f2fea5c3bd99",
+    "item_id": "q-f2fea5c3bd99",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇达的实体类型为人物(迷宫生物)",
+    "hypothesis": "缇亚的实体类型为人物",
+    "reason": "主体不同：缇达与缇亚名称不同"
+   },
+   {
+    "pair_id": "pair-q-964504140b66",
+    "item_id": "q-964504140b66",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『世界炎蛇』的实体类型为技能魔法",
+    "hypothesis": "『世界冰蛇』的实体类型为技能魔法",
+    "reason": "主体不同：世界炎蛇与世界冰蛇名称不同"
+   },
+   {
+    "pair_id": "pair-q-768106223a9d",
+    "item_id": "q-768106223a9d",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "塞拉·雷迪安特的实体类型为人物",
+    "reason": "主体不同：缇娅拉与塞拉为不同人物"
+   },
+   {
+    "pair_id": "pair-q-c86760856cd1",
+    "item_id": "q-c86760856cd1",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "阿尔肯的实体类型为人物",
+    "hypothesis": "阿尔缇的实体类型为人物(迷宫生物)",
+    "reason": "主体不同：阿尔肯与阿尔缇名称不同"
+   },
+   {
+    "pair_id": "pair-q-3d22cace6e48",
+    "item_id": "q-3d22cace6e48",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "雷鲁·桑库斯的实体类型为人物",
+    "reason": "主体不同：帕林库洛与雷鲁为不同人物"
+   },
+   {
+    "pair_id": "pair-q-db0d69f87ab8",
+    "item_id": "q-db0d69f87ab8",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "缇莉·琉克的实体类型为人物",
+    "reason": "主体不同：缇娅拉与缇莉为不同人物"
+   },
+   {
+    "pair_id": "pair-q-ba740fe8aea9",
+    "item_id": "q-ba740fe8aea9",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "塞拉·雷迪安特的实体类型为人物",
+    "hypothesis": "艾尔米拉德·希达尔克的实体类型为人物",
+    "reason": "主体不同：塞拉与艾尔米拉德为不同人物"
+   }
+  ],
+  "entails": [
+   {
+    "pair_id": "pair-q-dd3db3ddc010",
+    "item_id": "q-dd3db3ddc010",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "『维度』的实体类型为技能魔法",
+    "hypothesis": "《维度》的实体类型为技能魔法",
+    "reason": "同一技能『维度』，仅引号形不同，类型值相同。"
+   },
+   {
+    "pair_id": "pair-q-7c2168f7dbe9",
+    "item_id": "q-7c2168f7dbe9",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "海因·赫勒比勒夏因的实体类型为人物",
+    "hypothesis": "海因的实体类型为人物",
+    "reason": "海因为海因·赫勒比勒夏因之名，同主体同值。"
+   },
+   {
+    "pair_id": "pair-q-a180c45f82a7",
+    "item_id": "q-a180c45f82a7",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "帕林库洛的实体类型为人物",
+    "reason": "帕林库洛为帕林库洛·勒伽西之简称，同主体同值。"
+   },
+   {
+    "pair_id": "pair-q-b4b71164f8cf",
+    "item_id": "q-b4b71164f8cf",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "玛利亚·迪斯特拉斯的实体类型为人物",
+    "hypothesis": "玛利亚的实体类型为人物",
+    "reason": "玛利亚即玛利亚·迪斯特拉斯之名，同主体同值。"
+   },
+   {
+    "pair_id": "pair-q-520d86cb88a3",
+    "item_id": "q-520d86cb88a3",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "波鲁扎克的实体类型为人物",
+    "hypothesis": "波尔札克的实体类型为人物",
+    "reason": "波鲁扎克与波尔札克为同一人名异译，类型值相同。"
+   },
+   {
+    "pair_id": "pair-q-02b3d0d176c7",
+    "item_id": "q-02b3d0d176c7",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "拉丝缇娅拉为全名简称，同主体同值。"
+   },
+   {
+    "pair_id": "pair-q-a8ffac516240",
+    "item_id": "q-a8ffac516240",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "拉丝缇娅拉为全名简称，同主体同值。"
+   },
+   {
+    "pair_id": "pair-q-b07635e3211c",
+    "item_id": "q-b07635e3211c",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "拉丝缇娅拉为全名简称，同主体同值。"
+   },
+   {
+    "pair_id": "pair-q-5dc347c8e01e",
+    "item_id": "q-5dc347c8e01e",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "玛利亚的实体类型为人物",
+    "hypothesis": "玛利亚·迪斯特拉斯的实体类型为人物",
+    "reason": "玛利亚为玛利亚·迪斯特拉斯简称，同主体同字段同值"
+   },
+   {
+    "pair_id": "pair-q-ced1dfbb5bb1",
+    "item_id": "q-ced1dfbb5bb1",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "拉丝缇娅拉为全名简称，同主体同值人物"
+   },
+   {
+    "pair_id": "pair-q-119c2b3a6d7a",
+    "item_id": "q-119c2b3a6d7a",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "玛利亚·迪斯特拉斯的实体类型为人物",
+    "hypothesis": "玛利亚的实体类型为人物",
+    "reason": "玛利亚·迪斯特拉斯自称玛利亚，同主体同值"
+   },
+   {
+    "pair_id": "pair-q-ed4f5f490867",
+    "item_id": "q-ed4f5f490867",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "全名与简称同主体，实体类型值相同"
+   },
+   {
+    "pair_id": "pair-q-3e1a13e3e0a7",
+    "item_id": "q-3e1a13e3e0a7",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "帕林库洛的实体类型为人物",
+    "reason": "帕林库洛为姓氏全称之简称，同主体同值"
+   },
+   {
+    "pair_id": "pair-q-6fcadbcacd8c",
+    "item_id": "q-6fcadbcacd8c",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "波尔札克的实体类型为人物",
+    "hypothesis": "波鲁扎克的实体类型为人物",
+    "reason": "波尔札克与波鲁扎克为译名变体，同主体同值"
+   },
+   {
+    "pair_id": "pair-q-c5717dc112ef",
+    "item_id": "q-c5717dc112ef",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "玛利亚·迪斯特拉斯的实体类型为人物",
+    "hypothesis": "玛利亚的实体类型为人物",
+    "reason": "玛利亚·迪斯特拉斯自称玛利亚，同主体同值"
+   },
+   {
+    "pair_id": "pair-q-b24ac96df110",
+    "item_id": "q-b24ac96df110",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "帕林库洛的实体类型为人物",
+    "reason": "帕林库洛为姓氏全称之简称，同主体同值"
+   },
+   {
+    "pair_id": "pair-q-f200239a9f57",
+    "item_id": "q-f200239a9f57",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "玛利亚·迪斯特拉斯的实体类型为人物",
+    "hypothesis": "玛利亚的实体类型为人物",
+    "reason": "玛利亚·迪斯特拉斯自称玛利亚，同主体同值"
+   },
+   {
+    "pair_id": "pair-q-cac798d1a337",
+    "item_id": "q-cac798d1a337",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "帕林库洛的实体类型为人物",
+    "reason": "帕林库洛为全名简称，值同为人物，直接推出"
+   },
+   {
+    "pair_id": "pair-q-c0e0db6608c5",
+    "item_id": "q-c0e0db6608c5",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "海因·赫勒比勒夏因的实体类型为人物",
+    "hypothesis": "海因的实体类型为人物",
+    "reason": "海因为全名简称，值同为人物，直接推出"
+   },
+   {
+    "pair_id": "pair-q-51851f3559c9",
+    "item_id": "q-51851f3559c9",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "拉丝缇娅拉为全名简称，值同为人物，直接推出"
+   },
+   {
+    "pair_id": "pair-q-9a2f578fe129",
+    "item_id": "q-9a2f578fe129",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "海因·赫勒比勒夏因的实体类型为人物",
+    "hypothesis": "海因的实体类型为人物",
+    "reason": "海因为全名简称，值同为人物，直接推出"
+   },
+   {
+    "pair_id": "pair-q-7b2efc026ae4",
+    "item_id": "q-7b2efc026ae4",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "帕林库洛的实体类型为人物",
+    "reason": "帕林库洛为全名简称，值同为人物，直接推出"
+   },
+   {
+    "pair_id": "pair-q-c40837e8459d",
+    "item_id": "q-c40837e8459d",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "帕林库洛·勒伽西的实体类型为人物",
+    "hypothesis": "帕林库洛的实体类型为人物",
+    "reason": "帕林库洛为全名简称，值同为人物，直接推出"
+   },
+   {
+    "pair_id": "pair-q-906198f3a48b",
+    "item_id": "q-906198f3a48b",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "拉丝缇娅拉·弗茨亚茨的实体类型为人物",
+    "hypothesis": "拉丝缇娅拉的实体类型为人物",
+    "reason": "拉丝缇娅拉为全名简称，值同为人物，直接推出"
+   },
+   {
+    "pair_id": "pair-q-4b5ee3ab3fa0",
+    "item_id": "q-4b5ee3ab3fa0",
+    "family": "embedding_notice",
+    "recovery": "full",
+    "premise": "玛利亚·迪斯特拉斯的实体类型为人物",
+    "hypothesis": "玛利亚的实体类型为人物",
+    "reason": "玛利亚为全名简称，值同为人物，直接推出"
+   }
+  ]
+ }
+}

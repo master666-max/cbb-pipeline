@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "魔石宿主(守护者缇达)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 62,
+   "line": 106,
+   "quote": "「不能放任帕林库洛恣意妄为。那家伙体内寄宿着守护者缇达的魔石。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 318,
+   "quote": "「不能放着帕林库洛不管。现在，他的身体中寄宿着守护者缇达的魔石，极其危险。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 319,
+   "quote": "守护者缇达的魔石。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 321,
+   "quote": "只要看到帕林库洛和玛利亚状态值的变化就一目了然。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 62,
+   "text": "追讨动机合流点：守护者魔石寄宿强大力量（帕林库洛与玛利亚属性变化为证）；弗茨亚茨高层为得魔石急红眼；涡波最大动机=无法原谅（场面话自剥）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-f271658345dc",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f271658345dc-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-f271658345dc",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-17"
+ },
+ "version": 2
+}

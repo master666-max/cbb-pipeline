@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "本土追讨宣言(周回二度)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 110,
+   "line": 313,
+   "quote": "「大家，我们的目标是瓦尔德『本土』，追赶身在『本土』的帕林库洛。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 323,
+   "quote": "「不，刚才那只是表面话而已呢⋯一定，我只是不能原谅帕林库洛把。仅仅是，无法原谅。那家伙做了作为人绝不该干的事。所以我要和他战斗，不打败他不行。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 325,
+   "quote": "但这次我一定不会输，我有与之相符的自信。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 326,
+   "quote": "我跨越『试练』后变强了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 110,
+   "text": "表面理由=身宿守护者缇达魔石极其危险；真动机自剥『仅仅是无法原谅/那家伙做了作为人绝不该干的事』；圣诞祭败北的翻盘宣言（『这次我一定不会输』+『跨越『试练』后变强』）；以领队身份请求同伴借力——全员爽快承诺（详见出航誓师事件）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d7431cc6bab8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0110.txt",
+  "sha": "9fc0790550d49f0be562deb4d677eef25593d2b8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

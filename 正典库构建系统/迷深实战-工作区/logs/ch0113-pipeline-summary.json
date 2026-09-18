@@ -1,0 +1,227 @@
+{
+ "unit": "ch0113",
+ "chapter": 113,
+ "ingestion_index": 84,
+ "title": "132话-越发狭窄的包围网",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 26,
+  "pass": 26,
+  "intercept": 0,
+  "admitted": 15,
+  "quarantined": 11
+ },
+ "tracks": {
+  "contradiction": 2,
+  "consistent-duplicate": 1,
+  "on-create": 12
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-f367ec8c6a8f",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-4595ef6cea75"
+   }
+  },
+  {
+   "record_id": "cand-entity-6c2505461707",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-10fd9f887e91",
+   "type": "entity",
+   "name": "Dimension",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-524f3727ded0"
+   }
+  },
+  {
+   "record_id": "cand-relation-f398c11f0e8e",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9d4dc6c4f452",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d7faa4fe6a4a",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a807094a7ae9",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fa9273a08986",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-dbd58b0e534a",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-234bec8ea691",
+   "type": "event",
+   "name": "斯诺夜访·窃听坦白与自我厌恶风波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3f69ba007af1",
+   "type": "event",
+   "name": "斯诺的告白与涡波的保留回答",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-7838667ba79f",
+   "type": "event",
+   "name": "对等伙伴握手与斯诺的不逃避宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e554242dcd4e",
+   "type": "event",
+   "name": "涡波的恋爱决断（章末悬念）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-d1e97ea2b659",
+   "type": "foreshadow",
+   "name": "涡波的『最喜欢的人』答案",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4d5d7e791c46",
+   "type": "setting",
+   "name": "乘船离开联合国·同船成员(ch113)",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-3a51e209c7be",
+   "type": "entity",
+   "name": "玛利亚",
+   "item_id": "q-3492e5ecb236",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-53e557380227",
+   "type": "entity",
+   "name": "帕林库洛",
+   "item_id": "q-6cf7b4abd0ae",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-cb2d9a7d37f7",
+   "type": "entity",
+   "name": "缇达",
+   "item_id": "q-997ec28f6023",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-6a3e7bfe50d6",
+   "type": "entity",
+   "name": "艾尔米拉德",
+   "item_id": "q-713ddddcc18d",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-cc39e39bce47",
+   "type": "entity",
+   "name": "相川阳滝",
+   "item_id": "q-ba6bb2131d9e",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-26fb9c20ce59",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "item_id": "q-24337940ca0d",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-867f91470b3a",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-f73a970c1e92",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-496522c8ef92",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-bfd6d0915a48",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-b75f86d359a8",
+   "type": "foreshadow",
+   "name": "斯诺与守护者缇达的过去",
+   "item_id": "q-f8f1d9d79659",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-26d483873c53",
+   "type": "foreshadow",
+   "name": "『更早抵达最深部』赌约",
+   "item_id": "q-d421d598d7f5",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-2d4eb93d26fe",
+   "type": "setting",
+   "name": "涡波的16年人生与异性观自述(ch113)",
+   "item_id": "q-eb96b7f0b513",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 84,
+  "pseudo_date": "2000-03-25",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

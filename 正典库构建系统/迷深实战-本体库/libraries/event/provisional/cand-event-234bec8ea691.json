@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "对话风波",
+  "name": "斯诺夜访·窃听坦白与自我厌恶风波",
+  "tick": 113,
+  "time_verbatim": "乘船航行的夜晚（玛利亚谈话后同夜、就寝前）"
+ },
+ "evidence": [
+  {
+   "chapter": 113,
+   "line": 14,
+   "quote": "在我重新检查船的重要部分时，看到了斯诺的身影。",
+   "vol": 1
+  },
+  {
+   "chapter": 113,
+   "line": 18,
+   "quote": "[……抱歉，涡波。你跟玛利亚酱的谈话，我都听到了]",
+   "vol": 1
+  },
+  {
+   "chapter": 113,
+   "line": 28,
+   "quote": "当我一帮玛利亚说话，斯诺的瞳孔就失去了光泽，她就这样陷入了自我厌恶中。",
+   "vol": 1
+  },
+  {
+   "chapter": 113,
+   "line": 30,
+   "quote": "[——斯诺，等下，冷静点。你听到了的话也应该明白吧。玛利亚那时候是有很深的原委的。我伤玛利亚伤得太深了，所以就算成为玛利亚的东西也无可厚非。并不是说我特别讨厌斯诺，完全没有那个意思！]",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 113,
+   "text": "涡波睡前展开《Dimension》检查船况，发现惴惴不安走近的斯诺进入房间；斯诺坦白听到其与玛利亚的全部谈话（涡波推测系振动魔法窃听，无法断定）；因『那时候激烈拒绝、对玛利亚却愿意成为所有物』的差别待遇陷入自我厌恶，涡波抓其肩拼命说明（玛利亚有很深原委/自己伤她太深/并不讨厌斯诺）方才平复——涡波自评说服技能提高、未再像以前不停犯错"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-234bec8ea691",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0113.txt",
+  "sha": "9a03171c20f0f112750abadde4f10ed58a508132",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

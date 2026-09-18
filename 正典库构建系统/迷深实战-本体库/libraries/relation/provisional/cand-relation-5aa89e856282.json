@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "别扭的信赖(经拉丝缇娅拉中介)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 153,
+   "quote": "「⋯⋯我只不过是觉得，那位大小姐认同的你，不可能会输给这种货色而已」",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 154,
+   "quote": "彼处存在着别扭的信赖。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 116,
+   "quote": "「──只不过，我不能将这位女性当作赌注。因为她并不是我的『东西』。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 109,
+   "text": "口头否认『信赖什么的并没有』、实质=『彼处存在着别扭的信赖』；涡波自任『负责塞拉小姐人身的人』并誓必胜；涡波拒以塞拉为赌注（『她并不是我的「东西」』）；涡波空虚演技时塞拉勉强配合"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5aa89e856282",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "秘密交换之约",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 293,
+   "quote": "本来的话，我们之间有过我拿出勇气将这个秘密告诉玛利亚的话，作为交换就能听取拉丝缇娅拉的秘密的约定。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 294,
+   "quote": "但是，结果顺序搞反，我已经知晓了拉丝缇娅拉的秘密了。因此必须要尽快实现那个约定才行。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 115,
+   "text": "旧约=涡波拿出勇气将秘密告诉玛利亚⇔作为交换听取拉丝缇娅拉的秘密；'结果顺序搞反'（涡波已知晓她的秘密），须尽快补行——本章以身份公开宣言启动兑现（约定所指'她的秘密'内容本章未复述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0d15031d9619",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

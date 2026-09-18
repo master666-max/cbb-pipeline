@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "好友(自任监护人)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 254,
+   "quote": "没关系的。我跟欧尼酱是好朋友不是嘛？",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 255,
+   "quote": "挚友表示用不着道谢。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 261,
+   "quote": "作为监护人的我，常识会遭外人怀疑的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 115,
+   "text": "相互确认'我跟欧尼酱是好朋友'；涡波视其为挚友（'挚友表示用不着道谢'）并以'监护人'自居（操心其从窗户出入）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-611322a0c717",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

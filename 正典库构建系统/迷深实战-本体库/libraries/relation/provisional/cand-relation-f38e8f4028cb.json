@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "敌对(反击筹备中)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 112,
+   "line": 50,
+   "quote": "现在，我们正为了向帕林库洛发起反击而在团结一致当中。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 112,
+   "text": "'现在，我们正为了向帕林库洛发起反击而在团结一致当中'；涡波视全员相互理解为对帕林库洛战的必要准备"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f38e8f4028cb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0112.txt",
+  "sha": "a24d19ef4f161ecc68a8a040cb6d16fe449eb51f34f17272aa8c480245ff6030",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

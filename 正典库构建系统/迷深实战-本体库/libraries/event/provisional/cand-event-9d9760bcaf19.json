@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "『维度·多重展开』",
+   "塞拉·雷迪安特",
+   "相川涡波",
+   "菲伊・厄鲁斯"
+  ],
+  "instant": null,
+  "kind": "处置",
+  "name": "菲伊旧奴隶全员安置",
+  "tick": 110,
+  "time_verbatim": "同日·赌场隐蔽房间（紧接驱逐后）"
+ },
+ "evidence": [
+  {
+   "chapter": 110,
+   "line": 51,
+   "quote": "你们的所有权现在转移到了我手上。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 53,
+   "quote": "从『表示』的状态来看，对于他们来说护卫的工作正可谓是天职。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 55,
+   "quote": "还有就是想要被解放的人也请和我说。我不会对之后的事负责，但只要你们想，我就会解放你们。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 94,
+   "quote": "就这样，我榨光剩余的魔力，找到了所有孩子能够工作的地方。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 98,
+   "quote": "孩子们理解到即使接下来要作为奴隶活下去，也还有着小小的希望。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 110,
+   "text": "所有权转移公示→肌肉男们获介绍开拓团护卫（『表示』判天职）/土木/剑闘士可另介绍/想要解放者予以解放（之后不负责）→『解放』一词令大半奴隶涌起各述要求（文件处理能力=公会『史诗探索者』一日文件整理经验+『表示』记名适性）→无依靠孩子们无法活用机会→涡波宣告能做的只有解放+一定量金钱（『我并不是能拯救你们的那种方便的人』）→对放弃生存希望的孩子们榨光剩余魔力找齐工作场所（嘴中血味/自我满足的精神安定）→孩子们眼中取回光芒（作为奴隶活下去也有小小希望）；花大钱经赌场介绍的中介奴隶商推进手续"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9d9760bcaf19",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0110.txt",
+  "sha": "9fc0790550d49f0be562deb4d677eef25593d2b8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

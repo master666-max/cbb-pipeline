@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "菲伊？厄鲁斯",
+   "诈术"
+  ],
+  "instant": null,
+  "kind": "能力变化",
+  "name": "涡波习得『诈术』并夺尽菲伊的诈术1.33",
+  "tick": 109,
+  "time_verbatim": "同日·别间牌局进行中（局数逾50）"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 199,
+   "quote": "得到了技能『诈术』",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 227,
+   "quote": "因为不能用《Dimension》所以花了不少时间。然而，我终于夺尽了男人的『诈术1.33』，并到达了『诈术1.34』",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 277,
+   "quote": "在赌局前为止如他所言，我是个连『诈术』的基本都不明白的臭小子而已。只不过，那个臭小子在赌局的数十分之间，就超越了菲伊？厄鲁斯花费几十年岁月培养出来的『诈术』",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 228,
+   "quote": "原本我就有必胜的自信。不过，这样便进一步得到了状态上的参数的保障。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 109,
+   "text": "观察对方千术期间入手技能『诈术』(1.02)（『和诺文说的一样呢。只要有意识地去学，没有我得不到的技能』）→ 反千将局势拉平 → 终局『夺尽了男人的「诈术1.33」』到达1.34（『进一步得到了状态上的参数的保障』）；数十分间超越菲伊花费几十年培养的诈术——涡波自评『太过不平等，连我自己都觉得有些不舒服』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9254c4992d0c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

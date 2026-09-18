@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉·雷迪安特",
+  "rel_type": "蓄意标的(娈获目标)",
+  "subject": "菲伊？厄鲁斯"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 122,
+   "quote": "男人的视线像是要黏在塞拉小姐身上一样。他现在思考着该用何种手段将塞拉小姐归为己有。",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 127,
+   "quote": "「──无妨、涡波。把我也当作赌注。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 109,
+   "text": "视线黏着塞拉、思考『用何种手段将塞拉小姐归为己有』；涡波声明不以塞拉为赌注时其表情蒙上阴影（『那就有点遗憾了』）；塞拉自任赌注后转而称赞其胆量"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-28fa7fabc907",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

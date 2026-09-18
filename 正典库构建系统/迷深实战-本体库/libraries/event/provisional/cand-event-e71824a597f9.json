@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entities": [
+   "『LivingLegend号』",
+   "古尔亚德",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "交易",
+  "name": "古利亚德港深夜购船(LivingLegend号·周回二度)",
+  "tick": 110,
+  "time_verbatim": "深夜（黄昏时资金尚不足，数小时内翻千倍）"
+ },
+ "evidence": [
+  {
+   "chapter": 110,
+   "line": 231,
+   "quote": "黄昏的时候钱还不够，明明是这样，仅仅用了数小时，持有的金额就突然翻了千倍，他作为一个商人发出了颤抖的声音。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 233,
+   "quote": "这里的金额已经是市价的一倍了，而且还都是崭新的金币",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 237,
+   "quote": "商人坦白地说出这条船是一艘失败作。",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 266,
+   "quote": "「啊啊，我和莉帕都已经读完了，已经明白了船的操作方法。大概，七人也能开动吧。」",
+   "vol": 1
+  },
+  {
+   "chapter": 110,
+   "line": 269,
+   "quote": "「OK～！『连接』的设置和补给也都准备好了！准备万全！给，商人先生你的钱～大家！快乘上去！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 110,
+   "text": "数小时资金翻千倍（商人为之颤抖）；市价一倍崭新金币现金强推交易；商人坦白失败作（数百魔法使级）反令拉丝缇娅拉更起劲；缇亚（蒂娅）受指示一人注入魔力启动（船震/波浪/进出光亮/商人战栗）；涡波+莉帕 Dimension 速读资料判七人可开动；塞拉与斯诺喧闹爬舷上船（梯子闲置）；『连接』设置与补给就绪"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e71824a597f9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0110.txt",
+  "sha": "9fc0790550d49f0be562deb4d677eef25593d2b8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

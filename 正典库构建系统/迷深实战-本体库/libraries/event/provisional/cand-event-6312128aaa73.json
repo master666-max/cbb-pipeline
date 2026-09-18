@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "回忆",
+  "name": "失忆期与缇亚的约会（回忆）",
+  "tick": 115,
+  "time_verbatim": "回忆（失忆时期，时序在过去）"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 111,
+   "quote": "失去了记忆时的我曾跟缇亚约会过。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 112,
+   "quote": "穿着可爱的衣服，缇亚就像一个女孩子一样开心地笑着。一起看戏剧，一起吃晚饭，但是在那期间，她没有一刻放开过我的手。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 115,
+   "text": "据涡波回忆：失去记忆时期曾与缇亚约会——'穿着可爱的衣服'看戏剧、共进晚饭，全程'没有一刻放开过我的手'（时序在过去，instant 留空）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6312128aaa73",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

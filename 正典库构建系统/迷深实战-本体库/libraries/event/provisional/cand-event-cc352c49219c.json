@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "阿尔缇"
+  ],
+  "instant": null,
+  "kind": "战斗(回溯)",
+  "name": "圣诞祭夜之战(回溯)",
+  "tick": 112,
+  "time_verbatim": "圣诞祭那天晚上（玛利亚与涡波对话中回溯）"
+ },
+ "evidence": [
+  {
+   "chapter": 112,
+   "line": 60,
+   "quote": "[要说的是在圣诞祭那天晚上，我和阿尔缇一起同涡波先生战斗的事情]",
+   "vol": 1
+  },
+  {
+   "chapter": 112,
+   "line": 103,
+   "quote": "把家烧掉，在最后关头背叛，想要夺取你的性命，这可不是随便就能还得起的。",
+   "vol": 1
+  },
+  {
+   "chapter": 112,
+   "line": 77,
+   "quote": "在阿尔缇的《试炼》中被逼得走投无路的我，试图将一切都堵在玛利亚身上。",
+   "vol": 1
+  },
+  {
+   "chapter": 112,
+   "line": 78,
+   "quote": "如果说，玛利亚能够发誓代替我前往最深部的话——跟我约定会帮助我的妹妹的话",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 112,
+   "text": "据二人对话回溯：圣诞祭夜玛利亚与阿尔缇一起同涡波战斗；玛利亚恩将仇报背叛、欲夺涡波性命，并自陈'把家烧掉'；涡波在阿尔缇的《试炼》中被逼得走投无路，试图将一切堵在玛利亚身上——曾言[成为我的东西也行][死掉也无所谓]，并提条件：玛利亚发誓代替涡波前往最深部、约定帮助涡波的妹妹（涡波自评'事到如今我的想法也没有变'）；此战在二人深层心理均留下创伤、都想当作没发生过"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-cc352c49219c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0112.txt",
+  "sha": "a24d19ef4f161ecc68a8a040cb6d16fe449eb51f34f17272aa8c480245ff6030",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

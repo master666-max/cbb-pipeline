@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "技能『并列思考』",
+   "技能『感应』",
+   "技能『？？？』",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "技能群三重死亡预告与涡波的动弹不得",
+  "tick": 115,
+  "time_verbatim": "新旅程首日夜（涡波房间；紧接133话同夜，莉帕观察缇亚已入眠）"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 43,
+   "quote": "那是一幅《浑身是血的我，与熊熊燃烧的船一同沉没》的光景。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 55,
+   "quote": "我打消了与缇亚商谈的念头，烦恼着。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 67,
+   "quote": "我急忙冷却兴奋的感情，好不容易将技能的发动遏制住。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 73,
+   "quote": "我摸清了技能《？？？》对于恋爱可以承受的界限。看来会发展到告白程度的爱意是不行的。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 85,
+   "quote": "将经验与知识结合起来思考的结果——经由至今为止的战斗磨炼而出的集大成者、技能《并列思考》，告诉我说[这样下去的话你小子就死定了]。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 115,
+   "text": "《感应》预测'去缇亚房间'⇒《浑身是血的我，与熊熊燃烧的船一同沉没》的光景→涡波'打消了与缇亚商谈的念头'；《？？？》因告白念头发动→'摸清了对恋爱可以承受的界限'（告白级爱意不行）；《并列思考》推得维持现状亦'死定了'——三路皆死，涡波'维持了奇怪的姿势，一动也不动'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7c10afce273c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

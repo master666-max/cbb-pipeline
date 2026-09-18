@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "chapter": 109,
+  "fact": "先天技能：剑术4.89 冻结魔法2.58＋1.10；后天技能：体术1.56 次元魔术5.25＋0.10 感应3.56 并列思考1.46 编织1.07 诈术1.02(牌局中初得)→1.34(终局)；『我终于夺尽了男人的「诈术1.33」，并到达了「诈术1.34」』——技能等级夺取实证（『这样便进一步得到了状态上的参数的保障』）；涡波：『只要有意识地去学，没有我得不到的技能』（称'和诺文说的一样'）",
+  "name": "涡波状态快照与诈术夺取(ch0109)",
+  "tick": 109
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 196,
+   "quote": "先天技能：剑术4.89冻结魔法2.58＋1.10",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 197,
+   "quote": "后天技能：体术1.56次元魔术5.25＋0.10感应3.56并列思考1.46",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 198,
+   "quote": "编织1.07诈术1.02",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 226,
+   "quote": "编织1.07诈术1.34",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 227,
+   "quote": "因为不能用《Dimension》所以花了不少时间。然而，我终于夺尽了男人的『诈术1.33』，并到达了『诈术1.34』",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 109,
+   "text": "人物状态更新+技能成长机制（关键事实轨道）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-8bb595df0cb1",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

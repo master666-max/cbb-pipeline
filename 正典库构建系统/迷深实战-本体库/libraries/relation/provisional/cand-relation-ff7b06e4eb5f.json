@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "同伴·性格相通的朋友",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 114,
+   "line": 44,
+   "quote": "我与拉丝缇娅拉既是同伴，又是性格相通的朋友。就算沉默也不会觉得有什么难受，仅仅在一起就会觉得惬意。",
+   "vol": 1
+  },
+  {
+   "chapter": 114,
+   "line": 78,
+   "quote": "果然，我在与拉丝缇娅拉相处的时候心境是最安稳的。",
+   "vol": 1
+  },
+  {
+   "chapter": 114,
+   "line": 64,
+   "quote": "真让人怀念。到圣诞祭开始为止，就是拉丝缇娅拉的这份开朗将我拯救了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 114,
+   "text": "沉默共处不难受、'仅仅在一起就会觉得惬意'；涡波自评'在与拉丝缇娅拉相处的时候心境是最安稳的'；到圣诞祭开始为止，她的开朗曾将涡波拯救"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ff7b06e4eb5f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0114.txt",
+  "sha": "32922a81bc34cb0005679f4ab551707b5bd96bcc",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

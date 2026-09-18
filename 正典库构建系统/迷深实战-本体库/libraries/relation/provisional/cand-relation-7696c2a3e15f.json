@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "菲伊？厄鲁斯",
+  "rel_type": "宿敌·请求处决(据塞拉指控)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 135,
+   "quote": "「那家伙是恶名传遍弗茨亚茨的大恶徒。用大量金钱贿赂国家，在各处干尽壊事的地下商人」",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 137,
+   "quote": "「我不喜欢那种货色。至今为止因为我侍奉国家，没有办法对他出手⋯⋯⋯现在可以不用多做顾虑狠狠教训那家伙，绝不会饶恕他的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 139,
+   "quote": "「──不用说了，快点了结他」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 109,
+   "text": "据塞拉指控：菲伊是恶名传遍弗茨亚茨的大恶徒、用大量金钱贿赂国家、各处干尽壊事的地下商人；因侍奉国家无法出手，如今宣告『不用多说，快点了结他』『绝不会饶恕』——涡波判其为塞拉『不可思议的正义感暴走的结果』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7696c2a3e15f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

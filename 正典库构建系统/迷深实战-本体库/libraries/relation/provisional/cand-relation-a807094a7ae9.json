@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "魔石同化",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 113,
+   "line": 111,
+   "quote": "[顺带一说帕林库洛那家伙现在跟守护者缇达的魔石同化了。应该变得相当强了，所以战斗的时候会强制你参战的]",
+   "vol": 1
+  },
+  {
+   "chapter": 113,
+   "line": 114,
+   "quote": "[呜呜，只有守护者、可能的话还是不想与之扯上关系的啊~。缇达吗-，持有那个缇达的魔石吗-，帕林库洛……。那个笨蛋啊……]",
+   "vol": 1
+  },
+  {
+   "chapter": 113,
+   "line": 115,
+   "quote": "比起帕林库洛自身，斯诺似乎更在意帕林库洛持有缇达的魔石的事情。这么回想起来，玛利亚那时候也说过类似的话来着。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 113,
+   "text": "据涡波对话转述（玛利亚此前亦说过类似话）：帕林库洛现在跟守护者缇达的魔石同化、应该变得相当强；斯诺闻之消极（『我的话还是留下守船吧』）、念叨『那个笨蛋啊……』——相比帕林库洛本人更在意此魔石一事"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a807094a7ae9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0113.txt",
+  "sha": "9a03171c20f0f112750abadde4f10ed58a508132",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

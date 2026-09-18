@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能(欺骗系)",
+  "name": "诈术"
+ },
+ "evidence": [
+  {
+   "chapter": 109,
+   "line": 78,
+   "quote": "后天技能：诈术1.33交涉1.06──",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 199,
+   "quote": "得到了技能『诈术』",
+   "vol": 1
+  },
+  {
+   "chapter": 109,
+   "line": 227,
+   "quote": "因为不能用《Dimension》所以花了不少时间。然而，我终于夺尽了男人的『诈术1.33』，并到达了『诈术1.34』",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 109,
+   "text": "欺骗系技能：菲伊？厄鲁斯以数十年培养至1.33并以之掌控赌局出千；涡波于本章牌局中入手（1.02）并夺尽其1.33到达1.34——终局『以他的「诈术」是无法看破我的「诈术」的』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d57645679a05",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0109.txt",
+  "sha": "92d598e94719b8b59b75aa9bc7d9eb1017702076",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}
