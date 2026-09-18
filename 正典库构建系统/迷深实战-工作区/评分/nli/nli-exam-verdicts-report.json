@@ -1,0 +1,35 @@
+{
+ "separation": 1.0,
+ "exact_match": 1.0,
+ "parse_failure_rate": 0.0,
+ "n_paper": 44,
+ "n_judged": 44,
+ "n_real_bases": 11,
+ "pass": true,
+ "by_kind": {
+  "base": {
+   "n": 11,
+   "lenient": 1.0,
+   "exact": 1.0
+  },
+  "entails_control": {
+   "n": 11,
+   "lenient": 1.0,
+   "exact": 1.0
+  },
+  "entails_paraphrase": {
+   "n": 11,
+   "lenient": 1.0,
+   "exact": 1.0
+  },
+  "neutral_subject": {
+   "n": 11,
+   "lenient": 1.0,
+   "exact": 1.0
+  }
+ },
+ "missing": [],
+ "parse_fail": [],
+ "gate_definition": "separation（路由口径：真对=contradicts 且伪对=非contradicts）≥0.70 且 exact_match（三分全标签）≥0.70（堵永远-neutral 退化器）且 parse_failure≤0.05（W1 纪律）",
+ "decision_rule": "pass→NLI 预筛可启用（contradicts→人工队列置顶/neutral→挂起第二意见/entails→转双轨 confidence，全程留痕不静默）；fail→不启用，积压继续人工"
+}
