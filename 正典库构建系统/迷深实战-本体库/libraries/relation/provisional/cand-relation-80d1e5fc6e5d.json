@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阳滝",
+  "rel_type": "兄妹(兄)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 38,
+   "quote": "不过她话说到一半便戛然而止。因为她身旁的哥哥——也就是『始祖涡波』的表情有些不对劲。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 50,
+   "quote": "「好好好，你又来了。哥哥你每次看到美女都非得来这么一出才行是么？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "千年前旅途中阳滝称其为哥哥并关切其异样；对其『拈花惹草』习惯毒舌"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-80d1e5fc6e5d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

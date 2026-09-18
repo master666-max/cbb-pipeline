@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entity_type": "技能(光魔法)",
+  "name": "光之御旗（NosfyFlag）"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 765,
+   "quote": "「……好了，以我为界，您二人不得再向前踏出一步。——『LightRod』、还有『光之御旗（NosfyFlag）』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 772,
+   "quote": "就在旗帜竖立起来的一瞬间，整个空间的魔力颜色全都产生了变化。白色的光之魔力驱散了翠色的风之魔力，但凡在场之物全被光所沁染，整个五十层皆为光属性的白色所支配。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 899,
+   "quote": "最后我总算明白了『光之御旗（NosfyFlag）』真正的能力。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 900,
+   "quote": "那杆旗不是武器，而是精神感应魔法的发动媒介。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 904,
+   "quote": "这是直接跟魔法的术式进行『交流』的把戏。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 909,
+   "quote": "而且双重发动时的魔法消耗的也不是我们的魔力，而是沁染到体内的诺斯菲的魔力",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 92,
+   "text": "与『LightRod』同时咏出的光魔法具现之旗：插地后五十层全域魔力由翠色风属性转为白色光属性支配；真身=精神感应魔法『交流』的发动媒介，对象非生物而是刻于『血』中的术式（对无意识术式可无条件解决许可与否、如欺骗幼儿般操纵）→致我方魔法双重发动正反相抵、消耗的是沁入体内的诺斯菲魔力（我方魔力不减、事前无法察觉难以抵御）；可变形为枪/斧/长刀/长剑/双剑/短剑等多种武器、旗面可裹人投掷、旗杆如长枪架势"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-6ad943f312f1",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "使徒西斯",
+  "rel_type": "盟友(千年前)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 51,
+   "quote": "「唉，盟友的坏毛病真是让人困扰啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 58,
+   "quote": "「现在我们要做的只有一件事。那就是收集魔力。你可千万不要搞错了啊，盟友。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "千年前四人旅伴期：西斯以『盟友』相称并提点其勿忘收集魔力之本业"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b6ec64e05ef6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

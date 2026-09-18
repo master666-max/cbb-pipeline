@@ -1,0 +1,91 @@
+{
+ "canonical": {
+  "entities": [
+   "DistanceMute",
+   "GreenHighElement",
+   "Jaeger·Wind",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "64层GreenHighElement战",
+  "tick": 90,
+  "time_verbatim": "第四日（65层突破后）"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 522,
+   "quote": "它用跟莉帕相似的瞬间移动紧咬住我们不放。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 537,
+   "quote": "莱纳！这样就行！继续用魔法攻击！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 542,
+   "quote": "将莱纳的风像芳醇的食粮一样吸收起来的精灵体型已经膨胀到了原来的十倍。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 544,
+   "quote": "我冲专心吸收魔法的Element的身体伸出手。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 551,
+   "quote": "虽然右臂的血肉被撕裂，赤色的鲜血四处飞溅，但我还是攥紧了敌人的『魔石』——并将之抽出。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 552,
+   "quote": "精灵顷刻间炸裂开来。应该是储蓄在它体内的莱纳的风魔法未经消化就被解放的缘故。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 557,
+   "quote": "我倒是没事……可是，基督你的手却、可恶！——『FullCare』!",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "精灵瞬移突现眼前→涡波Default拉开距离拎莱纳逃→莱纳Jaeger·Wind两连被吸收（膨胀至十倍）→涡波判断'将身后暴露给这种擅长魔法的怪物更加危险'令其继续喂风→DistanceMute接触膨胀体抽魔石（借艾尔芬里斯战经验+存在内部结构相似'仅过数瞬'完成理解）→精灵炸裂（蓄积风魔法未经消化解放）→涡波右臂表面被风刃炸烂（'表面的皮肤基本都被炸烂了，整根手臂都是红黑色的'）→莱纳FullCare治愈；涡波头痛副作用（DistanceMute＝过密次元的真冬级大招）；战后由内部侵入获得该怪完整情报"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-86692f513889",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

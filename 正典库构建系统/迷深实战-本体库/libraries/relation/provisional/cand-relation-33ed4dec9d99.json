@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多•沃尔斯",
+  "rel_type": "雇佣(锻冶帮手)·秘密协力",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 549,
+   "quote": "可能的话，我打算在刚才那个工房工作。雷纳尔多需要帮手吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1366,
+   "quote": "如果罗德来这里打探情况的话，我就骗她说你出去采买好了。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 808,
+   "quote": "我是打算增大难度来让你放弃这份工作的……想不到你居然跟得上……",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "涡波主动求职工房（'我想一边工作一边磨炼锻冶技术'，罗德中介且在预料之内）；雷纳尔多以'增大难度'考验后接纳（'想不到你居然跟得上'）；终局全面协力：对罗德保密+赊账打造对风龙魔法道具+主动代为掩饰行踪（'我就骗她说你出去采买好了'）+明日继续应付罗德；报酬=铜币入『持有物品』+技能『锻冶』成长"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-33ed4dec9d99",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

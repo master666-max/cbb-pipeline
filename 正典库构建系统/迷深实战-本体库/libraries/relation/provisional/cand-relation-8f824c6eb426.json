@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "和解·友(初交同性朋友)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 195,
+   "quote": "……现在的你并不是北方的代表而是守护者，我也不是南方的代表而是守护者。彼此都是守护者，让我们友好相处吧？",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 315,
+   "quote": "呣呣！难道说，人家终于能交到一个同性朋友了！？",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 198,
+   "quote": "没问题没问题。你就在这座魔王城里随便挑一间喜欢的房间住下吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "千年前互相攻伐的两方领袖和解：『彼此都是守护者，让我们友好相处吧』；罗德喜得首位同性朋友；诺斯菲获其许可在魔王城随意挑房定居；口角后隔门互相致歉（思考方式仍平行线）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8f824c6eb426",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

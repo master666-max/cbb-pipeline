@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "贝斯",
+  "rel_type": "祖父(为孙女操心)",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1185,
+   "quote": "唔，是小子你啊。倒没什么，只是我家孙女没影儿了……",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1314,
+   "quote": "那么到时候就把贝斯那孩子带上一起去吧。即使只有一点也好，或许能够重头来过啊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "贝斯走失即在宅前忐忑踱步并托涡波寻找；闻其在花田若有所思但一口否决带回；道出唯一愿望=崩坏后带贝斯同去地上『重头来过』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-41ace903522c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

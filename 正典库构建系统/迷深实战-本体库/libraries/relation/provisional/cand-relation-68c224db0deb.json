@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "崇敬·执念(恋慕推定)",
+  "subject": "贝丝"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 1384,
+   "quote": "没错、一直一直、永远永远，我都想这样做下去！",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 882,
+   "quote": "——千年前的贝斯恐怕是喜欢千年前的『始祖涡波』的吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "连日烤点心相赠、'一直一直、永远永远，我都想这样做下去'的誓言级言明（涡波评'已经与大人的信念无异'）；涡波推定：'千年前的贝斯恐怕是喜欢千年前的『始祖涡波』的吧'（反推·低置信）；听闻其将离开『这里』时表情整个僵住后强装开朗"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-68c224db0deb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "chapter": 90,
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "雷纳尔多"
+  ],
+  "name": "罗德的留恋",
+  "note": "涡波：'我对罗德的留恋毫无头绪''既无法实现罗德的留恋'——留恋内容未明示，为滞留66层里侧的核心悬案；强化'跟对罗德的救济有直接关系'（雷纳尔多协力动机）；涡波'发誓日后绝对会来救她'+'明天人家要一个人了吗……'的孤独；留在『这里』幸福可永续但'在那条路的尽头我们什么也得不到'——救济路径待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 90,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 77,
+   "quote": "但是，在那条路的尽头我们什么也得不到。既无法实现罗德的留恋，我也无法帮助妹妹和同伴们，莱纳那扭曲的生存方式也不会好转。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 204,
+   "quote": "因为我们的强化是跟对罗德的救济有直接关系的，所以雷纳尔多一脸高兴地催促我动身。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 236,
+   "quote": "这样吗……明天人家要一个人了吗……",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 90,
+   "text": "里侧滞留主线钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-1489a8669b23",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

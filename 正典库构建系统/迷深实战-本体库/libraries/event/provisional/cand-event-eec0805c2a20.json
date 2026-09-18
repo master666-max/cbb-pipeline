@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德·缇缇",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "罗德『手滑』乱战·新魔法初阵",
+  "tick": 91,
+  "time_verbatim": "同日·57层（越层推进中）"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 851,
+   "quote": "啊、哎呀—、手滑啦——！！！！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 894,
+   "quote": "——『Dimension•曲战演算（Difference）』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 908,
+   "quote": "——魔法『Foam•捩菖蒲（Torsion）』！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 925,
+   "quote": "就这样，我们用了十几分的时间，终于歼灭了将近十匹的光属性怪物。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 91,
+   "text": "罗德假称手滑放风→周围无害怪物眼睛全部转黑集体来袭（PiercePigeon/WhiteSnake[Rank60·物理无效]/人形铠甲/白色精灵）；涡波以『Default』调整敌位各个击破并专职指挥（唯一攻击魔法为『DistanceMute』）；莱纳『WindFlamberge』X形将人形铠甲斩成四段；新魔法『Dimension•曲战演算』实战初成功（莱纳弃防御专攻）；再现始祖『Torsion』之『Foam•捩菖蒲』附着新月琉璃攻击MP弱化HolyElement→莱纳『SehrWind』了结；诺斯菲冷静指导莱纳（光体物理无效）并以『ScytheLight』回击、处理数为二人以上；罗德欲参战被斥退（消去铳剑眼角泛泪）；十几分钟歼灭近十匹光属性怪物并回收魔石"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-eec0805c2a20",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

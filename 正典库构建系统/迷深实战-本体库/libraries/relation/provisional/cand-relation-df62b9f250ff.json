@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "盲信·绝对信赖(近乎神)",
+  "subject": "诺斯菲"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1132,
+   "quote": "诺斯菲眼中寄宿着对我的绝对信赖。就像不久前的莱纳一样，这是一种认为只要是我的话就无所不能的盲信。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1135,
+   "quote": "——！？连、连涡波大人都不知道吗！？",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1059,
+   "quote": "我可是为了帮上涡波大人的忙才在这里的。没错，我就是为此而存在的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "眼中寄宿绝对信赖=认为只要是涡波就无所不能的盲信（甚于不久前的莱纳）；闻其『不知道』即大惊失色（『连涡波大人都不知道吗』）；自认『为帮上涡波大人而存在』、拒绝休息要求继续前进"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-df62b9f250ff",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

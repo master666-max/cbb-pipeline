@@ -1,0 +1,33 @@
+{
+ "unit": "ch0096",
+ "chapter": 96,
+ "ingestion_index": 78,
+ "title": "9卷特典",
+ "noise": "NOISE:特典",
+ "dup_of": null,
+ "counts": {
+  "authored": 0,
+  "pass": 0,
+  "intercept": 0,
+  "admitted": 0,
+  "quarantined": 0
+ },
+ "tracks": {},
+ "admitted": [],
+ "quarantined": [],
+ "anchor": {
+  "tick": 78,
+  "pseudo_date": "2000-03-19",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

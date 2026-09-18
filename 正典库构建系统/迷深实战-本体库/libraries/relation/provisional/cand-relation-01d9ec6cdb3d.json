@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "绝对信赖(全权委托)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 222,
+   "quote": "基督怎么想就怎么做吧。全都交给你了。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 220,
+   "quote": "本来是很唐突的要求，但莱纳丝毫没有感到不乐意。他毕恭毕敬地交出自己身上所有的装备，也很配合地接受了『Dimension』对尺寸的衡量。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "装备重铸征询时答'基督怎么想就怎么做吧。全都交给你了'（涡波：'从他那只要把事情交给我就没有任何问题的表情上就看得出来'，自感必须回应这份信赖）；毕恭毕敬交出全部装备并配合Dimension测量"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-01d9ec6cdb3d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

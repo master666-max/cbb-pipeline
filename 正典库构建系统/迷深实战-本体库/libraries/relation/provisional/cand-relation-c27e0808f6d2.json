@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "维斯·海利普洛佩",
+  "rel_type": "体内宿魂(可内省征询)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 575,
+   "quote": "更重要的是，在你体内的维斯·海利普洛佩又是怎么说的？",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 577,
+   "quote": "莱纳垂下头。看样子是自己在脑海里开始了对答。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "涡波以'在你体内的维斯·海利普洛佩又是怎么说的？'为说服论据→莱纳垂头'在脑海里开始了对答'数秒后让步——体内之志可被本人征询且影响其决断"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c27e0808f6d2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

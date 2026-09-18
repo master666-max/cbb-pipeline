@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德·缇缇",
+  "rel_type": "弟子(风魔法·罗德教导)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1346,
+   "quote": "在罗德的教导下『风魔法』的数值一口气上升了将近0.50。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1346,
+   "quote": "而且还新增了『魔力操作』和『集中收束』，该说是真不愧为『风之理的盗窃者』的弟子吗。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "罗德教导下『风魔法』数值一口气上升近0.50（涡波评短时间如此上升很稀奇）；并新增『魔力操作』『集中收束』——『真不愧为风之理的盗窃者的弟子』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3209e6361549",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

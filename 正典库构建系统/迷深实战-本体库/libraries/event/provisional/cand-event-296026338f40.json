@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "贝斯"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "魔王城茶话会与家人化骚动",
+  "tick": 90,
+  "time_verbatim": "滞留第三日前夜"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 7,
+   "quote": "而罗德则坐在价值不菲的椅子上，以优雅的姿势品着红茶。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 58,
+   "quote": "这都是为了尽可能地治愈作为贵族的养子被抚养长大而妄自菲薄的莱纳。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 76,
+   "quote": "如果留在隔绝于世的『这里』，那这份幸福应该能永远持续下去吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 77,
+   "quote": "但是，在那条路的尽头我们什么也得不到。既无法实现罗德的留恋，我也无法帮助妹妹和同伴们，莱纳那扭曲的生存方式也不会好转。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "庭院白桌红茶茶话会（罗德假冒大小姐扮相/莱纳侍从端壶）；涡波以贝斯赠礼+礼仪击溃莱纳侍者姿态；地位争论（对等朋友vs等级序列）→罗德姐姐宣言+喂饼干揉肩惯莱纳（'都是为了尽可能地治愈作为贵族的养子被抚养长大而妄自菲薄的莱纳'）；罗德欲当涡波之姐被拒→赌气接手晚饭；三人谈笑到深夜；涡波自觉'渐渐能体会到罗德的心情'+'如果留在隔绝于世的『这里』，那这份幸福应该能永远持续下去'但'在那条路的尽头我们什么也得不到'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-296026338f40",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "对等朋友宣言与哥哥定位",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 25,
+   "quote": "至少我跟罗德可都当你是自己的朋友哦。跟年龄立场都没关系，你是我们对等的朋友。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 51,
+   "quote": "好嘞。那么哥哥我也来喂你饼干吃吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 64,
+   "quote": "然而很遗憾，虽然我想要一个像莱纳这样的弟弟，但是像你这样的姐姐就免了……",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "'至少我跟罗德可都当你是自己的朋友哦。跟年龄立场都没关系，你是我们对等的朋友'；以喂饼干回应（'那么哥哥我也来喂你饼干吃吧'——'要是莱纳一意坚持贬低自己的话，那我们就惯他惯得更厉害好了'）；'虽然我想要一个像莱纳这样的弟弟'（但拒罗德为姐）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-eb0156f5a7dc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

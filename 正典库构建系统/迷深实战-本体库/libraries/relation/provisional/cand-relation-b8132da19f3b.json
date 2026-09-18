@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "维斯•海利普洛佩",
+  "rel_type": "魔力与灵魂吸收",
+  "subject": "莱纳•赫勒比勒夏因"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 261,
+   "quote": "再加上对维斯的魔力和灵魂的吸收，他各项属性的数值都有了飞跃性的提升。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "据涡波述：莱纳'对维斯的魔力和灵魂的吸收'令其各项属性数值飞跃提升（真正LevelUp成长之外的第二要因）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b8132da19f3b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

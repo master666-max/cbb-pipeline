@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "玛利亚",
+  "rel_type": "火攻旧事(据涡波口述)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 573,
+   "quote": "不如说，我已经因为这么做而失败过了。之前我差点就被玛利亚给一把火烧了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "据涡波声称：'不如说，我已经因为这么做而失败过了。之前我差点就被玛利亚给一把火烧了。'——自曝兄长式自我牺牲的失败先例（事件原貌本章未展开）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f7fefbd8aec3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

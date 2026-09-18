@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "罗德·缇缇",
+  "rel_type": "新弟弟(被诺斯菲指认)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 835,
+   "quote": "「此乃无上殊荣，赫勒比勒夏因。你·就·是·罗·德·的·新·弟·弟。」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 838,
+   "quote": "只要有你在，艾德之流根本没有必要。这就是罗德得到的答案。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "据诺斯菲宣告：莱纳（赫勒比勒夏因）=罗德的新弟弟——不苛求王者姿态、可畅谈真心话、同为风属性值得教导；『只要有你在，艾德之流根本没有必要。这就是罗德得到的答案』；莱纳闻言挥剑砍向诺斯菲"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b3f4e47ef511",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

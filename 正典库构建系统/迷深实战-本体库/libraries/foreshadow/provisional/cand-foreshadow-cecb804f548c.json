@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "chapter": 92,
+  "entities": [
+   "相川涡波",
+   "罗德·缇缇",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "name": "诺斯菲任性条件的逻辑死循环(其真实意图)",
+  "note": "诺斯菲禁行条件=『直到罗德停止哭泣、真正恢复笑容为止』且要求无数次回到起点；但令罗德展笑需带回艾德、带回艾德需回地上、而回地上被其封锁——自相矛盾；涡波断言『诺斯菲根本没有想让我实现她的任性的意思』；莱纳亦直言其话全为假话；其真实目的（试练？留恋真身？）悬置",
+  "payoff_chapter": null,
+  "setup_chapter": 92,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 849,
+   "quote": "直到罗德停止哭泣，真正恢复笑容为止，这里都是禁止通行的呀。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 851,
+   "quote": "——我只能认为诺斯菲根本没有想让我实现她的任性的意思。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 92,
+   "text": "主线级意图之谜钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-cecb804f548c",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

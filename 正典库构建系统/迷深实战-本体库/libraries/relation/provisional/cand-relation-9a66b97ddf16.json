@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "诺斯菲",
+  "rel_type": "强制婚姻安排(吸收敌方阵营)",
+  "subject": "使徒西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 295,
+   "quote": "但是初战却反被击败并落入了敌人的手中。在那之后使徒西斯为了将我吸收到自己的阵营，便让当时作为南之『御旗』的诺斯菲与我缔结了婚姻关系。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "据诺斯菲自述+涡波推演：千年前为妹复仇的涡波初战败于西斯精神崩溃落入南方手中；西斯为将涡波吸收进自己阵营，令南之『御旗』诺斯菲与其缔结婚姻关系；其后涡波取回自我北逃，诺斯菲统率自己的国家实行侵略"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9a66b97ddf16",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

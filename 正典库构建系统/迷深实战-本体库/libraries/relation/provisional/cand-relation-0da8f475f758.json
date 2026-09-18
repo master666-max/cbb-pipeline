@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德•缇缇",
+  "rel_type": "千年守望(救她不得)",
+  "subject": "雷纳尔多•沃尔斯"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 832,
+   "quote": "整整一千年啊、我等在『这里』想尽了办法也无济于事。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 850,
+   "quote": "因为你们两个，『佩艾希亚』的所有人都没了命。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 847,
+   "quote": "罗德她——似乎一直都在告诉自己说已经被拯救了，已经得到报偿了，这样就足够了，一切都结束了之类的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "'整整一千年啊、我等在『这里』想尽了办法也无济于事'；自陈'当然讨厌'罗德与涡波（因其二人佩艾希亚全民丧命）仍低头托涡波救她；罗德本人千年来只说'已经够了，谢谢你们'之类——'其实什么都没有解决'；雷纳尔多或因'不能放着这样的罗德不管就逝去'这一『留恋』而留自我"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0da8f475f758",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

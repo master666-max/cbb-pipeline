@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "chapter": 91,
+  "fact": "迷宫阶层特色：十层『火炎』/三十层『水晶』/四十层『草原』/六十层『光』（柔和光/大理石地面光滑如瓷砖/白色光晶飘升；六十一层之光则刺眼）；66层=空之世界、艾尔芬里斯镇守中央螺旋阶梯；65层=以阶梯为主体构成的三维迷宫、LizardFlyer（可回避一切物理攻击/以风中和敌方魔法攻击/以风为感觉器官故对光魔法敏感）；64层=GreenHighElement（精灵系/索敌范围广/瞬移接近）；63层=PaleGriffin（狮鹫兽/并非畏惧死亡的生物故『交流』无效）；62层=PiercePigeon（羽毛为流光魔力/轻盈）；59层石材发光刺眼影响视野；57层回廊宽五十米且一路直通上层；被罗德之风侵扰的光属性怪物眼睛全部转黑后敌化（WhiteSnake Rank60/物理无效、人形铠甲LivingArmor、白色精灵等）",
+  "name": "迷宫60~66层环境与怪物配置(ch91)",
+  "tick": 91
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 5,
+   "quote": "我还记得第十层的特色是『火炎』。三十层是『水晶』、四十层是『草原』，而这六十层则全部在『光』的支配之下。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 563,
+   "quote": "下一层是以阶梯为主体构成的三维迷宫。在那里游荡着的怪物名字叫LizardFlyer。可以回避一切物理攻击，并可以利用风中和敌人的魔法攻击，是这么一种防御能力堪称铁板一块的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 644,
+   "quote": "您说PaleGriffin是吗……对它的话，我的魔法就起不到效果了呢。因为狮鹫兽并非畏惧死亡的生物，所以我的『交流』就没用了啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 855,
+   "quote": "只见这些怪物眼睛的颜色全部转黑，接着狠狠地瞪向这边——下一刻，它们全都动身袭来。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 865,
+   "quote": "【怪物】WhiteSnake：Rank60",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 91,
+   "text": "阶层环境与怪物图鉴更新"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-09aecc3aba5a",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

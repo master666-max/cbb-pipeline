@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "海莉",
+  "rel_type": "魂之继承(据涡波陈述)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 343,
+   "quote": "继承了海莉的魂，提升了等级，魔力大幅增强，以守护者艾德和罗德教为师学习魔法，掌握了『咏唱』这一技术，手上还握着增强风魔法效果的魔剑。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "涡波叙述莱纳风魔法飞跃要因首条：'继承了海莉的魂，提升了等级，魔力大幅增强'（据涡波陈述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6ee228db5515",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

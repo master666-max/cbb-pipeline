@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德·缇缇",
+   "艾德",
+   "贝丝"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "说服罗德·向居民报平安",
+  "tick": 92,
+  "time_verbatim": "翌日早晨"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 492,
+   "quote": "「意思是说，只要让艾德对你不抱有期待就可以了吧？",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 505,
+   "quote": "罗德恢复了气力，回握我伸出的手。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 522,
+   "quote": "对此，罗德点了点头。接着，她以稳健的步伐——坐·到·了·王·座·上。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 540,
+   "quote": "「啊~，这个是因为……昨天，我从迷宫带了一位她的老朋友回来。因为和老朋友聊了一整晚，所以她今天睡过头了来着。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 92,
+   "text": "于谒见室找到蜷坐王座后无所得咏唱的罗德；以『敲打艾德后带回不抱期待的弟弟』方案说服（姐弟为千年后重逢论/保管室艾德幼时绘画为佐证）；罗德由激烈拒绝（握碎王座一角）转为回握其手、坐上王座送别、自言『人家真正的愿望好像终于能实现了』；涡波向城外居民以『同性的老朋友来访聊整晚睡过头』圆谎（隐去哭泣之事）、众人体散去、贝丝留候"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-04cfd6f544a2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

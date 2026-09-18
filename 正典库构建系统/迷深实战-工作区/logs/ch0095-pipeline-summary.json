@@ -1,0 +1,33 @@
+{
+ "unit": "ch0095",
+ "chapter": 95,
+ "ingestion_index": 77,
+ "title": "第九卷-封面说明（内含剧透）",
+ "noise": "NOISE:封面说明",
+ "dup_of": null,
+ "counts": {
+  "authored": 0,
+  "pass": 0,
+  "intercept": 0,
+  "admitted": 0,
+  "quarantined": 0
+ },
+ "tracks": {},
+ "admitted": [],
+ "quarantined": [],
+ "anchor": {
+  "tick": 77,
+  "pseudo_date": "2000-03-18",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

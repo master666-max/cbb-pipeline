@@ -1,0 +1,69 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫65层怪物)",
+  "name": "LizardFlyer"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 381,
+   "quote": "【怪物】LizardFlyer：位阶61",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 384,
+   "quote": "乍一看去，直径一千米内平均有十匹。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 398,
+   "quote": "这就意味着LizardFlyer并非利用剑压避开了我们的攻击——而是一边用眼睛看着，一边活动自己的躯体避开的。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 407,
+   "quote": "伤口深达两公分。如果它的目标是我的手，那现在应该已经切断我两根手指了。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 429,
+   "quote": "由此推测这家伙没有办法同时进行移动和『魔法相杀』。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 90,
+   "text": "65层怪物（位阶61）：摆动苍蝇般翅膀的蜥蜴（体长约1米）；直径一千米内平均十匹（任何地点必被察觉）；特化回避——动态视力异常，看着剑闪以最低限度动作避开（涡波莱纳三道剑闪全避；'单看技能数值已达达人境界'亦无用）；翅膀鸣响（非人语）=具有『咏唱』效果的『魔法宣言』，可发动『魔法相杀』（化解莱纳全力Sehr·Wind；推测其无法同时移动与相杀——静止迎击时为唯一破绽）；翅膀划伤涡波肩膀（深达两公分/近动脉，'再迟一些整根手臂都会被切断'）；速度远超人类极限；对浓密『Dimension』魔力亦以魔法相杀响应"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-495bc6080034",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

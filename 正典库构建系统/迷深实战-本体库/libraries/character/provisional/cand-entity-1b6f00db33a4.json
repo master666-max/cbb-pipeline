@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能",
+  "name": "最深部之誓约者"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 25,
+   "quote": "【技能『最深部之誓约者』发动了】",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 26,
+   "quote": "以特定的感情为交换使精神安定下来",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 32,
+   "quote": "与还不完善的技能『？？？』不同，技能『最深部之誓约者』能够任意调节。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 89,
+   "text": "涡波新掌控的技能：'以特定的感情为交换使精神安定下来'（混乱补正+1.00）；与不可调节的『？？？』不同能够任意调节——涡波刻意保留一定程度的焦躁感（'为了不至于像『始祖涡波』那样暴走'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-1b6f00db33a4",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

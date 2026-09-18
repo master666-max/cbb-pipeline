@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(光魔法)",
+  "name": "LightKnife"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 168,
+   "quote": "「正是如此，请您立刻同意。——『LightKnife』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 169,
+   "quote": "诺斯菲莞尔一笑，随即咏出魔法。光聚集在她手中形成了一把看上去就很锋利的小刀，接着她将小刀比在我的脖子旁边。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 92,
+   "text": "诺斯菲光魔法：手中光聚成锋利小刀、抵于涡波颈侧胁迫其同意；被斥后如因咬手指被叱责的孩童般羞耻解除光刃（其威胁手法娴熟令涡波在意）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-e1161d3b7398",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "始祖涡波",
+  "rel_type": "夫妻(千年前·形式婚姻)",
+  "subject": "诺斯菲"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 244,
+   "quote": "因为诺斯菲可是涡涡的『妻•子』啊！！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 249,
+   "quote": "妻子。也就是说，诺斯菲是『始祖涡波』的妻子了呗。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 273,
+   "quote": "……我•们•并•没•有•许•下•爱•的•誓•言。那不过是徒具形式的婚姻。是充斥着虚伪和欺瞒的契约。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1253,
+   "quote": "哦对了，记得她跟小子你原来是夫妻关系来着啊，那会变成这样也是理所当然的嘛。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 148,
+   "quote": "「是了，这是理所当然的……！因为我们原本可是夫妻啊……！",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 252,
+   "quote": "若从理性的角度出发，最好的做法应该是利用自己丈夫的立场驱使诺斯菲这名守护者。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "罗德当众揭露并坚称『只要共同许下了爱的誓言，那就应该是永恒的关系』；诺斯菲承认过去关系但定性为徒具形式的婚姻/充斥虚伪和欺瞒的契约、未许下爱的誓言，主张承认夫妻的国家早已不在、现在不是夫妻且不愿再提；涡波失忆初次得知；佩艾希亚居民与千年前登场人物皆知此事"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-bfc84688fd32",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bfc84688fd32-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-bfc84688fd32",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

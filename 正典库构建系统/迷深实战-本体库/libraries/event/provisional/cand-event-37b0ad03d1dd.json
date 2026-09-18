@@ -1,0 +1,85 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德·缇缇",
+   "艾尔芬里斯",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "第三次迷宫探索·66→63层突破",
+  "tick": 91,
+  "time_verbatim": "地下生活第五天（四队制首征）"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 507,
+   "quote": "这样一来就是地下生活的第五天，同时也是第三次挑战迷宫。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 535,
+   "quote": "那是因为艾尔芬里斯听到了罗德的请求之后，居然还真点了点头飞离了螺旋阶梯旁边。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 576,
+   "quote": "——光魔法『Light•幻影（Phantom）』。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 644,
+   "quote": "您说PaleGriffin是吗……对它的话，我的魔法就起不到效果了呢。因为狮鹫兽并非畏惧死亡的生物，所以我的『交流』就没用了啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 655,
+   "quote": "那就让姐姐给你表演一下自己厉害的地方吧！——『AngeloBaïonnette』！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 713,
+   "quote": "一旦罗德和诺斯菲联手成为我们的敌人，那么我们想离开迷宫就是不可能的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 91,
+   "text": "四人新队（含双守护者/涡波评史上最强战力）出发；66F罗德一声『借个光』、艾尔芬里斯点头让路——零损耗和平破层；65F诺斯菲无咏唱『Light•幻影』+『Light』镇伏LizardFlyer（物理免疫/风为感官）『已用魔法打消了怪物们的斗志』；64F同法摆平GreenHighElement；63F PaleGriffin（不畏死故交流无效）由罗德（『AngeloBaïonnette』风铳剑/『WindArrow』）与诺斯菲（『LightRod』改长枪/『ShineArrow』）同时命中脑门瞬杀；二人疾走达『缩地』『瞬步』级、罗德持剑术诺斯菲持枪术、边走边自愈回复、『魔法战斗』数值恐高于涡波；涡波阵阵恶寒——状况过于理想，若二人联手为敌则离迷宫无望"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-37b0ad03d1dd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

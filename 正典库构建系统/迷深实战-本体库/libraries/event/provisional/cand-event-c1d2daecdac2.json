@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "贝斯",
+   "雷纳尔多"
+  ],
+  "instant": null,
+  "kind": "日常·转折",
+  "name": "雷纳尔多工房·三剑装备与父之言",
+  "tick": 91,
+  "time_verbatim": "同日傍晚至夜（探索中止后）"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1210,
+   "quote": "【赫勒比勒夏因之神圣双剑『片翼』】",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1233,
+   "quote": "哼。——『Flame•Accel』。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1265,
+   "quote": "小子，你不用在意『这里』的问题。我等早就做好了无论何时崩坏都无妨的觉悟了。……不过嘛，罗德应该是例外吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1293,
+   "quote": "但是把我错看成父亲什么的肯定是不对的。……我作为父亲是不合格的。到头来，我没能理解任何一个家人。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 91,
+   "text": "为寻贝斯（魔王城后方花田）访宅→工房检查莱纳装备；『片翼』出库（赫勒比勒夏因铭/成对武器单把/攻2）由涡波研磨并配新剑带；莱纳抗议三剑负重被雷纳尔多『Flame•Accel』热魔法加速铁拳一击昏迷（级别30+/力量特化）；其甄别莱纳魔法道具并销毁自残用具；确认崩坏情报（早有预兆/我等已觉悟/罗德例外/须尽快带艾德）；训诫『死了就什么都做不到了』；撤回拯救罗德之托减负；自白不合格父亲并接受『像父亲』；涡波发出地上邀约（联合国/探索者/锻冶师吃香）→其愿带贝斯同去『重头来过』；涡波背着被强制换装的莱纳购粮归城就寝"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c1d2daecdac2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

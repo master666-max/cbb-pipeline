@@ -28,7 +28,9 @@ from pathlib import Path
 TOP_ENTITIES = 25
 TOP_FORESHADOWS = 12
 ROLLING_KEEP = 30
-BUDGET_CHARS = 1300
+BUDGET_CHARS = 2600  # ≤2K token 封顶（中文≈1.5-1.8字/token，2600字≈1.4-1.7K token 保守）；
+# 2026-09-19 勘误：原 1300 字+②→①→③裁剪序会把①人物册整节裁空（③30行即超预算）——
+# 人物册是异名消歧核心先验，裁剪序改为 ③旧章行→②尾→①尾（①最后牺牲）。
 
 HEADER = ("# 上下文包（机械生成 · 先验而非事实源：与原文冲突以原文为准+存疑分开建）\n"
           "> 生成器=cbb/tools/context_pack.py（确定性脚本 R-018）；子代理必读但不得当作事实源。\n")
@@ -116,13 +118,13 @@ def build(store: Path, alias_seed: Path | None, rolling: Path | None) -> str:
         return "\n\n".join(parts) + "\n"
 
     text = render(sec2, sec1, sec3)
-    # 预算裁剪（确定性顺序：②尾部→①尾部→③旧章行）
+    # 预算裁剪（确定性顺序：③旧章行→②尾部→①尾部——①人物册最后牺牲）
+    while len(text) > BUDGET_CHARS and len(sec3) > 1:
+        sec3.pop(0); text = render(sec2, sec1, sec3)
     while len(text) > BUDGET_CHARS and len(sec2) > 0:
         sec2.pop(); text = render(sec2, sec1, sec3)
     while len(text) > BUDGET_CHARS and len(sec1) > 0:
         sec1.pop(); text = render(sec2, sec1, sec3)
-    while len(text) > BUDGET_CHARS and len(sec3) > 1:
-        sec3.pop(0); text = render(sec2, sec1, sec3)
     return text
 
 

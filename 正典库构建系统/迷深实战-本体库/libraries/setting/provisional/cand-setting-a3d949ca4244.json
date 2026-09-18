@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 90,
+  "fact": "据涡波自述：'因为失去了冰结属性的才能，攻击手段锐减的我只能采用这种配置'——现攻击手段仅'奇袭之后使用DistanceMute'一种；故采斥候后卫定位（莱纳骑士前卫）、不需攻击力防御力",
+  "name": "涡波失去冰结属性才能（ch90追认）",
+  "tick": 90
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 311,
+   "quote": "另外说一下，我的装备只有『新月琉璃』和那两个护身符而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 312,
+   "quote": "探索还是以莱纳为主。我的职责是用魔法辅助他。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 313,
+   "quote": "那就是作为骑士的莱纳是队伍的前卫，而作为斥候的我则是队伍的后卫这样吧。因为失去了冰结属性的才能，攻击手段锐减的我只能采用这种配置。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 90,
+   "text": "能力变化追认（跨章事实走setting）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-a3d949ca4244",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

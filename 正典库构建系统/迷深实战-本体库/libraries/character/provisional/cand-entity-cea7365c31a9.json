@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "道具(首饰)",
+  "name": "翠之护身符"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 1363,
+   "quote": "可以保护身体抵御风属性攻击的首饰、【翠之护身符】。效果你知道吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1352,
+   "quote": "钱的事情不用在意。将来你有钱了再付也行。不过要对罗德保密啊。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 89,
+   "text": "雷纳尔多花几十分钟打造的翠色光辉项链，交予涡波；功能=保护身体抵御风属性攻击（涡波以持有【赤之护身符】的经验类比知其效果）；品质明显优于地上制品；费用赊账（'将来你有钱了再付也行'）且对罗德保密"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-cea7365c31a9",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

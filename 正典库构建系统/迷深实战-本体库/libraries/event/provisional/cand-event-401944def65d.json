@@ -1,0 +1,92 @@
+{
+ "canonical": {
+  "entities": [
+   "DistanceMute",
+   "Sylph·Rokh·Bringer",
+   "TauzSchuss·Wind",
+   "相川涡波",
+   "艾尔芬里斯",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "艾尔芬里斯再讨伐（二人联动）",
+  "tick": 90,
+  "time_verbatim": "第四日晨（入66层门后即刻）"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 334,
+   "quote": "刚冲进六十六层这个开阔的空间，我们立刻兵分两路。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 346,
+   "quote": "千年前的大魔法于此重现。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 347,
+   "quote": "——风魔法『TauzSchuss·Wind』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 355,
+   "quote": "确认到两种大魔法的冲突后，我在距离莱纳较远的位置使用魔法进行跳跃，并移动到毫无防备的艾尔芬里斯背后。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 358,
+   "quote": "艾尔芬里斯根本没有还手之力，只能乖乖被我抽出『魔石』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 362,
+   "quote": "等候在下方的莱纳用魔法打造出风之坐垫。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 367,
+   "quote": "这次使用的魔法为『TowersSus·Wind』『DistanceMute』『Default』各一回。我的MP消费量在200左右，莱纳则在50上下。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "进门兵分两路（远离螺旋阶梯决战省MP）→莱纳咏唱『天路垂临』『续道碧霄』→TauzSchuss·Wind千风大剑佯攻（被风之壁挡下＝龙注意力集中于莱纳）→涡波Default+DistanceMute跳跃至龙背电光石火奇袭抽魔石→艾尔芬里斯毫无还手之力再消亡→莱纳以『Wind』造风之坐垫接住涡波（'原理跟之前让勺子浮在空中一样'）；MP消费：涡波约200/莱纳约50"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-401944def65d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

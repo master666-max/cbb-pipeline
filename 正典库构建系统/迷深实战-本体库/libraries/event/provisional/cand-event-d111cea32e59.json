@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "相川阳滝",
+   "艾德",
+   "莱纳•赫勒比勒夏因"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "阳滝被守护者艾德带走(莱纳证言)",
+  "tick": 89,
+  "time_verbatim": "涡波昏倒时（世界奉还阵战后）"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 192,
+   "quote": "抱歉，掉下来的只有我们两个。你的妹妹在你昏倒的时候被守护者艾德带走了。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 193,
+   "quote": "值得注意的是，在莱纳提到艾德这个名字的时候，罗德突然僵住了。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 198,
+   "quote": "艾德那家伙是天生的教育者，而且痴迷于建国运动。恐怕他是为了建国而在网罗人才吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 20,
+   "quote": "当时留在那里的不只有我们两个，还有失去了意识的妹妹。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 23,
+   "quote": "如果罗德说的都是真的。那就是说阳滝一个人被留在了那场灾厄的中心。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "据莱纳：'你的妹妹在你昏倒的时候被守护者艾德带走了'、坠落里侧者仅涡波莱纳二人（罗德亦证无第三者侵入）；艾德动机推定（莱纳）：天生教育者+痴迷建国网罗人才+非战斗魔法超一流（'应该会有将她唤醒的办法吧'）；罗德闻艾德之名突然僵住；涡波初闻时以为阳滝被留在灾厄中心而焦躁发动『最深部之誓约者』；决意'守护阳滝是我的使命'、尽快回地上夺回"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d111cea32e59",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

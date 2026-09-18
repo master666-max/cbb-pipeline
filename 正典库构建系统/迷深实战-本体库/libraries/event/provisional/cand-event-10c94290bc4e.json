@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德·缇缇",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "『妻子』事实揭露",
+  "tick": 91,
+  "time_verbatim": "和解对话中（同日傍晚）"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 244,
+   "quote": "因为诺斯菲可是涡涡的『妻•子』啊！！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 249,
+   "quote": "妻子。也就是说，诺斯菲是『始祖涡波』的妻子了呗。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 273,
+   "quote": "……我•们•并•没•有•许•下•爱•的•誓•言。那不过是徒具形式的婚姻。是充斥着虚伪和欺瞒的契约。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 336,
+   "quote": "不知道啊，我还是第一次听说始祖大人有老婆呢。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 338,
+   "quote": "我还是头一次知道自己在千年前结过婚。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 91,
+   "text": "涡波打听与诺斯菲旧关系→罗德难置信其忘却（『至少也要把诺斯菲的事记起来』）并激昂揭露『因为诺斯菲可是涡涡的妻•子啊』；涡波耗时良久才消化（诺斯菲=始祖涡波之妻）；诺斯菲冷静否定现在关系（未许爱的誓言/徒具形式的婚姻/承认的国家已不在/提起即困扰→强行终止话题）；罗德不满但接受；莱纳初闻（『第一次听说始祖大人有老婆』）；涡波受创（『头一次知道自己在千年前结过婚/想哭』），莱纳调侃负责任再婚"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-10c94290bc4e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

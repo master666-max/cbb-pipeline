@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "弟子(剑术·经佩剑传承)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1354,
+   "quote": "而且他还是『地之理的盗窃者』的弟子。多亏如此，技能『剑术』的数值也大幅提高了。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1352,
+   "quote": "装备者可以习得诺文•阿雷亚斯的剑术",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "佩剑镶诺文魔石/装备者可习得诺文•阿雷亚斯的剑术；『他还是地之理的盗窃者的弟子。多亏如此技能剑术数值也大幅提高』；涡波原望其兼掌地魔法但未遂（忙于风魔法）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-06510b16aeb9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

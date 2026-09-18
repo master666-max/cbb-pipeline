@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "六十层守护者初遇·抚摸未消失",
+  "tick": 91,
+  "time_verbatim": "地下生活第四天·首次抵达六十层"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 21,
+   "quote": "【六十守护者（SixtyGuardian）】光之理的盗窃者",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 36,
+   "quote": "请您触碰、抚摸我吧。哪怕只有一次，若能得到涡波大人的抚摸，那我便能消失了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 54,
+   "quote": "就这么足足摸了有十•五•分•钟。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 55,
+   "quote": "……没、没有消失诶？",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 78,
+   "quote": "我的名字叫做诺斯菲。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 91,
+   "text": "初次挑战即抵六十层（光之阶层中央少女起身）；『注视』鉴定=六十守护者·光之理的盗窃者；她认涡波为千年盼望之故人（『正如计划中安排的那样，您是那个时候的样子』）、求抚摸一次即愿消失；涡波应允抚摸足足十五分钟→未消失；她困惑拼命坚称未说谎；涡波坦白无千年前记忆后，她稳定情绪掐裙角行礼重新自我介绍『诺斯菲』；涡波始终看不透她（如视太阳/与至今守护者不同）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2fd65287e277",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

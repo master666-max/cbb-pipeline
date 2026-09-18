@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 90,
+  "fact": "『咏唱』=莱纳从罗德处习得的魔法技术（'程度较轻的'如『天路垂临』『续道碧霄』——诵出后周围之风纳入支配，魔力浓度与先前判若两人）；怪物侧存在等效机制：LizardFlyer翅膀鸣响（'嗡嗡、地'，非人语）=具有『咏唱』效果的『魔法宣言』，用于发动『魔法相杀』（柔和之风顷刻化解莱纳全力风魔法）；其相杀破绽=迎击时须静止（无法同时移动与相杀，据涡波推测）",
+  "name": "『咏唱』与『魔法宣言』机制（ch90）",
+  "tick": 90
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 340,
+   "quote": "莱纳诵出从罗德那里学到的程度较轻的『咏唱』，紧接着周围的风便被纳入到他的支配之下。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 416,
+   "quote": "尽管这并非人语，但却是具有『咏唱』效果的『魔法宣言』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 417,
+   "quote": "紧接着，莱纳的『Sehr·Wind』便遭到了『魔法相杀』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 90,
+   "text": "咏唱/宣言/相杀三概念联动（本章实证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-6557069deb2a",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

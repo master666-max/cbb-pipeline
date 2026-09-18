@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entity_type": "地点(迷宫里侧再现都市)",
+  "name": "佩艾希亚"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 199,
+   "quote": "……魔王城。果然，这里是佩艾希亚城吗。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1086,
+   "quote": "在诺斯菲的带领下，我们穿过了『Connection』，回到了罗德的世界、佩艾希亚。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1157,
+   "quote": "每次走在绿意盎然的街道上，居民们都会友好地向我们打招呼。但这一次还有人打趣问\"听说你老婆也来了？\"什么的，让我不知该作何回答，最后只好用笑容敷衍过去。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 407,
+   "quote": "城门本身是大敞着的，没有拒绝任何人进入的意思。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 612,
+   "quote": "先是我的现身、接着是与罗德的邂逅，再之后是诺斯菲的登场，随着为千年前的因缘所纠缠的三人在『这里』齐聚，始终停滞不前的佩艾希亚产生了变化。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 986,
+   "quote": "「更进一步来说，这同时也是您的责任。您必须对『过去』负责任，不负不可。鉴于以上原因，您还是跟我一起回去为好。回到千年前的佩艾西亚——！」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 91,
+   "text": "罗德的世界/千年前北方都市再现之城；诺斯菲道出其城堡本名『佩艾希亚城』（通称魔王城）且生前曾到访；居民与涡波、莱纳熟络（以『听说你老婆也来了？』打趣婚姻传闻）；天空扭曲恶化中、微光与魔石之光相似（寿命将尽征兆）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-9cd1b93b7b2b",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-9cd1b93b7b2b-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-9cd1b93b7b2b",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

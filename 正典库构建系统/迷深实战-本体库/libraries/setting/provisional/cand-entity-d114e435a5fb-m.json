@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能(次元魔法)",
+  "name": "Dimension•曲战演算（Difference）"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 894,
+   "quote": "——『Dimension•曲战演算（Difference）』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 896,
+   "quote": "就跟次元属性的『次元之冬』差不多。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 677,
+   "quote": "在此基础上，只要使用『Dimension·曲战演算』稍稍调整一下二者攻击的轨迹就可以了。调整的距离不到一厘米，但效果显著。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 91,
+   "text": "涡波连日构想的新次元魔法·实战初登场即成功：以『Dimension』把握空间计算出敌方挥剑轨迹→以『Default』扭曲剑将通过的空间→破坏敌方攻击与防御、制造误差（原理与次元属性的『次元之冬』相近）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-d114e435a5fb",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d114e435a5fb-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-d114e435a5fb",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

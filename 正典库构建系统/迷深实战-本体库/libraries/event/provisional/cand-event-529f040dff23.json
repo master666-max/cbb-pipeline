@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "对话",
+  "name": "回收莱纳·信任表态",
+  "tick": 92,
+  "time_verbatim": "深夜"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 349,
+   "quote": "「啊，莱纳他现在被我绑起来丢在走廊那里了，有劳您去回收一下。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 373,
+   "quote": "在我看来诺斯菲那家伙说的话全都可疑得不得了。说得直接一点吧，你难道不觉得她说的全是假话吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 377,
+   "quote": "「或许如此。但就算是这样，我也想相信她……」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 92,
+   "text": "涡波解除含塞口物在内的拘束回收莱纳、转达诺斯菲道歉；莱纳愤慨欲讨公道、并直言诺斯菲所说『全是假话』；涡波以对阿尔缇愿望逃避之后悔自省、表态『就算是这样，我也想相信她』——以听取任性并观察为折中；莱纳表态服从再观察"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-529f040dff23",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

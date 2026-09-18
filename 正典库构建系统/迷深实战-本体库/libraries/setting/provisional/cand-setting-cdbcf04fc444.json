@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 92,
+  "fact": "守护者阶层在人类初次抵达时发动『异邦人召唤』术式、将『理的盗窃者』唤醒（涡波此前只知守护者会被召唤、不知术式之名）；该术式现况=如无使用者的魔法般状态；诺斯菲与执行召唤的术式『交流』、将五十层召唤对象由罗德改为自身（自称篡改关系到迷宫根底的术式很容易）",
+  "name": "『异邦人召唤』术式",
+  "tick": 92
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 755,
+   "quote": "「对了，现在的涡波大人是不知道的来着？这个呢，是守护者的阶层在人类初次抵达的时候，发动『异邦人召唤』的术式，将『理的盗窃者』唤醒的现象。」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 757,
+   "quote": "「没错，原定应在五十层得到召唤的确实是罗德。不过，就在不久前，我与执行召唤的术式进行了『交流』，将召唤对象从罗德转变为了我自己。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 758,
+   "quote": "诺斯菲轻描淡写地表示，自己篡改了关系到迷宫根底的术式。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 92,
+   "text": "迷宫根底术式规则+本章被篡改实例"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-cdbcf04fc444",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

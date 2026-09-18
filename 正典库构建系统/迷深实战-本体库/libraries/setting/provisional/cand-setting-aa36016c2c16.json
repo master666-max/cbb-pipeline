@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "chapter": 89,
+  "fact": "锻冶过程消费魔力：铁锤刻有魔术式（'可以被称为魔法道具的铁锤'），锤击间魔力如网状附着铁器表面、冷却同时固定形态——涡波评'这绝不是一般的锻冶技术…可能已经是跟锻冶不同的另一种技术'；冷却工序并用火焰/水/地魔法补正铁器强度（普通铁锅升华為上位存在）；经一定技术改造的道具在名称前冠以施工者名（【雷纳尔多的铁锅】/通过『神铁锻冶』升华——注释如传说武器）；魔石装备修复需特殊道具+将术式文字刻回恢复原状的装备（超人级精密作业，涡波以其属性应付无苦/会铭刻简单魔术式）；千年前遗物（33层拾获品）能入其法眼；其工房构造与『史诗探索者』的『工房』相似但规格更高；技能『锻冶』3.12=人类至宝级热量精准掌握",
+  "name": "雷纳尔多的魔法锻冶·神铁锻冶",
+  "tick": 89
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 754,
+   "quote": "而魔力就像在强化铁器一般延伸成网状附着于铁的表面，在冷却的同时将铁的形态固定。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 773,
+   "quote": "通过技术『神铁锻冶』，升华为了高位的存在。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 775,
+   "quote": "看来经由一定的技术改造之后，在道具的名称前面会加上施工的人名。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 433,
+   "quote": "虽然规模不同，但这里跟『史诗探索者』的『工房』构造相似。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 765,
+   "quote": "正因为他做得到，所以他的技能『锻冶』才会有3.12这么高。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 89,
+   "text": "生产系技术设定（本章目击实录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-aa36016c2c16",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

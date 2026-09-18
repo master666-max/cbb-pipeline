@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "隐瞒与救济誓约",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 233,
+   "quote": "果然像这样欺骗罗德使我心里很不是滋味。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 234,
+   "quote": "但是，我还是在心中发誓日后绝对会来救她，并继续实施当初的方针。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 238,
+   "quote": "我就这样逃离了罗德身边。想到每次跟她接触都会品尝这种苦楚的滋味，我想要回到地上的决意便更强了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "隐瞒已讨伐艾尔芬里斯（罗德仍信'你们肯定又得败在小艾尔芬里斯的手下'）；涡波'像这样欺骗罗德使我心里很不是滋味'；婉拒三人野餐（'事到如今，我们回到地上本身就是为了罗德好'）；'在心中发誓日后绝对会来救她'；接触的苦楚反使'想要回到地上的决意便更强了'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fb8180b69f26",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "剑术师承",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 945,
+   "quote": "她应该是觉得能更轻松地制服我吧。能感觉到她很惊讶于一直在做后卫的我『剑术』水平会有这么高。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 946,
+   "quote": "诺文的剑术具有可以弥补绝望性的身体能力差的力量。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "涡波之剑术承自诺文（具有弥补绝望性身体能力差之力）；五十层近战令诺斯菲意外其后卫出身有此『剑术』水平"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2f9eda82df53",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "骑士宣誓(继承兄长意志)",
+  "subject": "莱纳•赫勒比勒夏因"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 209,
+   "quote": "莱纳，你不会再像以前那样跟拉丝缇娅拉吵架了吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 210,
+   "quote": "我不会找她吵架了。从今以后，我要继承兄长的意志，成为她的骑士。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 207,
+   "quote": "我也必须尽快去守护现人神。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "莱纳宣言：'我也必须尽快去守护现人神'；被涡波问'你不会再像以前那样跟拉丝缇娅拉吵架了吗'（旧怨：'我那时候可是真的动了杀心的'）→'从今以后，我要继承兄长的意志，成为她的骑士'；涡波评'这身姿颇有骑士的风采。看来他终于找到了自己真正的使命'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-988dfc953bd4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

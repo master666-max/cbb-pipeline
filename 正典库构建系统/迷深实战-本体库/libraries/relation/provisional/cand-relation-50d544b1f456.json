@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "联结断绝",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 53,
+   "quote": "然后是最严重的问题，我与莉帕的『联结』也断了。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 54,
+   "quote": "在许许多多的解除系魔法的影响下，那顽固到近乎诅咒般的『联结』也没撑住。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "世界奉还阵的诸多解除系魔法影响下'那顽固到近乎诅咒般的『联结』也没撑住'而断绝→涡波平安的消息无法传达给地上同伴（'最严重的问题'级）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-50d544b1f456",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

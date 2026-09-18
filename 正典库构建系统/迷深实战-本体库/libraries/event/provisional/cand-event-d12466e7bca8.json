@@ -1,0 +1,102 @@
+{
+ "canonical": {
+  "entities": [
+   "DistanceMute",
+   "HighSkyBeryl",
+   "相川涡波",
+   "艾尔芬里斯"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "艾尔芬里斯初讨伐（涡波单独）",
+  "tick": 90,
+  "time_verbatim": "滞留66层里侧第三日晨"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 101,
+   "quote": "为保万全，我在展开『Dimension·决战演算』之后进入了六十六层。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 124,
+   "quote": "使用新的次元魔法，我将上空的空间予以压缩。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 135,
+   "quote": "由『Foam』造出的泡沫一点点地错捩世界，扰乱艾尔芬里斯的魔法感官。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 141,
+   "quote": "就这样，正如当初的计划所定，我成功站到了风龙的背上。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 158,
+   "quote": "——魔法『DistanceMute』！给我拔出来啊啊啊啊啊！！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 163,
+   "quote": "覆盖天际的巨体渐渐透明化，转换成了光芒。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 171,
+   "quote": "使用魔法迷惑对手，移动到对手身后，抽取魔石。这就是我全新的战斗方式。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 181,
+   "quote": "【经验值：202345/135000】",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 188,
+   "quote": "如此这般，我的第二次屠龙行动也平安无事地告终了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "展开『Dimension·决战演算』入66层→龙躯冲撞毁阶梯+龙之风→Default压缩上空空间作无视物理法则的跳跃→被龙瞳追回→组合Foam（千数泡沫错捩世界扰乱龙之风感官）+决战演算+Default（于认识外空间移动）→站上龙背→DistanceMute刺入连结领域抽魔石（硬接龙之咆哮/龙之风维持）→艾尔芬里斯透明化化作光之雨消亡；获称号『苍穹的知音』（技巧补正+0.01）+HighSkyBeryl+经验值202345（低于预想未升10级）；'战斗时长不过数秒'；确立新战斗方式'使用魔法迷惑对手，移动到对手身后，抽取魔石'（涡波自称'第二次屠龙行动'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d12466e7bca8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,465 @@
+{
+ "unit": "ch0090",
+ "chapter": 90,
+ "ingestion_index": 72,
+ "title": "第九卷第二章-迷宫逆行",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 59,
+  "pass": 59,
+  "intercept": 0,
+  "admitted": 59,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 3,
+  "contradiction": 4,
+  "on-create": 52
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-4c51e59f3b5d",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-27c49ddf5cb5",
+   "type": "entity",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-42d976aa9d89",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-d749c3066a3b",
+   "type": "entity",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d46976da3034",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-0484fbca5844"
+   }
+  },
+  {
+   "record_id": "cand-entity-f2db58ef763a",
+   "type": "entity",
+   "name": "维斯·海利普洛佩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-dc808e495a5d",
+   "type": "entity",
+   "name": "缇达",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-1b24826259da"
+   }
+  },
+  {
+   "record_id": "cand-entity-e171bde51753",
+   "type": "entity",
+   "name": "阿尔缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5b78099214c5"
+   }
+  },
+  {
+   "record_id": "cand-entity-c550ec4d23af",
+   "type": "entity",
+   "name": "贝斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-c1642a259321",
+   "type": "entity",
+   "name": "守护炎（Egis）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-495bc6080034",
+   "type": "entity",
+   "name": "LizardFlyer",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a007e52948e3",
+   "type": "entity",
+   "name": "GreenHighElement",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-5e5f0c9a66ef",
+   "type": "entity",
+   "name": "PaleGriffin",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-164a09052ecf",
+   "type": "entity",
+   "name": "PiercePigeon",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-4d04f519b15c",
+   "type": "entity",
+   "name": "ColorlessUnicorn",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ef7d509a23e6",
+   "type": "entity",
+   "name": "HolyElement",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2ce5c41d52e6",
+   "type": "entity",
+   "name": "HighSkyBeryl",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-e2beb9cb5d2d",
+   "type": "entity",
+   "name": "Sylph·Rokh·Bringer",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9d60606075e1",
+   "type": "entity",
+   "name": "DistanceMute",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a020d413d21c-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-18f4f055e0e5",
+   "type": "entity",
+   "name": "TauzSchuss·Wind",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-5f5ce14ce6b0",
+   "type": "entity",
+   "name": "Jaeger·Wind",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-02ae916b3089",
+   "type": "entity",
+   "name": "过密次元的真冬",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-e2181cb1e1cd"
+   }
+  },
+  {
+   "record_id": "cand-relation-a5472ecd5b97",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-eb0156f5a7dc",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-556629deab34",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-01d9ec6cdb3d",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d688075d7235",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-196ce3fb7d34",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fb8180b69f26",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c27e0808f6d2",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6ee228db5515",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8fbfcb9ec6a3",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f7fefbd8aec3",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8d49c8552dec",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-93d33532150a",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-23e4435ee5b7",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-764dab7c5fcf",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d12466e7bca8",
+   "type": "event",
+   "name": "艾尔芬里斯初讨伐（涡波单独）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-1e30cce269d1",
+   "type": "event",
+   "name": "莱纳自爆装备检视",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-878288aebb5d",
+   "type": "event",
+   "name": "Sylph·Rokh·Bringer锻造完成",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-401944def65d",
+   "type": "event",
+   "name": "艾尔芬里斯再讨伐（二人联动）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8eaae80834cc",
+   "type": "event",
+   "name": "65层LizardFlyer遭遇战与突破",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-86692f513889",
+   "type": "event",
+   "name": "64层GreenHighElement战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-1014bef25778",
+   "type": "event",
+   "name": "63~61层通层与白色怪物",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0ddf5681453f",
+   "type": "event",
+   "name": "60层守护者接触计划（章末）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-296026338f40",
+   "type": "event",
+   "name": "魔王城茶话会与家人化骚动",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b7223b7f5ec5",
+   "type": "setting",
+   "name": "佩艾希亚（66层里侧城市，ch90）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-272aa581a2da",
+   "type": "setting",
+   "name": "迷宫61~66层构造与通用规则（ch90探明）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f2b15287c220",
+   "type": "setting",
+   "name": "涡波=迷宫与系统创造者自白（ch90）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-670ed71f684e",
+   "type": "setting",
+   "name": "莱纳的风魔法飞跃（ch90）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-a3d949ca4244",
+   "type": "setting",
+   "name": "涡波失去冰结属性才能（ch90追认）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-6557069deb2a",
+   "type": "setting",
+   "name": "『咏唱』与『魔法宣言』机制（ch90）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-dd2818e16b6a",
+   "type": "setting",
+   "name": "等级序列世界观（莱纳论与罗德千年前证言，ch90）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3bc403fd6ed4",
+   "type": "setting",
+   "name": "『光之理的盗窃者』=60层守护者（ch90推测）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1489a8669b23",
+   "type": "foreshadow",
+   "name": "罗德的留恋",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-4788b48ce3e1",
+   "type": "foreshadow",
+   "name": "66层天空的违和感",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-953f66bc1ba1",
+   "type": "foreshadow",
+   "name": "白色怪物对涡波的注视",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-457884abb7e3",
+   "type": "foreshadow",
+   "name": "60层守护者对峙（光之理的盗窃者）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-50a95cc08e3b",
+   "type": "foreshadow",
+   "name": "RokhBringer的制造者之谜",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 72,
+  "pseudo_date": "2000-03-13",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "骑士·同伴(同行决意)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 101,
+   "quote": "他是正在协助我的骑士，莱纳•赫勒比勒夏因。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1179,
+   "quote": "我是守护基督和拉丝缇娅拉的骑士——不，即使没有这些，我也是你的同伴啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1176,
+   "quote": "非要说的话，感觉她更像是邻居家的笨姐姐。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "涡波介绍其为『正在协助我的骑士』；莱纳对守护者之重作最终确认忠告（保持距离为好）后仍以『我做的就只是辅助基督』义无反顾同行；自陈『守护基督和拉丝缇娅拉的骑士——即使没有这些也是同伴』；视罗德『更像是邻居家的笨姐姐』非敌人"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-71b54fde001e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

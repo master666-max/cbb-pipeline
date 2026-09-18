@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "带入『这里』计划",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 78,
+   "quote": "我要去地上帮助等待我归来的大家，然后将艾德带到『这里』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 284,
+   "quote": "为了报答他的恩情，我绝对要成功回到地上将艾德带到这里。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "回归地上的目的链：'我要去地上帮助等待我归来的大家，然后将艾德带到『这里』'；为报答雷纳尔多恩情再度强调'我绝对要成功回到地上将艾德带到这里'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-764dab7c5fcf",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

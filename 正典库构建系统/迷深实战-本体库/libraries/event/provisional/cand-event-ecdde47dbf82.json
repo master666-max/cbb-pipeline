@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "贝丝",
+   "雷纳尔多•沃尔斯"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "工房打工：全城修理·装备修复·护符受领",
+  "tick": 89,
+  "time_verbatim": "第一至二日（雷纳尔多宅工房）"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 754,
+   "quote": "仔细观察的话，会发现铁锤上刻着魔术式。那是一把可以被称为魔法道具的铁锤。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1305,
+   "quote": "看着【CallOuter】【AllConfess】【BloodSword】这些原本因为精神污染而没法使用的东西",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1356,
+   "quote": "【CallOuter】和【AllConfess】这两个在修理过后不再有精神污染的效果了。然而【BloodSword】算是寿终正寝了",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1301,
+   "quote": "我记得这些都是在三十三层附近陪拉丝缇娅拉寻宝的时候捡来的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "第一日以非人速度清空原定一周份的修理量（雷纳尔多故意加量劝退失败）；目击魔法锻冶全程（锤刻魔术式/魔力网强化固定/火焰·水·地魔法交织补正强度）；第二日无活转修理训练：修复三十三层陪拉丝缇娅拉寻宝拾获的精神污染装备——【CallOuter】【AllConfess】修复后不再精神污染、【BloodSword】寿终正寝（折剑修复难于防具）、『赫勒比勒夏因家的神圣双剑『片翼』』确认丧失本力；受领对风龙首饰【翠之护身符】（赊账/对罗德保密）；薪水入『持有物品』+技能『锻冶』成长；宝剑诺文拒削装饰插曲"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ecdde47dbf82",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

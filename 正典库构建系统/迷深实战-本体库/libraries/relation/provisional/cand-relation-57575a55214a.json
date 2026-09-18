@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳•赫勒比勒夏因",
+  "rel_type": "剑术传授(阿雷亚斯家)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 968,
+   "quote": "是的，正是诺文的魔石。实现了留恋之后的他化作了剑。顺带一说，阿雷亚斯家的剑术被传授给了我和莱纳继承。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 965,
+   "quote": "基督他毫无疑问是超越了诺文的剑士。基督继承了诺文的剑就是证据。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 980,
+   "quote": "诺文同作为当时『最强』的格连战斗的故事。与贵族们打交道被穷追不舍的故事。最后与作为现代『剑圣』的芬里尔•阿雷亚斯相遇，找到自己的答案的故事。之后，我与诺文在决赛中再会，『舞斗大会』也就此落下了帷幕。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "涡波向罗德说明：'阿雷亚斯家的剑术被传授给了我和莱纳继承'（涡波侧同受传承）；罗德闻诺文败北始末（莱纳证言：竞技场观众见证下正面决斗/继承其剑为证/'基督他毫无疑问是超越了诺文的剑士'）后羡慕其'与守护者相衬的消失方式'，遂提出以魔法传授回礼；莱纳另转述其生前故事：与当时『最强』的格连战斗、与现代『剑圣』芬里尔•阿雷亚斯相遇找到答案、与涡波在『舞斗大会』决赛再会"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-57575a55214a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,438 @@
+{
+ "unit": "ch0089",
+ "chapter": 89,
+ "ingestion_index": 71,
+ "title": "第九卷第一章-迷宫里侧、佩艾希亚国",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 55,
+  "pass": 53,
+  "intercept": 2,
+  "admitted": 53,
+  "quarantined": 2
+ },
+ "tracks": {
+  "consistent-duplicate": 2,
+  "on-create": 46,
+  "contradiction": 5
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-e6e09ad33c4f",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-08c366cd22c7",
+   "type": "entity",
+   "name": "罗德•缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-478e406e6664",
+   "type": "entity",
+   "name": "莱纳•赫勒比勒夏因",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-86a5a3cb5257",
+   "type": "entity",
+   "name": "贝丝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f4f9bce35458",
+   "type": "entity",
+   "name": "雷纳尔多•沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-5e5c88a0c3e4",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-03bacab1e54a",
+   "type": "entity",
+   "name": "维斯•海利普洛佩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2026bb15419b",
+   "type": "entity",
+   "name": "诺文",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-95f56da39844"
+   }
+  },
+  {
+   "record_id": "cand-entity-d501c1732328",
+   "type": "entity",
+   "name": "缇达",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-61329ac8b9c9"
+   }
+  },
+  {
+   "record_id": "cand-entity-abd7889aa798",
+   "type": "entity",
+   "name": "芙兰琉莱",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-8ae9c655dfbf-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-7f671ae07e04",
+   "type": "entity",
+   "name": "次元之冬",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f89eec3c0cac"
+   }
+  },
+  {
+   "record_id": "cand-entity-a020d413d21c",
+   "type": "entity",
+   "name": "DistanceMute",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-db7241e77490",
+   "type": "entity",
+   "name": "Default",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-0c9ca61ca7c8",
+   "type": "entity",
+   "name": "Torsion",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-1b6f00db33a4",
+   "type": "entity",
+   "name": "最深部之誓约者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-bba083f94a9f",
+   "type": "entity",
+   "name": "？？？",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-64ae6827e818",
+   "type": "entity",
+   "name": "新月琉璃制直剑",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-ba7b005e5187"
+   }
+  },
+  {
+   "record_id": "cand-entity-f439ac5d4bca",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑诺文",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f9af02d35b41"
+   }
+  },
+  {
+   "record_id": "cand-entity-cea7365c31a9",
+   "type": "entity",
+   "name": "翠之护身符",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-debc1f7a65a8",
+   "type": "entity",
+   "name": "赫勒比勒夏因家的神圣双剑『片翼』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-988dfc953bd4",
+   "type": "relation",
+   "name": "莱纳•赫勒比勒夏因",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-50d544b1f456",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9dc7bbbcbe91",
+   "type": "relation",
+   "name": "罗德•缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-45b4628e9cf6",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-344c37b3dcaa",
+   "type": "relation",
+   "name": "芙兰琉莱",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-57575a55214a",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-33ed4dec9d99",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ecde46e39763",
+   "type": "relation",
+   "name": "缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4aca7c9f3587",
+   "type": "relation",
+   "name": "罗德•缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-68c224db0deb",
+   "type": "relation",
+   "name": "贝丝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0ee895d0c341",
+   "type": "relation",
+   "name": "罗德•缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b8132da19f3b",
+   "type": "relation",
+   "name": "莱纳•赫勒比勒夏因",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0da8f475f758",
+   "type": "relation",
+   "name": "雷纳尔多•沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0b3b449e96e2",
+   "type": "event",
+   "name": "涡波一年沉眠判明",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ba67df9bf560",
+   "type": "event",
+   "name": "帕林库洛败北·维斯牺牲(涡波回想补录)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d111cea32e59",
+   "type": "event",
+   "name": "阳滝被守护者艾德带走(莱纳证言)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-42871d326756",
+   "type": "event",
+   "name": "六十六层初战：艾尔芬里斯攻防败退",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-df4c151bbb74",
+   "type": "event",
+   "name": "莱纳加入队伍(和解成立)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-7f646ea78749",
+   "type": "event",
+   "name": "雷纳尔多揭示佩艾希亚真相·托付救罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ce0d05db777a",
+   "type": "event",
+   "name": "藏书室·绘画保管室调查",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-51877ab6343f",
+   "type": "event",
+   "name": "涡波魔法开发：Default完成→DistanceMute拔魂实证",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ecdde47dbf82",
+   "type": "event",
+   "name": "工房打工：全城修理·装备修复·护符受领",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1bf6401ccf52",
+   "type": "foreshadow",
+   "name": "罗德的真『留恋』之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-a532e373be00",
+   "type": "foreshadow",
+   "name": "『这里』的异变危机(两个涡波并存)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c11fc2f027f2",
+   "type": "foreshadow",
+   "name": "地上艾德×地下罗德相会计划",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-9233c1d07249",
+   "type": "foreshadow",
+   "name": "贝丝的千年残留",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-14634cc42123",
+   "type": "foreshadow",
+   "name": "六十层不知底细的守护者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-5cd3177fde38",
+   "type": "setting",
+   "name": "佩艾希亚(迷宫六十六层里侧·魔王城)的构造与真相",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-094005da791f",
+   "type": "setting",
+   "name": "迷宫六十六层(天空阶层)与风龙封锁",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-58b6e385f347",
+   "type": "setting",
+   "name": "涡波能力状态剧变(战后·失去水魔石)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-e9d5e49b4b29",
+   "type": "setting",
+   "name": "咏唱与咒术体系(罗德讲授)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-aa36016c2c16",
+   "type": "setting",
+   "name": "雷纳尔多的魔法锻冶·神铁锻冶",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f7f05f3137e7",
+   "type": "setting",
+   "name": "罗德的千年史(史书·英雄谭·学者手记合证)",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-relation-6e2daf53aeab",
+   "type": "relation",
+   "name": "雷纳尔多•沃尔斯",
+   "item_id": "q-bde6136445bb",
+   "reason": "gate1:G1-EVIDENCE;G1-EVIDENCE"
+  },
+  {
+   "record_id": "cand-setting-df2be32d9513",
+   "type": "setting",
+   "name": "次元魔法理论(千年前魔导书)",
+   "item_id": "q-44f7dfccad5c",
+   "reason": "gate1:G1-EVIDENCE"
+  }
+ ],
+ "anchor": {
+  "tick": 71,
+  "pseudo_date": "2000-03-12",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳•赫勒比勒夏因"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "莱纳加入队伍(和解成立)",
+  "tick": 89,
+  "time_verbatim": "六十六层出击前（餐厅）"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 242,
+   "quote": "出发吧，基督。让我们两个人合力干掉那条龙。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 247,
+   "quote": "莱纳•赫勒比勒夏因加入了队伍。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 249,
+   "quote": "虽然是值得纪念的自己与莱纳的和解，但一想到设计出这个系统的是我本人，我便不由地感到有些不好意思。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "莱纳伸手示协力（'让我们两个人合力干掉那条龙'）→『表示』显示【队伍】莱纳•赫勒比勒夏因加入；该系统设计者=涡波本人（始祖涡波开发『表示』魔法）；涡波借以查看同伴状态栏；'值得纪念的自己与莱纳的和解'；夜间二人结成'迷宫脱离作战'同盟（涡波统筹魔力开发魔法/莱纳监视罗德）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-df4c151bbb74",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

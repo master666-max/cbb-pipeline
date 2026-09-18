@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "罗德•缇缇",
+  "rel_type": "受托背叛·致死(千年前·据罗德声称)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 141,
+   "quote": "复仇之后的事？那就不知道了呢。因为在那之前，人家就被涡涡背叛死掉了啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 147,
+   "quote": "别担心，人家不在意的。因为拜托你背叛的，就是人家自己啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 149,
+   "quote": "涡涡实现了人家的愿望。不仅如此，还专门为死后的人家准备了这么棒的世界。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 394,
+   "quote": "无论是现在还是以前，王（孤）跟始祖（涡涡）的交涉都得在对等的立场下进行。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "据罗德声称：'人家就被涡涡背叛死掉了'（复仇之后的事她已不知）；'因为拜托你背叛的，就是人家自己啊'——涡波实现了她的愿望、并为死后的她准备了这个世界，故'人家最喜欢涡涡了'；交涉原则：'王（孤）跟始祖（涡涡）的交涉都得在对等的立场下进行'；罗德自陈不想回忆过去、羡慕彻底失忆"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-45b4628e9cf6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

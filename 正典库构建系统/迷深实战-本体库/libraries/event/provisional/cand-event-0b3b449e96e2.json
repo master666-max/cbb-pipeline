@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德•缇缇",
+   "莱纳•赫勒比勒夏因"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "涡波一年沉眠判明",
+  "tick": 89,
+  "time_verbatim": "苏醒当日（餐厅）——据罗德：自那场战斗结束已过去一年"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 218,
+   "quote": "别勉强，基督。不管怎么说，你毕竟睡了一整年。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 222,
+   "quote": "是啊，一年。据罗德所说，自那场战斗结束之后已经过去一年了。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 224,
+   "quote": "想要把你们和那坚硬的水晶完美地分离开来也要费上好一番功夫哦。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 276,
+   "quote": "跟莱纳打听了一下，他说是在我沉眠的时候，作为治疗的一环，也帮我施展了升级的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "莱纳揭示：'你毕竟睡了一整年'（涡波体感仅一日）；据罗德：自战斗结束已过一年；罗德自辩分离涡波与坚硬水晶（诺文水晶护体）费了一番功夫；沉眠期间莱纳作为治疗一环为涡波施展升级魔法（等级22之由来）；涡波痛感'现在确实不是喝着味噌汤优哉游哉的时候'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0b3b449e96e2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

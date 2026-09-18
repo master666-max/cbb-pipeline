@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "挽留·再访之约(永远等待)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 466,
+   "quote": "人家就直说了吧！你们可别想那么容易就回到地上哦！大家倒是在『这里』多待一阵子啊！",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 929,
+   "quote": "如果继续这样一帆风顺地前进下去的话，大家不是就会回到地上了么。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 958,
+   "quote": "涡涡，你一定要再过来哦？人家会永远永远等下去的。没错，就在『这里』永远永远等下去……！！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "不愿众人回地上（直说『可别想那么容易就回到地上』）；手滑捣乱动机=想尽可能久地和大家待在一起（真挚孩子气的心愿）；约定『绝对要再来这里玩』否则姐姐会生气会哭；『就在这里永远永远等下去』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b3e6dfb1628e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

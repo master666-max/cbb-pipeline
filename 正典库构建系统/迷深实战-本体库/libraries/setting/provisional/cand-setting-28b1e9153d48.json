@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 91,
+  "fact": "诺斯菲自荐可与六十层附近的怪物『交流』使其反过来保护『Connection』转移魔法门（仅限六十层附近/需相当温顺的怪物）——此前涡波从未在守护者阶层以外设置『Connection』（『正道』结界妨碍+可能被怪物破坏两大理由）；据此于五十七层通往五十六层的阶梯附近安全设置『Connection』并以光魔法交流周边怪物、确保折跃点；可大幅缩短路程（涡波甚至动了回地上后去艾尔多拉琉学院拐一名光属性魔法学生入队的念头）；地下第五天即从六十六层困局推进至五十六层附近",
+  "name": "迷宫攻略计划革命(57层Connection+怪物护卫)",
+  "tick": 91
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 837,
+   "quote": "与这附近的怪物进行『交流』的话，甚至可以让它们反过来保护您的魔法门。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 842,
+   "quote": "泼您冷水真是不好意思，只限六十层附近才可以哦？另外就是要相当温顺的怪物才行……",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1076,
+   "quote": "终于到了。这附近的话应该是安全的吧。——魔法『Connection』。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 507,
+   "quote": "这样一来就是地下生活的第五天，同时也是第三次挑战迷宫。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 91,
+   "text": "攻略方法论更新（据诺斯菲能力）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-28b1e9153d48",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

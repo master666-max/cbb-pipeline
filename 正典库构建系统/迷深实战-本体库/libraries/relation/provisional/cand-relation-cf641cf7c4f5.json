@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "一同归地宣言",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 93,
+   "line": 227,
+   "quote": "当然，我还要把莱纳也带上。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 93,
+   "text": "向罗德宣告：『事到如今就算是为了你，我也要从「这里」出去。当然，我还要把莱纳也带上』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cf641cf7c4f5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0093.txt",
+  "sha": "fbf80a69b450ebf5505913481ffb346e13121b52",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

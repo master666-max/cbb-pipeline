@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德·缇缇",
+  "rel_type": "家人(罗德之亲)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1127,
+   "quote": "我能做的只有尽快结束迷宫探索，回到地上把她的家人、『木之理的盗窃者』艾德带来罢了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "涡波称艾德为罗德的『家人』；尽快结束迷宫探索带回艾德被视为理解罗德的必要（不能放任闭门的她/她或成『这里』的陪葬）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d3041d990bf0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

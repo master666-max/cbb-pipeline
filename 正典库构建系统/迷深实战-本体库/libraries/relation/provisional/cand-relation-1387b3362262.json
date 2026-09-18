@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "莱纳",
+  "rel_type": "带走(据罗德告知)",
+  "subject": "雷纳尔多·沃尔斯"
+ },
+ "evidence": [
+  {
+   "chapter": 93,
+   "line": 29,
+   "quote": "「——嗯？好奇怪啊。莱纳这是跑到哪里去了呢。我确实是将他送到这里来了，怎么看不到人……」",
+   "vol": 1
+  },
+  {
+   "chapter": 93,
+   "line": 31,
+   "quote": "「皆因雷纳尔多·沃尔斯所致……其人察觉并参与到发生于此处的战斗后，将莱纳带走了……」",
+   "vol": 1
+  },
+  {
+   "chapter": 93,
+   "line": 114,
+   "quote": "看来有危险的不仅仅是莱纳。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 93,
+   "text": "据罗德：雷纳尔多·沃尔斯察觉并参与发生于此处的战斗后将莱纳带走；诺斯菲称确实将莱纳送来御殿、人却不见踪影；涡波由此警觉『看来有危险的不仅仅是莱纳』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1387b3362262",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0093.txt",
+  "sha": "fbf80a69b450ebf5505913481ffb346e13121b52",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

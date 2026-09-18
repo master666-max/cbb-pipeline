@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 91,
+  "fact": "涡波：lv25/HP353/MP1165(-200)；力量14.01体力15.54技巧20.77敏捷25.87贤能20.79魔力45.23素质6.21；先天剑术3.79；后天体术1.56/次元魔法5.33(+0.40)/魔法战斗0.79/感应3.56/指挥0.89/后卫技术1.01/编织1.15/诈术1.34/锻冶1.00/神铁锻冶0.56——新增『指挥』『后卫技术』；魔力与MP总量成长最显著，战斗直接相关技能不见起色。莱纳：lv27/HP409/MP102/281；先天风魔法2.57；后天神圣魔法1.27/剑术2.38/血术1.12/魔力操作0.89/集中收束0.56/最适行动1.22/不屈1.11——风魔法经罗德教导一口气上升近0.50、新增『魔力操作』『集中收束』，战斗相关技能涨得快",
+  "name": "状态栏更新(ch91)",
+  "tick": 91
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1325,
+   "quote": "姓名：相川涡波HP353/353MP1165/1165-200职业：探索者",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1327,
+   "quote": "力量14.01体力15.54技巧20.77敏捷25.87贤能20.79魔力45.23素质6.21",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1335,
+   "quote": "不知不觉间还新增了技能『指挥』『后卫技术』。然而，与战斗直接相关的技能却不见起色。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1346,
+   "quote": "在罗德的教导下『风魔法』的数值一口气上升了将近0.50。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 91,
+   "text": "数值面板快照（本章末）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-4dce7d623f30",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

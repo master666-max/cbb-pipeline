@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德•缇缇",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "调查",
+  "name": "藏书室·绘画保管室调查",
+  "tick": 89,
+  "time_verbatim": "翌日夜（罗德魔法授课后独自行动）"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 1206,
+   "quote": "不是哦，是人家去调查了一番之后才变成那样滴！反正再也不会去第二次了！",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1145,
+   "quote": "——『支配之王』和『近卫骑士团长涡波』消失了。舍弃了北方的人民，前往南方不知所踪。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1173,
+   "quote": "所有被毁掉的绘画，上面都刻画着『支配之王』的雄姿。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1181,
+   "quote": "担任『庭师』的罗德脸上，挂着被毁坏的『支配之王』脸上所没有的无上的笑容。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "以罗德钥匙入藏书室（震后般散乱——罗德自认'人家去调查了一番之后才变成那样'且再不二访）；读书：史书（北方同盟击退南方/南方联盟反扑/雷纳尔多•沃尔斯将军）+罗德英雄谭+学者手记（见S7）；以『DistanceMute』解锁毗邻密室入绘画保管室：刻画『支配之王』雄姿的油画尽毁（撕碎/揉团/刀划——人为恶意），唯孩童涂鸦（老夫妇/孤儿院[画中体型小两圈的艾德]/庭师罗德）完好且配最贵重画框；涡波推断'罗德真正的笑容，恐怕也就到那里为止了'；毁画者二选一（想起收束时既毁/罗德自毁）未定；用后以DistanceMute复锁复原"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ce0d05db777a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

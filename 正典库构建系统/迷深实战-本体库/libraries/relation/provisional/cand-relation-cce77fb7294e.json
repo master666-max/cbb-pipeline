@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多",
+  "rel_type": "地上再出发邀约(崩坏后)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1303,
+   "quote": "雷纳尔多。等到『这里』崩坏之后，您要不要跟我一起去地上呢？",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1314,
+   "quote": "那么到时候就把贝斯那孩子带上一起去吧。即使只有一点也好，或许能够重头来过啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1318,
+   "quote": "现在在迷宫上面有着叫联合国的规模庞大的国家。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "涡波邀其于『这里』崩坏后同去地上：作为锻冶师重新营业/介绍熟人工房/『离开这片墓地』并守望罗德们的将来；地上有规模庞大的联合国与众多探索者（原冒险者），名匠吃香；雷纳尔多被打动、道出带贝斯同行重头来过的愿望"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cce77fb7294e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

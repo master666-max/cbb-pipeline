@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "魔法师从(艾德与罗德)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 340,
+   "quote": "莱纳诵出从罗德那里学到的程度较轻的『咏唱』，紧接着周围的风便被纳入到他的支配之下。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 343,
+   "quote": "继承了海莉的魂，提升了等级，魔力大幅增强，以守护者艾德和罗德教为师学习魔法，掌握了『咏唱』这一技术，手上还握着增强风魔法效果的魔剑。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 600,
+   "quote": "是啊，是那家伙教我的。虽然掌握的还不完全，不过是适合立即发动的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "'以守护者艾德和罗德教为师学习魔法，掌握了『咏唱』这一技术'；『天路垂临』『续道碧霄』系'从罗德那里学到的程度较轻的『咏唱』'；『Jaeger·Wind』'是那家伙（罗德）教我的'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8fbfcb9ec6a3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

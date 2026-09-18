@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩艾希亚",
+  "rel_type": "支配之王·国王(庭师)",
+  "subject": "罗德•缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 852,
+   "quote": "而罗德则是君临于北方诸王之上的『支配之王』。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1109,
+   "quote": "王驾临于佩艾希亚，将北方诸国统合在了一起。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 557,
+   "quote": "——虽然确实是国王，但是人家的工作是『庭师』哦。另外副业则是自警团的工作。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "千年前'君临于北方诸王之上的『支配之王』'（雷纳尔多）；史书：'王驾临于佩艾希亚，将北方诸国统合在了一起'；雷纳尔多：'那个时候的罗德，确实是比任何人都更具风范的王。其威严近乎神明'；现自认国王、正业『庭师』副业自警团"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0ee895d0c341",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

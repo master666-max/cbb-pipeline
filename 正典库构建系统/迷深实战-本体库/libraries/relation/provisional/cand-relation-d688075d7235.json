@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "锻冶师的装备救济",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 246,
+   "quote": "用于增幅魔力的戒指和令魔力爆发的戒指……这个则是用来强制加速的……？",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 248,
+   "quote": "这小子根本就没想着活着回来。这些装备全都是为了跟敌人同归于尽而准备的。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 265,
+   "quote": "唯有用上这个魔石的修复是绝对不能失败的。那这事就交给我单独负责。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "鉴定莱纳全装备为同归于尽道具后诧异并涌起使命感：'得打造出上好的武器让他免于依赖这种自爆用的道具才可以'；以HighSkyBeryl单独负责RokhBringer修复（'唯有用上这个魔石的修复是绝对不能失败的'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d688075d7235",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

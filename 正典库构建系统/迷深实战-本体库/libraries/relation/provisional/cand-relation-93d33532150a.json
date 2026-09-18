@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "前卫后卫分工(斥候辅助)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 309,
+   "quote": "左手上的则是可以操使水晶魔法的守护者宝剑『阿雷亚斯家的宝剑诺文』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 310,
+   "quote": "以及通过神铁锻冶的修复重获新生的千年前的轻盔『AllConfess』和胸甲『CallOuter』。个个都是现时点的最强装备。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 311,
+   "quote": "另外说一下，我的装备只有『新月琉璃』和那两个护身符而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 313,
+   "quote": "那就是作为骑士的莱纳是队伍的前卫，而作为斥候的我则是队伍的后卫这样吧。因为失去了冰结属性的才能，攻击手段锐减的我只能采用这种配置。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "'作为骑士的莱纳是队伍的前卫，而作为斥候的我则是队伍的后卫'；装备据此分配：莱纳=Sylph·Rokh·Bringer+阿雷亚斯家的宝剑诺文+AllConfess轻盔+CallOuter胸甲（'个个都是现时点的最强装备'）；涡波=『新月琉璃』+两护身符（'我的攻击手段只有奇袭之后使用DistanceMute这一种'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-93d33532150a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

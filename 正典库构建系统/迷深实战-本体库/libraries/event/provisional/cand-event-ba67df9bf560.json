@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "维斯•海利普洛佩",
+   "莱纳•赫勒比勒夏因"
+  ],
+  "instant": null,
+  "kind": "战斗(回想)",
+  "name": "帕林库洛败北·维斯牺牲(涡波回想补录)",
+  "tick": 89,
+  "time_verbatim": "就在不久前（本土拜伦西斯大陆中央，记忆断片前）"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 7,
+   "quote": "就在不久前，我还在被称为『本土』的拜伦西斯大陆的中央与帕林库洛•勒伽西激战。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 7,
+   "quote": "得到『暗之理的盗窃者』的力量，发动了千年前的『世界奉还阵』的帕林库洛俨然成为了我最糟糕的敌人。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 8,
+   "quote": "最后维斯牺牲，我与莱纳联手终于得以战胜仇敌。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 190,
+   "quote": "当时我借助基督的剑……也就是诺文的力量，用他的水晶保护了我们两个人的身体",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "涡波回想：帕林库洛得『暗之理的盗窃者』之力发动千年前『世界奉还阵』成最糟敌人；同伴尽数掉队后一对一对决险败；维斯与莱纳为援军→维斯牺牲→二人联手终于战胜；莱纳借基督的剑=诺文的水晶保护二人身体免于溶解、坠落大陆深处（=迷宫里侧）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ba67df9bf560",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

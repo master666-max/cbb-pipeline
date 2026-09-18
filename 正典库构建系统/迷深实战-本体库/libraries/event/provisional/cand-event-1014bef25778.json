@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entities": [
+   "ColorlessUnicorn",
+   "HolyElement",
+   "PaleGriffin",
+   "PiercePigeon",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "63~61层通层与白色怪物",
+  "tick": 90,
+  "time_verbatim": "第四日（连续约四小时以上）"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 613,
+   "quote": "——『WindFlamberge』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 614,
+   "quote": "莱纳用风强化剑的威力，将PaleGriffin逼入了绝境。然而，没等我们结果它，PaleGriffin就突然飞到特高的地方，然后开始竭力嘶吼。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 631,
+   "quote": "我们已经不作休息地连续行进四个小时了。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 656,
+   "quote": "难道是我们不主动攻击就不会作出反应的怪物吗……？难不成这一层之所以对视野产生了这么大的影响，就是为了让我们看不清怪物而撞到它们，然后再被拉进战斗当中吗",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 686,
+   "quote": "这样就没有不挑战六十层的理由了。堪称光之阶层的六十一层和六十二层，简直就像是在如此呼唤我一般。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "63层PaleGriffin试探（WindFlamberge逼入绝境）→其高飞嘶吼呼群→撤回64层后改无视通层；连续四小时无休+死亡相邻战斗→体力透支；62层全面强光（牵手行进/Wind限战斗时）；PiercePigeon与ColorlessUnicorn皆无敌意（涡波推测该层设计=让探索者看不清而撞上拉入战斗）；61层HolyElement围观下无战斗通层；于60层前成功设置Connection（'并不排斥魔力'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1014bef25778",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

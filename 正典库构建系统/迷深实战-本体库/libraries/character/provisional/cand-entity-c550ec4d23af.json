@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "贝斯"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 12,
+   "quote": "我一边感叹莱纳人生的悲哀，一边将贝斯的点心摆到桌上。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 14,
+   "quote": "吃吧，本来就是贝斯送给你们的，当然没关系。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 90,
+   "text": "向魔王城三人赠送点心（涡波摆上茶话会桌并称'本来就是贝斯送给你们的'）；据语境为佩艾希亚交往居民（据涡波转述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c550ec4d23af",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

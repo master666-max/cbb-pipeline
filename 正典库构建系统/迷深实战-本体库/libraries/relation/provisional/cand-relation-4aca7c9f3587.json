@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "旅店房主·房客(对等交涉)",
+  "subject": "罗德•缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 540,
+   "quote": "客人您的住宿费本店确实收到了。欢迎来到『魔王城』旅店。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1227,
+   "quote": "不过，谢啦。虽然涡涡是•第•二•次•跟人家说这种话了，不过还是很让人开心的哟。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 164,
+   "quote": "嗯！我们约好了哦！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "罗德开张『魔王城』旅店（一天十枚铜币/另立'露宿被自警团逮捕+禁闭三天'新法刁难）；涡波以诈术应对、以饭钱三银币反将一军→房租减半成交；双方均乐在这种互相欺骗（'她十分享受这种互相欺骗的过程'）；约定'等我在地上把事情都办完了，我会再过来的'；罗德称涡波的承诺之言是'第•二•次'（第一次记忆涡波无存）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4aca7c9f3587",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

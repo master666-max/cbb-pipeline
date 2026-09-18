@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "单方面家人化(姐姐宣言)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 42,
+   "quote": "也就是说，人家是姐姐，莱纳就是弟弟喽。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 45,
+   "quote": "否决！人家说行就是行了哟！家人可是越多越好的嘛！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 49,
+   "quote": "乖哦乖哦~，莱纳。让姐姐喂你饼干吃~。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "'干脆就从朋友关系飞跃到家人好了''人家是姐姐，莱纳就是弟弟喽'；强行喂饼干/揉肩/娇惯（'你想要什么姐姐都去给你买来哟~'）；莱纳抗拒（'我在地上已经有正儿八经的家人了……我可不想再多个姐姐了'）却被'这座城堡就跟孤儿院差不多喽！从今天起大家都是家人了哟！'的理论弄得目瞪口呆"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a5472ecd5b97",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

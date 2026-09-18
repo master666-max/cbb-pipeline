@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "DistanceMute",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "修行",
+  "name": "涡波魔法开发：Default完成→DistanceMute拔魂实证",
+  "tick": 89,
+  "time_verbatim": "两夜（短睡与全力开发交替/翌夜通宵攻读魔导书）"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 632,
+   "quote": "次元魔法：Dimension1.69Connection1.03Foam1.07Default1.00",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1257,
+   "quote": "我要将存在于其领域之中最为醒目的『魂』给拔除——",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1262,
+   "quote": "经过一整晚的研究和练习，『DistanceMute』终于完成了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "第一夜：技能『表示』更新（次元魔法：Dimension1.69 Connection1.03 Foam1.07 Default1.00）唯Default达认可；Torsion仅雏形、DistanceMute指尖难入无机物；确认冰结魔法无论尝试几次皆不可用；第二夜：于藏书室取魔导书彻夜攻读（次元理论大进）→DistanceMute由指尖遍及整根手臂→成功拔除桌之『魂』得魔石（桌子化光消失=与迷宫怪物临终同一现象）；自评此招不逊『始祖涡波』、'到了明日应该可以与风龙一决雌雄'；对罗德保密（'它会成为我与罗德战斗时的底牌'）；最终形态预感=魔力缠绕全身"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-51877ab6343f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

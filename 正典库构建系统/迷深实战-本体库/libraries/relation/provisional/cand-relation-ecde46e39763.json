@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "魔法共同研发(推定)",
+  "subject": "缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 587,
+   "quote": "我估计这是跟另一位始祖缇娅拉一起研发的魔法吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 588,
+   "quote": "『DistanceMute』这个魔法很明显与缇娅拉有关。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "据涡波推定：'我估计这是跟另一位始祖缇娅拉一起研发的魔法吧'、'『DistanceMute』这个魔法很明显与缇娅拉有关'——推定其构成为迷宫全体抽取魔石术式×次元魔法的组合升华"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ecde46e39763",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

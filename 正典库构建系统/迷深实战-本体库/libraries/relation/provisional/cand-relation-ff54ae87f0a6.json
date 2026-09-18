@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "始祖涡波",
+  "rel_type": "守护者任命(身亡后选拔)",
+  "subject": "诺斯菲"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 83,
+   "quote": "因此涡波大人便将已经身亡的我选为了迷宫的守护者。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "据诺斯菲自述：战争中至身死一直追寻涡波、思念不曾断绝；身亡后被涡波选为迷宫守护者（第六位/六十层）；千年后夙愿（相见）实现但消失愿望未成——守护者使命未完"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ff54ae87f0a6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

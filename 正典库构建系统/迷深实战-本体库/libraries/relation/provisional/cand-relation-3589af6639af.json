@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "始祖涡波",
+  "rel_type": "治疗担当(初战败北后)",
+  "subject": "诺斯菲"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 289,
+   "quote": "战败后的涡波大人当时的精神处于崩溃的状态，而负责治疗您的人便是我。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "据诺斯菲自述：战败后的涡波精神处于崩溃状态，负责治疗者即诺斯菲；自谓仅履行义务——当时两人皆为棋盘上的棋子，只是两枚棋子凑到了一起"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3589af6639af",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

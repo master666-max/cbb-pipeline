@@ -1,0 +1,95 @@
+{
+ "canonical": {
+  "chapter": 92,
+  "fact": "56层=通常模式石质回廊（光属性影响下无好战怪物、安全范围）；行至深处光属性荫蔽到头（亮度下降/如坏灯泡忽明忽暗）；55层=怪物已无光属性、模样狰狞凶猛、天花板稍高如肮脏石窟、怪物主动袭击（狼型SkyWolf：位阶52/四肢由魔力构成可踏空而行/前足化钩爪/反应极快/被WindFlamberge一刀两断）；55→54层途中山道峡谷地带（以『Wind』浮力如羚羊登崖）；54层部分地貌同前、大部分石质回廊；53/52层强行军通过；50层=『风之理的盗窃者』阶层、辽阔草原狂风不休（构造与艾德四十层相似）、越近中央云层越厚终降暴雨成风暴=罗德哭泣之象征（呼应阿尔缇第十层『此处景象乃是我的写照』）；光之御旗插地后全域转为光属性白色",
+  "name": "迷宫56~50层环境与怪物配置(ch92)",
+  "tick": 92
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 627,
+   "quote": "诺斯菲说的没错，只要光属性的影响还在，我们就不会遇到好战的怪物。看来五十六层仍然是安全范围。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 661,
+   "quote": "栖息在五十五层的怪物已经没了光属性的特征，模样非常狰狞凶猛。回廊的天花板稍微高了一些，整体上近似于肮脏的石窟。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 667,
+   "quote": "对手是一只狼型怪物，不过和一般的狼不同，构成它四肢的不是血肉，而是魔力，这赋予了它踏空而行的能力。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 668,
+   "quote": "【Monster】SkyWolf：位阶52",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 692,
+   "quote": "干掉了挡路的SkyWolf之后，我们抵达了新的区域。这里的道路变得更加崎岖，周围与其说是墙壁，倒不如说是峡谷，浑似一条险峻的山道。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 727,
+   "quote": "就这样，我们一路狂飙，抵达了原定的中继位置、五十层——亦即是『风之理的盗窃者』的阶层。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 737,
+   "quote": "越接近五十层中央，头顶的云层就越积越厚，可这里明明是在迷宫啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 813,
+   "quote": "辽阔无垠的草原。无论周围怎样晴朗，草原的中心却是暴风骤雨。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 815,
+   "quote": "我回想起了阿尔缇当初说过的话。在第十层，她曾说过「此处景象乃是我的写照」。其他的守护者想必也是如此吧。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 92,
+   "text": "阶层环境与怪物图鉴更新（含守护者阶层=守护者写照之象征规则再验证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-369b3c6dd36d",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

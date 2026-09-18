@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "雇主·类父之情",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 1287,
+   "quote": "那个……该说是您就像父亲一样才对吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1282,
+   "quote": "也找不出第二个像雷纳尔多这样关心我的大人。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 1274,
+   "quote": "但你切记不要丧命。如果死了，可就什么都做不到了，这点你千万不要忘了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "涡波在工房打工听其指示（研磨片翼/配剑带，自认打工仔）；雷纳尔多的关怀为涡波平生仅见（『找不出第二个这样关心我的大人』）；自白不合格父亲后接受『像父亲』之说；训诫切勿丧命/可舍弃『这里』一切/主动撤回拯救罗德之托为其减负"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d12cb42a3381",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "SkyWolf",
+   "相川涡波",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "第五次探索·宣言直返地上与强行军",
+  "tick": 92,
+  "time_verbatim": "翌日晨出发→出发后五小时抵五十层"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 585,
+   "quote": "接着，我和莱纳取捷径直接转移到了昨天在五十七层尽头设置的传送点。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 588,
+   "quote": "这是第五次探索，并且又变回了两人小队。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 603,
+   "quote": "「莱纳，我们要在这次的迷宫探索中直接回到地上。」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 680,
+   "quote": "SkyWolf的身体被一刀两断，化作光芒消失了。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 722,
+   "quote": "我们一路冲过了五十四层、五十三层、五十二层。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 92,
+   "text": "诺斯菲留城中待罗德、以『Connection』送二人直抵五十七层尽头传送点（第五次探索·两人小队）；涡波宣言本次直接回地上（剩约五十六层/不眠不休约两天/余粮仅一顿）；56层光属性安全圈→55层起遇袭：联手奇袭秒杀SkyWolf（曲战演算+WindFlamberge）；涡波拔『新月琉璃』同任前卫、无视地形与祭坛强行军冲过54/53/52层、念『加速』『加速』『加速』疾行（代价=失去安全、速度快计划一倍）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-07406249f621",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

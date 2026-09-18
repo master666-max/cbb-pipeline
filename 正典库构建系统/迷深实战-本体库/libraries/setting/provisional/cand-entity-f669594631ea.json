@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(光魔法)",
+  "name": "Light•幻影（Phantom）"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 576,
+   "quote": "——光魔法『Light•幻影（Phantom）』。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 579,
+   "quote": "而LizardFlyer了无踌躇地继续在闪光中突进，并用它们那锋利的翅膀将诺斯菲的身体斩断——看上去如此，可实际上却只是掠过了她的身体，就像穿过了三维影像一样。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 91,
+   "text": "诺斯菲之光魔法：无咏唱无准备动作即发动（维持中的『Dimension』未能察觉其构筑——娴熟洗练而自然）；手轻轻一挥即放眩目闪光，目标身处其中如穿过三维影像（幻象化）；感官越灵敏效果越好"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-f669594631ea",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

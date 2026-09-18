@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "雷纳尔多"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "莱纳自爆装备检视",
+  "tick": 90,
+  "time_verbatim": "第三日午后（工房）"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 245,
+   "quote": "用于增幅魔力的戒指和令魔力爆发的戒指……这个则是用来强制加速的……？",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 248,
+   "quote": "这小子根本就没想着活着回来。这些装备全都是为了跟敌人同归于尽而准备的。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 251,
+   "quote": "居然到了被说成个人风格的地步了吗……那不尽快想点办法可不行啊。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "涡波借来莱纳全部装备摆上桌→雷纳尔多逐件锁眉鉴定：'用于增幅魔力的戒指和令魔力爆发的戒指……强制加速……''这小子根本就没想着活着回来。这些装备全都是为了跟敌人同归于尽而准备的'；涡波反应平淡（'这还真符合他的风格'）、雷纳尔多诧异并决意'不尽快想点办法可不行'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1e30cce269d1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

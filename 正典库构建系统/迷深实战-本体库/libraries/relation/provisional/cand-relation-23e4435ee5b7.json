@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩艾希亚",
+  "rel_type": "庭师(城市维护)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 208,
+   "quote": "岂止是宝石和铁器，就连石材都没用上。是因为这个原因吗，佩艾希亚城内的大树极多。但就算这样没有让人感到密不透风，都是多亏了作为庭师的罗德吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 209,
+   "quote": "我赶到时，罗德正使用高枝剪啪擦啪擦地修剪着路边树的枝叶，莱纳则负责将剪下的枝叶收集起来进行清理。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "以高枝剪修剪路边树枝（莱纳收集清理搭档作业）；'佩艾希亚城内的大树极多。但就算这样没有让人感到密不透风，都是多亏了作为庭师的罗德吧''可见罗德在修剪时用了不少心思'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-23e4435ee5b7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

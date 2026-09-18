@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "恋慕(心上人)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 249,
+   "quote": "——拉丝缇娅拉·弗茨亚茨。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 251,
+   "quote": "拉丝缇娅拉的存在才是我始终无法接受诺斯菲的最大理由。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 254,
+   "quote": "理由再简单不过了。因为我早已有了心上人，仅此而已。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "涡波自陈早已有了心上人（拉丝缇娅拉·弗茨亚茨）、故拒绝诺斯菲索求与『丈夫立场』最优解；其存在=无法接受诺斯菲的最大理由"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7d86dc87180a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

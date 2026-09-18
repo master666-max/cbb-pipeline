@@ -1,0 +1,95 @@
+{
+ "canonical": {
+  "entities": [
+   "LizardFlyer",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗·撤退",
+  "name": "65层LizardFlyer遭遇战与突破",
+  "tick": 90,
+  "time_verbatim": "第四日（66层再战后）"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 407,
+   "quote": "伤口深达两公分。如果它的目标是我的手，那现在应该已经切断我两根手指了。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 417,
+   "quote": "紧接着，莱纳的『Sehr·Wind』便遭到了『魔法相杀』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 429,
+   "quote": "由此推测这家伙没有办法同时进行移动和『魔法相杀』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 437,
+   "quote": "哈啊、哈啊！肩膀好痛……差点就挂了……！！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 445,
+   "quote": "你的伤也得赶紧治疗了。——神圣魔法『FullCare』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 459,
+   "quote": "——『Dimension·多重展开』！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 460,
+   "quote": "以填满整层迷宫为目的施放的次元属性的魔力进入上层拓展开来。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 493,
+   "quote": "——基督，最后冲刺了！做好准备！『Ex·Wind』！！",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "试探战：三道剑闪全避→涡波肩伤两公分近动脉（'一旦反应再迟一些整根手臂都会被切断'）→莱纳Sehr·Wind遭魔法相杀→判明'连DistanceMute这种作弊技都不能用。因为根本就摸不到敌人'→撤退回66层（怪物不跨层）；莱纳FullCare治疗；方针转逃亡突破：Dimension把握最短路+风魔法牵制（浓密Dimension亦触发相杀＝拖敌手段追加）+Dimension·多重展开填层索敌→两位数LizardFlyer滚雪球式追击中，莱纳Ex·Wind爆炸推进最后冲刺，冲过天花板洞穴入64层"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8eaae80834cc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

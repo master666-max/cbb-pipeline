@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "四十层",
+  "rel_type": "镇守阶层",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 731,
+   "quote": "这与她弟弟艾德的四十层构造相似，并没有什么亮眼的特点。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "艾德的四十层为草原构造、与罗德五十层相似"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-71d1b7282dfb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

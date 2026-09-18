@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒勒伽西",
+   "使徒西斯",
+   "相川涡波",
+   "缇娅拉",
+   "罗德·缇缇",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "口述",
+  "name": "千年前战争史实口述(诺斯菲)",
+  "tick": 91,
+  "time_verbatim": "同日傍晚（对话延续）"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 285,
+   "quote": "那就是向使徒西斯大人复仇却被反杀的涡波大人在那之后被•交•托•到•了我的手上。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 295,
+   "quote": "但是初战却反被击败并落入了敌人的手中。在那之后使徒西斯为了将我吸收到自己的阵营，便让当时作为南之『御旗』的诺斯菲与我缔结了婚姻关系。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 297,
+   "quote": "然后我开始打造迷宫，并遭到了使徒勒伽西的欺骗，演变成了现在的状况。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 94,
+   "quote": "似乎是因为在千年前的最后遭到了一个叫使徒勒伽西的家伙的妨碍来着",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 91,
+   "text": "据诺斯菲自述+涡波推演：决心为妹之死复仇的涡波追杀南方联盟的使徒西斯→初战反被击败、精神崩溃落入敌手→诺斯菲负责治疗→西斯为吸收其入阵营令南之『御旗』诺斯菲与之缔结婚姻→涡波经某途径取回自我开始逃亡、北逃与罗德联手→诺斯菲统率自己的国家实行侵略→终盘以足以毁灭自我的魔力对抗罗德、被大陆吞噬身亡→涡波与罗德舍北方追杀潜逃的西斯并打倒之→缇娅拉说服自暴自弃的涡波→打造迷宫→遭使徒勒伽西欺骗→在不完全状态下被迷宫召唤（今之失忆）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2998a929a0f1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

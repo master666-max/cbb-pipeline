@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳•赫勒比勒夏因",
+  "rel_type": "姐弟",
+  "subject": "芙兰琉莱"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 616,
+   "quote": "不得不会啊。我毕竟是芙兰姐姐大人的弟弟……",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 619,
+   "quote": "姐姐大人她现在并不在这里！既不用每隔一小时就备茶伺候、也不用为了做点心忙得手忙脚乱",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "'我毕竟是芙兰姐姐大人的弟弟'——因姐姐的颐指气使被迫学会一切家事杂役；姐姐不在场令莱纳狂喜（'这也太爽了'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-344c37b3dcaa",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

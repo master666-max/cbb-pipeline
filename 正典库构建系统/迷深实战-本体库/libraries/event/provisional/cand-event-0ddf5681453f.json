@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "相川阳滝",
+   "罗德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "60层守护者接触计划（章末）",
+  "tick": 90,
+  "time_verbatim": "第四日（抵达60层入口）"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 695,
+   "quote": "我一个人进入六十层，先跟守护者交谈试试。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 699,
+   "quote": "虽说是守护者，但他们原本也是人类。好好谈一谈的话总能互相理解的。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 700,
+   "quote": "要是个像罗德那样对『始祖涡波』态度友好的家伙就好了……",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 703,
+   "quote": "就这样，向着迷宫的六十层，向着『光之理的盗窃者』所在的阶层，我迈出了前进的脚步。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "方针：莱纳守Connection掩护／涡波单独入60层'先跟守护者交谈试试'（谈崩即撤）；涡波'总有一种不祥的预感'仍决意挑战（'守护者原本也是人类。好好谈一谈的话总能互相理解的'）；莱纳'要是个像罗德那样对『始祖涡波』态度友好的家伙就好了'；'在他的推动下，我终于下定决心'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0ddf5681453f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

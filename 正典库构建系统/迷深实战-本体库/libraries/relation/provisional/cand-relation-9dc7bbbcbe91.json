@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "姐弟(非血缘·总角之交)",
+  "subject": "罗德•缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 1332,
+   "quote": "我记得他也是孤儿院出身的。虽说没有血缘关系，但据说罗德和他是姐弟。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1126,
+   "quote": "在孤儿院的登场人物中，就有艾德的名字。看来这两人是总角之交。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 1335,
+   "quote": "他即使在罗德和小子你消失之后，也作为中流砥柱一直支撑着北国。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 202,
+   "quote": "那些孩子、『魔石人类』们也很爱戴他，说他是天生的教育者应该不假。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 89,
+   "text": "据雷纳尔多：艾德亦孤儿院出身、曾任佩艾希亚宰相——'虽说没有血缘关系，但据说罗德和他是姐弟'；英雄谭佐证：孤儿院登场人物中有艾德、'这两人是总角之交'；艾德在罗德与涡波消失后作为中流砥柱支撑北国至最后、坚信王之归还；据莱纳：艾德天生教育者、『魔石人类』们爱戴他"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9dc7bbbcbe91",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

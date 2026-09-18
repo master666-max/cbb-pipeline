@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "chapter": 90,
+  "entities": [
+   "Sylph·Rokh·Bringer",
+   "斯诺",
+   "相川涡波",
+   "雷纳尔多"
+  ],
+  "name": "RokhBringer的制造者之谜",
+  "note": "千年前魔剑RokhBringer做工精湛但雷纳尔多不识其制造者（'不用『神铁』的技术就能够达到这种水平的话，我应该认识的才对啊'）；涡波推测'没准是雷纳尔多死后诞生的剑吧'（'毕竟是在迷宫里捡到的'）；原具凶险的精神污染能力（'当时我身边要是没有斯诺的话，就中了这家伙的精神污染了'，据涡波）——来历悬案已随更名Sylph·Rokh·Bringer转入新篇",
+  "payoff_chapter": null,
+  "setup_chapter": 90,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 255,
+   "quote": "在迷宫里找到的诸多物品中，尤属这把剑的能力最为凶险。当时我身边要是没有斯诺的话，就中了这家伙的精神污染了。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 256,
+   "quote": "这把剑的做工相当不错啊。不过，制造者到底是谁呢？不用『神铁』的技术就能够达到这种水平的话，我应该认识的才对啊……",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 90,
+   "text": "道具来历钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-50a95cc08e3b",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

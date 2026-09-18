@@ -1,0 +1,43 @@
+{
+ "unit": "ch0089",
+ "summary": {
+  "total": 55,
+  "pass": 53,
+  "intercept": 2,
+  "by_code": {
+   "G1-SCHEMA": 0,
+   "G1-EVIDENCE": 2,
+   "G1-REF": 0,
+   "G1-REL-BACKLINK": 0,
+   "G1-TIME_INVERSION": 0,
+   "G1-DEAD-WALK": 0,
+   "G1-FORESHADOW-ORDER": 0,
+   "G1-CHEKHOV-OVERDUE": 0,
+   "G1-CONTRADICTION": 0
+  }
+ },
+ "intercepted": [
+  {
+   "record_id": "cand-relation-6e2daf53aeab",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[0] quote 悬空（坐标块内不可回落）: v1c89 又见面啦，贝丝。那啥，你爷爷现在在家吗？…"
+    },
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[2] quote 悬空（坐标块内不可回落）: v1c89 小子，你对我家孙女做了什么……？…"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-setting-df2be32d9513",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[0] quote 悬空（坐标块内不可回落）: v1c89 根据书中的记载，『次元魔法』似乎是所有人…"
+    }
+   ]
+  }
+ ]
+}

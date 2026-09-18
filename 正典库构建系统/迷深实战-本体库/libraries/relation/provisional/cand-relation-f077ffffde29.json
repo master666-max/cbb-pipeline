@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "致死对决·自爆吞没(千年前终战)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 178,
+   "quote": "好久不见了，罗德。自从被你杀死之后我们就没像这样见过面了呢。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 181,
+   "quote": "那还不是因为如果不使用足以毁灭自我的魔力，就没法胜过你呀。这难道不就等于是被你杀死的么？",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 189,
+   "quote": "虽然我确实是因为你而被大陆吞噬。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "诺斯菲自述『最后自己被支配之王所杀』；罗德反驳系其自行乱搞自爆（见其突然被大地吞没反被吓到）；诺斯菲：不使用足以毁灭自我的魔力就无法胜过罗德=等同于被其杀死；因被大陆吞噬反获与涡波冷静交流之机→现已不恨、无再战之意"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f077ffffde29",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

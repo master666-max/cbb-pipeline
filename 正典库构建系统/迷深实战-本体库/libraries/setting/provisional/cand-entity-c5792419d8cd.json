@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(鉴定)",
+  "name": "注视"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 39,
+   "quote": "『始祖涡波』在对罗德使用『注视』。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 46,
+   "quote": "「我总觉得……她看上去很痛苦。现在也是，她在盼望着有人来拯救她……」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 92,
+   "text": "始祖涡波技能：千年前对凯旋的罗德使用、洞察其痛苦与求救渴望（同伴皆不信其品评、唯阳滝默察其异样）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c5792419d8cd",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

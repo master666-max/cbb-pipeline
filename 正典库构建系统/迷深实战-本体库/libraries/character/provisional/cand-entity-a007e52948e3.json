@@ -1,0 +1,69 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫64层怪物·精灵)",
+  "name": "GreenHighElement"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 504,
+   "quote": "【怪物】GreenHighElement：Rank65",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 522,
+   "quote": "它用跟莉帕相似的瞬间移动紧咬住我们不放。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 529,
+   "quote": "但这道风却被精灵一饮而尽。岂止是造成伤害，两种风就这样直接混合在一起，让怪物变得更巨大了。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 542,
+   "quote": "将莱纳的风像芳醇的食粮一样吸收起来的精灵体型已经膨胀到了原来的十倍。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 587,
+   "quote": "移动方式是将自己的身体分解，与风同化进行移动。因为本身的速度就很快，所以看起来就像瞬间移动一样。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 90,
+   "text": "64层怪物（Rank65）：发淡绿色光的气态精灵（Element系/风特化）；移动方式=身体分解与风同化（本体速度极快，看起来像瞬间移动——'跟莉帕相似的瞬间移动'）；无感知接近→突现眼前；吸收风魔法强化（莱纳Jaeger·Wind被'一饮而尽'，两连后膨胀至原十倍）；体内蓄积未消化的风魔法；射锐利风刃（一瞬将涡波右臂表面炸烂至红黑色）；拥有索敌魔法（感知即瞬移接近，但索敌范围窄于涡波的Dimension且不主动探查）；被涡波以DistanceMute抽出魔石后炸裂消亡"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-a007e52948e3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

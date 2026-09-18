@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅",
+  "rel_type": "前队长(部下)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 709,
+   "quote": "「不，毕竟我之前的队长是西娅、再之前是芙兰姐姐大人啊……」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "莱纳自陈之前的队长是西娅（在芙兰之后）；由此感慨从未被正经队长带过队"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a15c88873d7f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

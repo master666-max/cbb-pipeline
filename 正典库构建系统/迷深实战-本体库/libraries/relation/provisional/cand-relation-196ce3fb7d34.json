@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "锻冶师徒与全面协助",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 204,
+   "quote": "因为我们的强化是跟对罗德的救济有直接关系的，所以雷纳尔多一脸高兴地催促我动身。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 215,
+   "quote": "空下来的时间我打算让雷纳尔多教我锻冶技能。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 284,
+   "quote": "这两天真是承蒙雷纳尔多关照了。金钱和装备自不必说，就连情报收集也获益不浅。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "昨日答应全面协助（因强化'跟对罗德的救济有直接关系'而尽心尽力）；指导涡波锻冶技能（涡波：'空下来的时间我打算让雷纳尔多教我锻冶技能'）；临别拳头相抵鼓劲（涡波感言'金钱和装备自不必说，就连情报收集也获益不浅'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-196ce3fb7d34",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

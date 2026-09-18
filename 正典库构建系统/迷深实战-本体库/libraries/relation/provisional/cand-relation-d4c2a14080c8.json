@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾尔芬里斯",
+  "rel_type": "玩伴(千年鬼抓人·杀过几次)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 91,
+   "line": 554,
+   "quote": "只是在这一千年里，人家感到运动不足的时候就会来找艾尔芬里斯酱玩鬼抓人游戏来着。虽然过程中杀掉过它几次，但是现在已经成为好朋友了哟~。",
+   "vol": 1
+  },
+  {
+   "chapter": 91,
+   "line": 547,
+   "quote": "不不，它能听懂的也就只有人家的话而已哟？",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 91,
+   "text": "千年间运动不足时找艾尔芬里斯玩（空中）鬼抓人游戏；过程中杀掉过它几次、如今自称好朋友（见面低头打招呼）；能听懂其话者唯罗德——66F借道即成"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d4c2a14080c8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

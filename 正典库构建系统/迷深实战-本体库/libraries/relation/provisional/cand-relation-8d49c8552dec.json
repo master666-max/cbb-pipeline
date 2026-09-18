@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "RokhBringer",
+  "rel_type": "修复强化更名",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 202,
+   "quote": "我记得莱纳爱用的魔剑『RokhBringer』现在处于断折的状态。虽然多亏了诺文和艾利巴茨的调整让外表还看得过去，但我打算借这个机会把那把剑也修好。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 259,
+   "quote": "总之，小子你拿来的『HighSkyBeryl』就用在对这把剑的修复和强化上了哦。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 277,
+   "quote": "连名字都变成了『Sylph·Rokh·Bringer』。就『表示』的内容来说，真可谓脱胎换骨。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 90,
+   "text": "断折的『RokhBringer』（此前外表靠诺文和艾利巴茨的调整维持；'既然其他的精神污染道具都得到了修复，那RokhBringer应该也没有问题'——据涡波）经雷纳尔多以HighSkyBeryl一日修复强化，更名『Sylph·Rokh·Bringer』（'连名字都变成了……真可谓脱胎换骨'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8d49c8552dec",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

@@ -1,0 +1,552 @@
+{
+ "unit": "ch0091",
+ "chapter": 91,
+ "ingestion_index": 73,
+ "title": "第九卷第三章-终究触及不到的手",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 67,
+  "pass": 66,
+  "intercept": 1,
+  "admitted": 66,
+  "quarantined": 1
+ },
+ "tracks": {
+  "on-create": 44,
+  "consistent-duplicate": 11,
+  "contradiction": 11
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-23ef103d5db4",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d427be538e6f",
+   "type": "entity",
+   "name": "罗德·缇缇",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-9f2e523cc01a-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-3e9c299ec55b",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-2ff478ce141c",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b58b79da8e28",
+   "type": "entity",
+   "name": "雷纳尔多",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-2b9ff38611e4"
+   }
+  },
+  {
+   "record_id": "cand-entity-097d6427a142",
+   "type": "entity",
+   "name": "贝斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-c550ec4d23af-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b74e9becff7c",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-23c85a0c2fbc"
+   }
+  },
+  {
+   "record_id": "cand-entity-b620d79f714a",
+   "type": "entity",
+   "name": "艾德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-869b06c98a42"
+   }
+  },
+  {
+   "record_id": "cand-entity-79afb4375874",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-b08eda4687e8",
+   "type": "entity",
+   "name": "缇娅拉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-117c7e85605a"
+   }
+  },
+  {
+   "record_id": "cand-entity-9b8cf87079c7",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-3f096be0cc1c",
+   "type": "entity",
+   "name": "缇达",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f4334bbb29cf"
+   }
+  },
+  {
+   "record_id": "cand-entity-270fc1c3cb0d",
+   "type": "entity",
+   "name": "阿尔缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-4ee35a5d630c"
+   }
+  },
+  {
+   "record_id": "cand-entity-a5285d975375",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5e802ebd82b0"
+   }
+  },
+  {
+   "record_id": "cand-entity-58c1c6971715",
+   "type": "entity",
+   "name": "使徒勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6c930aff2557-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-c4ecc8760e89",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-7c7503f408ac",
+   "type": "entity",
+   "name": "诺文",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-0da1517d1b38"
+   }
+  },
+  {
+   "record_id": "cand-entity-e43ffe79d3c4",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-703a7b9eb924",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-5cc5d4d30b40",
+   "type": "entity",
+   "name": "相川阳滝",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-19f341955628-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-9cd1b93b7b2b",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2952cdedfd60",
+   "type": "entity",
+   "name": "新月琉璃制直剑",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-07adb633195f"
+   }
+  },
+  {
+   "record_id": "cand-entity-59d8c14c2796",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-645cec57b0e5"
+   }
+  },
+  {
+   "record_id": "cand-entity-67aa18992bf0",
+   "type": "entity",
+   "name": "赫勒比勒夏因之神圣双剑『片翼』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6e6cab6b49b0",
+   "type": "entity",
+   "name": "Sylph•Rokh•Bringer",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ee641f3d4259",
+   "type": "entity",
+   "name": "次元之冬",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5099edbeb4ad"
+   }
+  },
+  {
+   "record_id": "cand-entity-f669594631ea",
+   "type": "entity",
+   "name": "Light•幻影（Phantom）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d114e435a5fb",
+   "type": "entity",
+   "name": "Dimension•曲战演算（Difference）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6f107b396327",
+   "type": "entity",
+   "name": "Foam•捩菖蒲（Torsion）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-bfc84688fd32",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f077ffffde29",
+   "type": "relation",
+   "name": "罗德·缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9a66b97ddf16",
+   "type": "relation",
+   "name": "使徒西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ff54ae87f0a6",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3589af6639af",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8f824c6eb426",
+   "type": "relation",
+   "name": "罗德·缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d3041d990bf0",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3209e6361549",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-06510b16aeb9",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-71b54fde001e",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-41ace903522c",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d12cb42a3381",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0a6c00012207",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-df62b9f250ff",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b3e6dfb1628e",
+   "type": "relation",
+   "name": "罗德·缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d4c2a14080c8",
+   "type": "relation",
+   "name": "罗德·缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-cce77fb7294e",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2fd65287e277",
+   "type": "event",
+   "name": "六十层守护者初遇·抚摸未消失",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-51afca5c65a6",
+   "type": "event",
+   "name": "双守护者对峙与和解(佩艾希亚中庭)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-10c94290bc4e",
+   "type": "event",
+   "name": "『妻子』事实揭露",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2998a929a0f1",
+   "type": "event",
+   "name": "千年前战争史实口述(诺斯菲)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-37b0ad03d1dd",
+   "type": "event",
+   "name": "第三次迷宫探索·66→63层突破",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-eec0805c2a20",
+   "type": "event",
+   "name": "罗德『手滑』乱战·新魔法初阵",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c1d2daecdac2",
+   "type": "event",
+   "name": "雷纳尔多工房·三剑装备与父之言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-23bbe99b09b1",
+   "type": "foreshadow",
+   "name": "双守护者与千年前形象的违和",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-667535b9a7c6",
+   "type": "foreshadow",
+   "name": "佩艾希亚崩坏倒计时与罗德陪葬危机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-02de74bdf503",
+   "type": "foreshadow",
+   "name": "诺斯菲的『留恋』之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c3786055b9d4",
+   "type": "foreshadow",
+   "name": "『千年前的梦』开启(王的追忆)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-09aecc3aba5a",
+   "type": "setting",
+   "name": "迷宫60~66层环境与怪物配置(ch91)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c284aa5803c1",
+   "type": "setting",
+   "name": "千年前婚姻真相(诺斯菲×始祖涡波)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9183a49d890b",
+   "type": "setting",
+   "name": "诺斯菲的『诅咒』(先天咒术式)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-869bf1882195",
+   "type": "setting",
+   "name": "光魔法原理(『交流』属性)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4bcf2d571cb8",
+   "type": "setting",
+   "name": "佩艾希亚的寿命(崩坏倒计时)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b4b94ffce6d1",
+   "type": "setting",
+   "name": "魔王与勇者(双救世主传说)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4dce7d623f30",
+   "type": "setting",
+   "name": "状态栏更新(ch91)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-bac586bd1f77",
+   "type": "setting",
+   "name": "升级追忆机制(魔石取回力量)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-28b1e9153d48",
+   "type": "setting",
+   "name": "迷宫攻略计划革命(57层Connection+怪物护卫)",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-event-28bdf86f49d4",
+   "type": "event",
+   "name": "佩艾希亚寿命告知·守护者口角与罗德闭门",
+   "item_id": "q-4582fb3b978d",
+   "reason": "gate1:G1-EVIDENCE"
+  }
+ ],
+ "anchor": {
+  "tick": 73,
+  "pseudo_date": "2000-03-14",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

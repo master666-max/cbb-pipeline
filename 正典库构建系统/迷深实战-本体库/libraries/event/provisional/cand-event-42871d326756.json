@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德•缇缇",
+   "艾尔芬里斯",
+   "莱纳•赫勒比勒夏因"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "六十六层初战：艾尔芬里斯攻防败退",
+  "tick": 89,
+  "time_verbatim": "抵达六十六层当日"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 314,
+   "quote": "我拿着『新月琉璃』，莱纳则握着『阿雷亚斯家的宝剑诺文』和『RokhBringer』，都是随时准备迎击的状态。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 342,
+   "quote": "——风魔法『WindWing』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 347,
+   "quote": "虽然看到位阶就知道会很难对付、不过真没想到能到这种地步……完全没有胜算……",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 395,
+   "quote": "在先前的战斗中，罗德完全没有出手。她从始至终都只待在适当的距离处旁观。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 89,
+   "text": "登螺旋阶梯途中遭袭：龙之风封位+巨体冲撞粉碎阶梯+腮下风弹（陨石群规模）降注；莱纳以风魔法『WindWing』携涡波于瓦砾间反复横跳滑翔脱出（罗德展翼自飞）；涡波全力斩击被龙鳞弹开（手臂震麻）、与莱纳交换『新月琉璃』/『阿雷亚斯家的宝剑诺文』再试仍败（'就像电影的片段重播'）；罗德全程安全圈旁观未出手；涡波自认'完全没有胜算'的完败；龙仅视接近空中者为敌、对落地者无兴趣"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-42871d326756",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

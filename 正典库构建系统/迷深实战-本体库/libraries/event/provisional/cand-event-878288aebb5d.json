@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "HighSkyBeryl",
+   "Sylph·Rokh·Bringer",
+   "相川涡波",
+   "莱纳",
+   "雷纳尔多"
+  ],
+  "instant": null,
+  "kind": "锻造成果",
+  "name": "Sylph·Rokh·Bringer锻造完成",
+  "tick": 90,
+  "time_verbatim": "第三日傍晚"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 268,
+   "quote": "我利用MP自然回复的时间，研磨在昨天重获新生的『赫勒比勒夏因家的神圣双剑』『CallOuter』『AllConfess』。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 269,
+   "quote": "——呼，我这边完成了哦，小子。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 279,
+   "quote": "只用一天就打造出了与我的『新月琉璃』匹敌的宝剑，让我对雷纳尔多高超的技艺叹服不已。",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 285,
+   "quote": "我将在工房得到的『Sylph·Rokh·Bringer』等一系列装备收进『持有物品』当中，快步赶回魔王城。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 90,
+   "text": "分工：雷纳尔多单独负责魔石修复（'绝对不能失败'）／涡波研磨昨日重获新生的『赫勒比勒夏因家的神圣双剑』『CallOuter』『AllConfess』；傍晚完成——'既具有对风属性的抗性，同时还可以减轻使用风魔法时的负担'（对艾尔芬里斯战的风魔法使再合适不过）；一天打造出与『新月琉璃』匹敌的宝剑；成品收入『持有物品』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-878288aebb5d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 1
+}

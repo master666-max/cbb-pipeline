@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "北之帝国",
+   "始祖涡波",
+   "缇娅拉",
+   "罗德·缇缇",
+   "阳滝"
+  ],
+  "instant": null,
+  "kind": "遭遇(梦中记忆)",
+  "name": "千年前北方凯旋·与罗德初遇即错过",
+  "tick": 92,
+  "time_verbatim": "千年前·罗德凯旋日"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 18,
+   "quote": "那是一位乘在狰狞凶猛的巨兽背上，身后追随着成千上万的士兵，沐浴在喝彩与赞赏的风暴中高歌猛进的年轻女王。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 22,
+   "quote": "虽然这些旅人不知为何用魔法进行了变装，但我还是认得出他们都是谁。金发的女性是使徒西斯。黑发少女是阳滝。最年少的少女为缇娅拉。而戴着假面的少年则是『始祖涡波』。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 64,
+   "quote": "最初的相遇，我与罗德彼此错过了。",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 67,
+   "quote": "是在阳滝化作怪物，『始祖涡波』与使徒西斯和缇娅拉决裂之后的事。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 92,
+   "text": "翠发年轻女王（罗德）乘巨兽率军凯旋（城市与佩艾希亚相似、民众皆兽人）；始祖涡波四人（西斯/阳滝/缇娅拉）猫耳猫尾变装混入观礼；始祖以『注视』评其痛苦、无人相信；极力避免接触、话被当做没说过——初遇彼此错过；互助在阳滝怪物化、与西斯及缇娅拉决裂之后"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2f571dde2183",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}
