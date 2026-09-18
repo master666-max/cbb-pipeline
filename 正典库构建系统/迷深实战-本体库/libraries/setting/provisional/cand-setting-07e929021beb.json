@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "chapter": 130,
+  "fact": "船位=联合国西南方的海上（联合国之外），正向瓦尔德本土航行中——与船旅死亡预告/瓦尔德本土追讨线同轨",
+  "name": "瓦尔德本土航路（ch130）",
+  "tick": 130
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 53,
+   "quote": "「这里是联合国西南方的海上。现在在朝瓦尔德本土航行中」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 130,
+   "text": "航程定位（涡波对海莉说明）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-07e929021beb",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

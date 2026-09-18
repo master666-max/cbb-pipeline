@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 126,
+  "fact": "拉丝缇娅拉用以确认他人状态的能力：借此确认涡波技能『？？？』发动（『混乱的数值上升了』）",
+  "name": "『拟神之眼』（ch126）",
+  "tick": 126
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 29,
+   "quote": "拉丝缇娅拉用『拟神之眼』确认了我的状态。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 28,
+   "quote": "「诶、『？？？』发动了⋯⋯？啊，是真的啊。混乱的数值上升了」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 126,
+   "text": "状态确认之眼（本章用例）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-1fe8c698581c",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

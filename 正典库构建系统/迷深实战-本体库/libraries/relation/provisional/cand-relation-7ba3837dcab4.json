@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉・维斯普洛佩",
+  "rel_type": "警戒(杀意待命→旁观客人对应)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 94,
+   "quote": "「涡波先生，她就是之前提到的⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 95,
+   "quote": "「嗯。但是，对方没有要战斗的意思，我们就尽量旁观吧。把她当成客人就好」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 97,
+   "quote": "说着玛利亚收回了洋溢着杀意的魔力。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 130,
+   "text": "得知其为'之前提到的'迷宫暴走者后杀意魔力待命；经涡波'对方没有要战斗的意思，把她当成客人就好'指示收回杀意"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7ba3837dcab4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "探索(撤退)",
+  "name": "35层阶梯浸水受阻与折返",
+  "tick": 126,
+  "time_verbatim": "BOSS战后同日探索途中"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 101,
+   "quote": "紧接着我们就找到了前往35层的阶梯。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 109,
+   "quote": "在浸于水中的阶梯之前，我们开始了作战会议。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 121,
+   "quote": "一边感慨今天的迷宫探索真是乱七八糟，我一边背过身，在回廊的角落造出『连接』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 126,
+   "text": "回避战斗推进→发现通往35层的阶梯；阶梯浸水（拉丝缇娅拉见浅水早有预感）；作战会议确认全员游泳能力后决意折返、练习游泳后再挑战；涡波在回廊角落构筑『连接』准备归船——其后遭遇雪白少女"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3f0b952599bf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

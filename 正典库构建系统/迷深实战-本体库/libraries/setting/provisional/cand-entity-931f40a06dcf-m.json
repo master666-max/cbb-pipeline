@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『耶梦加得之霜』"
+ },
+ "evidence": [
+  {
+   "chapter": 119,
+   "line": 194,
+   "quote": "『耶梦加得之霜』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 119,
+   "line": 198,
+   "quote": "她释放出的巨型冰槌从正面将我精制的冰蛇碾作齑粉。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 125,
+   "quote": "「魔法『耶梦加得之霜』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 129,
+   "quote": "冰蛇在暴风中突进，尽管鳞片被剥离，势头却丝毫不减。这是因为『耶梦加得之霜』中凝聚了相当的质量和魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 153,
+   "quote": "「连我一同吞噬！魔法『耶梦加得之霜』！」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 119,
+   "text": "涡波在魔法使对决中改变战法后释放的大招，凝成冰蛇；被拉丝缇娅拉『冰BatteringRam』从正面碾作齑粉"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-931f40a06dcf",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-931f40a06dcf-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-931f40a06dcf",
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0119.txt",
+  "sha": "09ee3441ba929c4c5e429fe2d7b08c0ec06c3c4a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 2
+}

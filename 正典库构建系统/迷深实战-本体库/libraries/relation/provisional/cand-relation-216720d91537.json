@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "复合鲜血魔法『假想诺文・阿雷亚斯』",
+  "rel_type": "实战初使用(复合鲜血魔法)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 87,
+   "quote": "「──复合鲜血魔法『假想诺文・阿雷亚斯』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 88,
+   "quote": "拉丝缇娅拉使出的魔法是昨天特训的成果。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 92,
+   "quote": "拉丝缇娅拉的剑率先斩裂了伽鲁夫纳多杰里的躯体。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 125,
+   "text": "34层Boss战首击：昨天特训成果的复合鲜血魔法率先斩裂伽鲁夫纳多杰里躯体（伤口深、未能一刀两断）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-216720d91537",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

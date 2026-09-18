@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "海莉·维斯普洛佩",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "全员参战夹击与魔力暴走化解",
+  "tick": 127,
+  "time_verbatim": "遭遇战后盘（涡波求援后）"
+ },
+ "evidence": [
+  {
+   "chapter": 127,
+   "line": 107,
+   "quote": "我立刻使用『过密次元的真冬』去妨害。但是这股魔力并不是用来构筑魔法的，而是有意让风属性魔力发生暴走。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 110,
+   "quote": "我的斩击被冲击力化解了。同伴们好不容易创造的机会，就这么白费了。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 113,
+   "quote": "「──呵呵，如果说会被你的剑击败的话，那到时候就像这样炸开便是」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 127,
+   "text": "拉丝缇娅拉率先冲锋（莉帕/兽化塞拉尾随）→『深渊次元的真夜』被生命代价之风化解→拉丝缇娅拉『GrowthExtended』+鲜血魔法+『CannonSehr』射穿暴风、被海莉同技迎击震退→涡波斩击被海莉'有意让风属性魔力暴走'的自爆化解（同伴创造的机会白费/海莉亦自创+耗魔）→涡波『耶梦加得之霜』冰蛇对『SehrFang』风锥被撞碎→'白白削减生命的做法绝不允许'怒涛攻势与海莉'用完即丢的命'宣言对撞"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c320adef879e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0127.txt",
+  "sha": "44284332395d728eabc27f669d1074410a02956e",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "安慰庇护",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 129,
+   "line": 121,
+   "quote": "拉丝缇娅拉将缇亚抱在胸前，抚摸着缇亚的头安慰她。",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 120,
+   "quote": "「好了好了～，乖哦乖哦。缇亚真可爱呀，居然欺负这么可爱的缇亚，涡波什么的就应该被烧死才对的说」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 129,
+   "text": "抱在胸前抚头安慰；再以全员同心的证言收束其不安；遭其升级腕力捶胸肺部连受重击"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cdd09041c692",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0129.txt",
+  "sha": "2dbabb1026e0822425330c61e98dda59fdd980cf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

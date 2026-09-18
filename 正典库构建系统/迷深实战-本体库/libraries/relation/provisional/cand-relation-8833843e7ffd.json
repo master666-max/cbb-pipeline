@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "大小姐敬称(海因记忆延续)",
+  "subject": "海莉・维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 99,
+   "quote": "「大小姐⋯⋯⋯抱歉，我没控制好情绪」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 100,
+   "quote": "少女用十分爱怜的口气同现身的拉丝缇娅拉说道。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 113,
+   "quote": "跟与我交谈时的态度简直天壤之别。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 108,
+   "quote": "「也就是说，现在的你──海莉酱你虽然有海因的记忆，但是却不认为自己是海因。是这么回事吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 130,
+   "text": "以'大小姐'称呼拉丝缇娅拉、十分爱恋的口气；拉丝缇娅拉据此推断其拥有海因记忆；其与拉丝缇娅拉对谈态度和对涡波天壤之别；拉丝缇娅拉以'海莉酱'称之"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8833843e7ffd",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

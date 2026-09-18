@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 130,
+  "fact": "海莉使用的收纳类魔法：手伸进空无一物的空中消失、翻找后自某个空间取出物品（门戒）；与『维度』并称其常用魔法",
+  "name": "『所有物』",
+  "tick": 130
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 188,
+   "quote": "她的手伸进空无一物的空中，接着消失了。然后翻找了一通，便从某个空间中取出了一枚戒指。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 191,
+   "quote": "她从『所有物』中取出戒指，灌注魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 203,
+   "quote": "在她使用『维度』和『所有物』的时候我就料到了。能够探索到三十多层的话，海莉应该也会使用『连接』的。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 130,
+   "text": "魔法机制（本章首见）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-a3ee84435c47",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

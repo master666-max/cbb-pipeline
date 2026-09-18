@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉·雷迪安特",
+  "rel_type": "骑乘作战(人马一体)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 124,
+   "line": 81,
+   "quote": "莉帕骑到塞拉小姐的背上，散发出魔法之暗。黑暗像黑衣一样包裹住塞拉小姐的巨大身躯。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 99,
+   "quote": "莉帕用与塞拉小姐人马一体的娴熟动作，将敌人诱导到方便我们释放魔法的位置。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 124,
+   "text": "莉帕骑上兽化塞拉背部协同作战：黑暗疾走缠斗、'人马一体的娴熟动作'诱导敌人至魔法释放位、响指散黑暗+踢击破势"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8ae3e40861f6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0124.txt",
+  "sha": "eab49fb9784ae15059f71928682292aa3f98361a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

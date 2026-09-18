@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "战斗(战后处理)",
+  "name": "34层水母BOSS战终结与接吻事故余波",
+  "tick": 126,
+  "time_verbatim": "BOSS战刚结束后（34层BOSS房水位回落时）"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 95,
+   "quote": "就这样，34层的BOSS战落下了帷幕。──以最糟糕的形式。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 84,
+   "quote": "那之后，在拉丝缇娅拉的强硬手段调解下勉强冷静下来的塞拉给我打了「没有下次了啊！」的预防针后，探索就再度开始了。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 13,
+   "quote": "就像是胜利宣言一样，我谴责起技能『？？？』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 126,
+   "text": "施术者（BOSS）消失→水位回落；涡波救起拉丝缇娅拉（人工呼吸接吻）；胜因三环节=拉丝缇娅拉信任+莉帕受信+塞拉接受『连接』；塞拉怒斥涡波→拉丝缇娅拉强抑感情仲裁+轻吻脸颊平息+『没有下次了啊！』预防针→探索再开；涡波与莉帕反省对BOSS掉以轻心（欲得高纯度魔石应去浅层找易对付的BOSS）；34层BOSS战以『最糟糕的形式』落幕"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d13e40becd7a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

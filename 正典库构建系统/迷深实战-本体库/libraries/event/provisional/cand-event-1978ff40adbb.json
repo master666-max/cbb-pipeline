@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "技能『？？？』圣诞祭后再发动（ch126）",
+  "tick": 126,
+  "time_verbatim": "34层BOSS战中至战后"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 27,
+   "quote": "「不是的，我刚才没有在生你的气。只是技能『？？？』发动了，让我有点不爽而已⋯⋯⋯拉丝缇娅拉在刚才那样的情况下仍能实现共鸣实际上是帮了大忙的」",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 92,
+   "quote": "技能『？？？』的发动是自圣诞祭之后未有的。再加上技能『并列思考』的并用，我根本无法停止无意识的思考。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 61,
+   "quote": "「──这次也、就当没发生过吧。那只是个人工呼吸而已。是为了解决战斗必须的。除此之外没有更多的意义了。好吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 126,
+   "text": "因疏忽而发动（涡波以怒吼斥责其『只要自己活着就很划算』提案并践言不放任其肆意妄为）；拉丝缇娅拉以『拟神之眼』确认混乱数值上升；发动后涡波理性化、失去与拉丝缇娅拉感情的共鸣；拉丝缇娅拉强抑感情提出『就当没发生过』口径"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1978ff40adbb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

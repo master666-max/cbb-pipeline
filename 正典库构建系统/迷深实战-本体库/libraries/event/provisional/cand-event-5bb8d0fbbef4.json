@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "海莉・维斯普洛佩",
+   "相川涡波",
+   "西娅・勒伽西"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "门戒离船与西娅·勒伽西登场",
+  "tick": 130,
+  "time_verbatim": "同日·对谈结束后（章末）"
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 202,
+   "quote": "在我的目送下，海莉使用仅有的魔力捏碎了戒指。接着，一连串的魔法构筑便造出了魔法门。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 207,
+   "quote": "「──姆，姆姆？好奇怪呀⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 210,
+   "quote": "但是，在我来到他她旁之前，门伴随着挺大的声音打开了。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 213,
+   "quote": "「终，终于连通上了！太好了──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 223,
+   "quote": "理解到这点的同时，我的胸口像被揪住一样疼痛。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 130,
+   "text": "海莉自『所有物』取出魔石『门』之戒指、以仅余魔力捏碎造翡翠色『连接』门辞别（涡波目送）；门一度未开（涡波疑对面门机能失常）后大开；西娅·勒伽西现身（'终于连通上了'）；海莉介绍其=队伍领队/帕林库洛侄女；涡波理解同时胸口如被揪住般疼痛——其名/其'血'牵动心脏"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5bb8d0fbbef4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

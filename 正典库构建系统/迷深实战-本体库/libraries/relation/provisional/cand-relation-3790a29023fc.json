@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉・维斯普洛佩",
+  "rel_type": "遭遇战·误认海因",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 174,
+   "quote": "「──海、海因？」",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 180,
+   "quote": "「你了解得真清楚呢，少年⋯⋯！但是，你猜错了！──『维度』！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 126,
+   "text": "涡波对少女抱双重既视感（确信一种+暧昧一种），以『阿雷亚斯家的宝剑诺文』接其双剑并试唤『海因？』——少女微笑否认（『你猜错了』）后施放『维度』；暧昧一方可能性消失"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3790a29023fc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

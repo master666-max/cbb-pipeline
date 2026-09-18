@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "连接受信·魔力供给",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 10,
+   "quote": "如果拉丝缇娅拉没有相信我的话，如果莉帕没有听到我心中的呼喊的话，如果塞拉对『连接』有所抗拒的话，一旦这三个环节中的任何一个出错，就不会这个结果了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 77,
+   "quote": "于是，莉帕向在一旁静观事情发展的我搭话，她的语气中掺杂着些不甘，看来是利用『连接』明白了我身上发生了什么吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 79,
+   "quote": "「没有的事，莉帕也做得很不错哦。都是多亏了莉帕，我才能构筑出那个冻结魔法啊」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 126,
+   "text": "34层BOSS战胜负三环节之一：莉帕听到涡波心中的呼喊（『连接』传心）；其积攒MP支撑涡波构筑冻结魔法；战后经『连接』明白涡波身上发生之事（语气掺不甘）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e3c34967beda",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

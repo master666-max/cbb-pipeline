@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "泳衣（涡波手制八件）",
+  "rel_type": "制作者(赠与)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 129,
+   "line": 4,
+   "quote": "在太阳西沉之前，总算是成功制成了八件泳衣。",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 9,
+   "quote": "接着最后将自信作的这些泳衣也都收进去。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 129,
+   "text": "太阳西沉前数小时制成八件并收入『所有物』；携至甲板铺展供同伴取用"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-653fb326b8ec",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0129.txt",
+  "sha": "2dbabb1026e0822425330c61e98dda59fdd980cf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

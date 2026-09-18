@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 130,
+  "fact": "35层完全浸在水里（不会游泳无法抵达36层）；迷宫路途100层之多；涡波目标=抵达40层前全员学会游泳；另据海莉自称数日跨越30层",
+  "name": "迷宫35层浸水层与游泳必要性",
+  "tick": 130
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 36,
+   "quote": "「大家在进行游泳的练习哦。毕竟35层完全浸在水里嘛」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 45,
+   "quote": "「确实不会游泳的话是无法抵达36层的呢。再考虑100层之多的路途，确实要趁现在精通游泳才行啊。不错的判断」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 46,
+   "quote": "「⋯⋯是啊。可能的话，希望能在抵达40层之前让所有人都学会游泳。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 130,
+   "text": "迷宫层结构新情报"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-4d55d690d1bf",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

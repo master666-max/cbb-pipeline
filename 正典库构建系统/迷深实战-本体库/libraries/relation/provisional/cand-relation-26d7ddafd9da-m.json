@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "称呼保证(缇亚就是缇亚)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1267,
+   "quote": "「真的吗？就算名为缇亚的少年是伪物，即使那样，涡波也会称呼我为缇亚吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1270,
+   "quote": "「缇亚就是缇亚哦。在我眼中，缇亚就是货真价实的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 105,
+   "quote": "「我有『维度』在啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 132,
+   "quote": "「要我说几次都行，缇亚。你毫无疑问是一个可爱的女孩子」",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 157,
+   "quote": "「缇亚就是缇亚哦。在我眼中，缇亚就是货真价实的」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "缇亚不安确认'就算名为缇亚的少年是伪物，即使那样，涡波也会称呼我为缇亚吗'→涡波'缇亚就是缇亚哦。在我眼中，缇亚就是货真价实的'；并言'如果说你有不得不扮男装的理由的话，就告诉我吧，我会尽我所能帮你的'（'我已经决定不再对同伴有所隐瞒了'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-26d7ddafd9da",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-26d7ddafd9da-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-26d7ddafd9da",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

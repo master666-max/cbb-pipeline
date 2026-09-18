@@ -1,0 +1,100 @@
+{
+ "canonical": {
+  "entities": [
+   "伽鲁夫纳多杰里",
+   "共鸣魔法『冰・Aegis（守护冰）』",
+   "复合鲜血魔法『假想诺文・阿雷亚斯』",
+   "拉丝缇娅拉",
+   "次元之冬",
+   "相川涡波",
+   "莉帕",
+   "魔法『水晶剑』"
+  ],
+  "instant": null,
+  "kind": "战斗(奇袭)",
+  "name": "共鸣奇袭与首击（冰Aegis冻结眷属→假想诺文・阿雷亚斯→水晶剑）",
+  "tick": 125,
+  "time_verbatim": "同日·34层Boss区域（144话）"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 61,
+   "quote": "保持着我和拉丝缇娅拉的魔法能够生效而敌人却无法察觉的距离，我们开始了咏唱。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 68,
+   "quote": "「共鸣魔法『冰・Aegis』」",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 70,
+   "quote": "原本『次元之冬・终霜』仅具有打乱敌人平衡的冰冻效果，但是在拉丝缇娅拉的帮助下升华了。共鸣魔法完成的刹那间，水中的怪物们便迎来了冰之洗礼。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 77,
+   "quote": "在打造出鹅卵石小路一样的冰道之后，进攻的准备就告成了。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 87,
+   "quote": "「──复合鲜血魔法『假想诺文・阿雷亚斯』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 94,
+   "quote": "数不尽的触手朝拉丝缇娅拉挥去，我的水晶剑将这些触手一一切断。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 95,
+   "quote": "迟来一步的莉帕也跟着加入战场，绕到敌人身后挥下镰刀。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 102,
+   "quote": "就这样，在水晶剑绕过触手数度刺入敌人体内的过程中，发现了疑似核心的发光石头。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 125,
+   "text": "远距离『冰・Aegis』占先机：『次元之冬・终霜』×『冻结』共鸣，依姿态+原世界知识推定游动必要部位局部冻结无力化眷属鱼群（对Boss本体失败）；冰封浅水造鹅卵石小路式冰道后四人突击；首击=拉丝缇娅拉复合鲜血魔法斩裂躯体、涡波水晶剑切断反击触手、莉帕绕后挥镰斩断聚拢防御的触手；水晶剑数度刺入体内发现疑似核心的发光石头"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-4d0ec9e979d9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

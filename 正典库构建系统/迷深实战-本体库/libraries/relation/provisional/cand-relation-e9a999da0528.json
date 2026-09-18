@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉·雷迪安特",
+  "rel_type": "价值观同调(诚实责任观)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 62,
+   "quote": "「那可不是能当做没发生过的事啊！大小姐！那种不诚实的行径，我不能容忍！」",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 64,
+   "quote": "果然，塞拉的思考方式跟我一样。我们俩的价值观很相似。正因如此，我才对无法说出跟她一样的话的现在的自己感到悲伤。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 126,
+   "text": "塞拉主张接吻事故不可当没发生过（『不诚实的行径不能容忍』）——涡波认同：『塞拉的思考方式跟我一样。我们俩的价值观很相似』，并因无法说出同样的话而悲伤"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e9a999da0528",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

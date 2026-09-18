@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entity_type": "技能",
+  "name": "技能『并列思考』"
+ },
+ "evidence": [
+  {
+   "chapter": 115,
+   "line": 81,
+   "quote": "使用技能《并列思考》来预测一下好了。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 85,
+   "quote": "将经验与知识结合起来思考的结果——经由至今为止的战斗磨炼而出的集大成者、技能《并列思考》，告诉我说[这样下去的话你小子就死定了]。",
+   "vol": 1
+  },
+  {
+   "chapter": 115,
+   "line": 160,
+   "quote": "使用技能《并列思考》开始分析起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 152,
+   "quote": "『并列思考』『感应』『次元魔术』所有的技能齐上阵，应对眼前的危机。虽然因为在水中让我的动作变得有些迟缓，但还是能应付的。我有将敌人尽数斩杀的自信。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 158,
+   "quote": "刹那间『并列思考』开始全速掉头。我毫不犹豫地遵照思考出的答案采取了行动。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 165,
+   "quote": "这就是『并列思考』得出的答案。合理而且最妥当的策略。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 115,
+   "text": "涡波称其为'经由至今为止的战斗磨炼而出的集大成者'；本章用于现状预测（'这样下去的话你小子就死定了'）与一夫多妻可行性分析（'使用技能《并列思考》开始分析起来'）——近名检索库内无既有实体，新立（判例4）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-c1f498c7651c",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-c1f498c7651c-m",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-c1f498c7651c",
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0115.txt",
+  "sha": "0f62edd60c7d7ea2c4c78ce6f12ae241b717ee7d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 2
+}

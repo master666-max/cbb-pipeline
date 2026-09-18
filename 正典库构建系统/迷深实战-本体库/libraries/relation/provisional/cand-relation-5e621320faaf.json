@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "主从忠诚(称大小姐)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 96,
+   "quote": "「裸、是裸体的吗！大小姐！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 98,
+   "quote": "要我说我是为了什么样的怨念而彷徨于世的话！绝对是为了大小姐没有错的啊！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 128,
+   "text": "称拉丝缇娅拉为'大小姐'；'彷徨于世的怨念绝对是为了大小姐'；船上肌肤露出率上升时对其兴奋呼喊"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5e621320faaf",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

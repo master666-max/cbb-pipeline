@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 126,
+  "fact": "34层BOSS房水位曾漫及天花板（施术者=水母BOSS消失后回落复原）；通往35层的阶梯浸于水中无法通行（涡波称自己一人能过）；队伍决意折返、练习游泳后再挑战",
+  "name": "迷宫34-35层水域地形（ch126）",
+  "tick": 126
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 3,
+   "quote": "因为施术者的消失，本来漫及天花板的水位开始下降了。我立即浮上水面，并帮助怀里的拉丝缇娅拉调整呼吸。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 100,
+   "quote": "与水母BOSS的战斗结束后，我们朝迷宫的深处继续前进。基本上采取回避战斗的模式前进，所以探索进展很快。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 107,
+   "quote": "将手伸向阶梯，戳出扑哧扑哧的声音。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 120,
+   "quote": "「先回去吧。等练习过游泳之后再来挑战」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 126,
+   "text": "迷宫地形更新：35层入口水没"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-46e6eda3d655",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

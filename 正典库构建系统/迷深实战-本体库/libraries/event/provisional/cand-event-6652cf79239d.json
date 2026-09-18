@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "技能『？？？』发动（游泳日当日回顾）",
+  "tick": 131,
+  "time_verbatim": "当日夜就寝前回顾"
+ },
+ "evidence": [
+  {
+   "chapter": 131,
+   "line": 127,
+   "quote": "也一点点地失去了之前的从容。",
+   "vol": 1
+  },
+  {
+   "chapter": 131,
+   "line": 143,
+   "quote": "一时疏忽缩短了自己与拉丝缇娅拉的距离，结果却一口气拉远了太多。居然发动了技能『？？？』实在是最大的失误。",
+   "vol": 1
+  },
+  {
+   "chapter": 131,
+   "line": 144,
+   "quote": "祸不单行地加上了海莉的登场。她的存在无时无刻不骚动着我的内心。海莉的出身、性格、思想这些所有的一切，都给我施加着压力。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 131,
+   "text": "'一时疏忽缩短了自己与拉丝缇娅拉的距离，结果却一口气拉远了太多。居然发动了技能『？？？』实在是最大的失误'——发动经过未在本章展开（回顾性提及）；同日'祸不单行地加上了海莉的登场'；涡波自评'也一点点地失去了之前的从容'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6652cf79239d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0131.txt",
+  "sha": "717bfbc8cad848dc318a0ab28b227bf55662904d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

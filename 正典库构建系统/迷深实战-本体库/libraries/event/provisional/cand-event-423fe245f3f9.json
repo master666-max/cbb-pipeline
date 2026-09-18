@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "海莉·维斯普洛佩",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "海莉发作倒下·魔石夺除与收容决定",
+  "tick": 127,
+  "time_verbatim": "遭遇战终盘（冰系夹击被抵消后）"
+ },
+ "evidence": [
+  {
+   "chapter": 127,
+   "line": 165,
+   "quote": "──却突然跪倒在地。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 167,
+   "quote": "「哈啊哈啊⋯⋯！在，在这种时候发作？何等不堪！」",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 204,
+   "quote": "「反正也要回去了。就带上她一起回船上仔细诊断好了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 127,
+   "text": "双重『CannonSehr・Madness』抵消夹击后海莉突然跪倒、口鼻滴血呼吸急促（'在这种时候发作？何等不堪！'）→『所有物』取魔石欲吞（帕林库洛同型）被涡波踢飞→『次元之冬』浸润制压→大量咳血、HP剧减、力竭魔法解除→拉丝缇娅拉回复魔法救治（HP半复/昏睡；失血过大不能立愈/原本身体状况不好/比较特殊需详细诊断）→全员合议带回船→涡波MP几空仍造『连接』归船"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-423fe245f3f9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0127.txt",
+  "sha": "44284332395d728eabc27f669d1074410a02956e",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

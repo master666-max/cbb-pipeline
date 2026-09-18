@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "愿望既知(来源不明)",
+  "subject": "海莉·维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 127,
+   "line": 17,
+   "quote": "「──你怎么会知道我的愿望！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 18,
+   "quote": "少女竟然知道我的愿望。愿望的内容即使是同伴们也是在最近才得知的，那么自然我也没跟海因说过。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 127,
+   "text": "海莉知道涡波'想回到原来的世界'的愿望——该内容'即使是同伴们也是在最近才得知'，涡波也没跟海因说过；其知识来源本章未明（涡波惊'你怎么会知道我的愿望！？'，因破绽遭双剑袭来）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-145ed3c05bab",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0127.txt",
+  "sha": "44284332395d728eabc27f669d1074410a02956e",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

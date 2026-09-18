@@ -1,0 +1,85 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "新月琉璃制直剑",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "请战",
+  "name": "拉丝缇娅拉复归与BOSS搜索请战（水之阶层行进中）",
+  "tick": 125,
+  "time_verbatim": "同日·34层后水之阶层行进中（144话）"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 3,
+   "quote": "「寻找祭坛什么的简直蠢爆了再也不干了！继续朝深处前进吧！果然迷宫探索的醍醐味还是强敌呀！所以我们快去打倒怪物吧！」",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 4,
+   "quote": "在莉帕的努力下，拉丝缇娅拉满状态复活了。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 31,
+   "quote": "最主要的目的还是魔石。BOSS怪物掉落的魔石，比一般的怪物掉落的纯度要高很多。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 32,
+   "quote": "正好我也学会了『锻冶』技能，正值筹备新装备的时候。能得到上等的魔石的话，说不定也能打造出堪比『新月琉璃』的武器。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 33,
+   "quote": "我也想尽快为塞拉准备合适的武器。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 37,
+   "quote": "「答应了答应了。我会去找的，稍微等一下。──『维度・多重展开』」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 125,
+   "text": "祭坛搜寻受挫宣言'寻找祭坛什么的简直蠢爆了再也不干了'；拉丝缇娅拉以'想发挥作用'恳求找BOSS，涡波衡量利弊（Boss魔石纯度高+锻冶新装备+为塞拉备武器+积累队伍经验）后应允，以『维度・多重展开』搜索最近BOSS"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-974c86411bad",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

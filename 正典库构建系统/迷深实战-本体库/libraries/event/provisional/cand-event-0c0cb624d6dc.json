@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "海莉・维斯普洛佩",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "白色少女苏醒现身甲板",
+  "tick": 130,
+  "time_verbatim": "游泳教学当日（教学收束后）"
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 19,
+   "quote": "海里六人。甲板上有我一人。『维度』把握到了在这七人之外的第八个人的行动。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 23,
+   "quote": "不过现在的她就连维持『维度』这种基础魔法都很吃力。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 27,
+   "quote": "一连串果决的行动让我明白她打算与我们相见。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 56,
+   "quote": "「一定⋯⋯，曾在梦中见过这幅光景吧⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 57,
+   "quote": "我没有听清到底是『谁的梦』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 130,
+   "text": "涡波『维度』把握到七人之外的第八人行动；少女勉强自用『维度』探知所在后立刻解除（维持此基础魔法都吃力）；果决下床直行甲板，无再战气力但涡波仍入临战态势；视线相接微笑（'这一次、是发自内心的欢喜'）→战意确认；途中仰天闭眼'一定⋯⋯，曾在梦中见过这幅光景吧⋯⋯'——涡波未听清'谁的梦'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0c0cb624d6dc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

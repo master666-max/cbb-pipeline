@@ -1,0 +1,38 @@
+{
+ "extraction": "candidates/extraction-ch0120.json",
+ "gate": "PASS",
+ "dangling": {
+  "bad": 0,
+  "total": 188,
+  "rate": 0.0,
+  "pass": true,
+  "samples": []
+ },
+ "coverage_lib_hard": {
+  "hit": 36,
+  "in_slice": 40,
+  "recall": 0.9,
+  "pass": true,
+  "missing": [
+   "LivingLegend号",
+   "『LivingLegend号』",
+   "持有物品",
+   "表示"
+  ]
+ },
+ "envelope": {
+  "violations": [],
+  "pass": true
+ },
+ "density": {
+  "total": 66,
+  "by_type": {
+   "entity": 23,
+   "setting": 4,
+   "relation": 23,
+   "event": 11,
+   "foreshadow": 5
+  },
+  "track_obs_share": 0.076
+ }
+}

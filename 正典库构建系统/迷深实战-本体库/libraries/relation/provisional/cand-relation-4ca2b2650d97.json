@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉·雷迪安特",
+  "rel_type": "『连接』(新造于塞拉)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 221,
+   "quote": "我这无声的诉言，立刻被莉帕察觉到了。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 222,
+   "quote": "莉帕随即在塞拉的身上也制造出『连接』。然后将两人份的魔力传送给我。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 125,
+   "text": "水中无法直接交谈，涡波动员全部感情于心中无声诉说被莉帕察觉——莉帕随即在塞拉身上也制造出『连接』（WEB表记『连接』，卷版ch71作『联结』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4ca2b2650d97",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

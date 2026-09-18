@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅·勒伽西",
+  "rel_type": "探索竞争(先抵最深部)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 131,
+   "line": 44,
+   "quote": "我们回去吧。现在立刻回去吧。说到同行那就是竞争对手了嘛。",
+   "vol": 1
+  },
+  {
+   "chapter": 131,
+   "line": 134,
+   "quote": "既然已经出现了探索迷宫的竞争对手，就必须进一步提高探索的效率才可以。看海莉今天的状态，她想再进行迷宫探索是要隔一段时间了。不过，太大意的话真让她先到了最深部可就不好笑了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 131,
+   "text": "西娅自称'说到同行那就是竞争对手了嘛'而匆匆离场；涡波决意'必须进一步提高探索的效率才可以'——'太大意的话真让她先到了最深部可就不好笑了'（判断海莉今日状态后其队探索将间隔一段时间）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7183fd73124d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0131.txt",
+  "sha": "717bfbc8cad848dc318a0ab28b227bf55662904d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

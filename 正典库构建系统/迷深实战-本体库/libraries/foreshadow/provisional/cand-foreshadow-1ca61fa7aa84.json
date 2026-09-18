@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "chapter": 128,
+  "entities": [
+   "拉丝缇娅拉",
+   "海因",
+   "白色的少女"
+  ],
+  "name": "白色少女与海因的未明关系",
+  "note": "名字反应实证（据涡波判断'毫无疑问有着什么关系存在'）；叠加其魔石耗损至极限的濒死状态与拉丝缇娅拉'看起来也不像是失败的样子'的制造疑云——身世/来历经待揭（海因亲族线的延长）",
+  "payoff_chapter": null,
+  "setup_chapter": 128,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 42,
+   "quote": "她确实对于海因先生的名字有所反应。他们之间毫无疑问有着什么关系存在。",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 25,
+   "quote": "看起来也不像是失败的样子，这样的话不就像是⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 128,
+   "text": "身世关联钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-1ca61fa7aa84",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

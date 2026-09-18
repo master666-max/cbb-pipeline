@@ -1,0 +1,95 @@
+{
+ "canonical": {
+  "entities": [
+   "『？？？』",
+   "拉丝缇娅拉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "危机(技能暴走)",
+  "name": "技能『？？？』第二次暴走（死亡危险×恋心复合·水中战）",
+  "tick": 125,
+  "time_verbatim": "同日·水中战场（144话）"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 172,
+   "quote": "──说到底，技能『？？？』的发动只是时间上的问题而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 179,
+   "quote": "就像拼命隐瞒的事情，最终说漏一样。就像天崩地裂，被吸入黑洞中一样。就像一切都白费一样。我产生了一种安详感──看准这个间隙，技能『？？？』钻了空子。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 180,
+   "quote": "死亡的危险和恋心，这两者中任意一个单独出现的话我都能忍耐。但是在两者复合，又身处水中战斗的状况下就不一样了。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 183,
+   "quote": "──技能『？？？』暴走了。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 184,
+   "quote": "以一定的感情为交换，使精神安定化。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 185,
+   "quote": "混乱+1.00附加完毕──",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 186,
+   "quote": "这已经是第二次丧失对拉丝缇娅拉的感情了──。正因为是第二次，所以才跟第一次不同，很明确地有一种感情被吞食的感觉。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 187,
+   "quote": "技能『？？？』就像具有智能一样，将急躁，胆怯，焦虑，悲伤等等感情从我心中剥夺。技能『？？？』在感受到死亡的危险而发动时，就像冰冷的机械一样，但不知为何，在侵食我的恋心时，却微妙的有种人情味。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 125,
+   "text": "死亡危险与恋心单独出现均可忍耐、两者复合且身处水中战斗则无法抵抗（思考处理宣告失败、感情被技能吞食）；效果=以一定的感情为交换使精神安定化、混乱+1.00附加完毕；这是第二次丧失对拉丝缇娅拉的感情——明确感到感情被吞食；侵食恋心时'微妙的有种人情味'（如泡沫般一瞬即逝）；暴走后脑海全白、妨碍生存的一切事物被消除"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3b7043f9f6e8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,100 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "人工呼吸之吻(第二次丧失感情)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 473,
+   "quote": "——因为对我而言，拉丝缇娅拉这名少女，是永远必要的存在。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 480,
+   "quote": "我下定决心，吻上拉丝缇娅拉的樱唇。然后将自己积攒的氧气全部送进她的口中。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 490,
+   "quote": "最后又一同跨越了『舞斗大会』的试练，我们终于实现了约定在一起，一同探索迷宫。而这，就是这些积累起来的结果。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 492,
+   "quote": "也就是说，我会无数次喜欢上拉丝缇娅拉，又无数次失去这份感情。",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 502,
+   "quote": "这已经是第二次丧失对拉丝缇娅拉的感情了——正因为是第二次，所以才跟第一次不同，很明确地有一种感情被吞食的感觉。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 162,
+   "quote": "双目相合，拉丝缇娅拉不再迷茫。她停止了一切动作，凭借对同伴的信赖，将一切委托于我。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 164,
+   "quote": "我下定决心，吻上拉丝缇娅拉的樱唇。然后将自己积攒的氧气全部送进她的口中。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 166,
+   "quote": "我知道自己正因为这一举动而脸颊火热。就算告诉自己这只是人工呼吸也根本不可能压制这股热意。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 167,
+   "quote": "拉丝缇娅拉也一样。就算明白这是交换氧气的行为，也不可避免地羞红了脸。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "洪水中『并列思考』得出的渡氧之吻（'合理而且最妥当的策略'但双方脸红心动摇）；'因为对我而言，拉丝缇娅拉这名少女，是永远必要的存在'；技能『？？？』暴走吞食恋慕——'我会无数次喜欢上拉丝缇娅拉，又无数次失去这份感情'（第二次丧失）；感情积累自述：'早在我将拉丝缇娅拉从大圣堂救回来的时候就开始了…最后又一同跨越了『舞斗大会』的试练，我们终于实现了约定在一起'；拉丝缇娅拉察觉被夺走的感情后以'这次也就当没发生过'强行收场；涡波誓愿消除技能后'将来一定要还这个人情'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-baa9f800f71c",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-baa9f800f71c-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-baa9f800f71c",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

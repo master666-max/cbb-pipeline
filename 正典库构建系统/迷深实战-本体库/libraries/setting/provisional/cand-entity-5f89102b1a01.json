@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "技能(兽人变身)",
+  "name": "技能『兽化』"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 6,
+   "quote": "拉丝缇娅拉骑在兽化的塞拉背上，趾高气扬地指着前方喧闹着。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 50,
+   "quote": "「我明白的。我会以大小姐的──不，以所有人的安全为最优先考虑。我这『兽化』就是为此才存在的」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "manifestation",
+   "chapter": 125,
+   "text": "塞拉自述该技能存在的意义=守护（'以所有人的安全为最优先考虑。我这『兽化』就是为此才存在的'）；本战用于背负拉丝缇娅拉与莉帕移动及水中撤离"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5f89102b1a01",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

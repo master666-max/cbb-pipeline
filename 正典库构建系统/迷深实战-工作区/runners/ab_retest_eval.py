@@ -43,7 +43,7 @@ def load_slice_names(slice_text: str, store: Path) -> set[str]:
         except Exception:
             continue
     for a in aliases:
-        if a["alias"] in slice_text:
+        if isinstance(a.get("alias"), str) and a["alias"] in slice_text:  # 脏行防御同上
             names.add(a["alias"])
     names |= {c for c in canon if c in slice_text}
     # 噪声剔除（机械规则）：称呼后缀/超长短语；库内名一律保留（硬门口径）
@@ -141,7 +141,8 @@ def main(argv=None) -> int:
         except Exception:
             continue
     for a in _load_jsonl(store / 'aliases.jsonl'):
-        libnames.add(a['alias'])
+        if isinstance(a.get('alias'), str):  # 历史脏行防御（2026-09-19 勘误：dict 型 alias 留档不删）
+            libnames.add(a['alias'])
     got, blob = candidate_names(ext)
     in_slice_lib = sorted({n for n in libnames if n in slice_text})
     lib_hit = sorted({n for n in in_slice_lib if n in got or n in blob})

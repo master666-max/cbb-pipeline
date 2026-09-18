@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "海莉·维斯普洛佩",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗转折",
+  "name": "海莉MP枯竭与生命燃烧再开",
+  "tick": 127,
+  "time_verbatim": "遭遇战中盘（暴风对峙几十秒后）"
+ },
+ "evidence": [
+  {
+   "chapter": 127,
+   "line": 61,
+   "quote": "──MP64／512－200──",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 70,
+   "quote": "「──你在松懈些什么！战斗还没结束呢！还差的远呢！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 78,
+   "quote": "──282／341──",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 127,
+   "text": "涡波防御观MP将胜（海莉64/512、表情因痛苦抽动）→海莉怒斥松懈'战斗还没结束呢'重启暴风供给——'明明MP已经枯竭，魔力的力量却更强了'（HP代MP）→最大HP 352→347→341递减→涡波脊背发凉、承认'不可能在不伤害任何人的情况下终止'作战失败"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-10343d8d18cc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0127.txt",
+  "sha": "44284332395d728eabc27f669d1074410a02956e",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

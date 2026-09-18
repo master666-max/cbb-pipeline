@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "技能『缝纫』",
+   "泳衣（涡波手制八件）",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "制作",
+  "name": "八件泳衣制作完成",
+  "tick": 129,
+  "time_verbatim": "船旅中某日·太阳西沉前（数小时）"
+ },
+ "evidence": [
+  {
+   "chapter": 129,
+   "line": 4,
+   "quote": "在太阳西沉之前，总算是成功制成了八件泳衣。",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 7,
+   "quote": "一切都多亏了状态和技能的犯规般的恩惠啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 14,
+   "quote": "不过材料倒是让我烦恼了一下。在我原来世界的服饰知识里，橡胶对于泳衣来说是必要的，但是在异世界里可没有那东西。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 129,
+   "text": "状态与技能的犯规恩惠下数小时完成八件（『维度』测量+『并列思考』并行）；无橡胶材料→绳系古朴造型、全茶色；针线等缝纫道具与成品皆收入『所有物』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-59c30e8ebe3f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0129.txt",
+  "sha": "2dbabb1026e0822425330c61e98dda59fdd980cf",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

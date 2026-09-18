@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "白色的少女",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "制作(行动开始)",
+  "name": "泳装制作着手",
+  "tick": 128,
+  "time_verbatim": "同日（逃离甲板后·返房途中）"
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 114,
+   "quote": "因为学会了锻造技能的缘故，我对制作物品觉醒了兴趣。",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 146,
+   "quote": "途中，经过了白色的少女和缇亚的房间。",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 147,
+   "quote": "两个人，都如同死了一般的熟睡着。",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 149,
+   "quote": "全员都下海玩耍的话，因为迷宫而产生的阴郁气氛也能有所改变吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 128,
+   "text": "涡波逃回船内奔向自己房间着手泳装制作（原世界家务技能造诣+锻冶觉醒的制作兴趣+欲借此入手新技能+技能数增加的实感愉快）→途经白色的少女与缇亚的房间，两人'如同死了一般的熟睡着'→期望两人醒来前完成，全员下海玩耍以改变迷宫阴郁气氛"
+  },
+  {
+   "category": "foreshadowing",
+   "chapter": 128,
+   "text": "缇亚白天已熟睡、此时仍与白色少女同样'如同死了一般的熟睡着'——睡眠深度异常，与白色少女的关联存疑"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0440d2e03260",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

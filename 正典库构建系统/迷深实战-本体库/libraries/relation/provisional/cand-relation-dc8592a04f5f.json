@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "魔法特训搭档(后卫二人组)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 124,
+   "line": 11,
+   "quote": "「能不能先让我和拉丝缇娅拉来应敌呢？有不少特训的成果想检验一下」",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 110,
+   "quote": "后卫二人组全力地释放出魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 124,
+   "text": "提议由二人应敌'检验特训的成果'；战斗中以'后卫二人组'合力释放魔法（炎之矢+QuartzBullet）；特训受挫后一同挂机、一同恢复参战"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dc8592a04f5f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0124.txt",
+  "sha": "eab49fb9784ae15059f71928682292aa3f98361a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

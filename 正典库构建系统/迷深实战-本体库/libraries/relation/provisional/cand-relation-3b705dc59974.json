@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "通行无阻的水军",
+  "rel_type": "获得称号",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 242,
+   "quote": "──获得了称号『通行无阻的水军』",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 243,
+   "quote": "速度+0.05附加完毕──",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 125,
+   "text": "伽鲁夫纳多杰里核心被一刀两断、Boss化光消失后获得；效果'速度+0.05附加完毕'（称号轨沿 ch0003-0006 获得称号关系惯例）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3b705dc59974",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

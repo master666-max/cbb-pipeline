@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "帕林库洛",
+  "rel_type": "土产关联(涡波推断)",
+  "subject": "海莉・维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 196,
+   "quote": "这超越了人智的推理能力，推测出了少女的来历。",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 197,
+   "quote": "「──那个混蛋（帕林库洛）！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 198,
+   "quote": "我发自内心地，痛骂不在眼前那个男人所带来的土产。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 126,
+   "text": "据涡波超推理（『？？？』理性化+『并列思考』）：少女来历=『不在眼前那个男人所带来的土产』，遂痛骂『那个混蛋（帕林库洛）』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ac45fe8d2cca",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

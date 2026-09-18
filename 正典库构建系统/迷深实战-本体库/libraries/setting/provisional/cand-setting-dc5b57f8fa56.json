@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 128,
+  "fact": "据涡波（甲板口述）：35层完全在水里面，如果不能游泳就完全无法前进——全员游泳练习的直接动因",
+  "name": "迷宫35层·水中阶层",
+  "tick": 128
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 64,
+   "quote": "「所以，迷宫中有海这件事情是真的吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 65,
+   "quote": "「啊阿，是真的。35层完全就在水里面。如果不能游泳就完全无法前进」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 128,
+   "text": "迷宫阶层情报（据涡波口述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-dc5b57f8fa56",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

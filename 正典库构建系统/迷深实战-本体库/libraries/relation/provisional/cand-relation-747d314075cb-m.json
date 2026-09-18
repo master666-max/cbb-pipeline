@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "游泳指导约定",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 71,
+   "line": 1037,
+   "quote": "「嗯……请温柔地指导我吧，涡波。」",
+   "vol": 1
+  },
+  {
+   "chapter": 71,
+   "line": 1290,
+   "quote": "「——我要先教玛利亚。已经约好了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 129,
+   "line": 177,
+   "quote": "「──我要先教玛利亚。已经约好了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 71,
+   "text": "玛利亚'请温柔地指导我吧，涡波'→涡波对斯诺'——我要先教玛利亚。已经约好了'；玛利亚水平最绝望但终能浮于水面"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-747d314075cb",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-747d314075cb-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-747d314075cb",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

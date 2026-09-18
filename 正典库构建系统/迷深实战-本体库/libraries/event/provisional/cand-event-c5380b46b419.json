@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "海莉·维斯普洛佩",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "35层阶梯海莉遭遇战",
+  "tick": 127,
+  "time_verbatim": "第二次迷宫探索途中（迷宫回廊；周回对照=一周目卷七143~150话区间，事件名沿用库名）"
+ },
+ "evidence": [
+  {
+   "chapter": 127,
+   "line": 8,
+   "quote": "「正因为都是探索者，才要战斗啊！因为能够抵达最深部的只能有一个人，只有一个人而已啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 87,
+   "quote": "拉丝缇娅拉伴随着对我的责备率先冲了出来。莉帕和『兽化』的塞拉尾随着她。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 183,
+   "quote": "看了一眼周围，方才那样狂暴的风一下子全部恢复了平静。看来少女因为超过限度的战斗导致力竭，魔法已经解除了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 127,
+   "text": "迷宫回廊遭自称维斯普洛佩的双剑少女袭击→涡波无反击说服+劝诱同行（被唯一愿望主张拒）→『次元之冬』相杀被『无序之风』反妨害→『SehrWind・Madness』无规律暴风领域+呼吸妨害→涡波『过密次元的真冬』+MP消耗战（889 vs 512系）→海莉MP枯竭后燃HP逆转→涡波求援、全员参战（深渊次元的真夜被化解/拉丝缇娅拉CannonSehr被同技震退/斩击被魔力暴走自爆化解）→冰系夹击被双重『CannonSehr・Madness』抵消→海莉发作跪倒→魔石吞入被踢飞阻止→『次元之冬』浸润制压→力竭昏厥获救治、随队归船"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c5380b46b419",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0127.txt",
+  "sha": "44284332395d728eabc27f669d1074410a02956e",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

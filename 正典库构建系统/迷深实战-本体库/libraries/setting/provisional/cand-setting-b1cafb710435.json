@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 127,
+  "fact": "燃烧生命作薪柴的魔法运用：MP枯竭后仍可重启魔力供给且'魔法的力量却更强了'——用HP代替MP的超越极限力量，代价为最大HP递减（352→347→341，单回合约-50='小孩子份量的生命值'）；以生命为代价的魔法远强于通常魔法（可化解莉帕最强黑暗魔法；涡波自陈'我自己亲身体验过'故知其棘手）。另有放弃魔法构筑、有意让风属性魔力暴走的自爆式迎击：可化解斩击但己身受创+魔力消费更多（'如果说会被你的剑击败的话，那到时候就像这样炸开便是'）",
+  "name": "HP代MP的生命燃烧机制（ch127实证）",
+  "tick": 127
+ },
+ "evidence": [
+  {
+   "chapter": 127,
+   "line": 74,
+   "quote": "我知道这个现象是怎么回事。燃烧生命作薪柴的魔法运用。用HP代替MP的超越极限的力量。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 81,
+   "quote": "这次不是MP，而是最大HP在以肉眼可见的速度减少着。我的『表示』清清楚楚地看到了这一点。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 113,
+   "quote": "「──呵呵，如果说会被你的剑击败的话，那到时候就像这样炸开便是」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 127,
+   "text": "生命燃烧魔法运用实证（本章为敌方使用侧记录）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-b1cafb710435",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0127.txt",
+  "sha": "44284332395d728eabc27f669d1074410a02956e",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

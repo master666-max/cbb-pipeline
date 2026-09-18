@@ -1,0 +1,91 @@
+{
+ "canonical": {
+  "entities": [
+   "伽鲁夫纳多杰里",
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "伽鲁夫纳多杰里咆哮唤洪水·战场强制水中化",
+  "tick": 125,
+  "time_verbatim": "同日·34层Boss区域（144话）"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 106,
+   "quote": "伽鲁夫纳多杰里的身体震动，位于身体下方的口部吐出爆音。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 107,
+   "quote": "这是蕴含着大量魔力的咆哮。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 112,
+   "quote": "利用『维度』的感知能力，我发现了洪水正自远处的回廊席卷而来。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 123,
+   "quote": "当我正呼叫全员的时候，洪水就抵达了战场。洪水以天裂地吞之势从四面八方袭来。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 125,
+   "quote": "结果，不管是我和同伴们，还是伽鲁夫纳多杰里与其眷属们，都被大水吞噬了。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 126,
+   "quote": "战斗区域就这么强制性地转换到了水中。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 129,
+   "quote": "在袭来的洪水冲击下，作为眷属的鱼型怪物们的拘束纷纷被解除。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 125,
+   "text": "Boss首次反击=口部爆音咆哮（蕴含大量魔力），鸣叫含呼唤远方之水的魔力；洪水以天裂地吞之势自四面八方袭来——全员与Boss眷属尽被吞噬、战斗区域强制性转入水中；激流封住行动；水位直达天花板无法呼吸；洪水解除眷属冻结拘束、Boss趁机生龙活虎修复躯体"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-da2bc08e520c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

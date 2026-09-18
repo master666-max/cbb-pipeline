@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "名字一字差·类海因联想",
+  "subject": "海莉·维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 127,
+   "line": 4,
+   "quote": "真是个扯淡的名字。跟海因的名字只差了一个字实在是恶意满满。",
+   "vol": 1
+  },
+  {
+   "chapter": 127,
+   "line": 146,
+   "quote": "少女跟对我有大恩的海因很像。所以我不能弃她不顾。至少在了解她们之间的关系之前，绝不能让她死掉。我是这样想的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 127,
+   "text": "名字与海因只差一字（涡波观感'恶意满满'，念名必联想）；善良礼貌性格'像极了海因'；涡波因'对我有大恩的海因'不能弃她不顾、决意'在了解她们之间的关系之前'不让她死——两人实际关系未明（本切片内）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6be24ca3d214",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0127.txt",
+  "sha": "44284332395d728eabc27f669d1074410a02956e",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

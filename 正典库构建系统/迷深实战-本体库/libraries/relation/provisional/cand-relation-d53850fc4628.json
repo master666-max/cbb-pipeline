@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『？？？』",
+  "rel_type": "愤怒·拒从提案",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 125,
+   "line": 195,
+   "quote": "即使失去了恋心，脸颊的热意却没有断绝。这一点跟之前一样，不过这一次，代替失去的感情，取而代之的是我对技能『？？？』的愤怒。再加上对自己的愤怒，两者合二为一，怒意更加深重。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 218,
+   "quote": "技能『？？？』此时此刻仍然在劝我丢下拉丝缇娅拉逃走。但是，我就是要朝着与之正相反的答案前进到底。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 125,
+   "text": "第二次暴走后'代替失去的感情，取而代之的是我对技能『？？？』的愤怒。再加上对自己的愤怒'；技能仍劝其丢下拉丝缇娅拉逃走——'我就是要朝着与之正相反的答案前进到底'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d53850fc4628",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0125.txt",
+  "sha": "763ed1b9b7eb19c4441f2f2f7fecf13ae8aed723",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

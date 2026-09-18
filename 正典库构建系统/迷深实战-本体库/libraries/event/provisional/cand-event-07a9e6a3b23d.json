@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "Raked・Blade",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "相川涡波",
+   "莉帕",
+   "阿雷亚斯家的宝剑"
+  ],
+  "instant": null,
+  "kind": "发现/处置",
+  "name": "沙海祭坛诅咒剑（Raked・Blade）鉴定与破壊",
+  "tick": 124,
+  "time_verbatim": "同日·31层沙海"
+ },
+ "evidence": [
+  {
+   "chapter": 124,
+   "line": 194,
+   "quote": "在跟斯诺一起进行迷宫探索的时候，我在24层的祭坛上找到了『堕落使徒』",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 203,
+   "quote": "攻击力5精神污染+1.50",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 210,
+   "quote": "一瞬间就像发生了化学反应般，剑开始喷发出薄雾。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 226,
+   "quote": "Raked・Blade很轻松地就被我斩断了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 124,
+   "text": "莉帕绕路寻'感兴趣的东西'发现沙海台形祭坛插剑（涡波忆24层祭坛『堕落使徒』前例）；『表示』鉴定：攻击力5/精神污染+1.50→制止欲触碰的莉帕；以『维度』细查时剑喷发薄雾；拉丝缇娅拉以英雄谭/诅咒跨越进化说怂恿被拒（涡波一度被'浪漫情节带了下节奏'后自警）；以『阿雷亚斯家的宝剑诺文』轻松将其斩断"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-07a9e6a3b23d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0124.txt",
+  "sha": "eab49fb9784ae15059f71928682292aa3f98361a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

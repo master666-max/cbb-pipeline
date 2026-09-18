@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "chapter": 128,
+  "entities": [
+   "拉丝缇娅拉",
+   "白色的少女",
+   "相川涡波"
+  ],
+  "name": "白色少女的半年死线",
+  "note": "据拉丝缇娅拉：'恐怕坚持不到半年了吧'，且'即使能够完全恢复⋯⋯她或许也活不了多久了'——治疗线的时限压力；涡波'还有很多想听这孩子说的事情'的未竟对话；魔石供给能否延命待验证",
+  "payoff_chapter": null,
+  "setup_chapter": 128,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 37,
+   "quote": "「我想这支零破碎的身体，恐怕坚持不到半年了吧。」",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 22,
+   "quote": "「我想即使能够完全恢复⋯⋯，她或许也活不了多久了⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 41,
+   "quote": "我还有很多想听这孩子说的事情⋯⋯不论如何一定要帮忙啊，拉丝缇娅拉",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 128,
+   "text": "死线时限钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-044abf5e7f1b",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "海莉・维斯普洛佩",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "求死劝说与对手之约",
+  "tick": 130,
+  "time_verbatim": "同日·甲板对谈后半"
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 137,
+   "quote": "「⋯⋯不好意思，在我眼中看来，只觉得你是沉醉在自我的悲剧中而已。难道不是找到了一种轻松的死法就没头没脑地扑上去而已吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 159,
+   "quote": "不到一个月的人生什么的，未免太短了。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 179,
+   "quote": "「我们是竞争谁先抵达最深部的对手关系。不会互相厮杀。就这样好了。──这之外的事看来是没戏了呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 178,
+   "quote": "即使到现在，海莉身上也散发着一种一个不小心就挂掉的危险气息。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 130,
+   "text": "海莉以'状态会恢复→必然再战'之理求死→涡波拒斥其死亡观（守护者对照）并指其'沉醉在自我的悲剧中'→海莉自认（舞台名演员论）→涡波以'不到一个月人生太短/到极限仍想死才做对手'劝其再活→海莉接受提议，结'竞争最深部、不互相厮杀'之约；涡波判断其仍有'一个不小心就挂掉的危险气息'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d2e48421a3e1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

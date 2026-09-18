@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "白色的少女",
+  "rel_type": "主治医疗(持续照看)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 7,
+   "quote": "从迷宫返回之后，拉丝缇娅拉便一直使用着神圣魔法和鲜血魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 11,
+   "quote": "所以，我想我可能还需要再多照看一段时间吧",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 37,
+   "quote": "「我想这支零破碎的身体，恐怕坚持不到半年了吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 128,
+   "text": "神圣魔法+鲜血魔法连用治疗；脉搏体温诊察；预判寿命不足半年与清醒后暴走风险；'我想我可能还需要再多照看一段时间吧'；自言血液中似有医生般的存在"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2076a387483c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

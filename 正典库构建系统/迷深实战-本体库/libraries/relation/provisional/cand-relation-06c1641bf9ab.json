@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "侍奉主从(大小姐称呼)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 126,
+   "line": 46,
+   "quote": "「涡波，你这混蛋！我可看到了！你在战斗中，跟、跟大小姐她──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 126,
+   "line": 74,
+   "quote": "被喜欢的大小姐亲了一口的塞拉陷入了大混乱中。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 126,
+   "text": "称拉丝缇娅拉为『大小姐』并为其名誉怒斥涡波（『你在战斗中，跟、跟大小姐她──』）；旁白记述『被喜欢的大小姐亲了一口』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-06c1641bf9ab",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0126.txt",
+  "sha": "a1bc2d711b1c5d5c5f2940c8f13c814d6ad9261a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫怪物·31层)",
+  "name": "水晶蚁"
+ },
+ "evidence": [
+  {
+   "chapter": 124,
+   "line": 17,
+   "quote": "──水晶蚁 级别26──",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 35,
+   "quote": "结果却没能击穿水晶蚁的水晶躯体。仅仅烧焦了表面，外加被水晶楔刺破了一点而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 50,
+   "quote": "在数量作战的猛攻下，水晶蚁终于化作光芒消失了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 124,
+   "text": "级别26：上层阶层常见的小型怪物；水晶躯体坚硬（火焰仅烧焦表面、水晶楔仅刺破一点）；身体能力惊人，闪避火鸟与水晶散弹、多足左躲右闪；经FlameCutter×3+QuartzBullet×3连射方击杀"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-8a8a62a276a2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0124.txt",
+  "sha": "eab49fb9784ae15059f71928682292aa3f98361a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "『史诗探索者』",
+   "拉丝缇娅拉",
+   "白色的少女",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "决定",
+  "name": "拘束预案敲定与刑具借用·留船决定",
+  "tick": 128,
+  "time_verbatim": "同日（病情告知后即刻）"
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 43,
+   "quote": "但是清醒之后，又会开始暴走也说不定⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 44,
+   "quote": "「可以从『史诗探索者』那里借来拘束用的道具。",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 48,
+   "quote": "总而言之，已经确定在状态稳定之前要一直待在船上了。",
+   "vol": 1
+  },
+  {
+   "chapter": 128,
+   "line": 50,
+   "quote": "接着，决定时常以『维度』来对少女进行监视后，拉丝缇娅拉和我一起去向同伴们进行报告。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 128,
+   "text": "二人敲定少女待遇：清醒后恐暴走→向『史诗探索者』借拘束道具（实际借到过去抑制涡波魔力的那组刑具）→因魔力缺乏症MP不会简单回复故拘束无碍→确定状态稳定前一直留在船上→决定时常以『维度』监视→一同向同伴报告"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9ecaf0f4e6a6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

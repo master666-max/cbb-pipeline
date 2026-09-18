@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "探索模式转换：莉帕领队·遇敌即砍",
+  "tick": 124,
+  "time_verbatim": "同日·31层探索续行"
+ },
+ "evidence": [
+  {
+   "chapter": 124,
+   "line": 125,
+   "quote": "「难得大家一起来一次，每个人都发挥自己的专长才是最合适的呀。而且因为焦虑而临时抱佛脚的话，没准会酿成恶果的」",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 136,
+   "quote": "就这样，在领队莉帕的指引下，我们一行人在31层继续前进着。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 140,
+   "quote": "这也是因为塞拉小姐的攻击一般没法给敌人造成伤害的原因。我考虑起应该专门为她的『兽化』形态准备相应的武器。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 124,
+   "text": "莉帕建言'每个人都发挥自己的专长才是最合适的''临时抱佛脚会酿成恶果'；涡波拉丝受打击挂机（原期待救场景象落空）；转为领队莉帕索敌、塞拉周旋、莉帕收割的重复模式；塞拉攻击一般无法伤敌→涡波以『维度』测量其狼形态准确尺寸、拟备兽化专用武器；塞拉因穿脱麻烦只披大外套（涡波所给）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-06fe6eaeef7e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0124.txt",
+  "sha": "eab49fb9784ae15059f71928682292aa3f98361a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

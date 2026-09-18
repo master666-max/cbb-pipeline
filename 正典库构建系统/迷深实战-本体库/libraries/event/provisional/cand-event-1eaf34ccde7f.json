@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "『兽化』",
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "阵容变更",
+  "name": "塞拉『兽化』上阵与阵型转换",
+  "tick": 124,
+  "time_verbatim": "同日·水晶蚁战后"
+ },
+ "evidence": [
+  {
+   "chapter": 124,
+   "line": 58,
+   "quote": "「是啊我知道啊！但是人家今天就是想当魔法使嘛QAQ！我也想像魔法使一样，叭～！地一下就把敌人都歼灭掉嘛！」",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 69,
+   "quote": "回过头去，面前的塞拉小姐已是『兽化』的姿态了。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 71,
+   "quote": "我将她脱下的女仆装收进『所有物』中，接着我们改变了阵型。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 72,
+   "quote": "「那么，这一次就是人家和塞拉姐姐打先锋了呢。使用『维度』索敌的任务也一并交给人家就好了，你们两人就作为后卫集中于构筑魔法就行喽」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 124,
+   "text": "拉丝缇娅拉撒娇坚持当魔法使→莉帕迁就改案：自己与塞拉姐姐周旋、令二人后卫专心构筑魔法；塞拉脱女仆装（衣物莉帕代收、涡波收入『所有物』）经骨肉变形声『兽化』为狼；莉帕骑乘先锋并接手『维度』索敌"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1eaf34ccde7f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0124.txt",
+  "sha": "eab49fb9784ae15059f71928682292aa3f98361a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

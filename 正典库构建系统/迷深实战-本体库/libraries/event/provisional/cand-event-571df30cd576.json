@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "训练",
+  "name": "甲板游泳教学（全员脱沉）",
+  "tick": 130,
+  "time_verbatim": "赴瓦尔德本土航程中某日（教学约一小时后收束）"
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 3,
+   "quote": "游泳教学进行了大概一个小时左右，我的体力就消耗殆尽了。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 6,
+   "quote": "不过也多亏了自己如此辛劳，所有人算是都摆脱了进水必沉的状态。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 8,
+   "quote": "按照预想，后卫二人组要掌握游泳技巧是不太容易的。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 11,
+   "quote": "拉丝缇娅拉、斯诺、莉帕因为运动神经很优秀，一下子就学会了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 130,
+   "text": "涡波全程海中执教一小时体力耗尽；全员摆脱进水必沉状态；后卫二人组（缇亚/玛利亚）难学：缇亚断手+不擅运动仅能露头、玛利亚水中不可用火焰魔法感官；拉丝缇娅拉/斯诺/莉帕速成；塞拉狗刨式最快；转由拉丝缇娅拉+塞拉指导二人"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-571df30cd576",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

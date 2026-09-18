@@ -1,0 +1,35 @@
+{
+ "extraction": "candidates/extraction-ch0126.json",
+ "gate": "PASS",
+ "dangling": {
+  "bad": 0,
+  "total": 70,
+  "rate": 0.0,
+  "pass": true,
+  "samples": []
+ },
+ "coverage_lib_hard": {
+  "hit": 34,
+  "in_slice": 35,
+  "recall": 0.9714,
+  "pass": true,
+  "missing": [
+   "感应"
+  ]
+ },
+ "envelope": {
+  "violations": [],
+  "pass": true
+ },
+ "density": {
+  "total": 25,
+  "by_type": {
+   "entity": 5,
+   "setting": 5,
+   "relation": 8,
+   "event": 4,
+   "foreshadow": 3
+  },
+  "track_obs_share": 0.24
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅·勒伽西",
+  "rel_type": "协助领队(好友+欠恩)",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 131,
+   "line": 22,
+   "quote": "「我正在协助西娅前往最深部。毕竟跟她不但是合得来的好朋友，再说我还欠了她很多的恩情呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 131,
+   "line": 28,
+   "quote": "「西娅你不用认识也无所谓。反正你认识了也只会徒增些麻烦事罢了」",
+   "vol": 1
+  },
+  {
+   "chapter": 131,
+   "line": 31,
+   "quote": "明明刚才介绍说她是『领队』的，但是她对待领队的态度未免太草率了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 131,
+   "text": "'我正在协助西娅前往最深部。毕竟跟她不但是合得来的好朋友，再说我还欠了她很多的恩情呢'；西娅被介绍为『领队』，而海莉对其态度草率（'你认识了也只会徒增些麻烦事罢了'——涡波对此吃惊）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-87ff48a96f46",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0131.txt",
+  "sha": "717bfbc8cad848dc318a0ab28b227bf55662904d",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

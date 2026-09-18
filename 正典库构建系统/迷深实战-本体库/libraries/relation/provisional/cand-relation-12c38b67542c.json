@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "海因",
+  "rel_type": "再诞材料与本体(失败)",
+  "subject": "海莉・维斯普洛佩"
+ },
+ "evidence": [
+  {
+   "chapter": 130,
+   "line": 68,
+   "quote": "制造出我所用的材料，就是海因・赫勒比勒夏因的身体。",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 102,
+   "quote": "「⋯⋯诶诶，海因的记忆残留的相当多。不过，满是漏洞，实在说不上完全就是了」",
+   "vol": 1
+  },
+  {
+   "chapter": 130,
+   "line": 143,
+   "quote": "看到她这副模样，我终于开始了解海莉这名少女的为人了。同时也开始接受她与海因不是同一个人的事实。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 130,
+   "text": "据海莉自白：材料=海因·赫勒比勒夏因的身体（特别订制品=用尽所有的血）；保有海因记忆（满是漏洞）但自认非海因；涡波最终接受'她与海因不是同一个人'（并认为她是比莉帕和拉丝缇娅拉更年幼的幼儿）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-12c38b67542c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0130.txt",
+  "sha": "cbb147bb15339c755315d9f1ad6807f821efc4e5",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "AllConfess",
+   "BloodSword",
+   "CallOuter",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "探索/处置",
+  "name": "祭坛巡回：诅咒武具连破与碎片回收（31~33层）",
+  "tick": 124,
+  "time_verbatim": "同日·31~33层（数小时）"
+ },
+ "evidence": [
+  {
+   "chapter": 124,
+   "line": 248,
+   "quote": "我们一行人一边在31层、32层、33层寻找祭坛一边前进。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 249,
+   "quote": "对32层的飞行系怪物，我们基本上采取无视的方针。虽然有呼唤增援的事，但是多亏了莉帕的暗魔法，很容易就甩掉了。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 267,
+   "quote": "基本上都是带有诅咒的东西，『精神污染』这个描述可以说是必有的。",
+   "vol": 1
+  },
+  {
+   "chapter": 124,
+   "line": 268,
+   "quote": "不管在一边撒娇的拉丝缇娅拉，我默默地进行着破壊工作。因为没法解除诅咒，又不能随便碰，所以这也是无奈之举。姑且把破壊后没有精神污染的威胁的碎片冻起来收进了『所有物』。说不定能二次利用吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 124,
+   "text": "队伍转为寻找祭坛方针：31/32/33层巡回；32层飞行系怪物基本无视（赖莉帕暗魔法甩掉增援）；所寻祭坛武具基本全带诅咒（『精神污染』描述必有：CallOuter/AllConfess/BloodSword等）；涡波一律破壊，无污染威胁碎片冻入『所有物』备二次利用；无诅咒装饰品皆无魔力无效"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9682eb0a0a85",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0124.txt",
+  "sha": "eab49fb9784ae15059f71928682292aa3f98361a",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

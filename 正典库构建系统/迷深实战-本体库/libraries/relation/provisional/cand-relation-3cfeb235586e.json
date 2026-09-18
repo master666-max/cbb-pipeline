@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『史诗探索者』",
+  "rel_type": "拘束刑具借用(旧物再利用)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 128,
+   "line": 49,
+   "quote": "结果十分轻松的便借到了过去曾经用来抑制我的魔力的那组刑具。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 128,
+   "text": "为白色少女清醒后的拘束预案，从史诗探索者借来过去曾用于抑制涡波自身魔力的那组刑具——旧日刑具的用途转移"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3cfeb235586e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0128.txt",
+  "sha": "8bcd11571e2da8d8a426f2a35f6a81f59477983b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}
