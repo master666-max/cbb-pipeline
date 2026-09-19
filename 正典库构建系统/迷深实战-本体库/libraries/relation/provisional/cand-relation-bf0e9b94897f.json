@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛・勒伽西",
+  "rel_type": "魔法对拼胜而未倒",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 157,
+   "line": 49,
+   "quote": "毕竟在方才的极大魔法对拼中，胜利者是玛利亚啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 157,
+   "line": 57,
+   "quote": "如果这是一对一的战斗的话，结果就是帕林库洛了结掉昏倒的玛利亚吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 157,
+   "text": "极大魔法对拼的胜者（火焰魔法击破暗之理魔法、对方HP0且无恢复势头）；但未能打倒——战果被撺掇；一对一的话'结果就是帕林库洛了结掉昏倒的玛利亚吧'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bf0e9b94897f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0157.txt",
+  "sha": "51cedaeed48808e31a0ee2f55213b141dbd3a3224c774bfd6572ad31b0ef3725",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

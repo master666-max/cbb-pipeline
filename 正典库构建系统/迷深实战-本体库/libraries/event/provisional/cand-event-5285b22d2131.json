@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "缇达"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "涡波对帕林库洛冻结攻防（尸体补给破局）",
+  "tick": 156,
+  "time_verbatim": "帕林库洛决战·中盘（单挑段）"
+ },
+ "evidence": [
+  {
+   "chapter": 156,
+   "line": 88,
+   "quote": "然而不管他怎么后退，速度的差距都是不可逆转的。我立刻斩伤他的身体，并进行冻结，他仅剩的一只手臂也被我斩飞、击碎了。帕林库洛的黑色身躯正以肉眼可见的速度被削减着。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 94,
+   "quote": "一接触到帕林库洛的身体，怪物的尸体便在黑色的浸染下液体化了。接着，怪物转化成的黑色液体重新补足了帕林库洛残缺的身体。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 115,
+   "quote": "一道轨迹划过，双剑成功地斩断了帕林库洛的脚。然而──失去了脚部的帕林库洛将一只手臂液体化，使之流淌到腿部，立马又恢复了行走能力。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 156,
+   "text": "涡波以斩击+冻结循环削减其身躯（速度差不可逆、仅剩逃窜）；帕林库洛接触怪鸟尸体→黑色浸染液化→补给残缺身体（自称缇达能力）破解冻结战术；涡波转『维度・决战演算』加大MP提速、斩脚仅换来其手臂液化代脚复走；评估其防御+暗之理特性令『致亲爱的一闪』亦难奏效"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5285b22d2131",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0156.txt",
+  "sha": "923fc939a38d36e4ead7183df6ebc964f46f723807ab3f9aa8ba88dc87b2982d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉",
+  "rel_type": "血亲裁定与结局接受",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 158,
+   "line": 201,
+   "quote": "「喂，海因他弟！你能接受这样的事吗！你的兄长可就在这里啊，如果这样下去的话──」",
+   "vol": 1
+  },
+  {
+   "chapter": 158,
+   "line": 202,
+   "quote": "「──兄长大人他并不在这里。而她则是一个命不久矣的、名叫海莉的『魔石人类』」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 158,
+   "text": "面对帕林库洛'你的兄长可就在这里啊'的劝说，连话都不听完就打断：'兄长大人他并不在这里。而她则是一个命不久矣的、名叫海莉的『魔石人类』'；对海莉赴死之选'就依她喜欢吧'——涡波评其'对海莉的珍惜，一定在我百倍之上'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4defd98682a5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0158.txt",
+  "sha": "97f6aa56c8bfe4f853c70d4eb095df4880562a2434b034da8b65255d05cc546d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

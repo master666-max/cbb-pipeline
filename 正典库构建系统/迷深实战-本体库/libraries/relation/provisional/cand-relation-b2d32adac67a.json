@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "师徒训练再开之约",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 160,
+   "line": 64,
+   "quote": "「诺文！拜托你继续我们那一天的训练！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 65,
+   "quote": "水晶宝剑应声闪烁。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 160,
+   "text": "接剑后对剑呼'诺文！拜托你继续我们那一天的训练！！'——水晶宝剑应声闪烁（剑灵应答；段内译注指舞闘大会时诺文传授莱纳剑术之事，注本身为元文本不抽）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b2d32adac67a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0160.txt",
+  "sha": "e6350ea367575f27d7cdf670be47daef98db8b6fb9dc69eb3bd909464a919ed6",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

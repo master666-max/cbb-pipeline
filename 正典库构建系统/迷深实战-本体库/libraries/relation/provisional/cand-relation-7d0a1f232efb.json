@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "世界奉还阵",
+  "rel_type": "联结供魔(自称MP无限)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 156,
+   "line": 12,
+   "quote": "「这不是我的力量啦。都是同伴们的力量」",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 15,
+   "quote": "通过『维度』，我注意到这些魔力都注入到了帕林库洛体内。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 16,
+   "quote": "「这个『世界奉还阵』在同我联结着。换句话说，我现在的MP是无限的。不仅如此，现在我就连这种事都做得到哦？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 156,
+   "text": "据帕林库洛自述'这不是我的力量啦。都是同伴们的力量'——阵亡士兵肉体转化的魔力经涡波『维度』观测确认注入其体内、其自称MP无限"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7d0a1f232efb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0156.txt",
+  "sha": "923fc939a38d36e4ead7183df6ebc964f46f723807ab3f9aa8ba88dc87b2982d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

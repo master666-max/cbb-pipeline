@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "缇达"
+  ],
+  "instant": null,
+  "kind": "战斗(终结)",
+  "name": "黑剑挑飞·决斗终结",
+  "tick": 165,
+  "time_verbatim": "同日（剑斗终盘）"
+ },
+ "evidence": [
+  {
+   "chapter": 165,
+   "line": 161,
+   "quote": "只有帕林库洛的黑剑被挑飞，在白色的日轮中舞动。",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 166,
+   "quote": "要想空手闯过我的阻拦难度有如登天，跟剑之间的距离又太远。",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 169,
+   "quote": "这便是这场决斗因帕林库洛的败北而告终的瞬间。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 165,
+   "text": "『先谭』完全预测帕林库洛接下来的动作、两剑交错唯其黑剑被挑飞（白色日轮中舞动、刺入远处扭曲大地）；取剑须过涡波阻拦（空手闯过难度有如登天/距离太远）而不得——决斗以此败北告终"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d30ee1647f32",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0165.txt",
+  "sha": "8db3200533bf17338be0d14d8d6bcf02d6d5fe575b25502b30a22e2219413b14",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

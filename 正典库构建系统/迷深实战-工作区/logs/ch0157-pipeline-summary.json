@@ -1,0 +1,309 @@
+{
+ "unit": "ch0157",
+ "chapter": 157,
+ "ingestion_index": 128,
+ "title": "176话-与暗之理的盗窃者的真正战斗",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 35,
+  "pass": 35,
+  "intercept": 0,
+  "admitted": 35,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 6,
+  "contradiction": 4,
+  "on-create": 25
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-1e5ff0127231",
+   "type": "entity",
+   "name": "帕林库洛・勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-de708e65c1da",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m54"
+   }
+  },
+  {
+   "record_id": "cand-entity-a50ad856d707",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m93"
+   }
+  },
+  {
+   "record_id": "cand-entity-1d4818ed7711",
+   "type": "entity",
+   "name": "相川阳滝",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-19f341955628-m17"
+   }
+  },
+  {
+   "record_id": "cand-entity-1e56e369269b",
+   "type": "entity",
+   "name": "始祖涡波",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-eadf71f5ac6e"
+   }
+  },
+  {
+   "record_id": "cand-entity-1c98b2d05248",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m47"
+   }
+  },
+  {
+   "record_id": "cand-entity-52247971977b",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m60"
+   }
+  },
+  {
+   "record_id": "cand-entity-ad80e825bec0",
+   "type": "entity",
+   "name": "艾德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d32d641d71c6"
+   }
+  },
+  {
+   "record_id": "cand-entity-b48b027fe92d",
+   "type": "entity",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2719634011-m8"
+   }
+  },
+  {
+   "record_id": "cand-entity-22defee3b58a",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5f9dee8d467a"
+   }
+  },
+  {
+   "record_id": "cand-entity-bc5de6375542",
+   "type": "entity",
+   "name": "缇达",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d796bf8a1564"
+   }
+  },
+  {
+   "record_id": "cand-relation-a80598f1d378",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-bf0e9b94897f",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9c2106af0248",
+   "type": "relation",
+   "name": "帕林库洛・勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-536fb12b3471",
+   "type": "relation",
+   "name": "帕林库洛・勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3100a80f83fc",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-2bd56bf7cfe9",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4996beb55ef9",
+   "type": "relation",
+   "name": "帕林库洛・勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-662a0b8d2aed",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d6fb63053d55",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8bc9a1cee33a",
+   "type": "event",
+   "name": "火暗大战终焉·战场歼灭",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0ae7d9d1f0b4",
+   "type": "event",
+   "name": "帕林库洛捏碎心脏·完死体化",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d2d93014594c",
+   "type": "event",
+   "name": "对怪物帕林库洛：剑斗与精神攻防",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ea5b72e59dd9",
+   "type": "event",
+   "name": "涡波逞强崩壊·受降",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-554d0887bbae",
+   "type": "event",
+   "name": "帕林库洛复活阳滝宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-cf9dfadf774f",
+   "type": "foreshadow",
+   "name": "帕林库洛的『复活相川阳滝』宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1f7e9e5a3a5b",
+   "type": "foreshadow",
+   "name": "大姐的『魔石』回收计划",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-842a2e9d45b7",
+   "type": "foreshadow",
+   "name": "『世界奉还阵』与千年前『什么东西』的连结",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-16669e41f19f",
+   "type": "foreshadow",
+   "name": "技能『？？？』的死之禁止",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c12ba7c88ff1",
+   "type": "setting",
+   "name": "『世界奉还阵』机制（ch157更新）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-0eaab22092ce",
+   "type": "setting",
+   "name": "魔力=毒与怪物化机制（据涡波自述）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-6499ffd28f7d",
+   "type": "setting",
+   "name": "『表示』怪物判定：二十守护者（TwentyGuardian）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-71576bd1f566",
+   "type": "setting",
+   "name": "暗之理的盗窃者（完死体）战斗特性",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-8c1a7c9e631f",
+   "type": "setting",
+   "name": "同伴自抑魔法解除因果链（据涡波回顾）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-6adcd7f25941",
+   "type": "setting",
+   "name": "技能『？？？』与『并列思考』的禁用与暴走",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 128,
+  "pseudo_date": "2000-05-08",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 487,
+   "edges": 919,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 480,
+    "edges": 919
+   }
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 159,
+  "entity_type": "技能(风魔法)",
+  "fact": "海莉放出的风魔法（咏唱『『SehrWind』』）：暴风炸裂声如战炮势如飞弹，途经之处森罗万物尽皆粉碎烟灭——威力令帕林库洛察觉异常（远超其身体与级别渐溶下应有的衰弱态，因魔力取自阵中）",
+  "name": "SehrWind",
+  "tick": 159
+ },
+ "evidence": [
+  {
+   "chapter": 159,
+   "line": 10,
+   "quote": "「『SehrWind』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 12,
+   "quote": "此魔法途经之处，森罗万物尽皆粉碎烟灭。看到这等威力，帕林库洛察觉到了其中异常之处。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 159,
+   "text": "风魔法威力实录（本章再使用）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-98f40d13adc5",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0159.txt",
+  "sha": "6ce4653ba10d2533853e0a25603a9bed786c673ba9abee3dcd6d9ca870b24e1b",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

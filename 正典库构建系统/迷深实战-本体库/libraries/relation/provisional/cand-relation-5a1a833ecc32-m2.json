@@ -1,0 +1,94 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "保密约定与道别",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 111,
+   "quote": "「不能再说下去了哦，莱纳。请遵守我们的约定。」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 114,
+   "quote": "「把话说在前面，我是要杀了帕林库洛的。即使事到如今，这个目的也没有变。我可不打算遵从你的意思哦。」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 116,
+   "quote": "「……别了，海·莉。」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 125,
+   "quote": "「抱歉、了，莱、纳……这么不成器——地……——」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 111,
+   "quote": "「不能再说下去了哦，莱纳。请遵守我们的约定」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 115,
+   "quote": "「没关系。接下来的事情就随你喜欢去做好了。毕竟我只是想要成为心中牵挂的三・个・人的助力而已」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 116,
+   "quote": "「⋯⋯别了，海莉小姐」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 125,
+   "quote": "「抱歉、了，莱、纳⋯⋯，这么不成器──地⋯⋯──」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "阻莱纳说出其真实（食指贴唇『不能再说下去了哦，莱纳。请遵守我们的约定』）；莱纳不顾劝阻宣言仍要杀帕林库洛；海莉允诺『接下来的事情就随你喜欢去做好了』并自陈只想成为心中牵挂的三·个·人的助力；莱纳以『别了，海·莉』道别；海莉最后遗言向莱纳致歉（『抱歉、了，莱、纳……这么不成器——地……』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-5a1a833ecc32",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5a1a833ecc32-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-5a1a833ecc32",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

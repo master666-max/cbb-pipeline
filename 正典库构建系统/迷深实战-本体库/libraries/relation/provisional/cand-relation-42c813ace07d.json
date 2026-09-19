@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "事实扭曲(阳滝生存隐瞒)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 162,
+   "line": 10,
+   "quote": "因此帕林库洛才会对我说涡波和阳滝都已经死了。",
+   "vol": 1
+  },
+  {
+   "chapter": 162,
+   "line": 31,
+   "quote": "恐怕这就是一直被帕林库洛隐藏起来的真相吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 162,
+   "line": 134,
+   "quote": "接着，我也明白了帕林库洛将事实扭曲到了何种地步而感到了愤怒。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 162,
+   "text": "帕林库洛曾对涡波宣告'涡波和阳滝都已经死了'——本章记忆显示其为对事实的扭曲（缇娅拉主张阳滝仍活着=被隐藏的真相）；涡波'明白了帕林库洛将事实扭曲到了何种地步而感到了愤怒'；至今为止确立的诸多事实全部被颠覆"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-42c813ace07d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0162.txt",
+  "sha": "8f03d42420e238fea0a122b705499ae0bef54cee1692e791ff82d5348f06d1fd",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

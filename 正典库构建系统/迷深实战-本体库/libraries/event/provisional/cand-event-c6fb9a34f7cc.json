@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "地之理的盗窃者",
+   "相川涡波",
+   "莱纳",
+   "阿雷亚斯家的宝剑"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "宝剑转投莱纳与第三个魔石发现",
+  "tick": 160,
+  "time_verbatim": "怪物突破途中（莱纳苦战时）"
+ },
+ "evidence": [
+  {
+   "chapter": 160,
+   "line": 51,
+   "quote": "说着，我将手中的『阿雷亚斯家的宝剑诺文』丢给莱纳。",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 54,
+   "quote": "就在他握住剑的一瞬间，侵蚀着莱纳的『世界奉还阵』的影响便消失了。在『理的盗窃者』的加护之下，他身体的溶解（LevelDown）停止了。",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 59,
+   "quote": "在玛利亚离开之后，照理说现在这里剩下的『理的盗窃者』的魔石应该只有『地』与『暗』两个了。不过实际上并非如此。这里还有第三个魔石。",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 60,
+   "quote": "不，岂止三个，搞不好的话甚至有──！！",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 62,
+   "quote": "不仅仅是战斗的胜机，甚至是照亮黑暗的光明。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 160,
+   "text": "莱纳于阵『中心』LevelDown无法避免、海莉所升级别不断消耗而苦战→涡波'带着某种确信'投出『阿雷亚斯家的宝剑诺文』→握剑瞬间侵蚀消失（『理的盗窃者』的加护）→涡波验证：放开『地之理的盗窃者』魔石的自己也不LevelDown（'即使没有了诺文，我也不会受到『世界奉还阵』的影响'）→推理：玛利亚离开后此地应只剩『地』『暗』两魔石、实际有第三个（'不，岂止三个，搞不好的话甚至有──！！'未完）→'希望涌现而出。不仅仅是战斗的胜机，甚至是照亮黑暗的光明'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c6fb9a34f7cc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0160.txt",
+  "sha": "e6350ea367575f27d7cdf670be47daef98db8b6fb9dc69eb3bd909464a919ed6",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

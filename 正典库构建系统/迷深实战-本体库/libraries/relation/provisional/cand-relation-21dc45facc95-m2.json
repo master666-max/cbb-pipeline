@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉",
+  "rel_type": "继承(魔力/灵魂/家名之光)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 143,
+   "quote": "被『世界奉还阵』所溶解的海莉的『魔力』——其所散发的光辉。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 145,
+   "quote": "将在场的光芒全部吸入，转化为自己的血肉的莱纳吼叫着。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 148,
+   "quote": "『我乃赫勒比勒夏因最后之光』！莱纳！『莱纳·赫勒比勒夏因』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 130,
+   "quote": "「──怎能就这样把她交给你（世界）！若要支付『代价』我自会清偿！『汝者，刮目自省而可也』！『此间光辉』，『乃是生命飘渺虚幻之一瞬』──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 144,
+   "quote": "甚至连同她的灵魂──全部，都为他所继承。",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 148,
+   "quote": "「──是以！『在于吾身，在于汝身』！呜呼！『赫勒比勒夏因家所孕育的至高之光将由我继承』！『纵使此身不流其血，此魂此魄亦可抵至其境』！『我乃赫勒比勒夏因最后之光』！莱纳！『莱纳・赫勒比勒夏因』！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "以LevelUp咏唱直接向世界索取（自偿『代价』）吸收海莉被阵溶解而散逸的魔力及其灵魂之光，转化为自己的血肉；宣言『赫勒比勒夏因家所孕育的至高之光将由我继承』『纵使此身不流其血，此魂此魄亦可抵至其境』——继承家名之光而非血"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.95,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-21dc45facc95",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-21dc45facc95-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-21dc45facc95",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

@@ -1,0 +1,84 @@
+{
+ "canonical": {
+  "entities": [
+   "『魔石线』",
+   "世界奉还阵",
+   "帕林库洛",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "帕林库洛零魔力触发世界奉还阵（自爆祈愿）",
+  "tick": 164,
+  "time_verbatim": "世界奉还阵中心·最终决战（当前帧，紧接ch163怪物召唤之后）"
+ },
+ "evidence": [
+  {
+   "chapter": 164,
+   "line": 11,
+   "quote": "因为强行运用魔力的反噬，帕林库洛右臂的皮肤绽裂。",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 14,
+   "quote": "他对作为『世界奉还阵』的载体的『魔石线』进行直接的接触、干涉、并祈愿。",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 15,
+   "quote": "我现在确实没有办法使用魔力了！『理的盗窃者』的力量和『使徒』的力量也都丧失了！",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 16,
+   "quote": "到头来，帕林库洛仍然没有成功用出魔力。他的右臂中就连一滴的魔力也没有流通。",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 17,
+   "quote": "──然而，『世界奉还阵』却开始了脉动。",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 19,
+   "quote": "接着大地就像是块被捏碎的饼干一样到处都是龟裂。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 164,
+   "text": "魔力封印无法驱使→强行运用反噬自爆（右臂皮肤绽裂/手上无数血管炸开鲜血四溢）→仍以血肉模糊的右臂与大地物理连接，对『魔石线』直接接触、干涉、祈愿→宣言丧失魔力/『理的盗窃者』与『使徒』之力/身体溶解中仍'绝不束手投降'（最后一回合）→右臂一滴魔力也未流通却令阵开始脉动（『魔石线』如回应愿望般发光震动）→大地龟裂挡住涡波脚步"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b850eb5891eb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0164.txt",
+  "sha": "9a0c27316d51019a7943e85e8fdcf723197fddcf2d394d3adfd891f5aa4b62b5",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

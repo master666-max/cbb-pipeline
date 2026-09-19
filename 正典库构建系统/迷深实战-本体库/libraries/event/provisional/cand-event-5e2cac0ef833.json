@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒勒伽西",
+   "帕林库洛",
+   "相川涡波",
+   "缇达"
+  ],
+  "instant": null,
+  "kind": "死亡",
+  "name": "帕林库洛之死",
+  "tick": 165,
+  "time_verbatim": "同日（决斗终结后即刻）"
+ },
+ "evidence": [
+  {
+   "chapter": 165,
+   "line": 170,
+   "quote": "失去了魔石的帕林库洛身体开始溶解。跟海莉和士兵们一样，他的肉体被转化为白色的魔力粒子。即使这样帕林库洛也没有摆出打算停止『世界奉还阵』的样子。看来他那自己也停止不了的说辞并不是谎言。",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 180,
+   "quote": "他还没有放弃战斗。",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 186,
+   "quote": "「永别了，帕林库洛⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 196,
+   "quote": "「Haimei⋯⋯⋯Haimeiyoufangqi。Wo，Hai、Mei赢⋯⋯⋯Wo、Haiyao，Haiyao、Aa──、Aaa──」",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 203,
+   "quote": "帕林库洛就连一点骨灰也不剩地被『世界奉还阵』吞噬了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 165,
+   "text": "失去魔石身体开始溶解（同海莉与士兵化为白色魔力粒子）；无停止『世界奉还阵』之意（'自己也停止不了'非谎言）；失去双腿双手如芋虫爬向远处黑剑、'他还没有放弃战斗'；被涡波以真名道别后双目圆睁而笑；声带溶解中含糊遗言成最后台词；留白烟完全消失、骨灰不剩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5e2cac0ef833",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0165.txt",
+  "sha": "8db3200533bf17338be0d14d8d6bcf02d6d5fe575b25502b30a22e2219413b14",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

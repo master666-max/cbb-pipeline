@@ -1,0 +1,84 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛・勒伽西",
+   "海莉",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "帕林库洛怪物化·合成兽自强化",
+  "tick": 160,
+  "time_verbatim": "贯穿本章（前段狼同化、后段尸体融合）"
+ },
+ "evidence": [
+  {
+   "chapter": 160,
+   "line": 34,
+   "quote": "「没错，我已经没法对怪物们进行制御了。本来我就有不死身的特性，虽然这样做不好看所以我不太喜欢，但是拿来当自爆战术用用也没什么不妥」",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 37,
+   "quote": "「──不过，就让我借用一匹的身体好了」",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 38,
+   "quote": "抓住一匹有八只眼睛的巨狼，帕林库洛身上的黑色液体向它涌去。黑色液体像活着的触手一样将巨狼缠绕起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 123,
+   "quote": "帕林库洛也提升了自己的级别，化为了『怪物』",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 124,
+   "quote": "现在想来，他一直在刻意回避对自身的强化。据他自己所言，是因为「感到害怕」的缘故。",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 128,
+   "quote": "他的左脸已经完全变成了黑色的能面。黑色的手臂也在不断增加着。那咕噜咕噜地流动着、膨胀着的躯体上不断地生出被吸收的怪物们的部位。下半身依旧使用着一整只巨狼来支撑他那肥大化的上半身。『怪物』中的『怪物』。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 160,
+   "text": "制御不能下以不死身特性当自爆战术（遭巨型蜈蚣攻击液体之躯被撕裂亦无惧）→'就让我借用一匹的身体好了'：黑色液体如活触手缠绕八眼巨狼、下半身与之同化得四足（姿态离人形更远、袭己怪物误认同伴而减少）→后段以黑翼回收被二人斩杀的怪物尸体不断融合——黑翼肥大化、身体如合成兽、左脸完全黑色能面、下半身整只巨狼支撑肥大化上半身→提升级别化为『怪物』中的『怪物』；曾因'感到害怕'刻意回避自身强化（专以花策利用他人避免亲战）→今为堂堂正正交战而强化（勇气=海莉所赐）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ac983dd70400",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0160.txt",
+  "sha": "e6350ea367575f27d7cdf670be47daef98db8b6fb9dc69eb3bd909464a919ed6",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,54 @@
+{
+ "canonical": {
+  "chapter": 159,
+  "entity_type": "物品",
+  "fact": "铺展于大地之上；海莉不使用自身魔力而从中汲取魔力并将其转化为魔法——把『世界奉还阵』变为友方的手段（本章用法，帕林库洛据此识破其魔力来源）",
+  "name": "『魔石线』",
+  "tick": 159
+ },
+ "evidence": [
+  {
+   "chapter": 159,
+   "line": 18,
+   "quote": "海莉没有使用自己体内的魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 19,
+   "quote": "而是从铺展在大地上的『魔石线』中汲取魔力，并将之转化为魔法。毫无疑问，她将『世界奉还阵』变为了自己的友方。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 159,
+   "text": "阵之载体的新用法：被海莉汲取转用"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-a86905de3042",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0159.txt",
+  "sha": "6ce4653ba10d2533853e0a25603a9bed786c673ba9abee3dcd6d9ca870b24e1b",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

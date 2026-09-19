@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "海莉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "玛利亚怒斥·打醒自暴自弃的涡波",
+  "tick": 156,
+  "time_verbatim": "帕林库洛决战·玛利亚濒极限时"
+ },
+ "evidence": [
+  {
+   "chapter": 156,
+   "line": 161,
+   "quote": "那道火焰轻微的拂过我的右脸。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 172,
+   "quote": "「──帕林库洛是绝对，绝对不会拯救涡波先生的。他是敌人。除了敌人不可能是别的，所以请你不要再『自暴自弃』了，快继续跟帕林库洛战斗，拿出你的全力来⋯⋯！」",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 185,
+   "quote": "我曾那样厌恶海莉的自杀行为，结果现在自己却在做一样的事。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 187,
+   "quote": "「你给我回想一下缇亚最后说的话啊！你给我回想一下离别前拉丝缇娅拉的表情啊！你给我回想一下在城堡战斗的斯诺的姿态啊！大家，全都是为了你，为了涡波先生你啊！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 156,
+   "text": "玛利亚火焰拂过涡波右脸、阻其以削减生命为代价的冻结魔法决意；点破其开心表情=对败北欣慰的微笑、'把死亡当成救赎'的自暴自弃（与其厌恶的海莉自杀行为同构）；'帕林库洛是绝对，绝对不会拯救涡波先生的'；令其回想缇亚最后的话/离别前拉丝缇娅拉的表情/城堡战斗的斯诺；'千年前也好，魔石人类也罢，我们喜欢的就是现在存活在这里的你'——涡波愕然理解后自省"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a971f6c2b610",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0156.txt",
+  "sha": "923fc939a38d36e4ead7183df6ebc964f46f723807ab3f9aa8ba88dc87b2982d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

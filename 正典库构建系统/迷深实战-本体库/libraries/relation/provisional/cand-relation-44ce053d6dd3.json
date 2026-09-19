@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉",
+  "rel_type": "回以信赖·遗言践行",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 161,
+   "line": 41,
+   "quote": "──「能找到妹妹的哟」",
+   "vol": 1
+  },
+  {
+   "chapter": 161,
+   "line": 48,
+   "quote": "────回以信赖，我相信着海莉。",
+   "vol": 1
+  },
+  {
+   "chapter": 161,
+   "line": 50,
+   "quote": "于咆哮中鼓起勇气，将忌避的技能的封印解开。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 161,
+   "text": "'────回以信赖，我相信着海莉''我思考着，祈愿着，叫喊着，以此来祭奠海莉'；'于咆哮中鼓起勇气，将忌避的技能的封印解开'；以'将死之际，她肯定是不会错的'为前提逐条兑现遗言（'能找到妹妹的哟'/'请使用所有的技能'→呼唤『她』→放声呼喊）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-44ce053d6dd3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0161.txt",
+  "sha": "ecbf3ca58f5bca815510f03237d3aadce2dde212e38e4e64143ae6e9f51363f0",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇达",
+  "rel_type": "评价(接近不死之身)",
+  "subject": "阿尔缇"
+ },
+ "evidence": [
+  {
+   "chapter": 156,
+   "line": 99,
+   "quote": "我回想阿尔缇曾评价过缇达接近不死之身的事。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 100,
+   "quote": "正如她所说吧。如果可以使用怪物修复身体的话，那么在这状况下就意味着连HP也是无限的了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 156,
+   "text": "据涡波回想：阿尔缇曾评价缇达接近不死之身——本章帕林库洛以怪物尸体修复身体实证其HP近乎无限"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ee3dd65b0f64",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0156.txt",
+  "sha": "923fc939a38d36e4ead7183df6ebc964f46f723807ab3f9aa8ba88dc87b2982d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

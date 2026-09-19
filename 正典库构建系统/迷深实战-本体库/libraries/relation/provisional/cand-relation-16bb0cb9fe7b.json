@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "原料起源与同一性否定",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 158,
+   "line": 175,
+   "quote": "现在存在于此的是『再诞』失败的劣质品，海莉・维斯普洛佩！",
+   "vol": 1
+  },
+  {
+   "chapter": 158,
+   "line": 192,
+   "quote": "「已经死去的人，绝对无法再度复生！再度得生的我，丝毫不认为我是海因・赫勒比勒夏因！我就是我！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 158,
+   "text": "自述'我的确是以海因为原料创造出来的''确实有一些名叫海因的男人的记忆，但是不是一个人就是不是一个人'——感觉相像只因'我和海因的兴趣有那么一点点重合罢了，只是偶然而已'（据其断言）；自我定位='『再诞』失败的劣质品，海莉・维斯普洛佩'；'已经死去的人，绝对无法再度复生'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-16bb0cb9fe7b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0158.txt",
+  "sha": "97f6aa56c8bfe4f853c70d4eb095df4880562a2434b034da8b65255d05cc546d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

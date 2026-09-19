@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "战场移送",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 158,
+   "line": 274,
+   "quote": "在称赞了我之后，海莉将晕倒的玛利亚送进了『连接』当中，并取消了魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 158,
+   "line": 276,
+   "quote": "「放心吧。只是将她送到安全的地方罢了。这样就可以不用顾虑周围战斗了吧？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 158,
+   "text": "将晕倒的玛利亚经『连接』魔法门送至'安全的地方'（'这样就可以不用顾虑周围战斗了吧'）后取消魔法；并转述已听到玛利亚肯定涡波存在的呐喊、以之激励涡波"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9733f3636ddb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0158.txt",
+  "sha": "97f6aa56c8bfe4f853c70d4eb095df4880562a2434b034da8b65255d05cc546d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

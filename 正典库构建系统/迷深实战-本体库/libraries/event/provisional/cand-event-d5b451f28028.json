@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "海莉",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗/死亡",
+  "name": "海莉之死（决斗落幕与消散）",
+  "tick": 159,
+  "time_verbatim": "第八卷终局战场·世界奉还阵中心（178话·战斗期间雨渐止转晴）"
+ },
+ "evidence": [
+  {
+   "chapter": 159,
+   "line": 48,
+   "quote": "海莉的剑精准地刺穿了帕林库洛的胸膛。",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 123,
+   "quote": "在海莉跟帕林库洛战斗的期间，雨势渐衰。乌云褪去，缕缕阳光透过云层射来。",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 126,
+   "quote": "留下这句话，海莉彻底变成光消失了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 159,
+   "text": "燃命压打（借阵魔力/怒涛风魔法/一往无前）→一剑之隔互贯定胜负（双方均已失实态无血）→松手抚颊遗言+与莱纳道别→战斗期间雨势渐衰乌云褪去，望云层外碧蓝『苍天』→彻底变成光从这个世界上消失（双脚先完全溶解/道尽遗言时仅头部完好/化光消散）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.95,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d5b451f28028",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0159.txt",
+  "sha": "6ce4653ba10d2533853e0a25603a9bed786c673ba9abee3dcd6d9ca870b24e1b",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "对质",
+  "name": "『魔石人类』谎言当面揭穿",
+  "tick": 163,
+  "time_verbatim": "涡波重返交锋时（战场『中心』）"
+ },
+ "evidence": [
+  {
+   "chapter": 163,
+   "line": 109,
+   "quote": "「啊啊，我恢复过来了！而且还知晓了真相！也知道了你这个人是多么卑劣地颠倒了是非！什么『魔石人类』啊！我才不是呢！你这个大骗子！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 163,
+   "line": 110,
+   "quote": "「──！！啊啊，原来如此啊！你都知道了啊！哈哈，我还挺有自信能骗过你的来着呢！感觉如何！？我编的故事挺有意思的吧！？涡波小哥！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 163,
+   "line": 105,
+   "quote": "「哈、哈哈！少年，只依靠自己就恢复过来了吗！？之前那次我可是施加了数量过百的精神魔法才好不容易给你拉回来的哦！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 163,
+   "text": "涡波当面宣告知晓真相：'什么『魔石人类』啊！我才不是呢！你这个大骗子！！'；帕林库洛不再隐瞒、自认编造并自得（'我还挺有自信能骗过你的来着呢'）；另自曝前科——上次曾施加数量过百的精神魔法才把涡波拉回——其『魔石人类』叙事链（ch147 起的对涡波身份宣告）确认为欺骗"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-466741dcb33f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0163.txt",
+  "sha": "79515b245938aa8fbc784cc8dd1a017dc693c4b07e2bea81a3eebcda6d1fcbef",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

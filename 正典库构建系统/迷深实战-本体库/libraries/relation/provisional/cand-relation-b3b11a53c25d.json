@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "缠缚捕缚·固有技能爆发诱导",
+  "subject": "帕林库洛・勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 161,
+   "line": 13,
+   "quote": "接连不断的所释放出大招随之而来的反动也很大。趁着这个空隙，我的手被抓住了。",
+   "vol": 1
+  },
+  {
+   "chapter": 161,
+   "line": 16,
+   "quote": "虽然打算立刻把他甩开，但帕林库洛的手腕发生了变化，就像软件动物一般缠了上来。",
+   "vol": 1
+  },
+  {
+   "chapter": 161,
+   "line": 19,
+   "quote": "「哈哈，胜利的机会就在这里！我要让少年的固有技能爆发！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 161,
+   "line": 151,
+   "quote": "「────做，做到了吗？⋯⋯好，Sh，胜利了！赢了与涡波小哥的竞争！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 161,
+   "text": "抓大招反动空隙得手，手腕变化如软体动物般缠上'还打算就这样侵入'；魔力侵入并宣言'我要让少年的固有技能爆发！！'；涡波崩倒后自称'赢了与涡波小哥的竞争'——诱导技能『？？？』暴走为贯穿全章的战术意图"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b3b11a53c25d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0161.txt",
+  "sha": "ecbf3ca58f5bca815510f03237d3aadce2dde212e38e4e64143ae6e9f51363f0",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,88 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "宿敌决战(败死)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 191,
+   "quote": "「岂能让你得逞，帕林库洛！你今天会被我杀掉……！我一定会杀了你！今天、就在这儿！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1092,
+   "quote": "我想要超越涡波！我想要和真正的涡波战斗，然后超越他！",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1540,
+   "quote": "结果一切都如同既定的命运一般，两把剑交错——",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1573,
+   "quote": "「哈哈，还不到说永别的时候啊？我还没有、wo、还没有放弃、shengfu……！」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 178,
+   "quote": "「哈哈，看来对『涡波』的确保是没戏了啊⋯⋯⋯回收大姐的『魔石』也泡汤了⋯⋯⋯就连『世界奉还阵』也因为那个笨蛋的缘故变得乱七八糟⋯⋯⋯哈、哈哈哈，既然变成了这样，那剩下的『路』也就一条而已了啊⋯⋯⋯没错，只剩下这一条了！都多亏了那个笨蛋的福事情简单多了啊！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 191,
+   "quote": "「岂能让你得逞，帕林库洛！你今天会被我杀掉⋯⋯！我一定会杀了你！今天、就在这儿！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 159,
+   "line": 195,
+   "quote": "讽刺的是，因为彼此的算计全部崩壊，我们才得以下决心互相厮杀。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "笼络失败后双方决意互相厮杀（涡波：『你今天会被我杀掉』/『我们的利害完全一致了』——因彼此算计全部崩坏才得以下决心）；耗尽一切手段（躯壳召唤/夺回黑剑）后只能纯粹拼上全力剑斗（双方濒死互角/如两个小孩子打架般难登大雅之堂）；被『先谭』完全预测动作、黑剑被挑飞完败；临终自认清算真正愿望——『我想赢啊！我只是想要战胜你啊』；消散时仍在喊『还没放弃』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-84100052e3c3",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-84100052e3c3-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-84100052e3c3",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

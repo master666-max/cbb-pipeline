@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "魂抽取救援(复活筹划)",
+  "subject": "缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 162,
+   "line": 67,
+   "quote": "「假死状态吗⋯⋯⋯不，这就足够了。真亏你能将事态从那种状况扭转到现在这样啊⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 162,
+   "line": 70,
+   "quote": "阳滝现在陷入了跟心脏被刺穿化为『完死体（怪物）』的他们相同的状况。但是，缇娅拉却成功地在那种状态下仅将『魔石（魂）』给抽取了出来。",
+   "vol": 1
+  },
+  {
+   "chapter": 162,
+   "line": 82,
+   "quote": "传授抽出『魂』的术式，并筹划使用这个术式让『相川阳滝』复活的计划。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 162,
+   "text": "在阳滝被师父刺穿心脏化为『完死体（怪物）』的状况下，成功仅将『魔石（魂）』抽取出来（始祖涡波：'真亏你能将事态从那种状况扭转到现在这样啊'——据记忆内台词）；以说服始祖涡波+魂抽出双功终结千年前大战（主张'阳滝姐还活着'直到最后）；传授抽出『魂』的术式并筹划以此让『相川阳滝』复活"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-47bb51f00515",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0162.txt",
+  "sha": "8f03d42420e238fea0a122b705499ae0bef54cee1692e791ff82d5348f06d1fd",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "DeepDurahan",
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波",
+   "闪耀吧炎之剑"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "『闪耀吧炎之剑』战场扫讨",
+  "tick": 156,
+  "time_verbatim": "帕林库洛决战·终盘"
+ },
+ "evidence": [
+  {
+   "chapter": 156,
+   "line": 203,
+   "quote": "足以斩断世界的巨大炎之剑，由玛利亚挥下。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 214,
+   "quote": "首先被召唤在周围的怪物们只在顷刻间便化作了灰烬。一瞬间就被炭化的它们最后连着炭一起被烧得灰飞烟灭。就如字面意思，连炭都不剩。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 222,
+   "quote": "『炎之剑』连同『耐性』这个『理（Rule）』也一并烧尽了。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 225,
+   "quote": "仅仅几秒钟，原本还存在于战场上的草木和岩石便消失的无影无踪，远处耸立的群山也被烧得不成原样，地面基本全都化作了熔岩，战场转变成了一片赤色的荒野。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 227,
+   "quote": "在周围好几平方公里的范围内被召唤出的数量过万的怪物们已经全灭了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 156,
+   "text": "玛利亚决意耗尽MP（自言将陷无法行动状态）→业火螺旋贯穿天际→『闪耀吧炎之剑』逆十字巨剑（剑芯红转白=阿尔缇级）→『将地平线一同斩裂』挥下：海啸般的火焰席卷战场、怪物顷刻灰飞烟灭连炭不剩、有意避开涡波（飓风眼）；DeepDurahan独存缓接近施法者→玛利亚再横挥全烧——白炎熔解之、『炎之剑』连同『耐性』这个『理（Rule）』一并烧尽；数秒内数平方公里过万怪物全灭、群山烧变形、地面熔岩化、战场成赤色荒野"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c22b435d535b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0156.txt",
+  "sha": "923fc939a38d36e4ead7183df6ebc964f46f723807ab3f9aa8ba88dc87b2982d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛・勒伽西",
+   "海莉",
+   "玛利亚",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "布阵",
+  "name": "玛利亚移送与治疗布阵",
+  "tick": 158,
+  "time_verbatim": "诀别后、再战前"
+ },
+ "evidence": [
+  {
+   "chapter": 158,
+   "line": 269,
+   "quote": "她捏碎了一个作为魔法道具的戒指，打造出翠绿色的魔法门。",
+   "vol": 1
+  },
+  {
+   "chapter": 158,
+   "line": 282,
+   "quote": "「以少年现在的状态去战斗的话，又会让帕林库洛的精神攻击得逞的。现在先让莱纳帮你将受到污染的精神状态调整好。治疗的时间我会为你争取」",
+   "vol": 1
+  },
+  {
+   "chapter": 158,
+   "line": 285,
+   "quote": "──状态：混乱7.87精神污染1.22认识阻碍0.23──",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 158,
+   "text": "海莉咏唱『连接』、捏碎作为魔法道具的戒指造出翠绿色魔法门，将晕倒玛利亚送至安全地带后取消魔法；阻止涡波参战（'以少年现在的状态去战斗的话，又会让帕林库洛的精神攻击得逞的'），安排莱纳以神圣魔法调整其受污染精神、自任争取治疗时间；涡波『表示』自检=混乱7.87／精神污染1.22／认识阻碍0.23"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fab091c30111",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0158.txt",
+  "sha": "97f6aa56c8bfe4f853c70d4eb095df4880562a2434b034da8b65255d05cc546d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

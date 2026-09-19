@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迷宫",
+  "rel_type": "同系统同源(据称)",
+  "subject": "世界奉还阵"
+ },
+ "evidence": [
+  {
+   "chapter": 156,
+   "line": 28,
+   "quote": "「毕竟『世界奉还阵』跟『迷宫』是同一系统的术式，进行这种程度的『想起收束』简直轻而易举。不如说这才是『世界奉还阵』原本的用途才对」",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 30,
+   "quote": "但是迷宫确实拥有召唤怪物的能力。那么这样看来，『世界奉还阵』确实跟『迷宫』有密切的关系。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 156,
+   "text": "据帕林库洛：'跟迷宫是同一系统的术式'、想起收束轻而易举；涡波以迷宫拥有召唤怪物能力佐证、判二者有密切关系（同时自认无法看透术式细节）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9e9eadd51347",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0156.txt",
+  "sha": "923fc939a38d36e4ead7183df6ebc964f46f723807ab3f9aa8ba88dc87b2982d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

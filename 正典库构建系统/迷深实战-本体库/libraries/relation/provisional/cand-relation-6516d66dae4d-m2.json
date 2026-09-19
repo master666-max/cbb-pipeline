@@ -1,0 +1,88 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "追求(夺魔石错装)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 82,
+   "line": 1215,
+   "quote": "明明自己的『灵魂』就在面前，他却更想要、不，只想要得到妹妹的『灵魂』。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1339,
+   "quote": "『始祖涡波』的手握住了在我体内的——『魔石』。",
+   "vol": 1
+  },
+  {
+   "chapter": 82,
+   "line": 1364,
+   "quote": "——就这样，『身体』和『魔石』产生了错装。",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 80,
+   "quote": "「在、在渴求我！？不对，是想要我体内的『魔石（阳滝）』吗！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 82,
+   "quote": "即使失去了一切，即使变得一无所知，『涡波』这一存在也会永远追求着『妹妹』",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 220,
+   "quote": "『始祖涡波』将从我体内抽出的『魔石』抱在胸前，逃离了我身边。",
+   "vol": 1
+  },
+  {
+   "chapter": 164,
+   "line": 228,
+   "quote": "为了不再分离，他小心再小心、珍惜再珍惜地将『魔石』收进体内。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 82,
+   "text": "无魂躯壳唯遵本能永远追求妹妹——弃眼前的『自己的灵魂』（次元魔石）于不顾、只想要妹妹的『灵魂』；以『幻之紫腕』探入涡波体内紧握魔石（超越肉体疼痛的心灵剧痛）并借次元断层甩开涡波剥离之；得手后珍而重之纳入自身体内致『身体』与『魔石』错装——躯壳因魂优先而再诞为阳滝少女（『即使失去了一切，即使变得一无所知，『涡波』这一存在也会永远追求着『妹妹』』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-6516d66dae4d",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6516d66dae4d-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-6516d66dae4d",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

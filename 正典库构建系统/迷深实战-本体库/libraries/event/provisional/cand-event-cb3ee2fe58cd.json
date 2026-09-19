@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛・勒伽西",
+   "次元之冬",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "共鸣魔法『次元之冬・朔风』冻结帕林库洛",
+  "tick": 160,
+  "time_verbatim": "黑刃被错位后紧接"
+ },
+ "evidence": [
+  {
+   "chapter": 160,
+   "line": 167,
+   "quote": "「粉碎他的四肢！──『SehrWind・Madness』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 169,
+   "quote": "「冬之风啊，将黑暗冻结！！共鸣魔法『次元之冬・朔风』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 173,
+   "quote": "「这个魔法是、可恶！『Dark──！』」",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 176,
+   "quote": "结果成功地在帕林库洛完成暗魔法前就让『次元之冬・朔风』席卷他的全身。",
+   "vol": 1
+  },
+  {
+   "chapter": 160,
+   "line": 177,
+   "quote": "体温被剥夺，黑色液体构成的躯体也被渐渐冻结。再加上暴风对行动的封锁。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 160,
+   "text": "莱纳'粉碎他的四肢！'暴风趁隙（SehrWind・Madness）+涡波冷气→即兴络合完成凶恶共鸣魔法『次元之冬・朔风』（未经任何练习）——驱逐在场所有暖气、夺取已丧失热量防御之物质的温度、接触一切全冻结；帕林库洛欲以魔法迎击（'这个魔法是、可恶！『Dark──！』'）被涡波以『次元之冬』全力干扰、在完成暗魔法前被席卷全身——体温被剥夺、黑色液体躯体渐冻、暴风封锁行动→'帕林库洛产生了决定性的破绽'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-cb3ee2fe58cd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0160.txt",
+  "sha": "e6350ea367575f27d7cdf670be47daef98db8b6fb9dc69eb3bd909464a919ed6",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

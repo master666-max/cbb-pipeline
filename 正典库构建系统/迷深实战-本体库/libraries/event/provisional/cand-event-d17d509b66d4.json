@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entities": [
+   "DeepDurahan",
+   "WindLever",
+   "世界奉还阵",
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "『世界奉还阵』怪物军团量产",
+  "tick": 156,
+  "time_verbatim": "帕林库洛决战·中盘（战场全域）"
+ },
+ "evidence": [
+  {
+   "chapter": 156,
+   "line": 14,
+   "quote": "失去了意识之后，肉体的溶解速度也变得更快了。现在士兵们的身体已经丧失了原形，基本已经完全被转化为了魔力粒子。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 42,
+   "quote": "伴随呜呜啦啦的声音，怪物们分别沿着独特的轨道向我们扑来。但是，不知为何它们全都无视了我的存在，冲玛利亚那边──",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 53,
+   "quote": "周围士兵们的粒子化不断加速，生成了十匹左右的怪物。而且在更远的位置上还有更多的怪物诞生出来。看来他打算利用整个战场不断地打造兽之军势。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 136,
+   "quote": "很明显是跟在迷宫内的熔岩地带出没的怪物一样拥有对火耐性的敌人。而且还是相当高级的那种。看来是帕林库洛特别挑选的对付玛利亚的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 156,
+   "line": 140,
+   "quote": "到头来还是让他召唤出了共计三匹的DeepDurahan。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 156,
+   "text": "阵亡士兵/高官肉体粒子化注入帕林库洛→想起收束生怪鸟WindLever（涡波冰结剑斩杀）→DarkCloth强化五匹级别30上下怪物、全无视涡波专袭玛利亚→倍增量产（十匹→远处更多→无差别数十匹混杂对火耐性者）→'大姐的天敌'DeepDurahan级别45弹反炎之剑、量产共三匹→玛利亚濒临极限"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d17d509b66d4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0156.txt",
+  "sha": "923fc939a38d36e4ead7183df6ebc964f46f723807ab3f9aa8ba88dc87b2982d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}
