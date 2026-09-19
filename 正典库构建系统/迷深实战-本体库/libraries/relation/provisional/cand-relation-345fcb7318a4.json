@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "南军高官",
+  "rel_type": "悲愿欺瞒与牺牲",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 155,
+   "line": 92,
+   "quote": "士兵们坚信『魔法阵』是什么好东西。而不知道它其实是在过去的战争中导致大陆九成生命死亡的『世界奉还阵』",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 206,
+   "quote": "「你一开始就打算牺牲我们吗⋯⋯！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 213,
+   "quote": "「啊啊，似乎是那样」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 155,
+   "text": "（沿用 ch0081 关系名）坐视全军把『魔法阵』当悲愿欢庆（信息不对称——实为致大陆九成生命死亡之世界奉还阵）；对高官『你一开始就打算牺牲我们吗』等质问全部应『啊啊』；对其亡后仅以掺杂情感的应答收场（『啊啊，似乎是那样』）——信任其的军人述说着不可能的未来而全灭"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-345fcb7318a4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0155.txt",
+  "sha": "e8255492234a7b18583dce08780c8438cdbff0e6a82d1efd35226fe280a115da",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

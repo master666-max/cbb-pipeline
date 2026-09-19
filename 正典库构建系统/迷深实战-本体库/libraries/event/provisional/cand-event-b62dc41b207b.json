@@ -1,0 +1,88 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "宿营",
+  "name": "废村宿营与彻夜MP回复（决前夜）",
+  "tick": 152,
+  "time_verbatim": "决前夜至次日清晨（日期改变）"
+ },
+ "evidence": [
+  {
+   "chapter": 152,
+   "line": 182,
+   "quote": "「要赶上明天的袭击的话，现在先到这附近的村子去吧。在那里休息一晚上是最合适的」",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 184,
+   "quote": "那是一个因为战争的影响而被废弃的村子。虽然没有什么食物，不过能借一间屋子休息就很不错了。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 187,
+   "quote": "这里什么都没有。使用『维度』进行确认，周围也没有几个士兵。可能这里是没什么战略价值的地方吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 191,
+   "quote": "为了恢复先前流失的MP，我和玛利亚换班开始休息。因为光是移动就花了好几小时，等我们开始休息的时候天色已晚。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 195,
+   "quote": "所以我在房间的角落倚坐着，盯着这间借用的房子的墙壁。一个接一个地数着被烧毁的墙壁上的裂痕，让内心维持空虚的状态。数完之后又开始一点又一点地看着自己MP的不断恢复。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 199,
+   "quote": "当MP的回复结束之后，日期已经改变了。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 201,
+   "quote": "连续两夜都没合眼的我，却总觉得身体莫名的轻盈──",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 152,
+   "text": "采玛利亚提案投宿战祸废弃村（无食物、可借屋；『维度』确认周围士兵稀少）；移动数小时后天色已晚，二人换班休息；涡波失眠，倚坐数烧毁墙壁裂痕维持内心空虚、逐点确认MP回复；回复完毕时日期已改变——连续两夜未眠却觉身体莫名轻盈"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b62dc41b207b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0152.txt",
+  "sha": "f160c964434ef5a845677cb9f20d263ae35e0bfde9cd21b966620190090afb77",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

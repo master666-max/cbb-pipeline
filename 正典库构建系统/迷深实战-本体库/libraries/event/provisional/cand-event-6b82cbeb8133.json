@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "『暗之理的盗窃者』",
+   "帕林库洛",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "决斗开幕：帕林库洛重创与半死体化自刎",
+  "tick": 154,
+  "time_verbatim": "本章开场连续场景（承接上章决战），无绝对时间坐标"
+ },
+ "evidence": [
+  {
+   "chapter": 154,
+   "line": 3,
+   "quote": "帕林库洛轻轻一跳。",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 19,
+   "quote": "反手一记横斩，水晶之间划过了帕林库洛的双眼，夺去了他的光明。",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 34,
+   "quote": "「不，还没完。我还没完。接下来是『半死体』化」",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 43,
+   "quote": "这就是『暗之理的盗窃者』的『半死体』──",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 44,
+   "quote": "「来吧，第二回合了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 154,
+   "text": "帕林库洛轻跳斩喉开局→涡波一招擦剑断其三指→斩飞右臂（帕以单手挥舞握剑断臂强攻）→反手横斩于水晶之间夺其双目→帕却步放声大笑（自嘲撑不过十秒）→涡波劝降（不可同日而语/正在变成超越守护者的『怪物』）→帕宣言'接下来是『半死体』化'举剑自刺喉咙→紫色魔力泄露、魔力反增→黑液包裹全身（血由红转黑/姿态接近曾交战的守护者）→右臂双眼黑液再生（眼球全黑）→'来吧，第二回合了'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6b82cbeb8133",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0154.txt",
+  "sha": "aead9fc67947cd3c657f7aa97dfe26cad1f31b98a27a7f1c2e079f9cb65bb1ba",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

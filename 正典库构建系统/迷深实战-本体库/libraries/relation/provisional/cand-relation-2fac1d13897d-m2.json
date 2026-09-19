@@ -1,0 +1,94 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛·勒伽西",
+  "rel_type": "暗之理创伤战逃与回归",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 586,
+   "quote": "帕林库洛的右臂咕哒咕哒地蠕动着渐渐变化为黑色的液体。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 588,
+   "quote": "看到这一幕的斯诺发出了不成声的悲鸣。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 867,
+   "quote": "「你就原谅她吧，少年。斯诺她对『暗之理的盗窃者』是有心理阴影的。记得是数年前被他杀害了所有的同伴对吧？」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 863,
+   "quote": "「刚、刚才逃走了，对不起。不、不要讨厌我……」",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 16,
+   "quote": "「刚、刚才逃走了，对不起。不、不要讨厌我⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 20,
+   "quote": "斯诺她对『暗之理的盗窃者』是有心理阴影的。记得是数年前被他杀害了所有的同伴对吧？",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 24,
+   "quote": "「没关系的，斯诺。我没有生你的气。你肯来到这个战场上，我就应该感谢你了。",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 28,
+   "quote": "我却还把她当成擅长对付帕林库洛的战斗人员，都怪我太天真了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "帕林库洛将右臂化为黑色液体（同缇达变化、只针对斯诺解放暗之理之力）并威胁『那场悲剧会重演』；据海莉：斯诺数年前被『暗之理的盗窃者』杀害了所有同伴故有心理阴影；斯诺发悲鸣后越城墙战逃；随海莉返场谢罪获涡波谅解（涡波自省将其当战斗人员是自己的天真——斯诺在船上说过人是没办法那么容易就改变的）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-2fac1d13897d",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2fac1d13897d-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-2fac1d13897d",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

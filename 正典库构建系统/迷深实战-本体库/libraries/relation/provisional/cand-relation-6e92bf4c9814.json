@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "压倒性制压(两秒夺目断臂·十秒将军)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 154,
+   "line": 5,
+   "quote": "这是空灵流动的一剑。剑中凝结着百般磨砺的技术。正所谓是骑士所能挥出的最理想的剑闪──然而，却还差得远。",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 85,
+   "quote": "正好经历了十秒左右的攻防。战斗就这样宣告结束了。",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 90,
+   "quote": "「我变强了。一直不停地在迷宫打拼，战斗过来的我，就凭自那天起一点变化也没有的你是赢不了的⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 154,
+   "text": "剑速判若云泥：帕林库洛的骑士理想剑闪于涡波如慢动作、连毫毛都碰不到；两秒余夺其三指右臂双眼；第二回合约十秒将军（黑液弹幕全避→冰枪贯穿封身→剑抵咽喉）；差距根源宣言——'一直不停地在迷宫打拼，战斗过来的我，就凭自那天起一点变化也没有的你是赢不了的'（帕林库洛自认败于怠惰未升级）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6e92bf4c9814",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0154.txt",
+  "sha": "aead9fc67947cd3c657f7aa97dfe26cad1f31b98a27a7f1c2e079f9cb65bb1ba",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

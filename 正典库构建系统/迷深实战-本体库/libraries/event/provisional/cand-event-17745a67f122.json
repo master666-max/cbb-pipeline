@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "涡波放弃救援士兵与玛利亚制止",
+  "tick": 155,
+  "time_verbatim": "全军溶解进行中（南军高官倒下前）"
+ },
+ "evidence": [
+  {
+   "chapter": 155,
+   "line": 159,
+   "quote": "「大家！请立刻逃到『魔法阵』的范围之外去！现在行动还来得及！在这期间我会──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 163,
+   "quote": "「不要把目光从敌人身上移开。这也是帕林库洛・勒伽西的攻击──，我们还在战斗中」",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 171,
+   "quote": "可能的话，我真的想拯救所有人。因为『我』就是那样一个人。在几乎失去了一切的现在，我反而越发清楚地意识到自己的这一性格。只有去救他们，才能让我确信我还是我。",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 174,
+   "quote": "我有这样的经验。因此，令我遗憾地──在玛利亚的再三忠告下，我只能放弃对士兵们施以援手。",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 195,
+   "quote": "固定住我这一存在的『楔子』也一个接一个被拔除。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 155,
+   "text": "涡波欲令全员逃出阵外（『大家！请立刻逃到『魔法阵』的范围之外去！现在行动还来得及！』）——话未完被玛利亚打断并制止（『这也是帕林库洛・勒伽西的攻击──，我们还在战斗中』+握腕不放）；其自白：赌命救士兵『非常具有魅力』、甚至觉得为之而死都划算，但深知无差别拯救=无法负责到最后的伪善、且数量超出能力——『在玛利亚的再三忠告下，我只能放弃对士兵们施以援手』；促成其奋战的理由与固定自我存在的『楔子』随士兵全灭被逐根拔除；对拒走『劳拉维亚的英雄』之路的自责回想相伴"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-17745a67f122",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0155.txt",
+  "sha": "e8255492234a7b18583dce08780c8438cdbff0e6a82d1efd35226fe280a115da",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

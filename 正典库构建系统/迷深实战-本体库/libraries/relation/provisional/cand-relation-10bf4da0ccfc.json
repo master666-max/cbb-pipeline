@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "塞拉·雷迪安特",
+  "rel_type": "集中削弱(仿真战全败宿敌)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 149,
+   "line": 154,
+   "quote": "你是最棘手的一个。不仅没什么弱点，而且你很习惯与我战斗。我可没忘记自己在仿真战中一次都没赢过你的事哦？",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 159,
+   "quote": "将咒术『世界奉还阵』的对象集中设置为塞拉・蕾蒂安忒",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 166,
+   "quote": "虽然你被告诫过不要直接接触我，不过还是太嫩了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 149,
+   "text": "点名『蕾蒂安忒。你是最棘手的一个。不仅没什么弱点，而且你很习惯与我战斗。我可没忘记自己在仿真战中一次都没赢过你的事哦？』；随后『将咒术『世界奉还阵』的对象集中设置为塞拉・蕾蒂安忒』——中庭之光收束射向她；另称其『被告诫过不要直接接触我，不过还是太嫩了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-10bf4da0ccfc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0149.txt",
+  "sha": "d01ff630f39a0899f5862211887445d3d53173bf0bf762fa8f36045665fd2265",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

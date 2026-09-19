@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "天敌魔法压制(千年前吞噬者·称『死神』)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 149,
+   "line": 139,
+   "quote": "这就是那个千年前将你们吞噬的『魔法阵』──咒术『世界奉还阵』啊",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 144,
+   "quote": "恐怕这个『魔法阵』具有吸收魔力的效果。因此莉帕陷入了魔力不足的状态。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 149,
+   "text": "称其『死神』，告知此阵即『那个千年前将你们吞噬的『魔法阵』──咒术『世界奉还阵』』『是你的天敌魔法哦』；伸手紧握遥控魔力吸收——呼吸困难状丢下镰刀（同初遇时被切断『连接』的症状；据涡波判断：阵具有吸收魔力的效果）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b8814ec2c379",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0149.txt",
+  "sha": "d01ff630f39a0899f5862211887445d3d53173bf0bf762fa8f36045665fd2265",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

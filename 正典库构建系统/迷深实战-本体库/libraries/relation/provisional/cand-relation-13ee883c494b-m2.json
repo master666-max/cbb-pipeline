@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "存在证明演说与代价不容独担",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 703,
+   "quote": "不管你知道了什么，不论你失去了什么，都改变不了涡波先生存在于此的事实！",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 697,
+   "quote": "「过去之类的，跟现在没有关系！现在应该专心救出缇亚才对吧！？涡波先生！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 705,
+   "quote": "总结起来很简单。就是我不能允许只让玛利亚一个人一而再再而三地付出『代价』。",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 11,
+   "quote": "过去之类的，跟现在没有关系！现在应该专心救出缇亚才对吧！？涡波先生！！",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 17,
+   "quote": "不管你知道了什么，不论你失去了什么，都改变不了涡波先生存在于此的事实！",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 19,
+   "quote": "就是我不能允许只让玛利亚一个人一而再再而三地付出『代价』",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "危机演说：不管知道或失去了什么都改变不了涡波先生存在于此的事实（就算不叫涡波也无所谓/名字已变过一次再改一次又何妨）；过去与现在无关、应专心救出缇亚；批评剑术上展露败相的涡波；涡波以『不能允许只让玛利亚一而再再而三地付出代价』为支点取回战意"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-13ee883c494b",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-13ee883c494b-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-13ee883c494b",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

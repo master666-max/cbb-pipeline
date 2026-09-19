@@ -1,0 +1,282 @@
+{
+ "unit": "ch0152",
+ "chapter": 152,
+ "ingestion_index": 123,
+ "title": "171话-幕间",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 31,
+  "pass": 29,
+  "intercept": 2,
+  "admitted": 26,
+  "quarantined": 5
+ },
+ "tracks": {
+  "consistent-duplicate": 9,
+  "contradiction": 1,
+  "on-create": 16
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-1adb3cd211eb",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m88"
+   }
+  },
+  {
+   "record_id": "cand-entity-4c78f4a53de6",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m49"
+   }
+  },
+  {
+   "record_id": "cand-entity-82cf38d6b01d",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m59"
+   }
+  },
+  {
+   "record_id": "cand-entity-1eeb725d022f",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m37"
+   }
+  },
+  {
+   "record_id": "cand-entity-ca700c6a07f9",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m39"
+   }
+  },
+  {
+   "record_id": "cand-entity-7e688387080a",
+   "type": "entity",
+   "name": "塞拉·雷迪安特",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-c4d221e71ea0-m21"
+   }
+  },
+  {
+   "record_id": "cand-entity-1fc099bd929d",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m36"
+   }
+  },
+  {
+   "record_id": "cand-entity-14a9e18b6250",
+   "type": "entity",
+   "name": "阿尔缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-1b4861b44ab5"
+   }
+  },
+  {
+   "record_id": "cand-entity-c4151e0077de",
+   "type": "entity",
+   "name": "技能『并列思考』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-27ba4e8ea602-m4"
+   }
+  },
+  {
+   "record_id": "cand-relation-e542379a7378",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-bbe4288fe130",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-852fff93d4e0",
+   "type": "relation",
+   "name": "塞拉·雷迪安特",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d717a4e3d2dd",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4d881674edd4",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fb57f4702fd1",
+   "type": "relation",
+   "name": "莉帕",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4f88609b9073",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-127838e2753d-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-0a8a62556766",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-df4eafdbf4ce",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-6551f1e96b67",
+   "type": "event",
+   "name": "队伍分派（四人离队/斯诺任领队）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9fad5ed659ae",
+   "type": "event",
+   "name": "『维度』北方全域观测与军势预测失败",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9cd57574ad83",
+   "type": "event",
+   "name": "军势分析与帕林库洛负伤泄露判读",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b62dc41b207b",
+   "type": "event",
+   "name": "废村宿营与彻夜MP回复（决前夜）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-baa7fad76f26",
+   "type": "setting",
+   "name": "『维度』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-756cd83130bc",
+   "type": "setting",
+   "name": "瓦尔德本土北部战场（科斯特/科纳/利维拉/阿尔德纳）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-56b10fa416a2",
+   "type": "setting",
+   "name": "世界奉还阵（千年前魔法阵·再现）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-72c19b238a2b",
+   "type": "setting",
+   "name": "LivingLegend队伍的崩壊（七人→二人）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-c576c02b3ec3",
+   "type": "entity",
+   "name": "海莉",
+   "item_id": "q-2aac6770399b",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-0b343cac128c",
+   "type": "entity",
+   "name": "缇亚",
+   "item_id": "q-fd0c41915fd0",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-2366bf28a159",
+   "type": "foreshadow",
+   "name": "涡波身体的莫名轻盈",
+   "item_id": "q-377d5469ba35",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-e8157649858e",
+   "type": "foreshadow",
+   "name": "帕林库洛事先准备的『魔法阵』（濒死续唱·涡波坐视）",
+   "item_id": "q-13aefdce0d57",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  },
+  {
+   "record_id": "cand-foreshadow-1318de9c8e04",
+   "type": "foreshadow",
+   "name": "帕林库洛（勒伽西）的意图与诱敌",
+   "item_id": "q-ddc9500fbf37",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  }
+ ],
+ "anchor": {
+  "tick": 123,
+  "pseudo_date": "2000-05-03",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 478,
+   "edges": 884,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 472,
+    "edges": 884
+   }
+  }
+ }
+}

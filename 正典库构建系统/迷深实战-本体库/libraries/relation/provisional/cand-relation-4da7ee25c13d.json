@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "求情代辩(阴影代披露)",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 151,
+   "line": 13,
+   "quote": "「好啦好啦，我会跟你一起道歉的，快出来吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 19,
+   "quote": "当我正烦恼该如何将自己的想法传达给斯诺时，海莉也来为斯诺求情。",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 20,
+   "quote": "「你就原谅她吧，少年。斯诺她对『暗之理的盗窃者』是有心理阴影的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 151,
+   "text": "为战逃的斯诺向涡波求情（'我会跟你一起道歉的，快出来吧'——微笑侧身让斯诺上前）；代为披露其对『暗之理的盗窃者』的心理阴影与同伴全灭之过去（海莉比涡波更清楚斯诺的过去——海因记忆）；涡波顺其台阶抚摸斯诺头谅解"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4da7ee25c13d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0151.txt",
+  "sha": "b854aa0d8a410807cc142e10a6a58f242e1493d4549aba07240bee927f530dff",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

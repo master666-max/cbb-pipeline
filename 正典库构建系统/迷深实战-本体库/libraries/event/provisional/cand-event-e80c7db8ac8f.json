@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛的部下",
+   "斯诺·沃克",
+   "海莉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "援军",
+  "name": "海莉乱入救援与城堡镇压",
+  "tick": 150,
+  "time_verbatim": "同夜·紧接杀意萌生后"
+ },
+ "evidence": [
+  {
+   "chapter": 150,
+   "line": 137,
+   "quote": "不行，少年。『Sehr・Wind』",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 150,
+   "quote": "我知道帕林库洛要逃到哪儿。现在就让他逃掉也没关系。先冷静下来镇压这座城堡吧",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 160,
+   "quote": "最后只剩下我们四人还站着。说是完胜也不为过。",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 162,
+   "quote": "帕林库洛和西斯。我们没能抓住身为目标的二者中的任何一人。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 150,
+   "text": "海莉『Sehr・Wind』吹飞士兵（撞墙失神）抹消涡波杀意；牵斯诺手自城墙现身（涡波一度摆迎击架势、见其眼中无丝毫敌意而解除）；劝其保持冷静、告知『我知道帕林库洛要逃到哪儿』并主张暂放先镇压城堡、守护涡波背后；战况逆转——后续冲至士兵全部于几分钟内击晕、四人完胜；然奇袭作战终告失败：帕林库洛与西斯两个目标皆未抓住。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e80c7db8ac8f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0150.txt",
+  "sha": "7b2d6539c12dfa23004d89141de92db9f8b99f7991e2e08df3cba65784995046",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,347 @@
+{
+ "unit": "ch0151",
+ "chapter": 151,
+ "ingestion_index": 122,
+ "title": "170话-追踪",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 38,
+  "pass": 35,
+  "intercept": 3,
+  "admitted": 31,
+  "quarantined": 7
+ },
+ "tracks": {
+  "consistent-duplicate": 16,
+  "on-create": 13,
+  "contradiction": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-1d385cfd2717",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m87"
+   }
+  },
+  {
+   "record_id": "cand-entity-316ab6953567",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m48"
+   }
+  },
+  {
+   "record_id": "cand-entity-84bfcfabe60a",
+   "type": "entity",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2719634011-m6"
+   }
+  },
+  {
+   "record_id": "cand-entity-8fc148f296dd",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m36"
+   }
+  },
+  {
+   "record_id": "cand-entity-25a791091de2",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m35"
+   }
+  },
+  {
+   "record_id": "cand-entity-f2e271ae2702",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2c6486ab38-m10"
+   }
+  },
+  {
+   "record_id": "cand-entity-34dc5034766d",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m46"
+   }
+  },
+  {
+   "record_id": "cand-entity-908aef2581d4",
+   "type": "entity",
+   "name": "艾德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-43aa892f43d2-m11"
+   }
+  },
+  {
+   "record_id": "cand-entity-6effb20f8386",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m16"
+   }
+  },
+  {
+   "record_id": "cand-entity-28b3480af287",
+   "type": "entity",
+   "name": "相川阳滝",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-19f341955628-m16"
+   }
+  },
+  {
+   "record_id": "cand-entity-f45bac864c9e",
+   "type": "entity",
+   "name": "勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-106ade3052f4-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-394541ee6918",
+   "type": "entity",
+   "name": "海因·赫勒比勒夏因",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4cd68e1d3308-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-04939a6761ac",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑诺文",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-121b4652fa68-m3"
+   }
+  },
+  {
+   "record_id": "cand-relation-26efb53d0dfe",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-2fac1d13897d-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-1b4e19417cbc",
+   "type": "relation",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-c2057ae1dc44-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-44703a98bf20",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-3d4a8730cd7b"
+   }
+  },
+  {
+   "record_id": "cand-relation-f684bd9e3f1b",
+   "type": "relation",
+   "name": "海因·赫勒比勒夏因",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-968b5cf37f76"
+   }
+  },
+  {
+   "record_id": "cand-relation-eebc2dbe601c",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-331f9c695403",
+   "type": "relation",
+   "name": "帕林库洛·勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-c4e0037d1bab-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-b1fd42e00bdb",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8004a15659df",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4da7ee25c13d",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-4dfe4d975fce",
+   "type": "event",
+   "name": "海莉乱入救援与城堡镇压",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b1dda0749b79",
+   "type": "event",
+   "name": "艾德一行动向（北上兴国/莱纳被捕）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3015a0738128",
+   "type": "event",
+   "name": "世界奉还阵质询与勒伽西意志说",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-223273d1ec20",
+   "type": "event",
+   "name": "涡波三目的宣言与继续战斗确认",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8e296a02ff14",
+   "type": "event",
+   "name": "海莉别离与追击出发（马车）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-f48d7874af22",
+   "type": "foreshadow",
+   "name": "世界奉还阵发动迫近（主战场中军）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-59fe7319b7ed",
+   "type": "setting",
+   "name": "世界奉还阵（千年前魔法阵·再现）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4ffafef82149",
+   "type": "setting",
+   "name": "魔石线",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-7b200dda2c17",
+   "type": "setting",
+   "name": "双重记忆三重并列（缇亚·使徒西斯／涡波·始祖涡波／帕林库洛·勒伽西）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-d64853151edc",
+   "type": "entity",
+   "name": "西娅·勒伽西",
+   "item_id": "q-230b21f7e3db",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-aa39106dd67b",
+   "type": "entity",
+   "name": "露洁",
+   "item_id": "q-4f2e5f73a698",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-bda89f43df8f",
+   "type": "entity",
+   "name": "诺瓦露",
+   "item_id": "q-ff724a1b4b48",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-3da383043031",
+   "type": "entity",
+   "name": "莉帕",
+   "item_id": "q-866fd0719ffa",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-c8b9540b4464",
+   "type": "foreshadow",
+   "name": "阳滝死讯的真伪与最深部确认",
+   "item_id": "q-fb027809c7ef",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  },
+  {
+   "record_id": "cand-foreshadow-4efadc584417",
+   "type": "foreshadow",
+   "name": "次元魔法大陆覆盖追踪计划",
+   "item_id": "q-c7e4e534f23f",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  },
+  {
+   "record_id": "cand-foreshadow-419755a7d94f",
+   "type": "foreshadow",
+   "name": "涡波=容器/无名存在",
+   "item_id": "q-1708991dc511",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  }
+ ],
+ "anchor": {
+  "tick": 122,
+  "pseudo_date": "2000-05-02",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 478,
+   "edges": 876,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 472,
+    "edges": 876
+   }
+  }
+ }
+}

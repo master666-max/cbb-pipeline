@@ -1,0 +1,276 @@
+{
+ "unit": "ch0148",
+ "chapter": 148,
+ "ingestion_index": 119,
+ "title": "167话-物语的终末",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 31,
+  "pass": 29,
+  "intercept": 2,
+  "admitted": 25,
+  "quarantined": 6
+ },
+ "tracks": {
+  "on-create": 18,
+  "contradiction": 2,
+  "consistent-duplicate": 5
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-5d364e5b444b",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m84"
+   }
+  },
+  {
+   "record_id": "cand-entity-5ad541ff0a13",
+   "type": "entity",
+   "name": "相川阳滝",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-19f341955628-m14"
+   }
+  },
+  {
+   "record_id": "cand-entity-3ab81c3018af",
+   "type": "entity",
+   "name": "次元之理的盗窃者",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-daa1f77edb66"
+   }
+  },
+  {
+   "record_id": "cand-entity-8fdeaf0801a7",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2c6486ab38-m9"
+   }
+  },
+  {
+   "record_id": "cand-entity-f6a3a006ea3f",
+   "type": "entity",
+   "name": "缇娅拉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-653c6d991d7c"
+   }
+  },
+  {
+   "record_id": "cand-entity-865cd529e279",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m57"
+   }
+  },
+  {
+   "record_id": "cand-entity-2eeae787373c",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m32"
+   }
+  },
+  {
+   "record_id": "cand-relation-e5b5e9dc3d7f",
+   "type": "relation",
+   "name": "次元之理的盗窃者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-aa0574a5dbe8",
+   "type": "relation",
+   "name": "次元之理的盗窃者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-55132f489dd0",
+   "type": "relation",
+   "name": "使徒西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d89c8e50991a",
+   "type": "relation",
+   "name": "使徒西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8268936020cc",
+   "type": "relation",
+   "name": "次元之理的盗窃者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f45da8030b75",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-7f2ead8a7c5b",
+   "type": "relation",
+   "name": "缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-05dfd5ab973e",
+   "type": "relation",
+   "name": "缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-21c0eb8bb070",
+   "type": "event",
+   "name": "城堡之梦第三场·千年前结局记忆再生",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-01d14fd1810e",
+   "type": "event",
+   "name": "阳滝死讯直受（涡波）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f010c6b390cc",
+   "type": "event",
+   "name": "西斯白翼逃亡与男子黑紫魔力失控",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e200ebac5ebd",
+   "type": "event",
+   "name": "缇娅拉的灵魂宣誓与幸福魔法之梦",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c6f5c7d48f16",
+   "type": "event",
+   "name": "男子的复仇宣言与大陆级『维度』展开",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-dd39b9d9727b",
+   "type": "event",
+   "name": "复仇路概要与千年前终幕",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-37202f259dd7",
+   "type": "foreshadow",
+   "name": "『水之理的盗窃者』容器失败与替代品之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4144ffbc9645",
+   "type": "setting",
+   "name": "LevelUP/Status体系=千年前男子所创『咒术』『变换』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-278ef2f9f1cd",
+   "type": "setting",
+   "name": "千年前『魔力』称『毒』与守护者同类黑紫魔力",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-85589796c9b1",
+   "type": "setting",
+   "name": "世界奉还阵（千年前魔法阵·再现）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-9fbb2329d756",
+   "type": "entity",
+   "name": "海莉",
+   "item_id": "q-24d4d545115b",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-7687697749f4",
+   "type": "entity",
+   "name": "水之理的盗窃者",
+   "item_id": "q-4bde59412bc6",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-23baa7458c60",
+   "type": "relation",
+   "name": "次元之理的盗窃者",
+   "item_id": "q-cb82bedc830a",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-e3eb2a375133",
+   "type": "setting",
+   "name": "弗茨亚茨与使徒的千年前棋局（据男子斥言）",
+   "item_id": "q-f003946c894f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-03c7290a57bc",
+   "type": "foreshadow",
+   "name": "缇娅拉的千年誓言与圣人结局",
+   "item_id": "q-92d6edf4db6f",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  },
+  {
+   "record_id": "cand-foreshadow-0f0c084fc5f7",
+   "type": "foreshadow",
+   "name": "阳滝死讯的真伪与最深部确认",
+   "item_id": "q-f4e3a4c2ab8c",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  }
+ ],
+ "anchor": {
+  "tick": 119,
+  "pseudo_date": "2000-04-29",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 476,
+   "edges": 859,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 470,
+    "edges": 859
+   }
+  }
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "次元之理的盗窃者",
+  "rel_type": "同貌·疑似同一存在",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 148,
+   "line": 14,
+   "quote": "而他的相貌就跟预料中一样，长着跟我一模一样的脸。除『相川涡波』之外不可能是别人的男子跪坐在石制地砖上。",
+   "vol": 1
+  },
+  {
+   "chapter": 148,
+   "line": 46,
+   "quote": "这种能力跟我的『所有物』没什么差别。果然那是他开发的某种魔法吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 148,
+   "text": "『长着跟我一模一样的脸。除『相川涡波』之外不可能是别人的男子』；空无拔剑之术与涡波『所有物』同类（据涡波推断为其所开发的魔法）；千年前男子定位名『次元之理的盗窃者』与莉帕创造者（ch134）称呼同型——是否同一存在留终审（判例1不自动合并）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f45da8030b75",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0148.txt",
+  "sha": "3fe94268194624f6df622b69a164ad591b02df4a37054edc6e3e21bca5733c5c",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

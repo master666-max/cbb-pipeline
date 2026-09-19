@@ -1,0 +1,228 @@
+{
+ "unit": "ch0150",
+ "chapter": 150,
+ "ingestion_index": 121,
+ "title": "169话-逃走",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 23,
+  "pass": 21,
+  "intercept": 2,
+  "admitted": 21,
+  "quarantined": 2
+ },
+ "tracks": {
+  "consistent-duplicate": 9,
+  "on-create": 10,
+  "contradiction": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-a777d1c64aa0",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m86"
+   }
+  },
+  {
+   "record_id": "cand-entity-97daea9736ac",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m47"
+   }
+  },
+  {
+   "record_id": "cand-entity-655cc043da83",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m34"
+   }
+  },
+  {
+   "record_id": "cand-entity-8534a9b8ac93",
+   "type": "entity",
+   "name": "迪亚布罗·西斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-df6b4eef8381"
+   }
+  },
+  {
+   "record_id": "cand-entity-ff580b4b3ac1",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m45"
+   }
+  },
+  {
+   "record_id": "cand-entity-3c5cf0b23334",
+   "type": "entity",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2719634011-m5"
+   }
+  },
+  {
+   "record_id": "cand-entity-6c1df4d8af0e",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m35"
+   }
+  },
+  {
+   "record_id": "cand-entity-abfbb2ce25e5",
+   "type": "entity",
+   "name": "帕林库洛的部下",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-bad2c7103dff"
+   }
+  },
+  {
+   "record_id": "cand-entity-9e563d5cd78c",
+   "type": "entity",
+   "name": "炎之蛇（耶梦加得之炎）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ae830bfe8a72",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-64e0d470b823",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-13ee883c494b-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-5f51ba79324a",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-bbb0fb98988c-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-f8436699d3b3",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-c8c1119a3c00-m3"
+   }
+  },
+  {
+   "record_id": "cand-relation-e7b0305bdb3a",
+   "type": "relation",
+   "name": "帕林库洛的部下",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f29d08ae7f4b",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c6937e653fe7",
+   "type": "event",
+   "name": "玛利亚代价再燃与涡波再起",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-85d5b0cb1e71",
+   "type": "event",
+   "name": "西斯逃走（左脚烧失）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-bec757a29821",
+   "type": "event",
+   "name": "士兵死守掩护帕林库洛撤离（涡波杀意萌生）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e80c7db8ac8f",
+   "type": "event",
+   "name": "海莉乱入救援与城堡镇压",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c166ceab77fa",
+   "type": "setting",
+   "name": "世界奉还阵（千年前魔法阵·再现）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-6f18b63b166c",
+   "type": "setting",
+   "name": "涡波的怪物化进行（ch80）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-foreshadow-3697911aa8b2",
+   "type": "foreshadow",
+   "name": "玛利亚=本时代最大敌人（西斯宣言）",
+   "item_id": "q-8aac7d30d7f1",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  },
+  {
+   "record_id": "cand-foreshadow-2478a4bb7d48",
+   "type": "foreshadow",
+   "name": "帕林库洛事先准备的『魔法阵』（濒死续唱·涡波坐视）",
+   "item_id": "q-280a10253bef",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  }
+ ],
+ "anchor": {
+  "tick": 121,
+  "pseudo_date": "2000-05-01",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 478,
+   "edges": 872,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 472,
+    "edges": 872
+   }
+  }
+ }
+}

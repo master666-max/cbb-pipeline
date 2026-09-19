@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "『Flame·决战炎域』",
+   "『维度·决战演算』",
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "融合魔法着陆与『决斗场』结成",
+  "tick": 153,
+  "time_verbatim": "突破南军后·瞬间连携"
+ },
+ "evidence": [
+  {
+   "chapter": 153,
+   "line": 99,
+   "quote": "魔法『维度・决战演算』！",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 100,
+   "quote": "『火焰』！『Impulse』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 110,
+   "quote": "这道火焰不是为了将接触到东西燃烧殆尽，而是为了将一切吹飞。",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 112,
+   "quote": "玛利亚的一击将守护帕林库洛的士兵统统震飞到十米之外。",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 118,
+   "quote": "接着火圈演变成把包括帕林库洛在内的三人与周围隔离开的障壁",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 153,
+   "text": "空中两人同时喊出完成构筑的魔法（『维度・决战演算』＋『火焰』『Impulse』），收束『维度』锁定帕林库洛一人、两魔法融合；着陆点为距其几步的大地（分隔优先于奇袭攻击）；爆炎混无属性冲击魔法、火焰为吹飞而非燃烧——护卫士兵被统统震飞十米之外、流星落地般的轰鸣；军马惊逃、帕林库洛跳下马纵其离去；继而『Flame・决战炎域』火圈成障壁，把含帕林库洛三人与周围隔离——无观众席『决斗场』结成、分断成功（一连串魔法一瞬间构筑完毕）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fddc31f4549d",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0153.txt",
+  "sha": "826396b5468e1373ecb6a5f0e9105b53a88c5425eef496b18425fd2b91ba234a",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

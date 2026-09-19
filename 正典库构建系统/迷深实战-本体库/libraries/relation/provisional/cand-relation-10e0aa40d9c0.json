@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "奇妙信赖(王牌前不死)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 155,
+   "line": 36,
+   "quote": "明明是为了在他成功发动之前做出了结而准备的拟似共鸣魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 38,
+   "quote": "那个帕林库洛不可能在打出王牌之前就被干掉，这样的奇妙信赖。",
+   "vol": 1
+  },
+  {
+   "chapter": 155,
+   "line": 39,
+   "quote": "所以我冷静地进行对应。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 155,
+   "text": "拟似共鸣魔法被挺过去后旁白自白：『不知为何，我却觉得这也是理所当然的。我心里对他有一种：那个帕林库洛不可能在打出王牌之前就被干掉，这样的奇妙信赖』——故对完全发动的阵光冷静应对而非慌乱（非初见之光，咬紧牙关抵抗侵蚀）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-10e0aa40d9c0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0155.txt",
+  "sha": "e8255492234a7b18583dce08780c8438cdbff0e6a82d1efd35226fe280a115da",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

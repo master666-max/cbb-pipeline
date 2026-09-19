@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿尔缇",
+  "rel_type": "魔石同化的技能影响",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 1140,
+   "quote": "「啊、啊诶。那个—，是阿尔缇很擅长啦。多亏了在我体内的阿尔缇的福，我很了解战争的问题」",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1142,
+   "quote": "看来与『理的盗窃者』的魔石的同化，不仅仅是接受魔力和魔法这么简单，还会对其它的技能产生影响。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 157,
+   "quote": "「啊、啊诶。那个─，是阿尔缇很擅长啦。多亏了在我体内的阿尔缇的福，我很了解战争的问题」",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 159,
+   "quote": "看来与『理的盗窃者』的魔石的同化，不仅仅是接受魔力和魔法这么简单，还会对其它的技能产生影响。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 160,
+   "quote": "阿尔缇会清楚战争的事情，多半是因为跟千年前的战争有关联吧。于是我将『并列思考』当做了最终手段，先把『维度』把握到的情报告知玛利亚。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "玛利亚自陈战争分析能力来自体内的阿尔缇（阿尔缇很擅长战争问题/或与千年前战争相关）；叙述结论：与『理的盗窃者』魔石的同化不止承接魔力和魔法、还会影响其它技能"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-127838e2753d",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-127838e2753d-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-127838e2753d",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

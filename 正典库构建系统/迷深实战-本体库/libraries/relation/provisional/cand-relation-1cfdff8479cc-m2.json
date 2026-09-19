@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇亚",
+  "rel_type": "救出质询与目的确认",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 81,
+   "line": 122,
+   "quote": "「帕林库洛，换一个问题。你知道将使徒从缇亚体内逼出来的办法吗？还是说，如果实现了使徒西斯的留恋的话，那家伙也会消失呢？」",
+   "vol": 1
+  },
+  {
+   "chapter": 81,
+   "line": 1017,
+   "quote": "——第二个目的，救出提亚的事。",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 116,
+   "quote": "「那么我想知道『你们』的记忆。我问你，帕林库洛。这个『世界奉还阵』真的是使徒勒伽西──不对，是你所冀求的东西吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 157,
+   "quote": "「帕林库洛，换一个问题。你知道将使徒从缇亚体内逼出来的办法吗？还是说，如果实现了使徒西斯的留恋的话，那家伙也会消失呢？」",
+   "vol": 1
+  },
+  {
+   "chapter": 154,
+   "line": 158,
+   "quote": "「⋯⋯嗯，谁知道呢？这个问题的答案，我可能知道，也可能不知道。嘛啊，就算我知道，也不是免费的哦？要打听记忆之外的事情就需要另外付费了哦」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 81,
+   "text": "向帕林库洛求问将使徒自缇亚体内逼出之法（留恋实现是否使其消失）——被索另付代价未获答；崩溃后自列目的时确认『救出提亚的事（帮助同伴）』为第二目的（切片该处拼写作『提亚』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-1cfdff8479cc",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1cfdff8479cc-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-1cfdff8479cc",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

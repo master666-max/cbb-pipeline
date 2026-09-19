@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "剑术感应承继(本章失效)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 80,
+   "line": 681,
+   "quote": "从诺文手中接过的『剑术』和『感应』早已消失的无影无踪。简直愧对手上这柄宝剑。",
+   "vol": 1
+  },
+  {
+   "chapter": 80,
+   "line": 1200,
+   "quote": "要是帕林库洛有匹敌诺文的剑术水准就两说了，所幸并非如此。",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 181,
+   "quote": "明明在与诺文的战斗中学到了身心一致有多么重要，但是现在我的内心却拿不出战意。",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 204,
+   "quote": "从诺文手中接过的『剑术』和『感应』早已消失的无影无踪。简直愧对手上这柄宝剑。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 80,
+   "text": "涡波自陈从诺文手中接过的『剑术』和『感应』因身心分裂消失无踪（愧对手上宝剑）；对照系：帕林库洛若有匹敌诺文的剑术水准则另当别论、所幸并非如此"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-c8c1119a3c00",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c8c1119a3c00-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-c8c1119a3c00",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

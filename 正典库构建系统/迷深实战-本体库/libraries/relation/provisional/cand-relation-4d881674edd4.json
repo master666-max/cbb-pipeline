@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "借用婉拒(不惯用剑·不擅应付)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 152,
+   "line": 66,
+   "quote": "看来经过一时的反省，斯诺决定再努把力的样子。我一边苦笑，一边让她看向挂在我腰间的『阿雷亚斯家的宝剑诺文』",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 67,
+   "quote": "「斯诺，你能用这把剑吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 68,
+   "quote": "「诶、诺文⋯⋯？我不怎么用剑的说⋯⋯、而且⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 69,
+   "quote": "一边吞吞吐吐地，斯诺一边把视线从剑上移开。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 152,
+   "text": "涡波示以腰间『阿雷亚斯家的宝剑诺文』问『你能用这把剑吗』；斯诺吞吞吐吐『我不怎么用剑的说』并把视线从剑上移开——除不怎么用剑外另有对诺文本身的不擅应付（正文对话与动作所示；行70作者PS注为元文本不入档）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4d881674edd4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0152.txt",
+  "sha": "f160c964434ef5a845677cb9f20d263ae35e0bfde9cd21b966620190090afb77",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

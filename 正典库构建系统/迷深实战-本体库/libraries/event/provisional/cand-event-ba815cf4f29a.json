@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "宣战",
+  "name": "最后通牒与宣战布告（帕林库洛拒绝）",
+  "tick": 153,
+  "time_verbatim": "决斗场结成后"
+ },
+ "evidence": [
+  {
+   "chapter": 153,
+   "line": 141,
+   "quote": "帕林库洛，现在马上给我交出缇达的魔石",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 147,
+   "quote": "因为你砍了缇亚那一剑，还有唆使阿尔缇与玛利亚的事，我要让你用一只手和双眼来偿还",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 156,
+   "quote": "我将水晶剑的剑锋指向了帕林库洛。",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 162,
+   "quote": "不过我拒绝",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 153,
+   "text": "涡波直抛三要求：①马上交出缇达的魔石；②因砍缇亚之剑+唆使阿尔缇与玛利亚——以一只手和双眼偿还；③吐出体内使徒（据海莉）所知的一切——不杀理由即情报索求；帕林库洛先是批评天真（『难道你还对杀死我感到犹豫不成？』），被指可随时大卸八块、脸上留冷汗，仍以『不过我拒绝』摇头回绝；涡波以水晶剑指其一步之距、宣告『犯了人所不能为的罪过⋯⋯杀了你一切就结束』；帕林库洛清楚明白点头应诺"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ba815cf4f29a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0153.txt",
+  "sha": "826396b5468e1373ecb6a5f0e9105b53a88c5425eef496b18425fd2b91ba234a",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

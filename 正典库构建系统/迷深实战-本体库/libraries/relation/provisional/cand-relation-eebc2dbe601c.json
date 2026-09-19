@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "追击决战(世界奉还阵阻止+总账清算)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 151,
+   "line": 84,
+   "quote": "「啊啊，我要去」",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 105,
+   "quote": "第一是帕林库洛。那家伙的『世界奉还阵』什么扯淡的东西我必须要阻止。当然顺便也要跟他算清我们之间的总账。",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 133,
+   "quote": "必须尽快前往帕林库洛所在的魔法阵中心不可──把这样的想法塞满大脑，我乘上了海莉准备的马车。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 151,
+   "text": "涡波宣言'啊啊，我要去'/'我要继续战斗'；'那家伙的『世界奉还阵』什么扯淡的东西我必须要阻止。当然顺便也要跟他算清我们之间的总账'（'想打听出过去的情报'之期待已不抱）；乘海莉马车赴主战场中军方向追击（'一秒也不能浪费'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-eebc2dbe601c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0151.txt",
+  "sha": "b854aa0d8a410807cc142e10a6a58f242e1493d4549aba07240bee927f530dff",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

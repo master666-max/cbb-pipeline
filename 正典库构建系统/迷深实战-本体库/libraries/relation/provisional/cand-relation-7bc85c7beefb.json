@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迪亚布罗·西斯",
+  "rel_type": "火焰牵制·逃亡封锁",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 149,
+   "line": 62,
+   "quote": "她以绝不允许西斯逃走的力度操纵着火焰。",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 129,
+   "quote": "要一边防御玛利亚的火焰魔法一边构筑光之翼似乎是件很费劲的事。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 149,
+   "text": "以绝不允许西斯逃走的力度操纵火焰；西斯在其牵制下显得很吃力、无法脱离战场——要一边防御火焰魔法一边构筑光之翼似乎是件很费劲的事（封锁持续至涡波再投入捕获）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7bc85c7beefb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0149.txt",
+  "sha": "d01ff630f39a0899f5862211887445d3d53173bf0bf762fa8f36045665fd2265",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

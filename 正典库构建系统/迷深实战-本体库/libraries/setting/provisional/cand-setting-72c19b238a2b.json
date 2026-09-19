@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 152,
+  "fact": "当初离开劳拉维亚时『本来还以为没有人能敌得过LivingLegend队伍』，不知不觉间队伍陷入崩壊状态（涡波自认『从来就没有顺顺利利地打赢过几场仗』）；本章拉丝缇娅拉、塞拉、斯诺、莉帕四人经『连接』离队后仅剩涡波与玛利亚",
+  "name": "LivingLegend队伍的崩壊（七人→二人）",
+  "tick": 152
+ },
+ "evidence": [
+  {
+   "chapter": 152,
+   "line": 87,
+   "quote": "原本共有七人的队伍成员不断减少，终于只剩下了我和玛利亚。",
+   "vol": 1
+  },
+  {
+   "chapter": 152,
+   "line": 88,
+   "quote": "当初离开劳拉维亚的时候，本来还以为没有人能敌得过LivingLegend队伍。结果不知不觉间队伍就陷入了崩壊的状态。其实仔细想来，自己从来就没有顺顺利利地打赢过几场仗。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "status_change",
+   "chapter": 152,
+   "text": "队伍规模状态更新（七人→二人留守体制）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-72c19b238a2b",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0152.txt",
+  "sha": "f160c964434ef5a845677cb9f20d263ae35e0bfde9cd21b966620190090afb77",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

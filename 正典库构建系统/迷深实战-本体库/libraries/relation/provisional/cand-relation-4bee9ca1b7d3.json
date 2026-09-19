@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "使徒情报索求(不杀理由)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 153,
+   "line": 150,
+   "quote": "我之所以不杀你，是为了让你把知道的事全吐出来。据海莉所说，你的体内现在有一名使徒的存在。我要让你告诉我那个使徒知晓的一切",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 152,
+   "quote": "我确实想从同样是使徒的勒伽西口中打探西斯的情报",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 153,
+   "text": "『我之所以不杀你，是为了让你把知道的事全吐出来。据海莉所说，你的体内现在有一名使徒的存在。我要让你告诉我那个使徒知晓的一切』；目的：从『同样是使徒的勒伽西』口中打探西斯的情报；若拒供则杀——『到时候只要杀了他就是』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4bee9ca1b7d3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0153.txt",
+  "sha": "826396b5468e1373ecb6a5f0e9105b53a88c5425eef496b18425fd2b91ba234a",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

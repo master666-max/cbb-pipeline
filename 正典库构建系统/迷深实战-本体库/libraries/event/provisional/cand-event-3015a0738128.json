@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "勒伽西",
+   "帕林库洛",
+   "海莉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "情报确认",
+  "name": "世界奉还阵质询与勒伽西意志说",
+  "tick": 151,
+  "time_verbatim": "城堡中庭·镇压后同日"
+ },
+ "evidence": [
+  {
+   "chapter": 151,
+   "line": 55,
+   "quote": "「呐，海莉。你了解有关这个『魔法阵』的事情吗？那家伙称呼这东西为『世界奉还阵』来着。难道说这个跟千年前的『魔法阵』是同样的东西吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 57,
+   "quote": "「诶诶，没错。帕林库洛打算再现千年前的『魔法阵』。他想将整个战场作为『代价』，展开『世界奉还阵』」",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 60,
+   "quote": "「『世界奉还阵』的发动只有那一次⋯⋯，据说当时整个大陆九成的生命都因其而灭亡⋯⋯⋯恐怕这一次还会导致一样的结果吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 151,
+   "line": 69,
+   "quote": "「在我看来，这可能不是帕林库洛而是那个名为勒伽西的存在的意志」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 151,
+   "text": "涡波以'那家伙称呼这东西为『世界奉还阵』'质询海莉→证实：帕林库洛打算再现千年前的『魔法阵』、将整个战场作为『代价』展开——即'结束了千年前的战争的魔法阵'；史上唯一一次发动曾致'整个大陆九成的生命都因其而灭亡'、此次恐致同果（'这样下去的话无数人会丧命'）；对'为什么那家伙要做这种事'之惑，海莉答以勒伽西意志说（'可能不是帕林库洛而是那个名为勒伽西的存在的意志'——海因·赫勒比勒夏因记忆之推测）；涡波结论：帕林库洛的状况跟自己无关、'帕林库洛就是帕林库洛'，要事唯阻止其以使徒知识发动『世界奉还阵』并算账"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3015a0738128",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0151.txt",
+  "sha": "b854aa0d8a410807cc142e10a6a58f242e1493d4549aba07240bee927f530dff",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

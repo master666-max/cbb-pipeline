@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迪亚布罗·西斯",
+  "rel_type": "战场求援遭拒(半守护者规则)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 150,
+   "line": 36,
+   "quote": "西斯最后用力地呼唤帕林库洛的名字。",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 38,
+   "quote": "那我做不到！『魔法阵』有不得加害同为『半守护者』的规则在，我也无可奈何！",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 41,
+   "quote": "看来『世界奉还阵』的影响很可能对玛利亚无效。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 150,
+   "text": "西斯被八炎蛇捆缚时用力呼唤帕林库洛求援；帕林库洛答『那我做不到！『魔法阵』有不得加害同为『半守护者』的规则在』拒绝（西斯斥其派不上用场）；涡波闻之称『听到了不错的情报』——推断『世界奉还阵』的影响很可能对玛利亚无效，确立分工胜局（己对帕林库洛／玛利亚压制西斯）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ae830bfe8a72",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0150.txt",
+  "sha": "7b2d6539c12dfa23004d89141de92db9f8b99f7991e2e08df3cba65784995046",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

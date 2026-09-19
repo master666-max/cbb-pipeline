@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迪亚布罗·西斯",
+  "rel_type": "捕获目标(压制→挣脱→再追)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 149,
+   "line": 9,
+   "quote": "西斯仍然被我压在身下。",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 122,
+   "quote": "为了救出缇亚，就必须捕获企图逃跑的西斯不可。",
+   "vol": 1
+  },
+  {
+   "chapter": 149,
+   "line": 133,
+   "quote": "「西斯！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 149,
+   "text": "记忆再生期间将其压在身下→受宣告后手脱力被挣脱→再起后重新投入捕获行动（战术两目标之一：为帮助同伴须打倒帕林库洛、为救出缇亚须捕获企图逃跑的西斯）；冲向其呼喊『西斯！！』——用意向同伴传达自己已没事"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-45c7aa9afdc7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0149.txt",
+  "sha": "d01ff630f39a0899f5862211887445d3d53173bf0bf762fa8f36045665fd2265",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

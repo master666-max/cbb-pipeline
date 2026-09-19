@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "舍身死守掩护撤离",
+  "subject": "帕林库洛的部下"
+ },
+ "evidence": [
+  {
+   "chapter": 150,
+   "line": 60,
+   "quote": "──帕林库洛长官！",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 66,
+   "quote": "您对这场战争来说是必不可少的",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 72,
+   "quote": "请赶快去最前线的中军大营！这里交给我们──！",
+   "vol": 1
+  },
+  {
+   "chapter": 150,
+   "line": 90,
+   "quote": "所有的兵力都被投入到了舍身掩护帕林库洛撤离的行动中。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 150,
+   "text": "自发死守（帕林库洛本人亦意外『你们这是，要帮我？』）：青年军人带头熊叫舍身攻击＋弩手狙击掩护＋全员投死（呼『您对这场战争来说是必不可少的』『请赶快去最前线的中军大营』）；以决死气魄困住MP近枯竭的涡波玛利亚，助帕林库洛经人墙出城乘预备马车脱离。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e7b0305bdb3a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0150.txt",
+  "sha": "7b2d6539c12dfa23004d89141de92db9f8b99f7991e2e08df3cba65784995046",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

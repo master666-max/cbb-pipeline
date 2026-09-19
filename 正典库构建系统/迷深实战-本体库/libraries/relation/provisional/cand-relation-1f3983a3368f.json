@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "宿怨决战(最后通牒·宣战布告)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 153,
+   "line": 141,
+   "quote": "帕林库洛，现在马上给我交出缇达的魔石",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 142,
+   "quote": "这是我的最后通牒，也是我的宣战布告。",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 198,
+   "quote": "如果你什么都不打算说的话，我就杀了你，那样一切就结束了",
+   "vol": 1
+  },
+  {
+   "chapter": 153,
+   "line": 210,
+   "quote": "这是我盼望了许久的宿怨之战",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 153,
+   "text": "通牒首项『现在马上给我交出缇达的魔石』——『这是我的最后通牒，也是我的宣战布告』；罪状清算：因砍缇亚之剑+唆使阿尔缇与玛利亚，要求『用一只手和双眼来偿还』；宣战辞『你犯下了人所不能为的罪过。对此我绝不饶恕⋯⋯如果你什么都不打算说的话，我就杀了你，那样一切就结束了』；与玛利亚商定开局数分钟一对一；涡波自认『这是我盼望了许久的宿怨之战』；旁白定性『这是一场在见面的瞬间便得到了双方认同的决斗』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1f3983a3368f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0153.txt",
+  "sha": "826396b5468e1373ecb6a5f0e9105b53a88c5425eef496b18425fd2b91ba234a",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

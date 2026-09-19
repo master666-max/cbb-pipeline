@@ -1,0 +1,39 @@
+{
+ "unit": "ch0150",
+ "summary": {
+  "total": 23,
+  "pass": 21,
+  "intercept": 2,
+  "by_code": {
+   "G1-SCHEMA": 0,
+   "G1-EVIDENCE": 0,
+   "G1-REF": 0,
+   "G1-REL-BACKLINK": 0,
+   "G1-TIME_INVERSION": 0,
+   "G1-DEAD-WALK": 0,
+   "G1-FORESHADOW-ORDER": 0,
+   "G1-CHEKHOV-OVERDUE": 2,
+   "G1-CONTRADICTION": 0
+  }
+ },
+ "intercepted": [
+  {
+   "record_id": "cand-foreshadow-3697911aa8b2",
+   "violations": [
+    {
+     "code": "G1-CHEKHOV-OVERDUE",
+     "detail": "契诃夫枪超期：第80章埋设，至第150章 已 70 章未兑现（≥3）"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-foreshadow-2478a4bb7d48",
+   "violations": [
+    {
+     "code": "G1-CHEKHOV-OVERDUE",
+     "detail": "契诃夫枪超期：第147章埋设，至第150章 已 3 章未兑现（≥3）"
+    }
+   ]
+  }
+ ]
+}
