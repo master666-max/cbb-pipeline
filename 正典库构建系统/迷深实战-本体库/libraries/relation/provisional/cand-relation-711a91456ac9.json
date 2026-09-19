@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "无血缘救助宣言",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 146,
+   "line": 25,
+   "quote": "「⋯⋯？并不一定非要有血缘关系才要去帮她啊。阳滝这名女孩子是一个善良的好孩子。怎么能坐视她因为不讲理的事而死呢？",
+   "vol": 1
+  },
+  {
+   "chapter": 146,
+   "line": 29,
+   "quote": "「你说的不对哦，海莉。尽管一开始可能是假的，但是现在已经变成真的了啊。就像我想去救缇亚一样，对阳滝这个女孩子的心意也绝无虚假。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 146,
+   "text": "面对海莉'无血缘'质问的回应：'并不一定非要有血缘关系才要去帮她'；'对阳滝这个女孩子的心意也绝无虚假'（'尽管一开始可能是假的，但是现在已经变成真的了'）；战后'是我的妹妹亦或不是，也无所谓'仍不变"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-711a91456ac9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0146.txt",
+  "sha": "e6d3d8d3b86f9bff5fa1f1a086bdaffff20df38c080c8f495b77f2d8e844c09d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "涉嫌欺瞒下的信任抉择",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 146,
+   "line": 112,
+   "quote": "如果相信海莉所说的话，那么面前的拉丝缇娅拉就是在欺骗我。",
+   "vol": 1
+  },
+  {
+   "chapter": 146,
+   "line": 115,
+   "quote": "在劳拉维亚的『舞闘大会』中，我已经决定要相信拉丝缇娅拉了。就算，就算她真的撒了谎，那也是为了我好。我应该这样想才是。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 146,
+   "text": "据海莉所言则拉丝缇娅拉'从我们相遇那时开始一直到现在'都在欺骗他——涡波'立马把这种想法驱出脑海'，以『舞闘大会』时的决定为准继续相信（'就算她真的撒了谎，那也是为了我好'）；'跟『我自己』有关的事都要排到后面解决'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3621cc9772c8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0146.txt",
+  "sha": "e6d3d8d3b86f9bff5fa1f1a086bdaffff20df38c080c8f495b77f2d8e844c09d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "对决自任(不成器的同僚)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 146,
+   "line": 137,
+   "quote": "「那不成器的同僚就交给我好了」",
+   "vol": 1
+  },
+  {
+   "chapter": 146,
+   "line": 140,
+   "quote": "在船上旅行的时候就探讨过对『暗之理的盗窃者』的对策，所以只是拖延时间的话她们两个应该能胜任。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 146,
+   "text": "'那不成器的同僚就交给我好了'——自任帕林库洛对手；与斯诺共担拖延战术（'只是拖延时间的话她们两个应该能胜任'）。'同僚'称谓所指背景【待确认】"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9f596a9f84e0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0146.txt",
+  "sha": "e6d3d8d3b86f9bff5fa1f1a086bdaffff20df38c080c8f495b77f2d8e844c09d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

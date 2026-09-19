@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "兄妹(兄·妹)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 74,
+   "quote": "「才怪，我根本没什么病！健康得很！阳滝，是你在骗她才对吧！」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 37,
+   "quote": "「你真了不起啊，缇娅拉。虽然我会这么努力都是为了我的妹妹，但是你却能为不认识的陌生人而奋斗。」",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 196,
+   "quote": "是妹妹相川阳滝。除此之外不做他想。只要是为了她，无论以什么为牺牲都无妨。",
+   "vol": 1
+  },
+  {
+   "chapter": 141,
+   "line": 78,
+   "quote": "跟我的妹妹一模一样的少女笑了。",
+   "vol": 1
+  },
+  {
+   "chapter": 141,
+   "line": 79,
+   "quote": "接着她跟同作为她兄长的我极其相似的男子谈笑起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 141,
+   "line": 80,
+   "quote": "「哪里的话，哥哥。我可没有在说谎呢。毕竟哥哥你为了耍帅不还戴着这装模作样的假面吗。这难道不是所谓的『中二病』么？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "梦中阳滝以『哥哥』称呼假面男子并戏称其中二病；始祖亲口唤出『阳滝』之名；始祖自陈努力『都是为了我的妹妹』；涡波确信梦中少女与自己的妹妹一模一样——『是妹妹相川阳滝。除此之外不做他想』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-fee4a45c51db",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fee4a45c51db-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-fee4a45c51db",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "拦路对峙→放行",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 146,
+   "line": 68,
+   "quote": "「所以，请你从那儿让开。海莉・维斯普洛佩」",
+   "vol": 1
+  },
+  {
+   "chapter": 146,
+   "line": 89,
+   "quote": "「⋯⋯你去吧。我相信少年你说的话」",
+   "vol": 1
+  },
+  {
+   "chapter": 146,
+   "line": 105,
+   "quote": "跟心地善良的海莉不同，接下来我要面对的敌人绝不会放过放过那一点。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 146,
+   "text": "平原拦路全程：告知魔石人类可能性+指出始祖涡波记忆→断言统合不可能（以自身失败为证）→被涡波宣告本名后心态崩壊、自认'劣质品'→'⋯⋯你去吧。我相信少年你说的话'放行；涡波评其'心地善良'、并备有强行突破预案（两败代价）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3521c242e227",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0146.txt",
+  "sha": "e6d3d8d3b86f9bff5fa1f1a086bdaffff20df38c080c8f495b77f2d8e844c09d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

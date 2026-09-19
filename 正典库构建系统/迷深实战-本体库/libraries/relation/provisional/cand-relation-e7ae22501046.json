@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "迪亚布罗·西斯",
+  "rel_type": "奇袭压制与魔力比拼",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 11,
+   "quote": "着弹点就是西斯的身体。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 50,
+   "quote": "你们用这种心理攻击不觉得太卑鄙了吗",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 116,
+   "quote": "再过十五秒西斯的MP就会变成0，到时候胜利就属于我们了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 147,
+   "text": "奇袭着弹直击（踢碎白翼）→扼颈被防→白紫双色魔力比拼＋呼唤缇亚心理攻击＋玛利亚火焰的三对一压制；以『表示』监测其MP（推定30秒→15秒→数秒归零）；西斯处于劣势求逃"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e7ae22501046",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

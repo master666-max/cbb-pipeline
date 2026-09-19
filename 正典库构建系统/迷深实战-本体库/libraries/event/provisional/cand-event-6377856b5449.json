@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "塞拉·雷迪安特",
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "艾德",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "动员",
+  "name": "夺回缇亚之战的作战会议",
+  "tick": 146,
+  "time_verbatim": "『连接』合流后·攻城前"
+ },
+ "evidence": [
+  {
+   "chapter": 146,
+   "line": 128,
+   "quote": "「没什么时间了我简单地说一下。最重要的不是打倒帕林库洛，而是夺回缇亚。这一点绝对不要搞错了」",
+   "vol": 1
+  },
+  {
+   "chapter": 146,
+   "line": 131,
+   "quote": "「首先，捕获缇亚的任务由我和玛利亚负责。不管使徒西斯想说什么，总之先让她失去意识丢回船上去」",
+   "vol": 1
+  },
+  {
+   "chapter": 146,
+   "line": 134,
+   "quote": "「在我们捕获西斯期间，希望你们四个能拖住帕林库洛和守护者艾德。我们跟艾德姑且还不是敌对关系，先瞪着他给他牵制住就好」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 146,
+   "text": "纲领'最重要的不是打倒帕林库洛，而是夺回缇亚'（'追二兔者一兔不得'）；捕获组=涡波+玛利亚（使使徒西斯失去意识丢回船）；牵制组=拉丝缇娅拉/斯诺/塞拉+莉帕机动补位，拖住帕林库洛与守护者艾德（与艾德'姑且还不是敌对关系'仅瞪视牵制）；塞拉斯诺自任帕林库洛对手、拉丝缇娅拉求雪耻艾德"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6377856b5449",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0146.txt",
+  "sha": "e6d3d8d3b86f9bff5fa1f1a086bdaffff20df38c080c8f495b77f2d8e844c09d",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

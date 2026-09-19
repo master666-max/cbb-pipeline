@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "缇娅拉",
+  "rel_type": "师徒(师父)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 52,
+   "quote": "「师父，你又来这套？」",
+   "vol": 1
+  },
+  {
+   "chapter": 141,
+   "line": 27,
+   "quote": "跟上次一样，缇娅拉依旧称呼假面男子为师父。",
+   "vol": 1
+  },
+  {
+   "chapter": 141,
+   "line": 37,
+   "quote": "「⋯⋯别这么说嘛。师父你也很厉害哦。毕竟是师父引导了我啊。是你告诉我一起来创造出能让所有人幸福的『魔法』的啊」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 92,
+   "text": "千年前缇娅拉称始祖涡波『师父』（乘于西斯肩头同行）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-f9ff50f58dd6",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f9ff50f58dd6-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-f9ff50f58dd6",
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 2
+}

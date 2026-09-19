@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "仿真战全胜·实战不敌",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 160,
+   "quote": "尽管塞拉在仿真战中从未败给帕林库洛，但是很明显地，她在实战中赢不了。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 167,
+   "quote": "帕林库洛只用一只手，就完全防御住了塞拉的两次攻击。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 147,
+   "text": "相性实证：仿真战中从未败给帕林库洛，但实战明显赢不了——因其'天真到只要对手不动就不会攻击'的不擅厮杀性格被帕林库洛完全读透（两次攻击被空手防御、气得颤抖）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b3412fe7eb90",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

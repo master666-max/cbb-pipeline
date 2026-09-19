@@ -89,7 +89,7 @@ class TestDualTrack(unittest.TestCase):
         self.assertEqual(res["track"], "consistent-duplicate")
         self.assertAlmostEqual(res["confidence"], 86.0)  # max(80,84)+2.0 上调
         latest = store.resolve_latest("obs-1")
-        self.assertEqual(latest["record_id"], "obs-1-m")          # supersede 新版本
+        self.assertEqual(latest["record_id"], "obs-1-m2")         # supersede 新版本（紧凑后缀 -m{版本号}，2026-09-20 MAX_PATH 修复）
         self.assertEqual(latest["supersedes"], "obs-1")
         self.assertEqual(len(latest["evidence"]), 2)              # 证据并集
         self.assertEqual(latest["version"], 2)
@@ -112,7 +112,7 @@ class TestDualTrack(unittest.TestCase):
         self.assertEqual(lib_files, lib_files2)  # 库文件零增殖
         # find_by_identity 取活版本（不被 glob 序坑）
         live = store.find_by_identity(second)
-        self.assertEqual(live["record_id"], "obs-1-m")
+        self.assertEqual(live["record_id"], "obs-1-m2")
 
     def test_contradiction_quarantine_and_verdict_not_silent_merge(self):
         store, td = make_store()

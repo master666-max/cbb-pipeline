@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "龙人臂力粉碎(断臂·飞踢)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 177,
+   "quote": "啪啦一下，帕林库洛的胳膊就像黏土一样被打断了。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 215,
+   "quote": "是斯诺的飞踢。将注意力集中于面前两人的帕林库洛未能察觉，实打实地吃下了斯诺这一发。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 147,
+   "text": "战力压制实证：全力一拳令其胳膊如黏土般打断、击飞十米余；后突破士兵包围以飞踢命中（帕林库洛专注构筑未能察觉）——'从那时候以来我们变得越来越强了'的成长展示一环"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-51b6091c559e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

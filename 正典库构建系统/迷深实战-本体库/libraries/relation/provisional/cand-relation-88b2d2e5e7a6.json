@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "缇亚",
+  "rel_type": "身体争夺胜利·人格吞并(据海莉)",
+  "subject": "使徒西斯"
+ },
+ "evidence": [
+  {
+   "chapter": 145,
+   "line": 100,
+   "quote": "相反缇亚的场合，双方应该互相抢夺着身体。那个抢夺的结果是缇亚输了。所以现在使徒西斯任意妄为着。",
+   "vol": 1
+  },
+  {
+   "chapter": 145,
+   "line": 32,
+   "quote": "「艾德老师魔法的原因，被使徒的记忆所吞没⋯⋯⋯那已经不是被称为缇亚的少女，而是名为西斯的使徒吧。即使如此也要说去帮助她吗？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 145,
+   "text": "据海莉：缇亚与使徒'双方应该互相抢夺着身体。那个抢夺的结果是缇亚输了。所以现在使徒西斯任意妄为着'；据海莉并称其起因=艾德老师魔法（被使徒的记忆所吞没）；涡波侧认识=侵蚀随时间加深"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-88b2d2e5e7a6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0145.txt",
+  "sha": "07e55720ffba5986bb851846b0025a8afc372e155a423e4586c86f9b95eb3bd1",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

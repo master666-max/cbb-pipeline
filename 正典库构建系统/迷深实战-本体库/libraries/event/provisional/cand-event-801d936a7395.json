@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "过渡",
+  "name": "涡波苏醒与战后状况确认",
+  "tick": 142,
+  "time_verbatim": "上章战斗后·借宿屋内（苏醒时）"
+ },
+ "evidence": [
+  {
+   "chapter": 142,
+   "line": 3,
+   "quote": "当我打算拓展『维度』的时候，房间的门被推开，玛利亚现身了。",
+   "vol": 1
+  },
+  {
+   "chapter": 142,
+   "line": 15,
+   "quote": "「太好了⋯⋯⋯那么，那之后莱纳他们怎么样了？」",
+   "vol": 1
+  },
+  {
+   "chapter": 142,
+   "line": 16,
+   "quote": "「守护者对我们失去了兴趣，就那样离开了。⋯⋯比起这个，涡波先生，那个守护者的魔法对你的影响呢？」",
+   "vol": 1
+  },
+  {
+   "chapter": 142,
+   "line": 18,
+   "quote": "「已经不受魔法的影响了。那家伙说的没错，看来确实只是一时的东西」",
+   "vol": 1
+  },
+  {
+   "chapter": 142,
+   "line": 31,
+   "quote": "证明我不是始祖，而是涡波。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 142,
+   "text": "玛利亚照料下苏醒（拟拓展『维度』被打断）→确认：众人未转移、借三间屋安置，缇亚与拉丝缇娅拉分房休息→莱纳一行随守护者'失去兴趣'离去→守护者魔法对涡波的影响已消（一时性，'对同伴们产生的那种正体不明的感情也消失了'）→涡波立三重证明宣言（非始祖/缇亚非西斯/拉丝缇娅拉非缇娅拉）后偕玛利亚走向两人房间"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-801d936a7395",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0142.txt",
+  "sha": "0595fc597236eba51039a486d8800774d834075c5198cc29b672fe656c42eac6",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

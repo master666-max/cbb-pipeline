@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "迪亚布罗·西斯"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "呼唤缇亚与MP倒计时",
+  "tick": 147,
+  "time_verbatim": "紧接奇袭（同场景连续）"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 46,
+   "quote": "缇亚，能听到吗！我来救你了！能听到的话就给个回应！！",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 56,
+   "quote": "她的MP正以相当剧烈的速度减少着。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 113,
+   "quote": "要是那个『魔石人类』也跑来这边的话，说实话就不妙了呀",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 147,
+   "text": "涡波极近距离呼唤缇亚＋玛利亚叱责（'区区一个使徒你都对付不了吗'）——西斯抗议'心理攻击太卑鄙'、白色魔力减弱（缇亚体内反抗）；其MP经『表示』观测以剧烈速度减少（推定30秒→15秒→只剩几秒归零）；西斯自请逃走被要求留下缇亚；西斯忌惮『魔石人类』赶来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-78a051442c94",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "相川涡波",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "艾德举手投降与中立离场",
+  "tick": 147,
+  "time_verbatim": "西斯对峙期间（同场景）"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 91,
+   "quote": "接着甚至为了表明自己没有战意，直接举起了双手。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 93,
+   "quote": "那么鄙人投降。这就离开这里。毕竟想问的已经都问完了呢",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 109,
+   "quote": "在我们与西斯对峙的期间，三对六转变为二对六了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 147,
+   "text": "艾德欲与帕林库洛汇合→被拉丝缇娅拉拦路→自称中立（'单纯的治疗魔法'辩解）→举双手降服（异世界通识）→'想问的已经都问完了'请辞→经涡波点头、拉丝缇娅拉代行放行→步行离场（不跑不攀墙）；对局由三对六转为二对六；帕林库洛挽留遭拒（'涉及使徒的事跟鄙人没什么关系'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a28070539280",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

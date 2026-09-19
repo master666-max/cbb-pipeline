@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "迪亚布罗·西斯",
+   "阿雷亚斯家的宝剑"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "公馆客房初战：光腕格挡与『炎之矢』直击",
+  "tick": 143,
+  "time_verbatim": "承接前章公馆对峙的客房→庭院连续场景"
+ },
+ "evidence": [
+  {
+   "chapter": 143,
+   "line": 5,
+   "quote": "目前就好像缇亚和西斯共同存在的状态，刚才的抓取没有理由会被避开，不论速度和技术我都是压倒性的有利。",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 9,
+   "quote": "就好像叩击中空的管子一样发出共鸣声，剑被弹开了。",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 17,
+   "quote": "随着西斯的动作，玛利亚咏唱的魔法直接命中了西斯。",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 22,
+   "quote": "西斯用那张光翼包裹住身体，以此作为防御的手段来使用。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 143,
+   "text": "涡波抓取被异常避开（预想中情况）→斩脚约束攻击被白色辉腕空手格挡弹开（叩中空管共鸣；连迷宫深层水晶都能击碎的宝剑）→西斯逃向窗口被玛利亚预读咏唱的『炎之矢』直击→光翼裹身防御、裹焰冲破旅馆墙壁→庭院（艾德草原化）着火→光翼展开轻易摆脱烈焰、无烧伤现身"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a48250c892b3",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0143.txt",
+  "sha": "bbc69691352011ebd700ce46639eaf9940693a645871ca7bf0508cf28b772a8b",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

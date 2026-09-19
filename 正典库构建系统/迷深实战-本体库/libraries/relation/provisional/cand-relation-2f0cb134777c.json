@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "半死体化进言与拒援",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 80,
+   "quote": "不如现在就『半死体化』如何？",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 81,
+   "quote": "在这么多人的环境下做得到才怪哦。我可也有我的安排来着啊",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 98,
+   "quote": "不过涉及使徒的事跟鄙人没什么关系啊",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 147,
+   "text": "进言'不如现在就『半死体化』如何？'（以局势一边倒为前提）遭拒（'在这么多人的环境下做得到才怪哦。我可也有我的安排来着啊'）；帕林库洛挽留其参战（'你要是就这么一走了之的话，我的负担可就加重了啊'）被回绝——'涉及使徒的事跟鄙人没什么关系'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2f0cb134777c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

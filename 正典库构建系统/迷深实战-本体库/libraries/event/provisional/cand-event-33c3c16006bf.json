@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "海莉",
+   "相川涡波",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "海莉的拦路对峙与禁止通行宣言",
+  "tick": 145,
+  "time_verbatim": "承接上章、涡波单骑赶赴三人所在地途中（马上对峙）"
+ },
+ "evidence": [
+  {
+   "chapter": 145,
+   "line": 9,
+   "quote": "「我在等着你⋯⋯⋯不会让你继续前进了，少年。」",
+   "vol": 1
+  },
+  {
+   "chapter": 145,
+   "line": 3,
+   "quote": "海莉阻挡在前进的路上。",
+   "vol": 1
+  },
+  {
+   "chapter": 145,
+   "line": 13,
+   "quote": "「现在，去那三人的所在地的话，无法预测到底会发生什么，至少，请在艾德老师离开了后再去。」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 145,
+   "text": "海莉面色发青仍万全装束（双剑+魔法道具+防具）骑马拦路：'我在等着你⋯⋯⋯不会让你继续前进了，少年'；劝涡波至少待艾德老师离开再去、警告'去的话────可能就回不来了'；涡波拒绝（'能早一秒绝不晚一秒'，目的=使徒西斯与帕林库洛）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-33c3c16006bf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0145.txt",
+  "sha": "07e55720ffba5986bb851846b0025a8afc372e155a423e4586c86f9b95eb3bd1",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

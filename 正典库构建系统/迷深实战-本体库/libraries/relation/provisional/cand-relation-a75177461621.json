@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "魔法影响(庭院草原化·精神衰弱)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 143,
+   "line": 26,
+   "quote": "庭院由于艾德的魔法所致，依旧是草原化的模样",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 151,
+   "quote": "但是明显体力得到了损耗和我一样因为艾德的魔法的原因精神受到了衰弱。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 143,
+   "text": "公馆庭院因艾德魔法维持草原化；拉丝缇娅拉体力损耗+精神衰弱（涡波同症：'和我一样因为艾德的魔法的原因精神受到了衰弱'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a75177461621",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0143.txt",
+  "sha": "bbc69691352011ebd700ce46639eaf9940693a645871ca7bf0508cf28b772a8b",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

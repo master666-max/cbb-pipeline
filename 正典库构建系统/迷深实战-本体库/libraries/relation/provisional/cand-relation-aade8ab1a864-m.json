@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺瓦露",
+  "rel_type": "师徒·强化支援",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 94,
+   "quote": "「好了、莱纳大人。鄙人只会使用辅助魔法，而那些辅助魔法又只对真正的人类效果最好。恐怕只靠露洁和诺瓦露两人的话力量还不足吧。──难道您想让这些孩子战斗到力竭吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 171,
+   "quote": "话是这么说，但是守护者艾德基本不参与到战斗中来。只是用绿色的魔力缠绕我面前的两名少女而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 140,
+   "line": 78,
+   "quote": "接着他释放出与守护者相符的异样魔力，扶起了跌倒的露洁她们。",
+   "vol": 1
+  },
+  {
+   "chapter": 140,
+   "line": 327,
+   "quote": "艾德对露洁和诺瓦露下达指示，让她们带走屋里的西娅和海莉。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 139,
+   "text": "艾德自言辅助魔法只对真正的人类效果最好、'只靠露洁和诺瓦露两人的话力量还不足'——以其续战顾虑说服莱纳参战；战中同样以绿色魔力缠绕强化"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-aade8ab1a864",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-aade8ab1a864-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-aade8ab1a864",
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 2
+}

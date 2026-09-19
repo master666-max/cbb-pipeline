@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇亚",
+   "迪亚布罗·西斯"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "西斯的点数再分配（咒术『集中收束』重新修正）",
+  "tick": 143,
+  "time_verbatim": "公馆庭院战中断（西斯自检身体后）"
+ },
+ "evidence": [
+  {
+   "chapter": 143,
+   "line": 45,
+   "quote": "咒术『集中收束』是不是有点在平衡方面出了点问题，很难行动，为什么在筋肉和力量上这么突出，明明我不是手持武器战斗的角色。",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 47,
+   "quote": "「没有办法，重新修正吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 51,
+   "quote": "名字：迪亚波罗・西斯",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 63,
+   "quote": "从字面上看，重新洗过的点数反映在了状态栏里",
+   "vol": 1
+  },
+  {
+   "chapter": 143,
+   "line": 65,
+   "quote": "魔力超过了100.00",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 143,
+   "text": "西斯检查身体不满平衡（筋肉力量突出难行动）→响指'没有办法，重新修正吧'（表达方式令涡波联想原世界'游戏'）→『表示』读出再洗后状态：迪亚波罗・西斯／使徒／级别20／HP142／142 MP1489／1672／力量0.21 体力0.41 技巧0.24 敏捷0.44 贤能1.00 魔力112.67 素质5.00→'魔力超过了100.00'技能效果增加、'接下来发生什么也不会觉得不可思议'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d594f3027266",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0143.txt",
+  "sha": "bbc69691352011ebd700ce46639eaf9940693a645871ca7bf0508cf28b772a8b",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

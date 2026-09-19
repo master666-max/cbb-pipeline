@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "海莉",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "发现",
+  "name": "『素体』发现与『异邦人』说法冲突",
+  "tick": 145,
+  "time_verbatim": "推测揭示后的反证往复（技能板核视）"
+ },
+ "evidence": [
+  {
+   "chapter": 145,
+   "line": 147,
+   "quote": "「那个，魔石人类全员，有着技能『素体』，这难道不是『魔石人类』的证明吗⋯⋯？但是我却没有那个⋯⋯！」",
+   "vol": 1
+  },
+  {
+   "chapter": 145,
+   "line": 151,
+   "quote": "「────什，你在说什么？在那里不是写着吗⋯⋯，『素体』⋯⋯⋯在看不见的技能下面好好地有着『素体』技能⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 145,
+   "line": 155,
+   "quote": "「等，等等。在哪里不是写着『异邦人』吗⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 145,
+   "line": 171,
+   "quote": "也就是说，有一方是在说谎？",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 145,
+   "text": "涡波以'魔石人类全员，有着技能『素体』…但是我却没有那个'反证自辩（'所以我不是在天涯海角的孤身一人'的希望），被海莉否定：'在看不见的技能下面好好地有着『素体』技能'；涡波核视技能板（两层『？？？』）发觉自认的『异邦人』来自拉丝缇娅拉转告而非本人确认——'也就是说，有一方是在说谎？'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-93c33cb432bf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0145.txt",
+  "sha": "07e55720ffba5986bb851846b0025a8afc372e155a423e4586c86f9b95eb3bd1",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

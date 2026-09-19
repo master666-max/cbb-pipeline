@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "玛利亚",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "涡波对西斯开战（未完）",
+  "tick": 142,
+  "time_verbatim": "章末（同室，战斗展开未完）"
+ },
+ "evidence": [
+  {
+   "chapter": 142,
+   "line": 237,
+   "quote": "「好的我明白了，你走好⋯⋯，你觉得我会这么说吗！──玛利亚、拜托了！」",
+   "vol": 1
+  },
+  {
+   "chapter": 142,
+   "line": 239,
+   "quote": "玛利亚也立刻进入临战态势。在做好随时可以释放魔法的准备后，她简短地答应了一声。",
+   "vol": 1
+  },
+  {
+   "chapter": 142,
+   "line": 240,
+   "quote": "「缇亚，搞不好可能会连你一两条腿一并斩断！抱歉了！」",
+   "vol": 1
+  },
+  {
+   "chapter": 142,
+   "line": 246,
+   "quote": "如此大喊了一声后，我便冲了出去。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 142,
+   "text": "西斯'在缇亚酱跟前，我没法招呼你啊。这时候就不能老老实实地退开吗？'劝退→涡波'要是这时候退开的话，我当初就不会邀请缇亚做同伴了！！'——假意送别实为突击：'──玛利亚、拜托了！'→玛利亚即刻临战（随时可释放魔法）→涡波向缇亚预告不留手（'搞不好可能会连你一两条腿一并斩断！抱歉了！'）后冲出，战斗展开未完"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2d5575ecc096",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0142.txt",
+  "sha": "0595fc597236eba51039a486d8800774d834075c5198cc29b672fe656c42eac6",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

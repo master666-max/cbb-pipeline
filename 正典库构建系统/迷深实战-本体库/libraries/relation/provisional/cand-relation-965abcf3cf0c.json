@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛的部下",
+  "rel_type": "统率与违令救护",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 66,
+   "quote": "你们可不要出手哦。这帮人相当不妙。擅动者性命不保",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 186,
+   "quote": "数名士兵无视了长官的命令跑了出来。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 189,
+   "quote": "不管经受了怎样的猛攻都未作反应的帕林库洛这时却情绪愤懑起来。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 147,
+   "text": "以'擅动者性命不保'制止士兵介入（识敌'这帮人相当不妙'）；士兵见其被击飞仍违令冲出护卫、挡在斯诺前——帕林库洛情绪愤懑斥'你们这帮笨蛋'后冷静续唱（士卒向心力实证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-965abcf3cf0c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

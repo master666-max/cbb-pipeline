@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "支配之王",
+  "rel_type": "麾下辅佐",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 79,
+   "line": 125,
+   "quote": "以及在她麾下辅佐的两名男子——艾德和另一人。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 124,
+   "quote": "与被称作『支配之王（Lord/罗德）』的少女。",
+   "vol": 1
+  },
+  {
+   "chapter": 141,
+   "line": 123,
+   "quote": "以及在她麾下辅佐的两名男子──艾德和另一人。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 79,
+   "text": "千年前北方：支配之王麾下辅佐的两名男子之一即艾德（另一人身份未明）；四人组为收集魔力北上会见支配之王——此段记忆扭曲模糊，需涡波进一步升级方能看清"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-52b571277331",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-52b571277331-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-52b571277331",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

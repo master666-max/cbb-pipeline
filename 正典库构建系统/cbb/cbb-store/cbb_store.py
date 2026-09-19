@@ -97,6 +97,21 @@ def canonical_conflicts(a: dict, b: dict) -> list[dict]:
     return out
 
 
+def _chain_base(record_id: str) -> str:
+    """版本链基名：剥除尾部累积的 -m / -m{N} 版本后缀（core_id 十六进制段不含 '-m'，
+    剥后必为链首 id）。2026-09-20 Windows MAX_PATH 修复配套（见 dual_track 注）。"""
+    rid = record_id
+    while True:
+        if rid.endswith("-m"):
+            rid = rid[:-2]
+            continue
+        i = rid.rfind("-m")
+        if i != -1 and rid[i + 2:].isdigit():
+            rid = rid[:i]
+            continue
+        return rid
+
+
 def multiversion_merge(records: list[dict]) -> dict:
     """多版本对齐合并（cbb-merge 并入；claude-book 四动作词汇）。
 
@@ -305,7 +320,12 @@ class ThreeStateStore:
                     seen_q.add(k)
                     ev.append(e)
             merged["evidence"] = ev
-            merged["record_id"] = existing["record_id"] + "-m"  # 新版本换 id（旧件不可覆盖）
+            # 2026-09-20 Windows MAX_PATH 修复：旧法 record_id+"-m" 逐次累加，高频实体
+            # 77 次合并后路径 261 字符>260 上限写入失败（ch0143 首案）。改为紧凑版本后缀
+            # -m{N}（N=新版本号，链内严格递增=唯一性等价；剥旧后缀取链基名，旧链文件不动；
+            # supersede-index/resolve_latest 按 id 等值工作，不受文件名形态影响）。
+            new_ver = existing.get("version", 1) + 1
+            merged["record_id"] = f"{_chain_base(existing['record_id'])}-m{new_ver}"
             path, created = self.supersede(existing["record_id"], merged)
             return {"track": "consistent-duplicate", "new_id": merged["record_id"],
                     "confidence": merged["provenance"]["extractor_confidence"],

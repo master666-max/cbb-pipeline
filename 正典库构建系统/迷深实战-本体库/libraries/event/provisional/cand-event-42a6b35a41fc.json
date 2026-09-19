@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "『魔石线』",
+   "塞拉·雷迪安特",
+   "帕林库洛",
+   "帕林库洛的部下",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "围攻濒死帕林库洛（四强连击·魔石线发光）",
+  "tick": 147,
+  "time_verbatim": "宣言后数秒级攻防（同场景）"
+ },
+ "evidence": [
+  {
+   "chapter": 147,
+   "line": 148,
+   "quote": "帕林库洛这次要以斯诺、塞拉、拉丝缇娅拉、莉帕这四个在大陆难觅敌手的顶级实力者为对手。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 149,
+   "quote": "但是面对袭来的敌人，帕林库洛却不为所动依旧专心于魔法构筑上。甚至连拉开距离都放弃了，将手置于地面用于魔法构筑。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 192,
+   "quote": "吸收了帕林库洛的血的中庭开始产生淡淡的光芒。",
+   "vol": 1
+  },
+  {
+   "chapter": 147,
+   "line": 220,
+   "quote": "就算不看HP也知道他现在已经濒死了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 147,
+   "text": "斯诺/塞拉/拉丝缇娅拉/莉帕四强围攻：塞拉剑斩（浅伤）两次被空手防→斯诺布裹拳打断其臂、击飞十米→士兵违令冲出挡斯诺（塞拉接手士兵）→拉丝缇娅拉+莉帕夹击（其防御超越状态数值/体势严重不稳）→帕林库洛扩伤口撒血逼避→斯诺飞踢命中→濒死（袈裟斩/断臂/吐血/'就算不看HP也知道他现在已经濒死了'）仍置手于地续唱；其血浸中庭令『魔石线』发光（对魔力反应）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-42a6b35a41fc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0147.txt",
+  "sha": "30396534177480246b21c43e31c9aace191be2ac26197df847c1ed44c7f193d4",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

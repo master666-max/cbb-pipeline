@@ -1,0 +1,353 @@
+{
+ "unit": "ch0145",
+ "chapter": 145,
+ "ingestion_index": 116,
+ "title": "164《辩论》",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 42,
+  "pass": 42,
+  "intercept": 0,
+  "admitted": 28,
+  "quarantined": 14
+ },
+ "tracks": {
+  "on-create": 21,
+  "contradiction": 1,
+  "consistent-duplicate": 6
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-432b17d796c3",
+   "type": "entity",
+   "name": "海莉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-e76ff6ab56dd"
+   }
+  },
+  {
+   "record_id": "cand-entity-40c1f8c6be8c",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m81"
+   }
+  },
+  {
+   "record_id": "cand-entity-784d667c6281",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m42"
+   }
+  },
+  {
+   "record_id": "cand-entity-d5f4ba4fa864",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2c6486ab38-m7"
+   }
+  },
+  {
+   "record_id": "cand-entity-746b238b4148",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m29"
+   }
+  },
+  {
+   "record_id": "cand-entity-26d79bd04282",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m54"
+   }
+  },
+  {
+   "record_id": "cand-entity-c44bd80c9dd2",
+   "type": "entity",
+   "name": "始祖涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-28ea7f2630b1-m3"
+   }
+  },
+  {
+   "record_id": "cand-relation-e70973a23eb3",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b49fd4f4693a",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-88b2d2e5e7a6",
+   "type": "relation",
+   "name": "使徒西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-864490bd4d72",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-aea3ec42e305",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a0e3d32300c7",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c9138c64ffcc",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8a43e7d71010",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-33c3c16006bf",
+   "type": "event",
+   "name": "海莉的拦路对峙与禁止通行宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e8aea25d05da",
+   "type": "event",
+   "name": "海莉的自白崩溃——记忆混杂之苦全暴露",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-17af23d26be3",
+   "type": "event",
+   "name": "海莉的颠覆推测揭示——涡波=『再诞』用魔石人类",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-93c33cb432bf",
+   "type": "event",
+   "name": "『素体』发现与『异邦人』说法冲突",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-cc4b5c8cd591",
+   "type": "event",
+   "name": "涡波的自答断章——'为了拯救他人的『妹妹』而被调整出来的'",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-65ea87dfdb37",
+   "type": "foreshadow",
+   "name": "涡波=『再诞』用魔石人类推测（始祖之器）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-e36918c7c691",
+   "type": "foreshadow",
+   "name": "『异邦人』与『素体』的说法冲突（一方说谎）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-88815dd51486",
+   "type": "foreshadow",
+   "name": "『假面男子』记忆流入·掩埋自我",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-2e751a840a48",
+   "type": "setting",
+   "name": "容器论三重并列（圣人缇娅拉／使徒西斯／始祖）（据海莉）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-2d715b356323",
+   "type": "setting",
+   "name": "『魔石人类』共通特征（级别初始化·全员『素体』·素质=寿命交换）（据海莉）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-131f04660412",
+   "type": "setting",
+   "name": "涡波的记忆流入与自我掩埋机制（自述）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c4feeea6ee2f",
+   "type": "setting",
+   "name": "相川涡波的技能板（ch145数值公开）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-582444d71cc8",
+   "type": "setting",
+   "name": "『素体』（隐藏于涡波技能板·据海莉）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-68af8aa46bd2",
+   "type": "entity",
+   "name": "艾德",
+   "item_id": "q-e44438ef0be0",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-c26f85973156",
+   "type": "entity",
+   "name": "海因",
+   "item_id": "q-366d5cb3ae1a",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-f726a29f6cf4",
+   "type": "entity",
+   "name": "相川阳滝",
+   "item_id": "q-c98c351dcc58",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-c576a535d702",
+   "type": "entity",
+   "name": "缇娅拉",
+   "item_id": "q-63487c90be81",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-aeb11356fb94",
+   "type": "relation",
+   "name": "海莉",
+   "item_id": "q-261ae234f254",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-603dc7c4a5ef",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "item_id": "q-8c65bad3eb63",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-a227d017b797",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "item_id": "q-d044f6f7db48",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-29f1ef50aa8c",
+   "type": "relation",
+   "name": "艾德",
+   "item_id": "q-589b712ca233",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-2677f4f1afa5",
+   "type": "relation",
+   "name": "海莉",
+   "item_id": "q-ad6f40c47666",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-7ed64dfe1881",
+   "type": "foreshadow",
+   "name": "帕林库洛战斗的心理战预告",
+   "item_id": "q-ebf126bcc34f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-5719dbc5267c",
+   "type": "foreshadow",
+   "name": "海莉的死愿与'东拼西凑身体'的崩壊时限",
+   "item_id": "q-2f1c1ea93c5f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-77182e2c76b1",
+   "type": "setting",
+   "name": "『异邦人』说法（据拉丝缇娅拉·涡波自认知见）",
+   "item_id": "q-4e4c24580cb4",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-b59906676706",
+   "type": "setting",
+   "name": "『调整』（记忆预设·器之维护，据海莉推测+涡波附会）",
+   "item_id": "q-66de871ca465",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-9b07f2c80081",
+   "type": "setting",
+   "name": "千年前传说所造『魔石人类』与现代之别（据海莉）",
+   "item_id": "q-0f213460293d",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 116,
+  "pseudo_date": "2000-04-26",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 476,
+   "edges": 833,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 470,
+    "edges": 833
+   }
+  }
+ }
+}

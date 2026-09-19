@@ -1,0 +1,339 @@
+{
+ "unit": "ch0144",
+ "chapter": 144,
+ "ingestion_index": 115,
+ "title": "163《疾走》",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 40,
+  "pass": 40,
+  "intercept": 0,
+  "admitted": 30,
+  "quarantined": 10
+ },
+ "tracks": {
+  "consistent-duplicate": 6,
+  "on-create": 23,
+  "contradiction": 1
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-46c0b3a2ed79",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m80"
+   }
+  },
+  {
+   "record_id": "cand-entity-0d30f328fe98",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m43"
+   }
+  },
+  {
+   "record_id": "cand-entity-1bfc58f8dd05",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m53"
+   }
+  },
+  {
+   "record_id": "cand-entity-7eea65bd5def",
+   "type": "entity",
+   "name": "帕林库洛",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ccd0d3ece575-m28"
+   }
+  },
+  {
+   "record_id": "cand-entity-e09a41dcdb52",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2c6486ab38-m6"
+   }
+  },
+  {
+   "record_id": "cand-entity-6378577b71e5",
+   "type": "entity",
+   "name": "艾德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-43aa892f43d2-m8"
+   }
+  },
+  {
+   "record_id": "cand-entity-e8d404731562",
+   "type": "entity",
+   "name": "海莉・维斯普洛佩",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-e4804edf6478"
+   }
+  },
+  {
+   "record_id": "cand-entity-301e6536e2da",
+   "type": "entity",
+   "name": "艾尔乌纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-526e43d6b173",
+   "type": "setting",
+   "name": "柯尔库",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-5ed26f838458",
+   "type": "setting",
+   "name": "柯尔拉纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-2281099f3b02",
+   "type": "setting",
+   "name": "帕林库洛的驻地大堡垒（ch144实测）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b965a5474825",
+   "type": "setting",
+   "name": "『维度』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-60e5f72cfe0f",
+   "type": "setting",
+   "name": "次元之冬",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-bfe20ebf108d",
+   "type": "setting",
+   "name": "『炎之矢』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9a859ba0df6b",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-eaa8a74568e0",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-66a82a2316a7",
+   "type": "relation",
+   "name": "使徒西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-23d273efd259",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b3eebd89a89d",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-545d6ede8e55",
+   "type": "relation",
+   "name": "海莉・维斯普洛佩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5a121cf3a3ae",
+   "type": "relation",
+   "name": "西娅·勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d846868651d2",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5711ee925bf9",
+   "type": "event",
+   "name": "公馆北奇袭·军马强夺（ch144）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-11df286176d8",
+   "type": "event",
+   "name": "柯尔库北关突破（ch144）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ff687d222210",
+   "type": "event",
+   "name": "柯尔拉纳潜入·独走再出发（ch144）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5ca02f5b13f4",
+   "type": "event",
+   "name": "涡波的六人集结宣言与二人归船（ch144）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d0eefba81472",
+   "type": "event",
+   "name": "森林战争地域强行穿越（ch144）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9877230010bb",
+   "type": "event",
+   "name": "大堡垒『维度』侦察：中庭三人异常魔力对峙（ch144）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1e20eee3672c",
+   "type": "foreshadow",
+   "name": "海莉・维斯普洛佩的拦截",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-0a49fac4576f",
+   "type": "foreshadow",
+   "name": "梦的记忆与异世界适应（再证）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-d662929ffbd5",
+   "type": "entity",
+   "name": "缇亚",
+   "item_id": "q-2bb0772350e3",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-66f6175acab6",
+   "type": "setting",
+   "name": "柯尔库西北战争地域（战场形态观察）",
+   "item_id": "q-24210c9e41c3",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-998604b5efae",
+   "type": "setting",
+   "name": "『所有物』",
+   "item_id": "q-c4af6287a493",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-59b82c548142",
+   "type": "setting",
+   "name": "『链接』",
+   "item_id": "q-19c9c0f99929",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-4d1e82d2729c",
+   "type": "setting",
+   "name": "魔石线",
+   "item_id": "q-32ba8fa716b4",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-4af14d0a8660",
+   "type": "setting",
+   "name": "『舞闘大会』第二战回顾（据涡波自述）",
+   "item_id": "q-40a946453103",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-c27d68d80538",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "item_id": "q-2163eaaa170c",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-b820718cf566",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-48b3edcf92a3",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-89e1bd47e3ad",
+   "type": "foreshadow",
+   "name": "涡波的失败感——'搞错了什么'的不安",
+   "item_id": "q-abcefcf45ace",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-e4b9ccb211d1",
+   "type": "foreshadow",
+   "name": "'圣诞祭的晚上'的重演拒绝",
+   "item_id": "q-16e1b3501057",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 115,
+  "pseudo_date": "2000-04-25",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 476,
+   "edges": 825,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 470,
+    "edges": 825
+   }
+  }
+ }
+}
