@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅·勒伽西",
+  "rel_type": "救命恩人(奴隶处境营救)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 138,
+   "line": 4,
+   "quote": "于是成功营救了西娅的我们，现在正在远离港口的街上跟西娅面对面。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 6,
+   "quote": "非常感谢，真的非常感谢！我还以为接下来要作为奴隶度过后半生了呢！",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 18,
+   "quote": "我想给你这份救命之恩献上相应的回礼呢！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 138,
+   "text": "海上夺还成功（西娅原以为'要作为奴隶度过后半生'）；西娅称其'涡波哥哥'，欲'给你这份救命之恩献上相应的回礼'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ffc750654a07",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0138.txt",
+  "sha": "a320351cddc9fa0c98fe84e9dde5a99b63b885f4dfbe726c5b805ab9a0885938",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

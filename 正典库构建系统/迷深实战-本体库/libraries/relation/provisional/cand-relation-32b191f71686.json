@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莉帕",
+  "rel_type": "『连接』情感共有(拒绝中止)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 137,
+   "line": 58,
+   "quote": "「是说那个『连接』的事？我倒是因为隐私问题给切断了，涡波你还留着啊？」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 59,
+   "quote": "「因为我和莉帕是好朋友啊。只是共有一部分感情而已，没问题啦」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 63,
+   "quote": "拉丝缇娅拉欲言又止地说道。她身旁的缇亚和玛利亚神情也与她相似。果然，正常来看共有感情是十分疯狂的行为。",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 66,
+   "quote": "我跟诺文约定过会好好守护莉帕，那就绝对不能把目光从她身上偏离。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 137,
+   "text": "涡波的情感与经验经『连接』流出到莉帕处（'只是共有一部分感情'）；拉丝缇娅拉因隐私问题切断己侧、缇亚与玛利亚神情相同（'正常来看共有感情是十分疯狂的行为'）；涡波不打算中止——理由=与诺文的守护约定（'绝对不能把目光从她身上偏离'）+迷宫探索便利；自认代价仅为丧失隐私"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-32b191f71686",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0137.txt",
+  "sha": "9b468d00ec37286ae44a4f4c81eeb6bbe3f70b22f71158ddaa912173cea4eed8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

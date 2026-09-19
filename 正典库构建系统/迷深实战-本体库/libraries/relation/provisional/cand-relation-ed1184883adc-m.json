@@ -1,0 +1,88 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "菲洛·艾尔巴特",
+  "rel_type": "击溃与招揽(单方面交锋)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 642,
+   "quote": "「唉，真是遗憾。如果能换一种跟你相遇的方式，说不定我们能成为同伴呢。……但是很抱歉。我现在有点急事。——以后有缘的话，我们再见吧。」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 667,
+   "quote": "虽然想给他带回去说服其成为同伴，但是现在这个时机不太好。明天就要抵达本土了，感觉说服所需的时间可能不够所以放弃了。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 668,
+   "quote": "——唉，『菲洛·艾尔巴特』先生。要是下次有机会再见的话，务必请你转行不要再做海盗了啊。那样的话，到时候我一定要劝你加入我的队伍……",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 126,
+   "quote": "「唉，真是遗憾。如果能换一种跟你相遇的方式，说不定我们能成为同伴呢。⋯⋯但是很抱歉。我现在有点急事。──以后有缘的话，我们再见吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 129,
+   "quote": "所幸的是以船上最高战力的我为对手，总算是让少年也拿出了全力战斗了一回。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 149,
+   "quote": "虽然想给他带回去说服其成为同伴，但是现在这个时机不太好。明天就要抵达本土了，感觉说服所需的时间可能不够所以放弃了。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 148,
+   "quote": "虽然因为出现了一个素质相当高的海盗让我有点着急，但是最后还是一切顺利。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "涡波一眼看破菲洛为本船最厉害者+原骑士+属性（劝降「把剑丢掉」）；菲洛全力一剑与全部魔法被击溃；涡波惜才（素质相当高）欲说服其成为同伴、因明日抵本土时间不够放弃——留言「以后有缘的话，我们再见吧/务必转行别做海盗/劝你加入我的队伍」"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-ed1184883adc",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ed1184883adc-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-ed1184883adc",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

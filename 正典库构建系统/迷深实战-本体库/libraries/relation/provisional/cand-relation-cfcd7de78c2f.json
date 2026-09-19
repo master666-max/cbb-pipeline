@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "自认过失(道歉)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 133,
+   "line": 99,
+   "quote": "都是因为我太天真。",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 103,
+   "quote": "「抱歉刚才冲你们怒吼，玛利亚，拉丝缇娅拉。是我做错了」",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 121,
+   "quote": "「⋯⋯不过，在烧毁整艘船这件事上，你们也要反省。一会就看到一场大火，不论谁都会混乱的啊」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 133,
+   "text": "怒吼后自认'都是因为我太天真'（道德上可能对、安全上无疑为过失），向玛利亚与拉丝缇娅拉低头道歉；同时要求两人就烧毁整船一事反省（'一会就看到一场大火，不论谁都会混乱的啊'）——玛利亚应之承认烧船过头"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cfcd7de78c2f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0133.txt",
+  "sha": "79ac90d98297a19bc285c83d3b52b94d780c5e2aa47bf1cb05229d87f0e32283",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

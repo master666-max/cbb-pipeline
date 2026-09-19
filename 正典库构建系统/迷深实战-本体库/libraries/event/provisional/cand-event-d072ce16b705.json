@@ -1,0 +1,84 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "莱纳",
+   "西娅·勒伽西"
+  ],
+  "instant": null,
+  "kind": "情报/移动",
+  "name": "街头情报听取与同赴别墅",
+  "tick": 138,
+  "time_verbatim": "营救当日（街头→勒伽西家别墅）"
+ },
+ "evidence": [
+  {
+   "chapter": 138,
+   "line": 33,
+   "quote": "「那个，我是找帕林库洛有事才来这边的，你要是知道他在哪儿的话能告诉我么？」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 35,
+   "quote": "「我知道哦！叔父大人的话，在距离这边稍微偏北的方向。据说他现在正在最前线指挥军队来着！」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 58,
+   "quote": "「好的！我想想啊，叔父大人现在在──。那～个，好像是－、啊嘞？他在⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 61,
+   "quote": "如果你想知道的话，就跟我们去别墅那边好了。看到留在那里的书信的话，立马就知道了",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 64,
+   "quote": "「我知道了，那就再陪你们一程」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 162,
+   "quote": "「没有的事，这种程度小菜一碟啦。啊，涡波先生，这就是书信。我们已经读完了，你直接给它带走就行」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 138,
+   "text": "涡波表明'我是找帕林库洛有事才来这边的'；西娅提供方位/参谋职/来信线索但记不住准确地名；莱纳指路别墅取信（'看到留在那里的书信的话，立马就知道了'）；涡波决意'再陪你们一程'；本章末西娅将已读来信交涡波带走。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d072ce16b705",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0138.txt",
+  "sha": "a320351cddc9fa0c98fe84e9dde5a99b63b885f4dfbe726c5b805ab9a0885938",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

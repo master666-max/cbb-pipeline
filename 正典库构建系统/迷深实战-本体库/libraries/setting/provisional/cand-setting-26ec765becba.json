@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 136,
+  "fact": "自37层水中阶层下行的阶层：回廊遍布浅滩，墙壁如热带雨林般生长大量植物；植被茂密程度自第一层之后再未见过；水栖类怪物减少、植物类怪物增加（移动能力普遍低）——38层回避敌人难度为各层最低，仅靠『维度』无需莉帕魔法即可无事故通过",
+  "name": "迷宫38层（植物回廊）",
+  "tick": 136
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 10,
+   "quote": "回廊遍布浅滩这点倒是跟之前一样，但是墙壁上就如同热带雨林一般生长着大量的植物。",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 12,
+   "quote": "植被如此茂密的区域自第一层之后再未见过。",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 20,
+   "quote": "水栖类的怪物减少，植物类的怪物增加了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 136,
+   "text": "阶层环境更新"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-26ec765becba",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "支配之王",
+  "rel_type": "效忠誓愿(再造王国待再临)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 38,
+   "quote": "「──鄙人要再次打造一个王国，等待『支配之王（Lord/罗德）』的再临。她必将于不远的将来从『那里』脱身吧。而这一次，胜利将紧握于『支配之王』手中。势必要经由我们的双手，为大陆带来和平与安宁──！没错，因为这才是王的心愿，亦是鄙人的心愿──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 69,
+   "quote": "「人这种生物，只有被逼入绝境，才会显露出本性。鄙人不是说过正在为了王而网罗优秀的臣子么？也就是说这是一场面试。要检验一下涡波大人究竟是否能在真正的意义上成为我们的同伴」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 139,
+   "text": "据艾德宣誓：再次打造王国等待『支配之王（Lord/罗德）』再临；她将从『那里』脱身；胜利紧握于王手；经守护者之手为大陆带来和平安宁——'这才是王的心愿，亦是鄙人的心愿'；为网罗优秀臣子而'面试'涡波"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b5d44f8887f5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

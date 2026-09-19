@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "西娅·勒伽西"
+  ],
+  "instant": null,
+  "kind": "战斗/营救",
+  "name": "西娅夺还作战成功",
+  "tick": 138,
+  "time_verbatim": "本章开篇回溯（营救后于远离港口的街头）"
+ },
+ "evidence": [
+  {
+   "chapter": 138,
+   "line": 3,
+   "quote": "西娅夺还作战顺利地取得了成功。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 4,
+   "quote": "以能够在海上自由行动的我和莱纳为对手，船员们根本没有还手之力。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 6,
+   "quote": "非常感谢，真的非常感谢！我还以为接下来要作为奴隶度过后半生了呢！",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 138,
+   "text": "涡波与莱纳以海上自由行动能力为战力压制船员（'船员们根本没有还手之力'），成功营救面临奴隶处境的西娅；战斗过程在本章为回溯叙述（章题'落地死的流星'未用于抽取）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2bc9d5259745",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0138.txt",
+  "sha": "a320351cddc9fa0c98fe84e9dde5a99b63b885f4dfbe726c5b805ab9a0885938",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

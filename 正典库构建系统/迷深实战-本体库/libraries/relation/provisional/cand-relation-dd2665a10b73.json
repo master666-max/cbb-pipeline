@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "夺取记忆(据涡波回忆重申)",
+  "subject": "帕林库洛"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 33,
+   "quote": "在被帕林库洛夺去记忆的状态下，我同莱纳相遇时，莱纳也是这种眼神。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 139,
+   "text": "涡波回忆：'在被帕林库洛夺去记忆的状态下，我同莱纳相遇时，莱纳也是这种眼神'——记忆夺取致涡波不识艾德等旧识的既有背景（跨章事实，relation 落轨）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-dd2665a10b73",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

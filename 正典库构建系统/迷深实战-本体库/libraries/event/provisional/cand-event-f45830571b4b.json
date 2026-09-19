@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "海盗船烧毁击退（留守组）",
+  "tick": 133,
+  "time_verbatim": "152话·探索队离船日（晨袭+午袭，归船时火海）"
+ },
+ "evidence": [
+  {
+   "chapter": 133,
+   "line": 62,
+   "quote": "浓烟滚滚，船只像薪柴一样熊熊燃烧。船帆被火烧得不成原形，桅杆在火中摇摇欲坠。",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 88,
+   "quote": "「那艘船一开始是假扮成商船来跟我们交涉的⋯⋯，但是船员的代表一看到我们都是小孩子，态度就豹变，袭击过来了啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 96,
+   "quote": "「看到一心遵守涡波的吩咐的玛利亚酱很困扰。我就擅自做出许可喽。跟她说『接下来还敢过来的家伙，就给他们的船烧成灰吧』来着！杀鸡儆猴嘛！",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 84,
+   "quote": "虽然在联合国我是个臭名昭著的犯罪者，但是我还是想在其他地方有一个清正洁白的探索者形象的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 133,
+   "text": "据玛利亚与拉丝缇娅拉：晨间伪装商船的海盗见全员小孩豹变袭击→玛利亚遵约以火胁迫驱离；午间他船再袭→依拉丝缇娅拉许可将敌船整艘烧毁（火海沉没，二人甲板大笑旁观，塞拉劝阻无效）→探索队归来目睹火海，涡波创伤再现、怒吼质问→闻原委后自认误判道歉并要求两人反省烧船过头；涡波'清正洁白的探索者形象'计划随火船落空"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f45830571b4b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0133.txt",
+  "sha": "79ac90d98297a19bc285c83d3b52b94d780c5e2aa47bf1cb05229d87f0e32283",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

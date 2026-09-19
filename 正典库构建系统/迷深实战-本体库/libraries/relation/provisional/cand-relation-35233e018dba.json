@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅·勒伽西",
+  "rel_type": "『Sleep』强制入睡(压制反对)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 90,
+   "quote": "「──『Sleep』。姑且先让领队像海莉大人一样先睡下吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 91,
+   "quote": "紧接着西娅就像断了线的人偶一样倒下了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 139,
+   "text": "西娅两次反对交战面试后，艾德打响指咏唱『Sleep』'姑且先让领队像海莉大人一样先睡下吧'——西娅如断线人偶倒下，倒在海莉身旁平稳入睡"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-35233e018dba",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

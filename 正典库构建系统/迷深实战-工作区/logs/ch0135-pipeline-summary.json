@@ -1,0 +1,244 @@
+{
+ "unit": "ch0135",
+ "chapter": 135,
+ "ingestion_index": 106,
+ "title": "154话-传闻中的英雄",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 26,
+  "pass": 24,
+  "intercept": 2,
+  "admitted": 17,
+  "quarantined": 9
+ },
+ "tracks": {
+  "on-create": 8,
+  "consistent-duplicate": 9
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-d6ef8b40b6f6",
+   "type": "entity",
+   "name": "菲洛·艾尔巴特",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-cd0220ee9444-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-93cba0198967",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-677ce95ae496",
+   "type": "entity",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-0f0405a8285b-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-ce3231be2a95",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-1003878db448",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-6fa0b22c82c0",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m-m"
+   }
+  },
+  {
+   "record_id": "cand-entity-04cb5dc2efb8",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2c6486ab38-m-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-d4acbadc639e",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-ed1184883adc-m"
+   }
+  },
+  {
+   "record_id": "cand-relation-778a72bbd656",
+   "type": "relation",
+   "name": "缇亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-28244fa92881-m"
+   }
+  },
+  {
+   "record_id": "cand-setting-1141bf47a127",
+   "type": "setting",
+   "name": "『英雄』涡波传闻（联合国东北扩散·ch135）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-cb408e7bcd82",
+   "type": "setting",
+   "name": "阿雷亚斯家剑法",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-616c6ebdec40",
+   "type": "setting",
+   "name": "海盗七船船队与近海治安（ch135）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-33d41421b624",
+   "type": "event",
+   "name": "涡波只身迎击七艘海盗船队",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-04d5345cc781",
+   "type": "event",
+   "name": "奴隶解放与西斯误认骚动",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f68e76126f27",
+   "type": "event",
+   "name": "悬赏判明与绕路决定",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d74d78b0b5eb",
+   "type": "event",
+   "name": "午后探索队编成与斯诺捕获",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-b973379c8219",
+   "type": "foreshadow",
+   "name": "菲洛再会与转行招揽预告",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-ae6b97267b12",
+   "type": "entity",
+   "name": "海盗船长",
+   "item_id": "q-43612ab641da",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-46aa71656d4d",
+   "type": "relation",
+   "name": "菲洛·艾尔巴特",
+   "item_id": "q-10834292e5e2",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-d3d5b50b61d1",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-79e869314512",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-8d430d80c7a6",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-52e03bf39465",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-af791342b770",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-247757af3020",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-9ae2d2c61bb6",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-e3ffaab8d99e",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-fe3f342dffdc",
+   "type": "setting",
+   "name": "使徒西斯救村传说（据原奴隶信徒声称）",
+   "item_id": "q-27982629f87a",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-77ecbe179d19",
+   "type": "foreshadow",
+   "name": "缇亚与使徒西斯的重叠疑云",
+   "item_id": "q-057a102b5c15",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  },
+  {
+   "record_id": "cand-foreshadow-b3f41eb3fe00",
+   "type": "foreshadow",
+   "name": "联合国悬赏与行踪暴露风险",
+   "item_id": "q-445be58e20b3",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  }
+ ],
+ "anchor": {
+  "tick": 106,
+  "pseudo_date": "2000-04-16",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "error",
+   "stderr": "！！！！！\\正典库构建系统\\cbb\\tools\\embed_dedup_scan.py\", line 110, in collect_entity_names\n    lib.add(a[\"alias\"])\n    ~~~~~~~^^^^^^^^^^^^\nTypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\n"
+  },
+  "neo4j": {
+   "nodes": 474,
+   "edges": 753,
+   "batches": 7,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 467,
+    "edges": 753
+   }
+  }
+ }
+}

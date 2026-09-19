@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "40层守护者",
+  "rel_type": "守护者唤醒(推测)",
+  "subject": "海莉"
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 96,
+   "quote": "「看来果然是海莉已经将守护者唤醒了呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 97,
+   "quote": "「看起来是这么回事啊。而且看这样子，40层的守护者还活着⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 136,
+   "text": "据拉丝缇娅拉与涡波推断：40层守护者已被海莉唤醒（大草原空无一人+草仍在=守护者未被别人打倒且仍存活——若被打倒则房间应连草都不长）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d56a7574f6c1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

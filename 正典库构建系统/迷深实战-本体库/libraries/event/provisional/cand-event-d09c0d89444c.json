@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "Rokh·Bringer",
+   "相川涡波",
+   "莱纳",
+   "诺瓦露",
+   "阿雷亚斯家的宝剑",
+   "露洁"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "重力共鸣的庭院追捕战",
+  "tick": 139,
+  "time_verbatim": "面试开战后连续"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 152,
+   "quote": "双脚被轻而易举地推离地面，我被轰到了后面的墙壁上。老化的木制墙壁顷刻间被撞碎。",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 158,
+   "quote": "在莱纳『魔力风刃化』的修补下，折断的『堕落使徒』完美地化身为两把长剑。风之魔剑舞动着向我袭来。",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 212,
+   "quote": "但是被回避的『某物』却改变了前进的方向，朝逃掉的我追了过来。看来这魔法就跟捕捉猎物的野兽一样具有追踪功能。",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 171,
+   "quote": "话是这么说，但是守护者艾德基本不参与到战斗中来。只是用绿色的魔力缠绕我面前的两名少女而已。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 139,
+   "text": "客厅：Gravity・Greed空间颠倒+超重，涡波Quartz剑转盾仍被魔力凝聚体轰飞撞碎木墙跌入庭院→退路被风刃化修补的断剑双剑封锁（莱纳空中奇袭，风扰『维度』）→庭院：Daemon不可视某物掀地追踪+强欲转换泡沫填空（触物直坠），艾德绿色魔力强化双少女（身体强化1.45/魔力强化2.02）→涡波体术杂技式周旋+耶梦加得冰蛇上天化作烟火（假浪费）→'1打4'持久战，庭院被糟蹋成土色耕地"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d09c0d89444c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

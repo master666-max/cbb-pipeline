@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "木制的义手",
+  "rel_type": "制作提供(35层探索装备)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 132,
+   "line": 66,
+   "quote": "顺带一提斯诺握着的是木制的义手。是我为了这次探索专门制造的能够让缇亚跟斯诺紧紧联结起来的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 132,
+   "text": "涡波为35层探索专门制造木制义手并交付使用：缇亚牵、斯诺握，作为二人在水中的联结装置"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bd4ca0d1d4c6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0132.txt",
+  "sha": "97203e9899d3968072d0623dd484ef0a23365ca6",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

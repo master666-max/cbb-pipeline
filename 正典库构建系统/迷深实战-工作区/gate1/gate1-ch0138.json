@@ -1,0 +1,39 @@
+{
+ "unit": "ch0138",
+ "summary": {
+  "total": 33,
+  "pass": 31,
+  "intercept": 2,
+  "by_code": {
+   "G1-SCHEMA": 0,
+   "G1-EVIDENCE": 1,
+   "G1-REF": 0,
+   "G1-REL-BACKLINK": 0,
+   "G1-TIME_INVERSION": 0,
+   "G1-DEAD-WALK": 0,
+   "G1-FORESHADOW-ORDER": 0,
+   "G1-CHEKHOV-OVERDUE": 1,
+   "G1-CONTRADICTION": 0
+  }
+ },
+ "intercepted": [
+  {
+   "record_id": "cand-foreshadow-97b309b604a4",
+   "violations": [
+    {
+     "code": "G1-CHEKHOV-OVERDUE",
+     "detail": "契诃夫枪超期：第130章埋设，至第138章 已 8 章未兑现（≥3）"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-setting-a60a42338a9d",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[2] quote 悬空（坐标块内不可回落）: v1c138 「没有的事，这种程度小菜一圃啦。啊，涡波…"
+    }
+   ]
+  }
+ ]
+}

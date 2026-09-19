@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "被迫交战(同情但应战)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 97,
+   "quote": "「⋯⋯我上就行了吧。我上」",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 103,
+   "quote": "「抱歉、基督⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 108,
+   "quote": "「⋯⋯其实说实话，我也很想了解艾德口中的『基督的本性』」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 139,
+   "text": "莱纳反对无效（被'难道您想让这些孩子战斗到力竭吗'说服）后厌恶应战'我上就行了吧'；对涡波'抱歉、基督⋯⋯'歉意摇头；战中'其实说实话，我也很想了解艾德口中的『基督的本性』'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9d5a1a5303a6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

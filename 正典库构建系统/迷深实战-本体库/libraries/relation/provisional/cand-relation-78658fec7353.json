@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "分开行动方针",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 197,
+   "quote": "「涡波的要求只有希望作为次元魔术使的莉帕跟你分开行动而已不是吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 124,
+   "quote": "看来尽可能的话我还是跟莉帕分开行动比较好。不然会让大家产生不必要的担心。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 136,
+   "text": "涡波方针：希望作为次元魔术使的莉帕与自己分开行动（『连接』通讯便利+避免船上众人不必要的担心——莉帕同行时船侧无法得知队伍安否）；本土行动莉帕留守船侧"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-78658fec7353",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

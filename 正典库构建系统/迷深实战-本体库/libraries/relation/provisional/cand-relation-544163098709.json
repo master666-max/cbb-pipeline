@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "侄女-叔父亲缘",
+  "subject": "西娅·勒伽西"
+ },
+ "evidence": [
+  {
+   "chapter": 138,
+   "line": 34,
+   "quote": "作为侄女，西娅可能知道帕林库洛现在的位置。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 35,
+   "quote": "「我知道哦！叔父大人的话，在距离这边稍微偏北的方向。据说他现在正在最前线指挥军队来着！」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 52,
+   "quote": "对于自己的叔父，她单纯以看待亲人的眼光去看他的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 138,
+   "text": "西娅称帕林库洛'叔父大人'，叙述定位'作为侄女'；对其不知情、单纯以亲人眼光看待；数日前收到其来信；本章涡波为寻帕林库洛而向其打听。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-544163098709",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0138.txt",
+  "sha": "a320351cddc9fa0c98fe84e9dde5a99b63b885f4dfbe726c5b805ab9a0885938",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "使徒西斯",
+  "rel_type": "被误认(使徒西斯再临)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 705,
+   "quote": "「啊啊，西斯大人！看您的样貌果然是西斯大人啊！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 707,
+   "quote": "「不，不对。我不是西斯，我是缇亚啊……」",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 732,
+   "quote": "信徒们还在向着离去的缇亚背影膜拜着。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 183,
+   "quote": "「西、西斯大人⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 184,
+   "quote": "原奴隶中的一名男子，冲着在远处旁观事态发展的缇亚说着。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 189,
+   "quote": "「不，不对。我不是西斯，我是缇亚啊⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "据原奴隶男子（莱文教虔诚信徒）声称：缇亚=善良的西斯大人（拯救村子记忆/美丽容颜不可能忘）→「货真价实的传说中那名使徒的再临」；众信徒随之围拢、向其背影膜拜；缇亚本人否认（「我不是西斯，我是缇亚」）并为此改回男装"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-28244fa92881",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-28244fa92881-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-28244fa92881",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

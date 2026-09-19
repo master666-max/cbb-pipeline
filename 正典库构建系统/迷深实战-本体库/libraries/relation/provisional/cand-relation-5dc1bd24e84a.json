@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉·维斯普洛佩",
+  "rel_type": "治疗者(绿色魔力光)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 138,
+   "line": 207,
+   "quote": "一道绿色的魔力之光从客厅的门外射来。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 208,
+   "quote": "「已经来了。治疗的问题就请交给鄙人吧，莱纳大人」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 212,
+   "quote": "那名男子放出柔和的光芒、用温柔的魔力之光将海莉包裹起来。紧接着海莉的呼吸便转好。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 231,
+   "quote": "「这样一时之间应该就没问题了。那么，这位客人──」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 138,
+   "text": "从客厅门外射出绿色魔力之光、干涉莱纳的神圣魔法并接手治疗；'用温柔的魔力之光将海莉包裹起来'后呼吸转好、苦闷缓和、不再剧汗；判'这样一时之间应该就没问题了'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5dc1bd24e84a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0138.txt",
+  "sha": "a320351cddc9fa0c98fe84e9dde5a99b63b885f4dfbe726c5b805ab9a0885938",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

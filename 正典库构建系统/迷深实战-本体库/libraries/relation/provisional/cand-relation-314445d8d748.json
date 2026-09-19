@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "复仇杀意(旧伤)",
+  "subject": "缇亚"
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 213,
+   "quote": "「哈哈，哈哈哈哈。被那个混蛋砍伤的伤痕现在还隐隐作痛呢。虽然在劳拉维亚给他逃了，但是这一次可没那么容易。绝对要弄死他」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 136,
+   "text": "'被那个混蛋砍伤的伤痕现在还隐隐作痛''虽然在劳拉维亚给他逃了，但是这一次可没那么容易。绝对要弄死他'——帕林库洛所致砍伤旧恨（劳拉维亚逃脱）与本格复仇宣言"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-314445d8d748",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

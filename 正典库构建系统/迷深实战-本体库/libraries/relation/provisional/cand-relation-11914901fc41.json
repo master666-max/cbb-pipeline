@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海因",
+  "rel_type": "兄长敬重(实力将超越)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 137,
+   "line": 174,
+   "quote": "「太好了⋯⋯⋯那样的话，你应该从海莉那儿听说海因的事情了吧？」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 226,
+   "quote": "「因为她们拿兄长大人的记忆做诱饵啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 288,
+   "quote": "──其实力甚至将要超越莱纳自己一直以来敬重的兄长。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 137,
+   "text": "莱纳称海因为'兄长大人'并敬重之；涡波评莱纳风魔法实力'甚至将要超越莱纳自己一直以来敬重的兄长'；另据涡波观察，其对家人着想的性格是其对莱纳抱好感的共鸣点"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-11914901fc41",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0137.txt",
+  "sha": "9b468d00ec37286ae44a4f4c81eeb6bbe3f70b22f71158ddaa912173cea4eed8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

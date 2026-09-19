@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "莱文教",
+  "rel_type": "缔造者(传说)",
+  "subject": "缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 466,
+   "quote": "圣人『缇娅拉』构筑了魔法的基础，并缔造了莱文教。使徒西斯带着一同战斗的英雄们巡回各地播撒着奇迹。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 400,
+   "quote": "在那之后，圣人缇娅拉甚至还缔造出一大宗教，企图进行自己的『再诞』。执念如此之深的人，根本不可能会给后人留下正确的历史记载。",
+   "vol": 1
+  },
+  {
+   "chapter": 134,
+   "line": 71,
+   "quote": "在那之后，圣人缇娅拉甚至还缔造出一大宗教，企图进行自己的『再诞』。执念如此之深的人，根本不可能会给后人留下正确的历史记载。",
+   "vol": 1
+  },
+  {
+   "chapter": 134,
+   "line": 137,
+   "quote": "「因为那个『魔法阵』的缘故，战争就结束了。虽然失去了众多宝贵的生命，但是伟大的圣人『缇娅拉』和使徒西斯为了复兴大陆的文明而尽心竭力。圣人『缇娅拉』构筑了魔法的基础，并缔造了莱文教。使徒西斯带着一同战斗的英雄们巡回各地播撒着奇迹。非常感谢，真的非常感谢你们，圣人缇娅拉和使徒西斯。──完」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 72,
+   "text": "据拉丝缇娅拉传说讲述：圣人缇娅拉构筑了魔法的基础，并缔造了莱文教（战后为复兴大陆文明尽心竭力）；另据涡波：其企图进行自己的『再诞』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-357bad9f6b28",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-357bad9f6b28-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-357bad9f6b28",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

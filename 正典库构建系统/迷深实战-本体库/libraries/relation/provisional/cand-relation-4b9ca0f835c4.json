@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "水中战力起用(全勤方针)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 132,
+   "line": 143,
+   "quote": "确实水中战斗斯诺比所有人都优秀。不单纯是因为她擅长游泳，还在于振动魔法的应用能力。",
+   "vol": 1
+  },
+  {
+   "chapter": 132,
+   "line": 95,
+   "quote": "果然斯诺在水中探索是必要的角色。并且我也决定要让她在从今往后的探索活动里全勤上岗了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 132,
+   "text": "涡波判明斯诺水中战斗比所有人优秀（游泳+振动魔法应用能力），以义手联结与守护职设计逼出其责任感（'不管怎样一定得让斯诺有活干'）；决意今后探索全勤上岗；试探推举其打头阵（捧高高煽动大作战）以失败告终"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4b9ca0f835c4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0132.txt",
+  "sha": "97203e9899d3968072d0623dd484ef0a23365ca6",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "柯尔库",
+   "玛利亚",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "移动/投宿",
+  "name": "柯尔库入市与旅店投宿（ch137）",
+  "tick": 137,
+  "time_verbatim": "抵柯尔库当日（昼前入市→午后追击）"
+ },
+ "evidence": [
+  {
+   "chapter": 137,
+   "line": 10,
+   "quote": "以了解本土状况的缇亚为向导，我们在街上行进。",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 49,
+   "quote": "使用适当的假名，同服务员交流。渐渐习惯以假名示人的自己好像有点可悲。",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 50,
+   "quote": "就这样开了两间价格最高的房间。已经不会愁钱的事了所以大手大脚的花就是。",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 51,
+   "quote": "听服务员的介绍，这里的住宿条件跟弗茨亚茨那边一样，都提供伙食。毕竟消费了这么多钱，服务态度相当的好。",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 55,
+   "quote": "「唔─，留守组有没有好好做饭吃啊⋯⋯⋯感觉放着斯诺不管的话，那丫头会懒到活活饿死诶，真担心⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 137,
+   "text": "上岸组4人（涡波/拉丝缇娅拉/玛利亚/缇亚）以缇亚为向导入市；留守组=斯诺/塞拉/莉帕留守船（涡波担心斯诺'懒到活活饿死'、预计终由莉帕掌勺）；涡波以假名同服务员交流、开两间最贵客房（'已经不会愁钱的事了'）；旅馆提供伙食（条件同弗茨亚茨）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-16ef7b6c7662",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0137.txt",
+  "sha": "9b468d00ec37286ae44a4f4c81eeb6bbe3f70b22f71158ddaa912173cea4eed8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

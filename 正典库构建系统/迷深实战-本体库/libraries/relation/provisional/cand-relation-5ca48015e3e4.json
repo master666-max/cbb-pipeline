@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "留守指示与节制请求",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 132,
+   "line": 39,
+   "quote": "「不，不是的，我不是让你注意这个。不要光顾着这艘船，也要让来接触的对手平安地回去哦⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 132,
+   "line": 43,
+   "quote": "「不，就算是以海盗为对手也请你手下留情⋯⋯⋯尽可能不要杀人⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 132,
+   "text": "提醒留守组注意接近的船只且'也要让来接触的对手平安地回去'；对海盗亦请求'手下留情⋯⋯⋯尽可能不要杀人'被驳'太天真了'；涡波不愿脏其手、自停反驳"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5ca48015e3e4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0132.txt",
+  "sha": "97203e9899d3968072d0623dd484ef0a23365ca6",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

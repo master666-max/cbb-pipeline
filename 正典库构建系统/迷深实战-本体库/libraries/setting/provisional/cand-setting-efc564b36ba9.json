@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 138,
+  "fact": "据西娅声称：帕林库洛在距当地稍偏北方向的最前线指挥军队，正担任『南方』总大将的参谋；涡波在劳拉维亚时已闻其作为将领被召回本土、现处战争中心（旧闻印证）；本章舞台为本土（据海莉：'这么快就来到本土了呀'）；西娅队伍的目的地同为帕林库洛处。",
+  "name": "帕林库洛的位置与『南方』战局",
+  "tick": 138
+ },
+ "evidence": [
+  {
+   "chapter": 138,
+   "line": 35,
+   "quote": "「我知道哦！叔父大人的话，在距离这边稍微偏北的方向。据说他现在正在最前线指挥军队来着！」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 37,
+   "quote": "我在劳拉维亚的时候，就听说过帕林库洛作为将领被召回了本土这件事，果然那家伙现在正处于战争的中心处。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 38,
+   "quote": "听说叔父大人正在担任『南方』总大将的参谋哦",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 173,
+   "quote": "「少年，这么快就来到本土了呀。呵呵，让你看到我不成器的样子了呢，真是不好意思」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 138,
+   "text": "战局情报（据西娅声称+涡波旧闻，两源一致）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-efc564b36ba9",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0138.txt",
+  "sha": "a320351cddc9fa0c98fe84e9dde5a99b63b885f4dfbe726c5b805ab9a0885938",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

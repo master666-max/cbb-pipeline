@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "支配之王",
+  "rel_type": "'诓骗了王'罪嫌(据艾德声称)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 30,
+   "quote": "「诶诶，没错正是如此。一切都已经结束了。因此就忘掉你诓骗了我等的王这件事好了。都是过去的事情了，已经与现在无关了啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 32,
+   "quote": "明明他说着已经没有关系了，但是那双瞳孔中依然寄宿着敌意。我记得这种眼神。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 139,
+   "text": "据艾德：'忘掉你诓骗了我等的王这件事好了'——千年前涡波〔或其前世〕欺骗守护者之王的指控（涡波无相关记忆，存疑分开建）；艾德嘴上说'已经与现在无关'但瞳孔仍寄宿敌意"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2f7b3d9c8424",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

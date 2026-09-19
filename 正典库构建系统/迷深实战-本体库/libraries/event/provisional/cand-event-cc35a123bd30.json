@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "部署·争论",
+  "name": "出征前留守指示与海盗应对争论",
+  "tick": 132,
+  "time_verbatim": "第二天早晨·甲板集合时"
+ },
+ "evidence": [
+  {
+   "chapter": 132,
+   "line": 33,
+   "quote": "确实，我也发现了这附近的海水跟之前的样子不同。气候也安定了下来，看似商船的船只随处可见。",
+   "vol": 1
+  },
+  {
+   "chapter": 132,
+   "line": 42,
+   "quote": "「但是这里离战场也很近了，我觉得这附近可能会出现海盗船的。要是他们敢来的话我一定会全力迎击的哦？无需多言直接烧成灰」",
+   "vol": 1
+  },
+  {
+   "chapter": 132,
+   "line": 44,
+   "quote": "「太天真了，涡波先生。你对那种恶人手下留情干什么」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 132,
+   "text": "因接近本土船只增多，涡波提醒留守组注意接近者并要求'让来接触的对手平安地回去'；玛利亚预警战场临近可能出现海盗船、宣言全力迎击'无需多言直接烧成灰'；涡波请求'尽可能不要杀人'被驳'太天真了'（其对杀人无大抵触）；涡波自停反驳转向『连接』出发"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-cc35a123bd30",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0132.txt",
+  "sha": "97203e9899d3968072d0623dd484ef0a23365ca6",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

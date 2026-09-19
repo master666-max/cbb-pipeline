@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "联合国",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "决策",
+  "name": "悬赏判明与绕路决定",
+  "tick": 135,
+  "time_verbatim": "奴隶解放后、午后探索前（甲板小憩时段）"
+ },
+ "evidence": [
+  {
+   "chapter": 135,
+   "line": 155,
+   "quote": "就像我们预想的那样，我们正航行的路线上似乎有不少海盗在活动。不仅如此，我们还被联合国冠上了赏金。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 156,
+   "quote": "跟莉帕商量过之后，我们决定稍微绕一下远路。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 220,
+   "quote": "「航线已经改变了，所以没问题了哦。虽然会绕点远路，但是明天还是能抵达『本土』的吧？那么吃过午饭后，就要开始迷宫探索了呢。今天谁要去？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 135,
+   "text": "审问被捕海盗（'可能是因为我的袭击给他们造成了阴影吧，他们丝毫不打算隐瞒什么'）判明：①航路上海盗活动频繁（与预想一致）；②涡波一行已被联合国冠上赏金；与莉帕商定稍微绕远路——'虽然会绕点远路，但是明天还是能抵达『本土』的吧'；因夺取敌方物资粮食充足"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f68e76126f27",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0135.txt",
+  "sha": "77bf1ac5fb819afeb3d5fff3c886d5ca64c7a509",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

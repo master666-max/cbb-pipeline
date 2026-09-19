@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉",
+  "rel_type": "记忆诱饵入队(不视其为兄)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 349,
+   "quote": "「因为她们拿兄长大人的记忆做诱饵啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 303,
+   "quote": "「没怎么想。既然本人要求把她当成别人来对待，那就照她说的做喽。——她是一个拥有兄长大人一部分记忆的，余下生命不长的『魔石人类』。仅此而已。你不这么看吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 180,
+   "quote": "「没怎么想。既然本人要求把她当成别人来对待，那就照她说的做呗。──她是一个拥有兄长大人一部分记忆的，余下生命不长的『魔石人类』。仅此而已。你不这么看吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 181,
+   "quote": "「不，我也一样。因为她也对我这么说过」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 226,
+   "quote": "「因为她们拿兄长大人的记忆做诱饵啊！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 78,
+   "text": "莱纳入西娅队的动因：『因为她们拿兄长大人的记忆做诱饵啊！』。对海莉的定位——遵其本人要求当别人对待：『她是一个拥有兄长大人一部分记忆的，余下生命不长的『魔石人类』。仅此而已』；同时存疑其是否正确继承海因记忆（施术者为帕林库洛故不可信）。涉及海因"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-ed06ea579b14",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ed06ea579b14-m",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-ed06ea579b14",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

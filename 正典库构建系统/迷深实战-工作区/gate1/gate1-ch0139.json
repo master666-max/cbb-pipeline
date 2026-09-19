@@ -1,0 +1,39 @@
+{
+ "unit": "ch0139",
+ "summary": {
+  "total": 47,
+  "pass": 45,
+  "intercept": 2,
+  "by_code": {
+   "G1-SCHEMA": 0,
+   "G1-EVIDENCE": 2,
+   "G1-REF": 0,
+   "G1-REL-BACKLINK": 0,
+   "G1-TIME_INVERSION": 0,
+   "G1-DEAD-WALK": 0,
+   "G1-FORESHADOW-ORDER": 0,
+   "G1-CHEKHOV-OVERDUE": 0,
+   "G1-CONTRADICTION": 0
+  }
+ },
+ "intercepted": [
+  {
+   "record_id": "cand-setting-640f190fd2ef",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[0] quote 悬空（坐标块内不可回落）: v1c139 「──『无序之风」！」…"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-event-d2d68ff47b95",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[2] quote 悬空（坐标块内不可回落）: v1c139 「『炎之矢・散花（FallFlower）…"
+    }
+   ]
+  }
+ ]
+}

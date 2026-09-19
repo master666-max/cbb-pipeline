@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『LivingLegend号』",
+  "rel_type": "留守守护受托(『LivingLegend号』)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 132,
+   "line": 38,
+   "quote": "「放心吧涡波先生。我绝对会守护好这艘船的。不管有什么样的敌人，都不会有任何闪失──！」",
+   "vol": 1
+  },
+  {
+   "chapter": 132,
+   "line": 40,
+   "quote": "有玛利亚在的话是不用担心海战的问题的。会让这艘LivingLegend号沉没的状况，只会是我们队伍里的谁暴走所致吧。不如说，LivingLegend号的敌人就是玛利亚你们啊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 132,
+   "text": "因与水相性不好而全权受托留守守护（'被交付了这艘船的玛利亚干劲满满'）；涡波判断：会让该船沉没的状况只会是自队成员暴走（'LivingLegend号的敌人就是玛利亚你们啊'——反语表其战力即最大保障）；同时被要求让来接触的对手平安回去"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1988c5362813",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0132.txt",
+  "sha": "97203e9899d3968072d0623dd484ef0a23365ca6",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

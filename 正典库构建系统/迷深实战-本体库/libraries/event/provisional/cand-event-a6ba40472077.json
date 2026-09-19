@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "干死帕林库洛小队",
+   "拉丝缇娅拉",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "决策",
+  "name": "成员分组与『干死帕林库洛小队』结成",
+  "tick": 136,
+  "time_verbatim": "抵达『本土』当晨（甲板）"
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 192,
+   "quote": "「总而言之，要跟涡波一起去本土的也就我和玛利亚酱还有缇亚而已了。这样就漂亮地4对3了呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 201,
+   "quote": "「那可不行。我总觉得你会擅自跑去战斗，然后就被人家反杀掉」",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 216,
+   "quote": "「那么我们就出发吧。也不能去海岸那种容易被发现的地方靠岸，我们就从这里直接翻上那座悬崖吧。我背着玛利亚酱跳上去，缇亚就拜托涡波了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 136,
+   "text": "分组既定：跟涡波去本土的=拉丝缇娅拉+玛利亚+缇亚（4对3）；塞拉想随拉丝缇娅拉被说服；斯诺摆您走好态度摇「一路顺风」小旗；方针=莉帕（次元魔术使+『连接』通讯）与涡波分开、人数精简（涡波本想一人去找人被拉丝缇娅拉以'会被反杀'否决）；涡波放弃1对1想法接受围攻；队名『干死帕林库洛小队』获玛利亚缇亚险恶笑容赞同；出发方式=不从海岸靠岸、直接翻船旁悬崖"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a6ba40472077",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

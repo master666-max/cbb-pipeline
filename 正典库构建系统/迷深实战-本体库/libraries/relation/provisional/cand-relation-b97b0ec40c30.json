@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "侍奉照料(红茶·值班提案)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 134,
+   "line": 12,
+   "quote": "玛利亚为趴在桌子上的拉丝缇娅拉准备着红茶。桌子上居然摆设着齐全的茶具，看来不知不觉间这艘船上就常备了我所不了解的她们的喜好品了。大概是从昨天袭击过来的海盗船上抢过来的吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 134,
+   "line": 17,
+   "quote": "「要不接下来你们去休息，我来值班好了？」",
+   "vol": 1
+  },
+  {
+   "chapter": 134,
+   "line": 18,
+   "quote": "「唔～嗯，那样会对玛利亚酱的皮肤不好，绝对不能那么做」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 134,
+   "text": "为趴桌的拉丝缇娅拉备红茶（船内常备茶具）；主动提议'接下来你们去休息，我来值班好了'——被拉丝缇娅拉以'那样会对玛利亚酱的皮肤不好'回绝"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b97b0ec40c30",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0134.txt",
+  "sha": "fa3a6ea95f59fe20ac661772504b63a9c1280b7887a44cf9abe1db9e09dfacae",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

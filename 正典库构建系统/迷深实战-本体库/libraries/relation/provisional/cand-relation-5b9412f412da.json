@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "敌意(主张制伏)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 137,
+   "line": 104,
+   "quote": "「我也不同意呢。那小子比他姐姐芙兰还看不顺眼」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 107,
+   "quote": "缇亚和玛利亚甚至散发出了杀气。",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 108,
+   "quote": "其他的成员对莱纳的好感度不可思议地低到了绝望的地步。果然，他在舞闘大会的最后搞出的乱子太致命了。",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 130,
+   "quote": "「嗯～。我还是觉得赶紧所有人出马给他抓住比较好」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 137,
+   "text": "拉丝缇娅拉提议'找一个没人的地方，大家一起上实打实地揍他一顿'、'赶紧所有人出马给他抓住'（自信能完胜）；缇亚（'那小子比他姐姐芙兰还看不顺眼'）与玛利亚（'我也觉得他是我们的敌人'）同持敌意、甚至散发杀气；好感度低源于莱纳在舞闘大会最后搞出的乱子；涡波以单独接触+大魔法（耶梦加得之霜）信号妥协案压制"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5b9412f412da",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0137.txt",
+  "sha": "9b468d00ec37286ae44a4f4c81eeb6bbe3f70b22f71158ddaa912173cea4eed8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

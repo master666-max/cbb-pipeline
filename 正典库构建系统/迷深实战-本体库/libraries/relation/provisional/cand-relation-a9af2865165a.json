@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "质问·潜在一战(据其自述)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 138,
+   "line": 47,
+   "quote": "「关于海莉小姐的身世，还有兄长大人的问题，我有话要问他。根据他的回答，我可能会跟帕林库洛一战」",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 49,
+   "quote": "不知不觉间，莱纳的首要目标发生了改变，我算是明白为什么他现在不一见到我就要打要杀的了。",
+   "vol": 1
+  },
+  {
+   "chapter": 138,
+   "line": 40,
+   "quote": "「知道的！就在前几天才收到他的来信，里面有提到的。正好我们队伍也要赶去他身边！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 138,
+   "text": "据莱纳自述：就'海莉小姐的身世，还有兄长大人的问题'有话要问帕林库洛，'根据他的回答，我可能会跟帕林库洛一战'；其首要目标已改变（涡波理解为他'现在不一见到我就要打要杀的了'的原因）；西娅队伍目的地同为帕林库洛处（莱纳确认'啊啊，没错'）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a9af2865165a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0138.txt",
+  "sha": "a320351cddc9fa0c98fe84e9dde5a99b63b885f4dfbe726c5b805ab9a0885938",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

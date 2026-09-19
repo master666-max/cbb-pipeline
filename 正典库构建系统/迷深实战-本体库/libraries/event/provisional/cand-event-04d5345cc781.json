@@ -1,0 +1,83 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "相川涡波",
+   "缇亚"
+  ],
+  "instant": null,
+  "kind": "事件",
+  "name": "奴隶解放与西斯误认骚动",
+  "tick": 135,
+  "time_verbatim": "战斗后清晨（'太阳已经升起来了'时原奴隶出航）"
+ },
+ "evidence": [
+  {
+   "chapter": 135,
+   "line": 159,
+   "quote": "被海盗们捕获的奴隶们所有人都没有受伤。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 171,
+   "quote": "「⋯⋯谢谢你，大哥哥」",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 183,
+   "quote": "「西、西斯大人⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 215,
+   "quote": "强行让他们停止这么做并送到另一艘船上又费了一番功夫。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 216,
+   "quote": "于是等原奴隶们做好了出航的准备的时候，太阳已经升起来了。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 217,
+   "quote": "就这样跟自己帮助过的人们道别，我目送最后一艘船去往海的彼方。之前已经用『维度』确认过那条航线上没有危险了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 135,
+   "text": "被海盗捕获的奴隶近20人全员无伤，乘夺来的第七条船获释；涡波指引航向大陆的航线（已用『维度』确认航线上无危险）；躲大人身后的少女经安抚后细声道谢'谢谢你，大哥哥'，众人依次致谢（涡波：'既然生而为人，我就还是不想被视为『怪物』的啊'）；其后莱文教徒男子误认缇亚=使徒西斯再临，磕头拜谒+信徒集体膜拜；缇亚否定并宣告改回男装逃往船内；劝止膜拜并把信徒送上另一艘船'又费了一番功夫'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-04d5345cc781",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0135.txt",
+  "sha": "77bf1ac5fb819afeb3d5fff3c886d5ca64c7a509",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "艾德对涡波的畏惧与『初次见面』冲击",
+  "tick": 139,
+  "time_verbatim": "承接上章流星落地后的别墅客厅对峙"
+ },
+ "evidence": [
+  {
+   "chapter": 139,
+   "line": 3,
+   "quote": "『木之理的盗窃者』的战意立马消散的一干二净。",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 9,
+   "quote": "「初、初次、见面？您的意思是说，不认识鄙人艾德了吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 139,
+   "line": 17,
+   "quote": "「──怎、怎么会是这样？也就是说，涡波大人不仅是『魔法阵』和『迷宫』，就连『再诞』也失败了？无论是谁的『悲愿』都没能实现？所以对守护者的规则才会这样不完善？要是这样的话，在那之后世界到底变成什么样了──！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 139,
+   "text": "战意消散（源于畏惧）→涡波自介'初次见面'→艾德震惊自语混乱（被『维度』窃听：魔法阵/迷宫/再诞皆失败/谁的悲愿都没实现/守护者规则不完善/那之后世界变成了什么）→涡波伸手欲安抚反吓退艾德（'那反应就像一个胆怯的小猫'）→艾德决断'一切的一切都无所谓了'→瞳孔仍留敌意（涡波困惑同莱纳相遇时）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2e1faea26f0c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0139.txt",
+  "sha": "27947dd70d40c87032cc8b9d0a47b9b081343da8ba9dc87ca551f015961d0b1b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

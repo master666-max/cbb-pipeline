@@ -1,0 +1,83 @@
+{
+ "canonical": {
+  "entities": [
+   "海盗船长",
+   "相川涡波",
+   "菲洛·艾尔巴特"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "涡波只身迎击七艘海盗船队",
+  "tick": 135,
+  "time_verbatim": "拂晓前后开战；原奴隶出航时'太阳已经升起来了'（章末收束）"
+ },
+ "evidence": [
+  {
+   "chapter": 135,
+   "line": 13,
+   "quote": "──竟然冻住了。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 70,
+   "quote": "接触到少年的魔力的一瞬间，箭矢便减速，魔法便衰弱。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 78,
+   "quote": "冰之粒子的轨迹，像是在给世界染上自己的颜色，须臾之间少年就将所有敌人的武器尽数破壊了。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 90,
+   "quote": "而更让人感到恐惧的，是少年还在手下留情。他担心敌人受伤，竟然在不伤害敌人的情况下将对手一一制服。",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 145,
+   "quote": "「搞～定，MissionComplete！」",
+   "vol": 1
+  },
+  {
+   "chapter": 135,
+   "line": 151,
+   "quote": "我觉得很可惜地看着被海水冲走的六艘船。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 135,
+   "text": "海盗七船发炮'打招呼'锁定大型目标船→涡波冻结船队前方海面致七船停滞（菲洛：用自己的冻结魔法将推进力'冲减为零'，'渡海时随手那么一挥'）→少年跳上甲板：箭矢魔法接触其魔力瞬间减速衰弱、轻挥水晶剑化解全攻击→剑技破壊全员武器、冰之魔法锁一一拘束（不伤敌方针：'在不伤害敌人的情况下将对手一一制服'）→船长'像是对付一个杂兵一样'被夺走意识→菲洛应战一击败北（涡波爆发冷气裹住船内）→事后破壊船舵、夺取全部物资，六艘任其漂流；涡波自评'MissionComplete'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-33d41421b624",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0135.txt",
+  "sha": "77bf1ac5fb819afeb3d5fff3c886d5ca64c7a509",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

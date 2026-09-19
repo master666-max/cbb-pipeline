@@ -40,6 +40,8 @@ SUBCLASS_GROUP = {"contradiction_pending": "entity_unalignable",
 # 调度层机械归一（2026-09-19，先例=批9-10 ch0079/ch0121 手工修正；确定性零裁量，每次改写计入 summary 留痕）
 LIBRARY_NORMALIZE = {"organization": "character", "location": "setting",
                      "item": "setting", "magic": "setting", "skill": "setting"}
+# observations.category 枚举外值→契约枚举（2026-09-20 ch0136 'behavior' 首例；确定性零裁量）
+OBS_CATEGORY_NORMALIZE = {"behavior": "manifestation"}
 
 
 def boundary(chapter_no: int) -> dict:
@@ -68,6 +70,21 @@ def normalize(raw: dict, verified: dict) -> list[dict]:
         if lib not in cbb_store.LIBRARIES and lib in LIBRARY_NORMALIZE:
             remaps.append((c["type"], c["canonical"].get("name") or c["canonical"].get("subject"), lib, LIBRARY_NORMALIZE[lib]))
             lib = LIBRARY_NORMALIZE[lib]
+        obs_norm = False
+        for o in c.get("observations", []):
+            if o.get("category") in OBS_CATEGORY_NORMALIZE:
+                o["category"] = OBS_CATEGORY_NORMALIZE[o["category"]]
+                obs_norm = True
+        if obs_norm:
+            remaps.append((c["type"], c["canonical"].get("name") or c["canonical"].get("subject"),
+                           "obs_category", "枚举归一"))
+        # vol 归一（2026-09-20 ch0138 首例：137/137 条 vol=0 → 规范口径恒 1；确定性零裁量）
+        vol_fixed = sum(1 for ev in c["evidence"] if ev.get("vol") != 1)
+        if vol_fixed:
+            for ev in c["evidence"]:
+                ev["vol"] = 1
+            remaps.append((c["type"], c["canonical"].get("name") or c["canonical"].get("subject"),
+                           "vol", f"1（{vol_fixed}条）"))
         rec = {
             "record_id": core_id(c["type"], canonical, c["evidence"]),
             "record_type": c["type"], "library": lib, "status": "candidate",
@@ -142,16 +159,19 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
                             "name": rec["canonical"].get("name") or rec["canonical"].get("subject"),
                             "item_id": iid, "reason": f"gate1:{codes}"})
 
-    for c in raw["candidates"]:
+    for idx, c in enumerate(raw["candidates"]):
         for alias in c.get("aliases_to_register", []):
             # 结构化别名防御（2026-09-19 ch0121 勘误：子代理交 dict{name,kind,confidence}→取 name 串）
             if isinstance(alias, dict):
                 alias = alias.get("name") or alias.get("alias")
                 if not isinstance(alias, str):
                     continue
-            ent = next(r for r in cands if r["record_type"] == "entity"
-                       and r["canonical"]["name"] == c["canonical"]["name"])
-            store.register_alias(alias, ent["record_id"], c["canonical"]["entity_type"])
+            # 2026-09-20 ch0132 勘误：别名登记按序号直取候选自身规范化记录（normalize 与 raw 严格 1:1 同序），
+            # 替代旧名+硬编码 entity 匹配——setting 类候选带别名（ch0132『Impulse』）旧法 StopIteration；
+            # entity_type 缺省回退 library（entity 候选行为不变）。
+            ent = cands[idx]
+            store.register_alias(alias, ent["record_id"],
+                                 c["canonical"].get("entity_type") or c["library"])
         if c["type"] == "entity":
             store.record_appearance(c["canonical"]["name"], chapter_no)
 

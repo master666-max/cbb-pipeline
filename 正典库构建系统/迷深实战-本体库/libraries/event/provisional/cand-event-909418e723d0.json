@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "『LivingLegend号』",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "迁移",
+  "name": "『本土』抵达与藏船",
+  "tick": 136,
+  "time_verbatim": "船上最后一晚饭后翌晨"
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 135,
+   "quote": "照计划一抵达本土，迷宫探索就要告一段落了。",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 141,
+   "quote": "为了隐藏『LivingLegend号』，我们将它停靠在本土东北部瓦尔德本国东端的海崖下。",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 142,
+   "quote": "因为之前帮助过奴隶以及对付过海盗的缘故，我们乘着这艘船的情报很可能已经泄露了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 136,
+   "text": "探索终止夜享用在船上的最后一顿晚饭；莉帕确认航线无偏离、安排翌早靠岸；涡波欲多留几日升级但忌惮帕林库洛自得准备，照计划抵达『本土』；『LivingLegend号』藏于本土东北部瓦尔德本国东端海崖下（船只情报恐因奴隶/海盗事件泄露，选人迹罕至处停靠；大型船恐难一直隐藏，抓到帕林库洛前数日求不被发现）；高价船只须拨人留守+人多显眼故分组"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-909418e723d0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

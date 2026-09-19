@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "斯特鲁",
+   "斯诺·沃克",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "探索·战斗",
+  "name": "39层猎场开设与斯特鲁讨伐",
+  "tick": 136,
+  "time_verbatim": "跨越30层后第四次迷宫探索日（37层→39层）"
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 46,
+   "quote": "藤蔓一瞬间就被斩断，敌人冲到了它的面前。无法应对从三个方向袭来的斩击，斯特鲁的花瓣绽裂，茎也被拦腰斩断。",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 53,
+   "quote": "「⋯⋯嗯，不错。就这样继续和39层的怪物战斗吧。找出最容易对付的敌人，然后用它来刷经验」",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 137,
+   "quote": "在那之后，消化了积攒的经验值的拉丝缇娅拉和斯诺也升上了20级。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 136,
+   "text": "37层水中漫游→38层植物回廊（回避难度最低，仅靠『维度』即无事通过）→39层开猎：涡波索敌、拉丝缇娅拉打头阵率斯诺莉帕近战三方向斩击拦腰斩断斯特鲁（被识破花粉战术）；确信39层为方便猎场（拟态奇袭型为主、打倒敌人不聚集、风险低），选定理想猎场持续刷经验；BOSS以『维度』避开；狩猎仅用『维度』/神圣魔法/『表示』/『剑术』四样；持续至饿肚子极限收工；拉丝缇娅拉与斯诺升至20级"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-20c556fe9382",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

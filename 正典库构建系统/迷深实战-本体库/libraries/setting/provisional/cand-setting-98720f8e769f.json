@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 133,
+  "fact": "通往迷宫37层的阶梯完全浸水（与35层同型）；涡波据此决断当日撤退——下次沿最短路径、以更完全状态挑战，并需准备更多储存空气的皮袋；据拉丝缇娅拉预估，明日可'一口气到39层'",
+  "name": "37层",
+  "tick": 133
+ },
+ "evidence": [
+  {
+   "chapter": 133,
+   "line": 47,
+   "quote": "通往37层的阶梯又是完全浸在水中的样子。",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 52,
+   "quote": "「⋯⋯不，今天就先到这里吧。把握了35层和36层的路就已经足够了」",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 55,
+   "quote": "而且也了解到需要准备更多储存空气的皮袋了。",
+   "vol": 1
+  },
+  {
+   "chapter": 133,
+   "line": 128,
+   "quote": "「原来如此。那么明天看来是能一口气到39层了呢⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 133,
+   "text": "迷宫进度更新（37层阶梯情报）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-98720f8e769f",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0133.txt",
+  "sha": "79ac90d98297a19bc285c83d3b52b94d780c5e2aa47bf1cb05229d87f0e32283",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

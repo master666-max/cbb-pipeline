@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅·勒伽西",
+  "rel_type": "队长救出(寻人急行)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 137,
+   "line": 122,
+   "quote": "虽说是在找人，但是名字并不是我们。如果我读唇正确的话，他在说的是『栗色的头发』『个头小但是吵人』『西娅・勒伽西』",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 199,
+   "quote": "「那，那个笨蛋领队！果然变成这样了吗！到底是怎样才能像她这样如此频繁地遭遇不幸啊，该死！」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 203,
+   "quote": "「啊啊，虽然很不爽，但是还是很感谢你！时间不多了，我得赶紧过去！」",
+   "vol": 1
+  },
+  {
+   "chapter": 137,
+   "line": 230,
+   "quote": "「而且在海莉小姐因伤休养的这段时间里，那帮人还都什么用处也派不上！所以戴着手铐的我只能这样不情不愿地去救我们那位队长了呗！啊啊，我到底在搞什么啊，真是受不了！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 137,
+   "text": "莱纳为西娅队队员（新人），为寻队长西娅在柯尔库酒馆打听其特征；从涡波得知其位置后疾驰赴港口（'时间不多了，我得赶紧过去'）；称其'笨蛋领队''如此频繁地遭遇不幸'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0bbe8a67b077",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0137.txt",
+  "sha": "9b468d00ec37286ae44a4f4c81eeb6bbe3f70b22f71158ddaa912173cea4eed8",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}

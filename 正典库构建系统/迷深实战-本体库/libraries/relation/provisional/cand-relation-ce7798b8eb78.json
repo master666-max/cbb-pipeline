@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "恋慕好意(求背)",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 136,
+   "line": 244,
+   "quote": "「换人。这回我要涡波先生背我」",
+   "vol": 1
+  },
+  {
+   "chapter": 136,
+   "line": 251,
+   "quote": "虽然她对我抱有好意让我感到开心，但是同时也很胃痛。尽管知道她们并没有这么看，但是我还是有一种都怪自己不肯做出选择的愧疚感。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 136,
+   "text": "翻崖潜入时指名'这回我要涡波先生背我'（胁迫拉丝缇娅拉换人）；涡波明知其心思——'她对我抱有好意让我感到开心，但是同时也很胃痛'、'都怪自己不肯做出选择的愧疚感'；缇亚察觉玛利亚的想法而未提出异议"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ce7798b8eb78",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0136.txt",
+  "sha": "c268cee7f5e127ab34d184ecdd44514e01706d3b",
+  "verified_at": "2026-09-19"
+ },
+ "version": 1
+}
