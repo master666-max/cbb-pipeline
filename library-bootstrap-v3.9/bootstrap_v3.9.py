@@ -911,7 +911,7 @@ def _all_entries(lib):
         out.append((f.stem, entry_normalize(e), 0.0))
     return out
 
-def _rank_entries(lib, q: str):
+def _rank_entries(lib, q: str, as_of_tick=None):
     """v3.3/Y-005：检索打分抽取（retrieve 与 eval 共用）——keywords ×3 / content ×1 / [[links]] 一跳扩散"""
     lib = Path(lib); entries = []
     _toks = []  # v3.10/M3：CJK-bigram 查询分词（W-11 达门件，与衔尾蛇 tok_eval S2 同源；自然中文句词法通道恢复）
@@ -926,6 +926,10 @@ def _rank_entries(lib, q: str):
     for f in (lib / "memory").rglob("*.json"):
         e = json.loads(f.read_text(encoding="utf-8"))
         if e.get("validity", {}).get("t_invalid"): continue  # Zep式：失效不删除不参与
+        if (e.get("validity") or {}).get("tombstone"): continue  # v3.10/M3 件五：墓碑退出检索保留审计窗口（v893 对等）
+        if as_of_tick is not None:
+            tk = e.get("tick")
+            if tk is None or tk > as_of_tick: continue  # v3.10/M3 件四：缺坐标判不可见——宁漏召回不泄漏
         e = entry_normalize(e)
         try:  # v3.1/V-004：坏时间戳单条降级，不全库崩溃
             age_days = (time.time() - time.mktime(time.strptime(e["created_at"][:10], "%Y-%m-%d"))) / 86400
@@ -956,7 +960,30 @@ def _rank_entries(lib, q: str):
                 scored[lid] = (base + s * 0.5, e2, c2)
     return scored, bad_ts
 
-def cmd_engine(op: str, lib, text: str = "", k: int = 5):
+def _content_dupes(lib, entry):
+    """v3.10/M3 件五：content_hash 轻量查重（UNIQUE 防重的库侧 warn 级实现，v893 对等）"""
+    _ch = hashlib.sha256(json.dumps(entry.get("content", ""), ensure_ascii=False).encode("utf-8")).hexdigest()
+    out = []
+    for g in (Path(lib) / "memory").rglob("*.json"):
+        if g.stem == entry.get("id"): continue
+        try:
+            _oh = hashlib.sha256(json.dumps(json.loads(g.read_text(encoding="utf-8")).get("content", ""), ensure_ascii=False).encode("utf-8")).hexdigest()
+            if _oh == _ch: out.append(g.stem)
+        except Exception: pass
+    return out
+
+def _stale_entries(lib):
+    """v3.10/M3 件四：verified_against 漂移钩子（v893 对等 is_stale）——验证时版本落后于生效版本 → 强制重验"""
+    out = []
+    for f in (Path(lib) / "memory").rglob("*.json"):
+        try:
+            _e = json.loads(f.read_text(encoding="utf-8"))
+            _va, _in = _e.get("verified_against"), _e.get("instant")
+            if _va is not None and _in is not None and _in > _va: out.append(f.stem)
+        except Exception: pass
+    return out
+
+def cmd_engine(op: str, lib, text: str = "", k: int = 5, as_of_tick=None):
     lib = Path(lib)  # v3.3/Y-004：函数层 Path 契约统一（str 入参直调不崩）
     if op == "append":
         try: e = json.loads(text)
@@ -972,6 +999,10 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5):
         if epath.exists():  # v3.5/J-001：永不覆盖（铁律 1）——同 id 拒绝，更新走显式裁决
             old = json.loads(epath.read_text(encoding="utf-8"))
             sys.exit(f"schema v3 拒绝写入：条目 {e['id']} 已存在（created_at={old.get('created_at')}）。更新请人工裁决或换 id——写入路径不覆盖。")
+        if "tick" not in e:  # v3.10/M3 件四：写入序显式化（单调整数，as-of 知识边界轴）
+            e["tick"] = sum(1 for _ in (lib / "memory").rglob("*.json")) + 1
+        _dupes = _content_dupes(lib, e)
+        if _dupes: print(f"  [v3.10/M3 件五 warn] content_hash 重复（warn 级不拒绝）: 与 {_dupes[:3]} 内容一致——请人工裁决合并或改写")
         (dest / f"{e['id']}.json").write_text(json.dumps(e, ensure_ascii=False, indent=1), encoding="utf-8")
         h = chain_append(lib / "audit", f"entry:{e['id']} → {dest.name}")
         _ledger_append(lib, "append", f"entry={e['id']} → {dest.name}")  # v3.3：账本先于根（根须含账本行）
@@ -994,7 +1025,7 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5):
                 shutil.rmtree(_lock, ignore_errors=True)
         print(f"append: {e['id']} 事件哈希 {h[:16]}…")
     elif op == "retrieve":
-        scored, bad_ts = _rank_entries(lib, text)
+        scored, bad_ts = _rank_entries(lib, text, as_of_tick=as_of_tick)
         ranked = sorted(scored.items(), key=lambda kv: (-kv[1][0], kv[0]))  # v3.10/M3：确定性平局破序（W-5 开口关闭）
         for fid, (s, e, c) in ranked[:k]: print(f"{s:6.2f}  {fid}  {c[:60]}")
         if bad_ts: print(f"  [bad-ts] {len(bad_ts)} 条 created_at 无法解析（age 按 0 计）: {', '.join(bad_ts[:5])}")
@@ -1123,8 +1154,26 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5):
             if lst: print(f"  [{tag}] {', '.join(lst[:8])}")
         if chain_bad: print("  [断链] " + "，".join(chain_bad[:8]) + "（审计链被篡改——按 10.2.1 口径对账人侧锚点）")
         if state_bad: print("  [state] 根对账不一致（最近写操作未刷根或被篡改）")
+        _stale = _stale_entries(lib)
+        if _stale: print(f"  [stale] verified_against 落后 instant（强制重验，v3.10/M3 件四）: {', '.join(_stale[:8])}")
         if not (o1 or o2 or o3 or o4) and not chain_bad and not state_bad: print("  五态 全一致")
         else: print("  → 差异等用户裁决，不自动修（铁律1）")
+    elif op == "tombstone":  # v3.10/M3 件五：墓碑状态机（v893 对等）——标记退出检索，原位保留审计窗口
+        tid = text.strip()
+        tp = None
+        for f in (lib / "memory").rglob("*.json"):
+            if f.stem == tid: tp = f; break
+        if not tp: sys.exit(f"engine tombstone: 条目不存在 {tid}")
+        te = json.loads(tp.read_text(encoding="utf-8"))
+        te.setdefault("validity", {})["tombstone"] = True
+        te["validity"]["tombstoned_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        tp.write_text(json.dumps(te, ensure_ascii=False, indent=1), encoding="utf-8")
+        _ledger_append(lib, "tombstone", f"entry={tid} → tombstone（原位保留）")
+        if (lib / "state.json").exists():
+            st = json.loads((lib / "state.json").read_text(encoding="utf-8"))
+            st["merkle_root"] = merkle_root(lib, exclude={"state.json"})  # v3.3/Y-001：写后刷根
+            (lib / "state.json").write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"tombstone: {tid} 已标记（退出检索，原位保留审计窗口）")
     elif op == "retire":  # v3.1/V-013：失效条目 TTL 出仓（移 attic，留痕）
         ttl = TUNABLES["invalid_ttl_days"]["value"]; moved = []  # v3.2/C-008 改名
         for f in (lib / "memory").rglob("*.json"):
@@ -2507,6 +2556,60 @@ def t_tiebreak_deterministic():
     finally:
         shutil.rmtree(tmp1, ignore_errors=True); shutil.rmtree(tmp2, ignore_errors=True)
 
+@t
+def t_dualtime_asof():
+    """v3.10/M3 件四：as-of-tick 知识边界——未来条目不可见+缺坐标判不可见"""
+    tmp = _tmpdir("_bsv3t_asof_")
+    try:
+        (tmp / "memory").mkdir(parents=True, exist_ok=True)
+        (tmp / "memory" / "old_e.json").write_text(json.dumps(
+            {"content": "旧知识条目", "keywords": [], "importance": 5, "created_at": "2026-09-01T00:00:00", "tick": 1}, ensure_ascii=False), encoding="utf-8")
+        s1, _ = _rank_entries(tmp, "知识")
+        assert "old_e" in s1
+        s2, _ = _rank_entries(tmp, "知识", as_of_tick=5)
+        assert "old_e" in s2          # tick=1 ≤ 5：可见
+        s3, _ = _rank_entries(tmp, "知识", as_of_tick=0)
+        assert "old_e" not in s3      # 未来不可见
+        (tmp / "memory" / "no_tick.json").write_text(json.dumps(
+            {"content": "无坐标条目", "keywords": [], "importance": 5, "created_at": "2026-09-01T00:00:00"}, ensure_ascii=False), encoding="utf-8")
+        s4, _ = _rank_entries(tmp, "无坐标", as_of_tick=99)
+        assert "no_tick" not in s4    # 缺坐标判不可见（宁漏召回不泄漏）
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_tombstone_lifecycle():
+    """v3.10/M3 件五：墓碑退出检索但原位保留（审计窗口）"""
+    tmp = _tmpdir("_bsv3t_tomb_")
+    try:
+        (tmp / "memory").mkdir(parents=True, exist_ok=True)
+        (tmp / "memory" / "dead_e.json").write_text(json.dumps(
+            {"content": "将被墓碑化的条目", "keywords": [], "importance": 5, "created_at": "2026-09-01T00:00:00",
+             "validity": {"tombstone": True, "tombstoned_at": "2026-09-19T00:00:00"}}, ensure_ascii=False), encoding="utf-8")
+        s, _ = _rank_entries(tmp, "墓碑化")
+        assert "dead_e" not in s      # 退出检索
+        assert (tmp / "memory" / "dead_e.json").exists()  # 原位保留
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+@t
+def t_dedupe_and_stale_fns():
+    """v3.10/M3 件五/件四：content_hash 查重与 verified_against 漂移钩子（机制函数）"""
+    tmp = _tmpdir("_bsv3t_dedup_")
+    try:
+        (tmp / "memory").mkdir(parents=True, exist_ok=True)
+        body = {"content": "完全相同的内容体", "keywords": [], "importance": 5, "created_at": "2026-09-19T00:00:00"}
+        a = dict(body, id="dup_a"); b = dict(body, id="dup_b")
+        (tmp / "memory" / "dup_a.json").write_text(json.dumps(a, ensure_ascii=False), encoding="utf-8")
+        assert _content_dupes(tmp, b) == ["dup_a"]
+        (tmp / "memory" / "dup_b.json").write_text(json.dumps(b, ensure_ascii=False), encoding="utf-8")
+        (tmp / "memory" / "stale_e.json").write_text(json.dumps(
+            {"content": "漂移条目", "keywords": [], "importance": 5, "created_at": "2026-09-19T00:00:00",
+             "instant": 7, "verified_against": 3}, ensure_ascii=False), encoding="utf-8")
+        assert _stale_entries(tmp) == ["stale_e"]
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
 def cmd_run_tests():
     fails = 0
     for fn in TESTS:
@@ -2529,6 +2632,7 @@ s.add_argument("--target", default="./mylib"); s.add_argument("--yes", action="s
 s.add_argument("--redeliver", action="store_true")  # v3.5/J-010
 s = sub.add_parser("engine");      s.add_argument("op"); s.add_argument("--lib", default="./mylib")
 s.add_argument("--text", default=""); s.add_argument("--k", type=int, default=5)
+s.add_argument("--as-of-tick", type=int, default=None)  # v3.10/M3 件四：as-of-tick 知识边界查询
 s = sub.add_parser("guard");       s.add_argument("--diff", default=None); s.add_argument("--lib", default="./mylib")
 s.add_argument("--anchor", default=None); s.add_argument("--snapshot", action="store_true")  # v3.3/Y-006
 s = sub.add_parser("absorb-md");   s.add_argument("--src", required=True); s.add_argument("--lib", required=True)
@@ -2543,7 +2647,7 @@ if __name__ == "__main__":
     {"absorb": lambda: cmd_absorb(a.src), "verify": lambda: cmd_verify(a.fix, absorb_overrides=a.absorb_overrides),
      "run-tests": cmd_run_tests, "build-docs": lambda: cmd_build(Path(a.out) if a.out else None, a.lib),
      "install": lambda: cmd_install(a.level, a.packages, Path(a.target), a.yes, a.redeliver),
-     "engine": lambda: cmd_engine(a.op, Path(a.lib), a.text, a.k),
+     "engine": lambda: cmd_engine(a.op, Path(a.lib), a.text, a.k, as_of_tick=getattr(a, "as_of_tick", None)),
      "guard": lambda: cmd_guard(a.diff, Path(a.lib), a.anchor, a.snapshot),
      "absorb-md": lambda: cmd_absorb_md(Path(a.src), Path(a.lib), a.dry_run),
      "migrate": lambda: cmd_migrate(Path(a.lib))}[a.cmd]()

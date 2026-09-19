@@ -61,3 +61,8 @@ W-5（轨迹撞号，知识库侧）不在本包范围，【待确认】搁置�
 **变更**：make_v39 新增三补丁——①平局破序（eval/retrieve 双排序点 `(−score, id)`，W-5 残留开口"平局彩票"关闭）；②CJK-bigram 查询分词（`_rank_entries` 查询侧，W-11 达门件 recall 0.7273→0.7879 同日对照）；③新增两测试 t_cjk_bigram_channel / t_tiebreak_deterministic。
 **当前发布锚点 = sha256 前 16 位 c2d1f2ea**（16 补丁全锚点命中，vendor ≡ 发布区逐位一致），run-tests **73/73**，参数正典不变。56704c90 退役归档。
 **换段**：库调试工作区金标基线重测归档 **recall@5=0.758 / MRR=0.683**（2026-09-19 engine eval；工单预期 0.7879 与实测 1 查询位差已归因=跨日自然老化，同刻对照 S0 0.7273/S2 0.7576 增益真实）；监控序列新段 `E1R-bigram-v310` 起算（指纹增 tokenization 轴），首点 0.7273/0.6768 双跑逐位一致。state.json 经 W-2b 通道同步。Shewhart 激活/件四/件五留 v3.11。实施报告：`大审查/衔尾蛇/reports/M3_W11裁决执行_实施报告-20260919.md`。
+
+## 修订记录（2026-09-19 晚 · M3 实施波：件四五落地——v3.10 六件全部出清）
+
+**变更**：make_v39 新增八补丁（实施插曲两起被锚点断言+回归门拦截：M4-2 锚点注释"Zep式"无空格/M4-3 首版误引 args 作用域）——①件四 as-of-tick（`_rank_entries` 加参+缺坐标判不可见+append 自动写 tick+CLI `--as-of-tick`）；②件四 verified_against 漂移钩子（`_stale_entries`+doctor stale 段）；③件五 content_hash 查重（`_content_dupes`，append warn 级）；④件五墓碑状态机（`engine tombstone`：退出检索原位保留+账本+刷根）；⑤新测试 ×3。
+**当前发布锚点 = sha256 前 16 位 8de8fb1f**（27 补丁全锚点命中，vendor ≡ 发布区逐位一致），run-tests **76/76**（原始输出归档=088 残留项整改），参数正典不变。c2d1f2ea 退役归档。**零读数设计实证**：金标重测 0.758/0.683 逐位不变，监控段不换段继续。v893 对等移植语义差异（tick 轴 vs 世界版本号/warn 级起步/instant 查询入口待归一器）详见实施报告。v3.10 六件至此全部出清（一二三 M3 早批+四五六本波；Shewhart 激活维持 off 留变异样本）。报告：`大审查/衔尾蛇/reports/M3_件四五实施报告+ROI评估-20260919.md`。
