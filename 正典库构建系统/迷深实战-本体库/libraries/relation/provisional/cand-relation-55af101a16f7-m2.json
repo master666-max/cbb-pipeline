@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "剑术传授(约定实行)",
+  "subject": "诺文"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 44,
+   "quote": "向继兄长之后的自己第二个尊敬的人请求协助。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 58,
+   "quote": "我和他之间有过约定。让他传授我剑术的约定——！",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 46,
+   "quote": "被浓缩的『剑术』心得旋即从闪耀着的水晶之剑中溢出。",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 59,
+   "quote": "我和他之间有过约定。让他传授我剑术的约定──！",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 45,
+   "quote": "向继兄长之后的自己第二个尊敬的人请求协助。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "莱纳称'我和他之间有过约定。让他传授我剑术的约定'，并视诺文为'继兄长之后的自己第二个尊敬的人'；本章实战中借得'被浓缩的『剑术』心得'；第二次咏唱时诺文的魔石主动发光、'想法完全一致'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-55af101a16f7",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-55af101a16f7-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-55af101a16f7",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

@@ -1,0 +1,96 @@
+{
+ "canonical": {
+  "entity_type": "道具(剑)",
+  "name": "新月琉璃制直剑"
+ },
+ "evidence": [
+  {
+   "chapter": 84,
+   "line": 45,
+   "quote": "我拿出了『新月琉璃』。",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 97,
+   "quote": "「对，那可是我自满的剑哦」",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 99,
+   "quote": "「很不错嘛这个。又坚固又轻便，还很锋利！」",
+   "vol": 1
+  },
+  {
+   "chapter": 118,
+   "line": 100,
+   "quote": "明明附近没有敌人，拉丝缇娅拉却把剑挥来挥去的。说实话这么做蛮危险的。但是看到她一脸开心的表情，我们谁都没有去制止她。",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 109,
+   "quote": "『新月琉璃』的青色磷光在黑暗中闪耀。",
+   "vol": 1
+  },
+  {
+   "chapter": 165,
+   "line": 110,
+   "quote": "撕裂这个漆黑的世界，击碎敌人的黑剑，取胜获捷，高歌猛进。",
+   "vol": 1
+  },
+  {
+   "chapter": 168,
+   "line": 44,
+   "quote": "我立刻想从『所有物』中取出剑。由于『阿雷亚斯家的宝剑诺文』不在的缘故，我拿出了『新月琉璃直剑』",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 84,
+   "text": "因『阿雷亚斯家的宝剑诺文』不在，涡波从『持有物品』取出握持应战的剑（本章称『新月琉璃』——判例4近名检索命中库内『新月琉璃制直剑』，并入旧名并登记别名）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 6.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-dcd964d993df",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-dcd964d993df-m",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-dcd964d993df-m3",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-dcd964d993df-m4",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-dcd964d993df-m3",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 4
+}

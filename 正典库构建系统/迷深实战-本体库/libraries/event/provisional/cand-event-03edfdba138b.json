@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "艾德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "莱纳与艾德的一对一交锋（小树枝对双剑）",
+  "tick": 166,
+  "time_verbatim": "宣战后即时（战场）"
+ },
+ "evidence": [
+  {
+   "chapter": 166,
+   "line": 70,
+   "quote": "仅仅一个小树枝居然能跟宝剑交锋，甚至进发出火光",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 72,
+   "quote": "看来他想要回避战斗，只打算回收作为目标的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 166,
+   "text": "艾德自我强化（『Growth・Extended』『SenseBless』『BranchWoodShell』）后以小树枝对莱纳双剑——'仅仅一个小树枝居然能跟宝剑交锋，甚至进发出火光'；其技巧'拙劣'但莱纳力竭'只是站着都很勉强'；艾德看穿状况'打算放着我不管强行冲过我身边''想要回避战斗，只打算回收作为目标的东西'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-03edfdba138b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0166.txt",
+  "sha": "b439d07a368ece04ed33a51ea809daf1e4c29f1f4adaf5172e3e8820c4aecc3f",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

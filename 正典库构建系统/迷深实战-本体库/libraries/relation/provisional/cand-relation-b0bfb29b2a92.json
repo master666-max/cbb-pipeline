@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "魔王城",
+  "rel_type": "命名者(据罗德言)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 168,
+   "line": 191,
+   "quote": "「哦，这是还是涡涡命名的呦。因为是支配着魔人们的王，因此称之为魔王城这样说来着。」",
+   "vol": 1
+  },
+  {
+   "chapter": 168,
+   "line": 189,
+   "quote": "「欢迎回家，涡涡！我们的『魔王城』！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 168,
+   "text": "据罗德：'这是还是涡涡命名的呦。因为是支配着魔人们的王，因此称之为魔王城这样说来着'；并称'欢迎回家，涡涡！我们的『魔王城』'——涡波对此命名无记忆，'支配着魔人们的王'所指未明言"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b0bfb29b2a92",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0168.txt",
+  "sha": "c070aa9984d7e55ee06b9a875466e6bd13441d813ab4e29e196112ab36c5dce7",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

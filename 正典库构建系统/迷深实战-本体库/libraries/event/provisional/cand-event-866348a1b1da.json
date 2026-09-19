@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "王之器",
+   "艾德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "撤退/带走",
+  "name": "艾德撤退并回收王之器少女",
+  "tick": 166,
+  "time_verbatim": "Quartz阻路后（战场崩坏中）"
+ },
+ "evidence": [
+  {
+   "chapter": 166,
+   "line": 85,
+   "quote": "就先确保王之器好了。反正对鄙人的计划来说涡波大人本来就不是必要的呢",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 87,
+   "quote": "接着一根巨树便从地上钻出。巨树的根干开裂，将女孩子和艾德裹进去。",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 91,
+   "quote": "二人的气息从战场上彻底消除了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 166,
+   "text": "艾德审视状况后冷静摇头：'就先确保王之器好了。反正对鄙人的计划来说涡波大人本来就不是必要的呢'——走近远处少女，构筑新木属性魔法，'一根巨树便从地上钻出。巨树的根干开裂，将女孩子和艾德裹进去'，巨树旋即缩回，'二人的气息从战场上彻底消除了'；留别语'让我们下次再会吧，莱纳大人。话是这么说，那也要看您能否活下来呢'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-866348a1b1da",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0166.txt",
+  "sha": "b439d07a368ece04ed33a51ea809daf1e4c29f1f4adaf5172e3e8820c4aecc3f",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

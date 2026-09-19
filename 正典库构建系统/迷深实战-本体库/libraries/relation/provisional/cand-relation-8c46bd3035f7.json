@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "情报来源(据罗德言)",
+  "subject": "罗德・缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 168,
+   "line": 69,
+   "quote": "「诶～，还真的不清楚人家的事情耶。跟莱纳说的一样呢」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 168,
+   "text": "据罗德言'跟莱纳说的一样呢'——莱纳曾向罗德谈及涡波（内容含'涡波不知罗德之事'）；莱纳战后存续且与五十层守护者有接触的暗示（ch165 回收未竟开环的部分线索）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8c46bd3035f7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0168.txt",
+  "sha": "c070aa9984d7e55ee06b9a875466e6bd13441d813ab4e29e196112ab36c5dce7",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}

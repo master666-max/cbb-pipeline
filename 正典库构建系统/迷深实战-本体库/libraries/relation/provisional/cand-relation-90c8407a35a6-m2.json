@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "仇敌宣称(始祖)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 30,
+   "quote": "对鄙人来说作为始祖的『涡波』大人是我的仇敌。光是看到他就会涌起强烈的杀意，根本不是值得我去关怀的对象。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 32,
+   "quote": "居然能让那个艾德老师说到这个地步，叫作『始祖涡波』的家伙究竟是做了什么啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 31,
+   "quote": "对鄙人来说作为始祖的『涡波』大人是我的仇敌",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 20,
+   "quote": "那么就先把涡波大人的魔石抽取出来",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "据艾德声称：'作为始祖的『涡波』大人是我的仇敌。光是看到他就会涌起强烈的杀意，根本不是值得我去关怀的对象'——基督若因魔石剥离而死亦'无所谓'。莱纳不识'始祖涡波'（'叫作『始祖涡波』的家伙究竟是做了什么啊'）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-90c8407a35a6",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-90c8407a35a6-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-90c8407a35a6",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

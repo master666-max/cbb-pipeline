@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "体内共存",
+  "subject": "海因·赫勒比勒夏因"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 38,
+   "quote": "但是，兄长他就在我的体内。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 39,
+   "quote": "让内心沉静下来的话，我就能在一旁感觉到兄长心脏的鼓动。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 41,
+   "quote": "「海因·赫勒比勒夏因在莱纳大人的体内？……啊啊，原来如此。",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 39,
+   "quote": "兄长他就在我的体内",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 42,
+   "quote": "海因・赫勒比勒夏因在莱纳大人的体内？",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "据莱纳：兄长海因已死但'就在我的体内'，静心可感'兄长心脏的鼓动'，力量随之上涌（'这股力量并非只属于我一个人的东西'，故不能单凭己意使用）；艾德复述确认'海因·赫勒比勒夏因在莱纳大人的体内？'并评'就是因为这样人类才可怕啊。总是如此轻易地无视世界的『理』'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-d3898ad6aba6",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d3898ad6aba6-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-d3898ad6aba6",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

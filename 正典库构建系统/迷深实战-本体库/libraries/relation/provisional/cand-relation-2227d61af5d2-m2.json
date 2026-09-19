@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "基督·欧亚",
+  "rel_type": "守护宣言(以命相护)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 105,
+   "quote": "「我绝对不要再后悔了！我绝对不会松开这只手！——水晶魔法『Quartz』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 123,
+   "quote": "他才是兄长所憧憬的存在。是被兄长托付了自己性命的存在。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 128,
+   "quote": "喊道——你由我来守护。",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 106,
+   "quote": "我绝对不要再后悔了！我绝对不会松开这只手！",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 129,
+   "quote": "喊道──你由我来守护。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "双剑横举挡在基督身前；第二次咏唱时'我绝对不要再后悔了！我绝对不会松开这只手！'；认定'他才是兄长所憧憬的存在。是被兄长托付了自己性命的存在'，誓以'渣滓的性命'作交换守护；心中呼喊'你由我来守护'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-2227d61af5d2",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2227d61af5d2-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-2227d61af5d2",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

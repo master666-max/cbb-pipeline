@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "敌对宣言(本章成立)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 21,
+   "quote": "这个男人想要以渔翁之利的形式从旁玷污基督和海因兄长的战斗",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 33,
+   "quote": "如果你想要剥离基督的魔石，就先将我打倒再说……！",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 34,
+   "quote": "守护者艾德，你是我的敌人。如果你想要剥离基督的魔石，就先将我打倒再说",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "因艾德欲剥离基督魔石并以渔翁之利玷污基督和海因兄长的战斗，莱纳弃用敬语宣战：'老师你就是我的敌人——不，守护者艾德，你是我的敌人'；艾德确认'莱纳大人要与鄙人为敌吗'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-fed8c85f9d14",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fed8c85f9d14-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-fed8c85f9d14",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

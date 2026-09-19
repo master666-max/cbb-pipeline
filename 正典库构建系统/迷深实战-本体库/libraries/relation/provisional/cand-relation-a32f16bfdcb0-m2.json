@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "莱纳",
+  "rel_type": "教导(师事)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 11,
+   "quote": "这是一种能让听者感到安心的沉稳的声音。也是一种时常教导他人的教师的声音。",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 22,
+   "quote": "「……等、给我等一等，艾德老师。」",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 12,
+   "quote": "也是一种时常教导他人的教师的声音。",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 23,
+   "quote": "「⋯⋯等、给我等一等，艾德老师」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "据莱纳认知：对艾德的称谓为'艾德老师'；其声音印象为'能让听者感到安心的沉稳的声音''时常教导他人的教师的声音'——过往受教关系。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-a32f16bfdcb0",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a32f16bfdcb0-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-a32f16bfdcb0",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

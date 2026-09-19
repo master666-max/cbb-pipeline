@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "同指(据本章对话推定)",
+  "subject": "基督·欧亚"
+ },
+ "evidence": [
+  {
+   "chapter": 83,
+   "line": 19,
+   "quote": "毕竟所有的魔石都是为了我王而存在的……那么就先把涡波大人的魔石抽取出来……",
+   "vol": 1
+  },
+  {
+   "chapter": 83,
+   "line": 29,
+   "quote": "你刚才说要剥离基督的魔石对吧",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 20,
+   "quote": "那么就先把涡波大人的魔石抽取出来",
+   "vol": 1
+  },
+  {
+   "chapter": 166,
+   "line": 30,
+   "quote": "你刚才说要剥离基督的魔石对吧",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 83,
+   "text": "本章对话内：艾德言'就先把涡波大人的魔石抽取出来'，莱纳随即以'你刚才说要剥离基督的魔石对吧'回应，此后全程以'基督'称呼同一倒地者——两名指向同一人的本章内证据链。跨章合并留终审R4（判例1：双名不自动合并）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-51a242657737",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-51a242657737-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-51a242657737",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

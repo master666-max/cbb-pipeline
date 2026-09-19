@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "宿敌(胜负已决)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 168,
+   "line": 14,
+   "quote": "──好像，我是和帕林库洛战斗在黑暗中战斗来着。",
+   "vol": 1
+  },
+  {
+   "chapter": 168,
+   "line": 15,
+   "quote": "然后，在莱纳和海莉的帮助下，应该已经完美的达到了复仇的目的才对。",
+   "vol": 1
+  },
+  {
+   "chapter": 168,
+   "line": 19,
+   "quote": "尽管那只是帕林库洛的策略之一，但是作为我人生最终目标的妹妹，她确实在那里出现了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 168,
+   "text": "战后回忆确认：与帕林库洛在黑暗中死战、耗尽所有力量而失去意识；在莱纳与海莉帮助下'完美地达到了复仇的目的'（据涡波）；阳滝的『复活』是其策略之一——ch165 终局之战的涡波侧收束口径"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cd602d175e0b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0168.txt",
+  "sha": "c070aa9984d7e55ee06b9a875466e6bd13441d813ab4e29e196112ab36c5dce7",
+  "verified_at": "2026-09-20"
+ },
+ "version": 1
+}
