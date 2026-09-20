@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 175,
+  "entities": [
+   "相川涡波",
+   "罗德・缇缇"
+  ],
+  "name": "罗德的藏书室调查（内容不明）",
+  "note": "藏书室之乱系罗德'去调查了一番之后才变成那样'且宣言'反正再也不会去第二次了'——其调查对象与目的未明；与她'不想被我看到的东西'（其它房间/不想回忆的过去）线索群同向，疑与自身过去或涡波相关信息有关",
+  "payoff_chapter": null,
+  "setup_chapter": 175,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 175,
+   "line": 126,
+   "quote": "「哦～，涡涡。你手里拿的不是魔导书嘛。真亏你能在那乱七八糟的藏书室里找到啊～」",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 128,
+   "quote": "「不是哟，是人家去调查了一番之后才变成那样滴！反正再也不会去第二次了！」",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 57,
+   "quote": "让她内心呐喊着不想回忆起来的『过去』的某种东西⋯⋯⋯",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 175,
+   "text": "罗德主动调查藏书室之动机钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-ec2defe6fbcb",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0175.txt",
+  "sha": "9f38973ebf01c3319a05b587fb6ed829c54d859893d45c15e32a1343bc9ffc31",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

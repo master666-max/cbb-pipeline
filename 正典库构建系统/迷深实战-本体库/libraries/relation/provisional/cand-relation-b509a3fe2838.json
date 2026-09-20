@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱文教",
+  "rel_type": "授勋骑士·虔诚信徒(始祖忠诚誓约)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 249,
+   "quote": "「不会的。但是，再怎么说我也是一名虔诚的莱文教信徒。也在莱文教教会接受了骑士的授勋。其中就有对始祖大人献上忠诚的誓约。说实话，感觉挺微妙的吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 253,
+   "quote": "「啊啊，我明白。无论你是神也好还是别的什么也罢，对我来说你就是你，没有什么不同。话说回来，基督你打算使用哪一种魔法呢？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 171,
+   "text": "莱纳自述：虔诚莱文教信徒，在莱文教教会接受骑士授勋，誓约中含对始祖大人献上忠诚——对'与作为始祖的基督谈话'感觉微妙；涡波请他'像平时一样把我当做基督对待'，莱纳应'对我来说你就是你，没有什么不同'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b509a3fe2838",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

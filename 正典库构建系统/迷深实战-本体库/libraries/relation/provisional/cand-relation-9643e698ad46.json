@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "佩艾希亚",
+  "rel_type": "英雄『支配之王』(史书定位)",
+  "subject": "罗德・缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 174,
+   "line": 134,
+   "quote": "这个国家的历史书和英雄谭。──那就等于是与佩艾希亚的英雄『支配之王（罗德/Lord）』相关的资料。",
+   "vol": 1
+  },
+  {
+   "chapter": 174,
+   "line": 135,
+   "quote": "想到那名在我的房间里欢声笑语的少女的面容，我便先搁置自己本来的目的，翻开了这些书阅览起来。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 174,
+   "text": "据佩艾希亚的历史书与英雄谭（R6-4 声称标注）：其记载对象＝'佩艾希亚的英雄『支配之王（罗德/Lord）』'（文本内嵌'罗德/Lord'注音）；涡波读时联想'那名在我的房间里欢声笑语的少女的面容'而搁置原目的翻阅；年表开篇：'『王』降临于佩艾希亚，将北方诸国团结在一起'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9643e698ad46",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0174.txt",
+  "sha": "96720e8c41188ad7aa632248e23ebd0d2a8107249b4ddddcb85ea4d2c995ce1f",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

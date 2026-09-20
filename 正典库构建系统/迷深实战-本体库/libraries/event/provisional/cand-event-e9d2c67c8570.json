@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "贝丝"
+  ],
+  "instant": null,
+  "kind": "计划",
+  "name": "返回地上的粮饷筹备与上工",
+  "tick": 172,
+  "time_verbatim": "本章晨起"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 32,
+   "quote": "说实话，我们两个现在是真的穷。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 35,
+   "quote": "想也知道从六十六层赶往地上会是一段相当漫长的路途。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 36,
+   "quote": "哪怕将每过一层需要花费的时间乐观地估计成一小时，单纯计算一下也是六十六小时",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 38,
+   "quote": "如果要尽可能稳妥地去准备的话，那么我打算至少把一周的食物储存在『所有物』里再进行挑战。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 172,
+   "text": "二人财政拮据（'越穷越忙'），自今日起在街上从事计效支付的日薪制工作（搞砸会被扣薪）；从六十六层赶往地上乐观估计每层一小时、共约六十六小时（大概三天，不计休息），期间持续消耗水和食物；拟至少把一周食物储存在『所有物』里再挑战；只赚维持生活的钱则永远无法做好回到地上的准备"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e9d2c67c8570",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

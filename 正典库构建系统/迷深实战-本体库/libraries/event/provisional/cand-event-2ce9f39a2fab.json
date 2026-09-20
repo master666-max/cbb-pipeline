@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "相川涡波",
+   "罗德・缇缇",
+   "藏书室"
+  ],
+  "instant": null,
+  "kind": "探索",
+  "name": "藏书室探索与佩艾希亚史书发现",
+  "tick": 174,
+  "time_verbatim": "同日·魔法修炼后（'之后调查一遍藏书室，今天的行程也就差不多了吧'）"
+ },
+ "evidence": [
+  {
+   "chapter": 174,
+   "line": 130,
+   "quote": "话是这么说，但要说找东西我还是很擅长的。只要稍稍展开『维度』，寻找与魔法有关的东西就好了。",
+   "vol": 1
+  },
+  {
+   "chapter": 174,
+   "line": 133,
+   "quote": "其中最吸引我眼球的，则是历史书和英雄谭。",
+   "vol": 1
+  },
+  {
+   "chapter": 174,
+   "line": 134,
+   "quote": "这个国家的历史书和英雄谭。──那就等于是与佩艾希亚的英雄『支配之王（罗德/Lord）』相关的资料。",
+   "vol": 1
+  },
+  {
+   "chapter": 174,
+   "line": 136,
+   "quote": "历史书写得并不完善。光是看一下上面的年表就能感到满是瑕疵，根本无法与我的世界里的教科书同日而语。",
+   "vol": 1
+  },
+  {
+   "chapter": 174,
+   "line": 138,
+   "quote": "──『王』降临于佩艾希亚，将北方诸国团结在一起。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 174,
+   "text": "穿无人食堂大厅抵藏书室（荷包锁/锈蚀/落尘＝长期未用；内部如遭地震、书籍大量落地）→涡波展开『维度』搜魔法相关并顺带整理→藏书：动植物图鉴/千年前世界地图/兵书，'种类可谓应有尽有'→最吸引＝历史书与英雄谭（＝佩艾希亚英雄『支配之王（罗德/Lord）』资料）→联想罗德面容、搁置本来目的翻阅→历史书'写得并不完善'、年表'满是瑕疵'→年表开篇：'『王』降临于佩艾希亚，将北方诸国团结在一起'（章末钩：阅读止于年表第一句）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2ce9f39a2fab",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0174.txt",
+  "sha": "96720e8c41188ad7aa632248e23ebd0d2a8107249b4ddddcb85ea4d2c995ce1f",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

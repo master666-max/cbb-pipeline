@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "罗德",
+  "rel_type": "造界报恩(称魔之王)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 173,
+   "line": 54,
+   "quote": "在千年前，『始祖涡波』打造迷宫的时候打算向『罗德』致谢。因而才专门为了她打造出这个『可以实现所有愿望的空间』。",
+   "vol": 1
+  },
+  {
+   "chapter": 173,
+   "line": 246,
+   "quote": "被『始祖涡波』称为魔之王的少女罗德。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 173,
+   "text": "据雷纳尔多讲述+叙述综合：千年前打造迷宫时打算向罗德致谢，专门为她打造'可以实现所有愿望的空间'；叙述称罗德为'被『始祖涡波』称为魔之王的少女'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b192ce5b2784",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0173.txt",
+  "sha": "07ced8d93f2499549b6d69b468f35e0e0b24ede43c59a69695a3e5a8027dbe6a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "艾德",
+  "rel_type": "总角之交·孤儿院旧识（据英雄谭/涂鸦）",
+  "subject": "罗德・缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 175,
+   "line": 23,
+   "quote": "在孤儿院的登场人物中，就有艾德的名字。看来这两人是总角之交。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 94,
+   "quote": "在那里画着的是拥有比我认识的艾德・小・上・两・圈・的体型时的他。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 96,
+   "quote": "挂在孤儿院那张画之后的，是描绘担任庭师在城堡工作的罗德的画。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 175,
+   "text": "据英雄谭：孤儿院登场人物中有艾德之名，'看来这两人是总角之交'，后属其'未来的下属们'；据涂鸦：幼年艾德拽罗德袖口、庭师时代'稍微长大了一些的艾德'随侍在侧——自孤儿院至庭师期的长期同行"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.87,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-406047aa9eb6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0175.txt",
+  "sha": "9f38973ebf01c3319a05b587fb6ed829c54d859893d45c15e32a1343bc9ffc31",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

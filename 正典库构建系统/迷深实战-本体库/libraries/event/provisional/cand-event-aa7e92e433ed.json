@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德・缇缇",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "判明",
+  "name": "涡波一年沉眠判明",
+  "tick": 169,
+  "time_verbatim": "自帕林库洛战结束已过去一年（据罗德，经莱纳告知）；涡波体感仅一日"
+ },
+ "evidence": [
+  {
+   "chapter": 169,
+   "line": 217,
+   "quote": "「别勉强，基督。不管怎么说，你毕竟睡了一整年。」",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 221,
+   "quote": "「是啊，一年。据罗德所说，自那场战斗结束之后已经过去一年了。所以我刚才冲进来的时候才说你安心个头啊。」",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 224,
+   "quote": "看这样子，我睡了一年的事好像是真的。在我的体感上只过了一天，然而现实却如此严酷。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 226,
+   "quote": "「快、快出发吧……！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 169,
+   "text": "莱纳：'你毕竟睡了一整年''据罗德所说，自那场战斗结束之后已经过去一年了'；罗德辩解系水晶太硬、分离费时（'不是人家的错哦？'）；涡波自认'虽然保住了性命，但我也付出了相应的代价'，随即'快、快出发吧'决意速往迷宫"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-aa7e92e433ed",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0169.txt",
+  "sha": "4d549ef6c1e5ab439f9b4759d2a4e689ca051031d7bf99698e72937427a709ac",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

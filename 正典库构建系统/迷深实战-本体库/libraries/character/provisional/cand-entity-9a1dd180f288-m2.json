@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "道具(剑)",
+  "name": "新月琉璃"
+ },
+ "evidence": [
+  {
+   "chapter": 78,
+   "line": 815,
+   "quote": "一把用化作盾牌的『阿雷亚斯家的宝剑诺文』防住，另一把用从『持有物品』中拔出的『新月琉璃』接下来。",
+   "vol": 1
+  },
+  {
+   "chapter": 78,
+   "line": 821,
+   "quote": "我在毫厘之间用『新月琉璃』挡开莱纳的『魔力风刃化』。",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 105,
+   "quote": "我拿着『新月琉璃』",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 126,
+   "quote": "我全力挥出的一击，就连贯穿艾尔芬里斯的鳞片都做不到。",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 129,
+   "quote": "「莱纳！把剑跟我换一下！！」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 78,
+   "text": "涡波从『持有物品』中拔出的剑，与变形为盾的『阿雷亚斯家的宝剑诺文』组成双剑运用：接下浮空袭来的魔剑『Rokh·Bringer』之一；毫厘间挡开莱纳的『魔力风刃化』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-9a1dd180f288",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-9a1dd180f288-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-9a1dd180f288",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

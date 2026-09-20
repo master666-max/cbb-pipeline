@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "秘密监视(受涡波指派)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 230,
+   "quote": "「──我希望莱纳你负责监视罗德」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 264,
+   "quote": "「就拜托你一边跟罗德学习魔法，一边陪她工作了。也就是说要尽可能地监视住罗德，将她的注意力从我身上移开」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 301,
+   "quote": "莱纳为了监视罗德而出门，我则在房间里打坐开始统筹魔力。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 171,
+   "text": "涡波密令：'我希望莱纳你负责监视罗德'——一边跟罗德学习魔法一边陪她工作，'尽可能地监视住罗德，将她的注意力从我身上移开'（为涡波秘密开发DistanceMute作掩护）。莱纳以'已经打败了三个守护者的大英雄的判断'为由接受；章末出门执行。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c9795638bf65",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

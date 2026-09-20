@@ -1,0 +1,931 @@
+{
+ "_meta": {
+  "unit": "U-C04 · CHAPTER 0176（194话-准备完毕，摄入序 i=176→tick176→伪锚点2000-06-24）",
+  "source": {
+   "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0176.txt",
+   "sha": "7671326ae389e1d9cb28f56979eec657ba0013d8e08b6884ef6e7ae59902bf69",
+   "verified_at": "2026-09-21",
+   "slice": "行1-206（CHAPTER 0176，含标记行；正文行2-205）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线，规范 v1.1 §8 封套）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+(i-1)天；本章 i=176→tick176→2000-06-24。章内故事时间坐标：章首'到了翌日一早'起一整日（晨间魔法练习→工房锻冶训练→午后魔法道具制作），风龙决战定于'明日'（章内相对坐标，无绝对故事日，instant 留空）。禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，章标记行不计、空行占号）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；行1 章标记（194话=话数）与行3 章题'落地死的流星'（篇章题·与 ch0166 同名篇章续章）不抽",
+   "reason": "章标记/章题=话数卷数类（R6 规则1；ch0166 同题先例）",
+   "deterministic_check": "全章无翻译组注/作者杂谈/论坛吐槽/现实日期；无内嵌注入式指令文本；原文异体/笔误'破壊／壊掉／途经／埝脚石／而去还主动表示'等按 R6 规则3 逐字引用不改写"
+  },
+  "chapter_summary": "魔王城侧备战章：涡波借千年魔导书完成即死魔法DistanceMute（拔桌之魂得魔石）；雷纳尔多授锻冶修复精神污染装备、赠翠之护身符与MP储存戒（次元之戒）；揭示艾德=千年前罗德之义弟宰相；明日决战风龙。",
+  "cross_chapter_notes": [
+   "★阳滝去向原文点名：'把阳滝从艾德手上夺回来之后'——ch166'被带走的王之器少女'开环获正文直证（阳滝在艾德手上，与 ch166 先验推定一致，本章为实证位）",
+   "★艾德身份扩容（据雷纳尔多）：千年前宰相/孤儿院出身/与罗德无血缘义姐弟/涡波罗德消失后支撑北国至最后——与 ch166 艾德'棋子集齐/我王'计划、北方再建国线并轨",
+   "★DistanceMute 谱系：ch164 始祖涡波以『幻之紫腕（DistanceMute）』夺阳滝魔石——本章涡波同型魔法完成（指尖→整臂），自桌拔『魂』得魔石，操作层实证'魔石=魂的具现化'",
+   "★罗德前史新证（据雷纳尔多）：统合北方众多国家/即位前职业庭师/孤儿院出身——补充 ch168 罗德线；'与现在判若两人'再证",
+   "★宝剑回归：涡波『所有物』内持有阿雷亚斯家的宝剑（对照 ch168'宝剑不在身边'——ch169-175 未经本线抽取，回归经过待补）",
+   "★佩艾希亚：行112'昨天晚上了解过千年前的佩艾希亚的事'仅回指性提及、本章零新息，未立项，归属 ch175",
+   "★魔导书作者：'与涡波相近感性'+异邦人关联推定——'作者=始祖涡波'仅为先验猜想，原文未证实，不合并【待确认】"
+  ],
+  "alias_policy": "判例4 近名检索沿用库内名：'幻之紫腕（DistanceMute）'（本章文本作'次元魔术『DistanceMute』'，补登记别名'DistanceMute'）；'罗德・缇缇'（文本作'罗德'，库内别名已含不再重复登记）；'阿雷亚斯家的宝剑'（文本作'阿雷亚斯家的宝剑诺文'，库内别名已含）；'『北』的王国'（文本作'北国/北方的众多国家'）。新名：雷纳尔多/艾利巴茨/风龙/神铁锻冶/千年前的魔导书/翠之护身符/次元之戒/CallOuter/AllConfess/BloodSword/赫勒比勒夏因家的神圣双剑『片翼』——本工作区可见范围内未见库内近名（判例4 尽检），留终审 R4 复核。",
+  "confidence_calibration": "亲历实录（涡波POV/雷纳尔多对话实录）0.88-0.9；据雷纳尔多转述的千年前历史声称（罗德王姿/艾德宰相/义姐弟）0.85 且 rel_type/observations 内标'据雷纳尔多'/'据说'；诺文魂宿剑中=库内既定+本章'挚友的守护者'间接印证 0.8；POV'我'=相川涡波系 ch166-168 连续弧线亲证（本弧直接延续）。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章/主线级事实（阳滝去向实证/艾德计划并轨/罗德前史/DistanceMute谱系）一律走 relation/event/setting/foreshadow 与 _meta。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {"name": "相川涡波", "entity_type": "人物"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章POV：彻夜研读千年前魔导书后于翌晨'可以成功构筑出那些次元魔术了'，完成『DistanceMute』整臂级运用并自桌中拔『魂』得魔石；受雷纳尔多传授锻冶与魔术式铭刻、修复精神污染装备；获翠之护身符与次元之戒后决意明日挑战六十六层风龙",
+     "chapter": 176
+    },
+    {
+     "category": "trait",
+     "text": "被雷纳尔多以'骑士团长'相称（'真不愧是骑士团长，这么快就找到破局之法了啊'）；自述家人观：'与长久分离的家人再会则是无价的至宝''要是我是守护者的话，我有一见到阳滝立马成佛的自信'",
+     "chapter": 176
+    },
+    {
+     "category": "summary",
+     "text": "行动决意：从艾德手上夺回阳滝、反将艾德绑至地下会罗德（'这件事权当顺水推舟好了'）；向雷纳尔多申请暂停工作一日获准，专心备战",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 3, "quote": "到了翌日一早，与之前不同，我可以成功构筑出那些次元魔术了。"},
+    {"vol": 1, "chapter": 176, "line": 167, "quote": "真不愧是骑士团长，这么快就找到破局之法了啊"},
+    {"vol": 1, "chapter": 176, "line": 139, "quote": "把阳滝从艾德手上夺回来之后，就给他绑了一路带到这里便是。这样刚刚好。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {"name": "雷纳尔多", "entity_type": "人物(工房主·锻冶师)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波的工作场所工房之主，拥有技能『神铁锻冶』；委托修理存货被涡波一天清空（原计划一周）后主动提出锻冶训练（'让小子你有事做也是老朽的义务啊'）；重度性能主义——评宝剑装饰'这造型纯粹就是拿来看的花把势'欲削除，闻'剑本人不愿意'后不疑反感兴趣又觉无趣",
+     "chapter": 176
+    },
+    {
+     "category": "trait",
+     "text": "以'小子/老朽'相称的年长工匠：边手把手传授『神铁锻冶』动作边对答如流、'相当富有余裕'（涡波评'这位长者果然也不是一般人'）；知悉罗德千年前王姿与艾德宰相身份等旧事；闻艾德在地上'立马神色大悦'——'由此可见生前的艾德人望极高'",
+     "chapter": 176
+    },
+    {
+     "category": "summary",
+     "text": "对涡波全面协助：免费打造对风龙的魔法道具（'钱的事情不用在意。将来你有钱了再付也行'）、赠翠之护身符、制作MP储存戒指，并主动替涡波应付罗德打探（拟谎称'出去采买'）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 108, "quote": "而且雷纳尔多还是拥有技能『神铁锻冶』的人物。"},
+    {"vol": 1, "chapter": 176, "line": 54, "quote": "摆在那个仓库里的原本是打算用上一周的时间去解决的"},
+    {"vol": 1, "chapter": 176, "line": 131, "quote": "跟面对我和罗德时的表情截然不同，由此可见生前的艾德人望极高。"},
+    {"vol": 1, "chapter": 176, "line": 144, "quote": "「钱的事情不用在意。将来你有钱了再付也行。不过要对罗德保密啊」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "罗德・缇缇", "entity_type": "人物"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接出场（被对谈及被监视对象）：千年前'将北方的众多国家统合'、'比任何人都更具风范的王。其威严近乎神明'（据雷纳尔多）；即位前职业为庭师、孤儿院出身；'到了现在再提到她的威严，也就跟小孩子没什么两样'——与千年前判若两人",
+     "chapter": 176
+    },
+    {
+     "category": "trait",
+     "text": "行事风险（据雷纳尔多）：若知涡波挑战迷宫'十有八九会为了找乐子而去碍事的'，故雷纳尔多拟谎称涡波外出采买以应付其打探",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 118, "quote": "那个时候的罗德，确实是比任何人都更具风范的王。其威严近乎神明，仅仅立于人前，便足以震慑百姓使之噤口"},
+    {"vol": 1, "chapter": 176, "line": 121, "quote": "在成为王之前，她的职业应该是庭师。"},
+    {"vol": 1, "chapter": 176, "line": 119, "quote": "到了现在再提到她的威严，也就跟小孩子没什么两样吧"},
+    {"vol": 1, "chapter": 176, "line": 195, "quote": "要是被那家伙知道了，十有八九会为了找乐子而去碍事的"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "艾德", "entity_type": "人物(千年前宰相·现迷宫守护者)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "千年前宰相（据雷纳尔多）：'即使在罗德和小子你消失之后，也作为中流砥柱一直支撑着北国。作为真正的忠臣，他坚信着王的归还，战斗到最后一刻'；'既作为家人，又作为臣下跟随在罗德身旁'（涡波评'最理解罗德心境的人应该非他莫属了吧'）",
+     "chapter": 176
+    },
+    {
+     "category": "summary",
+     "text": "出身与近况：孤儿院出生、与罗德'据说'为无血缘姐弟（据雷纳尔多）；现'作为迷宫的守护者已经被召唤了。现在似乎打算再次在地上缔造国家'（据涡波）；持有阳滝——涡波拟夺回阳滝后反将其绑至地下",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 126, "quote": "那位大人即使在罗德和小子你消失之后，也作为中流砥柱一直支撑着北国。作为真正的忠臣，他坚信着王的归还，战斗到最后一刻"},
+    {"vol": 1, "chapter": 176, "line": 121, "quote": "记得那位大人也是孤儿院出生的。虽说没有血缘关系，但据说罗德和他是姐弟关系"},
+    {"vol": 1, "chapter": 176, "line": 132, "quote": "他作为迷宫的守护者已经被召唤了。现在似乎打算再次在地上缔造国家来着"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "莱纳", "entity_type": "人物"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "与涡波同行滞留：一早'已经做好早饭的莱纳回到了房间'、受涡波报告魔法练习进度；白天分工'我在雷纳尔多的家里工作，莱纳则负责对罗德的监视'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 44, "quote": "已经做好早饭的莱纳回到了房间"},
+    {"vol": 1, "chapter": 176, "line": 46, "quote": "在吃完早饭并向莱纳报告了魔法练习的进度后，我来到了街上。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {"name": "相川阳滝", "entity_type": "人物"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "在艾德手上（涡波内语直证'把阳滝从艾德手上夺回来之后'）；涡波以分离家人定位：'要是我是守护者的话，我有一见到阳滝立马成佛的自信'——夺回阳滝为涡波返地上的首要目标",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 139, "quote": "把阳滝从艾德手上夺回来之后，就给他绑了一路带到这里便是。这样刚刚好。"},
+    {"vol": 1, "chapter": 176, "line": 135, "quote": "要是我是守护者的话，我有一见到阳滝立马成佛的自信。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "艾利巴茨", "entity_type": "人物(锻冶师)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "『阿雷亚斯家的宝剑诺文』的制作者：其作品'风格还算是偏稳重那边的'但'对帅气的执着追求在这把剑上'仍有体现（据涡波评述）；涡波'在艾利巴茨那里稍稍练习过一点'铭刻魔术式基本、亦在其工房见过同类的魔法道具打造道具",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 69, "quote": "『阿雷亚斯家的宝剑诺文』上的装饰在艾利巴茨的作品中风格还算是偏稳重那边的。"},
+    {"vol": 1, "chapter": 176, "line": 95, "quote": "多亏在艾利巴茨那里稍稍练习过一点，基本的东西我已经掌握了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "始祖涡波", "entity_type": "人物(千年前·始祖)"},
+   "observations": [
+    {
+     "category": "significance",
+     "text": "涡波的实力自评坐标：完成『DistanceMute』后自认'我这一招应该不比『始祖涡波』逊色'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 36, "quote": "我这一招应该不比『始祖涡波』逊色。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "风龙", "entity_type": "人物(怪物·迷宫第六十六层)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "盘踞六十六层、阻碍涡波返回地上的强敌（'现在确实是因为风龙的阻碍陷入困境了'·据雷纳尔多确认）；涡波已有破局手段（即死魔法），所欠仅魔力消耗——获赠抗风属性『翠之护身符』+次元之戒（MP储存）后备战；决战定于翌日早晨，'大有一蹴而就的势头'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 140, "quote": "现在确实是因为风龙的阻碍陷入困境了对吧"},
+    {"vol": 1, "chapter": 176, "line": 166, "quote": "其实我已经有对付那条风龙的办法了。要说不足的话，就是需要用到的魔法消耗甚大这点吧。"},
+    {"vol": 1, "chapter": 176, "line": 193, "quote": "不光是魔法的问题，装备的问题也解决了，攻略风龙的自信越来越充分。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {"name": "幻之紫腕（DistanceMute）", "entity_type": "魔法(次元魔术·最高等)"},
+   "aliases_to_register": ["DistanceMute"],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "本章涡波完成度跃升：'到昨天为止还只能用指尖发动的魔法，这一次却遍及整根手臂'（发淡紫色光芒的手臂无接触与桌重合）——不以三次元/四次元、而以万物内在『领域』为目标伸手，攥住其'最为醒目的『魂』'抽离；被拔魂的桌子'化作光芒消失了'（'同迷宫内的怪物临终之际一模一样'），手中得'一颗光芒黯淡的魔石'",
+     "chapter": 176
+    },
+    {
+     "category": "manifestation",
+     "text": "代价与泛用性：'每过一秒就要消费庞大的魔力。对信息的处理也让大脑悲鸣不已'；对象由物品转为生物'难易度自然会抬高'，但'只要增加对魔力的消费就能解决'——'不讲道理的即死魔法'，是否通用取决于灌注的魔力总量",
+     "chapter": 176
+    },
+    {
+     "category": "evolution",
+     "text": "仅成功运用一次即感知到魔法的『进化』：'恐怕它的最终形态是将魔力缠绕于全身吧'（见 foreshadow）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 18, "quote": "「──次元魔术『DistanceMute』」"},
+    {"vol": 1, "chapter": 176, "line": 19, "quote": "到昨天为止还只能用指尖发动的魔法，这一次却遍及整根手臂。"},
+    {"vol": 1, "chapter": 176, "line": 29, "quote": "我要将存在于其领域之中最为醒目的『魂』给拔除──！"},
+    {"vol": 1, "chapter": 176, "line": 31, "quote": "置于我手中的是一颗光芒黯淡的魔石。"},
+    {"vol": 1, "chapter": 176, "line": 37, "quote": "『DistanceMute』就是这么一个不讲道理的即死魔法。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {"name": "千年前的魔导书", "entity_type": "道具(魔导书)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "记载次元魔术体系的千年前魔导书：因千年前次元属性'十分普遍，有关的资料颇为丰富'；对次元概念详加解释（自一次元至更高次元），并含'只言词组暗示平行世界和异世界的存在'——涡波推定'这本书的执笔过程与我这样的异邦人脱不了干系'；作者名讳处'并没有我的名字'但'可以确信作者拥有与我相近的感性'",
+     "chapter": 176
+    },
+    {
+     "category": "knowledge",
+     "text": "研读效果：'读得越多，我驱使次元魔术的水准也变得越来越高'，'就跟想起自己遗忘的东西时那种感觉很类似'；'使用次元魔术的话可以操纵整个时空'的意念被证实后魔法完成度迅速提高，'我对超越次元进行想像的所有忌惮被一扫而空'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 4, "quote": "被记载于千年前的魔导书内的知识实在令人叹服。"},
+    {"vol": 1, "chapter": 176, "line": 10, "quote": "我于是去确认了作者的名讳，但上面并没有我的名字。然而，可以确信作者拥有与我相近的感性。"},
+    {"vol": 1, "chapter": 176, "line": 13, "quote": "可以推定这本书的执笔过程与我这样的异邦人脱不了干系"},
+    {"vol": 1, "chapter": 176, "line": 15, "quote": "使用次元魔术的话可以操纵整个时空──当这份意念被证实后，魔法的完成度便得以迅速提高。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {"name": "阿雷亚斯家的宝剑", "entity_type": "道具(剑)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波自『所有物』取出示于雷纳尔多：'镶有作为我挚友的守护者的魔石'，雷纳尔多评'难怪魔石的品质如此绝俗'却嫌装饰'拿来看的花把势'欲削除；剑'隐隐约约地闪起了光''就像是因为害怕而瑟瑟发抖的样子'，技能『感应』擅自发动探明'已经死翘翘的这位守护者的心情'——剑本人不愿，削装饰遂作罢",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 66, "quote": "那个，这把剑镶有作为我挚友的守护者的魔石"},
+    {"vol": 1, "chapter": 176, "line": 71, "quote": "语毕，我便注意到『阿雷亚斯家的宝剑诺文』隐隐约约地闪起了光。看上去就像是因为害怕而瑟瑟发抖的样子。"},
+    {"vol": 1, "chapter": 176, "line": 73, "quote": "『抱、抱歉，雷纳尔多先生。剑本人似乎不愿意这样，能不能算了呢？』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {"name": "神铁锻冶", "entity_type": "技能(锻冶系)"},
+   "observations": [
+    {
+     "category": "technique",
+     "text": "雷纳尔多持有的技能：支撑'一般人做不到的'修复工艺——装备外形重接后再'将术式的文字刻到恢复原状的装备上面'铭刻魔术式、'将魔石的力量予以最大限度的激发'令损毁装备取回原来的力量；对精密性的要求'达到了超人的级别'；雷纳尔多边烦恼答话边'手把手传授我『神铁锻冶』的动作'亦从容不迫",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 108, "quote": "而且雷纳尔多还是拥有技能『神铁锻冶』的人物。"},
+    {"vol": 1, "chapter": 176, "line": 108, "quote": "也就是将魔术式铭刻到修好的武器和防具上，将魔石的力量予以最大限度的激发。"},
+    {"vol": 1, "chapter": 176, "line": 112, "quote": "当然，即使烦恼他也没有停下手把手传授我『神铁锻冶』的动作。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {"name": "翠之护身符", "entity_type": "道具(魔石项链·护身符)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "雷纳尔多递与的'闪着翠色光辉的项链'——'可以保护身体抵御风属性攻击的魔石'，为六十六层风龙战的防御准备；涡波已有同系的『赤之护身符』故知其效果（护身符为有成品的常用魔法道具系列）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 163, "quote": "那是一条闪着翠色光辉的项链。雷纳尔多将它递到我手上。"},
+    {"vol": 1, "chapter": 176, "line": 164, "quote": "首先是可以保护身体抵御风属性攻击的魔石呐。正好有这个『翠之护身符』在，拿去用吧。"},
+    {"vol": 1, "chapter": 176, "line": 165, "quote": "「感激不尽。我有『赤之护身符』所以知道效果的」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {"name": "次元之戒", "entity_type": "道具(魔法戒指·MP储存)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "由雷纳尔多将'本来是结婚仪式上使用的魔法戒指'（魔石『空白』之戒——'将双方的思念和魔力结合在一起，通过交换的方式缔结羁绊的礼装'）改造为战斗用：'把多余恢复的魔力存储到这个戒指里'；涡波注入工作中自然回复的MP后'仅仅如此，戒指的名字就改变了'——「次元之戒」'寄宿着『次元』力量的戒指'",
+     "chapter": 176
+    },
+    {
+     "category": "significance",
+     "text": "与既往『魔法相杀』对策戒同类：'不仅仅是增强魔法和MP用尽时的紧急手段，应该也能成为应对『魔法相杀』的对策吧'；雷纳尔多'再做几个好了。所幸材料还有剩'（约四五十分钟可成一枚）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 179, "quote": "这本来是结婚仪式上使用的魔法戒指。是将双方的思念和魔力结合在一起，通过交换的方式缔结羁绊的礼装。"},
+    {"vol": 1, "chapter": 176, "line": 184, "quote": "仅仅如此，戒指的名字就改变了。"},
+    {"vol": 1, "chapter": 176, "line": 185, "quote": "「次元之戒」"},
+    {"vol": 1, "chapter": 176, "line": 187, "quote": "变成了跟之前作为对我的『魔法相杀』的对策使用的戒指同类的东西。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "CallOuter", "entity_type": "道具(迷宫拾得防具)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "迷宫三十三层附近拾得、因『表示』显示精神污染而被涡波破坏的装备之一；经雷纳尔多指导修复+魔术式铭刻成功复活，『表示』确认'防御力6'——'修理得还算不错'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 86, "quote": "看着「CallOuter」「AllConfess」「BloodSword」这些原本因为精神污染而没法使用的东西，我不由地期待起来。"},
+    {"vol": 1, "chapter": 176, "line": 153, "quote": "防御力6"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "AllConfess", "entity_type": "道具(迷宫拾得轻盔)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "同批精神污染装备中的轻盔：'满是伤痕的轻盔「AllConfess」也被修补完善'，『表示』确认'防御力4耐魔力1'——修复成功件之一",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 103, "quote": "被折断的「BloodSword」的剑身重新接合，满是伤痕的轻盔「AllConfess」也被修补完善。"},
+    {"vol": 1, "chapter": 176, "line": 155, "quote": "防御力4耐魔力1"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "BloodSword", "entity_type": "道具(迷宫拾得剑)"},
+   "observations": [
+    {
+     "category": "status_change",
+     "text": "同批精神污染装备中的断剑：剑身虽重新接合仍'算是寿终正寝了'——'果然要修复断折的刀剑没有那么简单'，列入再也无法使用的失败件",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 160, "quote": "顺带一说「BloodSword」算是寿终正寝了。果然要修复断折的刀剑没有那么简单。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "赫勒比勒夏因家的神圣双剑『片翼』", "entity_type": "道具(剑·双剑其一)"},
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章与精神污染批次一同修理、摆桌确认状态的装备：'这个本来就是件宝物'，但'失去了双剑中的另一把，无法发挥出原本的力量'——『表示』确认'攻击力2'/'失去了片翼，丧失了原本的力量'；赫勒比勒夏因家系的神圣双剑之一",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 156, "quote": "「赫勒比勒夏因家的神圣双剑『片翼』」"},
+    {"vol": 1, "chapter": 176, "line": 158, "quote": "失去了片翼，丧失了原本的力量"},
+    {"vol": 1, "chapter": 176, "line": 159, "quote": "这个本来就是件宝物。但是，可惜的是失去了双剑中的另一把，无法发挥出原本的力量。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "雷纳尔多", "rel_type": "师徒传授(锻冶·魔法道具修复·铭刻魔术式)", "object": "相川涡波"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "修理清空后转入锻冶训练：从铭刻道具用途讲起（'如果要研磨破损的地方，就要用这个'）到手把手传授『神铁锻冶』动作；'多亏了他简明易懂的介绍，我很快就掌握了修理魔法道具的工艺顺序'；涡波把壊掉装备当做技能『锻冶』成长的埝脚石",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 112, "quote": "当然，即使烦恼他也没有停下手把手传授我『神铁锻冶』的动作。"},
+    {"vol": 1, "chapter": 176, "line": 96, "quote": "「那就开始吧。这些就是在老朽这里用于铭刻魔术式的道具。"},
+    {"vol": 1, "chapter": 176, "line": 97, "quote": "我专心地听取雷纳尔多对道具用途的说明。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "雷纳尔多", "rel_type": "全面协助(对风龙装备·费用后付·对罗德保密)", "object": "相川涡波"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "'接下来就来打造对付风龙的魔法道具吧'且分文不取（'将来你有钱了再付也行。不过要对罗德保密啊'）；赠翠之护身符、制作MP储存戒指；主动替涡波应付罗德打探（'老朽就骗她说你出去采买好了'）；涡波感言'比起老老实实攒钱，还是打人情牌抄捷径更正确'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 142, "quote": "「也好。反正修理的训练也差不多了。接下来就来打造对付风龙的魔法道具吧」"},
+    {"vol": 1, "chapter": 176, "line": 144, "quote": "「钱的事情不用在意。将来你有钱了再付也行。不过要对罗德保密啊」"},
+    {"vol": 1, "chapter": 176, "line": 195, "quote": "如果罗德来这里打探情况的话，老朽就骗她说你出去采买好了。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "罗德・缇缇", "rel_type": "义姐弟(无血缘·同孤儿院出身·据雷纳尔多'据说')", "object": "艾德"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据雷纳尔多：'记得那位大人也是孤儿院出生的。虽说没有血缘关系，但据说罗德和他是姐弟关系'——罗德即位前旧事'要说可能知道的人，那估计也只有宰相阁下了吧'即指艾德；涡波听后'倒真让我大吃一惊'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 121, "quote": "虽说没有血缘关系，但据说罗德和他是姐弟关系"},
+    {"vol": 1, "chapter": 176, "line": 121, "quote": "要说可能知道的人，那估计也只有宰相阁下了吧。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "艾德", "rel_type": "忠臣宰相(据雷纳尔多·坚信王之归还战斗到最后一刻)", "object": "罗德・缇缇"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "'既作为家人，又作为臣下跟随在罗德身旁的艾德。最理解罗德心境的人应该非他莫属了吧'（涡波评）；雷纳尔多闻其在地上神色大悦：'如果有跟王关系最接近的艾德阁下在，那么罗德那一直为人不解的留恋说不定也能被揭晓了啊'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 126, "quote": "「没错，就是艾德阁下。那位大人即使在罗德和小子你消失之后，也作为中流砥柱一直支撑着北国。作为真正的忠臣，他坚信着王的归还，战斗到最后一刻」"},
+    {"vol": 1, "chapter": 176, "line": 127, "quote": "既作为家人，又作为臣下跟随在罗德身旁的艾德。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "罗德・缇缇", "rel_type": "王(千年前·统合北方众多国家·据雷纳尔多)", "object": "『北』的王国"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波据城内藏书室史记载发问'罗德她真的将北方的众多国家统合在一起了吗'，雷纳尔多证言'这话不假。那个时候的罗德，确实是比任何人都更具风范的王'——史载王姿与现状'完全判若两人'令涡波'有点怀疑历史记载的真假'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 117, "quote": "「罗德她真的将北方的众多国家统合在一起了吗？」"},
+    {"vol": 1, "chapter": 176, "line": 118, "quote": "「这话不假。那个时候的罗德，确实是比任何人都更具风范的王。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "莱纳", "rel_type": "监视(白天分工)", "object": "罗德・缇缇"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波在雷纳尔多工房工作期间，'莱纳则负责对罗德的监视'（当日分工与昨日相同）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 47, "quote": "我在雷纳尔多的家里工作，莱纳则负责对罗德的监视。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "艾德", "rel_type": "留置(阳滝在其手上·涡波拟夺回)", "object": "相川阳滝"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波内语直证：'把阳滝从艾德手上夺回来之后，就给他绑了一路带到这里便是'——ch166 被带走的'王之器少女'去向的原文点名（本线首次实证）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 139, "quote": "把阳滝从艾德手上夺回来之后，就给他绑了一路带到这里便是。这样刚刚好。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "相川涡波", "rel_type": "带来承诺(自地上带至地下会罗德·顺水推舟)", "object": "艾德"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "应雷纳尔多之托（'老朽倒是希望你能把他从地上带来'），涡波应诺'当然，我会的。本来我就有事要找他，这件事权当顺水推舟好了'——计划夺回阳滝后反将艾德绑至地下",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 137, "quote": "如果小子方便的话，老朽倒是希望你能把他从地上带来⋯⋯」"},
+    {"vol": 1, "chapter": 176, "line": 138, "quote": "「当然，我会的。本来我就有事要找他，这件事权当顺水推舟好了」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "相川涡波", "rel_type": "随身持有(『所有物』内·战后回归)", "object": "阿雷亚斯家的宝剑"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "自『所有物』取出全部武器装备示于雷纳尔多：'从『阿雷亚斯家的宝剑诺文』开始到破损的直剑和护手'——宝剑现随涡波身侧（雷纳尔多亦知其『所有物』空间之事：'看来我『所有物』的事暴露的一干二净'）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 63, "quote": "从『阿雷亚斯家的宝剑诺文』开始到破损的直剑和护手，我将身上形形色色的东西全部摆到桌上。"},
+    {"vol": 1, "chapter": 176, "line": 62, "quote": "看来我『所有物』的事暴露的一干二净。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {"subject": "诺文", "rel_type": "魂宿魔石(剑之守护者·心情可经『感应』探知)", "object": "阿雷亚斯家的宝剑"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "剑镶'作为我(涡波)挚友的守护者的魔石'；雷纳尔多欲削装饰时剑发光颤抖、技能『感应』探明'已经死翘翘的这位守护者的心情'——剑本人不愿被削（守护者个体名经库内既定链为诺文，本章原文未点名）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 66, "quote": "那个，这把剑镶有作为我挚友的守护者的魔石"},
+    {"vol": 1, "chapter": 176, "line": 72, "quote": "技能『感应』也擅自发动，并探明已经死翘翘的这位守护者的心情。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.82,
+   "canonical": {"subject": "艾利巴茨", "rel_type": "锻造制作(据装饰风格判定)", "object": "阿雷亚斯家的宝剑"},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据涡波评述：宝剑装饰'在艾利巴茨的作品中风格还算是偏稳重那边的'、其'对帅气的执着追求在这把剑上'仍有体现——作品归属由风格判定（本章无直接制作叙述）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 69, "quote": "『阿雷亚斯家的宝剑诺文』上的装饰在艾利巴茨的作品中风格还算是偏稳重那边的。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『领域』与次元魔术的普遍才能论（据千年魔导书）",
+    "fact": "据魔导书记载：所有存在'都在自己的内部拥有专属的『领域』'——人是兽、地上之岩石、天边之云彩乃至『世界』本身皆'无一例外'；领域在潜移默化中成为次元魔术的才能，故『次元魔术』'似乎是所有人都拥有的才能'、'任何人只要有心就能习得'（其它属性魔法无才能则终生不可用）；次元魔术即'对这些普遍存在的『领域』进行干涉'——以『领域』为目标伸手是'无法用数字表示的魔法的次元''在常识束缚之外的只有魔力存在的世界'；『次元属性』在现代地上稀奇、千年前却十分普遍",
+    "chapter": 176,
+    "tick": 176
+   },
+   "entities_involved": ["千年前的魔导书", "幻之紫腕（DistanceMute）", "相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "次元魔术体系基础设定（本章经魔导书首次系统展开）", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 8, "quote": "原因是所有的存在都在自己的内部拥有专属的『领域』，而这在潜移默化中就成为了『次元魔术』的才能。"},
+    {"vol": 1, "chapter": 176, "line": 7, "quote": "书上甚至还写有这样一番豪言壮语：其它的属性魔法如果没有才能的话，那终其一生都无法使用，但只有次元魔术，任何人只要有心就能习得。"},
+    {"vol": 1, "chapter": 176, "line": 9, "quote": "而所谓的次元魔术就是要对这些普遍存在的『领域』进行干涉。"},
+    {"vol": 1, "chapter": 176, "line": 28, "quote": "是在常识束缚之外的只有魔力存在的世界。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "迷宫上层构造与六十六层攻略坐标",
+    "fact": "六十六层风龙为涡波返回地上的当前阻碍；'只要突破了六十六层，之后的敌人只会越来越弱'（据涡波）；迷宫'怎么也是十的好几倍数的阶层'且'迷宫的构造有多麻烦'不可大意；六十层另有'不知底细的守护者'——涡波推定'一定也驻守着千年前的某位猛者'，雷纳尔多称'最大的难关就是那里了吧'",
+    "chapter": 176,
+    "tick": 176
+   },
+   "entities_involved": ["风龙", "相川涡波", "雷纳尔多"],
+   "observations": [
+    {"category": "knowledge", "text": "迷宫阶层规模与难关分布（据涡波·雷纳尔多对谈）", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 201, "quote": "只要突破了六十六层，之后的敌人只会越来越弱。"},
+    {"vol": 1, "chapter": 176, "line": 201, "quote": "怎么也是十的好几倍数的阶层，马虎不得。"},
+    {"vol": 1, "chapter": 176, "line": 202, "quote": "「谨记在心。在六十层还有不知底细的守护者。我想在那里，一定也驻守着千年前的某位猛者」"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔法道具修复与魔术式铭刻工艺（据雷纳尔多传授）",
+    "fact": "修复分两层：外形重接（'只是外形的话，很轻易就能修复回原状'）不等于取回强度（'光是外形恢复并不能取回它们原来的强度'，故一般武器防具'用壊即丢，修复起来并不划算'）；取回力量须『神铁锻冶』级工艺——将术式文字刻回复原装备、铭刻魔术式以激发魔石之力，精密性要求'达到了超人的级别'；含魔石/魔术式的装备修复需专用道具（与修纯铁制品做法大不同）；结婚礼装戒指可改造为MP储存具（存入多余回复魔力）",
+    "chapter": 176,
+    "tick": 176
+   },
+   "entities_involved": ["雷纳尔多", "神铁锻冶", "相川涡波", "次元之戒"],
+   "observations": [
+    {"category": "knowledge", "text": "魔法道具工艺规则（本章经雷纳尔多教学展开）", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 105, "quote": "但光是外形恢复并不能取回它们原来的强度。"},
+    {"vol": 1, "chapter": 176, "line": 108, "quote": "也就是将魔术式铭刻到修好的武器和防具上，将魔石的力量予以最大限度的激发。"},
+    {"vol": 1, "chapter": 176, "line": 90, "quote": "「因为这些装备使用了魔石啊。其中不乏刻有魔术式的东西。如果要连同这些一起修复的话，就必须使用这个道具」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "涡波研读魔导书·次元魔术大成（翌晨可构筑）", "kind": "修炼", "tick": 176, "instant": null, "time_verbatim": "章首'到了翌日一早'——承接上章彻夜研读"},
+   "entities_involved": ["相川涡波", "千年前的魔导书", "幻之紫腕（DistanceMute）"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "'与之前不同，我可以成功构筑出那些次元魔术了'——千年前魔导书知识令理解大进（'有种自己一直欠缺的部分得到补足的感觉，就跟想起自己遗忘的东西时那种感觉很类似'）；'使用次元魔术的话可以操纵整个时空'的意念被证实后'我对超越次元进行想像的所有忌惮被一扫而空'，自认'才能早已具备。我欠缺的正是这份确信'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 3, "quote": "到了翌日一早，与之前不同，我可以成功构筑出那些次元魔术了。"},
+    {"vol": 1, "chapter": 176, "line": 14, "quote": "有种自己一直欠缺的部分得到补足的感觉，就跟想起自己遗忘的东西时那种感觉很类似。"},
+    {"vol": 1, "chapter": 176, "line": 17, "quote": "才能早已具备。我欠缺的正是这份确信──"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.92,
+   "canonical": {"name": "『DistanceMute』完成——桌之魂拔除实验（得魔石·桌化光消散）", "kind": "魔法实验", "tick": 176, "instant": null, "time_verbatim": "晨间·工房工作前的房间内练习"},
+   "entities_involved": ["相川涡波", "幻之紫腕（DistanceMute）"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "一整晚研究练习后完成：魔力遍及整根手臂（淡紫色光芒），无接触与桌重合，于桌之『领域』内攥住'像石头一样的东西'（其『魂』）抽离——手中得'一颗光芒黯淡的魔石'，被拔魂的桌子'化作光芒消失了''同迷宫内的怪物临终之际一模一样'——'魔石=魂的具现化'的操作性实证；'这样就能挑战六十六层了'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 33, "quote": "「好、好的，成功了⋯⋯！这样就能挑战六十六层了⋯⋯！」"},
+    {"vol": 1, "chapter": 176, "line": 34, "quote": "经过一整晚的研究和练习，『DistanceMute』终于完成了。"},
+    {"vol": 1, "chapter": 176, "line": 32, "quote": "『魂』被拔除的桌子就这样化作光芒消失了。这幅光景同迷宫内的怪物临终之际一模一样。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "雷纳尔多工房修理清空·转入锻冶训练", "kind": "转折", "tick": 176, "instant": null, "time_verbatim": "抵达工房的当日上午"},
+   "entities_involved": ["雷纳尔多", "相川涡波"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波以非人速度一日清空原定一周的委托存货（'没活儿了。昨天修得太多，做过头了'——涡波腹诽'原因并不是我来的缘故，而是因为您故意刁难我才对吧'）；雷纳尔多以'让小子你有事做也是老朽的义务啊'提出锻冶训练，以涡波『所有物』内装备为素材",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 50, "quote": "「没活儿了。昨天修得太多，做过头了」"},
+    {"vol": 1, "chapter": 176, "line": 57, "quote": "让小子你有事做也是老朽的义务啊"},
+    {"vol": 1, "chapter": 176, "line": 62, "quote": "看来我『所有物』的事暴露的一干二净。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "宝剑削装饰风波——剑发光'拒绝'·作罢", "kind": "小事件", "tick": 176, "instant": null, "time_verbatim": "锻冶训练开始时"},
+   "entities_involved": ["雷纳尔多", "阿雷亚斯家的宝剑", "相川涡波", "诺文"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "雷纳尔多欲削宝剑无用装饰提升实用性（'剃了算了'），剑'隐隐约约地闪起了光''就像是因为害怕而瑟瑟发抖的样子'；技能『感应』擅自发动探明已故守护者心情，涡波转达'剑本人似乎不愿意这样'，雷纳尔多'什么啊。无趣'——改以迷宫拾得道具为练习对象；涡波萌想'根据次元魔术的用法，通过『魔石』听取装备的声音可能也不是天方夜谭'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 71, "quote": "语毕，我便注意到『阿雷亚斯家的宝剑诺文』隐隐约约地闪起了光。看上去就像是因为害怕而瑟瑟发抖的样子。"},
+    {"vol": 1, "chapter": 176, "line": 73, "quote": "『抱、抱歉，雷纳尔多先生。剑本人似乎不愿意这样，能不能算了呢？』"},
+    {"vol": 1, "chapter": 176, "line": 79, "quote": "根据次元魔术的用法，通过『魔石』听取装备的声音可能也不是天方夜谭。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "精神污染装备修复训练（成败清单）", "kind": "修炼", "tick": 176, "instant": null, "time_verbatim": "当日至午后（『我们将午后的时间用于魔法道具的制作上』之前）"},
+   "entities_involved": ["相川涡波", "雷纳尔多", "CallOuter", "AllConfess", "BloodSword", "赫勒比勒夏因家的神圣双剑『片翼』", "神铁锻冶"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "以三十三层附近陪拉丝缇娅拉寻宝时拾得、因『表示』显示精神污染而被破坏的装备为素材学习修复+铭刻：'原本带有精神污染的问题儿童们纷纷获得新生'——CallOuter（防御力6）/AllConfess（防御力4耐魔力1）修复成功；BloodSword'寿终正寝'报废；片翼修复但失其双、仅攻击力2；'有几件的修理以失败告终，再也无法使用了'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 110, "quote": "就这样，原本带有精神污染的问题儿童们纷纷获得新生。"},
+    {"vol": 1, "chapter": 176, "line": 82, "quote": "我记得这些都是在三十三层附近陪拉丝缇娅拉寻宝的时候捡来的东西。因为『表示』上显示有精神污染的字样，所以全都被我破壊了。"},
+    {"vol": 1, "chapter": 176, "line": 149, "quote": "当然，成果算不上完美。有几件的修理以失败告终，再也无法使用了。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "雷纳尔多讲述罗德千年前王姿与艾德宰相义弟身份", "kind": "揭示", "tick": 176, "instant": null, "time_verbatim": "修理作业进行中（涡波主动打听）"},
+   "entities_involved": ["雷纳尔多", "罗德・缇缇", "艾德", "相川涡波", "『北』的王国"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波因'昨天晚上了解过千年前的佩艾希亚的事'且自行在城内藏书室查过千年前史载、疑'历史记载的真假'而问罗德旧事；雷纳尔多证言：罗德千年前为统合北方众多国家、威严近神之王，即位前职业庭师、孤儿院出身；知其前事者'估计也只有宰相阁下'——即艾德：同为孤儿院出身、与罗德'据说'为无血缘姐弟、涡波罗德消失后支撑北国至最后",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 114, "quote": "「是的。但是，罗德作为王那时候的形象我怎么都难以想像⋯⋯⋯实话跟您说，我有点怀疑历史记载的真假」"},
+    {"vol": 1, "chapter": 176, "line": 121, "quote": "要说可能知道的人，那估计也只有宰相阁下了吧。"},
+    {"vol": 1, "chapter": 176, "line": 122, "quote": "「宰相⋯⋯⋯您说的难道是艾德吗？」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "带回艾德之托与涡波承诺（兼夺回阳滝）", "kind": "约定", "tick": 176, "instant": null, "time_verbatim": "对谈延续中"},
+   "entities_involved": ["雷纳尔多", "相川涡波", "艾德", "相川阳滝", "罗德・缇缇"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "得知艾德在地上（被召唤为守护者、拟再建国）后雷纳尔多神色大悦，托涡波'把他从地上带来'——姐弟再会或揭示罗德'为人不解的留恋'乃至'立马就能成佛'；涡波应诺'这件事权当顺水推舟好了'并内定'把阳滝从艾德手上夺回来之后，就给他绑了一路带到这里'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 133, "quote": "如果有跟王关系最接近的艾德阁下在，那么罗德那一直为人不解的留恋说不定也能被揭晓了啊。"},
+    {"vol": 1, "chapter": 176, "line": 137, "quote": "如果小子方便的话，老朽倒是希望你能把他从地上带来⋯⋯」"},
+    {"vol": 1, "chapter": 176, "line": 139, "quote": "把阳滝从艾德手上夺回来之后，就给他绑了一路带到这里便是。这样刚刚好。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "翠之护身符赠与", "kind": "赠与", "tick": 176, "instant": null, "time_verbatim": "装备确认后·打造风龙对策道具之初"},
+   "entities_involved": ["雷纳尔多", "相川涡波", "翠之护身符", "风龙"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "雷纳尔多自架上取来'一条闪着翠色光辉的项链'递与涡波——'可以保护身体抵御风属性攻击的魔石'，为风龙战防御准备；涡波已有『赤之护身符』故识其效（'那就好'）",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 163, "quote": "那是一条闪着翠色光辉的项链。雷纳尔多将它递到我手上。"},
+    {"vol": 1, "chapter": 176, "line": 164, "quote": "首先是可以保护身体抵御风属性攻击的魔石呐。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "次元之戒诞生（空白之戒充能·名变）", "kind": "制作", "tick": 176, "instant": null, "time_verbatim": "'大概过了四五十分钟后'·午后道具制作时段"},
+   "entities_involved": ["雷纳尔多", "相川涡波", "次元之戒"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "雷纳尔多自抽屉取不知名魔石加工并打造镶嵌戒指，'大概过了四五十分钟后'完成魔石『空白』之戒（结婚礼装改造：'把多余恢复的魔力存储到这个戒指里'）；涡波'将在工作中自然回复的MP注入戒指中'后'仅仅如此，戒指的名字就改变了'——「次元之戒」寄宿着『次元』力量，与既往『魔法相杀』对策戒同类；涡波'得到了如果是在游戏里差不多等于稀有道具的MP回复手段'，雷纳尔多将再制数个",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 175, "quote": "大概过了四五十分钟后，一个魔法戒指便完成了。"},
+    {"vol": 1, "chapter": 176, "line": 184, "quote": "仅仅如此，戒指的名字就改变了。"},
+    {"vol": 1, "chapter": 176, "line": 185, "quote": "「次元之戒」"},
+    {"vol": 1, "chapter": 176, "line": 187, "quote": "变成了跟之前作为对我的『魔法相杀』的对策使用的戒指同类的东西。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "决战风龙日程确定·请假与对罗德保密", "kind": "决意", "tick": 176, "instant": null, "time_verbatim": "午后道具制作收尾·当日傍晚（'明天早上就去挑战'）"},
+   "entities_involved": ["相川涡波", "雷纳尔多", "风龙", "罗德・缇缇"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "'不光是魔法的问题，装备的问题也解决了'，自信至'大有一蹴而就的势头'（原备多次挑战）；涡波申请暂停工作一日获爽快同意（'对老朽而言，也是希望小子你越早回到地上越好'）；雷纳尔多拟对罗德谎称'你出去采买'防其碍事，并戒'一旦死了的话，那就什么都白费了。难关恐怕不止六十六层而已'",
+     "chapter": 176
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 193, "quote": "不光是魔法的问题，装备的问题也解决了，攻略风龙的自信越来越充分。"},
+    {"vol": 1, "chapter": 176, "line": 195, "quote": "「嗯。对老朽而言，也是希望小子你越早回到地上越好。明天你就放心去挑战吧。"},
+    {"vol": 1, "chapter": 176, "line": 200, "quote": "「不过，不要勉强啊。一旦死了的话，那就什么都白费了。难关恐怕不止六十六层而已」"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {"name": "章末名单钩——'千年前最需要注意的人物'", "setup_chapter": 176, "payoff_chapter": null, "tier": "章节", "note": "六十层守护者话题引出：雷纳尔多'想来，说到千年前最需要注意的人物的话──''稍作思考后，道出了那些人的名字'——名单内容本章未揭（切章悬念），与六十层未知守护者身份直接相关", "chapter": 176},
+   "entities_involved": ["雷纳尔多", "相川涡波"],
+   "observations": [
+    {"category": "foreshadowing", "text": "章末悬念钩（名单内容待下章回收）", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 203, "quote": "「是啊，最大的难关就是那里了吧。要是出来个不听人话的家伙就糟透了。想来，说到千年前最需要注意的人物的话──」"},
+    {"vol": 1, "chapter": 176, "line": 204, "quote": "雷纳尔多稍作思考后，道出了那些人的名字。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {"name": "六十层不知底细的守护者（千年前猛者推定）", "setup_chapter": 176, "payoff_chapter": null, "tier": "支线", "note": "涡波：'在六十层还有不知底细的守护者。我想在那里，一定也驻守着千年前的某位猛者'；雷纳尔多：'最大的难关就是那里了吧。要是出来个不听人话的家伙就糟透了'——身份与应对待回收", "chapter": 176},
+   "entities_involved": ["相川涡波", "雷纳尔多"],
+   "observations": [
+    {"category": "foreshadowing", "text": "迷宫攻略中途新难关预告", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 202, "quote": "「谨记在心。在六十层还有不知底细的守护者。我想在那里，一定也驻守着千年前的某位猛者」"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {"name": "『DistanceMute』的『进化』——最终形态魔力缠全身", "setup_chapter": 176, "payoff_chapter": null, "tier": "支线", "note": "仅成功运用一次涡波即预感'这个魔法的真髓应该远不及此。恐怕它的最终形态是将魔力缠绕于全身吧''我还能变得更强'——进化条件与全形态待回收", "chapter": 176},
+   "entities_involved": ["相川涡波", "幻之紫腕（DistanceMute）"],
+   "observations": [
+    {"category": "foreshadowing", "text": "主力魔法成长线新钩", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 41, "quote": "虽然现在的我只能魔力缠绕于整根手臂，但这个魔法的真髓应该远不及此。恐怕它的最终形态是将魔力缠绕于全身吧。"},
+    {"vol": 1, "chapter": 176, "line": 43, "quote": "我还能变得更强。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {"name": "艾德×罗德再会——解开留恋/成佛的构想", "setup_chapter": 176, "payoff_chapter": null, "tier": "核心", "note": "涡波：'搞不好只要让地上的艾德和地下的罗德相见，两个人立马就能成佛了呢'；雷纳尔多：'寻访艾德阁下确实是个妙计'——姐弟再会能否揭示罗德'为人不解的留恋'、涡波携艾德下地之约待回收；与 ch166 艾德'棋子集齐/我王'计划的走向交错", "chapter": 176},
+   "entities_involved": ["艾德", "罗德・缇缇", "相川涡波", "雷纳尔多"],
+   "observations": [
+    {"category": "foreshadowing", "text": "罗德留恋线×艾德线的并轨钩", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 134, "quote": "「家人关系不一般──我也是同感呢。⋯⋯话说、怎么觉得比想像中要简单啊。搞不好只要让地上的艾德和地下的罗德相见，两个人立马就能成佛了呢」"},
+    {"vol": 1, "chapter": 176, "line": 129, "quote": "「那么如果我去地上跟艾德打听的话，会不会就能明白罗德的留恋是什么了呢⋯⋯？」"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {"name": "千年魔导书作者之谜——异邦人关联与'相近感性'", "setup_chapter": 176, "payoff_chapter": null, "tier": "支线", "note": "名讳处'并没有我的名字'但'可以确信作者拥有与我相近的感性'；书中只言词组暗示平行世界/异世界——'可以推定这本书的执笔过程与我这样的异邦人脱不了干系'（涡波推定）；作者身份待回收（'作者=始祖涡波'系先验猜想，原文未证实）", "chapter": 176},
+   "entities_involved": ["千年前的魔导书", "相川涡波"],
+   "observations": [
+    {"category": "foreshadowing", "text": "魔导书来历×异邦人线索", "chapter": 176}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 176, "line": 10, "quote": "我于是去确认了作者的名讳，但上面并没有我的名字。然而，可以确信作者拥有与我相近的感性。"},
+    {"vol": 1, "chapter": 176, "line": 13, "quote": "从其中有只言词组暗示平行世界和异世界的存在这一点来看，可以推定这本书的执笔过程与我这样的异邦人脱不了干系。"}
+   ]
+  }
+ ]
+}

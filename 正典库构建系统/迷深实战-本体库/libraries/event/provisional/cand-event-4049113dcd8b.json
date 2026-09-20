@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "向莱纳坦白只会次元魔术",
+  "tick": 170,
+  "time_verbatim": "初战脱离后（66层地面）"
+ },
+ "evidence": [
+  {
+   "chapter": 170,
+   "line": 156,
+   "quote": "使用你之前攻击帕林库洛那家伙的冻结魔法的话，应该很容易就能给那条龙击落不是吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 160,
+   "quote": "「冻结魔法是我妹妹的才能，现在的我只会使用次元魔术而已⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 163,
+   "quote": "我现在有自信能用好的魔法只有『维度』『形式』『连接』这三个而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 167,
+   "quote": "「那个，这不就只能起到探测器的作用而已吗⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 175,
+   "quote": "就算不打败那条龙，我也一定能想办法突破它的阻拦的。交给我吧，莱纳！",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 170,
+   "text": "莱纳建议用冻结魔法击坠风龙→涡波因瞒不过而坦白：冻结魔法是妹妹的才能，现在只会次元魔术（有自信的仅『维度』『形式』『连接』且全无攻击力）→莱纳失望（『这不就只能起到探测器的作用』）→涡波自荐骚扰搅乱特长以求信任"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-4049113dcd8b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0170.txt",
+  "sha": "95b89a23efa8d04a524d6148471510e43e5f2967c7cf538fefe193cf4238d640",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

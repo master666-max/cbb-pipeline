@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "修行指导（过烈致魔力耗空）",
+  "subject": "罗德・缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 175,
+   "line": 119,
+   "quote": "映入我眼帘的便是瘫倒在床上的莱纳。明明我才离开这里一个小时，莱纳的魔力就空空如也了。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 121,
+   "quote": "「罗、罗德⋯⋯⋯你这是对莱纳干了什么啊⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 122,
+   "quote": "「诶？就是让他修行地稍微认真了点儿哦？没事的没事的，等明天他就会满血复活的」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 175,
+   "text": "涡波离开房间约一小时内，莱纳被罗德'修行'至魔力空空瘫倒床上；据罗德：'就是让他修行地稍微认真了点儿哦？没事的没事的，等明天他就会满血复活的'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c7c1f74d73ad",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0175.txt",
+  "sha": "9f38973ebf01c3319a05b587fb6ed829c54d859893d45c15e32a1343bc9ffc31",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

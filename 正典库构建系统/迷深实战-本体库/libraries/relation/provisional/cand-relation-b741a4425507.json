@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多・沃尔斯",
+  "rel_type": "锻冶帮工(预定)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 199,
+   "quote": "「可能的话，我打算在刚才那个锻冶场工作。雷纳尔多需要帮手吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 202,
+   "quote": "「嗯～，毕竟一开始就是人家向你推荐的啊。好吧，没问题的。这座城市里的人的铁制品，全都是老爷子他一个人负责修理的来着，如果能有涡涡帮忙的话，他应该会很高兴的吧。人家之后去跟老爷子说一声好了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 171,
+   "text": "涡波自请去雷纳尔多锻冶场工作（此章委托虽因货币壁垒未成，但打工意向达成）：明面动机='一边工作一边磨炼锻冶技术''如果我自己能够锻冶的话，不就不用花那么多钱了么'；罗德承诺代为说项——'这座城市里的人的铁制品，全都是老爷子他一个人负责修理的来着，如果能有涡涡帮忙的话，他应该会很高兴的'。此选择在罗德预料之内。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b741a4425507",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

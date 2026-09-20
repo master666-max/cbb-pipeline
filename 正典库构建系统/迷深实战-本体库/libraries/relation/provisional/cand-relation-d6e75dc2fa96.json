@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "打工引荐",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 55,
+   "quote": "昨天人家已经跟他打好招呼了哟。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 73,
+   "quote": "看来，罗德昨天真的是把我们的情况传开了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 172,
+   "text": "罗德昨日已向雷纳尔多为涡波打好工作招呼（'昨天人家已经跟他打好招呼了哟'），晨间分派工作（涡涡去雷纳尔多处、莱纳随她），并将二人情况传遍街区（居民欢迎新居民并愿帮助）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d6e75dc2fa96",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

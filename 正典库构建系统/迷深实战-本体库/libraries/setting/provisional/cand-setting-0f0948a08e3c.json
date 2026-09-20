@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 171,
+  "fact": "『魔王城』旅店：一天十枚铜币/间；'之后支付的铜币数量越多房间的规格也会越大'；厨房浴场可自由使用（十枚铜币因此算便宜实惠）。配套法（罗德自言'这条法律是人家刚刚想好的'，'毕竟人家可是国王哟'）：露宿会被逮捕、被捕关三天禁闭——自警团负责执行。罗德公职自述：'虽然确实是国王，但是人家的工作是『庭师』哦。另外副业则是自警团的工作'。全城市民的铁制品由雷纳尔多一人负责修理（涡波帮工预定）。",
+  "name": "魔王城旅店规则与罗德公职",
+  "tick": 171
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 158,
+   "quote": "「谁让你们没问人家嘛～。⋯⋯啊，对了！如果你们想使用城堡里的房间的话，就收你们一天十枚铜币好了～。从今天开始，『魔王城』旅店就正式开始营业啦～」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 175,
+   "quote": "『顺带一说，如果被逮捕的话就要关三天的禁闭！这条法律是人家刚刚想好的！毕竟人家可是国王哟！』",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 210,
+   "quote": "「──虽然确实是国王，但是人家的工作是『庭师』哦。另外副业则是自警团的工作。如果莱纳在这两方面都能来帮忙的话，多给你点报酬也可以哟？」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 225,
+   "quote": "不过城堡内的厨房和浴场都可以自由使用。从这一点上考虑的话，十枚铜币确实是相当便宜实惠的价格。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 171,
+   "text": "魔王城运营与罗德身份规则（本章）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-0f0948a08e3c",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

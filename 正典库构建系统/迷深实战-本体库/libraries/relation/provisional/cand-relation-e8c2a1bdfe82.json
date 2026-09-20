@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "剑术继承",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 173,
+   "line": 219,
+   "quote": "「是的，正是诺文的魔石。实现了留恋之后的他化作了剑。顺带一说，阿雷亚斯家的剑术被传授给了我和莱纳继承」",
+   "vol": 1
+  },
+  {
+   "chapter": 173,
+   "line": 231,
+   "quote": "「当然了，基督。诺文他肯定也是如此希望的」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 173,
+   "text": "阿雷亚斯家的剑术被传授给涡波与莱纳两人继承（本条记莱纳侧）；莱纳对诺文持续表敬意、应其'肯定也是如此希望的'以认真劲转述其大会期间事迹"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e8c2a1bdfe82",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0173.txt",
+  "sha": "07ced8d93f2499549b6d69b468f35e0e0b24ede43c59a69695a3e5a8027dbe6a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

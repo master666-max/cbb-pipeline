@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "契约",
+  "name": "魔王城旅店住宿契约",
+  "tick": 171,
+  "time_verbatim": "财政破产当日（返回魔王城前）"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 158,
+   "quote": "「谁让你们没问人家嘛～。⋯⋯啊，对了！如果你们想使用城堡里的房间的话，就收你们一天十枚铜币好了～。从今天开始，『魔王城』旅店就正式开始营业啦～」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 175,
+   "quote": "『顺带一说，如果被逮捕的话就要关三天的禁闭！这条法律是人家刚刚想好的！毕竟人家可是国王哟！』",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 185,
+   "quote": "「那就好──接着吧，这是住宿费。城堡内的一个房间我就先借用了。这是今天的，明天之后的钱等我在『这里』赚到钱之后再付」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 170,
+   "quote": "「啊，你们要是露宿的话，视场合而定可能会被逮捕的哦～。其实就是会被人家逮捕的啦要小心喽～。毕竟人家姑且也有负责自警团的工作嘛」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 171,
+   "text": "罗德即兴开设『魔王城』旅店：城堡房间一天十枚铜币；配套即兴立法——露宿'其实就是会被人家逮捕的啦'（自警团职务）＋被捕关三天禁闭（'这条法律是人家刚刚想好的！毕竟人家可是国王哟！'）。莱纳怒斥'你这绝对是刚想的鬼主意吧'并一度欲'干掉你变成魔石卖了'，涡波介入调解后全盘接受提议。涡波掷出铜币付当日住宿费（余款后补）；罗德'试图看穿我的想法'、涡波以扑克脸+技能『诈术』应对——'她十分享受这种互相欺骗的过程'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0d5912501c93",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

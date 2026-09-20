@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩艾希亚城",
+  "rel_type": "同正式名并称",
+  "subject": "魔王城"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 204,
+   "quote": "「没错，就是『佩艾希亚城』」",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 206,
+   "quote": "「这两个都是正式名字。无须在意」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 172,
+   "text": "据雷纳尔多：涡波所问的'魔王城'即'佩艾希亚城'，'这两个都是正式名字。无须在意'——同一座城的两个正式名（涡波注记：与罗德口中信息有些不同）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b265d1d22154",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

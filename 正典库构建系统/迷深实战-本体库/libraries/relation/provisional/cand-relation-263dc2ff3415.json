@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『北』的王国",
+  "rel_type": "支配·领主（自称Lord，兽人服从）",
+  "subject": "罗德・缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 169,
+   "line": 108,
+   "quote": "「这里是VIP房间哦！毕竟人家是罗德（Lord）嘛！」",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 91,
+   "quote": "接着罗德挡在我身前，驱赶着聚集在这里的人群。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 93,
+   "quote": "周围的人们苦笑着服从了吩咐。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 169,
+   "text": "自称'毕竟人家是罗德（Lord）嘛'；当众驱散围观人群时'周围的人们苦笑着服从了吩咐'；与ch168 自述'已经没有任何支配的对象了'并观——在『这里』城邑仍具实际权威"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-263dc2ff3415",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0169.txt",
+  "sha": "4d549ef6c1e5ab439f9b4759d2a4e689ca051031d7bf99698e72937427a709ac",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

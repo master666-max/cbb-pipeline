@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "六十六层",
+  "rel_type": "镇守(通往六十五层的阶梯)",
+  "subject": "艾尔芬里斯"
+ },
+ "evidence": [
+  {
+   "chapter": 170,
+   "line": 78,
+   "quote": "那就是挡在前往六十五层的路上的龙。『艾尔芬里斯』",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 88,
+   "quote": "镇守通往六十五层的阶梯的，就是这么一个怪物",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 102,
+   "quote": "在攀登台阶的途中它就会袭击过来的，要小心哦",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 170,
+   "text": "据莱纳：挡在前往六十五层之路的龙；攀登螺旋阶梯途中即会袭击过来；66层唯一怪物"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a2f621b0f30c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0170.txt",
+  "sha": "95b89a23efa8d04a524d6148471510e43e5f2967c7cf538fefe193cf4238d640",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

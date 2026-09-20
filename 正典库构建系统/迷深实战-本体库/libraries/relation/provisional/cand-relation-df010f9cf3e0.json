@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『表示』",
+  "rel_type": "设计者(生前)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 170,
+   "line": 24,
+   "quote": "一想到设计出这个系统的是我本人，我便不由地感到有些不好意思。",
+   "vol": 1
+  },
+  {
+   "chapter": 170,
+   "line": 24,
+   "quote": "一脸津津有味地开发出『表示』这一魔法的我的那副模样总觉得历历在目。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 170,
+   "text": "视界系统『表示』为涡波本人（始祖涡波）生前开发——『设计出这个系统的是我本人』，开发时的模样记忆犹新"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-df010f9cf3e0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0170.txt",
+  "sha": "95b89a23efa8d04a524d6148471510e43e5f2967c7cf538fefe193cf4238d640",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

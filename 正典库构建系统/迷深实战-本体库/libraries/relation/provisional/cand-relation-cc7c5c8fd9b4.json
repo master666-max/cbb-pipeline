@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多",
+  "rel_type": "锻冶受雇(打下手)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 84,
+   "quote": "我是接下来将在你们这里给锻冶打下手的相川涡波",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 142,
+   "quote": "像刚才这样的杂活就是小子你的工作。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 219,
+   "quote": "直到日落为止，我和雷纳尔多都一直这样持续进行着锻冶工作。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 172,
+   "text": "经罗德昨日打好招呼，涡波自今日起在雷纳尔多宅邸工房打工：任杂活下手（取送修理品、递换规格不同的铁锤与钳子、烧柴送风、清扫渣滓灰尘）；'像刚才这样的杂活就是小子你的工作'；工作持续至日落；选择此处的更主要原因是'创建在直觉之上的对雷纳尔多人品的信任'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cc7c5c8fd9b4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

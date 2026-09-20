@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "DistanceMute",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "修行",
+  "name": "DistanceMute修炼遇瓶颈",
+  "tick": 173,
+  "time_verbatim": "同日傍晚起（自己房间，至晚餐前）"
+ },
+ "evidence": [
+  {
+   "chapter": 173,
+   "line": 126,
+   "quote": "因为『Default』已经熟练掌握了，因此我集中练习的是『DistanceMute』",
+   "vol": 1
+  },
+  {
+   "chapter": 173,
+   "line": 134,
+   "quote": "如果不削减生命去挑战『次元之理』的话，我可能没有办法掌握那份感觉。",
+   "vol": 1
+  },
+  {
+   "chapter": 173,
+   "line": 166,
+   "quote": "经过刚才的魔法开发我的MP已经见底了。正在迷茫要不要削减生命使用魔法来着。不过还是想着今天先算了吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 173,
+   "text": "MP 回复一半、体力耗大半的状态下练习：指尖可无视质量划过桌椅但无法干涉、不能整臂伸入；理解为'增加能触及的次元'的魔法；判定不削减生命挑战『次元之理』则难掌握、战斗中不吝惜生命而平时稳妥，今日作罢（MP 见底）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f96a12717dc8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0173.txt",
+  "sha": "07ced8d93f2499549b6d69b468f35e0e0b24ede43c59a69695a3e5a8027dbe6a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

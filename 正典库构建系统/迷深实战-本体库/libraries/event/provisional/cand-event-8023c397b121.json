@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "DistanceMute",
+   "相川涡波",
+   "绘画的保管室",
+   "罗德・缇缇"
+  ],
+  "instant": null,
+  "kind": "调查（秘密）",
+  "name": "DistanceMute开锁侵入绘画保管室·拼合被毁画像",
+  "tick": 175,
+  "time_verbatim": "藏书室调查时段内（同日）"
+ },
+ "evidence": [
+  {
+   "chapter": 175,
+   "line": 56,
+   "quote": "罗德嘱咐过我不要进入其它的房间。但这也就意味着她在其他房间里有不想被我看到的东西。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 59,
+   "quote": "「⋯⋯魔法『DistanceMute』」",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 64,
+   "quote": "「太好了、成功了⋯⋯⋯不知道再出来的时候能不能再像这样把锁锁上啊⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 75,
+   "quote": "我驱使『维度』和记忆能力，将破烂不堪的油画重新拼合起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 105,
+   "quote": "将现场恢复原状之后，我离开了房间。然后再次使用『DistanceMute』，利用开锁时的要领重新将锁锁好。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 175,
+   "text": "扩展『维度』发现藏书室角落上锁之门（罗德嘱咐勿入其它房间）→决意'不能继续畏首畏尾'，以DistanceMute开锁潜入→目睹源于恶意、近乎狂气的毁画之海（王之雄姿尽毁）→以『维度』+记忆能力拼合油画确认画中人为『支配之王』→发现按英雄谭顺序排列、高价画框装饰的孩童涂鸦（老夫妇→孤儿院→庭师为止）→复原现场、复锁离开，不想被罗德发现"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8023c397b121",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0175.txt",
+  "sha": "9f38973ebf01c3319a05b587fb6ed829c54d859893d45c15e32a1343bc9ffc31",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "相川阳滝",
+   "罗德・缇缇",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "情报确认",
+  "name": "魔王城苏醒后情报确认·阳滝不在判明（ch169）",
+  "tick": 169,
+  "time_verbatim": "帕林库洛战后涡波苏醒当日（体感一日；实际已一年）"
+ },
+ "evidence": [
+  {
+   "chapter": 169,
+   "line": 3,
+   "quote": "「——也就是说，我是掉到『这里』的是吗。」",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 17,
+   "quote": "「有哦，涡涡是和莱纳一起掉下来的。」",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 20,
+   "quote": "「没有哦？只有你们两个。之后你再问一下莱纳，就知道是真的了。」",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 35,
+   "quote": "「那个~……莱纳的话现在正在挑战迷宫六十五层。」",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 22,
+   "quote": "如果罗德说的都是真的。那就是说阳滝一个人被留在了那场灾厄的中心。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 169,
+   "text": "了望台问答确认：坠落者仅涡波与莱纳（罗德：'只有你们两个''如果有第三个人侵入这里的话，人家绝对会察觉到的'）→涡波判定阳滝被单独留在灾厄中心、必须马上救她；确认身处『迷宫六十六层里侧』=『魔王城』；得知莱纳今早独自挑战迷宫六十五层、决定等其归来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-93c8170290c6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0169.txt",
+  "sha": "4d549ef6c1e5ab439f9b4759d2a4e689ca051031d7bf99698e72937427a709ac",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

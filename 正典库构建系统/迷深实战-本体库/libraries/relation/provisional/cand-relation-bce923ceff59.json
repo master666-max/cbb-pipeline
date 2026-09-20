@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "魔王城",
+  "rel_type": "现居",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 202,
+   "quote": "听到没人在，我就联想到了现在自己居住的那座城堡。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 41,
+   "quote": "我和莱纳都振作精神走出房间，来到了城堡的外庭。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 172,
+   "text": "涡波自述'现在自己居住的那座城堡'即魔王城（佩艾希亚城）；与莱纳同住该城并自城堡外庭出发上街工作"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bce923ceff59",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

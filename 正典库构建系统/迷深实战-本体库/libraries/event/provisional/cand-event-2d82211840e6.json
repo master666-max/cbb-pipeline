@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德・缇缇"
+  ],
+  "instant": null,
+  "kind": "调查",
+  "name": "涡波通读藏书室史书与『支配之王』英雄谭",
+  "tick": 175,
+  "time_verbatim": "涡波离开房间约一小时的藏书室调查时段（同日）"
+ },
+ "evidence": [
+  {
+   "chapter": 175,
+   "line": 3,
+   "quote": "在之后的书页上记载着对罗德的介绍。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 16,
+   "quote": "将历史书泛泛地浏览过一遍之后，我将目光移向了『支配之王（Lord）』的英雄谭。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 17,
+   "quote": "但是刚将书翻开，我就注意到了异常之处。书中有几页被撕碎了。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 36,
+   "quote": "因为到这里为止，一直没有出现『涡波』这个名字。毫无疑问，这个故事还有后续。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 175,
+   "text": "翻阅史书：罗德介绍（本国史书、夸张在所难免，涡波权且一看）→与南方的战争记载（北方击退侵略/数年和平/南方反扑，涡波判读=千年前大战）→战争年表（雷纳尔多・沃尔斯多胜）→年代疑念；转读『支配之王（Lord）』英雄谭：发现书中几页被撕碎、拾起掉落书页阅览，通读罗德人生轨迹至'『罗德/Lord』的永恒之战正式开幕'——因无『涡波』之名断定'这个故事还有后续'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2d82211840e6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0175.txt",
+  "sha": "9f38973ebf01c3319a05b587fb6ed829c54d859893d45c15e32a1343bc9ffc31",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

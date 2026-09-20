@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多・沃尔斯",
+  "rel_type": "祖孙",
+  "subject": "贝丝"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 43,
+   "quote": "「又见面啦，贝丝。呐、你爷爷现在在家吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 44,
+   "quote": "「嗯，在的哦！他就在老地方一个人嘀嘀咕咕的呢！」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 55,
+   "quote": "这名老者应该就是贝丝酱的爷爷了吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 171,
+   "text": "贝丝为雷纳尔多之孙女（罗德问'你爷爷现在在家吗'，贝丝答'他就在老地方一个人嘀嘀咕咕的'；工房老者'应该就是贝丝酱的爷爷了吧'）。涡波的工作地点由此定在'贝丝酱的家里'（罗德语）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0cb825a78ff0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

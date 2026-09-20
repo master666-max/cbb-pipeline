@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "状态变化",
+  "name": "涡波能力状态剧变(战后·失去水魔石)",
+  "tick": 169,
+  "time_verbatim": "苏醒当日确认（战后既成）"
+ },
+ "evidence": [
+  {
+   "chapter": 169,
+   "line": 50,
+   "quote": "恐怕是因为在帕林库洛的战斗中失去了『水之理的盗窃者』的魔石吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 51,
+   "quote": "看来在之前那场超越极限的战斗中，所有的『Connection』都被我在无意间解除了。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 53,
+   "quote": "在许许多多的解除系魔法的影响下，那顽固到近乎诅咒般的『联结』也没撑住。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 215,
+   "quote": "受的伤虽然痊愈了，但身体的平衡感却莫名的糟。或许是因为失去『水之理的盗窃者』的魔石的力量，总觉得身体的活力打了个对折。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 169,
+   "text": "冰结魔法构筑失败（推定因帕林库洛战中失去『水之理的盗窃者』魔石）；『Connection』于超越极限之战中无意识全解除（MP最大值未减）；与莉帕的『联结』在诸多解除系魔法影响下断绝——'平安无事的消息就没办法传达给在地上的同伴了'；伤愈但平衡感糟、'身体的活力打了个对折'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d58d520e0f6b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0169.txt",
+  "sha": "4d549ef6c1e5ab439f9b4759d2a4e689ca051031d7bf99698e72937427a709ac",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

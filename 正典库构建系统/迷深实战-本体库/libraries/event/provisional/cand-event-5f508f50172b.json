@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "雷纳尔多・沃尔斯"
+  ],
+  "instant": null,
+  "kind": "决定",
+  "name": "地下生活方针决定（章题事件）",
+  "tick": 171,
+  "time_verbatim": "住宿契约后·返回魔王城途中"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 183,
+   "quote": "「那当然没问题啦。不如说人家正希望你们那么做呀。毕竟你们两个能永远住在这里才是最棒的嘛」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 218,
+   "quote": "「OK～。那么涡涡就去贝丝酱的家里工作，莱纳则要跟着人家干活喽」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 222,
+   "quote": "距我苏醒以来，应该已经过去了很长的时间。然而，天空却跟我醒来时一样昏暗。漫步于不知是昼是夜的街道，我们就这样暂且返回了『魔王城』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 171,
+   "text": "工作分工确定：涡波去贝丝家（雷纳尔多锻冶场）工作磨炼锻冶；莱纳跟罗德干『庭师』+自警团（报酬优厚）。罗德'正希望你们那么做'——'你们两个能永远住在这里才是最棒的嘛'；看到计划顺利'乐得连蹦带跳'，之后离城将二人安排告知居民。天空与涡波苏醒时一样昏暗（'不知是昼是夜的街道'）。二人入住小房间并清扫，作为接下来生活场所。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5f508f50172b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

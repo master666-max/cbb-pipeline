@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川阳滝",
+  "rel_type": "兄妹·守护使命",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 169,
+   "line": 202,
+   "quote": "但一直这样下去可不行，守护阳滝是我的使命。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 22,
+   "quote": "如果罗德说的都是真的。那就是说阳滝一个人被留在了那场灾厄的中心。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 169,
+   "text": "阳滝不在则'保住了性命固然值得高兴，但阳滝不在的话就没有任何意义'；判定其被单独留在灾厄中心后必须马上去救；'守护阳滝是我的使命'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-617c8bf3094a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0169.txt",
+  "sha": "4d549ef6c1e5ab439f9b4759d2a4e689ca051031d7bf99698e72937427a709ac",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

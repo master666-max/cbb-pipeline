@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "雇佣(庭师·自警团)兼风魔法指导",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 19,
+   "quote": "「顺带一说，莱纳就已经选择了这个途径哦。在被誉为魔王的我的指导下、他最近一直在进行风魔法的修行哟！」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 210,
+   "quote": "「──虽然确实是国王，但是人家的工作是『庭师』哦。另外副业则是自警团的工作。如果莱纳在这两方面都能来帮忙的话，多给你点报酬也可以哟？」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 218,
+   "quote": "「OK～。那么涡涡就去贝丝酱的家里工作，莱纳则要跟着人家干活喽」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 171,
+   "text": "此前已在'被誉为魔王的'罗德指导下进行风魔法修行（莱纳点头承认）；本章确定莱纳跟罗德做『庭师』+自警团两职、可多得报酬（莱纳对'比这两个更艰辛的工作'习以为常）；实为涡波密令监视罗德之掩护。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fd269f43836b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

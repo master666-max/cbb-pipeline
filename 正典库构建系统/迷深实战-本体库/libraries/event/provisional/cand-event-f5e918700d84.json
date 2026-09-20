@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "『DistanceMute（幻之紫腕）』",
+   "相川涡波",
+   "罗德",
+   "艾尔芬里斯",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "密谋",
+  "name": "密室商谈·监视任务与魔法开发计划",
+  "tick": 171,
+  "time_verbatim": "入住魔王城小房间后（确认罗德离城之时）"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 230,
+   "quote": "「──我希望莱纳你负责监视罗德」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 236,
+   "quote": "「那三种魔法、『Torsion（捩菖蒲）』、『Default（行路渐歧）』、『DistanceMute（幻之紫腕）』恐怕全都是最高位的魔法。──分别是『无法被干涉的攻击魔法』『无法被闪避的空间魔法』『无法被防御的即死魔法』，哪怕只学会一种对付那条龙都绰绰有余」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 255,
+   "quote": "「我想使用的是『无法被防御的即死魔法』──『DistanceMute』。如果学会这招，估计只要一击就能打倒『艾尔芬里斯』」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 266,
+   "quote": "「我想把这当做跟守护者（罗德）战斗时的底牌」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 305,
+   "quote": "我开始了对魔法的开发──",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 171,
+   "text": "涡波以『维度』确认罗德离城后，向莱纳交底逃离计划：①'我已经想到解决那条龙的办法了'——再现对帕林库洛战见识的『始祖涡波』三魔法，选定『DistanceMute』（现不能使用，'花上一定的时间的话应该做得到'，故租用可集中意识的房间）；②莱纳任务=监视罗德并转移其注意力（明面为跟罗德学魔法+陪工作）；③对罗德保密——'我想把这当做跟守护者（罗德）战斗时的底牌'。莱纳以'打败了三个守护者的大英雄的判断'为由领命。其后谈莱文教话题（涡波自请'像平时一样把我当做基督对待'）；莱纳揽下买菜做饭。章末：莱纳出门监视，涡波在房间打坐统筹魔力、集中意识开始魔法开发（自析：魔力现为纯次元属性+『先谭』后理解提升=最佳时机；曾肉身吃下该魔法一击故易想像构成；无法使用冻结魔法的现在需补充手牌）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f5e918700d84",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,237 @@
+{
+ "unit": "ch0174",
+ "chapter": 174,
+ "ingestion_index": 144,
+ "title": "192话-咒术『咏唱』",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 27,
+  "pass": 27,
+  "intercept": 0,
+  "admitted": 27,
+  "quarantined": 0
+ },
+ "tracks": {
+  "contradiction": 2,
+  "on-create": 22,
+  "consistent-duplicate": 3
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-9688f169cf68",
+   "type": "entity",
+   "name": "罗德・缇缇",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-65787929a6fb-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-3ccff2c90d5c",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m29"
+   }
+  },
+  {
+   "record_id": "cand-entity-8470e3fafad5",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m109"
+   }
+  },
+  {
+   "record_id": "cand-entity-a9ae3b4b1927",
+   "type": "entity",
+   "name": "『天路垂临』『续道碧霄』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f8081f9772c5",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f336bfeea47d"
+   }
+  },
+  {
+   "record_id": "cand-entity-1fb28fe7c0d9",
+   "type": "entity",
+   "name": "藏书室",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6eefa308776d",
+   "type": "entity",
+   "name": "魔王城",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-18793a00d847"
+   }
+  },
+  {
+   "record_id": "cand-entity-87208bc222ba",
+   "type": "entity",
+   "name": "次元魔术",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3ab766750cc6",
+   "type": "relation",
+   "name": "罗德・缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fe1ef146c6fd",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5aa18fcf32f4",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9643e698ad46",
+   "type": "relation",
+   "name": "罗德・缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c0da54cdd158",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-dcac5bb82f17",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f0c781bd97ce",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-7eefa8b515fb",
+   "type": "event",
+   "name": "莱纳风魔法基础特训（木勺浮空）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-cd97d0c6e5c5",
+   "type": "event",
+   "name": "罗德揭示『咏唱』=『咒术』体系",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3349b2dba453",
+   "type": "event",
+   "name": "涡波自述咒术记忆全失",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a82657872c80",
+   "type": "event",
+   "name": "罗德示范风属性咒术咏唱与代价揭示",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-595d935e9fc4",
+   "type": "event",
+   "name": "轻量咏唱练习（莱纳成·涡波败）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-620c33c95eb7",
+   "type": "event",
+   "name": "次元魔术传授限定与藏书室钥匙取得",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2ce9f39a2fab",
+   "type": "event",
+   "name": "藏书室探索与佩艾希亚史书发现",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-546a691e6cf4",
+   "type": "foreshadow",
+   "name": "魔王城其他房间禁区（罗德叮嘱）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-af94c7b8c77f",
+   "type": "foreshadow",
+   "name": "莱纳的咏唱滥用预判（为他人的代价支付）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-6ff382098c8a",
+   "type": "foreshadow",
+   "name": "涡波的咒术记忆缺失（专家技艺领域空白）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3c534a3c6949",
+   "type": "setting",
+   "name": "咏唱与咒术体系(罗德讲授)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-67e05d673e9c",
+   "type": "setting",
+   "name": "次元魔术的属性模仿特性与传授不可（据罗德）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 144,
+  "pseudo_date": "2000-05-24",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

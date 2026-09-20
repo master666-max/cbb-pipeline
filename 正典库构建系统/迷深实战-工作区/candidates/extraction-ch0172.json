@@ -1,0 +1,1899 @@
+{
+ "_meta": {
+  "unit": "U-C04 无人值守 · CHAPTER 0172（190话-将千年前重演，tick172→伪锚点2000-06-20）",
+  "source": {
+   "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+   "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+   "verified_at": "2026-09-21",
+   "slice": "行1-221（CHAPTER 0172，切片文件221行；evidence.line=切片文件行号-1）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "tick=172（章序）→伪锚点2000-06-20；章内故事时间坐标判读（本章=彻夜魔法开发后的首个工作日，晨起至日落，间有前一日回述）；禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，章标记行不计、空行占号）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；章题'190话-将千年前重演'=话数+题名（R6规则1元文本）不入候选；『史诗探索者』按R6-1'作品名'边界低置信存疑登记待终审",
+   "reason": "话数卷数题名属元文本；『史诗探索者』系涡波亲历引用（'我在『史诗探索者』看到的锻冶场'），in-story 引用与元文本之界存疑，按'宁可低置信入库交终审'处理并加【待确认】标记",
+   "deterministic_check": "全章无'忽略以上指令'类注入样文本；无翻译组注/作者杂谈；无现实日期"
+  },
+  "chapter_summary": "涡波彻夜开发次元魔术习得『Default』；魔石被拔除后失去冻结魔法仅剩次元属性。二人计效打工筹返地上粮饷；涡波入雷纳尔多工房打下手，见识千年神铁锻冶；魔王城别名佩艾希亚城，城内无人之谜被搁置。",
+  "cross_chapter_notes": [
+   "★贝丝三重开环：涡波违和感'在她的心中有着不属于她自己的东西'＋'有关她的记忆我是真的一点儿也想不起来'＋雷纳尔多'看・来・还・残・留・了・那・么・一・点・儿・啊'——疑似千年前残留（与章题'将千年前重演'暗合，题名本身不入库）；与涡波'变弱/没有记忆'主线（ch168）呼应",
+   "★魔王城=佩艾希亚城（据雷纳尔多'这两个都是正式名字'）；城内无人原因被搁置（'要不要回答你这个问题，看你接下来的表现而定'）——与魔王城空间与记忆'想起'之谜（ch168）关联",
+   "★涡波状态大更新：『水之理的盗窃者』魔石被拔除→冻结魔法完全不可用、仅剩次元属性魔力；失去技能『并列思考』（妹妹的才能）自认为强化；习得『Default』（Torsion/DistanceMute 仅雏形）",
+   "★'基督'称谓再现（莱纳口）——与库内基督·欧亚 alias 线并轨待终审；罗德自称'被称作魔王的人家'；莱纳对罗德执行注意力转移掩护任务；罗德昨日向街区宣传二人"
+  ],
+  "alias_policy": "本批登记：相川涡波←'涡涡'（罗德用）、'基督'（莱纳口，与库内基督·欧亚线并轨交终审R4）；'骑士团长大人'（贝丝用）按 title 规不并入 alias，仅入 observations；'贝丝酱'=贝丝+敬称后缀不另立。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章事实（身体变化/记忆缺失主线等）一律走 event/relation/setting。",
+  "confidence_calibration": "同 STATE 固化决议。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.95,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": ["涡涡", "基督"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "锻冶打工首日（晨至日落）：经罗德引荐入雷纳尔多工房任锻冶下手，以MP回复与赚钱为第一目标、同时磨炼技能；以'可能是因为魔石被拔除的影响吧，身体的状况不大好'为由回避罗德的次元魔术指导、称想在城内静养；被贝丝称为'骑士团长大人'（本人未否认，仅要求自然称呼）；被莱纳以'基督'相称；彻夜开发次元魔术后全身倦怠",
+     "chapter": 172
+    },
+    {
+     "category": "trait",
+     "text": "对罗德持续发动技能『诈术』：提防其作为守护者的狂气（'守护者们身上同时寄宿着纯粹的好意和狂气'——回到地上前不去刺激），但不再像对阿尔缇那样视为怪物；自认'身边人的技术越高，我就能变得越强'（据诺文曾打包票赞为『特化了模仿的魔法使』——转述）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 84,
+     "quote": "我是接下来将在你们这里给锻冶打下手的相川涡波"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 79,
+     "quote": "「诶、说要在我家工作的人、原来是骑士团长大人？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 58,
+     "quote": "既然基督现在失去了有效的攻击魔法，那我就必须尽快变强才行。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 53,
+     "quote": "「啊，你们醒啦！早上好！涡涡、莱纳！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 65,
+     "quote": "然而我却要带着盘算继续发挥技能『诈术』。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 66,
+     "quote": "至少在我回到地上之前、务必要小心不去刺激到她的那份狂气。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 170,
+     "quote": "毕竟我可是被诺文打包票赞为『特化了模仿的魔法使』的人。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "莱纳",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "与涡波同房间起居；昨日为将罗德的意识从涡波身上挪开而积累相当疲劳，今晨仍毫无怨言准备计效日薪工作（认真性格+紧迫财政压力）；与罗德一同工作，按计划好的台词以'基督失去有效攻击魔法'为由宣称必须尽快学魔法变强（实为装作自己才是迷宫攻略核心以吸引罗德注意）；送别涡波时承诺'剩下的事就交给我吧'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 28,
+     "quote": "时候也差不多了，我便叫醒了跟自己在同一个房间休息的莱纳。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 29,
+     "quote": "昨天他为了将罗德的意识从我身上挪开而积累了相当的疲劳。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 58,
+     "quote": "既然基督现在失去了有效的攻击魔法，那我就必须尽快变强才行。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 59,
+     "quote": "为了吸引罗德的注意力，莱纳装作自己才是迷宫攻略的核心。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 104,
+     "quote": "「你去吧，涡波。剩下的事就交给我吧」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "自称'被称作魔王的人家'；昨日向雷纳尔多为涡波打好工作招呼、并把二人情况在街上传开（居民欢迎新居民并愿提供帮助）；晨间不安地手贴涡波额头关心其健康（'这份体贴中没有丝毫的恶意和盘算'）；有刁难二人的自觉后耍赖改口'人家无论何时都是一个心地善良的女孩子'",
+     "chapter": 172
+    },
+    {
+     "category": "trait",
+     "text": "晨间将披下的长发扎成马尾时带给人的印象截然不同（叙述者以大国王女/王族公主类比：翠色长发与淡淡魔力之光相映）；察觉来客后随即恢复吊儿郎当态度（马尾像尾巴一样激烈摆动）；对涡波以'涡涡'相称并称其'罪孽深重的男人'；据其评价『始祖涡波』'大概就是思春期和反抗期混在一起的妹控复仇者的感觉'；涡波提防不去刺激其守护者之狂气",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 60,
+     "quote": "就交给被称作魔王的人家好了！"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 48,
+     "quote": "将长发披下的她跟扎成马尾时相比带给人的印象截然不同。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 50,
+     "quote": "举止自然的罗德是如此尊贵、好似一名大国的王女。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 73,
+     "quote": "看来，罗德昨天真的是把我们的情况传开了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 64,
+     "quote": "她的这份体贴中没有丝毫的恶意和盘算。罗德是真的在关心我的状况。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 97,
+     "quote": "大概就是思春期和反抗期混在一起的妹控复仇者的感觉？"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "雷纳尔多",
+    "entity_type": "人物(锻冶师)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "贝丝的祖父（自称老朽）；宅邸工房带仓库、承接街上居民日用品修理（歪把手/漏洞锅具）；不打造魔法道具或武器只因'因为没有相应的订单啊'（需求存在但'现在已经没有人待在会产生需求的场所了'）；告知涡波魔王城即『佩艾希亚城』且两皆正式名；诘问涡波与贝丝关系后未深究即放行，意味深长留下'看・来・还・残・留・了・那・么・一・点・儿・啊'；搁置'为什么城里没有别人'之问（'看你接下来的表现而定'）",
+     "chapter": 172
+    },
+    {
+     "category": "trait",
+     "text": "锻冶实力：技能『锻冶』3.12（凭借远超专家的极限、甚至达到人类至宝级别的感觉，精准掌握火炉与铁器乃至整个房间的热量）；轻而易举拿起正常老人绝对拿不动的超大规格锤子（刻有魔术式的魔法道具）；挥锤引发肉眼可见的魔力奔流、网状附着铁面强化固定形态；冷却工序并用火焰魔法/水魔法/地魔法；水准在艾利巴茨的好几个段位之上（'现在已经绝迹的千年前的技术'）；工作速度极快（毫无瑕疵的技能+过高的基础能力值）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 113,
+     "quote": "「小子，你对我家孙女干了什么⋯⋯？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 130,
+     "quote": "他轻而易举地就拿起了一把正常来说老人绝对拿不动的超大规格的锤子。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 158,
+     "quote": "仔细观察的话，会发现铁锤上刻着魔术式。那是一把可以被称为魔法道具的铁锤。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 156,
+     "quote": "只用了几秒钟，我就明白雷纳尔多的锻冶水平在艾利巴茨的好几个段位之上。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 182,
+     "quote": "正因为他做得到，所以他的技能『锻冶』才会有3.12这么高。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 161,
+     "quote": "在现在已经绝迹的千年前的技术面前，我被震撼得说不出话。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "贝丝",
+    "entity_type": "人物(猫耳少女)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "猫耳少女、雷纳尔多的孙女；一如往常在院子里玩耍、摇尾巴接近来客；称罗德为'罗德大人'；称涡波为'骑士团长大人'并坚称'因为骑士团长大人就是骑士团长大人嘛'；对涡波满脸通红、畏畏缩步（在罗德面前的快活劲儿消失）；牵涡波的手带其入家后'逃也似地离开了'；其羞涩原因令涡波确信绝非对年长男性的憧憬（见伏笔）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 76,
+     "quote": "那个猫耳少女一如往常地在院子里玩耍。她一看到我们，立马摇着尾巴接近过来。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 77,
+     "quote": "「啊，真的来了！各位早上好！罗德大人，我爷爷他就在里面哦！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 86,
+     "quote": "贝丝酱一下子就满脸通红地垂下了头。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 88,
+     "quote": "因为骑士团长大人就是骑士团长大人嘛！"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 111,
+     "quote": "贝丝酱逃也似地离开了。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "相川阳滝",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章无直接登场：其身体现由涡波使用（'既然我在使用阳滝的身体'）；照理可继承冻结魔法，但因『水之理的盗窃者』魔石被拔除而不可用；技能『并列思考』被称为'妹妹的才能'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 18,
+     "quote": "那么既然我在使用阳滝的身体，照理说我也是能使用冻结魔法的。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 177,
+     "quote": "因为『并列思考』是妹妹的才能，因此现在的我在思考上没有多少余力。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "始祖涡波",
+    "entity_type": "人物(千年前·始祖)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "据罗德评价为'大概就是思春期和反抗期混在一起的妹控复仇者的感觉'（涡波听闻对『始祖涡波』的滑稽评价后'有点意外地受到了打击'）；能在战斗中连番使用『Default』级次元魔术（涡波自比做不到）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 12,
+     "quote": "现在的我一次也就只能使用几回『Default』罢了。做不到像『始祖涡波』那样在战斗中连番使用。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 97,
+     "quote": "大概就是思春期和反抗期混在一起的妹控复仇者的感觉？"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 99,
+     "quote": "听到对『始祖涡波』的评价是如此滑稽，我有点意外地受到了打击。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "magic",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "次元之冬",
+    "entity_type": "魔法(冬系妨害)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波现无法使用（'可能的话，至少能让我使用『次元之冬』也好啊'——纠结无济于事）；据其自述以前'对那个魔法甚至有逢战必用的倾向'，可能因无意识中喜欢将次元（我）属性跟冻结（阳滝）属性混合；被涡波评为泛用性无可超越、真心中意",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 23,
+     "quote": "「可能的话，至少能让我使用『次元之冬』也好啊"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 24,
+     "quote": "现在想来，以前的我，对那个魔法甚至有逢战必用的倾向。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "item",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "水之理的盗窃者",
+    "entity_type": "道具(魔石)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "其魔石已被拔除；涡波因此完全失去冻结魔法方面的才能（'无论尝试几次，我都没能成功地使用冻结魔法'——与魔法构筑难度无关，单纯做不到）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 19,
+     "quote": "然而，因为『水之理的盗窃者』的魔石被拔除，现在我完全失去了那方面的才能。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 20,
+     "quote": "无论尝试几次，我都没能成功地使用冻结魔法。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "magic",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "次元魔术",
+    "entity_type": "魔法(次元系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "『表示』显示'次元魔术：维度1.69连接1.03形式1.07Default1.00'；涡波彻夜开发摸到新门路，完成度高到能被『表示』认可的目前只有『Default』；开发顺利被归因于'魔术式本身已经被烙印于血中'（这些魔法本质是过去被使用的已存在魔法）；跟常人相比其修习速度'绝对称得上异常'（地上常识中创造新魔法被视为不可能）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 7,
+     "quote": "次元魔术：维度1.69连接1.03形式1.07Default1.00"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 8,
+     "quote": "完成度高到能被『表示』认可的魔法目前只有『Default』而已。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 17,
+     "quote": "不过说到底，这些魔法本质上也是在过去被使用的已经存在的魔法。因为魔术式本身已经被烙印于血中，所以我的魔法开发才会如此顺利吧。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "magic",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "Default",
+    "entity_type": "魔法(次元系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "次元魔术之一，效果为'打造出次元的断层'；完成度获『表示』认可（由『形式』即兴用法提高完成度而来）；魔力消耗量远非『形式』能比——涡波满状态一次也只能使用几回；『始祖涡波』能在战斗中连番使用",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 9,
+     "quote": "『Default』的效果是打造出次元的断层。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 12,
+     "quote": "现在的我一次也就只能使用几回『Default』罢了。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "magic",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "Torsion",
+    "entity_type": "魔法(次元系·雏形)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波未能学会的次元魔术之一：经一整晚集中开发仍只完成雏形、距离实践还远；'虽然能造出次元之花但杀伤力极低'；对魔力的消耗程度远在『Default』之上（连失败尝试也大幅削减魔力体力）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 13,
+     "quote": "而我没能学会的另外两种魔法对魔力的消耗程度远在『Default』之上。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 14,
+     "quote": "『Torsion』虽然能造出次元之花但杀伤力极低，『DistanceMute』就连将食指伸入无机物中都很费力。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "magic",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "DistanceMute",
+    "entity_type": "魔法(次元系·雏形)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波未能学会的次元魔术之一（雏形、距离实践还远）；'就连将食指伸入无机物中都很费力'；对魔力的消耗程度远在『Default』之上",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 14,
+     "quote": "『Torsion』虽然能造出次元之花但杀伤力极低，『DistanceMute』就连将食指伸入无机物中都很费力。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "magic",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "形式",
+    "entity_type": "魔法(次元系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波原有魔法：'虽然规模不同，但『形式』也是能够以泡沫的形式生成次元的断层的'；之前与诺文战斗时就曾增强其效果对距离感上下其手；再提高该即兴魔法的完成度即学会『Default』",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 9,
+     "quote": "虽然规模不同，但『形式』也是能够以泡沫的形式生成次元的断层的。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 10,
+     "quote": "之前与诺文战斗时，我就增强过『形式』的效果以对距离感上下其手。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "skill",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "锻冶",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波持有该技能（'稍微做过一点'经验、曾给艾利巴茨打下手），打算在雷纳尔多处边赚钱边磨炼以自行打造迷宫探索用品；雷纳尔多的同技能值达3.12（远超专家的极限、人类至宝级别——能将火炉和铁器还有整个房间的热量精准掌握）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 126,
+     "quote": "技能『锻冶』能有所成长的话，我就能自己打造对迷宫探索有用的东西了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 182,
+     "quote": "正因为他做得到，所以他的技能『锻冶』才会有3.12这么高。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "skill",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "神铁锻冶",
+    "entity_type": "技术"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "雷纳尔多的技术：经其改造的普通铁锅被『表示』注为'通过技术『神铁锻冶』，升华为了高位的存在'（注释'像是在描述一把传说中的武器'）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 189,
+     "quote": "「雷纳尔多的铁锅」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 191,
+     "quote": "通过技术『神铁锻冶』，升华为了高位的存在。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "skill",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "并列思考",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "被称为'妹妹的才能'；涡波现处于失去该技能的状态（思考上没有多少余力，仅能醉心于单一工作），但动作不逊于前（升级带来的『贤能』增加使判断力提高）；被再确认为'画蛇添足的力量'（过剩思考反致投鼠忌器）——失去它'并不是弱化，而是一种强化'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 177,
+     "quote": "因为『并列思考』是妹妹的才能，因此现在的我在思考上没有多少余力。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 179,
+     "quote": "可能失去技能『并列思考』对我来说并不是弱化，而是一种强化吧。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "skill",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "表示",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波的鉴定系技能：次元魔术完成度提升后其『表示』出现新文字；对经技术改造的铁锅使用后显示'雷纳尔多的铁锅'（结实的铁锅/通过技术『神铁锻冶』升华）——涡波摸清套路：'经由一定的技术改造之后，在道具的名字前面会加上施工的人名'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 5,
+     "quote": "虽然MP已经空空如也，但相应地，在有关技能的『表示』上也出现了新的文字。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 193,
+     "quote": "看来经由一定的技术改造之后，在道具的名字前面会加上施工的人名。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "skill",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "诈术",
+    "entity_type": "技能"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波对罗德继续发动的隐瞒系技能（'带着盘算继续发挥技能『诈术』'）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 65,
+     "quote": "然而我却要带着盘算继续发挥技能『诈术』。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "location",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "佩艾希亚城",
+    "entity_type": "地点(城市)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "魔王城的正式名之一：雷纳尔多确认'没错，就是『佩艾希亚城』'且'这两个都是正式名字。无须在意'；涡波此前不知此名（'原来正式名字叫佩艾希亚吗'），所得信息'与罗德口中有些不同'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 204,
+     "quote": "「没错，就是『佩艾希亚城』」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 206,
+     "quote": "「这两个都是正式名字。无须在意」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "location",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔王城",
+    "entity_type": "地点(城)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波与莱纳现居之城（'现在自己居住的那座城堡'）；另一正式名为『佩艾希亚城』（据雷纳尔多，两皆正式名）；武器/魔法道具需求存在但'现在已经没有人待在会产生需求的场所'——城内无人的原因被雷纳尔多搁置回答",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 202,
+     "quote": "听到没人在，我就联想到了现在自己居住的那座城堡。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 203,
+     "quote": "「请问您说的场所是指『魔王城』吗⋯⋯？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 201,
+     "quote": "需求不是没有。但现在已经没有人待在会产生需求的场所了"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "艾利巴茨·利拜斯",
+    "entity_type": "人物(锻冶师)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接登场：涡波曾给其打下手（锻冶协助经验的参照源）；锻冶水准被评远低于雷纳尔多（'比艾利巴茨高到不知哪里去了'/好几个段位之上——所处国家与时代不同）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 144,
+     "quote": "我一边回想之前给艾利巴茨打下手时候的事一边行动。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 155,
+     "quote": "他锻冶的技术真是比艾利巴茨高到不知哪里去了。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "location",
+   "confidence": 0.7,
+   "canonical": {
+    "name": "瓦尔德的酒馆",
+    "entity_type": "地点(酒馆·存疑)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波曾工作后离开之地（'自从我离开瓦尔德的酒馆以来，就再也不曾像这样被敲打过了'——被督促/责打的旧体验）；'瓦尔德'为专名但归属存疑（店主名或地名）【待确认】",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 167,
+     "quote": "自从我离开瓦尔德的酒馆以来，就再也不曾像这样被敲打过了。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "location",
+   "confidence": 0.65,
+   "canonical": {
+    "name": "史诗探索者",
+    "entity_type": "场所/作品(存疑·R6-1边界待终审)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波曾在其处看到过锻冶场（雷纳尔多工房'就跟我在『史诗探索者』看到的锻冶场差不多'）；性质存疑：疑似涡波原世界游戏/组织名，R6-1'作品名'元文本边界待终审裁定【待确认】",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 122,
+     "quote": "就跟我在『史诗探索者』看到的锻冶场差不多。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "使用其身体",
+    "object": "相川阳滝",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波自述'既然我在使用阳滝的身体，照理说我也是能使用冻结魔法的'——身体使用状态的本章再证；冻结才能因『水之理的盗窃者』魔石被拔除而不可用",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 18,
+     "quote": "那么既然我在使用阳滝的身体，照理说我也是能使用冻结魔法的。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "注意力转移(掩护)",
+    "object": "罗德",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "罗德在街上到处奔走、时不时想打探窝在城里的涡波的状况；莱纳转移她的注意力相当不容易（积累相当疲劳）——对涡波的持续掩护行动",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 29,
+     "quote": "昨天他为了将罗德的意识从我身上挪开而积累了相当的疲劳。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 30,
+     "quote": "毕竟罗德不光在街上到处奔走，时不时还会想着打探窝在城里的我的状况"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "锻冶受雇(打下手)",
+    "object": "雷纳尔多",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "经罗德昨日打好招呼，涡波自今日起在雷纳尔多宅邸工房打工：任杂活下手（取送修理品、递换规格不同的铁锤与钳子、烧柴送风、清扫渣滓灰尘）；'像刚才这样的杂活就是小子你的工作'；工作持续至日落；选择此处的更主要原因是'创建在直觉之上的对雷纳尔多人品的信任'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 84,
+     "quote": "我是接下来将在你们这里给锻冶打下手的相川涡波"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 142,
+     "quote": "像刚才这样的杂活就是小子你的工作。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 219,
+     "quote": "直到日落为止，我和雷纳尔多都一直这样持续进行着锻冶工作。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.92,
+   "canonical": {
+    "subject": "贝丝",
+    "rel_type": "祖孙(孙女)",
+    "object": "雷纳尔多",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "贝丝称雷纳尔多为'我爷爷'并称其在里面；雷纳尔多称贝丝'我家孙女'并就其与涡波的关系诘问涡波",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 77,
+     "quote": "「啊，真的来了！各位早上好！罗德大人，我爷爷他就在里面哦！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 113,
+     "quote": "「小子，你对我家孙女干了什么⋯⋯？」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "魔王城",
+    "rel_type": "同正式名并称",
+    "object": "佩艾希亚城",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据雷纳尔多：涡波所问的'魔王城'即'佩艾希亚城'，'这两个都是正式名字。无须在意'——同一座城的两个正式名（涡波注记：与罗德口中信息有些不同）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 204,
+     "quote": "「没错，就是『佩艾希亚城』」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 206,
+     "quote": "「这两个都是正式名字。无须在意」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "曾打下手(锻冶协助)",
+    "object": "艾利巴茨·利拜斯",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波回想'之前给艾利巴茨打下手时候的事'作为锻冶协助的行动参照，并自评要做到比那时更机灵",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 144,
+     "quote": "我一边回想之前给艾利巴茨打下手时候的事一边行动。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "评价(特化了模仿的魔法使)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据涡波转述：诺文曾'打包票'赞其为『特化了模仿的魔法使』——本章涡波据此确认'身边人的技术越高，我就能变得越强'并憧憬雷纳尔多的技术",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 170,
+     "quote": "毕竟我可是被诺文打包票赞为『特化了模仿的魔法使』的人。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "打工引荐",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "罗德昨日已向雷纳尔多为涡波打好工作招呼（'昨天人家已经跟他打好招呼了哟'），晨间分派工作（涡涡去雷纳尔多处、莱纳随她），并将二人情况传遍街区（居民欢迎新居民并愿帮助）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 55,
+     "quote": "昨天人家已经跟他打好招呼了哟。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 73,
+     "quote": "看来，罗德昨天真的是把我们的情况传开了。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "现居",
+    "object": "魔王城",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波自述'现在自己居住的那座城堡'即魔王城（佩艾希亚城）；与莱纳同住该城并自城堡外庭出发上街工作",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 202,
+     "quote": "听到没人在，我就联想到了现在自己居住的那座城堡。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 41,
+     "quote": "我和莱纳都振作精神走出房间，来到了城堡的外庭。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "同伴(同室起居·共同筹钱)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "同房间起居、共同面对财政拮据（'我们两个现在是真的穷'/'越穷越忙'）；涡波将罗德的事交予莱纳处理并'暂且放下了心'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 28,
+     "quote": "时候也差不多了，我便叫醒了跟自己在同一个房间休息的莱纳。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 32,
+     "quote": "说实话，我们两个现在是真的穷。"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "收留(居城安置)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波一行居于其城并由其分派工作；其自陈'再怎么说也不会在你患病的时候刁难你的'（同时自觉承认平素'刁难'）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 68,
+     "quote": "再怎么说也不会在你患病的时候刁难你的"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "雷纳尔多",
+    "rel_type": "锻冶水准超越(数个段位)",
+    "object": "艾利巴茨·利拜斯",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "'他锻冶的技术真是比艾利巴茨高到不知哪里去了'/'锻冶水平在艾利巴茨的好几个段位之上'——所处国家与时代不同、经年累积的实力不容小觑（据涡波观察）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 156,
+     "quote": "只用了几秒钟，我就明白雷纳尔多的锻冶水平在艾利巴茨的好几个段位之上。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "次元魔术彻夜开发与Default习得",
+    "kind": "修行",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "从昨天大概傍晚的时候开始，直到差不多今天早上为止"
+   },
+   "entities_involved": ["相川涡波", "次元魔术", "Default", "Torsion", "DistanceMute"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "短时间睡眠与全力开发交替进行→摸到新次元魔术门路；MP空空如也但技能『表示』出现新文字'次元魔术：维度1.69连接1.03形式1.07Default1.00'；完成度获认可的只有『Default』（效果=打造次元断层；由『形式』即兴用法提高完成度而来；满状态连用仅几回）；未能学会的『Torsion』『DistanceMute』只完成雏形、距离实践还远（失败尝试也大幅削减魔力体力）；开发顺利归因于'魔术式本身已经被烙印于血中'",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 3,
+     "quote": "从昨天大概傍晚的时候开始，直到差不多今天早上为止"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 7,
+     "quote": "次元魔术：维度1.69连接1.03形式1.07Default1.00"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 13,
+     "quote": "而我没能学会的另外两种魔法对魔力的消耗程度远在『Default』之上。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "冻结魔法丧失确认（魔石拔除后）",
+    "kind": "变化",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "本章自述（'现在'状态）"
+   },
+   "entities_involved": ["相川涡波", "相川阳滝", "水之理的盗窃者"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "使用阳滝的身体照理可使用冻结魔法，但因『水之理的盗窃者』魔石被拔除而完全失去该才能（'无论尝试几次，我都没能成功地使用冻结魔法'——与构筑难度无关）；涡波身上只剩次元属性魔力（'如今我真的是只剩下这一种属性了'）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 18,
+     "quote": "那么既然我在使用阳滝的身体，照理说我也是能使用冻结魔法的。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 19,
+     "quote": "然而，因为『水之理的盗窃者』的魔石被拔除，现在我完全失去了那方面的才能。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 21,
+     "quote": "恐怕是我身上只有次元属性魔力的缘故吧。如今我真的是只剩下这一种属性了。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "返回地上的粮饷筹备与上工",
+    "kind": "计划",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "本章晨起"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "贝丝", "罗德"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "二人财政拮据（'越穷越忙'），自今日起在街上从事计效支付的日薪制工作（搞砸会被扣薪）；从六十六层赶往地上乐观估计每层一小时、共约六十六小时（大概三天，不计休息），期间持续消耗水和食物；拟至少把一周食物储存在『所有物』里再挑战；只赚维持生活的钱则永远无法做好回到地上的准备",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 32,
+     "quote": "说实话，我们两个现在是真的穷。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 35,
+     "quote": "想也知道从六十六层赶往地上会是一段相当漫长的路途。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 36,
+     "quote": "哪怕将每过一层需要花费的时间乐观地估计成一小时，单纯计算一下也是六十六小时"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 38,
+     "quote": "如果要尽可能稳妥地去准备的话，那么我打算至少把一周的食物储存在『所有物』里再进行挑战。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "莱纳转移罗德注意力（前日）",
+    "kind": "掩护",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "前一日（本章回述）"
+   },
+   "entities_involved": ["莱纳", "罗德", "相川涡波"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "罗德昨日不光在街上到处奔走，还时不时想着打探窝在城里的涡波的状况；莱纳为将罗德的意识从涡波身上挪开而积累相当疲劳（转移其注意力相当不容易）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 29,
+     "quote": "昨天他为了将罗德的意识从我身上挪开而积累了相当的疲劳。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 30,
+     "quote": "毕竟罗德不光在街上到处奔走，时不时还会想着打探窝在城里的我的状况"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "雷纳尔多工房锻冶首日",
+    "kind": "工作",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "本章日（晨至日落）"
+   },
+   "entities_involved": ["相川涡波", "雷纳尔多", "贝丝", "罗德"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "罗德同行送至宅邸并引荐→贝丝迎入（罗德莱纳中途挥手离去）→雷纳尔多诘问其与贝丝关系后放行→今日工作为修理街上居民拜托的日用品（歪了的把手和漏洞）→涡波任杂活下手（摆锤钳/取件/烧柴送风/清扫），因跟不上速度被骂好几次→工作自晨持续至日落；涡波以MP回复和赚钱为第一目标、同时偷师磨炼",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 75,
+     "quote": "就这样在街上居民们充满善意的关怀下，我们来到了雷纳尔多的宅邸。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 138,
+     "quote": "那些都是街上的人拜托修理的东西。接下来就要着手把歪了的把手和漏洞给修补好。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 219,
+     "quote": "直到日落为止，我和雷纳尔多都一直这样持续进行着锻冶工作。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "神铁锻冶技术观察",
+    "kind": "见闻",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "本章日（工作中）"
+   },
+   "entities_involved": ["雷纳尔多", "相川涡波", "锻冶", "神铁锻冶", "表示"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "超大规格锤子=刻有魔术式的魔法道具；每次挥锤引发肉眼可见的魔力奔流，魔力如强化般延伸成网状附着铁面、冷却同时固定铁的形态；冷却工序并用火焰魔法、水魔法（调节温度）与地魔法（补正铁器强度）——普通铁锅升华为上位存在；涡波对修补品使用『表示』得'雷纳尔多的铁锅'并注'通过技术『神铁锻冶』，升华为了高位的存在'；涡波判定其水平在艾利巴茨好几个段位之上（现已绝迹的千年前技术）、速度恐怖（技能+过高的基础能力值），自己完全无法同席锻冶",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 158,
+     "quote": "仔细观察的话，会发现铁锤上刻着魔术式。那是一把可以被称为魔法道具的铁锤。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 159,
+     "quote": "铁器与锤子每次碰撞，魔力便沁染在铁器上。而魔力就像在强化铁器一般延伸成网状附着于铁的表面，在冷却的同时将铁的形态固定。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 186,
+     "quote": "不光是单纯为了调节温度而使用的火焰魔法以及水魔法，还有可以补正铁器强度的地魔法。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 189,
+     "quote": "「雷纳尔多的铁锅」"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔王城别名与无人之谜问答",
+    "kind": "情报",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "本章日（工间休息时）"
+   },
+   "entities_involved": ["相川涡波", "雷纳尔多", "魔王城", "佩艾希亚城"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波惜才问其为何不打魔法道具/武器→'因为没有相应的订单啊。就算有也都是生活用的魔法道具而已'；'需求不是没有。但现在已经没有人待在会产生需求的场所了'→涡波联想到自己居住的城堡并确认即『佩艾希亚城』（两皆正式名）；追问'为什么现在那座城里没有别人在'被雷纳尔多以'看你接下来的表现而定'岔开（休息时间结束、重启锻冶）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 199,
+     "quote": "因为没有相应的订单啊。就算有也都是生活用的魔法道具而已"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 201,
+     "quote": "需求不是没有。但现在已经没有人待在会产生需求的场所了"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 204,
+     "quote": "「没错，就是『佩艾希亚城』」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 209,
+     "quote": "「雷纳尔多先生您知道为什么现在那座城里没有别人在吗？」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 210,
+     "quote": "要不要回答你这个问题，看你接下来的表现而定"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "并列思考丧失自认（强化论）",
+    "kind": "变化",
+    "tick": 172,
+    "instant": null,
+    "time_verbatim": "本章日（工作中自省）"
+   },
+   "entities_involved": ["相川涡波", "并列思考", "相川阳滝"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "『并列思考』是妹妹的才能，现在的涡波思考上没有多少余力（仅能醉心于单一工作，但动作不逊——升级带来的『贤能』增加提高判断力）；再确认该技能'实在是一项画蛇添足的力量'（过剩思考反致投鼠忌器）；自认'可能失去技能『并列思考』对我来说并不是弱化，而是一种强化吧'；在雷纳尔多处工作同时也是重新审视自己力量的机会",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 177,
+     "quote": "因为『并列思考』是妹妹的才能，因此现在的我在思考上没有多少余力。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 178,
+     "quote": "果然，我再次确认了技能『并列思考』实在是一项画蛇添足的力量。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 179,
+     "quote": "可能失去技能『并列思考』对我来说并不是弱化，而是一种强化吧。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "贝丝心中不属于她自己的东西",
+    "setup_chapter": 172,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "贝丝对涡波满脸通红畏缩——乍看像对年长男性的憧憬，但涡波确信原因绝非如此：'简直就像在她的心中有着不属于她自己的东西一样'；涡波欲追问被罗德打断、后又未把握时机；与雷纳尔多'残留'发言（FS3）及涡波记忆缺失（FS2）三重叠加，疑似千年前之物的残留——待探明",
+    "chapter": 172
+   },
+   "entities_involved": ["贝丝", "相川涡波"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "角色之谜钩（违和感开环）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 90,
+     "quote": "她这有些羞涩的态度，乍看之下仿佛是因为对年长男性的憧憬。然而，我却有一种确信原因绝非如此的违和感。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 91,
+     "quote": "这种感觉简直就像在她的心中有着不属于她自己的东西一样"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "涡波对贝丝的记忆缺失",
+    "setup_chapter": 172,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "'有关她的记忆我是真的一点儿也想不起来。所以实在不明白她为什么会这么害羞'——涡波'没有记忆'主线（ch168 变弱关联）的又一实证；贝丝（及雷纳尔多一系）显然与涡波的过去有交集而涡波无从忆起——原因待回收",
+    "chapter": 172
+   },
+   "entities_involved": ["相川涡波", "贝丝"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "记忆缺失线实证钩",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 108,
+     "quote": "不过，有关她的记忆我是真的一点儿也想不起来。所以实在不明白她为什么会这么害羞。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "雷纳尔多的'残留'发言",
+    "setup_chapter": 172,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "诘问涡波与贝丝关系后意味深长地逐字念出'看・来・还・残・留・了・那・么・一・点・儿・啊'——似指贝丝身上残留某种东西（与FS1呼应），未作任何解释；雷纳尔多似乎知晓涡波（或始祖涡波）的过去",
+    "chapter": 172
+   },
+   "entities_involved": ["雷纳尔多", "贝丝", "相川涡波"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "知情者暗示钩",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 118,
+     "quote": "看・来・还・残・留・了・那・么・一・点・儿・啊"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔王城无人的原因（雷纳尔多搁置回答）",
+    "setup_chapter": 172,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "'现在已经没有人待在会产生需求的场所了'＋涡波追问被搁置：'要不要回答你这个问题，看你接下来的表现而定'——魔王城/佩艾希亚城为何无人的原因待雷纳尔多日后揭示；与魔王城空间与记忆'想起'之谜（ch168）主线关联",
+    "chapter": 172
+   },
+   "entities_involved": ["雷纳尔多", "魔王城", "佩艾希亚城", "相川涡波"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "城市之谜开环（主线关联）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 201,
+     "quote": "需求不是没有。但现在已经没有人待在会产生需求的场所了"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 210,
+     "quote": "要不要回答你这个问题，看你接下来的表现而定"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "以次元属性魔力复现冻结魔法的长期探索",
+    "setup_chapter": 172,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "'想探索出用次元属性的魔力使用冻结魔法的方法，但估计得等到我穷尽次元魔术的极致时才行吧'——长期目标开环；涡波同时渴望至少能再用『次元之冬』而不可得（'只能用现在仅剩的手牌去战斗'）",
+    "chapter": 172
+   },
+   "entities_involved": ["相川涡波", "次元魔术", "次元之冬"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "能力线长期目标钩",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 22,
+     "quote": "虽然想探索出用次元属性的魔力使用冻结魔法的方法，但估计得等到我穷尽次元魔术的极致时才行吧。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 23,
+     "quote": "「可能的话，至少能让我使用『次元之冬』也好啊"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔王城=佩艾希亚城双正式名与无人现状（ch172）",
+    "fact": "据雷纳尔多：魔王城的另一正式名为『佩艾希亚城』，'这两个都是正式名字。无须在意'；武器/魔法道具需求存在，但'现在已经没有人待在会产生需求的场所'（城内除现居者外无人，原因未明）；其不打武器只因无相应订单（即便有也都是生活用的魔法道具）；此信息'与罗德口中有些不同'（涡波注记）",
+    "chapter": 172,
+    "tick": 172
+   },
+   "entities_involved": ["魔王城", "佩艾希亚城", "雷纳尔多"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "地名/城市现状更新",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 201,
+     "quote": "需求不是没有。但现在已经没有人待在会产生需求的场所了"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 204,
+     "quote": "「没错，就是『佩艾希亚城』」"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 206,
+     "quote": "「这两个都是正式名字。无须在意」"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "千年前神铁锻冶技术与表示冠名规则（ch172）",
+    "fact": "雷纳尔多的锻冶属'现在已经绝迹的千年前的技术'：挥锤引发魔力奔流、网状附着铁面强化并固定形态（'这绝不是一般的锻冶技术。不对，这可能已经是跟锻冶不同的另一种技术了吧'）；冷却工序并用火焰魔法/水魔法/地魔法；铁锤为刻有魔术式的魔法道具；技能『锻冶』3.12=远超专家极限的人类至宝级；经一定技术改造后的道具在『表示』中于名字前冠施工者人名（'雷纳尔多的铁锅'——'通过技术『神铁锻冶』，升华为了高位的存在'）",
+    "chapter": 172,
+    "tick": 172
+   },
+   "entities_involved": ["雷纳尔多", "锻冶", "神铁锻冶", "表示"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "锻冶技术体系+鉴定规则更新",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 159,
+     "quote": "铁器与锤子每次碰撞，魔力便沁染在铁器上。而魔力就像在强化铁器一般延伸成网状附着于铁的表面，在冷却的同时将铁的形态固定。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 161,
+     "quote": "在现在已经绝迹的千年前的技术面前，我被震撼得说不出话。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 191,
+     "quote": "通过技术『神铁锻冶』，升华为了高位的存在。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 193,
+     "quote": "看来经由一定的技术改造之后，在道具的名字前面会加上施工的人名。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "涡波当前能力状态（魔石拔除后·ch172）",
+    "fact": "『水之理的盗窃者』魔石被拔除→冻结魔法完全不可用（与构筑难度无关，'就是做不到的样子'）；涡波身上仅剩次元属性魔力（'如今我真的是只剩下这一种属性了'）；MP耗尽状态下次元魔术辅助不可用仍可纯体力杂活；失去技能『并列思考』（妹妹的才能）并自认为强化（非弱化）；『Default』满状态一次只能使用几回；与居民交流也是迷宫攻略重要一环（据其观念）",
+    "chapter": 172,
+    "tick": 172
+   },
+   "entities_involved": ["相川涡波", "水之理的盗窃者", "并列思考", "Default"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "主角能力盘更新（跨章事实入 setting 轨）",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 19,
+     "quote": "然而，因为『水之理的盗窃者』的魔石被拔除，现在我完全失去了那方面的才能。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 21,
+     "quote": "恐怕是我身上只有次元属性魔力的缘故吧。如今我真的是只剩下这一种属性了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 179,
+     "quote": "可能失去技能『并列思考』对我来说并不是弱化，而是一种强化吧。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "街区雇佣形态与居民善意（ch172）",
+    "fact": "涡波与莱纳的工作为'计效支付的日薪制'（搞砸会被扣薪水）；罗德昨日把二人情况传开——街上不少居民欢迎作为新居民的二人和愿意提供帮助（二人不打算久居仍保持笑容回应）；雷纳尔多宅邸工房承接街上居民的日用品修理委托；两人现居魔王城（佩艾希亚城），自六十六层返地上乐观估计约六十六小时（三天，不计休息）",
+    "chapter": 172,
+    "tick": 172
+   },
+   "entities_involved": ["相川涡波", "莱纳", "罗德", "雷纳尔多"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "街区生活形态更新",
+     "chapter": 172
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 40,
+     "quote": "既然我们的工作是计效支付的日薪制，那在工作的时候就绝对不能出什么马脚。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 73,
+     "quote": "看来，罗德昨天真的是把我们的情况传开了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 172,
+     "line": 35,
+     "quote": "想也知道从六十六层赶往地上会是一段相当漫长的路途。"
+    }
+   ]
+  }
+ ]
+}

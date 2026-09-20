@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "贝丝",
+   "雷纳尔多・沃尔斯"
+  ],
+  "instant": null,
+  "kind": "交涉",
+  "name": "雷纳尔多工房访问与委托失败",
+  "tick": 171,
+  "time_verbatim": "三策建议后当日（街上步行数分钟抵达别墅）"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 85,
+   "quote": "「──啊啊，你说风龙是吗。那估计就是说『艾尔芬里斯』了吧。虽然谈不上绝对，但是能有效对付那家伙的魔法道具确实是有的」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 97,
+   "quote": "「虽然有点对不住，不过这钱用不了。这不是能在『这里』使用的金币。原因仅此而已」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 110,
+   "quote": "「⋯⋯不行。全都是破烂。就凭这些是不够代付费用的哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 121,
+   "quote": "「至少也得准备出中位的魔石吧、不然你这些东西在现在的这个国家里，都是用不上的玩应儿」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 124,
+   "quote": "「在这边这个也只是低级别的东西罢了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 171,
+   "text": "罗德引路至绿意盎然街区的避暑别墅（顶覆苔藓常春藤）；贝丝庭院引见。工房内：涡波『表示』确认雷纳尔多31级锻冶师；雷纳尔多见涡波瞬间动摇。涡波以文言自介（'初次见面，小辈名为相川涡波⋯⋯奈何六十六层那风龙不得⋯⋯可否劳您锻造些许法宝'）；雷纳尔多指认风龙=『艾尔芬里斯』、称'谈不上绝对'但存在对付它的魔法道具，并暗示与涡波的旧识（'这次还挺有礼貌的啊'）。支付失败：地上金币'不是能在这里使用的金币'；魔石鉴定'全都是破烂'、新月线形石'也只是低级别'、需中位魔石；涡波以水晶魔法『Quartz』精制钻石仍'不值钱'。未下单即被逐客（'如果不打算下单的话就走吧'），贝丝目送下返回街上。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2e1cf9d69ee9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

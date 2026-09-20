@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "罗德・缇缇",
+  "rel_type": "收养·养亲（据英雄谭/涂鸦）",
+  "subject": "隐居的老夫妇"
+ },
+ "evidence": [
+  {
+   "chapter": 175,
+   "line": 20,
+   "quote": "在大陆北方的边境出生，被双亲舍弃，再被一对隐居的老夫妇收养便是她物语的开始。",
+   "vol": 1
+  },
+  {
+   "chapter": 175,
+   "line": 89,
+   "quote": "我立马意识到这上面画的是罗德的家人。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 175,
+   "text": "据英雄谭：边境出生的弃儿罗德被双亲舍弃后由这对隐居老夫妇收养、'精心呵护'下成长；据涂鸦判读：老夫妇即'罗德的家人'（兽人老爷爷和老奶奶+带罗德面影的小女孩）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.87,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-548b78648b5b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0175.txt",
+  "sha": "9f38973ebf01c3319a05b587fb6ed829c54d859893d45c15e32a1343bc9ffc31",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

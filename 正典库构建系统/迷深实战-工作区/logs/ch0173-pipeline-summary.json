@@ -1,0 +1,372 @@
+{
+ "unit": "ch0173",
+ "chapter": 173,
+ "ingestion_index": 143,
+ "title": "191话-提出问题",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 45,
+  "pass": 45,
+  "intercept": 0,
+  "admitted": 36,
+  "quarantined": 9
+ },
+ "tracks": {
+  "consistent-duplicate": 3,
+  "contradiction": 6,
+  "on-create": 27
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-4017f751266e",
+   "type": "entity",
+   "name": "雷纳尔多",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-84b03c6240db"
+   }
+  },
+  {
+   "record_id": "cand-entity-099f99940c66",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-6d52664df209"
+   }
+  },
+  {
+   "record_id": "cand-entity-76b8cccee791",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m108"
+   }
+  },
+  {
+   "record_id": "cand-entity-8e962b084004",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m28"
+   }
+  },
+  {
+   "record_id": "cand-entity-f62b1040e9ec",
+   "type": "entity",
+   "name": "贝丝",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-432a76fdfbc4"
+   }
+  },
+  {
+   "record_id": "cand-entity-fa3a8fee50e8",
+   "type": "entity",
+   "name": "始祖涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-28ea7f2630b1-m9"
+   }
+  },
+  {
+   "record_id": "cand-entity-f38d128f0846",
+   "type": "entity",
+   "name": "诺文",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-bef8488369e9"
+   }
+  },
+  {
+   "record_id": "cand-entity-d858d243496c",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-35ce52e39cb7",
+   "type": "entity",
+   "name": "DistanceMute",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-8702116d3c0d"
+   }
+  },
+  {
+   "record_id": "cand-entity-d1ad4d081ff1",
+   "type": "entity",
+   "name": "维度",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a49f35d766c4",
+   "type": "entity",
+   "name": "所有物",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-eb4e6cd3692f",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-3d7819807b42"
+   }
+  },
+  {
+   "record_id": "cand-relation-27f49f5f1059",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6f7b1f586593",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6ab9473b7620",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5e298330fbdc",
+   "type": "relation",
+   "name": "贝丝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fc764b4d15eb",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-25a8de267be3",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b90b98c1eddc",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-92bc9bd7e591",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b192ce5b2784",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e8c2a1bdfe82",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-52ccef0df6db",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-40d61572cf76",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-39e70c65ff1e",
+   "type": "event",
+   "name": "锻冶考验与仓库密谈·拯救罗德的托付",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-4e22cf5a75d5",
+   "type": "event",
+   "name": "贝丝赠曲奇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f96a12717dc8",
+   "type": "event",
+   "name": "DistanceMute修炼遇瓶颈",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-703a06bbc8d7",
+   "type": "event",
+   "name": "罗德破窗闯入与住宿费谈判",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-1de209d9794d",
+   "type": "event",
+   "name": "三人晚餐·诺文败北真相与魔石之剑出示",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a0966e02a304",
+   "type": "event",
+   "name": "千年前北方战争与支配之王弃军逃走（据雷纳尔多讲述）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-a0b5894c020a",
+   "type": "foreshadow",
+   "name": "罗德真正的留恋之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-24a35fb66ed5",
+   "type": "foreshadow",
+   "name": "涡波的现在/过去天秤（回地上 vs 救罗德）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-51bb676f42f5",
+   "type": "foreshadow",
+   "name": "贝丝曲奇的味觉记忆",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-85de0db9949b",
+   "type": "foreshadow",
+   "name": "罗德的魔法传授宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9186c02623e7",
+   "type": "setting",
+   "name": "佩艾希亚的创造目的与千年崩坏（据雷纳尔多揭示）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-ef8b5f0a904f",
+   "type": "setting",
+   "name": "守护者的消失方式与魔石化",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-820b652e8c21",
+   "type": "entity",
+   "name": "芬里尔・阿雷亚斯",
+   "item_id": "q-62d012dcd507",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-10596c9bd6a2",
+   "type": "entity",
+   "name": "缇达",
+   "item_id": "q-258cc6cb7b12",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-04aa16ce2565",
+   "type": "entity",
+   "name": "格连",
+   "item_id": "q-72af43d7db07",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-ded8c5cdb306",
+   "type": "entity",
+   "name": "想起收束（Drop）",
+   "item_id": "q-1d9198f9d5b5",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-d693408203dd",
+   "type": "entity",
+   "name": "雷纳尔多的孙女",
+   "item_id": "q-80d7fba22ab3",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-31662c65def9",
+   "type": "entity",
+   "name": "缇缇",
+   "item_id": "q-ca5004dff2ff",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-44646b095cdd",
+   "type": "entity",
+   "name": "地之理的盗窃者",
+   "item_id": "q-6bbc95581839",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-992278f61141",
+   "type": "foreshadow",
+   "name": "罗德凝视魔石之剑（自己未来的姿态）",
+   "item_id": "q-b74bba28d5e2",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-7934df502a3d",
+   "type": "foreshadow",
+   "name": "DistanceMute与次元之理的生命代价",
+   "item_id": "q-48a7077c3dad",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 143,
+  "pseudo_date": "2000-05-23",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

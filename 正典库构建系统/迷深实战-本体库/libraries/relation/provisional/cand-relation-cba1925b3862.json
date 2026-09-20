@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "海莉",
+  "rel_type": "魔力与魂的吸收",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 170,
+   "line": 35,
+   "quote": "再加上对海莉的魔力和魂的吸收，他实力的水准和状态也提高了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 170,
+   "text": "叙述：莱纳吸收了海莉的魔力和魂，实力水准与状态因此提高（与真LevelUP叠加）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cba1925b3862",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0170.txt",
+  "sha": "95b89a23efa8d04a524d6148471510e43e5f2967c7cf538fefe193cf4238d640",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

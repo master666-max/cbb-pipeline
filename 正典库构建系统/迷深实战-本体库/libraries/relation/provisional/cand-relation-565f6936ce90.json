@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "和解协力·同伴（经维斯调解）",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 169,
+   "line": 39,
+   "quote": "经过维斯的调解，我们两个现在应该能做到齐心协力。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 211,
+   "quote": "这就和他要成为我的同伴是一个意思。回到地上之后就跟大家介绍下莱纳吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 169,
+   "text": "'经过维斯的调解，我们两个现在应该能做到齐心协力'；莱纳归来即向涡波交代情报并催促同行；涡波视其宣誓为'他要成为我的同伴是一个意思'、打算回地上后向大家介绍他入队"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-565f6936ce90",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0169.txt",
+  "sha": "4d549ef6c1e5ab439f9b4759d2a4e689ca051031d7bf99698e72937427a709ac",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

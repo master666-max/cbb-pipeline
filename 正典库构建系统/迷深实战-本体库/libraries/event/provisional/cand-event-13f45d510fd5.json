@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "商谈",
+  "name": "罗德三策建议",
+  "tick": 171,
+  "time_verbatim": "从迷宫撤退后当日（工房访问前）"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 15,
+   "quote": "「有了有了。既然提升级别这个正攻法被锁死了，那你们能采取的对策也就剩下这么几个了。首先是第一条：锻炼技能和魔法」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 23,
+   "quote": "「多攒点钱，雇人帮你们就好了啦。虽然除了我之外没有能打倒那条龙的人，但能影响战局的人还是不缺的」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 28,
+   "quote": "「然后就是第三条──也是我最推荐的方法：多准备一下能够对付那条龙的装备不就好了嘛」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 32,
+   "quote": "「不光是剑哟？这里可是千年前的世界。像『神铁锻冶』之类的技术也是留存着的。虽然要花不少钱，但能多准备一些针对风龙的装备的话，应该会轻松不少哦」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 171,
+   "text": "前提：'提升级别这个正攻法被锁死了'（此城不可升级）。罗德提三对策：①锻炼技能和魔法（莱纳已选此途——罗德指导下修风魔法）②多攒点钱雇人（'除了我之外没有能打倒那条龙的人，但能影响战局的人还是不缺的'；莱纳补：千年前城市实力不俗者比比皆是）③（罗德最推荐）多准备对付那条龙的装备——千年前世界留存『神铁锻冶』之类技术，多收集针对风龙/为回到地上服务的魔法道具，并自荐介绍'这座城里最好的锻冶师'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-13f45d510fd5",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

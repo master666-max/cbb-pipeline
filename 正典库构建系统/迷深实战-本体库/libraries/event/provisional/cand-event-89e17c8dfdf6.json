@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "翠之护身符",
+   "雷纳尔多",
+   "风龙"
+  ],
+  "instant": null,
+  "kind": "赠与",
+  "name": "翠之护身符赠与",
+  "tick": 176,
+  "time_verbatim": "装备确认后·打造风龙对策道具之初"
+ },
+ "evidence": [
+  {
+   "chapter": 176,
+   "line": 163,
+   "quote": "那是一条闪着翠色光辉的项链。雷纳尔多将它递到我手上。",
+   "vol": 1
+  },
+  {
+   "chapter": 176,
+   "line": 164,
+   "quote": "首先是可以保护身体抵御风属性攻击的魔石呐。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 176,
+   "text": "雷纳尔多自架上取来'一条闪着翠色光辉的项链'递与涡波——'可以保护身体抵御风属性攻击的魔石'，为风龙战防御准备；涡波已有『赤之护身符』故识其效（'那就好'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-89e17c8dfdf6",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0176.txt",
+  "sha": "7671326ae389e1d9cb28f56979eec657ba0013d8e08b6884ef6e7ae59902bf69",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

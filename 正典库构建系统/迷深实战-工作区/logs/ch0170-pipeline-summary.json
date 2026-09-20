@@ -1,0 +1,301 @@
+{
+ "unit": "ch0170",
+ "chapter": 170,
+ "ingestion_index": 140,
+ "title": "188话-Savepoint『迷宫孤岛』",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 35,
+  "pass": 35,
+  "intercept": 0,
+  "admitted": 35,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 6,
+  "contradiction": 3,
+  "on-create": 26
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-a7b4dc4bcb55",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5e5c88a0c3e4-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-528f7640c69f",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m26"
+   }
+  },
+  {
+   "record_id": "cand-entity-e3efbba06da8",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-b5cd54ce55fb"
+   }
+  },
+  {
+   "record_id": "cand-entity-ad47a83655dc",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m105"
+   }
+  },
+  {
+   "record_id": "cand-entity-020ba9e13165",
+   "type": "entity",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-82f940188466-m9"
+   }
+  },
+  {
+   "record_id": "cand-entity-c90eb2a4d610",
+   "type": "entity",
+   "name": "新月琉璃",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-9a1dd180f288-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-0b655cdf7463",
+   "type": "entity",
+   "name": "堕落使徒",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-f7643cee43c9-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-f7883ca23d65",
+   "type": "entity",
+   "name": "WindWing",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-8d57fb7e70f0",
+   "type": "entity",
+   "name": "维度・决战演算",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-934fb6e899d1"
+   }
+  },
+  {
+   "record_id": "cand-entity-a9996400b867",
+   "type": "entity",
+   "name": "『表示』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-76ce27f980e6",
+   "type": "entity",
+   "name": "六十六层",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9f96b4e6599e",
+   "type": "entity",
+   "name": "龙之风",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-42428c0ec9f6",
+   "type": "entity",
+   "name": "『连接』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-6d05804ddbf7"
+   }
+  },
+  {
+   "record_id": "cand-relation-a6b8badc0f40",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-7cb26fa11bba",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-98da63c7bdaa",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-df010f9cf3e0",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e963b1d84f35",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a2f621b0f30c",
+   "type": "relation",
+   "name": "艾尔芬里斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-83ed05bff66c",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-cba1925b3862",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4bace53268df",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f669a0dd8375",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-891c7bd29be1",
+   "type": "event",
+   "name": "六十六层艾尔芬里斯初战（完败脱离）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-351cdc1dd067",
+   "type": "event",
+   "name": "莱纳编入涡波队伍",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-4049113dcd8b",
+   "type": "event",
+   "name": "向莱纳坦白只会次元魔术",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e2d0918fb92f",
+   "type": "event",
+   "name": "六十六层死胡同确认（Savepoint困境）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9684c6434068",
+   "type": "setting",
+   "name": "涡波能力构成剧变（阳滝魔石拔除后）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-77fc9fc1bbf5",
+   "type": "setting",
+   "name": "艾尔芬里斯战力评估（据莱纳+初战实证）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-ae9a9e9b62ed",
+   "type": "setting",
+   "name": "迷宫设计意图与逆攻略死角",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f4ed03a7a089",
+   "type": "setting",
+   "name": "城市边缘无底悬崖与永久『连接』门",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-3dc746767fd5",
+   "type": "foreshadow",
+   "name": "六十六层存档点困境（无法离开亦无法突破）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1df2343f7442",
+   "type": "foreshadow",
+   "name": "六十七层的两只更大规格的龙",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-1efcabd9c3c3",
+   "type": "foreshadow",
+   "name": "魔石拔除影响过小之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-3e73cfde95be",
+   "type": "foreshadow",
+   "name": "罗德对风龙的『怀念』与永久滞留意愿",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 140,
+  "pseudo_date": "2000-05-20",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

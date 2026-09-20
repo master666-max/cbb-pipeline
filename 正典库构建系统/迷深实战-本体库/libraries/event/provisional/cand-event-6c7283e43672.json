@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "世界奉还阵",
+   "帕林库洛·勒伽西",
+   "相川涡波",
+   "维斯·海利普洛佩",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "回想补录",
+  "name": "帕林库洛败北·维斯牺牲(涡波回想补录)",
+  "tick": 169,
+  "time_verbatim": "章内回想（帕林库洛战当时）"
+ },
+ "evidence": [
+  {
+   "chapter": 169,
+   "line": 6,
+   "quote": "得到『暗之理的盗窃者』的力量，发动了千年前的『世界奉还阵』的帕林库洛俨然成为了我最糟糕的敌人。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 7,
+   "quote": "最后维斯牺牲，我与莱纳联手终于得以战胜仇敌。",
+   "vol": 1
+  },
+  {
+   "chapter": 169,
+   "line": 8,
+   "quote": "我的记忆就在这里断片，接着一觉睡醒发现自己置身于一座陌生的城堡。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 169,
+   "text": "据涡波回想：同伴一个个掉队后单挑险些落败→维斯与莱纳'意想不到的援军'出现→维斯牺牲、涡波与莱纳联手取胜；战后被『世界奉还阵』吞没，记忆在此断片"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6c7283e43672",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0169.txt",
+  "sha": "4d549ef6c1e5ab439f9b4759d2a4e689ca051031d7bf99698e72937427a709ac",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

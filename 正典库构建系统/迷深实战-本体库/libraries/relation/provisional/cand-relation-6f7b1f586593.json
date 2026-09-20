@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "锻冶雇佣与考察托付",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 173,
+   "line": 13,
+   "quote": "「老朽是打算增大难度来让你放弃这份工作的，想不到你居然跟得上⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 173,
+   "line": 87,
+   "quote": "正因如此雷纳尔多才会通过锻冶工作考察我的品性吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 173,
+   "text": "以刁难级锻冶工作考察涡波品性，考察过后真挚地和盘托出并低头托付拯救罗德；涡波暧昧应允后他表示'只要你有这份心就足够了'（已察觉涡波偏向回到地上）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6f7b1f586593",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0173.txt",
+  "sha": "07ced8d93f2499549b6d69b468f35e0e0b24ede43c59a69695a3e5a8027dbe6a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

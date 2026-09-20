@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "注意力转移(掩护)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 29,
+   "quote": "昨天他为了将罗德的意识从我身上挪开而积累了相当的疲劳。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 30,
+   "quote": "毕竟罗德不光在街上到处奔走，时不时还会想着打探窝在城里的我的状况",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 172,
+   "text": "罗德在街上到处奔走、时不时想打探窝在城里的涡波的状况；莱纳转移她的注意力相当不容易（积累相当疲劳）——对涡波的持续掩护行动"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6b1b95942871",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

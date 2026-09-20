@@ -1,0 +1,345 @@
+{
+ "unit": "ch0171",
+ "chapter": 171,
+ "ingestion_index": 141,
+ "title": "189话-决定地下生活的方针",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 42,
+  "pass": 42,
+  "intercept": 0,
+  "admitted": 34,
+  "quarantined": 8
+ },
+ "tracks": {
+  "contradiction": 3,
+  "consistent-duplicate": 3,
+  "on-create": 28
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-8ad06884171f",
+   "type": "entity",
+   "name": "雷纳尔多・沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ea8ad50566fb",
+   "type": "entity",
+   "name": "贝丝",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-cfef835a63ba"
+   }
+  },
+  {
+   "record_id": "cand-entity-77d3c5f37e7a",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5e5c88a0c3e4-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-e680f1b0a296",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-3651b7629973"
+   }
+  },
+  {
+   "record_id": "cand-entity-734067f0827b",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-934fc674f42f"
+   }
+  },
+  {
+   "record_id": "cand-entity-ad501077b1cf",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m106"
+   }
+  },
+  {
+   "record_id": "cand-entity-397ff05c29cd",
+   "type": "entity",
+   "name": "『DistanceMute（幻之紫腕）』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-061f13702cae",
+   "type": "entity",
+   "name": "『Torsion（捩菖蒲）』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-61cd85538854",
+   "type": "entity",
+   "name": "『Default（行路渐歧）』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-0ab5c51569a6",
+   "type": "entity",
+   "name": "魔王城",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-eab928942348",
+   "type": "entity",
+   "name": "莱文教",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab1bd91746a8-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-49baf9b4ed6a",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fd269f43836b",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c9795638bf65",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0cb825a78ff0",
+   "type": "relation",
+   "name": "贝丝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b741a4425507",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-08fd010f88e7",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b509a3fe2838",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-982b453aa006",
+   "type": "relation",
+   "name": "海莉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6197c67148cb",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-13f45d510fd5",
+   "type": "event",
+   "name": "罗德三策建议",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2e1cf9d69ee9",
+   "type": "event",
+   "name": "雷纳尔多工房访问与委托失败",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a3fd4e7b7b65",
+   "type": "event",
+   "name": "魔石携带品变现与财政破产",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0d5912501c93",
+   "type": "event",
+   "name": "魔王城旅店住宿契约",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5f508f50172b",
+   "type": "event",
+   "name": "地下生活方针决定（章题事件）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f5e918700d84",
+   "type": "event",
+   "name": "密室商谈·监视任务与魔法开发计划",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-b523200f8dae",
+   "type": "foreshadow",
+   "name": "DistanceMute开发计划与对守护者底牌",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c07fc88979e7",
+   "type": "foreshadow",
+   "name": "雷纳尔多的'这次'既识反应",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-589bd6f29569",
+   "type": "foreshadow",
+   "name": "罗德的扭曲与关键时刻妨碍预测",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-62980ab370e3",
+   "type": "setting",
+   "name": "千年前世界的货币与价值体系",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-d7cea3b37dd3",
+   "type": "setting",
+   "name": "始祖涡波三大魔法",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-0f0948a08e3c",
+   "type": "setting",
+   "name": "魔王城旅店规则与罗德公职",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b08f90b31c9f",
+   "type": "setting",
+   "name": "涡波魔力状态（纯次元属性）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-e20b98d31f94",
+   "type": "setting",
+   "name": "莱文教传承中的始祖地位",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-90ab2f8f16b6",
+   "type": "entity",
+   "name": "水晶魔法『Quartz』",
+   "item_id": "q-4234922a2aa7",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-0faad55e843f",
+   "type": "entity",
+   "name": "『诈术』",
+   "item_id": "q-d1144b5922a3",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-92cade94ef77",
+   "type": "entity",
+   "name": "次元决战演算「先谭」",
+   "item_id": "q-a6e20f23afd1",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-c7e28afde680",
+   "type": "entity",
+   "name": "赤色护身符",
+   "item_id": "q-b5b4f51a782b",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-8157e8c0fdfe",
+   "type": "relation",
+   "name": "缇娅拉",
+   "item_id": "q-9ae4fa98de0f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-9aa75f1fe292",
+   "type": "relation",
+   "name": "莱纳",
+   "item_id": "q-c483595e87a0",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-10c43bf7d936",
+   "type": "relation",
+   "name": "贝丝",
+   "item_id": "q-0f3a2eee308d",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-7cc1a01f709e",
+   "type": "foreshadow",
+   "name": "莱文教千年权力计划",
+   "item_id": "q-a78f0bb65300",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 141,
+  "pseudo_date": "2000-05-21",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

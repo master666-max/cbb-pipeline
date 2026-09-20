@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "道具(魔石)",
+  "name": "水之理的盗窃者"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 19,
+   "quote": "然而，因为『水之理的盗窃者』的魔石被拔除，现在我完全失去了那方面的才能。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 20,
+   "quote": "无论尝试几次，我都没能成功地使用冻结魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 172,
+   "text": "其魔石已被拔除；涡波因此完全失去冻结魔法方面的才能（'无论尝试几次，我都没能成功地使用冻结魔法'——与魔法构筑难度无关，单纯做不到）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-42b8a3da52ba",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

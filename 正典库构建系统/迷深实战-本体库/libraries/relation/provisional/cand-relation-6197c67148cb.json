@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾尔芬里斯",
+  "rel_type": "讨伐目标(DistanceMute一击计划)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 171,
+   "line": 234,
+   "quote": "「在跟帕林库洛战斗时，我见识到了『始祖涡波』的三种魔法。如果我也能使用那些魔法的话，就肯定能战胜『艾尔芬里斯』」",
+   "vol": 1
+  },
+  {
+   "chapter": 171,
+   "line": 255,
+   "quote": "「我想使用的是『无法被防御的即死魔法』──『DistanceMute』。如果学会这招，估计只要一击就能打倒『艾尔芬里斯』」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 171,
+   "text": "涡波已有'解决那条龙的办法'：再现始祖三魔法，选定『DistanceMute』——'如果学会这招，估计只要一击就能打倒艾尔芬里斯'（龙鳞再硬也无效，因该魔法直接抽出『魂』）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6197c67148cb",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0171.txt",
+  "sha": "15079a0a3e7dcdb0de1a9d36fde481281fe74a8ac00735dea86a830ceba424ca",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}
