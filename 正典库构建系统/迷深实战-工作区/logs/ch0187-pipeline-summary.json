@@ -1,0 +1,311 @@
+{
+ "unit": "ch0187",
+ "chapter": 187,
+ "ingestion_index": 157,
+ "title": "205话-归宅",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 36,
+  "pass": 36,
+  "intercept": 0,
+  "admitted": 27,
+  "quarantined": 9
+ },
+ "tracks": {
+  "on-create": 17,
+  "contradiction": 5,
+  "consistent-duplicate": 5
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-11120fe54822",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m122"
+   }
+  },
+  {
+   "record_id": "cand-entity-9a2258b27ff1",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-0054dfd50470"
+   }
+  },
+  {
+   "record_id": "cand-entity-ece5bfc94b36",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5d4e8898223f"
+   }
+  },
+  {
+   "record_id": "cand-entity-21345fc8014c",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m42"
+   }
+  },
+  {
+   "record_id": "cand-entity-ad3b1bfd216b",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-3dfd10c36d5f"
+   }
+  },
+  {
+   "record_id": "cand-entity-bded694aee1b",
+   "type": "entity",
+   "name": "五十七层",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6f2c719d438b-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-14bcf15cf50d",
+   "type": "entity",
+   "name": "五十六层",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-5aa4bff0ad51",
+   "type": "entity",
+   "name": "保管室",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2697b2cd2ef9",
+   "type": "entity",
+   "name": "SehrWind",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-800cfce79589-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-4db91853a19d",
+   "type": "entity",
+   "name": "技能『感应』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-8cfc7c58b666"
+   }
+  },
+  {
+   "record_id": "cand-entity-c49451597f93",
+   "type": "entity",
+   "name": "Default",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-812ec9a2cb4e"
+   }
+  },
+  {
+   "record_id": "cand-entity-0ec63b2cb56d",
+   "type": "entity",
+   "name": "连接",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9ab4b5eb579b",
+   "type": "entity",
+   "name": "一再反转之光（Re・Light）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-8e710c2f6232-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-9b869bea03ba",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e0c2ce7b8086",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f5896eead108",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-86761c707af8",
+   "type": "event",
+   "name": "双守护者五十七层口角激化（魔力对峙）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e159cb31c61a",
+   "type": "event",
+   "name": "『感应』警报与『Default』隔离（守护者接触阻止）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-35dd50cd8aeb",
+   "type": "event",
+   "name": "罗德独自飞返佩艾希亚（离队）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-29d75b57d92a",
+   "type": "event",
+   "name": "诺斯菲头痛发作与留恋膨胀（探索强行继续被劝止）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a6705246228a",
+   "type": "event",
+   "name": "五十六层阶梯折跃点确保（连接×一再反转之光）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0bd63c2aada5",
+   "type": "event",
+   "name": "归宅佩艾希亚·发现罗德于保管室独泣",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-daf88540add4",
+   "type": "event",
+   "name": "保管室门前相互谢罪·平行线对话（罗德拒归地上）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f751287c4533",
+   "type": "event",
+   "name": "诺斯菲求教与涡波自认不知·邀共思（章末分头）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-de161fd33b63",
+   "type": "foreshadow",
+   "name": "『感应』守护者接触前兆警报（五十七层）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-7c2e0acf6bd9",
+   "type": "foreshadow",
+   "name": "诺斯菲留恋之谜推进（无法实现的留恋·佩艾希亚崩壊利害）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-7ca0af24326f",
+   "type": "foreshadow",
+   "name": "罗德坚决否定『成熟大人/王』之谜",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-78c8de71487f",
+   "type": "entity",
+   "name": "雷纳尔多",
+   "item_id": "q-011c736eebcc",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-25828a25b8ae",
+   "type": "entity",
+   "name": "藏书室",
+   "item_id": "q-102bea717059",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-2b77b869083c",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-50b6fcae0c52",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-7ba3109adde5",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-1c8f632e772f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-737a90d88b2a",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-14f295bce270",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-fc1cdf754ed0",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-ff72ca307b9b",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-30bdcc699663",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-9f5855646738",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-e93285a78e9d",
+   "type": "setting",
+   "name": "『连接』×『一再反转之光』折跃点确保法（阶梯带运用）",
+   "item_id": "q-9f412508dc45",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-3e3c867a16fe",
+   "type": "foreshadow",
+   "name": "保管室满是被撕碎的绘画（毁画者之谜续）",
+   "item_id": "q-54487318adc8",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 157,
+  "pseudo_date": "2000-06-06",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

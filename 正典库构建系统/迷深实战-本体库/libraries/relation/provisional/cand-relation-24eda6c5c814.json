@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『支配之王』",
+  "rel_type": "过去身份（据本人自述）",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 191,
+   "line": 98,
+   "quote": "「因为，如果现在和艾德见面的话，那人家又非得摆出完美的王的做派不可！花费了一千年的时间，好不容易才让作为『支配之王』的人家成为了过去！事到如今岂能再恢复原状！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 191,
+   "line": 100,
+   "quote": "「让人家再做回那个王什么的、不要！再去背负那种期待什么的、也不要！因为人家、人家啊啊啊──！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 191,
+   "text": "'花费了一千年的时间，好不容易才让作为『支配之王』的人家成为了过去！事到如今岂能再恢复原状'；若与艾德见面'又非得摆出完美的王的做派不可'——王之身份为其拒斥的过去"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-24eda6c5c814",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0191.txt",
+  "sha": "3d7d9970638c17ac2726a56f553b22de08bb6695509905f075cb6153b5f2cb11",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

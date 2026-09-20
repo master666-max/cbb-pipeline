@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "魔法(技能)",
+  "name": "『感应』"
+ },
+ "evidence": [
+  {
+   "chapter": 190,
+   "line": 25,
+   "quote": "不光是技能『感应』，从以往的经验中锻炼出来的直觉也是这样判断的。",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 26,
+   "quote": "我丝毫不觉得守护者会凭如・此・简・单・的・行・为就消失。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "manifestation",
+   "chapter": 190,
+   "text": "本章与实战直觉并提用于判断诺斯菲之事：守护者不会凭『如・此・简・单・的・行・为』消失"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-e3050c529dc3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0190.txt",
+  "sha": "d5e278d1a835d79796b9219865ddee82f007ea7b480a551527c79ad8f775929b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

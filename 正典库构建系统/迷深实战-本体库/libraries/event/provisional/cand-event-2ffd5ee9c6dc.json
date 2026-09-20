@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "小事件",
+  "name": "莱纳被捆与获释",
+  "tick": 190,
+  "time_verbatim": "同夜（诺斯菲离室前后）"
+ },
+ "evidence": [
+  {
+   "chapter": 190,
+   "line": 160,
+   "quote": "「啊，莱纳他现在被我绑起来丢在走廊那里了，有劳您去回收一下。因为要是我去说的话，总觉得会闹得不愉快，能拜托涡波大人代我向他道歉么？」",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 173,
+   "quote": "但在走廊的角落里倒是躺着被魔法制成的闪着光芒的绳子捆了个结结实实的莱纳。",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 176,
+   "quote": "「──那、那个女人！你没事吧，基督！没被那家伙做什么吧！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 181,
+   "quote": "「⋯⋯我们谈的是关乎她的人生的重要的话。她也是无论如何都不希望被打扰才会这么做的，你就原谅她吧。她也托我向你道歉了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 190,
+   "text": "诺斯菲一早把莱纳用魔法制闪绳（含塞口物）捆缚弃于走廊角落（为使谈话不被打扰），临别托涡波回收并代为致歉（『我诚恳地拜托您』有意强调两次）；涡波解除其全部拘束；莱纳获释即问涡波安否，愤慨欲追讨公道，被涡波以『关乎她的人生的重要的话』劝止"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2ffd5ee9c6dc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0190.txt",
+  "sha": "d5e278d1a835d79796b9219865ddee82f007ea7b480a551527c79ad8f775929b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

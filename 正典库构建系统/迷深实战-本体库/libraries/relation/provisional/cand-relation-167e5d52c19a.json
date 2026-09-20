@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "指挥掩护(回避代行)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 61,
+   "quote": "「诺斯菲，左侧就继续这样拜托你了！莱纳，你的回避行动由我来帮你进行，你不须顾及防御只要专心攻击便是！──次元魔术、『维度』『Default』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 62,
+   "quote": "「我相信你、基督！」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 78,
+   "quote": "「下一个！诺斯菲，有蛇打算从你身后偷袭，小心点！莱纳，接下来你去对付面前那个白色的精灵，三秒后且战且退，把它引到我附近来！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 186,
+   "text": "涡波宣言『莱纳，你的回避行动由我来帮你进行，你不须顾及防御只要专心攻击便是』→莱纳答『我相信你、基督！』；以『维度・曲战演算』令敌剑偏差挥空兑现掩护；再指示其且战且退把HolyElement引至近前（莱纳复命『我给它引过来了哦，基督！』）——指挥与信任的往返"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-167e5d52c19a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

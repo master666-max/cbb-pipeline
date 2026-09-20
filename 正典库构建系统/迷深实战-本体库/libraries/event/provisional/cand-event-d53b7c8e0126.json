@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "entities": [
+   "HolyElement",
+   "IllusionistKnight",
+   "PiercePigeon",
+   "WhiteSnake",
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "战斗诱因(捣乱)",
+  "name": "罗德假手滑挑起光属性怪物乱战",
+  "tick": 186,
+  "time_verbatim": "同日·迷宫回廊（乱战爆发·本章所在阶层未明示）"
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 3,
+   "quote": "『维度』并没有漏过她表情的变化。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 6,
+   "quote": "随着罗德这听起来就觉得假的叫声，一股蕴含着凶恶魔力的风随即诞生。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 7,
+   "quote": "情况很不妙。不但我们目前所处的空间相对辽阔──而且在罗德视野范围之内就徘徊着数只丧失了敌意的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 9,
+   "quote": "被这道疾风所侵扰的怪物种类繁多。既有飞在空中的洁白精灵和鸟类，还有在地上行走的白蛇与人形铠甲（LivingArmor）。所有这些，眼睛的颜色全部转黑，接着狠狠地瞪向这边──下一刻，它们全都动身袭来。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 11,
+   "quote": "「──啊哈，果然！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 186,
+   "text": "『维度』未漏过罗德表情变化、涡波欲招呼时罗德抢先喊『啊、啊呀－、手滑啦──！！』→蕴含凶恶魔力的风诞生、以视野内丧失敌意的怪物为攻击目标→被侵扰的怪物（洁白精灵/鸟类/白蛇/人形铠甲）眼睛颜色全部转黑狠狠瞪向这边、下一刻全数袭来→罗德笑称『──啊哈，果然！』『手滑了手滑了』玩笑化（涡波料不到她以这么幼稚的手段这么早捣乱）→诺斯菲冷静构筑光之枪劝迎击（『既然是手滑那就没办法了』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d53b7c8e0126",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

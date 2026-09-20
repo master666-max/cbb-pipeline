@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『维度』",
+  "rel_type": "使用(索敌·侦察·识人)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 103,
+   "quote": "然后回廊的光亮陷入了以往的薄暗之中的时候到达了五十五层的楼梯。在上楼之前微微的张开了『维度』",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 262,
+   "quote": "马上张开『维度』后，叫出了一个人物的名字。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 192,
+   "text": "本章反复使用：上楼前侦察下层、计算最短捷径、章末识别人影"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-df2729adfec5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

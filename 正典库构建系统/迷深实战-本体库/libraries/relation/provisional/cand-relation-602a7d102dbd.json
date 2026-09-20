@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "Torsion",
+  "rel_type": "劣化模仿(剑身附着)",
+  "subject": "形式・捩菖蒲（Torsion）"
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 84,
+   "quote": "将始祖涡波释放的魔法『Torsion』进行再现──的程度虽然做不到，但只是模仿的话应该没有问题。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 89,
+   "quote": "跟始祖涡波的魔法相比，这个只是完全没有物理性攻击力的劣化版。但既然对手也是没有物理实体的精灵，那这样就足够了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 186,
+   "text": "对始祖涡波『Torsion』的模仿之作：再现程度做不到、模仿没有问题；较原版为完全没有物理性攻击力的劣化版——与库内原版实体（Torsion/捩菖蒲cluster）分开建，派生关系挂接"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-602a7d102dbd",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

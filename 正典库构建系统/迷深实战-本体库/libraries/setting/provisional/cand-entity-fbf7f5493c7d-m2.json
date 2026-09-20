@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "技能(光魔法)",
+  "name": "LightStuff"
+ },
+ "evidence": [
+  {
+   "chapter": 92,
+   "line": 191,
+   "quote": "「涡波大人！——魔法『LightStuff』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 92,
+   "line": 192,
+   "quote": "然而连同窗户在内的所有出口都被拼成格状的光棒锁死了。所有的光中都蕴含着多得扯淡的魔力，让我逃无可逃。",
+   "vol": 1
+  },
+  {
+   "chapter": 189,
+   "line": 221,
+   "quote": "「涡波大人！──魔法『LightStuff』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 189,
+   "line": 222,
+   "quote": "然而连同窗户在内的所有出口都被拼成格状的光棒锁死了。所有的光中都蕴含着多得扯淡的魔力，让我逃无可逃。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 92,
+   "text": "诺斯菲光魔法：光棒拼成格状封锁含窗户在内的全部出口、光中蕴含大量魔力令涡波逃无可逃"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-fbf7f5493c7d",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-fbf7f5493c7d-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-fbf7f5493c7d",
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0092.txt",
+  "sha": "c54b7c47b695bb8c4069c72739c4150dd214ba18f7e34258e60cf1ce9146abc2",
+  "verified_at": "2026-09-19"
+ },
+ "version": 2
+}

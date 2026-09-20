@@ -1,0 +1,344 @@
+{
+ "unit": "ch0186",
+ "chapter": 186,
+ "ingestion_index": 156,
+ "title": "204话-乱战",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 41,
+  "pass": 40,
+  "intercept": 1,
+  "admitted": 30,
+  "quarantined": 11
+ },
+ "tracks": {
+  "on-create": 21,
+  "contradiction": 7,
+  "consistent-duplicate": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-29c0c009322e",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m121"
+   }
+  },
+  {
+   "record_id": "cand-entity-c8251d3be2e2",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-aee3ed6c9325"
+   }
+  },
+  {
+   "record_id": "cand-entity-eb7243d82a06",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-3ddb2a9a8def"
+   }
+  },
+  {
+   "record_id": "cand-entity-b20530b22ba2",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m41"
+   }
+  },
+  {
+   "record_id": "cand-entity-063b1e22a8a4",
+   "type": "entity",
+   "name": "PiercePigeon",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-a97de84a2b6d"
+   }
+  },
+  {
+   "record_id": "cand-entity-3b4fa5845f5d",
+   "type": "entity",
+   "name": "WhiteSnake",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3fd2a308bfea",
+   "type": "entity",
+   "name": "IllusionistKnight",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3ffadf0a86a6",
+   "type": "entity",
+   "name": "HolyElement",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-e7cb34f066c4"
+   }
+  },
+  {
+   "record_id": "cand-entity-e08e23b97d3a",
+   "type": "entity",
+   "name": "维度・曲战演算",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-237563cfdd18",
+   "type": "entity",
+   "name": "形式・捩菖蒲（Torsion）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-7356e8f2ac2f",
+   "type": "entity",
+   "name": "Default",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d0614f778dce"
+   }
+  },
+  {
+   "record_id": "cand-entity-f45a3b32bcd8",
+   "type": "entity",
+   "name": "魔力风刃化",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-95041b28e6a6"
+   }
+  },
+  {
+   "record_id": "cand-entity-a960e95b8e5b",
+   "type": "entity",
+   "name": "新月琉璃",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-239a38367487"
+   }
+  },
+  {
+   "record_id": "cand-relation-4e7a3fd0f6bd",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-167e5d52c19a",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-20c5684fa3ff",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f074a6712a9b",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4d67dbde27ad",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-97ec36debd9e",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-602a7d102dbd",
+   "type": "relation",
+   "name": "形式・捩菖蒲（Torsion）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d96104447d8b",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d53b7c8e0126",
+   "type": "event",
+   "name": "罗德假手滑挑起光属性怪物乱战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0e5202c8985b",
+   "type": "event",
+   "name": "乱战歼灭——涡波后方指挥与新魔法双初用",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b459da0a4b1b",
+   "type": "event",
+   "name": "战后对质——罗德留恋坦白与归还被拒",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-353b37544ca4",
+   "type": "event",
+   "name": "佩艾希亚寿命告知重演·罗德狂暴暴风",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8d34bea19802",
+   "type": "event",
+   "name": "罗德狂暴暴风吹飞三人（章末骤变）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-7bbea0a33e40",
+   "type": "setting",
+   "name": "佩艾希亚的寿命(崩坏倒计时)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-dd43da84fd0c",
+   "type": "setting",
+   "name": "光属性怪物的物理免疫与MP攻击（ch186实战）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-d4d8b0379e2b",
+   "type": "foreshadow",
+   "name": "罗德对速通回地上的不满（留恋线推进）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2b40c495c441",
+   "type": "foreshadow",
+   "name": "罗德狂暴暴风（吹飞三人）之冲突走向",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-90472f03e9d8",
+   "type": "entity",
+   "name": "ScytheWind",
+   "item_id": "q-d67b8a536744",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-51bf26ec1b36",
+   "type": "entity",
+   "name": "ScytheLight",
+   "item_id": "q-0bf7be8992ed",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-53af009dd61b",
+   "type": "entity",
+   "name": "SehrWind",
+   "item_id": "q-798e4db2aa9b",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-1f4e9c2406db",
+   "type": "entity",
+   "name": "DistanceMute",
+   "item_id": "q-e8fa96cfb558",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-2c4c697c54e0",
+   "type": "entity",
+   "name": "『所有物』",
+   "item_id": "q-0ebf1597c919",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-cdf313e40863",
+   "type": "entity",
+   "name": "相川阳滝",
+   "item_id": "q-a8e93473c120",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-9f219205aa3e",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-617993dce33e",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-fd4abf127447",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-bb7c75f28106",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-86ae41531e80",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-74984f3f3367",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-19c345c96127",
+   "type": "foreshadow",
+   "name": "双守护者的违和感（真心确信却违和未消）",
+   "item_id": "q-204d74556cd1",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-b8db438a63af",
+   "type": "foreshadow",
+   "name": "佩艾希亚崩坏倒计时与罗德陪葬危机",
+   "item_id": "q-7a08c4443cc9",
+   "reason": "gate1:G1-CHEKHOV-OVERDUE"
+  }
+ ],
+ "anchor": {
+  "tick": 156,
+  "pseudo_date": "2000-06-05",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

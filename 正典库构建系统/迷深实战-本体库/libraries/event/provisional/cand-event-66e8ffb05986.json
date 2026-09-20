@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "SkyRunner",
+   "相川涡波",
+   "维度・决战演算",
+   "莱纳",
+   "魔力风刃化"
+  ],
+  "instant": null,
+  "kind": "战斗(奇袭·演算支援)",
+  "name": "五十五层SkyRunner奇袭战",
+  "tick": 192,
+  "time_verbatim": "同日·五十五层（入口带回廊）"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 114,
+   "quote": "我们从SkyRunner的死角发动袭击。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 121,
+   "quote": "最初的一击──莱纳的双剑与SkyRunner的钩爪相咬合，双方被弹向后方。接着，是第二次的交锋。看到莱纳和SkyRunner同时突进后我发动了无咏唱的魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 122,
+   "quote": "把那个情报元，真的是很轻微──用『维度・决战演算』更改两者的攻击轨道。恐怕，仅偏离了连一厘米都没有的距离。但是却得到了巨大的收益。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 123,
+   "quote": "「──『风刃剑』」",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 128,
+   "quote": "「──已经是另一个次元的强大了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 192,
+   "text": "从SkyRunner死角发动奇袭→其反应极快回头迎击（前脚化钩爪）；最初一击莱纳双剑与钩爪相咬合、双方弹向后方，第二次交锋同时突进时涡波无咏唱以『维度・决战演算』把两者攻击轨道更改不足一厘米→莱纳全力的魔法剑『风刃剑』直击，SkyRunner未作过多抵抗身体被切断化光消失；战前约定无法回避时就拜托莱纳前卫；战后涡波断言『已经是另一个次元的强大了』——对该带弱化的怪物先制最强一击即可确定胜利"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-66e8ffb05986",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

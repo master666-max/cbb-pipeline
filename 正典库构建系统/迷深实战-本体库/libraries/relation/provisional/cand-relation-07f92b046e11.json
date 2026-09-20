@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "贝丝",
+  "rel_type": "祖孙(祖父·孙女)",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 188,
+   "line": 37,
+   "quote": "只是我家孙女没影儿了",
+   "vol": 1
+  },
+  {
+   "chapter": 188,
+   "line": 184,
+   "quote": "到头来，他说出的也是与自己不同的名字。最先讲出口的还是他自己孙女的名字。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 188,
+   "text": "'我家孙女没影儿了'（寻人起因）；谈自身愿望时最先说出的仍是孙女名字（'把贝丝那孩子带上一起去吧⋯⋯或许能够重头来过'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.95,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-07f92b046e11",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0188.txt",
+  "sha": "9e4c531e2949a2d44239c5f603942a627eb16393a5dd92b1da06155f17374bde",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

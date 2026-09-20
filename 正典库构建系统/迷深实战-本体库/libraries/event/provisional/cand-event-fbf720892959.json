@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "RioshethEagle",
+   "Sylph・堕落使徒",
+   "相川涡波",
+   "莱纳",
+   "赫勒比勒夏因之神圣双剑『片翼』"
+  ],
+  "instant": null,
+  "kind": "战术变更",
+  "name": "对RioshethEagle武器换装与零MP战术",
+  "tick": 192,
+  "time_verbatim": "同日·五十四层行进途中"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 177,
+   "quote": "「──莱纳！对方明显是风魔法相性最差的对手！把『Sylph・堕落使徒』和『片翼』交换！还有和这家话战斗节约着使用风魔法！」",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 182,
+   "quote": "和里约鹰同样，不使用任何的风魔法，嘴和爪子的攻击才是主体。就算从莱纳的即死攻击中脱离出去，不使用风魔法追击，我控制住以后用投掷给予最后一击就好了。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 183,
+   "quote": "节约魔力的关系，稍微拉长了点战斗时间，但没有什么特别的问题。这场战斗我们完全没有使用MP。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 192,
+   "text": "数度交战彻底观察后涡波判明：对方明显是风魔法相性最差的对手→指示把『Sylph・堕落使徒』与『片翼』交换、并节约使用风魔法（莱纳：说起来你有千里眼来着）；RioshethEagle同里约鹰不用风魔法、嘴爪攻击主体——从莱纳即死攻击脱离时不以风魔法追击、由涡波控制住后投掷补刀；战斗时间略拉长但本场战斗两人完全没有使用MP"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fbf720892959",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

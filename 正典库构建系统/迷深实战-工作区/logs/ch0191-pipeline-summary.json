@@ -1,0 +1,343 @@
+{
+ "unit": "ch0191",
+ "chapter": 191,
+ "ingestion_index": 161,
+ "title": "209《出发》",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 41,
+  "pass": 41,
+  "intercept": 0,
+  "admitted": 41,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 32,
+  "contradiction": 5,
+  "consistent-duplicate": 4
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-4f592e06e91d",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-b21f552a0584"
+   }
+  },
+  {
+   "record_id": "cand-entity-12215092cdf3",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m127"
+   }
+  },
+  {
+   "record_id": "cand-entity-e46d3fcaf53e",
+   "type": "entity",
+   "name": "贝丝",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-46c842b180f7"
+   }
+  },
+  {
+   "record_id": "cand-entity-fb293b632642",
+   "type": "entity",
+   "name": "艾德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-43aa892f43d2-m17"
+   }
+  },
+  {
+   "record_id": "cand-entity-29e3b5cea3be",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-e90fcbf99209"
+   }
+  },
+  {
+   "record_id": "cand-entity-5984a7483efc",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m44"
+   }
+  },
+  {
+   "record_id": "cand-entity-9a461fa61fa3",
+   "type": "entity",
+   "name": "雷纳尔多",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-d749c3066a3b-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-5e38e383ced6",
+   "type": "entity",
+   "name": "『维度』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-7306065cc0ec"
+   }
+  },
+  {
+   "record_id": "cand-entity-98de1fa02ef4",
+   "type": "entity",
+   "name": "『连接』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-dde5527beb36",
+   "type": "entity",
+   "name": "『感应』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-fe7a34773dd1",
+   "type": "entity",
+   "name": "『最深部之誓约者』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-46c06f4d7764",
+   "type": "entity",
+   "name": "『支配之王』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d389a0dc479d",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-caa01812317c"
+   }
+  },
+  {
+   "record_id": "cand-entity-dadee3a63f7e",
+   "type": "entity",
+   "name": "王的谒见室",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c588c03fac8d",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-600e734e7141",
+   "type": "relation",
+   "name": "贝丝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b34dd9d7cbab",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5d7da665eeb8",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f5f9d1870f80",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-24eda6c5c814",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4728a9483c3e",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d34e90b42d98",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0827d0c64397",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0b3a18a29d47",
+   "type": "event",
+   "name": "城门外居民集议（罗德失约晨）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-79ddeb0c3ad7",
+   "type": "event",
+   "name": "谒见室寻获罗德（玉座后的咏唱）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-657fcf35f495",
+   "type": "event",
+   "name": "艾德接引提案与罗德的激烈拒绝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2feaba9f3f28",
+   "type": "event",
+   "name": "『不带期待的弟弟』方案成立·罗德复元",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-7da1bdb2c2ff",
+   "type": "event",
+   "name": "向居民报平安（哭泣隐匿的圆话）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-822cc04fbb1a",
+   "type": "event",
+   "name": "自室会合诺斯菲·探索送别",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a43d81721417",
+   "type": "event",
+   "name": "第五次迷宫探索出发·直接回归地上宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b64bf9d7f033",
+   "type": "event",
+   "name": "诺斯菲袭击未遂（昨夜·本章回想）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-d123bdc23382",
+   "type": "foreshadow",
+   "name": "罗德的『真正的愿望』与视线错位",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-f3f0dbe6136a",
+   "type": "foreshadow",
+   "name": "双守护者会聚成障碍的预兆（ch184开环推进）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c6c9dcaf84dd",
+   "type": "foreshadow",
+   "name": "『感应』的『来不及』预感与最高难度转换",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-01737e228483",
+   "type": "foreshadow",
+   "name": "咏唱的代价去向",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-6ff30f8c8a5f",
+   "type": "foreshadow",
+   "name": "'像那个时候一样'——涡波曾救罗德的过去",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-4d6429183a78",
+   "type": "foreshadow",
+   "name": "罗德的'这・样・就・好・办・了'",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-1dd7595436f7",
+   "type": "setting",
+   "name": "『这里』的入城法则（ch191实证）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-83c292b8b39b",
+   "type": "setting",
+   "name": "罗德的咏唱与代价支付（ch191）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3b09787a3ecb",
+   "type": "setting",
+   "name": "守护者的消失条件与『家人』假设（ch191更新）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-011d92eb8594",
+   "type": "setting",
+   "name": "迷宫探索进度·第五次（ch191）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 161,
+  "pseudo_date": "2000-06-10",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

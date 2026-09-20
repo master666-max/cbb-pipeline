@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "chapter": 187,
+  "entities": [
+   "Default",
+   "技能『感应』",
+   "相川涡波",
+   "罗德",
+   "诺斯菲"
+  ],
+  "name": "『感应』守护者接触前兆警报（五十七层）",
+  "note": "续ch181开环『感应』×『最深部之誓约者』非战斗场景同时警报：本章『感应』再次于非战斗场景突然发动——恰于罗德与诺斯菲来到距彼此触手可及位置、向对方伸手之刻，警告如闪电劈过天灵盖，涡波感到『绝对不能让她们两个接触』并当即以『Default』隔离；两名守护者相互接触会发生什么、『感应』警报的真意（其按理只在濒死时最活跃却屡在非战斗场景发动）待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 187,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 187,
+   "line": 25,
+   "quote": "随着口角越来越激烈，罗德与诺斯菲之间的距离也越来越近。接着，两人终于来到了距彼此触手可及的位置，并向对方伸出手。",
+   "vol": 1
+  },
+  {
+   "chapter": 187,
+   "line": 27,
+   "quote": "技能『感应』就在这时突然发动。",
+   "vol": 1
+  },
+  {
+   "chapter": 187,
+   "line": 28,
+   "quote": "这道警告就像闪电劈过天灵盖一样震悚。",
+   "vol": 1
+  },
+  {
+   "chapter": 187,
+   "line": 29,
+   "quote": "感觉到绝对不能让她们两个接触的我当即使用魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 187,
+   "text": "既有核心开环（ch181）之新实例：守护者相互接触=危险"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-de161fd33b63",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0187.txt",
+  "sha": "c05809e16836c0802dec9319721f7ea2b9003dcc6d8ec0146135f7100b7b2260",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

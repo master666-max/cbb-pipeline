@@ -39,7 +39,8 @@ SUBCLASS_GROUP = {"contradiction_pending": "entity_unalignable",
                   "overdue_omission": "low_confidence"}
 # 调度层机械归一（2026-09-19，先例=批9-10 ch0079/ch0121 手工修正；确定性零裁量，每次改写计入 summary 留痕）
 LIBRARY_NORMALIZE = {"organization": "character", "location": "setting",
-                     "item": "setting", "magic": "setting", "skill": "setting"}
+                     "item": "setting", "magic": "setting", "skill": "setting",
+                     "title": "setting"}  # 2026-09-21 ch0191『支配之王』称号首例：称号类实体库内惯例入 setting
 # observations.category 枚举外值→契约枚举（2026-09-20 ch0136 'behavior' 首例；确定性零裁量）
 OBS_CATEGORY_NORMALIZE = {"behavior": "manifestation"}
 

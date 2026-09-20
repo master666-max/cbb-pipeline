@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "怪物(迷宫·人形铠甲)",
+  "name": "IllusionistKnight"
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 53,
+   "quote": "此时，诺斯菲刚好结果了一匹WhiteSnake。但莱纳正与他的对手、会动的铠甲（LivingArmor）IllusionistKnight陷入胶着。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 54,
+   "quote": "IllusionKnight的特征非常明显。它是拥有可以完全抵消物理攻击的防御力，使用一柄闪耀光芒的剑进行战斗的战士。丝毫没有能够使用魔法的迹象，一切全凭『剑术』说话。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 73,
+   "quote": "敌人也没有放过这个空隙用剑挥出一计斜切──但、并・没・有・击・中。本应斩断莱纳身体的光芒四射的剑产生了微小的偏差。简直就像外行胡乱使出的斩击一样挥空了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 186,
+   "text": "会动的铠甲（LivingArmor·人形铠甲）；级别59——涡波特意分配给莱纳的最低级别对手却效果不佳；特征=拥有可完全抵消物理攻击的防御力、以一柄闪耀光芒的剑战斗的战士、丝毫没有能用魔法的迹象一切全凭『剑术』；最终中计——斜切被『维度・曲战演算』偏差化如外行斩击般挥空露出巨大破绽，被莱纳『魔力风刃化』斩成四段化作光芒消失"
+  },
+  {
+   "category": "alias",
+   "chapter": 186,
+   "text": "行53首现『IllusionistKnight』、行54以『IllusionKnight』续指同一对手（同章变体）；LivingArmor为其物种括号码（人形铠甲）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-3fd2a308bfea",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

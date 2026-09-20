@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "相川涡波",
+   "罗德",
+   "贝丝"
+  ],
+  "instant": null,
+  "kind": "事件",
+  "name": "城门外居民集议（罗德失约晨）",
+  "tick": 191,
+  "time_verbatim": "次日早上（前夜事件转天）"
+ },
+ "evidence": [
+  {
+   "chapter": 191,
+   "line": 10,
+   "quote": "在人群的前方能够看到贝丝酱的身影。她以十分不安的样子窥伺着城内的状况。",
+   "vol": 1
+  },
+  {
+   "chapter": 191,
+   "line": 14,
+   "quote": "「其实我和罗德大人本来约好了昨天晚上碰头的。但是，昨天不论我怎么等她都没有来⋯⋯！而且今早也没有外出的迹象，总感觉很奇怪，这究竟是──！」",
+   "vol": 1
+  },
+  {
+   "chapter": 191,
+   "line": 18,
+   "quote": "「早上罗德大人没有来回飞这种事，有多久没发生了⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 191,
+   "line": 26,
+   "quote": "不论发生什么，国民都不得进入城中。他们的这一行为实际上暗示了『这里』的一条法则。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 191,
+   "text": "贝丝牵头报告昨晚约定碰头未果＋今晨无外出迹象；居民担忧声不断（'从来没生过病''早上没有来回飞…多久没发生了'）；城门大敞而无人入城→涡波判读『这里』入城法则、以骑士团长身份承揽查探，居民谢而候于门外"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0b3a18a29d47",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0191.txt",
+  "sha": "3d7d9970638c17ac2726a56f553b22de08bb6695509905f075cb6153b5f2cb11",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

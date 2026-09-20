@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "魔法传授",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 134,
+   "quote": "在这之上，现在得到了千年前的魔王罗德所教授的魔法，千年前的『神铁锻造』持有者的雷纳尔多充实了装备，级别也得到了提升。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 144,
+   "quote": "对亏了罗德所锻炼的魔力操作，没有浪费多余的魔力与体力。在能够自然恢复的范围内使用风魔法，实际上莱纳的MP并没有减少。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 192,
+   "text": "千年前的魔王罗德教授了莱纳魔法（涡波回顾莱纳成长要素之一；罗德所锻炼的魔力操作亦令莱纳用风不耗MP）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c2ea73868632",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

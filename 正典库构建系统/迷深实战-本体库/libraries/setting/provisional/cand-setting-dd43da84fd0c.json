@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "chapter": 186,
+  "fact": "光属性魔力时常在敌人身上流动的怪物物理攻击无效（据诺斯菲指导+本章实战验证）：WhiteSnake被莱纳剑闪精准命中而不被斩裂；IllusionistKnight拥有可完全抵消物理攻击的防御力（一切全凭『剑术』、无魔法迹象）；精灵系怪物无一例外免疫物理（剑直接穿过HolyElement身体）；对策=风魔法斩击（ScytheWind/魔力风刃化·X形斩断铠甲）或直接攻击魔力——『形式・捩菖蒲』为攻击MP而非HP的魔法（爆炸无物理性影响、却能对敌人魔力造成莫大影响）；另：丧失敌意的怪物被外力（罗德凶恶魔力之风）侵扰后眼睛颜色转黑恢复袭击（无敌意状态可逆转）",
+  "name": "光属性怪物的物理免疫与MP攻击（ch186实战）",
+  "tick": 186
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 26,
+   "quote": "向我们逼近的WhiteSnake遭到了莱纳双剑的迎击。莱纳锐利的剑闪精准地命中了敌人那小巧的身体。但WhiteSnake的身体却并没有被斩裂。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 33,
+   "quote": "「原来如此。我明白了，涡波大人。──莱纳，你应该更仔细的观察敌人的身体才好。光属性的魔力不是时常在敌人身上流动么？对这样的对手，物理攻击是没有效果的」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 54,
+   "quote": "IllusionKnight的特征非常明显。它是拥有可以完全抵消物理攻击的防御力，使用一柄闪耀光芒的剑进行战斗的战士。丝毫没有能够使用魔法的迹象，一切全凭『剑术』说话。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 93,
+   "quote": "剑本身就那样穿过了HolyElement的身体。果然精灵系的怪物无一例外都是免疫物理攻击的。但是『形式・捩菖蒲』构造出的花却成功地附上了敌人的身体。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 96,
+   "quote": "这股爆炸并不具有物理性的影响力。但却能够对敌人的魔力造成莫大的影响。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 97,
+   "quote": "用游戏的语言来说，这是攻击MP而不是HP的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 186,
+   "text": "光属性怪物战斗规则（据诺斯菲指导+涡波实战验证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-dd43da84fd0c",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

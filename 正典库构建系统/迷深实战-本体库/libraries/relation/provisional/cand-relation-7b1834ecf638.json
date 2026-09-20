@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "赫勒比勒夏因之神圣双剑『片翼』",
+  "rel_type": "装备持有(昨日新入手·换装启用)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 179,
+   "quote": "莱纳巧妙的把一边的剑收起来，换成了昨天新入手的剑。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 192,
+   "text": "莱纳昨日新入手『片翼』并按涡波指示换装启用（对风相性最差之敌）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7b1834ecf638",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

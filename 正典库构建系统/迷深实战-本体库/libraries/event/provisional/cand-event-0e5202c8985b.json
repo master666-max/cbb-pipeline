@@ -1,0 +1,104 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "HolyElement",
+   "IllusionistKnight",
+   "PiercePigeon",
+   "SehrWind",
+   "WhiteSnake",
+   "形式・捩菖蒲（Torsion）",
+   "相川涡波",
+   "维度・曲战演算",
+   "莱纳",
+   "诺斯菲",
+   "魔力风刃化"
+  ],
+  "instant": null,
+  "kind": "战斗(歼灭)",
+  "name": "乱战歼灭——涡波后方指挥与新魔法双初用",
+  "tick": 186,
+  "time_verbatim": "同日·同处（历时十几分钟）"
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 29,
+   "quote": "「──魔法『Default』！！诺斯菲、莱纳！我会将看上去难对付的敌人先拉到远处，你们注意按照顺序打倒它们！」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 38,
+   "quote": "「罗德！你给我待着别动！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 45,
+   "quote": "被我责怪一番之后，罗德总算明白自己做了错事。眼角泛起泪光的她随即将手中的铳剑雾散掉。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 73,
+   "quote": "敌人也没有放过这个空隙用剑挥出一计斜切──但、并・没・有・击・中。本应斩断莱纳身体的光芒四射的剑产生了微小的偏差。简直就像外行胡乱使出的斩击一样挥空了。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 76,
+   "quote": "以最快的速度，缠绕着最强的魔力挥出的双剑用X形将敌人的铠甲斩成了四段。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 94,
+   "quote": "「捩转它！──『形式・捩菖蒲』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 106,
+   "quote": "就这样，我们用了十几分的时间，终于歼灭了将近十匹的光属性怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 107,
+   "quote": "大量的光之粒子漂浮在回廊之中。将怪物们掉落的魔石回收之后，我确认过周围没有其它怪物，便质问罗德道。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 186,
+   "text": "涡波以『维度』整理情报+『Default』调度（低级别先至各个击破）、全程不拔剑专司指挥；诺斯菲光枪扫飞PiercePigeon、结果WhiteSnake多匹（战果两倍以上）并指导莱纳；莱纳『ScytheWind』应对+受『维度・曲战演算』掩护（敌剑偏差挥空）后以『魔力风刃化』X形斩断IllusionistKnight；涡波再以『形式・捩菖蒲』附着HolyElement（剑穿身物理无效→花附着→解放歪曲削其魔力至收缩）+莱纳『SehrWind』了结；中途喝止罗德提铳剑参战（其认错雾散铳剑）；十几分钟歼灭将近十匹光属性怪物、光之粒子漂浮回廊、回收魔石"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0e5202c8985b",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

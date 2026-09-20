@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "再访约定(保证)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 134,
+   "quote": "「那、那么呢⋯⋯、人家会，一直在『这里』等你们的⋯⋯⋯所以说、你们绝对、绝对要再来这里玩哦⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 138,
+   "quote": "「那当然。这个我可以跟你保证」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 139,
+   "quote": "「要是打破了约定的话，姐姐会生气的哟！大概会哭的哟！」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 150,
+   "quote": "「涡涡，你一定要再过来哦？人家会永远永远等下去的。没错，就在『这里』永远永远等下去──」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 186,
+   "text": "罗德索约『你们绝对、绝对要再来这里玩哦』并以『要是打破了约定的话，姐姐会生气的哟！大概会哭的哟！』加码→涡波答『那当然。这个我可以跟你保证』；其后罗德再叮咛『人家会永远永远等下去的。没错，就在『这里』永远永远等下去』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f074a6712a9b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

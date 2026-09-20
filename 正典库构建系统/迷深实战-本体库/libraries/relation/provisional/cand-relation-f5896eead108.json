@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩艾希亚",
+  "rel_type": "世界归属(罗德的世界)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 187,
+   "line": 93,
+   "quote": "在诺斯菲的带领下，我们穿过了『连接』，回到了罗德的世界──佩艾希亚之中。",
+   "vol": 1
+  },
+  {
+   "chapter": 187,
+   "line": 96,
+   "quote": "尽管在迷宫里分别之后还没过一个小时，她人就已经在城堡里了。由此可见她飞行的速度有多快。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 187,
+   "text": "叙述称佩艾希亚为『罗德的世界』；罗德自迷宫飞返后不到一小时即已入佩艾希亚城中"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f5896eead108",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0187.txt",
+  "sha": "c05809e16836c0802dec9319721f7ea2b9003dcc6d8ec0146135f7100b7b2260",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

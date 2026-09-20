@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "调停守望(带回家人誓言)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 187,
+   "line": 30,
+   "quote": "「──魔法『Default』！！你们两个都先冷静下来！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 187,
+   "line": 104,
+   "quote": "但是如果我们真的用这种方式破壊掉这扇门的话，那么这扇门就永远不会再向我们敞开了。不论是物理上，还是精神上，都是如此。",
+   "vol": 1
+  },
+  {
+   "chapter": 187,
+   "line": 141,
+   "quote": "我能做到的只有尽快结束迷宫探索，回到地上把她的家人带来罢了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 187,
+   "text": "口角中以『Default』隔离两人、以发自内心的愤怒令其冷静；保管室前选择不破门而在门外沟通（代替诺斯菲去交流恐怕也是同样结果——涡波判断）、决定让她一个人整理情绪；自陈能做到的只有尽快结束迷宫探索、回到地上把她的家人带来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.87,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e0c2ce7b8086",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0187.txt",
+  "sha": "c05809e16836c0802dec9319721f7ea2b9003dcc6d8ec0146135f7100b7b2260",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

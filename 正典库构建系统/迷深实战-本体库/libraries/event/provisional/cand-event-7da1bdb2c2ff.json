@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "诺斯菲",
+   "贝丝"
+  ],
+  "instant": null,
+  "kind": "事件",
+  "name": "向居民报平安（哭泣隐匿的圆话）",
+  "tick": 191,
+  "time_verbatim": "同日上午（城门外）"
+ },
+ "evidence": [
+  {
+   "chapter": 191,
+   "line": 177,
+   "quote": "我的大脑高速运转起来并开始圆话。",
+   "vol": 1
+  },
+  {
+   "chapter": 191,
+   "line": 178,
+   "quote": "「啊─，那是因为⋯⋯昨天，我从迷宫把罗德以前的朋友带来了的缘故。因为跟她聊了一整晚，所以罗德今天睡过头了来着」",
+   "vol": 1
+  },
+  {
+   "chapter": 191,
+   "line": 184,
+   "quote": "「是真的哦。大概中午左右就会从城堡里出来了，具体的事等到那个时候再问罗德吧。其余的诸位也都可以放心了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 191,
+   "text": "'大脑高速运转…开始圆话'：托词'昨天，我从迷宫把罗德以前的朋友带来了的缘故。因为跟她聊了一整晚，所以罗德今天睡过头了'——诺斯菲首次以『罗德以前的朋友』身份对居民公开；预告'大概中午左右就会从城堡里出来了'；哭泣之事被隐去；居民安心散去、贝丝留下等待"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7da1bdb2c2ff",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0191.txt",
+  "sha": "3d7d9970638c17ac2726a56f553b22de08bb6695509905f075cb6153b5f2cb11",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

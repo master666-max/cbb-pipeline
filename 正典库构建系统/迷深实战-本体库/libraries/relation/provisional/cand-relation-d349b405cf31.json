@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "五十层",
+  "rel_type": "阶层守护(守护者)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 243,
+   "quote": "「这，这里就是五十层⋯⋯⋯罗德的阶层⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 260,
+   "quote": "那是，守护者的阶层有人进来后的『召还』现象。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 192,
+   "text": "五十层为罗德的阶层（守护者所有层）；守护者的阶层有人进来后发生『召还』现象——但罗德身在六十六层（据莱纳），故五十层被召还者身份存疑（F1）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d349b405cf31",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

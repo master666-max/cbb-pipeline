@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "师承(风魔法·罗德教导)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 188,
+   "line": 221,
+   "quote": "在罗德的教导下『风魔法』的数值一口气上升了将近0.50。",
+   "vol": 1
+  },
+  {
+   "chapter": 188,
+   "line": 221,
+   "quote": "而且还新增了『魔力操作』和『集中收束』，该说是真不愧为『风之理的盗窃者』的弟子吗。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 188,
+   "text": "'在罗德的教导下『风魔法』的数值一口气上升了将近0.50⋯⋯该说是真不愧为『风之理的盗窃者』的弟子吗'；【反推】罗德=『风之理的盗窃者』由该师承句反推，仅留注不另立；莱纳陪罗德期间'遭受过分的对待已经成为这里的家常便饭'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-31e5de16a34f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0188.txt",
+  "sha": "9e4c531e2949a2d44239c5f603942a627eb16393a5dd92b1da06155f17374bde",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,85 @@
+{
+ "canonical": {
+  "entities": [
+   "『加速』",
+   "五十四层",
+   "新月琉璃制直剑",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "强行军(里程碑)",
+  "name": "五十四层起强行军（『加速』连用·攻略时间减半）",
+  "tick": 192,
+  "time_verbatim": "同日·五十四层→五十三层→五十二层（开始后四个小时节点明示）"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 194,
+   "quote": "「接下来我也在前面挥剑吧。之后要更加的加快脚步才行」",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 199,
+   "quote": "就这样，认真的强行军开始了。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 201,
+   "quote": "在祭坛上的珍宝神器也好全部无视。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 206,
+   "quote": "继续『加速』──，『加速』『加速』『加速』──！",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 212,
+   "quote": "接着，这个强硬的迷宫探索已经开始了四个小时。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 214,
+   "quote": "没有拥有着异样回避率的怪物，也没有拥有着异样移动力的怪物。没有什么特别的问题，五十三层与五十二层用同样的方式攻略了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 192,
+   "text": "涡波宣言『接下来我也在前面挥剑吧。之后要更加的加快脚步才行』、拔『新月琉璃直剑』加入前卫，莱纳以『了解，队长。没有异议』全权信赖应允→认真的强行军开始：地形、敌人、祭坛上的珍宝神器全部无视；被怪物从后袭击时也不作无端魔力消耗、强行拉走后前进；连用『加速』如咏唱般念诵——代价为失去『安全』、屏住呼吸数次受敌攻击，但本来攻略时间降到一半以下（自评恐怕是理论上的最速）；开始四小时后愈感轻松（无异常回避率/移动力怪物），五十三层与五十二层用同样方式攻略"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-aff606707d91",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

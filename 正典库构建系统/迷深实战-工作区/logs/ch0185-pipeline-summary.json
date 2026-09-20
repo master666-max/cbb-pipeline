@@ -1,0 +1,249 @@
+{
+ "unit": "ch0185",
+ "chapter": 185,
+ "ingestion_index": 155,
+ "title": "203《直到57层》",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 28,
+  "pass": 28,
+  "intercept": 0,
+  "admitted": 22,
+  "quarantined": 6
+ },
+ "tracks": {
+  "on-create": 15,
+  "consistent-duplicate": 4,
+  "contradiction": 3
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-fe2a57d4e568",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m120"
+   }
+  },
+  {
+   "record_id": "cand-entity-08cf5222f467",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d44f3806ced5"
+   }
+  },
+  {
+   "record_id": "cand-entity-b397d015ff6d",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-31b2bbd606ee"
+   }
+  },
+  {
+   "record_id": "cand-entity-53821ce2df5b",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m40"
+   }
+  },
+  {
+   "record_id": "cand-entity-34a9729583da",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f8c68810d423"
+   }
+  },
+  {
+   "record_id": "cand-entity-2d4e605cbef9",
+   "type": "entity",
+   "name": "六十层",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-03f7e01f933a-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-38652c7eb839",
+   "type": "entity",
+   "name": "五十九层",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6f2c719d438b",
+   "type": "entity",
+   "name": "五十七层",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0d14a844243e",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-66b9f6c11b9d-m2"
+   }
+  },
+  {
+   "record_id": "cand-relation-7ffddd8435c6",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-24de9f260b43",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-77d0416f1e7c",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-dde2e4f4f34e",
+   "type": "event",
+   "name": "六十层野餐茶会休憩",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d8accec282dd",
+   "type": "event",
+   "name": "五十九层『光』中和与无血连下至五十七层",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-28bc55e52911",
+   "type": "event",
+   "name": "『连接』五十五层近路计划改定",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-1d5494661b2f",
+   "type": "setting",
+   "name": "光之理区域攻略方针（五十九~五十五层）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-d7a391a5bcca",
+   "type": "setting",
+   "name": "六十层休憩空间特性（光辉石之层）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f266906a9ab9",
+   "type": "setting",
+   "name": "『连接』设置限制与五十五层近路",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-db40c9a14d52",
+   "type": "setting",
+   "name": "守护者迷恋的增减对照（罗德/诺文/诺斯菲）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ec32934e5e62",
+   "type": "foreshadow",
+   "name": "罗德的迷恋凶化与理解者联络",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-eebaca1b4174",
+   "type": "foreshadow",
+   "name": "诺斯菲的迷恋反效果膨胀（地上寻找解法）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-25e984a1bbcc",
+   "type": "foreshadow",
+   "name": "光魔法学生劝诱计划（艾尔米拉德学院）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-a68be20ea7cd",
+   "type": "entity",
+   "name": "光精灵",
+   "item_id": "q-a2fe1eaca5b8",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-aea6e27c984f",
+   "type": "entity",
+   "name": "艾尔米拉德学院",
+   "item_id": "q-e77e10799354",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-d40e312b3b72",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-231dc2b45bfe",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-2486d5b29458",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-8de214effff8",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-9fd8b1d70a3b",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-16a790b2c69f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-6f9fa2e2de53",
+   "type": "relation",
+   "name": "光精灵",
+   "item_id": "q-f5423d2ca8d6",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 155,
+  "pseudo_date": "2000-06-04",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

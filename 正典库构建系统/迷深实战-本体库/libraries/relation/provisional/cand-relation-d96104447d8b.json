@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩艾希亚",
+  "rel_type": "千年滞留(永远等待宣言)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 186,
+   "line": 160,
+   "quote": "「寿命？才、才没有那种事吧？人家要在那里永远生存下去啊⋯⋯，因为就是这么决定的啊⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 166,
+   "quote": "「就、就是有！因为，人家已经在那里待了一千年了不是么？整整一千年！所以，接下来也没有问题！肯定的！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 194,
+   "quote": "「『地上』⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 186,
+   "line": 195,
+   "quote": "对听到『地上』一词而畏惧起来的罗德，诺斯菲继续向她倾吐着毫无瑕疵的正论。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 186,
+   "text": "自陈已在那个空间待了整整一千年、故认为接下来也没有问题（『因为就是这么决定的啊』）；宣言就在『这里』永远永远等下去；对『地上』一词畏惧——被诺斯菲判定该空间寿命仅剩一个月、灭亡时将不得不回到地上"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d96104447d8b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0186.txt",
+  "sha": "b953e5b7908c39804866651915273aa54de8a679f5308b316dccd00620733877",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

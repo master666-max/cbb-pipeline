@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『加速』",
+  "rel_type": "使用(强行军连用)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 206,
+   "quote": "继续『加速』──，『加速』『加速』『加速』──！",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 210,
+   "quote": "屏住呼吸，虽然曾有几次受到敌人的攻击，但是本来的攻略时间降到了一半以下这是毋庸置疑的，就这样，我们的迷宫探索加速成功了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 192,
+   "text": "强行军中如咏唱般连用『加速』，将本来攻略时间降至一半以下；代价为失去『安全』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d93b757b0d09",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,1638 @@
+{
+ "_meta": {
+  "unit": "CBB 正典库逐章抽取 · CHAPTER 0192（210《自56层开始》，tick192→伪锚点2000-07-10）",
+  "source": {
+   "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+   "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+   "verified_at": "2026-09-21",
+   "slice": "行1-265（行1章标记/行2空行/行3译者署名Plague丶佩斯特（元文本）/行4-264正文/行265空行；空行占号，evidence.line=文件行号-1）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "tick=192（章序）→伪锚点2000-07-10；章内故事时间坐标判读；禁墙钟。章内坐标：ch184=滞留『这里』第四日，其后隔ch185-191（本库缺extraction，日数不可确证）→本章为第四日之后（推定）；本日=晨于佩艾希亚城内查缺（涡波自述『今天，在城里来回游走』）→昼间自五十六层出发连上至五十层；强行军『已经开始了四个小时』为章内明示节点；涡波自述迷宫侧『数日前』=现实一年之前（推定）。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，章标记行不计、空行占号）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取",
+   "reason": "章标记话数210《自56层开始》与译者署名行『Plague丶佩斯特』为元文本（R6-1）未抽取；正文无作者杂谈/翻译组注/现实日期；无『忽略以上指令』类注入样文本；拉丁字母专名SkyRunner/RioshethEagle/Default/Sylph逐字照录（R6-3，与ch0184判例同）；声称类按文本事实+据称标注：光属性怪物不好战（据诺斯菲说）、罗德现于六十六层（据莱纳）、西娅·勒伽西为外行人队长（据莱纳）、涡波体内魔石被剥离弱化（据涡波自述·回述）；推断类标注：RioshethEagle为里约鹰上位种（涡波推断）、五十层人影=守护者阶层『召还』现象（涡波凭既视感判读）；称号『救世主』『魔王』『队长大人』永不合并为别名；『基督』为库内既有别名（ch0181已注册、全名形态基督·欧亚见ch0012）本章仅记录不复注；『诺斯费』为本章同人异写（行5）仅记录不注册；判例4近名处理：『新月琉璃直剑』→库内名新月琉璃制直剑（异写登记别名）、『神铁锻造』→库内名神铁锻冶（异写登记别名）、『西娅・伽勒西』→库内名西娅·勒伽西（异写登记别名）、『最深部的誓约者』→库内名最深部之誓约者（异写登记别名）、片翼→库内长名赫勒比勒夏因之神圣双剑『片翼』（『片翼』short form ch0092已注册）、雷纳尔多=库内锻冶师实体（与莱纳不合并）；『芙兰姐姐』为敬称形态不入别名账（疑=芙兰琉莱，留R4）；『弟弟艾德』之『弟弟』所指原文未明、不建关系（防先验污染）。",
+   "deterministic_check": "引文逐字照录（含⋯⋯/──/・/译者错字原文保留如『结束语帕林库洛』『不没我的华MP』『这家话』『魔法的想想是直尺』等——引文预检逐条通过，见回执）；全章无拉丁字母指令段；魔法咏唱句与技能名照原文记录未做翻译改写。"
+  },
+  "chapter_summary": "涡波依『感应』断言罗德随时崩溃、诺斯菲气氛有异、没有多少时间了，与莱纳定两天不眠不休强行军方針自56层上行：55层斩SkyRunner与断崖RioshethEagle群、换装『片翼』零MP战术、连用『加速』速通54-52层；以『维度・多重展开』测距2274米首用长距离『Default』垂直突破51层空洞抵50层罗德草原层，暴风雨中央现『召还』人影而非罗德（章末钩）。",
+  "alias_policy": "新登记别名：新月琉璃直剑→新月琉璃制直剑、神铁锻造→神铁锻冶、西娅・伽勒西→西娅·勒伽西、最深部的誓约者→最深部之誓约者（均为判例4库内近名合入+本章异写登记）。不登记：『基督』（库内既有别名，本章莱纳多用）、『诺斯费』（同人异写仅记录）、『队长大人』（戏称）、『弟弟艾德』（称谓形态）、『救世主』『魔王』（称号永不合并）、『芙兰姐姐』（敬称，疑=芙兰琉莱留R4）。",
+  "observations_policy": "实体observations仅放本章直接观察；跨章/主线级事实（帕林库洛战后弱化、罗德诺斯菲崩溃倒计时、佩艾希亚有物涌动、双守护者成敌变数）一律走event/foreshadow/setting。",
+  "confidence_calibration": "同STATE固化决议：现场直察类0.85-0.95；据角色声称/说明类（诺斯菲光怪物说/莱纳罗德所在说/莱纳前队长说）0.78-0.85；涡波推断/反推类（上位种推断/召还判读/弟弟所指）0.7-0.78。",
+  "cross_chapter_notes": [
+   "★主线推进：ch184[回地上稳了]之后确立两天不眠不休强行军（『连接』轮休制）并当日自56层连上至50层=迷宫正中间分界；50层=罗德阶层（草原·叩身狂风·云自天井溢出降雨）。",
+   "★新开环（章末钩）：五十层暴风雨中央『召还』人影——莱纳指摘罗德身在六十六层、涡波唤『罗德？』后章末切断『但是，在那里的是──』：召还者非罗德，身份待回收；与ch184[双守护者联手成敌之忧]同域。",
+   "★核心开环推进：罗德暴躁平息/诺斯菲老实=表面现象，『罗德无论何时崩溃都不奇怪』『可能，没有多少时间了』（涡波依『感应』确信）——推进ch181/184双守护者变数开环；『世界（佩艾希亚）』有什么正涌动着（与ch184天空异变开环同向·先验关联）。",
+   "★首用/新知识：Default首次长距离空间压缩（测距两千两百七十四米七十八厘米三毫米；耗魔在压缩不在距离伸展）；『维度・多重展开』线状连结测距用法（形象『直尺』·毫米级·切断五感特化）；技能『指挥』昨日掌握（其获得章ch189-191本库缺extraction，待补）；迷宫内外时差首度明示：迷宫侧数日前=现实一年前（涡波推定）。",
+   "★判例4近名合入：新月琉璃直剑/神铁锻造/西娅・伽勒西/最深部的誓约者四处异写均改用库内名并登记别名；雷纳尔多=库内锻冶师（ch0171-0188高频）勿与莱纳并行立新实体。",
+   "★未注册留R4项：『弟弟艾德』之『弟弟』所指（对谁之弟原文未明）；『芙兰姐姐』（莱纳语，疑=芙兰琉莱ch0012）；守护者对阶层进入者的『召还』响应规则（罗德不在时谁被召还）。",
+   "★库侧管道洞（供调度员）：candidates目录缺extraction-ch0189/0190/0191三章，『指挥』获得章与本章『昨天』所指无法锚定。"
+  ]
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.95,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章视角叙述者（全名未出现，莱纳全程称『基督』=库内既有别名）；依技能『感应』的预感断言罗德无论何时崩溃都不奇怪、诺斯菲气氛与以往不同、可能没有多少时间了，决意尽可能早一步回到地上；计算剩余16层×2小时、识路四十层后合计两天不眠不休可通关，到四十层即胜线；宣言体力MP充实后加入前卫、拔『新月琉璃直剑』开路",
+     "chapter": 192
+    },
+    {
+     "category": "trait",
+     "text": "睡意满满保持一周神经反而敏锐、不睡反而更强（据其言为拉丝缇娅拉所认可）；基础魔法用一只手就数得过来；自省以往追求百分百胜率与绝对安全反而总晚一步、给许许多多的人添了麻烦，故本章选择背负风险赶路（『加速』的代价=失去『安全』）",
+     "chapter": 192
+    },
+    {
+     "category": "alias",
+     "text": "本章称呼：『基督』（莱纳×多，库内既有别名）、『队长大人』（莱纳戏称：粗暴的使唤人的队长大人）",
+     "chapter": 192
+    },
+    {
+     "category": "interpretation",
+     "text": "评莱纳『已经是另一个次元的强大了』、对风属性的骑士完成度无人更高；自述技能『指挥』昨日于与莱纳的战斗中掌握、其数值还很低；自省感谢『最深部的誓约者』的同时它诱发了心情的松懈",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 4, "quote": "莱纳怀疑我的意识是否清醒。但是，那是技能『感应』──结合了至今为止的所有经验做出来的决定。对于那个预感，确实的感觉到了某种确信。"},
+    {"vol": 1, "chapter": 192, "line": 17, "quote": "「⋯⋯基督说的话我都理解了。但，别想着单靠自己的力量去。要前往地上的话，我一定会助你一臂之力」"},
+    {"vol": 1, "chapter": 192, "line": 18, "quote": "就好像看透了我的想法一般，莱纳插了进来。"},
+    {"vol": 1, "chapter": 192, "line": 72, "quote": "我的场合来说睡意满满的保持一周的话神经反而会敏锐。不睡的话反而更强，是拉丝缇娅拉也认可的。"},
+    {"vol": 1, "chapter": 192, "line": 195, "quote": "拔出『新月琉璃直剑』体力和MP都充实的我宣言要加入前卫的行列。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.95,
+   "canonical": {
+    "name": "莱纳",
+    "entity_type": "人物(风属性·骑士)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "全程前卫担当（『像以往一样，前卫就交给我了』）；双剑使，按敌相性在『Sylph・堕落使徒』与昨日新入手的『片翼』间换装；断崖地带以风魔法浮力助两人攀岩（多亏罗德锻炼的魔力操作、自然恢复范围内用风则MP实际无减）；对不眠不休赶路需集中精神感到不安，接受『连接』轮休方案；感言『跟着基督的指示走，感觉战斗很容易』",
+     "chapter": 192
+    },
+    {
+     "category": "trait",
+     "text": "具备基础的风魔法与神圣魔法（涡波评：学院教育的成果、曾被教育的固定观念感染现已解除）；能以多样形式使用多种魔法、根据对手讨厌的方式战斗；作为前卫对涡波的后方指示十分便利（涡波：至今的完全特化型同伴做不到）",
+     "chapter": 192
+    },
+    {
+     "category": "arc",
+     "text": "成长轨迹（涡波回顾）：初遇时正要被一位数阶层的怪物吃掉→再次相会以舍身方式把涡波逼到走投无路→再下次已能作为伙伴相助→帕林库洛战完全开花与涡波并肩→现在得千年前的魔王罗德所授魔法、千年前的『神铁锻造』持有者雷纳尔多充实装备、级别提升",
+     "chapter": 192
+    },
+    {
+     "category": "knowledge",
+     "text": "曾任其队伍队长者（据莱纳）：『之前是外行人的西娅・伽勒西是队长，再之前是芙兰姐姐做队长』——对正经队长的指挥感到新鲜而感动（芙兰姐姐=敬称形态，所指留R4）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 106, "quote": "「啊啊，了解了。像以往一样，前卫就交给我了」"},
+    {"vol": 1, "chapter": 192, "line": 133, "quote": "当初刚和莱纳相遇的时候他正要被一位数的阶层的怪物吃掉。"},
+    {"vol": 1, "chapter": 192, "line": 144, "quote": "对亏了罗德所锻炼的魔力操作，没有浪费多余的魔力与体力。在能够自然恢复的范围内使用风魔法，实际上莱纳的MP并没有减少。"},
+    {"vol": 1, "chapter": 192, "line": 152, "quote": "用一只手就可以数的过来的我所持有的基础魔法不同，莱纳具备着基础的风魔法与神圣魔法。"},
+    {"vol": 1, "chapter": 192, "line": 186, "quote": "「不，之前是外行人的西娅・伽勒西是队长，再之前是芙兰姐姐做队长⋯⋯」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.93,
+   "canonical": {
+    "name": "罗德·缇缇",
+    "entity_type": "人物(五十层守护者·千年前的魔王)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "千年前的魔王（涡波述，本章简称罗德=库内别名）；其阶层为五十层（风属性草原世界）；教授了莱纳魔法、其锻炼的魔力操作令莱纳用风几乎不耗MP；据莱纳言其人现在六十六层（佩艾希亚侧）——故五十层『召还』人影身份生疑",
+     "chapter": 192
+    },
+    {
+     "category": "status_change",
+     "text": "与诺斯菲表面状态好转：暴躁平息、表情变得明亮、能与诺斯菲相处准备食物——但涡波判断只是表面、无论何时崩溃都不奇怪（跨章评估入F2）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 11, "quote": "罗德的暴躁平息了，诺斯菲也老实了。"},
+    {"vol": 1, "chapter": 192, "line": 134, "quote": "在这之上，现在得到了千年前的魔王罗德所教授的魔法，千年前的『神铁锻造』持有者的雷纳尔多充实了装备，级别也得到了提升。"},
+    {"vol": 1, "chapter": 192, "line": 243, "quote": "「这，这里就是五十层⋯⋯⋯罗德的阶层⋯⋯」"},
+    {"vol": 1, "chapter": 192, "line": 249, "quote": "「但是，基督。现在罗德那家伙在六十六层哪里。这种场合，守护者会怎么样呢。谁都不出来吗？」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "诺斯菲",
+    "entity_type": "人物(迷宫六十层守护者)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "与罗德一同留守佩艾希亚（涡波轮休方案中莱纳防卫失败时的救援预设之一）；光属性怪物不好战情报的来源（据诺斯菲说，涡波以56层实证印证）；曾预告56层深处敌人属性可能变化之地",
+     "chapter": 192
+    },
+    {
+     "category": "status_change",
+     "text": "老实了（涡波观察）——但涡波同时感到其与以往的气氛不太一样（跨章评估入F2）",
+     "chapter": 192
+    },
+    {
+     "category": "alias",
+     "text": "本章另见异写『诺斯费』（行5：诺斯费也是感觉到了和以往的气氛不太一样）——同人异写，仅记录不注册",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 38, "quote": "在这途中，虽然与几头怪物相遇但并没有受到袭击。和诺斯菲说的一样，有着光属性的特色的怪物并不好战。看来这个五十六层能作为安全地带。"},
+    {"vol": 1, "chapter": 192, "line": 89, "quote": "但是，如果是我防卫失败的场合，只要再一次制作『连接』就可以回来了。但如果是莱纳失败的场合，就只好向佩艾希亚留守的罗德和诺斯菲低头拜托救出的帮忙了⋯⋯⋯"},
+    {"vol": 1, "chapter": 192, "line": 101, "quote": "「啊啊，一直在前进呢。这里就是诺斯菲所说的敌人的属性可能要变化的地方呢」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "帕林库洛",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "与涡波、莱纳交战过的守护者级存在（莱纳将罗德、诺斯菲与其并列：『比起守护者们还远远不够』）；该战中莱纳的能力得到完全开花、与涡波并肩战斗（涡波回顾）；涡波自述其战斗结束后体内『魔石』被剥离而极大弱化（据涡波自述，入E9）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 130, "quote": "「有这么强吗？仅仅只是敌人变弱了这么感觉啊⋯⋯⋯比起守护者们──罗德呀，诺斯菲呀，帕林库洛也是，还远远不够不是吗」"},
+    {"vol": 1, "chapter": 192, "line": 133, "quote": "但是，下一次的相会他以舍身的方式把我逼到走投无路，在下一次的相会他已经能作为伙伴帮助我的程度追上我。接着，最后的帕林库洛战中才能得到完全开花与我并肩战斗。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "拉丝缇娅拉",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "relation",
+     "text": "曾认可涡波『不睡的话反而更强』（据涡波言，于讨论不眠赶路时引述）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 72, "quote": "我的场合来说睡意满满的保持一周的话神经反而会敏锐。不睡的话反而更强，是拉丝缇娅拉也认可的。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "艾德",
+    "entity_type": "人物(四十层守护者)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "被称『弟弟艾德』（『弟弟』对谁所称原文未明，留R4）；其阶层四十层的构造与五十层、佩艾希亚六十六层十分接近；涡波列举现在世界存在的守护者=艾德、罗德、诺斯菲三人，且根据场合有可能与复数守护者交战",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 148, "quote": "不论如何，现在世界存在的守护者艾德，罗德，诺斯菲三人。根据场合来看，也有可能与复数的守护者交战。那时候⋯⋯──"},
+    {"vol": 1, "chapter": 192, "line": 246, "quote": "弟弟艾德的阶层的四十层──以及『佩艾希亚』的阶层六十六层的构造十分的接近，并没有耳目一新的感觉。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "雷纳尔多",
+    "entity_type": "人物(锻冶师)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "千年前的『神铁锻冶』（本章原文作『神铁锻造』）持有者；为莱纳充实了装备（涡波回顾莱纳成长要素之一；判例4：库内既有锻冶师实体，不与莱纳合并）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 134, "quote": "在这之上，现在得到了千年前的魔王罗德所教授的魔法，千年前的『神铁锻造』持有者的雷纳尔多充实了装备，级别也得到了提升。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "西娅·勒伽西",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [
+    "西娅・伽勒西"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "莱纳的前任队长、被莱纳称作『外行人的西娅・伽勒西』（据莱纳；本章异写伽勒西=库内勒伽西，判例4合入并登记异写别名）；莱纳以与西娅·勒伽西、芙兰姐姐两位队长的对比衬托涡波指挥之可靠",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 186, "quote": "「不，之前是外行人的西娅・伽勒西是队长，再之前是芙兰姐姐做队长⋯⋯」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "SkyRunner",
+    "entity_type": "怪物(五十五层·风属性·狼型)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "appearance",
+     "text": "级别52（『怪物』SkyRunner：级别52）；像狼一样的野兽型怪物、与一般狼不同处为四只脚——并非血肉之脚、由高密集魔力构成踏在空中行走（空中行走的狼）",
+     "chapter": 192
+    },
+    {
+     "category": "manifestation",
+     "text": "反应速度十分快：从死角发动的奇袭未成即被回头迎击；被认知为敌人后两个前脚化作不详的钩爪；与莱纳双剑两次交锋后被『风刃剑』增幅一击切断身体、化作光消失（E2）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 110, "quote": "对手的怪物是像狼一样野兽型的怪物。和一般的狼不一样的是那四只脚。并非拥有血肉的脚而是由高密集的魔力构成踏在空中走着。"},
+    {"vol": 1, "chapter": 192, "line": 111, "quote": "「怪物」SkyRunner：级别52"},
+    {"vol": 1, "chapter": 192, "line": 118, "quote": "察觉到袭击的SkyRunner回过头。"},
+    {"vol": 1, "chapter": 192, "line": 119, "quote": "它的反应速度十分快，偷袭并没有得到成功便受到了迎击。被认知为敌人后SkyRunner的两个前脚化成了不详的钩爪的样子。"},
+    {"vol": 1, "chapter": 192, "line": 125, "quote": "锋利的双剑的到了风的魔力的增幅变得更加锐利。结果，SkyRunner并没有过多的抵抗身体遭到切断就这样变成光消失了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "RioshethEagle",
+    "entity_type": "怪物(五十五层断崖带·鸟型)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "appearance",
+     "text": "级别53（『怪物』RioshethEagle：级别53）；鸟型怪物；名字与二十层附近的里约鹰很像、不出意外应该是其上位种（涡波推断）",
+     "chapter": 192
+    },
+    {
+     "category": "manifestation",
+     "text": "于无立足点断崖袭击、我方于体势不利下迎击；与里约鹰同样不使用风魔法、嘴和爪子的攻击为主体、并同具呼唤同伴的特性（→周围个体不得不全部打倒）；被莱纳击穿心脏化作光、魔石坠向悬崖下方无法回收",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 165, "quote": "「怪物」RioshethEagle：级别53"},
+    {"vol": 1, "chapter": 192, "line": 166, "quote": "和二十层附近的里约鹰的名字很像。不出意外应该是它的上位种。"},
+    {"vol": 1, "chapter": 192, "line": 170, "quote": "悬崖边的战斗没办法回收魔石让人不开心，我们继续应对着敌人的袭击。和里约鹰一样有着呼唤同伴的特性。结果我们最后不得不把周围的RioshethEagle全部打倒。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "里约鹰",
+    "entity_type": "怪物(二十层附近·鹰型)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "二十层附近的鹰型怪物（本章对照提及）：RioshethEagle之名与之很像、被推定为其上位种；同具呼唤同伴特性、不使用风魔法而以嘴和爪子攻击为主体",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 166, "quote": "和二十层附近的里约鹰的名字很像。不出意外应该是它的上位种。"},
+    {"vol": 1, "chapter": 192, "line": 182, "quote": "和里约鹰同样，不使用任何的风魔法，嘴和爪子的攻击才是主体。就算从莱纳的即死攻击中脱离出去，不使用风魔法追击，我控制住以后用投掷给予最后一击就好了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "『维度』",
+    "entity_type": "技能(次元魔术·涡波)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "本章用法：上楼前微微张开掌握下一层情况；计算通往地上的最短捷径；迷宫复杂处（墙壁发光）以其为关键把握最短路程；章末识别人影前即时张开",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 36, "quote": "低阶层的要吐不平的岩石表面不同，还有某些墙壁发着光，复杂的迷宫之中『维度』成为了关键。"},
+    {"vol": 1, "chapter": 192, "line": 103, "quote": "然后回廊的光亮陷入了以往的薄暗之中的时候到达了五十五层的楼梯。在上楼之前微微的张开了『维度』"},
+    {"vol": 1, "chapter": 192, "line": 108, "quote": "接着，『维度』计算出最短的通往地上的捷径。敌人的认知范围就以上层的高绿元素为原型。如果是在近十层的这层的话，应该不至于超越那个感知范围的吧。"},
+    {"vol": 1, "chapter": 192, "line": 262, "quote": "马上张开『维度』后，叫出了一个人物的名字。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "维度・决战演算",
+    "entity_type": "魔法(次元系·战斗支援)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "战斗支援用法：无咏唱发动、以极轻微幅度（恐怕连一厘米都不到）更改敌我双方的攻击轨道，令莱纳全力的魔法剑得以直击——微小变更换取巨大收益（E2）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 122, "quote": "把那个情报元，真的是很轻微──用『维度・决战演算』更改两者的攻击轨道。恐怕，仅偏离了连一厘米都没有的距离。但是却得到了巨大的收益。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "维度・多重展开",
+    "entity_type": "魔法(次元系·测距)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "本章新用法：不作广范围扩散、而以连接上空空洞的『线』形式伸展；魔法形象为『直尺』、以毫米为单位精确测量（为减少『Default』的过度消费）；闭眼意图性切断触觉听觉嗅觉、特化距离测量，不考虑上空风的魔力影响故测量很快结束",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 226, "quote": "「不没我的华MP还有多余。而且这途中还有怪物在晃来晃去，移动最好能在一瞬间结束。⋯⋯稍微等一下。──魔法『维度・多重展开』」"},
+    {"vol": 1, "chapter": 192, "line": 228, "quote": "次元魔术向上空伸展。但是不是想着广范围扩散，而是以连接五十层的空洞而以线的形式连起来的感觉。"},
+    {"vol": 1, "chapter": 192, "line": 229, "quote": "魔法的想想是『直尺』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.93,
+   "canonical": {
+    "name": "Default",
+    "entity_type": "魔法(次元魔术·空间压缩移动)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "空间压缩系移动魔法：中心在空间压缩、最费魔力的地方也在压缩——因此若只是距离上的伸展就没有困难处；发动时身体被拉扯、一瞬间距离变成零后于上空放出（伴浮游感）",
+     "chapter": 192
+    },
+    {
+     "category": "manifestation",
+     "text": "本章首次用于长距离（约2274米垂直）：与『维度・多重展开』毫米级测距配合，把二人自五十一层空洞底部瞬间送到五十层（E6）；另被涡波预定用于接住坠落的莱纳（『如果掉下去了，我就用『Default』拉你』）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 223, "quote": "「哈啊，没办法、用『Default』好了。」"},
+    {"vol": 1, "chapter": 192, "line": 162, "quote": "「照这个样子进行下一场战斗吧。因为中间夹杂着光的阶层，十分的轻松。诶，⋯⋯下一场战斗的怪物是鸟类。跟上一次一样。莱纳就全力的上吧。如果掉下去了，我就用『Default』拉你」"},
+    {"vol": 1, "chapter": 192, "line": 236, "quote": "「──魔法『Default』」"},
+    {"vol": 1, "chapter": 192, "line": 238, "quote": "以前从未有过长距离的空间压缩，但是没有消耗过多的MP。这个魔法的中心在于空间的压缩，最费魔力的地方也在那里。因此，如果只是距离上的伸展就没有任何困难的地方。"},
+    {"vol": 1, "chapter": 192, "line": 240, "quote": "感到身体被拉扯后一瞬间距离变成了零。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『连接』",
+    "entity_type": "魔法(据点设置·往返)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "往返佩艾希亚的据点魔法：轮休制核心——有必要休息的一方经其回佩艾希亚的房间休息、另一方留在迷宫独自守护；越接近上层保卫任务越轻松（涡波推测）；涡波防卫失败可再一次制作『连接』返回；若三四层的『连接』还在则毫无疑问能归还地上",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 56, "quote": "虽说多少有点乱来，如果到达四十层的话已经可以说胜利了。如果三四层的『连接』还在的话，毫无疑问能归还地上了。"},
+    {"vol": 1, "chapter": 192, "line": 81, "quote": "「啊啊，所以说，只有一方用『连接』回佩艾希亚的房间里休息」"},
+    {"vol": 1, "chapter": 192, "line": 87, "quote": "「越接近上面，『连接』的保卫任务应该也越轻松，应该不是那么难的事我是这么想的。」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『加速』",
+    "entity_type": "技能(移动加速·涡波)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "赶路技法（库内既有）：强行军中如咏唱般反复念用（『加速』『加速』『加速』）；代价应为失去『安全』（数次受到敌人攻击）；成果为本来的攻略时间降到一半以下——恐怕是理论上的最速（E5）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 206, "quote": "继续『加速』──，『加速』『加速』『加速』──！"},
+    {"vol": 1, "chapter": 192, "line": 208, "quote": "对这『加速』的『代价』应该是要失去『安全』吧。"},
+    {"vol": 1, "chapter": 192, "line": 210, "quote": "屏住呼吸，虽然曾有几次受到敌人的攻击，但是本来的攻略时间降到了一半以下这是毋庸置疑的，就这样，我们的迷宫探索加速成功了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔力风刃化",
+    "entity_type": "魔法(风属性·莱纳·魔法剑)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "莱纳的魔法剑技（咏唱名『风刃剑』=库内别名，ch0180已注册）：锋利的双剑得风的魔力增幅变得更加锐利，一击将SkyRunner身体切断令其化光消失（E2）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 123, "quote": "「──『风刃剑』」"},
+    {"vol": 1, "chapter": 192, "line": 125, "quote": "锋利的双剑的到了风的魔力的增幅变得更加锐利。结果，SkyRunner并没有过多的抵抗身体遭到切断就这样变成光消失了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "指挥",
+    "entity_type": "技能(指挥系·涡波)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "涡波昨天掌握的新技能：能发挥其最大性能的对象就是莱纳——正因为是和莱纳一起战斗才掌握了这个技能（涡波自述）；数值还很低；莱纳在其指示下感言『跟着基督的指示走，感觉战斗很容易』",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 161, "quote": "昨天掌握的技能『指挥』，能发挥它最大性能就是莱纳了。倒不如说，正因为是和莱纳一起战斗才掌握了『指挥』这个技能。"},
+    {"vol": 1, "chapter": 192, "line": 185, "quote": "「跟着基督的指示走，感觉战斗很容易呢⋯⋯」"},
+    {"vol": 1, "chapter": 192, "line": 184, "quote": "「不，还差的远呢。技能『指挥』的数值还很低呢」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "感应",
+    "entity_type": "技能(感知·涡波)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "结合至今为止所有经验产生预感的技能：本章给涡波带来某种确信，成为速归地上方针的判断依据（莱纳一度怀疑其意识是否清醒）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 4, "quote": "莱纳怀疑我的意识是否清醒。但是，那是技能『感应』──结合了至今为止的所有经验做出来的决定。对于那个预感，确实的感觉到了某种确信。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "最深部之誓约者",
+    "entity_type": "技能(涡波·辅助)"
+   },
+   "aliases_to_register": [
+    "最深部的誓约者"
+   ],
+   "observations": [
+    {
+     "category": "interpretation",
+     "text": "本章回顾提及（原文作『最深部的誓约者』，判例4合入库内名并登记异写）：涡波虽十分感谢它、但诱发心情松懈毋庸置疑、令其遗忘了不眠不休朝最深部奔走的焦躁感——跨章评估记入E1",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 93, "quote": "虽然十分感谢『最深部的誓约者』但诱发了心情的松懈也是毋庸置疑的。以前，不眠不休的朝着最深部奔走的焦躁感也遗忘许久了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "新月琉璃制直剑",
+    "entity_type": "道具(剑·涡波)"
+   },
+   "aliases_to_register": [
+    "新月琉璃直剑"
+   ],
+   "observations": [
+    {
+     "category": "manifestation",
+     "text": "涡波的爱剑（本章写法『新月琉璃直剑』=判例4库内名之异写，登记别名）：强行军阶段涡波体力MP充实、拔其宣言加入前卫行列开路",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 195, "quote": "拔出『新月琉璃直剑』体力和MP都充实的我宣言要加入前卫的行列。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "Sylph・堕落使徒",
+    "entity_type": "道具(魔剑·莱纳)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "manifestation",
+     "text": "莱纳双剑其一：对不使用风魔法的敌人（RioshethEagle类）反成风魔法相性最差之选，按涡波指示与『片翼』交换收起（E4）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 177, "quote": "「──莱纳！对方明显是风魔法相性最差的对手！把『Sylph・堕落使徒』和『片翼』交换！还有和这家话战斗节约着使用风魔法！」"},
+    {"vol": 1, "chapter": 192, "line": 181, "quote": "不仅失去了单纯的刀刃，对风魔法的耐性莱纳也失去了。但是，就算如此『片翼』也比『Sylph・堕落使徒』来的合适。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "赫勒比勒夏因之神圣双剑『片翼』",
+    "entity_type": "道具(剑·莱纳)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "manifestation",
+     "text": "昨日新入手的剑（本章简称『片翼』=库内既有别名）：是并没有取回本来力量的武器、较『Sylph・堕落使徒』衰弱几段；装备语境下莱纳失去对风魔力的耐性；即便如此对风相性最差之敌反而更合适（涡波判断）——本来力量之谜入F3",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 179, "quote": "莱纳巧妙的把一边的剑收起来，换成了昨天新入手的剑。"},
+    {"vol": 1, "chapter": 192, "line": 180, "quote": "『片翼』并没有取回本来的力量的武器。和『Sylph・堕落使徒』比应该要衰弱几段的剑吧。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "神铁锻冶",
+    "entity_type": "技能(锻冶系)"
+   },
+   "aliases_to_register": [
+    "神铁锻造"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "千年前的持有者为雷纳尔多（本章原文作『神铁锻造』，判例4合入库内名神铁锻冶并登记异写）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 134, "quote": "在这之上，现在得到了千年前的魔王罗德所教授的魔法，千年前的『神铁锻造』持有者的雷纳尔多充实了装备，级别也得到了提升。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "魔石",
+    "entity_type": "道具(怪物掉落)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "manifestation",
+     "text": "怪物被击杀化光后掉落：断崖战斗中坠向悬崖下方无法回收（让人不开心）；另涡波自述体内曾有『魔石』、与帕林库洛的战斗结束后被剥离（据涡波自述，入E9）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 169, "quote": "就这样被击穿心脏的RioshethEagle变成了光，魔石向着悬崖下方掉了下去。"},
+    {"vol": 1, "chapter": 192, "line": 30, "quote": "说实话，结束语帕林库洛的战斗，身体中的『魔石』被剥离让我极具弱化了。『素质』被削减，特定的技能也被弱化。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "佩艾希亚",
+    "entity_type": "地点(迷宫六十六层·里侧世界)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "别称『世界（佩艾希亚）』：与罗德相会、呼唤出诺斯菲、两人的『救世主』在『这里』会合后，本停滞着的它有什么正涌动着（涡波叙述，入F4）；罗德与诺斯菲现留守于此、有『房间』可休息（轮休制据点）；其阶层=六十六层，与艾德四十层、罗德五十层构造相近",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 7, "quote": "与罗德相会，呼唤出诺斯菲，两人的『救世主』在『这里』回合，本停滞着的这个『世界（佩艾希亚）』有什么正涌动着。"},
+    {"vol": 1, "chapter": 192, "line": 81, "quote": "「啊啊，所以说，只有一方用『连接』回佩艾希亚的房间里休息」"},
+    {"vol": 1, "chapter": 192, "line": 246, "quote": "弟弟艾德的阶层的四十层──以及『佩艾希亚』的阶层六十六层的构造十分的接近，并没有耳目一新的感觉。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "五十六层",
+    "entity_type": "地点(迷宫)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章攻略起点（自其朝上的阶梯出发）：光属性怪物为中心、不好战（据诺斯菲说）不引发袭击，可作安全地带；构造与变回合之前一样、与低阶层岩石表面不同、某些墙壁发光、复杂迷宫中『维度』成关键；深处光亮递减、可见电灯泡样闪烁处=正从光属性安全圈脱离的指标（敌人属性可能变化之地，诺斯菲预告）；食物在此仅剩一次分量",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 38, "quote": "在这途中，虽然与几头怪物相遇但并没有受到袭击。和诺斯菲说的一样，有着光属性的特色的怪物并不好战。看来这个五十六层能作为安全地带。"},
+    {"vol": 1, "chapter": 192, "line": 35, "quote": "来到这里迷宫的构造好像变回合之前一样了。"},
+    {"vol": 1, "chapter": 192, "line": 100, "quote": "越是前进光亮越是减少，有时还能看到像电灯泡一样闪烁着的地方。这是意味着正从光属性的安全圈脱离的指标。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "五十五层",
+    "entity_type": "地点(迷宫)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "风属性怪物地带：等着的不是发光怪物、而是六十六层附近出现的那种凶猛风属性怪物；天花板微微提高、看惯的岩石构成的不整洁回廊；SkyRunner（级别52）出没于入口带；深部石造回廊变粗糙、成被夹在悬崖谷底的险峻岩道、出现断崖绝壁段（RioshethEagle级别53袭击带）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 104, "quote": "并不是五十五层见到的闪着光辉的怪物在等着，倒不如说是六十六层附近出现的凶猛的风属性的怪物。天花板微微的提高了，看惯的岩石构成的不整洁的回廊。"},
+    {"vol": 1, "chapter": 192, "line": 138, "quote": "把挡道的SkyRunner打倒，我们进入了下一个区域。石造的回廊的样子变了，变得更加粗糙。与其说是墙壁不如说是被夹在了悬崖的谷底的险峻岩道。"},
+    {"vol": 1, "chapter": 192, "line": 139, "quote": "不如说，已经没什么平坦的道路了，有时也会出现不得不通过断崖绝壁的画面。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "五十四层",
+    "entity_type": "地点(迷宫)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "由悬崖包围的特殊区域、但基本是石造的普通回廊（断崖战斗辛苦、此层应轻松不少——涡波预判）；经此发动强行军直贯五十三、五十二层（同法攻略）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 173, "quote": "惯例的微微张开『维度』掌握下一层的情况，立马突入了进去。悬崖边的战斗十分的辛苦，但是下一层应该会轻松不少。"},
+    {"vol": 1, "chapter": 192, "line": 174, "quote": "以地上为目标的迷宫攻略让我有种奇怪的感觉，我们向着五十四层前进。这里也是由悬崖包围的特殊区域不过基本是石造的普通回廊。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "五十一层",
+    "entity_type": "地点(迷宫·空洞层)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "迄今为止没有遇到过的层：完全的空洞；与六十六层同样广阔的空间与高度、但中央没有螺旋的楼梯；位于迷宫的一半（五十层与五十一层的夹缝间）构成拒绝折返的构造；本来应是难以降落的楼层、迷宫逆向行走（自下向上）状况下又产生其他困难——被涡波以『Default』垂直突破（E6）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 215, "quote": "但是有问题的是之后的五十一层。"},
+    {"vol": 1, "chapter": 192, "line": 217, "quote": "完全的空洞的层数在等着。"},
+    {"vol": 1, "chapter": 192, "line": 218, "quote": "然后，和六十六层同样广阔的空间与高度但是──中央却没有螺旋的楼梯。"},
+    {"vol": 1, "chapter": 192, "line": 219, "quote": "迷宫的一半，五十层与五十一层的夹缝间，成为了拒绝折返的构造。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "五十层",
+    "entity_type": "地点(迷宫·罗德的阶层)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "罗德的阶层：广阔的草原世界；构造与艾德的四十层、佩艾希亚的六十六层十分接近、无耳目一新的感觉；坚持风属性、叩击身体般的狂风吹来；迷宫的正中间分界（与五十一层夹缝=拒绝折返构造）；中央附近云从天井溢出、雨滴落下、与强风合流成暴风雨草原之草如激流中摇曳；无守护者现身时为理想休息点（涡波判断）；章末中央出现跪地人影起立之『召还』现象（E8/F1）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 243, "quote": "「这，这里就是五十层⋯⋯⋯罗德的阶层⋯⋯」"},
+    {"vol": 1, "chapter": 192, "line": 245, "quote": "广阔的世界是一片草原。"},
+    {"vol": 1, "chapter": 192, "line": 247, "quote": "就好像坚持这自己的风属性一般，宛如叩击身体一般的狂风吹了过来，仅此而已。"},
+    {"vol": 1, "chapter": 192, "line": 252, "quote": "确认这楼层的安全而到处走着，慢慢的云的走向变得奇怪了起来。这不是什么比喻，是现实的表现。五十层的中央附近，明明在迷宫里云却从天井里溢出来。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "队伍同伴(前卫·受指挥)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "落到迷宫底部紧急结成的队伍、经数日共同探索『好不容易终于有真正成为伙伴的感觉了』（涡波述）；战斗分工固定为莱纳前卫、涡波后方支援指挥；对涡波加入前卫的宣言以『了解，队长。没有异议』全权信赖应允；奇袭时涡波跟在冲阵的莱纳之后",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 23, "quote": "落到迷宫的底部，紧急结成的队伍，好不容易终于有真正成为伙伴的感觉了。"},
+    {"vol": 1, "chapter": 192, "line": 106, "quote": "「啊啊，了解了。像以往一样，前卫就交给我了」"},
+    {"vol": 1, "chapter": 192, "line": 197, "quote": "全权的信赖让莱纳没有片刻便答应了下来。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "罗德·缇缇",
+    "rel_type": "魔法传授",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "千年前的魔王罗德教授了莱纳魔法（涡波回顾莱纳成长要素之一；罗德所锻炼的魔力操作亦令莱纳用风不耗MP）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 134, "quote": "在这之上，现在得到了千年前的魔王罗德所教授的魔法，千年前的『神铁锻造』持有者的雷纳尔多充实了装备，级别也得到了提升。"},
+    {"vol": 1, "chapter": 192, "line": 144, "quote": "对亏了罗德所锻炼的魔力操作，没有浪费多余的魔力与体力。在能够自然恢复的范围内使用风魔法，实际上莱纳的MP并没有减少。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "雷纳尔多",
+    "rel_type": "充实装备(锻冶强化)",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "千年前的『神铁锻冶』持有者雷纳尔多充实了莱纳的装备（涡波回顾其成长要素之一）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 134, "quote": "在这之上，现在得到了千年前的魔王罗德所教授的魔法，千年前的『神铁锻造』持有者的雷纳尔多充实了装备，级别也得到了提升。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.86,
+   "canonical": {
+    "subject": "雷纳尔多",
+    "rel_type": "持有(千年前)",
+    "object": "神铁锻冶",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "雷纳尔多为千年前的『神铁锻冶』持有者（本章原文作『神铁锻造』）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 134, "quote": "在这之上，现在得到了千年前的魔王罗德所教授的魔法，千年前的『神铁锻造』持有者的雷纳尔多充实了装备，级别也得到了提升。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "罗德·缇缇",
+    "rel_type": "阶层守护(守护者)",
+    "object": "五十层",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "五十层为罗德的阶层（守护者所有层）；守护者的阶层有人进来后发生『召还』现象——但罗德身在六十六层（据莱纳），故五十层被召还者身份存疑（F1）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 243, "quote": "「这，这里就是五十层⋯⋯⋯罗德的阶层⋯⋯」"},
+    {"vol": 1, "chapter": 192, "line": 260, "quote": "那是，守护者的阶层有人进来后的『召还』现象。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.75,
+   "canonical": {
+    "subject": "RioshethEagle",
+    "rel_type": "上位种(涡波推断)",
+    "object": "里约鹰",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "名字与二十层附近的里约鹰很像、『不出意外应该是它的上位种』（涡波推断）；两者同具呼唤同伴特性、同样不使用风魔法而以嘴爪攻击为主体",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 166, "quote": "和二十层附近的里约鹰的名字很像。不出意外应该是它的上位种。"},
+    {"vol": 1, "chapter": 192, "line": 170, "quote": "悬崖边的战斗没办法回收魔石让人不开心，我们继续应对着敌人的袭击。和里约鹰一样有着呼唤同伴的特性。结果我们最后不得不把周围的RioshethEagle全部打倒。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "技能掌握(昨日)",
+    "object": "指挥",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波昨天掌握技能『指挥』——正因为是和莱纳一起战斗才掌握；数值还很低",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 161, "quote": "昨天掌握的技能『指挥』，能发挥它最大性能就是莱纳了。倒不如说，正因为是和莱纳一起战斗才掌握了『指挥』这个技能。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "装备持有(双剑其一)",
+    "object": "Sylph・堕落使徒",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "莱纳双剑其一；对不使用风魔法的敌人成最差相性、本章按指示收起换『片翼』",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 177, "quote": "「──莱纳！对方明显是风魔法相性最差的对手！把『Sylph・堕落使徒』和『片翼』交换！还有和这家话战斗节约着使用风魔法！」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "装备持有(昨日新入手·换装启用)",
+    "object": "赫勒比勒夏因之神圣双剑『片翼』",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "莱纳昨日新入手『片翼』并按涡波指示换装启用（对风相性最差之敌）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 179, "quote": "莱纳巧妙的把一边的剑收起来，换成了昨天新入手的剑。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "装备使用(前卫开路)",
+    "object": "新月琉璃制直剑",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "体力MP充实的涡波拔『新月琉璃直剑』宣言加入前卫行列（本章异写=库内名之别名）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 195, "quote": "拔出『新月琉璃直剑』体力和MP都充实的我宣言要加入前卫的行列。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "使用(线状连结·毫米级测距)",
+    "object": "维度・多重展开",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "为突破五十一层空洞而以线状连结上空、形象『直尺』毫米级测距（为省『Default』消耗）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 226, "quote": "「不没我的华MP还有多余。而且这途中还有怪物在晃来晃去，移动最好能在一瞬间结束。⋯⋯稍微等一下。──魔法『维度・多重展开』」"},
+    {"vol": 1, "chapter": 192, "line": 228, "quote": "次元魔术向上空伸展。但是不是想着广范围扩散，而是以连接五十层的空洞而以线的形式连起来的感觉。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.92,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "使用(首次长距离空间压缩)",
+    "object": "Default",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "抓着莱纳的手发动『Default』完成以前从未有过的长距离空间压缩（约2274米垂直、MP未过度消耗）——与『维度・多重展开』测距联动",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 236, "quote": "「──魔法『Default』」"},
+    {"vol": 1, "chapter": 192, "line": 238, "quote": "以前从未有过长距离的空间压缩，但是没有消耗过多的MP。这个魔法的中心在于空间的压缩，最费魔力的地方也在那里。因此，如果只是距离上的伸展就没有任何困难的地方。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "直传魔法运用(全力喊出)",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "莱纳的魔法运用方式中亦有涡波直传之物（用全力喊出来）——莱纳战斗成长来源之一",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 155, "quote": "顺便一提，也有我直传的魔法的运用方式（用全力喊出来）。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.8,
+   "canonical": {
+    "subject": "西娅·勒伽西",
+    "rel_type": "前任队长(据莱纳·外行人队长)",
+    "object": "莱纳",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据莱纳：『之前是外行人的西娅・伽勒西是队长』——西娅·勒伽西曾任莱纳所在队伍的队长（本章异写伽勒西登记别名）；莱纳此前缺乏与正经队长同队的经验",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 186, "quote": "「不，之前是外行人的西娅・伽勒西是队长，再之前是芙兰姐姐做队长⋯⋯」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.78,
+   "canonical": {
+    "subject": "拉丝缇娅拉",
+    "rel_type": "认可(不眠更强·据涡波)",
+    "object": "相川涡波",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据涡波言：不睡的话反而更强、为拉丝缇娅拉所认可（于不眠不休赶路讨论中引述）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 72, "quote": "我的场合来说睡意满满的保持一周的话神经反而会敏锐。不睡的话反而更强，是拉丝缇娅拉也认可的。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "使用(强行军连用)",
+    "object": "『加速』",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "强行军中如咏唱般连用『加速』，将本来攻略时间降至一半以下；代价为失去『安全』",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 206, "quote": "继续『加速』──，『加速』『加速』『加速』──！"},
+    {"vol": 1, "chapter": 192, "line": 210, "quote": "屏住呼吸，虽然曾有几次受到敌人的攻击，但是本来的攻略时间降到了一半以下这是毋庸置疑的，就这样，我们的迷宫探索加速成功了。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "使用(索敌·侦察·识人)",
+    "object": "『维度』",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "本章反复使用：上楼前侦察下层、计算最短捷径、章末识别人影",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 103, "quote": "然后回廊的光亮陷入了以往的薄暗之中的时候到达了五十五层的楼梯。在上楼之前微微的张开了『维度』"},
+    {"vol": 1, "chapter": 192, "line": 262, "quote": "马上张开『维度』后，叫出了一个人物的名字。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "速归地上方针确立与『连接』轮休制",
+    "kind": "方针确立(队伍决策)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "本日晨·佩艾希亚城内查缺后→五十六层行进途中商定（滞留『这里』第四日之后·推定）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "『连接』", "佩艾希亚", "罗德·缇缇", "诺斯菲", "最深部之誓约者"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波依『感应』确信罗德无论何时崩溃都不奇怪、诺斯菲气氛有异、可能没有多少时间了，决意尽早回地上（『不管做什么『这里』都过于闭锁了』）；食物仅剩一次分量→『吃饭的话只能忍耐了』；时间计算：剩16层×一层2小时=32小时、识路的四十层不浪费前进约20小时——两天不眠不休即可结束、到四十层即胜利（若三四层『连接』还在则毫无疑问能归还）；莱纳对不眠集中精神不安→轮休方案：有必要休息的一方用『连接』回佩艾希亚房间休息、另一方留迷宫独守『连接』（越近上层越轻松；涡波失守可重制、莱纳失守则拜托留守的罗德和诺斯菲救出）；自省『当初最开始就应该选这个方法』、感谢『最深部的誓约者』的同时它诱发了心情松懈、已遗忘不眠不休奔向最深部的焦躁感；莱纳初以为回佩艾希亚外迷宫内休息不可能、经说明接受",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 5, "quote": "「今天，在城里来回游走，想着做些填补⋯⋯但，已经是极限了。和两人的谈话确信了这点。罗德无论何时崩溃都不奇怪，诺斯费也是感觉到了和以往的气氛不太一样。可能，没有多少时间了」"},
+    {"vol": 1, "chapter": 192, "line": 50, "quote": "「还有，还好好的计算过时间了哦。我已经完全的记住了四十层左右的路实际还剩下的层数只有16层而已。那么，这十六层一层要两小时来考虑，必要的时间是三十二个小时。接着，知道路的四十层毫不浪费的前进的话我想只要二十小时，合计的话⋯⋯」"},
+    {"vol": 1, "chapter": 192, "line": 52, "quote": "「恩──简单地说，只要两天不眠不休的进发的话就能结束啦」"},
+    {"vol": 1, "chapter": 192, "line": 83, "quote": "「啊啊，有必要休息的哪一个回佩艾希亚。所以另一个留在迷宫里独自守护『连接』"},
+    {"vol": 1, "chapter": 192, "line": 93, "quote": "虽然十分感谢『最深部的誓约者』但诱发了心情的松懈也是毋庸置疑的。以前，不眠不休的朝着最深部奔走的焦躁感也遗忘许久了。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "五十五层SkyRunner奇袭战",
+    "kind": "战斗(奇袭·演算支援)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "同日·五十五层（入口带回廊）"
+   },
+   "entities_involved": ["莱纳", "SkyRunner", "相川涡波", "维度・决战演算", "魔力风刃化"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "从SkyRunner死角发动奇袭→其反应极快回头迎击（前脚化钩爪）；最初一击莱纳双剑与钩爪相咬合、双方弹向后方，第二次交锋同时突进时涡波无咏唱以『维度・决战演算』把两者攻击轨道更改不足一厘米→莱纳全力的魔法剑『风刃剑』直击，SkyRunner未作过多抵抗身体被切断化光消失；战前约定无法回避时就拜托莱纳前卫；战后涡波断言『已经是另一个次元的强大了』——对该带弱化的怪物先制最强一击即可确定胜利",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 114, "quote": "我们从SkyRunner的死角发动袭击。"},
+    {"vol": 1, "chapter": 192, "line": 121, "quote": "最初的一击──莱纳的双剑与SkyRunner的钩爪相咬合，双方被弹向后方。接着，是第二次的交锋。看到莱纳和SkyRunner同时突进后我发动了无咏唱的魔法。"},
+    {"vol": 1, "chapter": 192, "line": 122, "quote": "把那个情报元，真的是很轻微──用『维度・决战演算』更改两者的攻击轨道。恐怕，仅偏离了连一厘米都没有的距离。但是却得到了巨大的收益。"},
+    {"vol": 1, "chapter": 192, "line": 123, "quote": "「──『风刃剑』」"},
+    {"vol": 1, "chapter": 192, "line": 128, "quote": "「──已经是另一个次元的强大了」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "断崖带RioshethEagle迎击战",
+    "kind": "战斗(迎击·群战)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "同日·五十五层深处断崖岩道（约二十分钟后抵五十四层楼梯前）"
+   },
+   "entities_involved": ["莱纳", "RioshethEagle", "相川涡波", "里约鹰"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "断崖登录途中新的鸟型怪物RioshethEagle（级别53）袭来：无立足点+体势不利的条件下二人不焦躁（只要魔力在就绝不会衰弱死、对彼此配合绝对信赖）；莱纳迎击、涡波后方支援的分工；RioshethEagle被击穿心脏化光、魔石坠崖无法回收；其呼伴特性（同里约鹰）→最终不得不把周围个体全部打倒；重复迎击与爬坡约二十分钟抵五十四层楼梯前",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 167, "quote": "而且，不仅没有立足点，还要在体势不妙的情况下战斗，但我们并不焦躁。只要有魔力的情况下，就绝对不会衰弱死。不论如何，我们都对彼此的配合有着绝对的信赖。"},
+    {"vol": 1, "chapter": 192, "line": 169, "quote": "就这样被击穿心脏的RioshethEagle变成了光，魔石向着悬崖下方掉了下去。"},
+    {"vol": 1, "chapter": 192, "line": 171, "quote": "接着，重复着迎击与爬坡二十分钟左右，终于到达了五十四层的楼梯前。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "对RioshethEagle武器换装与零MP战术",
+    "kind": "战术变更",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "同日·五十四层行进途中"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "Sylph・堕落使徒", "赫勒比勒夏因之神圣双剑『片翼』", "RioshethEagle"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "数度交战彻底观察后涡波判明：对方明显是风魔法相性最差的对手→指示把『Sylph・堕落使徒』与『片翼』交换、并节约使用风魔法（莱纳：说起来你有千里眼来着）；RioshethEagle同里约鹰不用风魔法、嘴爪攻击主体——从莱纳即死攻击脱离时不以风魔法追击、由涡波控制住后投掷补刀；战斗时间略拉长但本场战斗两人完全没有使用MP",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 177, "quote": "「──莱纳！对方明显是风魔法相性最差的对手！把『Sylph・堕落使徒』和『片翼』交换！还有和这家话战斗节约着使用风魔法！」"},
+    {"vol": 1, "chapter": 192, "line": 182, "quote": "和里约鹰同样，不使用任何的风魔法，嘴和爪子的攻击才是主体。就算从莱纳的即死攻击中脱离出去，不使用风魔法追击，我控制住以后用投掷给予最后一击就好了。"},
+    {"vol": 1, "chapter": 192, "line": 183, "quote": "节约魔力的关系，稍微拉长了点战斗时间，但没有什么特别的问题。这场战斗我们完全没有使用MP。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "五十四层起强行军（『加速』连用·攻略时间减半）",
+    "kind": "强行军(里程碑)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "同日·五十四层→五十三层→五十二层（开始后四个小时节点明示）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "『加速』", "新月琉璃制直剑", "五十四层"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波宣言『接下来我也在前面挥剑吧。之后要更加的加快脚步才行』、拔『新月琉璃直剑』加入前卫，莱纳以『了解，队长。没有异议』全权信赖应允→认真的强行军开始：地形、敌人、祭坛上的珍宝神器全部无视；被怪物从后袭击时也不作无端魔力消耗、强行拉走后前进；连用『加速』如咏唱般念诵——代价为失去『安全』、屏住呼吸数次受敌攻击，但本来攻略时间降到一半以下（自评恐怕是理论上的最速）；开始四小时后愈感轻松（无异常回避率/移动力怪物），五十三层与五十二层用同样方式攻略",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 194, "quote": "「接下来我也在前面挥剑吧。之后要更加的加快脚步才行」"},
+    {"vol": 1, "chapter": 192, "line": 199, "quote": "就这样，认真的强行军开始了。"},
+    {"vol": 1, "chapter": 192, "line": 201, "quote": "在祭坛上的珍宝神器也好全部无视。"},
+    {"vol": 1, "chapter": 192, "line": 206, "quote": "继续『加速』──，『加速』『加速』『加速』──！"},
+    {"vol": 1, "chapter": 192, "line": 212, "quote": "接着，这个强硬的迷宫探索已经开始了四个小时。"},
+    {"vol": 1, "chapter": 192, "line": 214, "quote": "没有拥有着异样回避率的怪物，也没有拥有着异样移动力的怪物。没有什么特别的问题，五十三层与五十二层用同样的方式攻略了。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "五十一层空洞『Default』垂直突破",
+    "kind": "里程碑(首次长距离空间移动)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "同日·五十一层空洞底部→五十层（『Default』瞬间）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "维度・多重展开", "Default", "五十一层", "五十层"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "站在寸草不生的空洞地面仰望（向只做这个迷宫的家伙发牢骚）→涡波马上得出最好解答『用『Default』好了』（不用风魔法的理由：MP需有余裕、途中有怪物晃荡、移动最好一瞬间结束）；『维度・多重展开』以线状连结上空、形象『直尺』毫米级测量——闭眼意图性切断触觉听觉嗅觉特化测距，得地面到上空距离两千两百七十四米七十八厘米三毫米（不，四毫米左右·小数点以下误差在容许范围内）；抓着莱纳的手发动『Default』：以前从未有过的长距离空间压缩、未消耗过多MP（魔法的中心在空间压缩、最费魔力处也在那，单纯距离伸展无困难）→身体被拉扯、一瞬间距离变成零、与浮游感一同在上空被放出→先把莱纳丢进大空洞、涡波抓边缘爬进五十层，平安抵达",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 223, "quote": "「哈啊，没办法、用『Default』好了。」"},
+    {"vol": 1, "chapter": 192, "line": 232, "quote": "从石造的地面到上空的距离时⋯⋯两千两百七十四米七十八厘米三毫米──不，四毫米左右。小数点以下的误差在容许范围内。"},
+    {"vol": 1, "chapter": 192, "line": 236, "quote": "「──魔法『Default』」"},
+    {"vol": 1, "chapter": 192, "line": 240, "quote": "感到身体被拉扯后一瞬间距离变成了零。"},
+    {"vol": 1, "chapter": 192, "line": 242, "quote": "首先把莱纳丢进大空洞里。我抓着大空洞的边缘后爬进五十层。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "抵达五十层（罗德阶层·草原暴风雨）",
+    "kind": "到达(异变伴随)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "同日·五十层（『Default』突破后）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "罗德·缇缇", "五十层", "艾德"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "窥伺周围：广阔的世界是一片草原、叩击身体般的狂风（坚持风属性）；构造与弟弟艾德的四十层、佩艾希亚的六十六层十分接近、无耳目一新的感觉；莱纳疑问：罗德那家伙现在在六十六层、这种场合守护者会怎么样、谁都不出来吗？→涡波料大概如此、欲以此层为休息点（已经走了很久）；莱纳为确认危险四处走动；巡查中云的走向变怪——五十层中央附近、迷宫里云却从天井溢出、雨滴落下、与强风合流如暴风雨（草原之草如大海激流中摇曳）→涡波感不适合休息准备出发",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 243, "quote": "「这，这里就是五十层⋯⋯⋯罗德的阶层⋯⋯」"},
+    {"vol": 1, "chapter": 192, "line": 245, "quote": "广阔的世界是一片草原。"},
+    {"vol": 1, "chapter": 192, "line": 249, "quote": "「但是，基督。现在罗德那家伙在六十六层哪里。这种场合，守护者会怎么样呢。谁都不出来吗？」"},
+    {"vol": 1, "chapter": 192, "line": 254, "quote": "接着，雨滴从云中落了下来。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "五十层中央『召还』人影出现",
+    "kind": "遭遇(悬念)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "同日·五十层暴风雨中央（章末）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "罗德·缇缇", "五十层"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "暴风雨的中央——五十层的中心有人影出现：跪在地上的人影正好站了起来；此光景有强烈既视感=守护者的阶层有人进来后的『召还』现象（涡波判读）；涡波唤『罗，罗德⋯⋯？』并马上张开『维度』叫出一个人物的名字——但站在那里的是──（章末切断，身份未揭示，入F1）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 257, "quote": "暴风雨的中央──五十层的中心有人影出现了。"},
+    {"vol": 1, "chapter": 192, "line": 258, "quote": "跪在地上的人影，现在正好站了起来。"},
+    {"vol": 1, "chapter": 192, "line": 260, "quote": "那是，守护者的阶层有人进来后的『召还』现象。"},
+    {"vol": 1, "chapter": 192, "line": 261, "quote": "「罗，罗德⋯⋯？」"},
+    {"vol": 1, "chapter": 192, "line": 263, "quote": "但是，在那里的是──"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "帕林库洛战后涡波弱化（体内魔石剥离）",
+    "kind": "状态变化(回述)",
+    "tick": 192,
+    "instant": null,
+    "time_verbatim": "回述：与帕林库洛的战斗结束后（本章之前）"
+   },
+   "entities_involved": ["相川涡波", "帕林库洛", "魔石"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "据涡波自述：与帕林库洛的战斗结束后、身体中的『魔石』被剥离令其极大弱化——『素质』被削减、特定的技能也被弱化；取而代之心灵更加强健（不会再畏惧/不欲再从这个世界逃走/不会再搞错自己的愿望/不会再独自一人烦恼迷失自我——自述无丝毫疑惑）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 30, "quote": "说实话，结束语帕林库洛的战斗，身体中的『魔石』被剥离让我极具弱化了。『素质』被削减，特定的技能也被弱化。"},
+    {"vol": 1, "chapter": 192, "line": 32, "quote": "不会再畏惧了。已经不会想着再从这个世界逃走了。不会再搞错自己的愿望了。不会再独自一个人烦恼迷失自我了。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "五十层『召还』人影之谜（预期罗德→另有其人）",
+    "setup_chapter": 192,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "罗德身为五十层守护者却身在六十六层（据莱纳指摘）→五十层中央暴风雨里被『召还』站起的人影：涡波唤『罗德？』张开『维度』后章末切断『但是，在那里的是──』——召还者非罗德；其身份、守护者不在时『召还』响应于谁、与罗德/诺斯菲现状（F2）及ch184[双守护者联手成敌之忧]开环的关联待回收",
+    "chapter": 192
+   },
+   "entities_involved": ["相川涡波", "罗德·缇缇", "五十层", "莱纳"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "章末主悬念钩（五十层召还者身份）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 249, "quote": "「但是，基督。现在罗德那家伙在六十六层哪里。这种场合，守护者会怎么样呢。谁都不出来吗？」"},
+    {"vol": 1, "chapter": 192, "line": 257, "quote": "暴风雨的中央──五十层的中心有人影出现了。"},
+    {"vol": 1, "chapter": 192, "line": 260, "quote": "那是，守护者的阶层有人进来后的『召还』现象。"},
+    {"vol": 1, "chapter": 192, "line": 263, "quote": "但是，在那里的是──"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.87,
+   "canonical": {
+    "name": "罗德与诺斯菲的表面平静与『没有多少时间了』",
+    "setup_chapter": 192,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "涡波依『感应』确信：与昨日探索结束时不同两人表情变得明亮、罗德暴躁平息、诺斯菲老实——『感觉只是表面上这样而已』『那两个人明显很奇怪』『罗德无论何时崩溃都不奇怪，诺斯费也是感觉到了和以往的气氛不太一样。可能，没有多少时间了』；有被追赶不舍之感故要尽可能早一步到地上——推进ch181/184双守护者变数与诺斯菲留恋开环，崩溃/生变的具体形态待回收",
+    "chapter": 192
+   },
+   "entities_involved": ["相川涡波", "罗德·缇缇", "诺斯菲", "莱纳"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "既有核心开环（双守护者变数）之判定推进：表面平静=倒计时",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 5, "quote": "「今天，在城里来回游走，想着做些填补⋯⋯但，已经是极限了。和两人的谈话确信了这点。罗德无论何时崩溃都不奇怪，诺斯费也是感觉到了和以往的气氛不太一样。可能，没有多少时间了」"},
+    {"vol": 1, "chapter": 192, "line": 9, "quote": "「感觉只是表面上这样而已。至今为止与各式各样的守护者战斗的经验推测，那两个人明显很奇怪⋯⋯」"},
+    {"vol": 1, "chapter": 192, "line": 10, "quote": "与昨天的迷宫探索结束时不同，两人的表情都变得明亮起来了。"},
+    {"vol": 1, "chapter": 192, "line": 15, "quote": "有一种被追赶不舍的感觉。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "『片翼』本来的力量未取回",
+    "setup_chapter": 192,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "『片翼』是并没有取回本来力量的武器、较『Sylph・堕落使徒』衰弱几段（涡波述）；装备语境下并失去单纯刀刃与对风魔力的耐性——其『本来的力量』为何、能否取回待回收（先验关联：赫勒比勒夏因家神圣双剑之来历，ch89/91/92/124线）",
+    "chapter": 192
+   },
+   "entities_involved": ["赫勒比勒夏因之神圣双剑『片翼』", "莱纳", "Sylph・堕落使徒"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "武器本源力量待恢复（『片翼』未取回本来的力量）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 180, "quote": "『片翼』并没有取回本来的力量的武器。和『Sylph・堕落使徒』比应该要衰弱几段的剑吧。"},
+    {"vol": 1, "chapter": 192, "line": 181, "quote": "不仅失去了单纯的刀刃，对风魔法的耐性莱纳也失去了。但是，就算如此『片翼』也比『Sylph・堕落使徒』来的合适。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "『世界（佩艾希亚）』有物涌动",
+    "setup_chapter": 192,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "与罗德相会、呼唤出诺斯菲、两人的『救世主』在『这里』会合后——本停滞着的『世界（佩艾希亚）』有什么正涌动着（涡波叙述）；涌动者为何、与迷宫/守护者/回地上主线的关联待回收（先验关联：ch184佩艾希亚天空异变·魔石样微光开环同向）",
+    "chapter": 192
+   },
+   "entities_involved": ["佩艾希亚", "相川涡波", "罗德·缇缇", "诺斯菲"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "世界活性化信号（本停滞的佩艾希亚有什么正涌动）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 7, "quote": "与罗德相会，呼唤出诺斯菲，两人的『救世主』在『这里』回合，本停滞着的这个『世界（佩艾希亚）』有什么正涌动着。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.84,
+   "canonical": {
+    "name": "守护者阶层的『召还』现象",
+    "fact": "守护者的阶层有人进来后发生『召还』现象（涡波凭强烈既视感判读五十层中央跪地人影起立之景）；本章案例：涡波与莱纳进入罗德的阶层五十层→暴风雨中央出现人影——但守护者罗德身在六十六层（据莱纳），召还者身份未揭示；守护者不在时何人被召还、响应规则细节待后续补全",
+    "chapter": 192,
+    "tick": 192
+   },
+   "entities_involved": ["五十层", "罗德·缇缇", "相川涡波", "莱纳"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "迷宫机制（涡波判读·既视感依据）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 259, "quote": "这幅光景有着强烈的既视感。"},
+    {"vol": 1, "chapter": 192, "line": 260, "quote": "那是，守护者的阶层有人进来后的『召还』现象。"},
+    {"vol": 1, "chapter": 192, "line": 258, "quote": "跪在地上的人影，现在正好站了起来。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.86,
+   "canonical": {
+    "name": "五十层与五十一层夹缝的『拒绝折返』构造",
+    "fact": "迷宫的一半、五十层与五十一层的夹缝间成为拒绝折返的构造：五十一层为完全空洞、与六十六层同样广阔的空间与高度但中央没有螺旋楼梯；恐怕本来是难以降落的楼层，而迷宫逆向行走（自下向上）的状况下又产生其他困难问题——本章以『维度・多重展开』测距+长距离『Default』垂直突破解决",
+    "chapter": 192,
+    "tick": 192
+   },
+   "entities_involved": ["五十一层", "五十层", "相川涡波", "莱纳"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "迷宫结构规则（迷宫正中间分界·上下行不对称难题）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 218, "quote": "然后，和六十六层同样广阔的空间与高度但是──中央却没有螺旋的楼梯。"},
+    {"vol": 1, "chapter": 192, "line": 219, "quote": "迷宫的一半，五十层与五十一层的夹缝间，成为了拒绝折返的构造。"},
+    {"vol": 1, "chapter": 192, "line": 220, "quote": "恐怕，本来是难以降落的楼层，但是迷宫的逆向行走的状况来看，又产生了其他的困难问题。与六十六层不同，站在寸草不生的地面上向着只做这个迷宫的家伙发牢骚边向天空凝视着。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "五十六层光属性安全地带与属性变化指标",
+    "fact": "五十六层以光属性怪物为中心、其不好战故不引发袭击、可作安全地带（据诺斯菲说，涡波以遇怪未被袭印证）；回廊深处光亮越是减少、有时可见电灯泡样闪烁之处——是正从光属性的安全圈脱离、敌人属性可能变化的指标（诺斯菲预告处）；脱离安全圈后即遇凶猛的风属性怪物（五十五层）",
+    "chapter": 192,
+    "tick": 192
+   },
+   "entities_involved": ["五十六层", "五十五层", "诺斯菲", "相川涡波", "莱纳"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "迷宫阶层机制（据诺斯菲说+涡波实证）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 38, "quote": "在这途中，虽然与几头怪物相遇但并没有受到袭击。和诺斯菲说的一样，有着光属性的特色的怪物并不好战。看来这个五十六层能作为安全地带。"},
+    {"vol": 1, "chapter": 192, "line": 100, "quote": "越是前进光亮越是减少，有时还能看到像电灯泡一样闪烁着的地方。这是意味着正从光属性的安全圈脱离的指标。"},
+    {"vol": 1, "chapter": 192, "line": 101, "quote": "「啊啊，一直在前进呢。这里就是诺斯菲所说的敌人的属性可能要变化的地方呢」"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.83,
+   "canonical": {
+    "name": "迷宫内外时间流速差（数日=一年·涡波推定）",
+    "fact": "涡波自述在四十层附近狩猎怪物之事『对于我而言数日前（现实应该是一年之前⋯⋯）』——迷宫/佩艾希亚侧的数日约当现实世界一年（涡波推定）；为本库首度明示的内外时差坐标",
+    "chapter": 192,
+    "tick": 192
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "世界规则（迷宫内外时间差·涡波推定）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 49, "quote": "对于我而言数日前（现实应该是一年之前⋯⋯），在四十层附近狩猎怪物时并有觉得辛苦。只要越靠近四十层，六十层左右的怪物就应该不必感到害怕。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "五十层与六十层的『试练』",
+    "fact": "五十层与六十层设有『试练』——涡波言：并没有从昨天的探索抽手的打算、正因为是这种时候才更该接受五十层与六十层的『试练』而收紧气（上行途中将迎五十层之试练；『试练』为库内既有机制实体ch0093）",
+    "chapter": 192,
+    "tick": 192
+   },
+   "entities_involved": ["『试练』", "五十层", "相川涡波", "莱纳"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "迷宫机制参照（50/60层试练·据涡波言）",
+     "chapter": 192
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 192, "line": 29, "quote": "当然，并没有从昨天的探索抽手的打算。但是，正因为是这种时候才更该接受五十层与六十层的『试练』，而收紧气。"}
+   ]
+  }
+ ]
+}

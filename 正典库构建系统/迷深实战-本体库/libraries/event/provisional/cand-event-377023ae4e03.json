@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "状态变化(跨章事实)",
+  "name": "涡波失去技能『并列思考』（自述）",
+  "tick": 190,
+  "time_verbatim": "本章自述（当下状态）"
+ },
+ "evidence": [
+  {
+   "chapter": 190,
+   "line": 32,
+   "quote": "失去了技能『并列思考』的我因为无法对思考进行分割，所以导致思考一旦开始加速就会停不下来。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 190,
+   "text": "本章自述：已失去技能『并列思考』，无法对思考进行分割——思考一旦开始加速就会停不下来（伴随脑部神经运转过快的痛苦、表情扭曲）；失去的时点与经纬本章未载"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-377023ae4e03",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0190.txt",
+  "sha": "d5e278d1a835d79796b9219865ddee82f007ea7b480a551527c79ad8f775929b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

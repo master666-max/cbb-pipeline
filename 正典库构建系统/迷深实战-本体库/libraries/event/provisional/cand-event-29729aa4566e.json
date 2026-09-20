@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "相川涡波",
+   "魔石"
+  ],
+  "instant": null,
+  "kind": "状态变化(回述)",
+  "name": "帕林库洛战后涡波弱化（体内魔石剥离）",
+  "tick": 192,
+  "time_verbatim": "回述：与帕林库洛的战斗结束后（本章之前）"
+ },
+ "evidence": [
+  {
+   "chapter": 192,
+   "line": 30,
+   "quote": "说实话，结束语帕林库洛的战斗，身体中的『魔石』被剥离让我极具弱化了。『素质』被削减，特定的技能也被弱化。",
+   "vol": 1
+  },
+  {
+   "chapter": 192,
+   "line": 32,
+   "quote": "不会再畏惧了。已经不会想着再从这个世界逃走了。不会再搞错自己的愿望了。不会再独自一个人烦恼迷失自我了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 192,
+   "text": "据涡波自述：与帕林库洛的战斗结束后、身体中的『魔石』被剥离令其极大弱化——『素质』被削减、特定的技能也被弱化；取而代之心灵更加强健（不会再畏惧/不欲再从这个世界逃走/不会再搞错自己的愿望/不会再独自一人烦恼迷失自我——自述无丝毫疑惑）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-29729aa4566e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0192.txt",
+  "sha": "71c3099c04302e834e5fe7218011cfa78f6818897cec400e75e8288f7efc70ae",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

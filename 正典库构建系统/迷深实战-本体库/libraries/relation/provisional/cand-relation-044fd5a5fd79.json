@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "装备打造与强行调校",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 188,
+   "line": 51,
+   "quote": "他连忙深深地鞠了一躬并对获赠『Sylph・堕落使徒』的事道谢。",
+   "vol": 1
+  },
+  {
+   "chapter": 188,
+   "line": 167,
+   "quote": "确认过『片翼』剑鞘上的剑带之后，雷纳尔多便去工房的仓库里拣选起了常备的魔法道具。",
+   "vol": 1
+  },
+  {
+   "chapter": 188,
+   "line": 168,
+   "quote": "把应当装备这些东西的本人放置在一边不管，他一而再再而三地擅自变更着莱纳的装备。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 188,
+   "text": "赠剑（Sylph・堕落使徒）获谢；嫌其'全自爆用的魔法道具'难以容忍，听取迷宫战斗详情后'决定莱纳所必需的装备'；说服不成即揍晕后'搜集好莱纳身上的魔法道具⋯⋯擅自甄别起来'，进而'一而再再而三地擅自变更着莱纳的装备'——以暴力代行涡波应尽的忠告（'他着实应该改变自己那伤敌一千自损八百的战法'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-044fd5a5fd79",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0188.txt",
+  "sha": "9e4c531e2949a2d44239c5f603942a627eb16393a5dd92b1da06155f17374bde",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

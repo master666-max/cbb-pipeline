@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "冲突",
+  "name": "诺斯菲索求『契约的证明』（未遂）",
+  "tick": 190,
+  "time_verbatim": "深夜·居室（承接前章拘束场景）"
+ },
+ "evidence": [
+  {
+   "chapter": 190,
+   "line": 4,
+   "quote": "「我很清楚这并不正确。但即使如此，我也要夺走涡波大人的一切。现在、就在这里⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 8,
+   "quote": "「如果得到了那所谓契约的证明，你就能够满足了吗？你真的觉得这样就能实现自己的留恋了？虽然很抱歉，但我觉得肯定不是那样⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 9,
+   "quote": "「舍此之外，我已经想不到别的了」",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 18,
+   "quote": "这是理所当然的，因为这行为已经接近强奸了，无论是从法律还是人道上来看都已经出格了。",
+   "vol": 1
+  },
+  {
+   "chapter": 190,
+   "line": 101,
+   "quote": "虽然诺斯菲确实袭击了我，但从结果来说她的目的还是未遂的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 190,
+   "text": "诺斯菲以双手把住涡波脸颊宣告『我也要夺走涡波大人的一切』；认定得到『契约的证明』即可满足留恋（『舍此之外，我已经想不到别的了』）；该行为被涡波判断为『已经接近强奸了』的出格之事；结果未遂；收手后阻挡退路的光棒消失"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f89b25fc7401",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0190.txt",
+  "sha": "d5e278d1a835d79796b9219865ddee82f007ea7b480a551527c79ad8f775929b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}
