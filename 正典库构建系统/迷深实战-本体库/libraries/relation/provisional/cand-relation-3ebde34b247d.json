@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "Default",
+  "rel_type": "使用者",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 180,
+   "line": 22,
+   "quote": "比莱纳更早反应过来的我针对这等异常事态果断打出了手中的一枚王牌。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 292,
+   "quote": "但是，莱纳在理性上也明白拥有『Default』的我去跟守护者交流最安全。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 180,
+   "text": "Element瞬移奇袭时'比莱纳更早反应过来'发动王牌拉开敌我距离；持有Default构成其只身与60层守护者交流的安全依据。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3ebde34b247d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0180.txt",
+  "sha": "ce2898aafdca4dbc40d60b49f4512ec9ee9770cfd30a7f9235f533f42e082307",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

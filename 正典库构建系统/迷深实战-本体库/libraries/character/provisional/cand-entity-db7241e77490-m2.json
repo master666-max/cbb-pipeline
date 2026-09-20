@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "技能(次元魔法)",
+  "name": "Default"
+ },
+ "evidence": [
+  {
+   "chapter": 89,
+   "line": 634,
+   "quote": "『Default』的效果是打造出次元的断层。",
+   "vol": 1
+  },
+  {
+   "chapter": 89,
+   "line": 633,
+   "quote": "完成度高到能被『表示』认可的魔法目前只有『Default』而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 21,
+   "quote": "「怎、怎么回事──！？──『Default』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 23,
+   "quote": "通过对空间的操弄，增加敌人与我们之间的距离。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 292,
+   "quote": "但是，莱纳在理性上也明白拥有『Default』的我去跟守护者交流最安全。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 89,
+   "text": "始祖涡波三魔法之一，效果『无法闪避的空间魔法』；涡波界定为'打造出次元的断层'——由对『Foam』距离感操作的即兴应用提高完成度习得；彻夜开发后成为首个被『表示』认可完成的魔法；魔力消耗量远非『Foam』能比"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-db7241e77490",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-db7241e77490-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-db7241e77490",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

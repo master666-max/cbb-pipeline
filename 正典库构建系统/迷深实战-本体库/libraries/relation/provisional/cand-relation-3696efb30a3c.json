@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "锻冶师承(指导)",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 35,
+   "quote": "「哎呀？涡涡，你不是在老爷子那儿学习锻冶技术的么？怎么做上衣服了？而且看上去还是跟迷宫攻略没什么关系的衣服呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 21,
+   "quote": "「唔姆，每一个都做的不错。赶紧带回去让他穿上试试吧」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 179,
+   "text": "涡波在其工房学习锻冶技术（罗德：'你不是在老爷子那儿学习锻冶技术的么'）；雷纳尔多检查其修复的全部装备并认可（'每一个都做的不错'），临别拍肩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3696efb30a3c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

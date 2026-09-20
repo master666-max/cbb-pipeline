@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "诺斯菲",
+  "rel_type": "选任守护者",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 181,
+   "line": 106,
+   "quote": "因此涡波大人便将已经身亡的我选为了迷宫的守护者。",
+   "vol": 1
+  },
+  {
+   "chapter": 181,
+   "line": 34,
+   "quote": "这名少女，正是这座迷宫的第六位守护者。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 181,
+   "text": "据诺斯菲自述：涡波大人将已经身亡的她选为迷宫的守护者（六十层）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9184889a079b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0181.txt",
+  "sha": "bed70cff09919f5b8c0d45e12bbcb6b65e9b8e5da9c6035ded8953acc530a575",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

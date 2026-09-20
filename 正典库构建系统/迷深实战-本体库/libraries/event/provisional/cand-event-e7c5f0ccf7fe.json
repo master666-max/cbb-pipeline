@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "LizardFlyer",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "分析",
+  "name": "LizardFlyer战力分析与弱点发现",
+  "tick": 179,
+  "time_verbatim": "同晨（撤回六十六层后）"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 269,
+   "quote": "由此推测这家伙没有办法同时进行移动和『魔法相杀』",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 286,
+   "quote": "「──那家伙，难不成是特化了回避的怪物？估计用剑攻击的话它只要看看就能躲得开。相较于身体行动的速度，那家伙的动态视力更加异常。我们用剑进行防御也没有用」",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 296,
+   "quote": "而且这次还不能用『DistanceMute』这种作弊技。因为根本就摸不到敌人啊。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 179,
+   "text": "二人复盘：'特化了回避的怪物'（用剑攻击只要看看就能躲开/动态视力异常/用剑防御也没有用）；魔法可被轻易无效化+速度绝望性差距（'就算使用威力强大难以化解的魔法大概也会遭到它的妨碍'）；撕裂肩膀的攻击力亦不容小觑；『DistanceMute』因摸不到敌人而不可用；关键发现（据涡波推测）：其迎击魔法时静止原地——'没办法同时进行移动和『魔法相杀』'，连续小魔法可将其拖住；莱纳以神圣魔法『CareFull』治疗涡波肩伤"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e7c5f0ccf7fe",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

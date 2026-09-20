@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "Ex・Wind",
+   "LizardFlyer",
+   "六十五层",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "突破(逃走)",
+  "name": "六十五层突围·抵达六十四层",
+  "tick": 179,
+  "time_verbatim": "同晨（连续数分）"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 347,
+   "quote": "数分过后，向我们袭来的LizardFlyer数量已经超过两位数。不管怎么拖，一旦解除了魔法的束缚，对手就又会追上来，数量越来越多也是必然的。现在的状态就像滚雪球。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 352,
+   "quote": "「──基督，做好准备！『Ex・Wind』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 356,
+   "quote": "多亏了莱纳妙不可言的判断，我们终于冲过了通往六十四层的位于天花板的洞穴。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 358,
+   "quote": "一边感谢着做出怪物不能跨层行动的规则的自己，我们一边在六十四层整理呼吸。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 179,
+   "text": "二人将阶梯当跳板疾走攀升：以『维度』+凝缩风魔法逼停追兵（LizardFlyer感知浓密魔力即由追踪转向迎击）；追击者滚雪球至两位数、牵制余裕渐失；终盘莱纳施放『Ex・Wind』以爆炸推进，二人冲过天花板上通往六十四层的洞穴——所有LizardFlyer当即停止追击（怪物不能跨层规则于深层通用）；涡波'一边感谢着做出怪物不能跨层行动的规则的自己'；二人击掌庆祝'姑且算是攻略了两层'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-878ad1a017f0",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

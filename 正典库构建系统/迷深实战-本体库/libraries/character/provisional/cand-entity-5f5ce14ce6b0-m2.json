@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "技能(莱纳·风魔法)",
+  "name": "Jaeger·Wind"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 527,
+   "quote": "——魔法『Jaeger·Wind』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 600,
+   "quote": "是啊，是那家伙教我的。虽然掌握的还不完全，不过是适合立即发动的魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 32,
+   "quote": "「──『Jaeger・Wind』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 34,
+   "quote": "但这道风却被Element一饮而尽。岂止是造成伤害，两种风就这样直接混合在一起，让怪物变得更巨大了。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 116,
+   "quote": "「是啊，是那家伙教我的。虽然掌握的还不完全，但是适合立即发动的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 90,
+   "text": "莱纳新魔法（'是那家伙教我的'——从罗德学来；'适合立即发动的魔法'）：疾风如箭矢袭敌；对GreenHighElement两度使用均被吸收反强化"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-5f5ce14ce6b0",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-5f5ce14ce6b0-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-5f5ce14ce6b0",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

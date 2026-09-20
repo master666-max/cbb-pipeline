@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "持续欺骗",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 130,
+   "quote": "「啊─，我工作努力过头了。该修的东西都修好了，所以就休息了」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 131,
+   "quote": "我用一早准备好的台词回答道。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 152,
+   "quote": "「不了，今天做好迷宫攻略的准备，明天我要跟莱纳一起试试去挑战迷宫」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 157,
+   "quote": "果然像这样欺骗罗德使我心里很不是滋味。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 158,
+   "quote": "但是，我还是在心中发誓绝对会救她，并继续实施当初的方针。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 178,
+   "text": "以一早准备好的『工作努力过头了…所以就休息了』套话掩饰迷宫攻略与装备强化实情；以『明天要跟莱纳一起试试去挑战迷宫』婉拒三人野餐；『果然像这样欺骗罗德使我心里很不是滋味』仍在心中发誓『绝对会救她』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3b8bf44ba16b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

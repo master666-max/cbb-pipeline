@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "魔法相杀",
+  "rel_type": "使用(翅膀振动发动)",
+  "subject": "LizardFlyer"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 251,
+   "quote": "尽管这并非人语，但却是具有『咏唱』效果的『魔法宣言』。因为『维度』感知到了LizardFlyer在进行魔力构筑的事实，所以我能够理解到这一点。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 269,
+   "quote": "由此推测这家伙没有办法同时进行移动和『魔法相杀』",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 179,
+   "text": "以翅膀鸣响（具『咏唱』效果的『魔法宣言』）构筑魔力发动相杀：化解全力风魔法、亦对浓密『维度』起反应；相杀时静止无法移动（涡波推测）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7d77484be314",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

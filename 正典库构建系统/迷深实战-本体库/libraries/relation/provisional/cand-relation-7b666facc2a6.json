@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "剑技习得",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 184,
+   "line": 207,
+   "quote": "这不是单纯的疾走而纵劈。正因为我习得了诺文的剑技，所以才能察觉到她们卓越的技能级别。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 184,
+   "text": "涡波自述习得了诺文的剑技，因此才能察觉罗德与诺斯菲疾走与挥击中卓越的技能级别（涡波第一人称陈述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7b666facc2a6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0184.txt",
+  "sha": "f82e9b857a04cc658d8a91979773d04059065eba262c45c8bab2315c764bc4f6",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

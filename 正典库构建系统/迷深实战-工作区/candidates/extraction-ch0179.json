@@ -1,0 +1,1244 @@
+{
+ "_meta": {
+  "unit": "CBB 正典库逐章抽取 · CHAPTER 0179（197话-至65层为止，tick179→伪锚点2000-06-27）",
+  "source": {
+   "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+   "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+   "verified_at": "2026-09-21",
+   "slice": "行1-364（CHAPTER 0179 章标记行1+正文行2-363+尾空行364，正文362行）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "tick=179（章序）→伪锚点2000-06-27；章内故事时间坐标判读；禁墙钟。章内坐标：地下第三日白天·工房收官与装备交付（行3-24）→当晚城堡晚餐+训练+升级（行25-89）→第四天晨·再战六十六层与六十五层突围（行90-362）。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，章标记行不计、空行占号）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取",
+   "reason": "章标记『197话-至65层为止』与章题『落地死的流星』为话数/题名元文本（R6-1）未抽取；正文无翻译组注/作者杂谈；无『忽略以上指令』类注入样文本。系统本质/制定者自认=涡波推断（据『世界奉还阵』记忆）→fact 内标『据涡波推断』；BOSS复活间隔一小时出自莱纳→标『据莱纳』；LizardFlyer『无法同时移动与相杀』『利用风感知』为涡波推测→标推测；CallOuter/AllConfess 按行文顺序与轻盔/胸甲对应【待确认】；『不死鸟使者』类别原文未明示【待确认】。库内名沿用（判例4近名）：风龙（艾尔芬里斯）/阿雷亚斯家的宝剑/新月琉璃制直剑（原文『新月琉璃直剑』登记为别名）。",
+   "deterministic_check": "全章无拉丁字母指令段；引文逐字照录（含⋯⋯/──/～/『』/壊/゛等原符号不改）；『BonusPoint』『技能Point』系统提示行与『怪物』LizardFlyer行为作中『表示』显示非元文本，正常抽取。"
+  },
+  "chapter_summary": "雷纳尔多魔剑强化完工，涡波缝衣遭三方恶评。升级分点魔力/次元魔术，自认LevelUP系统为己所造。第四日二度拔石击破风龙，拾HighSkyBeryl。65层三维阶梯迷宫遭LizardFlyer重创，涡波负伤突围至64层。",
+  "alias_policy": "基督/涡涡→相川涡波（本章同指实证：莱纳『怎么了吗。基督？』、罗德『涡涡，你不是在老爷子那儿…』，ch177已注册，沿用并附新证）；『新月琉璃直剑』→『新月琉璃制直剑』（判例4：近名合入库内名，本章新登记）；艾尔芬里斯→风龙（艾尔芬里斯）（ch177已并记同指，本章原文通篇作『艾尔芬里斯』，不重复登记）；老爷子→雷纳尔多（罗德口称，ch177已知，不重复登记）。无其他新别名。",
+  "observations_policy": "实体 observations 仅放本章直接观察；跨章/主线级事实（系统制定者自认、魂继承、师承、天空异变、不可跨层规则、失传大魔法复苏背景）一律走 event/relation/setting/foreshadow。",
+  "confidence_calibration": "现场直察与战斗/侦查实录0.85-0.95；人物口述与推断（据莱纳/据涡波/推测）0.7-0.8；装备名与部位对应（CallOuter/AllConfess）0.72；『不死鸟使者』类别不明【待确认】0.6。",
+  "cross_chapter_notes": [
+   "★系统制定者自认（失忆前身份线核心推进）：涡波经『世界奉还阵』记忆明白打造LevelUP/BonusPoint系统的人=自己；系统本质据其推断=对『魔力变换（LevelUP）』的应用、将余剩魔力随机应变补足到任何方面，'个人兴趣暴走下的产物'；升级依赖莱纳的神圣魔法（否则级别锁死）；本章点数分配『魔力』+『次元魔术』；怪物不能跨层行动规则亦自称己定（'感谢着做出怪物不能跨层行动的规则的自己'）——与咒术记忆缺失/即死魔法再造线（ch171/174）并轨",
+   "★六十六层风龙二度击破（ch170『66层存档点困境』实质解消）：较轻咏唱（罗德所授）+TowersSus・Wind（现代失传大魔法经莱纳复苏）千剑牵制→Default+DistanceMute背后奇袭拔取魔石一击定型；全战MP涡波约200/莱纳约50；拾HighSkyBeryl（第二次）；BOSS复活间隔一小时（据莱纳）",
+   "★六十五层新障壁：LizardFlyer（级别61）特化回避+魔法相杀+速度绝望性差距——剑技达人三道剑闪全被目视避开、涡波肩部深两公分达动脉伤（'幸好莱纳在。不然我刚才应该就死在那儿了'）；DistanceMute因摸不到敌人而失效；唯一弱点=相杀时无法移动（涡波推测）；层构造=中央石造阶梯三维迷宫/右瀑布蓝鸟/左巨树昆虫；出口=天花板大洞；涡波另察觉天空摇动异变（莱纳无感）——未解",
+   "★莱纳战力跳级（据叙述要素枚举）：继承海莉的魂+升级+以守护者艾德和罗德教为师+掌握咏唱+魔剑→风魔法提高数个次元、复苏失传大魔法；绝境以Ex・Wind爆发推进救场；自称'风属性的骑士'、对速度自信",
+   "★日常线：涡波缝纫技能实测（可做衣物/修复装备，自评无法从零打造高级物件）；缝衣遭雷纳尔多/罗德/莱纳三方'恶趣味'差评→莱纳信赖磨损→以'完美事前准备'挽回；雷纳尔多言'会裁缝比打造武器这种危险能力要好'；罗德每日来访城堡晚餐+魔法训练（'做好了要长期滞留这里的觉悟了？'试探）"
+  ]
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.95,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": ["基督", "涡涡"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章技能与定位直察：拥有缝纫技能（自述'简单一点的我都能做'，为莱纳缝制全套衣物含围巾套袖）；修复壊掉的成品装备——自评'凭我现在的水平，还没法从零打造出这种级别的物件'；战斗定位为斥候后卫，攻击手段仅奇袭后使用『DistanceMute』一种；仅有的装备=『新月琉璃直剑』+两个护身符",
+     "chapter": 179
+    },
+    {
+     "category": "event",
+     "text": "六十五层初战LizardFlyer：肩部被其翅刃划开（伤口深达两公分、鲜血从直达动脉的伤口喷涌），自述'幸好莱纳在。不然的话我刚才应该就死在那儿了'；升级后将点数分至『魔力』与『次元魔术』",
+     "chapter": 179
+    },
+    {
+     "category": "alias",
+     "text": "本章称呼：『基督』（莱纳全章）、『涡涡』（罗德）、『小子』（雷纳尔多）；自称'被传颂成了始祖之类的，但我终究还是个人类……是个谨慎胆小的人'",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 18, "quote": "「是的，简单一点的我都能做。我想我应该更适合从事这方面的工作吧」"},
+    {"vol": 1, "chapter": 179, "line": 54, "quote": "「不，都是壊掉的成品然后再被我修复过来的。凭我现在的水平，还没法从零打造出这种级别的物件」"},
+    {"vol": 1, "chapter": 179, "line": 106, "quote": "另外说一下，我的装备只有『新月琉璃直剑』和那两个护身符而已。"},
+    {"vol": 1, "chapter": 179, "line": 117, "quote": "「怎么了吗。基督？」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.93,
+   "canonical": {
+    "name": "莱纳",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "金发（涡波特选相衬配色）；出战装备=右手新生魔剑+左手守护者宝剑双剑+神铁锻冶修复的千年前轻盔胸甲+涡波缝制的衣服；本章风魔法魔力浓度与先前判若两人（对六十六层施TowersSus・Wind千剑、突围终盘以Ex・Wind爆发推进）；自称'怎么说也是风属性的骑士。我对速度还是有自信的'",
+     "chapter": 179
+    },
+    {
+     "category": "event",
+     "text": "会神圣魔法：以『CareFull』治疗涡波肩伤；对涡波缝制的衣服评价'跟舞台上的演员一样'（对恶趣味共识），后因完美事前准备对涡波信赖恢复",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 6, "quote": "防具的色彩特别选了跟莱纳的金发相衬的颜色"},
+    {"vol": 1, "chapter": 179, "line": 145, "quote": "这股魔力的浓度与先前的莱纳相比简直判若两人。"},
+    {"vol": 1, "chapter": 179, "line": 289, "quote": "「你的伤也得赶紧治疗了。──神圣魔法『CareFull』」"},
+    {"vol": 1, "chapter": 179, "line": 318, "quote": "「怎么说也是风属性的骑士。我对速度还是有自信的」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "在城堡与莱纳摆好料理等涡波回来共进晚餐；质疑涡涡做日常衣服（'你不是在老爷子那儿学习锻冶技术的么？怎么做上衣服了'），并试探'难不成涡涡你已经做好了要长期滞留在这里的觉悟了？'；评价涡波设计'修饰过头/恶趣味'；晚饭后三人谈笑并进行魔法训练，随后离开",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 35, "quote": "「哎呀？涡涡，你不是在老爷子那儿学习锻冶技术的么？怎么做上衣服了？而且看上去还是跟迷宫攻略没什么关系的衣服呢」"},
+    {"vol": 1, "chapter": 179, "line": 43, "quote": "「不光是武器防具居然还动手做了用于日常生活的衣服，难不成涡涡你已经做好了要长期滞留在这里的觉悟了？」"},
+    {"vol": 1, "chapter": 179, "line": 74, "quote": "在这之后就没什么特别的事了。我们三人像昨天晚上一样谈笑风生，然后进行魔法的训练，接着罗德就这样离开了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "雷纳尔多",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "自称'老朽'的老锻冶师：今日一天守在『不死鸟使者』旁锻造，完成魔剑强化（对风属性抗性+减轻风魔法使用负担）；检查并认可涡波修复的全部装备（'每一个都做的不错'），拍肩嘱'赶紧带回去让他穿上试试吧'；评涡波设计'就是有点恶趣味罢了'并自归因于年纪眼光；言'比起打造武器这种危险的能力，会裁缝要好上许多'",
+     "chapter": 179
+    },
+    {
+     "category": "alias",
+     "text": "罗德口称『老爷子』（涡波在其处学习锻冶技术——本章行35）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 4, "quote": "今天一天，一刻不停地守在『不死鸟使者』旁边进行锻造的雷纳尔多如此宣告道。"},
+    {"vol": 1, "chapter": 179, "line": 21, "quote": "「唔姆，每一个都做的不错。赶紧带回去让他穿上试试吧」"},
+    {"vol": 1, "chapter": 179, "line": 19, "quote": "「这可是个好本事。比起打造武器这种危险的能力，会裁缝要好上许多」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "风龙（艾尔芬里斯）",
+    "entity_type": "怪物(迷宫六十六层BOSS·级别67)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "级别67；行动原理单纯——'谁敢往六十五层去它就干谁'；迎击时首先以咆哮和龙之风打造防御壁（莱纳风魔法无法攻破其障壁）；本章第二次被涡波奇袭拔取体内『魔石』而消灭（'根本没有还手之力'）；被击破后掉落『HighSkyBeryl』；据莱纳：被打倒后到再度出现为止间隔一个小时",
+     "chapter": 179
+    },
+    {
+     "category": "alias",
+     "text": "本章原文通篇作『艾尔芬里斯』（库名'风龙（艾尔芬里斯）'，ch177 已并记同指）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 138, "quote": "艾尔芬里斯的行动原理很单纯。谁敢往六十五层去它就干谁。"},
+    {"vol": 1, "chapter": 179, "line": 158, "quote": "它首先利用咆哮和龙之风打造出防御壁。"},
+    {"vol": 1, "chapter": 179, "line": 160, "quote": "但仍旧无法凌驾于级别67的艾尔芬里斯之上"},
+    {"vol": 1, "chapter": 179, "line": 169, "quote": "艾尔芬里斯根本没有还手之力，只能乖乖被我拔出『魔石』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "LizardFlyer",
+    "entity_type": "怪物(迷宫六十五层·级别61)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "级别61；以肉眼无法看清的速度摆动苍蝇般翅膀、自由徘徊于空中的蜥蜴，体长约一米；特化回避——动态视力异常，以最低限度动作目视避开剑技达人的剑闪（'并非利用剑压……而是用一边用眼睛看着，一边活动自己的躯体避开的'）；单薄锐利的翅膀可轻松划裂'以守护者为对手也不曾轻易让敌人碰到'的涡波之躯（肩伤深两公分、达动脉）；动作缓急自如（落叶般轻盈与苍蝇般加速并存）",
+     "chapter": 179
+    },
+    {
+     "category": "technique",
+     "text": "翅膀振动鸣响=具『咏唱』效果的『魔法宣言』，可施展『魔法相杀』化解风魔法（含莱纳全力Sehr・Wind），对密度较浓的『维度』亦起反应；涡波推测其无法同时进行移动与『魔法相杀』（迎击时静止原地）；数量：直径一千米内平均十匹、总数比莱纳先前的魔法还多；感知范围极广（涡波推测可利用风感知敌人）；不跨层追击",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 198, "quote": "「怪物」LizardFlyer：级别61"},
+    {"vol": 1, "chapter": 179, "line": 201, "quote": "而且总数比莱纳先前的魔法还多。乍一看去，直径一千米内平均有十匹。"},
+    {"vol": 1, "chapter": 179, "line": 223, "quote": "这就意味着LizardFlyer并非利用剑压避开了我们的攻击──而是用一边用眼睛看着，一边活动自己的躯体避开的。"},
+    {"vol": 1, "chapter": 179, "line": 235, "quote": "伤口深达两公分。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "Sylph・堕落使徒",
+    "entity_type": "道具(魔剑)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "由雷纳尔多强化获得新生的魔剑（名称于出战装备宣示时首出）：具对风属性的抗性、减轻使用风魔法时的负担、强化风魔法效力；'对要以艾尔芬里斯为对手战斗的风魔法使而言，可谓再合适不过的武器'；莱纳右手佩用",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 5, "quote": "现在这把剑既具有对风属性的抗性，同时还可以减轻使用风魔法时的负担。"},
+    {"vol": 1, "chapter": 179, "line": 96, "quote": "握在他右手上的是强化了风魔法效力的新生魔剑。"},
+    {"vol": 1, "chapter": 179, "line": 97, "quote": "「Sylph・堕落使徒」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "阿雷亚斯家的宝剑",
+    "entity_type": "道具(剑)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "莱纳左手佩用的'可以操使水晶魔法的守护者的宝剑'（本章原文作『阿雷亚斯家的宝剑诺文』，库内别名沿用）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 98, "quote": "左手则是可以操使水晶魔法的守护者的宝剑。"},
+    {"vol": 1, "chapter": 179, "line": 99, "quote": "「阿雷亚斯家的宝剑诺文」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.72,
+   "canonical": {
+    "name": "CallOuter",
+    "entity_type": "道具(防具·轻盔)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "千年前轻盔，经神铁锻冶修复获得再生，莱纳出战装备之一；按行文顺序与轻盔对应（原文未逐一标注，对应关系【待确认】）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 100, "quote": "以及通过神铁锻冶的修复获得再生的千年前的轻盔和胸甲。"},
+    {"vol": 1, "chapter": 179, "line": 101, "quote": "「CallOuter」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.72,
+   "canonical": {
+    "name": "AllConfess",
+    "entity_type": "道具(防具·胸甲)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "千年前胸甲，经神铁锻冶修复获得再生，莱纳出战装备之一；按行文顺序与胸甲对应（原文未逐一标注，对应关系【待确认】）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 100, "quote": "以及通过神铁锻冶的修复获得再生的千年前的轻盔和胸甲。"},
+    {"vol": 1, "chapter": 179, "line": 102, "quote": "「AllConfess」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "HighSkyBeryl",
+    "entity_type": "道具(迷宫掉落物)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "风龙（艾尔芬里斯）被击破后的掉落物，本章为第二次拾取（原文'再捡起'）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 179, "quote": "我们做完对成果的总结，再捡起『HighSkyBeryl』，接着在草原上前进一会儿，便无伤地攀登起了位于中央的螺旋阶梯。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.78,
+   "canonical": {
+    "name": "新月琉璃制直剑",
+    "entity_type": "道具(剑)"
+   },
+   "aliases_to_register": ["新月琉璃直剑"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波随身佩剑：本章其仅有的装备=此剑+两个护身符（原文写法『新月琉璃直剑』，判例4近名合入库内名）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 106, "quote": "另外说一下，我的装备只有『新月琉璃直剑』和那两个护身符而已。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "TowersSus・Wind",
+    "entity_type": "魔法(风系大魔法)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "风魔法大魔法：咏唱词『千之大剑啊，咆哮怒吼吧』；生成数量不计的如高塔般巨大的风之大剑齐射天空（'俨然给人一种在空无一物的大平原上突然现出一座森林的观感'）；'在现代已经失传的大魔法'经莱纳之手复苏；威力仍不足以攻破级别67风龙的风之障壁（作牵制用）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 151, "quote": "「──『千之大剑啊，咆哮怒吼吧』！」"},
+    {"vol": 1, "chapter": 179, "line": 152, "quote": "因此，在现代已经失传的大魔法再度复苏。"},
+    {"vol": 1, "chapter": 179, "line": 153, "quote": "六十六层的平原上随即生成了数量不计的如同高塔一般巨大的风之大剑。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "Sehr・Wind",
+    "entity_type": "魔法(风系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "莱纳的风魔法·疾风奔流：'对使用翅膀飞舞在空中的生物来说，这是一道绝对无法忽视的风之奔流'；全力击出仍被LizardFlyer以『魔法相杀』化解；情急构筑的一次依靠消耗魔法道具戒指勉强形成暴风形态",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 246, "quote": "一阵疾风向敌人袭去。对使用翅膀飞舞在空中的生物来说，这是一道绝对无法忽视的风之奔流。"},
+    {"vol": 1, "chapter": 179, "line": 252, "quote": "莱纳的『Sehr・Wind』便遭到了『魔法相杀』"},
+    {"vol": 1, "chapter": 179, "line": 265, "quote": "尽管是情急之下胡乱构筑的魔法，但依靠消耗掉一个作为魔法道具的戒指，总算是勉强形成了暴风形态的攻击魔法。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "Ex・Wind",
+    "entity_type": "魔法(风系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "莱纳的风之爆炸魔法：炸裂产生强大推进力（涡波评其运用法'胡来'）；突围终盘施放使二人冲过通往六十四层的天花板洞穴",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 352, "quote": "「──基督，做好准备！『Ex・Wind』！！」"},
+    {"vol": 1, "chapter": 179, "line": 354, "quote": "身后的风炸裂开来。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.7,
+   "canonical": {
+    "name": "Acht・Wind",
+    "entity_type": "魔法(风系)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "莱纳于六十五层突围途中施放的风魔法（与『维度・多重展开』并用牵制追兵）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 342, "quote": "「──『Acht・Wind』！」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "维度",
+    "entity_type": "魔法(次元系·索敌)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波称'不讲道理的索敌能力'：可把握前往上一层的最短路径、感知敌人接近时机；集中一点的缩地用法（与莱纳凝缩风魔法并用）可逼停LizardFlyer追击；衍生技『维度・决战演算』能预测个大概（本章预感'再过须臾我的胴体就将被切成两段'）；进入六十五层前先行拓展以防巨型怪物",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 193, "quote": "不过因为我拥有『维度』这一不讲道理的索敌能力，所以没什么难办的。只要在阶梯与阶梯之间沿着捷径跳跃的话，应该很快就能抵达上一层。"},
+    {"vol": 1, "chapter": 179, "line": 262, "quote": "因为『维度・决战演算』能预测个大概所以这感觉相当恐怖。再过须臾我的胴体就将被切成两段。就在我意识到这点时──"},
+    {"vol": 1, "chapter": 179, "line": 329, "quote": "「──『维度』！」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "维度・多重展开",
+    "entity_type": "魔法(次元系·全域展开)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "以填满整层迷宫为目的施放的次元属性魔力展开：本章用于掌握六十五层全貌、找到通往六十四层的大洞（出口）；引发全层LizardFlyer施展『魔法相杀』反应——对空间掌握造成障碍，但同时成为拖住敌人的新手段",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 307, "quote": "「──『维度・多重展开』！」"},
+    {"vol": 1, "chapter": 179, "line": 309, "quote": "对这简单暴力的魔力的侵略做出反应，六十五层的LizardFlyer们纷纷开始施展『魔法相杀』。看来它们对密度较浓的『维度』也会起反应。"},
+    {"vol": 1, "chapter": 179, "line": 311, "quote": "因为『魔法相杀』的缘故，密布于六十五层的LizardFlyer周边的情况我无法掌握。但除开这些，将『维度・多重展开』拓展到深处之后，总算是找到了前往六十四层的阶梯──不对，应该是大洞更为准确。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "DistanceMute",
+    "entity_type": "魔法(次元系·奇袭)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波唯一攻击手段的核心（'攻击手段只有奇袭之后使用『DistanceMute』这一种'）：本章与『Default』连用跳跃至风龙背后拔取魔石；对摸不到的敌人（LizardFlyer）失效——'这次还不能用『DistanceMute』这种作弊技。因为根本就摸不到敌人啊'",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 108, "quote": "因为我的攻击手段只有奇袭之后使用『DistanceMute』这一种。所以对我而言不太需要什么攻击力和防御力。"},
+    {"vol": 1, "chapter": 179, "line": 296, "quote": "而且这次还不能用『DistanceMute』这种作弊技。因为根本就摸不到敌人啊。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.7,
+   "canonical": {
+    "name": "Default",
+    "entity_type": "魔法(移动)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波与『DistanceMute』连用的跳跃移动魔法（确认两魔法冲突后于远处施放、移动至风龙背后）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 164, "quote": "「──『Default』『DistanceMute』！！」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "CareFull",
+    "entity_type": "魔法(神圣系·治疗)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "莱纳的神圣魔法：用于治疗涡波被LizardFlyer划开的肩伤",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 289, "quote": "「你的伤也得赶紧治疗了。──神圣魔法『CareFull』」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "魔法相杀",
+    "entity_type": "魔法(妨害·相杀)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "以魔力构筑化解敌方魔法的伎俩：LizardFlyer以翅膀振动（具『咏唱』效果的『魔法宣言』）发动，顷刻化解莱纳全力风魔法；对密度较浓的『维度』展开亦起反应；发动时须静止原地（涡波推测无法同时移动与相杀）——连续小魔法可借此将其拖在原地",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 251, "quote": "尽管这并非人语，但却是具有『咏唱』效果的『魔法宣言』。因为『维度』感知到了LizardFlyer在进行魔力构筑的事实，所以我能够理解到这一点。"},
+    {"vol": 1, "chapter": 179, "line": 252, "quote": "莱纳的『Sehr・Wind』便遭到了『魔法相杀』"},
+    {"vol": 1, "chapter": 179, "line": 269, "quote": "由此推测这家伙没有办法同时进行移动和『魔法相杀』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "六十五层",
+    "entity_type": "地点(迷宫阶层)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "以『天空』为阶层基调，与空荡的六十六层相反'壅塞至极'：台阶（螺旋/四面八方倾斜笔直/曲线）无拘无束在空中延展，构成'森罗万象的三维迷宫'，常规徒步走到明天也出不去；区域划分=中央（无机质石造阶梯三维迷宫）+右侧（从天而降的瀑布，有令人毛骨悚然的蓝鸟）+左侧（直插天际的大树，有令人毛骨悚然的昆虫）；通往六十四层的出入口=位于天花板的大洞；层内铺天盖地的LizardFlyer",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 190, "quote": "而与之相对地，六十五层的构造可谓是壅塞至极。"},
+    {"vol": 1, "chapter": 179, "line": 192, "quote": "这些数量众多的阶梯在一起构成了森罗万象的三维迷宫。"},
+    {"vol": 1, "chapter": 179, "line": 313, "quote": "以无机质的石造阶梯构成的三维迷宫是中央区域所特有的。右侧区域有许多从天而降的瀑布，左侧则是生长着直插天际的大树的区域。"},
+    {"vol": 1, "chapter": 179, "line": 314, "quote": "瀑布那边有令人毛骨悚然的蓝鸟，大树那边则是令人毛骨悚然的昆虫。讲道理，哪个都不是让人想与之为敌的对手。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "佩艾希亚",
+    "entity_type": "地点(地下城镇)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "地下城镇：涡波与莱纳攻略迷宫时经其街前往；街上人们与涡波互致日常招呼（'跟昨天别无二致'）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 91, "quote": "这次出门目标不是工作而是攻略迷宫，我和莱纳一起走在佩艾希亚的街上。"},
+    {"vol": 1, "chapter": 179, "line": 25, "quote": "走在跟昨天别无二致的街上，听人们打着跟昨天别无二致的招呼。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.8,
+   "canonical": {
+    "name": "世界奉还阵",
+    "entity_type": "道具(阵)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "涡波回忆参照物：据其自述曾在此阵中看到过去的记忆，并因此明白LevelUP系统的打造者是自己",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 80, "quote": "在『世界奉还阵』中看到过去的记忆之后，我已经明白打造出这个系统的人就是我自己了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.6,
+   "canonical": {
+    "name": "不死鸟使者",
+    "entity_type": "道具(锻冶设施·类别不明【待确认】)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "雷纳尔多今日一天守在其旁进行锻造之物（魔剑强化之所系）；原文未明示其具体类别（炉/器物不明）【待确认】",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 4, "quote": "今天一天，一刻不停地守在『不死鸟使者』旁边进行锻造的雷纳尔多如此宣告道。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.7,
+   "canonical": {
+    "name": "连接",
+    "entity_type": "魔法(据点设置)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "出发攻略前设置于城堡内自己房间的魔法（ch177 已设撤退用『连接』，本章为第四天出门前的例行设置）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 90, "quote": "将『连接』设置在房间里之后我们就出发了。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "雷纳尔多",
+    "rel_type": "锻冶师承(指导)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波在其工房学习锻冶技术（罗德：'你不是在老爷子那儿学习锻冶技术的么'）；雷纳尔多检查其修复的全部装备并认可（'每一个都做的不错'），临别拍肩",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 35, "quote": "「哎呀？涡涡，你不是在老爷子那儿学习锻冶技术的么？怎么做上衣服了？而且看上去还是跟迷宫攻略没什么关系的衣服呢」"},
+    {"vol": 1, "chapter": 179, "line": 21, "quote": "「唔姆，每一个都做的不错。赶紧带回去让他穿上试试吧」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "雷纳尔多",
+    "rel_type": "装备锻修供给",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "为对抗艾尔芬里斯为风魔法使莱纳强化魔剑（风抗+减负），完工后嘱涡波'赶紧带回去让他穿上试试吧'",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 21, "quote": "「唔姆，每一个都做的不错。赶紧带回去让他穿上试试吧」"},
+    {"vol": 1, "chapter": 179, "line": 5, "quote": "现在这把剑既具有对风属性的抗性，同时还可以减轻使用风魔法时的负担。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "佩用(右手·强化风魔法)",
+    "object": "Sylph・堕落使徒",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "出战六十六层时右手握持的新生魔剑",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 96, "quote": "握在他右手上的是强化了风魔法效力的新生魔剑。"},
+    {"vol": 1, "chapter": 179, "line": 97, "quote": "「Sylph・堕落使徒」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "佩用(左手·水晶魔法)",
+    "object": "阿雷亚斯家的宝剑",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "出战时左手握持'可以操使水晶魔法的守护者的宝剑'",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 98, "quote": "左手则是可以操使水晶魔法的守护者的宝剑。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "队伍分工(斥候后卫×骑士前卫)",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "探索以莱纳为主、涡波以魔法辅助：'作为骑士的莱纳是队伍的前卫，而作为斥候的我则是队伍的后卫'；因涡波失去冻结属性才能致攻击手段锐减而采用此配置（据涡波自述）；装备分配亦据此（攻击防御集中给莱纳）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 110, "quote": "如果要用职业方面的话来解释的话，那就是作为骑士的莱纳是队伍的前卫，而作为斥候的我则是队伍的后卫这样吧。因为失去了冻结属性的才能，攻击手段锐减的我只能采用这种配置。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "风龙（艾尔芬里斯）",
+    "rel_type": "守层(六十六层BOSS)",
+    "object": "六十六层",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "盘踞六十六层上空：行动原理'谁敢往六十五层去它就干谁'；曾破坏通往六十五层的螺旋阶梯（再破坏将迫使二人消费多余MP——据涡波）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 138, "quote": "艾尔芬里斯的行动原理很单纯。谁敢往六十五层去它就干谁。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "LizardFlyer",
+    "rel_type": "栖息(遍布全层)",
+    "object": "六十五层",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "数量铺天盖地：'不管到六十五层的任何地方，都必定会被某匹LizardFlyer察觉到'（直径一千米内平均十匹）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 201, "quote": "而且总数比莱纳先前的魔法还多。乍一看去，直径一千米内平均有十匹。"},
+    {"vol": 1, "chapter": 179, "line": 202, "quote": "恐怕不管到六十五层的任何地方，都必定会被某匹LizardFlyer察觉到。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "风龙（艾尔芬里斯）",
+    "rel_type": "掉落物",
+    "object": "HighSkyBeryl",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "被击破化作光芒消失后遗落，被涡波拾取（本章第二次）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 179, "quote": "我们做完对成果的总结，再捡起『HighSkyBeryl』，接着在草原上前进一会儿，便无伤地攀登起了位于中央的螺旋阶梯。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "咏唱传授",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "莱纳咏出'从罗德那里学到的程度较轻的咏唱'（『天路垂临』『续道碧霄』）支配周围之风——大魔法发动的准备段",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 142, "quote": "「『天路垂临』『续道碧霄』──！」"},
+    {"vol": 1, "chapter": 179, "line": 143, "quote": "莱纳咏出从罗德那里学到的程度较轻的咏唱，旋即周围的风便被纳入到他的支配之下。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.78,
+   "canonical": {
+    "subject": "艾德",
+    "rel_type": "魔法师承",
+    "object": "莱纳",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据涡波本章叙述（前章事实回顾）：莱纳'以守护者艾德和罗德教为师学习魔法'，为风魔法水准跃升的要素之一",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 148, "quote": "继承了海莉的魂，提升了级别，魔力大幅增强，以守护者艾德和罗德教为师学习魔法，掌握了咏唱这一技术，手上还握着增强风魔法效果的魔剑。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.78,
+   "canonical": {
+    "subject": "海莉",
+    "rel_type": "魂继承",
+    "object": "莱纳",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据涡波本章叙述（前章事实回顾）：'继承了海莉的魂，提升了级别，魔力大幅增强'——莱纳风魔法提高数个次元的要素之首",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 148, "quote": "继承了海莉的魂，提升了级别，魔力大幅增强，以守护者艾德和罗德教为师学习魔法，掌握了咏唱这一技术，手上还握着增强风魔法效果的魔剑。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "莱纳",
+    "rel_type": "习得·复苏(失传大魔法)",
+    "object": "TowersSus・Wind",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "'在现代已经失传的大魔法再度复苏'——经莱纳（咏唱+魔剑+魔力强化）之手首次于本章实战施展",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 152, "quote": "因此，在现代已经失传的大魔法再度复苏。"},
+    {"vol": 1, "chapter": 179, "line": 153, "quote": "「──风魔法『TowersSus・Wind』」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "LizardFlyer",
+    "rel_type": "使用(翅膀振动发动)",
+    "object": "魔法相杀",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "以翅膀鸣响（具『咏唱』效果的『魔法宣言』）构筑魔力发动相杀：化解全力风魔法、亦对浓密『维度』起反应；相杀时静止无法移动（涡波推测）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 251, "quote": "尽管这并非人语，但却是具有『咏唱』效果的『魔法宣言』。因为『维度』感知到了LizardFlyer在进行魔力构筑的事实，所以我能够理解到这一点。"},
+    {"vol": 1, "chapter": 179, "line": 269, "quote": "由此推测这家伙没有办法同时进行移动和『魔法相杀』"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.82,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "每日来访共餐共训",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "每日到城堡与涡波、莱纳共进晚餐并参加魔法训练，结束后离开（'我们三人像昨天晚上一样谈笑风生，然后进行魔法的训练，接着罗德就这样离开了'）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 26, "quote": "接着，回到了位于城堡内的自己的房间后，发现莱纳和罗德已经摆好了料理在等着我了。"},
+    {"vol": 1, "chapter": 179, "line": 74, "quote": "在这之后就没什么特别的事了。我们三人像昨天晚上一样谈笑风生，然后进行魔法的训练，接着罗德就这样离开了。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "魔剑强化完工（工房第三日收官）",
+    "kind": "制作·强化",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "地下第三日白天（工房）"
+   },
+   "entities_involved": ["雷纳尔多", "相川涡波", "莱纳", "Sylph・堕落使徒", "风龙（艾尔芬里斯）"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "雷纳尔多守『不死鸟使者』旁锻造一日，完成魔剑强化：对风属性抗性+减轻风魔法负担（强化风魔法效力）——对以艾尔芬里斯为对手的风魔法使专用；此前打倒风龙一次所得魔石已被拿去强化莱纳的剑（据涡波叙述）；涡波同日完成壊掉成品的修复（含神铁锻冶修复的千年轻盔胸甲）并受检认可",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 5, "quote": "现在这把剑既具有对风属性的抗性，同时还可以减轻使用风魔法时的负担。对要以艾尔芬里斯为对手战斗的风魔法使而言，可谓再合适不过的武器。"},
+    {"vol": 1, "chapter": 179, "line": 87, "quote": "六十六层的侦查也完毕──不如说，已经打倒了艾尔芬里斯一次，还将它的魔石拿去强化莱纳的剑了。可以说万无一失。"},
+    {"vol": 1, "chapter": 179, "line": 100, "quote": "以及通过神铁锻冶的修复获得再生的千年前的轻盔和胸甲。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "缝衣恶趣味骚动与信赖波动",
+    "kind": "日常",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "地下第三日晚（城堡晚餐）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "罗德", "雷纳尔多"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波以缝纫技能为莱纳制作全套衣物（含围巾套袖，设计参照艾利巴茨的话）——遭雷纳尔多（'就是有点恶趣味罢了'）、罗德（'修饰过头/恶趣味'）、莱纳（'跟舞台上的演员一样…有点辣眼睛'）三方差评；涡波自省'耗费了那么多宝贵的时间'、'让莱纳对我的信赖产生了磨损'，转向展示修复装备并以完美事前准备挽回（'感觉总算是取回了些他对我的信赖'）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 12, "quote": "⋯⋯不过算了。只要装备确实修好了就行。⋯⋯就是有点恶趣味罢了」"},
+    {"vol": 1, "chapter": 179, "line": 62, "quote": "「要是把这些全穿在身上的话，感觉不是跟舞台上的演员一样了么⋯⋯？感觉用在迷宫探索的话有点辣眼睛的说⋯⋯」"},
+    {"vol": 1, "chapter": 179, "line": 69, "quote": "虽然我作为生产者向前迈进了一步，但代价却是让莱纳对我的信赖产生了磨损。得想点办法挽回才行⋯⋯⋯"},
+    {"vol": 1, "chapter": 179, "line": 88, "quote": "将这完美的状况告知莱纳后，感觉总算是取回了些他对我的信赖。将明天的目标定为抵达六十层之后，我和莱纳便沉入了梦乡。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "升级·点数分配与系统制定者自认",
+    "kind": "状态更新·身世揭示",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "地下第三日夜（训练后）"
+   },
+   "entities_involved": ["相川涡波", "莱纳"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波为消化打倒艾尔芬里斯所得经验值进行LevelUP，各获一点BonusPoint与技能Point；据涡波：若莱纳不会使用神圣魔法，两人'连级别都会被锁死'；据涡波（依『世界奉还阵』所见过去记忆）：打造该系统的人就是自己，系统本质=对『魔力变换（LevelUP）』的应用（推断）；带'回想起小时候的失败一样的难堪心情'将能力点分到『魔力』和『次元魔术』",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 75, "quote": "如果莱纳不会使用神圣魔法的话，我们就连级别都会被锁死。"},
+    {"vol": 1, "chapter": 179, "line": 77, "quote": "「BonusPoint」获得了一点BonusPoint。"},
+    {"vol": 1, "chapter": 179, "line": 80, "quote": "在『世界奉还阵』中看到过去的记忆之后，我已经明白打造出这个系统的人就是我自己了。"},
+    {"vol": 1, "chapter": 179, "line": 82, "quote": "带着跟回想起小时候的失败一样的难堪心情，我将能力点分到了『魔力』和『次元魔术』上。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.92,
+   "canonical": {
+    "name": "六十六层风龙二度击破",
+    "kind": "战斗",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "地下第四天晨（冲门后即时）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "风龙（艾尔芬里斯）", "TowersSus・Wind", "DistanceMute", "Default", "HighSkyBeryl"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "计划于距螺旋阶梯较远处决战：莱纳以罗德所授较轻咏唱（天路垂临/续道碧霄）支配周围之风，施展复苏的失传大魔法『TowersSus・Wind』千剑齐射——风龙以咆哮+龙之风造壁相抗，莱纳虽无法破防但吸住其全部注意力；涡波确认两魔法冲突之际以『Default』『DistanceMute』跳跃至其背后，以闪耀紫色光芒的右臂刺入体内拔出『魔石』——风龙毫无还手之力，临终哀嚎后化光消失；莱纳以『风』坐垫接住被抛向空中的涡波；拾取『HighSkyBeryl』后无伤登螺旋阶梯；全战MP消耗涡波约200/莱纳约50",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 153, "quote": "「──风魔法『TowersSus・Wind』」"},
+    {"vol": 1, "chapter": 179, "line": 164, "quote": "「──『Default』『DistanceMute』！！」"},
+    {"vol": 1, "chapter": 179, "line": 166, "quote": "接着我以电光石火的速度将闪耀紫色光芒的右臂刺入艾尔芬里斯体内。"},
+    {"vol": 1, "chapter": 179, "line": 181, "quote": "我的MP消费量在200左右，莱纳则在50上下。只要付出这种程度的消耗就可以稳妥地突破六十六层实在是令人振奋。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "LizardFlyer初遭遇战·涡波负伤撤退",
+    "kind": "战斗(败退)",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "同晨（初入六十五层）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "LizardFlyer", "Sehr・Wind", "魔法相杀"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "两人夹击单匹LizardFlyer：'凡是活物就绝对无法避开的三道剑闪'被其以落叶般动作尽数避开；其潜入涡波怀里以翅刃划肩（深两公分、鲜血从直达动脉的伤口喷涌——'如果它的目标是我的手，那现在应该已经切断我两根手指了'）；涡波急令莱纳以『Sehr・Wind』吹飞，却遭其翅膀振动发动的『魔法相杀』顷刻化解；再袭中莱纳情急构筑魔法（消耗一枚魔法道具戒指）勉强形成暴风才争得脱身距离，二人撤退逃回六十六层；涡波：'幸好莱纳在。不然的话我刚才应该就死在那儿了'",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 215, "quote": "凡是活物就绝对无法避开的三道剑闪──好吧，却被LizardFlyer以轻盈的动作给避开了。"},
+    {"vol": 1, "chapter": 179, "line": 231, "quote": "话音未落，LizardFlyer就潜入我的怀里，它那单薄却锐利的翅膀划过我的肩膀。"},
+    {"vol": 1, "chapter": 179, "line": 252, "quote": "莱纳的『Sehr・Wind』便遭到了『魔法相杀』"},
+    {"vol": 1, "chapter": 179, "line": 282, "quote": "「幸好莱纳在。不然的话我刚才应该就死在那儿了」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "LizardFlyer战力分析与弱点发现",
+    "kind": "分析",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "同晨（撤回六十六层后）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "LizardFlyer"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "二人复盘：'特化了回避的怪物'（用剑攻击只要看看就能躲开/动态视力异常/用剑防御也没有用）；魔法可被轻易无效化+速度绝望性差距（'就算使用威力强大难以化解的魔法大概也会遭到它的妨碍'）；撕裂肩膀的攻击力亦不容小觑；『DistanceMute』因摸不到敌人而不可用；关键发现（据涡波推测）：其迎击魔法时静止原地——'没办法同时进行移动和『魔法相杀』'，连续小魔法可将其拖住；莱纳以神圣魔法『CareFull』治疗涡波肩伤",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 269, "quote": "由此推测这家伙没有办法同时进行移动和『魔法相杀』"},
+    {"vol": 1, "chapter": 179, "line": 286, "quote": "「──那家伙，难不成是特化了回避的怪物？估计用剑攻击的话它只要看看就能躲得开。相较于身体行动的速度，那家伙的动态视力更加异常。我们用剑进行防御也没有用」"},
+    {"vol": 1, "chapter": 179, "line": 296, "quote": "而且这次还不能用『DistanceMute』这种作弊技。因为根本就摸不到敌人啊。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "维度・多重展开侦查六十五层全貌",
+    "kind": "侦查",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "同晨（再入六十五层前）"
+   },
+   "entities_involved": ["相川涡波", "维度・多重展开", "六十五层", "LizardFlyer"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波以『维度・多重展开』填满整层：全层LizardFlyer起『魔法相杀』反应（妨碍空间掌握，但同时新增一种拖敌手段）；排除相杀区域后找到通往六十四层的大洞并掌握全层构造（中央石造阶梯三维迷宫/右侧瀑布蓝鸟/左侧大树昆虫）；定策：沿靠近大树区一侧的最短路线一路向上，遇LizardFlyer以风魔法牵制、不测即撤（'战意为零的计划'）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 307, "quote": "「──『维度・多重展开』！」"},
+    {"vol": 1, "chapter": 179, "line": 311, "quote": "因为『魔法相杀』的缘故，密布于六十五层的LizardFlyer周边的情况我无法掌握。但除开这些，将『维度・多重展开』拓展到深处之后，总算是找到了前往六十四层的阶梯──不对，应该是大洞更为准确。"},
+    {"vol": 1, "chapter": 179, "line": 313, "quote": "以无机质的石造阶梯构成的三维迷宫是中央区域所特有的。右侧区域有许多从天而降的瀑布，左侧则是生长着直插天际的大树的区域。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "六十五层突围·抵达六十四层",
+    "kind": "突破(逃走)",
+    "tick": 179,
+    "instant": null,
+    "time_verbatim": "同晨（连续数分）"
+   },
+   "entities_involved": ["相川涡波", "莱纳", "LizardFlyer", "Ex・Wind", "六十五层"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "二人将阶梯当跳板疾走攀升：以『维度』+凝缩风魔法逼停追兵（LizardFlyer感知浓密魔力即由追踪转向迎击）；追击者滚雪球至两位数、牵制余裕渐失；终盘莱纳施放『Ex・Wind』以爆炸推进，二人冲过天花板上通往六十四层的洞穴——所有LizardFlyer当即停止追击（怪物不能跨层规则于深层通用）；涡波'一边感谢着做出怪物不能跨层行动的规则的自己'；二人击掌庆祝'姑且算是攻略了两层'",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 347, "quote": "数分过后，向我们袭来的LizardFlyer数量已经超过两位数。不管怎么拖，一旦解除了魔法的束缚，对手就又会追上来，数量越来越多也是必然的。现在的状态就像滚雪球。"},
+    {"vol": 1, "chapter": 179, "line": 352, "quote": "「──基督，做好准备！『Ex・Wind』！！」"},
+    {"vol": 1, "chapter": 179, "line": 356, "quote": "多亏了莱纳妙不可言的判断，我们终于冲过了通往六十四层的位于天花板的洞穴。"},
+    {"vol": 1, "chapter": 179, "line": 358, "quote": "一边感谢着做出怪物不能跨层行动的规则的自己，我们一边在六十四层整理呼吸。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "六十六层天空摇动异变",
+    "setup_chapter": 179,
+    "payoff_chapter": null,
+    "tier": "支线（待升级）",
+    "note": "涡波出发前察觉违和：'感觉整个天空在摇动。漆黑的天空看上去有些不自然，就像暴风雨来临前活动激烈的云层一样'——违和不在于颜色而来源于别的东西；莱纳同望无感（'这里的天空一开始不就很奇怪吗'）；涡波自我开解'可能是我想多了'后入层。未解：与迷宫空间制造目的/魔王城空间线（ch168'在这里的话『想起』是比较容易的'）的关联待回收",
+    "chapter": 179
+   },
+   "entities_involved": ["相川涡波", "莱纳", "六十六层"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "空间异变钩（出发前唯一未解信号）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 116, "quote": "感觉整个天空在摇动。漆黑的天空看上去有些不自然，就像暴风雨来临前活动激烈的云层一样。"},
+    {"vol": 1, "chapter": 179, "line": 120, "quote": "「这里的天空一开始不就很奇怪吗？」"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "涡波=系统与迷宫规则制定者（失忆前身份线推进）",
+    "setup_chapter": 179,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "据涡波自认（依『世界奉还阵』所见过去记忆）：'打造出这个系统的人就是我自己了'——系统本质为对『魔力变换（LevelUP）』的应用、'个人兴趣暴走下的产物'（据其推断）；同章又称怪物不能跨层规则为自己所制定（'感谢着做出怪物不能跨层行动的规则的自己'）——与咒术记忆缺失（ch174）/始祖即死魔法再造（ch171）并轨推进；其自称'被传颂成了始祖之类的'；千年前如何/为何造系统未解",
+    "chapter": 179
+   },
+   "entities_involved": ["相川涡波", "始祖涡波", "世界奉还阵"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "失忆前身份核心钩（自认推进）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 80, "quote": "在『世界奉还阵』中看到过去的记忆之后，我已经明白打造出这个系统的人就是我自己了。"},
+    {"vol": 1, "chapter": 179, "line": 358, "quote": "一边感谢着做出怪物不能跨层行动的规则的自己，我们一边在六十四层整理呼吸。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.78,
+   "canonical": {
+    "name": "六十五层未探明强敌（蓝鸟与昆虫）",
+    "setup_chapter": 179,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "右侧瀑布区'令人毛骨悚然的蓝鸟'、左侧巨树区'令人毛骨悚然的昆虫'——经『维度・多重展开』远观即回避（'哪个都不是让人想与之为敌的对手'）；底细不明，若最短路线失效或需再入六十五层时可能正面接触",
+    "chapter": 179
+   },
+   "entities_involved": ["六十五层", "相川涡波", "莱纳"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "深层怪物未探明钩",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 314, "quote": "瀑布那边有令人毛骨悚然的蓝鸟，大树那边则是令人毛骨悚然的昆虫。讲道理，哪个都不是让人想与之为敌的对手。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "LevelUP/BonusPoint系统本质与制定者（ch179自认）",
+    "fact": "升级时获得BonusPoint与技能Point各一点（本章实录）；系统本质据涡波推断=通过对『魔力变换（LevelUP）』的应用，作成可将余剩魔力随机应变地补足到任何方面的机制——'绝对是我个人兴趣暴走下的产物'；打造者=涡波自己（据其在『世界奉还阵』中看到的过去记忆，本人自认）；级别解锁条件：莱纳会使用神圣魔法，否则两人'连级别都会被锁死'（据涡波）；点数可分配至『魔力』『次元魔术』等能力项",
+    "chapter": 179,
+    "tick": 179
+   },
+   "entities_involved": ["相川涡波", "莱纳", "世界奉还阵"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "系统机制+制定者自认（据涡波）",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 77, "quote": "「BonusPoint」获得了一点BonusPoint。"},
+    {"vol": 1, "chapter": 179, "line": 80, "quote": "在『世界奉还阵』中看到过去的记忆之后，我已经明白打造出这个系统的人就是我自己了。"},
+    {"vol": 1, "chapter": 179, "line": 81, "quote": "想来这个系统的本质应该是通过对『魔力变换（LevelUP）』的应用，作成可以将余剩的魔力随机应变地补足到任何方面的机制吧。意图我懂，但是毋庸置疑，这绝对是我个人兴趣暴走下的产物。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.86,
+   "canonical": {
+    "name": "迷宫深层规则三则（ch179实证）",
+    "fact": "①BOSS怪物再出现间隔：'迷宫内的BOSS怪物被打倒后到再度出现为止间隔应该是一个小时'（据莱纳）；②怪物不能跨层行动：跨过层与层之间的出入口后所有LizardFlyer当即停止追击——'低阶层的规则在深层也是通用的'，涡波并自称该规则为自己所制定；③深层怪物感知范围极广：'只能认为它们可以利用风感知敌人'（据涡波推测）",
+    "chapter": 179,
+    "tick": 179
+   },
+   "entities_involved": ["风龙（艾尔芬里斯）", "LizardFlyer", "相川涡波", "莱纳"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "迷宫通用规则深层实证",
+     "chapter": 179
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 179, "line": 301, "quote": "迷宫内的BOSS怪物被打倒后到再度出现为止间隔应该是一个小时"},
+    {"vol": 1, "chapter": 179, "line": 357, "quote": "接着，在我们跨过了层与层之间的出入口之后，所有LizardFlyer当即停止追击。看来，低阶层的规则在深层也是通用的。"},
+    {"vol": 1, "chapter": 179, "line": 323, "quote": "果然跟低阶层的怪物不一样，感知范围不是一般的广。只能认为它们可以利用风感知敌人。"}
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "诺斯菲",
+  "rel_type": "守护骑士(诺斯菲三骑士之一)",
+  "subject": "诺文・阿雷亚斯"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 3,
+   "quote": "以及那名少女的骑士缇达・兰斯、诺文・阿雷亚斯、法芙纳・赫勒比勒夏因。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 9,
+   "quote": "「不，缇达和诺文的话已经无需担心了。因为他们两个已经全被我打倒了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 177,
+   "text": "据雷纳尔多列举：诺文・阿雷亚斯为诺斯菲三名守护骑士之一；已被涡波打倒（化魔石）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-da3fa7e15ba1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

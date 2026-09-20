@@ -1,0 +1,58 @@
+{
+ "canonical": {
+  "entities": [
+   "六十层",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "进度",
+  "name": "迷宫进度：抵达六十层（自报）",
+  "tick": 182,
+  "time_verbatim": "同日·当日迷宫探索归来"
+ },
+ "evidence": [
+  {
+   "chapter": 182,
+   "line": 113,
+   "quote": "我好不容易才抵达六十层，明明按理来说回到地上只是时间的问题了，但是现在这样就算我想回也不能回了啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 182,
+   "line": 121,
+   "quote": "不过，今天在迷宫里打拼了一天，你应该累了吧？",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 182,
+   "text": "据涡波自述：当日于迷宫打拼一天归来；现『好不容易才抵达六十层』，按理回到地上只是时间的问题——但因诺斯菲问题现状『就算我想回也不能回』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3ce60048f4d4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0182.txt",
+  "sha": "bf785146021b5ed4e7c3c4d243c2e23512d315e8fad7fc9eee3021a7b7d46060",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

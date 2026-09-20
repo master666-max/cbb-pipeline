@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "Sylph・堕落使徒",
+  "rel_type": "佩用(右手·强化风魔法)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 96,
+   "quote": "握在他右手上的是强化了风魔法效力的新生魔剑。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 97,
+   "quote": "「Sylph・堕落使徒」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 179,
+   "text": "出战六十六层时右手握持的新生魔剑"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5a86f31ac9e1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

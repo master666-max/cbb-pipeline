@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫61层怪物·精灵)",
+  "name": "HolyElement"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 682,
+   "quote": "【怪物】HolyElement：位阶62",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 684,
+   "quote": "明明位阶很高，但这些徘徊着的精灵系怪物对我们并没有什么兴趣。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 272,
+   "quote": "「怪物」HolyElement：级别62",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 273,
+   "quote": "明明级别很高，但这些徘徊着的精灵系怪物对我们并没有什么兴趣。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 271,
+   "quote": "六十一层的怪物跟之前差不多，没有任何敌意。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 90,
+   "text": "61层怪物（位阶62）：空中漂浮的白色雾霭状精灵系怪物；对二人毫无兴趣（'位阶很高……对我们并没有什么兴趣'）但确已察觉其存在（无数精灵围观下走过全层）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-ef7d509a23e6",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-ef7d509a23e6-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-ef7d509a23e6",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

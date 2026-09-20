@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 177,
+  "fact": "迷宫内的物体经过一段时间之后会自行修复（涡波推断：应该是使用了魔力的『想起收束（Drop）』的一种应用——之前被破坏的中央螺旋阶梯已恢复原状）；六十六层风龙交战规则：风龙对地上行走者全无兴趣，仅到六十五层与六十六层中间的位置才袭击过来（据莱纳所言）——要与风龙战斗似乎只能攀登位于中央的螺旋阶梯",
+  "name": "迷宫物体自修复与风龙交战规则",
+  "tick": 177
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 212,
+   "quote": "正如莱纳所言，只有到了六十五层和六十六层中间的位置它才会袭击过来。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 213,
+   "quote": "要与风龙战斗的话，似乎只能攀登位于中央的螺旋阶梯了。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 214,
+   "quote": "之前被破壊的阶梯已经恢复了原状。在迷宫内的物体经过一段时间之后就会自行修复。应该是使用了魔力的『想起收束（Drop）』的一种应用吧。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 177,
+   "text": "迷宫机制（自修复=想起收束（Drop）应用·涡波推断）+风龙索敌范围规则"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-b1e618dd32a2",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

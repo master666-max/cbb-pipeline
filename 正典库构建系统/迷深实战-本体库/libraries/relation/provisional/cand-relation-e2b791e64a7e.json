@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "魔法传授(Jaeger·Wind)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 180,
+   "line": 116,
+   "quote": "「是啊，是那家伙教我的。虽然掌握的还不完全，但是适合立即发动的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 180,
+   "text": "据莱纳：Jaeger·Wind'是那家伙（罗德）教我的'、掌握还不完全但适合立即发动；莱纳并转述罗德言'『始祖涡波』精通所有的魔法'，请基督以『始祖』视角给建议（因原版威力应该更强）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e2b791e64a7e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0180.txt",
+  "sha": "ce2898aafdca4dbc40d60b49f4512ec9ee9770cfd30a7f9235f533f42e082307",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩艾希亚",
+  "rel_type": "庭师·维护",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 125,
+   "quote": "是因为这个原因吗，佩艾希亚城内的大树极多。但就算这样没有让人感到密不透风，都是多亏了作为庭师的罗德吧。无论走在哪里都没有绝对的阴郁，可见罗德在修剪时用了不少心思。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 128,
+   "quote": "罗德正使用高枝剪啪擦啪擦地修剪着枝叶，莱纳则负责将剪下的枝叶收集起来进行清理。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 178,
+   "text": "『作为庭师的罗德』修剪城中草木（今日于马路剪除生长过度的枝叶）；『佩艾希亚城内的大树极多。但就算这样没有让人感到密不透风，都是多亏了作为庭师的罗德吧』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6ce3d9a690ae",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

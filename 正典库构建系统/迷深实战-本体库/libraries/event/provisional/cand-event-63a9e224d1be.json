@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "雷纳尔多"
+  ],
+  "instant": null,
+  "kind": "发现",
+  "name": "莱纳装备检查·自杀式道具判明",
+  "tick": 178,
+  "time_verbatim": "同日午后（携装备回到工房）"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 172,
+   "quote": "「用于魔力增幅的戒指和魔力爆发用的戒指⋯⋯⋯这个则是用来强制加速的⋯⋯？不管怎么看，这小子的想法都危险得不得了啊⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 174,
+   "quote": "「这小子根本就没想着活着回来。这些装备全都是为了跟敌人同归于尽而准备的」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 175,
+   "quote": "在精通武器装备的雷纳尔多眼中看来，这些似乎全都是用于自杀式袭击的道具。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 178,
+   "text": "莱纳全身装备摆上工房桌→雷纳尔多逐件皱眉：『用于魔力增幅的戒指和魔力爆发用的戒指⋯⋯⋯这个则是用来强制加速的⋯⋯？』→判明『全都是用于自杀式袭击的道具』、『这小子根本就没想着活着回来』（据雷纳尔多判断）；涡波习以为常（『这还真符合他的风格』），雷纳尔多诧异并涌起锻冶师的使命感"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-63a9e224d1be",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "Sylph・堕落使徒",
+   "相川涡波",
+   "莱纳",
+   "雷纳尔多",
+   "风龙（艾尔芬里斯）"
+  ],
+  "instant": null,
+  "kind": "制作·强化",
+  "name": "魔剑强化完工（工房第三日收官）",
+  "tick": 179,
+  "time_verbatim": "地下第三日白天（工房）"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 5,
+   "quote": "现在这把剑既具有对风属性的抗性，同时还可以减轻使用风魔法时的负担。对要以艾尔芬里斯为对手战斗的风魔法使而言，可谓再合适不过的武器。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 87,
+   "quote": "六十六层的侦查也完毕──不如说，已经打倒了艾尔芬里斯一次，还将它的魔石拿去强化莱纳的剑了。可以说万无一失。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 100,
+   "quote": "以及通过神铁锻冶的修复获得再生的千年前的轻盔和胸甲。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 179,
+   "text": "雷纳尔多守『不死鸟使者』旁锻造一日，完成魔剑强化：对风属性抗性+减轻风魔法负担（强化风魔法效力）——对以艾尔芬里斯为对手的风魔法使专用；此前打倒风龙一次所得魔石已被拿去强化莱纳的剑（据涡波叙述）；涡波同日完成壊掉成品的修复（含神铁锻冶修复的千年轻盔胸甲）并受检认可"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-66b4f821a4b7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

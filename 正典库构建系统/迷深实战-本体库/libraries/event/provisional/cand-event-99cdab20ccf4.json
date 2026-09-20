@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "PaleGriffin",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "63层PaleGriffin遭遇与呼群撤退",
+  "tick": 180,
+  "time_verbatim": "63层踏破段（行171-207）"
+ },
+ "evidence": [
+  {
+   "chapter": 180,
+   "line": 171,
+   "quote": "徘徊在六十三层的主要的怪物叫做「PaleGriffin」。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 193,
+   "quote": "这家伙是一遇到危险就撒腿逃跑然后呼唤同伴群殴的类型。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 195,
+   "quote": "「不了。暂时撤回六十四层吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 198,
+   "quote": "「既然已经知道了那家伙的能力，接下来就把它们全部无视掉前进吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 180,
+   "text": "为避免再遭奇袭，如65层时做法特地找一匹战斗收集情报→夹击（莱纳实践命名法、只用辅助魔法+剑术配合削弱）→PaleGriffin事先察觉奇袭、如呼吸般用魔法迎击，但无单项突出'也就那么个意思'→快打倒时其突然飞至特高处竭力嘶吼呼群→基督'啊，果然来这套'（一遇危险逃跑呼唤同伴群殴型）→决定不追、暂撤回64层（此型怪物追击横跨一整个阶层不会停）→回64层后追击止、集结怪物归位→方针转为全部无视（'要打倒那么一大群应该是没戏的'）——'最不划算的狩猎场'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-99cdab20ccf4",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0180.txt",
+  "sha": "ce2898aafdca4dbc40d60b49f4512ec9ee9770cfd30a7f9235f533f42e082307",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

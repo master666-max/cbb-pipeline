@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "赫勒比勒夏因家",
+  "rel_type": "养子(前骑士)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 81,
+   "quote": "你现在既不是贵族（赫勒比勒夏因家）的骑士，也不是谁的侍从。而是一个纯粹的探索者啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 87,
+   "quote": "我则是『孤儿院出身的贵族养子』。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 85,
+   "quote": "至少我跟罗德可都当你是自己的朋友哦。跟年龄立场都没关系，你是我们对等的朋友",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 177,
+   "text": "莱纳自陈『孤儿院出身的贵族养子』；涡波当面订正其身份认知：『你现在既不是贵族（赫勒比勒夏因家）的骑士，也不是谁的侍从。而是一个纯粹的探索者』；莱纳因自认地位最低而拒绝朋友对等论——被涡波/罗德当对等朋友与家人对待"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-710eb9fbb92b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

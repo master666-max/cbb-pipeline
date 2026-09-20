@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "监视(防碍事)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 201,
+   "quote": "「⋯⋯我知道了。那我今天不看好罗德可不行啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 202,
+   "quote": "莱纳对进展顺利的事感到欢喜，并表示绝对不会让罗德来碍事。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 177,
+   "text": "涡波独闯迷宫当日，莱纳主动留守：『那我今天不看好罗德可不行啊』——对进展顺利感到欢喜并表态绝不让罗德去碍事；此前亦一如既往负责监视罗德"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d94496ac806b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

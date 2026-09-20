@@ -1,0 +1,39 @@
+{
+ "unit": "ch0180",
+ "summary": {
+  "total": 36,
+  "pass": 34,
+  "intercept": 2,
+  "by_code": {
+   "G1-SCHEMA": 0,
+   "G1-EVIDENCE": 0,
+   "G1-REF": 0,
+   "G1-REL-BACKLINK": 0,
+   "G1-TIME_INVERSION": 0,
+   "G1-DEAD-WALK": 0,
+   "G1-FORESHADOW-ORDER": 0,
+   "G1-CHEKHOV-OVERDUE": 2,
+   "G1-CONTRADICTION": 0
+  }
+ },
+ "intercepted": [
+  {
+   "record_id": "cand-foreshadow-aaaa9e0b98f8",
+   "violations": [
+    {
+     "code": "G1-CHEKHOV-OVERDUE",
+     "detail": "契诃夫枪超期：第90章埋设，至第180章 已 90 章未兑现（≥3）"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-foreshadow-b9a0aed562b1",
+   "violations": [
+    {
+     "code": "G1-CHEKHOV-OVERDUE",
+     "detail": "契诃夫枪超期：第90章埋设，至第180章 已 90 章未兑现（≥3）"
+    }
+   ]
+  }
+ ]
+}

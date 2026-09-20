@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "Jaeger·Wind",
+  "rel_type": "使用者",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 180,
+   "line": 32,
+   "quote": "「──『Jaeger・Wind』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 42,
+   "quote": "「莱纳！这样就行！继续用魔法攻击！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 180,
+   "text": "64层迎击GreenHighElement时释放，被吸收后遵基督指示'这样就行！继续用魔法攻击！'再次释放（有意喂风令其肥大化以创造DistanceMute接触条件）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-578fb8a0863b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0180.txt",
+  "sha": "ce2898aafdca4dbc40d60b49f4512ec9ee9770cfd30a7f9235f533f42e082307",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

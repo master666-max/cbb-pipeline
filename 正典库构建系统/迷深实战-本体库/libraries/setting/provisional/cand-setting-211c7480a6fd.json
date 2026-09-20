@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 179,
+  "fact": "①BOSS怪物再出现间隔：'迷宫内的BOSS怪物被打倒后到再度出现为止间隔应该是一个小时'（据莱纳）；②怪物不能跨层行动：跨过层与层之间的出入口后所有LizardFlyer当即停止追击——'低阶层的规则在深层也是通用的'，涡波并自称该规则为自己所制定；③深层怪物感知范围极广：'只能认为它们可以利用风感知敌人'（据涡波推测）",
+  "name": "迷宫深层规则三则（ch179实证）",
+  "tick": 179
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 301,
+   "quote": "迷宫内的BOSS怪物被打倒后到再度出现为止间隔应该是一个小时",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 357,
+   "quote": "接着，在我们跨过了层与层之间的出入口之后，所有LizardFlyer当即停止追击。看来，低阶层的规则在深层也是通用的。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 323,
+   "quote": "果然跟低阶层的怪物不一样，感知范围不是一般的广。只能认为它们可以利用风感知敌人。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 179,
+   "text": "迷宫通用规则深层实证"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-211c7480a6fd",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

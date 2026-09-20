@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "队伍分工(斥候后卫×骑士前卫)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 110,
+   "quote": "如果要用职业方面的话来解释的话，那就是作为骑士的莱纳是队伍的前卫，而作为斥候的我则是队伍的后卫这样吧。因为失去了冻结属性的才能，攻击手段锐减的我只能采用这种配置。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 179,
+   "text": "探索以莱纳为主、涡波以魔法辅助：'作为骑士的莱纳是队伍的前卫，而作为斥候的我则是队伍的后卫'；因涡波失去冻结属性才能致攻击手段锐减而采用此配置（据涡波自述）；装备分配亦据此（攻击防御集中给莱纳）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5a291e7974d7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

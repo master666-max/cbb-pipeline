@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多",
+  "rel_type": "师从(锻冶)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 215,
+   "quote": "不过，才刚刚接受雷纳尔多的教导学会技能『神铁锻冶』的我能做到的事情也不多。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 198,
+   "quote": "「说的也是呐⋯⋯⋯确实，唯有用上这个魔石的修复是绝对不能失败的。那这事就交给老朽单独负责。小子你就把昨天剩下那点儿练习做完好了」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 209,
+   "quote": "只要看一看在我身旁的雷纳尔多就明白了。他奋力驱使身体的目的不是为了自己，而是为了使用武器的人。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 178,
+   "text": "『才刚刚接受雷纳尔多的教导学会技能『神铁锻冶』』；被安排『把昨天剩下那点儿练习做完』；汲取其『为了使用武器的人』的生产者姿势（『我必须要从他的姿势中汲取教诲』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3f1c31985c80",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

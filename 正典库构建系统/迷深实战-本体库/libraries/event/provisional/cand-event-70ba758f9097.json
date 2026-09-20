@@ -1,0 +1,84 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "魔王城"
+  ],
+  "instant": null,
+  "kind": "关系转折",
+  "name": "罗德家人宣言与宠弟作战",
+  "tick": 177,
+  "time_verbatim": "同日·茶会至深夜"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 101,
+   "quote": "既然这样，那干脆就从朋友关系飞跃到家人好了！",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 107,
+   "quote": "「这座城堡就跟孤儿院差不多喽！从今天起大家都是家人了哟！」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 113,
+   "quote": "「好滴。那么哥哥我也来喂你饼干吃吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 128,
+   "quote": "「然而很遗憾，虽然我想要一个像莱纳这样的弟弟，但是像你这样的姐姐就免了⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 130,
+   "quote": "「连个饭都不会做的姐姐，说实话有点⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 147,
+   "quote": "这一天──，围着罗德那不像样的晚饭，我们三个一直谈笑到深夜。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 177,
+   "text": "罗德宣布『干脆就从朋友关系飞跃到家人好了』（自任姐姐/莱纳为弟弟/『这座城堡就跟孤儿院差不多喽！从今天起大家都是家人了哟！』——莱纳目瞪口呆仍被强推）→宠弟作战：罗德喂饼干+揉肩+『你想要什么姐姐都去给你买来哟～』；涡波同调（『哥哥我也来喂你饼干吃吧』——莱纳一意自贬则惯得更厉害）→罗德转而欲当涡波姐姐（『虽说到不了代替涡涡妹妹的程度』），被『连个饭都不会做的姐姐』拒绝→怒而起身承包晚饭（『今天的晚饭就交给人家了！』——明明除了切菜之外啥都不会）→涡波托莱纳照顾『那个废物姐姐』→当晚三人围不像样的晚饭谈笑至深夜"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-70ba758f9097",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

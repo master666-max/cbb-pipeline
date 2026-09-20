@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战备",
+  "name": "独闯宣言与监视分工",
+  "tick": 177,
+  "time_verbatim": "剪发后·出发前"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 198,
+   "quote": "要是新魔法顺利的话，我想只要一击就能打倒那条龙了",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 200,
+   "quote": "「今天只是去尝试一下所以我一个人去就可以了」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 201,
+   "quote": "「⋯⋯我知道了。那我今天不看好罗德可不行啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 203,
+   "quote": "以防万一在出发的时候将撤退用的『连接』设置在了房间里。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 177,
+   "text": "涡波告知今日目的地是迷宫：『要是新魔法顺利的话，我想只要一击就能打倒那条龙了』→莱纳欢喜（『真不愧是基督啊』）问是否同去→涡波以『今天只是去尝试一下』为由独自前往→莱纳表态『那我今天不看好罗德可不行啊』（绝不让罗德碍事）；二人各自准备：莱纳一如既往监视罗德，涡波目的地改为迷宫（并在房间设置撤退用『连接』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-48873ccd4b62",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

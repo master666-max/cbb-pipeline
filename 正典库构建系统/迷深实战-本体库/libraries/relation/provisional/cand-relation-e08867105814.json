@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "六十四层",
+  "rel_type": "栖息(精灵系怪物)",
+  "subject": "GreenHighElement"
+ },
+ "evidence": [
+  {
+   "chapter": 184,
+   "line": 143,
+   "quote": "「接下来的对手是精灵系的怪物是么。这也是适合由我来对付的对手呢。请您放心吧，涡波大人。若论及和平地解决问题这点，没有人能够与我相提并论」",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 152,
+   "quote": "于是诺斯菲将罗德置于身后而自己先行。这一层的怪物，GreenHighElement的索敌范围很广。因而诺斯菲很快就被敌人感知到，伴随着一道风，敌人瞬移到了我们的身边。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 184,
+   "text": "六十四层的精灵系怪物（罗德/诺斯菲对话确认下一层对手为精灵系）；索敌范围广、伴随风瞬移袭来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e08867105814",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0184.txt",
+  "sha": "f82e9b857a04cc658d8a91979773d04059065eba262c45c8bab2315c764bc4f6",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

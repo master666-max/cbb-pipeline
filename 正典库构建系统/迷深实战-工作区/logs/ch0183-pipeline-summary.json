@@ -1,0 +1,276 @@
+{
+ "unit": "ch0183",
+ "chapter": 183,
+ "ingestion_index": 153,
+ "title": "201《新的队伍》",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 31,
+  "pass": 31,
+  "intercept": 0,
+  "admitted": 21,
+  "quarantined": 10
+ },
+ "tracks": {
+  "contradiction": 3,
+  "consistent-duplicate": 7,
+  "on-create": 11
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-ff14753ba790",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-23ef103d5db4-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-9a95712d548e",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m118"
+   }
+  },
+  {
+   "record_id": "cand-entity-9c9f4f2efca0",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m38"
+   }
+  },
+  {
+   "record_id": "cand-entity-00f283511689",
+   "type": "entity",
+   "name": "罗德·缇缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-2d882c005cdd"
+   }
+  },
+  {
+   "record_id": "cand-entity-957392b99f2c",
+   "type": "entity",
+   "name": "瓦尔德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-214a1e6922bb-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-cbd3e0db2d82",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5e5c88a0c3e4-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-a537be050cc7",
+   "type": "entity",
+   "name": "《维度》",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5665520f5751-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-c3c5f37a4d5c",
+   "type": "entity",
+   "name": "Default",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-db7241e77490-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-4af2c5b1ed64",
+   "type": "entity",
+   "name": "『表示』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-dfe534cdf9ff"
+   }
+  },
+  {
+   "record_id": "cand-entity-b617061e61a7",
+   "type": "entity",
+   "name": "『LivingLegend号』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f5ec45ec6909"
+   }
+  },
+  {
+   "record_id": "cand-relation-0be337e4c17a",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f9461750dc2d",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-836f5ef3ee33",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f3c8ad414953",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3e557a549473",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-cc6231883b6f",
+   "type": "event",
+   "name": "诺斯菲晨间无声近侍早餐",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-537cff88a25a",
+   "type": "event",
+   "name": "涡波×莱纳房内魔法战（拦逃闹战）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5d05732405ee",
+   "type": "event",
+   "name": "元夫妻话题挖出与失忆回避",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-665857dc1206",
+   "type": "event",
+   "name": "第三次迷宫探索出发（四人新队伍）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-7b15fea59e18",
+   "type": "setting",
+   "name": "迷宫探索队伍编成（第三次·四人·双守护者）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-0d73bfea3a5e",
+   "type": "setting",
+   "name": "涡波与莱纳的地上位阶（20级以上·怪物领域）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-ccf6c3da7534",
+   "type": "entity",
+   "name": "维艾西亚",
+   "item_id": "q-57360354c52a",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-09b45ef30039",
+   "type": "entity",
+   "name": "ExWind",
+   "item_id": "q-cded3700c13e",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-a60b8750fe12",
+   "type": "relation",
+   "name": "罗德·缇缇",
+   "item_id": "q-4addd6495c81",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-9fc48f9f7dba",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-f97f148e82f9",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-78fb572632e3",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-fcc76843f157",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-38700ae8f8c7",
+   "type": "relation",
+   "name": "相川涡波",
+   "item_id": "q-49f5dc8b412b",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-f4c5f0b98b54",
+   "type": "foreshadow",
+   "name": "诺斯菲微笑中的强烈恶意",
+   "item_id": "q-07fd7ececb68",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-308944133c1b",
+   "type": "foreshadow",
+   "name": "罗德的'大概，绝对'与背叛预感",
+   "item_id": "q-98bdc1c54e8f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-65d24adfe1ee",
+   "type": "foreshadow",
+   "name": "诺斯菲对四人阵容的怀旧感",
+   "item_id": "q-58683e3b5f26",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-75d3545ca8bc",
+   "type": "foreshadow",
+   "name": "元夫妻再开压力与失忆回避",
+   "item_id": "q-384ab23f05b8",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 153,
+  "pseudo_date": "2000-06-02",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

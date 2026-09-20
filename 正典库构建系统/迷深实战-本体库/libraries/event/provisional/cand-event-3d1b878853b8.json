@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "光之御旗（NosfyFlag）",
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "情报(状态更新)",
+  "name": "诺斯菲『诅咒』净化说明与罗德解脱宣言",
+  "tick": 182,
+  "time_verbatim": "同日·庭院（千年前话题告一段落后）"
+ },
+ "evidence": [
+  {
+   "chapter": 182,
+   "line": 51,
+   "quote": "「⋯⋯生前的我，因为身体里被先天性地植入了某个咒术式的缘故，所以处于一种时常向周围散布某种『咒术』的状态。不过现在我已经可以对该种咒术进行控制了。看来正如涡波大人预言的那样，在成为守护者的过程中得到了一定的净化呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 182,
+   "line": 55,
+   "quote": "「是带有魅惑力量的光。我就是依靠这道光统率南方的士兵们的」",
+   "vol": 1
+  },
+  {
+   "chapter": 182,
+   "line": 57,
+   "quote": "「对实力强悍的人是没有效果的。像涡波大人和罗德就可以将光的力量完全无效化。对那边的莱纳应该也是不起效的」",
+   "vol": 1
+  },
+  {
+   "chapter": 182,
+   "line": 61,
+   "quote": "「啊，果然呀。诺斯菲的那个力量已经没了吗。本来看到那个刺眼的圆光没有了，人家还挺奇怪的呢。太好了呢，诺斯菲。这样一来人家和诺斯菲都从『诅咒』中解脱出来了！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 182,
+   "text": "诺斯菲应涡波之问说明『诅咒』：先天植入的咒术式→魅惑之光（生前统率南方士兵所依）→成为守护者的过程中得到一定净化（正如涡波大人预言）、现已可控——莱纳当场印证不受影响；罗德证实刺眼圆光消失，宣言『人家和诺斯菲都从『诅咒』中解脱出来了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3d1b878853b8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0182.txt",
+  "sha": "bf785146021b5ed4e7c3c4d243c2e23512d315e8fad7fc9eee3021a7b7d46060",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

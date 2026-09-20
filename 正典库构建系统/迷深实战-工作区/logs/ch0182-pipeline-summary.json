@@ -1,0 +1,279 @@
+{
+ "unit": "ch0182",
+ "chapter": 182,
+ "ingestion_index": 152,
+ "title": "200话-感想",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 32,
+  "pass": 32,
+  "intercept": 0,
+  "admitted": 24,
+  "quarantined": 8
+ },
+ "tracks": {
+  "on-create": 16,
+  "consistent-duplicate": 5,
+  "contradiction": 3
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-175fc9b85480",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m117"
+   }
+  },
+  {
+   "record_id": "cand-entity-4f4d3954695e",
+   "type": "entity",
+   "name": "始祖涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-28ea7f2630b1-m14"
+   }
+  },
+  {
+   "record_id": "cand-entity-d56cc7449770",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-4798beb385a7"
+   }
+  },
+  {
+   "record_id": "cand-entity-cc77f7373015",
+   "type": "entity",
+   "name": "罗德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-27c49ddf5cb5-m6"
+   }
+  },
+  {
+   "record_id": "cand-entity-73ad79f0ffcb",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m37"
+   }
+  },
+  {
+   "record_id": "cand-entity-7060c2cf836c",
+   "type": "entity",
+   "name": "使徒西斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ab2c6486ab38-m11"
+   }
+  },
+  {
+   "record_id": "cand-entity-5762a5564bc2",
+   "type": "entity",
+   "name": "支配之王",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-812e6398650b"
+   }
+  },
+  {
+   "record_id": "cand-entity-41b563907616",
+   "type": "entity",
+   "name": "最深部之誓约者",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-0a9ba072623c"
+   }
+  },
+  {
+   "record_id": "cand-entity-100f02f006c5",
+   "type": "entity",
+   "name": "光之御旗（NosfyFlag）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-012c9d1a0e7f",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-38217e2f0346",
+   "type": "relation",
+   "name": "使徒西斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f2557151dfd9",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8e998ba3fbce",
+   "type": "relation",
+   "name": "支配之王",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c57d97ca356e",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4d621223cb91",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8bc8a0b2a4a3",
+   "type": "event",
+   "name": "夫妻关系暴露（罗德揭破·诺斯菲终结话题）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2ee798d74a11",
+   "type": "event",
+   "name": "千年前史核对（诺斯菲口述×涡波重构）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3d1b878853b8",
+   "type": "event",
+   "name": "诺斯菲『诅咒』净化说明与罗德解脱宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-33b8d6244d61",
+   "type": "event",
+   "name": "罗德劫走诺斯菲（女孩子间的谈话）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-abf4be609bc7",
+   "type": "event",
+   "name": "涡波恐惧发作与莱纳看护",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3ce60048f4d4",
+   "type": "event",
+   "name": "迷宫进度：抵达六十层（自报）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9a75d8859c30",
+   "type": "setting",
+   "name": "千年前战争史实口述(诺斯菲)",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-f8267e642ab8",
+   "type": "foreshadow",
+   "name": "诺斯菲的『留恋』之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-33497b839aa6",
+   "type": "foreshadow",
+   "name": "携诺斯菲回地上的再会危机（技能警报）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-0449f5356d55",
+   "type": "entity",
+   "name": "缇娅拉",
+   "item_id": "q-3a025d8a8349",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-83d73dc2b5e8",
+   "type": "entity",
+   "name": "使徒勒伽西",
+   "item_id": "q-b7f7c5031584",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-04a4121ab929",
+   "type": "entity",
+   "name": "莱文教",
+   "item_id": "q-c1c7e5e12fa1",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-67a3caea81fb",
+   "type": "entity",
+   "name": "六十层",
+   "item_id": "q-f142dc6d9406",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-4c2ec763e10e",
+   "type": "relation",
+   "name": "使徒西斯",
+   "item_id": "q-1f2ed0c7e1fc",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-81d63e66b4a0",
+   "type": "relation",
+   "name": "缇娅拉",
+   "item_id": "q-50e989ef558f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-1649071127d4",
+   "type": "relation",
+   "name": "使徒勒伽西",
+   "item_id": "q-3f254900586f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-e491d993c506",
+   "type": "foreshadow",
+   "name": "莱文教传承无婚姻记载之谜",
+   "item_id": "q-94b53ac748de",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 152,
+  "pseudo_date": "2000-06-01",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

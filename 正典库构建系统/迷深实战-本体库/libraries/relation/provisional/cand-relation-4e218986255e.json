@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "六十五层",
+  "rel_type": "栖息(游荡怪物)",
+  "subject": "LizardFlyer"
+ },
+ "evidence": [
+  {
+   "chapter": 184,
+   "line": 72,
+   "quote": "在那里游荡着的怪物名字叫LizardFlyer。可以回避一切物理攻击，并可以利用风中和敌人的魔法攻击，是这么一种防御能力堪称铁板一块的怪物。",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 79,
+   "quote": "附近的LizardFlyer自然没理由跟她客气，注意到诺斯菲的它们像苍蝇一般一股脑地飞了过来。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 184,
+   "text": "六十五层三维迷宫的游荡怪物；群袭赤手空拳打先锋的诺斯菲（像苍蝇一般一股脑地飞过来）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.87,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4e218986255e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0184.txt",
+  "sha": "f82e9b857a04cc658d8a91979773d04059065eba262c45c8bab2315c764bc4f6",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

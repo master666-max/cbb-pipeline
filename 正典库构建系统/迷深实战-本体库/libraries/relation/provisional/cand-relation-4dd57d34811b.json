@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾尔芬里斯",
+  "rel_type": "击杀(拔除魔石)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 61,
+   "quote": "我攥住艾尔芬里斯的魔石──并篡夺、拔除之。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 99,
+   "quote": "如此这般，我的第二次屠龙行动也平安无事地告终了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 178,
+   "text": "涡波以『Default』跃上龙背、『DistanceMute』刺入体内——『我攥住艾尔芬里斯的魔石──并篡夺、拔除之』；艾尔芬里斯临终哀嚎、巨体透明化成光消亡；『我的第二次屠龙行动也平安无事地告终了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4dd57d34811b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

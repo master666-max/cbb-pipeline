@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫62层怪物)",
+  "name": "PiercePigeon"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 647,
+   "quote": "【怪物】PiercePigeon：位阶60",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 648,
+   "quote": "PiercePigeon自由自在地漫步着。就像水族馆里的鱼一样，即使看到了我们也没有改变自己的步调无忧无虑地走来走去。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 233,
+   "quote": "「怪物」PiercePigeon：级别60",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 234,
+   "quote": "就像水族馆里的鱼一样，即使看到了我们也没有改变自己的步调无忧无虑地走来走去。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 247,
+   "quote": "这些白色的怪物们仅仅只盯着我一个人看。它们眼中并没有莱纳，只有我。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 90,
+   "text": "62层怪物（位阶60）：被光照得浑身洁白的鸟形怪物；看到涡波莱纳亦不袭击——'即使看到了我们也没有改变自己的步调无忧无虑地走来走去'（只优雅啄羽）；对涡波表现出安心感（白色怪物群体行为，见伏笔条）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-164a09052ecf",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-164a09052ecf-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-164a09052ecf",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

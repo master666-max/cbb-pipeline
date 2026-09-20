@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "六十层",
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "里程碑",
+  "name": "零消耗抵达六十层",
+  "tick": 184,
+  "time_verbatim": "同日·连下至六十层（当日达成）"
+ },
+ "evidence": [
+  {
+   "chapter": 184,
+   "line": 255,
+   "quote": "这之后，诺斯菲还是一样给罗德戴着高帽，迷宫攻略也由此一帆风顺。越接近六十层，没有战意的光属性怪物越多，所以攻略一直都是越来越轻松。",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 256,
+   "quote": "我和莱纳就这么丝毫没有消费HP和MP便抵达了六十层。",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 258,
+   "quote": "可以说回到地上这事儿已经是稳了。跟像被『将死』一样困在六十六层进退两难的时候比起来，前途一片光明。",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 260,
+   "quote": "但是，总有种不安像薄膜一样笼罩在头顶的感觉。──因为这状况实在是・过・于・理想了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 184,
+   "text": "其后诺斯菲照样给罗德戴着高帽、攻略一帆风顺；越接近六十层没有战意的光属性怪物越多；涡波和莱纳丝毫没有消费HP和MP便抵达六十层；涡波判断基本上以后就没有难关（越往上走迷宫难度越低）、回到地上这事儿已经是稳了——与像被『将死』一样困在六十六层进退两难时比前途一片光明；但总有种不安像薄膜一样笼罩头顶（状况过于理想）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-051f6471087e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0184.txt",
+  "sha": "f82e9b857a04cc658d8a91979773d04059065eba262c45c8bab2315c764bc4f6",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

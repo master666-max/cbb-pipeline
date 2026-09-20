@@ -1,0 +1,403 @@
+{
+ "unit": "ch0178",
+ "chapter": 178,
+ "ingestion_index": 148,
+ "title": "196话-风龙",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 50,
+  "pass": 50,
+  "intercept": 0,
+  "admitted": 42,
+  "quarantined": 8
+ },
+ "tracks": {
+  "consistent-duplicate": 3,
+  "contradiction": 4,
+  "on-create": 35
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-78e0fb95eee0",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-ff8eac55c2d1"
+   }
+  },
+  {
+   "record_id": "cand-entity-82796f4d41db",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m113"
+   }
+  },
+  {
+   "record_id": "cand-entity-85004a0e2e4a",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m33"
+   }
+  },
+  {
+   "record_id": "cand-entity-cff5e3baab1f",
+   "type": "entity",
+   "name": "雷纳尔多",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-4f2c5a2b3eda"
+   }
+  },
+  {
+   "record_id": "cand-entity-8eefb3168e27",
+   "type": "entity",
+   "name": "罗德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-27c49ddf5cb5-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-a097f54c08d6",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-9bee9a975e57"
+   }
+  },
+  {
+   "record_id": "cand-entity-cddb1d47e086",
+   "type": "entity",
+   "name": "HighSkyBeryl",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-741d320f0705"
+   }
+  },
+  {
+   "record_id": "cand-entity-398e4d4707c4",
+   "type": "entity",
+   "name": "『堕落使徒』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2eceb027c88f",
+   "type": "entity",
+   "name": "『Default』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6f931966575f",
+   "type": "entity",
+   "name": "『DistanceMute』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-6e8fff3333e1",
+   "type": "entity",
+   "name": "『维度・决战演算』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d468b9cf2e32",
+   "type": "entity",
+   "name": "『龙之风』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-011514d20d70",
+   "type": "entity",
+   "name": "『龙之咆哮』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-214d136cf2e6",
+   "type": "entity",
+   "name": "技能『神铁锻冶』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-1c9fd60bf924",
+   "type": "entity",
+   "name": "技能『缝纫』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4dd57d34811b",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c4438c3eefc1",
+   "type": "relation",
+   "name": "艾尔芬里斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3f1c31985c80",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b59deb1b905b",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3b8bf44ba16b",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-15f5bfac6c1c",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1a31eeae8c95",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c34b9a8f65b6",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-63117e5a2405",
+   "type": "relation",
+   "name": "缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-45f3403d280f",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-2900f733882d",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6ce3d9a690ae",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-562921e71805",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4e3cf897a354",
+   "type": "relation",
+   "name": "HighSkyBeryl",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-623b4782fd4f",
+   "type": "event",
+   "name": "艾尔芬里斯讨伐（第二次屠龙）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c0ed848c2f51",
+   "type": "event",
+   "name": "HighSkyBeryl入手与鉴定",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-40f2bcd35968",
+   "type": "event",
+   "name": "螺旋阶梯破壊·止步六十五层",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-63a9e224d1be",
+   "type": "event",
+   "name": "莱纳装备检查·自杀式道具判明",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8e609f53725e",
+   "type": "event",
+   "name": "对罗德的掩护接触（量尺寸·收装备·拒野餐）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9e77fbd272cb",
+   "type": "event",
+   "name": "莱纳专用装备·衣物制作（第三日完工）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-026015147b67",
+   "type": "foreshadow",
+   "name": "莱纳的同归于尽装备与不归觉悟",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-72f17548e2ab",
+   "type": "foreshadow",
+   "name": "『堕落使徒』的制造者之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-9d5caa88fbe9",
+   "type": "foreshadow",
+   "name": "对罗德的持续欺骗与救赎誓言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-e819b265f3a4",
+   "type": "foreshadow",
+   "name": "六十五层以深的再挑战（风龙障碍清除后）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-fdea7ae6dd55",
+   "type": "setting",
+   "name": "『魔石』=力量核心体系与拔石战法",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-7bedce1c8ae0",
+   "type": "setting",
+   "name": "泪洸（TearRay）天候",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-390e08322f24",
+   "type": "setting",
+   "name": "次元魔术境界论（领域交错·级别超越）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-d51b709b981c",
+   "type": "entity",
+   "name": "『新月线形石』",
+   "item_id": "q-4d20e69ad8d6",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-6bfd38d6f87d",
+   "type": "entity",
+   "name": "『次元戒指』",
+   "item_id": "q-0bafb1c17fd5",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-c54b3252b56d",
+   "type": "entity",
+   "name": "『形式』",
+   "item_id": "q-9bda2675fbaa",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-f75c2d48a7e9",
+   "type": "entity",
+   "name": "『维度』",
+   "item_id": "q-4cf344471d33",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-78a5c3878b90",
+   "type": "entity",
+   "name": "『并列思考』",
+   "item_id": "q-2b19c5778cdd",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-81d8c0691450",
+   "type": "entity",
+   "name": "『所有物』",
+   "item_id": "q-2212c6ac791c",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-775462a4f504",
+   "type": "entity",
+   "name": "螺旋阶梯",
+   "item_id": "q-3bb9cb6fa0b3",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-82f51e6ced75",
+   "type": "relation",
+   "name": "阿尔缇",
+   "item_id": "q-5272660ba272",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 148,
+  "pseudo_date": "2000-05-28",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

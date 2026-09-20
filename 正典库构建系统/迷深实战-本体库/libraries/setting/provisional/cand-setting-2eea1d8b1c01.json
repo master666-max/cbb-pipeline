@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 184,
+  "fact": "越往上走，迷宫的难度就会越低（涡波）；越接近六十层，没有战意的光属性怪物越多、攻略越来越轻松；在双守护者随行下涡波和莱纳丝毫没有消费HP和MP便自六十六层连下至六十层；到了六十层基本上以后就没有难关——回到地上这事儿已经是稳了（涡波判断）",
+  "name": "迷宫难度递减规律与六十层带怪物性质",
+  "tick": 184
+ },
+ "evidence": [
+  {
+   "chapter": 184,
+   "line": 255,
+   "quote": "这之后，诺斯菲还是一样给罗德戴着高帽，迷宫攻略也由此一帆风顺。越接近六十层，没有战意的光属性怪物越多，所以攻略一直都是越来越轻松。",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 256,
+   "quote": "我和莱纳就这么丝毫没有消费HP和MP便抵达了六十层。",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 257,
+   "quote": "到了这里的话，基本上以后就没有难关了吧。毕竟越往上走，迷宫的难度就会越低。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 184,
+   "text": "迷宫结构规律（涡波陈述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-2eea1d8b1c01",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0184.txt",
+  "sha": "f82e9b857a04cc658d8a91979773d04059065eba262c45c8bab2315c764bc4f6",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

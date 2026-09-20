@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "六十六层",
+   "相川涡波",
+   "维度・决战演算",
+   "风龙（艾尔芬里斯）"
+  ],
+  "instant": null,
+  "kind": "进入",
+  "name": "六十六层突入与战前部署",
+  "tick": 177,
+  "time_verbatim": "迷宫生活第三天·清晨街道→城市边缘"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 205,
+   "quote": "为保万全，我展开了『维度・决战演算』之后进入了六十六层。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 211,
+   "quote": "但今天，我却带着犯规的招数前来挑战。只要被我接触到，就有将它无力化的自信，胜算这次姑且是有的。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 216,
+   "quote": "一级一级地向上攀登，同时在脑海里仿真战斗的场景。按照计划，我打算使用两次魔法就决出胜负。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 217,
+   "quote": "在进入战斗之前，我开始构筑打算在最开始使用的魔法『Default』，并一点点地向六十五层接近。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 177,
+   "text": "漫步清晨街道至城市边缘→为保万全展开『维度・决战演算』后进入六十六层（空之世界）→观察风龙：体型甚于云海、如茶褐色天花板蠢动（『无论何时，都不觉得能赢得了』——但今天带着犯规的招数：只要被接触到就有将其无力化的自信，胜算姑且是有的）→确认交战规则：风龙对地上行走者无兴趣、仅中层位置袭击→登已自行复原的中央螺旋阶梯，脑内仿真战斗（计划使用两次魔法决出胜负），途中开始构筑最初的魔法『Default』并接近六十五层"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-81e5e5134d1e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

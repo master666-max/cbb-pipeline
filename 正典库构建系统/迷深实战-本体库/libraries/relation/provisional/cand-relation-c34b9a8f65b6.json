@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "关心(锻冶动力前提)",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 119,
+   "quote": "因为我们的强化是跟对罗德的救济有直接关系的，所以雷纳尔多一脸高兴地催促我动身。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 210,
+   "quote": "作为他动力的前提的是对被囚禁于『这里』的罗德的关心。其次是对即将使用『这把剑（堕落使徒）』的少年的担心。为了守护不爱惜自己的莱纳而打算造就一把杰出的宝剑的决心，只要看到他的表情便一目了然。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 178,
+   "text": "『作为他动力的前提的是对被囚禁于『这里』的罗德的关心』；涡波们的强化『跟对罗德的救济有直接关系』故『一脸高兴地催促我动身』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c34b9a8f65b6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

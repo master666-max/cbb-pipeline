@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "贝丝",
+   "雷纳尔多",
+   "魔王城"
+  ],
+  "instant": null,
+  "kind": "日常(别离伏线)",
+  "name": "贝丝点心赠答与离别告知",
+  "tick": 177,
+  "time_verbatim": "同日·离开雷纳尔多宅邸时"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 38,
+   "quote": "没错、一直一直、永远永远，我都想这样做下去」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 43,
+   "quote": "「那我在这里工作的期间就有劳你了。虽然我迟早会离开『这里』就是了」",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 49,
+   "quote": "贝丝酱的表情整个僵住了。她含英咀华般将我的话再三重复。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 54,
+   "quote": "贝丝酱方才的言谈中混杂着与她年纪不符的成熟感。可能是雷纳尔多口中所谓『还残留着』的东西使然吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 55,
+   "quote": "「直到那一天为止就有劳你了呢，贝丝酱。那再见了⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 177,
+   "text": "贝丝持点心在宅邸等到涡波下班→宣言永远做点心的信念→涡波明言『我迟早会离开『这里』』『必须要尽快回到地上才行』→贝丝表情整个僵住（数秒后强转开朗，让其带点心与城堡里的人一起吃）→涡波察觉其言谈与年纪不符的成熟感（联想雷纳尔多所谓『还残留着』的东西）→以『直到那一天为止就有劳你了』拉开距离（防千年记忆折磨）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-82bd002ed3cf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

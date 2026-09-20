@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "艾尔芬里斯"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "艾尔芬里斯讨伐（第二次屠龙）",
+  "tick": 178,
+  "time_verbatim": "锻冶修行第三天上午·迷宫（战斗数秒，迷宫挑战不到一小时）"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 11,
+   "quote": "使用『Default』缩短空间的距离，乘到艾尔芬里斯的背上。之后直接用『DistanceMute』拔除『魔石』。就这么简单。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 61,
+   "quote": "我攥住艾尔芬里斯的魔石──并篡夺、拔除之。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 68,
+   "quote": "仅仅一头艾尔芬里斯的消亡，就造就了泪洸（TearRay）的天候。级别达到60的怪物魔力密度有多高一目了然。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 69,
+   "quote": "「获得了称号『苍穹的知音』」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 74,
+   "quote": "战斗时间不过数秒。遭到破壊的螺旋阶梯的碎片尚未坠地，就决出了胜负。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 178,
+   "text": "阶梯被撞毁坠落中定策（『如果对手发起的攻击单调的话，我就使出比它还要单调的攻击』）→『Default』无视物理法则跃空→『形式』+『维度・决战演算』从视界消影→跃上龙背→『DistanceMute』刺入（领域连接）→硬接龙之咆哮与龙之风不解除→攥住魔石篡夺拔除→临终哀嚎→巨体透明化成光之雨（泪洸天候）；获称号『苍穹的知音』+获得补正技巧+0.01；经验值202345／135000低于预期"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-623b4782fd4f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

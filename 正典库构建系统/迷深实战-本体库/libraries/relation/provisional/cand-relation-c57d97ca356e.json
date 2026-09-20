@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "朋友(首个同性朋友)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 182,
+   "line": 64,
+   "quote": "「姆姆！难道说，人家终于能交到一个同性朋友了！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 182,
+   "line": 65,
+   "quote": "「当然，如果你觉得我可以，那请务必让我成为你的朋友」",
+   "vol": 1
+  },
+  {
+   "chapter": 182,
+   "line": 78,
+   "quote": "接着罗德就这么用公主抱的姿势带着诺斯菲飞出了庭院。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 182,
+   "text": "罗德宣言终于能交到一个同性朋友，诺斯菲应允『请务必让我成为你的朋友』；随后罗德以公主抱将其劫往自己房间进行『女孩子间的谈话』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c57d97ca356e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0182.txt",
+  "sha": "bf785146021b5ed4e7c3c4d243c2e23512d315e8fad7fc9eee3021a7b7d46060",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

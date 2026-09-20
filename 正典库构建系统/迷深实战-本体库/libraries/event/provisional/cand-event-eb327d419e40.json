@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "DistanceMute",
+   "HighSkyBeryl",
+   "TowersSus・Wind",
+   "相川涡波",
+   "莱纳",
+   "风龙（艾尔芬里斯）"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "六十六层风龙二度击破",
+  "tick": 179,
+  "time_verbatim": "地下第四天晨（冲门后即时）"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 153,
+   "quote": "「──风魔法『TowersSus・Wind』」",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 164,
+   "quote": "「──『Default』『DistanceMute』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 166,
+   "quote": "接着我以电光石火的速度将闪耀紫色光芒的右臂刺入艾尔芬里斯体内。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 181,
+   "quote": "我的MP消费量在200左右，莱纳则在50上下。只要付出这种程度的消耗就可以稳妥地突破六十六层实在是令人振奋。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 179,
+   "text": "计划于距螺旋阶梯较远处决战：莱纳以罗德所授较轻咏唱（天路垂临/续道碧霄）支配周围之风，施展复苏的失传大魔法『TowersSus・Wind』千剑齐射——风龙以咆哮+龙之风造壁相抗，莱纳虽无法破防但吸住其全部注意力；涡波确认两魔法冲突之际以『Default』『DistanceMute』跳跃至其背后，以闪耀紫色光芒的右臂刺入体内拔出『魔石』——风龙毫无还手之力，临终哀嚎后化光消失；莱纳以『风』坐垫接住被抛向空中的涡波；拾取『HighSkyBeryl』后无伤登螺旋阶梯；全战MP消耗涡波约200/莱纳约50"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-eb327d419e40",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

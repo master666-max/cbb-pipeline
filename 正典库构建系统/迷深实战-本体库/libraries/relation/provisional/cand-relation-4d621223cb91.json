@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "光之御旗（NosfyFlag）",
+  "rel_type": "免疫(魅惑之光不起效)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 182,
+   "line": 57,
+   "quote": "「对实力强悍的人是没有效果的。像涡波大人和罗德就可以将光的力量完全无效化。对那边的莱纳应该也是不起效的」",
+   "vol": 1
+  },
+  {
+   "chapter": 182,
+   "line": 59,
+   "quote": "他冲我点点头说「确实没事」，看来诺斯菲说能够控制自己的力量这点不假。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 182,
+   "text": "据诺斯菲：该光对实力强悍者没有效果——涡波大人和罗德可将光的力量完全无效化、对莱纳亦应不起效；莱纳当场点头自称『确实没事』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4d621223cb91",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0182.txt",
+  "sha": "bf785146021b5ed4e7c3c4d243c2e23512d315e8fad7fc9eee3021a7b7d46060",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

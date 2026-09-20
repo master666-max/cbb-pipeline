@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "LizardFlyer",
+   "六十五层",
+   "相川涡波",
+   "维度・多重展开"
+  ],
+  "instant": null,
+  "kind": "侦查",
+  "name": "维度・多重展开侦查六十五层全貌",
+  "tick": 179,
+  "time_verbatim": "同晨（再入六十五层前）"
+ },
+ "evidence": [
+  {
+   "chapter": 179,
+   "line": 307,
+   "quote": "「──『维度・多重展开』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 311,
+   "quote": "因为『魔法相杀』的缘故，密布于六十五层的LizardFlyer周边的情况我无法掌握。但除开这些，将『维度・多重展开』拓展到深处之后，总算是找到了前往六十四层的阶梯──不对，应该是大洞更为准确。",
+   "vol": 1
+  },
+  {
+   "chapter": 179,
+   "line": 313,
+   "quote": "以无机质的石造阶梯构成的三维迷宫是中央区域所特有的。右侧区域有许多从天而降的瀑布，左侧则是生长着直插天际的大树的区域。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 179,
+   "text": "涡波以『维度・多重展开』填满整层：全层LizardFlyer起『魔法相杀』反应（妨碍空间掌握，但同时新增一种拖敌手段）；排除相杀区域后找到通往六十四层的大洞并掌握全层构造（中央石造阶梯三维迷宫/右侧瀑布蓝鸟/左侧大树昆虫）；定策：沿靠近大树区一侧的最短路线一路向上，遇LizardFlyer以风魔法牵制、不测即撤（'战意为零的计划'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1dbee581dc12",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0179.txt",
+  "sha": "32f55c9250e8aaddd0fc9f33928080763008958473e1cb4aebcc4af7ca2229e3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

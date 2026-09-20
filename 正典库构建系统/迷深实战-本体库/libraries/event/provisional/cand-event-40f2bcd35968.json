@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "艾尔芬里斯",
+   "螺旋阶梯"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "螺旋阶梯破壊·止步六十五层",
+  "tick": 178,
+  "time_verbatim": "屠龙同日·战斗直后"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 94,
+   "quote": "位于平原中央的螺旋阶梯遭到破壊，无法登上六十五层。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 95,
+   "quote": "使用『Default』的话倒是能上的去。不过，经过刚才这场不计消耗的战斗，目前剩下的MP让我舍不得这么早。不惜消费作为备用魔力的『次元戒指』也要去挑战未知的六十五层什么的，我还是有所忌惮。",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 97,
+   "quote": "「先回去吧。不能急躁冒进」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 178,
+   "text": "艾尔芬里斯突进撞毁平原中央螺旋阶梯→『无法登上六十五层』；『Default』可上行但 MP 剩余不足、消费备用『次元戒指』挑战未知层为涡波所忌惮而当日止步（『先回去吧。不能急躁冒进』）；后续探索定与莱纳同行、亦想先处理好自己的LevelUP"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-40f2bcd35968",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

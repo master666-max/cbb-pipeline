@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "DistanceMute",
+   "相川涡波",
+   "空白之戒",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战备",
+  "name": "第三天晨间状态确认与全戒充魔",
+  "tick": 177,
+  "time_verbatim": "迷宫生活第三天清晨"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 150,
+   "quote": "名字：相川涡波HP293／293MP945／945职业：探索者",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 157,
+   "quote": "这两天的工作也有了成果，我的锻冶技能顺利成长了。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 158,
+   "quote": "昨天晚上我将魔力注入了所有的「空白之戒」中，应该储存了远超『表示』的大量魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 163,
+   "quote": "因为他吓得就差使出魔法了，搞得我也差点拔剑。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 177,
+   "text": "晨间『状态』确认：级别22/HP293/293/MP945/945、锻冶经两日工房劳作顺利成长、身体状况万全；前夜已将魔力注入所有「空白之戒」（储存远超『表示』——大量使用Default/DistanceMute亦不枯竭）；拍醒一旁熟睡的莱纳（莱纳惊得差点使出魔法，涡波也差点拔剑）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-00bc81320fdd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

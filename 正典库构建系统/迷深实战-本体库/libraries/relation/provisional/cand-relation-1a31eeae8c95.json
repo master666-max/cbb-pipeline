@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "欲以武器守护",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 178,
+   "line": 174,
+   "quote": "「这小子根本就没想着活着回来。这些装备全都是为了跟敌人同归于尽而准备的」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 179,
+   "quote": "「得打造出上好的武器让他免于依赖这种自爆用的道具才可以呐⋯⋯⋯首先就从这把剑开始着手吧⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 178,
+   "line": 210,
+   "quote": "作为他动力的前提的是对被囚禁于『这里』的罗德的关心。其次是对即将使用『这把剑（堕落使徒）』的少年的担心。为了守护不爱惜自己的莱纳而打算造就一把杰出的宝剑的决心，只要看到他的表情便一目了然。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 178,
+   "text": "判其装备皆同归于尽用后：『得打造出上好的武器让他免于依赖这种自爆用的道具才可以呐⋯⋯⋯首先就从这把剑开始着手吧⋯⋯』；『为了守护不爱惜自己的莱纳而打算造就一把杰出的宝剑的决心，只要看到他的表情便一目了然』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1a31eeae8c95",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0178.txt",
+  "sha": "2a92b2933e63d4ac4f607b02722dc452adb67d59207c02c204e5c2d683dc5659",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

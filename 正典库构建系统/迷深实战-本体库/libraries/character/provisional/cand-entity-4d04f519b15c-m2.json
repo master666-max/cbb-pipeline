@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "人物(迷宫62层怪物)",
+  "name": "ColorlessUnicorn"
+ },
+ "evidence": [
+  {
+   "chapter": 90,
+   "line": 653,
+   "quote": "【怪物】ColorlessUnicorn：位阶59",
+   "vol": 1
+  },
+  {
+   "chapter": 90,
+   "line": 654,
+   "quote": "之所以浑身洁白，是因为在这一层可以当做迷彩色吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 239,
+   "quote": "「怪物」ColorlessUnicorn：级别59",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 240,
+   "quote": "之所以浑身洁白，是因为在这一层可以当做迷彩色吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 248,
+   "quote": "它们表现出一种看到了我之后感到十分安心的感觉。这反应就像是见到了非常怀念的旧识一样。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 90,
+   "text": "62层怪物（位阶59）：浑身洁白的巨大独角兽（白色为该层迷彩，无魔法辅助难发现）；体型宜冲刺突进具威胁；看着涡波但'没有打算战斗的意图'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-4d04f519b15c",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-4d04f519b15c-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-4d04f519b15c",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

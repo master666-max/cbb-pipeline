@@ -1,0 +1,75 @@
+{
+ "canonical": {
+  "entities": [
+   "Care Full",
+   "Default",
+   "DistanceMute",
+   "GreenHighElement",
+   "Jaeger·Wind",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "64层GreenHighElement战",
+  "tick": 180,
+  "time_verbatim": "逆行64层初段（本章唯一一战）"
+ },
+ "evidence": [
+  {
+   "chapter": 180,
+   "line": 26,
+   "quote": "它用跟以前的莉帕相似的瞬间移动紧咬住我们不放。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 47,
+   "quote": "将莱纳的风像芳醇的食粮一样吸收起来的Element体型已经膨胀到了原来的十倍。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 58,
+   "quote": "Element顷刻间炸裂开来。应该是因为储蓄在它体内的莱纳的风魔法未经消化就被解放的缘故。",
+   "vol": 1
+  },
+  {
+   "chapter": 180,
+   "line": 67,
+   "quote": "莱纳用神圣魔法修复着我的右手。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 180,
+   "text": "GreenHighElement毫无预兆瞬移至二人身旁（淡青色薄雾伸手般接近）→基督Default拉距携莱纳逃→Element消失再现紧咬（莉帕式瞬移）→莱纳Jaeger·Wind迎击被一饮而尽、怪物混合肥大化→基督看破'一眼就能看出属性的怪物对特定属性有抗性'的游戏规则，反指示继续喂风（膨胀至原十倍）→伸手施放DistanceMute、数瞬完成内部理解（艾尔芬里斯先例+结构相似）→Element射出风刃撕裂基督右臂（血肉飞溅）→基督攥紧『魔石』拔出→Element因未消化风魔法解放而炸裂、化光消失→基督头痛（大招不习惯）；莱纳Care Full修复右手（判明仅表面撕裂）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a5ba72120c9c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0180.txt",
+  "sha": "ce2898aafdca4dbc40d60b49f4512ec9ee9770cfd30a7f9235f533f42e082307",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "诺斯菲",
+  "rel_type": "杀害(千年前)",
+  "subject": "支配之王"
+ },
+ "evidence": [
+  {
+   "chapter": 182,
+   "line": 32,
+   "quote": "后来又因为涡波大人逃到了北方的缘故，我就统率自己的国家实行了侵略。最后自己被『支配之王』所杀，这就是全部了⋯⋯⋯真的就仅此而已",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 182,
+   "text": "据诺斯菲自述：因涡波逃亡北方，其统率自己的国家实行侵略，最终自己被『支配之王』所杀"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8e998ba3fbce",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0182.txt",
+  "sha": "bf785146021b5ed4e7c3c4d243c2e23512d315e8fad7fc9eee3021a7b7d46060",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "义姐弟宣言(单方面家人化)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 177,
+   "line": 101,
+   "quote": "既然这样，那干脆就从朋友关系飞跃到家人好了！",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 103,
+   "quote": "也就是说，人家是姐姐，莱纳就是弟弟喽",
+   "vol": 1
+  },
+  {
+   "chapter": 177,
+   "line": 110,
+   "quote": "「乖哦乖哦～，莱纳。让姐姐喂你饼干吃～」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 177,
+   "text": "罗德单方面宣布从朋友关系飞跃到家人：『人家是姐姐，莱纳就是弟弟』（名义=莱纳说了任性话所以给的特别待遇）；以『这座城堡就跟孤儿院差不多喽！从今天起大家都是家人了哟！』强推；随即宠弟作战（喂饼干/揉肩/承诺买任何东西）；莱纳拒绝未遂（『我在地上已经有正儿八经的家人了⋯⋯我可不想再多个姐姐了』）仍被强喂"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0d9a66de8d93",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0177.txt",
+  "sha": "33d50ce095bbd565f07dc1df63826f34c55d85482864a1c51897b8803d4e5e46",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

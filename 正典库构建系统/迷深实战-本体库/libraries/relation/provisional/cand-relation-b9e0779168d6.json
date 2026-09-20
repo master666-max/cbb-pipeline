@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "六十三层",
+  "rel_type": "栖息(幻想生物)",
+  "subject": "PaleGriffin"
+ },
+ "evidence": [
+  {
+   "chapter": 184,
+   "line": 175,
+   "quote": "接下来，在前方等待着我们的敌人就不是精灵而是幻想生物狮鹫兽。",
+   "vol": 1
+  },
+  {
+   "chapter": 184,
+   "line": 198,
+   "quote": "当两人分配好任务之后，数匹PaleGriffin也发现了我们。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 184,
+   "text": "六十三层前方的敌人：不是精灵而是幻想生物狮鹫兽；数匹发现四人袭来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b9e0779168d6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0184.txt",
+  "sha": "f82e9b857a04cc658d8a91979773d04059065eba262c45c8bab2315c764bc4f6",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}
