@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "王近卫骑士团",
+  "rel_type": "剑术传授(千年前·据战法反推)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 40,
+   "quote": "然后，随着剑与剑的交错，我逐渐明白了教他们剑术的人正是我。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 42,
+   "quote": "绝对不会一人冒前突进，比起武人的矜持更重要的是将胜利拿到手。只为胜利而行动，是『陷入困境的我』惯用的手法。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 195,
+   "text": "「随着剑与剑的交错，我逐渐明白了教他们剑术的人正是我」——其战法充满现代价值观的合理性、贯彻多对少同时攻击、只为胜利（『陷入困境的我』惯用的手法）（据涡波判断）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-894d7864eebf",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

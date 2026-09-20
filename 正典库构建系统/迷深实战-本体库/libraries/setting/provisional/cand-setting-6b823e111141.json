@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 200,
+  "fact": "罗德的称呼之一：据罗德语，曾『被己方（涡波）称为魔王』；本章叙述中亦以『魔王（罗德）』指称",
+  "name": "魔王",
+  "tick": 200
+ },
+ "evidence": [
+  {
+   "chapter": 200,
+   "line": 226,
+   "quote": "用曾经被己方（你）称为『魔王』",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 149,
+   "quote": "多亏了与魔王（罗德）这样强大的对手交锋",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 200,
+   "text": "称呼来源=己方（据罗德声称）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-6b823e111141",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0200.txt",
+  "sha": "98f6dbae430f8af34510b61143350dec18e0aaeeed656a0879180aedddd1a1b4",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

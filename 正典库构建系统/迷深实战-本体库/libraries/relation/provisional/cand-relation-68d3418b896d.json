@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "崇拜（支配之王/救世主）",
+  "subject": "佩艾希亚的骑士们"
+ },
+ "evidence": [
+  {
+   "chapter": 199,
+   "line": 128,
+   "quote": "「我们的『支配之王』回来了啊！！我们的救世主没有背叛我们啊！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 129,
+   "quote": "「啊啊、终于回来了吗！？回到这『支配之王』的故乡！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 199,
+   "text": "见罗德身姿欢喜雀跃：『我们的支配之王回来了啊！！我们的救世主没有背叛我们啊！！』『回到这「支配之王」的故乡』——子民对王/救世主的期待与归属（罗德方却报以表情扭曲与叱退）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-68d3418b896d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0199.txt",
+  "sha": "62f2f280964f4f491823add57c95236f8144df2c033f50ffc36280e1fb8b9d4b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

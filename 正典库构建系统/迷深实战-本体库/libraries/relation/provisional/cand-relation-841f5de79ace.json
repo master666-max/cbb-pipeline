@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "相川涡波",
+  "rel_type": "部下（千年前·骑士团长麾下）",
+  "subject": "贝丝"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 8,
+   "quote": "想起了自己的身份。我是您的部下、伊丽莎白⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 14,
+   "quote": "「相信您一定会回来的我，一直、一直都在等您。没错，一直。唯有我一人，直到最后都不曾放弃等待。因为我相信，您一定会回来救我们的⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 196,
+   "text": "据贝丝自述：『我是您的部下、伊丽莎白』——千年前骑士团长麾下部下身份自认；自称唯她一人到最后不曾放弃等待团长归来、坚信其会回来救大家（据其自称）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-841f5de79ace",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

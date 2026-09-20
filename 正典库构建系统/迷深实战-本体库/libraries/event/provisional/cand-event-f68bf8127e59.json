@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "SehrWind",
+   "『血』中的『术式』",
+   "光之御旗（NosfiFLAG）",
+   "相川涡波",
+   "维度・决战演算",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "战斗机制判明",
+  "name": "魔法双重发动相杀机制暴露与判明",
+  "tick": 193,
+  "time_verbatim": "同日正午·交战中"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 146,
+   "quote": "『维度・决战演算』确实掌握了空间内的所有魔法。而它的分析结果告诉我，方才『Default』一共被发动了两次。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 161,
+   "quote": "在以诺斯菲为对手的时候，魔法会双重发动。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 162,
+   "quote": "而且是以正反相抵的『相杀』形式──！",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 175,
+   "quote": "那杆旗不是武器，而是精神感应魔法的发动媒介。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 179,
+   "quote": "「光属性的魔力沁染到了我们的『血』里！？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 193,
+   "text": "Default（扩张）与Sehr・Wind先后失效：同一魔法从相反方向同时发动而正反相抵；『维度・决战演算』判明两次发动均为涡波本人释放（第二次无意识）；涡波全面观测御旗后判明：旗为精神感应魔法媒介、光常时发动『交流』、对象是刻在『血』中的『术式』（对无意识术式可无条件解决许可）——消耗的是诺斯菲魔力故难察觉"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f68bf8127e59",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

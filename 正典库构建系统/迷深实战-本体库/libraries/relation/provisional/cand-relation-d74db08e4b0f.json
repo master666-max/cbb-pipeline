@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "维度・决战演算",
+  "rel_type": "使用（轨道回避+章末发动）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 60,
+   "quote": "缠绕着火焰的剑向我袭来。我读取剑的轨道，大幅扭转身体。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 182,
+   "quote": "「──魔法『维度・决战演算』！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 196,
+   "text": "读取贝丝火焰剑的轨道、千钧一发回避；对诺斯菲嘲笑忍无可忍时发动并冲上挥剑（章末）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d74db08e4b0f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

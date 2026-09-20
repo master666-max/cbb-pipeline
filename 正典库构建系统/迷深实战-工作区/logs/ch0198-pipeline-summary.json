@@ -1,0 +1,411 @@
+{
+ "unit": "ch0198",
+ "chapter": 198,
+ "ingestion_index": 168,
+ "title": "216话-誓言",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 50,
+  "pass": 50,
+  "intercept": 0,
+  "admitted": 49,
+  "quarantined": 1
+ },
+ "tracks": {
+  "consistent-duplicate": 6,
+  "contradiction": 5,
+  "on-create": 38
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-77616edad3e9",
+   "type": "entity",
+   "name": "伊丽莎白・沃尔斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-8d43ad9bda4a"
+   }
+  },
+  {
+   "record_id": "cand-entity-8daa00ff6b49",
+   "type": "entity",
+   "name": "雷纳尔多·沃尔斯",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-523df68f7d5e"
+   }
+  },
+  {
+   "record_id": "cand-entity-179f205206bc",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-dc5517961660"
+   }
+  },
+  {
+   "record_id": "cand-entity-28814ad2c41f",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-307250410b6b"
+   }
+  },
+  {
+   "record_id": "cand-entity-23ff0b5f1e9c",
+   "type": "entity",
+   "name": "罗德·缇缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-cbcff9449278"
+   }
+  },
+  {
+   "record_id": "cand-entity-42f3c1b2ab26",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-23ef103d5db4-m10"
+   }
+  },
+  {
+   "record_id": "cand-entity-fae437818e5f",
+   "type": "entity",
+   "name": "勖兮奋哉、吼哮不绝之焰",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-737f42071795",
+   "type": "entity",
+   "name": "焦土踏破、疾驰无息之魂",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-48e89747e072",
+   "type": "entity",
+   "name": "FullBlazing",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-98674731a3ea",
+   "type": "entity",
+   "name": "复合咒术『咏唱』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3456ce5aa048",
+   "type": "entity",
+   "name": "咒术『连接』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-c81499d747ff",
+   "type": "entity",
+   "name": "咒术『维度』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-065100d508c1",
+   "type": "entity",
+   "name": "咒术",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-8a2598191783",
+   "type": "entity",
+   "name": "维度・决战演算",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3bea6461fc24-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-5f8edf3413fc",
+   "type": "entity",
+   "name": "最深部之誓约者",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-088ea3ddecfe-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-24675adc5cf2",
+   "type": "entity",
+   "name": "Sylph・堕落使徒",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-cb1a35ed3469",
+   "type": "entity",
+   "name": "风之铳剑",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-657cc1cd4dd7",
+   "type": "entity",
+   "name": "雷纳尔多的外套",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9457b9ebf986",
+   "type": "entity",
+   "name": "沃尔斯家",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ce030f84b818-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-56f1ef7adbee",
+   "type": "entity",
+   "name": "理的盗窃者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9e769aa063c0",
+   "type": "entity",
+   "name": "『支配之王』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-46c06f4d7764-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-dd68b4d7767b",
+   "type": "entity",
+   "name": "光之御旗（NosfiFLAG）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a6070a004960",
+   "type": "entity",
+   "name": "『表示』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-a8cc6228088b-m4"
+   }
+  },
+  {
+   "record_id": "cand-relation-538e96b4dbd6",
+   "type": "relation",
+   "name": "雷纳尔多·沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1bc2924acd3a",
+   "type": "relation",
+   "name": "雷纳尔多·沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-df34cfb69326",
+   "type": "relation",
+   "name": "贝丝",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a70c8cb8382d",
+   "type": "relation",
+   "name": "雷纳尔多·沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4a0962d232ea",
+   "type": "relation",
+   "name": "雷纳尔多·沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4a9a3a7943fd",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4b8fb304bc92",
+   "type": "relation",
+   "name": "罗德·缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6c347c8397fa",
+   "type": "relation",
+   "name": "罗德·缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d33cf54e4a11",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d930dbf8944c",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-124e0dee797f",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-54f2636a498e",
+   "type": "event",
+   "name": "宅邸崩塌中涡波救出莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-eb8f713faa53",
+   "type": "event",
+   "name": "贝丝×雷纳尔多前廊决斗（同术抵消·身世对诉）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e30b9032a84e",
+   "type": "event",
+   "name": "祖孙同咏杀招与以命换魔力",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-cdeb3e241bdc",
+   "type": "event",
+   "name": "雷纳尔多致命一击与祖孙共逝（化光粒·无魔石）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d9eb3d3b71a4",
+   "type": "event",
+   "name": "雷纳尔多遗言（满足·牵挂孤独少女·促逃）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a3e438bc83c3",
+   "type": "event",
+   "name": "涡波决意转变（弃逃·誓亲自了断并改变未来）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-af101cf1acf2",
+   "type": "event",
+   "name": "咒术复得与复合咒术『咏唱』成立",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5a4c69b0d7f7",
+   "type": "event",
+   "name": "『先谭』再发动·确认亿分之一胜利未来",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ae3fc9a8d91d",
+   "type": "event",
+   "name": "莱纳许誓『咏唱』完成契约",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-749b42182be1",
+   "type": "event",
+   "name": "罗德诺斯菲毁门夹击与背靠背对峙",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-e02dc1bbbd44",
+   "type": "foreshadow",
+   "name": "祖孙光粒消散之可挽回性（『应该还──』）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-13603cd8620d",
+   "type": "foreshadow",
+   "name": "雷纳尔多未竟遗言（『只有那丫头还是老朽的⋯⋯』）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c4d7b5ff9963",
+   "type": "foreshadow",
+   "name": "复合咒术『咏唱』之代价清偿（后延非免除）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-9dcc8cde235b",
+   "type": "foreshadow",
+   "name": "莱纳许誓『咏唱』的契约代价",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-629a9570bd64",
+   "type": "foreshadow",
+   "name": "亿分之一胜利道路之脆弱性",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-relation-a8f768c9ceed",
+   "type": "relation",
+   "name": "雷纳尔多·沃尔斯",
+   "item_id": "q-f0c974f9b22f",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 168,
+  "pseudo_date": "2000-06-17",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

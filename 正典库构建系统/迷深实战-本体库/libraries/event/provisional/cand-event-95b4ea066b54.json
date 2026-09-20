@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "『御殿』",
+   "佩艾希亚",
+   "相川涡波",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "押送(逃跑连接尽失)",
+  "name": "诺斯菲流星押送涡波至佩艾希亚御殿",
+  "tick": 194,
+  "time_verbatim": "同日·紧接ch193流星传送（落抵御殿红地毯）"
+ },
+ "evidence": [
+  {
+   "chapter": 194,
+   "line": 4,
+   "quote": "设置在自己房间的『连接』和五十七层的『连接』就都消失了。可以肯定这也是诺斯菲事先做了什么手脚。",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 5,
+   "quote": "在我确认了可供逃跑的途径遭到削减之后，诺斯菲也松开了以几乎捏断骨头的力道握紧我手臂的手。",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 6,
+   "quote": "「我回来了。成功把人带回来了哦，罗德」",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 10,
+   "quote": "自己确实回到了位于六十六层里侧的『佩艾希亚』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 194,
+   "text": "诺斯菲表明敌对后涡波房间与五十七层的『连接』消失（其事先动手脚）、逃跑途径遭削减；以捏臂之力押送、流星落抵城堡中央御殿红地毯（涡波确认回到位于六十六层里侧的佩艾希亚）；松手后向玉座上的罗德复命『把人带回来了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-95b4ea066b54",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0194.txt",
+  "sha": "ba96370e0da73b18c8b924e77ffa0dea18215c2c7c7bdbd7378d71e909e555cb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

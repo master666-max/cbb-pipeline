@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "敌对认定·斩杀决意（放弃和解）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 197,
+   "line": 36,
+   "quote": "与这种对手和解，根本是强人所难。",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 37,
+   "quote": "「既然如此，那你就是我的敌人⋯⋯！就算被我在这里斩杀，你也不会有怨言吧！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 39,
+   "quote": "我要砍了她。不是对守护者、而是当作以怪物为对手，像斩杀怪物一样将她一并在这里斩杀。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 197,
+   "text": "本欲实现与阿尔缇未竟的守护者和解，但听毕诺斯菲真心后断言『与这种对手和解，根本是强人所难』，宣告『那你就是我的敌人⋯⋯！就算被我在这里斩杀，你也不会有怨言吧』；决意不以守护者、而以怪物为对手将她斩杀"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a55a5fd782fc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0197.txt",
+  "sha": "58098bc9f69be219d7c95f1ca429d6de69755a8fe05b36e9ee7adc22a5dfadbd",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "新月琉璃制直剑",
+  "rel_type": "装备使用(弹开五剑·斩伤四肢)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 38,
+   "quote": "现在我用单单是用『新月琉璃直剑』弹开他们的攻击就已经竭尽全力了。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 66,
+   "quote": "『新月琉璃直剑』上的青色磷光化作一条细线，击退了袭来的五柄利剑。然后斩伤了五人的手腕和脚部，使他们丧失战斗能力。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 195,
+   "text": "无辅助时弹开五骑攻击已竭尽全力；决战演算辅助下青色磷光细线击退五剑、斩伤五人手腕脚部（本章原文作『新月琉璃直剑』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9ec325d62c93",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『自由之风』",
+  "rel_type": "理盗取(风之理)",
+  "subject": "罗德·缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 194,
+   "line": 292,
+   "quote": "罗德摆动以魔力生成的羽翼，精巧地操纵着在场的风。明明不是魔法，但风却能以生物般自如的行动挡住我的去路。",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 296,
+   "quote": "『风之理的盗窃者（罗德・缇缇）』盗取了『自由之风』。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 194,
+   "text": "自述『风之理的盗窃者（罗德・缇缇）』盗取了『自由之风』；属性为风、逃亡亦在擅长领域之内——以羽翼操纵之风封路，涡波逃跑动作全被看穿"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9d1a99ccb1b5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0194.txt",
+  "sha": "ba96370e0da73b18c8b924e77ffa0dea18215c2c7c7bdbd7378d71e909e555cb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

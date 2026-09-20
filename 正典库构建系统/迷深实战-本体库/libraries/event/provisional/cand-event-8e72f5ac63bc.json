@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "始祖涡波",
+   "相川涡波",
+   "罗德"
+  ],
+  "instant": null,
+  "kind": "战斗/转折",
+  "name": "『重崩色之非风剑』贯穿佩艾希亚结界",
+  "tick": 199,
+  "time_verbatim": "开战后（佩艾希亚上空）"
+ },
+ "evidence": [
+  {
+   "chapter": 199,
+   "line": 163,
+   "quote": "这一招正是过去的你所传授的力量！这份罪过，你就好好品尝吧！！",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 168,
+   "quote": "「──『维度・曲战演算』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 179,
+   "quote": "一个宛如教科书插图里的黑洞一样巨大的漆黑洞穴凿穿了名为『佩艾希亚』的结界。",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 182,
+   "quote": "「反正只要涡波留下的话就能修好！」",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 190,
+   "quote": "我们像小孩子一样你一言我一嘴地吵了几句之后又重新开始了战斗。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 199,
+   "text": "雷霆魔弹试射（磁力结界+继续加速/弹道空间扭曲）后→罗德装填魔弹『重崩色之非风剑（NachtCult・Gram）』（自称『过去的你所传授』）→涡波以『维度・曲战演算』捩转空间→漆黑子弹划『暗线』在命中前偏折→轰穿『佩艾希亚』结界开黑洞般大洞、外膜如蛋壳碎裂天空剥落→两人像小孩子般争吵（涡波『不要再朝佩艾希亚射了』；罗德『反正只要涡波留下的话就能修好』『本来就是传授来射人的魔法』）→重新开战"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.95,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8e72f5ac63bc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0199.txt",
+  "sha": "62f2f280964f4f491823add57c95236f8144df2c033f50ffc36280e1fb8b9d4b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

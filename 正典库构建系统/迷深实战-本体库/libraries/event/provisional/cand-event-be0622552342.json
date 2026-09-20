@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "铳剑"
+  ],
+  "instant": null,
+  "kind": "大事件",
+  "name": "空间破碎第一拳·城堡彻底崩溃",
+  "tick": 200,
+  "time_verbatim": "涡波藏身城内后（同日连续场景）"
+ },
+ "evidence": [
+  {
+   "chapter": 200,
+   "line": 161,
+   "quote": "把所有魔力向一点集中。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 164,
+   "quote": "而是跟诺文释放『亡灵一闪』那时一样，有一种世界的理受到侵蚀的恐怖感。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 170,
+   "quote": "啪吱一声──我眼前的空间开始龟裂。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 173,
+   "quote": "──罗・德・的・拳・头・将・世・界・砸・裂・了。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 192,
+   "quote": "这座城堡就此彻底崩溃。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 200,
+   "text": "罗德解除铳剑形态、全魔力向一点集中（气息与诺文『亡灵一闪』同类：世界的理受到侵蚀）→空挥一拳将空间砸裂（裂痕自无中生有、蔓延至支柱/墙壁/地面/空气）→涡波因城外第二拳待命而无法逃离→城堡彻底崩溃，涡波被甩上空中抓住瓦砾"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-be0622552342",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0200.txt",
+  "sha": "98f6dbae430f8af34510b61143350dec18e0aaeeed656a0879180aedddd1a1b4",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "接引计划（带回罗德处使其振作）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 91,
+   "quote": "「⋯⋯要让罗德恢复精神必须要把艾德带过来才行。我很快就会回来的。不能等我到那时候吗」",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 219,
+   "quote": "现在正确的做法，是就算兵分两路也要尽快将艾德带回来。只要能回到地上，增援要多少有多少。所以──！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 193,
+   "text": "涡波立场：要让罗德恢复精神必须把艾德带过来、愿为此先回地上；诺斯菲拒绝等待（『根本没那个必要』）；莱纳被射走后涡波 reaffirm 兵分两路也要尽快将艾德带回"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5388b643d624",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

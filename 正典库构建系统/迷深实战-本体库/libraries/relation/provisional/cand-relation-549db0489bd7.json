@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "敌对认定（谈判不可）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 167,
+   "quote": "这家伙是『敌人』。是我的『敌人』啊。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 168,
+   "quote": "做出让步什么的，根本就是天方夜谭。这场会话根本连谈判都算不上。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 196,
+   "text": "涡波断言『这家伙是『敌人』。是我的『敌人』啊』『做出让步什么的，根本就是天方夜谭。这场会话根本连谈判都算不上』——对诺斯菲立场由交涉转为敌对（章末挥剑）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.93,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-549db0489bd7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 193,
+  "fact": "涡波的技能：级别之高出乎诺斯菲意料（『一直在做后卫的我『剑术』技能级别会有这么高』）、是其唯一胜过诺斯菲的项目——但不足以一口气决出胜负；对照：『体术』完全相反（诺斯菲身经百战）",
+  "name": "剑术",
+  "tick": 193
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 230,
+   "quote": "能感觉到她很惊讶于一直在做后卫的我『剑术』技能级别会有这么高。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 232,
+   "quote": "我只有在技能『剑术』上可以胜过诺斯菲",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 307,
+   "quote": "虽然『剑术』级别是我更高，但『体术』就完全相反了。而且诺斯菲很明显已经身经百战",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "technique",
+   "chapter": 193,
+   "text": "技能级别对照系（剑术>诺斯菲／体术<诺斯菲）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-bbbd890c42f5",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

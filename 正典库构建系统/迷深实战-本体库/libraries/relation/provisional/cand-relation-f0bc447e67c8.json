@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "贝丝",
+  "rel_type": "祖孙（雷纳尔多=贝丝祖父）",
+  "subject": "雷纳尔多"
+ },
+ "evidence": [
+  {
+   "chapter": 197,
+   "line": 114,
+   "quote": "「你说那位老人──雷纳尔多先生可是你的祖父啊！？这么重要的事你竟然给忘了吗！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 128,
+   "quote": "老朽这不肖的孙女，现在必然是处在对那个魔女来说最好利用的状态。",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 116,
+   "quote": "「我的祖父？您到底在说些什么？」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 197,
+   "text": "涡波当面点破『雷纳尔多先生可是你的祖父』；雷纳尔多以『老朽这不肖的孙女』自称、断言她正处于人生最低谷、最恨涡波、最易被魔女利用；千年来两人一同在『这里』生活（涡波言）；贝丝已不识祖父，敌意转向他——祖孙对决于章末成立"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f0bc447e67c8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0197.txt",
+  "sha": "58098bc9f69be219d7c95f1ca429d6de69755a8fe05b36e9ee7adc22a5dfadbd",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

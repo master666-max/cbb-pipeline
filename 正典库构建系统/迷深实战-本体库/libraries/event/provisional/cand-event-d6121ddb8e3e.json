@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "『SehrWind』",
+   "『御殿』",
+   "佩艾希亚",
+   "相川涡波",
+   "罗德·缇缇"
+  ],
+  "instant": null,
+  "kind": "战斗开始",
+  "name": "御殿开战：SehrWind炸殿与暴风雨降临佩艾希亚",
+  "tick": 194,
+  "time_verbatim": "同日·御殿（对话终结后即时）"
+ },
+ "evidence": [
+  {
+   "chapter": 194,
+   "line": 262,
+   "quote": "「──『SehrWind』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 265,
+   "quote": "以罗德那庞大的魔力释放出的『SehrWind』已经超越了暴风的级别──成为了爆炸的气浪。",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 270,
+   "quote": "天气从未发生过变化的佩艾希亚，不知为何如今正被暴风雨所支配。",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 272,
+   "quote": "我将沾润着雨珠的『新月琉璃』指向罗德，并逐步后退准备逃跑。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 194,
+   "text": "对话结束后罗德魔力剧烈膨胀、以庞大魔力放出的中级风魔法SehrWind超越暴风成为爆炸气浪——瞬间斥满御殿令其如充气过多的气球炸裂、失去天花板与墙壁；强风携被破坏的城堡碎片袭向涡波，其以『维度』掌握碎片全部轨迹用剑一一挡开；天气从未变化的佩艾希亚被暴风雨支配（与五十层同样户外风雨大作）；涡波持『新月琉璃』指向罗德逐步后退谋逃"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d6121ddb8e3e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0194.txt",
+  "sha": "ba96370e0da73b18c8b924e77ffa0dea18215c2c7c7bdbd7378d71e909e555cb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "王近卫骑士团",
+  "rel_type": "时间轴扭曲·唤回现世(与诺斯菲共同)",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 16,
+   "quote": "恐怕他们是罗德扭曲了时间轴而特地为我准备的阻碍吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 59,
+   "quote": "可是罗德和斯诺菲她们却扭曲了时间轴，将他们唤回了现世。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 61,
+   "quote": "选择将充满绝望和猜疑的战乱再现了出来。仅仅是为了那种理由──",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 195,
+   "text": "据涡波对照记忆的确信：罗德与诺斯菲扭曲时间轴、将昨日前尚为天上魔石的骑士们唤回现世，「选择将充满绝望和猜疑的战乱再现了出来。仅仅是为了那种理由──」；章首另推测五骑是罗德「特地为我准备的阻碍」（据涡波确信/推测）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4cde41a1ecfe",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

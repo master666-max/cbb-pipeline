@@ -1,0 +1,399 @@
+{
+ "unit": "ch0195",
+ "chapter": 195,
+ "ingestion_index": 165,
+ "title": "213-伊丽莎白",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 48,
+  "pass": 48,
+  "intercept": 0,
+  "admitted": 47,
+  "quarantined": 1
+ },
+ "tracks": {
+  "consistent-duplicate": 2,
+  "contradiction": 10,
+  "on-create": 35
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-5f0db4a6c2a9",
+   "type": "entity",
+   "name": "伊丽莎白・沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-487a92fca29e",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m130"
+   }
+  },
+  {
+   "record_id": "cand-entity-9d05824a1d35",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-1e7dbea9b6d4"
+   }
+  },
+  {
+   "record_id": "cand-entity-3f429a3f1296",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-23ef103d5db4-m7"
+   }
+  },
+  {
+   "record_id": "cand-entity-d257ce80ef01",
+   "type": "entity",
+   "name": "雷纳尔多",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-8e05aed0357a"
+   }
+  },
+  {
+   "record_id": "cand-entity-b5c12842d558",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f66099211116"
+   }
+  },
+  {
+   "record_id": "cand-entity-9612d472e801",
+   "type": "entity",
+   "name": "杂货铺店主",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ca4559429ed2",
+   "type": "entity",
+   "name": "王近卫骑士团",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-997e842c8e64",
+   "type": "entity",
+   "name": "『支配之王』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-a7147b43fa39"
+   }
+  },
+  {
+   "record_id": "cand-entity-97322095a096",
+   "type": "entity",
+   "name": "佩艾希亚",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-c896ed656dc0"
+   }
+  },
+  {
+   "record_id": "cand-entity-dc5e68c785f0",
+   "type": "entity",
+   "name": "新月琉璃制直剑",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-32e4e77629c1"
+   }
+  },
+  {
+   "record_id": "cand-entity-ba3636c383a2",
+   "type": "entity",
+   "name": "『维度』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f0589d794cab"
+   }
+  },
+  {
+   "record_id": "cand-entity-3bea6461fc24",
+   "type": "entity",
+   "name": "维度・决战演算",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-cdf074c54a19",
+   "type": "entity",
+   "name": "维度・多重展开",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-1e50b1bca937"
+   }
+  },
+  {
+   "record_id": "cand-entity-98bfc69fd39a",
+   "type": "entity",
+   "name": "『表示』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d713174437d4"
+   }
+  },
+  {
+   "record_id": "cand-entity-ce030f84b818",
+   "type": "entity",
+   "name": "沃尔斯家",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-8eb9607ae3d5",
+   "type": "entity",
+   "name": "天上之七骑士",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5967e2b4de78"
+   }
+  },
+  {
+   "record_id": "cand-relation-54ef6fa668d8",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5316b91cad75",
+   "type": "relation",
+   "name": "伊丽莎白・沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-894d7864eebf",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4cde41a1ecfe",
+   "type": "relation",
+   "name": "罗德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-008688463239",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3a13602daed6",
+   "type": "relation",
+   "name": "伊丽莎白・沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-64b39448364e",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f7a524ec0195",
+   "type": "relation",
+   "name": "王近卫骑士团",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1e549893dd55",
+   "type": "relation",
+   "name": "王近卫骑士团",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-be5f050ddc41",
+   "type": "relation",
+   "name": "伊丽莎白・沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-87c621bb0951",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-19b29f4415d4",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-5f6f79e59e12",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a97b79d37b35",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9ec325d62c93",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-0f3926895ac2",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a6c0b2a6e7e4",
+   "type": "relation",
+   "name": "伊丽莎白・沃尔斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-bd059867c1c8",
+   "type": "event",
+   "name": "王近卫骑士团五骑断罪截击战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-89ac6c0e8672",
+   "type": "event",
+   "name": "王近卫骑士团由天上魔石唤回现世",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-6bb3e2da9538",
+   "type": "event",
+   "name": "杂货铺兽人女店主之死确认",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-46e149f3a503",
+   "type": "event",
+   "name": "新人骑士发现涡波与团长代理情报窃听",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-399664f096c0",
+   "type": "event",
+   "name": "目击雷纳尔多与诺斯菲豪宅对峙",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-4e8764f88314",
+   "type": "event",
+   "name": "伊丽莎白・沃尔斯地震截击登场",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-290f294b315e",
+   "type": "foreshadow",
+   "name": "『支配之王』被夺之谜（据骑士指控）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-cdeb9109b1e8",
+   "type": "foreshadow",
+   "name": "涡波千年前身份之谜（团长·南方的骑士·第二个救世主）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-08ef96b84abc",
+   "type": "foreshadow",
+   "name": "涡波话语的『特别的力量』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-0df563068733",
+   "type": "foreshadow",
+   "name": "负伤雷纳尔多×诺斯菲对峙",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-5ffc1922da11",
+   "type": "foreshadow",
+   "name": "伊丽莎白・沃尔斯对涡波之战（章末钩）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-40474d8cbd9b",
+   "type": "setting",
+   "name": "佩艾希亚时间轴扭曲·千年前战时状态（ch195）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-ff155ec26235",
+   "type": "setting",
+   "name": "佩艾希亚天上魔石的正体（魂·可被唤回为人）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-9c191e578947",
+   "type": "entity",
+   "name": "魔人",
+   "item_id": "q-7ba4a57ce792",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 165,
+  "pseudo_date": "2000-06-14",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "status": "blocked",
+   "reason": "LM Studio http://127.0.0.1:8080 探活失败（嵌入档未载入）"
+  },
+  "neo4j": {
+   "status": "blocked",
+   "reason": "Neo4j 探活失败且拉起无果（§0④：跳过导出，不阻塞主链）"
+  }
+ }
+}

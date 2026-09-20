@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "新月琉璃",
+  "rel_type": "装备使用（拔出应战·弹开旗杆）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 128,
+   "quote": "看到我拔出『新月琉璃』",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 225,
+   "quote": "我一边用剑弹开旗杆一边反驳，然后转身面向诺斯菲。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 193,
+   "text": "决意战斗后拔出『新月琉璃』应战，以剑弹开旗杆、正面交锋"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6955bc8f103e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

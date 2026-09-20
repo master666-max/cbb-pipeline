@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『维度』",
+  "rel_type": "使用(索敌·侦察·观内)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 3,
+   "quote": "我一边奔跑一边回头，同时将『维度』的范围扩大，但没有找到罗德的身影。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 134,
+   "quote": "我将『维度』的注意力调回到附近。然后不去按建筑物的外观寻找，而是直接确认其内部。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 195,
+   "text": "本章用于：索敌罗德、寻找汇合二人、观测变貌街道、确认建筑内部找人、解析骑士魔力光芒"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5f6f79e59e12",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

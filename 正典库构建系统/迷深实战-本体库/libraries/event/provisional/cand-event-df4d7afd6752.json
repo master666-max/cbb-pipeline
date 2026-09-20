@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "王之肖像画",
+   "罗德"
+  ],
+  "instant": null,
+  "kind": "象征",
+  "name": "罗德粉碎王之肖像画",
+  "tick": 200,
+  "time_verbatim": "佩艾希亚毁灭后（同日连续场景）"
+ },
+ "evidence": [
+  {
+   "chapter": 200,
+   "line": 223,
+   "quote": "之前曾在保管室里看到的一幅画如今正漂浮在罗德身边。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 224,
+   "quote": "那是绘有完美的王之英姿的──肖像画的碎片。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 225,
+   "quote": "将绘画彻底粉碎。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 200,
+   "text": "保管室那幅绘有完美的王之英姿的肖像画碎片漂浮至罗德身边；她奋力砸向碎片，以对粉碎一枚碎片而言规格过大的暴风将绘画彻底粉碎"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-df4d7afd6752",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0200.txt",
+  "sha": "98f6dbae430f8af34510b61143350dec18e0aaeeed656a0879180aedddd1a1b4",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

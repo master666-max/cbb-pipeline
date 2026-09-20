@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "相川涡波",
+   "罗德"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "涡波对罗德近身剑战与超臂力投掷",
+  "tick": 199,
+  "time_verbatim": "开战后（大道·单挑战场）"
+ },
+ "evidence": [
+  {
+   "chapter": 199,
+   "line": 55,
+   "quote": "「啊啊，接招吧！罗德──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 67,
+   "quote": "通过回抽剑柄末端的柄头，叩击袭向自己的剑刃将其错开，借此实现了防御。",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 74,
+   "quote": "「──『W・I・N・D』」",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 99,
+   "quote": "衣摆被抓住──之后整个人就被她粗暴地丢了出去。",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 100,
+   "quote": "结果就是撞上一栋建筑的墙壁、撞穿──还没完、再撞到下一栋的墙上、再撞穿──一共重复了五次，最后顺势滚落在一条大道上。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 199,
+   "text": "开战号炮（罗德『放马过来』/涡波『接招吧』）→涡波挥『新月琉璃』首击被罗德魔力构筑铳剑瞬间解体穿透→涡波以『感应』『剑术』（柄头叩击）崩解罗德体势→罗德以『W・I・N・D』风调节平衡、失重剑舞（风剑术）连击压制→虚晃以左手抓衣摆、超人臂力将涡波如出膛子弹般掷出——在佩艾希亚大街撞穿建筑墙壁五次滚落大道；涡波赖级别提升之耐久免于骨折、起身即被数名骑士围见"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.93,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-82ebaaecdddd",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0199.txt",
+  "sha": "62f2f280964f4f491823add57c95236f8144df2c033f50ffc36280e1fb8b9d4b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "杂货铺店主",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "死亡确认(时间轴既死)",
+  "name": "杂货铺兽人女店主之死确认",
+  "tick": 195,
+  "time_verbatim": "同日·脱离五骑后·粮铺杂货店内"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 102,
+   "quote": "整个店铺都被破壊殆尽。货架被破壊，商品散落一地到处都是剑痕──而且在店的另一头还有一具尸 体。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 103,
+   "quote": "死者是一个被拦腰斩断的兽人女性。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 105,
+   "quote": "「这个人，在这个时间轴上已经死了啊」",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 113,
+   "quote": "我期待着在壊掉的日用品地下能有一点吃的，可严峻的现实就像是在嘲笑我一般，我连一片面包都找不到。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 195,
+   "text": "为补食入店：店铺破壊殆尽、满地剑痕、店主（兽人女性）被拦腰斩断死于店内；涡波数日受其照顾、感慨此时间轴一切早已千年前死去；『维度』店内寻食无果——连一片面包都找不到（国家规模粮食短缺或遭掠夺）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6bb3e2da9538",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

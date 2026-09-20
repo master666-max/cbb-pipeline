@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "贝丝",
+  "rel_type": "利害一致·临时协作",
+  "subject": "诺斯菲"
+ },
+ "evidence": [
+  {
+   "chapter": 197,
+   "line": 78,
+   "quote": "「呋呋呋，人我好好地帮你留住了哦，伊丽莎白。真亏你能注意到我那细微的魔力信号呢。",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 81,
+   "quote": "贝丝在行了一礼之后，竟然站到了诺斯菲的身旁，而不是雷纳尔多的。",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 83,
+   "quote": "「哪里哪里，你不必向我道谢。只是我们利害一致罢了」",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 86,
+   "quote": "「⋯⋯无妨。即使魔法使殿下不予此委托，我的怒火亦定将成就此事」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 197,
+   "text": "诺斯菲以细微魔力信号引贝丝到场并拖延时间（『人我好好地帮你留住了哦』）；贝丝行礼后站到诺斯菲身旁道谢，诺斯菲称『只是我们利害一致罢了』；委托贝丝在死前将全部愤怒向涡波发泄；贝丝以『魔法使殿下』敬称应命"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4c75fa20eb66",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0197.txt",
+  "sha": "58098bc9f69be219d7c95f1ca429d6de69755a8fe05b36e9ee7adc22a5dfadbd",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

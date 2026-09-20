@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "佩艾希亚的骑士们",
+  "rel_type": "叱退（拒绝援军）",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 199,
+   "line": 132,
+   "quote": "「──少、少来碍事！统统退下──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 133,
+   "quote": "受到王的叱咤，本打算作为援军介入战斗的骑士们止住了脚步。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 199,
+   "text": "本打算作为援军介入战斗的骑士们被罗德以反感到极点的口气『少来碍事！统统退下』叱退止步——王对子民的排斥性驱离"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d2b6228dcdcc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0199.txt",
+  "sha": "62f2f280964f4f491823add57c95236f8144df2c033f50ffc36280e1fb8b9d4b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

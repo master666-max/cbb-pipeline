@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "佩艾希亚",
+  "rel_type": "环境调整（拉回战争时代·受托）",
+  "subject": "诺斯菲"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 136,
+   "quote": "「诺斯菲──！！快住手！现在立刻让『这里』变回原样！这全都是你做的不是吗！？」",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 139,
+   "quote": "既然您如此强烈地希望我将这里变回去，那倒也无妨⋯⋯不过容我先问一句，在我将这里变回去之后，涡波大人又打算做什么呢？",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 196,
+   "text": "受罗德委托将『这里』拉回战争时代、全员卷入（据其自认+涡波指控）；涡波要求『现在立刻让『这里』变回原样』，诺斯菲称『既然您如此强烈地希望我将这里变回去，那倒也无妨』但随即转向万年计划说"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-40a6509accc5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

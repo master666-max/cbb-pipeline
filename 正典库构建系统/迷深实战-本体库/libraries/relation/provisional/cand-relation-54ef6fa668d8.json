@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "王近卫骑士团",
+  "rel_type": "团长(千年前·据骑士断罪宣称)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 21,
+   "quote": "「──请不要小看我们，我们乃荣耀的『王近卫骑士团』的一员。就算对手是团长殿下，也别想轻易从这里通过。」",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 23,
+   "quote": "『王近卫骑士团』。并且他还称呼我为团长殿下。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 34,
+   "quote": "现在开始将『王近卫骑士团』团长──断罪！！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 195,
+   "text": "五骑称其「团长殿下」（「就算对手是团长殿下，也别想轻易从这里通过」）并宣「现在开始将『王近卫骑士团』团长──断罪」；巡逻骑士称「团长大人」；而涡波自称对团长时期旧事无记忆（据王近卫骑士团声称）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-54ef6fa668d8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

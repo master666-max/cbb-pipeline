@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "『血』中的『术式』",
+   "『连接』",
+   "相川涡波",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "魔法发动·战场构筑",
+  "name": "超大门（Large・连接）开启（借涡波之手强制发动）",
+  "tick": 193,
+  "time_verbatim": "同日正午·交战中"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 192,
+   "quote": "「──次・元・魔・法『连接』」",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 194,
+   "quote": "尽管念出魔法名的人是诺斯菲，但发动者却是我。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 199,
+   "quote": "而且颜色不是紫色而是白色，密度也相当不凡",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 200,
+   "quote": "「这是将我事先灌注到您体内的魔力全部用尽使出的『超大门（Large・连接）』。好了，让我们干净利索地到对面去吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 201,
+   "quote": "以这句话为肇始，诺斯菲的动作变得更快了。可见她至今为止都在有意放水。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 193,
+   "text": "诺斯菲咏唱『次・元・魔・法『连接』』而发动者是涡波——魔法擅自从其左手进出完成构筑；白色·高密度·超大型的门铺开（涡波从未见过的规格、非其级别能打造）；诺斯菲自言此为耗尽事先灌注魔力的『超大门（Large・连接）』，此后动作提速（此前有意放水）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ca2637dec231",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

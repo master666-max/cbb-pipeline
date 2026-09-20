@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "地上交战（过去·涡波自述最乱来的一战）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 262,
+   "quote": "在地上我做过的最乱来的一次，就是与帕林库洛的战斗。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 263,
+   "quote": "在那场战斗的最后⋯⋯，我用那个犯规的魔法⋯⋯──",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 193,
+   "text": "涡波回想：在地上做过的最乱来的一次=与帕林库洛的战斗；其最后用了『犯规的魔法』（现可用次元魔术中最高级、代价沉重、仅此一次）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-94505a40d73d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

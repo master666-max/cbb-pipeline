@@ -42,7 +42,8 @@ LIBRARY_NORMALIZE = {"organization": "character", "location": "setting",
                      "item": "setting", "magic": "setting", "skill": "setting",
                      "title": "setting"}  # 2026-09-21 ch0191『支配之王』称号首例：称号类实体库内惯例入 setting
 # observations.category 枚举外值→契约枚举（2026-09-20 ch0136 'behavior' 首例；确定性零裁量）
-OBS_CATEGORY_NORMALIZE = {"behavior": "manifestation"}
+OBS_CATEGORY_NORMALIZE = {"behavior": "manifestation",
+                          "setting": "knowledge"}  # 2026-09-21 ch0199 沃尔斯家庭院首例：场景设定事实观察→knowledge
 
 
 def boundary(chapter_no: int) -> dict:

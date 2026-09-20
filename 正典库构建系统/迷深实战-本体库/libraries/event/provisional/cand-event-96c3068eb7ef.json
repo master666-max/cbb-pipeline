@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entities": [
+   "五十层",
+   "异邦人召唤",
+   "相川涡波",
+   "罗德·缇缇",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "术式篡改·守护者召唤更代（ch192召还人影之谜回收）",
+  "name": "诺斯菲篡改『异邦人召唤』代罗德显现五十层",
+  "tick": 193,
+  "time_verbatim": "同日正午（『距离您早上出发到现在才过了五个小时而已哦？这才刚到中午呢』·承ch0192晨发强行军当日）"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 8,
+   "quote": "「⋯⋯呵呵。好久没尝试过了，本来还挺不放心来着，看来是顺利成功了呢。虽说有不少的限制，不过运用我原本的魔法这些问题便迎刃而解了」",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 13,
+   "quote": "我对执行召唤的术式进行了『交流（篡改）』，将召唤对象从罗德转变为了我自己",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 19,
+   "quote": "技能『感应』也警报大作，告诫我不要贸然接近出现在五十层的六十层守护者（SixtyGuardian）。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 193,
+   "text": "诺斯菲自曝：对执行召唤的术式行『交流（篡改）』将召唤对象由罗德转为自身（术式现状态跟没有使用者的魔法差不多）；自称久未尝试、原本不放心，运用原本的魔法顺利成功；涡波与莱纳诧异其登场，『感应』警报大作"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.93,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-96c3068eb7ef",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

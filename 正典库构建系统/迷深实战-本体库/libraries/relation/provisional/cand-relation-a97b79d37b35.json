@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『表示』",
+  "rel_type": "使用(敌状态鉴识·危险度判读)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 19,
+   "quote": "我不禁为敌人敏捷的身手感到惊讶，停下来用『表示』确认他们的状态。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 161,
+   "quote": "然后，『表示』也正确地向我传达了贝丝酱的危险度。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 195,
+   "text": "确认五骑级别与素质；传达贝丝酱危险度（完全超越雷纳尔多）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a97b79d37b35",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

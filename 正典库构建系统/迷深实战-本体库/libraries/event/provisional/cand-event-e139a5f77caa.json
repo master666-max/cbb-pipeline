@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "五十层",
+   "剑术",
+   "新月琉璃",
+   "相川涡波",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "移动突破尝试→近战",
+  "name": "涡波冲刺四十九层阶梯失败·转入剑戟交战",
+  "tick": 193,
+  "time_verbatim": "同日正午·交战中（一段持续『将近五分钟』）"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 221,
+   "quote": "我咬了咬牙拔腿开跑。目标既不是诺斯菲也不是『连接』，而是通往四十九层的阶梯。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 230,
+   "quote": "能感觉到她很惊讶于一直在做后卫的我『剑术』技能级别会有这么高。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 248,
+   "quote": "虽然战斗已经持续了将近五分钟，但看她的样子就算打上一个小时也不会有什么问题。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 193,
+   "text": "涡波放弃救援近路、咬牙冲向通往四十九层的阶梯；诺斯菲三下五除二追上、以异常腕力挥旗；涡波意识到速度不可能甩开、转身以剑击退（因魔法被封、以『感应』和剑为中心）；诺斯菲惊讶其后卫出身『剑术』级别之高，战斗持续近五分钟、涡波体力削减开始喘息"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e139a5f77caa",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

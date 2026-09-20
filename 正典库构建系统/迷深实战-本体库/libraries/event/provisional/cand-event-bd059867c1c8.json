@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "『表示』",
+   "新月琉璃制直剑",
+   "王近卫骑士团",
+   "相川涡波",
+   "维度・决战演算"
+  ],
+  "instant": null,
+  "kind": "战斗(截击·五对一)",
+  "name": "王近卫骑士团五骑断罪截击战",
+  "tick": 195,
+  "time_verbatim": "时间轴扭曲后同日·佩艾希亚街道暴风雨中（章首疾驰开始后）"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 15,
+   "quote": "眼前的是用护臂和铠甲武装自己的五名男性兽人剑士。",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 34,
+   "quote": "「⋯⋯这个我们做不到。你的话语有着特别的力量。而且，我们并没有判断其真伪的能力。因此我们不会去听你所说的任何话语，虽然想听⋯⋯但却不能听。我们只为将任务完成。现在开始将『王近卫骑士团』团长──断罪！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 62,
+   "quote": "「──魔法『维度・决战演算』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 66,
+   "quote": "『新月琉璃直剑』上的青色磷光化作一条细线，击退了袭来的五柄利剑。然后斩伤了五人的手腕和脚部，使他们丧失战斗能力。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 195,
+   "text": "五名兽人剑士包围（拒听辩白·『断罪』宣言·波状同时攻击）→无辅助下涡波仅能弹开攻击→判明其魔石正体后咏唱『维度・决战演算』、青色磷光细线击退五剑并斩伤手腕脚部使其丧失战斗能力→战后打听汇合情报未果、在指责与自认无资格中留道歉离开"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-bd059867c1c8",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

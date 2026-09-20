@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "佩艾希亚",
+   "始祖涡波",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "追捕与脱围",
+  "name": "赴豪宅途中骑士追捕",
+  "tick": 196,
+  "time_verbatim": "同日·甩脱贝丝后→抵达豪宅前（含绕远路消耗）"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 114,
+   "quote": "时间拖得越久，敌人增加的越多。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 115,
+   "quote": "我必须趁早与莱纳和雷纳尔多汇合，然后和他们一起逃到迷宫里去。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 119,
+   "quote": "我终于抵达了作为目的地的豪宅。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 196,
+   "text": "以骑士们肉眼跟不上的速度飞奔、细心甩掉追踪在屋顶疾走；确认『这里』到处是千年前的『始祖涡波』之敌、时间越久敌越多（无印象却习惯与其战斗的骑士）；决心趁早与莱纳和雷纳尔多汇合逃向迷宫；途中注意力散漫差点被数名骑士包围、被迫用消耗不小的『Default』；因谨慎绕远路+奋力驱驰而激烈喘息"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-6087a76d2d17",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

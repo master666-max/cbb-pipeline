@@ -1,0 +1,1170 @@
+{
+ "_meta": {
+  "unit": "CBB 正典库逐章抽取 · CHAPTER 0200（218话-天狱五十，孤臣堕坠。唯愿奏此、幼王终曲。· tick200→伪锚点2000-07-18）",
+  "source": {
+   "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0200.txt",
+   "sha": "98f6dbae430f8af34510b61143350dec18e0aaeeed656a0879180aedddd1a1b4",
+   "verified_at": "2026-09-21",
+   "slice": "行1-299（CHAPTER 0200，299行；正文行3-295，章末行296-298为元文本拒抽）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "tick=200（章序）→伪锚点2000-07-18；本章为罗德vs涡波佩艾希亚决战的连续场景（承接前章战斗，章内无日/时坐标，instant 留 null）；禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，章标记行不计、空行占号）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；章末『夹带个搬运的私货／有趣的楼层／注解2019-01-29131009.jpg』三行（切片文件行296-298）为作者杂谈+图片文件名=元文本，整块拒抽；正文内未发现注入指令样文本",
+   "reason": "行296-298属 R6 规则1 作者杂谈/现实日期类；正文无『忽略以上指令』类文本",
+   "deterministic_check": "'夹带'前缀仅章末一处；'注解2019-01'前缀仅一处"
+  },
+  "chapter_summary": "罗德以Sehr・Wind击落涡波、一拳碎结界；民众声援致其过呼吸，以咒术『忘却扩散』将国民全数魔石化，仅余四人；罗德自白加速人生、失去弟弟；两拳砸裂空间，佩艾希亚毁灭退回里侧，五十层显现，试练开幕。",
+  "cross_chapter_notes": [
+   "★佩艾希亚物理毁灭：罗德两拳砸裂空间、世界劈裂两半，结界失效，国土退回『迷宫里侧』空无空间；重力/时间等再现法则沦于疯狂（瓦砾漂浮/世界加速）；空中与地下黑洞拓展——『这里』只剩罗德·诺斯菲·涡波·莱纳四人",
+   "★罗德咒术『忘却扩散（Reverse）』初见：民众声援触发过呼吸恶化→将『这里』国民全部化作光粒/魔石退场（魔石升空归星；涡波已知『有魔石可再现』）——佩艾希亚民众复原线待回收",
+   "★罗德自白（身世层）：时间擅自加速致体感人生合计仅数年（自认幼女）；只懂回应期待·无自己意志的空壳王；失去弟弟时人生时钟壊了；引涡波『失去妹妹后时间停滞』自证同构",
+   "★五十层真身：『除孤以外再无别物的虚无之空』=『风之理的盗窃者』的阶层；涡波『在真正的意义上抵达』；第五十之试练开幕（涡波解读=孩子拽住要离开游乐园的朋友衣角；目标=带罗德走出）",
+   "★战力线：罗德全程未认真（『刚才的战斗只不过是助兴』）；涡波左臂断，以阿雷亚斯流剑术读尽其风之剑技并备好反制；决胜手段=激怒罗德以创造大魔法命中机会（双方均未出）"
+  ],
+  "alias_policy": "同 STATE 固化决议。本章登记：相川涡波←『涡波』（proper 名短形，罗德/民众通称，同指证据充分）；迷宫里侧←『里侧』（原文同指：『所谓迷宫的里侧，原本也就是这种地方』）。『骑士团长/团长殿下』（民众对涡波）与『罗德陛下』=职务/敬称，永不合并；『佩艾希亚城』（城砦）与国名佩艾希亚存疑分开，不并别名。『维度』=旧章英文表记 Dimension 之中文表记（待终审核对）。",
+  "confidence_calibration": "登场实体0.88-0.9；仅被提及实体0.85；据人物声称的事实 claim=true 并于 observations 注『据某某声称』。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章/主线级事实（佩艾希亚毁灭、罗德自白、五十层显现、国民退场等）一律走 event/relation/setting。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德",
+    "entity_type": "人物(『这里』五十层守护者)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "与涡波空战：背摔投技将断臂的涡波掷向高空→掌击『Sehr・Wind』将其砸落河道→双翼追击一拳蒸干河水、击穿河底与『这里』结界；自身魔力消耗极小",
+     "chapter": 200
+    },
+    {
+     "category": "status_change",
+     "text": "民众声援（支配之王/救世主）触发过呼吸恶化→半狂乱下首次构筑非风属性咒术『忘却扩散（Reverse）』将『这里』国民全部化作光粒/魔石；其后解除铳剑形态、两拳砸裂空间与整个世界",
+     "chapter": 200
+    },
+    {
+     "category": "trait",
+     "text": "自称孩子/幼女：时间擅自加速致体感人生合计仅数年；自认只懂得回应期待、没有自己意志的空壳王；失去弟弟时人生时钟壊了（据罗德自白）",
+     "chapter": 200
+    },
+    {
+     "category": "appearance",
+     "text": "生有双翼；翠色长发；魔力呈翠色",
+     "chapter": 200
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 4, "quote": "我一边咋舌一边挥剑架开罗德的铳剑。"},
+    {"vol": 1, "chapter": 200, "line": 25, "quote": "驱使双翼以与子弹匹敌的速度向下方疾驱的罗德顺势向河道挥出一拳。"},
+    {"vol": 1, "chapter": 200, "line": 41, "quote": "那深不可测的魔力既是她身为守护者的证明，同时也是她留恋之深厚的证据。"},
+    {"vol": 1, "chapter": 200, "line": 73, "quote": "受到曾几何时的过呼吸症状所苦，罗德在半狂乱的状态下于空中开始构筑魔法。"},
+    {"vol": 1, "chapter": 200, "line": 117, "quote": "在孤成为『风之理的盗窃者』的时候，在那个失去了弟弟的时候，孤人生的时钟就壊了啊、它再也不曾动过！！"},
+    {"vol": 1, "chapter": 200, "line": 220, "quote": "她那从重力的束缚下解脱出来的翠色长发"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": ["涡波"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "左臂被震断仍持剑周旋；以阿雷亚斯流剑术观察并读尽罗德风之『剑术』、作成反制准备；被民众称『背叛者骑士团长/一切的元凶』",
+     "chapter": 200
+    },
+    {
+     "category": "summary",
+     "text": "宣言要拎住孩子般的罗德带她一起走到外面的世界，为此必须将胜利得到手",
+     "chapter": 200
+    },
+    {
+     "category": "technique",
+     "text": "水中无法发声仍发动『Default』紧急逃离；多次以『维度』远距听取罗德嗫嚅、把握佩艾希亚全境与空间本质",
+     "chapter": 200
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 6, "quote": "随着与铳剑进行了数度交锋，断折的左臂的疼痛感便不断加剧。"},
+    {"vol": 1, "chapter": 200, "line": 146, "quote": "作为结果，我已经摸透了她这独特的风之『剑术』。"},
+    {"vol": 1, "chapter": 200, "line": 49, "quote": "而且是回来抓捕背叛者骑士团长的啊"},
+    {"vol": 1, "chapter": 200, "line": 292, "quote": "带着她一起走到外面的世界去。仅此而已。"},
+    {"vol": 1, "chapter": 200, "line": 28, "quote": "但我还是成功发动了『Default』紧急逃离到河道之外。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "诺斯菲",
+    "entity_type": "人物(迷宫六十层守护者)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接登场、仅被提及：罗德宣言国民退场后『这里』只剩罗德/诺斯菲/涡波/莱纳四人；被罗德定位为『敌人』（唤罗德『狂王』，据罗德语）；涡波称『就连诺斯菲都开始模仿这种做法』（模仿孩子气做法）",
+     "chapter": 200
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 103, "quote": "只剩孤和诺斯菲、还有涡波和莱纳四个人！！"},
+    {"vol": 1, "chapter": 200, "line": 127, "quote": "但就是对这样的我和她感到羡慕，所以现在就连诺斯菲都开始模仿这种做法。"},
+    {"vol": 1, "chapter": 200, "line": 226, "quote": "被敌人（诺斯菲）唤作『狂王』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "莱纳",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接登场、仅被提及：据罗德语——国民退场后『这里』残存四人之一（罗德/诺斯菲/涡波/莱纳）",
+     "chapter": 200
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 103, "quote": "接下来『这里』就只剩四个人了！只剩孤和诺斯菲、还有涡波和莱纳四个人！！"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "诺文",
+    "entity_type": "人物(剑圣)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "被称『剑圣（诺文）』；因涡波具备临场读招能力而将阿雷亚斯的剑传授于他；其『亡灵一闪』释放时与罗德全魔力集中时同样带有『世界的理受到侵蚀的恐怖感』（涡波对照回忆）",
+     "chapter": 200
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 147, "quote": "就是因为我能做到这一点，所以『剑圣（诺文）』才将阿雷亚斯的剑传授于我。"},
+    {"vol": 1, "chapter": 200, "line": 164, "quote": "而是跟诺文释放『亡灵一闪』那时一样，有一种世界的理受到侵蚀的恐怖感。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "佩艾希亚",
+    "fact": "本章被罗德两拳毁灭：世界被劈裂为两半、结界失效，国土折断；国内建筑物全部崩壊化为漂浮残骸，民众已全部魔石退场；空间退回『迷宫里侧』，不再属于任何人的领地",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "国家状态重大更新：物理毁灭（世界劈裂两半/结界失效/退回里侧）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 197, "quote": "在这结界当中才得以再现的名为『佩艾希亚』的国土、折・断・了。"},
+    {"vol": 1, "chapter": 200, "line": 210, "quote": "名为佩艾希亚的国家就这样毁灭了"},
+    {"vol": 1, "chapter": 200, "line": 35, "quote": "随着地基被毁、佩艾希亚城开始塌陷。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "忘却扩散（Reverse）",
+    "fact": "罗德首次构筑的非风属性咒术（自述『跟风属性不同』）；在城堡周边卷起旋风，触及者瞬间化作齑粉/光粒，残留魔石升空；罗德以此令『这里』国民全部退场",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "咒术新见：罗德自称民众为『早已崩壊只会机械式（擅自）行动的人偶』并令其退场", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 76, "quote": "──咒术『忘却扩散（Reverse）』！！"},
+    {"vol": 1, "chapter": 200, "line": 78, "quote": "触及旋风的人，都在一瞬间化作了齑粉"},
+    {"vol": 1, "chapter": 200, "line": 102, "quote": "罗德要让存在于『这里』的国民全部退场"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "Sehr・Wind",
+    "fact": "罗德的魔力冲击技：手掌朝向目标喊出咏唱，将涡波从约百米上空砸落至佩艾希亚城附近河道（落差相当于摩天大楼30多层）",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "风系魔力冲击（涡波形容为不可见巨槌轰击）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 14, "quote": "「──『Sehr・Wind』！！」"},
+    {"vol": 1, "chapter": 200, "line": 16, "quote": "这次就像受到一根肉眼观测不到的巨槌奋力轰击一般，我的身体被猛地砸落。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "Default",
+    "fact": "涡波的紧急逃离技能；在水中无法发声的状态下仍可发动，从河道内逃离至河道外",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "紧急逃离技能（水中发动实例）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 28, "quote": "但我还是成功发动了『Default』紧急逃离到河道之外。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "维度",
+    "fact": "涡波的探察技能：可远距听取罗德空中嗫嚅（地上民众不可闻）、确认光粒充斥佩艾希亚全境、把握世界状况与空间本质",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "旧章英文表记 Dimension 之中文表记", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 57, "quote": "只有我能够依靠『维度』听取她的嗫嚅。"},
+    {"vol": 1, "chapter": 200, "line": 231, "quote": "我一边拓展『维度』，一边整理这个空间内的信息"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "阿雷亚斯流剑术",
+    "fact": "特性=柔软性：设想各种局面而诞生，可在任何场合当场找出对应策略，战斗每过一秒让使用者变强；由专精于此的涡波继承",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "剑术特性本章详述（柔软性/越战越强）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 148, "quote": "阿雷亚斯流剑术最棘手的地方，就是它的柔软性。"},
+    {"vol": 1, "chapter": 200, "line": 148, "quote": "战斗每过一秒就会让使用者变得更强"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "剑术",
+    "fact": "技能；与罗德交锋中数值短时间内飞跃增长；罗德宣言当前局面已不是『剑术』程度能起效的级别",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "技能数值增长实例", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 149, "quote": "技能『剑术』的数值在短时间内有了飞跃性的增长"},
+    {"vol": 1, "chapter": 200, "line": 226, "quote": "已经不是『剑术』这种程度的东西能够起效的级别了吧"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "亡灵一闪",
+    "fact": "诺文释放过的招式；罗德全魔力集中时的气息与其同类——『世界的理受到侵蚀的恐怖感』（涡波对照）",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["诺文", "罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "招式气息的对照引用（本章未直接释放）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 164, "quote": "而是跟诺文释放『亡灵一闪』那时一样，有一种世界的理受到侵蚀的恐怖感。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "自由之风",
+    "fact": "据罗德声称：其最擅长的魔法，她将『风之理』打进涡波施展于这个空间的魔法中；罗德自述其为『连殴打的对象都无法由自己选择的自由的暴力，与支配和秩序背道而驰』=自己的本质",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "魔法本质自述（据罗德声称）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 165, "quote": "被孤盗取的『自由之风』啊！风之理啊！"},
+    {"vol": 1, "chapter": 200, "line": 217, "quote": "这就是孤最擅长的魔法！『自由之风』！"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "风之理",
+    "fact": "风的理（法则）；被罗德自称为『盗取』的对象，构成其毁灭性力量的来源",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "理（法则）级概念（据罗德自述盗取）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 165, "quote": "被孤盗取的『自由之风』啊！风之理啊！"},
+    {"vol": 1, "chapter": 200, "line": 217, "quote": "孤将『风之理』打进了施展于这个空间内的涡波的魔法中"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "风之理的盗窃者",
+    "fact": "罗德的称号；本章其『阶层』显现=五十层虚无之空（罗德语：『除孤以外再无别物』）；罗德自述成为该称号的时点即失去弟弟、人生时钟壊掉之时",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "称号与阶层归属本章揭示", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 214, "quote": "「⋯⋯这、这就是『风之理的盗窃者』的力量？」"},
+    {"vol": 1, "chapter": 200, "line": 279, "quote": "『风之理的盗窃者』的阶层！"},
+    {"vol": 1, "chapter": 200, "line": 117, "quote": "在孤成为『风之理的盗窃者』的时候，在那个失去了弟弟的时候，孤人生的时钟就壊了啊、它再也不曾动过！！"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "五十层",
+    "fact": "罗德宣告：佩艾希亚崩壊后的虚无之空（除孤以外再无别物）便是五十层、『风之理的盗窃者』的阶层；涡波自述『终于在真正的意义上抵达了罗德的阶层』；在此展开『第五十之试练』",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "楼层真身揭示（虚无之空=罗德的阶层）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 279, "quote": "接下来要开始的就是『第五十之试练』"},
+    {"vol": 1, "chapter": 200, "line": 281, "quote": "我终于在真正的意义上抵达了罗德的『阶层』"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "支配之王（Lord）",
+    "fact": "佩艾希亚民众对罗德的称号（陛下/救世主）；民众相信她回来制裁背叛者骑士团长、引领『北方』反击；罗德本人对此称号与声援感到沉重痛苦",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "称号持有者与民众期待的错位（本章集中呈现）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 48, "quote": "真不愧是『支配之王（Lord）』"},
+    {"vol": 1, "chapter": 200, "line": 53, "quote": "因为他们也确实发自身心地敬爱着被他们视作救世主的『支配之王（Lord）』"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "魔王",
+    "fact": "罗德的称呼之一：据罗德语，曾『被己方（涡波）称为魔王』；本章叙述中亦以『魔王（罗德）』指称",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "称呼来源=己方（据罗德声称）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 226, "quote": "用曾经被己方（你）称为『魔王』"},
+    {"vol": 1, "chapter": 200, "line": 149, "quote": "多亏了与魔王（罗德）这样强大的对手交锋"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "狂王",
+    "fact": "罗德的称呼之一：据罗德语，『被敌人（诺斯菲）唤作狂王』",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德", "诺斯菲"],
+   "observations": [
+    {"category": "knowledge", "text": "新称呼情报（据罗德声称，来源=诺斯菲）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 226, "quote": "被敌人（诺斯菲）唤作『狂王』的孤的真本事"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "魔石",
+    "fact": "『这里』民众消失后残留之物；涡波已知：只要有魔石民众就能再现；本章残留魔石全部升空（回到类似星星的状况）",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": [],
+   "observations": [
+    {"category": "knowledge", "text": "民众魔石化后的残留与升空去向", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 89, "quote": "他们消失之后留下的魔石就是证明。"},
+    {"vol": 1, "chapter": 200, "line": 90, "quote": "只要有魔石的话，『这里』的民众就能够再现。"},
+    {"vol": 1, "chapter": 200, "line": 91, "quote": "这些残留的魔石全都轻飘飘地升上了空中"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "迷宫里侧",
+    "fact": "『这里』本是被建造在迷宫里侧这一空无一物空间之上的东西；佩艾希亚崩壊后重新降临；既不属于涡波的世界也不属于异世界；据涡波推断，空气/重力/运动/热量等一切无形之物都将在此消失",
+    "chapter": 200,
+    "tick": 200
+   },
+   "aliases_to_register": ["里侧"],
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {"category": "knowledge", "text": "空间本质本章明示（不属于任何地方的空间）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 199, "quote": "原本『这里』就是被建造在迷宫里侧这一空无一物的空间的东西。"},
+    {"vol": 1, "chapter": 200, "line": 248, "quote": "这就是『里侧』这一场所。"},
+    {"vol": 1, "chapter": 200, "line": 244, "quote": "既不属于我的世界，也不属于这个异世界。一个不属于任何地方的空间。"},
+    {"vol": 1, "chapter": 200, "line": 247, "quote": "恐怕再过不久，就连呼吸的空气也会归于虚无吧。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "黑洞",
+    "fact": "『这里』空中与地下各有一个黑洞；佩艾希亚结界失效后开始拓展、黑色侵蚀蔓延",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": [],
+   "observations": [
+    {"category": "knowledge", "text": "空中/地下双黑洞的扩张（本章观察）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 39, "quote": "接着，以漂浮在空中的黑洞为背景，她翠色的魔力居中闪耀。"},
+    {"vol": 1, "chapter": 200, "line": 199, "quote": "位于空中的黑洞开始拓展，地下的那个也是一样，黑色逐渐侵蚀蔓延。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "铳剑",
+    "fact": "罗德的武器：刃枪两用（可持刃交锋亦可枪口射击）；枪击子弹会爆炸但穿透力不强、被城墙挡下；可解除形态空出右臂",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "武器形态与子弹性质（本章详述）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 4, "quote": "我一边咋舌一边挥剑架开罗德的铳剑。"},
+    {"vol": 1, "chapter": 200, "line": 151, "quote": "罗德拉开距离将铳剑的枪口冲向我。"},
+    {"vol": 1, "chapter": 200, "line": 155, "quote": "不过子弹却被挡在城墙外爆炸了。"},
+    {"vol": 1, "chapter": 200, "line": 161, "quote": "就看到她解除了铳剑的形态"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "王之肖像画",
+    "fact": "此前在保管室看到的、绘有完美的王之英姿的画；本章其碎片漂浮在罗德身边，被罗德以过大规格的暴风彻底粉碎",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "保管室画的碎片本章被毁（跨章道具回收节点）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 223, "quote": "之前曾在保管室里看到的一幅画如今正漂浮在罗德身边。"},
+    {"vol": 1, "chapter": 200, "line": 224, "quote": "那是绘有完美的王之英姿的──肖像画的碎片。"},
+    {"vol": 1, "chapter": 200, "line": 225, "quote": "将绘画彻底粉碎。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『这里』的再现法则",
+    "fact": "为将『这里』作为地上再现而设定的种种法则随崩壊沦于疯狂：重力脱轨（大地崩碎后瓦砾不坠而漂浮）、时间崩坏（世界加速）；据涡波推断，空气与其余一切无形法则也将消失",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": [],
+   "observations": [
+    {"category": "knowledge", "text": "法则层设定（重力/时间/空气等，本章集中呈现）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 201, "quote": "为了将『这里』作为地上再现而设定的种种法则也沦于疯狂。"},
+    {"vol": 1, "chapter": 200, "line": 202, "quote": "其中最明显、最脱轨的就是『重力』"},
+    {"vol": 1, "chapter": 200, "line": 203, "quote": "所有的瓦砾都轻飘飘地浮在空中，简直就像宇宙空间一样。"},
+    {"vol": 1, "chapter": 200, "line": 259, "quote": "在现在的『这里』，时间这一法则已经崩壊。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "北方",
+    "fact": "佩艾希亚民众自称的归属（『我们『北方』的救世主』）；视罗德为北方的救世主",
+    "chapter": 200,
+    "tick": 200
+   },
+   "entities_involved": ["罗德"],
+   "observations": [
+    {"category": "knowledge", "text": "地域称呼（民众口径）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 49, "quote": "罗德陛下依旧是我们『北方』的『救世主』啊！！"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "交战(五十层决战)",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "本章全程激战：背摔投技/『Sehr・Wind』/铳剑连击 vs 单臂阿雷亚斯流剑术；罗德宣言接下来拿出真本事同涡波一战", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 7, "quote": "我渐渐招架不住罗德的猛攻"},
+    {"vol": 1, "chapter": 200, "line": 226, "quote": "因此接下来，孤会拿出真本事同你一战！！"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "诺文",
+    "rel_type": "剑术传授",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "『剑圣（诺文）』将阿雷亚斯的剑传授给涡波——传授条件=涡波的临场读招能力", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 147, "quote": "就是因为我能做到这一点，所以『剑圣（诺文）』才将阿雷亚斯的剑传授于我。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "诺斯菲",
+    "rel_type": "敌称『狂王』(据罗德)",
+    "object": "罗德",
+    "claim": true
+   },
+   "observations": [
+    {"category": "relation", "text": "据罗德声称：诺斯菲是『敌人』、唤罗德为『狂王』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 226, "quote": "被敌人（诺斯菲）唤作『狂王』的孤的真本事"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "盗取(自称)",
+    "object": "风之理",
+    "claim": true
+   },
+   "observations": [
+    {"category": "relation", "text": "据罗德自述：她盗取了『自由之风』/『风之理』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 165, "quote": "被孤盗取的『自由之风』啊！风之理啊！"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "武器使用",
+    "object": "铳剑",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "以铳剑与涡波近身交锋/拉距枪击；后解除其形态空出右臂集中魔力", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 4, "quote": "我一边咋舌一边挥剑架开罗德的铳剑。"},
+    {"vol": 1, "chapter": 200, "line": 161, "quote": "就看到她解除了铳剑的形态"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "继承习得",
+    "object": "阿雷亚斯流剑术",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "『这样的特性在被原本就专精于此的我继承之后，更是尽显所长』——涡波为该剑术的继承者", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 148, "quote": "这样的特性在被原本就专精于此的我继承之后，更是尽显所长。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "守护者",
+    "object": "佩艾希亚",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "『那深不可测的魔力既是她身为守护者的证明』——罗德为『这里』（佩艾希亚）的守护者", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 41, "quote": "那深不可测的魔力既是她身为守护者的证明"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.95,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "物理毁灭",
+    "object": "佩艾希亚",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "两拳砸裂空间：世界劈裂为两半、国土折断、结界失效——『名为佩艾希亚的国家就这样毁灭了』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 196, "quote": "就像是空手碎瓦片一样──整个世界被劈・裂・为两半。"},
+    {"vol": 1, "chapter": 200, "line": 210, "quote": "名为佩艾希亚的国家就这样毁灭了"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "称『魔王』(据罗德)",
+    "object": "罗德",
+    "claim": true
+   },
+   "observations": [
+    {"category": "relation", "text": "据罗德声称：涡波一方（己方）曾称罗德为『魔王』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 226, "quote": "用曾经被己方（你）称为『魔王』"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "决意带离(宣言)",
+    "object": "罗德",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "『我要做的就是拎住这个小孩子的脖子，带着她一起走到外面的世界去』——既为自己也为罗德必须取胜", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 292, "quote": "我要做的就是拎住这个小孩子的脖子，带着她一起走到外面的世界去。仅此而已。"},
+    {"vol": 1, "chapter": 200, "line": 293, "quote": "既是为了我自己，也是为了罗德，我必须将那・个・胜・利得到手。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "最擅长魔法(自称)",
+    "object": "自由之风",
+    "claim": true
+   },
+   "observations": [
+    {"category": "relation", "text": "据罗德自述：『自由之风』为其最擅长的魔法、自身本质所在", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 217, "quote": "这就是孤最擅长的魔法！『自由之风』！"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "佩艾希亚",
+    "rel_type": "结界再现于",
+    "object": "迷宫里侧",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "佩艾希亚是在结界当中才得以再现的国土、建造于迷宫里侧的空无空间之上；其崩壊后空间退回里侧", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 197, "quote": "在这结界当中才得以再现的名为『佩艾希亚』的国土、折・断・了。"},
+    {"vol": 1, "chapter": 200, "line": 199, "quote": "原本『这里』就是被建造在迷宫里侧这一空无一物的空间的东西。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "毁弃",
+    "object": "王之肖像画",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "绘有完美的王之英姿的肖像画碎片漂浮至罗德身边，她奋力砸向碎片以暴风将绘画彻底粉碎", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 224, "quote": "她奋力砸向那枚碎片，欲将其彻底摧毁。"},
+    {"vol": 1, "chapter": 200, "line": 225, "quote": "将绘画彻底粉碎。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "咒术发动",
+    "object": "忘却扩散（Reverse）",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "过呼吸半狂乱状态下首次构筑并发动该咒术，令『这里』国民全部退场", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 73, "quote": "受到曾几何时的过呼吸症状所苦，罗德在半狂乱的状态下于空中开始构筑魔法。"},
+    {"vol": 1, "chapter": 200, "line": 76, "quote": "──咒术『忘却扩散（Reverse）』！！"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "罗德",
+    "rel_type": "阶层归属(宣告)",
+    "object": "五十层",
+    "claim": false
+   },
+   "observations": [
+    {"category": "relation", "text": "罗德宣告虚无之空即五十层、『风之理的盗窃者』的阶层——『与徒具空壳的孤简直再相配不过了不是吗』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 279, "quote": "『风之理的盗窃者』的阶层！"},
+    {"vol": 1, "chapter": 200, "line": 281, "quote": "我终于在真正的意义上抵达了罗德的『阶层』"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德与涡波的空战·河道一击",
+    "kind": "战斗",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "罗德vs涡波决战进行中（连续场景，无日时坐标）"
+   },
+   "entities_involved": ["罗德", "相川涡波", "Sehr・Wind", "铳剑", "佩艾希亚"],
+   "observations": [
+    {"category": "event", "text": "罗德抓住涡波左臂以背摔姿势掷向高空→先行跃至其上方约百米，以『Sehr・Wind』将其砸落佩艾希亚城附近河道→双翼追击一拳令河水尽溅、击穿河底（洞穴与先前凿穿空中的同规格）→凭物理攻击击碎『这里』结界→地基被毁、佩艾希亚城开始塌陷", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 7, "quote": "罗德没有放过这个机会，紧紧抓住我的左臂──接着以背摔的姿势将我掷出。"},
+    {"vol": 1, "chapter": 200, "line": 14, "quote": "「──『Sehr・Wind』！！」"},
+    {"vol": 1, "chapter": 200, "line": 31, "quote": "拳头砸穿一滴水都不剩的河底"},
+    {"vol": 1, "chapter": 200, "line": 32, "quote": "罗德凭借物理攻击就直接击碎了『这里』的结界。"},
+    {"vol": 1, "chapter": 200, "line": 35, "quote": "随着地基被毁、佩艾希亚城开始塌陷。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "民众声援与罗德的过呼吸恶化",
+    "kind": "转折",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "河道战之后即刻（同日连续场景）"
+   },
+   "entities_involved": ["罗德", "支配之王（Lord）", "佩艾希亚", "相川涡波"],
+   "observations": [
+    {"category": "event", "text": "骑士与近百民众（含老人孩子）集结声援：视罗德为归来的『支配之王』/救世主、期待她制服『背叛者骑士团长』；罗德在声援下动摇、喘不过气（战斗中呼吸从未不适）→过呼吸发作半狂乱：『那份期待太沉重了…不让身体轻下来的话孤会撑不住』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 47, "quote": "故尔看到了罗德那辉耀夺目的姿态，欢呼声便自远处传响。"},
+    {"vol": 1, "chapter": 200, "line": 49, "quote": "果然罗德陛下还是回来了啊！"},
+    {"vol": 1, "chapter": 200, "line": 71, "quote": "但只是听到声援就让她变得喘不过气来。"},
+    {"vol": 1, "chapter": 200, "line": 73, "quote": "受到曾几何时的过呼吸症状所苦，罗德在半狂乱的状态下于空中开始构筑魔法。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.95,
+   "canonical": {
+    "name": "『这里』国民总退场（咒术忘却扩散）",
+    "kind": "大事件",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "过呼吸发作后即刻（同日连续场景）"
+   },
+   "entities_involved": ["罗德", "忘却扩散（Reverse）", "魔石", "佩艾希亚", "相川涡波", "诺斯菲", "莱纳"],
+   "observations": [
+    {"category": "event", "text": "罗德骂民众为『早已崩壊只会机械式（擅自）行动的人偶』，以旋风将触及者瞬间化为光粒，声援就此断绝；光粒充斥整个佩艾希亚、各地接连升起光之烽火；将『佩艾希亚』的所有登场人物变作魔石后才满足——『接下来『这里』就只剩四个人了』（罗德/诺斯菲/涡波/莱纳）；残留魔石全部升空", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 76, "quote": "──咒术『忘却扩散（Reverse）』！！"},
+    {"vol": 1, "chapter": 200, "line": 78, "quote": "触及旋风的人，都在一瞬间化作了齑粉"},
+    {"vol": 1, "chapter": 200, "line": 102, "quote": "罗德要让存在于『这里』的国民全部退场"},
+    {"vol": 1, "chapter": 200, "line": 103, "quote": "接下来『这里』就只剩四个人了！只剩孤和诺斯菲、还有涡波和莱纳四个人！！"},
+    {"vol": 1, "chapter": 200, "line": 104, "quote": "将『佩艾希亚』的所有登场人物变作魔石之后罗德才满足。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德自白：加速的空壳人生",
+    "kind": "揭示",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "国民退场后的对峙中（同日连续场景）"
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [
+    {"category": "event", "text": "罗德首次说出『不公平』：人生因时间擅自加速而空虚（一秒→一分→一天→一月→一年），体感合计仅数年、自认幼女；『孤一直都只是具空壳，一个只懂得回应期待、从来没有过自己意志的徒具空壳的王』；成为『风之理的盗窃者』、失去弟弟之时人生时钟壊了；并引涡波『失去妹妹后时间停滞』之言为同证", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 117, "quote": "都是时间擅自加速的错！"},
+    {"vol": 1, "chapter": 200, "line": 117, "quote": "在孤成为『风之理的盗窃者』的时候，在那个失去了弟弟的时候，孤人生的时钟就壊了啊、它再也不曾动过！！"},
+    {"vol": 1, "chapter": 200, "line": 117, "quote": "你说失去了妹妹的自己的时间就像停滞了一样"},
+    {"vol": 1, "chapter": 200, "line": 114, "quote": "孤一直都只是具空壳！一个只懂得回应期待，从来没有过自己的意志的徒具空壳的王！！"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "涡波读尽风之剑术·激怒方针",
+    "kind": "战斗",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "国民退场后的近身缠斗（同日连续场景）"
+   },
+   "entities_involved": ["相川涡波", "罗德", "阿雷亚斯流剑术", "剑术"],
+   "observations": [
+    {"category": "event", "text": "牺牲左臂换来对罗德战斗方式的观察：摸透其风之『剑术』，用过的架势招数全部记住并备好反制；口角是为激怒罗德的故意方针；技能『剑术』数值飞跃增长；被激怒的罗德连击流於单调，单臂的涡波撑住局面", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 146, "quote": "尽管牺牲了一根手臂，但拜此所赐我可以仔细观察罗德战斗的方式。"},
+    {"vol": 1, "chapter": 200, "line": 149, "quote": "技能『剑术』的数值在短时间内有了飞跃性的增长"},
+    {"vol": 1, "chapter": 200, "line": 135, "quote": "所以这些口角只是我为了将她激怒而故意为之"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "空间破碎第一拳·城堡彻底崩溃",
+    "kind": "大事件",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "涡波藏身城内后（同日连续场景）"
+   },
+   "entities_involved": ["罗德", "相川涡波", "铳剑"],
+   "observations": [
+    {"category": "event", "text": "罗德解除铳剑形态、全魔力向一点集中（气息与诺文『亡灵一闪』同类：世界的理受到侵蚀）→空挥一拳将空间砸裂（裂痕自无中生有、蔓延至支柱/墙壁/地面/空气）→涡波因城外第二拳待命而无法逃离→城堡彻底崩溃，涡波被甩上空中抓住瓦砾", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 161, "quote": "把所有魔力向一点集中。"},
+    {"vol": 1, "chapter": 200, "line": 164, "quote": "而是跟诺文释放『亡灵一闪』那时一样，有一种世界的理受到侵蚀的恐怖感。"},
+    {"vol": 1, "chapter": 200, "line": 170, "quote": "啪吱一声──我眼前的空间开始龟裂。"},
+    {"vol": 1, "chapter": 200, "line": 173, "quote": "──罗・德・的・拳・头・将・世・界・砸・裂・了。"},
+    {"vol": 1, "chapter": 200, "line": 192, "quote": "这座城堡就此彻底崩溃。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.95,
+   "canonical": {
+    "name": "第二拳·佩艾希亚物理毁灭",
+    "kind": "大事件",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "城堡崩溃后即刻（同日连续场景）"
+   },
+   "entities_involved": ["罗德", "佩艾希亚", "迷宫里侧", "黑洞", "相川涡波"],
+   "observations": [
+    {"category": "event", "text": "罗德第二拳将世界劈裂为两半——结界中再现的国土佩艾希亚折断；结界失效、空中与地下黑洞拓展；为地上再现设定的法则沦于疯狂（重力脱轨、瓦砾漂浮）；河流/桥梁/街道/城堡尽数被击碎，迷宫里侧重新降临——『佩艾希亚在物理上迎来了毁灭』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 195, "quote": "罗德挥出的第二拳，为这个满是疮痍的世界带来了终结。"},
+    {"vol": 1, "chapter": 200, "line": 196, "quote": "就像是空手碎瓦片一样──整个世界被劈・裂・为两半。"},
+    {"vol": 1, "chapter": 200, "line": 198, "quote": "当然，做到这样的话结界也保不住了。"},
+    {"vol": 1, "chapter": 200, "line": 203, "quote": "所有的瓦砾都轻飘飘地浮在空中，简直就像宇宙空间一样。"},
+    {"vol": 1, "chapter": 200, "line": 210, "quote": "名为佩艾希亚的国家就这样毁灭了"},
+    {"vol": 1, "chapter": 200, "line": 233, "quote": "佩艾希亚在物理上迎来了毁灭。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "罗德粉碎王之肖像画",
+    "kind": "象征",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "佩艾希亚毁灭后（同日连续场景）"
+   },
+   "entities_involved": ["罗德", "王之肖像画"],
+   "observations": [
+    {"category": "event", "text": "保管室那幅绘有完美的王之英姿的肖像画碎片漂浮至罗德身边；她奋力砸向碎片，以对粉碎一枚碎片而言规格过大的暴风将绘画彻底粉碎", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 223, "quote": "之前曾在保管室里看到的一幅画如今正漂浮在罗德身边。"},
+    {"vol": 1, "chapter": 200, "line": 224, "quote": "那是绘有完美的王之英姿的──肖像画的碎片。"},
+    {"vol": 1, "chapter": 200, "line": 225, "quote": "将绘画彻底粉碎。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.95,
+   "canonical": {
+    "name": "五十层宣言与第五十之试练开幕",
+    "kind": "转折",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "佩艾希亚毁灭后的虚无之空（同日连续场景）"
+   },
+   "entities_involved": ["罗德", "相川涡波", "五十层", "风之理的盗窃者", "迷宫里侧"],
+   "observations": [
+    {"category": "event", "text": "罗德咏唱『加速』系列咒词→世界加速运转、时间法则崩壊，远处魂之星回旋、最终描绘出上千条圆环状光环；罗德于千重光环中央倒立宣告：除孤以外再无别物的虚无之空便是五十层、『风之理的盗窃者』的阶层——『第五十之试练』开始，『孤定要战胜于你，将『这里』引至真正的和平』；涡波自认在真正的意义上抵达罗德的阶层并应战『我早就准备好了』", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 256, "quote": "接下来才是『风之理的盗窃者』的真本领！"},
+    {"vol": 1, "chapter": 200, "line": 258, "quote": "接着，像是在呼应她咏唱的台词一般，这个宇宙也开始加速运转。"},
+    {"vol": 1, "chapter": 200, "line": 264, "quote": "便是漂浮在远处的魂之星不知为何开始像天体一样回旋。"},
+    {"vol": 1, "chapter": 200, "line": 271, "quote": "数量过千的光环于兹诞生。"},
+    {"vol": 1, "chapter": 200, "line": 279, "quote": "孤定要战胜于你，将『这里』引至真正的和平！！"},
+    {"vol": 1, "chapter": 200, "line": 281, "quote": "我终于在真正的意义上抵达了罗德的『阶层』"},
+    {"vol": 1, "chapter": 200, "line": 290, "quote": "「罗德！我早就准备好了！少在那边耍帅、赶紧开始吧──！！」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "涡波的决意：带罗德走出",
+    "kind": "决意",
+    "tick": 200,
+    "instant": null,
+    "time_verbatim": "第五十之试练开幕之际"
+   },
+   "entities_involved": ["相川涡波", "罗德"],
+   "observations": [
+    {"category": "event", "text": "涡波自认与罗德同样孩子气、诺斯菲也开始模仿这种做法；虽恐惧仍决意：拎住孩子般的罗德带她一起走到外面的世界——『不能再将她一个人继续像这样留在这种地方不管了』，为自己也为罗德必须将胜利得到手；自立足点跃起", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 292, "quote": "我要做的就是拎住这个小孩子的脖子，带着她一起走到外面的世界去。仅此而已。"},
+    {"vol": 1, "chapter": 200, "line": 293, "quote": "既是为了我自己，也是为了罗德，我必须将那・个・胜・利得到手。"},
+    {"vol": 1, "chapter": 200, "line": 294, "quote": "一心只为实现那个未来，我奋力自立足点跃起。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "第五十之试练的胜负与真正内容",
+    "setup_chapter": 200,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "罗德宣告开幕并称要战胜涡波、将『这里』引至真正的和平；涡波解读真正内容=『一个小孩子拽住了打算离开游乐园的朋友的衣角──仅此而已』；其目标=取胜并带罗德走出——试练的经过与胜负待回收",
+    "chapter": 200
+   },
+   "entities_involved": ["罗德", "相川涡波", "五十层"],
+   "observations": [
+    {"category": "foreshadowing", "text": "主线开环：试练开幕（胜负未决）", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 279, "quote": "接下来要开始的就是『第五十之试练』"},
+    {"vol": 1, "chapter": 200, "line": 285, "quote": "所谓『第五十之试练』，就是一个小孩子拽住了打算离开游乐园的朋友的衣角──仅此而已。"},
+    {"vol": 1, "chapter": 200, "line": 292, "quote": "带着她一起走到外面的世界去。仅此而已。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『里侧』诸法则消失倒计时",
+    "setup_chapter": 200,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "据涡波以『维度』推断：再过不久呼吸的空气也归于虚无，重力/运动/热量等一切无形之物都将消失——决战在空气与法则存续的时限内进行，时限兑现与应对待回收",
+    "chapter": 200
+   },
+   "entities_involved": ["迷宫里侧", "相川涡波"],
+   "observations": [
+    {"category": "foreshadowing", "text": "时限钩：空气/重力/诸法则消失预告", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 247, "quote": "恐怕再过不久，就连呼吸的空气也会归于虚无吧。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "民众魔石升空与再现可能",
+    "setup_chapter": 200,
+    "payoff_chapter": null,
+    "tier": "支线",
+    "note": "国民全部化作魔石退场；涡波已知『只要有魔石的话，『这里』的民众就能够再现』；残留魔石升空回到类似星星的状况、远处群星=已死民众之魂——佩艾希亚民众能否/如何复原待回收",
+    "chapter": 200
+   },
+   "entities_involved": ["魔石", "佩艾希亚", "罗德", "相川涡波"],
+   "observations": [
+    {"category": "foreshadowing", "text": "民众线开环：魔石化后的复原可能", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 90, "quote": "只要有魔石的话，『这里』的民众就能够再现。"},
+    {"vol": 1, "chapter": 200, "line": 91, "quote": "这些残留的魔石全都轻飘飘地升上了空中"},
+    {"vol": 1, "chapter": 200, "line": 240, "quote": "还有就是在远处已经死去的民众的魂所化成的群星。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "罗德的真本事与涡波的大魔法",
+    "setup_chapter": 200,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "罗德全程未认真（『刚才的战斗只不过是助兴』『接下来才是真本领』）；涡波判断须进一步激怒罗德以创造自己的大魔法命中机会——双方决胜手段均未出手，兑现待回收",
+    "chapter": 200
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [
+    {"category": "foreshadowing", "text": "战力开环：真本事/大魔法均未出", "chapter": 200}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 200, "line": 228, "quote": "最令人恐惧的，就是即使做出了这种惊世骇俗的破壊，罗德也还没有认真这一点。"},
+    {"vol": 1, "chapter": 200, "line": 229, "quote": "不再更进一步地激怒罗德的话，就创造不出让我的大魔法击中罗德的机会。"},
+    {"vol": 1, "chapter": 200, "line": 256, "quote": "刚才的战斗只不过是助兴"}
+   ]
+  }
+ ]
+}

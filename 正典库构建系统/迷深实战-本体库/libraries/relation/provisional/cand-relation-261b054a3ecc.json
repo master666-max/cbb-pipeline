@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "Default",
+  "rel_type": "使用（紧急回避+脱围）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 66,
+   "quote": "在判断出回避已经来不及之后，我使用次元魔术压缩空间向后跳跃拉开了数十米的距离。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 115,
+   "quote": "情急之下甚至使出了『Default』这种消耗不小的招数。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 196,
+   "text": "判断回避不及时压缩空间后跳数十米；赴宅途中被骑士包围情急使用（消耗不小的招数）；屋顶追逃战刻意不用"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-261b054a3ecc",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,78 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "莱纳",
+   "贝丝",
+   "雷纳尔多"
+  ],
+  "instant": null,
+  "kind": "转折·托付",
+  "name": "雷纳尔多断后·崩宅送离",
+  "tick": 197,
+  "time_verbatim": "贝丝到访后同一场景（宅邸前廊→深处）"
+ },
+ "evidence": [
+  {
+   "chapter": 197,
+   "line": 103,
+   "quote": "「⋯⋯等等，小子。⋯⋯贝丝就让老朽来对付。",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 126,
+   "quote": "「小子，你・想・错・了」",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 157,
+   "quote": "「──『Earthquake』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 165,
+   "quote": "雷纳尔多就是为了让我去救莱纳，才使用了『Earthquake』",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 166,
+   "quote": "「我、我很快就会把莱纳带回来！您一定要等到那个时候！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 197,
+   "text": "雷纳尔多拦下涡波自任贝丝对手；以FlameAccel将其掷往宅邸深处并训诫『你・想・错・了』；自认祖父、宣告直面家人是夙愿；以远超贝丝版本的Earthquake定点崩毁承重柱，逼涡波去救深处昏睡的莱纳；涡波允诺『很快会把莱纳带回来』后离开"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7b6e12b5b397",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0197.txt",
+  "sha": "58098bc9f69be219d7c95f1ca429d6de69755a8fe05b36e9ee7adc22a5dfadbd",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

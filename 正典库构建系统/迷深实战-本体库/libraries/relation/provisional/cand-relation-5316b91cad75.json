@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "王近卫骑士团",
+  "rel_type": "团长代理(据巡逻骑士·涡波推断)",
+  "subject": "伊丽莎白・沃尔斯"
+ },
+ "evidence": [
+  {
+   "chapter": 195,
+   "line": 126,
+   "quote": "「绝对要找到他！这里离沃尔斯家很近！再等一下团长代理就会过来了！在此之前一定要拖住他！」",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 127,
+   "quote": "「啊啊，如果是伊丽莎白・沃尔斯殿下的话，就算是以团长大人为对手肯定也能有办法解决的！」",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 131,
+   "quote": "她现在是团长代理？",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 195,
+   "text": "巡逻骑士：「再等一下团长代理就会过来了」「如果是伊丽莎白・沃尔斯殿下的话，就算是以团长大人为对手肯定也能有办法解决的」；涡波推断「她现在是团长代理？」并按时间轴推其长大成人就任近卫骑士并不不可思议（据骑士言）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5316b91cad75",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0195.txt",
+  "sha": "c0c2a126a6abf5d026ad11bfbc1ff920661ba03f8f132dbbf365a67fc559f68e",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "罗德",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "章外行动（据称）",
+  "name": "罗德破坏佩艾希亚出入口（据诺斯菲·章外）",
+  "tick": 197,
+  "time_verbatim": "本章同时刻（据诺斯菲现场陈述）"
+ },
+ "evidence": [
+  {
+   "chapter": 197,
+   "line": 92,
+   "quote": "看来她没有注意到我的信号，跑去破壊佩艾希亚的出入口了",
+   "vol": 1
+  },
+  {
+   "chapter": 197,
+   "line": 92,
+   "quote": "虽然将『门』破壊掉确实是一种办法，但绕的实在是太远了啊",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 197,
+   "text": "据诺斯菲当场声称：罗德没注意到诺斯菲的信号，跑去破坏佩艾希亚的出入口（『门』）；诺斯菲评『将『门』破壊掉确实是一种办法，但绕的实在是太远了』，自己去接她回来"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-432d74a3638e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0197.txt",
+  "sha": "58098bc9f69be219d7c95f1ca429d6de69755a8fe05b36e9ee7adc22a5dfadbd",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

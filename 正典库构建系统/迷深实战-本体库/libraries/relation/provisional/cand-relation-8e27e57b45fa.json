@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "决意带离(宣言)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 200,
+   "line": 292,
+   "quote": "我要做的就是拎住这个小孩子的脖子，带着她一起走到外面的世界去。仅此而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 293,
+   "quote": "既是为了我自己，也是为了罗德，我必须将那・个・胜・利得到手。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 200,
+   "text": "『我要做的就是拎住这个小孩子的脖子，带着她一起走到外面的世界去』——既为自己也为罗德必须取胜"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8e27e57b45fa",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0200.txt",
+  "sha": "98f6dbae430f8af34510b61143350dec18e0aaeeed656a0879180aedddd1a1b4",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

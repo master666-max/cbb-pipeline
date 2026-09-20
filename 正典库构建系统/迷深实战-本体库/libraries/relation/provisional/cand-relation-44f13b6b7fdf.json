@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "交战被制（先袭→双臂脱臼→被射入连接）",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 193,
+   "line": 114,
+   "quote": "这是缠绕着风属性魔力的全力一击，但却被诺斯菲轻而易举地避开了。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 141,
+   "quote": "『维度』把握到信赖着我的魔法的莱纳一条手臂此时已经脱臼。",
+   "vol": 1
+  },
+  {
+   "chapter": 193,
+   "line": 205,
+   "quote": "随着这道可爱的声音，莱纳就像曲棍球一样被她射进了巨大的『连接』当中。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 193,
+   "text": "莱纳趁诺斯菲话未说完以魔力风刃化全力袭击被轻易避开；此后一条手臂脱臼（Default被相杀后御旗横扫）、Sehr・Wind被抵消后最后一条手臂亦脱臼；终被旗面裹住射进超大门"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-44f13b6b7fdf",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0193.txt",
+  "sha": "25510a28004da1402b8ea44c96e41c6ea1fd3d3fe7163bd7770b2da237999322",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

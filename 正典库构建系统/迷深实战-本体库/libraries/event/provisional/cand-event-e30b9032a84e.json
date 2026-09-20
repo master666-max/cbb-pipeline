@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "贝丝",
+   "雷纳尔多·沃尔斯"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "祖孙同咏杀招与以命换魔力",
+  "tick": 198,
+  "time_verbatim": "同日昼间·沃尔斯家前廊（决斗终局段）"
+ },
+ "evidence": [
+  {
+   "chapter": 198,
+   "line": 62,
+   "quote": "「──『勖兮奋哉、吼哮不绝之焰』！『焦土踏破、疾驰无息之魂』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 198,
+   "line": 66,
+   "quote": "贝丝是为了获得胜利而绞尽了自己所有的魔力，雷纳尔多是为了同归于尽而绞尽了自己所有的生命力。",
+   "vol": 1
+  },
+  {
+   "chapter": 198,
+   "line": 68,
+   "quote": "雷纳尔多的最大HP开始削减、削减、再削减，这全部都转化为了浓郁的魔力。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 198,
+   "text": "『爷爷──雷纳尔多・沃尔斯』之名宣告战斗进入尾声：两人拉开距离以同样咏唱释放同样魔法（『勖兮奋哉、吼哮不绝之焰』『焦土踏破、疾驰无息之魂』）再同发『FullBlazing』；贝丝为胜利绞尽全部魔力，雷纳尔多为同归于尽绞尽全部生命力——最大HP削减转化为浓郁魔力、身体开始散作发光粒子（如濒临消失的迷宫怪物）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e30b9032a84e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0198.txt",
+  "sha": "e0436896606cad73ee5bd976f19dbb5e390730c2f08c7f9e82665afbb8aa78bb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

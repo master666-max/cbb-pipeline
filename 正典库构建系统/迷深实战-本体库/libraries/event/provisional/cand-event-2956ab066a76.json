@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "支配之王（Lord）",
+   "相川涡波",
+   "罗德"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "民众声援与罗德的过呼吸恶化",
+  "tick": 200,
+  "time_verbatim": "河道战之后即刻（同日连续场景）"
+ },
+ "evidence": [
+  {
+   "chapter": 200,
+   "line": 47,
+   "quote": "故尔看到了罗德那辉耀夺目的姿态，欢呼声便自远处传响。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 49,
+   "quote": "果然罗德陛下还是回来了啊！",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 71,
+   "quote": "但只是听到声援就让她变得喘不过气来。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 73,
+   "quote": "受到曾几何时的过呼吸症状所苦，罗德在半狂乱的状态下于空中开始构筑魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 200,
+   "text": "骑士与近百民众（含老人孩子）集结声援：视罗德为归来的『支配之王』/救世主、期待她制服『背叛者骑士团长』；罗德在声援下动摇、喘不过气（战斗中呼吸从未不适）→过呼吸发作半狂乱：『那份期待太沉重了…不让身体轻下来的话孤会撑不住』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2956ab066a76",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0200.txt",
+  "sha": "98f6dbae430f8af34510b61143350dec18e0aaeeed656a0879180aedddd1a1b4",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

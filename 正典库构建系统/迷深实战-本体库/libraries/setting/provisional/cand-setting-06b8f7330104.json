@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 200,
+  "fact": "此前在保管室看到的、绘有完美的王之英姿的画；本章其碎片漂浮在罗德身边，被罗德以过大规格的暴风彻底粉碎",
+  "name": "王之肖像画",
+  "tick": 200
+ },
+ "evidence": [
+  {
+   "chapter": 200,
+   "line": 223,
+   "quote": "之前曾在保管室里看到的一幅画如今正漂浮在罗德身边。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 224,
+   "quote": "那是绘有完美的王之英姿的──肖像画的碎片。",
+   "vol": 1
+  },
+  {
+   "chapter": 200,
+   "line": 225,
+   "quote": "将绘画彻底粉碎。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 200,
+   "text": "保管室画的碎片本章被毁（跨章道具回收节点）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-06b8f7330104",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0200.txt",
+  "sha": "98f6dbae430f8af34510b61143350dec18e0aaeeed656a0879180aedddd1a1b4",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

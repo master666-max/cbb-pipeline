@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德·缇缇",
+  "rel_type": "对立开战(拒绝臣从·宣战受诺)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 194,
+   "line": 122,
+   "quote": "「容我拒绝」",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 256,
+   "quote": "既然如此，那你就死心与孤一战，然后再败给孤便是。",
+   "vol": 1
+  },
+  {
+   "chapter": 194,
+   "line": 273,
+   "quote": "「很遗憾我既不会死心，也不打算输给你。事到如今就算是为了你，我也要从『这里』出去。当然，我还要把莱纳也带上」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 194,
+   "text": "两度『容我拒绝』（拒为臣子/拒死心一战）；宣言既不会死心也不打算输、事到如今为了罗波也要从『这里』出去并带上莱纳；罗德令其死心一战败给自己、魔力剧烈膨胀以SehrWind开战"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b4f691b809a9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0194.txt",
+  "sha": "ba96370e0da73b18c8b924e77ffa0dea18215c2c7c7bdbd7378d71e909e555cb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "一对一决战（各个击破）",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 199,
+   "line": 22,
+   "quote": "「将计就计便是，诺斯菲。与其让他们使出即兴的共鸣魔法，不如各个击破更为稳妥」",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 23,
+   "quote": "将我和莱纳各个击破可以确实地排除不确定因素。──跟我预测的一样。",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 54,
+   "quote": "孤必将否定那一切，之后重新将你纳入麾下！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 199,
+   "text": "罗德确信基本实力远胜、采纳各个击破以排除不确定因素（『与其让他们使出即兴的共鸣魔法，不如各个击破更为稳妥』——与涡波预判一致）；宣言『孤绝无败北之理』、胜后要将涡波『重新纳入麾下』；战场由庭院转移至大道"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-986f4d0dd74c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0199.txt",
+  "sha": "62f2f280964f4f491823add57c95236f8144df2c033f50ffc36280e1fb8b9d4b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

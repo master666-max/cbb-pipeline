@@ -1,0 +1,88 @@
+{
+ "canonical": {
+  "entities": [
+   "Default",
+   "Earthquake",
+   "FlameAccel",
+   "新月琉璃制直剑",
+   "炎之剑（贝丝版·火焰辅助定位）",
+   "相川涡波",
+   "维度・决战演算",
+   "贝丝"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "贝丝宣战与街道剑战（势均力敌·直感之谜）",
+  "tick": 196,
+  "time_verbatim": "同日昼间·佩艾希亚街道（遭遇直后）"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 51,
+   "quote": "「既如此，那之后剩下的就只有战斗而已了。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 57,
+   "quote": "贝丝在顷刻间就冲到了我怀里。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 72,
+   "quote": "两把剑同时挥出，『新月琉璃』和『炎之剑』就此交锋。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 73,
+   "quote": "然而事情的发展出乎了我的预料，上演在面前的不是一边倒的战斗，而是势均力敌的激烈互角。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 79,
+   "quote": "但是在那种时候，她采取的行动，正所谓是以『直感』来迎击。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 82,
+   "quote": "──贝丝已经习惯了与我的战斗了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 196,
+   "text": "贝丝掷包裹宣战→『FlameAccel』无咏唱起动（站立地点炸裂、地面掀翻）顷刻冲至怀里火焰剑袭来→涡波『维度・决战演算』读轨扭转身体千钧回避→『噬咬侵蚀之』『炎之剑』火苗溅袖蔓延逼其断袖→第二斩逼近以『Default』后跳数十米→『戮力擒之』『Earthquake』地震撼体屈膝→怒涛连击下两剑交锋（『新月琉璃』vs『炎之剑』）——涡波『剑术』『速度』『技术』数值全面占优却无法压制：贝丝以过分精确的『直感』迎击（『师徒的预测』级预见）→涡波结论：她已习惯与自己的战斗、千年前受过自己漫长训练（反推）→次元魔术偷袭不可行、放弃带她同行"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d6e88390f4f1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

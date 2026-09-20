@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "新月琉璃制直剑",
+  "rel_type": "使用（交锋·指敌·章末挥出）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 196,
+   "line": 72,
+   "quote": "两把剑同时挥出，『新月琉璃』和『炎之剑』就此交锋。",
+   "vol": 1
+  },
+  {
+   "chapter": 196,
+   "line": 137,
+   "quote": "混杂着怒气和敌意，我将『新月琉璃』指向诺斯菲。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 196,
+   "text": "与贝丝『炎之剑』交锋势均力敌；混杂怒气与敌意指向诺斯菲；章末冲上挥出（本章略称『新月琉璃』=库内既有别名）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-943c720274e8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0196.txt",
+  "sha": "132300adf55367d7d5e5de538be13d3a475024f8ab9d5205e0ad4d27df1578d3",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

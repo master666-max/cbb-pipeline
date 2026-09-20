@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德"
+  ],
+  "instant": null,
+  "kind": "战斗/受创",
+  "name": "涡波左臂被余波震断·罗德转入近身捕获",
+  "tick": 199,
+  "time_verbatim": "重崩色之非风剑发射后（章末）"
+ },
+ "evidence": [
+  {
+   "chapter": 199,
+   "line": 197,
+   "quote": "我确实完美地避开了魔弹『重崩色之非风剑』",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 200,
+   "quote": "难道真的仅靠余波就震断了我一根手臂吗。",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 201,
+   "quote": "呋哈哈哈、这样一来近身战就是孤的完胜了！！",
+   "vol": 1
+  },
+  {
+   "chapter": 199,
+   "line": 204,
+   "quote": "罗德在空中一蹬便飞翔起来，宛如嘲笑重力一般自由地向我逼近。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 199,
+   "text": "涡波冲刺切入近身战中感到违和——左臂使不上力摇摇下垂、直触脑髓的剧痛；自证『完美地避开了魔弹』连擦伤都没有却左臂骨折（『仅靠余波就震断了一根手臂』）→罗德大喜『这样一来近身战就是孤的完胜了』、停止装填转入近身、以因负伤战力下降的涡波只需捕获即可的判断『宛如嘲笑重力一般』飞翔逼近（章末悬置）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-569c687a346a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0199.txt",
+  "sha": "62f2f280964f4f491823add57c95236f8144df2c033f50ffc36280e1fb8b9d4b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}
