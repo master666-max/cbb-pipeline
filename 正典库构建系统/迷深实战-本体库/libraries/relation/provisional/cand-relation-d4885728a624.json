@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "支配之王",
+  "rel_type": "身份辞退宣言",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 230,
+   "line": 15,
+   "quote": "多亏了涡涡，人家终于能放下『支配之王』的身份，作为少女缇缇而活",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 37,
+   "quote": "（『支配之王』啊，请您回想起来！您在千年前的愿望是世界的和平！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 230,
+   "text": "'多亏了涡涡，人家终于能放下『支配之王』的身份，作为少女缇缇而活'（据其自述涡涡建议之功）；艾德仍以其千年前誓言（世界的和平/拯救北方）相求，指其'只是摆出了英明强悍的样子'（缇缇自辩）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d4885728a624",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0230.txt",
+  "sha": "6d9f4ae2910396ebe3e4eaedb17603a125707445a21c7cb117b0f6e48c92afa8",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

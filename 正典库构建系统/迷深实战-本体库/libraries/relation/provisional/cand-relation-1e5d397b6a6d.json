@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "佩艾希亚",
+  "rel_type": "北方再现(自称完成)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 229,
+   "line": 165,
+   "quote": "（⋯⋯恭候多时了，『支配之王』。这一年来，鄙人艾德为了您的归来已经做了多番准备。如今在这北方，鄙人已经完成了对昔日佩艾希亚之再现。让我们在那里重新来过吧。这一次定要实现千年前我等未能实现的梦想。就由您和鄙人两人、亲手⋯⋯）",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 170,
+   "quote": "「你说的不对啊，艾德。无论怎样相似，你在北方缔造的这个国家终究不是人家和你的佩艾希亚。无论准备怎样的替角，『支配之王』也终究不会再回来。这两者都已经不复存在。──已经不存在了啊」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 229,
+   "text": "据艾德：这一年为支配之王归来做多番准备、在北方已完成对昔日佩艾希亚之再现、冀望重头来实现千年梦想；缇缇否定——'无论怎样相似，你在北方缔造的这个国家终究不是人家和你的佩艾希亚'（我们的佩艾希亚已经毁灭）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1e5d397b6a6d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0229.txt",
+  "sha": "cfabe7016c8ee5eb9092db7f9518288993b305a83bd390db77f5f508181f1bc5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

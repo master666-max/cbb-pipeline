@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "古奈尔",
+   "相川涡波",
+   "罗德·缇缇"
+  ],
+  "instant": null,
+  "kind": "离队",
+  "name": "古奈尔脱队逃走",
+  "tick": 225,
+  "time_verbatim": "袭港急报当口的骚动中"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 45,
+   "quote": "「──然而这正是千载难逢的机会！就是现在！咱这就溜喽、后面的事就拜托你们了！等咱跑远了就会为了彼此再也不见而祈祷滴─！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 46,
+   "quote": "见她突然狂奔起来，担任护卫的一干人等虽然吃惊但也只好追上去。",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 51,
+   "quote": "「算了，就放她去吧。看上去她是真的不想应付我们。这次只要知道有从千年前活到今天的人存在就足够了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 225,
+   "text": "古奈尔抱起缇缇（'正统派公主'）狂奔而逃，喊话'为了彼此再也不见而祈祷'；护卫吃惊追上（'司空见惯'）；缇缇不满（'那家伙还是逃掉了'）提议由己讨伐怪物、涡波去追；涡波放行——'这次只要知道有从千年前活到今天的人存在就足够了'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fd4dde1cbd6c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

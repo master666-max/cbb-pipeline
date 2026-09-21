@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "克洛伊·希达尔克",
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "斯诺入室禁令与辞职宣言",
+  "tick": 225,
+  "time_verbatim": "击杀怪物后·返回柯尔库途中"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 239,
+   "quote": "「对了，从今天开始所有人不许擅自进入我的房间。这是总司令的命令，敢违背的话就处以极刑。而且我会哭的」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 240,
+   "quote": "「斯诺大人会哭！？⋯⋯不不，就算您说不许进入、可是接下来还有怪物讨伐的报告书以及招待塞斯提亚和历基亚国公主的事情要处理啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 249,
+   "quote": "「那、那这样吧，什么总司令什么英雄我都不干了算了？」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 250,
+   "quote": "──她在自己的部下面前，表示说要就此辞职。",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 255,
+   "quote": "这是和拉丝缇娅拉再会时未能体会到的心情。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 225,
+   "text": "斯诺牵手涡波于士兵拥簇下返城；途中以总司令身份下令'从今天开始所有人不许擅自进入我的房间⋯⋯敢违背的话就处以极刑。而且我会哭的'，改口'到明天早上为止⋯⋯特别是晚上，晚上绝对不可以进来'；克洛伊以怪物讨伐报告书与'招待塞斯提亚和历基亚国公主'事务谏诤、斥其身份（柯尔库最高领导人/南方联盟总司令/人人憧憬的英雄）；斯诺答'什么总司令什么英雄我都不干了算了？'——'她在自己的部下面前，表示说要就此辞职'；克洛伊惨叫全军哗然；涡波'仅仅只是感到了怀念'（'这才是斯诺'，'和拉丝缇娅拉再会时未能体会到的心情'）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2509cf642d97",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

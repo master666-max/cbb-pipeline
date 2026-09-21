@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "同死神相伴的魔女",
+   "大洞",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "魔法行使",
+  "name": "涡波发动『次元决战演算『前日谭』』",
+  "tick": 228,
+  "time_verbatim": "入城当日（大洞熔岩现场）"
+ },
+ "evidence": [
+  {
+   "chapter": 228,
+   "line": 542,
+   "quote": "「没错，我要使用『次元决战演算『前日谭』』（维度・GradientRecall）。就是在迷宫和你战斗时用的那个」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 546,
+   "quote": "「当然不会像那时候一样拼命的。这次不会进行对魂的『想起收束』，所以不用担心。我只是使用现存的魔力，调查一下招致这个惨状的人的去向而已。因为有些问题需要确认一下」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 570,
+   "quote": "这便是魔法『次元决战演算『前日谭』』",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 576,
+   "quote": "而我也借此看到了这座『大洞』被赤红浸染的始末──",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 228,
+   "text": "为调查招致惨状者的去向（有些问题需要确认），涡波拜托缇缇后在岩浆旁发动大魔法『次元决战演算『前日谭』』（维度・GradientRecall，迷宫之战同款）；本次不用咏唱、不进行对魂的『想起收束』、仅使用现存魔力（缇缇负责警戒）；将『现在』和『过去』相联结，观照大洞被赤红浸染的始末（章末悬置）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-f2e142e79717",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0228.txt",
+  "sha": "b5fd9cfb0e999c48376cf2f414386feb8849dc4ce216339f8612cea6ea5e9f29",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

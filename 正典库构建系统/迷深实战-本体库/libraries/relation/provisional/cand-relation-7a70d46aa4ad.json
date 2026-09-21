@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "赛鲁多拉",
+  "rel_type": "同孤儿院出身·好友·旧部",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 227,
+   "line": 66,
+   "quote": "缇缇和赛鲁多拉是同一所孤儿院出身的。缇缇对曾是好友之人的『留恋』似乎有些头绪。",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 57,
+   "quote": "不过赛鲁多拉是下属所以人家对他很了解哦。",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 80,
+   "quote": "只是为了还人家的人情，他甚至一路干到了我军总大将的地位，明明就对那个位子没什么兴趣呢。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 227,
+   "text": "据缇缇口述：二人同一所孤儿院出身、赛鲁多拉为曾是好友之人；作为下属缇缇对他很了解；其为还缇缇人情一路干到军之总大将对位子无兴趣；缇缇因成为王而丧失余裕、始终没能真正理解他的毛病"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7a70d46aa4ad",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0227.txt",
+  "sha": "0e004e70fbbca7d4ced61b70f9f5900d29500ac9c10a6233741e7b732094bb30",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "复仇执念(败北洗刷)",
+  "subject": "诺瓦露"
+ },
+ "evidence": [
+  {
+   "chapter": 230,
+   "line": 79,
+   "quote": "没错，只要再赢过英雄大人你，那场败北就可以彻底洗刷了呢",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 92,
+   "quote": "「不，我记得啊。你不就是一年前在『柯尔库』和我战斗过的诺瓦露么⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 122,
+   "quote": "重要的是向英雄大人复仇。必须要把那天的屈辱洗刷掉才行。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 230,
+   "text": "据涡波回忆她是一年前在『柯尔库』与己战斗过的诺瓦露；其自言'只要再赢过英雄大人你，那场败北就可以彻底洗刷了''重要的是向英雄大人复仇。必须要把那天的屈辱洗刷掉才行'；称涡波'劳拉维亚帅气的英雄大人'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4716ae960d53",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0230.txt",
+  "sha": "6d9f4ae2910396ebe3e4eaedb17603a125707445a21c7cb117b0f6e48c92afa8",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "玛利亚",
+  "rel_type": "旅程支援",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 226,
+   "line": 28,
+   "quote": "一边为玛利亚的旅程提供帮助",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 226,
+   "text": "据斯诺自述：分别后的一年一边为玛利亚的旅程提供帮助（与代理人业务并行）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0f45d7812b25",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0226.txt",
+  "sha": "d34295a5f549ff2c45faa79dba9feaeac71fc3de80af92fa2daf0a429fd5b1fe",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

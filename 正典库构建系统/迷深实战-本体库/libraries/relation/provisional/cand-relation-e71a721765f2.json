@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛·勒伽西",
+  "rel_type": "旧战记忆对照",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 35,
+   "quote": "这种怪物我以前见过。我和帕林库洛在本土中央战斗的时候，它也是在天上飞来飞去的怪物中的一种。",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 97,
+   "quote": "跟帕林库洛战斗的时候，这一招是需要相当的精力和大量的魔力才能使出来的，但现在却如此驾轻就熟。看来服用大量魔石之后，对我已有的魔法也产生了不俗的影响。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 225,
+   "text": "涡波回想与帕林库洛在本土中央的交战：彼时见过同种飞行怪物；『次元斩裂剑』当时需相当的精力和大量的魔力（今昔对照）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e71a721765f2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

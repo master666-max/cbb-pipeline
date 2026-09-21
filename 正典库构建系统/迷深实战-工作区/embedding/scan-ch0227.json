@@ -1,0 +1,91 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "赛鲁多拉",
+   "library_match": "艾尔多拉琉",
+   "similarity": 0.8976
+  },
+  {
+   "candidate": "法芙纳",
+   "library_match": "法芙纳・赫勒比勒夏因",
+   "similarity": 0.9219
+  },
+  {
+   "candidate": "迪普拉库拉",
+   "library_match": "帕林库洛",
+   "similarity": 0.8658
+  },
+  {
+   "candidate": "克洛伊",
+   "library_match": "克洛伊大人",
+   "similarity": 0.8764
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  }
+ ],
+ "pairs": [
+  [
+   "赛鲁多拉",
+   "艾尔多拉琉",
+   0.8976
+  ],
+  [
+   "法芙纳",
+   "法芙纳・赫勒比勒夏因",
+   0.9219
+  ],
+  [
+   "迪普拉库拉",
+   "帕林库洛",
+   0.8658
+  ],
+  [
+   "古奈尔",
+   "古利亚德",
+   0.8251
+  ],
+  [
+   "克洛伊",
+   "克洛伊大人",
+   0.8764
+  ],
+  [
+   "巨型西瓜虫",
+   "锯齿甲虫",
+   0.6751
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "缇缇",
+   "缇缇姐姐",
+   0.8149
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 9,
+  "library": 840,
+  "dup_suspect": 1,
+  "uncertain": 5
+ }
+}

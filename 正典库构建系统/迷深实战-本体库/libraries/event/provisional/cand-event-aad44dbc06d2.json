@@ -1,0 +1,81 @@
+{
+ "canonical": {
+  "entities": [
+   "古奈尔",
+   "同死神相伴的魔女",
+   "大洞",
+   "斯诺·沃克",
+   "玛利亚",
+   "相川涡波",
+   "莉帕"
+  ],
+  "instant": null,
+  "kind": "情报",
+  "name": "西迷宫熔封判明（同死神相伴的魔女传闻）",
+  "tick": 228,
+  "time_verbatim": "入城当日"
+ },
+ "evidence": [
+  {
+   "chapter": 228,
+   "line": 490,
+   "quote": "「据说是『同死神相伴的魔女』用火焰魔法将迷宫的出入口熔解了。整个迷宫的周围都化作了熔岩地带，要恢复通行似乎要等上很久的时间。⋯⋯这个还是亲自去看看情况比较好吧。咱有点半信半疑的说」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 498,
+   "quote": "『大洞』周遭已经化作了熔岩之海。",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 524,
+   "quote": "「既然传闻说是什么『同死神相伴的魔女』，那应该不会有错了⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 526,
+   "quote": "「可是，就我用『维度』查探的结果来看，那两个人并不在这座城里。她们到底是去了哪里呢？」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 528,
+   "quote": "「她们写给我的最后一封信上写着是在这里的啊⋯⋯看来在那之后又向其它地方移动了呢。而且就算有下一封信，那也只会送到柯尔库那边，有点难办了啊」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 228,
+   "text": "古奈尔的下属士兵先入城打探后耳语报告：迷宫似被封锁——据说是『同死神相伴的魔女』用火焰魔法将迷宫出入口熔解、周围尽成熔岩地带→涡波以『维度』核实（大洞周围清一色鲜红/阶梯只剩残骸）→亲赴现场（直径约一千米的大洞+岩浆热气）后斯诺认同传闻→涡波断定魔女身份（文中未明示读者）；『维度』查探显示目标两人并不在城中——斯诺收到的最后一封信写的是在此、看来其后又移动，且就算有下一封信也只会送到柯尔库"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-aad44dbc06d2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0228.txt",
+  "sha": "b5fd9cfb0e999c48376cf2f414386feb8849dc4ce216339f8612cea6ea5e9f29",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

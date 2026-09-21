@@ -1,0 +1,87 @@
+{
+ "canonical": {
+  "entities": [
+   "Gravity・Greed",
+   "『阿雷亚斯家的宝剑诺文』",
+   "斯诺·沃克",
+   "相川涡波",
+   "缇缇",
+   "诺瓦露",
+   "露洁"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "涡波对诺瓦露之战（魔人化vs千算相杀）",
+  "tick": 230,
+  "time_verbatim": "同上章连续场景"
+ },
+ "evidence": [
+  {
+   "chapter": 230,
+   "line": 157,
+   "quote": "「──『Growth』！！『CureRegeneration』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 169,
+   "quote": "这次只要我一个人就够了！就让你看看跟一年前的不同之处吧、英雄大人！──『Gravity・Greed』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 189,
+   "quote": "缇缇用风保护着附近的帐篷和建筑物，露洁则操纵周围的树木守护自己和其余的同伴。",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 211,
+   "quote": "「──『维度・千算相杀』」",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 215,
+   "quote": "结果很简单──『阿雷亚斯家的宝剑诺文』在避开诺瓦露的脏器的情况下刺穿了她的腹部。",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 236,
+   "quote": "无可奈何之下，我只好按照最初的计划──用剑抵在她的手腕上，接着横向挥出，借此切断她右手的韧带。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 230,
+   "text": "诺瓦露以『Growth』『CureRegeneration』强化后突进（速度凌驾敏捷数值）；重力结界与『重力』之球将斯诺角力逼退十米（缇缇以风护帐篷建筑、露洁以树木护同伴）；涡波完成解析后以『维度・千算相杀』相杀重力、拉开剑速在避开脏器处刺穿其腹并宣告'再乱动的话就是死路一条'；诺瓦露不弃战，涡波断其右腕韧带；其斗志不降反增令涡波疑其代价"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-65ab1b0b2f17",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0230.txt",
+  "sha": "6d9f4ae2910396ebe3e4eaedb17603a125707445a21c7cb117b0f6e48c92afa8",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

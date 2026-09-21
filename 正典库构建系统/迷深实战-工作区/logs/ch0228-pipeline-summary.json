@@ -1,0 +1,300 @@
+{
+ "unit": "ch0228",
+ "chapter": 228,
+ "ingestion_index": 197,
+ "title": "245.第二迷宫都市",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 34,
+  "pass": 34,
+  "intercept": 0,
+  "admitted": 34,
+  "quarantined": 0
+ },
+ "tracks": {
+  "consistent-duplicate": 3,
+  "contradiction": 5,
+  "on-create": 26
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-941bd223de1e",
+   "type": "entity",
+   "name": "芙洛拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d2415a36dea8",
+   "type": "entity",
+   "name": "古奈尔",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-bfc5306ba784"
+   }
+  },
+  {
+   "record_id": "cand-entity-1e389c448609",
+   "type": "entity",
+   "name": "缇缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-07b46905f71a"
+   }
+  },
+  {
+   "record_id": "cand-entity-3a1e3b39f945",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m44"
+   }
+  },
+  {
+   "record_id": "cand-entity-7fcccf47804d",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m156"
+   }
+  },
+  {
+   "record_id": "cand-entity-682605d3d648",
+   "type": "entity",
+   "name": "同死神相伴的魔女",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-4b71c50dbd75",
+   "type": "entity",
+   "name": "第二迷宫都市达利尔",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4265d39422ca-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-159d23bb44ce",
+   "type": "entity",
+   "name": "历基亚国",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-1fd486c4f5e4"
+   }
+  },
+  {
+   "record_id": "cand-entity-4e763f6a2199",
+   "type": "entity",
+   "name": "白樱（Pieris・EithéA）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ed943a372ab4",
+   "type": "entity",
+   "name": "黑云",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9b8cf619f3ed",
+   "type": "entity",
+   "name": "大洞",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-cafa0c8cc0f6",
+   "type": "entity",
+   "name": "南方联盟",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-02a47c4bfc10"
+   }
+  },
+  {
+   "record_id": "cand-entity-2acc76fa92c0",
+   "type": "entity",
+   "name": "飞翔翠石制轻铠路易芬理德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-3c395d34dec1"
+   }
+  },
+  {
+   "record_id": "cand-entity-0240d010c7bc",
+   "type": "entity",
+   "name": "始祖与魔王的魔剑BraveFluorite",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e4a7367cf744",
+   "type": "relation",
+   "name": "缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1aa0a81714b7",
+   "type": "relation",
+   "name": "古奈尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-7cb52851d3ec",
+   "type": "relation",
+   "name": "古奈尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-bb258fb9160e",
+   "type": "relation",
+   "name": "芙洛拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-204127e58fd5",
+   "type": "relation",
+   "name": "佩艾希亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c01c44b86db9",
+   "type": "relation",
+   "name": "古奈尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-cf284ec25297",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c398f73754f8",
+   "type": "relation",
+   "name": "缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-953a3c21236f",
+   "type": "event",
+   "name": "古奈尔车队重逢与捕获同行",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-1339b5aa67c9",
+   "type": "event",
+   "name": "缇缇勇者断念与装身托付",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-103cc5b24537",
+   "type": "event",
+   "name": "缇缇天职确认（庭师）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-fe0173e6e08b",
+   "type": "event",
+   "name": "艾德天职探讨（老师）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-31ad5b424659",
+   "type": "event",
+   "name": "抵达第二迷宫都市达利尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-aad44dbc06d2",
+   "type": "event",
+   "name": "西迷宫熔封判明（同死神相伴的魔女传闻）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f2e142e79717",
+   "type": "event",
+   "name": "涡波发动『次元决战演算『前日谭』』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-0aaaa7bd4ae9",
+   "type": "foreshadow",
+   "name": "黑云再现：千年前的悲剧即将重演的前兆",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-dca915b2072c",
+   "type": "foreshadow",
+   "name": "『同死神相伴的魔女』的身份与去向",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-e5e5e233e276",
+   "type": "foreshadow",
+   "name": "缇缇『没多少时间了』的暗示",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-d97e7c38c505",
+   "type": "foreshadow",
+   "name": "斯诺的身体将变得和『理的盗窃者』相近的警告",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ea832fab4218",
+   "type": "foreshadow",
+   "name": "涡波的服装行业适性",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 197,
+  "pseudo_date": "2000-07-16",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 14,
+   "library": 841,
+   "dup_suspect": 2,
+   "uncertain": 3
+  },
+  "neo4j": {
+   "nodes": 730,
+   "edges": 1619,
+   "batches": 11,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 714,
+    "edges": 1619
+   }
+  }
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "无战意·求手下留情",
+  "subject": "露洁"
+ },
+ "evidence": [
+  {
+   "chapter": 230,
+   "line": 130,
+   "quote": "「⋯⋯好吧！不过，拜托你能像一年前那样下手轻一些！劳拉维亚的英雄先生！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 117,
+   "quote": "「等等，诺瓦露！先把『魔人化』解除掉！在开打之前我觉得还是和对方谈一谈比较好。相川涡波应该不是那种会凌虐弱者的人。他和南方那帮人应该没关系！我总觉得老师刚才的样子有些奇怪！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 230,
+   "text": "'拜托你能像一年前那样下手轻一些！劳拉维亚的英雄先生'；判断'相川涡波应该不是那种会凌虐弱者的人。他和南方那帮人应该没关系'；涡波令其'至少你不要出手'，她应允"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ab420fc4bf28",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0230.txt",
+  "sha": "6d9f4ae2910396ebe3e4eaedb17603a125707445a21c7cb117b0f6e48c92afa8",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

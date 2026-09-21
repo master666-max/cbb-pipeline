@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "最小的弟弟（自称）",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 226,
+   "line": 80,
+   "quote": "对的，涡涡是人家排第二的弟弟啦！顺带一说最小的弟弟是莱纳！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 226,
+   "text": "缇缇自定位莱纳为其'最小的弟弟'（与涡波=排第二的弟弟并列自述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-213bc6c82506",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0226.txt",
+  "sha": "d34295a5f549ff2c45faa79dba9feaeac71fc3de80af92fa2daf0a429fd5b1fe",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

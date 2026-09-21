@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "次元决战演算『前日谭』",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "情报",
+  "name": "过去视确认与同伴情报交换",
+  "tick": 229,
+  "time_verbatim": "现在·前日谭效果解除后（涡波一行在『大洞』现场）"
+ },
+ "evidence": [
+  {
+   "chapter": 229,
+   "line": 116,
+   "quote": "「──呼。斯诺，果然原因出在玛利亚身上。我刚才用『维度』透过留存在此地的魔力确认了当时的情况，不会有错的」",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 127,
+   "quote": "「另外还有莉帕和格连，而且连西娅酱也在玛利亚身边」",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 131,
+   "quote": "比起莉帕，斯诺更在意格连的问题。想来也是，因为我此前在『史诗探索者』得到的消息也说他正投身于战事之中，或许是在中途抽身了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 134,
+   "quote": "「玛利亚她们在放火焚烧了这里之后，为了求得对付『支配之王』的办法而前往了南方。虽然先跟玛利亚她们汇合比较好⋯⋯但是那样一来去见艾德的日程就又要被耽搁了⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 229,
+   "text": "涡波以前日谭回溯确认惨状犯人（玛利亚/莉帕/格连/西娅在列）并告知斯诺；向缇缇介绍玛利亚（火焰魔法+守护者魔石=阿尔缇的魔石）；缇缇确认莉帕=『格林・利姆・莉帕』寄宿于玛利亚；斯诺闻兄消息意外（史诗探索者消息为投身战事、推测中途抽身）；涡波权衡汇合利弊（想尽快报平安vs见艾德日程被耽搁）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-089a19cc444a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0229.txt",
+  "sha": "cfabe7016c8ee5eb9092db7f9518288993b305a83bd390db77f5f508181f1bc5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

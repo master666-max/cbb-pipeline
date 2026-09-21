@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "赛鲁多拉",
+  "rel_type": "异世界同行契约·积极协助(千年前)",
+  "subject": "始祖涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 227,
+   "line": 71,
+   "quote": "可能就是因为如此吧，他对身为『异邦人』的涡涡提供了积极的协助。你们两个应该是订下了等一切结束之后就一起去异世界的『契约』来着",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 80,
+   "quote": "人家记得他是唯一一个用魔法将涡涡的世界的兵器再现出来的呢。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 227,
+   "text": "据缇缇口述：赛鲁多拉对身为『异邦人』的涡涡提供了积极的协助；二人订下了等一切结束之后就一起去异世界的『契约』；'感觉他和千年前的涡波关系也不错'；他是唯一一个用魔法将涡涡的世界的兵器再现出来的人"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-768c98c138f9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0227.txt",
+  "sha": "0e004e70fbbca7d4ced61b70f9f5900d29500ac9c10a6233741e7b732094bb30",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

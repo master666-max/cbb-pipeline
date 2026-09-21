@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "缇缇",
+  "rel_type": "迷宫带出(据缇缇)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 229,
+   "line": 164,
+   "quote": "「艾德啊，人家来找你了哦。就在几天前，人家被涡涡从迷宫中带出来了呢」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 229,
+   "text": "据缇缇对艾德自述：就在几天前、人家被涡涡从迷宫中带出来了"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-39be7bfbac5d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0229.txt",
+  "sha": "cfabe7016c8ee5eb9092db7f9518288993b305a83bd390db77f5f508181f1bc5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

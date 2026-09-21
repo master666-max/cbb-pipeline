@@ -1,0 +1,98 @@
+{
+ "canonical": {
+  "entities": [
+   "XiphiasSpear",
+   "古奈尔",
+   "巨型西瓜虫",
+   "斯诺·沃克",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "战斗(救援)",
+  "name": "巨型西瓜虫讨伐（第二次救援作战）",
+  "tick": 227,
+  "time_verbatim": "西行次日（出发柯尔库翌日前后）"
+ },
+ "evidence": [
+  {
+   "chapter": 227,
+   "line": 118,
+   "quote": "「──啊，不对、稍等一下。这个感觉、它好像是在追着什么⋯⋯？在它的前进方向上有其他人⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 119,
+   "quote": "我拓展『维度』的范围，结果发现了和我们一样驾着马车移动的团体。马车一共有四辆，应该说是车队更准确。",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 129,
+   "quote": "「毕竟是认识的人被缠上了啊⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 140,
+   "quote": "「既然决定好了，那么第二次救援作战就开始吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 142,
+   "quote": "接下来的战斗可以说是XiphiasSpear一战的复刻。",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 145,
+   "quote": "「──之前虽然没好好握住，不过这次可不一样了！接招吧、『绝冲风击・改』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 147,
+   "quote": "仅仅如此就产生了广域魔法的效果。随着一道震耳欲聋的爆炸声，以巨型西瓜虫所在位置为中心，公路被砸成了一座环形山口的地貌。当然，敌人也被砍了个稀烂，非常利索地断气儿了。",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 159,
+   "quote": "「你好啊，古奈尔酱。我们又见面了呢」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 227,
+   "text": "『维度』不管怎么走老发现怪物身影（绕行致时间拖久）；本次巨型西瓜虫的行动带有鲜明的目的性——追赶驾马车移动的四辆车队；涡波拓展『维度』察明车队成员=认识的人（昨天才从柯尔库逃掉的古奈尔）→'毕竟是认识的人被缠上了啊'决意救援；分工：战斗交给缇缇（请战'人家想当职业勇者'）、涡波与斯诺抵御余波专心救人（缇缇的魔法都是直来直往的攻击）；战斗=XiphiasSpear一战的复刻、唯一不同=陆地→胜负顷刻决出：缇缇于敌正上方劈剑放『绝冲风击・改』产生广域魔法效果、公路被砸成环形山口、怪物利索断气；斯诺『Dragon・Wave』抵消余波、无碎屑飞溅；缇缇自愁下手太狠（大剑力道未习惯）；涡波以『维度』确认安全后向优先保护的少女古奈尔问候再会，古奈尔哀嚎'明明是咱先出发的'快马加鞭仍被追上"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a7faeb554dde",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0227.txt",
+  "sha": "0e004e70fbbca7d4ced61b70f9f5900d29500ac9c10a6233741e7b732094bb30",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

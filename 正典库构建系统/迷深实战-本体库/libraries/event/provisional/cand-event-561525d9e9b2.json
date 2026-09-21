@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "玛利亚",
+   "第二迷宫都市达利尔",
+   "耶梦加得之炎"
+  ],
+  "instant": null,
+  "kind": "灾害",
+  "name": "第二迷宫封锁与达利尔大混乱（过去视所见）",
+  "tick": 229,
+  "time_verbatim": "过去视回溯（近期·玛利亚队伍封锁第二迷宫时；原文无绝对坐标）"
+ },
+ "evidence": [
+  {
+   "chapter": 229,
+   "line": 24,
+   "quote": "没过多久，『第二迷宫都市达利尔』便被混乱的漩涡所吞没。",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 39,
+   "quote": "幸运的是，炎龙将螺旋阶梯全部熔化时，刚好最后一个探索者逃到了『大洞』之外。真是再差一点就会变成将活人烧成泥水的大惨剧了。",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 45,
+   "quote": "岩浆在她的影响下逐渐冷却，最终生成了一条通往曾经是迷宫入口的道路。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 229,
+   "text": "赤黑色泥（岩浆）自迷宫入口横穴翻涌+炽烈火焰喷出似火山喷发→探索者弃自尊夺路而逃、悲鸣支配整个地区、达利尔被混乱漩涡吞没；玛利亚以耶梦加得之炎召炎龙熔解螺旋阶梯（最后一个探索者刚逃出即全熔、差一步成烧活人大惨剧）、挥手驱散炎龙后冷却岩浆生成通往旧入口之路=封死迷宫入口"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-561525d9e9b2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0229.txt",
+  "sha": "cfabe7016c8ee5eb9092db7f9518288993b305a83bd390db77f5f508181f1bc5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

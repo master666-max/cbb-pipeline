@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "西迷宫遗址",
+  "rel_type": "驻留(据称)",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 227,
+   "line": 9,
+   "quote": "根据从拉丝缇娅拉和斯诺口中得到的信息来看，玛利亚和莉帕似乎正待在那里，将这两人带上之后，我们就可以改向北方进发了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 227,
+   "text": "据拉丝缇娅拉和斯诺口中得到的信息：玛利亚和莉帕似乎正待在西迷宫，带上二人后一行改向北方进发——所在待会合验证"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5a3d075a7947",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0227.txt",
+  "sha": "0e004e70fbbca7d4ced61b70f9f5900d29500ac9c10a6233741e7b732094bb30",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

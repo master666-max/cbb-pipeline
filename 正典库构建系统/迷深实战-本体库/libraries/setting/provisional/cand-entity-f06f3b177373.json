@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "地点(第二迷宫都市·本土中央)",
+  "name": "达利尔"
+ },
+ "evidence": [
+  {
+   "chapter": 226,
+   "line": 291,
+   "quote": "踏上了前往位于本土中央的『第二迷宫都市达利尔』的旅途",
+   "vol": 1
+  },
+  {
+   "chapter": 226,
+   "line": 278,
+   "quote": "「是的，然后再经『达利尔』前往北方的『佩艾希亚』」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 226,
+   "text": "位于本土中央的『第二迷宫都市』；行程第二站（柯尔库→达利尔→佩艾希亚）；玛利亚预定在那里被接上同行"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-f06f3b177373",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0226.txt",
+  "sha": "d34295a5f549ff2c45faa79dba9feaeac71fc3de80af92fa2daf0a429fd5b1fe",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

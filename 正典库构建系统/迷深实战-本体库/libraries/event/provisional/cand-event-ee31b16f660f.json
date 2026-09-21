@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "Centidreadnought",
+   "克洛伊·希达尔克",
+   "圣柯尔库堡",
+   "斯诺·沃克",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "危机",
+  "name": "Centidreadnought袭港急报与迎击准备",
+  "tick": 225,
+  "time_verbatim": "入港当日·免职令出示被打断时"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 27,
+   "quote": "「之前的那个怪物正从西面向我们这边袭来！虽然数量不是十只而是一只，但也是不可小觑的威胁。现在指挥部那边正在制定以驻守在『圣柯尔库堡』的兵力迎击的计划，可能的话希望克洛伊大人也能参与指挥」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 29,
+   "quote": "「没错。虽然斯诺大人此前应该是前往迎击了，但好像还是有漏网之鱼。斯诺大人她也还没有回来」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 33,
+   "quote": "「怪物」Centidreadnought：级别32",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 39,
+   "quote": "「没错，有大型的飞行怪物正在向这边袭来。方向是西南偏西，距离十五千米，数量为一匹」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 225,
+   "text": "柯尔库士兵急报：'之前的那个怪物'自西面袭来（一匹·斯诺此前迎击的漏网之鱼·斯诺未归）；指挥部拟以『圣柯尔库堡』兵力迎击并请克洛伊参与指挥；克洛伊压下动摇（『维度』看破其心中动摇）表态'回应她的信赖'；涡波以『维度』侦查判明：西南偏西·十五千米·一匹；'怪物'Centidreadnought级别32≈十名联合国精英探索者。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ee31b16f660f",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

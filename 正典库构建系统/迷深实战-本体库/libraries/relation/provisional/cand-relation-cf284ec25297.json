@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "古奈尔",
+  "rel_type": "关系质询",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 228,
+   "line": 278,
+   "quote": "「我已经从那个位子上辞退了，所以直接叫我斯诺就行。比起这个，我有点在意的是，古奈尔和涡波是什么关系⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 288,
+   "quote": "「就是这样了、斯诺。顺带一说，咱对会长真的没什么想法所以请放心吧。而且那种跟自杀无异的竞赛，咱就是死都不想掺和进去。真心的」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 228,
+   "text": "斯诺在意古奈尔与涡波的关系而迫近质询（古奈尔被吓得面如纸色、以『沃克代理总司令殿下』敬称）；听完涡波淡化说明与古奈尔『对会长无想法/不掺和竞赛』的补充后老实退开"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-cf284ec25297",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0228.txt",
+  "sha": "b5fd9cfb0e999c48376cf2f414386feb8849dc4ce216339f8612cea6ea5e9f29",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "提供马车(规格小而品级高)",
+  "subject": "克洛伊"
+ },
+ "evidence": [
+  {
+   "chapter": 227,
+   "line": 3,
+   "quote": "虽然克洛伊小姐为我们准备的马车规格不大，但品级之高绝对是一目了然。",
+   "vol": 1
+  },
+  {
+   "chapter": 227,
+   "line": 6,
+   "quote": "至少在这趟旅行中是不用担心它会壊掉了吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 227,
+   "text": "为涡波一行准备的马车规格不大但品级之高一目了然：美轮美奂的内部装潢、冠绝全军的动力马匹、讲究的车轮——涡波推测为打造这辆马车搭上了不俗的人力物力，至少这趟旅行不用担心它壊掉"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e4ba2591956e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0227.txt",
+  "sha": "0e004e70fbbca7d4ced61b70f9f5900d29500ac9c10a6233741e7b732094bb30",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

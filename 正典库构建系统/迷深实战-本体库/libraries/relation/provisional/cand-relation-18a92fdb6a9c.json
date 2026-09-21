@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "离任安排(拜托带走)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 15,
+   "quote": "拉丝缇娅拉拜托我将斯诺带走，这当然就意味着要让斯诺从现有的职位上离职。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 225,
+   "text": "拉丝缇娅拉拜托涡波将斯诺带走——'这当然就意味着要让斯诺从现有的职位上离职'（与免职令敕令互为表里）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.86,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-18a92fdb6a9c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

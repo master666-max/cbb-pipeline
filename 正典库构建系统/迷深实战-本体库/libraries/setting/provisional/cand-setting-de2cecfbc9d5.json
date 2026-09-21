@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 230,
+  "fact": "三名年幼『魔石人类』的魔力机制：生来便被刻进血中的『咏唱』自动进行——'她们的血伴随着热量流经全身，同时生产出多得惊人的魔力'（远超状态所示数值）；再叠加亲口诵祷的『咏唱』，两者合二为一释放神圣魔法（共鸣魔法）；战斗中再补第三重『咏唱』恢复光矢之力——累计三重的『代价』惨重，'作为让她们释放出不逊于斯诺的魔力的代价，三名『魔石人类』会牺牲相应的重要之物'（据涡波判断）；牺牲内容本章未揭示",
+  "name": "血刻『咏唱』与口诵『咏唱』的二重叠加（ch230）",
+  "tick": 230
+ },
+ "evidence": [
+  {
+   "chapter": 230,
+   "line": 264,
+   "quote": "这跟之前那次一样，也是因为生来便被刻进血中的『咏唱』所致。她们的血伴随着热量流经全身，同时生产出多得惊人的魔力。",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 267,
+   "quote": "除了刻在血中的自动进行的『咏唱』之外，还加上了她们亲口诵祷的『咏唱』，两者合二为一最终释放出神圣魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 277,
+   "quote": "三名『魔石人类』补以更进一步的『咏唱』，恢复了光矢的力量。",
+   "vol": 1
+  },
+  {
+   "chapter": 230,
+   "line": 280,
+   "quote": "但这累计三重的『咏唱』让她们付出的『代价』实在令人看不下去。尽管只有一时，但作为让她们释放出不逊于斯诺的魔力的代价，三名『魔石人类』会牺牲相应的重要之物。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 230,
+   "text": "咏唱机制新层：血刻自动+口诵叠加（据涡波观察）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-de2cecfbc9d5",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0230.txt",
+  "sha": "6d9f4ae2910396ebe3e4eaedb17603a125707445a21c7cb117b0f6e48c92afa8",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

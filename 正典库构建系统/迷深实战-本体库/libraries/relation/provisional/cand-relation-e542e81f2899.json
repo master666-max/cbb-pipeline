@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "同行脱逃(单方离队)",
+  "subject": "古奈尔"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 45,
+   "quote": "「──然而这正是千载难逢的机会！就是现在！咱这就溜喽、后面的事就拜托你们了！等咱跑远了就会为了彼此再也不见而祈祷滴─！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 51,
+   "quote": "「算了，就放她去吧。看上去她是真的不想应付我们。这次只要知道有从千年前活到今天的人存在就足够了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 225,
+   "text": "趁乱宣言'咱这就溜喽'逃离同行；护卫追之不及（'司空见惯'）；缇缇提议追回，涡波放行（'就放她去吧⋯⋯这次只要知道有从千年前活到今天的人存在就足够了'）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e542e81f2899",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

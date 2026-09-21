@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "古奈尔",
+   "斯诺·沃克",
+   "相川涡波",
+   "第二迷宫都市达利尔",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "移动",
+  "name": "抵达第二迷宫都市达利尔",
+  "tick": 228,
+  "time_verbatim": "抵达当日（入城后时间刚过正午）"
+ },
+ "evidence": [
+  {
+   "chapter": 228,
+   "line": 370,
+   "quote": "马车在公路上不断前进，终于到了用肉眼就可以看到天边的黑云的位置。按照古奈尔酱的话，那应该就是笼罩在『第二迷宫都市达利尔』上空的黑云了吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 410,
+   "quote": "第二迷宫都市达利尔是一座既没有城墙也不设关卡的都市。",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 414,
+   "quote": "不过对我们旅人而言这自然是再好不过，无需多费周折便可轻松入城。入城之后，我们立马下了马车前往街上漫步。古奈尔酱的车队需要补给和休养，我则需要与同伴们汇合。",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 416,
+   "quote": "据拉丝缇娅拉和斯诺的话来说，玛利亚和莉帕应该就在这里⋯⋯",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 228,
+   "text": "远望天边黑云（白日与黑夜无异）→缇缇觉怀念、古奈尔确认与千年前黑云完全同质并提醒其收敛→无城墙无关卡轻松入城，下车漫步搜索同伴（玛利亚和莉帕应在该处——据拉丝缇娅拉和斯诺）→都市实况观察：战区最前线/武装探索者兼具驻屯兵职责/南方联盟募兵告示/帐篷多于建筑/大灾厄致平地稀少/维度发现在平整土地与植树的工程；古奈尔叹比半年前来时糟糕；沿途地貌荒野令涡波回想一年前与帕林库洛之战（时隔一年重回战场）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-31ad5b424659",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0228.txt",
+  "sha": "b5fd9cfb0e999c48376cf2f414386feb8849dc4ce216339f8612cea6ea5e9f29",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,450 @@
+{
+ "unit": "ch0229",
+ "chapter": 229,
+ "ingestion_index": 198,
+ "title": "246.走失児童",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 54,
+  "pass": 54,
+  "intercept": 0,
+  "admitted": 54,
+  "quarantined": 0
+ },
+ "tracks": {
+  "contradiction": 4,
+  "on-create": 41,
+  "consistent-duplicate": 9
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-04a5433fd24d",
+   "type": "entity",
+   "name": "玛利亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6ec55f218d59-m64"
+   }
+  },
+  {
+   "record_id": "cand-entity-890363c260b2",
+   "type": "entity",
+   "name": "莉帕",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-62211c4ac0fd-m42"
+   }
+  },
+  {
+   "record_id": "cand-entity-5ace4f0abce4",
+   "type": "entity",
+   "name": "格连",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7d375a26a456-m16"
+   }
+  },
+  {
+   "record_id": "cand-entity-37731a1e768f",
+   "type": "entity",
+   "name": "西娅・勒伽西",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3d467b91ce6c-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-43cde1560ccd",
+   "type": "entity",
+   "name": "艾德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-43aa892f43d2-m29"
+   }
+  },
+  {
+   "record_id": "cand-entity-6b2a69763267",
+   "type": "entity",
+   "name": "缇缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-9b64e47e2888"
+   }
+  },
+  {
+   "record_id": "cand-entity-b486fa5b17d9",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m157"
+   }
+  },
+  {
+   "record_id": "cand-entity-4038bdd7a56d",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m45"
+   }
+  },
+  {
+   "record_id": "cand-entity-688c0c0bb8b8",
+   "type": "entity",
+   "name": "古奈尔",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-d0d8c52afe8e-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-18bf6cba1f28",
+   "type": "entity",
+   "name": "阿尔缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d98f14d77da7"
+   }
+  },
+  {
+   "record_id": "cand-entity-a95cf925c348",
+   "type": "entity",
+   "name": "使徒迪普拉库拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-8083fc3ec598",
+   "type": "entity",
+   "name": "赛鲁多拉",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-e961bce538e9"
+   }
+  },
+  {
+   "record_id": "cand-entity-5e8cbd0df81c",
+   "type": "entity",
+   "name": "法芙纳・赫勒比勒夏因",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-c14bd185df91"
+   }
+  },
+  {
+   "record_id": "cand-entity-b7c2dcf1b5d0",
+   "type": "entity",
+   "name": "第二迷宫都市达利尔",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4265d39422ca-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-a1a6d30ad1b1",
+   "type": "entity",
+   "name": "世界树（Yggdrasil）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d3448cc0cb3f",
+   "type": "entity",
+   "name": "耶梦加得之炎",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-614452616ddb",
+   "type": "entity",
+   "name": "次元决战演算『前日谭』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-72a5f26a604f",
+   "type": "entity",
+   "name": "通信机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-1293a83b2143",
+   "type": "entity",
+   "name": "缇达的魔石",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-db68a81ec35c",
+   "type": "entity",
+   "name": "白樱",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4192037d5b0c",
+   "type": "relation",
+   "name": "缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c6ec0f95872e",
+   "type": "relation",
+   "name": "格连",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-51e1a8eb48cb",
+   "type": "relation",
+   "name": "西娅・勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4b8caf232473",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c5a6d827f8d6",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-2523fcc3eb17",
+   "type": "relation",
+   "name": "玛利亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-3308b2be900e",
+   "type": "relation",
+   "name": "莉帕",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e49ae573e0eb",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-39be7bfbac5d",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-616d05f354bf",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-13d1d9cfc904",
+   "type": "relation",
+   "name": "格连",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c23e56c93da1",
+   "type": "relation",
+   "name": "使徒迪普拉库拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9160bedf89f4",
+   "type": "relation",
+   "name": "西娅・勒伽西",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1e5d397b6a6d",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-3b7d6de25ba8",
+   "type": "setting",
+   "name": "『魔人返还』计划（艾德）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-db3078c6ab74",
+   "type": "setting",
+   "name": "魔人与兽人的千年史（圣人缇娅拉改造说）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-b12d03d3fa7e",
+   "type": "setting",
+   "name": "当今世界实力排序（据莉帕）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-6b6e80178913",
+   "type": "setting",
+   "name": "守护者彼此不一定全都相识",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-030f4dc31712",
+   "type": "setting",
+   "name": "『庭师』与『老师』——姐弟本有人生",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-610c55b9cc38",
+   "type": "setting",
+   "name": "昔日南方战力名录（据艾德）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-5c6700c4105c",
+   "type": "setting",
+   "name": "通信机开发与涡波的近卫骑士团长时期",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c4b92bd822c6",
+   "type": "setting",
+   "name": "『亲和』机制",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-561525d9e9b2",
+   "type": "event",
+   "name": "第二迷宫封锁与达利尔大混乱（过去视所见）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-d701b2939fd3",
+   "type": "event",
+   "name": "玛利亚队伍集结与南下出发（过去视所见）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-089a19cc444a",
+   "type": "event",
+   "name": "过去视确认与同伴情报交换",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-97a2ec379fcd",
+   "type": "event",
+   "name": "汇合抉择与南行提议",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a2036b46c5ae",
+   "type": "event",
+   "name": "白樱通信机来电（艾德）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-bb0bd7f0645f",
+   "type": "event",
+   "name": "缇缇拒绝归还与归乡恳愿（艾德动摇）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-0dcf87d3dba8",
+   "type": "foreshadow",
+   "name": "艾德动摇尽头的台词（章末悬置）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2d09d1ca1c3f",
+   "type": "foreshadow",
+   "name": "世界树烧却计划（逼出迪普拉库拉）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-cdae79bc4301",
+   "type": "foreshadow",
+   "name": "格连脑中的声音",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-d976dae5bfb4",
+   "type": "foreshadow",
+   "name": "亲和的血缘条件不足",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c65b74502970",
+   "type": "foreshadow",
+   "name": "缇缇的了无遗憾逝去愿望",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-a5462924b228",
+   "type": "foreshadow",
+   "name": "王座交替准备完毕与命定之王",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 198,
+  "pseudo_date": "2000-07-17",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 20,
+   "library": 842,
+   "dup_suspect": 2,
+   "uncertain": 10
+  },
+  "neo4j": {
+   "nodes": 737,
+   "edges": 1633,
+   "batches": 11,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 721,
+    "edges": 1633
+   }
+  }
+ }
+}

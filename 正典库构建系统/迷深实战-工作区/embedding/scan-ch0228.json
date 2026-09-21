@@ -1,0 +1,111 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  },
+  {
+   "candidate": "始祖与魔王的魔剑BraveFluorite",
+   "library_match": "始祖和魔王的魔剑BraveFluorite",
+   "similarity": 0.9899
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "芙洛拉",
+   "library_match": "芙洛拉・塞斯提亚",
+   "similarity": 0.9139
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "飞翔翠石制轻铠路易芬理德",
+   "library_match": "『飞翔翠石制轻铠路易芬理德』",
+   "similarity": 0.8582
+  }
+ ],
+ "pairs": [
+  [
+   "芙洛拉",
+   "芙洛拉・塞斯提亚",
+   0.9139
+  ],
+  [
+   "古奈尔",
+   "古利亚德",
+   0.8251
+  ],
+  [
+   "缇缇",
+   "缇缇姐姐",
+   0.8149
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "同死神相伴的魔女",
+   "『慕影死神（格林・利姆・莉帕）』",
+   0.6441
+  ],
+  [
+   "第二迷宫都市达利尔",
+   "迷宫联合国",
+   0.5495
+  ],
+  [
+   "历基亚国",
+   "艾尔多拉琉",
+   0.7522
+  ],
+  [
+   "白樱（Pieris・EithéA）",
+   "白色精灵",
+   0.7211
+  ],
+  [
+   "黑云",
+   "悬影",
+   0.731
+  ],
+  [
+   "大洞",
+   "大空洞",
+   0.849
+  ],
+  [
+   "南方联盟",
+   "北方同盟",
+   0.8413
+  ],
+  [
+   "飞翔翠石制轻铠路易芬理德",
+   "『飞翔翠石制轻铠路易芬理德』",
+   0.8582
+  ],
+  [
+   "始祖与魔王的魔剑BraveFluorite",
+   "始祖和魔王的魔剑BraveFluorite",
+   0.9899
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 14,
+  "library": 841,
+  "dup_suspect": 2,
+  "uncertain": 3
+ }
+}

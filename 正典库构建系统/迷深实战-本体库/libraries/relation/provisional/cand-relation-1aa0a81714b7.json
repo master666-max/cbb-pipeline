@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "千年前相识",
+  "subject": "古奈尔"
+ },
+ "evidence": [
+  {
+   "chapter": 228,
+   "line": 282,
+   "quote": "「这就说来话长了⋯⋯嘛，感觉就跟熟人差不多吧。我昨天跟你讲过『千年前』的事不是么，她就是我当时的相识。虽然我这边因为没有记忆所以不是那么熟就是了」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 74,
+   "quote": "之前我使用『连接』得到的信息真的仅有最小的限度，所以我所不知道的相川涡波和古奈尔酱进行过的冒険还有很多。",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 262,
+   "quote": "「嗯─，会长这人颇有匠人气质，所以比较适合开服装店或者木工之类的。而且会长以前就跟咱说过想从事跟服装有关的行业来着呢。讲道理，咱觉得会长应该是跟咱同种类型的幕后工作者」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 228,
+   "text": "涡波向斯诺说明古奈尔是千年前当时的相识（自己无记忆不算熟）；古奈尔自证对会长无想法、死都不想掺和『跟自杀无异的竞赛』；千年前两人的冒険因『连接』所得信息极小而多不明；古奈尔评涡波有匠人气质（适合服装店或木工）、属与自己同种的幕后工作者，并称会长以前跟她说过想从事服装相关行业"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1aa0a81714b7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0228.txt",
+  "sha": "b5fd9cfb0e999c48376cf2f414386feb8849dc4ce216339f8612cea6ea5e9f29",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『LivingLegend号』",
+  "rel_type": "驻港手续斡旋",
+  "subject": "克洛伊·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 4,
+   "quote": "不过多亏了有克洛伊小姐的介绍，手续的办理非常顺利。不然的话，像『LivingLegend号』这样的大型船只肯定要经过相当严格的审查的，但利用克洛伊小姐的立场，这些流程统统被免除了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 225,
+   "text": "凭克洛伊的立场，大型船『LivingLegend号』免于严格审查，驻港手续顺利完成。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ae50036d04b2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

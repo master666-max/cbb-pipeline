@@ -1,0 +1,96 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  },
+  {
+   "candidate": "克洛伊・希达尔克",
+   "library_match": "克洛伊·希达尔克",
+   "similarity": 0.9898
+  },
+  {
+   "candidate": "佩艾希亚",
+   "library_match": "佩艾西亚",
+   "similarity": 0.9582
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "柯尔库",
+   "library_match": "克罗",
+   "similarity": 0.8596
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "克洛伊・希达尔克",
+   "克洛伊·希达尔克",
+   0.9898
+  ],
+  [
+   "理的盗窃者",
+   "地之理的盗窃者",
+   0.8366
+  ],
+  [
+   "混账三骑士",
+   "骑士小姐",
+   0.6047
+  ],
+  [
+   "柯尔库",
+   "克罗",
+   0.8596
+  ],
+  [
+   "达利尔",
+   "迪普拉库拉",
+   0.833
+  ],
+  [
+   "佩艾希亚",
+   "佩艾西亚",
+   0.9582
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 10,
+  "library": 836,
+  "dup_suspect": 3,
+  "uncertain": 3
+ }
+}

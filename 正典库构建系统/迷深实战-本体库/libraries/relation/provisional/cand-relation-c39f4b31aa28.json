@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "部下敬仰(上下级)",
+  "subject": "克洛伊·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 18,
+   "quote": "「怎、怎么可以⋯⋯根本没有人能够代替斯诺大人的──」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 30,
+   "quote": "「⋯⋯镇静一点。斯诺大人她一定是相信我们的能力，认为只有一匹的话交给我们也没有问题才会有此事态。我们必须要回应她的信赖才可以」",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 217,
+   "quote": "不过，虽然全场都噤声不语，但唯有一人面露愠色。距离斯诺最近、也是最敬爱斯诺的克洛伊小姐狠狠地瞪着我。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 225,
+   "text": "视免职令为重大冲击（'根本没有人能够代替斯诺大人的'）；动员时称'斯诺大人她一定是相信我们的能力⋯⋯我们必须要回应她的信赖'；见斯诺丑态大惊失色；叙述定位'距离斯诺最近、也是最敬爱斯诺的克洛伊小姐'；对斯诺辞职宣言惨叫。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c39f4b31aa28",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

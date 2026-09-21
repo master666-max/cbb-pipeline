@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "古奈尔",
+  "rel_type": "主从同行(车队代管)",
+  "subject": "芙洛拉"
+ },
+ "evidence": [
+  {
+   "chapter": 228,
+   "line": 90,
+   "quote": "「啊、请您放开古奈尔酱！拜托您了！」",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 98,
+   "quote": "咱接下来会陪在会长身边跟他们打交道，车队那边就拜托芙洛拉了⋯⋯",
+   "vol": 1
+  },
+  {
+   "chapter": 228,
+   "line": 104,
+   "quote": "接着，在混乱中观望着我们这边的状态的护卫们听从正统派公主的安排，将车队的阵型恢复了原状。只剩下古奈尔酱一个人上了我们的马车。她没有带上其他任何一名护卫的骑士，可以说是单刀赴会。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 228,
+   "text": "芙洛拉在缇缇捕获古奈尔时恳求放人；古奈尔谢其心意后自认命运已定、将车队托付芙洛拉；护卫们听从正统派公主的安排恢复车队阵型"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bb258fb9160e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0228.txt",
+  "sha": "b5fd9cfb0e999c48376cf2f414386feb8849dc4ce216339f8612cea6ea5e9f29",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

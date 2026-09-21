@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "斯诺·沃克",
+   "相川涡波",
+   "缇缇",
+   "诺文"
+  ],
+  "instant": null,
+  "kind": "遭遇·关系成立",
+  "name": "斯诺与缇缇初会·义姐妹成立",
+  "tick": 226,
+  "time_verbatim": "Centidreadnought讨伐结束当日（柯尔库要塞·斯诺房间）"
+ },
+ "evidence": [
+  {
+   "chapter": 226,
+   "line": 10,
+   "quote": "「你、你好。我是斯诺。请多关照。⋯⋯总感觉这个情节之前也有过一次来着」",
+   "vol": 1
+  },
+  {
+   "chapter": 226,
+   "line": 17,
+   "quote": "「看来你也跟诺文一样呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 226,
+   "line": 19,
+   "quote": "和以前不同，这一次，斯诺在行过一礼后向作为守护者的缇缇伸出了手。",
+   "vol": 1
+  },
+  {
+   "chapter": 226,
+   "line": 54,
+   "quote": "「好棒！缇缇真是我理想中的姐姐！究极理想！我从今天开始就要当缇缇的妹妹！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 226,
+   "text": "涡波引荐（五十层守护者）→缇缇自我介绍（迷宫怪物/不必客气）→与一年前诺文初会同型对话→斯诺以安心语气'看来你也跟诺文一样呢'→行礼握手（'留恋不同但期望相同的结局/请求协助'）→性格相合迅速亲昵化（理想姐姐/妹妹宣言/扑怀），两人'关系亲昵得简直就像亲姐妹一样'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-644778779724",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0226.txt",
+  "sha": "d34295a5f549ff2c45faa79dba9feaeac71fc3de80af92fa2daf0a429fd5b1fe",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

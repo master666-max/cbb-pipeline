@@ -1,0 +1,1781 @@
+{
+ "_meta": {
+  "unit": "迷深实战 · CHAPTER 0226（243.光阴流転延及之物）",
+  "source": {
+   "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0226.txt",
+   "sha": "d34295a5f549ff2c45faa79dba9feaeac71fc3de80af92fa2daf0a429fd5b1fe",
+   "verified_at": "2026-09-22",
+   "slice": "行1-301（CHAPTER 0226，301行）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "本章摄入序=226→tick226。instant 全部留空（章内仅'第二天一早'等相对坐标，无绝对故事时间坐标——缺坐标判不可见）。禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，切片第1行为 <<<CHAPTER>>> 标记）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；章末'流星酱精分现场''神秘楼层'及两行'注解2019-01-30*.jpg'为作者吐槽与插图注解（元文本），整块拒抽；章首小标题'落地死的流星'（切片行3）为文学性小标题、无实体行为，不抽取",
+   "reason": "R6 规则1：作者杂谈/插图注解类元文本",
+   "deterministic_check": "'注解2019-01-30'前缀共2处，均位于章末（切片行298/300），正文区零出现"
+  },
+  "alias_policy": "涡涡=相川涡波（缇缇称，ch8'正如涡涡所说'同指证据，≥0.85）登记；克洛伊/克洛伊小姐=克洛伊・希达尔克（全名ch225经缇缇之口）；达利尔=第二迷宫都市达利尔；『支配之王（Lord）』与库内『罗德』疑似同指，按判例1不自动合并、留终审R4；『理的盗窃者』为新名（或与前日谭人物相关），存疑单独立、关系留终审；'女王陛下/姐姐大人'等为情境称呼不作别名。",
+  "confidence_calibration": "0.90=直接命名+行为事实；0.85~0.88=verbatim提及/声称类（claim:true者均于observations标注'据某某'）。",
+  "observations_policy": "实体 observations 仅放本章直接观察；跨章/主线级事实（身体变化/婚姻关系/暗杀计划/行程）一律走 setting/relation/event/foreshadow。",
+  "chapter_summary": "斯诺引涡波与缇缇入柯尔库要塞；缇缇与斯诺义姐妹成立；诺斯菲千年前婚姻与涡波告白被甩相继曝光，斯诺立誓不再放弃；千年始祖物语托出；副官克洛伊拦阻被暗杀计划说服，整备马车送行；出发经达利尔赴佩艾希亚。",
+  "cross_chapter_notes": [
+   "★斯诺身体恶化实锤：一年间右臂皮肤硬化至右肩不再是人类样貌（衣服掩盖、『维度』看破；推断为『龙化』过度使用后遗症）；'仅仅过去一年就到了这等地步'+'时隔十年斯诺想必会彻底──'未完——龙化进行性恶化主线（章题'光阴流転延及之物'直指此）",
+   "★诺斯菲线：千年前婚姻（举办仪式之国已灭/双方同意视为不存在→已废弃）经缇缇之口曝光；'几天前还和她杀了个你死我活'；缇缇仍单方面视诺斯菲为友（已被明确绝交）并确信涡波终将拯救她",
+   "★求爱线更新：涡波告白遭冰冷回绝自白；斯诺'已经决定不会再放弃'宣言+缇缇站队撮合（'婚事就由人家来撮合'）；缇缇自定位：涡波=排第二的弟弟/莱纳=最小的弟弟、对涡涡无恋爱感情；前女王自述婚姻预期仅政治联姻+'女王'称呼心灵创伤",
+   "★主线揭示（对克洛伊）：北方同盟盟主=『支配之王（Lord）』；艾德暗中操纵『北方』；二人将经缇缇与涡涡等之手消失；预断数日内北方统一战线崩溃；联合国上层的现人神拉丝缇娅拉・弗茨亚茨指示斯诺配合暗杀计划（据缇缇·含添油加醋）",
+   "★离任与出发：斯诺凭介绍信（克洛伊称系弗茨亚茨公主签发·'无限期休息'）卸任代理总司令；克洛伊・希达尔克（柯尔库副官）拦阻→被说服→马车/地图/沿北边山脉路线相送；行程=柯尔库→达利尔（接玛利亚）→佩艾希亚（归途终点确信·艾德在彼处为预感）"
+  ]
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [
+    "涡涡"
+   ],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "向斯诺引荐缇缇（五十层守护者）并概述别后经历：一年前与帕林库洛决战后坠入迷宫深处→深层遇缇缇与诺斯菲→与莱纳努力脱出→地上知拉丝缇娅拉须留守弗茨亚茨→先行赶至斯诺处",
+     "chapter": 226
+    },
+    {
+     "category": "summary",
+     "text": "诺斯菲婚姻曝光后当众辩解：无结婚记忆/举办仪式之国已灭/双方同意把结婚事实当做不存在故婚姻已废弃/数日前仍与诺斯菲厮杀",
+     "chapter": 226
+    },
+    {
+     "category": "trait",
+     "text": "以『维度』常态感知周边（隔门察觉克洛伊候访）；自认在克洛伊心中人物形象已废且可能永远无法挽回；与克洛伊立下'不给斯诺大人弄哭'之约",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 26,
+     "quote": "首先是在一年前和帕林库洛的决战告终之后，我坠入了迷宫深处这件事。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 99,
+     "quote": "再加上我们双方都决定要把结婚的事实当做不存在所以婚姻关系已经被废弃了"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 190,
+     "quote": "不过，在离开斯诺的房间之前，『维度』注意到有人正徘徊在门外。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 270,
+     "quote": "「⋯⋯嗯、好的。我知道了。我会铭记在心的」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "缇缇",
+    "entity_type": "人物(迷宫五十层守护者·前女王)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "初会斯诺即自我介绍'人家就是缇缇'（五十层守护者/迷宫怪物、请对方不必客气）；主动伸手请求协助：'虽然人家的留恋跟那家伙不一样，但都期望着相同的结局'",
+     "chapter": 226
+    },
+    {
+     "category": "summary",
+     "text": "向斯诺传授千年习得的教训并劝其退出英雄行当（'英雄之流还是趁早不干了为好'）；姊妹定位：涡涡=排第二的弟弟/莱纳=最小的弟弟，对涡涡无恋爱感情",
+     "chapter": 226
+    },
+    {
+     "category": "summary",
+     "text": "前女王自述：婚姻预期仅政治联姻、终究未婚；'女王'类称呼触发心灵创伤（以手扶额），涡波嘱斯诺勿再用女王称呼",
+     "chapter": 226
+    },
+    {
+     "category": "summary",
+     "text": "为带走斯诺向克洛伊连提三案（令敌方总司令无法行动致双方群龙无首/瘫痪整条前线/灭掉双方），被涡波依其女王时期经历判定非虚张声势；自省'欺负过头'后道歉——本意是劝诫勿过度依赖个人之力",
+     "chapter": 226
+    },
+    {
+     "category": "arc",
+     "text": "旁观斯诺与克洛伊告别时与过去的自我重合（叙述观察：'很可能还是将斯诺和过去的自己重合在了一起'）；'尽管是早已亡命的守护者，但却有了一些成长'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 8,
+     "quote": "人家就是缇缇。请多关照喽"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 20,
+     "quote": "虽然人家的留恋跟那家伙不一样，但都期望着相同的结局"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 80,
+     "quote": "对的，涡涡是人家排第二的弟弟啦！顺带一说最小的弟弟是莱纳！"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 160,
+     "quote": "缇缇因为心灵创伤受到刺激而以手扶额。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 290,
+     "quote": "尽管是早已亡命的守护者，但却有了一些成长"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "斯诺·沃克",
+    "entity_type": "人物"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "与缇缇初会：战战兢兢问候后迅速亲昵（'缇缇真是我理想中的姐姐！究极理想！'自封妹妹、扑入其怀）；自述一年辛劳至泪光，被涡波牵发慰劳",
+     "chapter": 226
+    },
+    {
+     "category": "trait",
+     "text": "求爱策略精进：以眼力观察缇缇表情、选'姐姐大人'等称呼触动其心弦；'老公'称呼被涡波要求收敛仍不改",
+     "chapter": 226
+    },
+    {
+     "category": "status_change",
+     "text": "闻涡波告白被甩后自认'拉丝缇娅拉大人本来就领先我一步'，随即宣言'已经决定不会再放弃'并以自己的方式继续；凭介绍信卸任代理总司令随涡波离柯尔库",
+     "chapter": 226
+    },
+    {
+     "category": "interpretation",
+     "text": "对千年物语以童话视之坦然接受（叙述归纳：真正重要的只是存在于她眼前的我）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 30,
+     "quote": "斯诺以闪着泪光的双眸微微一笑。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 54,
+     "quote": "「好棒！缇缇真是我理想中的姐姐！究极理想！我从今天开始就要当缇缇的妹妹！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 141,
+     "quote": "因为我已经决定不会再放弃了呢。所以我还会继续努力的。用我自己的方式，让涡波喜欢上我"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 177,
+     "quote": "似乎在斯诺眼里，千年前的传说不过是近似于童话故事一样的东西。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 206,
+     "quote": "从代理总司令的职位上离职的斯诺也会跟我一起走"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "诺斯菲",
+    "entity_type": "人物(迷宫六十层守护者)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章无直接登场：经缇缇之口被曝光为'涡涡千年前的老婆'（据缇缇）；涡波长篇辩解称婚姻关系已废弃",
+     "chapter": 226
+    },
+    {
+     "category": "knowledge",
+     "text": "据涡波：六十层守护者、涡波的敌人、'对我抱有的恶意太深了'；数日前两人仍相互厮杀（据涡波自述）",
+     "chapter": 226
+    },
+    {
+     "category": "knowledge",
+     "text": "斯诺因其'总有一天会消失'的守护者特性而对婚姻传闻释怀（'既然这样，那可能没关系'）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 87,
+     "quote": "她是涡涡千年前的老婆啊"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 110,
+     "quote": "她是六十层的守护者。而且跟缇缇不一样，她是我的敌人啊"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 109,
+     "quote": "看来是多亏了诺斯菲作为守护者的总有一天会消失的特性所赐。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "克洛伊・希达尔克",
+    "entity_type": "人物(军人·柯尔库副官)"
+   },
+   "aliases_to_register": [
+    "克洛伊",
+    "克洛伊小姐"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "掌管柯尔库城的副官（自称）；全名'克洛伊・希达尔克'经缇缇之口揭示",
+     "chapter": 226
+    },
+    {
+     "category": "summary",
+     "text": "自很早之前守候斯诺房门外；拦阻质问涡波留宿并骂'变态'；攥介绍信抗议'无限期休息'命令、指控涡波诓骗弗茨亚茨公主",
+     "chapter": 226
+    },
+    {
+     "category": "trait",
+     "text": "以'保家卫国的军人的骄傲'挡路；在守护者威压下仍坚持对峙（叙述：一般人早已吓昏，其坚持实属不易）",
+     "chapter": 226
+    },
+    {
+     "category": "status_change",
+     "text": "被斯诺亲口劝说与暗杀计划揭示后接受现实；周到安排马车/物资/地图/沿北边山脉路线；与涡波约定'弄哭斯诺绝不原谅'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 192,
+     "quote": "待在门外的正是眉头紧蹙的克洛伊小姐。看她的样子，似乎是从很早之前就等候在此了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 222,
+     "quote": "作为掌管柯尔库城的副官，我绝对不会退缩"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 226,
+     "quote": "那人家就去把克洛伊・希达尔克阁下的不安消除了便是"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 269,
+     "quote": "「涡波大人！你要是给斯诺大人弄哭的话，我是绝对不会原谅你的！你可要记好了！！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 280,
+     "quote": "看来只要排除对斯诺的执念，克洛伊小姐就是个非常优秀的人。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "理的盗窃者",
+    "entity_type": "人物/存在(称号·千年前的敌对者)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "据涡波内心定位：'千年前的战斗说到底都是我和『理的盗窃者』之间的问题'——千年因果的对立归因对象；真身/与库内人物之关系本章未明（存疑单独立，留终审）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 170,
+     "quote": "千年前的战斗说到底都是我和『理的盗窃者』之间的问题"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "混账三骑士",
+    "entity_type": "人物(集体称呼·据缇缇)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "据缇缇骂称'那群脑子有病的混账三骑士'，用于与自身（温柔善良大姐姐）对比；语境紧接斯诺'跟诺文和缇达不一样很温柔'——所指为令斯诺畏惧的守护者骑士群（涉及诺文/缇达），具体成员本章未明",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 49,
+     "quote": "可不要把人家跟那群脑子有病的混账三骑士相提并论呀"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 48,
+     "quote": "跟诺文和缇达不一样很温柔呢"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "柯尔库",
+    "entity_type": "地点(港口城市·本土)"
+   },
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本土港口城市；附近有要塞（斯诺甩掉部下遁入的房间所在、其部队驻地）；克洛伊掌管该城；一行由此出发转陆路",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 3,
+     "quote": "斯诺将我们带到了位于港口城市柯尔库附近的一座要塞"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 291,
+     "quote": "就这样，我们从『柯尔库』出发"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "达利尔",
+    "entity_type": "地点(第二迷宫都市·本土中央)"
+   },
+   "aliases_to_register": [
+    "第二迷宫都市达利尔"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "位于本土中央的『第二迷宫都市』；行程第二站（柯尔库→达利尔→佩艾希亚）；玛利亚预定在那里被接上同行",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 291,
+     "quote": "踏上了前往位于本土中央的『第二迷宫都市达利尔』的旅途"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 278,
+     "quote": "「是的，然后再经『达利尔』前往北方的『佩艾希亚』」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "佩艾希亚",
+    "entity_type": "地点(人工空间·记忆收束城市·北方)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "行程最终目的地（北方）；涡波与缇缇确信'现在'的佩艾希亚是『归途』的终点；艾德等人在彼处仅为预感（无保证）；沿途将穿越数段战场",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 278,
+     "quote": "「是的，然后再经『达利尔』前往北方的『佩艾希亚』」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 293,
+     "quote": "我们都确信，『现在』的『佩艾希亚』才是『归途』的终点──"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "斯诺的龙化后遗症（右臂硬化·ch226确认）",
+    "fact": "一年间右臂显著变化：皮肤硬化致右肩附近体征不再呈人类样貌（衣服掩盖、由涡波『维度』看破）；叙述推断为过度使用『龙化』的后遗症；'仅仅过去一年就到了这等地步'→数年后恶化可期（'时隔十年斯诺想必会彻底──'话头中断）",
+    "chapter": 226,
+    "tick": 226
+   },
+   "entities_involved": [
+    "斯诺·沃克"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "身体变化关键事实：跨章走本setting轨道，不入实体observations",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 33,
+     "quote": "因为皮肤的硬化，她右肩附近的体征已经不再是人类的样貌了。恐怕这是她过度使用『龙化』的后遗症吧。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 34,
+     "quote": "仅仅过去一年就到了这等地步，那么不难想像再过数年会是何种模样。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "守护者的威压与常人耐受",
+    "fact": "来自守护者的压力足以令一般人当场吓昏（叙述）；克洛伊坚持对峙属例外级耐受力；缇缇的威压方案（令敌方总司令无法行动→双方群龙无首→战争自然僵局；瘫痪整条前线；灭掉双方）被涡波依其女王时期经历判定为非虚张声势",
+    "chapter": 226,
+    "tick": 226
+   },
+   "entities_involved": [
+    "缇缇",
+    "克洛伊・希达尔克"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "守护者位格与常人差距的世界规则实证",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 246,
+     "quote": "毕竟是来自守护者的压力，一般人的话早就已经吓昏了。克洛伊小姐能坚持这么久实属不易。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 234,
+     "quote": "关键是让双方平等地陷入群龙无首的状况。如此一来，在一段时间里战争自然会陷入僵局"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "柯尔库战线对斯诺的战力依赖（据克洛伊声称）",
+    "fact": "据克洛伊拦阻时声称：『境界战争』海战均势基本依靠斯诺之力维持；斯诺若离开→『北方同盟』将趁机进攻/各种方面平衡被打破/'斯诺大人的力量对这里而言是绝对必要的'",
+    "chapter": 226,
+    "tick": 226
+   },
+   "entities_involved": [
+    "斯诺·沃克",
+    "柯尔库"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "战略事实（据克洛伊声称，R6-4）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 222,
+     "quote": "现在『境界战争』的海战那边也基本都是依靠斯诺大人的力量才能保持均势的哦"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "北方战线现势与暗杀计划公开（ch226）",
+    "fact": "北方同盟盟主=『支配之王（Lord）』；艾德暗中操纵『北方』；缇缇宣告二人将经她与涡涡等之手消失；预断'再过几天『北方』的统一战线就会崩溃'；据缇缇：联合国上层的现人神拉丝缇娅拉・弗茨亚茨指示斯诺配合暗杀计划（叙述注明缇缇'添油加醋地让理由变得圆润'）",
+    "chapter": 226,
+    "tick": 226
+   },
+   "entities_involved": [
+    "支配之王（Lord）",
+    "艾德",
+    "缇缇",
+    "相川涡波",
+    "斯诺·沃克",
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "主线级现势汇总（指示部分据缇缇声称）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "因为作为北方同盟盟主的『支配之王（Lord）』将会消失。同时，在暗地里操纵『北方』的『艾德』也一样会消失"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 251,
+     "quote": "联合国上层的现人神拉丝缇娅拉・弗茨亚茨"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "千年前物语对斯诺托出（轮廓ch226再述）",
+    "fact": "涡波主讲+缇缇补足：与使徒西斯/圣人缇娅拉/妹妹阳滝三人共度之日→阳滝因使徒西斯之过失化作怪物→自暴自弃的涡波得圣人缇娅拉拯救；涡波自称大陆千年传说主要登场人物之一的始祖本人；同伴中与千年前有瓜葛者仅缇亚与拉丝缇娅拉（据涡波）；斯诺以童话视之接受、玛利亚预计同反应（据涡波推测）",
+    "chapter": 226,
+    "tick": 226
+   },
+   "entities_involved": [
+    "相川涡波",
+    "使徒西斯",
+    "缇娅拉",
+    "相川阳滝",
+    "斯诺·沃克"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "既知千年物语的本章托出记录（叙述者自述口径）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 174,
+     "quote": "在那之后，阳滝因为使徒西斯的过失化作了怪物，而因此变得自暴自弃的我得到了圣人缇娅拉的拯救"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 175,
+     "quote": "还自称是其中主要登场人物之一的始祖本人"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 179,
+     "quote": "跟千年前有瓜葛的只有缇亚和拉丝缇娅拉两个人。"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "拉丝缇娅拉的现人神称号与联合国上层地位（据缇缇）",
+    "fact": "据缇缇对克洛伊的言及：'联合国上层的现人神拉丝缇娅拉・弗茨亚茨'——全名形（拉丝缇娅拉・弗茨亚茨）、称号（现人神）与联合国上层地位并见（据缇缇声称）",
+    "chapter": 226,
+    "tick": 226
+   },
+   "entities_involved": [
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "称号/地位情报（据缇缇，R6-4）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 251,
+     "quote": "而联合国上层的现人神拉丝缇娅拉・弗茨亚茨对斯诺下达的指示就是要她配合我们的暗杀计划"
+    }
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "守护者'总有一日消失'的特性",
+    "fact": "守护者具有总有一天会消失的特性（叙述将其归于守护者共性）；斯诺据此对'千年前老婆'诺斯菲的存在感释怀（'是守护者吗⋯⋯？既、既然这样，那可能没关系'）",
+    "chapter": 226,
+    "tick": 226
+   },
+   "entities_involved": [
+    "诺斯菲",
+    "斯诺·沃克"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "守护者机制情报（本章对话语境呈现）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 109,
+     "quote": "看来是多亏了诺斯菲作为守护者的总有一天会消失的特性所赐。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 108,
+     "quote": "「是守护者吗⋯⋯？既、既然这样，那可能没关系⋯⋯？」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "求爱（再挑战宣言）",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "'我的愿望就是成为涡波的妻子'；'老公'称呼被涡波要求收敛仍不改；闻告白失败后自认落后仍宣言'不会再放弃/用自己的方式让涡波喜欢上我'——'曾经的斯诺不会说出口的话'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 119,
+     "quote": "因为我的愿望就是成为涡波的妻子"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 141,
+     "quote": "因为我已经决定不会再放弃了呢。所以我还会继续努力的。用我自己的方式，让涡波喜欢上我"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 62,
+     "quote": "你那个『老公』的称呼方式，能不能收敛一下呢"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "队伍代理领导·贯彻委托",
+    "object": "相川涡波",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据斯诺自述：分别后代涡波力求带好队伍；'必须要贯彻涡波的委托'；在分为两半的队伍中间担任调解纽带（维系大吵一架的玛利亚与拉丝缇娅拉）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 28,
+     "quote": "在与我分别之后，她代替我力求将队伍带领好的事。以及向艾德和使徒发起挑战，结果连战连败的事。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 29,
+     "quote": "我想着必须要贯彻涡波的委托，所以必须要拼命努力才行"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "旅程支援",
+    "object": "玛利亚",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据斯诺自述：分别后的一年一边为玛利亚的旅程提供帮助（与代理人业务并行）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 28,
+     "quote": "一边为玛利亚的旅程提供帮助"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "地位抬升代理（弗茨亚茨）",
+    "object": "拉丝缇娅拉",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据斯诺自述：为抬高拉丝缇娅拉在弗茨亚茨的地位而作为代理人完成国家的委托",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 28,
+     "quote": "为了抬高拉丝缇娅拉在弗茨亚茨的地位而作为代理人完成国家的委托"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "挑战（连战连败）",
+    "object": "艾德",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据斯诺自述：分别后向艾德和使徒发起挑战，结果连战连败",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 28,
+     "quote": "以及向艾德和使徒发起挑战，结果连战连败的事"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "缇缇",
+    "rel_type": "义姐弟定位（非恋爱）",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "'涡涡是人家排第二的弟弟'；'应该是完全没有把涡涡当做恋爱对象来看待的哟'；序列：最初敌人→同伴→恩人→弟弟",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 80,
+     "quote": "对的，涡涡是人家排第二的弟弟啦！顺带一说最小的弟弟是莱纳！"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 71,
+     "quote": "应该是完全没有把涡涡当做恋爱对象来看待的哟"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "缇缇",
+    "rel_type": "最小的弟弟（自称）",
+    "object": "莱纳",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "缇缇自定位莱纳为其'最小的弟弟'（与涡波=排第二的弟弟并列自述）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 80,
+     "quote": "对的，涡涡是人家排第二的弟弟啦！顺带一说最小的弟弟是莱纳！"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {
+    "subject": "缇缇",
+    "rel_type": "支持同盟·婚事撮合",
+    "object": "斯诺·沃克",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "义姐妹成立（'好不容易得到的同伴兼妹妹'）；被'姐姐大人'称呼击中软肋后站队：'从今天开始人家就站在斯诺这边了！涡涡跟斯诺的婚事就由人家来撮合'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 156,
+     "quote": "从今天开始人家就站在斯诺这边了！涡涡跟斯诺的婚事就由人家来撮合"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 166,
+     "quote": "毕竟是好不容易得到的同伴兼妹妹嘛"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "千年前婚姻（双方同意废弃）",
+    "object": "诺斯菲",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据缇缇曝光'千年前老婆'；涡波辩解：无结婚记忆/举办仪式之国已灭/双方同意把结婚事实当做不存在→婚姻关系已废弃；数日前两人仍相互厮杀",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 87,
+     "quote": "她是涡涡千年前的老婆啊"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 99,
+     "quote": "再加上我们双方都决定要把结婚的事实当做不存在所以婚姻关系已经被废弃了"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "缇缇",
+    "rel_type": "单方面朋友（被宣告绝交）",
+    "object": "诺斯菲",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据缇缇：'应该只是人家单方面这么想'；'诺斯菲已经明确表示说她和人家不再是朋友了'——但并不担心，因确信涡波终将拯救诺斯菲",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 116,
+     "quote": "毕竟诺斯菲已经明确表示说她和人家不再是朋友了呢"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "告白→回绝",
+    "object": "拉丝缇娅拉",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波自白：'我一回到地上就同她告白，结果只得到了冰冷的回绝'（缇缇补刀'这小子在人家面前被人狠狠地甩掉了哦'）；斯诺定位'拉丝缇娅拉大人本来就领先我一步'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 134,
+     "quote": "我一回到地上就同她告白，结果只得到了冰冷的回绝"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 128,
+     "quote": "这小子在人家面前被人狠狠地甩掉了哦"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 139,
+     "quote": "毕竟拉丝缇娅拉大人本来就领先我一步"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "拉丝缇娅拉",
+    "rel_type": "暗杀计划配合指示",
+    "object": "斯诺·沃克",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据缇缇向克洛伊声称：联合国上层的现人神拉丝缇娅拉・弗茨亚茨指示斯诺配合暗杀计划（'让『英雄』和『英雄』强强联合'）；叙述注明缇缇'添油加醋地让理由变得圆润了一些'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 251,
+     "quote": "而联合国上层的现人神拉丝缇娅拉・弗茨亚茨对斯诺下达的指示就是要她配合我们的暗杀计划"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "克洛伊・希达尔克",
+    "rel_type": "副官忠诚·敬慕",
+    "object": "斯诺·沃克",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "'斯诺大人是我们的斯诺大人'；以战略理由（北方同盟趁机进攻/海战均势依赖）拦阻其离任；被劝服后转而托付涡波'弄哭斯诺绝不原谅'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 207,
+     "quote": "斯诺大人是我们的斯诺大人"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 222,
+     "quote": "如果斯诺大人不在了的话，『北方同盟』一定会趁机发动进攻的"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 269,
+     "quote": "「涡波大人！你要是给斯诺大人弄哭的话，我是绝对不会原谅你的！你可要记好了！！」"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "克洛伊・希达尔克",
+    "rel_type": "敌视→守约托付",
+    "object": "相川涡波",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "晨间质问留宿/骂'变态'/指控诓骗弗茨亚茨公主；被说服后立约'弄哭斯诺绝不原谅'；涡波自嘲'斯诺粉丝俱乐部又添新丁'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 201,
+     "quote": "「这、这反应不就跟昨天的古奈尔殿下一样吗！英雄涡波──你、你这个变态！！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 269,
+     "quote": "「涡波大人！你要是给斯诺大人弄哭的话，我是绝对不会原谅你的！你可要记好了！！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 272,
+     "quote": "换句话说，这就是斯诺粉丝俱乐部又添新丁的意思了呗"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "支配之王（Lord）",
+    "rel_type": "盟主",
+    "object": "北方同盟",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "缇缇揭示：'作为北方同盟盟主的『支配之王（Lord）』将会消失'；与库内『罗德』之关系按判例1留终审R4",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "因为作为北方同盟盟主的『支配之王（Lord）』将会消失"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "艾德",
+    "rel_type": "暗中操纵",
+    "object": "北方同盟",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "缇缇揭示：'在暗地里操纵『北方』的『艾德』也一样会消失'——与支配之王并列为本次旅程的消失目标",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "在暗地里操纵『北方』的『艾德』"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "相川涡波",
+    "rel_type": "千年前敌对（问题归属）",
+    "object": "理的盗窃者",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据涡波自述：'千年前的战斗说到底都是我和『理的盗窃者』之间的问题'——将现代同伴排除在千年恩怨之外的归因",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 170,
+     "quote": "千年前的战斗说到底都是我和『理的盗窃者』之间的问题"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "斯诺与缇缇初会·义姐妹成立",
+    "kind": "遭遇·关系成立",
+    "tick": 226,
+    "instant": null,
+    "time_verbatim": "Centidreadnought讨伐结束当日（柯尔库要塞·斯诺房间）"
+   },
+   "entities_involved": [
+    "斯诺·沃克",
+    "缇缇",
+    "相川涡波",
+    "诺文"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波引荐（五十层守护者）→缇缇自我介绍（迷宫怪物/不必客气）→与一年前诺文初会同型对话→斯诺以安心语气'看来你也跟诺文一样呢'→行礼握手（'留恋不同但期望相同的结局/请求协助'）→性格相合迅速亲昵化（理想姐姐/妹妹宣言/扑怀），两人'关系亲昵得简直就像亲姐妹一样'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 10,
+     "quote": "「你、你好。我是斯诺。请多关照。⋯⋯总感觉这个情节之前也有过一次来着」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 17,
+     "quote": "「看来你也跟诺文一样呢」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 19,
+     "quote": "和以前不同，这一次，斯诺在行过一礼后向作为守护者的缇缇伸出了手。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 54,
+     "quote": "「好棒！缇缇真是我理想中的姐姐！究极理想！我从今天开始就要当缇缇的妹妹！」"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "涡波与斯诺的一年经历交换",
+    "kind": "情报交换",
+    "tick": 226,
+    "instant": null,
+    "time_verbatim": "初会当日（同室）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "斯诺·沃克",
+    "艾德",
+    "玛利亚",
+    "拉丝缇娅拉",
+    "缇缇",
+    "诺斯菲",
+    "莱纳"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波概述：坠迷宫→深层遇缇缇与诺斯菲→与莱纳脱出→知拉丝缇娅拉须留守弗茨亚茨→先行至斯诺处；斯诺自述：代带队伍/挑战艾德与使徒连战连败/调解玛利亚×拉丝缇娅拉/玛利亚旅程支援+拉丝缇娅拉地位抬升代理；'相信涡波一定会回来'；涡波同场经『维度』察觉其右臂龙化异变",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 26,
+     "quote": "首先是在一年前和帕林库洛的决战告终之后，我坠入了迷宫深处这件事。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 28,
+     "quote": "在与我分别之后，她代替我力求将队伍带领好的事。以及向艾德和使徒发起挑战，结果连战连败的事。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 29,
+     "quote": "因为我相信涡波一定会回来的⋯⋯"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "诺斯菲'千年前老婆'曝光骚动",
+    "kind": "暴露·冲突",
+    "tick": 226,
+    "instant": null,
+    "time_verbatim": "同日·义姐妹成立后"
+   },
+   "entities_involved": [
+    "缇缇",
+    "斯诺·沃克",
+    "相川涡波",
+    "诺斯菲"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "缇缇直球发问'斯诺你是涡涡在这个时代的妻子？'→进而曝光'她是涡涡千年前的老婆啊'→斯诺泪目、抬手掐向涡波颈部未遂→涡波长篇辩解（婚姻已废弃/守护者之敌）→斯诺因守护者'总有一日消失'特性释怀",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 65,
+     "quote": "也就是说斯诺你是涡涡在这个时代的妻子"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 87,
+     "quote": "她是涡涡千年前的老婆啊"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 99,
+     "quote": "再加上我们双方都决定要把结婚的事实当做不存在所以婚姻关系已经被废弃了"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "告白被甩公开与斯诺再挑战宣言",
+    "kind": "转折",
+    "tick": 226,
+    "instant": null,
+    "time_verbatim": "同日·诺斯菲骚动后"
+   },
+   "entities_involved": [
+    "斯诺·沃克",
+    "缇缇",
+    "相川涡波",
+    "拉丝缇娅拉"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "缇缇以'对同伴有所隐瞒不是人家的风格'公开涡波告白及其惨败；涡波如实自白（冰冷回绝、奉行不隐瞒主义）；斯诺确认'既然被甩了那也行吧/拉丝缇娅拉大人本来就领先我一步'后双瞳复明并宣言不再放弃——'这是曾经的斯诺不会说出口的话'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 128,
+     "quote": "这小子在人家面前被人狠狠地甩掉了哦"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 134,
+     "quote": "我一回到地上就同她告白，结果只得到了冰冷的回绝"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 139,
+     "quote": "「⋯⋯既然被甩了、那也行吧。毕竟拉丝缇娅拉大人本来就领先我一步」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 141,
+     "quote": "因为我已经决定不会再放弃了呢。所以我还会继续努力的。用我自己的方式，让涡波喜欢上我"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "千年物语对斯诺托出·夜谈",
+    "kind": "披露",
+    "tick": 226,
+    "instant": null,
+    "time_verbatim": "同日夜（持续至深夜）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "缇缇",
+    "斯诺·沃克",
+    "使徒西斯",
+    "缇娅拉",
+    "相川阳滝"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "缇缇主张'斯诺毕竟是要加入和使徒西斯的战斗的同伴'当说清→涡波主讲+缇缇补足千年物语（西斯/缇娅拉/阳滝→阳滝怪物化→缇娅拉拯救；自称始祖本人）→斯诺童话式坦然接受（'既然是涡波这也没什么不可能的呢'）；夜谈插入缇缇自身故事令斯诺深代入；晚饭后仍互慰谈笑至深夜，'队伍的牵绊得到巩固'",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 171,
+     "quote": "斯诺毕竟是要加入和使徒西斯的战斗的同伴"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 174,
+     "quote": "在那之后，阳滝因为使徒西斯的过失化作了怪物，而因此变得自暴自弃的我得到了圣人缇娅拉的拯救"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 180,
+     "quote": "──这段有关千年前的谈话一直持续到了夜里。"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "克洛伊晨间拦阻与说服",
+    "kind": "冲突→送别",
+    "tick": 226,
+    "instant": null,
+    "time_verbatim": "翌晨（离开斯诺房间时）"
+   },
+   "entities_involved": [
+    "克洛伊・希达尔克",
+    "相川涡波",
+    "斯诺·沃克",
+    "缇缇"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "克洛伊堵门质问留宿/骂'变态'→介绍信之争（代理总司令离职·'无限期休息'；被指控诓骗弗茨亚茨公主）→以军人骄傲拒绝放行（均势依赖/北方同盟威胁）→缇缇威压三案后自省道歉（本意劝诫勿过度依赖个人之力）→揭示暗杀计划（支配之王与艾德将消失/数日崩溃/现人神指示）→斯诺亲劝（'无法回应你的期待/想要陪伴在涡波身边'）→克洛伊松手，立守约之诺+马车/地图/路线安排；涡波与缇缇目送那『一份理想』",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 194,
+     "quote": "「──你、你在『早上好』个什么劲啊！到头来还是睡在斯诺大人的房间里了啊！真是龌蹉！你在斯诺大人的房间里到底干了什么！？昨天到很晚的时候我还能听见有声音从里面传来呢！」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 206,
+     "quote": "正如昨天给你的介绍信上写的那样，从代理总司令的职位上离职的斯诺也会跟我一起走"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 222,
+     "quote": "作为掌管柯尔库城的副官，我绝对不会退缩"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "因为作为北方同盟盟主的『支配之王（Lord）』将会消失。同时，在暗地里操纵『北方』的『艾德』也一样会消失。全都经由咱和涡涡他们的手"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 263,
+     "quote": "正如克洛伊想要和我待在一起那样，我也想要陪伴在涡波的身边"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 267,
+     "quote": "我和缇缇则将这一幕看在眼里──看着那『一份理想』"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "柯尔库出发·赴达利尔",
+    "kind": "出发·旅程",
+    "tick": 226,
+    "instant": null,
+    "time_verbatim": "翌晨（马车整备后数十分钟内成行）"
+   },
+   "entities_involved": [
+    "相川涡波",
+    "缇缇",
+    "斯诺·沃克",
+    "克洛伊・希达尔克",
+    "柯尔库",
+    "达利尔",
+    "佩艾希亚",
+    "玛利亚"
+   ],
+   "observations": [
+    {
+     "category": "event",
+     "text": "克洛伊整备马车（含『LivingLegend号』私人物品）+地图+沿北边山脉路线（'为了路上不节外生枝'再作安排）；斯诺与克洛伊告别（细枝末节手续托付）；行程确定：柯尔库→达利尔（接玛利亚）→佩艾希亚；沿途将穿越数段战场（涡波魔法应对）；'在本土的第一天就这样迎来了尾声'后翌晨启程",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 277,
+     "quote": "另外再把这边使用的地图也给你们吧"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 279,
+     "quote": "「这样的话，那么沿着北边的山脉前进是最好的。具体的路线是──」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 282,
+     "quote": "旅途必备的物品不仅在马车中应有尽有，就连我们在『LivingLegend号』上的私人物品都收拾好了。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 291,
+     "quote": "就这样，我们从『柯尔库』出发，踏上了前往位于本土中央的『第二迷宫都市达利尔』的旅途。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "涡波终将拯救诺斯菲（缇缇确信）",
+    "setup_chapter": 226,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "缇缇：'人家相信，涡涡总有一天会拯救诺斯菲的。所以诺斯菲那边人家并不担心'；涡波自认无付诸实现的自信——与绝交/婚姻废弃线并行的救赎预期，回收待考",
+    "chapter": 226
+   },
+   "entities_involved": [
+    "缇缇",
+    "相川涡波",
+    "诺斯菲"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "救赎线开放环",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 116,
+     "quote": "因为人家相信，涡涡总有一天会拯救诺斯菲的"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "佩艾希亚=『归途』的终点确信",
+    "setup_chapter": 226,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "涡波与缇缇共有的确信：'现在的佩艾希亚才是归途的终点'；艾德等人在彼处仅为预感（无保证）——主线目的地钩（承接ch215缇缇终局/ch220归途）",
+    "chapter": 226
+   },
+   "entities_involved": [
+    "相川涡波",
+    "缇缇",
+    "佩艾希亚",
+    "艾德"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "主线目的地钩",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 293,
+     "quote": "我们都确信，『现在』的『佩艾希亚』才是『归途』的终点──"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "缇缇将对艾德传达之物",
+    "setup_chapter": 226,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "章末设问：'在最后，缇缇到底会跟艾德传达些什么呢'；'在这段『归途』中，缇缇找到了形形色色的东西'——终局对面的传达内容待回收（承接ch215'结束所有这一切'）",
+    "chapter": 226
+   },
+   "entities_involved": [
+    "缇缇",
+    "艾德"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "终局传达内容开放环",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 295,
+     "quote": "在最后，缇缇到底会跟艾德传达些什么呢⋯⋯我一面对此感到在意，一面驱车出发。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 294,
+     "quote": "在这段『归途』中，缇缇找到了形形色色的东西。"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "斯诺龙化的进行性恶化（十年后设想中断）",
+    "setup_chapter": 226,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "'仅仅过去一年就到了这等地步'；'如果我时隔十年再回来的话，斯诺想必会彻底──'（话头中断）；右臂硬化已至右肩非人类样貌——光阴流转下恶化不可逆的明示钩（章题直指）",
+    "chapter": 226
+   },
+   "entities_involved": [
+    "斯诺·沃克"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "身体恶化时间钩",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 33,
+     "quote": "因为皮肤的硬化，她右肩附近的体征已经不再是人类的样貌了。恐怕这是她过度使用『龙化』的后遗症吧。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 34,
+     "quote": "如果我时隔十年再回来的话，斯诺想必会彻底──"
+    }
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "北方统一战线数日内崩溃预断",
+    "setup_chapter": 226,
+    "payoff_chapter": null,
+    "tier": "核心",
+    "note": "缇缇：'再过几天『北方』的统一战线就会崩溃的。因为作为北方同盟盟主的『支配之王（Lord）』将会消失'＋艾德同消失——暗杀计划时间表与验证钩（承接再诞倒计时等主线）",
+    "chapter": 226
+   },
+   "entities_involved": [
+    "缇缇",
+    "相川涡波",
+    "支配之王（Lord）",
+    "艾德"
+   ],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "暗杀时间表验证钩",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "毕竟再过几天『北方』的统一战线就会崩溃的"
+    }
+   ]
+  }
+ ]
+}

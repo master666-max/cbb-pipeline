@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "西娅・勒伽西",
+  "rel_type": "名义俘虏·实际关照",
+  "subject": "玛利亚"
+ },
+ "evidence": [
+  {
+   "chapter": 229,
+   "line": 91,
+   "quote": "「很遗憾不是。毕竟严格来说你只是这边的俘虏而已」",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 98,
+   "quote": "不过，注意到西娅酱因为害怕接下来事态的发展而瑟瑟发抖后，在前面打头的玛利亚出言安慰了她几句。从这个细节上便可以明白，所谓俘虏只是玛利亚不坦率的说法，她对西娅酱其实还是非常关照的。",
+   "vol": 1
+  },
+  {
+   "chapter": 229,
+   "line": 99,
+   "quote": "「当然，为了能不用真的放火，我会力求稳妥解决的。刚才的说法只是对最糟糕的情况的假设而已」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 229,
+   "text": "玛利亚宣告'严格来说你只是这边的俘虏而已'并不计入其意见；但见西娅因害怕而瑟瑟发抖即出言安慰、力求稳妥解决以回应其恐慌——俘虏只是不坦率的说法、实际非常关照（叙述判断）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4b8caf232473",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0229.txt",
+  "sha": "cfabe7016c8ee5eb9092db7f9518288993b305a83bd390db77f5f508181f1bc5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

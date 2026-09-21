@@ -1,0 +1,1087 @@
+{
+  "_meta": {
+    "unit": "迷深实战 · CHAPTER 0225（242.这就是斯诺）",
+    "source": {
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+      "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+      "verified_at": "2026-09-22",
+      "slice": "行1-263（CHAPTER 0225，263行）"
+    },
+    "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+    "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+    "reference_time": "伪锚点 2000-01-01+i；本章摄入序=225→tick225→2000-08-12。禁墙钟。",
+    "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，切片第1行为 <<<CHAPTER>>> 标记）。",
+    "r6_decision": {
+      "verdict": "正文正常抽取；章尾『神秘楼层』与『注解2019-01-30174728.jpg』为元文本（楼层标记/注解图片文件名含现实日期），零抽取",
+      "reason": "R6 规则1：现实日期与楼层/注解类元文本不抽",
+      "deterministic_check": "'注解2019-01-30'前缀与'神秘楼层'各仅章尾一处，正文无其他元文本块"
+    },
+    "chapter_summary": "柯尔库入港日：塞拉介绍信实为斯诺免职令兼同行敕令；涡波以次元魔术分割捕获来袭巨型蜈蚣（级别32）；古奈尔趁机脱队；斯诺·沃克驰归，时隔一年再会痛哭撒娇、当众称涡波为老公，末了宣言辞去总司令与英雄之位。",
+    "alias_policy": "同 STATE 固化决议。本章别名登记见各候选 aliases_to_register（全名/・点变体/爱称）；『翠色的辉翼』『青色的龙人少女』『正统派公主』为 descriptor 不合并。",
+    "confidence_calibration": "0.90=直接命名+行为事实；0.85~0.88=verbatim 提及/声称类。",
+    "observations_policy": "实体 observations 仅本章直接观察；跨章事实一律走 event/relation/foreshadow。"
+  },
+  "candidates": [
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.92,
+      "canonical": {"name": "相川涡波", "entity_type": "人物"},
+      "aliases_to_register": ["涡波", "涡涡", "相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "柯尔库抵达日行为线：持塞拉的介绍信办理斯诺离任安排；以『维度』侦知来袭怪物（西南偏西·十五千米·一匹）；自请主攻，以次元魔术『Shift』+『次元斩裂剑』+『Default』将Centidreadnought分割捕获（保持存活）；喝止缇缇误击驰归的斯诺；向斯诺致歉（'来的这么迟'）并抚摸其头称赞其一年坚守。",
+          "chapter": 225
+        },
+        {
+          "category": "trait",
+          "text": "重摆『英雄』姿态请战（'正是为了这种紧急情况而存在的'）；自评本章战斗于己'只不过是热身运动'；对斯诺的恐怖行径已习惯不动摇；见同伴归来'不觉莞尔一笑'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 65, "quote": "「毋需多虑，克洛伊小姐。『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』正是为了这种紧急情况而存在的。我此去势在必得。你们没有必要勉强自己」"},
+        {"vol": 1, "chapter": 225, "line": 158, "quote": "「住手、缇缇！她就是斯诺！斯诺・沃克！她不是我们的敌人！！」"},
+        {"vol": 1, "chapter": 225, "line": 172, "quote": "「没错，是我。抱歉了，斯诺。来的这么迟」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.92,
+      "canonical": {"name": "斯诺·沃克", "entity_type": "人物(龙人·英雄)"},
+      "aliases_to_register": ["斯诺", "斯诺・沃克", "斯诺大人"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "据克洛伊言：掌管北部战区全域的总司令；此前独力迎击大蜈蚣群未归（余一漏网）。本章自天际驰回被缇缇拦截，经涡波确证身份——时隔一年再会：泪涌痛哭（'我的涡波！'）、当众拥抱撒娇索求摸头与夸奖、宣告涡波为'我一直在寻找的老公'（据斯诺声称）、一拳砸烂被捕获的Centidreadnought头部、以总司令名义颁布入室禁令、进而当面宣言'什么总司令什么英雄我都不干了'。",
+          "chapter": 225
+        },
+        {
+          "category": "appearance",
+          "text": "淡青色长发；乍看慵懒的樱色眼瞳寄宿炽热意志；背后一对酷似龙种的青色翅膀（与缇缇羽翼不同）；民族服饰+庄严肃穆披风。",
+          "chapter": 225
+        },
+        {
+          "category": "trait",
+          "text": "据涡波评：'既倦怠又奔放还有逃亡癖、本质上就是个废人。这样才符合她的风格'；部下面前形象崩塌（克洛伊等大惊——'想必斯诺是第一次在他人面前展露自己不成器的模样'）；据拉丝缇娅拉之言，离别之际的委托完成出色，且各地拼命努力、力所能及范围内尽职尽责。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 9, "quote": "「这倒确实，涡波大人和斯诺大人的确是互相认识的⋯⋯倒不如说，您二位的关系应该是相当深厚的啊，这点我也有所耳闻。不过，就算您再怎么着急、斯诺大人她毕竟是掌管北部战区全域的总司令，我想实在是没办法那么容易就安排──」"},
+        {"vol": 1, "chapter": 225, "line": 169, "quote": "──就这样，在此时此刻、时隔一年的岁月，青色的龙人少女斯诺・沃克终于和我再会了。"},
+        {"vol": 1, "chapter": 225, "line": 156, "quote": "少女留着一头淡青色的长发。乍看之下有些慵懒的樱色眼瞳中确实地寄宿着炽热的意志。"},
+        {"vol": 1, "chapter": 225, "line": 206, "quote": "「嗯！他就是我一直在寻找的老公哦。诶嘿嘿～」"},
+        {"vol": 1, "chapter": 225, "line": 249, "quote": "「那、那这样吧，什么总司令什么英雄我都不干了算了？」"},
+        {"vol": 1, "chapter": 225, "line": 200, "quote": "离别之际，我跟斯诺说了之后的事就拜托她了。根据拉丝缇娅拉的话听来，斯诺很出色地完成了我的委托。而且不仅如此，斯诺还在各种各样的地方拼命努力，在她力所能及的范围内尽职尽责。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.9,
+      "canonical": {"name": "克洛伊·希达尔克", "entity_type": "人物"},
+      "aliases_to_register": ["克洛伊", "克洛伊小姐", "克洛伊大人"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "柯尔库军人（'恢复了作为军人的矜持'）：以自身立场为『LivingLegend号』免除驻港审查；接士兵急报后压下动摇组织迎击、短时间召集全城士兵完成准备；受涡波助战（本顾虑军人体面）后部队后方待机；阅免职令面色发青、听不进劝（'根本没有人能够代替斯诺大人的'）；以蕴含期待与憧憬的眼神仰视涡波；对战果惊问；对斯诺丑态与老公宣言大惊，力谏其守总司令/英雄分寸，闻辞职宣言惨叫。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 4, "quote": "不过多亏了有克洛伊小姐的介绍，手续的办理非常顺利。不然的话，像『LivingLegend号』这样的大型船只肯定要经过相当严格的审查的，但利用克洛伊小姐的立场，这些流程统统被免除了。"},
+        {"vol": 1, "chapter": 225, "line": 18, "quote": "「怎、怎么可以⋯⋯根本没有人能够代替斯诺大人的──」"},
+        {"vol": 1, "chapter": 225, "line": 71, "quote": "「那就容我接受您的好意了⋯⋯当然，我方的部队也会在后方待机以备不测，毕竟实在不方便全都交由您一人处理」"},
+        {"vol": 1, "chapter": 225, "line": 243, "quote": "「斯诺大人，请您发言注意一下分寸！您可是『柯尔库』的最高领导人、是肩负『南方联盟』之一切的总司令、为人人所憧憬的『英雄』啊！！」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.9,
+      "canonical": {"name": "罗德·缇缇", "entity_type": "人物(五十层守护者)"},
+      "aliases_to_register": ["缇缇"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "同抵柯尔库：不满古奈尔逃脱而鼓颊抱怨；自请对付飞行怪物被涡波否决（涡波顾虑其战斗余波重创城市——'整片平原从地图上消失'）；凭风感先于『维度』察觉'跟人家同水准的飞行能力者'急速接近，警告'没时间用『维度』确认'后张开双翼升空呵止拦截；闻涡波之言战意即消；评斯诺'这女孩子相当有意思''不如说跟人家更相似呢'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 141, "quote": "「有个跟人家同水准的飞行能力者正在朝这边赶过来！！」"},
+        {"vol": 1, "chapter": 225, "line": 148, "quote": "「快快停下！来者何人！」"},
+        {"vol": 1, "chapter": 225, "line": 160, "quote": "一听到我的话，缇缇立马叨咕了一声「原来如此」，而她的战意也随之萎靡下来。而斯诺则因为惊讶而张大了嘴巴。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.9,
+      "canonical": {"name": "古奈尔", "entity_type": "人物(吸血种)"},
+      "aliases_to_register": ["古奈尔酱"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "趁怪物来袭骚动抱起缇缇（'正统派公主'）逃走，宣言'咱这就溜喽、后面的事就拜托你们了⋯⋯为了彼此再也不见而祈祷'；护卫司空见惯地追赶；涡波判断其真心不愿同行而放行（'这次只要知道有从千年前活到今天的人存在就足够了'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 45, "quote": "「──然而这正是千载难逢的机会！就是现在！咱这就溜喽、后面的事就拜托你们了！等咱跑远了就会为了彼此再也不见而祈祷滴─！！」"},
+        {"vol": 1, "chapter": 225, "line": 51, "quote": "「算了，就放她去吧。看上去她是真的不想应付我们。这次只要知道有从千年前活到今天的人存在就足够了」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.88,
+      "canonical": {"name": "拉丝缇娅拉", "entity_type": "人物"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "本章未在场（仅提及）：拜托涡波将斯诺带走——即令斯诺从现有职位上离职同行；另据涡波，斯诺出色完成了离别之际的委托（根据拉丝缇娅拉的话听来）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 15, "quote": "拉丝缇娅拉拜托我将斯诺带走，这当然就意味着要让斯诺从现有的职位上离职。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.88,
+      "canonical": {"name": "塞拉·雷迪安特", "entity_type": "人物(弗茨亚茨骑士·狼耳兽人)"},
+      "aliases_to_register": ["塞拉"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "其交予涡波的介绍信走联合国正式程序，实为斯诺『免职令』兼命令斯诺同行、安排补位的敕令。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 12, "quote": "当身边的船员们急急忙忙地装卸着船上的货物时，我将塞拉给我的介绍信递给了克洛伊小姐。"},
+        {"vol": 1, "chapter": 225, "line": 10, "quote": "「我手上有联合国那边的介绍信来着，用这个的话能不能通融一下呢？」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.86,
+      "canonical": {"name": "艾德", "entity_type": "人物(四十守护者)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "提及：涡波以'与艾德战斗'为前提定位本章战斗（'只不过是与艾德战斗之前的热身运动'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 91, "quote": "对把这个问题当做一大危机的军队来说可能有些失礼，但这场战斗于我而言只不过是与艾德战斗之前的热身运动罢了。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.86,
+      "canonical": {"name": "帕林库洛·勒伽西", "entity_type": "人物"},
+      "aliases_to_register": ["帕林库洛"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "回想提及：涡波与帕林库洛在本土中央交战时见过同种空中飞舞的怪物；彼时『次元斩裂剑』需相当的精力与大量魔力才能使出。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 35, "quote": "这种怪物我以前见过。我和帕林库洛在本土中央战斗的时候，它也是在天上飞来飞去的怪物中的一种。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.85,
+      "canonical": {"name": "赛鲁多拉", "entity_type": "人物"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "提及：缇缇初见斯诺时的联想比较对象（'总觉得跟赛鲁多拉有点⋯⋯不对不像啊。性格上差得太多了'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 195, "quote": "「哦、嚯～？感觉这个女孩子相当有意思呢。亏人家刚才吓了一跳。不过、唔－⋯⋯⋯总觉得跟赛鲁多拉有点⋯⋯不对不像啊。性格上差得太多了。不如说跟人家更相似呢」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.85,
+      "canonical": {"name": "艾尔米拉德·希达尔克", "entity_type": "人物"},
+      "aliases_to_register": ["艾尔米拉德・希达尔克"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "提及：涡波推测克洛伊或与'喜欢英雄戏码的艾尔米拉德・希达尔克'属于同类。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 74, "quote": "搞不好她也和喜欢英雄戏码的艾尔米拉德・希达尔克属于同类吧。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.86,
+      "canonical": {"name": "艾利巴茨·利拜斯", "entity_type": "人物(锻冶师)"},
+      "aliases_to_register": ["艾利巴茨"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "提及：涡波身着其制作的「ChromeGlove」「MegistusBoots」战斗，'在心中默默地感谢艾利巴茨的关照'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 106, "quote": "我一面在心中默默地感谢艾利巴茨的关照，一面提高奔跑的速度。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "character",
+      "confidence": 0.9,
+      "canonical": {"name": "Centidreadnought", "entity_type": "人物(怪物)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "「怪物」级别32：空中飞舞的巨型蜈蚣，獠牙如利爪；战力相当于十名联合国精英探索者（涡波评）；据士兵称系斯诺此前迎击的大蜈蚣群之'漏网之鱼'（'还是有漏网之鱼'，与库内 ch222『大蜈蚣』之关系留终审）；据说为数度袭击城市的凶恶种类；被涡波空间错位斩击切成上百段而未死（仅头部完整趴地呻吟），终被斯诺一拳砸烂头部。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 33, "quote": "「怪物」Centidreadnought：级别32"},
+        {"vol": 1, "chapter": 225, "line": 34, "quote": "是在空中飞舞的巨型蜈蚣。"},
+        {"vol": 1, "chapter": 225, "line": 29, "quote": "「没错。虽然斯诺大人此前应该是前往迎击了，但好像还是有漏网之鱼。斯诺大人她也还没有回来」"},
+        {"vol": 1, "chapter": 225, "line": 36, "quote": "级别32──此等水平相当于十名联合国精英探索者的战力。"},
+        {"vol": 1, "chapter": 225, "line": 230, "quote": "只听吧唧一声，Centidreadnought的脑袋就被砸烂了。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.9,
+      "canonical": {"name": "『Shift』", "entity_type": "魔法(次元魔术)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "涡波'最近刚获得的魔法'；将'可以引发捩转的魔力丝线'缠绕于右手佩剑；与『次元斩裂剑』同为仅引发空间错位、不具物理攻击力的魔法（分割捕获原理：扰乱飞行感觉而非真斩断）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 92, "quote": "「──次元魔术『Shift』」"},
+        {"vol": 1, "chapter": 225, "line": 93, "quote": "我最近刚获得的魔法『Shift』"},
+        {"vol": 1, "chapter": 225, "line": 123, "quote": "因为『Shift』和『次元斩裂剑』只是引发空间错位的魔法，并不具备物理层面的攻击力。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.88,
+      "canonical": {"name": "次元斩裂剑", "entity_type": "魔法(次元系)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "曾为高难度魔法（对帕林库洛时需相当的精力和大量的魔力）；'服用大量魔石之后'于本章驾轻就熟——横斩+十余计斜斩+坠地连击将Centidreadnought切成上百段（空间错位非物理斩断）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 95, "quote": "「──魔法『次元斩裂剑』」"},
+        {"vol": 1, "chapter": 225, "line": 97, "quote": "跟帕林库洛战斗的时候，这一招是需要相当的精力和大量的魔力才能使出来的，但现在却如此驾轻就熟。看来服用大量魔石之后，对我已有的魔法也产生了不俗的影响。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.86,
+      "canonical": {"name": "Default", "entity_type": "魔法(次元魔术)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "本章用作跳跃强化：'通过对空间的扭曲和压缩，一个普通的跳跃立时升华为堪比瞬间移动的移动手段'（涡波自称'犯规手段'），一刹那贴近千米外的目标。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 111, "quote": "「──魔法『Default』！」"},
+        {"vol": 1, "chapter": 225, "line": 113, "quote": "通过对空间的扭曲和压缩，一个普通的跳跃立时升华为堪比瞬间移动的移动手段。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.88,
+      "canonical": {"name": "『维度』", "entity_type": "技能(次元魔术·感知)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "本章应用：看破克洛伊心中动摇；侦查发现目标（方向西南偏西·距离十五千米·数量一匹）；衡量柯尔库战斗力；把握怪物位置/高度/速度/抵达时刻/风向风速/温度湿度；战后缩小范围（再展开被缇缇以'没时间'否决）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 31, "quote": "但拥有『维度』的我还是能看出她心中的动摇。这座港口城市如今陷入了危机。"},
+        {"vol": 1, "chapter": 225, "line": 39, "quote": "「没错，有大型的飞行怪物正在向这边袭来。方向是西南偏西，距离十五千米，数量为一匹」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.86,
+      "canonical": {"name": "ChromeGlove", "entity_type": "道具(手套)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "涡波手上装备：缝制用魔石丝线对魔力起反应，'握剑的手感也上了一个层次'；'仿佛是被我一直使用至今的装备那样趁手'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 101, "quote": "准确来说是穿在我手脚上的──「ChromeGlove」和「MegistusBoots」"},
+        {"vol": 1, "chapter": 225, "line": 104, "quote": "这让我的动作变得更加轻盈。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.86,
+      "canonical": {"name": "MegistusBoots", "entity_type": "道具(靴)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "涡波脚上装备：'双脚拔地时感觉更加有力'；着陆冲击缓冲（'多亏了⋯⋯「MegistusBoots」的加护，冲击还不到无法承受的地步'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 101, "quote": "准确来说是穿在我手脚上的──「ChromeGlove」和「MegistusBoots」"},
+        {"vol": 1, "chapter": 225, "line": 119, "quote": "着陆的冲击从双脚一直传到头顶。但是多亏了我这结实的身体和「MegistusBoots」的加护，冲击还不到无法承受的地步。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.86,
+      "canonical": {"name": "阿雷亚斯家的宝剑", "entity_type": "道具(剑)"},
+      "aliases_to_register": ["阿雷亚斯家的宝剑诺文"],
+      "observations": [
+        {
+          "category": "summary",
+          "text": "本章为涡波右手佩剑；『Shift』'可以引发捩转的魔力丝线'的缠绕载体。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 94, "quote": "我将它那可以引发捩转的魔力丝线缠绕在右手上的『阿雷亚斯家的宝剑诺文』上。这样一来──"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.85,
+      "canonical": {"name": "魔力变换（LevelUP）", "entity_type": "魔法"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "提及：涡波跳跃力'经过异世界的『魔力变换（LevelUP）』已经升华到了其它的次元'（本章战斗跳跃的根基）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 110, "quote": "我的跳跃力经过异世界的『魔力变换（LevelUP）』已经升华到了其它的次元。而且还伴之以异世界魔法的力量。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.88,
+      "canonical": {"name": "斯诺的免职令", "entity_type": "道具(敕令文书)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "塞拉交予涡波、以联合国介绍信形式递交的敕令文书：既是斯诺『免职令』，亦'命令斯诺和我们同行，并安排人员补充斯诺离去造成的职位空缺'；克洛伊阅后'脸色变得越来越青'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 14, "quote": "「诶⋯⋯这个是、斯诺大人的『免职令』⋯⋯？怎么会，为什么这么快就⋯⋯？」"},
+        {"vol": 1, "chapter": 225, "line": 16, "quote": "递给克洛伊小姐的介绍信同时也是命令斯诺和我们同行，并安排人员补充斯诺离去造成的职位空缺的敕令。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.9,
+      "canonical": {"name": "柯尔库", "entity_type": "地点(港口城市)"},
+      "observations": [
+        {
+          "category": "knowledge",
+          "text": "坐落于本土东端（柯尔库港）；城内有可供全副武装军队通行的最宽大道；克洛伊短时间即召集驻城士兵完成迎击准备；市民议论'那个开拓地的英雄来到了这里'、对英雄参加『境界战争』抱期待；据克洛伊言斯诺为其最高领导人。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 3, "quote": "抵达了坐落于本土东端的柯尔库港之后，我们立刻前往办理『LivingLegend号』的驻港手续。"},
+        {"vol": 1, "chapter": 225, "line": 80, "quote": "稍稍用『维度』确认了一番，结果明白了他们是在议论「那个开拓地的英雄来到了这里」云云。他们投向我的眼神里充满了对英雄参加『境界战争』的期待。"},
+        {"vol": 1, "chapter": 225, "line": 243, "quote": "「斯诺大人，请您发言注意一下分寸！您可是『柯尔库』的最高领导人、是肩负『南方联盟』之一切的总司令、为人人所憧憬的『英雄』啊！！」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.86,
+      "canonical": {"name": "圣柯尔库堡", "entity_type": "地点(城堡·司令部)"},
+      "observations": [
+        {
+          "category": "knowledge",
+          "text": "驻兵要塞：迎击计划原拟以驻堡兵力实施；后接克洛伊命令派出增援，与城内部队合流成'如长蛇般的阵列'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 27, "quote": "「之前的那个怪物正从西面向我们这边袭来！虽然数量不是十只而是一只，但也是不可小觑的威胁。现在指挥部那边正在制定以驻守在『圣柯尔库堡』的兵力迎击的计划，可能的话希望克洛伊大人也能参与指挥」"},
+        {"vol": 1, "chapter": 225, "line": 79, "quote": "想当然耳，这是一条可以让全副武装的军队通行的大道。而且，接到克洛伊小姐命令的『要塞』那边也派出了增援的部队加入进来，最终形成了一条如长蛇般的阵列。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.88,
+      "canonical": {"name": "『LivingLegend号』", "entity_type": "魔石船(船艇)"},
+      "observations": [
+        {
+          "category": "summary",
+          "text": "抵达柯尔库港办理驻港手续；此类大型船只本需严格审查，凭克洛伊立场统统免除。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 3, "quote": "抵达了坐落于本土东端的柯尔库港之后，我们立刻前往办理『LivingLegend号』的驻港手续。"},
+        {"vol": 1, "chapter": 225, "line": 4, "quote": "不过多亏了有克洛伊小姐的介绍，手续的办理非常顺利。不然的话，像『LivingLegend号』这样的大型船只肯定要经过相当严格的审查的，但利用克洛伊小姐的立场，这些流程统统被免除了。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.86,
+      "canonical": {"name": "联合国", "entity_type": "组织"},
+      "observations": [
+        {
+          "category": "knowledge",
+          "text": "涡波持'联合国那边的介绍信'（克洛伊认系'走了国家那边的正式程序'）；级别32怪物的战力参照='十名联合国精英探索者的战力'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 10, "quote": "「我手上有联合国那边的介绍信来着，用这个的话能不能通融一下呢？」"},
+        {"vol": 1, "chapter": 225, "line": 36, "quote": "级别32──此等水平相当于十名联合国精英探索者的战力。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.85,
+      "canonical": {"name": "南方联盟", "entity_type": "组织"},
+      "observations": [
+        {
+          "category": "knowledge",
+          "text": "据克洛伊言：斯诺为'肩负『南方联盟』之一切的总司令'、『柯尔库』最高领导人、人人憧憬的『英雄』（本章末斯诺宣言辞去）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 243, "quote": "「斯诺大人，请您发言注意一下分寸！您可是『柯尔库』的最高领导人、是肩负『南方联盟』之一切的总司令、为人人所憧憬的『英雄』啊！！」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.85,
+      "canonical": {"name": "『境界战争』", "entity_type": "战争"},
+      "observations": [
+        {
+          "category": "knowledge",
+          "text": "柯尔库市民对英雄（涡波）参加『境界战争』抱以期待（沿途议论）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 80, "quote": "稍稍用『维度』确认了一番，结果明白了他们是在议论「那个开拓地的英雄来到了这里」云云。他们投向我的眼神里充满了对英雄参加『境界战争』的期待。"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.85,
+      "canonical": {"name": "历基亚国", "entity_type": "国家"},
+      "observations": [
+        {
+          "category": "knowledge",
+          "text": "据克洛伊言：柯尔库方面接下来有'招待塞斯提亚和历基亚国公主'的事务待处理。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 240, "quote": "「斯诺大人会哭！？⋯⋯不不，就算您说不许进入、可是接下来还有怪物讨伐的报告书以及招待塞斯提亚和历基亚国公主的事情要处理啊！」"}
+      ]
+    },
+    {
+      "type": "entity",
+      "library": "setting",
+      "confidence": 0.85,
+      "canonical": {"name": "弗茨亚茨", "entity_type": "国家"},
+      "observations": [
+        {
+          "category": "knowledge",
+          "text": "据涡波听闻：补充斯诺空位的人员'由弗茨亚茨选定的一干人才'（'虽然没有斯诺那样有能，但为数不少'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 17, "quote": "「⋯⋯那个，补充空位的人员似乎是由弗茨亚茨选定的一干人才，请你放心。我听说虽然没有斯诺那样有能，但为数不少所以应该能派上用场的」"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.88,
+      "canonical": {"subject": "斯诺·沃克", "rel_type": "老公宣称(婚姻自称)", "object": "相川涡波", "claim": true},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "据斯诺声称：'他就是我一直在寻找的老公'；引开拓地英雄谭自证（'涡波就是把我从束缚中拯救出来的人。是把家族啊婚约者啊什么的杂七杂八的东西全都打飞的人'）；进而提议'干脆直接结婚⋯⋯不如说来生孩子吧'——涡波未认同（'你再说下去我的社会地位差不多就要粉碎了'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 206, "quote": "「嗯！他就是我一直在寻找的老公哦。诶嘿嘿～」"},
+        {"vol": 1, "chapter": 225, "line": 214, "quote": "「诶、诶？我没有开玩笑唷？克洛伊也知道在开拓地上演的那则英雄谭不是么？涡波就是把我从束缚中拯救出来的人。是把家族啊婚约者啊什么的杂七杂八的东西全都打飞的人。所以说，他是我老公。诶嘿嘿～」"},
+        {"vol": 1, "chapter": 225, "line": 221, "quote": "「呐呐，涡波。我们两个去好好聊聊吧、好～好地聊一聊！来听听我这一年的努力吧！听完之后来夸夸我！夸我夸我夸我！然后重新迷上我！可能的话干脆直接结婚好了！不如说来生孩子吧！！」"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.9,
+      "canonical": {"subject": "克洛伊·希达尔克", "rel_type": "部下敬仰(上下级)", "object": "斯诺·沃克", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "视免职令为重大冲击（'根本没有人能够代替斯诺大人的'）；动员时称'斯诺大人她一定是相信我们的能力⋯⋯我们必须要回应她的信赖'；见斯诺丑态大惊失色；叙述定位'距离斯诺最近、也是最敬爱斯诺的克洛伊小姐'；对斯诺辞职宣言惨叫。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 18, "quote": "「怎、怎么可以⋯⋯根本没有人能够代替斯诺大人的──」"},
+        {"vol": 1, "chapter": 225, "line": 30, "quote": "「⋯⋯镇静一点。斯诺大人她一定是相信我们的能力，认为只有一匹的话交给我们也没有问题才会有此事态。我们必须要回应她的信赖才可以」"},
+        {"vol": 1, "chapter": 225, "line": 217, "quote": "不过，虽然全场都噤声不语，但唯有一人面露愠色。距离斯诺最近、也是最敬爱斯诺的克洛伊小姐狠狠地瞪着我。"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.88,
+      "canonical": {"subject": "克洛伊·希达尔克", "rel_type": "受援协同(敬意)", "object": "相川涡波", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "初以军人体面顾虑请托客人出面；称涡波助战'雪中送炭'并受诺（部队后方待机）；'用钦佩的眼神仰视⋯⋯蕴含着某种期待，寄宿着几丝憧憬'；后称其'传说中的天然小白脸英雄'并面露愠色。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 62, "quote": "「涡波大人他？这实在是雪中送炭，只是⋯⋯」"},
+        {"vol": 1, "chapter": 225, "line": 72, "quote": "言及于此，克洛伊小姐用钦佩的眼神仰视着我。"},
+        {"vol": 1, "chapter": 225, "line": 218, "quote": "「百闻不如一见、这就是那个传说中的天然小白脸英雄『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』吗──！」"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.86,
+      "canonical": {"subject": "拉丝缇娅拉", "rel_type": "离任安排(拜托带走)", "object": "斯诺·沃克", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "拉丝缇娅拉拜托涡波将斯诺带走——'这当然就意味着要让斯诺从现有的职位上离职'（与免职令敕令互为表里）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 15, "quote": "拉丝缇娅拉拜托我将斯诺带走，这当然就意味着要让斯诺从现有的职位上离职。"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.88,
+      "canonical": {"subject": "塞拉·雷迪安特", "rel_type": "敕令文书交付", "object": "相川涡波", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "塞拉交给涡波的联合国介绍信，实为斯诺免职令兼命令同行/安排补位的敕令（由涡波向克洛伊出示）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 12, "quote": "当身边的船员们急急忙忙地装卸着船上的货物时，我将塞拉给我的介绍信递给了克洛伊小姐。"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.88,
+      "canonical": {"subject": "罗德·缇缇", "rel_type": "初遇拦截(解除敌意)", "object": "斯诺·沃克", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "缇缇侦知'跟人家同水准的飞行能力者'升空呵止拦截（急刹车对峙）；闻涡波'她就是斯诺'战意即消；评斯诺'相当有意思''不如说跟人家更相似呢'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 145, "quote": "丢下这句话之后，缇缇便张开双翼冲上了天穹。"},
+        {"vol": 1, "chapter": 225, "line": 160, "quote": "一听到我的话，缇缇立马叨咕了一声「原来如此」，而她的战意也随之萎靡下来。而斯诺则因为惊讶而张大了嘴巴。"},
+        {"vol": 1, "chapter": 225, "line": 195, "quote": "「哦、嚯～？感觉这个女孩子相当有意思呢。亏人家刚才吓了一跳。不过、唔－⋯⋯⋯总觉得跟赛鲁多拉有点⋯⋯不对不像啊。性格上差得太多了。不如说跟人家更相似呢」"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.88,
+      "canonical": {"subject": "相川涡波", "rel_type": "主攻分工协商", "object": "罗德·缇缇", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "缇缇自请讨伐飞行怪物（'对付飞行类的怪物的话，人家比涡涡更合适'）；涡波以前约（'再有大型怪物出现的话就让我来主攻'）与试验需求否决——并因顾虑其战斗余波（'整片平原从地图上消失'）未言明；缇缇接受并转入筹划。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 57, "quote": "「既然这样，那人家这就去给怪物解决掉怎样。对付飞行类的怪物的话，人家比涡涡更合适」"},
+        {"vol": 1, "chapter": 225, "line": 58, "quote": "「不用，还是我来吧。之前不是说了再有大型怪物出现的话就让我来主攻的么。正好我也有些事想拿那个怪物来试验一下」"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.88,
+      "canonical": {"subject": "古奈尔", "rel_type": "同行脱逃(单方离队)", "object": "相川涡波", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "趁乱宣言'咱这就溜喽'逃离同行；护卫追之不及（'司空见惯'）；缇缇提议追回，涡波放行（'就放她去吧⋯⋯这次只要知道有从千年前活到今天的人存在就足够了'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 45, "quote": "「──然而这正是千载难逢的机会！就是现在！咱这就溜喽、后面的事就拜托你们了！等咱跑远了就会为了彼此再也不见而祈祷滴─！！」"},
+        {"vol": 1, "chapter": 225, "line": 51, "quote": "「算了，就放她去吧。看上去她是真的不想应付我们。这次只要知道有从千年前活到今天的人存在就足够了」"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.85,
+      "canonical": {"subject": "斯诺·沃克", "rel_type": "总司令·最高领导人", "object": "南方联盟", "claim": true},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "据克洛伊言：斯诺掌管北部战区全域的总司令；『柯尔库』最高领导人、肩负『南方联盟』之一切的总司令、人人憧憬的『英雄』——本章末其当面宣言辞去（兑现待续）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 9, "quote": "「这倒确实，涡波大人和斯诺大人的确是互相认识的⋯⋯倒不如说，您二位的关系应该是相当深厚的啊，这点我也有所耳闻。不过，就算您再怎么着急、斯诺大人她毕竟是掌管北部战区全域的总司令，我想实在是没办法那么容易就安排──」"},
+        {"vol": 1, "chapter": 225, "line": 243, "quote": "「斯诺大人，请您发言注意一下分寸！您可是『柯尔库』的最高领导人、是肩负『南方联盟』之一切的总司令、为人人所憧憬的『英雄』啊！！」"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.88,
+      "canonical": {"subject": "克洛伊·希达尔克", "rel_type": "驻港手续斡旋", "object": "『LivingLegend号』", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "凭克洛伊的立场，大型船『LivingLegend号』免于严格审查，驻港手续顺利完成。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 4, "quote": "不过多亏了有克洛伊小姐的介绍，手续的办理非常顺利。不然的话，像『LivingLegend号』这样的大型船只肯定要经过相当严格的审查的，但利用克洛伊小姐的立场，这些流程统统被免除了。"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.86,
+      "canonical": {"subject": "艾利巴茨·利拜斯", "rel_type": "装备制作受谢", "object": "相川涡波", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "涡波身着其制作的手套靴（ChromeGlove/MegistusBoots）迎战，'在心中默默地感谢艾利巴茨的关照'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 106, "quote": "我一面在心中默默地感谢艾利巴茨的关照，一面提高奔跑的速度。"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.86,
+      "canonical": {"subject": "相川涡波", "rel_type": "旧战记忆对照", "object": "帕林库洛·勒伽西", "claim": false},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "涡波回想与帕林库洛在本土中央的交战：彼时见过同种飞行怪物；『次元斩裂剑』当时需相当的精力和大量的魔力（今昔对照）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 35, "quote": "这种怪物我以前见过。我和帕林库洛在本土中央战斗的时候，它也是在天上飞来飞去的怪物中的一种。"},
+        {"vol": 1, "chapter": 225, "line": 97, "quote": "跟帕林库洛战斗的时候，这一招是需要相当的精力和大量的魔力才能使出来的，但现在却如此驾轻就熟。看来服用大量魔石之后，对我已有的魔法也产生了不俗的影响。"}
+      ]
+    },
+    {
+      "type": "relation",
+      "library": "relation",
+      "confidence": 0.86,
+      "canonical": {"subject": "斯诺·沃克", "rel_type": "不再放弃誓约(据斯诺自述)", "object": "相川涡波", "claim": true},
+      "observations": [
+        {
+          "category": "relation",
+          "text": "据斯诺自述：'因为我跟涡波发誓不会再放弃，所以这一年来我都相信着涡波然后不断地努力着'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 180, "quote": "「呜、呜呜⋯⋯！一直以来！我、一直以来都相信着涡波会回来的！因为我跟涡波发誓不会再放弃，所以这一年来我都相信着涡波然后不断地努力着！我真的、超级超级努力了──！！」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.88,
+      "canonical": {"name": "柯尔库港驻港手续（克洛伊斡旋）", "kind": "入港", "tick": 225, "instant": null, "time_verbatim": "抵达本土东端柯尔库港当日"},
+      "entities_involved": ["相川涡波", "克洛伊·希达尔克", "『LivingLegend号』"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "『LivingLegend号』抵达柯尔库港即办驻港手续；凭克洛伊介绍免除大型船只审查，办理顺利；随后众人下船各自行动。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 3, "quote": "抵达了坐落于本土东端的柯尔库港之后，我们立刻前往办理『LivingLegend号』的驻港手续。"},
+        {"vol": 1, "chapter": 225, "line": 5, "quote": "结束了手续的办理，我们纷纷下了船照各自原本的目的行动了起来。"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.9,
+      "canonical": {"name": "斯诺免职令出示与判明", "kind": "转折", "tick": 225, "instant": null, "time_verbatim": "入港当日·驻港手续后"},
+      "entities_involved": ["相川涡波", "克洛伊·希达尔克", "斯诺·沃克", "塞拉·雷迪安特", "拉丝缇娅拉"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "涡波求见斯诺，递出塞拉的介绍信（联合国正式程序）；克洛伊阅后'脸色变得越来越青'——判明为斯诺『免职令』，兼命令斯诺同行、安排补位之敕令；据涡波听闻补位者由弗茨亚茨选定；克洛伊受冲击听不进劝（涡波本欲'稳妥地把这件事办好'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 12, "quote": "当身边的船员们急急忙忙地装卸着船上的货物时，我将塞拉给我的介绍信递给了克洛伊小姐。"},
+        {"vol": 1, "chapter": 225, "line": 13, "quote": "她在接过信件浏览起来之后⋯⋯脸色变得越来越青。"},
+        {"vol": 1, "chapter": 225, "line": 14, "quote": "「诶⋯⋯这个是、斯诺大人的『免职令』⋯⋯？怎么会，为什么这么快就⋯⋯？」"},
+        {"vol": 1, "chapter": 225, "line": 16, "quote": "递给克洛伊小姐的介绍信同时也是命令斯诺和我们同行，并安排人员补充斯诺离去造成的职位空缺的敕令。"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.9,
+      "canonical": {"name": "Centidreadnought袭港急报与迎击准备", "kind": "危机", "tick": 225, "instant": null, "time_verbatim": "入港当日·免职令出示被打断时"},
+      "entities_involved": ["克洛伊·希达尔克", "Centidreadnought", "斯诺·沃克", "圣柯尔库堡", "相川涡波"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "柯尔库士兵急报：'之前的那个怪物'自西面袭来（一匹·斯诺此前迎击的漏网之鱼·斯诺未归）；指挥部拟以『圣柯尔库堡』兵力迎击并请克洛伊参与指挥；克洛伊压下动摇（『维度』看破其心中动摇）表态'回应她的信赖'；涡波以『维度』侦查判明：西南偏西·十五千米·一匹；'怪物'Centidreadnought级别32≈十名联合国精英探索者。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 27, "quote": "「之前的那个怪物正从西面向我们这边袭来！虽然数量不是十只而是一只，但也是不可小觑的威胁。现在指挥部那边正在制定以驻守在『圣柯尔库堡』的兵力迎击的计划，可能的话希望克洛伊大人也能参与指挥」"},
+        {"vol": 1, "chapter": 225, "line": 29, "quote": "「没错。虽然斯诺大人此前应该是前往迎击了，但好像还是有漏网之鱼。斯诺大人她也还没有回来」"},
+        {"vol": 1, "chapter": 225, "line": 33, "quote": "「怪物」Centidreadnought：级别32"},
+        {"vol": 1, "chapter": 225, "line": 39, "quote": "「没错，有大型的飞行怪物正在向这边袭来。方向是西南偏西，距离十五千米，数量为一匹」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.9,
+      "canonical": {"name": "古奈尔脱队逃走", "kind": "离队", "tick": 225, "instant": null, "time_verbatim": "袭港急报当口的骚动中"},
+      "entities_involved": ["古奈尔", "罗德·缇缇", "相川涡波"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "古奈尔抱起缇缇（'正统派公主'）狂奔而逃，喊话'为了彼此再也不见而祈祷'；护卫吃惊追上（'司空见惯'）；缇缇不满（'那家伙还是逃掉了'）提议由己讨伐怪物、涡波去追；涡波放行——'这次只要知道有从千年前活到今天的人存在就足够了'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 45, "quote": "「──然而这正是千载难逢的机会！就是现在！咱这就溜喽、后面的事就拜托你们了！等咱跑远了就会为了彼此再也不见而祈祷滴─！！」"},
+        {"vol": 1, "chapter": 225, "line": 46, "quote": "见她突然狂奔起来，担任护卫的一干人等虽然吃惊但也只好追上去。"},
+        {"vol": 1, "chapter": 225, "line": 51, "quote": "「算了，就放她去吧。看上去她是真的不想应付我们。这次只要知道有从千年前活到今天的人存在就足够了」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.9,
+      "canonical": {"name": "涡波英雄请战与迎击布阵", "kind": "出阵", "tick": 225, "instant": null, "time_verbatim": "急报后同日"},
+      "entities_involved": ["相川涡波", "克洛伊·希达尔克", "罗德·缇缇", "圣柯尔库堡"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "涡波（顾虑军人体面）再摆『英雄』姿态请战（克洛伊见状'又是、和斯诺大人一样──'一惊）；克洛伊受诺、部队后方待机，并'只用刚才这么短的时间'召集全城士兵完成迎击准备；沿最宽大道行军、圣柯尔库堡增援合流成'如长蛇般的阵列'；市民沿途议论期待；部队于距柯尔库西南一千米处排兵布阵；涡波独自出阵（'就算真有什么不测，那也是缇缇出场帮忙，然后整片平原从地图上消失罢了'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 65, "quote": "「毋需多虑，克洛伊小姐。『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』正是为了这种紧急情况而存在的。我此去势在必得。你们没有必要勉强自己」"},
+        {"vol": 1, "chapter": 225, "line": 68, "quote": "「又、又是、和斯诺大人一样──」"},
+        {"vol": 1, "chapter": 225, "line": 77, "quote": "说着克洛伊小姐便将士兵聚集起来。只用刚才这么短的时间，她就将驻守在这座城里的士兵召集了起来并完成了迎击的准备。"},
+        {"vol": 1, "chapter": 225, "line": 83, "quote": "就这样，部队在距柯尔库西南方向一千米的位置处排兵布阵。"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.9,
+      "canonical": {"name": "Centidreadnought分割捕获战", "kind": "战斗", "tick": 225, "instant": null, "time_verbatim": "布阵后同日·平原迎击"},
+      "entities_involved": ["相川涡波", "Centidreadnought", "『Shift』", "次元斩裂剑", "Default", "ChromeGlove", "MegistusBoots"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "涡波以『Shift』丝线缠『阿雷亚斯家的宝剑诺文』发动『次元斩裂剑』；以『Default』扭曲压缩空间，使跳跃'升华为堪比瞬间移动的移动手段'，一刹那贴近千米外目标；横斩两断+十余计斜斩+坠地连击将敌'切成了上百段'——因仅引发空间错位无物理攻击力，敌未死（仅头部完整趴地呻吟，无适应错位的智力）；涡波决定保持存活捕获；克洛伊赶到惊问，涡波说明并用意：活捕'大有裨益·可调查弱点'（据克洛伊：首次捕获、能否把握不明）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 115, "quote": "我首先冲Centidreadnought的腹部使出一记横斩，就这样将它那庞大的躯体一刀两断。当然，剑闪远远不止于此。接在第一剑之后，我又从各个方向挥出十余计斜斩。"},
+        {"vol": 1, "chapter": 225, "line": 117, "quote": "在它陨落之际我仍然在不断释放斩击，等到敌人的身体触及地面时，它那巨大的身体已经被我切成了上百段。"},
+        {"vol": 1, "chapter": 225, "line": 123, "quote": "因为『Shift』和『次元斩裂剑』只是引发空间错位的魔法，并不具备物理层面的攻击力。因此我做的并不是真正意义上的将敌人身体斩断，而是通过空间的错位扰乱它飞行的感觉。"},
+        {"vol": 1, "chapter": 225, "line": 125, "quote": "结果只剩下头部还完整的Centidreadnought只能趴在地上可怜兮兮地呻吟着。"},
+        {"vol": 1, "chapter": 225, "line": 132, "quote": "「您说捕获是吗⋯⋯？确实、如果能抓到活的那真是大有裨益。这样就能调查这个棘手的怪物的弱点了。不过，我们这边也是第一次捕获它，也不清楚能否把握好就是了⋯⋯」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.88,
+      "canonical": {"name": "缇缇拦截未知飞行者", "kind": "遭遇", "tick": 225, "instant": null, "time_verbatim": "捕获战后·事前处理商谈中"},
+      "entities_involved": ["罗德·缇缇", "相川涡波", "斯诺·沃克"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "缇缇如机敏小猫般抬头望天、'露出相当严肃的表情'（来到地上后初见），喊'涡涡'示警：'有个跟人家同水准的飞行能力者正在朝这边赶过来'；否决涡波再展『维度』（'没时间'）后张开双翼冲上天穹（暴风随起）；其后再至一道横向暴风——小型物体以凌驾Centidreadnought的速度自天边踏来，急刹车悬停；涡波认出'翠色的辉翼'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 141, "quote": "「有个跟人家同水准的飞行能力者正在朝这边赶过来！！」"},
+        {"vol": 1, "chapter": 225, "line": 145, "quote": "丢下这句话之后，缇缇便张开双翼冲上了天穹。"},
+        {"vol": 1, "chapter": 225, "line": 153, "quote": "「翠色的辉翼⋯⋯？偏偏在这种时候⋯⋯！」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.92,
+      "canonical": {"name": "涡波与斯诺时隔一年再会", "kind": "重逢", "tick": 225, "instant": null, "time_verbatim": "捕获战后·平原上（'时隔一年的岁月'）"},
+      "entities_involved": ["相川涡波", "斯诺·沃克", "罗德·缇缇", "克洛伊·希达尔克"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "涡波喝止缇缇（'她就是斯诺！⋯⋯不是我们的敌人'）；克洛伊补充'涡波大人他已经将敌人解决了'；斯诺呆若木鸡后着陆接近、确认'涡、波⋯⋯？'——泪涌痛哭拥抱（'我的涡波！'），自陈'发誓不会再放弃'故一年来坚信并努力；当众索求摸头夸奖（'摸头摸头摸头！'），众吐司兵见司令丑态大惊（'想必斯诺是第一次在他人面前展露自己不成器的模样'）；涡波无法拒绝、真心称赞其坚守（据拉丝缇娅拉之言委托完成出色）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 158, "quote": "「住手、缇缇！她就是斯诺！斯诺・沃克！她不是我们的敌人！！」"},
+        {"vol": 1, "chapter": 225, "line": 169, "quote": "──就这样，在此时此刻、时隔一年的岁月，青色的龙人少女斯诺・沃克终于和我再会了。"},
+        {"vol": 1, "chapter": 225, "line": 178, "quote": "「呜、呜哇啊啊、呜哇啊啊啊啊啊啊啊啊！！涡、涡波──！涡波涡波涡波！我的涡波！是涡波啊啊啊啊啊──！！」"},
+        {"vol": 1, "chapter": 225, "line": 184, "quote": "以克洛伊小姐为始，众吐司兵因为看到自己司令的丑态而大惊失色。从他们的反应来看，想必斯诺是第一次在他人面前展露自己不成器的模样──这也让我明白了斯诺这一年里有多么出色地坚持战斗。"},
+        {"vol": 1, "chapter": 225, "line": 186, "quote": "「涡波、给我奖励！来摸摸头！摸头摸头摸头！好好摸摸我的头、夸夸我！！」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.9,
+      "canonical": {"name": "斯诺当众老公宣言与形象崩塌", "kind": "转折", "tick": 225, "instant": null, "time_verbatim": "再会当场·众兵面前"},
+      "entities_involved": ["斯诺·沃克", "相川涡波", "克洛伊·希达尔克"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "克洛伊战战兢兢问询二人关系，斯诺满面春风答'他就是我一直在寻找的老公'，引开拓地英雄谭（'把我从束缚中拯救出来⋯⋯把家族啊婚约者啊什么的杂七杂八的东西全都打飞'）向部下炫耀——'过去被封印的爱称就此复活'；叙述定评'斯诺用一年时间塑造起来的高大形象轰然倒塌的瞬间'；克洛伊怒斥'请您不要开玩笑'、称涡波'传说中的天然小白脸英雄'并狠狠瞪之；斯诺进而提议聊天-夸奖-再迷恋-结婚-生孩子，涡波以'社会地位差不多就要粉碎了'劝止。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 206, "quote": "「嗯！他就是我一直在寻找的老公哦。诶嘿嘿～」"},
+        {"vol": 1, "chapter": 225, "line": 209, "quote": "我想，这应该就是斯诺用一年时间塑造起来的高大形象轰然倒塌的瞬间了吧。"},
+        {"vol": 1, "chapter": 225, "line": 213, "quote": "「老公！？请、请您不要开玩笑！」"},
+        {"vol": 1, "chapter": 225, "line": 218, "quote": "「百闻不如一见、这就是那个传说中的天然小白脸英雄『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』吗──！」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.88,
+      "canonical": {"name": "斯诺一拳击杀Centidreadnought", "kind": "处决", "tick": 225, "instant": null, "time_verbatim": "再会后·返回柯尔库前"},
+      "entities_involved": ["斯诺·沃克", "Centidreadnought", "相川涡波"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "涡波以'那边那只怪物的问题'相指，斯诺犹豫片刻接近挥下一拳——'只听吧唧一声'砸烂其脑袋，溅血毫不在乎（'好的，搞定了。工作结束'）；'如此决绝的行动让除我以外的所有人倒吸了一口凉气'；涡波评'虽然确实有所成长，但斯诺还是有不少地方还是老样子'。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 228, "quote": "听完我的说辞，斯诺在犹豫了片刻之后，缓缓地向它接近过去并挥下一拳。"},
+        {"vol": 1, "chapter": 225, "line": 230, "quote": "只听吧唧一声，Centidreadnought的脑袋就被砸烂了。"},
+        {"vol": 1, "chapter": 225, "line": 232, "quote": "「好的，搞定了。工作结束。所以赶紧回柯尔库去吧。让我们在那儿好好聊聊」"}
+      ]
+    },
+    {
+      "type": "event",
+      "library": "event",
+      "confidence": 0.9,
+      "canonical": {"name": "斯诺入室禁令与辞职宣言", "kind": "转折", "tick": 225, "instant": null, "time_verbatim": "击杀怪物后·返回柯尔库途中"},
+      "entities_involved": ["斯诺·沃克", "克洛伊·希达尔克", "相川涡波"],
+      "observations": [
+        {
+          "category": "event",
+          "text": "斯诺牵手涡波于士兵拥簇下返城；途中以总司令身份下令'从今天开始所有人不许擅自进入我的房间⋯⋯敢违背的话就处以极刑。而且我会哭的'，改口'到明天早上为止⋯⋯特别是晚上，晚上绝对不可以进来'；克洛伊以怪物讨伐报告书与'招待塞斯提亚和历基亚国公主'事务谏诤、斥其身份（柯尔库最高领导人/南方联盟总司令/人人憧憬的英雄）；斯诺答'什么总司令什么英雄我都不干了算了？'——'她在自己的部下面前，表示说要就此辞职'；克洛伊惨叫全军哗然；涡波'仅仅只是感到了怀念'（'这才是斯诺'，'和拉丝缇娅拉再会时未能体会到的心情'）。",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 239, "quote": "「对了，从今天开始所有人不许擅自进入我的房间。这是总司令的命令，敢违背的话就处以极刑。而且我会哭的」"},
+        {"vol": 1, "chapter": 225, "line": 240, "quote": "「斯诺大人会哭！？⋯⋯不不，就算您说不许进入、可是接下来还有怪物讨伐的报告书以及招待塞斯提亚和历基亚国公主的事情要处理啊！」"},
+        {"vol": 1, "chapter": 225, "line": 249, "quote": "「那、那这样吧，什么总司令什么英雄我都不干了算了？」"},
+        {"vol": 1, "chapter": 225, "line": 250, "quote": "──她在自己的部下面前，表示说要就此辞职。"},
+        {"vol": 1, "chapter": 225, "line": 255, "quote": "这是和拉丝缇娅拉再会时未能体会到的心情。"}
+      ]
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "confidence": 0.9,
+      "canonical": {"name": "斯诺总司令·英雄职位辞任（ch222三连钩兑现推进）", "setup_chapter": 222, "payoff_chapter": null, "tier": "核心", "note": "ch222 总钩三连（①与涡波重逢②境遇使罗德・缇缇生怒③辞去总司令职务）之①③于本章兑现推进：免职令敕令既下、重逢既成、斯诺本人当众宣言'不干了'；弗茨亚茨选定的补位人才待到任；克洛伊激烈反对——离任落地程序与南方联盟军政影响待回收。", "chapter": 225},
+      "entities_involved": ["斯诺·沃克", "克洛伊·希达尔克", "相川涡波", "南方联盟", "弗茨亚茨"],
+      "observations": [
+        {
+          "category": "foreshadowing",
+          "text": "ch222 总钩兑现中段（重逢+辞职宣言已出，离任手续未完）",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 14, "quote": "「诶⋯⋯这个是、斯诺大人的『免职令』⋯⋯？怎么会，为什么这么快就⋯⋯？」"},
+        {"vol": 1, "chapter": 225, "line": 249, "quote": "「那、那这样吧，什么总司令什么英雄我都不干了算了？」"},
+        {"vol": 1, "chapter": 225, "line": 250, "quote": "──她在自己的部下面前，表示说要就此辞职。"}
+      ]
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "confidence": 0.85,
+      "canonical": {"name": "斯诺房间当夜禁令（'晚上绝对不可以进来'）", "setup_chapter": 225, "payoff_chapter": null, "tier": "支线", "note": "禁令限期'到明天早上为止'且特指'特别是晚上'，以'处以极刑''我会哭的'强撑——当夜房间内事项未明（与涡波'好好聊聊'的既定安排相邻）；次晨解禁。", "chapter": 225},
+      "entities_involved": ["斯诺·沃克", "相川涡波", "克洛伊·希达尔克"],
+      "observations": [
+        {
+          "category": "foreshadowing",
+          "text": "当夜房间事项未明之钩",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 242, "quote": "「嗯～。那就到早上为止好了。到明天早上为止，务必要贯彻这条命令，拜托了。特别是晚上，晚上绝对不可以进来！」"}
+      ]
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "confidence": 0.86,
+      "canonical": {"name": "招待塞斯提亚与历基亚国公主的既定日程", "setup_chapter": 225, "payoff_chapter": null, "tier": "支线", "note": "据克洛伊言柯尔库接下来有'招待塞斯提亚和历基亚国公主的事情要处理'——'塞斯提亚'疑指 ch224 同船王族公主芙洛拉・塞斯提亚【待确认：原文未明其为国名省称还是人名】；该外交日程未展开。", "chapter": 225},
+      "entities_involved": ["克洛伊·希达尔克", "斯诺·沃克", "历基亚国", "塞斯提亚国"],
+      "observations": [
+        {
+          "category": "foreshadowing",
+          "text": "近期外交事件预告钩",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 240, "quote": "「斯诺大人会哭！？⋯⋯不不，就算您说不许进入、可是接下来还有怪物讨伐的报告书以及招待塞斯提亚和历基亚国公主的事情要处理啊！」"}
+      ]
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "confidence": 0.88,
+      "canonical": {"name": "对艾德之战将近（热身定位·既有核心钩推进）", "setup_chapter": 225, "payoff_chapter": null, "tier": "核心", "note": "涡波明言本章战斗'只不过是与艾德战斗之前的热身运动罢了'——艾德交战预备期的当事者自认（接 ch218『与艾德及阳滝交战的可能性』既有钩）。", "chapter": 225},
+      "entities_involved": ["相川涡波", "艾德"],
+      "observations": [
+        {
+          "category": "foreshadowing",
+          "text": "交战预热线推进",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 91, "quote": "对把这个问题当做一大危机的军队来说可能有些失礼，但这场战斗于我而言只不过是与艾德战斗之前的热身运动罢了。"}
+      ]
+    },
+    {
+      "type": "foreshadow",
+      "library": "foreshadow",
+      "confidence": 0.85,
+      "canonical": {"name": "弗茨亚茨选定的补位人才", "setup_chapter": 225, "payoff_chapter": null, "tier": "支线", "note": "据涡波听闻：补充斯诺空位者'由弗茨亚茨选定的一干人才'（'虽然没有斯诺那样有能，但为数不少'）——人选成色、到任经过与艾德暗手疑云（ch215 弗茨亚茨之疑）待回收。", "chapter": 225},
+      "entities_involved": ["弗茨亚茨", "斯诺·沃克", "相川涡波"],
+      "observations": [
+        {
+          "category": "foreshadowing",
+          "text": "补位人事未展开之钩",
+          "chapter": 225
+        }
+      ],
+      "evidence": [
+        {"vol": 1, "chapter": 225, "line": 17, "quote": "「⋯⋯那个，补充空位的人员似乎是由弗茨亚茨选定的一干人才，请你放心。我听说虽然没有斯诺那样有能，但为数不少所以应该能派上用场的」"}
+      ]
+    }
+  ]
+}

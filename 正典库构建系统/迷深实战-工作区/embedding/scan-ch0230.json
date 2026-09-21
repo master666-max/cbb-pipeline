@@ -1,0 +1,101 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "诺瓦露",
+   "library_match": "拉丝缇娅拉",
+   "similarity": 0.8748
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "Dragon・Ardor",
+   "library_match": "DeepDurahan",
+   "similarity": 0.8568
+  },
+  {
+   "candidate": "『阿雷亚斯家的宝剑诺文』",
+   "library_match": "阿雷亚斯家的宝剑诺文",
+   "similarity": 0.9329
+  }
+ ],
+ "pairs": [
+  [
+   "诺瓦露",
+   "拉丝缇娅拉",
+   0.8748
+  ],
+  [
+   "露洁",
+   "沃尔斯",
+   0.7607
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "缇缇",
+   "缇缇姐姐",
+   0.8149
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "古奈尔",
+   "古利亚德",
+   0.8251
+  ],
+  [
+   "三名年幼魔石人类（不同型号）",
+   "魔石人类",
+   0.7845
+  ],
+  [
+   "Gravity・Greed",
+   "Impulse",
+   0.7846
+  ],
+  [
+   "Divaplays・Arrow",
+   "DeepDurahan",
+   0.7033
+  ],
+  [
+   "Dragon・Ardor",
+   "DeepDurahan",
+   0.8568
+  ],
+  [
+   "『阿雷亚斯家的宝剑诺文』",
+   "阿雷亚斯家的宝剑诺文",
+   0.9329
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 12,
+  "library": 856,
+  "dup_suspect": 1,
+  "uncertain": 4
+ }
+}

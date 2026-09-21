@@ -1,0 +1,81 @@
+{
+ "canonical": {
+  "entities": [
+   "Centidreadnought",
+   "ChromeGlove",
+   "Default",
+   "MegistusBoots",
+   "『Shift』",
+   "次元斩裂剑",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "Centidreadnought分割捕获战",
+  "tick": 225,
+  "time_verbatim": "布阵后同日·平原迎击"
+ },
+ "evidence": [
+  {
+   "chapter": 225,
+   "line": 115,
+   "quote": "我首先冲Centidreadnought的腹部使出一记横斩，就这样将它那庞大的躯体一刀两断。当然，剑闪远远不止于此。接在第一剑之后，我又从各个方向挥出十余计斜斩。",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 117,
+   "quote": "在它陨落之际我仍然在不断释放斩击，等到敌人的身体触及地面时，它那巨大的身体已经被我切成了上百段。",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 123,
+   "quote": "因为『Shift』和『次元斩裂剑』只是引发空间错位的魔法，并不具备物理层面的攻击力。因此我做的并不是真正意义上的将敌人身体斩断，而是通过空间的错位扰乱它飞行的感觉。",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 125,
+   "quote": "结果只剩下头部还完整的Centidreadnought只能趴在地上可怜兮兮地呻吟着。",
+   "vol": 1
+  },
+  {
+   "chapter": 225,
+   "line": 132,
+   "quote": "「您说捕获是吗⋯⋯？确实、如果能抓到活的那真是大有裨益。这样就能调查这个棘手的怪物的弱点了。不过，我们这边也是第一次捕获它，也不清楚能否把握好就是了⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 225,
+   "text": "涡波以『Shift』丝线缠『阿雷亚斯家的宝剑诺文』发动『次元斩裂剑』；以『Default』扭曲压缩空间，使跳跃'升华为堪比瞬间移动的移动手段'，一刹那贴近千米外目标；横斩两断+十余计斜斩+坠地连击将敌'切成了上百段'——因仅引发空间错位无物理攻击力，敌未死（仅头部完整趴地呻吟，无适应错位的智力）；涡波决定保持存活捕获；克洛伊赶到惊问，涡波说明并用意：活捕'大有裨益·可调查弱点'（据克洛伊：首次捕获、能否把握不明）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-14d920d0c544",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0225.txt",
+  "sha": "2fce7968f784c6c04ed6e92f5c1d134693bb677c582699d1daf23c1ce0fb33b0",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}
