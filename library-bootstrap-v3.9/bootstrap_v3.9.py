@@ -523,7 +523,7 @@ def cmd_absorb_md(src, lib, dry_run=False):
                 "keywords": kw[:12], "links": links, "source_event_id": "genesis-v4",
                 "importance": imp, "confidence": conf, "validity": {"t_valid": e["date"]}}
     entries = []
-    for name, prefix in (("pitfalls.md", "P"), ("patterns.md", "PT"), ("reflections.md", "R"), ("decisions.md", "D"), ("structured.md", "S")):   # C-1/WP-C：structured 白名单（M3 追加三批）
+    for name, prefix in (("pitfalls.md", "P"), ("patterns.md", "PT"), ("reflections.md", "R"), ("decisions.md", "D"), ("structured.md", "S")):  # C-1/WP-C：structured 白名单（M3 追加三批；P-020 第三例吸收入链，用户令 2026-09-21）
         if not (src / "knowledge" / name).exists():
             print(f"  [absorb-md] 缺 knowledge/{name}——跳过（如实登记）")
             continue
