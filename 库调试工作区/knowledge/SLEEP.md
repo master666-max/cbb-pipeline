@@ -2,7 +2,7 @@
 
 # SLEEP · 定时体检与睡眠整理（2026-09-21 建立，WP-C2）
 
-> 模式：auto（首触发实测 ✓ 2026-09-19 00:13:35 调度器真实触发 automation-f6c19799；**每日档待新会话配置**——本会话建每日件被会话归属限制拒绝，诊断 prompt 备于 WP-C2 预注册 §一.3，新会话 CronCreate 每日 09:00 即完成）。依据：sleep-time compute——空闲期整理，查询期省力。
+> 模式：auto（**每日档已建**：automation-333bf023，每日 09:00 recurring，下次触发 2026-09-22 09:00；首触发实测 ✓ 2026-09-21 00:13:35 automation-f6c19799）。依据：sleep-time compute——空闲期整理，查询期省力。
 > 建立依据：下发单-WP-C2-mcron定时批量同步启用-20260921（模块=modules/m-cron，blob acd83d6d/5054ff50，bootstrap v3.9，现役引擎见 RELEASE.md）。
 
 ## 每日同步窗口（每日 09:00，wrap-up 前置收集）
