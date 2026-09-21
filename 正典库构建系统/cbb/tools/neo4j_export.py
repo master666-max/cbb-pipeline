@@ -223,7 +223,7 @@ def ensure_server(base: str, allow_start: bool) -> bool:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="本体库→Neo4j 增量 MERGE 导出（探活失败 blocked 不阻塞主链）")
     ap.add_argument("--store", required=True)
-    ap.add_argument("--base", default="http://localhost:7474")
+    ap.add_argument("--base", default=os.environ.get("NEO4J_HTTP", "http://localhost:7474"))
     ap.add_argument("--user", default="neo4j")
     ap.add_argument("--password", default="")
     ap.add_argument("--out")
