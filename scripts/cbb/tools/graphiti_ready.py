@@ -10,8 +10,8 @@
   D 隔离矛盾积压 >50 或裁决滞后 >14 天 → RED（解锁 NLI 预筛）
   C 的阈值为就绪层建议值（工单未定），启用与否=段收口呈报审核线裁决。
 用法：
-  py -X utf8 graphiti_ready.py [--store 迷深实战-本体库] [--json]
-  py -X utf8 graphiti_ready.py --sentinel --store 迷深实战-本体库
+  py -X utf8 graphiti_ready.py [--store <workspace>/本体库] [--json]
+  py -X utf8 graphiti_ready.py --sentinel --store <workspace>/本体库
 """
 from __future__ import annotations
 
@@ -88,7 +88,7 @@ def ready_report(preset: str = "deepseek") -> dict:
 def trigger_sentinel(store_root: Path | str, logs_dir: Path | str | None = None) -> dict:
     """四触发器哨兵：只读扫描，输出 GREEN/AMBER/RED 状态表（并入段收口校准报告）。"""
     store = Path(store_root)
-    logs = Path(logs_dir) if logs_dir else store.parent / "迷深实战-工作区" / "logs"
+    logs = Path(logs_dir) if logs_dir else store.parent / "<workspace>/工作区" / "logs"
 
     # A 全局归纳型查询计数（数据源=计数文件；无文件=0）
     cnt_file = logs / "global-query-count.txt"
@@ -140,7 +140,7 @@ def trigger_sentinel(store_root: Path | str, logs_dir: Path | str | None = None)
 def main(argv=None) -> int:
     import argparse
     ap = argparse.ArgumentParser(description="graphiti 就绪自检+四触发器哨兵（U-C03.7）")
-    ap.add_argument("--store", default="迷深实战-本体库")
+    ap.add_argument("--store", default="<workspace>/本体库")
     ap.add_argument("--preset", default="deepseek", choices=["deepseek", "lmstudio-flash"])
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--sentinel", action="store_true")

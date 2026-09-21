@@ -5,7 +5,7 @@ license: CC-BY-4.0 (content)
 compatibility: 需 Python 3.10+（Windows 用 py -X utf8 启动器）；嵌入扫描/图导出为可选增强（LM Studio/Neo4j），缺省不影响主链
 metadata:
   version: "1.0"
-  origin: CBB 全量构筑版（16 仓对比吸收 + 迷深 517 章实战沉淀，2026-09）
+  origin: CBB 全量构筑版（16 仓对比吸收 + <目标作品> 517 章实战沉淀，2026-09）
 ---
 
 # cbb-pipeline · 正典库构建流水线

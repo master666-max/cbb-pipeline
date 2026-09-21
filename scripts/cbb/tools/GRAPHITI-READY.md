@@ -29,7 +29,7 @@
 | C | 按章回溯操作计数（`工作区/logs/chapter-backtrack-count.txt`） | ≥3 → RED（阈值=就绪层建议值） | episode 三层 |
 | D | 隔离矛盾积压 / 裁决滞后 | >50 → RED；滞后>14 天（载体无日期字段=UNKNOWN，如实披露） | NLI 预筛 |
 
-跑法：`py -X utf8 cbb/tools/graphiti_ready.py --sentinel --store 迷深实战-本体库`
+跑法：`py -X utf8 cbb/tools/graphiti_ready.py --sentinel --store <workspace>/本体库`
 
 **启用动作=段收口呈报审核线裁决，哨兵只报告不动作。**
 

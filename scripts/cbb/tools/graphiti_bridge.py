@@ -96,7 +96,7 @@ def ingest_candidates(graphiti, chapter_records: dict[int, list[dict]],
             episode_body=episode_body_of(chapter_no, recs),
             episode_name=f"ch{chapter_no:04d}",
             group_id=group_id,
-            source_description="cbb jsonl 本体库 · 迷深实战",
+            source_description="cbb jsonl 本体库 · <示例项目>",
         )
         results[chapter_no] = graphiti.add_episode(**kwargs)
     return results

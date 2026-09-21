@@ -2,7 +2,7 @@
 # scripts/init_project.py 读取本文件生成工作区骨架
 
 project:
-  book_name: ""            # 书名（例：迷深）
+  book_name: ""            # 书名（例：<目标作品>）
   source_path: ""          # 全文语料路径（txt/md，需含章节标记，如 <<<CHAPTER 0001 | 题>>>）
   chapter_pattern: "^<<<CHAPTER\\s*(\\d+)"   # 章节标记正则（捕获组=编号）
   library_path: ""         # 本体库落盘根（留空=自动：<项目>/库/）

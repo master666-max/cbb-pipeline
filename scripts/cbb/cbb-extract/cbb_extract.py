@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "contracts"))
 import cbb_contracts  # noqa: E402
 
 # ---- ①读入侧：R6 元文本规则（生产标配，逐字照抄 Step0 Tier2 run_tier2_pipeline.py，勿改动措辞） ----
-R6_CUSTOM_EXTRACTION_INSTRUCTIONS = """领域规则（中文小说《迷深》正典库构建）：
+R6_CUSTOM_EXTRACTION_INSTRUCTIONS = """领域规则（中文小说《目标作品》正典库构建）：
 1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；
 2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；
 3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；
@@ -80,7 +80,7 @@ _BANNED_COMPILED = {k: tuple(re.compile(p) for p in v["patterns"])
 ALIAS_KINDS = ("proper_name", "nickname", "descriptor", "title")
 ALIAS_MERGE_CONFIDENCE_GATE = 0.85
 
-# ---- 长篇施工参数（oh-story 降维聚合——迷深 517 章直接可用） ----
+# ---- 长篇施工参数（oh-story 降维聚合——<目标作品> 517 章直接可用） ----
 CONSTRUCTION_PARAMS = {
     "batch_chapters": (5, 8),        # 每批 5-8 章（clamp）
     "batch_context": "fresh-subagent",  # 每批新上下文子代理（no accumulation）
