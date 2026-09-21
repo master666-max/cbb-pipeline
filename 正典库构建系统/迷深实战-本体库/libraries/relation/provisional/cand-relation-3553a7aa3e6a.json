@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "南方联盟",
+  "rel_type": "交战对手（胜败互斥·并证）",
+  "subject": "北方同盟"
+ },
+ "evidence": [
+  {
+   "chapter": 226,
+   "line": 222,
+   "quote": "如果斯诺大人不在了的话，『北方同盟』一定会趁机发动进攻的！",
+   "vol": 1
+  },
+  {
+   "chapter": 226,
+   "line": 259,
+   "quote": "我觉得和涡波他们一起前往北方才是『南方联盟』的取胜之路",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 226,
+   "text": "交战关系由双方阵营之言并证：据克洛伊，北方同盟将对己方（柯尔库）趁机进攻、『境界战争』海战赖斯诺保持均势；据斯诺，赴北方同行=『南方联盟』的取胜之路——两造胜败互斥确认交战结构"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3553a7aa3e6a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0226.txt",
+  "sha": "d34295a5f549ff2c45faa79dba9feaeac71fc3de80af92fa2daf0a429fd5b1fe",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

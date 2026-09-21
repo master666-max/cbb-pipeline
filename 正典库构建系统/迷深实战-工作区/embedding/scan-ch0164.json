@@ -1,0 +1,75 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "幻之紫腕（DistanceMute）",
+   "library_match": "『DistanceMute（幻之紫腕）』",
+   "similarity": 0.9448
+  }
+ ],
+ "pairs": [
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "青色魔石",
+   "魔石",
+   0.8485
+  ],
+  [
+   "『魔石线』",
+   "『魔石人类』",
+   0.7719
+  ],
+  [
+   "捩菖蒲",
+   "『Torsion（捩菖蒲）』",
+   0.6935
+  ],
+  [
+   "行路渐歧（Default）",
+   "『Default（行路渐歧）』",
+   0.7943
+  ],
+  [
+   "幻之紫腕（DistanceMute）",
+   "『DistanceMute（幻之紫腕）』",
+   0.9448
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 9,
+  "library": 860,
+  "dup_suspect": 0,
+  "uncertain": 3
+ }
+}

@@ -1,0 +1,156 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "迪亚布罗·西斯",
+   "library_match": "迪亚波罗・西斯",
+   "similarity": 0.9732
+  },
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  },
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  },
+  {
+   "candidate": "塞拉·雷迪安特",
+   "library_match": "塞拉・蕾蒂安特",
+   "similarity": 0.9716
+  },
+  {
+   "candidate": "缇娅拉",
+   "library_match": "缇亚拉",
+   "similarity": 0.9617
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "莉帕",
+   "library_match": "格林·莉姆·莉帕",
+   "similarity": 0.9285
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.8789
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "缇达",
+   "library_match": "缇达・兰斯",
+   "similarity": 0.9092
+  },
+  {
+   "candidate": "『耶梦加得之炎』",
+   "library_match": "『耶梦加得之霜』",
+   "similarity": 0.9
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "迪亚布罗·西斯",
+   "迪亚波罗・西斯",
+   0.9732
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "莉帕",
+   "格林·莉姆·莉帕",
+   0.9285
+  ],
+  [
+   "塞拉·雷迪安特",
+   "塞拉・蕾蒂安特",
+   0.9716
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "阿尔缇",
+   "拉丝缇亚拉",
+   0.8789
+  ],
+  [
+   "缇娅拉",
+   "缇亚拉",
+   0.9617
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "缇达",
+   "缇达・兰斯",
+   0.9092
+  ],
+  [
+   "诺文",
+   "诺瓦露",
+   0.8395
+  ],
+  [
+   "『耶梦加得之炎』",
+   "『耶梦加得之霜』",
+   0.9
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 15,
+  "library": 854,
+  "dup_suspect": 5,
+  "uncertain": 8
+ }
+}

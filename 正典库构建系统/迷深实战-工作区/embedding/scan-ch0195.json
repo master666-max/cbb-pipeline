@@ -1,0 +1,171 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "佩艾希亚",
+   "library_match": "佩艾西亚",
+   "similarity": 0.9582
+  },
+  {
+   "candidate": "新月琉璃制直剑",
+   "library_match": "新月琉璃直剑",
+   "similarity": 0.9719
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "罗德",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.8856
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "雷纳尔多",
+   "library_match": "莱纳尔多",
+   "similarity": 0.8972
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "『维度』",
+   "library_match": "『维度・多重展开』",
+   "similarity": 0.8784
+  },
+  {
+   "candidate": "维度・决战演算",
+   "library_match": "Dimension·决战演算",
+   "similarity": 0.9221
+  },
+  {
+   "candidate": "维度・多重展开",
+   "library_match": "『维度・多重展开』",
+   "similarity": 0.8682
+  },
+  {
+   "candidate": "『表示』",
+   "library_match": "表示",
+   "similarity": 0.8881
+  },
+  {
+   "candidate": "沃尔斯家",
+   "library_match": "沃克家",
+   "similarity": 0.8981
+  },
+  {
+   "candidate": "天上之七骑士",
+   "library_match": "天上的七骑士",
+   "similarity": 0.9031
+  }
+ ],
+ "pairs": [
+  [
+   "伊丽莎白・沃尔斯",
+   "伊丽莎白",
+   0.8482
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "罗德",
+   "罗德·缇缇",
+   0.8856
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "雷纳尔多",
+   "莱纳尔多",
+   0.8972
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "杂货铺店主",
+   "店长",
+   0.7311
+  ],
+  [
+   "王近卫骑士团",
+   "佩艾希亚的骑士们",
+   0.7149
+  ],
+  [
+   "『支配之王』",
+   "支配之王",
+   0.841
+  ],
+  [
+   "佩艾希亚",
+   "佩艾西亚",
+   0.9582
+  ],
+  [
+   "新月琉璃制直剑",
+   "新月琉璃直剑",
+   0.9719
+  ],
+  [
+   "『维度』",
+   "『维度・多重展开』",
+   0.8784
+  ],
+  [
+   "维度・决战演算",
+   "Dimension·决战演算",
+   0.9221
+  ],
+  [
+   "维度・多重展开",
+   "『维度・多重展开』",
+   0.8682
+  ],
+  [
+   "『表示』",
+   "表示",
+   0.8881
+  ],
+  [
+   "沃尔斯家",
+   "沃克家",
+   0.8981
+  ],
+  [
+   "魔人",
+   "魔王城",
+   0.7868
+  ],
+  [
+   "天上之七骑士",
+   "天上的七骑士",
+   0.9031
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 18,
+  "library": 852,
+  "dup_suspect": 2,
+  "uncertain": 11
+ }
+}

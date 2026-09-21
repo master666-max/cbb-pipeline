@@ -1,0 +1,136 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "『维度·决战演算』",
+   "library_match": "『维度・决战演算』",
+   "similarity": 0.9815
+  },
+  {
+   "candidate": "『Flame·决战炎域』",
+   "library_match": "『Flame・决战炎域』",
+   "similarity": 0.9809
+  },
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "帕林库洛的宝剑",
+   "library_match": "阿雷亚斯家的宝剑",
+   "similarity": 0.8709
+  },
+  {
+   "candidate": "缇达",
+   "library_match": "缇达・兰斯",
+   "similarity": 0.9092
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.8789
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "『维度·决战演算』",
+   "『维度・决战演算』",
+   0.9815
+  ],
+  [
+   "『Flame·决战炎域』",
+   "『Flame・决战炎域』",
+   0.9809
+  ],
+  [
+   "帕林库洛的宝剑",
+   "阿雷亚斯家的宝剑",
+   0.8709
+  ],
+  [
+   "使徒西斯",
+   "使徒勒伽西",
+   0.8473
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "缇达",
+   "缇达・兰斯",
+   0.9092
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ],
+  [
+   "阿尔缇",
+   "拉丝缇亚拉",
+   0.8789
+  ],
+  [
+   "诺文",
+   "诺瓦露",
+   0.8395
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 13,
+  "library": 856,
+  "dup_suspect": 3,
+  "uncertain": 8
+ }
+}

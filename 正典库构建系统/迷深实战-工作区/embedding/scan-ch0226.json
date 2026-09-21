@@ -31,6 +31,11 @@
    "candidate": "柯尔库",
    "library_match": "克罗",
    "similarity": 0.8596
+  },
+  {
+   "candidate": "支配之王（Lord）",
+   "library_match": "支配之王（Lord/罗德）",
+   "similarity": 0.9461
   }
  ],
  "pairs": [
@@ -41,8 +46,8 @@
   ],
   [
    "缇缇",
-   "蒂娅",
-   0.787
+   "缇缇姐姐",
+   0.8149
   ],
   [
    "斯诺·沃克",
@@ -83,14 +88,44 @@
    "佩艾希亚",
    "佩艾西亚",
    0.9582
+  ],
+  [
+   "支配之王（Lord）",
+   "支配之王（Lord/罗德）",
+   0.9461
+  ],
+  [
+   "南方联盟",
+   "北方",
+   0.6871
+  ],
+  [
+   "北方同盟",
+   "北方",
+   0.7131
+  ],
+  [
+   "DistanceMute",
+   "『DistanceMute』",
+   0.7737
+  ],
+  [
+   "连接",
+   "『连接』",
+   0.8139
+  ],
+  [
+   "莱文教",
+   "莱文教圣经",
+   0.8156
   ]
  ],
  "status": "ok",
  "model": "text-embedding-qwen3-embedding-8b@q8_0",
  "counts": {
-  "candidates": 10,
-  "library": 836,
+  "candidates": 16,
+  "library": 853,
   "dup_suspect": 3,
-  "uncertain": 3
+  "uncertain": 4
  }
 }

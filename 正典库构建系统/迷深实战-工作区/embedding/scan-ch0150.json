@@ -1,0 +1,106 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "迪亚布罗·西斯",
+   "library_match": "迪亚波罗・西斯",
+   "similarity": 0.9732
+  },
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛长官",
+   "similarity": 0.8825
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "帕林库洛的部下",
+   "library_match": "帕林库洛长官",
+   "similarity": 0.9002
+  },
+  {
+   "candidate": "炎之蛇（耶梦加得之炎）",
+   "library_match": "『耶梦加得之炎』",
+   "similarity": 0.8877
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛长官",
+   0.8825
+  ],
+  [
+   "迪亚布罗·西斯",
+   "迪亚波罗・西斯",
+   0.9732
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "帕林库洛的部下",
+   "帕林库洛长官",
+   0.9002
+  ],
+  [
+   "炎之蛇（耶梦加得之炎）",
+   "『耶梦加得之炎』",
+   0.8877
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 9,
+  "library": 860,
+  "dup_suspect": 2,
+  "uncertain": 7
+ }
+}

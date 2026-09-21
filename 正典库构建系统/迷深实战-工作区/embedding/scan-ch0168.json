@@ -1,0 +1,131 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "罗德・缇缇",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.9887
+  },
+  {
+   "candidate": "新月琉璃制直剑",
+   "library_match": "新月琉璃直剑",
+   "similarity": 0.9719
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "维度・多重展开",
+   "library_match": "『维度・多重展开』",
+   "similarity": 0.8682
+  },
+  {
+   "candidate": "维度・决战演算",
+   "library_match": "Dimension·决战演算",
+   "similarity": 0.9221
+  },
+  {
+   "candidate": "『北』的王国",
+   "library_match": "『北方』王国",
+   "similarity": 0.8905
+  },
+  {
+   "candidate": "劳拉维亚",
+   "library_match": "瓦尔法拉",
+   "similarity": 0.8528
+  }
+ ],
+ "pairs": [
+  [
+   "罗德・缇缇",
+   "罗德·缇缇",
+   0.9887
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "世界奉还阵",
+   "世界树",
+   0.6502
+  ],
+  [
+   "新月琉璃制直剑",
+   "新月琉璃直剑",
+   0.9719
+  ],
+  [
+   "维度・多重展开",
+   "『维度・多重展开』",
+   0.8682
+  ],
+  [
+   "维度・决战演算",
+   "Dimension·决战演算",
+   0.9221
+  ],
+  [
+   "无序之风",
+   "风龙",
+   0.739
+  ],
+  [
+   "魔王城",
+   "青色魔石",
+   0.7851
+  ],
+  [
+   "『北』的王国",
+   "『北方』王国",
+   0.8905
+  ],
+  [
+   "劳拉维亚",
+   "瓦尔法拉",
+   0.8528
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 14,
+  "library": 855,
+  "dup_suspect": 2,
+  "uncertain": 7
+ }
+}

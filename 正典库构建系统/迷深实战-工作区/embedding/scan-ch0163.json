@@ -1,0 +1,85 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "『最深部之誓约者』",
+   "library_match": "最深部之誓约者",
+   "similarity": 0.852
+  },
+  {
+   "candidate": "阿雷亚斯家的宝剑",
+   "library_match": "【修坏的阿雷亚斯家宝剑】",
+   "similarity": 0.8915
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "『最深部之誓约者』",
+   "最深部之誓约者",
+   0.852
+  ],
+  [
+   "『暗之理的盗窃者』的『魔石』",
+   "『暗之理的盗窃者』",
+   0.8258
+  ],
+  [
+   "阿雷亚斯家的宝剑",
+   "【修坏的阿雷亚斯家宝剑】",
+   0.8915
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 8,
+  "library": 861,
+  "dup_suspect": 0,
+  "uncertain": 6
+ }
+}

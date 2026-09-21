@@ -1,0 +1,60 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.8789
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "南军高官",
+   "大将军",
+   0.6745
+  ],
+  [
+   "阿尔缇",
+   "拉丝缇亚拉",
+   0.8789
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 5,
+  "library": 864,
+  "dup_suspect": 0,
+  "uncertain": 4
+ }
+}

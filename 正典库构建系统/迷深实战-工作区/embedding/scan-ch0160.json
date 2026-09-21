@@ -1,0 +1,181 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "帕林库洛・勒伽西",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.976
+  },
+  {
+   "candidate": "冰结剑·冰刃",
+   "library_match": "冰结剑・冰刃",
+   "similarity": 0.9762
+  },
+  {
+   "candidate": "QuartzBlade·Size",
+   "library_match": "QuartzBlade・Size",
+   "similarity": 0.9834
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "海因",
+   "library_match": "海因・赫勒比勒夏因",
+   "similarity": 0.8837
+  },
+  {
+   "candidate": "缇达",
+   "library_match": "缇达・兰斯",
+   "similarity": 0.9092
+  },
+  {
+   "candidate": "阿雷亚斯家的宝剑",
+   "library_match": "【修坏的阿雷亚斯家宝剑】",
+   "similarity": 0.8915
+  },
+  {
+   "candidate": "次元之冬",
+   "library_match": "次元雪",
+   "similarity": 0.8627
+  },
+  {
+   "candidate": "SehrWind",
+   "library_match": "Sehr・Wind",
+   "similarity": 0.9273
+  },
+  {
+   "candidate": "阿雷亚斯流共鸣剑术",
+   "library_match": "阿雷亚斯的剑法",
+   "similarity": 0.8728
+  },
+  {
+   "candidate": "『耶梦加得之霜』",
+   "library_match": "『耶梦加得之炎』",
+   "similarity": 0.9
+  },
+  {
+   "candidate": "地之理的盗窃者",
+   "library_match": "火之理的盗窃者",
+   "similarity": 0.8627
+  }
+ ],
+ "pairs": [
+  [
+   "帕林库洛・勒伽西",
+   "帕林库洛·勒伽西",
+   0.976
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "海因",
+   "海因・赫勒比勒夏因",
+   0.8837
+  ],
+  [
+   "缇达",
+   "缇达・兰斯",
+   0.9092
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "阿雷亚斯家的宝剑",
+   "【修坏的阿雷亚斯家宝剑】",
+   0.8915
+  ],
+  [
+   "世界奉还阵",
+   "世界树",
+   0.6502
+  ],
+  [
+   "次元斩裂剑",
+   "次元之戒",
+   0.7457
+  ],
+  [
+   "冰结剑·冰刃",
+   "冰结剑・冰刃",
+   0.9762
+  ],
+  [
+   "次元之冬",
+   "次元雪",
+   0.8627
+  ],
+  [
+   "SehrWind",
+   "Sehr・Wind",
+   0.9273
+  ],
+  [
+   "阿雷亚斯流共鸣剑术",
+   "阿雷亚斯的剑法",
+   0.8728
+  ],
+  [
+   "『耶梦加得之霜』",
+   "『耶梦加得之炎』",
+   0.9
+  ],
+  [
+   "QuartzBlade·Size",
+   "QuartzBlade・Size",
+   0.9834
+  ],
+  [
+   "地之理的盗窃者",
+   "火之理的盗窃者",
+   0.8627
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 18,
+  "library": 851,
+  "dup_suspect": 3,
+  "uncertain": 12
+ }
+}

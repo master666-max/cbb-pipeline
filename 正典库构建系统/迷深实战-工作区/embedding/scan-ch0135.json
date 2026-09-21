@@ -1,0 +1,86 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "菲洛·艾尔巴特",
+   "library_match": "菲洛・艾尔巴特",
+   "similarity": 0.9931
+  },
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  },
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  },
+  {
+   "candidate": "莉帕",
+   "library_match": "格林·莉姆·莉帕",
+   "similarity": 0.9285
+  }
+ ],
+ "pairs": [
+  [
+   "菲洛·艾尔巴特",
+   "菲洛・艾尔巴特",
+   0.9931
+  ],
+  [
+   "海盗船长",
+   "帕林库洛长官",
+   0.7192
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "莉帕",
+   "格林·莉姆·莉帕",
+   0.9285
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ],
+  [
+   "使徒西斯",
+   "使徒勒伽西",
+   0.8473
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 8,
+  "library": 862,
+  "dup_suspect": 3,
+  "uncertain": 3
+ }
+}

@@ -1,0 +1,166 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  },
+  {
+   "candidate": "西娅·勒伽西",
+   "library_match": "西娅・勒伽西",
+   "similarity": 0.9857
+  },
+  {
+   "candidate": "海因·赫勒比勒夏因",
+   "library_match": "海因・赫勒比勒夏因",
+   "similarity": 0.9872
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "诺瓦露",
+   "library_match": "拉丝缇娅拉",
+   "similarity": 0.8748
+  },
+  {
+   "candidate": "勒伽西",
+   "library_match": "帕林库洛・勒伽西",
+   "similarity": 0.8963
+  },
+  {
+   "candidate": "阿雷亚斯家的宝剑诺文",
+   "library_match": "『阿雷亚斯家的宝剑诺文』",
+   "similarity": 0.9329
+  },
+  {
+   "candidate": "莉帕",
+   "library_match": "格林·莉姆·莉帕",
+   "similarity": 0.9285
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "使徒西斯",
+   "使徒勒伽西",
+   0.8473
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "西娅·勒伽西",
+   "西娅・勒伽西",
+   0.9857
+  ],
+  [
+   "露洁",
+   "沃尔斯",
+   0.7607
+  ],
+  [
+   "诺瓦露",
+   "拉丝缇娅拉",
+   0.8748
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "勒伽西",
+   "帕林库洛・勒伽西",
+   0.8963
+  ],
+  [
+   "海因·赫勒比勒夏因",
+   "海因・赫勒比勒夏因",
+   0.9872
+  ],
+  [
+   "阿雷亚斯家的宝剑诺文",
+   "『阿雷亚斯家的宝剑诺文』",
+   0.9329
+  ],
+  [
+   "莉帕",
+   "格林·莉姆·莉帕",
+   0.9285
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 17,
+  "library": 852,
+  "dup_suspect": 3,
+  "uncertain": 10
+ }
+}

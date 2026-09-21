@@ -1,0 +1,176 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "罗德·缇缇",
+   "library_match": "罗德・缇缇",
+   "similarity": 0.9887
+  },
+  {
+   "candidate": "佩艾希亚",
+   "library_match": "佩艾西亚",
+   "similarity": 0.9582
+  },
+  {
+   "candidate": "新月琉璃制直剑",
+   "library_match": "新月琉璃直剑",
+   "similarity": 0.9719
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "雷纳尔多",
+   "library_match": "莱纳尔多",
+   "similarity": 0.8972
+  },
+  {
+   "candidate": "赛鲁多拉",
+   "library_match": "赛鲁多拉大人",
+   "similarity": 0.9209
+  },
+  {
+   "candidate": "『御殿』",
+   "library_match": "御殿",
+   "similarity": 0.9066
+  },
+  {
+   "candidate": "『自由之风』",
+   "library_match": "自由之风",
+   "similarity": 0.8555
+  },
+  {
+   "candidate": "『SehrWind』",
+   "library_match": "Sehr・Wind",
+   "similarity": 0.8625
+  },
+  {
+   "candidate": "维度・多重展开",
+   "library_match": "『维度・多重展开』",
+   "similarity": 0.8682
+  }
+ ],
+ "pairs": [
+  [
+   "罗德·缇缇",
+   "罗德・缇缇",
+   0.9887
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "雷纳尔多",
+   "莱纳尔多",
+   0.8972
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "诺文",
+   "诺瓦露",
+   0.8395
+  ],
+  [
+   "赛鲁多拉",
+   "赛鲁多拉大人",
+   0.9209
+  ],
+  [
+   "『御殿』",
+   "御殿",
+   0.9066
+  ],
+  [
+   "『北之大帝国』",
+   "北之帝国",
+   0.794
+  ],
+  [
+   "『自由之风』",
+   "自由之风",
+   0.8555
+  ],
+  [
+   "『不碎之水晶』",
+   "『赤之护身符』",
+   0.785
+  ],
+  [
+   "『SehrWind』",
+   "Sehr・Wind",
+   0.8625
+  ],
+  [
+   "『DistanceMute』",
+   "DistanceMute",
+   0.7737
+  ],
+  [
+   "维度・多重展开",
+   "『维度・多重展开』",
+   0.8682
+  ],
+  [
+   "『支配之王』",
+   "支配之王",
+   0.841
+  ],
+  [
+   "『北方的救世主』",
+   "《寒冰》",
+   0.7345
+  ],
+  [
+   "『来自异界的救主（相川涡波）』",
+   "『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』",
+   0.676
+  ],
+  [
+   "佩艾希亚",
+   "佩艾西亚",
+   0.9582
+  ],
+  [
+   "新月琉璃制直剑",
+   "新月琉璃直剑",
+   0.9719
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 20,
+  "library": 850,
+  "dup_suspect": 3,
+  "uncertain": 9
+ }
+}

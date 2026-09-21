@@ -1,0 +1,121 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "赫勒比勒夏因之神圣双剑『片翼』",
+   "library_match": "赫勒比勒夏因之神圣双剑·片翼",
+   "similarity": 0.9858
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "雷纳尔多",
+   "library_match": "莱纳尔多",
+   "similarity": 0.8972
+  },
+  {
+   "candidate": "罗德",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.8856
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "阿雷亚斯家的宝剑诺文",
+   "library_match": "『阿雷亚斯家的宝剑诺文』",
+   "similarity": 0.9329
+  },
+  {
+   "candidate": "『Sylph・堕落使徒』",
+   "library_match": "Sylph・堕落使徒",
+   "similarity": 0.9236
+  },
+  {
+   "candidate": "『Flame・Accel』",
+   "library_match": "『Flame・Aegis』",
+   "similarity": 0.8717
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "雷纳尔多",
+   "莱纳尔多",
+   0.8972
+  ],
+  [
+   "贝丝",
+   "赛莉",
+   0.8082
+  ],
+  [
+   "罗德",
+   "罗德·缇缇",
+   0.8856
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "诺文",
+   "诺瓦露",
+   0.8395
+  ],
+  [
+   "阿雷亚斯家的宝剑诺文",
+   "『阿雷亚斯家的宝剑诺文』",
+   0.9329
+  ],
+  [
+   "『Sylph・堕落使徒』",
+   "Sylph・堕落使徒",
+   0.9236
+  ],
+  [
+   "赫勒比勒夏因之神圣双剑『片翼』",
+   "赫勒比勒夏因之神圣双剑·片翼",
+   0.9858
+  ],
+  [
+   "『Flame・Accel』",
+   "『Flame・Aegis』",
+   0.8717
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 12,
+  "library": 857,
+  "dup_suspect": 1,
+  "uncertain": 8
+ }
+}

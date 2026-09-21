@@ -1,0 +1,66 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "雷纳尔多·沃尔斯",
+   "library_match": "雷纳尔多・沃尔斯",
+   "similarity": 0.9769
+  },
+  {
+   "candidate": "罗德·缇缇",
+   "library_match": "罗德・缇缇",
+   "similarity": 0.9887
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "贝丝",
+   "赛莉",
+   0.8082
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "雷纳尔多·沃尔斯",
+   "雷纳尔多・沃尔斯",
+   0.9769
+  ],
+  [
+   "罗德·缇缇",
+   "罗德・缇缇",
+   0.9887
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 6,
+  "library": 863,
+  "dup_suspect": 2,
+  "uncertain": 2
+ }
+}

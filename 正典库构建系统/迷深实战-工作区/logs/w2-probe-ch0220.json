@@ -1,0 +1,35 @@
+{
+ "extraction": "candidates/extraction-ch0220.json",
+ "gate": "PASS",
+ "dangling": {
+  "bad": 0,
+  "total": 144,
+  "rate": 0.0,
+  "pass": true,
+  "samples": []
+ },
+ "coverage_lib_hard": {
+  "hit": 39,
+  "in_slice": 41,
+  "recall": 0.9512,
+  "pass": true,
+  "missing": [
+   "所有物",
+   "『所有物』"
+  ]
+ },
+ "envelope": {
+  "violations": [],
+  "pass": true
+ },
+ "density": {
+  "total": 51,
+  "by_type": {
+   "entity": 22,
+   "setting": 5,
+   "relation": 13,
+   "event": 6,
+   "foreshadow": 5
+  }
+ }
+}

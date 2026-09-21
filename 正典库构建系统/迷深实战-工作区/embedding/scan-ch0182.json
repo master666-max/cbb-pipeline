@@ -1,0 +1,126 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "缇娅拉",
+   "library_match": "缇亚拉",
+   "similarity": 0.9617
+  },
+  {
+   "candidate": "最深部之誓约者",
+   "library_match": "最深部的誓约者",
+   "similarity": 0.9753
+  },
+  {
+   "candidate": "光之御旗（NosfyFlag）",
+   "library_match": "光之御旗（NosfiFLAG）",
+   "similarity": 0.9852
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "罗德",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.8856
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "支配之王",
+   "library_match": "支配之王（Lord）",
+   "similarity": 0.8511
+  },
+  {
+   "candidate": "六十层",
+   "library_match": "六十五层",
+   "similarity": 0.8927
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "罗德",
+   "罗德·缇缇",
+   0.8856
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "使徒西斯",
+   "使徒迪普拉库拉",
+   0.8101
+  ],
+  [
+   "支配之王",
+   "支配之王（Lord）",
+   0.8511
+  ],
+  [
+   "缇娅拉",
+   "缇亚拉",
+   0.9617
+  ],
+  [
+   "使徒勒伽西",
+   "勒伽西",
+   0.8295
+  ],
+  [
+   "最深部之誓约者",
+   "最深部的誓约者",
+   0.9753
+  ],
+  [
+   "光之御旗（NosfyFlag）",
+   "光之御旗（NosfiFLAG）",
+   0.9852
+  ],
+  [
+   "莱文教",
+   "莱文教圣经",
+   0.8156
+  ],
+  [
+   "六十层",
+   "六十五层",
+   0.8927
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 13,
+  "library": 856,
+  "dup_suspect": 3,
+  "uncertain": 6
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "缇达",
+   "library_match": "缇达・兰斯",
+   "similarity": 0.9092
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.8789
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "DeepDurahan",
+   "library_match": "Dragon・Ardor",
+   "similarity": 0.8568
+  },
+  {
+   "candidate": "维度・决战演算",
+   "library_match": "Dimension·决战演算",
+   "similarity": 0.9221
+  },
+  {
+   "candidate": "暗之理的盗窃者",
+   "library_match": "火之理的盗窃者",
+   "similarity": 0.8607
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "缇达",
+   "缇达・兰斯",
+   0.9092
+  ],
+  [
+   "阿尔缇",
+   "拉丝缇亚拉",
+   0.8789
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "WindLever",
+   "SehrWind",
+   0.8014
+  ],
+  [
+   "DeepDurahan",
+   "Dragon・Ardor",
+   0.8568
+  ],
+  [
+   "新月琉璃",
+   "新月琉璃直剑",
+   0.8376
+  ],
+  [
+   "维度・决战演算",
+   "Dimension·决战演算",
+   0.9221
+  ],
+  [
+   "世界奉还阵",
+   "世界树",
+   0.6502
+  ],
+  [
+   "DarkFisher",
+   "SehrFang",
+   0.805
+  ],
+  [
+   "DarkCloth",
+   "LightStuff",
+   0.6764
+  ],
+  [
+   "闪耀吧炎之剑",
+   "『炎之矢』",
+   0.6301
+  ],
+  [
+   "暗之理的盗窃者",
+   "火之理的盗窃者",
+   0.8607
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 15,
+  "library": 854,
+  "dup_suspect": 0,
+  "uncertain": 9
+ }
+}

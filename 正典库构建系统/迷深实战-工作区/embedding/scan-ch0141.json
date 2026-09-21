@@ -1,0 +1,96 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "缇娅拉",
+   "library_match": "缇亚拉",
+   "similarity": 0.9617
+  },
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "支配之王",
+   "library_match": "支配之王（Lord）",
+   "similarity": 0.8511
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "使徒西斯",
+   "使徒勒伽西",
+   0.8473
+  ],
+  [
+   "缇娅拉",
+   "缇亚拉",
+   0.9617
+  ],
+  [
+   "支配之王",
+   "支配之王（Lord）",
+   0.8511
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 10,
+  "library": 859,
+  "dup_suspect": 2,
+  "uncertain": 4
+ }
+}

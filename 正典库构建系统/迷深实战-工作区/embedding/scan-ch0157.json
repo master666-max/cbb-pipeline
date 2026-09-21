@@ -1,0 +1,106 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "帕林库洛・勒伽西",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.976
+  },
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  },
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "缇达",
+   "library_match": "缇达・兰斯",
+   "similarity": 0.9092
+  }
+ ],
+ "pairs": [
+  [
+   "帕林库洛・勒伽西",
+   "帕林库洛·勒伽西",
+   0.976
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "使徒西斯",
+   "使徒勒伽西",
+   0.8473
+  ],
+  [
+   "缇达",
+   "缇达・兰斯",
+   0.9092
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 11,
+  "library": 858,
+  "dup_suspect": 2,
+  "uncertain": 5
+ }
+}

@@ -1,0 +1,141 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "佩艾希亚",
+   "library_match": "佩艾西亚",
+   "similarity": 0.9582
+  },
+  {
+   "candidate": "五十七层",
+   "library_match": "五十五层",
+   "similarity": 0.9511
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "罗德",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.8856
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "雷纳尔多",
+   "library_match": "莱纳尔多",
+   "similarity": 0.8972
+  },
+  {
+   "candidate": "五十六层",
+   "library_match": "六十五层",
+   "similarity": 0.9472
+  },
+  {
+   "candidate": "SehrWind",
+   "library_match": "Sehr・Wind",
+   "similarity": 0.9273
+  },
+  {
+   "candidate": "技能『感应』",
+   "library_match": "技能『所有物』",
+   "similarity": 0.9228
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "罗德",
+   "罗德·缇缇",
+   0.8856
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "雷纳尔多",
+   "莱纳尔多",
+   0.8972
+  ],
+  [
+   "佩艾希亚",
+   "佩艾西亚",
+   0.9582
+  ],
+  [
+   "五十七层",
+   "五十五层",
+   0.9511
+  ],
+  [
+   "五十六层",
+   "六十五层",
+   0.9472
+  ],
+  [
+   "藏书室",
+   "绘画的保管室",
+   0.7889
+  ],
+  [
+   "保管室",
+   "绘画的保管室",
+   0.7841
+  ],
+  [
+   "SehrWind",
+   "Sehr・Wind",
+   0.9273
+  ],
+  [
+   "技能『感应』",
+   "技能『所有物』",
+   0.9228
+  ],
+  [
+   "Default",
+   "『Default』",
+   0.8117
+  ],
+  [
+   "连接",
+   "『连接』",
+   0.8139
+  ],
+  [
+   "一再反转之光（Re・Light）",
+   "Light・幻影（Phantom）",
+   0.7064
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 15,
+  "library": 854,
+  "dup_suspect": 2,
+  "uncertain": 8
+ }
+}

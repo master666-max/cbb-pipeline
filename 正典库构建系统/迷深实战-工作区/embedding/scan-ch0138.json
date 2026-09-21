@@ -1,0 +1,86 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "西娅·勒伽西",
+   "library_match": "西娅・勒伽西",
+   "similarity": 0.9857
+  },
+  {
+   "candidate": "海莉·维斯普洛佩",
+   "library_match": "海莉・维斯普洛佩",
+   "similarity": 0.987
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "诺瓦露",
+   "library_match": "拉丝缇娅拉",
+   "similarity": 0.8748
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "西娅·勒伽西",
+   "西娅・勒伽西",
+   0.9857
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "海莉·维斯普洛佩",
+   "海莉・维斯普洛佩",
+   0.987
+  ],
+  [
+   "露洁",
+   "沃尔斯",
+   0.7607
+  ],
+  [
+   "诺瓦露",
+   "拉丝缇娅拉",
+   0.8748
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 8,
+  "library": 861,
+  "dup_suspect": 2,
+  "uncertain": 4
+ }
+}

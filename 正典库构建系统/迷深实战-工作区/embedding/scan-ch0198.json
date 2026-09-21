@@ -1,0 +1,186 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "雷纳尔多·沃尔斯",
+   "library_match": "雷纳尔多・沃尔斯",
+   "similarity": 0.9769
+  },
+  {
+   "candidate": "罗德·缇缇",
+   "library_match": "罗德・缇缇",
+   "similarity": 0.9887
+  },
+  {
+   "candidate": "最深部之誓约者",
+   "library_match": "最深部的誓约者",
+   "similarity": 0.9753
+  },
+  {
+   "candidate": "光之御旗（NosfiFLAG）",
+   "library_match": "光之御旗（NosfyFlag）",
+   "similarity": 0.9852
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "维度・决战演算",
+   "library_match": "Dimension·决战演算",
+   "similarity": 0.9221
+  },
+  {
+   "candidate": "Sylph・堕落使徒",
+   "library_match": "『Sylph・堕落使徒』",
+   "similarity": 0.9236
+  },
+  {
+   "candidate": "沃尔斯家",
+   "library_match": "沃克家",
+   "similarity": 0.8981
+  },
+  {
+   "candidate": "『表示』",
+   "library_match": "表示",
+   "similarity": 0.8881
+  }
+ ],
+ "pairs": [
+  [
+   "伊丽莎白・沃尔斯",
+   "伊丽莎白",
+   0.8482
+  ],
+  [
+   "雷纳尔多·沃尔斯",
+   "雷纳尔多・沃尔斯",
+   0.9769
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "罗德·缇缇",
+   "罗德・缇缇",
+   0.9887
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "勖兮奋哉、吼哮不绝之焰",
+   "『炽天之纤炎』",
+   0.6408
+  ],
+  [
+   "焦土踏破、疾驰无息之魂",
+   "血与魂的共鸣",
+   0.6768
+  ],
+  [
+   "FullBlazing",
+   "FlameArrow",
+   0.7739
+  ],
+  [
+   "复合咒术『咏唱』",
+   "咒术『正式咏唱』",
+   0.8381
+  ],
+  [
+   "咒术『连接』",
+   "咒术『正式咏唱』",
+   0.833
+  ],
+  [
+   "咒术『维度』",
+   "咒术『正式咏唱』",
+   0.8085
+  ],
+  [
+   "咒术",
+   "咒术『正式咏唱』",
+   0.7927
+  ],
+  [
+   "维度・决战演算",
+   "Dimension·决战演算",
+   0.9221
+  ],
+  [
+   "最深部之誓约者",
+   "最深部的誓约者",
+   0.9753
+  ],
+  [
+   "Sylph・堕落使徒",
+   "『Sylph・堕落使徒』",
+   0.9236
+  ],
+  [
+   "风之铳剑",
+   "风刃剑",
+   0.7974
+  ],
+  [
+   "雷纳尔多的外套",
+   "雷纳尔多",
+   0.8099
+  ],
+  [
+   "沃尔斯家",
+   "沃克家",
+   0.8981
+  ],
+  [
+   "理的盗窃者",
+   "地之理的盗窃者",
+   0.8366
+  ],
+  [
+   "『支配之王』",
+   "支配之王",
+   0.841
+  ],
+  [
+   "光之御旗（NosfiFLAG）",
+   "光之御旗（NosfyFlag）",
+   0.9852
+  ],
+  [
+   "『表示』",
+   "表示",
+   0.8881
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 23,
+  "library": 846,
+  "dup_suspect": 4,
+  "uncertain": 7
+ }
+}

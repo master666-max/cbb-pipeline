@@ -1776,6 +1776,282 @@
      "quote": "毕竟再过几天『北方』的统一战线就会崩溃的"
     }
    ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "支配之王（Lord）",
+    "entity_type": "人物/存在(北方同盟盟主·称号)"
+   },
+   "aliases_to_register": [
+    "支配之王"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "缇缇向克洛伊揭示：其为北方同盟盟主，将与暗地操纵『北方』的艾德一同消失，'全都经由咱和涡涡他们的手'——本旅程暗杀目标宣告（伏笔轨道已由主文件'北方统一战线数日内崩溃预断'承载，此处仅立本体）",
+     "chapter": 226
+    },
+    {
+     "category": "summary",
+     "text": "克洛伊闻讯惊问'「『北方同盟』的『支配之王』会消失⋯⋯？这、这话是什么意思⋯⋯？」'——该情报对柯尔库军方属新知（含简形'支配之王'并见）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "因为作为北方同盟盟主的『支配之王（Lord）』将会消失"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "全都经由咱和涡涡他们的手"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 250,
+     "quote": "「『北方同盟』的『支配之王』会消失⋯⋯？这、这话是什么意思⋯⋯？」"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "南方联盟",
+    "entity_type": "组织/势力(与北方同盟交战的阵营)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "叙述直接陈述：斯诺隶属于『南方联盟』；涡波预计令其入队将使接下来的旅程方便不少",
+     "chapter": 226
+    },
+    {
+     "category": "knowledge",
+     "text": "据斯诺宣称：'和涡波他们一起前往北方才是『南方联盟』的取胜之路'——与北方统一战线崩溃预断互为表里（R6-4 声称口径）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 275,
+     "quote": "让隶属于『南方联盟』的她成为同伴的话，接下来的旅程想必会方便不少。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 259,
+     "quote": "我觉得和涡波他们一起前往北方才是『南方联盟』的取胜之路"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "北方同盟",
+    "entity_type": "组织/势力(北方阵营·统一战线)"
+   },
+   "aliases_to_register": [
+    "北方"
+   ],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "据克洛伊：斯诺职责='对付『北方』的袭击、将这里守护好、并团结臣民'；并声称斯诺若不在北方同盟必趁机进攻柯尔库（R6-4 声称）",
+     "chapter": 226
+    },
+    {
+     "category": "knowledge",
+     "text": "盟主=『支配之王（Lord）』；缇缇预断'再过几天『北方』的统一战线就会崩溃'——『北方』=北方同盟阵营简称（同句因果绑定）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 227,
+     "quote": "斯诺大人要做的是对付『北方』的袭击、将这里守护好、并团结臣民"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 222,
+     "quote": "如果斯诺大人不在了的话，『北方同盟』一定会趁机发动进攻的！"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 248,
+     "quote": "毕竟再过几天『北方』的统一战线就会崩溃的"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {
+    "subject": "斯诺·沃克",
+    "rel_type": "隶属（南方联盟）",
+    "object": "南方联盟",
+    "claim": false
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "叙述直接陈述'隶属于『南方联盟』的她'（=斯诺，随行入队时点明）；该阵营身份被涡波预期为陆路旅程之便",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 275,
+     "quote": "让隶属于『南方联盟』的她成为同伴的话"
+    }
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {
+    "subject": "北方同盟",
+    "rel_type": "交战对手（胜败互斥·并证）",
+    "object": "南方联盟",
+    "claim": true
+   },
+   "observations": [
+    {
+     "category": "relation",
+     "text": "交战关系由双方阵营之言并证：据克洛伊，北方同盟将对己方（柯尔库）趁机进攻、『境界战争』海战赖斯诺保持均势；据斯诺，赴北方同行=『南方联盟』的取胜之路——两造胜败互斥确认交战结构",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 222,
+     "quote": "如果斯诺大人不在了的话，『北方同盟』一定会趁机发动进攻的！"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 259,
+     "quote": "我觉得和涡波他们一起前往北方才是『南方联盟』的取胜之路"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "DistanceMute",
+    "entity_type": "魔法(系心的魔法)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "缇缇怂恿涡波对克洛伊'直接朝她的胸来一发'（发动涉及胸口之描述，措辞遭涡波斥责不正经）；涡波点明使用条件：'人家没同意怎么能随便做呢'——需对方同意方可使用",
+     "chapter": 226
+    },
+    {
+     "category": "knowledge",
+     "text": "叙述归类：缇缇所催促者为'系心的魔法'；涡波因'在弗茨亚茨大圣堂发生的事尚且记忆犹新'而拒绝——该魔法于弗茨亚茨大圣堂有使用前科（据涡波自述引用）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 214,
+     "quote": "「唔姆，真麻烦。涡涡，你直接朝她的胸来一发怎么样？快快，动手吧动手吧」"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 215,
+     "quote": "「你是说『DistanceMute』吗？人家没同意怎么能随便做呢、你傻吗。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 216,
+     "quote": "虽然缇缇催促我使用系心的魔法，但在弗茨亚茨大圣堂发生的事尚且记忆犹新所以我是拒绝的。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "连接",
+    "entity_type": "魔法(『连接』)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "功能经对比句直证：涡波叙述'虽然没有魔法的『连接』，但我和斯诺的内心确实实现了彼此相通'——『连接』为令内心相通之魔法，本番未使用而实现相通",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 43,
+     "quote": "尽管只有短短几句话的交流，虽然没有魔法的『连接』，但我和斯诺的内心确实实现了彼此相通。"
+    }
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "莱文教",
+    "entity_type": "宗教(大陆信仰)"
+   },
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "据涡波：大陆流传千年之传说即其信众所维护之叙事（涡波自称始祖本人=对该传说的否定）；并假设'如果被莱文教的忠实信徒听到，搞不好我会被人用刀捅过来的'——信徒狂热度之假设性声称（R6-4）",
+     "chapter": 226
+    }
+   ],
+   "evidence": [
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 175,
+     "quote": "毕竟我不仅否定了大陆流传千年的传说，还自称是其中主要登场人物之一的始祖本人。"
+    },
+    {
+     "vol": 1,
+     "chapter": 226,
+     "line": 175,
+     "quote": "如果被莱文教的忠实信徒听到，搞不好我会被人用刀捅过来的。"
+    }
+   ]
   }
  ]
 }

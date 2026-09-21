@@ -1,0 +1,106 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "Jaeger·Wind",
+   "library_match": "Jaeger・Wind",
+   "similarity": 0.9833
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "GreenHighElement",
+   "HighSkyBeryl",
+   0.6222
+  ],
+  [
+   "PaleGriffin",
+   "Rokh•Bringer",
+   0.777
+  ],
+  [
+   "PiercePigeon",
+   "RioshethEagle",
+   0.7515
+  ],
+  [
+   "ColorlessUnicorn",
+   "SehrFang",
+   0.748
+  ],
+  [
+   "HolyElement",
+   "WindFlamberge",
+   0.779
+  ],
+  [
+   "DistanceMute",
+   "『DistanceMute』",
+   0.7737
+  ],
+  [
+   "Default",
+   "『Default』",
+   0.8117
+  ],
+  [
+   "Jaeger·Wind",
+   "Jaeger・Wind",
+   0.9833
+  ],
+  [
+   "魔力风刃化",
+   "技能『魔力风刃化』",
+   0.8055
+  ],
+  [
+   "Care Full",
+   "FullBlazing",
+   0.6322
+  ],
+  [
+   "次元之戒",
+   "次元之冬",
+   0.83
+  ],
+  [
+   "连接",
+   "『连接』",
+   0.8139
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 15,
+  "library": 854,
+  "dup_suspect": 1,
+  "uncertain": 2
+ }
+}

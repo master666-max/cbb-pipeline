@@ -1,0 +1,76 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "缇娅拉",
+   "library_match": "缇亚拉",
+   "similarity": 0.9617
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "海莉",
+   "library_match": "海莉·维斯普洛佩",
+   "similarity": 0.9393
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  }
+ ],
+ "pairs": [
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "使徒勒伽西",
+   "使徒西斯",
+   0.8473
+  ],
+  [
+   "缇娅拉",
+   "缇亚拉",
+   0.9617
+  ],
+  [
+   "海莉",
+   "海莉·维斯普洛佩",
+   0.9393
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "青色魔石",
+   "魔石",
+   0.8485
+  ],
+  [
+   "最深部",
+   "最深部之誓约者",
+   0.7881
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 8,
+  "library": 861,
+  "dup_suspect": 1,
+  "uncertain": 3
+ }
+}

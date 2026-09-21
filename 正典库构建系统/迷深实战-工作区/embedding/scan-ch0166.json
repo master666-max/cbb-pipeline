@@ -1,0 +1,116 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "基督·欧亚",
+   "library_match": "基督・欧亚",
+   "similarity": 0.9623
+  },
+  {
+   "candidate": "海因·赫勒比勒夏因",
+   "library_match": "海因・赫勒比勒夏因",
+   "similarity": 0.9872
+  },
+  {
+   "candidate": "帕林库洛·勒伽西",
+   "library_match": "帕林库洛・勒伽西",
+   "similarity": 0.976
+  },
+  {
+   "candidate": "拉丝缇娅拉·弗茨亚茨",
+   "library_match": "拉丝缇娅拉・弗茨亚茨",
+   "similarity": 0.9951
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "阿雷亚斯家的宝剑",
+   "library_match": "【修坏的阿雷亚斯家宝剑】",
+   "similarity": 0.8915
+  },
+  {
+   "candidate": "堕落使徒",
+   "library_match": "『堕落使徒』",
+   "similarity": 0.8649
+  }
+ ],
+ "pairs": [
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "基督·欧亚",
+   "基督・欧亚",
+   0.9623
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "诺文",
+   "诺瓦露",
+   0.8395
+  ],
+  [
+   "海因·赫勒比勒夏因",
+   "海因・赫勒比勒夏因",
+   0.9872
+  ],
+  [
+   "王之器",
+   "白石玉衣",
+   0.7251
+  ],
+  [
+   "帕林库洛·勒伽西",
+   "帕林库洛・勒伽西",
+   0.976
+  ],
+  [
+   "拉丝缇娅拉·弗茨亚茨",
+   "拉丝缇娅拉・弗茨亚茨",
+   0.9951
+  ],
+  [
+   "阿雷亚斯家的宝剑",
+   "【修坏的阿雷亚斯家宝剑】",
+   0.8915
+  ],
+  [
+   "堕落使徒",
+   "『堕落使徒』",
+   0.8649
+  ],
+  [
+   "世界奉还阵",
+   "世界树",
+   0.6502
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 12,
+  "library": 857,
+  "dup_suspect": 4,
+  "uncertain": 4
+ }
+}

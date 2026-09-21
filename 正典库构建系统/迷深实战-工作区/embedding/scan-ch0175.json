@@ -1,0 +1,106 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "罗德・缇缇",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.9887
+  },
+  {
+   "candidate": "雷纳尔多·沃尔斯",
+   "library_match": "雷纳尔多・沃尔斯",
+   "similarity": 0.9769
+  },
+  {
+   "candidate": "佩艾希亚",
+   "library_match": "佩艾西亚",
+   "similarity": 0.9582
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "『维度』",
+   "library_match": "『维度・多重展开』",
+   "similarity": 0.8784
+  }
+ ],
+ "pairs": [
+  [
+   "罗德・缇缇",
+   "罗德·缇缇",
+   0.9887
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "雷纳尔多·沃尔斯",
+   "雷纳尔多・沃尔斯",
+   0.9769
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "隐居的老夫妇",
+   "旅店",
+   0.6591
+  ],
+  [
+   "佩艾希亚",
+   "佩艾西亚",
+   0.9582
+  ],
+  [
+   "绘画的保管室",
+   "藏书室",
+   0.7889
+  ],
+  [
+   "DistanceMute",
+   "『DistanceMute』",
+   0.7737
+  ],
+  [
+   "『维度』",
+   "『维度・多重展开』",
+   0.8784
+  ],
+  [
+   "孤儿院",
+   "旅店",
+   0.7439
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 12,
+  "library": 857,
+  "dup_suspect": 3,
+  "uncertain": 3
+ }
+}

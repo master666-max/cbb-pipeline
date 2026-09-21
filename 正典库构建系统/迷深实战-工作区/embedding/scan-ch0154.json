@@ -1,0 +1,75 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "『耶梦加得之霜』",
+   "library_match": "『耶梦加得之炎』",
+   "similarity": 0.9
+  },
+  {
+   "candidate": "『次元之冬』",
+   "library_match": "『次元雪』",
+   "similarity": 0.9242
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "使徒勒伽西",
+   "使徒西斯",
+   0.8473
+  ],
+  [
+   "『耶梦加得之霜』",
+   "『耶梦加得之炎』",
+   0.9
+  ],
+  [
+   "『次元之冬』",
+   "『次元雪』",
+   0.9242
+  ],
+  [
+   "水晶之间",
+   "水晶魔法『Quartz』",
+   0.8232
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 7,
+  "library": 863,
+  "dup_suspect": 0,
+  "uncertain": 5
+ }
+}

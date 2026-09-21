@@ -1,0 +1,60 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "罗德",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.8856
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  }
+ ],
+ "pairs": [
+  [
+   "罗德",
+   "罗德·缇缇",
+   0.8856
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "诺文",
+   "诺瓦露",
+   0.8395
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 5,
+  "library": 864,
+  "dup_suspect": 0,
+  "uncertain": 4
+ }
+}

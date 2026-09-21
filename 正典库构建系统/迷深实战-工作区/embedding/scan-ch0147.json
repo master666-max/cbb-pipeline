@@ -1,0 +1,131 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "迪亚布罗·西斯",
+   "library_match": "迪亚波罗・西斯",
+   "similarity": 0.9732
+  },
+  {
+   "candidate": "塞拉·雷迪安特",
+   "library_match": "塞拉・蕾蒂安特",
+   "similarity": 0.9716
+  },
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  },
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "缇亚",
+   "library_match": "蒂娅",
+   "similarity": 0.9493
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "莉帕",
+   "library_match": "格林·莉姆·莉帕",
+   "similarity": 0.9285
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛长官",
+   "similarity": 0.8825
+  },
+  {
+   "candidate": "帕林库洛的部下",
+   "library_match": "帕林库洛长官",
+   "similarity": 0.9002
+  },
+  {
+   "candidate": "『过密次元的真冬』",
+   "library_match": "过密次元的真冬",
+   "similarity": 0.8704
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "迪亚布罗·西斯",
+   "迪亚波罗・西斯",
+   0.9732
+  ],
+  [
+   "缇亚",
+   "蒂娅",
+   0.9493
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "塞拉·雷迪安特",
+   "塞拉・蕾蒂安特",
+   0.9716
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ],
+  [
+   "莉帕",
+   "格林·莉姆·莉帕",
+   0.9285
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛长官",
+   0.8825
+  ],
+  [
+   "艾德",
+   "达利尔",
+   0.7772
+  ],
+  [
+   "帕林库洛的部下",
+   "帕林库洛长官",
+   0.9002
+  ],
+  [
+   "『过密次元的真冬』",
+   "过密次元的真冬",
+   0.8704
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 12,
+  "library": 857,
+  "dup_suspect": 4,
+  "uncertain": 7
+ }
+}
