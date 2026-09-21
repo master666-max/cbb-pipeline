@@ -1,7 +1,7 @@
 ---
 name: cbb-pipeline
 description: 正典库构建流水线（Correct-by-Construction Canon Library）——把长篇小说原文转化为带证据四元组、三态写入、隔离区兜底的可查询正典库。当用户提到 正典库 canon 提取 小说入库 证据四元组 三态写入 隔离区 契诃夫枪 伏笔台账 实体别名 终审抽校 lore 知识图谱 时使用本技能。适用于任意长篇小说（含百万字级）的全文正典化：开书→逐章子代理抽取→三态门禁→全库终审。
-license: CC-BY-4.0 (content)
+license: MIT
 compatibility: 需 Python 3.10+（Windows 用 py -X utf8 启动器）；嵌入扫描/图导出为可选增强（LM Studio/Neo4j），缺省不影响主链
 metadata:
   version: "1.0"
