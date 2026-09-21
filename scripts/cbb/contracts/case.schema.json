@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/case/v2.0",
+  "title": "Case 契约 v2.0（本体版；v1.0 冻结于 cbb-skills/contracts）",
+  "type": "object",
+  "required": ["issue", "verdict", "provenance", "retrieval_hints", "usage", "gate_scenario"],
+  "properties": {
+    "case_id": { "type": "string", "description": "先例引用键（Record.provenance.precedent_refs 元素）" },
+    "issue": { "type": "object", "description": "内嵌 Issue（结构见 issue.schema.json v2.0）" },
+    "verdict": { "type": "object", "description": "内嵌 Verdict（结构见 verdict.schema.json v2.0）" },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "trust_weight"],
+      "properties": {
+        "source": { "enum": ["human", "cloud_arbiter", "self_consistent"], "description": "该 issue 最终真相的来源（human > cloud_arbiter > self_consistent）" },
+        "trust_weight": { "type": "number" }
+      }
+    },
+    "retrieval_hints": {
+      "type": "object",
+      "properties": {
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "entities": { "type": "array", "items": { "type": "string" } },
+        "counter_example_of": { "type": ["string", "null"] }
+      }
+    },
+    "counter_example": {
+      "type": "object",
+      "description": "三段式反例（worldbook 错误示例教材格式）：原文/错误提取/正确示范——counter_example_of 非空时必填（校验器强制配对）",
+      "required": ["source_text", "wrong", "right"],
+      "properties": {
+        "source_text": { "type": "string", "minLength": 1, "description": "原文" },
+        "wrong": { "type": "string", "minLength": 1, "description": "错误提取" },
+        "right": { "type": "string", "minLength": 1, "description": "正确示范" }
+      }
+    },
+    "retro_tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^#\\S+", "description": "复盘标签（chinese-webnovel 投稿复盘）：#词形式结构化失败经验（如 #开篇慢 #爽点晚）" }
+    },
+    "usage": {
+      "type": "object",
+      "properties": {
+        "retrieval_count": { "type": "integer" },
+        "agreement_rate_when_cited": { "type": "number" }
+      }
+    },
+    "gate_scenario": { "enum": ["admission", "extraction"], "description": "双场景硬过滤互斥键" }
+  },
+  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3）：+counter_example 三段式（worldbook 常见错误 9 例的 原文/错误提取/正确示范 教材格式——Case『失败也是资产』的最佳文档形态；counter_example_of 非空时强制配对）；+retro_tags 复盘标签（chinese-webnovel 投稿复盘标签，pattern ^# 锁定词形）。issue.error_type 在 admission 场景允许 null（门禁时错误未判定）。judge 言论不进 Case（入 Record.provenance.gate_trace）。"
+}

@@ -1,0 +1,40 @@
+# 开书参数模板 —— 复制为 project.yaml 后填写
+# scripts/init_project.py 读取本文件生成工作区骨架
+
+project:
+  book_name: ""            # 书名（例：迷深）
+  source_path: ""          # 全文语料路径（txt/md，需含章节标记，如 <<<CHAPTER 0001 | 题>>>）
+  chapter_pattern: "^<<<CHAPTER\\s*(\\d+)"   # 章节标记正则（捕获组=编号）
+  library_path: ""         # 本体库落盘根（留空=自动：<项目>/库/）
+  workspace_path: ""       # 工作区落盘根（留空=自动：<项目>/工作区/）
+
+anchor:
+  mode: pseudo_date        # 伪锚点模式
+  epoch: "2000-01-01"      # 锚点纪元（第 i 章 = epoch + i 天）
+  wall_clock: forbidden    # 禁墙钟（硬条款）
+
+extract:
+  r6_verbatim: true        # R6 元文本规范逐字内嵌抽取规范
+  alias_threshold: 0.85    # nickname 合并门槛（存疑分开建）
+  concurrency_start: 9     # 并发起步（两段式：2h 后切巡航档 4）
+  concurrency_cruise: 4
+  batch_chapters: 8        # 每 8 章轻收口（断点密度）
+
+gate:
+  tau_provisional: 0.85    # provisional 路由阈值
+  tau_confirmed: 0.97      # confirmed 门槛（人工晋升前置）
+  chekhov_overdue_chapters: 3   # 契诃夫枪超期报警阈值
+
+dedup:
+  embedding_scan: true     # 嵌入相似度扫描（需 LM Studio @8080）
+  sim_merge: 0.95          # ≥ 走双轨合并流程
+  sim_suspect: 0.85        # 0.85~sim_merge 存疑入隔离（只提示不静默）
+
+graph:
+  neo4j_uri: "bolt://localhost:7687"
+  export_per_batch: true   # 每批增量导出（强制派生图层，债务台账制）
+
+audit:
+  deepseek_spotcheck_budget_cny: 7   # 第三方抽检总预算（谷价）
+  confirmed_sample_size: 30          # 终审抽检条数
+  confirmed_pass_rate: 0.95

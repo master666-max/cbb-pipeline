@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/record/v2.0",
+  "title": "Record 契约 v2.0（本体版；v1.0 冻结于 cbb-skills/contracts，判据不回改）",
+  "type": "object",
+  "required": ["record_id", "record_type", "library", "status", "canonical", "evidence", "provenance", "version", "supersedes", "verified_against"],
+  "properties": {
+    "record_id": { "type": "string", "description": "uuid" },
+    "record_type": { "enum": ["event", "entity", "relation", "foreshadow", "setting", "anchor"] },
+    "library": { "enum": ["event", "character", "timeline", "relation", "setting", "foreshadow"] },
+    "status": { "enum": ["confirmed", "provisional"] },
+    "canonical": { "type": "object", "description": "按库类型的本体字段" },
+    "evidence": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["vol", "chapter", "line", "quote"],
+        "properties": {
+          "vol": { "type": "integer", "minimum": 0 },
+          "chapter": { "type": "integer", "minimum": 0 },
+          "line": { "type": "integer", "minimum": 0 },
+          "quote": { "type": "string", "minLength": 1 },
+          "file": { "type": "string", "minLength": 1, "description": "源文件路径（author-toolkit location 三元组之 file 位；可选，坐标 vol/chapter/line 已可定位时省略）" },
+          "graph_edge": {
+            "type": "object",
+            "description": "证据链→图边回填位（v1.4 漂移修正 D2；语义同基线 graphiti_edge，改名因 graphiti 运行时旁路、由导出器回填）。可选：记录层导出前自洽，导出后证据链闭合到图",
+            "required": ["edge_id", "valid_at", "invalid_at"],
+            "properties": {
+              "edge_id": { "type": "string", "minLength": 1, "description": "导出器派生的确定性边 id（三元组内容哈希）" },
+              "valid_at": { "type": ["integer", "null"], "minimum": 0, "description": "边生效章（←证据最早 chapter；null=不可判）" },
+              "invalid_at": { "type": ["integer", "null"], "minimum": 0, "description": "边失效章（supersede 时=后继生效章；活版本 null=开放区间仍有效）" }
+            }
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "description": "观察分类（basic-memory observations 语义分类）：可数组，每条带词表类目+文本+可选章 attribution",
+      "items": {
+        "type": "object",
+        "required": ["category", "text"],
+        "properties": {
+          "category": { "enum": ["summary", "event", "tone", "technique", "quote", "significance", "foreshadowing", "arc", "trait", "manifestation", "evolution", "appearance", "interpretation", "atmosphere", "example", "status_change", "relation", "alias", "knowledge"] },
+          "text": { "type": "string", "minLength": 1 },
+          "chapter": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "verified_against": {
+      "type": "object",
+      "description": "溯源三件套（story-systems 漂移钩子）：记录验证时所对的源版本；源变更→本记录 stale→须重验（U-B07 store 消费）",
+      "required": ["path", "sha", "verified_at"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha": { "type": "string", "pattern": "^[0-9a-f]{7,64}$", "description": "git SHA（40 位全长或 ≥7 位短哈希）；非 git 源用内容哈希（hex）" },
+        "verified_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}", "description": "验证时间（ISO 日期起头）" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "extractor_confidence": { "type": "number" },
+        "gate_trace": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["gate"],
+            "properties": {
+              "gate": { "enum": ["1", "2a", "2b", "3"] },
+              "verdict_id": { "type": "string" },
+              "ts": { "type": "string" }
+            }
+          }
+        },
+        "precedent_refs": { "type": "array", "items": { "type": "string" } },
+        "status_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to"],
+            "properties": {
+              "from": { "type": "string" },
+              "to": { "type": "string" },
+              "at": { "type": "string" },
+              "by": { "enum": ["human", "shadow", "promotion"] },
+              "graphiti_edge": { "type": "string", "description": "valid_at/invalid_at 边 id" }
+            }
+          }
+        }
+      }
+    },
+    "version": { "type": "integer", "minimum": 1 },
+    "supersedes": { "type": ["string", "null"], "description": "前一版 record_id | null" }
+  },
+  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3 契约层修订）：①evidence[].quote 即 author-toolkit location(file/line/quote) 三元组之原文引用位（v1.0 已有，v2.0 增可选 file 位成四锚）；②verified_against=story-systems 溯源三件套 path+SHA+验证时（必填，drift hook）；③observations=分类词表（basic-memory 15 类照录：summary/event/tone/technique/quote/significance/foreshadowing/arc/trait/manifestation/evolution/appearance/interpretation/atmosphere/example + CBB 自增 4 类：status_change/relation/alias/knowledge，分别对应状态债务/graphify 关系与知情双清单/别名归一吸收项）。状态仍二态 confirmed/provisional——用户裁决 2026-09-15 不增设第四态：cut 以 supersedes+归档覆盖，quarantine 走隔离区，candidate 仍为入库前状态（B1 纪律不变）。④（追加，v1.4 漂移修正 D2，2026-09-17）evidence[].graph_edge 可选回填位：导出器导出后回填边 id+valid_at/invalid_at，记录层导出前自洽——纯追加字段，旧记录零改动，评分器与金标零改动。"
+}

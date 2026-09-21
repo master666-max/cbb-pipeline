@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/issue/v2.0",
+  "title": "Issue 契约 v2.0（本体版；v1.0 冻结于 cbb-skills/contracts）",
+  "type": "object",
+  "required": ["issue_id", "skill", "error_type", "claim", "evidence_span", "graph_context", "severity", "fix_action", "confidence_caliber", "cites"],
+  "properties": {
+    "issue_id": { "type": "string" },
+    "skill": { "type": "string" },
+    "error_type": { "type": ["string", "null"], "description": "admission 场景允许 null（门禁时错误未判定，见 Case 契约声明）" },
+    "claim": { "type": "string" },
+    "evidence_span": { "type": "object", "description": "证据定位（坐标四元组形态：vol/chapter/line/quote）" },
+    "graph_context": { "type": "object" },
+    "severity": { "type": "string" },
+    "extraction_confidence": { "type": "number" },
+    "fix_action": {
+      "type": "object",
+      "description": "修复动作（story-skills 修复行动生成器）：不止报告还给出下一步动作——P0-P3 优先级+精确命令",
+      "required": ["priority", "command"],
+      "properties": {
+        "priority": { "enum": ["P0", "P1", "P2", "P3"] },
+        "command": { "type": "string", "minLength": 1, "description": "精确命令或精确动作句（可直接执行/照做）" },
+        "note": { "type": "string" }
+      }
+    },
+    "confidence_caliber": { "enum": ["deterministic", "judgment"], "description": "口径（author-toolkit 双口径）：deterministic=确定性校验器产物；judgment=LLM/人工判断——机器可辨（R-010 证据语气三分离同构）" },
+    "cites": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "description": "Cites 强制列（story-systems findings Cites 列）：本 Issue 所对照的 Record record_id / canon 卡路径——无引用的发现不受理" }
+  },
+  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3）：+fix_action（story-skills P0-P3+精确命令）/+confidence_caliber（author-toolkit deterministic|judgment 双口径）/+cites（story-systems Cites 强制列 minItems 1）。CBB→NAS 转换器以此为终点（双构咬合点①，v1.0 语义保留）。"
+}
