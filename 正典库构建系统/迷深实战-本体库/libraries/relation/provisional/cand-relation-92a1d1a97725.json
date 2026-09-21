@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『天上的七骑士』",
+  "rel_type": "就任总长（自称·多重偶然）",
+  "subject": "拉古涅·卡伊库欧拉"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 51,
+   "quote": "其实我，最近当上了『天上的七骑士』的总长哦",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 55,
+   "quote": "顺势当上罢了",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 212,
+   "text": "自称'最近当上了总长'、把持大圣堂全部警备；自解=佩露修娜总长与副总长战争出差+自己'在战争中派不上任何用场而被丢下来'的多重偶然（'和我的实力无关'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-92a1d1a97725",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

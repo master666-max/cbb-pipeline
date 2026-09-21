@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "拉丝缇娅拉",
+  "rel_type": "断言(血无余量)",
+  "subject": "阿尔缇"
+ },
+ "evidence": [
+  {
+   "chapter": 213,
+   "line": 167,
+   "quote": "曾几何时，十层守护者阿尔缇说过拉丝缇娅拉的『血』已经没有余量。这份隐忧到了现在似乎成为了致命性的问题。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 213,
+   "text": "据涡波回忆转述：十层守护者阿尔缇曾说过拉丝缇娅拉的『血』已经没有余量；这份隐忧到了现在似乎成为了致命性的问题（与本章她自述的成长停滞互证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-418bc4f83e11",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0213.txt",
+  "sha": "f11b0a277e1dda04cb2832afeb9fee3beecc88a980f99bda2ce96fdbadc4d1d6",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

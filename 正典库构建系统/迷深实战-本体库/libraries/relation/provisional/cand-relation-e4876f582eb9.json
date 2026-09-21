@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『天上的七骑士』",
+  "rel_type": "复归邀请（暂缓）",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 159,
+   "quote": "现在就复归『天上的七骑士』怎么样？",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 160,
+   "quote": "「⋯⋯多谢好意。但是，我还没有回过老家通报一下呢。这事儿还是等之后再说吧。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 212,
+   "text": "斐勒卢托以其'很出色的完成了我们下达的命令'且平安归来为由邀其复归；莱纳以未回老家通报为由暂缓（'这事儿还是等之后再说吧'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e4876f582eb9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

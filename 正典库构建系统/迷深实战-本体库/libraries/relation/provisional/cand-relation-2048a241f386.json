@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "格连",
+  "rel_type": "宝石变现委托",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 216,
+   "line": 210,
+   "quote": "在先前的海上旅行中，我曾经用『阿雷亚斯家的宝剑诺文』生成了大量的宝石。之后我到『史诗探索者』拜托格连将这些宝石变现。看来过去了一年的时间，变现的事已经得到解决了。",
+   "vol": 1
+  },
+  {
+   "chapter": 216,
+   "line": 209,
+   "quote": "「没错，是说将涡波之前带来的那些魔石和宝石变现的事情对吧。那些钱现在由我保管所以不用担心。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 216,
+   "text": "先前海上旅行中以『阿雷亚斯家的宝剑诺文』生成的大量宝石与魔石，托格连于『史诗探索者』变现；一年后事已办结、款项由缇莉接手保管"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-2048a241f386",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0216.txt",
+  "sha": "1489190fc5bab97510c2211cd4bb0e90808e0c621cc25be8628748c9eff91065",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

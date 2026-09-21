@@ -1,0 +1,118 @@
+{
+ "canonical": {
+  "entity_type": "人物",
+  "name": "克劳"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 5,
+   "quote": "此时此刻，我正在与老朋友克劳交谈，打算从他的嘴里套点情报出来。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 11,
+   "quote": "克劳是我第一天在这家店工作时便结下缘份的朋友。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 317,
+   "quote": "「喂，克劳！你丫再纠缠我家新人不放的话，小心我揍飞你哦！」",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 318,
+   "quote": "看来这个被唤作克劳的人跟店长是相识。",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 39,
+   "quote": "会出现在一层的Boss数量并不多。我记得不过只有十种而已。",
+   "vol": 1
+  },
+  {
+   "chapter": 5,
+   "line": 54,
+   "quote": "来讲讲联合国『最强』的探索者格连与守护者战斗的故事吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 214,
+   "line": 12,
+   "quote": "在这片喧嚣之中，我听到了酒馆的熟人克罗的声音。",
+   "vol": 1
+  },
+  {
+   "chapter": 214,
+   "line": 105,
+   "quote": "况且这还是来自前辈探索者克罗的推荐。",
+   "vol": 1
+  },
+  {
+   "chapter": 214,
+   "line": 37,
+   "quote": "「基督小哥，女人又不是只有一个，不要吊死在一棵树上嘛！干脆我带你去个好地方爽爽转换一下心情怎么样？一个去了之后能让你重获新生的好地方哦！」",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "酒馆常客，主角入职首日结识的朋友；主角工作日基本都会看到他在店里喝酒（L11）"
+  },
+  {
+   "category": "event",
+   "chapter": 14,
+   "text": "冲突中来到两人之间打算庇护主角（L44）"
+  },
+  {
+   "category": "knowledge",
+   "chapter": 14,
+   "text": "向主角提供十四层情报：沙漠不毛之地、怪物稀少、基本没人探索、大抵经『正道』直奔十五层（L6-10）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 6.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-3ee856ee4181",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-3ee856ee4181-m",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-3ee856ee4181-m-m",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-3ee856ee4181-m4",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-3ee856ee4181-m-m",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 4
+}

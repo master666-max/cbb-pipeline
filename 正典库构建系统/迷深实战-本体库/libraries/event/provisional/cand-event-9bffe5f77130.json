@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "罗德・缇缇",
+   "艾尔芬里斯",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "缇缇被压制与艾尔芬里斯舍身",
+  "tick": 209,
+  "time_verbatim": "开战后"
+ },
+ "evidence": [
+  {
+   "chapter": 209,
+   "line": 127,
+   "quote": "确认到这一点的诺斯菲击破缇缇的防御架势之后，向她使出一记回旋踢。",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 128,
+   "quote": "明明缇缇勉强用铳剑的末端防住了这记踢击，却还是被一脚踢上高空。",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 136,
+   "quote": "『光之理的盗窃者』的全力一击，将龙那坚硬的腹部击穿，光枪一直插穿至飞龙的嵴背。但是，也就到那为止了。尽管艾尔芬里斯的龙血如雨般洒落，它仍旧凭借自己那强韧的身躯将光枪挡下，护住了缇缇。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 209,
+   "text": "同为守护者而魔力量不同（缇缇留恋半分解消被压制）；诺斯菲击破其防御架势、一记回旋踢将其踢上高空并以光之矢Brionac追击；艾尔芬里斯横插挡下（腹部贯穿至嵴背仍护住缇缇）；缇缇操纵风于龙背降落、追击断绝"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9bffe5f77130",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0209.txt",
+  "sha": "bb53685f6466220c135e88348d174e5ddf02aef7bc09c9004aa1d651fb5776f5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

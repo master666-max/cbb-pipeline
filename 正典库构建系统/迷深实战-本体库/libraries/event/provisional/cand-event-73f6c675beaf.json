@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "弗茨亚茨",
+   "相川涡波",
+   "缇缇",
+   "艾德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "节点",
+  "name": "一年后重返地面·弗茨亚茨再访",
+  "tick": 212,
+  "time_verbatim": "重返地面次日（睡至正午）午后出发（『大灾害』约一年后）"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 3,
+   "quote": "第二天──回到久违的地面的我们漂亮地睡到了正午。",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 7,
+   "quote": "一小时不到我们就到达了弗茨亚茨",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 16,
+   "quote": "我们不在的这一年里，说不定⋯⋯是那家伙──",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 212,
+   "text": "地面归来次日睡至正午（MP/HP全恢复）；三人越境（'越靠近迷宫走越快'）不到一小时抵弗茨亚茨；街道剧变生疑（莱纳曾住此地）→'是・谁・造成了现在的景象，我们心里多少有些线索'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-73f6c675beaf",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

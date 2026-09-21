@@ -1,0 +1,102 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "瓦尔德"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 13,
+   "quote": "他们身上的行头与在瓦尔德烂大街的货色截然不同",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 49,
+   "quote": "「你这家伙，可别看不起瓦尔德啊！」",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 237,
+   "quote": "依照当初的预定，我前往了东边的瓦尔德。",
+   "vol": 1
+  },
+  {
+   "chapter": 4,
+   "line": 243,
+   "quote": "且不说贫富差距更加显著，最明显的区别要数职业分层。",
+   "vol": 1
+  },
+  {
+   "chapter": 183,
+   "line": 133,
+   "quote": "老实说，诺斯菲的料理十分的美味。能够让瓦尔德的酒场端出来的职业的料理都觉得逊色。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 100,
+   "quote": "建筑物和道路的规格很明显扩建了不少，人流量也增多了。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 122,
+   "quote": "若再神经质一点，我还需指出在瓦尔德的兽人的比率也有所下降。另外，身着白银色铠甲的骑士莫名增多，照亮街道的魔石的光辉有些慑人，这都让我有些在意。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 137,
+   "quote": "我之前住的家附近现在已经漂亮地夷为了平地。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "酒馆所在城镇（生面孔们的行头与瓦尔德烂大街货色对比，L13；常客护城镇之名，L49）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 6.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-214a1e6922bb",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-214a1e6922bb-m",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-214a1e6922bb-m3",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-214a1e6922bb-m4",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-214a1e6922bb-m3",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 4
+}

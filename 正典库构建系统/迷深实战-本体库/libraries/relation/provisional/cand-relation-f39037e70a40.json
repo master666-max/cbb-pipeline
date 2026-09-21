@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "恋心（我喜欢的人·当面告白）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 210,
+   "line": 289,
+   "quote": "在技能『？？？』升华为技能『最深部之誓约者』之后，对她的感情已经重新回到了我的心中。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 290,
+   "quote": "那毫无疑问是我对她的『恋心』",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 367,
+   "quote": "「──她是个非常朝气蓬勃的女孩子。并且，拉丝缇娅拉・弗茨亚茨这名少女是我喜欢的人」",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 372,
+   "quote": "「没错，我喜欢她⋯⋯所以，我想早点见到她⋯⋯还有其余的同伴们也是⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 210,
+   "text": "技能『？？？』升华为技能『最深部之誓约者』之后，对她的感情重新回到心中——'那毫无疑问是我对她的『恋心』'；对缇缇宣告'拉丝缇娅拉・弗茨亚茨这名少女是我喜欢的人'、'我想早点见到她'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-f39037e70a40",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0210.txt",
+  "sha": "16574ee39c06101cfa8ee61d9b8da8ada6129e5e829368aec6623146665c828b",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,81 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "克劳",
+   "library_match": "克罗",
+   "similarity": 0.9145
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "克劳",
+   "克罗",
+   0.9145
+  ],
+  [
+   "日樱小姐",
+   "日樱",
+   0.8196
+  ],
+  [
+   "玲小姐",
+   "小玲",
+   0.7485
+  ],
+  [
+   "店长",
+   "杂货铺店主",
+   0.7311
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ],
+  [
+   "大圣堂",
+   "弗茨亚茨大圣堂",
+   0.8278
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 9,
+  "library": 757,
+  "dup_suspect": 1,
+  "uncertain": 3
+ }
+}

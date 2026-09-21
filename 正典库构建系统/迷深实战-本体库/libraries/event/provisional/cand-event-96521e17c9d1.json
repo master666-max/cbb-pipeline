@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "罗德・缇缇",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "过渡",
+  "name": "战后治疗与再出发动机",
+  "tick": 209,
+  "time_verbatim": "战后"
+ },
+ "evidence": [
+  {
+   "chapter": 209,
+   "line": 365,
+   "quote": "因为至今以来老是在大战之后遭人偷袭所以还是小心为上。但是，确认到周围真的已经没有敌人之后，我安心得一屁股坐了下来。",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 380,
+   "quote": "「⋯⋯也是。不赶快行动的话有可能会饿死呢。毕竟现在里侧的街道已经完全崩壊了呢。」",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 386,
+   "quote": "「啊，这个不用担心！接下来的迷宫探索人家也好帮忙的！人家认真起来的话，六十六层什么的很快就结束了！大概还很轻松哦！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 209,
+   "text": "涡波探索确认周围无敌后力竭坐地（'姑且算是赢了⋯⋯其实是平局'）；莱纳自远处步履蹒跚接近施神圣魔法治疗；因里侧街道完全崩壊+粮食不足（饿死之虞）须从六十六层重走；缇缇承诺认真协助探索；莱纳翻旧账（昨日因其之过被怪物包围）；涡波宽慰'缇缇说的也没错，我们必须赶快出发'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-96521e17c9d1",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0209.txt",
+  "sha": "bb53685f6466220c135e88348d174e5ddf02aef7bc09c9004aa1d651fb5776f5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

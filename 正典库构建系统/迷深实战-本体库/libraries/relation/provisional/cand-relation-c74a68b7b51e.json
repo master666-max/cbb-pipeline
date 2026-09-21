@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "大圣堂神官之奉仕",
+  "subject": "斐勒卢托・夏鲁梭斯"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 134,
+   "quote": "在拉丝缇娅拉大人来之前",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 190,
+   "quote": "「既然目的是拉丝缇娅拉大人的话，那多说无益。虽然多少有些遗憾，就以当初的预定一样招待各位了──」",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 379,
+   "quote": "「──斐・勒・卢・托。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 212,
+   "text": "于其到来前负责招待、称'拉丝缇娅拉大人'；预判涡波目的在拉丝缇娅拉而拒绝二人单独谈话（'要是让您二位在一起谈话，我怎么也不觉得那会带来什么好结果'）；终被其一声喝止"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c74a68b7b51e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

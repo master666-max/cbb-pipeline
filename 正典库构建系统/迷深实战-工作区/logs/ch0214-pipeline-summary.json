@@ -1,0 +1,259 @@
+{
+ "unit": "ch0214",
+ "chapter": 214,
+ "ingestion_index": 183,
+ "title": "231.借酒消愁",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 28,
+  "pass": 28,
+  "intercept": 0,
+  "admitted": 27,
+  "quarantined": 1
+ },
+ "tracks": {
+  "on-create": 19,
+  "consistent-duplicate": 6,
+  "contradiction": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-0ebb1ef22a68",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m142"
+   }
+  },
+  {
+   "record_id": "cand-entity-64b1da6ad15b",
+   "type": "entity",
+   "name": "缇缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5728f0e5f580"
+   }
+  },
+  {
+   "record_id": "cand-entity-11e84c5da8ae",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m55"
+   }
+  },
+  {
+   "record_id": "cand-entity-87eaf32e8505",
+   "type": "entity",
+   "name": "克劳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3ee856ee4181-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-c53d96d14bbd",
+   "type": "entity",
+   "name": "日樱小姐",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-9d04152ca046",
+   "type": "entity",
+   "name": "玲小姐",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-c9a06c49bbf8-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-99e593b959b1",
+   "type": "entity",
+   "name": "店长",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-28c3cd8aab22-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-d1480dac93bc",
+   "type": "entity",
+   "name": "拉丝缇娅拉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3be971ec494c-m65"
+   }
+  },
+  {
+   "record_id": "cand-entity-b65b3919cfca",
+   "type": "entity",
+   "name": "大圣堂",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f2213bc2998b"
+   }
+  },
+  {
+   "record_id": "cand-relation-27660a723507",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a32568249def",
+   "type": "relation",
+   "name": "拉丝缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-92645028b5c1",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-e065ff9a9d04",
+   "type": "relation",
+   "name": "缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-cc931d21804c",
+   "type": "relation",
+   "name": "克劳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-be6981afc2df",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-cbb1c3e8e805",
+   "type": "relation",
+   "name": "缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5121e2134f9e",
+   "type": "event",
+   "name": "告白失败后的酒馆消沉夜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-22fda485848f",
+   "type": "event",
+   "name": "基督再谈方针宣言与主从握手",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5d2bf24debcb",
+   "type": "event",
+   "name": "基督人生初次饮酒（麦芽酒）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-7325e3b35d1c",
+   "type": "event",
+   "name": "缇缇×莱纳劝酒攻防",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2efa044a94ac",
+   "type": "event",
+   "name": "深夜意识沉没（睡魔或烂醉不可辨）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-6e660e2ad75f",
+   "type": "foreshadow",
+   "name": "拉丝缇娅拉拒绝的违和（怒意急促·疑另有理由）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-164f8f4a73ba",
+   "type": "foreshadow",
+   "name": "基督自我变化之问（技能变化／成长／其它缘由·束缚解除）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-afee206321a0",
+   "type": "foreshadow",
+   "name": "基督无意识压抑的真心话（缇缇醉后本性论）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-738ceea2ef42",
+   "type": "setting",
+   "name": "缇缇的守护者力量减弱与酒精生效（ch214自察）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4f428cf58940",
+   "type": "setting",
+   "name": "饮酒年龄规则（原来的世界与这边世界的差异）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-85aaf450abc6",
+   "type": "setting",
+   "name": "『表示』状态异常栏与『烂醉』检测（ch214）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-relation-b67181064757",
+   "type": "relation",
+   "name": "相川阳滝",
+   "item_id": "q-6aff6542d93b",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 183,
+  "pseudo_date": "2000-07-02",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 9,
+   "library": 757,
+   "dup_suspect": 1,
+   "uncertain": 3
+  },
+  "neo4j": {
+   "nodes": 658,
+   "edges": 1444,
+   "batches": 10,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 649,
+    "edges": 1444
+   }
+  }
+ }
+}

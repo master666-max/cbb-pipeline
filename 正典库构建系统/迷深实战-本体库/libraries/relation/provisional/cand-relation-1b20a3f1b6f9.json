@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "弗茨亚茨",
+  "rel_type": "技术供给与资金卷逃（据拉古涅声称）",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 75,
+   "quote": "包括『魔石线』的改良，新的运输手段的确立",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 91,
+   "quote": "带走了这个联合国的资金与人脉",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 212,
+   "text": "据拉古涅：提供大量技术情报（『魔石线』改良/新运输手段/交易改善/农工/奴隶制度整合）；其后带走联合国资金人脉出逃"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1b20a3f1b6f9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

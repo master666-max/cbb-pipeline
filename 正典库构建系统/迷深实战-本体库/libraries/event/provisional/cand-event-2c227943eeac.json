@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "使徒西斯",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "艾德",
+   "魔石人类"
+  ],
+  "instant": null,
+  "kind": "决断",
+  "name": "拉丝缇娅拉的留守决断",
+  "tick": 213,
+  "time_verbatim": "本章当面陈述（决定始于一年前）"
+ },
+ "evidence": [
+  {
+   "chapter": 213,
+   "line": 159,
+   "quote": "「因为、我的力量已经不足以和你们同行了⋯⋯我现在能做的就只有在这里维系各国之间的合作，在力所能及的范围内为玛利亚她们的旅程提供援助而已了吧⋯⋯？」",
+   "vol": 1
+  },
+  {
+   "chapter": 213,
+   "line": 175,
+   "quote": "「我已经没有战斗的力量了，这点毋庸置疑。──所以，我决定采取其它的『方法』和艾德等人对抗。利用自己作为现人神的权限，就算不能立刻让南方战胜北方，但至少也可以准备一个与艾德和使徒西斯对等谈判的场所。既然在战斗中派不上用场，那就选择交涉，概以言之就是这么回事了」",
+   "vol": 1
+  },
+  {
+   "chapter": 213,
+   "line": 195,
+   "quote": "「这真的是你自己的选择吗⋯⋯？你没有说谎吧？没有像以前那场仪式一样被动了什么手脚吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 213,
+   "line": 196,
+   "quote": "「哈哈，没有被动什么手脚啦，放心吧。我是以自己的意志留在这里的。不如说，你没必要露出这种表情的。我会一直留在这里，涡波你想来的时候随时都可以来见我不是么？为什么要摆出那种表情呢？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 213,
+   "text": "本人当面陈述的留守理由：力量已不足以同行（强度早已完成无成长余地）→在此维系各国合作、为玛利亚她们的旅程提供援助→以现人神权限走对等交涉路线对抗艾德与使徒西斯→守护『魔石人类（家人）』（因她的错而诞生的孩子们）；涡波质疑是否被动手脚（如以前那场仪式），她否认并以自己的意志留在此地、'你想来的时候随时都可以来见我'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-2c227943eeac",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0213.txt",
+  "sha": "f11b0a277e1dda04cb2832afeb9fee3beecc88a980f99bda2ce96fdbadc4d1d6",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

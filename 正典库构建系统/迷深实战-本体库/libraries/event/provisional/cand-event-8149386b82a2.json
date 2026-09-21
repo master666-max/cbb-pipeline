@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entities": [
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "海莉",
+   "玛利亚",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "战斗余波",
+  "name": "海莉战死与玛利亚送还",
+  "tick": 213,
+  "time_verbatim": "一年前帕林库洛决战当日（对话转述）"
+ },
+ "evidence": [
+  {
+   "chapter": 213,
+   "line": 86,
+   "quote": "「──那天、和帕林库洛决战的那天，只有玛利亚能跟在你的身边。我能做的就只有在船上等你和玛利亚回来，所以我很努力地等着。等啊等等啊等一刻不停地等待着⋯⋯可是，最后回来的却只有玛利亚一个人。是涡波你用『连接』送她回来的？」",
+   "vol": 1
+  },
+  {
+   "chapter": 213,
+   "line": 89,
+   "quote": "「不，那是海莉送她回去的。她当时跟我说是送到了一个安全的地方⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 213,
+   "line": 91,
+   "quote": "「没错，海莉和莱纳赌上了自己的性命前来助阵。而海莉她⋯⋯也死在了那里，虽然如此，但最后我和莱纳两个人总算是打败了帕林库洛。只是，因为没来得及逃出那里，结果我们两个人被『世界奉还阵』吞没，掉到了地下。因为掉到了迷宫的深层，所以花了很长的时间才回到了这里」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 213,
+   "text": "据拉丝缇娅拉与涡波对话转述：决战日只有玛利亚能跟在涡波身边；最后只有玛利亚一人回来——由海莉（而非涡波）用『连接』送到船停泊附近的安全地方；海莉与莱纳赌命前来助阵，海莉死在了那里；涡波与莱纳两人总算是打败了帕林库洛"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8149386b82a2",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0213.txt",
+  "sha": "f11b0a277e1dda04cb2832afeb9fee3beecc88a980f99bda2ce96fdbadc4d1d6",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

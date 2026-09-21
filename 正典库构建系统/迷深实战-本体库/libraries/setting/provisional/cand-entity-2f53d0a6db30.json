@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "瓦尔德的酒馆"
+ },
+ "evidence": [
+  {
+   "chapter": 210,
+   "line": 141,
+   "quote": "那就是距离瓦尔德迷宫出入口最近的酒馆。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 142,
+   "quote": "也是我曾经工作过的地方。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 152,
+   "quote": "迎接我的是与以前别无二致的看板和门扉。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 244,
+   "quote": "不愧是迷宫附近的酒馆，罪犯大摇大摆地出现在这里吃东西也都是家常便饭了呢。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 210,
+   "text": "距离瓦尔德迷宫出入口最近的酒馆、涡波曾经工作过的地方；看板与门扉与以前别无二致"
+  },
+  {
+   "category": "summary",
+   "chapter": 210,
+   "text": "黄昏客满的探索者酒馆——涡波一行入店即引来视线与全名传唱的骚动；'不愧是迷宫附近的酒馆，罪犯大摇大摆地出现在这里吃东西也都是家常便饭'（现场氛围未至一触即发）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-2f53d0a6db30",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0210.txt",
+  "sha": "16574ee39c06101cfa8ee61d9b8da8ada6129e5e829368aec6623146665c828b",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

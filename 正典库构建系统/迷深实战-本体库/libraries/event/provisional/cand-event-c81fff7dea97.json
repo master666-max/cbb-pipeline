@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "罗德・缇缇",
+   "艾尔芬里斯",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "强化",
+  "name": "缇缇的LevelUP与艾尔芬里斯消散",
+  "tick": 209,
+  "time_verbatim": "战斗中段·上空"
+ },
+ "evidence": [
+  {
+   "chapter": 209,
+   "line": 188,
+   "quote": "那是由已经消失了的大家所构成的魔力的残渣。",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 192,
+   "quote": "对吧，罗德！！──神圣魔法『魔力变换（LevelUP）』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 194,
+   "quote": "以万为记的臣民的力量都向缇缇聚集。就连乘坐的艾尔芬里斯也一样，就像解开的编织物一般，风龙就此消失。但从龙瞳中就可以看出，这正是它的心愿。",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 197,
+   "quote": "「大家的力量！那人家就不客气地使用了哟！！──还有，莱纳！人家不是罗德而是缇缇哦！在『这里』的是缇缇啊！！」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 209,
+   "text": "莱纳为缇缇咏唱神圣魔法魔力变换（LevelUP）（'汝者，刮目自省而可也…'）；已消失众人构成的无魂魔力残渣尽为缇缇身体所引；艾尔芬里斯降低高度让莱纳乘背、随后如解开的编织物般自愿消散（龙瞳心愿）；缇缇宣言'人家不是罗德而是缇缇'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c81fff7dea97",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0209.txt",
+  "sha": "bb53685f6466220c135e88348d174e5ddf02aef7bc09c9004aa1d651fb5776f5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

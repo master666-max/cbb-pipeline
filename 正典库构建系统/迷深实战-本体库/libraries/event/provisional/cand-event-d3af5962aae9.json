@@ -1,0 +1,66 @@
+{
+ "canonical": {
+  "entities": [
+   "『支配之王（Lord）』",
+   "弗茨亚茨",
+   "相川涡波",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "转折",
+  "name": "涡波判读：千年南北战争再现计划",
+  "tick": 212,
+  "time_verbatim": "情报解禁后（同章内连续）"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 94,
+   "quote": "并且，如果我的猜想没有错的话──他这么做都是为了让千年前的『北方』与『南方』的战争重新上演。",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 95,
+   "quote": "特意增强弗茨亚茨的实力让它成为南方的中心，为的也是再现当初的弗茨亚茨──不，是为了打造出与『支配之王（Lord）』相匹配的敌国。",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 87,
+   "quote": "在我心中，阻止艾德的优先顺位一下子就上升了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 212,
+   "text": "涡波判读：艾德一年行动皆为了『支配之王（Lord）』——强化弗茨亚茨为南方中心=打造与王相匹配的敌国、重演千年前『北方』与『南方』之战；'阻止艾德的优先顺位一下子就上升了'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-d3af5962aae9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

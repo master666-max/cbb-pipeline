@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "玛利亚",
+  "rel_type": "随行",
+  "subject": "莉帕"
+ },
+ "evidence": [
+  {
+   "chapter": 213,
+   "line": 138,
+   "quote": "「嗯，大家都没事哦。都是多亏了斯诺她拼命地劝解呢。于是乎，玛利亚她现在正在西方的迷宫以到达最深部为目标中。我想莉帕应该跟她在一起」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 213,
+   "text": "据拉丝缇娅拉转述（'我想莉帕应该跟她在一起'）：莉帕现与玛利亚同在西方的迷宫（第二迷宫都市达利尔），同行以到达最深部为目标"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4518e2364ca6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0213.txt",
+  "sha": "f11b0a277e1dda04cb2832afeb9fee3beecc88a980f99bda2ce96fdbadc4d1d6",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

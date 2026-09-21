@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entities": [
+   "世界奉还阵",
+   "帕林库洛",
+   "拉丝缇娅拉",
+   "玛利亚",
+   "相川涡波",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "灾变",
+  "name": "世界奉还阵吞没与大空洞形成",
+  "tick": 213,
+  "time_verbatim": "一年前决战终结时（对话转述）"
+ },
+ "evidence": [
+  {
+   "chapter": 213,
+   "line": 91,
+   "quote": "「没错，海莉和莱纳赌上了自己的性命前来助阵。而海莉她⋯⋯也死在了那里，虽然如此，但最后我和莱纳两个人总算是打败了帕林库洛。只是，因为没来得及逃出那里，结果我们两个人被『世界奉还阵』吞没，掉到了地下。因为掉到了迷宫的深层，所以花了很长的时间才回到了这里」",
+   "vol": 1
+  },
+  {
+   "chapter": 213,
+   "line": 94,
+   "quote": "「我们这边的话，等玛利亚一恢复好，就赶往了你们交战的地方。即使是在大陆的边缘，也能看到『世界奉还阵』那非同寻常的光芒，我们大家的情绪都非常混乱⋯⋯结果等赶到之后，应该是涡波你战斗的场所附近形成了一个大空洞，那周边都化作了熔岩地带。直径数十公里的范围内寸草不生。大地到处都是裂缝，大空洞里面就更不得了了」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 213,
+   "text": "据对话转述：涡波与莱纳因没来得及逃出被『世界奉还阵』吞没掉到地下（迷宫深层），花了很长时间才回到此处（众人找遍周围也没发现其身影）；非同寻常的光芒在大陆边缘亦可见；涡波战斗场所附近形成大空洞、周边化作熔岩地带，直径数十公里寸草不生、大地到处裂缝；该大空洞后来形成类似迷宫之物（=西方的迷宫/第二迷宫都市达利尔）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e162fb324724",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0213.txt",
+  "sha": "f11b0a277e1dda04cb2832afeb9fee3beecc88a980f99bda2ce96fdbadc4d1d6",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇缇",
+   "艾尔・昆图斯",
+   "艾米丽",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "雇佣护送的报酬结清与加护送别",
+  "tick": 210,
+  "time_verbatim": "抵达地上后·别离前"
+ },
+ "evidence": [
+  {
+   "chapter": 210,
+   "line": 66,
+   "quote": "把这一路的报酬付给你吧",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 79,
+   "quote": "我和缇缇都将自心而发的魔力灌注于「赐予他们一些加护吧」的祈愿之中。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 82,
+   "quote": "像是被什么诅咒缠上了身一样颤抖了一番",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 76,
+   "quote": "艾尔君他们因为得到了这笔意外收入，所以接下来打算去弗茨亚茨购置装备。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 210,
+   "text": "涡波装模作样从口袋掏钱（实则『所有物』取钱）结清一路报酬；二人以'哥哥姐姐'道别并祝一路平安；涡波缇缇将自心而发的魔力灌注于'赐予他们一些加护吧'的祈愿——两人却像被什么诅咒缠身般颤抖离去；涡波远距听取其谈话确认可信用（勿松懈论·出人头地之约）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a742098a2619",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0210.txt",
+  "sha": "16574ee39c06101cfa8ee61d9b8da8ada6129e5e829368aec6623146665c828b",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

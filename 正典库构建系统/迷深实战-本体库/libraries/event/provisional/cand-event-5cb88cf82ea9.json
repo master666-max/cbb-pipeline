@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "拉丝缇娅拉",
+   "日樱",
+   "相川涡波"
+  ],
+  "instant": null,
+  "kind": "日常",
+  "name": "拉丝缇娅拉情报收集（大圣堂传闻听取）",
+  "tick": 210,
+  "time_verbatim": "酒馆晚餐时"
+ },
+ "evidence": [
+  {
+   "chapter": 210,
+   "line": 294,
+   "quote": "您知道方才提到的那位拉丝缇娅拉・弗茨亚茨现在在哪里吗",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 299,
+   "quote": "然后拉丝缇娅拉大人在尽情地体验过外面的世界之后，就接受了自己的使命回到了大圣堂，现在就在致力于完成那份使命",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 304,
+   "quote": "就是拉丝缇娅拉重新回到了弗茨亚茨，甚至与之协作共事这点。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 308,
+   "quote": "在我和她分别之前，拉丝缇娅拉正处于精神和肉体都极度虚弱的状态。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 210,
+   "text": "涡波立即调换心情开始收集情报——询问其所在、听取'劫走矫饰版'公开说法；判基本胡扯、唯无法接受她回归弗茨亚茨并协作共事；'果然整整一年的空白期还是长了些'（离别时她精神和肉体都极度虚弱）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-5cb88cf82ea9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0210.txt",
+  "sha": "16574ee39c06101cfa8ee61d9b8da8ada6129e5e829368aec6623146665c828b",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

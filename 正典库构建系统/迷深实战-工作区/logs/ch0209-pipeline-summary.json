@@ -1,0 +1,502 @@
+{
+ "unit": "ch0209",
+ "chapter": 209,
+ "ingestion_index": 179,
+ "title": "227.《迷宫最后的战斗》",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 62,
+  "pass": 62,
+  "intercept": 0,
+  "admitted": 62,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 51,
+  "consistent-duplicate": 8,
+  "contradiction": 3
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-d8c529784fa7",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-23ef103d5db4-m15"
+   }
+  },
+  {
+   "record_id": "cand-entity-6635307c5dd2",
+   "type": "entity",
+   "name": "罗德・缇缇",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-65787929a6fb-m5"
+   }
+  },
+  {
+   "record_id": "cand-entity-d3d6c50cb578",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m138"
+   }
+  },
+  {
+   "record_id": "cand-entity-7c436c9903b7",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m51"
+   }
+  },
+  {
+   "record_id": "cand-entity-0e81a3df45c8",
+   "type": "entity",
+   "name": "艾尔芬里斯",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-5e5c88a0c3e4-m5"
+   }
+  },
+  {
+   "record_id": "cand-entity-b6f8e2f5b4da",
+   "type": "entity",
+   "name": "诺文",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-01669eb4e8e5"
+   }
+  },
+  {
+   "record_id": "cand-entity-60f4ff1b3b55",
+   "type": "entity",
+   "name": "兰斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-3e75d821e85e",
+   "type": "entity",
+   "name": "鲜血魔法『相川涡波/相川阳滝』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-52831b96082b",
+   "type": "entity",
+   "name": "转光枪（Brionac）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-10c0308a7bcf",
+   "type": "entity",
+   "name": "维度・决战演算",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-722aa39c6aae"
+   }
+  },
+  {
+   "record_id": "cand-entity-5bbfaaa3d0b2",
+   "type": "entity",
+   "name": "『次元决战演算『先谭』』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-dbfa0a1f7ef3",
+   "type": "entity",
+   "name": "次元之晖昀",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-4a69c4eda20e",
+   "type": "entity",
+   "name": "风之矢",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-f54ab0984455",
+   "type": "entity",
+   "name": "魔力变换（LevelUP）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-5f7a8f8e0cfd",
+   "type": "entity",
+   "name": "TowsSchussWind・GrandFall",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-5caac83cb003",
+   "type": "entity",
+   "name": "Light・VariantWall",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-eab6688862c7",
+   "type": "entity",
+   "name": "Sehr・Wind",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-b982a208583c",
+   "type": "entity",
+   "name": "魔法『致亲爱的一闪』",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-c43cfb8745dd"
+   }
+  },
+  {
+   "record_id": "cand-entity-afcd846399b9",
+   "type": "entity",
+   "name": "DistanceMute",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7362a0020d95-m3"
+   }
+  },
+  {
+   "record_id": "cand-entity-1fa2de51f92e",
+   "type": "entity",
+   "name": "次元之戒",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-932be6c1e136",
+   "type": "entity",
+   "name": "魔石『诺文』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-ce5915412662",
+   "type": "entity",
+   "name": "光之御旗（NosfiFLAG）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-dd68b4d7767b-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-ed1b3d956b93",
+   "type": "entity",
+   "name": "新月琉璃制直剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-cbe61ea8bc6b-m3"
+   }
+  },
+  {
+   "record_id": "cand-relation-7713cc2a2edc",
+   "type": "relation",
+   "name": "罗德・缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-85026dd35af7",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f6e10b56a3bb",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1e5e487863aa",
+   "type": "relation",
+   "name": "罗德・缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1ecf368006ef",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6ee564fb61a8",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1de4a8df8b1b",
+   "type": "relation",
+   "name": "缇达",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-ce5af2abf208",
+   "type": "relation",
+   "name": "阿尔缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d85ff990d741",
+   "type": "relation",
+   "name": "帕林库洛",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-81ef2a5ebd7f",
+   "type": "relation",
+   "name": "罗德・缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1f339d3ddceb",
+   "type": "relation",
+   "name": "雷纳尔多",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-9c1fad0ba13d",
+   "type": "relation",
+   "name": "罗德・缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-a7f1811d4b13",
+   "type": "relation",
+   "name": "莉帕",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-501dbcb0e426",
+   "type": "relation",
+   "name": "艾尔芬里斯",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-347edc60fbc4",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-62e682095e8c",
+   "type": "event",
+   "name": "缇缇的告别与弃王宣言",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-0070bd7c157b",
+   "type": "event",
+   "name": "诺斯菲翻脸宣战与黑光自白",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3b1ffdf2e1f0",
+   "type": "event",
+   "name": "鲜血魔法黑化与缇缇格挡",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9bffe5f77130",
+   "type": "event",
+   "name": "缇缇被压制与艾尔芬里斯舍身",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-acf249a230b9",
+   "type": "event",
+   "name": "涡波的战术指示",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c81fff7dea97",
+   "type": "event",
+   "name": "缇缇的LevelUP与艾尔芬里斯消散",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-914d159faead",
+   "type": "event",
+   "name": "总攻：共鸣魔法与自由之风开路",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f065ce5af878",
+   "type": "event",
+   "name": "涡波突进受挫与次元之戒",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-61c73c11cbf6",
+   "type": "event",
+   "name": "致亲爱的一闪·断臂",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-925939ee8d0f",
+   "type": "event",
+   "name": "诺斯菲的败北承认与退却",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-96521e17c9d1",
+   "type": "event",
+   "name": "战后治疗与再出发动机",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-601f17c746cf",
+   "type": "event",
+   "name": "罗德・缇缇入队与最后的迷宫探索",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2756080148b4",
+   "type": "foreshadow",
+   "name": "缇缇对艾尔芬里斯的想起（内容未言明）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-dd537f92e3ef",
+   "type": "foreshadow",
+   "name": "诺斯菲的真正魔法（代表全部人生·疑即死）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-98b823561d88",
+   "type": "foreshadow",
+   "name": "诺斯菲留恋言行矛盾",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-426bd07ec891",
+   "type": "foreshadow",
+   "name": "地上再会之约",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2c712b91f30d",
+   "type": "foreshadow",
+   "name": "涡波的南北罪孽（据诺斯菲声称）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-fadf05adca80",
+   "type": "foreshadow",
+   "name": "千年前的南方之谜",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-71f5dfd782d7",
+   "type": "foreshadow",
+   "name": "光之咏唱的危险（原因未言明）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-d1e3392e3953",
+   "type": "setting",
+   "name": "守护者力量=残存留恋总量机制（ch209实证）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-70e501c327e5",
+   "type": "setting",
+   "name": "六十六层『这里』的本质（ch209）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-10d8f4c90c32",
+   "type": "setting",
+   "name": "次元决战演算『先谭』效果定性（ch209）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9e16010e653a",
+   "type": "setting",
+   "name": "六十五层的地形与怪物（ch209）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-4df84009b780",
+   "type": "setting",
+   "name": "阿雷亚斯的断魔之剑最终形态（ch209）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 179,
+  "pseudo_date": "2000-06-28",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 23,
+   "library": 723,
+   "dup_suspect": 4,
+   "uncertain": 7
+  },
+  "neo4j": {
+   "nodes": 644,
+   "edges": 1393,
+   "batches": 10,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 635,
+    "edges": 1393
+   }
+  }
+ }
+}

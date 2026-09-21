@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "瓦尔德的酒馆",
+  "rel_type": "就职（未经允许擅自离职的店员）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 210,
+   "line": 145,
+   "quote": "在立场上我终究是未经店长允许就擅自离职的店员。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 178,
+   "quote": "当初咱们酒馆不是许可了你去迷宫探索的事儿来着么",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 210,
+   "text": "'虽然是出于不可抗力的原因，但在立场上我终究是未经店长允许就擅自离职的店员'；为长期无故缺勤诚恳致歉；日樱回应当初酒馆已许可其迷宫探索、'相当于我们已经做好你以后会陷入生死不明状态的准备'；担心的'在弗茨亚茨干了那种事'添麻烦并未发生"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8bb18676ccc1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0210.txt",
+  "sha": "16574ee39c06101cfa8ee61d9b8da8ada6129e5e829368aec6623146665c828b",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

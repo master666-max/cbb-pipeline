@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "会长辅佐",
+  "subject": "缇莉・琉克"
+ },
+ "evidence": [
+  {
+   "chapter": 216,
+   "line": 141,
+   "quote": "「这可不对哦。我们是会长辅佐。在咱们这里被唤作会长的，不是另有其人么？」",
+   "vol": 1
+  },
+  {
+   "chapter": 216,
+   "line": 237,
+   "quote": "「不用的。对我们这些史诗探索者初期成员而言，能够助我们的英雄涡波一臂之力可是一件幸事唷」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 216,
+   "text": "在会长辅佐位子上坐太久，与雷鲁、波鲁扎克同被新成员误认为会长；自称公会初期成员"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-8a7b1b91fa2a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0216.txt",
+  "sha": "1489190fc5bab97510c2211cd4bb0e90808e0c621cc25be8628748c9eff91065",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "帕林库洛",
+  "rel_type": "『大灾害』对决（一年前）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 92,
+   "quote": "说起一年前的『大灾害』话，应该就是我和帕林库洛战斗的那件事。",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 60,
+   "quote": "并没有被看做是在和帕林库洛的战斗中死掉了",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 212,
+   "text": "涡波判读一年前『大灾害』即二人之战；世人未视涡波为战死（'消息不明的英雄'一类）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-47e14650f361",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "朋友之爱与劝进(自称)",
+  "subject": "罗德・缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 209,
+   "line": 15,
+   "quote": "「不对，不是这样的，诺斯菲！人家对你真的是像朋友一样爱着的！虽然一同活下去这点是没办法做到的了，但是即使到了现在人家也将你看作自己的朋友啊！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 209,
+   "line": 22,
+   "quote": "「这人家做不到⋯⋯⋯人家要去艾德那里，必须要与『过去』做个了断才行。就像诺斯菲之前说的那样──人家已经决定要向前进了。」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 209,
+   "text": "'人家对你真的是像朋友一样爱着的''即使到了现在人家也将你看作自己的朋友'；坚拒共陷不幸（'这人家做不到⋯⋯要去艾德那里'）；望其'也能继续前进'；对其苦痛不自知而懊悔"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9c1fad0ba13d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0209.txt",
+  "sha": "bb53685f6466220c135e88348d174e5ddf02aef7bc09c9004aa1d651fb5776f5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

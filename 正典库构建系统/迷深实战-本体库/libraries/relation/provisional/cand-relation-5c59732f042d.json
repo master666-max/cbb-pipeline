@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾尔・昆图斯",
+  "rel_type": "神圣魔法后援",
+  "subject": "艾米丽"
+ },
+ "evidence": [
+  {
+   "chapter": 210,
+   "line": 55,
+   "quote": "这边这位、真的是快要不行了哦⋯⋯",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 58,
+   "quote": "这名银发黑瞳的少女是在探索时使用神圣魔法为艾尔君打后援的魔法使。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 210,
+   "text": "探索时使用神圣魔法为艾尔打后援的魔法使；同行中率先提醒莱纳濒死应尽速休息"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-5c59732f042d",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0210.txt",
+  "sha": "16574ee39c06101cfa8ee61d9b8da8ada6129e5e829368aec6623146665c828b",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

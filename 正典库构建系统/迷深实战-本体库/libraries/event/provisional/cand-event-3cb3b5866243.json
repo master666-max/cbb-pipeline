@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "entities": [
+   "『支配之王（Lord）』",
+   "北方",
+   "弗茨亚茨",
+   "拉古涅·卡伊库欧拉",
+   "相川涡波",
+   "缇缇",
+   "艾德",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "情报",
+  "name": "拉古涅情报解禁：艾德治世与北逃宰相",
+  "tick": 212,
+  "time_verbatim": "入堂途中庭院对话（同章内连续）"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 68,
+   "quote": "弗茨亚茨已经成为了联合国的龙头了",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 80,
+   "quote": "他证明了不论是谁都能够对这个世界的魔力加以操纵",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 83,
+   "quote": "跟『先天技能』配合在一起进行『咏唱』并产生『代价』这一现象",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 85,
+   "quote": "『魔石人类』的研究院一齐崩溃而引发了大混乱呢",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 91,
+   "quote": "立了一名叫『支配之王（Lord）』的人为王",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 212,
+   "text": "据拉古涅：弗茨亚茨=世界第一/联合国龙头；艾德一年功绩（技术输出/魔法革命/『代价』现象/曝光『魔石人类』致研究院崩溃）；卷资北逃立支配之王自任宰相；『境界战争』再激化；缇缇莱纳闻艾德之名表情骤变"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3cb3b5866243",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

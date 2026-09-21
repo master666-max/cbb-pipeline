@@ -1,0 +1,91 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  },
+  {
+   "candidate": "拉古涅·卡伊库欧拉",
+   "library_match": "拉古涅・卡伊库欧拉",
+   "similarity": 0.978
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "斐勒卢托・夏鲁梭斯",
+   "library_match": "斐勒卢托·利奥斯",
+   "similarity": 0.9323
+  },
+  {
+   "candidate": "佩露修娜·库艾伽",
+   "library_match": "拉丝缇娅拉·弗茨亚茨",
+   "similarity": 0.8838
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ],
+  [
+   "拉古涅·卡伊库欧拉",
+   "拉古涅・卡伊库欧拉",
+   0.978
+  ],
+  [
+   "斐勒卢托・夏鲁梭斯",
+   "斐勒卢托·利奥斯",
+   0.9323
+  ],
+  [
+   "艾德",
+   "艾利巴茨",
+   0.7761
+  ],
+  [
+   "魔石人类侍女四少女",
+   "魔石人类",
+   0.7517
+  ],
+  [
+   "佩露修娜·库艾伽",
+   "拉丝缇娅拉·弗茨亚茨",
+   0.8838
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 9,
+  "library": 748,
+  "dup_suspect": 2,
+  "uncertain": 4
+ }
+}

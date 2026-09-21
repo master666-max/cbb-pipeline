@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "魔石人类",
+  "rel_type": "守护(家人)",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 213,
+   "line": 185,
+   "quote": "「这一年来发生了不少事啊。虽然有已经没有能力陪在大家身边这个原因，但除此之外，我想留下来也是为了守护这些『魔石人类（家人）』⋯⋯这些孩子、就相当于是因为我的错而诞生的一样⋯⋯我觉得我有帮助她们的责任。而且，这也是一场除了我之外没有人能够胜任的战斗」",
+   "vol": 1
+  },
+  {
+   "chapter": 213,
+   "line": 187,
+   "quote": "看到少女们的反应，我便理解到在拉丝缇娅拉和她们之间已经结下了相当深厚的牵绊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 213,
+   "text": "据拉丝缇娅拉本人自述：留在此处的理由之一是守护『魔石人类（家人）』——'这些孩子、就相当于是因为我的错而诞生的'，自认有帮助她们的责任，且这是'除了我之外没有人能够胜任的战斗'；涡波由此理解双方牵绊、并推想她这一年间如英雄般拯救了无数处境悲惨的少女"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c5cff759de35",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0213.txt",
+  "sha": "f11b0a277e1dda04cb2832afeb9fee3beecc88a980f99bda2ce96fdbadc4d1d6",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

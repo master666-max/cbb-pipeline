@@ -1,0 +1,61 @@
+{
+ "canonical": {
+  "chapter": 216,
+  "entities": [
+   "玛利亚",
+   "相川涡波",
+   "缇亚",
+   "艾利巴茨"
+  ],
+  "name": "艾利巴茨装备领取（含订制品）",
+  "note": "委托装备已完工一年无人取（锻冶师不安）；内容「各种各样的装备」且含为缇亚与玛利亚订制之物——装备内容与用途待回收",
+  "payoff_chapter": null,
+  "setup_chapter": 216,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 216,
+   "line": 227,
+   "quote": "「说起来，会长你拜托艾利巴茨那家伙打造的装备已经做好了哦？见你一直不来取，他还挺不安的来着，要不你去一趟吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 216,
+   "line": 230,
+   "quote": "说起来，我确实拜托他打造了各种各样的装备。里面应该还有为了缇亚和玛利亚订制的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 216,
+   "text": "道具线领取钩"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-a3118ed466bf",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0216.txt",
+  "sha": "1489190fc5bab97510c2211cd4bb0e90808e0c621cc25be8628748c9eff91065",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

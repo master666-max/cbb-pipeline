@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德・缇缇",
+  "rel_type": "魔力归属守护(自认)",
+  "subject": "艾尔芬里斯"
+ },
+ "evidence": [
+  {
+   "chapter": 209,
+   "line": 191,
+   "quote": "给见到对这不可能的奇迹而发出疑问的缇缇以回答的正是风龙艾尔芬里斯。它那巨大的龙首点动着，认可从自己腹部的伤口所漏出的魔力正是属于缇缇的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 209,
+   "text": "龙首点动，认可腹部伤口漏出的魔力'正是属于缇缇的东西'；舍身挡下光之矢Brionac护住缇缇；LevelUP时自愿消散供力；让莱纳乘到龙背"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-501dbcb0e426",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0209.txt",
+  "sha": "bb53685f6466220c135e88348d174e5ddf02aef7bc09c9004aa1d651fb5776f5",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

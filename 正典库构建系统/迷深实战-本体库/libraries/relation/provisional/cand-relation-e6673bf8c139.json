@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "『支配之王（Lord）』",
+  "rel_type": "拥立为王·自任宰相（据拉古涅声称）",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 91,
+   "quote": "然后就好像千年前的传说再现一样立了一名叫『支配之王（Lord）』的人为王，然后他则在北方做起了『宰相』",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 96,
+   "quote": "这一年的艾德的所有行动都是为了『支配之王（Lord）』，我们清楚地意识到了这点。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 212,
+   "text": "据拉古涅：'就好像千年前的传说再现一样立了一名叫『支配之王（Lord）』的人为王，然后他则在北方做起了『宰相』'；涡波判读其一年行动皆为了王"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e6673bf8c139",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

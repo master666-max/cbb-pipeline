@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "魔石人类侍女四少女",
+  "rel_type": "繋心交流→战意消失·初恋",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 212,
+   "line": 312,
+   "quote": "你没有和我们战斗的必要",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 328,
+   "quote": "四名少女膝盖脱力坐了下来，她们的战意完全消失了。",
+   "vol": 1
+  },
+  {
+   "chapter": 212,
+   "line": 356,
+   "quote": "「──也就是说，这些孩子全员，都对涡涡陷入了见到初恋般的状态喽！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 212,
+   "text": "以『DistanceMute・繋心』伸腕入胸连续『交流』（'冷静下来⋯⋯你没有和我们战斗的必要⋯⋯因为你就是你'）；四少女战意全失、结界解除；缇缇判读全员'对涡涡陷入了见到初恋般的状态'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4160819aac05",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0212.txt",
+  "sha": "2b69667a22078f8a8f1637f18d8462c9a9fdc144f202d43b75da9b78ba6fcadf",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}
