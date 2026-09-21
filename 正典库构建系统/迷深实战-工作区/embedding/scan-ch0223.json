@@ -1,0 +1,166 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "克洛伊・希达尔克",
+   "library_match": "克洛伊·希达尔克",
+   "similarity": 0.9898
+  },
+  {
+   "candidate": "艾尔米拉德·希达尔克",
+   "library_match": "艾尔米拉德・希达尔克",
+   "similarity": 0.9906
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "艾利巴茨",
+   "library_match": "艾利巴茨·利拜斯",
+   "similarity": 0.9088
+  },
+  {
+   "candidate": "柯尔库",
+   "library_match": "克罗",
+   "similarity": 0.8596
+  },
+  {
+   "candidate": "『飞翔翠石制轻铠路易芬理德』",
+   "library_match": "飞翔翠石制轻铠路易芬理德",
+   "similarity": 0.8582
+  },
+  {
+   "candidate": "『始祖和魔王的魔剑BraveFluorite』",
+   "library_match": "始祖和魔王的魔剑BraveFluorite",
+   "similarity": 0.8764
+  },
+  {
+   "candidate": "《维度》",
+   "library_match": "『维度』",
+   "similarity": 0.8774
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "克洛伊・希达尔克",
+   "克洛伊·希达尔克",
+   0.9898
+  ],
+  [
+   "XiphiasSpear",
+   "WindFlamberge",
+   0.7593
+  ],
+  [
+   "艾尔米拉德·希达尔克",
+   "艾尔米拉德・希达尔克",
+   0.9906
+  ],
+  [
+   "相川阳滝",
+   "相川·涡波",
+   0.82
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "夏比",
+   "赛拉",
+   0.801
+  ],
+  [
+   "艾利巴茨",
+   "艾利巴茨·利拜斯",
+   0.9088
+  ],
+  [
+   "LivingLegend号",
+   "《LivingLegend》号",
+   0.7974
+  ],
+  [
+   "古尔亚德",
+   "赛鲁多拉",
+   0.8402
+  ],
+  [
+   "柯尔库",
+   "克罗",
+   0.8596
+  ],
+  [
+   "『飞翔翠石制轻铠路易芬理德』",
+   "飞翔翠石制轻铠路易芬理德",
+   0.8582
+  ],
+  [
+   "『始祖和魔王的魔剑BraveFluorite』",
+   "始祖和魔王的魔剑BraveFluorite",
+   0.8764
+  ],
+  [
+   "『LimitBreak・SehrWind・G・EndBurst』",
+   "『SehrWind』",
+   0.5883
+  ],
+  [
+   "北铳王流古武术",
+   "北之王",
+   0.5284
+  ],
+  [
+   "『旋风击』",
+   "『龙之咆哮』",
+   0.7272
+  ],
+  [
+   "『绝冲风击』",
+   "『寒冰·速成箭』",
+   0.7281
+  ],
+  [
+   "『疾风弹』",
+   "『魔弹（FlyShoots）』",
+   0.8025
+  ],
+  [
+   "魔法（FlyShoots）",
+   "『魔弹（FlyShoots）』",
+   0.8046
+  ],
+  [
+   "《维度》",
+   "『维度』",
+   0.8774
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 21,
+  "library": 804,
+  "dup_suspect": 2,
+  "uncertain": 7
+ }
+}

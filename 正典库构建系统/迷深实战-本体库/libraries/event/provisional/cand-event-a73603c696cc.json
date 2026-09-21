@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "古奈尔",
+   "吸血种（吸血鬼）",
+   "相川涡波",
+   "缇娅拉"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "千年前·吸血鬼一族歼灭战",
+  "tick": 224,
+  "time_verbatim": "千年前（古奈尔记忆回溯）"
+ },
+ "evidence": [
+  {
+   "chapter": 224,
+   "line": 215,
+   "quote": "──而最初的一张照片则是『在某个公馆的地下、四肢被木桩钉穿的古奈尔酱』",
+   "vol": 1
+  },
+  {
+   "chapter": 224,
+   "line": 220,
+   "quote": "无法容忍『魔人吸血鬼』的恶行的当时的我的战斗记录──就是『相川涡波』与『古奈尔・库洛尼科尔・修尔斯・历基亚・英格利特』的故事的情节。",
+   "vol": 1
+  },
+  {
+   "chapter": 224,
+   "line": 221,
+   "quote": "从她的记忆看来，当时的我的姿态跟被唤作始祖涡波的时候相比，更接近于现在的我。虽然穿着的式样是异世界的风格，但头发和样貌几无变化。",
+   "vol": 1
+  },
+  {
+   "chapter": 224,
+   "line": 222,
+   "quote": "当时的我与应该是缇娅拉的少女两个人一起同吸血鬼一族进行了死斗。然而对手是不死的存在。在故事的最后，通过借助作为『吸血鬼的异端之子』的古奈尔酱，我们好不容易实现了对吸血鬼的歼灭。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 224,
+   "text": "记忆首幕为「某个公馆的地下、四肢被木桩钉穿的古奈尔酱」；千年前吸血种『魔人』恶行遍布，无法容忍其恶行的当时的涡波（姿态较被唤作始祖涡波时更接近现在的我，异世界装束、发貌几无变化）与「应该是缇娅拉的少女」二人同吸血鬼一族死斗，对手为不死的存在；最终借『吸血鬼的异端之子』古奈尔吸光所有吸血鬼的血实现歼灭——近似对魂的吸收令其级别迅猛提高，空有高级别的半吊子吸血鬼由此诞生；此即『相川涡波』与『古奈尔・库洛尼科尔・修尔斯・历基亚・英格利特』的故事情节"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-a73603c696cc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0224.txt",
+  "sha": "190646582677b42dc11c0e6ba88c282fe6040f535e7c88c4ef537e52e027a162",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

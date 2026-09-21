@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "阿雷亚斯家的宝剑",
+  "rel_type": "持有(兼作精工工具)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 133,
+   "quote": "干脆直接用『诺文』来好了⋯⋯接着我便将剑从腰间拔了出来。不如说要想对这把锻造得过于坚固的剑上下其手，『诺文』是相当有必要的。",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 136,
+   "quote": "我先尝试着轻轻划了几下，结果确认了『阿雷亚斯家的宝剑诺文』根本没有卷刃。一面感慨它果然是一把抵达了不同次元的利剑，我一面开始用『阿雷亚斯家的宝剑诺文』攻击摆在工作台上的新武器。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 217,
+   "text": "从腰间拔出『诺文』用于新剑的雕饰镌刻与研磨——'要想对这把锻造得过于坚固的剑上下其手，『诺文』是相当有必要的'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fdf1aadd3455",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

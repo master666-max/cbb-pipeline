@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "莱纳"
+  ],
+  "instant": null,
+  "kind": "决斗",
+  "name": "莱纳对塞拉的决斗败北",
+  "tick": 221,
+  "time_verbatim": "昨日夜（灯光之下、月华满地·酒馆后面）"
+ },
+ "evidence": [
+  {
+   "chapter": 221,
+   "line": 28,
+   "quote": "——毕竟我昨天在与塞拉的决斗中被一边倒地击败了。",
+   "vol": 1
+  },
+  {
+   "chapter": 221,
+   "line": 30,
+   "quote": "我清楚地记得灯光之下、月华满地，在酒馆后面发生的决斗迎来了怎样的结局。",
+   "vol": 1
+  },
+  {
+   "chapter": 221,
+   "line": 34,
+   "quote": "顺带一说，那场决斗的赌注，是如果我赢了的话『塞拉就要将她知道的事和盘托出』——如果塞拉赢了那么就『只将原委告知于我但不可以向涡波透露分毫』。",
+   "vol": 1
+  },
+  {
+   "chapter": 221,
+   "line": 60,
+   "quote": "而我就是败给了使用这种『魔人化』的塞拉。",
+   "vol": 1
+  },
+  {
+   "chapter": 221,
+   "line": 61,
+   "quote": "在决斗过后，得知她就是为了说服我才专门进行这种怪物化的内情之后，在各种各样的意义上我自然就没有退路了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 221,
+   "text": "昨日酒馆后面的决斗：塞拉使用『魔人化』一边倒击败莱纳并夺其双剑（莱纳摔坐在地）。赌注：莱纳胜→塞拉和盘托出所知；塞拉胜→只告知莱纳原委但不得向涡波透露分毫（塞拉胜成立）。决斗后莱纳得知塞拉为说服他而专门怪物化的内情，'没有退路'遂入局。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-03b759b97c4e",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0221.txt",
+  "sha": "7c107e00f0045428c6866def69e8b2d7b1b763edf90da64c3bed4af8013d04d4",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

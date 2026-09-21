@@ -1,0 +1,353 @@
+{
+ "unit": "ch0222",
+ "chapter": 222,
+ "ingestion_index": 191,
+ "title": "239.代理总司令斯诺沃克",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 41,
+  "pass": 41,
+  "intercept": 0,
+  "admitted": 41,
+  "quarantined": 0
+ },
+ "tracks": {
+  "on-create": 31,
+  "consistent-duplicate": 6,
+  "contradiction": 4
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-4d09cad17f29",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m40"
+   }
+  },
+  {
+   "record_id": "cand-entity-8c98631a92ca",
+   "type": "entity",
+   "name": "克洛伊·希达尔克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-50a45c587937",
+   "type": "entity",
+   "name": "艾尔米拉德·希达尔克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-6010c4590776-m4"
+   }
+  },
+  {
+   "record_id": "cand-entity-43b023412e13",
+   "type": "entity",
+   "name": "缇缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d95185f6dfa5"
+   }
+  },
+  {
+   "record_id": "cand-entity-615dcfaf9060",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m150"
+   }
+  },
+  {
+   "record_id": "cand-entity-1b6dae9f428a",
+   "type": "entity",
+   "name": "艾德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-43aa892f43d2-m27"
+   }
+  },
+  {
+   "record_id": "cand-entity-d235fa2bd1ce",
+   "type": "entity",
+   "name": "大将军",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d05e19c20f23",
+   "type": "entity",
+   "name": "『支配之王』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-46ad6ee07709",
+   "type": "entity",
+   "name": "大蜈蚣",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-98f8f6061017",
+   "type": "entity",
+   "name": "柯尔库",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-8e9f56e4da8d-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-0ae9f2435b35",
+   "type": "entity",
+   "name": "圣柯尔库堡",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-444509d5bb5c",
+   "type": "entity",
+   "name": "大空洞",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-a0d79707cfdd",
+   "type": "entity",
+   "name": "北方同盟",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-ec44969b008a"
+   }
+  },
+  {
+   "record_id": "cand-entity-6fe4635dd124",
+   "type": "entity",
+   "name": "南方联盟",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-e7b8c70a8083",
+   "type": "entity",
+   "name": "弗茨亚茨",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-17b62220b529"
+   }
+  },
+  {
+   "record_id": "cand-entity-1a2963e928c9",
+   "type": "entity",
+   "name": "第二迷宫都市达利尔",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-4265d39422ca-m2"
+   }
+  },
+  {
+   "record_id": "cand-entity-daa3faf619ea",
+   "type": "entity",
+   "name": "联合国",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-ee226c241ffb"
+   }
+  },
+  {
+   "record_id": "cand-relation-2f0c6d2d580d",
+   "type": "relation",
+   "name": "克洛伊·希达尔克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-8f955cb686ba",
+   "type": "relation",
+   "name": "艾尔米拉德·希达尔克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-bf4c9b6ec23c",
+   "type": "relation",
+   "name": "艾尔米拉德·希达尔克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d1d5572bbee7",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-d2aa282f09d3",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-7e088fb43ca5",
+   "type": "relation",
+   "name": "弗茨亚茨",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-560da17c6b85",
+   "type": "relation",
+   "name": "北方同盟",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4777bf30539c",
+   "type": "relation",
+   "name": "弗茨亚茨",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-43f465a874c7",
+   "type": "relation",
+   "name": "大将军",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-339f56b7aee6",
+   "type": "relation",
+   "name": "艾德",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-eee5ebcf6cad",
+   "type": "relation",
+   "name": "克洛伊·希达尔克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-57ecb785a0e6",
+   "type": "relation",
+   "name": "『支配之王』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-55203e1b7092",
+   "type": "event",
+   "name": "北方重启境界战争与北方同盟结成（南方视角回顾）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9685fb2d25b2",
+   "type": "event",
+   "name": "十匹大蜈蚣群现西面山地（急报）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-4b514297ddf3",
+   "type": "event",
+   "name": "斯诺·沃克独力出击讨伐怪物群",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-3729437e2f93",
+   "type": "event",
+   "name": "迎接滞留开拓地王族的护送任务（进行中）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-b413d2579f08",
+   "type": "event",
+   "name": "斯诺辞任总司令（章末预告）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2195b029629a",
+   "type": "foreshadow",
+   "name": "英雄斯诺·沃克形象的彻底颠覆（ch222总钩）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-15884bc56cc0",
+   "type": "foreshadow",
+   "name": "战争激化的幕后搭桥牵线者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-f7f1c02dccfe",
+   "type": "foreshadow",
+   "name": "『咏唱』之『代价』的真内容",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-03d94c8e81bf",
+   "type": "setting",
+   "name": "『境界战争』南方总况（ch222）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-53ee01e2d1f4",
+   "type": "setting",
+   "name": "『大灾害』南方记录（ch222·别名『大灾厄』）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-9c3853466417",
+   "type": "setting",
+   "name": "代价咏唱体系南方军现状（ch222）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-f8bd0b50f9fa",
+   "type": "setting",
+   "name": "圣柯尔库堡魔法部队（ch222）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 191,
+  "pseudo_date": "2000-07-10",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 17,
+   "library": 796,
+   "dup_suspect": 2,
+   "uncertain": 3
+  },
+  "neo4j": {
+   "nodes": 697,
+   "edges": 1542,
+   "batches": 11,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 676,
+    "edges": 1542
+   }
+  }
+ }
+}

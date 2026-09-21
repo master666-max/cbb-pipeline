@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "LivingLegend号",
+  "rel_type": "掌舵驾驶",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 22,
+   "quote": "对负责掌舵的我的悲鸣充耳不闻的缇缇站在船头继续激烈地驱使风魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 13,
+   "quote": "考虑到级别的问题虽然不会有性命之虞，但我的本能还是在抗拒。如果一个不小心撞上了陆地，那我们恐怕会让不少地图变成废纸的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 223,
+   "text": "负责掌舵与导航，对缇缇的激烈操船悲鸣连连；担心撞上陆地『让不少地图变成废纸』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-c3e46d3a3cb1",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

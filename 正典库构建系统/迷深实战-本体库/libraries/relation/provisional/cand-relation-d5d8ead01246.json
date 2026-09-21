@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "ChromeGlove",
+  "rel_type": "装备购入",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 45,
+   "quote": "在这些东西的旁边还摆着给我使用的手套和靴子。可能是为了配合我的发色吧，这些东西的主色是黑色，然后上面用银线加以点缀。",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 53,
+   "quote": "「好、好棒啊，这些东西⋯⋯！真是帮大忙了。我正好想给自己置办这些装备呢」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 67,
+   "quote": "我和艾利巴茨又商量了一番，最后总算是用相对便宜的价格付款了事。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 217,
+   "text": "与靴子同列的会长自用订制品（黑色银线以合发色），以相对便宜价格一并付款购入"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d5d8ead01246",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

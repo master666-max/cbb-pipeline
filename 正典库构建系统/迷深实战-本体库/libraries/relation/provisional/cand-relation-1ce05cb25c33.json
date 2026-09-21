@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "代价咏唱体系",
+  "rel_type": "咏唱扩散归因（据涡波）",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 219,
+   "line": 217,
+   "quote": "「就算你这么问、只是因为这一年来支付『代价』的『咏唱』已经成为了世界的一般常识了呀。我想但凡是使用魔法的人基本都知道的⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 219,
+   "quote": "艾德那家伙。究竟是把何等危险的东西扩散开了啊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 219,
+   "text": "据涡波归因（据艾米丽称咏唱已成世界一般常识）：咏唱系艾德扩散——『究竟是把何等危险的东西扩散开了啊』；大圣堂时涡波已隐有预感，今日见认识的少女亦能使用而感到头大；并疑其目的在重燃战争"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-1ce05cb25c33",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0219.txt",
+  "sha": "3258b3c10435f34a4f17e39d48e93a10cf50220916d20f2a89f0f07ad423cf09",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

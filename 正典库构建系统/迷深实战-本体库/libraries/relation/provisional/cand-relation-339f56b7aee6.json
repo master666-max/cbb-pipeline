@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "南方联盟",
+  "rel_type": "背叛(促成南方团结)",
+  "subject": "艾德"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 24,
+   "quote": "据说促使南方做出这等决断的最大原因，是在南方暗中活跃的人物『艾德』的背叛。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 222,
+   "text": "据本章叙述（据说形）：在南方暗中活跃的人物『艾德』的背叛=促使南方做出团结一致决断的最大原因"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-339f56b7aee6",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

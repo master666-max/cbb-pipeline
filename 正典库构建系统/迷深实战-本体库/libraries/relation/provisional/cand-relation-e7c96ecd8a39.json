@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "行程目标承接（便条）",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 219,
+   "line": 281,
+   "quote": "比起过于遥远的目标，现在完成莱纳给出的目标更为实际。我从『所有物』中取出莱纳的便条重新确认上面的事项。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 219,
+   "text": "涡波以完成莱纳给出的目标为当前实际任务，自『所有物』取出莱纳的便条重新确认事项，随后启赴下一目的地（章末未明示）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e7c96ecd8a39",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0219.txt",
+  "sha": "3258b3c10435f34a4f17e39d48e93a10cf50220916d20f2a89f0f07ad423cf09",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

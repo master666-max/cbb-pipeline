@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "古奈尔",
+  "rel_type": "强制同行旅伴(魔王命令)",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 224,
+   "line": 265,
+   "quote": "「──很～好。那么这个叫古奈尔的接下来就陪咱们一起旅行吧。同伴又多了一个呢。捡到宝喽」",
+   "vol": 1
+  },
+  {
+   "chapter": 224,
+   "line": 287,
+   "quote": "「你不是级别比涡涡还高么？没问题没问题。这是魔王命令。你必须跟人家一起走」",
+   "vol": 1
+  },
+  {
+   "chapter": 224,
+   "line": 295,
+   "quote": "「那人家就把这家伙带去自己的房间喽！总觉得这么下去没意义！人家要花上一晚的时间说服她，你就尽情期待好了！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 224,
+   "text": "缇缇单方面宣布古奈尔同行（「同伴又多了一个呢。捡到宝喽」），以「这是魔王命令」强要、连夜绑来审问并扛回房花一晚说服；理由为年龄相近者稀有（1111岁与约1050岁）；翌晨古奈尔转而求涡波相助"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-65dd72f2edb5",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0224.txt",
+  "sha": "190646582677b42dc11c0e6ba88c282fe6040f535e7c88c4ef537e52e027a162",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

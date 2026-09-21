@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "北铳王流古武术",
+  "rel_type": "招式使用",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 52,
+   "quote": "「既、既然如此！那接下来就是『北铳王流古武术』！受死吧、『旋风击』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 53,
+   "quote": "缇缇很快就振作气势使出一记猛烈的飞踢。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 223,
+   "text": "佩剑被震飞后改以北铳王流古武术『旋风击』应战（千年前使铳剑的支配之王招式的现世使用）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-e12fdd600f6a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

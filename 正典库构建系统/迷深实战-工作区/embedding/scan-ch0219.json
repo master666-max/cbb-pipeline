@@ -1,0 +1,95 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "艾尔・昆图斯",
+   "library_match": "帕林库洛·勒伽西",
+   "similarity": 0.856
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "形式・捩菖蒲（Torsion）",
+   "library_match": "『Torsion（捩菖蒲）』",
+   "similarity": 0.8799
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "店员姐姐",
+   "店长",
+   0.7303
+  ],
+  [
+   "艾尔・昆图斯",
+   "帕林库洛·勒伽西",
+   0.856
+  ],
+  [
+   "艾米丽",
+   "艾尔娜",
+   0.8441
+  ],
+  [
+   "艾德",
+   "艾利巴茨",
+   0.7761
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "形式・捩菖蒲（Torsion）",
+   "『Torsion（捩菖蒲）』",
+   0.8799
+  ],
+  [
+   "维度・千算相杀（Counting）",
+   "维度・曲战演算",
+   0.7414
+  ],
+  [
+   "代价咏唱体系",
+   "复合咒术『咏唱』",
+   0.6744
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 11,
+  "library": 785,
+  "dup_suspect": 0,
+  "uncertain": 5
+ }
+}

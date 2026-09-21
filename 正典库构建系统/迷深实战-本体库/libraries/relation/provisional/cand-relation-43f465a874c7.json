@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "职务代行(负伤期由斯诺代行总司令)",
+  "subject": "大将军"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 36,
+   "quote": "尽管这只是在大将军负伤期间代行总司令职务的位子，但也绝对不可能随意让青年士官儿戏。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 222,
+   "text": "大将军负伤→斯诺代行总司令职务（代理总司令位子的权力来源与期限条件）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-43f465a874c7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,82 @@
+{
+ "canonical": {
+  "entities": [
+   "『缇娅拉大人的血』",
+   "圣杯",
+   "塞拉·雷迪安特",
+   "帕林库洛",
+   "弗茨亚茨",
+   "拉丝缇娅拉",
+   "莱纳",
+   "魔石人类"
+  ],
+  "instant": null,
+  "kind": "揭示",
+  "name": "圣血散播与回收作业揭示",
+  "tick": 220,
+  "time_verbatim": "同夜（地下最深房间）"
+ },
+ "evidence": [
+  {
+   "chapter": 220,
+   "line": 116,
+   "quote": "「啊啊真是的，麻烦死了。就是说在我们不在的一年间，之前的再诞仪式又被举行了？」",
+   "vol": 1
+  },
+  {
+   "chapter": 220,
+   "line": 117,
+   "quote": "一年前，大小姐和我确实是为了找到『缇娅拉大人的血』而回到弗茨亚茨的。",
+   "vol": 1
+  },
+  {
+   "chapter": 220,
+   "line": 124,
+   "quote": "「『缇娅拉大人的血』非常特殊。就算是被洒到荒郊野岭，她的血也会自行活动向圣杯回笼。像这样、咕噜咕噜～⋯⋯的感觉。为了防止血重新回到圣杯之内，帕林库洛便将血散播到了『人』这一容器之中，如此一来血就无法再聚集到同一个地方了」",
+   "vol": 1
+  },
+  {
+   "chapter": 220,
+   "line": 127,
+   "quote": "「──在一年前被量产出来的『魔石人类』当中有寄宿着『圣人缇娅拉大人的血』的人。大小姐和我们现在就在进行相关的回收作业」",
+   "vol": 1
+  },
+  {
+   "chapter": 220,
+   "line": 119,
+   "quote": "就算是死了，那个男人留下的东西一样要处处妨碍我们。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 220,
+   "text": "莱纳问'在我们不在的一年间，之前的再诞仪式又被举行了？'，塞拉答非也——一年前大小姐与塞拉为寻『缇娅拉大人的血』返弗茨亚茨时血已不复存在（帕林库洛事前洒出散播入『人』之容器，防其自行回笼圣杯聚集）；一年前量产『魔石人类』中有寄宿圣血者，大小姐与塞拉正进行回收作业；莱纳塞拉一致斥帕林库洛死后仍妨碍、'不三不四'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-22d76dc5a7e9",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0220.txt",
+  "sha": "d6b985612789e3a075cb7c91feec4a0e7dd425f38bb20c94f3c4974f417188aa",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "『境界战争』",
+   "『大灾害』（一年前）",
+   "北方同盟",
+   "南方联盟"
+  ],
+  "instant": null,
+  "kind": "战争重启/结盟",
+  "name": "北方重启境界战争与北方同盟结成（南方视角回顾）",
+  "tick": 222,
+  "time_verbatim": "大灾厄后一年内（叙述回顾）"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 17,
+   "quote": "于是率先重整态势的北方诸国抓住了这个机会，重新挑起了一度偃旗息鼓的战争。",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 19,
+   "quote": "但被怀疑丧失理智的北方诸国在先后向南方宣布敌对之后渐次组成了『北方同盟』这一势力。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 222,
+   "text": "大灾厄→南方边疆武备显露疲态→率先重整态势的北方诸国抓住机会重新挑起一度偃旗息鼓的战争→北方诸国先后向南方宣布敌对、渐次组成『北方同盟』；南方亦团结一致（艾德背叛促成为最大原因，据说）承认弗茨亚茨霸权组南方联盟"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-55203e1b7092",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "店员姐姐",
+   "相川涡波",
+   "缇缇",
+   "艾尔・昆图斯",
+   "艾米丽"
+  ],
+  "instant": null,
+  "kind": "遭遇",
+  "name": "艾尔艾米丽再会于魔法屋练习场",
+  "tick": 188,
+  "time_verbatim": "魔法屋取货等待时（同日）"
+ },
+ "evidence": [
+  {
+   "chapter": 219,
+   "line": 48,
+   "quote": "他们就是几天前我们三个从地下一路逆行返回地上的时候遇到的艾尔君和艾米丽酱。",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 52,
+   "quote": "「居然还能见到两位前辈真是让人高兴。我们现在正在用之前从你们那里得来的钱进行魔法的强化⋯⋯可是艾米丽她偏偏把院子里的人偶给打壊了⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 54,
+   "quote": "「他们两个人可是店里的常客哟，跟小哥你不一样经常照顾店里的生意呢。所以就让他们随意使用院子里的魔法练习场了。另外你们两个不用放在心上哦，练习的人偶被破壊也是它的命运呢」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 219,
+   "text": "数日前从地下一路逆行返地时结识的艾尔艾米丽进店（艾米丽打壊院中人偶被艾尔数落）；认出涡波（『前辈』）行礼致意，称正用二人所赠之钱强化魔法；店员证言两人是常客故可用练习场；缇缇见窗外人偶兴奋冲入院内，涡波付清魔石价款追上"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-9019349b6502",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0219.txt",
+  "sha": "3258b3c10435f34a4f17e39d48e93a10cf50220916d20f2a89f0f07ad423cf09",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

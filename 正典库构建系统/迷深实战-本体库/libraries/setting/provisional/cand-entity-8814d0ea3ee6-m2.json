@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "魔法屋"
+ },
+ "evidence": [
+  {
+   "chapter": 13,
+   "line": 842,
+   "quote": "在距离酒馆不远处的地方就有一家『魔法屋』。",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 20,
+   "quote": "于是立刻带着她前往了劳拉维亚规模最大的魔法商店──魔法屋。",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 24,
+   "quote": "我们刚到入口便被拦下要求出示身份的证明。",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 26,
+   "quote": "将这两点告知工作人员之后，对方吓得双目圆睁然后立马将我们带到了相当于VIP专用的房间。",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 73,
+   "quote": "「看来还是没办法给所有种类都准备两个呢。果然」",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 146,
+   "quote": "猛地推开了古尔亚德魔法屋的大门，缇缇上来就狮子大开口。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 13,
+   "text": "贩卖魔法/魔术式相关商品的店铺统称（如武器屋之于五金）：似书店；精灵耳女店员；目录数千魔法（攻击/回复/属性/辅助/生活/仪式）；水晶球测属性与容量；稀有属性目录含『星』『太阳』『光』『暗』（次元仅两种）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-8814d0ea3ee6",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-8814d0ea3ee6-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-8814d0ea3ee6",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

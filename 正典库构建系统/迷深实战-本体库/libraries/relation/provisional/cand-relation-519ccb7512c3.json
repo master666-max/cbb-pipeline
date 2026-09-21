@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾米丽",
+  "rel_type": "境遇相仿的相互信赖",
+  "subject": "艾尔・昆图斯"
+ },
+ "evidence": [
+  {
+   "chapter": 219,
+   "line": 247,
+   "quote": "看来她们两人的魔力属性是相同的。而且不仅魔力属性相同，连境遇也彼此相仿。正因如此两个人才能相互信赖结伴同行吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 246,
+   "quote": "就像是证明这份坦然一般，艾尔笑着使出了和艾米丽一样的『咏唱』",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 219,
+   "text": "两人魔力属性相同、境遇彼此相仿（奴隶重症/魔石人类投药之医疗重负），正因如此相互信赖结伴同行；同用一段咏唱文；艾尔数落并关照连连打壊人偶的艾米丽"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-519ccb7512c3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0219.txt",
+  "sha": "3258b3c10435f34a4f17e39d48e93a10cf50220916d20f2a89f0f07ad423cf09",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

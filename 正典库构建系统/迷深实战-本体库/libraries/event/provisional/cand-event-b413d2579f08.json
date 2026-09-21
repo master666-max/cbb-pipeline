@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "克洛伊·希达尔克",
+   "斯诺·沃克",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "转折(预告形)",
+  "name": "斯诺辞任总司令（章末预告）",
+  "tick": 222,
+  "time_verbatim": "本章之后的未来（叙述预告）"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 146,
+   "quote": "这位英雄斯诺・沃克，在之后与相川涡波重逢，并且其人所处境遇让罗德・缇缇生怒，结果立马就辞去了总司令的职务。",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 147,
+   "quote": "在那时，克洛伊・希达尔克才看到了斯诺・沃克这名少女真正的姿态。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 222,
+   "text": "叙述者直接预告：斯诺与相川涡波重逢→其人所处境遇让罗德・缇缇生怒→结果立马辞去总司令职务；其时克洛伊才看到斯诺这名少女真正的姿态、不得不认同兄艾尔米拉德的负面评价"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-b413d2579f08",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

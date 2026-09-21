@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "LivingLegend号",
+  "rel_type": "风魔法推进",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 5,
+   "quote": "在缇缇的风的加持下，整艘船就像上了喷气式发动机一样驰骋在辽阔的海面上。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 72,
+   "quote": "站在XiphiasSpear的尸体上的缇缇为了不让船和尸体撞在一起，她用风魔法进行了适当的调整",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 223,
+   "text": "以风魔法加持整船高速推进并执行U形转弯/漂移等机动；战后亦用风魔法调整船与尸体避免相撞"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-efc8a029db2b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

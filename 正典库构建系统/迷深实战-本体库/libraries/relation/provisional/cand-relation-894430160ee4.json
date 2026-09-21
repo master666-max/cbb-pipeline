@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "魔法屋",
+  "rel_type": "人情(所持)",
+  "subject": "缇莉・琉克"
+ },
+ "evidence": [
+  {
+   "chapter": 218,
+   "line": 21,
+   "quote": "「好，我们到了。这里不但有缇莉的人情，而且还有塞拉给的介绍信可以派上用场」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 218,
+   "text": "据涡波言：劳拉维亚规模最大的魔法屋'有缇莉的人情'（与塞拉介绍信并列提及、同为入店之便）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-894430160ee4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0218.txt",
+  "sha": "90f903c26e64363acb93900859e725dd088cedcbfaea9384cf4f7d766672761c",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

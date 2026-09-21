@@ -1,0 +1,388 @@
+{
+ "unit": "ch0224",
+ "chapter": 224,
+ "ingestion_index": 193,
+ "title": "241.老朋友",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 48,
+  "pass": 48,
+  "intercept": 0,
+  "admitted": 48,
+  "quarantined": 0
+ },
+ "tracks": {
+  "contradiction": 1,
+  "on-create": 45,
+  "consistent-duplicate": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-d0d8c52afe8e",
+   "type": "entity",
+   "name": "古奈尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-e7a8c560c323",
+   "type": "entity",
+   "name": "芙洛拉・塞斯提亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-85655052e486",
+   "type": "entity",
+   "name": "克洛伊",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d4ae437ea8e9",
+   "type": "entity",
+   "name": "斯诺·沃克",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-ac0880edb63e-m41"
+   }
+  },
+  {
+   "record_id": "cand-entity-59bcff7ad15a",
+   "type": "entity",
+   "name": "斯科纳・伊格德拉西尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-2ba188efe57b",
+   "type": "entity",
+   "name": "托尔普・特鲁克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-entity-d19222ef4ebb",
+   "type": "entity",
+   "name": "缇缇",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-593194bfdea6"
+   }
+  },
+  {
+   "record_id": "cand-entity-ee104345ea16",
+   "type": "entity",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-7bfeec89472b-m152"
+   }
+  },
+  {
+   "record_id": "cand-entity-c784a9b808c9",
+   "type": "entity",
+   "name": "『始祖与魔王的魔剑BraveFluorite』",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-31a31fa4a120",
+   "type": "setting",
+   "name": "英格利特商会",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-fcac3e2e5768",
+   "type": "setting",
+   "name": "历基亚国",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-31467b815dc5",
+   "type": "setting",
+   "name": "塞斯提亚国",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-907de2253a95",
+   "type": "setting",
+   "name": "吸血种（吸血鬼）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-07aca2a92fa7",
+   "type": "setting",
+   "name": "柯尔库（ch224）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-beef71ba9a6c",
+   "type": "setting",
+   "name": "大灾厄",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-2cf97f66eb78",
+   "type": "setting",
+   "name": "会长的翻译魔法·方言调整（ch224）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-0c38c84bc980",
+   "type": "setting",
+   "name": "『LivingLegend号』（ch224）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-be69af94723b",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-6a1e6c1f7e17",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-bd68f12d68bf",
+   "type": "relation",
+   "name": "古奈尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-fa5f2ab9392b",
+   "type": "relation",
+   "name": "古奈尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-910f5130e304",
+   "type": "relation",
+   "name": "芙洛拉・塞斯提亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-878bb2dd965b",
+   "type": "relation",
+   "name": "克洛伊",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-65dd72f2edb5",
+   "type": "relation",
+   "name": "缇缇",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-00d5ab873bc0",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-f44d36599391",
+   "type": "relation",
+   "name": "斯诺·沃克",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-318956f4825e",
+   "type": "relation",
+   "name": "缇娅拉",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-090f939e0c3c",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-042a947aff93",
+   "type": "relation",
+   "name": "克洛伊",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-44afe651fc1b",
+   "type": "relation",
+   "name": "芙洛拉・塞斯提亚",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-74afbf740ca5",
+   "type": "relation",
+   "name": "古奈尔",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-4ae2abcdb50d",
+   "type": "relation",
+   "name": "始祖涡波",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-7741a4e24615",
+   "type": "event",
+   "name": "船队甲板茶会招待与同船提案",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-671e3777d2d3",
+   "type": "event",
+   "name": "古奈尔木桶登场与失态否认",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-5513f59da13c",
+   "type": "event",
+   "name": "状态彻查与吸血鬼判明",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-4fdc8c025e5b",
+   "type": "event",
+   "name": "深夜绑缚审问与旧友自白",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-914b382fee6d",
+   "type": "event",
+   "name": "『DistanceMute・繋心』记忆确认",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-a73603c696cc",
+   "type": "event",
+   "name": "千年前·吸血鬼一族歼灭战",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-36f0339dee1e",
+   "type": "event",
+   "name": "千年前·商会发展、历基亚国建国与尼特千年",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-2edeaf500350",
+   "type": "event",
+   "name": "长生种情报提供",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ecde528b966f",
+   "type": "event",
+   "name": "旅行目的说明与古奈尔同行强要",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-9776992dcbe7",
+   "type": "event",
+   "name": "翌晨态度逆转：「万一」委托与威光压问",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-080adac4effe",
+   "type": "event",
+   "name": "柯尔库安全宣言与本土望见",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-323e43c01551",
+   "type": "foreshadow",
+   "name": "缇缇的『最后的时间』（ch224再证）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-9d803659b366",
+   "type": "foreshadow",
+   "name": "千年前存活长生种线索（斯科纳/托尔普）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-ff1ab7b0fde5",
+   "type": "foreshadow",
+   "name": "古奈尔的「万一」委托",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-44a68c65cee5",
+   "type": "foreshadow",
+   "name": "同艾德爆发战斗的可能性（ch224）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-0c1d55052441",
+   "type": "foreshadow",
+   "name": "本土＝新战场宣告（ch224）",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [],
+ "anchor": {
+  "tick": 193,
+  "pseudo_date": "2000-07-12",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 9,
+   "library": 828,
+   "dup_suspect": 2,
+   "uncertain": 4
+  },
+  "neo4j": {
+   "nodes": 714,
+   "edges": 1568,
+   "batches": 11,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 698,
+    "edges": 1568
+   }
+  }
+ }
+}

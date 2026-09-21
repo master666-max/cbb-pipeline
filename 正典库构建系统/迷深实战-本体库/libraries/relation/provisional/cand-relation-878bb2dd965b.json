@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "芙洛拉・塞斯提亚",
+  "rel_type": "护卫·护送",
+  "subject": "克洛伊"
+ },
+ "evidence": [
+  {
+   "chapter": 224,
+   "line": 14,
+   "quote": "「那个⋯⋯我们这边的船队是由总数过千的成员组成的。因为这次的任务是对国家要人的护送，所以才特地出动了这个级别的部队⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 224,
+   "line": 324,
+   "quote": "是昨天那位正统派公主。而克洛伊小姐则宛如护卫一般跟在她的身后。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 224,
+   "text": "船队本次任务即对国家要人芙洛拉的护送；翌晨克洛伊如护卫般跟在芙洛拉身后"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-878bb2dd965b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0224.txt",
+  "sha": "190646582677b42dc11c0e6ba88c282fe6040f535e7c88c4ef537e52e027a162",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

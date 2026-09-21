@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "波鲁扎克",
+   "相川涡波",
+   "缇莉・琉克"
+  ],
+  "instant": null,
+  "kind": "经济",
+  "name": "变现现金送达工房",
+  "tick": 217,
+  "time_verbatim": "同日（缇莉取钱归来）"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 208,
+   "quote": "就在这时，缇莉和波鲁扎克走进了工房。",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 209,
+   "quote": "「啊，果然还在这里！你要的现金我都准备好了哦！」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 210,
+   "quote": "波鲁扎克抱着装有大量金币的袋子还有文件。看来以后是不用为钱发愁了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 217,
+   "text": "缇莉与波鲁扎克携备妥现金（装有大量金币的袋子+文件）走进工房交付涡波——'以后是不用为钱发愁了'（ch0216 变现款'先取十分之一购物资'的兑现）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8b0cc1be5b90",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,62 @@
+{
+ "canonical": {
+  "entity_type": "技能",
+  "name": "锻冶"
+ },
+ "evidence": [
+  {
+   "chapter": 172,
+   "line": 126,
+   "quote": "技能『锻冶』能有所成长的话，我就能自己打造对迷宫探索有用的东西了。",
+   "vol": 1
+  },
+  {
+   "chapter": 172,
+   "line": 182,
+   "quote": "正因为他做得到，所以他的技能『锻冶』才会有3.12这么高。",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 96,
+   "quote": "我将她画的造型暗记下来，然后迅速在脑海中构建锻造的最佳程序。所幸自己在地下生活中给雷纳尔多打过下手，拜此所赐与技能『锻冶』相关的知识和经验都非常充足。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 172,
+   "text": "涡波持有该技能（'稍微做过一点'经验、曾给艾利巴茨打下手），打算在雷纳尔多处边赚钱边磨炼以自行打造迷宫探索用品；雷纳尔多的同技能值达3.12（远超专家的极限、人类至宝级别——能将火炉和铁器还有整个房间的热量精准掌握）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-0f6583c19cf2",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-0f6583c19cf2-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-0f6583c19cf2",
+ "verified_against": {
+  "path": "D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/slice/ch0172.txt",
+  "sha": "b45530f2feb13f9d21c6048cc5fb93bec1b785a496dce0ed72b6a649f31f5486",
+  "verified_at": "2026-09-21"
+ },
+ "version": 2
+}

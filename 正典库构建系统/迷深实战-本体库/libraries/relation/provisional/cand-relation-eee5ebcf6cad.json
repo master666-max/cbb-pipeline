@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "希达尔克家",
+  "rel_type": "出身家门(同姓反推)",
+  "subject": "克洛伊·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 9,
+   "quote": "在这之中，我──辅佐南方『代理总司令』斯诺・沃克的『代理副传令官』克洛伊・希达尔克正感到烦闷不已。",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 148,
+   "quote": "原本她是一直不相信从哥哥艾尔米拉德那儿听来的对斯诺的评价的。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 222,
+   "text": "姓名冠希达尔克姓＋其兄艾尔米拉德（库内全名艾尔米拉德·希达尔克）属希达尔克家→同为希达尔克家出身（反推：姓氏＋兄妹关系，层级低；『与斯诺有着相似的家境』旁证贵族家门）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-eee5ebcf6cad",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

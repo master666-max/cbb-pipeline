@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "魔法测试攻击协力",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 219,
+   "line": 178,
+   "quote": "「看来是不行啊，缇缇。我这边也一样基本都是原本就会的东西。不过还是有点进展的。感觉能做到挺有意思的事，所以拜托你随便用一个魔法对我发动攻击怎样？尽可能用刚才服下的魔石里的魔法，有劳了」",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 179,
+   "quote": "「姆，刚才吞下的魔法是吗？好啊，那就──『Wind・Scythe』」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 219,
+   "text": "涡波请缇缇随便用一个（刚吞下魔石中的）魔法攻击自己以实测新变种——缇缇以『Wind・Scythe』应约出手，风刃被千算相杀瞬间雾散；涡波称『我跟缇缇之前大打过一架，所以试起来更容易了』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b43024585b22",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0219.txt",
+  "sha": "3258b3c10435f34a4f17e39d48e93a10cf50220916d20f2a89f0f07ad423cf09",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

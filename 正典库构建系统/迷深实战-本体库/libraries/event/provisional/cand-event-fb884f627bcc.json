@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entities": [
+   "塞拉·雷迪安特",
+   "相川涡波",
+   "经理",
+   "缇缇",
+   "魔法屋",
+   "魔石"
+  ],
+  "instant": null,
+  "kind": "交易",
+  "name": "魔法屋全种类魔石采购（劳拉维亚）",
+  "tick": 187,
+  "time_verbatim": "同日（购粮典当后随即入店）"
+ },
+ "evidence": [
+  {
+   "chapter": 218,
+   "line": 25,
+   "quote": "所幸我既是史诗探索者的会长，同时又持有来自弗茨亚茨现人神的介绍信。",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 28,
+   "quote": "「──那个，虽然有些冒昧，不过请把这里所有种类的魔石都卖给我」",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 29,
+   "quote": "「而且所有种类各要两个哟！」",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 80,
+   "quote": "我已经不打算再对『所有物』遮遮掩掩了。虽然做的是从腰包里取钱的动作，但取出的金币和神圣金币的数量明显不是里面能装得下的。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 218,
+   "text": "以会长身份+'来自弗茨亚茨现人神的介绍信'通过身份查验入VIP室（另及缇莉的人情/塞拉给的介绍信——三口径并存，与塞拉信是否同一封未判明，存疑）；要求'所有种类的魔石都卖给我''所有种类各要两个'（存货所限未全满足）；当场以金币与神圣金币付清（自『所有物』取出明显超出腰容量之数额，'已经不打算再对『所有物』遮遮掩掩'）；签订合同；离店时魔石收入『所有物』——'毕竟没办法在这间店买到所有的魔石，所以必须要去其它的魔法屋不可'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-fb884f627bcc",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0218.txt",
+  "sha": "90f903c26e64363acb93900859e725dd088cedcbfaea9384cf4f7d766672761c",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

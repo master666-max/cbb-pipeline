@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "柯尔库",
+  "rel_type": "物资输送(船队停泊)",
+  "subject": "弗茨亚茨"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 6,
+   "quote": "来自现如今执掌南方联盟牛耳的大国弗茨亚茨的船队今天也一如既往地停泊于港口之中。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 222,
+   "text": "本土神圣国家与开拓地成员国两形都不断向柯尔库输送物资，船队日常停泊港口（不可尽数的船帆如海面白皑皑的草原）；盟国船只络绎不绝＋企图发战争财的私船为数不少"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4777bf30539c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

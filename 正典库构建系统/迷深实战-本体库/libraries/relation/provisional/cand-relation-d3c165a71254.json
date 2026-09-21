@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "艾尔米拉德·希达尔克",
+  "rel_type": "亲属（据维度状态判读）",
+  "subject": "克洛伊・希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 109,
+   "quote": "看了下状态之后发现她似乎是艾尔米拉德・希达尔克的亲属。虽然级别不高，但指挥能力出类拔萃。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 223,
+   "text": "据涡波查看克洛伊状态——『似乎是艾尔米拉德・希达尔克的亲属』；具体亲缘关系未明（原文间隔号『・』，库内主名用『·』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d3c165a71254",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "拉丝缇娅拉",
+  "rel_type": "主从侍奉(骑士·独断行事获追认)",
+  "subject": "塞拉·雷迪安特"
+ },
+ "evidence": [
+  {
+   "chapter": 221,
+   "line": 5,
+   "quote": "[根据我个人的判断，我邀请他成为了我们的同伴。",
+   "vol": 1
+  },
+  {
+   "chapter": 221,
+   "line": 6,
+   "quote": "虽然大小姐说过必须对涡波保密，但对可否告知其他人则没有明确的指示，所以我认为这样也并无不可]",
+   "vol": 1
+  },
+  {
+   "chapter": 221,
+   "line": 7,
+   "quote": "看来塞拉将我拉进计划之中的决定并没有事先的得到拉丝缇娅拉的允许。",
+   "vol": 1
+  },
+  {
+   "chapter": 221,
+   "line": 15,
+   "quote": "不过拉丝缇娅拉并没有过分咎责，反而向塞拉道了一声谢。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 221,
+   "text": "塞拉以'我个人的判断'邀请莱纳入计划而未事先获得允许；援引口径='大小姐说过必须对涡波保密，但对可否告知其他人则没有明确的指示'；拉丝缇娅拉未过分咎责、道谢'一直以来都有劳你了呢'。塞拉自陈一切'全都是为了大小姐'并誓'上刀山下火海在所不辞'。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-42e1b8748bb0",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0221.txt",
+  "sha": "7c107e00f0045428c6866def69e8b2d7b1b763edf90da64c3bed4af8013d04d4",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

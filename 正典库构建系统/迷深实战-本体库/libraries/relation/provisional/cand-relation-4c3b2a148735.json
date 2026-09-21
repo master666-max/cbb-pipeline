@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "史诗探索者",
+  "rel_type": "会长(最上层领导)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 20,
+   "quote": "「这位就是咱们公会的会长。传说中的那位。他出现一次可是超级稀奇的事儿哦，超级稀奇的」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 62,
+   "quote": "一想到从今往后怀抱着梦与希望加入史诗探索者的新人们要面对的上层领导全都是这种人，我就在心里为他们感到可怜。顺带一说虽然最上层的领导是我，但对此也是爱莫能助。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 217,
+   "text": "以会长身份现身工房并向新人自报真名；艾利巴茨向众人证言'这位就是咱们公会的会长。传说中的那位'；涡波自述'虽然最上层的领导是我，但对此也是爱莫能助'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4c3b2a148735",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,71 @@
+{
+ "canonical": {
+  "entities": [
+   "相川涡波",
+   "缇缇",
+   "魔石"
+  ],
+  "instant": null,
+  "kind": "强化",
+  "name": "魔石服用与魔法习得",
+  "tick": 187,
+  "time_verbatim": "解析完成后当场～赴古尔亚德途中"
+ },
+ "evidence": [
+  {
+   "chapter": 218,
+   "line": 104,
+   "quote": "「呼。这样应该就可以了吧。──魔法『Shift』」",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 107,
+   "quote": "看来是通过对魔石的服用让使用者强行理解了术式，然后达到了可以在实践中使用的状态。想必这就是所谓的将术式写在血中吧。",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 120,
+   "quote": "「──呜、想吐⋯⋯胃好胀⋯⋯！好不容易才得到治愈的我的胃要⋯⋯！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 123,
+   "quote": "缇缇在吞第一个的时候脸色就不对，等第二个的时候就停手了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 218,
+   "text": "涡波先服次元属性『Shift』并当场咏唱成功（'次元属性的魔力便将附近的空间予以捩转'）；机理判读=服用使使用者强行理解术式、'将术式写在血中'；涡波一口气过量吞服石状魔石致胃胀想吐（'好不容易才得到治愈的我的胃'）；缇缇吞两颗即停手改'一点一点来'；其后二人'像一口一口地吃点心一样，我们一边吞咽魔石一边移动'赴古尔亚德"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-89c6804a9294",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0218.txt",
+  "sha": "90f903c26e64363acb93900859e725dd088cedcbfaea9384cf4f7d766672761c",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

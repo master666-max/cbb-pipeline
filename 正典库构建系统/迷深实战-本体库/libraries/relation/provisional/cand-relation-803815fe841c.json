@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "Red・StingDagger",
+  "rel_type": "订制制作",
+  "subject": "艾利巴茨·利拜斯"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 30,
+   "quote": "「为了能让你随时取走我早就准备好了。你直接拿去吧。此外还有在我的个人兴趣驱使下专门给会长打造的东西。这可都怪会长你迟迟不来取的缘故哦。作为代价你就都拿去用吧」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 37,
+   "quote": "「Red・StingDagger」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 217,
+   "text": "受涡波委托订制的装备之一，早已备好待会长随时取走"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-803815fe841c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

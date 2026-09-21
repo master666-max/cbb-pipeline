@@ -1,0 +1,181 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "塞拉·雷迪安特",
+   "library_match": "塞拉・蕾蒂安特",
+   "similarity": 0.9716
+  },
+  {
+   "candidate": "拉丝缇娅拉",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.9817
+  },
+  {
+   "candidate": "缇娅拉",
+   "library_match": "缇亚拉",
+   "similarity": 0.9617
+  },
+  {
+   "candidate": "『LivingLegend号』",
+   "library_match": "《LivingLegend》号",
+   "similarity": 0.953
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "帕林库洛",
+   "library_match": "帕林库洛的部下",
+   "similarity": 0.8929
+  },
+  {
+   "candidate": "诺斯菲",
+   "library_match": "诺斯菲・弗茨亚茨",
+   "similarity": 0.908
+  },
+  {
+   "candidate": "阿尔缇",
+   "library_match": "拉丝缇亚拉",
+   "similarity": 0.8789
+  },
+  {
+   "candidate": "玛利亚",
+   "library_match": "玛丽",
+   "similarity": 0.9252
+  },
+  {
+   "candidate": "柯尔库",
+   "library_match": "克罗",
+   "similarity": 0.8596
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "塞拉·雷迪安特",
+   "塞拉・蕾蒂安特",
+   0.9716
+  ],
+  [
+   "拉丝缇娅拉",
+   "拉丝缇亚拉",
+   0.9817
+  ],
+  [
+   "帕林库洛",
+   "帕林库洛的部下",
+   0.8929
+  ],
+  [
+   "港口军阶最高的联合国军人",
+   "沃尔斯将军",
+   0.5925
+  ],
+  [
+   "大圣堂地下的沉眠少女",
+   "大圣堂",
+   0.6122
+  ],
+  [
+   "诺斯菲",
+   "诺斯菲・弗茨亚茨",
+   0.908
+  ],
+  [
+   "艾德",
+   "艾利巴茨",
+   0.7761
+  ],
+  [
+   "使徒西斯",
+   "使徒迪普拉库拉",
+   0.8101
+  ],
+  [
+   "缇娅拉",
+   "缇亚拉",
+   0.9617
+  ],
+  [
+   "始祖涡波",
+   "『始祖』",
+   0.813
+  ],
+  [
+   "使徒勒伽西",
+   "勒伽西",
+   0.8295
+  ],
+  [
+   "阿尔缇",
+   "拉丝缇亚拉",
+   0.8789
+  ],
+  [
+   "玛利亚",
+   "玛丽",
+   0.9252
+  ],
+  [
+   "『LivingLegend号』",
+   "《LivingLegend》号",
+   0.953
+  ],
+  [
+   "柯尔库",
+   "克罗",
+   0.8596
+  ],
+  [
+   "古尔亚德",
+   "赛鲁多拉",
+   0.8402
+  ],
+  [
+   "弗茨亚茨",
+   "斐勒卢托",
+   0.8212
+  ],
+  [
+   "『缇娅拉大人的血』",
+   "圣人缇娅拉",
+   0.7462
+  ],
+  [
+   "圣杯",
+   "圣双剑",
+   0.7242
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 22,
+  "library": 778,
+  "dup_suspect": 4,
+  "uncertain": 7
+ }
+}

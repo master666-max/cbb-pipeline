@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "缇缇",
+  "rel_type": "偏爱(送行称呼)",
+  "subject": "缇莉・琉克"
+ },
+ "evidence": [
+  {
+   "chapter": 218,
+   "line": 4,
+   "quote": "「一路走好～。要保重哦，缇缇酱～」",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 5,
+   "quote": "总觉得缇莉是不是对笨丫头特别偏爱啊。顺带一说在她身后的波鲁扎克也默默地冲我们挥了挥手。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 218,
+   "text": "据涡波观感：'缇莉是不是对笨丫头特别偏爱啊'（送行时独唤'要保重哦，缇缇酱～'）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-fbf9f7874415",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0218.txt",
+  "sha": "90f903c26e64363acb93900859e725dd088cedcbfaea9384cf4f7d766672761c",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

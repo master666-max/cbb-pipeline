@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "始祖和魔王的魔剑BraveFluorite",
+  "rel_type": "专属持有(获赠)",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 176,
+   "quote": "「太好了呐。这样它就是你专属的武器了。可要好好珍惜哦」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 178,
+   "quote": "缇缇将完工的剑捧到脸边。看来她算是心满意足了。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 217,
+   "text": "涡波交剑：'这样它就是你专属的武器了。可要好好珍惜哦'；缇缇捧剑到脸边心满意足、承诺'人家会好好珍惜它的'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-51418be905e3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

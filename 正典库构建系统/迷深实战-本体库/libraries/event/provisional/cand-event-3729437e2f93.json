@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "克洛伊·希达尔克",
+   "圣柯尔库堡",
+   "柯尔库",
+   "联合国"
+  ],
+  "instant": null,
+  "kind": "任务",
+  "name": "迎接滞留开拓地王族的护送任务（进行中）",
+  "tick": 222,
+  "time_verbatim": "本章时期（王族即将抵达）"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 72,
+   "quote": "先前滞留在开拓地联合国的王族们即将抵达这个港口都市。",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 73,
+   "quote": "迎接国家要人兹事体大，绝对不能在这个时候让此等大敌杀到眼前。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 222,
+   "text": "先前滞留在开拓地联合国的王族们即将抵达这个港口都市；迎接并护送国家要人兹事体大（绝对不能在此时让大敌杀到眼前——十匹大蜈蚣急报与此任务相撞）；克洛伊在斯诺出击后需分秒必争处理文书并准备迎接要人业务（王族身份未明——开环）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3729437e2f93",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

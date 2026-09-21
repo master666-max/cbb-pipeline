@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "魔法屋",
+  "rel_type": "最高负责人(经营)",
+  "subject": "经理"
+ },
+ "evidence": [
+  {
+   "chapter": 218,
+   "line": 41,
+   "quote": "「好、好的！当然没问题，这就准备！只是，这笔事项过于重大，我需要转交给本店的最高负责人接手！」",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 56,
+   "quote": "「不才是这间店的经理。幸会，『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』大人。这便是本店现在能为您提供的所有魔石了」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 218,
+   "text": "巨额交易由店员上移至经理本人接手（'这笔事项过于重大，我需要转交给本店的最高负责人接手'）；经理自报'不才是这间店的经理'并经手合同与账款"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-a7a76ea1698a",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0218.txt",
+  "sha": "90f903c26e64363acb93900859e725dd088cedcbfaea9384cf4f7d766672761c",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

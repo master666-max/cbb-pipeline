@@ -1,0 +1,67 @@
+{
+ "canonical": {
+  "entities": [
+   "LivingLegend号",
+   "古尔亚德",
+   "柯尔库",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "旅程",
+  "name": "古尔亚德出航与高速渡海",
+  "tick": 223,
+  "time_verbatim": "数日航海（『将睡眠和魔法重复上演的几天就这样过去』）"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 3,
+   "quote": "从古尔亚德的港口出发的我和缇缇目前正在驾船航行。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 5,
+   "quote": "在缇缇的风的加持下，整艘船就像上了喷气式发动机一样驰骋在辽阔的海面上。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 6,
+   "quote": "以风圈残云的气势在海上掀起一阵阵的轰鸣，让擦肩而过的其他船只咄咄称奇、将睡眠和魔法重复上演的几天就这样过去──我们终于抵达了本土的港口城市『柯尔库』附近的海域。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 223,
+   "text": "涡波与缇缇自古尔亚德港口驾『LivingLegend号』出航：缇缇风魔法加持高速推进、涡波掌舵导航；海上高速轰鸣致擦肩船只侧目；数日后抵达本土港口城市柯尔库附近海域"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-ad2a26152f55",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

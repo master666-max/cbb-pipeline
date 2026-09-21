@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 223,
+  "fact": "迷宫外（海上/大自然）死掉的怪物不会变成魔石；魔石化术式为迷宫所独有、外面无掉落现象；但怪物尸体可回收解剖利用——各有长短",
+  "name": "迷宫外魔石化法则（ch223）",
+  "tick": 223
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 73,
+   "quote": "看着静止于海上的怪物和船只──我不禁想到这里和迷宫不一样，死掉的怪物并不会变成魔石。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 74,
+   "quote": "魔石化的术式既然是为迷宫所独有，自然在外面就不会有掉落的现象。但怪物的尸体却可以回收起来解剖利用，所以算是各有长短吧。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 223,
+   "text": "魔石化=迷宫独有术式（本章直证）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-50ea4255ef6f",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

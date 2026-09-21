@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "斯诺·沃克",
+  "rel_type": "舞斗大会先援",
+  "subject": "拉丝缇娅拉"
+ },
+ "evidence": [
+  {
+   "chapter": 221,
+   "line": 140,
+   "quote": "她就先于基督试图帮助龙人斯诺・沃克。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 221,
+   "text": "之前在劳拉维亚的舞斗大会中，拉丝缇娅拉先于基督试图帮助龙人斯诺・沃克（叙述者实录的既往行为）。"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ed168480128b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0221.txt",
+  "sha": "7c107e00f0045428c6866def69e8b2d7b1b763edf90da64c3bed4af8013d04d4",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

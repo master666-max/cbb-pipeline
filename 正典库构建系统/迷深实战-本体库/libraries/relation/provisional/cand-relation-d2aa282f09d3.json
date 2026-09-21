@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "圣柯尔库堡",
+  "rel_type": "司令官驻任(代理总司令)",
+  "subject": "斯诺·沃克"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 95,
+   "quote": "「作为这座城堡的司令官，我不能批准你的请命。与先前十倍规模的敌人交手，你们不可能没有伤亡」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 222,
+   "text": "『作为这座城堡的司令官』拒绝魔法部队请命；以总司令专用椅与彰显总司令身份的披风为标志；大将军负伤期间代行总司令职务"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d2aa282f09d3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

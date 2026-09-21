@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "怪物(水栖)",
+  "name": "XiphiasSpear"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 15,
+   "quote": "「怪物」XiphiasSpear：级别35",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 16,
+   "quote": "它的躯体跟鲸鱼相仿，足以和『LivingLegend号』相匹敌。上颚像旗鱼一样尖锐细长，全身覆有的鱼鳞则是为怪物所特有的甲壳。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 39,
+   "quote": "XiphiasSpear是真的聪明，至今为止面对缇缇的远距离攻击，它全都利用潜入水下并在船后现身袭击的方式化解了。但它的优势也就到此为止了。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 70,
+   "quote": "就这样，以令人不禁心生怜悯的方式，怪物咽气儿了。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 223,
+   "text": "级别35的BOSS级水栖怪物；躯体与鲸鱼相仿、足以匹敌『LivingLegend号』，上颚尖锐细长，鱼鳞为怪物特有甲壳；作为水栖怪物在海中占尽地利，聪明地以潜入水下化解缇缇的远程攻击"
+  },
+  {
+   "category": "status_change",
+   "chapter": 223,
+   "text": "被缇缇『旋风击』伤至骨肉行动迟缓→被风之铳剑刺穿后背→体内『疾风弹』风弹爆炸，浑身鳞片间隙迸血后炸开死亡；尸体静止于海上（迷宫外不魔石化，可回收解剖）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-b4394e77be2d",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

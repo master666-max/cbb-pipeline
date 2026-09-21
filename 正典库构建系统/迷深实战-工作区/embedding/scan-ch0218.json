@@ -1,0 +1,126 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "缇莉・琉克",
+   "library_match": "缇莉·琉克",
+   "similarity": 0.9922
+  },
+  {
+   "candidate": "塞拉·雷迪安特",
+   "library_match": "塞拉・蕾蒂安特",
+   "similarity": 0.9716
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  },
+  {
+   "candidate": "波鲁扎克",
+   "library_match": "波尔札克",
+   "similarity": 0.8655
+  },
+  {
+   "candidate": "莱纳",
+   "library_match": "莱纳·赫勒比勒夏因",
+   "similarity": 0.901
+  },
+  {
+   "candidate": "劳拉维亚",
+   "library_match": "瓦尔法拉",
+   "similarity": 0.8528
+  },
+  {
+   "candidate": "瓦尔德",
+   "library_match": "瓦尔德本国",
+   "similarity": 0.8945
+  },
+  {
+   "candidate": "魔石",
+   "library_match": "魔石戒指",
+   "similarity": 0.9084
+  }
+ ],
+ "pairs": [
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "缇莉・琉克",
+   "缇莉·琉克",
+   0.9922
+  ],
+  [
+   "波鲁扎克",
+   "波尔札克",
+   0.8655
+  ],
+  [
+   "经理",
+   "店长",
+   0.8224
+  ],
+  [
+   "莱纳",
+   "莱纳·赫勒比勒夏因",
+   0.901
+  ],
+  [
+   "塞拉·雷迪安特",
+   "塞拉・蕾蒂安特",
+   0.9716
+  ],
+  [
+   "『Connection』",
+   "『Growth』",
+   0.8046
+  ],
+  [
+   "魔法屋",
+   "魔法石",
+   0.7846
+  ],
+  [
+   "古尔亚德",
+   "赛鲁多拉",
+   0.8402
+  ],
+  [
+   "劳拉维亚",
+   "瓦尔法拉",
+   0.8528
+  ],
+  [
+   "联合国",
+   "联合国的一夫多妻制",
+   0.634
+  ],
+  [
+   "瓦尔德",
+   "瓦尔德本国",
+   0.8945
+  ],
+  [
+   "魔石",
+   "魔石戒指",
+   0.9084
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 14,
+  "library": 779,
+  "dup_suspect": 2,
+  "uncertain": 6
+ }
+}

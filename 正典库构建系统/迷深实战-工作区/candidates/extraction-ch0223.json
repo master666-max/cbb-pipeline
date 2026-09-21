@@ -1,0 +1,745 @@
+{
+ "_meta": {
+  "unit": "迷深实战 · CHAPTER 0223（240.海路，摄入序223→tick223→伪锚点2000-08-10）",
+  "source": {
+   "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+   "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+   "verified_at": "2026-09-22",
+   "slice": "行1-233（CHAPTER 0223，233行）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "伪锚点 2000-01-01+(i-1)；本章摄入序=223→tick223→2000-08-10。禁墙钟。（注：调度工单模板写作 tick192，与规范 tick=章摄入序不符，按规范以 223 执行）",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号−1；切片行1为<<<CHAPTER>>>标记）。",
+  "chapter_summary": "古尔亚德港出航，缇缇风魔法推进、涡波掌舵数日抵本土柯尔库海域；救遇袭军舰船队：击杀35级水栖怪XiphiasSpear，龙卷风大魔法歼千余怪物零牺牲；新人物=旗舰指挥克洛伊・希达尔克。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；切片行3『落地死的流星』判插图题注（与 ch216 章首同款题注）元文本排除；行26『（译注：日语惯性和感性同音）』与行151『（吐槽：…）』为翻译组注记元文本，括注整体零抽取（行151 引文截取括注前正文，不含吐槽）；无注入式指令样文本",
+   "reason": "R6 规则1：插图题注/译注/吐槽=作者杂谈与翻译组公告类；括注内无正文专名",
+   "deterministic_check": "『落地死的流星』仅切片行3一处；『（译注：』1处（行26）；『（吐槽：』1处（行151）；三处均未进入任何候选引文"
+  },
+  "cross_chapter_notes": [
+   "★克洛伊・希达尔克=新人物（近名检索：库内仅希达尔克家/艾尔米拉德·希达尔克，无同人冲突）：舰队旗舰指挥官；据涡波『维度』查看状态判读『似乎是艾尔米拉德・希达尔克的亲属』（间隔号原文・/库内·异写登记别名）",
+   "★涡波丧失冻结魔法（自述『我失去了使用冻结魔法的能力』）——身体变化跨章事实，已入 event『海上战斗不利条件判明』，不入实体 observations",
+   "★缇缇混有夏比之血、与水相当不对付（叙述者直述）→ relation 缇缇-夏比",
+   "★千年前缇缇不惜击沉友方船只也要打倒敌人→『狂王』『魔王』绰号注脚（库内已有『狂王』条目；跨章事实走 event）",
+   "★魔法（FlyShoots）：本章原文写『魔弹（FlyShoots）』，判例4 命中库内近名『魔法（FlyShoots）』（罗德版，而库内『风之铳剑』条目已载罗德=缇缇同人）→合入旧名+登记别名；据缇缇：该招名系涡涡所教、更强力但仅万不得已使用",
+   "★『LimitBreak・SehrWind・G・EndBurst』含库内既有名『SehrWind』——判例1 不自动合并，留终审 R4；涡波试拟汉字写法『限定解除・终结烈风』被缇缇当场否决，不登记别名",
+   "★涡波全名再公示（ch216 已登记 proper_name 别名，本章不重复登记）；『英雄』人设（舞闘大会冠军/屠龙/公会会长）为传闻设定，涡波自认『对真正成为那种理想的英雄敬谢不敏，但加以利用』",
+   "★XiphiasSpear 尸体与落海魔剑的回收为双开环（尸体可解剖利用=迷宫外规则）"
+  ],
+  "alias_policy": "全名『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』ch216 已登记不重复；『魔弹（FlyShoots）』→魔法（FlyShoots）（判例4 新登记）；『艾尔米拉德・希达尔克』（原文间隔号・）→艾尔米拉德·希达尔克（库内·）异写登记；『涡涡』库内已登记不重复；『大魔法使/勇者/大勇者缇缇/英雄』=自称·传闻称号 descriptor 永不合并；克洛伊・希达尔克为新实体（原文写法・）。",
+  "confidence_calibration": "0.90=直接命名+行为事实（在场：涡波/缇缇/克洛伊・希达尔克/XiphiasSpear）；0.88=在场配角既有实体本章新证与叙述者直述类；0.85=verbatim 提及未登场者（阳滝/玛利亚/夏比/艾利巴茨/艾尔米拉德）与声称·判读类（亲属判读/命名者据缇缇）。",
+  "observations_policy": "实体 observations 仅本章直接观察；跨章事实（冻结魔法丧失/夏比血统/千年前击沉友舰/狂王魔王绰号/FlyShoots命名者）一律走 event/relation 记录。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {"name": "相川涡波", "entity_type": "人物"},
+   "observations": [
+    {"category": "summary", "text": "掌舵驾船并自任导航系统监测航线；与缇缇分工『我负责防御缇缇负责攻击』，在龙卷风余波中救起险些跌入海中者；战后要求克洛伊直呼『涡波』（自陈长名字不中意），与克洛伊握手", "chapter": 223},
+    {"category": "manifestation", "text": "向克洛伊报出全名，以传闻中『英雄』的设定（强悍高尚善解人意+舞闘大会冠军+屠龙+公会会长）示以自信微笑换取信任；自陈对成为理想英雄敬谢不敏、但加以利用是另一码事", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 22, "quote": "对负责掌舵的我的悲鸣充耳不闻的缇缇站在船头继续激烈地驱使风魔法。"},
+    {"vol": 1, "chapter": 223, "line": 124, "quote": "「我的名字是『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』。"},
+    {"vol": 1, "chapter": 223, "line": 128, "quote": "虽然我对真正成为那种理想的英雄这点敬谢不敏，但加以利用则是另一码事。"},
+    {"vol": 1, "chapter": 223, "line": 207, "quote": "另外称呼我的时候直接用涡波就好。拜托了，那个长的要命的名字我不是很中意」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {"name": "缇缇", "entity_type": "人物"},
+   "observations": [
+    {"category": "summary", "text": "船头以风魔法为船加持推进并担任攻击手：踢技重创XiphiasSpear、铳剑贯穿+体内风弹将其击杀、发动覆盖全海域的龙卷风大魔法精准只卷走怪物；自称『大勇者缇缇』并要求旁人称其勇者而非大魔法使", "chapter": 223},
+    {"category": "trait", "text": "招式命名品味与涡波完全相反（嫌必杀技名长麻烦、自起『疾风弹』）；精神年龄幼齿、被摸头即满足；对大虐杀场景习以为常", "chapter": 223},
+    {"category": "interpretation", "text": "生死观念在千年前塑造而成，面对怪物尽数坠亡的惨状仍满面笑容，惊吓船队众人", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 44, "quote": "缇缇在船头一跃而起，只见艾利巴茨打造的『飞翔翠石制轻铠路易芬理德』在阳光的照耀下熠熠生辉，『始祖和魔王的魔剑BraveFluorite』已向XiphiasSpear的背后斩去。"},
+    {"vol": 1, "chapter": 223, "line": 130, "quote": "是大勇者缇缇要用风魔法将怪物歼灭的！」"},
+    {"vol": 1, "chapter": 223, "line": 193, "quote": "从她这个反应来看，估计是对这种大虐杀的场景习以为常了吧。生死观念是在千年前塑造而成的缇缇即使面对如此惨状也能自谓满意。"},
+    {"vol": 1, "chapter": 223, "line": 198, "quote": "「唔姆，不用客气。另外不要称呼人家什么大魔法使，叫勇者就好了」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {"name": "克洛伊・希达尔克", "entity_type": "人物(军人·舰队指挥官)"},
+   "observations": [
+    {"category": "appearance", "text": "穿紧致女式军服而显高贵气质；外表年龄二十上下；金色长发扎三股辫结成团子盘于脑后、两侧横发异样得长、刘海剪得齐平，样貌秀丽凛然", "chapter": 223},
+    {"category": "summary", "text": "船队总指挥、所在最大最豪华一艘为旗舰；制止部下对涡波一行的攻击意图；听完提案打量二人魔力后利落决定信任，下令全队停攻防冲击并传令全员；战后虽惧缇缇仍在责任感驱使下坚持致谢；被涡波评善解人意、与其握手互信，称呼『涡波大人』", "chapter": 223},
+    {"category": "trait", "text": "对涡波等异常存在的反应冷静得近乎习惯；船员对其信赖深厚", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 109, "quote": "将金色的长发扎成三股辫之后结成了团子状盘在脑后的发型，两侧的横发异样得长，刘海则剪的齐平。样貌给人一种秀丽凛然的感觉。"},
+    {"vol": 1, "chapter": 223, "line": 113, "quote": "面前这名女性的名字叫克洛伊・希达尔克。"},
+    {"vol": 1, "chapter": 223, "line": 114, "quote": "但从这一连串的行动中也不难看出船员们对克洛伊・希达尔克的信赖之深厚。"},
+    {"vol": 1, "chapter": 223, "line": 136, "quote": "「──全员听令！接下来将发动风属性的广域魔法歼灭敌人！所有人停止攻击，准备应对冲击！传令员务必将此令转达给船队全体的每一名成员！魔法的影响范围是整个海域！！」"},
+    {"vol": 1, "chapter": 223, "line": 208, "quote": "「我明白了，涡波大人⋯⋯既然是那位名满天下的『英雄』所言，那我愿意相信」"},
+    {"vol": 1, "chapter": 223, "line": 210, "quote": "看到她的姓氏是希达尔克，我本以为自尊心会相当高来着，不过似乎并非如此。我和克洛伊小姐彼此报以微笑，然后握了握手。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.88,
+   "canonical": {"name": "XiphiasSpear", "entity_type": "怪物(水栖)"},
+   "observations": [
+    {"category": "summary", "text": "级别35的BOSS级水栖怪物；躯体与鲸鱼相仿、足以匹敌『LivingLegend号』，上颚尖锐细长，鱼鳞为怪物特有甲壳；作为水栖怪物在海中占尽地利，聪明地以潜入水下化解缇缇的远程攻击", "chapter": 223},
+    {"category": "status_change", "text": "被缇缇『旋风击』伤至骨肉行动迟缓→被风之铳剑刺穿后背→体内『疾风弹』风弹爆炸，浑身鳞片间隙迸血后炸开死亡；尸体静止于海上（迷宫外不魔石化，可回收解剖）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 15, "quote": "「怪物」XiphiasSpear：级别35"},
+    {"vol": 1, "chapter": 223, "line": 16, "quote": "它的躯体跟鲸鱼相仿，足以和『LivingLegend号』相匹敌。上颚像旗鱼一样尖锐细长，全身覆有的鱼鳞则是为怪物所特有的甲壳。"},
+    {"vol": 1, "chapter": 223, "line": 39, "quote": "XiphiasSpear是真的聪明，至今为止面对缇缇的远距离攻击，它全都利用潜入水下并在船后现身袭击的方式化解了。但它的优势也就到此为止了。"},
+    {"vol": 1, "chapter": 223, "line": 70, "quote": "就这样，以令人不禁心生怜悯的方式，怪物咽气儿了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "艾尔米拉德·希达尔克", "entity_type": "人物"},
+   "aliases_to_register": ["艾尔米拉德・希达尔克"],
+   "observations": [
+    {"category": "summary", "text": "本章未直接登场（原文写法间隔号为『・』）：据涡波查看状态判读，克洛伊・希达尔克似乎是其亲属", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 109, "quote": "看了下状态之后发现她似乎是艾尔米拉德・希达尔克的亲属。虽然级别不高，但指挥能力出类拔萃。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "相川阳滝", "entity_type": "人物"},
+   "observations": [
+    {"category": "summary", "text": "本章未直接登场：涡波设想若招式命名之争被她与玛利亚听去，二人会叹气表示『无论是哪个都一样奇怪，没什么好争的』", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 87, "quote": "但如果被阳滝或者玛利亚听去的话，想必她们会在叹口气后表示『无论是哪个都一样奇怪，没什么好争的』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "玛利亚", "entity_type": "人物"},
+   "observations": [
+    {"category": "summary", "text": "本章未直接登场：与阳滝同为涡波设想中会嘲笑招式命名之争的人物", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 87, "quote": "但如果被阳滝或者玛利亚听去的话，想必她们会在叹口气后表示『无论是哪个都一样奇怪，没什么好争的』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "夏比", "entity_type": "人物"},
+   "observations": [
+    {"category": "summary", "text": "本章未直接登场：叙述者直述缇缇混有其血、因此与水相当不对付（海战中吃亏要因之一）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 29, "quote": "而且混有夏比的血的缇缇跟水还相当不对付"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {"name": "艾利巴茨", "entity_type": "人物(锻冶师)"},
+   "observations": [
+    {"category": "summary", "text": "本章未直接登场：缇缇所穿轻铠『飞翔翠石制轻铠路易芬理德』的打造者（ch216 预告的完工装备此处首次具名亮相）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 44, "quote": "艾利巴茨打造的『飞翔翠石制轻铠路易芬理德』"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {"name": "LivingLegend号", "entity_type": "道具(船只)"},
+   "observations": [
+    {"category": "summary", "text": "古尔亚德出航载涡波与缇缇渡海赴本土；在缇缇风魔法加持下高速驰骋，可作U形转弯/漂移等激烈机动；与XiphiasSpear赛船中主帆破损（寿终正寝），余桅之帆尚存仍可借风魔法移动", "chapter": 223},
+    {"category": "appearance", "text": "体型巨大、质量可怕，足以与XiphiasSpear匹敌、与本土军舰媲美", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 5, "quote": "在缇缇的风的加持下，整艘船就像上了喷气式发动机一样驰骋在辽阔的海面上。"},
+    {"vol": 1, "chapter": 223, "line": 23, "quote": "于是得到了进一步加速的『LivingLegend号』的船体倾斜着来了一个U形转弯。"},
+    {"vol": 1, "chapter": 223, "line": 41, "quote": "「啊啊！船帆破啦──！！」"},
+    {"vol": 1, "chapter": 223, "line": 97, "quote": "虽然船的主帆已经寿终正寝，但其它桅杆上的帆还健在，所以利用风魔法移动还是无碍的。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "古尔亚德", "entity_type": "国家"},
+   "observations": [
+    {"category": "summary", "text": "本次本土渡海的出航地（从其港口出发）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 3, "quote": "从古尔亚德的港口出发的我和缇缇目前正在驾船航行。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {"name": "柯尔库", "entity_type": "地点(港口城市)"},
+   "observations": [
+    {"category": "summary", "text": "本土的港口城市；涡波与缇缇数日航海后抵达其附近海域，并在该海域发现遭怪物袭击的船队", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 6, "quote": "我们终于抵达了本土的港口城市『柯尔库』附近的海域。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "『飞翔翠石制轻铠路易芬理德』", "entity_type": "道具(防具)"},
+   "observations": [
+    {"category": "summary", "text": "艾利巴茨打造的轻铠，缇缇船头跃起攻击时所穿", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 44, "quote": "缇缇在船头一跃而起，只见艾利巴茨打造的『飞翔翠石制轻铠路易芬理德』在阳光的照耀下熠熠生辉"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {"name": "『始祖和魔王的魔剑BraveFluorite』", "entity_type": "道具(剑)"},
+   "observations": [
+    {"category": "summary", "text": "缇缇的佩剑；斩击XiphiasSpear背部时因鳞片坚硬+守护者臂力反作用被震脱手飞出（『毕竟那把剑并不锋利嘛』）；涡波指示『剑之后再捡』，落海待回收", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 44, "quote": "『始祖和魔王的魔剑BraveFluorite』已向XiphiasSpear的背后斩去。"},
+    {"vol": 1, "chapter": 223, "line": 48, "quote": "结果『始祖和魔王的魔剑BraveFluorite』砰地一下就从缇缇的双手中飞了出去。"},
+    {"vol": 1, "chapter": 223, "line": 60, "quote": "而缇缇则打算利用这个机会去回收自己的佩剑。"},
+    {"vol": 1, "chapter": 223, "line": 61, "quote": "「剑之后再捡！你先拿出风之铳剑来结果它再说！要是再让它潜入水下就麻烦了！！」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {"name": "『LimitBreak・SehrWind・G・EndBurst』", "entity_type": "技能魔法(风属性大魔法)"},
+   "observations": [
+    {"category": "technique", "text": "缇缇受『连接』共享『维度』位置情报后发动：四面八方成百上千的暴风络合，不到一秒化作覆盖整个海域的巨型龙卷风，一口气改变天候；魔力操作精准至攻击对象局限于怪物（船只分毫未动），但余波仍摇晃船只", "chapter": 223},
+    {"category": "alias", "text": "涡波试拟汉字写法『限定解除・终结烈风』（写作/读作方案），被缇缇以『不许你擅自加假借字』当场否决——不成立的别名，仅记录", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 150, "quote": "──风魔法『LimitBreak・SehrWind・G・EndBurst』哦哦！！"},
+    {"vol": 1, "chapter": 223, "line": 153, "quote": "接着，从其它方向诞生的又一道暴风也席卷而成。随后还有第三道、第四道──从四面八方而来的暴风汇合在一处。成百上千的暴风络合在一起，不到一秒便化作了覆盖整个海域的巨型龙卷风。"},
+    {"vol": 1, "chapter": 223, "line": 155, "quote": "缇缇那精准无比的魔力操作让龙卷风的攻击对象局限于怪物之上。"},
+    {"vol": 1, "chapter": 223, "line": 159, "quote": "比如说写作『限定解除・终结烈风』，读作『LimitBreak・SehrWind・G・EndBurst』这样──"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "北铳王流古武术", "entity_type": "技能武术(流派)"},
+   "observations": [
+    {"category": "knowledge", "text": "千年前使铳剑的支配之王的招式（原文如此定性）；涡波评其名有标题欺诈感但效果了得", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 52, "quote": "「既、既然如此！那接下来就是『北铳王流古武术』！受死吧、『旋风击』！！」"},
+    {"vol": 1, "chapter": 223, "line": 55, "quote": "毕竟是千年前使铳剑的支配之王的招式，叫这个名字也无可厚非。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "『旋风击』", "entity_type": "技能招式(飞踢)"},
+   "observations": [
+    {"category": "technique", "text": "北铳王流古武术招式：猛烈飞踢；缇缇四肢攻击力远高于其佩剑，XiphiasSpear坚韧鳞片被此击直接伤至骨肉、行动迟缓", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 52, "quote": "受死吧、『旋风击』！！」"},
+    {"vol": 1, "chapter": 223, "line": 53, "quote": "缇缇很快就振作气势使出一记猛烈的飞踢。"},
+    {"vol": 1, "chapter": 223, "line": 57, "quote": "XiphiasSpear的鳞片在这招面前就跟饼干一样不堪一击，直接被伤到了骨肉。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "『绝冲风击』", "entity_type": "技能招式(喊名)"},
+   "observations": [
+    {"category": "summary", "text": "缇缇挥剑斩击时喊出的招式名——当时并未使用魔法，仅因其自认有勇者风格（最近常把勇者一词挂在嘴边）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 45, "quote": "「接招吧、『绝冲风击』！」"},
+    {"vol": 1, "chapter": 223, "line": 46, "quote": "虽然并没有在使用魔法，但缇缇却喊出了招式名。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "『疾风弹』", "entity_type": "技能招式(风弹)"},
+   "observations": [
+    {"category": "technique", "text": "缇缇的自命名招式：风之铳剑刺入敌体内后射出风之弹、于体内爆炸（『贯穿、然后尽情奔驰吧！』）；在守护者的魔法面前敌人装甲鳞片毫无意义", "chapter": 223},
+    {"category": "interpretation", "text": "命名归属：据缇缇——此为自己起的名字，与涡波所教的『魔弹（FlyShoots）』对立；涡波个人评价FlyShoots更高", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 64, "quote": "「⋯⋯毕竟人命关天，没办法呢。贯穿、然后尽情奔驰吧！『疾风弹』！」"},
+    {"vol": 1, "chapter": 223, "line": 65, "quote": "被铳剑刺穿的XiphiasSpear亟欲潜入水中逃匿。但没等它成功，缇缇的铳剑就已经在它体内射出了风之弹。"},
+    {"vol": 1, "chapter": 223, "line": 80, "quote": "你要问我觉得『疾风弹』和『魔弹（FlyShoots）』哪个好"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "魔法（FlyShoots）", "entity_type": "技能魔法(风弹系)"},
+   "aliases_to_register": ["『魔弹（FlyShoots）』"],
+   "observations": [
+    {"category": "knowledge", "text": "本章原文写法『魔弹（FlyShoots）』（判例4 合入库内名）：缇缇在迷宫中喊得贼起劲的招式；据缇缇——招名是涡涡教人家喊的、非自己起名，该招更强力但只要不是万不得已就不会用", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 76, "quote": "「说起来，你怎么不用在迷宫喊得贼起劲的那个『魔弹（FlyShoots）』了？」"},
+    {"vol": 1, "chapter": 223, "line": 78, "quote": "「姆？啊啊，毕竟那招是涡涡教人家喊得，不是人家自己起的名字嘛。虽然用那个确实更强力一些⋯⋯但只要不是万不得已人家是不会用的」"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {"name": "《维度》", "entity_type": "技能魔法"},
+   "observations": [
+    {"category": "technique", "text": "本章多用途运用：持续监测航线正确与否；把握远处船队被眷属围困的窘境；探测敌人总数（过千）；掌握暴风中陷危者坐标逐一救助；记住落海XiphiasSpear的位置以备回收", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 5, "quote": "对此我只能发挥导航系统的作用持续监测航线的正确与否。"},
+    {"vol": 1, "chapter": 223, "line": 32, "quote": "我的『维度』把握到了在远处遭受袭击的船队光是以XiphiasSpear的眷属为对手就陷入了无法行动的窘境。"},
+    {"vol": 1, "chapter": 223, "line": 94, "quote": "用『维度』探测过后，我发现敌人的总数过千。"},
+    {"vol": 1, "chapter": 223, "line": 184, "quote": "在此之前我已经用『维度』掌握了陷入危机的人的坐标"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {"name": "迷宫外魔石化法则（ch223）", "fact": "迷宫外（海上/大自然）死掉的怪物不会变成魔石；魔石化术式为迷宫所独有、外面无掉落现象；但怪物尸体可回收解剖利用——各有长短", "chapter": 223, "tick": 223},
+   "entities_involved": ["XiphiasSpear"],
+   "observations": [
+    {"category": "knowledge", "text": "魔石化=迷宫独有术式（本章直证）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 73, "quote": "看着静止于海上的怪物和船只──我不禁想到这里和迷宫不一样，死掉的怪物并不会变成魔石。"},
+    {"vol": 1, "chapter": 223, "line": 74, "quote": "魔石化的术式既然是为迷宫所独有，自然在外面就不会有掉落的现象。但怪物的尸体却可以回收起来解剖利用，所以算是各有长短吧。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "本土舰队军备与魔石远程武器（ch223）", "fact": "遇袭船队舰只总数十艘以上且基本为军舰，军人皆饱经训练的百战之士、临危不乱；各舰体型可与『LivingLegend号』媲美，舷侧并非火炮而是利用魔石打造的远程武器——因文明发展方向不同，魔石的动力与武器均与联合国侧有差别", "chapter": 223, "tick": 223},
+   "entities_involved": ["LivingLegend号"],
+   "observations": [
+    {"category": "knowledge", "text": "本土军备与文明差异（本章直证）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 92, "quote": "舰只的总数在十艘以上，而且基本都是军舰。船上的军人正运用魔法迎击袭来的小型怪物群。"},
+    {"vol": 1, "chapter": 223, "line": 101, "quote": "舷侧装有火炮──并非如此，而是利用魔石打造的远程武器。看来因为文明的发展方向有所不同，不仅是魔石的动力，就连武器也有所差别。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {"name": "大自然怪物增殖（ch223）", "fact": "与迷宫不同，在大自然中怪物数量可增殖到敌人总数过千的程度（『维度』探测直证）", "chapter": 223, "tick": 223},
+   "entities_involved": ["《维度》"],
+   "observations": [
+    {"category": "knowledge", "text": "迷宫外生态规则（本章直证）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 94, "quote": "用『维度』探测过后，我发现敌人的总数过千。"},
+    {"vol": 1, "chapter": 223, "line": 95, "quote": "跟迷宫不同，在大自然中的怪物数量居然可以增殖到这种地步。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "缇缇", "rel_type": "同行旅伴", "object": "相川涡波", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "莱纳脱队后的二人旅：共驾『LivingLegend号』渡海赴本土；面对克洛伊『是朋友吗』之问，涡波答『是这样没错』并担保会负责对付她", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 3, "quote": "从古尔亚德的港口出发的我和缇缇目前正在驾船航行。"},
+    {"vol": 1, "chapter": 223, "line": 207, "quote": "「是这样没错。别看她这样，但其实是个相当善良的人所以不用害怕的。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "克洛伊・希达尔克", "rel_type": "亲属（据维度状态判读）", "object": "艾尔米拉德·希达尔克", "claim": true},
+   "observations": [
+    {"category": "relation", "text": "据涡波查看克洛伊状态——『似乎是艾尔米拉德・希达尔克的亲属』；具体亲缘关系未明（原文间隔号『・』，库内主名用『·』）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 109, "quote": "看了下状态之后发现她似乎是艾尔米拉德・希达尔克的亲属。虽然级别不高，但指挥能力出类拔萃。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "缇缇", "rel_type": "血统（混有其血）", "object": "夏比", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "叙述者直述『混有夏比的血的缇缇跟水还相当不对付』——与水属性相性差为海战不利要因（跨章血统事实走本记录）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 29, "quote": "而且混有夏比的血的缇缇跟水还相当不对付"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "艾利巴茨", "rel_type": "打造", "object": "『飞翔翠石制轻铠路易芬理德』", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "该轻铠为艾利巴茨打造、现由缇缇穿着（ch216『装备完工待取』的具体成果之一）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 44, "quote": "艾利巴茨打造的『飞翔翠石制轻铠路易芬理德』"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "缇缇", "rel_type": "装备穿着", "object": "『飞翔翠石制轻铠路易芬理德』", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "船头跃起斩击XiphiasSpear时所穿", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 44, "quote": "缇缇在船头一跃而起，只见艾利巴茨打造的『飞翔翠石制轻铠路易芬理德』在阳光的照耀下熠熠生辉"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "缇缇", "rel_type": "佩剑持有", "object": "『始祖和魔王的魔剑BraveFluorite』", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "原文称之为『自己的佩剑』；被震飞后一度欲中断战斗回收，被涡波喝止", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 60, "quote": "而缇缇则打算利用这个机会去回收自己的佩剑。"},
+    {"vol": 1, "chapter": 223, "line": 48, "quote": "结果『始祖和魔王的魔剑BraveFluorite』砰地一下就从缇缇的双手中飞了出去。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "缇缇", "rel_type": "使用（手上生成）", "object": "『风之铳剑』", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "被涡波怒斥后一脸无可奈何地在手上生成铳剑，将剑刃刺入XiphiasSpear后背并在其体内射出风之弹", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 61, "quote": "你先拿出风之铳剑来结果它再说"},
+    {"vol": 1, "chapter": 223, "line": 63, "quote": "被我怒斥的缇缇一脸无可奈何地在手上生成铳剑，然后一把将剑刃刺入了XiphiasSpear的后背。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "相川涡波", "rel_type": "招式命名者（据缇缇）", "object": "魔法（FlyShoots）", "claim": true},
+   "observations": [
+    {"category": "relation", "text": "据缇缇——『那招是涡涡教人家喊得，不是人家自己起的名字』；故缇缇仅万不得已时使用该招（改用自命的『疾风弹』）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 78, "quote": "毕竟那招是涡涡教人家喊得，不是人家自己起的名字嘛"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "相川涡波", "rel_type": "掌舵驾驶", "object": "LivingLegend号", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "负责掌舵与导航，对缇缇的激烈操船悲鸣连连；担心撞上陆地『让不少地图变成废纸』", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 22, "quote": "对负责掌舵的我的悲鸣充耳不闻的缇缇站在船头继续激烈地驱使风魔法。"},
+    {"vol": 1, "chapter": 223, "line": 13, "quote": "考虑到级别的问题虽然不会有性命之虞，但我的本能还是在抗拒。如果一个不小心撞上了陆地，那我们恐怕会让不少地图变成废纸的。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "缇缇", "rel_type": "风魔法推进", "object": "LivingLegend号", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "以风魔法加持整船高速推进并执行U形转弯/漂移等机动；战后亦用风魔法调整船与尸体避免相撞", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 5, "quote": "在缇缇的风的加持下，整艘船就像上了喷气式发动机一样驰骋在辽阔的海面上。"},
+    {"vol": 1, "chapter": 223, "line": 72, "quote": "站在XiphiasSpear的尸体上的缇缇为了不让船和尸体撞在一起，她用风魔法进行了适当的调整"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "缇缇", "rel_type": "使用（发动）", "object": "『LimitBreak・SehrWind・G・EndBurst』", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "经『连接』获得『维度』共享情报后高举铳剑发动；自评『人家的风魔法可是史上最强的哦』；与库内既有名『SehrWind』的从属关系留终审 R4（判例1）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 150, "quote": "──风魔法『LimitBreak・SehrWind・G・EndBurst』哦哦！！"},
+    {"vol": 1, "chapter": 223, "line": 141, "quote": "「你以为自己在跟谁说话呢。人家的风魔法可是史上最强的哦」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "缇缇", "rel_type": "招式使用", "object": "北铳王流古武术", "claim": false},
+   "observations": [
+    {"category": "relation", "text": "佩剑被震飞后改以北铳王流古武术『旋风击』应战（千年前使铳剑的支配之王招式的现世使用）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 52, "quote": "「既、既然如此！那接下来就是『北铳王流古武术』！受死吧、『旋风击』！！」"},
+    {"vol": 1, "chapter": 223, "line": 53, "quote": "缇缇很快就振作气势使出一记猛烈的飞踢。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "古尔亚德出航与高速渡海", "kind": "旅程", "tick": 223, "instant": null, "time_verbatim": "数日航海（『将睡眠和魔法重复上演的几天就这样过去』）"},
+   "entities_involved": ["相川涡波", "缇缇", "LivingLegend号", "古尔亚德", "柯尔库"],
+   "observations": [
+    {"category": "event", "text": "涡波与缇缇自古尔亚德港口驾『LivingLegend号』出航：缇缇风魔法加持高速推进、涡波掌舵导航；海上高速轰鸣致擦肩船只侧目；数日后抵达本土港口城市柯尔库附近海域", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 3, "quote": "从古尔亚德的港口出发的我和缇缇目前正在驾船航行。"},
+    {"vol": 1, "chapter": 223, "line": 5, "quote": "在缇缇的风的加持下，整艘船就像上了喷气式发动机一样驰骋在辽阔的海面上。"},
+    {"vol": 1, "chapter": 223, "line": 6, "quote": "以风圈残云的气势在海上掀起一阵阵的轰鸣，让擦肩而过的其他船只咄咄称奇、将睡眠和魔法重复上演的几天就这样过去──我们终于抵达了本土的港口城市『柯尔库』附近的海域。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "船队遇袭发现与援助决断", "kind": "遭遇", "tick": 223, "instant": null, "time_verbatim": "抵达柯尔库附近海域当日"},
+   "entities_involved": ["相川涡波", "缇缇", "XiphiasSpear"],
+   "observations": [
+    {"category": "event", "text": "二人发现一支船队正遭怪物袭击，缇缇斗志昂扬提议援助、涡波无理由反对，遂挑起与怪物群中BOSS级怪物的战斗；『维度』判读：船队单凭XiphiasSpear眷属已无法行动，若加上BOSS必全灭——故纵有勉强也须将其打倒", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 8, "quote": "我们发现有一支船队正遭受怪物的袭击，于是缇缇立马斗志昂扬地表示说要去助他们一臂之力。我也没有理由反对她的提议，于是我们就挑起了与在怪物群中相当于BOSS地位的怪物的战斗。"},
+    {"vol": 1, "chapter": 223, "line": 32, "quote": "我的『维度』把握到了在远处遭受袭击的船队光是以XiphiasSpear的眷属为对手就陷入了无法行动的窘境。"},
+    {"vol": 1, "chapter": 223, "line": 33, "quote": "所以正如缇缇所说，即使多少有些勉强也得将它打倒。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "XiphiasSpear海上决战", "kind": "战斗", "tick": 223, "instant": null, "time_verbatim": "抵达柯尔库附近海域当日"},
+   "entities_involved": ["相川涡波", "缇缇", "XiphiasSpear", "LivingLegend号", "『始祖和魔王的魔剑BraveFluorite』", "『旋风击』", "『风之铳剑』", "『疾风弹』"],
+   "observations": [
+    {"category": "event", "text": "以赛船形式追逃：U形转弯漂移甩开追击反抢追击位，主帆破损；缇缇『绝冲风击』斩击被坚硬鳞片弹飞佩剑→改用北铳王流古武术『旋风击』飞踢伤其骨肉→涡波喝止拾剑、令以风之铳剑了结→铳剑刺穿后背射出『疾风弹』风弹于体内爆炸，怪物鳞缝迸血炸开死亡；战斗中它聪明地反复潜水化解远程攻击", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 18, "quote": "我们现在就在海上以赛车的形式和这么一个怪物进行赛船比试。"},
+    {"vol": 1, "chapter": 223, "line": 39, "quote": "XiphiasSpear是真的聪明，至今为止面对缇缇的远距离攻击，它全都利用潜入水下并在船后现身袭击的方式化解了。但它的优势也就到此为止了。"},
+    {"vol": 1, "chapter": 223, "line": 48, "quote": "结果『始祖和魔王的魔剑BraveFluorite』砰地一下就从缇缇的双手中飞了出去。"},
+    {"vol": 1, "chapter": 223, "line": 57, "quote": "XiphiasSpear的鳞片在这招面前就跟饼干一样不堪一击，直接被伤到了骨肉。"},
+    {"vol": 1, "chapter": 223, "line": 63, "quote": "被我怒斥的缇缇一脸无可奈何地在手上生成铳剑，然后一把将剑刃刺入了XiphiasSpear的后背。"},
+    {"vol": 1, "chapter": 223, "line": 69, "quote": "因为在体内爆炸的风弹的影响，XiphiasSpear浑身鳞片的间隙都开始进发鲜血──然后炸开了。"},
+    {"vol": 1, "chapter": 223, "line": 70, "quote": "就这样，以令人不禁心生怜悯的方式，怪物咽气儿了。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "海上战斗不利条件判明", "kind": "状态", "tick": 223, "instant": null, "time_verbatim": "战斗开始后（开战前未察）"},
+   "entities_involved": ["缇缇", "相川涡波", "夏比"],
+   "observations": [
+    {"category": "status_change", "text": "跨章事实三项（开战后方察觉，但纵然事前明白决定亦不变）：①缇缇为保护船体不能在空中战斗；②混有夏比之血的缇缇与水相当不对付；③涡波已失去使用冻结魔法的能力、不能直接在海面上行动——对上水栖的XiphiasSpear全面不利", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 29, "quote": "为了保护船体，缇缇不能在空中战斗这点真是吃亏。而且混有夏比的血的缇缇跟水还相当不对付，再加上我失去了使用冻结魔法的能力不能直接在海面上行动。"},
+    {"vol": 1, "chapter": 223, "line": 30, "quote": "注意到这些不利已经是在战斗开始之后的事情了。与此相对，XiphiasSpear作为水栖怪物在海里战斗那是真真正正的如鱼得水。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {"name": "招式命名论战", "kind": "日常", "tick": 223, "instant": null, "time_verbatim": "确认战果途中"},
+   "entities_involved": ["相川涡波", "缇缇", "魔法（FlyShoots）", "相川阳滝", "玛利亚"],
+   "observations": [
+    {"category": "event", "text": "涡波问缇缇为何不用迷宫中喊得贼起劲的『魔弹（FlyShoots）』→答：名字系涡涡所教非自起、更强力但仅万不得已使用；缇缇嫌必杀技名没意思/字多咬舌，涡波主张名字越长越好（举『重崩色之非风剑（NachtCult・Gram）』为帅例）——审美完全相反永不相交；二人共识：若被阳滝或玛利亚听去只会得到『无论是哪个都一样奇怪』的叹息", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 76, "quote": "「说起来，你怎么不用在迷宫喊得贼起劲的那个『魔弹（FlyShoots）』了？」"},
+    {"vol": 1, "chapter": 223, "line": 78, "quote": "「姆？啊啊，毕竟那招是涡涡教人家喊得，不是人家自己起的名字嘛。虽然用那个确实更强力一些⋯⋯但只要不是万不得已人家是不会用的」"},
+    {"vol": 1, "chapter": 223, "line": 84, "quote": "「明明必杀技的名字就是越长越好的说⋯⋯"},
+    {"vol": 1, "chapter": 223, "line": 87, "quote": "但如果被阳滝或者玛利亚听去的话，想必她们会在叹口气后表示『无论是哪个都一样奇怪，没什么好争的』"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "旗舰接舷与克洛伊初会面", "kind": "会面", "tick": 223, "instant": null, "time_verbatim": "击杀XiphiasSpear后（同日）"},
+   "entities_involved": ["相川涡波", "缇缇", "克洛伊・希达尔克"],
+   "observations": [
+    {"category": "event", "text": "二人乘破帆之船边杀杂鱼边抵船队中心（『维度』选路、自船队后侧慎重接近）；总指挥者制止部下攻击意图；与最大最豪华一艘接舷跳跃登船；指挥官女性确认该船即旗舰并郑重致谢——即克洛伊・希达尔克", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 103, "quote": "似乎是船队总指挥的人制止了部下的攻击意图。"},
+    {"vol": 1, "chapter": 223, "line": 104, "quote": "接着我们与其中最大最豪华的一艘船接舷，随后便跳到了那艘船上。"},
+    {"vol": 1, "chapter": 223, "line": 105, "quote": "「打扰了。请问这是这支舰队的旗舰吗？」"},
+    {"vol": 1, "chapter": 223, "line": 110, "quote": "「⋯⋯方才承蒙相助，实在是感激不尽。您所言极是，这艘船的确是旗舰」"},
+    {"vol": 1, "chapter": 223, "line": 113, "quote": "面前这名女性的名字叫克洛伊・希达尔克。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "全名自报与『英雄』人设取信", "kind": "交涉", "tick": 223, "instant": null, "time_verbatim": "接舷旗舰后"},
+   "entities_involved": ["相川涡波", "克洛伊・希达尔克"],
+   "observations": [
+    {"category": "event", "text": "为速决怪物歼灭交涉，涡波报出全名『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』（自谓东边联合国探索者）；克洛伊惊认『那个传闻中的』；涡波遂以传闻中『英雄』设定（强悍高尚善解人意+『舞闘大会冠军』+『屠龙』业绩+『公会会长』）示以自信微笑；克洛伊打量二人魔力后判断『不是在胡言乱语』、决定相信", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 124, "quote": "「我的名字是『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』。"},
+    {"vol": 1, "chapter": 223, "line": 127, "quote": "既是强悍、高尚、善解人意的探索者、又是『舞闘大会冠军』的、完成了『屠龙』业绩的『公会会长』的"},
+    {"vol": 1, "chapter": 223, "line": 128, "quote": "虽然我对真正成为那种理想的英雄这点敬谢不敏，但加以利用则是另一码事。"},
+    {"vol": 1, "chapter": 223, "line": 132, "quote": "「⋯⋯我明白了。您二位看上去都不是在胡言乱语。我愿意相信你们」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "『DistanceMute』与『连接』『维度』共享", "kind": "魔法运用", "tick": 223, "instant": null, "time_verbatim": "大魔法准备时"},
+   "entities_involved": ["相川涡波", "缇缇", "『DistanceMute』", "『连接』", "《维度》"],
+   "observations": [
+    {"category": "technique", "text": "涡波毫不犹豫对缇缇使出即死魔法『DistanceMute』（缇缇无任何怀疑地接受）；继而于彼此间构筑『连接』、将『维度』的效果共享给缇缇——完成近似共鸣魔法的魔法，使缇缇掌握全部怪物位置情报", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 144, "quote": "「──『DistanceMute』」"},
+    {"vol": 1, "chapter": 223, "line": 145, "quote": "我毫不犹豫地对缇缇使出了即死魔法。而缇缇也没有任何怀疑地接受了我的魔法。"},
+    {"vol": 1, "chapter": 223, "line": 146, "quote": "我在彼此之间暂时构筑出『连接』，将另一个魔法获得的信息传递给缇缇。"},
+    {"vol": 1, "chapter": 223, "line": 147, "quote": "「通过和缇缇的『连接』──将『维度』的效果共享」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "全海域龙卷风歼灭战", "kind": "战斗", "tick": 223, "instant": null, "time_verbatim": "会面后数十分钟（『──接着过了几十分钟』）"},
+   "entities_involved": ["缇缇", "相川涡波", "克洛伊・希达尔克", "『LimitBreak・SehrWind・G・EndBurst』"],
+   "observations": [
+    {"category": "event", "text": "克洛伊下全队停攻防冲击令并传令全员→缇缇（未等同意即构筑魔法、未用六十六层时的『咏唱』）发动『LimitBreak・SehrWind・G・EndBurst』：数秒成覆盖全海域巨型龙卷风改变天候，怪物全被卷上高空、船只分毫未动无人被刮飞；数十分钟后魔法结束，怪物纷纷坠落海面送命；涡波以『维度』掌握险情者坐标逐一救助（险坠海时以『Default』化解）；最终『有不少人受伤，但没有任何人牺牲』", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 136, "quote": "「──全员听令！接下来将发动风属性的广域魔法歼灭敌人！所有人停止攻击，准备应对冲击！传令员务必将此令转达给船队全体的每一名成员！魔法的影响范围是整个海域！！」"},
+    {"vol": 1, "chapter": 223, "line": 153, "quote": "接着，从其它方向诞生的又一道暴风也席卷而成。随后还有第三道、第四道──从四面八方而来的暴风汇合在一处。成百上千的暴风络合在一起，不到一秒便化作了覆盖整个海域的巨型龙卷风。"},
+    {"vol": 1, "chapter": 223, "line": 155, "quote": "附着在船上的怪物却纷纷被风抽离到高空。"},
+    {"vol": 1, "chapter": 223, "line": 184, "quote": "只要依靠我的力量和速度一个接一个地将险些跌入海中的人带到安全的地方就行了。虽然有时候因为暴风的影响我也差点掉进海里，不过依靠『Default』都可以平安化解。"},
+    {"vol": 1, "chapter": 223, "line": 189, "quote": "而被风席卷到高空的怪物们则纷纷坠落，一个接一个地狠狠撞在海面上送了命。"},
+    {"vol": 1, "chapter": 223, "line": 192, "quote": "「呋哈哈哈哈哈、怎么样！胜──利──！！大家可以放心喽！袭击你们的怪物已经全被人家干掉了！是被人家缇缇全部干掉的哟、一个不留哦！！」"},
+    {"vol": 1, "chapter": 223, "line": 230, "quote": "虽然有不少人受伤，但没有任何人牺牲。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "战后致谢与『魔王』观感", "kind": "战后", "tick": 223, "instant": null, "time_verbatim": "龙卷风魔法结束后"},
+   "entities_involved": ["克洛伊・希达尔克", "缇缇", "相川涡波"],
+   "observations": [
+    {"category": "event", "text": "周围人吓至面如纸色，克洛伊仍以责任感坚持致谢（称『相川涡波…大人』与『风属性的大魔法使阁下』）；缇缇要求改称『勇者』，克洛伊一面点头一面退开一步、战战兢兢确认涡波『是朋友吗』；缇缇迟觉自己吓到了人；周围人全是一副见证『魔王』降临的模样——涡波考虑要不要把事实告诉缇缇", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 196, "quote": "「非、非常感谢。『相川涡波・基督・欧亚・瓦尔德弗茨亚茨・冯・沃克』大人⋯⋯以及、这位风属性的大魔法使阁下」"},
+    {"vol": 1, "chapter": 223, "line": 198, "quote": "「唔姆，不用客气。另外不要称呼人家什么大魔法使，叫勇者就好了」"},
+    {"vol": 1, "chapter": 223, "line": 200, "quote": "但克洛伊小姐却一面点头一面退开一步。"},
+    {"vol": 1, "chapter": 223, "line": 202, "quote": "「啊、啊嘞嘞⋯⋯？感觉这是被人家吓到了⋯⋯？」"},
+    {"vol": 1, "chapter": 223, "line": 228, "quote": "再仔细看看，可以发现周围的人全都是一副见证『魔王』降临的模样。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.85,
+   "canonical": {"name": "千年前击沉友舰自白", "kind": "回顾", "tick": 223, "instant": null, "time_verbatim": "战后闲谈（千年前为既往时段）"},
+   "entities_involved": ["缇缇", "『狂王』"],
+   "observations": [
+    {"category": "event", "text": "据缇缇自辩『跟千年前不一样，这次人家一艘船都没弄沉』（自认努力克制）；叙述者判读：这丫头千年前不惜击沉友方船只也要将敌人打倒——难怪被唤作『狂王』『魔王』（跨章身世注脚，走本记录不入实体observations）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 216, "quote": "「可、可是，跟千年前不一样，这次人家一艘船都没弄沉哦！？明明努力了好一把的说，应该再多夸奖人家一些才对嘛！！」"},
+    {"vol": 1, "chapter": 223, "line": 217, "quote": "看来这丫头在千年前不惜击沉友方的船只也要将敌人打倒啊。难怪会被唤作『狂王』『魔王』之类的了。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {"name": "XiphiasSpear尸体与落海魔剑回收之约", "setup_chapter": 223, "payoff_chapter": null, "tier": "支线", "note": "缇缇嘱涡波以『维度』记住掉落的『XiphiasSpear』位置、『之后涡涡可要帮人家捡回来』（尸体可解剖利用）；魔剑BraveFluorite亦被喝止『剑之后再捡』悬置海上——两件回收均待兑现", "chapter": 223},
+   "entities_involved": ["缇缇", "相川涡波", "XiphiasSpear", "『始祖和魔王的魔剑BraveFluorite』", "《维度》"],
+   "observations": [
+    {"category": "foreshadowing", "text": "战利品/装备回收钩（尸体+佩剑双开环）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 61, "quote": "「剑之后再捡！你先拿出风之铳剑来结果它再说！要是再让它潜入水下就麻烦了！！」"},
+    {"vol": 1, "chapter": 223, "line": 98, "quote": "「啊。但是刚才掉出去的『XiphiasSpear』的位置可要用『维度』记住了哦。之后涡涡可要帮人家捡回来」"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {"name": "缇缇实力弱化之疑", "setup_chapter": 223, "payoff_chapter": null, "tier": "支线", "note": "涡波直断『我觉得自那之后你的实力应该变弱了哦！还是别想着跟以前一样比较好！！』（『自那之后』所指未明言）；缇缇赌气否认（『才、才没有那回事的说』）并拒绝减低威力——弱化真伪、程度与原因待回收", "chapter": 223},
+   "entities_involved": ["缇缇", "相川涡波"],
+   "observations": [
+    {"category": "foreshadowing", "text": "角色状态钩（实力变化悬案）", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 170, "quote": "「不不，我觉得自那之后你的实力应该变弱了哦！还是别想着跟以前一样比较好！！」"},
+    {"vol": 1, "chapter": 223, "line": 171, "quote": "「姆姆姆！才、才没有那回事的说！！」"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {"name": "攻击担当轮换之约", "setup_chapter": 223, "payoff_chapter": null, "tier": "支线", "note": "涡波：『下次再有机会的话让我来负责攻击吧』；缇缇：『下次人家也要像涡涡一样被感谢哦。快来吧，快来个谁袭击过来啊。下次，快点来呀』——下次遇敌时的攻守互换与缇缇的勇者活跃愿望待回收（本章以凌厉目光寻找下一猎物吓到克洛伊）", "chapter": 223},
+   "entities_involved": ["相川涡波", "缇缇", "克洛伊・希达尔克"],
+   "observations": [
+    {"category": "foreshadowing", "text": "战斗分工钩+勇者扮演线延续", "chapter": 223}
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 223, "line": 223, "quote": "「下次再有机会的话让我来负责攻击吧。这回是为了帮助大家，就先忍忍吧」"},
+    {"vol": 1, "chapter": 223, "line": 224, "quote": "「真没办法。──那就等下次好了。下次人家也要像涡涡一样被感谢哦。快来吧，快来个谁袭击过来啊。下次，快点来呀」"}
+   ]
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "canonical": {
+  "entity_type": "人物(职务称呼)",
+  "name": "大将军"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 36,
+   "quote": "尽管这只是在大将军负伤期间代行总司令职务的位子",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 49,
+   "quote": "按照原本的安排，为了配合大将军的负伤和斯诺大人的升职是想要调任一些虽然年轻但能力优秀的士官的。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 222,
+   "text": "南方军职（无专名职务称呼，R6 规则2 抽取）：负伤→斯诺·沃克于其负伤期间代行总司令职务（即『代理总司令』位子的由来）；其负伤与斯诺升职并提（调任年轻士官的安排因此作罢）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d235fa2bd1ce",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

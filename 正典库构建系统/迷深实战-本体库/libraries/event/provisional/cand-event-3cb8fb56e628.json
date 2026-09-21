@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "店员姐姐",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "购物",
+  "name": "魔法屋再访与魔石购入",
+  "tick": 188,
+  "time_verbatim": "瓦尔德魔法强化日（大型店购物后同日）"
+ },
+ "evidence": [
+  {
+   "chapter": 219,
+   "line": 9,
+   "quote": "我使出『维度』探索看上去能淘到新东西的店铺。过程中发现了一家眼熟的魔法屋。是我和玛利亚以前造访过的那间。",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 37,
+   "quote": "「真的吗？如果可以的话希望能每个都准备两个」",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 80,
+   "quote": "今天我一共入手了四份次元属性的魔石，就先从它们开始练起吧。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 219,
+   "text": "大型店大买后为补齐没淘到的魔石，涡波以『维度』探得一年前与玛利亚同去的魔法屋再访；被店员认出（有钱人）；点名要当天没买到的少见魔石且每种备双，顺利得手（顺利到缇缇来不及插嘴）；涡波共入手四份次元属性魔石"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3cb8fb56e628",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0219.txt",
+  "sha": "3258b3c10435f34a4f17e39d48e93a10cf50220916d20f2a89f0f07ad423cf09",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "玛利亚",
+  "rel_type": "好感与遗憾",
+  "subject": "店员姐姐"
+ },
+ "evidence": [
+  {
+   "chapter": 219,
+   "line": 26,
+   "quote": "「咦？今天那位小姑娘没跟着你吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 219,
+   "line": 29,
+   "quote": "我还记得这名店员当时比起我更中意玛利亚的事情。而现在她也毫不掩饰对没见到玛利亚感到的遗憾之情。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 219,
+   "text": "据涡波记忆：店员当年比起自己更中意玛利亚；今日主动问起『今天那位小姑娘没跟着你吗』，对未见她毫不掩饰遗憾"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-54e7483ebb6c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0219.txt",
+  "sha": "3258b3c10435f34a4f17e39d48e93a10cf50220916d20f2a89f0f07ad423cf09",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

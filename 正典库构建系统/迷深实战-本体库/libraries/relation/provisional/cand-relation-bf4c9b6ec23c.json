@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "斯诺·沃克",
+  "rel_type": "负面评价(卑屈懒散·意志薄弱·胆小)",
+  "subject": "艾尔米拉德·希达尔克"
+ },
+ "evidence": [
+  {
+   "chapter": 222,
+   "line": 148,
+   "quote": "当她的哥哥评价斯诺是一个又卑屈又懒散、不仅意志薄弱还胆小的少女的时候，认为这是对自己上司的侮辱的她自懂事以来第一次对哥哥大动肝火。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 222,
+   "text": "据克洛伊转述其兄评价：斯诺是『又卑屈又懒散、不仅意志薄弱还胆小的少女』；克洛伊原视为对上司的侮辱而不信，章末预告将不得不认同（此评价与英雄像互为表里）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-bf4c9b6ec23c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0222.txt",
+  "sha": "bab2098d03853af5a61c7905ba410773a4fd38170bcc31009b0846771e5d2555",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

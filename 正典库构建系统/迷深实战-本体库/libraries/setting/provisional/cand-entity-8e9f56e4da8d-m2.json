@@ -1,0 +1,86 @@
+{
+ "canonical": {
+  "entity_type": "地点(港口城市)",
+  "name": "柯尔库"
+ },
+ "evidence": [
+  {
+   "chapter": 72,
+   "line": 978,
+   "quote": "这里是瓦尔德本国东部的港口城市，名叫『柯尔库』",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 980,
+   "quote": "但是在远处一看，发现戒备十分森严。足足有五米高的墙壁围着城镇，全副武装的士兵们把持着关口。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 981,
+   "quote": "果然，因为瓦尔德本国距离战场最近，所以警戒的等级很高。",
+   "vol": 1
+  },
+  {
+   "chapter": 72,
+   "line": 1005,
+   "quote": "就这样，我们成功地侵入了港口城市柯尔库。",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 3,
+   "quote": "地点是位于港口都市柯尔库侧面的『圣柯尔库堡』",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 5,
+   "quote": "除此之外，这里还是『境界战争』的海军司令部，视情况而定的话真的有可能成为杀伐的最前沿。",
+   "vol": 1
+  },
+  {
+   "chapter": 222,
+   "line": 7,
+   "quote": "有如此规模的物资和人员流通，柯尔库港自然坐实了世界情报交流中心的地位。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 72,
+   "text": "瓦尔德本国东部的港口城市（来往人流量大/富有活力）；戒备森严——足足五米高的围墙+全副武装士兵把持关口（瓦尔德距战场最近警戒等级高；无凭信前往关口即被拘留→身份调查暴露联合国罪行）；涡波与拉丝缇娅拉背负二人瞬间翻墙潜入（『魔石线』无反应）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-8e9f56e4da8d",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-8e9f56e4da8d-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-8e9f56e4da8d",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-18"
+ },
+ "version": 2
+}

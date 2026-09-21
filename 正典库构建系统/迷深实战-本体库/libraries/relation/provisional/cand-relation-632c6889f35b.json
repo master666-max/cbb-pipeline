@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多",
+  "rel_type": "锻冶师承(打下手)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 96,
+   "quote": "我将她画的造型暗记下来，然后迅速在脑海中构建锻造的最佳程序。所幸自己在地下生活中给雷纳尔多打过下手，拜此所赐与技能『锻冶』相关的知识和经验都非常充足。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 217,
+   "text": "地下生活中给雷纳尔多打过下手，习得其千年前锻冶技术（知识和经验非常充足——本章锻剑速度异常的来源）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-632c6889f35b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

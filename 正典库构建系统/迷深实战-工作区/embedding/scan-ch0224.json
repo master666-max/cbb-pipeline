@@ -1,0 +1,91 @@
+{
+ "dup_suspect": [
+  {
+   "candidate": "斯诺·沃克",
+   "library_match": "斯诺・沃克",
+   "similarity": 0.9913
+  },
+  {
+   "candidate": "『始祖与魔王的魔剑BraveFluorite』",
+   "library_match": "『始祖和魔王的魔剑BraveFluorite』",
+   "similarity": 0.9961
+  }
+ ],
+ "uncertain": [
+  {
+   "candidate": "芙洛拉・塞斯提亚",
+   "library_match": "芙洛拉",
+   "similarity": 0.9139
+  },
+  {
+   "candidate": "克洛伊",
+   "library_match": "克洛伊小姐",
+   "similarity": 0.8709
+  },
+  {
+   "candidate": "斯科纳・伊格德拉西尔",
+   "library_match": "世界树",
+   "similarity": 0.8798
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  }
+ ],
+ "pairs": [
+  [
+   "古奈尔",
+   "古利亚德",
+   0.8251
+  ],
+  [
+   "芙洛拉・塞斯提亚",
+   "芙洛拉",
+   0.9139
+  ],
+  [
+   "克洛伊",
+   "克洛伊小姐",
+   0.8709
+  ],
+  [
+   "斯诺·沃克",
+   "斯诺・沃克",
+   0.9913
+  ],
+  [
+   "斯科纳・伊格德拉西尔",
+   "世界树",
+   0.8798
+  ],
+  [
+   "托尔普・特鲁克",
+   "雷鲁·桑库斯",
+   0.8013
+  ],
+  [
+   "缇缇",
+   "蒂娅",
+   0.787
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ],
+  [
+   "『始祖与魔王的魔剑BraveFluorite』",
+   "『始祖和魔王的魔剑BraveFluorite』",
+   0.9961
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 9,
+  "library": 828,
+  "dup_suspect": 2,
+  "uncertain": 4
+ }
+}

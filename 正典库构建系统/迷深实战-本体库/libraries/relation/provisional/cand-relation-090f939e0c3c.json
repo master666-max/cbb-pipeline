@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "始祖涡波",
+  "rel_type": "同一人(失忆·失力)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 224,
+   "line": 168,
+   "quote": "「现在没有那么多时间浪费，我们直接进入正题吧。──首先我必须说清楚，我并不认识你。始祖涡波因为使徒勒伽西的缘故导致千年前的计划失败了。因为这点，我现在既没有记忆也失去了始祖的力量。所以我希望你能告诉我你称呼我为『会长』的理由」",
+   "vol": 1
+  },
+  {
+   "chapter": 224,
+   "line": 221,
+   "quote": "从她的记忆看来，当时的我的姿态跟被唤作始祖涡波的时候相比，更接近于现在的我。虽然穿着的式样是异世界的风格，但头发和样貌几无变化。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 224,
+   "text": "据涡波自白：始祖涡波因使徒勒伽西之故千年前的计划失败，因此「我现在既没有记忆也失去了始祖的力量」；古奈尔记忆中千年前涡波姿态较始祖时期更接近现在的我（异世界装束、发貌几无变化）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-090f939e0c3c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0224.txt",
+  "sha": "190646582677b42dc11c0e6ba88c282fe6040f535e7c88c4ef537e52e027a162",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

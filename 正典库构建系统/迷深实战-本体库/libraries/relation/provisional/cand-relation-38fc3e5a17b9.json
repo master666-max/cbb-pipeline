@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "便条指示(战备·被执行)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 218,
+   "line": 10,
+   "quote": "按照莱纳的指示，为了今后不再陷入缺粮少食的境地，我买了相当充足的粮食。",
+   "vol": 1
+  },
+  {
+   "chapter": 218,
+   "line": 16,
+   "quote": "「唔姆，注意注意！莱纳的便条上也写了不能因为有了新装备就翘尾巴呢！不愧是莱纳，早早就预料到人家的心情了！来看看、按照便条上的指示⋯⋯接下来就是魔法的强化了！据说在现代有一种只要服用就能学会魔法的魔石来着！很好，那这就去给它们买个遍吧！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 218,
+   "text": "ch216 战备便条之②（魔石摄取强化魔法）与③（物资购入）本章被执行：涡波按指示购足粮食，缇缇按便条转进'接下来就是魔法的强化了'——'毕竟莱纳就是这么建议的嘛'（缇缇语，购石各要两个亦循此）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-38fc3e5a17b9",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0218.txt",
+  "sha": "90f903c26e64363acb93900859e725dd088cedcbfaea9384cf4f7d766672761c",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

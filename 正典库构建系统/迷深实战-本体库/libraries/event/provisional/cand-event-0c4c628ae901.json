@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "克洛伊・希达尔克",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "会面",
+  "name": "旗舰接舷与克洛伊初会面",
+  "tick": 223,
+  "time_verbatim": "击杀XiphiasSpear后（同日）"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 103,
+   "quote": "似乎是船队总指挥的人制止了部下的攻击意图。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 104,
+   "quote": "接着我们与其中最大最豪华的一艘船接舷，随后便跳到了那艘船上。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 105,
+   "quote": "「打扰了。请问这是这支舰队的旗舰吗？」",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 110,
+   "quote": "「⋯⋯方才承蒙相助，实在是感激不尽。您所言极是，这艘船的确是旗舰」",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 113,
+   "quote": "面前这名女性的名字叫克洛伊・希达尔克。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 223,
+   "text": "二人乘破帆之船边杀杂鱼边抵船队中心（『维度』选路、自船队后侧慎重接近）；总指挥者制止部下攻击意图；与最大最豪华一艘接舷跳跃登船；指挥官女性确认该船即旗舰并郑重致谢——即克洛伊・希达尔克"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-0c4c628ae901",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

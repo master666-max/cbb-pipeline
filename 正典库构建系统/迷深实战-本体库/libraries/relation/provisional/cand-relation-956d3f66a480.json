@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "飞翔翠石制轻铠路易芬理德",
+  "rel_type": "制作(倾尽心血)",
+  "subject": "艾利巴茨·利拜斯"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 201,
+   "quote": "她的青睐自然得到了作者艾利巴茨的共鸣。",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 202,
+   "quote": "「嚯，品味相当不错嘛。那可是我倾尽心血打造的英雄风格的造型啊」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 217,
+   "text": "'作者艾利巴茨'倾尽心血打造的英雄风格造型"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-956d3f66a480",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

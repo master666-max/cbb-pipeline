@@ -1,0 +1,90 @@
+{
+ "canonical": {
+  "entities": [
+   "『LimitBreak・SehrWind・G・EndBurst』",
+   "克洛伊・希达尔克",
+   "相川涡波",
+   "缇缇"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "全海域龙卷风歼灭战",
+  "tick": 223,
+  "time_verbatim": "会面后数十分钟（『──接着过了几十分钟』）"
+ },
+ "evidence": [
+  {
+   "chapter": 223,
+   "line": 136,
+   "quote": "「──全员听令！接下来将发动风属性的广域魔法歼灭敌人！所有人停止攻击，准备应对冲击！传令员务必将此令转达给船队全体的每一名成员！魔法的影响范围是整个海域！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 153,
+   "quote": "接着，从其它方向诞生的又一道暴风也席卷而成。随后还有第三道、第四道──从四面八方而来的暴风汇合在一处。成百上千的暴风络合在一起，不到一秒便化作了覆盖整个海域的巨型龙卷风。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 155,
+   "quote": "附着在船上的怪物却纷纷被风抽离到高空。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 184,
+   "quote": "只要依靠我的力量和速度一个接一个地将险些跌入海中的人带到安全的地方就行了。虽然有时候因为暴风的影响我也差点掉进海里，不过依靠『Default』都可以平安化解。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 189,
+   "quote": "而被风席卷到高空的怪物们则纷纷坠落，一个接一个地狠狠撞在海面上送了命。",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 192,
+   "quote": "「呋哈哈哈哈哈、怎么样！胜──利──！！大家可以放心喽！袭击你们的怪物已经全被人家干掉了！是被人家缇缇全部干掉的哟、一个不留哦！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 223,
+   "line": 230,
+   "quote": "虽然有不少人受伤，但没有任何人牺牲。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 223,
+   "text": "克洛伊下全队停攻防冲击令并传令全员→缇缇（未等同意即构筑魔法、未用六十六层时的『咏唱』）发动『LimitBreak・SehrWind・G・EndBurst』：数秒成覆盖全海域巨型龙卷风改变天候，怪物全被卷上高空、船只分毫未动无人被刮飞；数十分钟后魔法结束，怪物纷纷坠落海面送命；涡波以『维度』掌握险情者坐标逐一救助（险坠海时以『Default』化解）；最终『有不少人受伤，但没有任何人牺牲』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-78f3a7dda4b7",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0223.txt",
+  "sha": "bfa326ffb7e9c3d357a1746b6e3312b9b0d14cfb400d372ffe99e3ce857c9cb2",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

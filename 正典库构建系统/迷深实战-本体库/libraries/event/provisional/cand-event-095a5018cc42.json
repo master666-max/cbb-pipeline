@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "沃尔斯",
+   "相川涡波",
+   "神铁锻冶",
+   "艾利巴茨·利拜斯",
+   "雷纳尔多"
+  ],
+  "instant": null,
+  "kind": "对话",
+  "name": "锻冶师承揭示与神铁锻冶断定",
+  "tick": 217,
+  "time_verbatim": "同日（锻造完毕后·工房）"
+ },
+ "evidence": [
+  {
+   "chapter": 217,
+   "line": 182,
+   "quote": "──会长，你之前说自己练习了锻冶，请问是在什么地方练习的？」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 184,
+   "quote": "「真不愧是艾利巴茨，果然看得出来吗。我之前有幸能在传承了千年前的锻冶技术的人手下工作。我想应该是多亏了这个原因」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 185,
+   "quote": "「说起连我也见所未见的技术的话，那毫无疑问就是『神铁锻冶』的领域了。我方便打听一下那个流传有千年前的锻冶技术的地方是哪里吗？可能的话我想去拜会一下」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 186,
+   "quote": "「非常抱歉。持有这个技术的人，就在不久前与世长辞了⋯⋯我没办法给你介绍了⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 217,
+   "line": 190,
+   "quote": "「难道说沃尔斯老爷子其实是个很了不起的人？」",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 217,
+   "text": "艾利巴茨察觉锻冶异常（'这动作快得太惊人了'）问询练习地；涡波答曾在传承千年前锻冶技术者手下工作；艾利巴茨断为『神铁锻冶』领域并求拜会；涡波告知其人不久前已与世长辞；艾利巴茨惋惜后转念'只有作为英雄的会长一人拥有的技术感觉也不错'；缇缇以'沃尔斯老爷子'指认，涡波嘱其好好尊敬"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-095a5018cc42",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0217.txt",
+  "sha": "f407a90a9b80ae41d558cfebd230c980668690087ce10f5fec1e4c8f4d90892e",
+  "verified_at": "2026-09-22"
+ },
+ "version": 1
+}

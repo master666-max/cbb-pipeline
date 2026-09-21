@@ -1,0 +1,70 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "相川涡波",
+  "rel_type": "同行旅伴",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 216,
+   "line": 3,
+   "quote": "「莱纳去了弗茨亚茨，这样就只剩下我们两个人了啊⋯⋯虽然多亏了莱纳我才能了无牵挂地出发，不过还是有些寂寞啊⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 216,
+   "line": 178,
+   "quote": "我狠狠地给得意忘形的缇缇来了一拳揍得她当场歇菜，然后揪着她的脖子拖着她走了起来。",
+   "vol": 1
+  },
+  {
+   "chapter": 220,
+   "line": 3,
+   "quote": "随着夜幕的正式降临，我和缇缇通过『连接』来到了弗茨亚茨。",
+   "vol": 1
+  },
+  {
+   "chapter": 220,
+   "line": 62,
+   "quote": "就这样，我们将所有的惊叹和悲鸣甩在身后，一溜烟地离开了联合国。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 216,
+   "text": "莱纳脱队后与涡波二人同行巡联合国；被涡波一拳打晕揪脖拖行亦无碍（涡波称其结实得很）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-relation-72abf353cc01",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-72abf353cc01-m2",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": "cand-relation-72abf353cc01",
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0216.txt",
+  "sha": "1489190fc5bab97510c2211cd4bb0e90808e0c621cc25be8628748c9eff91065",
+  "verified_at": "2026-09-22"
+ },
+ "version": 2
+}
