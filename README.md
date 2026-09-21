@@ -52,4 +52,6 @@ py -X utf8 scripts/init_project.py project.yaml
 
 ## License
 
-内容与文档 CC-BY-4.0；代码可自由使用，禁止行为仅一条：**声称未经本管线校验的库为"已校验正典"**。
+代码 **MIT**（[LICENSE](LICENSE)）；文档与 schema **CC-BY-4.0**。
+设计研究出处与许可红线见 [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md)——
+GPL/AGPL/无许可证/NC 四仓零代码零文本接触（附污染审计记录）。
