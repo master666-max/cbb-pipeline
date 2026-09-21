@@ -52,6 +52,7 @@ py -X utf8 scripts/init_project.py project.yaml
 
 ## License
 
-代码 **MIT**（[LICENSE](LICENSE)）；文档与 schema **CC-BY-4.0**。
+**MIT** —— 见 [LICENSE](LICENSE)。
+本项目**全部内容**（代码、文档、schema、SKILL.md）统一以 MIT 授权。
 设计研究出处与许可红线见 [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md)——
 GPL/AGPL/无许可证/NC 四仓零代码零文本接触（附污染审计记录）。
