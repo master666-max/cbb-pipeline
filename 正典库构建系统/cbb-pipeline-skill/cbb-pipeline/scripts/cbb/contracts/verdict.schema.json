@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "cbb://contract/verdict/v2.0",
+  "title": "Verdict 契约 v2.0（本体版；v1.0 冻结于 cbb-skills/contracts）",
+  "type": "object",
+  "required": ["issue_id", "critique", "label", "confidence", "confidence_band", "judge_id", "reasoning", "evidence_check"],
+  "properties": {
+    "issue_id": { "type": "string" },
+    "critique": { "type": "string", "minLength": 1, "description": "评审先行（evals-skills）：先陈述评估再下结论——次序强制由校验器实施（critique 键必须先于 label 键出现于原文键序）" },
+    "label": { "enum": ["conflict", "consistent", "uncertain"] },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 100, "description": "v2.0 定标 0-100（v1.0 未定标；分带口径要求百分位）" },
+    "confidence_band": { "enum": ["high", "medium", "low"], "description": "可信度分带（evals-skills 校准三带）：>90=high / 80-90=medium / <80=low；校验器强制与 confidence 数值一致" },
+    "rule_applied": {
+      "type": "object",
+      "description": "裁决规则表（claude-book 冲突解决表+worldbook 首次出场基准，两派并陈按字段类型分派）：label=conflict 时必填（校验器强制）",
+      "required": ["school", "field", "rationale"],
+      "properties": {
+        "school": { "enum": ["first_appearance", "later_books", "documented_variance", "show_over_tell", "most_common"], "description": "first_appearance=worldbook 首次出场基准；later_books=claude-book 事实后书优先；documented_variance=claude-book 全冲突并陈（Sources vary 句式）；show_over_tell=claude-book 角色性格 show 优先；most_common=claude-book 风格模式最常见优先" },
+        "field": { "type": "string", "minLength": 1, "description": "适用字段类型（如 facts/appearance/character_traits/style）——两派按字段类型分派" },
+        "rationale": { "type": "string", "minLength": 1, "description": "为何选此派（并陈时写明 Sources vary 双方）" }
+      }
+    },
+    "judge_id": { "type": "string" },
+    "reasoning": { "type": "string" },
+    "evidence_check": { "type": "object", "description": "证据自证字段——引用不存在的原文则该票作废" }
+  },
+  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3）：+critique 且次序强制（evals-skills『先陈述评估再下结论』，防锚定先给结论）；+confidence 定标 0-100 与 confidence_band 分带强制一致（>90/80-90/<80）；+rule_applied 裁决规则表（首次出场基准 vs 后书优先两派并陈按字段分派，label=conflict 必填——裁决文书化：选了哪派、为何、何时可追溯，补 claude-book『有规则无文书』缺口）。所有 judge 的统一接口（门2a/2b/影子审计共用）。"
+}
