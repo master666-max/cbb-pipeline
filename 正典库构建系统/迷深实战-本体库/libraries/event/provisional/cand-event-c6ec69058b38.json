@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "莱纳",
+   "诺斯菲",
+   "诺斯菲的旗帜"
+  ],
+  "instant": null,
+  "kind": "撤退",
+  "name": "诺斯菲承认败势宣告撤退",
+  "tick": 203,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 203,
+   "line": 216,
+   "quote": "我这种利用对手的力量的魔法，在遇到你这种从别处借力的类型的时候发挥不出效果。",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 235,
+   "quote": "⋯⋯我必须承认。莱纳・赫勒比勒夏因很强。",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 235,
+   "quote": "综上所述，我要在这里打出撤退这张牌。",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 241,
+   "quote": "结果诺斯菲便将手中的旗帜一挥，放出一道眩目的光芒。",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 244,
+   "quote": "她的目的地不用想必然是罗德与基督的战场。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 203,
+   "text": "诺斯菲自陈战型相性太差（'我这种利用对手的力量的魔法，在遇到你这种从别处借力的类型的时候发挥不出效果'+莱纳具精神污染抗性）→承认'莱纳・赫勒比勒夏因很强'（法芙纳・赫勒比勒夏因复归级）→'我要在这里打出撤退这张牌'→将旗帜插进瓦砾宣泄后拔出蹬瓦砾脱身，挥旗放出眩目光芒干扰视界拉开距离；'她的目的地不用想必然是罗德与基督的战场'；莱纳追击"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c6ec69058b38",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0203.txt",
+  "sha": "41cbc0bae4cf52383fb693dd4f02de200c0d8ab50816c107e1b92bdef2812bdb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "王与宰相(过家家→真)·守护誓约",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 207,
+   "line": 512,
+   "quote": "遵命，谨记在心！为了不玷污这第一家臣的名号，微臣一定精进！缇缇姐姐大人──不，『支配之王』！！",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 528,
+   "quote": "呜姆，那宰相就让艾德来做好了！爷爷和奶奶的话，就做国家的顾问──也就是元老院的成员吧！",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 621,
+   "quote": "唉、真拿你没办法！既然你这么担心，那孤就同你许下『约定』好了！作为给你的奖赏，这『支配之王』同你许下『约定』！在此发誓，你的『宝物』──『世界和平』就由孤来守护！啊啊，让我们永远在一起吧，艾德！",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 774,
+   "quote": "人家之所以会成为王，只是为了一个人──为了守护艾德。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 207,
+   "text": "命名即授位（『为了不玷污这第一家臣的名号，微臣一定精进！…『支配之王』』）；宰相之任（艾德自请『宰相请让我来做！』）；王的誓约——『你的『宝物』──『世界和平』就由孤来守护！啊啊，让我们永远在一起吧，艾德！』；成为王的唯一动机=『为了守护艾德』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.93,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6ffbd63cf0d4",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0207.txt",
+  "sha": "839ebabe743c5a82e07c8bba5d492656139fd7ddf81ca88a81f12cc97c013e2b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

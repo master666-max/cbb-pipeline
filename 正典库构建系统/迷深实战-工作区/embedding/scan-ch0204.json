@@ -1,0 +1,35 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "罗德",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.8856
+  },
+  {
+   "candidate": "相川涡波",
+   "library_match": "相川·涡波",
+   "similarity": 0.8923
+  }
+ ],
+ "pairs": [
+  [
+   "罗德",
+   "罗德·缇缇",
+   0.8856
+  ],
+  [
+   "相川涡波",
+   "相川·涡波",
+   0.8923
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 2,
+  "library": 727,
+  "dup_suspect": 0,
+  "uncertain": 2
+ }
+}

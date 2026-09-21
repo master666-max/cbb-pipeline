@@ -1,0 +1,66 @@
+{
+ "unit": "ch0207",
+ "summary": {
+  "total": 41,
+  "pass": 36,
+  "intercept": 5,
+  "by_code": {
+   "G1-SCHEMA": 0,
+   "G1-EVIDENCE": 5,
+   "G1-REF": 0,
+   "G1-REL-BACKLINK": 0,
+   "G1-TIME_INVERSION": 0,
+   "G1-DEAD-WALK": 0,
+   "G1-FORESHADOW-ORDER": 0,
+   "G1-CHEKHOV-OVERDUE": 0,
+   "G1-CONTRADICTION": 0
+  }
+ },
+ "intercepted": [
+  {
+   "record_id": "cand-entity-da607fef19f9",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[2] quote 悬空（坐标块内不可回落）: v1c207 话换句话说，他就是你的弟弟了。这么一来，…"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-relation-ef4dfd78898a",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[1] quote 悬空（坐标块内不可回落）: v1c207 话换句话说，他就是你的弟弟了。这么一来，…"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-relation-6f21f424adf3",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[0] quote 悬空（坐标块内不可回落）: v1c207 话换句话说，他就是你的弟弟了。这么一来，…"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-relation-fb52981bf810",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[2] quote 悬空（坐标块内不可回落）: v1c207 即使是被强行掳走的时候，艾德也一直不停地…"
+    }
+   ]
+  },
+  {
+   "record_id": "cand-event-3a791cbeb9fe",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[2] quote 悬空（坐标块内不可回落）: v1c207 话换句话说，他就是你的弟弟了。这么一来，…"
+    }
+   ]
+  }
+ ]
+}

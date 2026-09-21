@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "爷爷",
+  "rel_type": "收养·拟制家人",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 207,
+   "line": 78,
+   "quote": "没有血缘关系也无所谓。咱们有咱们自己的规矩，决定是否是家人也一样。按照那个规矩来说，丫头你就是老夫的家人",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 278,
+   "quote": "不愧是老夫引以为傲的闺女呐",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 315,
+   "quote": "──既然缇缇这么说，那就这样吧。不，你能这么说，老夫很高兴呐，缇缇",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 207,
+   "text": "濒死获救→『丫头你就是老夫的家人』（无血缘亦可的自家规矩）；矫正敬语、令模仿老人口癖；夸『老夫引以为傲的闺女』；劝其外面发展而尊重留下之选；南方侵略中遇害（尸体在魔人尸山中）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.92,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-38686259f74f",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0207.txt",
+  "sha": "839ebabe743c5a82e07c8bba5d492656139fd7ddf81ca88a81f12cc97c013e2b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "翠色石子",
+  "rel_type": "视为宝物",
+  "subject": "草绿色头发的女孩"
+ },
+ "evidence": [
+  {
+   "chapter": 205,
+   "line": 27,
+   "quote": "事实上，这个女孩子也确实将小石头看做了宝物。",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 28,
+   "quote": "她的表情是如此着迷，就像大人在品鉴宝石一般。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 205,
+   "text": "寻得半透明翠色石子而露笑，'确实将小石头看做了宝物'，着迷如大人品鉴宝石"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-b79435f3f446",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0205.txt",
+  "sha": "2cd7d020c8def7a833d2039261b1321edafa53f414e73cff097ed36e45f2ec1a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

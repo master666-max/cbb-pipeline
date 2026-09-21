@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『剑术』",
+  "rel_type": "使用(连携『感应』)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 50,
+   "quote": "这个问题由技能『感应』来回答，接着技能『剑术』则负责将那天方夜谭般的答案化作现实。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 53,
+   "quote": "以最合适的出剑顺序配以最合适的身体动作，不存一丝瑕疵地、将风矢斩斩斩斩斩──不断斩除。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 202,
+   "text": "『感应』回答最合适出剑方式、『剑术』将答案化作现实；三剑开隙侧身潜入反复斩除、数秒斩尽全部风矢"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-0ae343874a08",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

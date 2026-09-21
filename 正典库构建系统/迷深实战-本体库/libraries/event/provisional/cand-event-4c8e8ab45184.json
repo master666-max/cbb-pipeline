@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "奶奶",
+   "爷爷",
+   "缇缇",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "灾厄",
+  "name": "南方魔人狩猎侵略·村庄毁灭",
+  "tick": 207,
+  "time_verbatim": "誓约后不久（姐弟远行北城归途）"
+ },
+ "evidence": [
+  {
+   "chapter": 207,
+   "line": 661,
+   "quote": "按照书上的记载来说就是「南方以魔人狩猎为理由发动了侵略」，仅仅凭此一言，这『漂亮的石子』就从自己的手中滑落，掉进了深渊之中。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 663,
+   "quote": "一切都发生于两个人遥遥看到故乡的草原被大火吞没的那一刻。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 667,
+   "quote": "在南方士兵们的手下，自己的家被火烧得不留片瓦，村里的魔人惨遭屠戮，森林里的朋友们化作鱼肉，那片草原俨然成为人间地狱。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 668,
+   "quote": "魔人的尸体堆积如山，其中自然也有爷爷和奶奶的身影。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 207,
+   "text": "『南方以魔人狩猎为理由发动了侵略』→二人遥见故乡草原被大火吞没→家被烧得不留片瓦、村里魔人惨遭屠戮、森林的朋友们化作鱼肉→爷爷奶奶尸体在尸山之中→姐弟藏身草丛（『而・这・就・是・一・切・的・开・始』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.95,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-4c8e8ab45184",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0207.txt",
+  "sha": "839ebabe743c5a82e07c8bba5d492656139fd7ddf81ca88a81f12cc97c013e2b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "chapter": 208,
+  "fact": "缇缇（罗德）的称号——'『风之理的盗窃者』的『试练』已经结束了'（决战终局、涡波胜利）；但其魔力仍然不失强大、她并没有消失的预兆（雷纳尔多点出理由：地上的艾德仍在等待缇缇的归还）",
+  "name": "『风之理的盗窃者』",
+  "tick": 208
+ },
+ "evidence": [
+  {
+   "chapter": 208,
+   "line": 377,
+   "quote": "但『风之理的盗窃者』的魔力仍然不失强大。她并没有消失的预兆。",
+   "vol": 1
+  },
+  {
+   "chapter": 208,
+   "line": 460,
+   "quote": "『风之理的盗窃者』的『试练』已经结束了。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "status_change",
+   "chapter": 208,
+   "text": "试练终结+魔力不灭（存在理由=地上等待者）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-d67132f38b89",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0208.txt",
+  "sha": "14c4312decc120839c3ba94cbe842ff36670ac992aae1316944b898c40b7e102",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

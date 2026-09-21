@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "entities": [
+   "佩艾希亚",
+   "缇缇",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "史述",
+  "name": "支配之王千年史（君临·被弑·地底千年）",
+  "tick": 207,
+  "time_verbatim": "村毁后数十年至千年（追忆概括）"
+ },
+ "evidence": [
+  {
+   "chapter": 207,
+   "line": 766,
+   "quote": "一个本来只是家家酒游戏中的王最终成为真正的王者的战斗就此开幕，而少女缇缇的时间则因为『诅咒』而停滞不前。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 768,
+   "quote": "在这之后，一个虚伪的王让一个陷入绝境的国家死灰复燃。接着，从家家酒游戏中脱胎而成的小孩子在数十年的时间里作为王者君临于佩艾希亚，其恶果便是北方的崩壊。最后『支配之王（Lord）』被南方的诺斯菲所杀。但是因为『理的盗窃者』的诅咒，就连死都成了奢望，只能堕入地底不得不再做整整一千年的王──而魂也由此濒于死壊。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 787,
+   "quote": "然而，如果自己能好好地将心中的痛苦告知艾德的话，应该就可以避免那样的结局了。自己最大的理解者一定不会是涡波，而是自己的弟弟。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 207,
+   "text": "『一个虚伪的王让一个陷入绝境的国家死灰复燃』→数十年君临佩艾希亚→恶果=北方崩壊→被南方诺斯菲所杀→因诅咒不得死→堕入地底再做整整一千年王→魂濒于死壊；『少女缇缇的时间则因为『诅咒』而停滞不前』；后悔论：若向艾德坦白痛苦即可避免结局（『自己最大的理解者…是自己的弟弟』）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.93,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-1e2255a99c0c",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0207.txt",
+  "sha": "839ebabe743c5a82e07c8bba5d492656139fd7ddf81ca88a81f12cc97c013e2b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

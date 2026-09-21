@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "唤醒引导（命拾书读书）",
+  "subject": "陌生的声音"
+ },
+ "evidence": [
+  {
+   "chapter": 205,
+   "line": 126,
+   "quote": "「──罗德，快想起来」",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 130,
+   "quote": "「──做不到也得做。听我的，快去把那个捡起来」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 205,
+   "text": "在孤放弃思考时坚持搭话：'罗德，快想起来'→'做不到也得做。听我的，快去把那个捡起来'→'捡到你手里，然后去读啊'——将其从千年崩溃态拉回并导向觉醒"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-15d81a3b6fb3",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0205.txt",
+  "sha": "2cd7d020c8def7a833d2039261b1321edafa53f414e73cff097ed36e45f2ec1a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

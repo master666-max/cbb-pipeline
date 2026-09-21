@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺文",
+  "rel_type": "剑技借用(魔石请托)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 163,
+   "quote": "向『地之理的盗窃者』的魔石发出请托，以便从剑中导出相应的技能。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 239,
+   "quote": "再者是剑术，这全都是跟诺文借来的东西。自己根本没去努力钻研过，全都是临阵磨枪而已。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 201,
+   "text": "向『地之理的盗窃者』的魔石请托、从剑中导出相应技能；莱纳自认剑术全是跟诺文借来的东西、临阵磨枪未曾自己钻研"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-597fd626fcab",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

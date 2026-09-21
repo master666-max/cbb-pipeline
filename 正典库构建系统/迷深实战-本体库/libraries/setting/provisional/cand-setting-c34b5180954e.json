@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "chapter": 201,
+  "fact": "莱纳体内可被诺斯菲之光支配之物（原文表记『血』）：莱纳自述『之前吃过一次亏』故本章决意主要依靠剑战斗；本章光之御旗的目标不是『血』而是莱纳自身",
+  "name": "『血』",
+  "tick": 201
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 88,
+   "quote": "就算『血』会受到支配也无妨。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 89,
+   "quote": "反正之前吃过一次亏，这次我早就决定主要依靠剑来战斗了。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 97,
+   "quote": "它要支配的不是『血』而是我自身。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "knowledge",
+   "chapter": 201,
+   "text": "支配对象层级本章辨析（血→人自身）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-c34b5180954e",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

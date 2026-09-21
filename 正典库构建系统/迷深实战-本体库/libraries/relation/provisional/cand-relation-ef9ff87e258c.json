@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "罗德",
+  "rel_type": "自称朋友(据诺斯菲声称)",
+  "subject": "诺斯菲"
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 41,
+   "quote": "「⋯⋯你这话说的就有些不知所谓了呢。既然罗德现在十分痛苦，那么就更需要我这个朋友在她身边陪伴不是么？我可是发自心底地希望罗德能再露出笑容哦？」",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 43,
+   "quote": "我都觉得你才是万恶之源",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 201,
+   "text": "据诺斯菲声称：罗德痛苦时『更需要我这个朋友在她身边陪伴』『发自心底地希望罗德能再露出笑容』；莱纳斥其恬不知耻、凭直觉断言诺斯菲才是万恶之源"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-ef9ff87e258c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

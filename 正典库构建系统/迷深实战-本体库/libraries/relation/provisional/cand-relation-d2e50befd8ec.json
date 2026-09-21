@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "奈落之底",
+  "rel_type": "被囚（千年）",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 205,
+   "line": 112,
+   "quote": "就这样──过去了一・千・年。",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 116,
+   "quote": "这奈落之底──这既不许生亦不许死的黑暗『地狱』，就是我的世界。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 205,
+   "text": "自绝壁坠落撞至奈落之底后无法脱身：'就这样──过去了一・千・年'——'就让人沦于疯狂而言，整整千年的时间实在是太足够了'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-d2e50befd8ec",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0205.txt",
+  "sha": "2cd7d020c8def7a833d2039261b1321edafa53f414e73cff097ed36e45f2ec1a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

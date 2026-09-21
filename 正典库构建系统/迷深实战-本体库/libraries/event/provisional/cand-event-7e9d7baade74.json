@@ -1,0 +1,64 @@
+{
+ "canonical": {
+  "entities": [
+   "缇缇",
+   "艾德"
+  ],
+  "instant": null,
+  "kind": "冒险(追忆概括)",
+  "name": "缇缇与艾德的一年大冒险",
+  "tick": 207,
+  "time_verbatim": "姐弟诞生后一年间"
+ },
+ "evidence": [
+  {
+   "chapter": 207,
+   "line": 555,
+   "quote": "这就是那些没有被收录在英雄谭中的冒険。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 559,
+   "quote": "像是将来到河边的精灵招待到自己家里、与在北方作祟的夜之怪异战斗、将飞在天上的怪鸟驯服、请求路过的魔法使教授自己魔法、太得意忘形结果惹怒了都会里的大人物、为了救出被掳作人质的艾德而参加武斗大会、去退治出现在东北方的大平原的翼龙等等──嘛，与翼龙的战斗结果基本都是惨败来的，不过依靠作为自己特技的交流能力总算是得以息事宁人──于自己而言，这就是不负于『支配之王』传说的大冒険。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 561,
+   "quote": "而且如此众多的事件竟然只是被凝缩于一年之中。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 207,
+   "text": "『没有被收录在英雄谭中的冒険』——将河畔精灵招待到家/与北方作祟的夜之怪异战斗/驯服天上怪鸟/请求路过的魔法使教授魔法/惹怒都会大人物/为救被掳作人质的艾德参加武斗大会/退治东北大平原的翼龙（基本惨败，以交流能力息事宁人）；众事件凝缩于一年，『就好像是一段数十年的冒険一样』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-7e9d7baade74",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0207.txt",
+  "sha": "839ebabe743c5a82e07c8bba5d492656139fd7ddf81ca88a81f12cc97c013e2b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

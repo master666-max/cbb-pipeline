@@ -1,0 +1,35 @@
+{
+ "dup_suspect": [],
+ "uncertain": [
+  {
+   "candidate": "罗德",
+   "library_match": "罗德·缇缇",
+   "similarity": 0.8856
+  }
+ ],
+ "pairs": [
+  [
+   "罗德",
+   "罗德·缇缇",
+   0.8856
+  ],
+  [
+   "草绿色头发的女孩",
+   "绿之克星",
+   0.5658
+  ],
+  [
+   "陌生的声音",
+   "异邦人",
+   0.6168
+  ]
+ ],
+ "status": "ok",
+ "model": "text-embedding-qwen3-embedding-8b@q8_0",
+ "counts": {
+  "candidates": 3,
+  "library": 730,
+  "dup_suspect": 0,
+  "uncertain": 1
+ }
+}

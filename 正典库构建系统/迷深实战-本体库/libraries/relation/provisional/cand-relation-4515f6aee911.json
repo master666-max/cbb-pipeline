@@ -1,0 +1,47 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "诺斯菲",
+  "rel_type": "千年前同归于尽（旧事）",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 208,
+   "line": 80,
+   "quote": "那是在她在《这里》生活一千年之前，在与诺斯菲同归于尽之前，甚至是成为支配之王丧失自我之前的时候——",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 208,
+   "text": "追溯其极限时点：'在她在《这里》生活一千年之前，在与诺斯菲同归于尽之前，甚至是成为支配之王丧失自我之前'——时序（早→晚）：心脏被捣碎那天→成为支配之王→与诺斯菲同归于尽→《这里》一千年"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4515f6aee911",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0208.txt",
+  "sha": "14c4312decc120839c3ba94cbe842ff36670ac992aae1316944b898c40b7e102",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

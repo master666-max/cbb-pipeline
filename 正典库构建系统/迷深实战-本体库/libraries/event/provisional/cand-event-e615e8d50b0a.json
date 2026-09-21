@@ -1,0 +1,60 @@
+{
+ "canonical": {
+  "entities": [
+   "『魔王』",
+   "帕林库洛",
+   "相川涡波",
+   "相川阳滝"
+  ],
+  "instant": null,
+  "kind": "身体变化",
+  "name": "涡波身体状态恢复（帕林库洛受损+阳滝魔石违和感消失）",
+  "tick": 202,
+  "time_verbatim": "同上连续场景"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 42,
+   "quote": "我能感觉到因为与帕林库洛的战斗而受损的力量现在重新恢复了。或者说是因为失去了阳滝的魔石而产生的违和感已经消失，应用于实战中的直觉重新趋于敏锐。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 43,
+   "quote": "虽然只有数秒的时间，但是拜与『魔王』的剑闘所赐，我的『剑术』已经成长到了前所未有的高级别。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 202,
+   "text": "与帕林库洛战斗受损的力量重新恢复；失去阳滝魔石产生的违和感消失、应用于实战的直觉重新敏锐；拜与『魔王』的数秒剑闘所赐『剑术』成长到前所未有的高级别（均据涡波自述）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e615e8d50b0a",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『支配之王』（称号）",
+  "rel_type": "否认己名（拒斥）",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 205,
+   "line": 143,
+   "quote": "支、支配之王？『支配之王（Lord）』？",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 149,
+   "quote": "我的我的、我的名字才不叫什么『支配之王（Lord）』！",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 151,
+   "quote": "我的名字叫⋯⋯──",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 205,
+   "text": "见扉页四字后激烈动摇否认：'支、支配之王？『支配之王（Lord）』？不对不对不对'→'我的名字才不叫什么『支配之王（Lord）』！'→真名'我的名字叫⋯⋯──'截断；与 ch202『王号(被称为)』并存——外界称其支配之王，本人拒斥该名"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-daa96ccacd19",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0205.txt",
+  "sha": "2cd7d020c8def7a833d2039261b1321edafa53f414e73cff097ed36e45f2ec1a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

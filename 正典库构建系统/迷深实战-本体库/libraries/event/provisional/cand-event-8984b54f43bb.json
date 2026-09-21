@@ -1,0 +1,76 @@
+{
+ "canonical": {
+  "entities": [
+   "Sylph・堕落使徒",
+   "兰斯",
+   "莱纳",
+   "诺斯菲",
+   "赫勒比勒夏因",
+   "赫勒比勒夏因之神圣双剑",
+   "阿雷亚斯",
+   "阿雷亚斯家的宝剑"
+  ],
+  "instant": null,
+  "kind": "情报揭示",
+  "name": "光感染四剑失败与三骑士之名暴露",
+  "tick": 203,
+  "time_verbatim": null
+ },
+ "evidence": [
+  {
+   "chapter": 203,
+   "line": 105,
+   "quote": "这就好像是同时以我的三名骑士为对手进行战斗一样",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 106,
+   "quote": "这一次光感染的对象既不是我本人也不是我的『血』，而是我们手中的四把『剑』",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 110,
+   "quote": "是阿雷亚斯、兰斯、赫勒比勒夏因你们几个对吧！你们这三个可恨的骑士！还是老样子，我这个主人的话你们一丁点儿都听不进去！！",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 114,
+   "quote": "看来寄宿在这把Sylph・堕落使徒当中的引人发狂的意志便是那个『兰斯』了吗。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 203,
+   "text": "诺斯菲将旗帜之光转而感染四把『剑』→因四剑各有明确意志与敌对意向而失败（'光对剑居然不起作用！？'）→她将四剑剑法比作'同时以我的三名骑士为对手'，脱口点名'是阿雷亚斯、兰斯、赫勒比勒夏因你们几个'并怒斥'我这个主人的话你们一丁点儿都听不进去'——三骑士为其旧部之信息暴露；莱纳借机推断 Sylph・堕落使徒 的疯狂意志=兰斯"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8984b54f43bb",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0203.txt",
+  "sha": "41cbc0bae4cf52383fb693dd4f02de200c0d8ab50816c107e1b92bdef2812bdb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

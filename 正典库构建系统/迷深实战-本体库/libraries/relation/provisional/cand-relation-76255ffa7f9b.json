@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "『维度・决战演算』",
+  "rel_type": "使用",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 37,
+   "quote": "「──『维度・决战演算』！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 47,
+   "quote": "『维度・决战演算』所抵达的新领域，它给了我能够预测眼前所有风矢的轨迹的能力。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 202,
+   "text": "于箭雨迫前驻足发动；本章节内该技提升到新领域（预测全部风矢轨迹）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-76255ffa7f9b",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

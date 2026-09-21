@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "同型魔法(原型)",
+  "subject": "『Ex・Wind』"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 128,
+   "quote": "以如此恢弘的气势，使出的却是莱纳也会的风属性魔法。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 129,
+   "quote": "而且还是连地上的探索者都能熟练使用的中级魔法，是原本根本就不具攻击力的用于移动的魔法。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 202,
+   "text": "『Ex・Wind』原型=莱纳也会的风属性中级魔法（地上探索者皆会、原不具攻击力的移动魔法）；罗德使出后效果判若云泥"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-7443e556b95e",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

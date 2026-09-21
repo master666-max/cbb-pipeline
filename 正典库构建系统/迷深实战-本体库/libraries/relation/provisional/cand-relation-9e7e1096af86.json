@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "艾德",
+  "rel_type": "姐弟（守护使命而活）",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 208,
+   "line": 110,
+   "quote": "因为人家还有弟弟在、所以不能就那么被逼上绝路后、死掉。作为、姐姐、人家有、守护弟弟的使命。",
+   "vol": 1
+  },
+  {
+   "chapter": 208,
+   "line": 113,
+   "quote": "人家最珍视的，只是自己的家人而已。除此之外的怎样都好。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 208,
+   "text": "自述生存理由：'因为人家还有弟弟在、所以不能就那么被逼上绝路后、死掉。作为、姐姐、人家有、守护弟弟的使命。所以、才活下来了。哪怕再怎么痛苦也还是活下来了'；'人家最珍视的，只是自己的家人而已'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-9e7e1096af86",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0208.txt",
+  "sha": "14c4312decc120839c3ba94cbe842ff36670ac992aae1316944b898c40b7e102",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

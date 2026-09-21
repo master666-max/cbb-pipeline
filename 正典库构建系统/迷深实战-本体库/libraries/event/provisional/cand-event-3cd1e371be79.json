@@ -1,0 +1,79 @@
+{
+ "canonical": {
+  "entities": [
+   "『Ex・Wind』",
+   "『次元决战演算『先谭』』",
+   "『维度・曲战演算』",
+   "相川涡波",
+   "罗德"
+  ],
+  "instant": null,
+  "kind": "决断",
+  "name": "涡波先谭预知确认·舍弃无伤回避",
+  "tick": 202,
+  "time_verbatim": "同上连续场景"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 162,
+   "quote": "一旦被击中就是消灭。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 166,
+   "quote": "就算用『维度・曲战演算』改变罗德的轨迹恐怕也没有意义。无论到哪里都避不开她攻击的余波。不对，说到底我的魔法能否起作用都是个问题。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 172,
+   "quote": "直到刚才为止我们之间的战斗都只是小打小闹，其过程甚至没有出现在『次元决战演算『先谭』』当中，但现如今我眼前的这一幕却曾在其中出现过。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 176,
+   "quote": "所以我早就知道。在这之后，我没能躲过这颗『流星』并受到重创──不、是负上了致命伤。像无伤回避这种天真的想法必须予以舍弃。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 178,
+   "quote": "而是去找到致胜一击所必须要用到的『那个』",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 202,
+   "text": "流星之下涡波冷汗涔涔：被击中即消灭、擦伤即死、近身必被拆散、远离亦因热量冲击HP顷刻归零、曲战演算变轨无意义且魔法能否起作用成问题；但该怎么做早已知道——此幕曾在『先谭』中出现=罗德彻底被激怒、涡波踏上胜利道路，确信能挺过飞踢；同时预知自己将没能躲过流星负致命伤、舍弃无伤回避之念；应做的是去找到致胜一击所必须用到的『那个』"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-3cd1e371be79",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 201,
+  "entities": [
+   "莱纳",
+   "诺斯菲"
+  ],
+  "name": "诺斯菲与『笨蛋骑士』赫勒比勒夏因的过去渊源",
+  "note": "诺斯菲称对赫勒比勒夏因剑法『早已惯于应付』、莱纳逼急后的自爆招数与『那个笨蛋骑士（赫勒比勒夏因）』如出一辙且『不记得阻止过多少次』、莱纳的行为『老是让我联想起过去的事』——她与赫勒比勒夏因家前人（千年前线）的具体渊源待回收；反推其习得家传双剑术于此渊源",
+  "payoff_chapter": null,
+  "setup_chapter": 201,
+  "tier": "支线"
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 80,
+   "quote": "你的这些行为老是让我联想起过去的事，拜托你克制一下不行吗？",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 140,
+   "quote": "「呵呵，这剑法真是让人怀念呢。不过，正因为它令人感怀，所以我早已惯于应付了」",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 186,
+   "quote": "「──就连逼急了想出的主意也跟那个笨蛋骑士（赫勒比勒夏因）如出一辙呢。这我也早就习惯了。毕竟我自己都不记得阻止过这种自爆招数多少次了呢。唉⋯⋯」",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 201,
+   "text": "身世/渊源开环：前人身份与关系未明"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-c955ee88e111",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

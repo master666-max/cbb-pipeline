@@ -1,0 +1,72 @@
+{
+ "canonical": {
+  "entities": [
+   "『支配之王』（书籍）",
+   "奈落之底",
+   "罗德",
+   "陌生的声音"
+  ],
+  "instant": null,
+  "kind": "转折（觉醒引导）",
+  "name": "陌生的声音唤醒罗德·命其拾读书",
+  "tick": 205,
+  "time_verbatim": "千年崩溃自认终局之刻（记忆回溯序·深渊段末）"
+ },
+ "evidence": [
+  {
+   "chapter": 205,
+   "line": 126,
+   "quote": "「──罗德，快想起来」",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 130,
+   "quote": "「──做不到也得做。听我的，快去把那个捡起来」",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 137,
+   "quote": "「我为了搞出那本书可是把命都折了。你再不愿意也得给我读」",
+   "vol": 1
+  },
+  {
+   "chapter": 205,
+   "line": 138,
+   "quote": "『这里』什么都没有──本应如此，但在这个什么都没有的地方，自己却看到了一本书。那是一本默默落在这个洞穴角落里的书。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 205,
+   "text": "'──罗德，快想起来'——孤以'已经什么都不明白了'回绝，声音仍坚持：'做不到也得做。听我的，快去把那个捡起来⋯⋯捡到你手里，然后去读啊'；自称'为了搞出那本书可是把命都折了'；空无之境中遂现出一本书"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8b22b34f7133",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0205.txt",
+  "sha": "2cd7d020c8def7a833d2039261b1321edafa53f414e73cff097ed36e45f2ec1a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

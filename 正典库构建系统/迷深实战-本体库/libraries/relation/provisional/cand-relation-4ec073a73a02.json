@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "莱纳",
+  "rel_type": "魔法传授·庭师共事",
+  "subject": "罗德"
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 36,
+   "quote": "好不容易才扯住了记忆流逝的脚步。在保留下来的记忆中就有罗德亲自传授我魔法的部分。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 38,
+   "quote": "我和她一起做了庭师的工作，工作之余还在一起吃饭休息。在玩自警团的把戏的时候，她装作姐姐的模样蹭早饭的记忆现在也还历历在目。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 39,
+   "quote": "可是事到如今，一想到在她的笑容背后，居然是这种痛苦的代价，我的心脏就好像被撕裂一般。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 201,
+   "text": "莱纳保留记忆：罗德亲自传授魔法（教法不算好/态度仔细认真）；同做庭师工作、共进饮食休息；玩自警团把戏时装作姐姐模样蹭早饭；其温柔态度令莱纳联想芙兰姐姐；想到其笑容背后是痛苦代价、莱纳心脏如被撕裂"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-4ec073a73a02",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "罗德",
+  "rel_type": "同一人物(罗德・缇缇)",
+  "subject": "缇缇"
+ },
+ "evidence": [
+  {
+   "chapter": 207,
+   "line": 554,
+   "quote": "──这就是罗德・缇缇的人生的真正开端。",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 764,
+   "quote": "人家──不，『孤』乃是支配这片大陆的翼人之王！继承最悠久的魔血的末裔，将此世上的一切纳入支配之下的王、『罗德（Lord）』！面对尔等草芥，孤绝无败北之理！！",
+   "vol": 1
+  },
+  {
+   "chapter": 207,
+   "line": 768,
+   "quote": "在这之后，一个虚伪的王让一个陷入绝境的国家死灰复燃。接着，从家家酒游戏中脱胎而成的小孩子在数十年的时间里作为王者君临于佩艾希亚，其恶果便是北方的崩壊。最后『支配之王（Lord）』被南方的诺斯菲所杀。但是因为『理的盗窃者』的诅咒，就连死都成了奢望，只能堕入地底不得不再做整整一千年的王──而魂也由此濒于死壊。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 207,
+   "text": "本章第一人称追忆即罗德本人：『──这就是罗德・缇缇的人生的真正开端』；战场宣名『『孤』乃是…『罗德（Lord）』』；『最后『支配之王（Lord）』被南方的诺斯菲所杀』。判例1：双名不自动合并，挂此 relation 留 R4 终审"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.95,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-842dbda573a8",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0207.txt",
+  "sha": "839ebabe743c5a82e07c8bba5d492656139fd7ddf81ca88a81f12cc97c013e2b",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

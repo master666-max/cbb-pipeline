@@ -1,0 +1,80 @@
+{
+ "canonical": {
+  "chapter": 202,
+  "entities": [
+   "相川涡波",
+   "罗德",
+   "莱纳",
+   "诺斯菲",
+   "风的所有者"
+  ],
+  "name": "风的所有者身份之谜",
+  "note": "流星一击前支援涡波的强风+柔光不属于罗德/诺斯菲/莱纳及在场任何人，但涡波清楚知道其归属、曾受其帮助无数次想忘都忘不掉——身份未点名，开环",
+  "payoff_chapter": null,
+  "setup_chapter": 202,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 192,
+   "quote": "这是一道从右侧远远吹来的强风──同时还伴以柔和的光芒。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 193,
+   "quote": "这道风不属于罗德。这光也不属于诺斯菲。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 194,
+   "quote": "当然，它也不属于莱纳。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 195,
+   "quote": "它不属于现在在场的任何人⋯⋯但我却清楚地知道它属于谁。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 196,
+   "quote": "我曾被风的所有者帮助过无数次，想忘都忘不掉。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 202,
+   "text": "开环：风+光同源支援（风不属于罗德、光不属于诺斯菲、不属于莱纳）——支援者与涡波关系深挚，真身待揭"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-d99d6f6aac16",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

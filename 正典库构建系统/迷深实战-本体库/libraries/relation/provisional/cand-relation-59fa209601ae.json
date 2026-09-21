@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "莱纳",
+  "rel_type": "命令(压制诺斯菲)(据诺斯菲转述)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 46,
+   "quote": "「⋯⋯我记得涡波大人对你的命令只是压制我来着？」",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 50,
+   "quote": "「是这样没错，我主的命令确实是让我拖住你。不过很可惜，我早就不打算做一个正八经儿的骑士了呢。我脑袋里满满的都是杀意！从一开始就是！！」",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 201,
+   "text": "据诺斯菲转述：『涡波大人对你的命令只是压制我』；莱纳回应『我主的命令确实是让我拖住你』——两命令同指一事（基督/涡波同指存疑，见_meta）；注：此为莱纳受命来源的并置证据，非涡波直接登场"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-59fa209601ae",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

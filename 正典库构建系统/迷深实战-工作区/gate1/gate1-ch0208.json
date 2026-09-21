@@ -1,0 +1,30 @@
+{
+ "unit": "ch0208",
+ "summary": {
+  "total": 60,
+  "pass": 59,
+  "intercept": 1,
+  "by_code": {
+   "G1-SCHEMA": 0,
+   "G1-EVIDENCE": 1,
+   "G1-REF": 0,
+   "G1-REL-BACKLINK": 0,
+   "G1-TIME_INVERSION": 0,
+   "G1-DEAD-WALK": 0,
+   "G1-FORESHADOW-ORDER": 0,
+   "G1-CHEKHOV-OVERDUE": 0,
+   "G1-CONTRADICTION": 0
+  }
+ },
+ "intercepted": [
+  {
+   "record_id": "cand-relation-1ca4238d6bd1",
+   "violations": [
+    {
+     "code": "G1-EVIDENCE",
+     "detail": "证据[2] quote 悬空（坐标块内不可回落）: v1c208 接着，雷纳尔多牵着她的手将她拉了起来，并…"
+    }
+   ]
+  }
+ ]
+}

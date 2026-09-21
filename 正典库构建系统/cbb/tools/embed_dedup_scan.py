@@ -107,7 +107,8 @@ def collect_entity_names(cands: dict, store_root: Path) -> tuple[list[str], list
     for ln in (Path(store_root) / "aliases.jsonl").read_text(encoding="utf-8").splitlines() if \
             (Path(store_root) / "aliases.jsonl").exists() else []:
         a = json.loads(ln)
-        lib.add(a["alias"])
+        if isinstance(a.get("alias"), str):  # ch0121 脏行(dict)防御跳过，脏行留档不删
+            lib.add(a["alias"])
     return cand, sorted(lib)
 
 

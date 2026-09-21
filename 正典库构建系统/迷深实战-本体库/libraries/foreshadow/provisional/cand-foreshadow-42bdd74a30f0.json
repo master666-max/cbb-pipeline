@@ -1,0 +1,73 @@
+{
+ "canonical": {
+  "chapter": 202,
+  "entities": [
+   "『Ex・Wind』",
+   "『次元决战演算『先谭』』",
+   "相川涡波",
+   "罗德"
+  ],
+  "name": "涡波致命伤预知（先谭轨道的下一幕）",
+  "note": "涡波预知自己将没能躲过『流星』、负致命伤；无伤回避必须舍弃；致命伤后如何以『那个』致胜=胜负开环；章末流星已坠至眼前（『落地死的流星』）",
+  "payoff_chapter": null,
+  "setup_chapter": 202,
+  "tier": "核心"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 2,
+   "quote": "落地死的流星",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 173,
+   "quote": "这就是说罗德终于彻底被激怒，而我也踏上了通往那个胜利的道路。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 176,
+   "quote": "所以我早就知道。在这之后，我没能躲过这颗『流星』并受到重创──不、是负上了致命伤。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 209,
+   "quote": "──罗德的『流星』已经坠至眼前。",
+   "vol": 1
+  }
+ ],
+ "library": "foreshadow",
+ "observations": [
+  {
+   "category": "foreshadowing",
+   "chapter": 202,
+   "text": "开环：先谭所示未来=负致命伤后的胜利道路；本章末流星坠至眼前、命中结果待下章"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-foreshadow-42bdd74a30f0",
+ "record_type": "foreshadow",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

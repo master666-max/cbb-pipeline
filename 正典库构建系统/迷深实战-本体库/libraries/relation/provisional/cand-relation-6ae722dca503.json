@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "风的所有者",
+  "rel_type": "受援(无数次)",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 196,
+   "quote": "我曾被风的所有者帮助过无数次，想忘都忘不掉。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 197,
+   "quote": "在这道风的支持下，我得以直面上空的罗德。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 202,
+   "text": "曾受风的所有者帮助无数次、想忘都忘不掉；本章其风再度支持涡波直面罗德"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-6ae722dca503",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

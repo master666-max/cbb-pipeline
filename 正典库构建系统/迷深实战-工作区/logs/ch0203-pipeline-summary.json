@@ -1,0 +1,402 @@
+{
+ "unit": "ch0203",
+ "chapter": 203,
+ "ingestion_index": 173,
+ "title": "221话-四骑士",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 50,
+  "pass": 50,
+  "intercept": 0,
+  "admitted": 30,
+  "quarantined": 20
+ },
+ "tracks": {
+  "contradiction": 3,
+  "on-create": 27
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-354daf5fee24",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-2aa65ec35b1b"
+   }
+  },
+  {
+   "record_id": "cand-entity-a3a8086e8db8",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-f71d0a2a44ee"
+   }
+  },
+  {
+   "record_id": "cand-entity-d879ef248618",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-4ae3a2b12249"
+   }
+  },
+  {
+   "record_id": "cand-setting-fc5caab3e0aa",
+   "type": "setting",
+   "name": "风之臂",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-fa81ac6f8fde",
+   "type": "setting",
+   "name": "赫勒比勒夏因之神圣双剑",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-66cd67d1db1d",
+   "type": "setting",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-58466b4b8382",
+   "type": "setting",
+   "name": "Sylph・堕落使徒",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-c515a7ada084",
+   "type": "setting",
+   "name": "次元戒指",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-603def59ecd2",
+   "type": "setting",
+   "name": "赫勒比勒夏因・二重奏剑",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-setting-5b84a1013fad",
+   "type": "setting",
+   "name": "光之理的盗窃者",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-08f300a30848",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-7d8e2c197176",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-2a400cc76cb6",
+   "type": "relation",
+   "name": "诺文",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-1fa28ee39410",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-df58e3e84c6e",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-b32e99d1551a",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-relation-c8c64c199930",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-6690cb3a9526",
+   "type": "event",
+   "name": "风之臂显现与诺斯菲束缚解脱",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-6d944c70c170",
+   "type": "event",
+   "name": "次元戒指破碎·圣双剑片翼备齐",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-68aa9da5e03c",
+   "type": "event",
+   "name": "二重奏剑宣言与四剑四重攻势",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-8984b54f43bb",
+   "type": "event",
+   "name": "光感染四剑失败与三骑士之名暴露",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-f09f226a53a8",
+   "type": "event",
+   "name": "舍身战法压制与诺斯菲中止反击",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c6ec69058b38",
+   "type": "event",
+   "name": "诺斯菲承认败势宣告撤退",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-c88411f1c7b1",
+   "type": "event",
+   "name": "流星坠落与翠色魔石诞生（基督-罗德战场异变）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-ddea72d82279",
+   "type": "event",
+   "name": "莱纳奉命阻截诺斯菲",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-event-e253f95aef24",
+   "type": "event",
+   "name": "千年前的战争·北方数度无血开城",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-c09d387265a9",
+   "type": "foreshadow",
+   "name": "罗德的不完全『魔石』之危",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-dc8a618350b8",
+   "type": "foreshadow",
+   "name": "诺斯菲的密藏手牌",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-2c0ec3e38677",
+   "type": "foreshadow",
+   "name": "诺斯菲的三重自锁（诅咒/光之咏唱/半死体）",
+   "track": "on-create",
+   "detail": {}
+  },
+  {
+   "record_id": "cand-foreshadow-e9f213725f19",
+   "type": "foreshadow",
+   "name": "作用全空间的涡波色魔力干涉",
+   "track": "on-create",
+   "detail": {}
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-76785d6bf5e6",
+   "type": "entity",
+   "name": "基督·欧亚",
+   "item_id": "q-40fd098dd330",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-03fce01913f4",
+   "type": "entity",
+   "name": "阿雷亚斯",
+   "item_id": "q-acdaf1755b57",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-b9f8e017fd3b",
+   "type": "entity",
+   "name": "兰斯",
+   "item_id": "q-7c3cd02996dc",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-8ea5c32d6689",
+   "type": "entity",
+   "name": "赫勒比勒夏因",
+   "item_id": "q-f613d0ec9cd4",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-entity-2b832747dd89",
+   "type": "entity",
+   "name": "法芙纳・赫勒比勒夏因",
+   "item_id": "q-ad76f942befe",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-9c32b1729169",
+   "type": "setting",
+   "name": "诺斯菲的旗帜",
+   "item_id": "q-cd77b388579e",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-4fb00dc00013",
+   "type": "setting",
+   "name": "翠星构成的魔石",
+   "item_id": "q-e8bdfbb453c5",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-76be1740b3b5",
+   "type": "setting",
+   "name": "光之御旗",
+   "item_id": "q-c622265d57bc",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-e06310a8bef5",
+   "type": "setting",
+   "name": "劳拉维亚",
+   "item_id": "q-250d1eba9324",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-ffca841101b8",
+   "type": "setting",
+   "name": "大演剧船",
+   "item_id": "q-495113c77515",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-9ce6c08be291",
+   "type": "setting",
+   "name": "弗茨亚茨",
+   "item_id": "q-3ac2cdd35c78",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-50c8f05ce743",
+   "type": "relation",
+   "name": "莱纳",
+   "item_id": "q-55ef46b3d781",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-4fe9fd91f716",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-aa562bd29411",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-2dd504d5a10b",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-116c49c22190",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-456a1f1e3492",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-41aada2959f7",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-3ca2144bccdd",
+   "type": "relation",
+   "name": "诺斯菲",
+   "item_id": "q-9b443b9f6e2f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-1e2eb3c132f4",
+   "type": "relation",
+   "name": "罗德",
+   "item_id": "q-7da08b2de537",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-relation-911186dfe645",
+   "type": "relation",
+   "name": "基督·欧亚",
+   "item_id": "q-00bdbaebdffe",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-261cde2eb9cb",
+   "type": "foreshadow",
+   "name": "风之臂魔力源与片翼下落之谜",
+   "item_id": "q-9480d1f39d67",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-foreshadow-4dfdab4940b3",
+   "type": "foreshadow",
+   "name": "法芙纳・赫勒比勒夏因的复归",
+   "item_id": "q-ae29d48696c8",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 173,
+  "pseudo_date": "2000-06-22",
+  "track": "on-create"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 8,
+   "library": 723,
+   "dup_suspect": 1,
+   "uncertain": 6
+  },
+  "neo4j": {
+   "nodes": 628,
+   "edges": 1331,
+   "batches": 10,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 611,
+    "edges": 1331
+   }
+  }
+ }
+}

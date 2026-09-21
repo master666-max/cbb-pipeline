@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "chapter": 208,
+  "fact": "决战终局：'在《这里》，《支配之王》已经不复存在'——缠绕缇缇的凶恶魔力雾散、为战斗而生的凶恶之风化作拂过草原的清风溶入世界；'压迫于她身上的『支配之王（Lord）』的存在已经消失，她的身体终于变得与曾经一样轻盈'；臣民'在对缇缇予以认可的同时，逐渐将自己的王的存在从心中涂抹消去'，谢罪感谢'这并非是对『支配之王』——而是对少女缇缇的谢罪和感谢'；如今只剩地上的艾德一人仍在期待『支配之王（Lord）』；缇娅拉时代英雄谭《支配之王》的全部内容=背负救世使命的缇缇（罗德·缇缇）",
+  "name": "『支配之王（Lord）』",
+  "tick": 208
+ },
+ "evidence": [
+  {
+   "chapter": 208,
+   "line": 89,
+   "quote": "在《这里》，《支配之王》已经不复存在。",
+   "vol": 1
+  },
+  {
+   "chapter": 208,
+   "line": 290,
+   "quote": "在对缇缇予以认可的同时，逐渐将自己的王的存在从心中涂抹消去",
+   "vol": 1
+  },
+  {
+   "chapter": 208,
+   "line": 296,
+   "quote": "这并非是对『支配之王』⸺而是对少女缇缇的谢罪和感谢",
+   "vol": 1
+  },
+  {
+   "chapter": 208,
+   "line": 381,
+   "quote": "恐怕事到如今，只剩下艾德殿下一个人在期待着『支配之王（Lord）』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "status_change",
+   "chapter": 208,
+   "text": "称号消亡节点：魔力雾散+臣民心中消去+唯独艾德的期待残留"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-setting-efff18775e0a",
+ "record_type": "setting",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0208.txt",
+  "sha": "14c4312decc120839c3ba94cbe842ff36670ac992aae1316944b898c40b7e102",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

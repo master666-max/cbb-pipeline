@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": true,
+  "object": "诺斯菲",
+  "rel_type": "交战(试练对手)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 200,
+   "quote": "果然，只有莱纳能够战胜诺斯菲。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 204,
+   "quote": "莱纳、让我们一起跨越这个试练吧！",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 202,
+   "text": "据涡波确信/心声：莱纳正在远处战斗、能战胜诺斯菲；两人各自承担对『光之理的盗窃者』的试练"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-240c84fdc4d7",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,465 @@
+{
+ "unit": "ch0201",
+ "chapter": 201,
+ "ingestion_index": 171,
+ "title": "219话-少年莱纳的挑战",
+ "noise": null,
+ "dup_of": null,
+ "counts": {
+  "authored": 43,
+  "pass": 43,
+  "intercept": 0,
+  "admitted": 40,
+  "quarantined": 3
+ },
+ "tracks": {
+  "consistent-duplicate": 38,
+  "contradiction": 2
+ },
+ "admitted": [
+  {
+   "record_id": "cand-entity-3aaad0e82173",
+   "type": "entity",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-3982f65529a8-m49",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-8cfd2b5ef017",
+   "type": "entity",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-23ef103d5db4-m13",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-d7777376726f",
+   "type": "entity",
+   "name": "罗德",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-d2fa1f9d4aae"
+   }
+  },
+  {
+   "record_id": "cand-entity-86bb166a7190",
+   "type": "entity",
+   "name": "基督",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-entity-86bb166a7190",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-entity-ed12298de511",
+   "type": "entity",
+   "name": "诺文",
+   "track": "contradiction",
+   "detail": {
+    "quarantine_item": "q-5e613fed0a49"
+   }
+  },
+  {
+   "record_id": "cand-setting-df49930ef37b",
+   "type": "setting",
+   "name": "阿雷亚斯家的宝剑",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-df49930ef37b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-c220d171647f",
+   "type": "setting",
+   "name": "Sylph・堕落使徒",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-c220d171647f",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-3b0ac9e46463",
+   "type": "setting",
+   "name": "光之御旗（NosfiFLAG）",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-3b0ac9e46463",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-19b0ff335be5",
+   "type": "setting",
+   "name": "Ex・Wind",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-19b0ff335be5",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-7623ea0ede46",
+   "type": "setting",
+   "name": "TowersSus・Wind",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-7623ea0ede46",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-df337baa15ff",
+   "type": "setting",
+   "name": "『加速』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-df337baa15ff",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-b7ed02bf404a",
+   "type": "setting",
+   "name": "理的盗窃者",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-b7ed02bf404a",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-53589c49db6e",
+   "type": "setting",
+   "name": "赫勒比勒夏因的双剑术",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-53589c49db6e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-bd81c6f6e10e",
+   "type": "setting",
+   "name": "阿雷亚斯流剑术",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-bd81c6f6e10e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-c34b5180954e",
+   "type": "setting",
+   "name": "『血』",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-c34b5180954e",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-b44cd3d633be",
+   "type": "setting",
+   "name": "莱文教",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-b44cd3d633be",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-8fa7b6470531",
+   "type": "setting",
+   "name": "劳拉维亚",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-8fa7b6470531",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-setting-aedfd96ddd21",
+   "type": "setting",
+   "name": "弗茨亚茨",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-setting-aedfd96ddd21",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-abcf45709e3c",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-abcf45709e3c",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-ef9ff87e258c",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-ef9ff87e258c",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-e2293903ca38",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-e2293903ca38",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-59fa209601ae",
+   "type": "relation",
+   "name": "相川涡波",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-59fa209601ae",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-4ec073a73a02",
+   "type": "relation",
+   "name": "罗德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-4ec073a73a02",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-110a67096aa5",
+   "type": "relation",
+   "name": "艾德",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-110a67096aa5",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-5e0f3206e464",
+   "type": "relation",
+   "name": "海莉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-5e0f3206e464",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-597fd626fcab",
+   "type": "relation",
+   "name": "莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-597fd626fcab",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-9cc03a0ef8ff",
+   "type": "relation",
+   "name": "基督",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-9cc03a0ef8ff",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-dc049ae6d9c4",
+   "type": "relation",
+   "name": "诺斯菲",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-dc049ae6d9c4",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-relation-7976b039fa7c",
+   "type": "relation",
+   "name": "基督",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-relation-7976b039fa7c",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-0c66e4fe1293",
+   "type": "event",
+   "name": "莱纳对诺斯菲开战：杀意宣言与双咏唱",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-0c66e4fe1293",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-56c731a5223a",
+   "type": "event",
+   "name": "光之御旗支配与莱纳的抗拒",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-56c731a5223a",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-f7c3bcf3c75b",
+   "type": "event",
+   "name": "诺斯菲复制家传剑法压制莱纳",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-f7c3bcf3c75b",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-c7dbf6a934f3",
+   "type": "event",
+   "name": "莱纳自伤最强一击落空·被诺斯菲制压完败",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-c7dbf6a934f3",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-0f7db2a3c93d",
+   "type": "event",
+   "name": "罗德真本事·世界崩壊余波波及",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-0f7db2a3c93d",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-4f8a7afacfef",
+   "type": "event",
+   "name": "诺斯菲的败因评定与莱纳的自省",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-4f8a7afacfef",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-event-0a0fd655d385",
+   "type": "event",
+   "name": "誓约再燃·章末未知之风",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-event-0a0fd655d385",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-ddff0ccdce46",
+   "type": "foreshadow",
+   "name": "未知之风与莱纳力量的真正源泉",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-ddff0ccdce46",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-037023b4c662",
+   "type": "foreshadow",
+   "name": "罗德真本事的兑现与世界崩壊进行",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-037023b4c662",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-c955ee88e111",
+   "type": "foreshadow",
+   "name": "诺斯菲与『笨蛋骑士』赫勒比勒夏因的过去渊源",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-c955ee88e111",
+    "repeated": true
+   }
+  },
+  {
+   "record_id": "cand-foreshadow-5892d572a201",
+   "type": "foreshadow",
+   "name": "莱纳达到『理的盗窃者』领域的可能性",
+   "track": "consistent-duplicate",
+   "detail": {
+    "new_id": "cand-foreshadow-5892d572a201",
+    "repeated": true
+   }
+  }
+ ],
+ "quarantined": [
+  {
+   "record_id": "cand-entity-48f66ee94739",
+   "type": "entity",
+   "name": "芙兰",
+   "item_id": "q-7524960fac4f",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-9b922dc319fd",
+   "type": "setting",
+   "name": "『天路垂临』『续道碧霄』",
+   "item_id": "q-d3b030661da9",
+   "reason": "confidence_route"
+  },
+  {
+   "record_id": "cand-setting-ad4a2f31c1c6",
+   "type": "setting",
+   "name": "艾尔多拉琉学院",
+   "item_id": "q-d808040c4ad3",
+   "reason": "confidence_route"
+  }
+ ],
+ "anchor": {
+  "tick": 171,
+  "pseudo_date": "2000-06-20",
+  "track": "consistent-duplicate"
+ },
+ "aux": {
+  "embedding": {
+   "candidates": 6,
+   "library": 718,
+   "dup_suspect": 0,
+   "uncertain": 4
+  },
+  "neo4j": {
+   "nodes": 628,
+   "edges": 1324,
+   "batches": 10,
+   "status": "ok",
+   "graph_counts_after": {
+    "nodes": 610,
+    "edges": 1324
+   }
+  }
+ }
+}

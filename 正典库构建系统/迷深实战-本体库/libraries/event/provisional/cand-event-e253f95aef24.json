@@ -1,0 +1,59 @@
+{
+ "canonical": {
+  "entities": [
+   "光之御旗",
+   "弗茨亚茨",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "历史事件（传承记载）",
+  "name": "千年前的战争·北方数度无血开城",
+  "tick": 203,
+  "time_verbatim": "千年前（弗茨亚茨历史记载，无绝对坐标）"
+ },
+ "evidence": [
+  {
+   "chapter": 203,
+   "line": 156,
+   "quote": "根据弗茨亚茨流传下来的历史记载，在千年前的战争中，在南方的攻击下，北方曾发生过数度的无血开城。而当时南军的统帅全部都是作为『光之御旗』的诺斯菲。",
+   "vol": 1
+  },
+  {
+   "chapter": 203,
+   "line": 157,
+   "quote": "她在无意识之中，更倾向于将对手制服而不是杀害，这才是她的战斗方式。毕竟连她拿来做武器的东西也是原本不具有杀伤性的『旗帜』。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 203,
+   "text": "据弗茨亚茨流传的历史记载（莱纳引述）：千年前战争中，'在南方的攻击下，北方曾发生过数度的无血开城。而当时南军的统帅全部都是作为『光之御旗』的诺斯菲'——莱纳据此推其无意识倾向制服而非杀害"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-e253f95aef24",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0203.txt",
+  "sha": "41cbc0bae4cf52383fb693dd4f02de200c0d8ab50816c107e1b92bdef2812bdb",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

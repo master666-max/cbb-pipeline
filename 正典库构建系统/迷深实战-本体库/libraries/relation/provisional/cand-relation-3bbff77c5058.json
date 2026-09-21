@@ -1,0 +1,53 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "雷纳尔多",
+  "rel_type": "约定达成（最理想形式）",
+  "subject": "相川涡波"
+ },
+ "evidence": [
+  {
+   "chapter": 208,
+   "line": 344,
+   "quote": "请问我实现好和您的约定了吗",
+   "vol": 1
+  },
+  {
+   "chapter": 208,
+   "line": 345,
+   "quote": "啊啊，当然了，而且是以最理想的形式啊。都到了让老朽不知道该说些什么感谢你的地步了",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 208,
+   "text": "涡波问'请问我实现好和您的约定了吗……？'，雷纳尔多答'啊啊，当然了，而且是以最理想的形式啊。都到了让老朽不知道该说些什么感谢你的地步了'；涡波自言感谢不必要——'因为我已经向雷纳尔多先生学到太多重要的事情了'"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-3bbff77c5058",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0208.txt",
+  "sha": "14c4312decc120839c3ba94cbe842ff36670ac992aae1316944b898c40b7e102",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

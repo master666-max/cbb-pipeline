@@ -1,0 +1,83 @@
+{
+ "canonical": {
+  "entities": [
+   "『咏唱』",
+   "相川涡波",
+   "罗德"
+  ],
+  "instant": null,
+  "kind": "战斗/能力行使",
+  "name": "罗德化星攀升·咏唱削魂·涡波制止无效",
+  "tick": 202,
+  "time_verbatim": "同上连续场景"
+ },
+ "evidence": [
+  {
+   "chapter": 202,
+   "line": 66,
+   "quote": "「既、既然如此！那就使用无法回避无法化解的魔法便是！你就后悔自己让孤使出这招好了──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 74,
+   "quote": "用翠色的羽翼包裹身体，向上再向上，罗德以下坠的势头扶摇直上。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 80,
+   "quote": "于是，将此世一切魔力纠集于一身的罗德，终于化作了一颗星。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 83,
+   "quote": "罗德要通过『咏唱』宣泄自己的人生不存任何意义，借此削耗自己的魂，从而让自己的身体无止境地变轻。",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 91,
+   "quote": "「罗德！快住手、不要再继续『咏唱』了──！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 202,
+   "line": 93,
+   "quote": "无论是在物理上还是在心理上，罗德跟我的距离都太过遥远，她不可能听到我的声音了。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 202,
+   "text": "罗德决意使用无法回避无法化解的魔法：不顾距离翱翔至更远，以翠翼包裹身体扶摇直上、魔力与空气剧烈摩擦描出青白线；将此世一切魔力纠集一身化作一颗星（肉眼唯见一点）；一面咏唱一面借宣泄人生无意义削耗魂使身体无止境变轻；涡波看不下去出言制止，但物理与心理距离过远、声音不可能传达"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-8ed32a917b59",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+  "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

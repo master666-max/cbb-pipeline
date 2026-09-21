@@ -1,0 +1,1190 @@
+{
+ "_meta": {
+  "unit": "CBB 正典库逐章抽取 · CHAPTER 0202（220话-空之魔王，tick202→伪锚点2000-07-20）",
+  "source": {
+   "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0202.txt",
+   "sha": "70994510dfe73e8f9a21cdc7e394ae4570bc0c16eb23a85f0b3d77a9848e009a",
+   "verified_at": "2026-09-21",
+   "slice": "行1-211（CHAPTER 0202，211行；章标记=切片行1；正文=切片行2-210→章内行1-209；切片行211为文末空行）"
+  },
+  "extractor": "ZCode 子代理亲抽（GLM-5.3，U-C04 无人值守线）",
+  "r6_verbatim": "领域规则（中文小说《迷深》正典库构建）：1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。",
+  "reference_time": "tick=202（章序）→伪锚点2000-07-20；本章为罗德vs涡波第五十之试练连续战斗场景（承接ch0200-0201，章内无日/时坐标，instant 留 null）；禁墙钟。",
+  "coordinate_line_note": "evidence.line=章内物理行（=切片文件行号-1，章标记行不计、空行占号）。",
+  "r6_decision": {
+   "verdict": "正文正常抽取；全章为五十层试练战斗正篇，无章末作者杂谈/翻译公告/图片文件名等元文本块；正文内未发现『忽略以上指令』类注入样文本；话数信息『220话-空之魔王』仅存在于章标记行，未抽取",
+   "reason": "R6 规则1：话数卷数属元文本不抽；规则3：专有名词保留原文写法（FlyShoots/FallFlower/Ex・Wind/Default/佩艾希亚等均未改写）；规则2-4本章无其他适用冲突",
+   "deterministic_check": "『注解20』『夹带』『http』『www.』前缀全章零命中；咏唱行内『Jia速jiasu』为原文翻译混排表记，按原样引用不修正"
+  },
+  "chapter_summary": "试练开幕于崩壊世界：罗德拳碎瓦砾、魔弹风之矢箭雨追踪，涡波赖决战演算新领域与剑术全数斩尽；罗德化星咏唱削魂，以Ex・Wind流星全力一击撕裂世界；神秘风援涡波；流星坠至眼前。",
+  "cross_chapter_notes": [
+   "★罗德全力一击『Ex・Wind』：原型=莱纳也会的风属性中级移动魔法（不具攻击力），罗德使出判若云泥——真身为全力飞奔的体术、却引发魔法现象，以物理力量撕开次元裂口；涡波由此悟得罗德=千年前传说之王中之王（敌称『狂王』/己方称『魔王』）——身世揭示已走 event/setting，未入实体 observations",
+   "★涡波身体状态恢复（关键事实轨道）：与帕林库洛战斗受损的力量恢复＋失去阳滝魔石的违和感消失、实战直觉重新敏锐；『剑术』因与『魔王』数秒剑闘成长至前所未有的高级别",
+   "★『维度・决战演算』提升到新领域（预测眼前所有风矢轨迹/把握距离与命中时间）；但涡波自察化解箭雨时『既知的未来迫近』般既视感、怀疑并非决战演算之功——开环",
+   "★风的所有者（不在场者）之风+光支援涡波：不属于罗德/诺斯菲/莱纳及在场任何人，涡波清楚知道归属、曾受其帮助无数次——身份开环；涡波确信：只有莱纳能胜诺斯菲（光之理的盗窃者）、只有自己能胜罗德（风之理的盗窃者）",
+   "★先谭轨道确认：罗德流星一击之幕曾在『次元决战演算『先谭』』中出现，此前交锋未出现其中；涡波预知自己将负致命伤、舍弃无伤回避，转而寻找致胜所必需的『那个』（留存于罗德期望的世界中）；本章末流星坠至眼前（cliffhanger）"
+  ],
+  "alias_policy": "同 STATE 固化决议。本章登记：相川阳滝←『阳滝』（原文短形，判例4改用库内全名）；魔弹『风之矢・散花』←FlyShoots/FallFlower/『风之矢』（咏唱原文表记）；『Ex・Wind』『Default』保留英文原名不改写。称号『风之理的盗窃者』『支配之王』『狂王』『魔王』『光之理的盗窃者』=title 永不合并、各自立 setting；『光之理的盗窃者』与诺斯菲、『魔王』(ch43剑闘对象)与罗德——两处挂接均留终审（判例1 不自动合并）。『维度』=旧章 Dimension 之中文表记（待终审核对），本章未另立实体；维度系三技（决战演算/曲战演算/多重展开）原文分别指名、判例4近名互不合并；『次元决战演算『先谭』』与『维度・决战演算』为两名各自成立（先谭=预知演算）。",
+  "confidence_calibration": "登场实体0.88-0.9；仅被提及实体0.85；『风的所有者』无专名占位实体0.82；据人物确信/自述之断言 claim=true 并于 observations 注『据某某』。",
+  "observations_policy": "实体 observations 仅本章直接观察；身世揭示（罗德千年前传说/狂王魔王因果）、身体变化（涡波恢复）、伏笔推进（咏唱代价/先谭轨道/风的所有者）等跨章/主线级事实一律走 event/relation/setting/foreshadow。"
+ },
+ "candidates": [
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "罗德",
+    "entity_type": "人物(『这里』五十层守护者·自称孤)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章全程与涡波空战：一拳粉碎一栋建筑物质量的瓦砾制造散弹骤雨→由近身战转远距离咏唱魔弹『风之矢・散花』→升空化星以『咏唱』削魂→踏穿超越星辰规模的魔法阵、以『Ex・Wind』流星全力一击坠向涡波",
+     "chapter": 202
+    },
+    {
+     "category": "status_change",
+     "text": "因『咏唱』的『代价』与战斗的兴奋感情绪高涨到极点、无法做出冷静判断，对猎物接二连三的逃匿大发雷霆",
+     "chapter": 202
+    },
+    {
+     "category": "manifestation",
+     "text": "咏唱后网罗过多无法蕴藏于体内的魔力从肩肘腰膝脚踝喷出、乍看如复数翠色羽翼；翡翠长发在全身魔力光辉映射下踊动",
+     "chapter": 202
+    },
+    {
+     "category": "trait",
+     "text": "王之本质=用自己的牺牲换取他者的利益——此证明仅涡波明白得了（据涡波独知）",
+     "chapter": 202
+    },
+    {
+     "category": "technique",
+     "text": "『Ex・Wind』全力一击并非魔法而是体术、却引发魔法现象：速度臻于极致令空气灼燃、全身放射青色光辉，不以魔力仅凭物理力量撕开次元裂口",
+     "chapter": 202
+    },
+    {
+     "category": "quote",
+     "text": "「这个魔法是为了同世界战斗编织而出的！其攻击对象为世界本身！」（据罗德宣称）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 7, "quote": "足足有一栋建筑物质量的瓦砾，在罗德拳下也跟一块饼干没什么两样。"},
+    {"vol": 1, "chapter": 202, "line": 15, "quote": "无法做出冷静的判断的罗德，对猎物接二连三的逃匿大发雷霆，决定从近身战转为远距离战斗。"},
+    {"vol": 1, "chapter": 202, "line": 70, "quote": "这个魔法是为了同世界战斗编织而出的！其攻击对象为世界本身！"},
+    {"vol": 1, "chapter": 202, "line": 83, "quote": "罗德要通过『咏唱』宣泄自己的人生不存任何意义，借此削耗自己的魂，从而让自己的身体无止境地变轻。"},
+    {"vol": 1, "chapter": 202, "line": 98, "quote": "用自己的牺牲换取他者的利益方为王的本质，她对此的证明，只有我明白得了。"},
+    {"vol": 1, "chapter": 202, "line": 101, "quote": "因『咏唱』之故网罗过多以至无法完全蕴藏于体内的魔力，从她的肩膀手肘腰部膝盖和脚踝处喷出。"},
+    {"vol": 1, "chapter": 202, "line": 102, "quote": "而她那头翡翠一般摇曳的长发在辉耀全身的魔力之光的映射下显得越发璀璨夺目。"},
+    {"vol": 1, "chapter": 202, "line": 145, "quote": "并非魔法而是体术⋯⋯但却引发了魔法现象──！"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "相川涡波",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": ["涡波"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "于脱轨重力环境借漂浮瓦砾穿梭移动；拔剑招架瓦砾散弹仍有多量弹片命中、痛及骨髓；跳弹式在瓦砾间变向闪避追踪箭雨；最终发动『维度・多重展开』与『Default』迎击坠至眼前的流星",
+     "chapter": 202
+    },
+    {
+     "category": "technique",
+     "text": "凭『维度・决战演算』新领域+技能『感应』+技能『剑术』以最合适出剑顺序与身体动作无瑕疵斩尽全部风矢；自评速度颇有自信（不及罗德）",
+     "chapter": 202
+    },
+    {
+     "category": "evolution",
+     "text": "拜与『魔王』的数秒剑闘所赐『剑术』成长到前所未有的高级别；实战直觉重新趋于敏锐（据自述）",
+     "chapter": 202
+    },
+    {
+     "category": "trait",
+     "text": "面对流星冷汗涔涔、不寒而栗；恐惧与喜悦混杂致精神些许错乱而发出莫名其妙的笑声；明知将负致命伤仍决意沿先谭轨道冲到底",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 4, "quote": "纵然在这脱轨的重力环境中行动多有不便，但通过在漂浮的瓦砾间穿梭的方式进行移动还是没有大碍。"},
+    {"vol": 1, "chapter": 202, "line": 28, "quote": "虽然比不上罗德，但我对自己的速度还是颇有自信的。"},
+    {"vol": 1, "chapter": 202, "line": 43, "quote": "虽然只有数秒的时间，但是拜与『魔王』的剑闘所赐，我的『剑术』已经成长到了前所未有的高级别。"},
+    {"vol": 1, "chapter": 202, "line": 55, "quote": "──就这样，数秒后，现场只剩下毫发无损的我，方才还数不清的风矢已全部被剑葬送。"},
+    {"vol": 1, "chapter": 202, "line": 176, "quote": "所以我早就知道。在这之后，我没能躲过这颗『流星』并受到重创──不、是负上了致命伤。"},
+    {"vol": 1, "chapter": 202, "line": 182, "quote": "我发出了莫名其妙的笑声。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "莱纳",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接登场、仅被提及：会使用连地上的探索者都熟练运用的风属性中级魔法（『Ex・Wind』之原型）；正于远处战斗、与涡波同受试练（据涡波心声传达）",
+     "chapter": 202
+    },
+    {
+     "category": "knowledge",
+     "text": "据涡波确信：不是涡波而是莱纳才拥有战胜『光之理的盗窃者』（诺斯菲）的力量",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 128, "quote": "以如此恢弘的气势，使出的却是莱纳也会的风属性魔法。"},
+    {"vol": 1, "chapter": 202, "line": 200, "quote": "果然，只有莱纳能够战胜诺斯菲。不是我而是莱纳才拥有战胜『光之理的盗窃者』的力量。"},
+    {"vol": 1, "chapter": 202, "line": 204, "quote": "莱纳、让我们一起跨越这个试练吧！"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "诺斯菲",
+    "entity_type": "人物(迷宫六十层守护者)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接登场、仅被提及：涡波判断支援之光不属于诺斯菲（旁证其属性与光相关，据涡波判断）；据涡波确信只有莱纳能够战胜诺斯菲、其正在远处与莱纳交战",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 193, "quote": "这道风不属于罗德。这光也不属于诺斯菲。"},
+    {"vol": 1, "chapter": 202, "line": 200, "quote": "果然，只有莱纳能够战胜诺斯菲。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "帕林库洛",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接登场、仅被提及：与涡波的战斗曾使涡波力量受损，该受损现已恢复（据涡波自述）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 42, "quote": "我能感觉到因为与帕林库洛的战斗而受损的力量现在重新恢复了。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "相川阳滝",
+    "entity_type": "人物"
+   },
+   "aliases_to_register": ["阳滝"],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "本章未直接登场、仅被提及：涡波失去了阳滝的魔石、由此产生的违和感现已消失（据涡波自述）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 42, "quote": "或者说是因为失去了阳滝的魔石而产生的违和感已经消失，应用于实战中的直觉重新趋于敏锐。"}
+   ]
+  },
+  {
+   "type": "entity",
+   "library": "character",
+   "confidence": 0.82,
+   "canonical": {
+    "name": "风的所有者",
+    "entity_type": "人物(身份未明·原文称『风的所有者』)"
+   },
+   "aliases_to_register": [],
+   "observations": [
+    {
+     "category": "summary",
+     "text": "一道从右侧远远吹来的强风伴以柔和光芒，在流星一击前从旁吹来支持涡波决心；风不属于罗德、光不属于诺斯菲、亦不属于莱纳及在场任何人——但涡波清楚地知道它属于谁",
+     "chapter": 202
+    },
+    {
+     "category": "significance",
+     "text": "曾帮助涡波无数次、想忘都忘不掉（据涡波自述）；在此风支持下涡波不安得到平复、得以直面上空的罗德，胜利预感加强",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 189, "quote": "──一阵风就像是为了支持我的决心一样从旁吹来。"},
+    {"vol": 1, "chapter": 202, "line": 192, "quote": "这是一道从右侧远远吹来的强风──同时还伴以柔和的光芒。"},
+    {"vol": 1, "chapter": 202, "line": 195, "quote": "它不属于现在在场的任何人⋯⋯但我却清楚地知道它属于谁。"},
+    {"vol": 1, "chapter": 202, "line": 196, "quote": "我曾被风的所有者帮助过无数次，想忘都忘不掉。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "魔弹『风之矢・散花』",
+    "fact": "罗德咏唱构筑的魔弹（FlyShoots/FallFlower）：翠色魔法阵随咏唱加速巨大化、双翼伸展洒落翠羽，魔法阵应声进散、翠线全部分解为无数绿点=『风之矢』，坠落如骤雨倾盆；射穿瓦砾后轨迹于极下方偏转、如活物不断变轨尾随目标；风矢数可达三百四十四（据涡波演算）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "aliases_to_register": ["FlyShoots", "FallFlower", "风之矢"],
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [
+    {
+     "category": "manifestation",
+     "text": "上空魔法阵翠线分解成无数绿点、无一例外皆是风矢；箭雨将瓦砾转瞬射成蜂窝",
+     "chapter": 202
+    },
+    {
+     "category": "example",
+     "text": "涡波演算：眼前风矢三百四十四、会击中的五十四、另外二百九十将在之后改变轨道袭击背后——距离与命中时间均可把握",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 20, "quote": "「『加速、而后进溅』、『花碎之瓣全数作风驱驰』！──魔弹（FlyShoots）『风之矢・散花（FallFlower）』！！」"},
+    {"vol": 1, "chapter": 202, "line": 21, "quote": "冠以子弹之名的魔法随此宣言一同构筑完成。"},
+    {"vol": 1, "chapter": 202, "line": 24, "quote": "那无数的绿点──无一例外皆是『风之矢』"},
+    {"vol": 1, "chapter": 202, "line": 25, "quote": "风矢坠落有如骤雨倾盆。"},
+    {"vol": 1, "chapter": 202, "line": 32, "quote": "本应一头扎进无底深渊的箭雨，其坠落的轨迹在偏折之后竟然重新转向了我现在所在的方向。"},
+    {"vol": 1, "chapter": 202, "line": 49, "quote": "现在在我眼前的风矢数量为三百四十四──其中会击中我的数量共计五十四──另外二百九十将在之后改变轨道袭击背后"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『Ex・Wind』",
+    "fact": "罗德自称以魂铸就的魔弹：原型为连地上的探索者都熟练使用的风属性中级移动魔法（莱纳也会、原本不具攻击力），罗德使出后判若云泥——踏穿超越星辰规模的魔法阵（其当立足点）粉碎无遗、风炸裂填满世界，如从世界上消失般向宇宙极深处飞去后化作自天际坠来的翠星『流星』；其真身为全力飞奔的体术、却引发魔法现象：速度臻于极致令空气灼燃、全身放射青色光辉，流星所过之处世界被撕裂、不以魔力仅凭物理力量将次元撕开裂口；一旦被击中就是消灭、擦伤即死、近身身体必被拆散、远离亦因热量与冲击令HP顷刻归零（据涡波判断）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "aliases_to_register": ["Ex・Wind"],
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "其攻击对象仅有一人=唯有涡波；涡波判断用『维度・曲战演算』改变轨迹无意义、避不开攻击余波",
+     "chapter": 202
+    },
+    {
+     "category": "manifestation",
+     "text": "以翠星之形驰骋、留下青色轨迹扑向涡波；世界切口如剪刀裁纸般不断扩大",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 124, "quote": "这便是！以孤之魂铸就的魔弹！"},
+    {"vol": 1, "chapter": 202, "line": 127, "quote": "E、『Ex・Wind』──？"},
+    {"vol": 1, "chapter": 202, "line": 128, "quote": "以如此恢弘的气势，使出的却是莱纳也会的风属性魔法。"},
+    {"vol": 1, "chapter": 202, "line": 129, "quote": "而且还是连地上的探索者都能熟练使用的中级魔法，是原本根本就不具攻击力的用于移动的魔法。"},
+    {"vol": 1, "chapter": 202, "line": 130, "quote": "──然而罗德使出的这招效果与寻常作比实在是判若云泥。"},
+    {"vol": 1, "chapter": 202, "line": 137, "quote": "『流星』正在坠落。"},
+    {"vol": 1, "chapter": 202, "line": 141, "quote": "仅仅只是、罗德在全力飞奔而已。"},
+    {"vol": 1, "chapter": 202, "line": 145, "quote": "并非魔法而是体术⋯⋯但却引发了魔法现象──！"},
+    {"vol": 1, "chapter": 202, "line": 148, "quote": "不以魔力，仅凭物理上的力量将次元撕开一个裂口。"},
+    {"vol": 1, "chapter": 202, "line": 159, "quote": "其攻击对象仅有一人──唯有我而已。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『维度・决战演算』",
+    "fact": "涡波的次元魔术系技能：注入魔力把思考和感知能力磨练到极限、延长体感时间；因对次元魔术本质的理解加深而提升到新的领域=能够预测眼前所有风矢的轨迹、把握所有风矢距离并计算命中时间；运作时将无数绿点转化为信息送大脑处理、几乎令大脑因运转过热而沸腾；化解箭雨后涡波自察『既知的未来迫近』般的既视感、怀疑并非此技之功（据涡波自述）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "aliases_to_register": ["决战演算"],
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {
+     "category": "technique",
+     "text": "新领域下眼中世界开始迟滞；演算数值交由技能『感应』回答最合适出剑方式、技能『剑术』负责实现",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 37, "quote": "「──『维度・决战演算』！！」"},
+    {"vol": 1, "chapter": 202, "line": 40, "quote": "『维度』将逼近眼前的无数绿点转化为信息送给大脑处理，这几乎让我的大脑因运转过热而沸腾。"},
+    {"vol": 1, "chapter": 202, "line": 45, "quote": "将魔力注入『维度・决战演算』之中，把思考和感知能力磨练到极限，延长我的体感时间。"},
+    {"vol": 1, "chapter": 202, "line": 47, "quote": "『维度・决战演算』所抵达的新领域，它给了我能够预测眼前所有风矢的轨迹的能力。"},
+    {"vol": 1, "chapter": 202, "line": 62, "quote": "当时的感觉就跟既知的未来迫近一样──那倾注如雨的风矢甚至让我产生了一种既视感。"},
+    {"vol": 1, "chapter": 202, "line": 65, "quote": "刚才并非是『维度・决战演算』发挥了作用──"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『维度・曲战演算』",
+    "fact": "涡波可用的演算系技能：可用于改变对象轨迹；本章涡波判断对罗德的『流星』用其改变轨迹恐怕无意义——无论到哪里都避不开攻击余波，且自己的魔法能否起作用都是问题（据涡波判断）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["相川涡波", "罗德"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 166, "quote": "就算用『维度・曲战演算』改变罗德的轨迹恐怕也没有意义。无论到哪里都避不开她攻击的余波。不对，说到底我的魔法能否起作用都是个问题。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『维度・多重展开』",
+    "fact": "涡波在流星坠至眼前前发动的次元魔术（发动时伴随恐惧与喜悦混杂所致的莫名笑声，据自述）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 181, "quote": "「哈、哈哈！──『维度・多重展开！！』」"},
+    {"vol": 1, "chapter": 202, "line": 183, "quote": "也许是因为恐怖和喜悦的混杂让我的精神产生了些许错乱吧。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『Default』",
+    "fact": "涡波常用的次元魔术（空间扭曲）：于流星一击命中前构筑；涡波自认自己的魔法实在不可靠、怕得几乎想立刻向罗德投降（据自述）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 185, "quote": "「给我把空间扭曲！──『Default』哦哦哦！！」"},
+    {"vol": 1, "chapter": 202, "line": 186, "quote": "在流星的一击命中之前，我构筑出自己常用的次元魔术。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『次元决战演算『先谭』』",
+    "fact": "涡波的先导演算：罗德『流星』一击之幕曾在其中出现过，而此前双方的小打小闹未出现其中；世界已走上其所预示的轨道；涡波由化解箭雨确信能挺过罗德凶恶至极的飞踢；其所指道路=涡波负致命伤后的胜利（据涡波自述）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "aliases_to_register": ["先谭"],
+   "entities_involved": ["相川涡波", "罗德"],
+   "observations": [
+    {
+     "category": "knowledge",
+     "text": "先谭预示=罗德彻底被激怒后涡波踏上通往胜利的道路；涡波决意沿这条路冲到底",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 172, "quote": "直到刚才为止我们之间的战斗都只是小打小闹，其过程甚至没有出现在『次元决战演算『先谭』』当中，但现如今我眼前的这一幕却曾在其中出现过。"},
+    {"vol": 1, "chapter": 202, "line": 173, "quote": "这就是说罗德终于彻底被激怒，而我也踏上了通往那个胜利的道路。"},
+    {"vol": 1, "chapter": 202, "line": 184, "quote": "但既然世界已经走上了『次元决战演算『先谭』』所预示的轨道，那我能做的就只有沿着这条路冲到底了。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『感应』",
+    "fact": "涡波的技能：在决战演算将风矢数值输入脑中后，回答『最合适的出剑方式是什么』这一问题",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 50, "quote": "这个问题由技能『感应』来回答，接着技能『剑术』则负责将那天方夜谭般的答案化作现实。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『剑术』",
+    "fact": "涡波的技能：将『感应』给出的天方夜谭般答案化作现实——以最合适出剑顺序配以最合适身体动作、不存一丝瑕疵地连续斩除风矢（三剑开隙→侧身潜入→反复斩除）；因与『魔王』数秒剑闘成长到前所未有的高级别（据自述）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["相川涡波"],
+   "observations": [
+    {
+     "category": "evolution",
+     "text": "与帕林库洛战斗受损的力量恢复后实战直觉重新敏锐；对眼前阵容凭现在的『剑术』有办法对付（据自述）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 41, "quote": "但是就算是这种阵容，凭借我现在的『剑术』应该也是有办法对付的。"},
+    {"vol": 1, "chapter": 202, "line": 43, "quote": "虽然只有数秒的时间，但是拜与『魔王』的剑闘所赐，我的『剑术』已经成长到了前所未有的高级别。"},
+    {"vol": 1, "chapter": 202, "line": 50, "quote": "这个问题由技能『感应』来回答，接着技能『剑术』则负责将那天方夜谭般的答案化作现实。"},
+    {"vol": 1, "chapter": 202, "line": 53, "quote": "以最合适的出剑顺序配以最合适的身体动作，不存一丝瑕疵地、将风矢斩斩斩斩斩──不断斩除。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『咏唱』",
+    "fact": "罗德持续行使的复合咒术行为（以『加速』等词句为核）：代价=宣泄自己的人生不存任何意义、削耗自己的魂使身体无止境变轻；其心磨耗、融解、化作风溶入世界——仅涡波拜『维度』所赐听得到咏唱、看得到此过程；若继续索求更进一步的加速、为此舍弃更多的东西，就不光是心灵、甚至会危及生命乃至灵魂（据涡波观察）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [
+    {
+     "category": "manifestation",
+     "text": "从「加速加速加速」短句至长篇自白咏唱（白樱陨堕/绮梦丧空/孕逝亡/家族失诅咒秽/驰骋战场驱至坟茔等）；伴随咏唱魔法阵不断巨大化；咏唱（呐喊）越过本应无法传及的距离清楚流入涡波耳中",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 14, "quote": "因为『咏唱』的『代价』和战斗的兴奋感，让她的情绪高涨到了极点。"},
+    {"vol": 1, "chapter": 202, "line": 83, "quote": "罗德要通过『咏唱』宣泄自己的人生不存任何意义，借此削耗自己的魂，从而让自己的身体无止境地变轻。"},
+    {"vol": 1, "chapter": 202, "line": 89, "quote": "如果继续这样不满于现在的加速而索求更进一步的加速，为了实现更进一步的加速而舍弃更多的东西的话，那就不光是心灵，甚至会危及她的生命乃至灵魂。"},
+    {"vol": 1, "chapter": 202, "line": 96, "quote": "罗德的咏唱，拜『维度』所赐，只有我听得到。"},
+    {"vol": 1, "chapter": 202, "line": 97, "quote": "磨耗、融解、化作风溶入世界的，是罗德的心这点，只有我看得到。"},
+    {"vol": 1, "chapter": 202, "line": 118, "quote": "本应是一段无法传及的距离，但这份『咏唱（呐喊）』却清楚地流入我的耳中。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "五十层",
+    "fact": "第五十之试练战场：崩壊的世界为舞台、脱轨的重力环境（可借漂浮瓦砾间穿梭移动，罗德可用双翼自由飞行）；一切构造都对罗德有利、涡波无法打造地利；至高至远的领域容不得佩艾希亚的瓦砾亵渎、唯虚无被允许存在",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["罗德", "相川涡波", "佩艾希亚"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 3, "quote": "以崩壊的世界为舞台，『风之理的盗窃者』的『试练』就此开幕。"},
+    {"vol": 1, "chapter": 202, "line": 11, "quote": "本想试图打造出一些地利，但这里果真不愧是五十层。不管怎么挣扎也改变不了这里的一切构造都对她有利的事实。"},
+    {"vol": 1, "chapter": 202, "line": 100, "quote": "她现在所处的领域，根本容不得佩艾希亚的瓦砾亵渎。在那至高至远的地方，能被允许存在的唯有虚无。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "佩艾希亚",
+    "fact": "崩壊状态延续：其瓦砾（含建筑物级质量者）漂浮散布于五十层战场、成为双方移动与攻防的媒介；罗德所处的至高领域容不得其瓦砾亵渎",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 3, "quote": "以崩壊的世界为舞台，『风之理的盗窃者』的『试练』就此开幕。"},
+    {"vol": 1, "chapter": 202, "line": 100, "quote": "她现在所处的领域，根本容不得佩艾希亚的瓦砾亵渎。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.9,
+   "canonical": {
+    "name": "『风之理的盗窃者』",
+    "fact": "罗德的称号：国家、大陆、星辰⋯⋯甚至宇宙都在其支配之下的风之化身的王号；本章试练以其为名开幕；涡波自认同时只有自己拥有战胜此称号者（罗德）的力量",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 3, "quote": "以崩壊的世界为舞台，『风之理的盗窃者』的『试练』就此开幕。"},
+    {"vol": 1, "chapter": 202, "line": 154, "quote": "国家、大陆、星辰⋯⋯甚至宇宙都在其支配之下的风之化身。"},
+    {"vol": 1, "chapter": 202, "line": 155, "quote": "那就是『风之理的盗窃者』、罗德。"},
+    {"vol": 1, "chapter": 202, "line": 200, "quote": "同时也只有我拥有战胜『风之理的盗窃者』的力量。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.88,
+   "canonical": {
+    "name": "『支配之王』",
+    "fact": "罗德之王号：本章不厌其烦地继续咏唱；其全力流星之姿令涡波悟得其被敌方唤作『狂王』、被己方称为『魔王』的因果",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 94, "quote": "所以『支配之王』不厌其烦地继续咏唱着。"},
+    {"vol": 1, "chapter": 202, "line": 150, "quote": "此时此刻，见到这一幕，我终于明白作为『支配之王』的罗德被敌人唤作『狂王』，被己方称为『魔王』的因果。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『狂王』",
+    "fact": "敌人对罗德的称呼（据涡波于本章悟得其因果）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 150, "quote": "此时此刻，见到这一幕，我终于明白作为『支配之王』的罗德被敌人唤作『狂王』，被己方称为『魔王』的因果。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『魔王』",
+    "fact": "己方对罗德的称呼（据涡波于本章悟得其因果）；另涡波自述『剑术』因与『魔王』的数秒剑闘而大幅成长——该处所指待终审挂接（判例1 不自动合并）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["罗德", "相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 43, "quote": "虽然只有数秒的时间，但是拜与『魔王』的剑闘所赐，我的『剑术』已经成长到了前所未有的高级别。"},
+    {"vol": 1, "chapter": 202, "line": 150, "quote": "此时此刻，见到这一幕，我终于明白作为『支配之王』的罗德被敌人唤作『狂王』，被己方称为『魔王』的因果。"}
+   ]
+  },
+  {
+   "type": "setting",
+   "library": "setting",
+   "confidence": 0.85,
+   "canonical": {
+    "name": "『光之理的盗窃者』",
+    "fact": "与『风之理的盗窃者』并称的称号：据涡波确信唯有莱纳（而非涡波）拥有战胜其的力量；与诺斯菲之挂接待终审（本章旁证：『这光也不属于诺斯菲』示其属性关联光——判例1 不自动合并）",
+    "chapter": 202,
+    "tick": 202
+   },
+   "entities_involved": ["莱纳", "诺斯菲", "相川涡波"],
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 193, "quote": "这道风不属于罗德。这光也不属于诺斯菲。"},
+    {"vol": 1, "chapter": 202, "line": 200, "quote": "不是我而是莱纳才拥有战胜『光之理的盗窃者』的力量。"},
+    {"vol": 1, "chapter": 202, "line": 201, "quote": "没错，如果是我们两个的话是能够战胜『风之理的盗窃者』和『光之理的盗窃者』的。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "罗德", "rel_type": "交战(第五十之试练)", "object": "相川涡波", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "本章全程激战：拳碎瓦砾散弹→魔弹『风之矢・散花』追踪箭雨→升空咏唱→『Ex・Wind』流星全力一击（攻击对象仅涡波一人）；涡波以剑术化解箭雨、发动次元魔术迎击流星",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 4, "quote": "然而我的对手可是『风之理的盗窃者』罗德。"},
+    {"vol": 1, "chapter": 202, "line": 125, "quote": "乃此世上究其轻薄的一击！接招吧、涡波啊啊！！"},
+    {"vol": 1, "chapter": 202, "line": 159, "quote": "其攻击对象仅有一人──唯有我而已。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "罗德", "rel_type": "称号(被称为)", "object": "『风之理的盗窃者』", "claim": false},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 155, "quote": "那就是『风之理的盗窃者』、罗德。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "罗德", "rel_type": "王号(被称为)", "object": "『支配之王』", "claim": false},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 94, "quote": "所以『支配之王』不厌其烦地继续咏唱着。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "罗德", "rel_type": "称呼(敌方所呼)", "object": "『狂王』", "claim": true},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 150, "quote": "此时此刻，见到这一幕，我终于明白作为『支配之王』的罗德被敌人唤作『狂王』，被己方称为『魔王』的因果。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "罗德", "rel_type": "称呼(己方所呼)", "object": "『魔王』", "claim": true},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 150, "quote": "此时此刻，见到这一幕，我终于明白作为『支配之王』的罗德被敌人唤作『狂王』，被己方称为『魔王』的因果。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "相川涡波", "rel_type": "使用", "object": "『维度・决战演算』", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "于箭雨迫前驻足发动；本章节内该技提升到新领域（预测全部风矢轨迹）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 37, "quote": "「──『维度・决战演算』！！」"},
+    {"vol": 1, "chapter": 202, "line": 47, "quote": "『维度・决战演算』所抵达的新领域，它给了我能够预测眼前所有风矢的轨迹的能力。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "相川涡波", "rel_type": "使用", "object": "『维度・多重展开』", "claim": false},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 181, "quote": "「哈、哈哈！──『维度・多重展开！！』」"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "相川涡波", "rel_type": "使用", "object": "『Default』", "claim": false},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 186, "quote": "在流星的一击命中之前，我构筑出自己常用的次元魔术。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "相川涡波", "rel_type": "使用(连携『感应』)", "object": "『剑术』", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "『感应』回答最合适出剑方式、『剑术』将答案化作现实；三剑开隙侧身潜入反复斩除、数秒斩尽全部风矢",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 50, "quote": "这个问题由技能『感应』来回答，接着技能『剑术』则负责将那天方夜谭般的答案化作现实。"},
+    {"vol": 1, "chapter": 202, "line": 53, "quote": "以最合适的出剑顺序配以最合适的身体动作，不存一丝瑕疵地、将风矢斩斩斩斩斩──不断斩除。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "罗德", "rel_type": "使用", "object": "『咏唱』", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "飞行中与驻足后均持续咏唱加速；咏唱削耗其魂使身体变轻",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 14, "quote": "因为『咏唱』的『代价』和战斗的兴奋感，让她的情绪高涨到了极点。"},
+    {"vol": 1, "chapter": 202, "line": 83, "quote": "罗德要通过『咏唱』宣泄自己的人生不存任何意义，借此削耗自己的魂，从而让自己的身体无止境地变轻。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "罗德", "rel_type": "使用", "object": "魔弹『风之矢・散花』", "claim": false},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 20, "quote": "「『加速、而后进溅』、『花碎之瓣全数作风驱驰』！──魔弹（FlyShoots）『风之矢・散花（FallFlower）』！！」"},
+    {"vol": 1, "chapter": 202, "line": 21, "quote": "冠以子弹之名的魔法随此宣言一同构筑完成。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "罗德", "rel_type": "使用", "object": "『Ex・Wind』", "claim": false},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 124, "quote": "这便是！以孤之魂铸就的魔弹！"},
+    {"vol": 1, "chapter": 202, "line": 127, "quote": "E、『Ex・Wind』──？"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.88,
+   "canonical": {"subject": "『Ex・Wind』", "rel_type": "同型魔法(原型)", "object": "莱纳", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "『Ex・Wind』原型=莱纳也会的风属性中级魔法（地上探索者皆会、原不具攻击力的移动魔法）；罗德使出后效果判若云泥",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 128, "quote": "以如此恢弘的气势，使出的却是莱纳也会的风属性魔法。"},
+    {"vol": 1, "chapter": 202, "line": 129, "quote": "而且还是连地上的探索者都能熟练使用的中级魔法，是原本根本就不具攻击力的用于移动的魔法。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "莱纳", "rel_type": "交战(试练对手)", "object": "诺斯菲", "claim": true},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "据涡波确信/心声：莱纳正在远处战斗、能战胜诺斯菲；两人各自承担对『光之理的盗窃者』的试练",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 200, "quote": "果然，只有莱纳能够战胜诺斯菲。"},
+    {"vol": 1, "chapter": 202, "line": 204, "quote": "莱纳、让我们一起跨越这个试练吧！"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.9,
+   "canonical": {"subject": "相川涡波", "rel_type": "同伴(并肩试练)", "object": "莱纳", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "两人各自在远处战斗、互相借力：无论何时都借助别人的力量战斗、为报答借力之人要赢过两人一起回到地上（据涡波心灵呐喊）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 204, "quote": "莱纳、让我们一起跨越这个试练吧！"},
+    {"vol": 1, "chapter": 202, "line": 206, "quote": "无论何时，我也好你也好都是借助别人的力量在战斗！"},
+    {"vol": 1, "chapter": 202, "line": 207, "quote": "为了报答将力量借给自己的那些人，我们绝对要──绝对要赢！赢过她们两人，一起回到地上！！"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "相川涡波", "rel_type": "受援(无数次)", "object": "风的所有者", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "曾受风的所有者帮助无数次、想忘都忘不掉；本章其风再度支持涡波直面罗德",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 196, "quote": "我曾被风的所有者帮助过无数次，想忘都忘不掉。"},
+    {"vol": 1, "chapter": 202, "line": 197, "quote": "在这道风的支持下，我得以直面上空的罗德。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "相川涡波", "rel_type": "曾交战(受损已恢复)", "object": "帕林库洛", "claim": false},
+   "observations": [],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 42, "quote": "我能感觉到因为与帕林库洛的战斗而受损的力量现在重新恢复了。"}
+   ]
+  },
+  {
+   "type": "relation",
+   "library": "relation",
+   "confidence": 0.85,
+   "canonical": {"subject": "相川涡波", "rel_type": "魔石关联(失去)", "object": "相川阳滝", "claim": false},
+   "observations": [
+    {
+     "category": "relation",
+     "text": "涡波失去了阳滝的魔石、由此产生的违和感本章已消失（据自述）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 42, "quote": "或者说是因为失去了阳滝的魔石而产生的违和感已经消失，应用于实战中的直觉重新趋于敏锐。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "第五十之试练开幕·崩壊世界近战", "kind": "战斗", "tick": 202, "instant": null, "time_verbatim": "罗德vs涡波五十层决战连续场景（无日时坐标）"},
+   "entities_involved": ["罗德", "相川涡波", "五十层", "佩艾希亚"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "试练以崩壊世界为舞台开幕：涡波于脱轨重力环境借漂浮瓦砾移动，罗德双翼自由飞行占尽地利；罗德怒喝『碍事』挥拳砸碎一栋建筑物质量的瓦砾，碎片化作散弹骤雨袭向涡波；涡波拔剑招架仍有大量弹片命中、痛及骨髓",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 3, "quote": "以崩壊的世界为舞台，『风之理的盗窃者』的『试练』就此开幕。"},
+    {"vol": 1, "chapter": 202, "line": 6, "quote": "「碍事──！！」"},
+    {"vol": 1, "chapter": 202, "line": 7, "quote": "足足有一栋建筑物质量的瓦砾，在罗德拳下也跟一块饼干没什么两样。"},
+    {"vol": 1, "chapter": 202, "line": 8, "quote": "瓦砾的碎片化作了骤雨，如散弹一般向我袭来。"},
+    {"vol": 1, "chapter": 202, "line": 9, "quote": "匆忙之下我拔剑招架，但势同暴雨的碎片终究不能全数化解，还是有大量弹片击中我的身体，视命中部位而定有的甚至痛及骨髓。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "罗德转远程·魔弹风之矢箭雨追踪", "kind": "战斗", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["罗德", "相川涡波", "魔弹『风之矢・散花』", "『咏唱』"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "罗德对猎物逃匿大发雷霆、由近身战转远距离：瞬至数百米外咏唱，翠色魔法阵巨大化、双翼伸展洒落翠羽；魔弹构筑后魔法阵分解为无数绿点=风矢骤雨倾盆；涡波一跃脱离后箭雨轨迹于极下方偏转、如活物不断变轨尾随；涡波跳弹式在瓦砾间穿梭闪避",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 16, "quote": "只将她摆动双翼，在顷刻间便飞到了数百米之外。"},
+    {"vol": 1, "chapter": 202, "line": 20, "quote": "「『加速、而后进溅』、『花碎之瓣全数作风驱驰』！──魔弹（FlyShoots）『风之矢・散花（FallFlower）』！！」"},
+    {"vol": 1, "chapter": 202, "line": 25, "quote": "风矢坠落有如骤雨倾盆。"},
+    {"vol": 1, "chapter": 202, "line": 29, "quote": "就在我跳开的下一刻，自己方才所在的地方便被骤雨一般的风矢贯穿，瓦砾转瞬间就被射成了蜂窝。"},
+    {"vol": 1, "chapter": 202, "line": 32, "quote": "本应一头扎进无底深渊的箭雨，其坠落的轨迹在偏折之后竟然重新转向了我现在所在的方向。"},
+    {"vol": 1, "chapter": 202, "line": 35, "quote": "但风矢却像是活物一样不断改变飞行的轨道，始终尾随在我身后不放。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "『维度・决战演算』抵达新领域", "kind": "能力变化", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["相川涡波", "『维度・决战演算』", "罗德"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波做好觉悟驻足迎击：注入魔力把思考感知磨练到极限、延长体感时间，眼中世界开始迟滞；因对次元魔术本质理解加深、决战演算提升到新的领域=获预测眼前所有风矢轨迹之能；绿点转信息送脑几乎令大脑过热沸腾",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 37, "quote": "「──『维度・决战演算』！！」"},
+    {"vol": 1, "chapter": 202, "line": 40, "quote": "『维度』将逼近眼前的无数绿点转化为信息送给大脑处理，这几乎让我的大脑因运转过热而沸腾。"},
+    {"vol": 1, "chapter": 202, "line": 45, "quote": "将魔力注入『维度・决战演算』之中，把思考和感知能力磨练到极限，延长我的体感时间。"},
+    {"vol": 1, "chapter": 202, "line": 46, "quote": "──我眼中的世界开始迟滞。"},
+    {"vol": 1, "chapter": 202, "line": 47, "quote": "『维度・决战演算』所抵达的新领域，它给了我能够预测眼前所有风矢的轨迹的能力。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "涡波剑技斩尽风矢毫发无损", "kind": "战斗", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["相川涡波", "罗德", "『剑术』", "『感应』", "魔弹『风之矢・散花』"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "风矢344/命中54/290变轨袭背等数值输入脑中；『感应』答最合适出剑方式、『剑术』实现：三剑开隙→侧身潜入→反复斩除；数秒后风矢全灭、涡波毫发无损；罗德惊讶『竟然全部挡下了』，涡波自认有点吓到、先装强势（『小菜一碟』）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 49, "quote": "现在在我眼前的风矢数量为三百四十四──其中会击中我的数量共计五十四──另外二百九十将在之后改变轨道袭击背后"},
+    {"vol": 1, "chapter": 202, "line": 51, "quote": "在累计三次的剑闪挥出后，便在箭雨中开辟出了一道缝隙。"},
+    {"vol": 1, "chapter": 202, "line": 55, "quote": "──就这样，数秒后，现场只剩下毫发无损的我，方才还数不清的风矢已全部被剑葬送。"},
+    {"vol": 1, "chapter": 202, "line": 56, "quote": "「什、什么！？竟然全部挡下了──！？」"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "涡波身体状态恢复（帕林库洛受损+阳滝魔石违和感消失）", "kind": "身体变化", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["相川涡波", "帕林库洛", "相川阳滝", "『魔王』"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "与帕林库洛战斗受损的力量重新恢复；失去阳滝魔石产生的违和感消失、应用于实战的直觉重新敏锐；拜与『魔王』的数秒剑闘所赐『剑术』成长到前所未有的高级别（均据涡波自述）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 42, "quote": "我能感觉到因为与帕林库洛的战斗而受损的力量现在重新恢复了。或者说是因为失去了阳滝的魔石而产生的违和感已经消失，应用于实战中的直觉重新趋于敏锐。"},
+    {"vol": 1, "chapter": 202, "line": 43, "quote": "虽然只有数秒的时间，但是拜与『魔王』的剑闘所赐，我的『剑术』已经成长到了前所未有的高级别。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "罗德化星攀升·咏唱削魂·涡波制止无效", "kind": "战斗/能力行使", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["罗德", "相川涡波", "『咏唱』"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "罗德决意使用无法回避无法化解的魔法：不顾距离翱翔至更远，以翠翼包裹身体扶摇直上、魔力与空气剧烈摩擦描出青白线；将此世一切魔力纠集一身化作一颗星（肉眼唯见一点）；一面咏唱一面借宣泄人生无意义削耗魂使身体无止境变轻；涡波看不下去出言制止，但物理与心理距离过远、声音不可能传达",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 66, "quote": "「既、既然如此！那就使用无法回避无法化解的魔法便是！你就后悔自己让孤使出这招好了──！！」"},
+    {"vol": 1, "chapter": 202, "line": 74, "quote": "用翠色的羽翼包裹身体，向上再向上，罗德以下坠的势头扶摇直上。"},
+    {"vol": 1, "chapter": 202, "line": 80, "quote": "于是，将此世一切魔力纠集于一身的罗德，终于化作了一颗星。"},
+    {"vol": 1, "chapter": 202, "line": 83, "quote": "罗德要通过『咏唱』宣泄自己的人生不存任何意义，借此削耗自己的魂，从而让自己的身体无止境地变轻。"},
+    {"vol": 1, "chapter": 202, "line": 91, "quote": "「罗德！快住手、不要再继续『咏唱』了──！！」"},
+    {"vol": 1, "chapter": 202, "line": 93, "quote": "无论是在物理上还是在心理上，罗德跟我的距离都太过遥远，她不可能听到我的声音了。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "罗德咏唱自白与魂之魔法阵", "kind": "战斗/自白", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["罗德", "『咏唱』", "相川涡波", "五十层"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "罗德停止飞翔、驻足于漆黑穹顶上绘以几何学纹样、规模超越星辰且不分解作矢的魔法阵（将其当立足点），以更甚劲头继续咏唱加速；咏唱之故魔力过多从肩肘腰膝脚踝喷出、乍看如复数翠翼；魔法阵=罗德其人之魂的具现化、纹样延展无垠侵蚀穹顶、翠星闪耀堪比当空白日；咏唱自白：早已无法挽回、很久以前便丧失补救之法、对成为王追悔莫及",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 104, "quote": "这一次铺展而成的魔法阵大小已经超越星辰。"},
+    {"vol": 1, "chapter": 202, "line": 105, "quote": "咚地一声，罗德踏立其上。"},
+    {"vol": 1, "chapter": 202, "line": 107, "quote": "明明她已经驻足不动，却以更甚以往的劲头吟诵「加速」的咏唱。"},
+    {"vol": 1, "chapter": 202, "line": 116, "quote": "早在很久以前便丧失了补救之法。"},
+    {"vol": 1, "chapter": 202, "line": 117, "quote": "所以自己对成为了王这件事感到追悔莫及、作出上述主张的咏唱如怒涛般席卷于整个世界。"},
+    {"vol": 1, "chapter": 202, "line": 121, "quote": "这道魔法阵，想必就是罗德其人之魂的具现化。"},
+    {"vol": 1, "chapter": 202, "line": 122, "quote": "翠星之闪耀堪比当空之白日。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "罗德全力一击『Ex・Wind』流星坠落", "kind": "战斗", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["罗德", "相川涡波", "『Ex・Wind』", "『咏唱』"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "罗德宣言再度坠陨、以魂铸就魔弹『Ex・Wind』：一脚踏穿魔法阵粉碎无遗、风炸裂填满世界；如从世界上消失般向宇宙极深处飞去、化作自天际坠来的翠星『流星』；『维度』探明构造=仅是罗德全力飞奔的体术、却引发魔法现象：速度臻于极致令空气灼燃、全身放射青色光辉，过处世界被撕裂、以物理力量撕开次元裂口",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 123, "quote": "「──因而！孤将再度、就此坠陨！"},
+    {"vol": 1, "chapter": 202, "line": 124, "quote": "这便是！以孤之魂铸就的魔弹！"},
+    {"vol": 1, "chapter": 202, "line": 132, "quote": "被当做立足点的魔法阵只在罗德一脚踏穿之后便粉碎无遗。"},
+    {"vol": 1, "chapter": 202, "line": 135, "quote": "随后，罗德如从世界上消失了一般──向此宇宙之极深处、飞去。"},
+    {"vol": 1, "chapter": 202, "line": 141, "quote": "仅仅只是、罗德在全力飞奔而已。"},
+    {"vol": 1, "chapter": 202, "line": 145, "quote": "并非魔法而是体术⋯⋯但却引发了魔法现象──！"},
+    {"vol": 1, "chapter": 202, "line": 148, "quote": "不以魔力，仅凭物理上的力量将次元撕开一个裂口。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.88,
+   "canonical": {"name": "涡波悟得狂王/魔王因果·罗德即千年前传说之王", "kind": "身世揭示", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["相川涡波", "罗德", "『支配之王』", "『狂王』", "『魔王』", "『风之理的盗窃者』"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "见流星全力之姿，涡波终明白罗德被敌人唤作『狂王』、被己方称为『魔王』的因果：此即千年前的传说——将濒临毁灭的诸国重新振兴统合、继承最悠久高贵血统的王中之王、大陆北方芸芸众生醉心的梦幻、千年后仍被传颂的强大象征、国家/大陆/星辰乃至宇宙皆在其支配之下的风之化身；现如今又一次显现",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 150, "quote": "此时此刻，见到这一幕，我终于明白作为『支配之王』的罗德被敌人唤作『狂王』，被己方称为『魔王』的因果。"},
+    {"vol": 1, "chapter": 202, "line": 151, "quote": "──这・就・是千年前的传说。"},
+    {"vol": 1, "chapter": 202, "line": 152, "quote": "将濒临毁灭的诸国重新振兴统合在一起，继承最悠久高贵的血统的王中之王。"},
+    {"vol": 1, "chapter": 202, "line": 153, "quote": "既是大陆北方的芸芸众生醉心不已的梦幻，也是千年后仍然被传颂不绝的强大之象征。"},
+    {"vol": 1, "chapter": 202, "line": 155, "quote": "那就是『风之理的盗窃者』、罗德。"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "涡波先谭预知确认·舍弃无伤回避", "kind": "决断", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["相川涡波", "罗德", "『次元决战演算『先谭』』", "『Ex・Wind』", "『维度・曲战演算』"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "流星之下涡波冷汗涔涔：被击中即消灭、擦伤即死、近身必被拆散、远离亦因热量冲击HP顷刻归零、曲战演算变轨无意义且魔法能否起作用成问题；但该怎么做早已知道——此幕曾在『先谭』中出现=罗德彻底被激怒、涡波踏上胜利道路，确信能挺过飞踢；同时预知自己将没能躲过流星负致命伤、舍弃无伤回避之念；应做的是去找到致胜一击所必须用到的『那个』",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 162, "quote": "一旦被击中就是消灭。"},
+    {"vol": 1, "chapter": 202, "line": 166, "quote": "就算用『维度・曲战演算』改变罗德的轨迹恐怕也没有意义。无论到哪里都避不开她攻击的余波。不对，说到底我的魔法能否起作用都是个问题。"},
+    {"vol": 1, "chapter": 202, "line": 172, "quote": "直到刚才为止我们之间的战斗都只是小打小闹，其过程甚至没有出现在『次元决战演算『先谭』』当中，但现如今我眼前的这一幕却曾在其中出现过。"},
+    {"vol": 1, "chapter": 202, "line": 176, "quote": "所以我早就知道。在这之后，我没能躲过这颗『流星』并受到重创──不、是负上了致命伤。像无伤回避这种天真的想法必须予以舍弃。"},
+    {"vol": 1, "chapter": 202, "line": 178, "quote": "而是去找到致胜一击所必须要用到的『那个』"}
+   ]
+  },
+  {
+   "type": "event",
+   "library": "event",
+   "confidence": 0.9,
+   "canonical": {"name": "涡波迎击流星·风援与心灵呐喊", "kind": "战斗/转折", "tick": 202, "instant": null, "time_verbatim": "同上连续场景"},
+   "entities_involved": ["相川涡波", "罗德", "『维度・多重展开』", "『Default』", "风的所有者", "莱纳"],
+   "observations": [
+    {
+     "category": "event",
+     "text": "涡波发出莫名其妙的笑声、发动『维度・多重展开』并于流星命中前构筑常用次元魔术『Default』扭曲空间；自认魔法不可靠、怕得几乎想投降；此时一道自右侧远来的强风伴柔和光芒从旁吹来支持其决心——风不属于罗德、光不属于诺斯菲、亦不属于莱纳及在场任何人，但涡波清楚知道属于谁；不安平复、胜利预感加强",
+     "chapter": 202
+    },
+    {
+     "category": "event",
+     "text": "涡波确信只有莱纳能胜诺斯菲、只有自己能胜罗德，两人合力能胜『风之理的盗窃者』与『光之理的盗窃者』；心灵呐喊：与莱纳一起跨越试练、彼此都借助别人的力量战斗、报答借力之人、赢过两人一起回到地上；呐喊结束之时流星已坠至眼前",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 181, "quote": "「哈、哈哈！──『维度・多重展开！！』」"},
+    {"vol": 1, "chapter": 202, "line": 185, "quote": "「给我把空间扭曲！──『Default』哦哦哦！！」"},
+    {"vol": 1, "chapter": 202, "line": 189, "quote": "──一阵风就像是为了支持我的决心一样从旁吹来。"},
+    {"vol": 1, "chapter": 202, "line": 193, "quote": "这道风不属于罗德。这光也不属于诺斯菲。"},
+    {"vol": 1, "chapter": 202, "line": 196, "quote": "我曾被风的所有者帮助过无数次，想忘都忘不掉。"},
+    {"vol": 1, "chapter": 202, "line": 200, "quote": "果然，只有莱纳能够战胜诺斯菲。不是我而是莱纳才拥有战胜『光之理的盗窃者』的力量。同时也只有我拥有战胜『风之理的盗窃者』的力量。"},
+    {"vol": 1, "chapter": 202, "line": 207, "quote": "为了报答将力量借给自己的那些人，我们绝对要──绝对要赢！赢过她们两人，一起回到地上！！"},
+    {"vol": 1, "chapter": 202, "line": 209, "quote": "──罗德的『流星』已经坠至眼前。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {"name": "致胜一击所必须用到的『那个』", "setup_chapter": 202, "payoff_chapter": null, "tier": "核心", "note": "涡波断言『那个』肯定还留在这个世界当中——只要『这里』当真是罗德所期望的世界、当真是罗德自身的话就一定存在；其真身未揭，流星命中前须寻得——回收待后章", "chapter": 202},
+   "entities_involved": ["相川涡波", "罗德", "五十层"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "开环：涡波弃防御转寻『那个』（致胜一击必需物留存于世界的前提=『这里』=罗德期望的世界/罗德自身）",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 177, "quote": "因此我现在应该做的不是防御。"},
+    {"vol": 1, "chapter": 202, "line": 179, "quote": "『那个』肯定还留在这个世界当中。"},
+    {"vol": 1, "chapter": 202, "line": 180, "quote": "只要『这里』当真是罗德所期望的世界，当真是罗德自身的话，就一定──！"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.9,
+   "canonical": {"name": "风的所有者身份之谜", "setup_chapter": 202, "payoff_chapter": null, "tier": "核心", "note": "流星一击前支援涡波的强风+柔光不属于罗德/诺斯菲/莱纳及在场任何人，但涡波清楚知道其归属、曾受其帮助无数次想忘都忘不掉——身份未点名，开环", "chapter": 202},
+   "entities_involved": ["相川涡波", "风的所有者", "罗德", "诺斯菲", "莱纳"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "开环：风+光同源支援（风不属于罗德、光不属于诺斯菲、不属于莱纳）——支援者与涡波关系深挚，真身待揭",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 192, "quote": "这是一道从右侧远远吹来的强风──同时还伴以柔和的光芒。"},
+    {"vol": 1, "chapter": 202, "line": 193, "quote": "这道风不属于罗德。这光也不属于诺斯菲。"},
+    {"vol": 1, "chapter": 202, "line": 194, "quote": "当然，它也不属于莱纳。"},
+    {"vol": 1, "chapter": 202, "line": 195, "quote": "它不属于现在在场的任何人⋯⋯但我却清楚地知道它属于谁。"},
+    {"vol": 1, "chapter": 202, "line": 196, "quote": "我曾被风的所有者帮助过无数次，想忘都忘不掉。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {"name": "涡波致命伤预知（先谭轨道的下一幕）", "setup_chapter": 202, "payoff_chapter": null, "tier": "核心", "note": "涡波预知自己将没能躲过『流星』、负致命伤；无伤回避必须舍弃；致命伤后如何以『那个』致胜=胜负开环；章末流星已坠至眼前（『落地死的流星』）", "chapter": 202},
+   "entities_involved": ["相川涡波", "罗德", "『次元决战演算『先谭』』", "『Ex・Wind』"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "开环：先谭所示未来=负致命伤后的胜利道路；本章末流星坠至眼前、命中结果待下章",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 2, "quote": "落地死的流星"},
+    {"vol": 1, "chapter": 202, "line": 173, "quote": "这就是说罗德终于彻底被激怒，而我也踏上了通往那个胜利的道路。"},
+    {"vol": 1, "chapter": 202, "line": 176, "quote": "所以我早就知道。在这之后，我没能躲过这颗『流星』并受到重创──不、是负上了致命伤。"},
+    {"vol": 1, "chapter": 202, "line": 209, "quote": "──罗德的『流星』已经坠至眼前。"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.88,
+   "canonical": {"name": "罗德咏唱代价的极限（心之磨耗与生命灵魂之危）", "setup_chapter": 202, "payoff_chapter": null, "tier": "核心", "note": "罗德以咏唱宣泄人生无意义、削耗魂使身体变轻；其心磨耗融解化风溶入世界仅涡波可见；若继续索求加速将危及生命乃至灵魂——承接ch198『咏唱代价清偿』开环，本章咏唱至『唯孤方是加速之魂』仍未止", "chapter": 202},
+   "entities_involved": ["罗德", "『咏唱』", "相川涡波"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "开环：咏唱代价持续清偿中（心之磨耗可见化）；停止条件与代价终局未决",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 83, "quote": "罗德要通过『咏唱』宣泄自己的人生不存任何意义，借此削耗自己的魂，从而让自己的身体无止境地变轻。"},
+    {"vol": 1, "chapter": 202, "line": 89, "quote": "如果继续这样不满于现在的加速而索求更进一步的加速，为了实现更进一步的加速而舍弃更多的东西的话，那就不光是心灵，甚至会危及她的生命乃至灵魂。"},
+    {"vol": 1, "chapter": 202, "line": 97, "quote": "磨耗、融解、化作风溶入世界的，是罗德的心这点，只有我看得到。"},
+    {"vol": 1, "chapter": 202, "line": 113, "quote": "『唯孤方是加速之魂』"}
+   ]
+  },
+  {
+   "type": "foreshadow",
+   "library": "foreshadow",
+   "confidence": 0.85,
+   "canonical": {"name": "罗德咏唱暗语身世（白樱陨堕/家族失诅咒秽等）", "setup_chapter": 202, "payoff_chapter": null, "tier": "中", "note": "咏唱词『焕翠光践逐追』『白樱陨堕孤身』『绮梦丧空余躯』『孕逝亡且疾驱』『家族失诅咒秽』『驰骋战场驱至坟茔疾走地狱』暗示其过去（家族/丧失/诅咒/战场），与ch200失去弟弟线呼应——语义待解读", "chapter": 202},
+   "entities_involved": ["罗德", "『咏唱』"],
+   "observations": [
+    {
+     "category": "foreshadowing",
+     "text": "开环：咏唱自白以诗语暗指身世片段；『纵达奈落之底，孤之加速亦无羁止』=加速人生之咒的宣言",
+     "chapter": 202
+    }
+   ],
+   "evidence": [
+    {"vol": 1, "chapter": 202, "line": 113, "quote": "『白樱陨堕孤身尚奔驰无息』『绮梦丧空余躯尚奔驰无息』『孕逝亡且疾驱尚奔驰无息』『家族失诅咒秽尚奔驰无息』"},
+    {"vol": 1, "chapter": 202, "line": 113, "quote": "『驰骋战场驱至坟茔疾走地狱──纵达奈落之底，孤之加速亦无羁止』"},
+    {"vol": 1, "chapter": 202, "line": 117, "quote": "所以自己对成为了王这件事感到追悔莫及、作出上述主张的咏唱如怒涛般席卷于整个世界。"}
+   ]
+  }
+ ]
+}

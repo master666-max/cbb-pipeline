@@ -1,0 +1,77 @@
+{
+ "canonical": {
+  "entities": [
+   "Ex・Wind",
+   "莱纳",
+   "诺斯菲"
+  ],
+  "instant": null,
+  "kind": "战斗",
+  "name": "莱纳自伤最强一击落空·被诺斯菲制压完败",
+  "tick": 201,
+  "time_verbatim": "绝境反击阶段（同上连续场景）"
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 176,
+   "quote": "被逼入绝境的我，无可奈何之下使出了被封印许久的手段。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 180,
+   "quote": "赌上我生来最优的踏地，向诺斯菲释出我最强的剑闪。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 183,
+   "quote": "诺斯菲从方才所在的地方消失得无影无踪，我的双剑徒劳地斩断了空气。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 186,
+   "quote": "「──就连逼急了想出的主意也跟那个笨蛋骑士（赫勒比勒夏因）如出一辙呢。这我也早就习惯了。毕竟我自己都不记得阻止过这种自爆招数多少次了呢。唉⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 194,
+   "quote": "结果看到的是岔开双腿、用双脚踩住我的双手的诺斯菲。她将手上的光之长棍抵在了我的眼前。",
+   "vol": 1
+  }
+ ],
+ "library": "event",
+ "observations": [
+  {
+   "category": "event",
+   "chapter": 201,
+   "text": "莱纳解封『Ex・Wind』踏地自伤冲出、释出最强剑闪——诺斯菲原地消失、轻拍其肩（评其主意与『笨蛋骑士（赫勒比勒夏因）』如出一辙）；随即棍扫将其打倒、双脚踩住双手、光之长棍抵于眼前——无可争辩的败北；其击晕一击因随后的大地震而打偏"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-event-c7dbf6a934f3",
+ "record_type": "event",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}

@@ -1,0 +1,65 @@
+{
+ "canonical": {
+  "claim": false,
+  "object": "基督",
+  "rel_type": "主从(骑士侍奉)",
+  "subject": "莱纳"
+ },
+ "evidence": [
+  {
+   "chapter": 201,
+   "line": 58,
+   "quote": "主君基督是因为信赖我才将这个任务托付给我的。我绝对不能辜负他的信赖。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 77,
+   "quote": "「为了能够在真正的意义上成为基督的骑士！今天，就在这儿！我要将守护者打倒，让自己变得更强！！我要杀了你！！──『Ex・Wind』噢噢！！」",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 241,
+   "quote": "就连身上的装备，也全是借来的东西。没有一件是我自己打造，甚至就连魔石都不是我自己收集的。而且我也没有花过一分钱，全部都是基督给我准备好的东西。从基督将他的挚友诺文借给我用这点看来，就能知道主君对我的关照已经到了无微不至的地步。",
+   "vol": 1
+  },
+  {
+   "chapter": 201,
+   "line": 243,
+   "quote": "在这封闭的地下空间里，基督早就预料到战斗的到来了吧。他早就预料到，在即将到来的战斗中，只有我的力量还不够充足了吧。",
+   "vol": 1
+  }
+ ],
+ "library": "relation",
+ "observations": [
+  {
+   "category": "relation",
+   "chapter": 201,
+   "text": "莱纳因信赖受托拖住诺斯菲、决不辜负信赖；『为了能够在真正的意义上成为基督的骑士』而战；据莱纳自述：装备与魔石全由基督准备、借出挚友诺文之剑=关照无微不至；基督自身处境危险仍预判战斗、专心助其提高实力"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 0.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-relation-abcf45709e3c",
+ "record_type": "relation",
+ "status": "provisional",
+ "supersedes": null,
+ "verified_against": {
+  "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-工作区\\slice\\ch0201.txt",
+  "sha": "e489f92f8681a8777dbe4dbdbc3fee181278f480f4aaaec6047acc1e00c33b99",
+  "verified_at": "2026-09-21"
+ },
+ "version": 1
+}
