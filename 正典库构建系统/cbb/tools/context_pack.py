@@ -105,7 +105,11 @@ def rolling_digest(rolling: Path) -> list[str]:
     return rows[-ROLLING_KEEP:]
 
 
-def build(store: Path, alias_seed: Path | None, rolling: Path | None) -> str:
+def build(store: Path, alias_seed: Path | None, rolling: Path | None,
+          reranker=None, rerank_query: str | None = None) -> str:
+    """reranker（U-F04 岗位①，可选）：callable(query, docs, mechanical_order) -> (order, backend)。
+    提供时对①人物册/②伏笔清单按与 rerank_query（缺省=滚动摘要尾部）的相关性重排——预算花在最相关条目上；
+    不可用→机械序（同形）。不提供→行为与历史版本逐字节一致。"""
     sec1 = entity_roster(store, alias_seed)
     sec2 = active_foreshadows(store)
     sec3 = rolling_digest(rolling or store.parent / "迷深实战-工作区" / "rolling-summary.md")
@@ -113,8 +117,20 @@ def build(store: Path, alias_seed: Path | None, rolling: Path | None) -> str:
     n_prec = len(re.findall(r"^\d+\. ", prec.read_text(encoding="utf-8"), re.M)) if prec.exists() else 0
     sec4 = [f"- cbb/tools/判例.md（当前 {n_prec} 条，连读《抽取规范.md》）"]
 
+    rr_note = "off"
+    if reranker is not None:
+        q = (rerank_query or " ".join(sec3[-5:])).strip()
+        if q:
+            o1, bk1 = reranker(q, sec1, list(range(len(sec1))))
+            sec1 = [sec1[i] for i in o1]
+            o2, bk2 = reranker(q, sec2, list(range(len(sec2))))
+            sec2 = [sec2[i] for i in o2]
+            rr_note = bk1 if bk1 == bk2 else f"{bk1}/{bk2}"
+
     def render(s2, s1, s3):
-        parts = [HEADER, "## ① 主要人物册（频次排序）\n" + ("\n".join(s1) if s1 else "（空）")]
+        parts = [HEADER + f"> 预算内重排：{rr_note}（岗位①·U-F04）\n"
+                 if rr_note != "off" else HEADER,
+                 "## ① 主要人物册（频次排序）\n" + ("\n".join(s1) if s1 else "（空）")]
         parts.append("## ② 活跃伏笔/开环\n" + ("\n".join(s2) if s2 else "（空）"))
         parts.append("## ③ 最近章提要\n" + "\n".join(s3))
         parts.append("## ④ 判例指针\n" + "\n".join(sec4))
