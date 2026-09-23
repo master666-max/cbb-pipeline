@@ -93,6 +93,24 @@ def test_lancedb_roundtrip_if_available(tmp_path):
     assert res[0]["name"] == "斯诺·沃克"
 
 
+def test_rerank_uses_rich_text_not_name(tmp_path):
+    """v3 修正断言：精排收到的是富文本 text 列，不是 name 串。"""
+    import pyarrow as pa
+    db = 检索._db(tmp_path / "idx")
+    db.create_table("records", pa.table({
+        "record_id": ["e-1"], "name": ["『注视』"],
+        "text": ["诺文获得的神秘眼睛，能发动『注视』直接洞穿魔法。"],
+        "vector": [[0.5] * 8], "library": ["setting"]}))
+    seen = {}
+    def t(endpoint, payload, timeout):
+        seen["docs"] = json.loads(payload.decode("utf-8"))["documents"]
+        return json.dumps({"results": [{"index": 0, "relevance_score": 0.7}]}).encode("utf-8")
+    store = mk_store(tmp_path)
+    检索.hybrid_search("注视", store, index_dir=tmp_path / "idx", top_k=3,
+                       rerank=True, embed_fn=lambda ts: [[0.5] * 8], rerank_transport=t)
+    assert any("神秘眼睛" in d for d in seen["docs"]), f"精排打分对象不是富文本: {seen['docs']}"
+
+
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for fn in fns:

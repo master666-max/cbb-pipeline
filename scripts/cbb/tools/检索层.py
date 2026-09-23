@@ -176,18 +176,41 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
     fused = rrf([p for p in paths if p])
     ranked = [(n, s) for n, s in fused]
 
-    # 岗位④重排精排（缺席→RRF 序）
+    # 岗位④重排精排（缺席→RRF 序）。v3 关键修正：**精排对象＝富文本 text 列，不是 name 串**
+    # （v2 实测：拿 name 打分语义偏泛）。text 从索引表按名投影取；索引/列缺席→退回 name（同形降级）。
     backend = "rrf"
     if rerank and ranked:
         names = [n for n, _ in ranked]
-        mech = list(range(len(names)))
-        o, bk = rr.rerank_order_or_mechanical(query, names, mech)
+        texts = _text_lookup(index_dir, names)
+        o, bk = rr.rerank_order_or_mechanical(query, texts, list(range(len(names))),
+                                              transport=rerank_transport)
         ranked = [(names[i], ranked[i][1] if i < len(ranked) else 0.0) for i in o]
         backend = bk
+        if bk == "rerank":
+            notes.append("精排打分对象=富文本")
 
     top = [{"name": n, "rrf": round(s, 6)} for n, s in ranked[:top_k]]
     return {"top": top, "backend": backend, "paths": len([p for p in paths if p]),
             "口径": "；".join(notes) or "无降级"}
+
+
+def _text_lookup(index_dir: Path | None, names: list[str]) -> list[str]:
+    """按名取富文本（列投影，不拉向量列）；任何失败→返回原名列表（同形降级）。"""
+    if not index_dir or not Path(index_dir).exists():
+        return names
+    try:
+        import lancedb
+        tbl = _open_table(lancedb.connect(str(index_dir)), "records")
+        if tbl is None:
+            return names
+        arrow = tbl.to_lance().to_table(columns=["name", "text"])
+        cols = {c: arrow.column(c).to_pylist() for c in ("name", "text")}
+        tmap: dict[str, str] = {}
+        for n, t in zip(cols["name"], cols["text"]):
+            tmap.setdefault(n, t or n)
+        return [tmap.get(n, n) for n in names]
+    except Exception:
+        return names
 
 
 def keyword_recall(query: str, store_root: Path, limit: int = 10) -> list[dict]:
