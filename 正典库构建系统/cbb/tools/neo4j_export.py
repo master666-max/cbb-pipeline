@@ -52,15 +52,31 @@ def collect_graph(store_root: Path) -> dict:
     if idx.exists():
         superseded = {json.loads(ln)["old_id"] for ln in idx.read_text(encoding="utf-8").splitlines() if ln.strip()}
     nodes, edges = [], []
+    mentions = set()  # (chapter, name) 去重——U-F03：章节点与 MENTIONS 边
+    skipped: list[str] = []
     for f in sorted(store_root.glob("libraries/*/*/*.json")):
-        rec = json.loads(f.read_text(encoding="utf-8"))
+        try:
+            text = f.read_text(encoding="utf-8")
+        except OSError:
+            # Windows MAX_PATH：合并后缀堆出的超长文件名（-m-m-…）常规路径打不开
+            # → 走扩展长度前缀重试；仍失败则跳过并计数（T-5：不静默）
+            try:
+                text = Path("\\\\?\\" + str(f.resolve())).read_text(encoding="utf-8")
+            except Exception:
+                skipped.append(f.name)
+                continue
+        rec = json.loads(text)
         if rec.get("record_id") in superseded:
             continue
         canon = rec.get("canonical") or {}
+        chapters = [e.get("chapter") for e in (rec.get("evidence") or [])
+                    if isinstance(e.get("chapter"), int)]
         if rec.get("record_type") == "entity" and canon.get("name"):
             nodes.append({"name": canon["name"], "entity_type": canon.get("entity_type", ""),
                           "lib": rec.get("library"), "status": rec.get("status"),
                           "record_id": rec.get("record_id"), "version": rec.get("version", 1)})
+            for ch in chapters:
+                mentions.add((ch, canon["name"]))
         elif rec.get("record_type") == "relation" and all(canon.get(k) for k in ("subject", "rel_type", "object")):
             obs = rec.get("observations") or []
             tmp = _edge_temporals(rec)
@@ -71,7 +87,12 @@ def collect_graph(store_root: Path) -> dict:
                           "edge_id": edge_id_for(canon["subject"], canon["rel_type"], canon["object"]),
                           "valid_at": tmp["valid_at"], "invalid_at": tmp["invalid_at"],
                           "evidence": rec.get("evidence") or []})
-    return {"nodes": nodes, "edges": edges}
+            for ch in chapters:  # 关系两端都算"本章提及"
+                mentions.add((ch, canon["subject"]))
+                mentions.add((ch, canon["object"]))
+    return {"nodes": nodes, "edges": edges,
+            "mentions": [{"chapter": c, "name": n} for c, n in sorted(mentions)],
+            "skipped_files": skipped}
 
 
 def node_statement(n: dict) -> dict:
@@ -149,15 +170,30 @@ def chunks(seq, n):
         yield seq[i:i + n]
 
 
+def chapter_statement(m: dict) -> dict:
+    """U-F03：章节点 + (章)-[:MENTIONS]->(实体) 边（MERGE 全幂等，重放零增殖）。
+    "某一章出现了什么"＝一条查询；章节点的编号与锚点章的 chapter 同轴。"""
+    return {"statement": ("MERGE (c:Chapter {no:$no}) "
+                          "MERGE (e:Entity {name:$name}) "
+                          "MERGE (c)-[:MENTIONS]->(e)"),
+            "parameters": {"no": m["chapter"], "name": m["name"]}}
+
+
 def export_graph(graph: dict, commit) -> dict:
-    """commit(statements:list[dict])->None（抛异常即失败）。约束→节点分批→边分批；返回执行报告。"""
+    """commit(statements:list[dict])->None（抛异常即失败）。约束→节点分批→边分批→章提及分批；返回执行报告。"""
     commit([{"statement": CONSTRAINT_CYPHER}])
     for batch in chunks([node_statement(n) for n in graph["nodes"]], BATCH):
         commit(batch)
     for batch in chunks([edge_statement(e) for e in graph["edges"]], BATCH):
         commit(batch)
+    mentions = graph.get("mentions", [])
+    for batch in chunks([chapter_statement(m) for m in mentions], BATCH):
+        commit(batch)
     return {"nodes": len(graph["nodes"]), "edges": len(graph["edges"]),
-            "batches": 1 + (len(graph["nodes"]) + BATCH - 1) // BATCH + (len(graph["edges"]) + BATCH - 1) // BATCH}
+            "mentions": len(mentions),
+            "batches": (1 + (len(graph["nodes"]) + BATCH - 1) // BATCH
+                        + (len(graph["edges"]) + BATCH - 1) // BATCH
+                        + (len(mentions) + BATCH - 1) // BATCH)}
 
 
 # ---- 运输层（Neo4j HTTP /db/neo4j/tx/commit） ----
