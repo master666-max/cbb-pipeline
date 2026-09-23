@@ -1,0 +1,108 @@
+# -*- coding: utf-8 -*-
+"""test_检索层.py — U-F07：别名召回/RRF/关键词/降级/引文核验（零网络；LanceDB 用例条件跳过）"""
+import importlib
+import json
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+检索 = importlib.import_module("检索层")
+
+
+def mk_store(tmp: Path) -> Path:
+    store = tmp / "store"
+    for lib in ("character", "relation"):
+        (store / "libraries" / lib / "provisional").mkdir(parents=True, exist_ok=True)
+    (store / "libraries" / "character" / "provisional" / "cand-entity-涡波.json").write_text(
+        json.dumps({"record_id": "e-wb", "record_type": "entity", "library": "character",
+                    "canonical": {"name": "相川涡波", "entity_type": "人物"},
+                    "observations": [{"category": "summary", "text": "手持创世手环的少年"}],
+                    "evidence": [{"vol": 1, "chapter": 41, "line": 1, "quote": "斯诺用眼神交流"}]},
+                   ensure_ascii=False), encoding="utf-8")
+    (store / "libraries" / "relation" / "provisional" / "r-1.json").write_text(
+        json.dumps({"record_id": "r-1", "record_type": "relation", "library": "relation",
+                    "canonical": {"subject": "斯诺·沃克", "rel_type": "情报传递", "object": "相川涡波"},
+                    "evidence": [{"vol": 1, "chapter": 41, "line": 2, "quote": "用眼神交流告诉过我了"}]},
+                   ensure_ascii=False), encoding="utf-8")
+    (store / "aliases.jsonl").write_text(
+        json.dumps({"alias": "涡波", "entity_id": "e-wb", "entity_type": "人物", "key": "涡波|e-wb"},
+                   ensure_ascii=False), encoding="utf-8")
+    return store
+
+
+def test_alias_recall_hits_exact_and_alias(tmp_path):
+    store = mk_store(tmp_path)
+    hits = {h["name"] for h in 检索.alias_recall("涡波用手环做了什么", store)}
+    assert "相川涡波" in hits  # 别名"涡波"命中
+    hits2 = {h["name"] for h in 检索.alias_recall("相川涡波的表情", store)}
+    assert "相川涡波" in hits2  # 本名精确命中
+
+
+def test_rrf_fusion_known_order():
+    """手算 RRF（k=60）：甲在两路都第 1 → 2/(60+1)；乙路一第 2、丙路二第 1 → 同分并列其后。"""
+    fused = 检索.rrf([["甲", "乙"], ["甲", "丙"]])
+    assert fused[0][0] == "甲"
+    assert abs(fused[0][1] - 2 / 61) < 1e-9
+
+
+def test_keyword_recall_scores(tmp_path):
+    store = mk_store(tmp_path)
+    hits = 检索.keyword_recall("手环的少年", store)
+    assert hits and hits[0]["name"] == "相川涡波"  # 观察文本含"手环""少年"
+
+
+def test_hybrid_search_degrades_without_index(tmp_path):
+    """判据：索引缺席 → 向量路缺席口径注明，别名＋关键词两路照跑，backend=rrf（重排关）。"""
+    store = mk_store(tmp_path)
+    rep = 检索.hybrid_search("涡波用手环", store, index_dir=tmp_path / "no-index",
+                             top_k=5, rerank=False)
+    assert rep["paths"] >= 2
+    assert "向量路缺席" in rep["口径"]
+    assert rep["backend"] == "rrf"
+    assert rep["top"] and rep["top"][0]["name"] == "相川涡波"
+
+
+def test_verify_citations_split(tmp_path):
+    store = mk_store(tmp_path)
+    rep = 检索.verify_citations([
+        {"record_id": "r-1", "quote": "用眼神交流告诉过我了"},      # 库内真证据
+        {"record_id": "r-1", "quote": "这句话库里根本没有。"},      # 落不回
+    ], store)
+    assert len(rep["verified"]) == 1 and len(rep["unverified"]) == 1
+    assert rep["unverified"][0]["quote"] == "这句话库里根本没有。"
+
+
+def test_lancedb_roundtrip_if_available(tmp_path):
+    """LanceDB 装好后：建表→写入→向量查询 回环（嵌入用注入桩，零网络）。"""
+    try:
+        import lancedb  # noqa: F401
+    except ImportError:
+        import unittest
+        raise unittest.SkipTest("lancedb 未安装（后台安装中）")
+    import pyarrow as pa
+    db = 检索._db(tmp_path / "idx")
+    tbl = db.create_table("records", pa.table({
+        "record_id": ["e-wb"], "name": ["相川涡波"], "text": ["手持创世手环的少年"],
+        "vector": [[0.1] * 8], "library": ["character"]}))
+    tbl.add(pa.table({"record_id": ["r-1"], "name": ["斯诺·沃克"], "text": ["情报传递"],
+                      "vector": [[0.9] * 8], "library": ["relation"]}))
+    res = tbl.search([0.9] * 8).limit(1).to_list()
+    assert res[0]["name"] == "斯诺·沃克"
+
+
+if __name__ == "__main__":
+    fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
+    for fn in fns:
+        try:
+            if fn.__code__.co_argcount:
+                with tempfile.TemporaryDirectory() as td:
+                    fn(Path(td))
+            else:
+                fn()
+            print(f"OK {fn.__name__}")
+        except unittest.SkipTest as e:
+            print(f"SKIP {fn.__name__}: {e}")
+    print(f"{len(fns)} tests PASS")
