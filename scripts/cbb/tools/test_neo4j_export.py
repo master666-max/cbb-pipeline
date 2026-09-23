@@ -127,7 +127,57 @@ class TestExportGraph(unittest.TestCase):
     def test_empty_graph_only_constraint(self):
         rec = Recorder()
         report = m.export_graph({"nodes": [], "edges": []}, rec)
-        self.assertEqual(report, {"nodes": 0, "edges": 0, "batches": 1})
+        self.assertEqual(report, {"nodes": 0, "edges": 0, "mentions": 0, "batches": 1})
+
+
+class TestChapterNodes(unittest.TestCase):
+    """U-F03：章节点与 MENTIONS 边（"某一章出现了什么"一条查询可答）。"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.store = cbb_store.ThreeStateStore(Path(self.tmp.name))
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_mentions_collected_and_deduped(self):
+        e = mk_entity("涡波")
+        e["evidence"] = [{"vol": 1, "chapter": 3, "line": 1, "quote": "a"},
+                         {"vol": 1, "chapter": 7, "line": 2, "quote": "b"},
+                         {"vol": 1, "chapter": 7, "line": 9, "quote": "c"}]  # 同章两条证据
+        self.store.admit_or_merge(e)
+        self.store.admit_or_merge(mk_relation("涡波", "认识", "缇达"))  # 章1，两端都应被提及
+        g = m.collect_graph(Path(self.tmp.name))
+        pairs = {(x["chapter"], x["name"]) for x in g["mentions"]}
+        self.assertIn((3, "涡波"), pairs)
+        self.assertIn((7, "涡波"), pairs)
+        self.assertEqual(sum(1 for x in g["mentions"] if x == {"chapter": 7, "name": "涡波"}), 1,
+                         "同章重复证据必须去重成一条 mentions")
+        self.assertIn((1, "缇达"), pairs)
+        self.assertIn((1, "涡波"), pairs)
+
+    def test_chapter_statement_merge_only_shape(self):
+        st = m.chapter_statement({"chapter": 14, "name": "涡波"})
+        s = st["statement"]
+        self.assertIn("MERGE (c:Chapter {no:$no})", s)
+        self.assertIn("MERGE (e:Entity {name:$name})", s)
+        self.assertIn("MERGE (c)-[:MENTIONS]->(e)", s)
+        self.assertNotIn("CREATE ", s.replace("ON CREATE", ""))  # 纯 MERGE＝重放零增殖
+        self.assertEqual(st["parameters"], {"no": 14, "name": "涡波"})
+
+    def test_export_graph_commits_chapters_and_counts(self):
+        graph = {"nodes": [], "edges": [],
+                 "mentions": [{"chapter": 1, "name": "甲"}, {"chapter": 2, "name": "乙"}]}
+        rec = Recorder()
+        report = m.export_graph(graph, rec)
+        self.assertEqual(report["mentions"], 2)
+        self.assertEqual(report["batches"], 2)  # 1 约束 + 1 章提及批（nodes/edges 为空）
+        flat = [s for b in rec.batches for s in b]
+        self.assertTrue(any("Chapter" in s["statement"] for s in flat))
+        # 幂等语义：重放语句逐字一致
+        rec2 = Recorder()
+        m.export_graph(graph, rec2)
+        self.assertEqual([b for b in rec.batches], [b for b in rec2.batches])
 
 
 if __name__ == "__main__":
