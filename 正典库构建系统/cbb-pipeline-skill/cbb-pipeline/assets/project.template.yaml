@@ -1,40 +1,53 @@
-# 开书参数模板 —— 复制为 project.yaml 后填写
+# 项目参数模板（v2.0 通用八项）—— 复制为 project.yaml 后填写
 # scripts/init_project.py 读取本文件生成工作区骨架
+# 术语：单元=切分单位（章/节/页/文档）；执行批次=一次连续执行会话；区段=重检查点
 
 project:
-  book_name: ""            # 书名（例：迷深）
-  source_path: ""          # 全文语料路径（txt/md，需含章节标记，如 <<<CHAPTER 0001 | 题>>>）
-  chapter_pattern: "^<<<CHAPTER\\s*(\\d+)"   # 章节标记正则（捕获组=编号）
+  name: ""                 # 项目名
+  corpus_type: novel       # 语料类型：novel|docs|wiki|legal|script|dialogue（适配建议见 references/架构与profile.md §五）
+  source_path: ""          # 全文语料路径（需含可切分单元标记）
+  unit_pattern: "^<<<CHAPTER\\s*(\\d+)"  # 单元标记正则（捕获组=编号）
   library_path: ""         # 本体库落盘根（留空=自动：<项目>/库/）
   workspace_path: ""       # 工作区落盘根（留空=自动：<项目>/工作区/）
 
 anchor:
   mode: pseudo_date        # 伪锚点模式
-  epoch: "2000-01-01"      # 锚点纪元（第 i 章 = epoch + i 天）
+  epoch: "2000-01-01"      # 锚点纪元（第 i 单元 = epoch + i 天）
   wall_clock: forbidden    # 禁墙钟（硬条款）
 
+profile:                   # ── 本体 profile（假矛盾的疫苗；空=用小说六库样例）──
+  libraries: []            # 库类型集合，例：[character, event, relation, foreshadow, setting, timeline]
+  required_fields: {}      # 每库必填字段，例：{character: [name, entity_type]}
+  type_vocab: {}           # 受控词表（枚举；禁自由文本；值间禁包含关系），例：{entity_type: [人物, 组织, 地点]}
+  relation_vocab: []       # 关系类型枚举
+  vocab_bootstrap: auto    # 词表自举：auto=试车归纳+50单元回补 | manual=人工给定
+
 extract:
-  r6_verbatim: true        # R6 元文本规范逐字内嵌抽取规范
+  r6_verbatim: true        # 领域规则逐字内嵌抽取规范（R6 文本按项目改写，写法照模板）
   alias_threshold: 0.85    # nickname 合并门槛（存疑分开建）
-  concurrency_start: 9     # 并发起步（两段式：2h 后切巡航档 4）
-  concurrency_cruise: 4
-  batch_chapters: 8        # 每 8 章轻收口（断点密度）
+  concurrency_start: 0     # 并发起步档（0=未标定；两段式数值依平台画像填，数据驱动）
+  concurrency_cruise: 0    # 巡航档（限流回落的最稳档；禁拍脑袋）
+  batch_units: 8           # 每 N 单元轻收口（断点密度）
 
 gate:
   tau_provisional: 0.85    # provisional 路由阈值
   tau_confirmed: 0.97      # confirmed 门槛（人工晋升前置）
-  chekhov_overdue_chapters: 3   # 契诃夫枪超期报警阈值
+  overdue_units: 3         # 伏笔超期报警阈值（通用；小说=契诃夫枪）
 
 dedup:
-  embedding_scan: true     # 嵌入相似度扫描（需 LM Studio @8080）
+  embedding_scan: false    # 嵌入相似度扫描（需本地嵌入服务）
+  embedding_model: ""      # 嵌入档，例：qwen3-embedding-8b@q4_k_m（4096 维，≈4.7GB 可常驻）
+                           # 纪律：一项目内档位固定禁混用；换档＝重算全部嵌入＋阈值对照
   sim_merge: 0.95          # ≥ 走双轨合并流程
   sim_suspect: 0.85        # 0.85~sim_merge 存疑入隔离（只提示不静默）
 
 graph:
-  neo4j_uri: "bolt://localhost:7687"
-  export_per_batch: true   # 每批增量导出（强制派生图层，债务台账制）
+  neo4j_uri: ""            # 留空=不启用图层；启用时每区段增量导出（强制派生层，债务台账制）
 
-audit:
-  deepseek_spotcheck_budget_cny: 7   # 第三方抽检总预算（谷价）
-  confirmed_sample_size: 30          # 终审抽检条数
-  confirmed_pass_rate: 0.95
+review:                    # ── 审查档位与抽样（公式见 references/审查与收口.md §四）──
+  tier: A                  # A 保命 | B 治理 | C 演化（C 类全库动作排主队列完成后）
+  sample_target_rate: 0.05 # 要证明的坏率上界 p
+  sample_confidence: 0.95  # 把握度 C；n = ln(1-C)/ln(1-p)（≤5%→59 条；≤1%→299 条）
+  sample_stratify: run     # 按执行批次分层，每层 8~10 条（禁均匀随机——缺陷按批次聚集）
+  dual_reviewer: true      # 双独立复查者+捕获-再捕获估残余缺陷（独立性=命门）
+  spotcheck_budget: 0      # 第三方对抗抽检预算（0=关闭；启用须台账逐次记账）

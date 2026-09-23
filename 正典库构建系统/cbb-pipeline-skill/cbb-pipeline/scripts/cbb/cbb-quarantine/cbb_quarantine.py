@@ -22,6 +22,7 @@ import argparse
 import hashlib
 import json
 import sys
+from datetime import date as _date
 from pathlib import Path
 
 GROUPS = ("unresolved_time", "missing_anchor", "ambiguous_reference",
@@ -44,6 +45,11 @@ DECISIONS = ("confirmed", "rejected")  # Part V：quarantine ──人工裁决�
 URGENCY_TIERS = {"core": 3.0, "subplot": 2.0, "decorative": 1.0}
 URGENCY_WARNING_RATIO = 0.8  # 🟡 警戒线：进度比 ≥0.8（CBB 定约：🔴=current≥target）
 TOP_URGENT_N = 3             # 写前注入只取前 3 条（urgent_loops 同思想）
+
+
+def _today() -> str:
+    """今日日期（审计日期位用；与故事伪锚点禁墙钟无关——那是故事时间，这是记账时间）。"""
+    return _date.today().isoformat()
 
 
 def _item_id(group: str, record_id: str, detail: str) -> str:
@@ -125,10 +131,13 @@ class QuarantineZone:
     def register(self, group: str, detail: str, record_id: str = None,
                  source: str = None, blocks: list | None = None,
                  subclass: str = None, tier: str = None,
-                 planted_chapter: int = None, target_chapter: int = None):
+                 planted_chapter: int = None, target_chapter: int = None,
+                 at: str = None):
         """登记隔离条目。幂等：同 (group,record_id,detail) 已在册 → (item_id, False)。
         subclass 三子类：显式传入（gate1 携带）或按五分组默认分流；
-        tier/planted/target 为期限项（超期遗漏类）参数，供 urgency 计算。"""
+        tier/planted/target 为期限项（超期遗漏类）参数，供 urgency 计算。
+        at=登记日期（v2.1 裁决②附带，2026-09-22）：裁决滞后计算依赖此位；
+        缺省=今日；item_id 不含 at（幂等键不变，旧库兼容）。"""
         if group not in GROUPS:
             raise ValueError(f"非法隔离分组 {group!r}，合法={GROUPS}")
         if tier is not None and tier not in URGENCY_TIERS:
@@ -150,6 +159,7 @@ class QuarantineZone:
             "detail": detail,
             "blocks_downstream": sorted(set(blocks or [])),
             "status": "pending",
+            "at": at or _today(),  # v2.1：登记日期位（滞后计算依赖；历史件无此位）
         }
         if tier is not None:
             item.update(tier=tier, planted_chapter=planted_chapter,
@@ -158,8 +168,11 @@ class QuarantineZone:
         return item_id, True
 
     # ---- 裁决（人工通道） ----
-    def adjudicate(self, item_id: str, decision: str, note: str = "", by: str = "human") -> dict:
-        """人工裁决：confirmed | rejected。终态留档不删；同条不可二次裁决。"""
+    def adjudicate(self, item_id: str, decision: str, note: str = "", by: str = "human",
+                   at: str = None) -> dict:
+        """人工裁决：confirmed | rejected。终态留档不删；同条不可二次裁决。
+        at=裁决日期（v2.1 裁决②附带）：触发器 D 的"裁决滞后"由此可算；
+        缺省=今日；历史补录只许填实际日期，不得编造。"""
         if decision not in DECISIONS:
             raise ValueError(f"非法裁决 {decision!r}，合法={DECISIONS}")
         items = self._load(self.items_path)
@@ -167,7 +180,8 @@ class QuarantineZone:
             raise KeyError(f"隔离条目不存在: {item_id}")
         if any(a["item_id"] == item_id for a in self._load(self.adj_path)):
             raise ValueError(f"条目已裁决（终态不可再裁）: {item_id}")
-        adj = {"item_id": item_id, "decision": decision, "note": note, "by": by}
+        adj = {"item_id": item_id, "decision": decision, "note": note, "by": by,
+               "at": at or _today()}  # v2.1：裁决日期位
         self._append(self.adj_path, adj)
         return adj
 
@@ -184,6 +198,26 @@ class QuarantineZone:
             merged["group"] = items.get(a["item_id"], {}).get("group")
             out.append(merged)
         return out
+
+    def status_report(self, today: str = None) -> dict:
+        """状态对账（v2.1 裁决②附带，2026-09-22）：未裁/已裁两数可分＋裁决滞后可算。
+        滞后口径（T-5：标签与量对账）＝今日 − 最早未裁条目的登记日（仅计带 at 位的条目）；
+        历史件无 at 位不计入，并在口径中如实披露计入比例。"""
+        from datetime import date as _date
+        t = today or _today().isoformat()
+        pend, adj = self.pending(), self.adjudicated()
+        dated = [it["at"] for it in pend if it.get("at")]
+        if dated:
+            d0 = min(dated)
+            lag = (_date.fromisoformat(t) - _date.fromisoformat(d0)).days
+            lag_out = {"days": lag, "since": d0,
+                       "口径": f"按最早未裁登记日计；带日期位 {len(dated)}/{len(pend)} 条"}
+        else:
+            lag_out = {"days": None, "since": None,
+                       "口径": "UNKNOWN（在库条目均无日期位——历史件，不得编造）"}
+        return {"pending_total": len(pend), "adjudicated_total": len(adj),
+                "裁决滞后": lag_out,
+                "adjudicated_with_date": sum(1 for a in adj if a.get("at"))}
 
     def by_group(self) -> dict:
         counts = {g: 0 for g in GROUPS}
