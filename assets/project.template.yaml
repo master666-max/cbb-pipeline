@@ -36,6 +36,8 @@ gate:
 
 dedup:
   embedding_scan: false    # 嵌入相似度扫描（需本地嵌入服务）
+  embedding_model: ""      # 嵌入档，例：qwen3-embedding-8b@q4_k_m（4096 维，≈4.7GB 可常驻）
+                           # 纪律：一项目内档位固定禁混用；换档＝重算全部嵌入＋阈值对照
   sim_merge: 0.95          # ≥ 走双轨合并流程
   sim_suspect: 0.85        # 0.85~sim_merge 存疑入隔离（只提示不静默）
 
