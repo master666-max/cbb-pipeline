@@ -1,0 +1,14 @@
+{
+ "name": "cbb-local",
+ "owner": {
+  "name": "CBB 构建线"
+ },
+ "plugins": [
+  {
+   "name": "cbb-guard",
+   "source": "../cbb-guard",
+   "description": "CBB 守门：冻结线保全+红区拦截+方法论命令（本地铁）",
+   "version": "0.1.0"
+  }
+ ]
+}

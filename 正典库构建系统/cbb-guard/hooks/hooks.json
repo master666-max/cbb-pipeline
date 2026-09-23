@@ -1,0 +1,19 @@
+{
+  "description": "cbb-guard hooks（U-G02 · 裁定 2026-09-24：二拦二警照准——拦①冻结线覆盖②红区 Write；③决策账=工具内断言、④副本漂移=状态报告常设项，均不进 hook）。旁通=env CBB_HOOK_BYPASS=<裁定引用>，旁通自动入决策账。",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|Bash",
+        "hooks": [
+          {
+            "type": "process",
+            "command": "node",
+            "args": ["${ZCODE_PLUGIN_ROOT}/hooks/guard.mjs"],
+            "timeoutMs": 5000,
+            "statusMessage": "cbb-guard: 守门检查…"
+          }
+        ]
+      }
+    ]
+  }
+}
