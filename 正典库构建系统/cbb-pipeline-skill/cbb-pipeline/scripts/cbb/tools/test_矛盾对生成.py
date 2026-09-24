@@ -159,7 +159,13 @@ def test_grade_dual_gate():
 
 
 def test_real_store_smoke_no_git():
-    """真库只读冒烟（不写）：两族群均有产出、计数与隔离区对账。"""
+    """真库只读冒烟（不写）：两族群均有产出、计数与隔离区对账。
+
+    口径（2026-09-24 定责修正）：对 = 可解析件产出（dual_track + embedding）；
+    unparsed（detail 形态不可解析）只计数不产出对——故断言 len(pairs) == 两族群之和，
+    并另以"三数之和 == pending"对账隔离区（清点时该 71 件须在隔离区报告可见）。
+    旧断言 len(pairs) == pending 只在 unparsed==0 时成立（无解析缺口期）。
+    """
     real = mp.DEFAULT_STORE
     if not real.exists():
         return  # 非本仓环境跳过
@@ -168,7 +174,7 @@ def test_real_store_smoke_no_git():
     pairs, stats = mp.build_pairs(store, idx)
     n_pending_con = len([i for i in store.zone.pending()
                          if i.get("subclass") == "contradiction_pending"])
-    assert len(pairs) == n_pending_con, (len(pairs), n_pending_con, stats)
+    assert len(pairs) == stats["dual_track"] + stats["embedding"], (len(pairs), stats)
     assert stats["dual_track"] + stats["embedding"] + stats["unparsed"] == n_pending_con
 
 
