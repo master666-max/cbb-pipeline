@@ -207,7 +207,7 @@ class TestAliasPolicy(unittest.TestCase):
 
 
 class TestConstructionParams(unittest.TestCase):
-    """长篇施工参数（<目标作品> 517 章直接可用）。"""
+    """长篇施工参数（迷深 517 章直接可用）。"""
 
     def test_batch_size_clamped_5_to_8(self):
         batches = cx.plan_batches(517, batch_size=20)  # 超上限 → clamp 8

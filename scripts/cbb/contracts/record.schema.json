@@ -91,7 +91,8 @@
       }
     },
     "version": { "type": "integer", "minimum": 1 },
-    "supersedes": { "type": ["string", "null"], "description": "前一版 record_id | null" }
+    "supersedes": { "type": ["string", "null"], "description": "前一版 record_id | null" },
+    "spec_version": { "type": ["string", "null"], "description": "抽取规范版本（v2.1 追加·可选，2026-09-22 用户裁定②A）：本记录按哪版抽取规范产出；历史件填 unknown(历史)，不得回填假值" }
   },
-  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3 契约层修订）：①evidence[].quote 即 author-toolkit location(file/line/quote) 三元组之原文引用位（v1.0 已有，v2.0 增可选 file 位成四锚）；②verified_against=story-systems 溯源三件套 path+SHA+验证时（必填，drift hook）；③observations=分类词表（basic-memory 15 类照录：summary/event/tone/technique/quote/significance/foreshadowing/arc/trait/manifestation/evolution/appearance/interpretation/atmosphere/example + CBB 自增 4 类：status_change/relation/alias/knowledge，分别对应状态债务/graphify 关系与知情双清单/别名归一吸收项）。状态仍二态 confirmed/provisional——用户裁决 2026-09-15 不增设第四态：cut 以 supersedes+归档覆盖，quarantine 走隔离区，candidate 仍为入库前状态（B1 纪律不变）。④（追加，v1.4 漂移修正 D2，2026-09-17）evidence[].graph_edge 可选回填位：导出器导出后回填边 id+valid_at/invalid_at，记录层导出前自洽——纯追加字段，旧记录零改动，评分器与金标零改动。"
+  "$comment": "v2.0 修订（工单 U-B01，源自 U-A17 §3 契约层修订）：①evidence[].quote 即 author-toolkit location(file/line/quote) 三元组之原文引用位（v1.0 已有，v2.0 增可选 file 位成四锚）；②verified_against=story-systems 溯源三件套 path+SHA+验证时（必填，drift hook）；③observations=分类词表（basic-memory 15 类照录：summary/event/tone/technique/quote/significance/foreshadowing/arc/trait/manifestation/evolution/appearance/interpretation/atmosphere/example + CBB 自增 4 类：status_change/relation/alias/knowledge，分别对应状态债务/graphify 关系与知情双清单/别名归一吸收项）。状态仍二态 confirmed/provisional——用户裁决 2026-09-15 不增设第四态：cut 以 supersedes+归档覆盖，quarantine 走隔离区，candidate 仍为入库前状态（B1 纪律不变）。④（追加，v1.4 漂移修正 D2，2026-09-17）evidence[].graph_edge 可选回填位：导出器导出后回填边 id+valid_at/invalid_at，记录层导出前自洽——纯追加字段，旧记录零改动，评分器与金标零改动。⑤（追加，v2.1，2026-09-22 用户裁定②A）spec_version 可选字段：抽取规范版本入记录（防口径漂移、支撑按执行批次分层抽样的版本维度）；v2.0 载荷全兼容；历史件填 unknown(历史) 不得回填假值。"
 }

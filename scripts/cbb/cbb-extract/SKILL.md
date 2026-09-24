@@ -15,7 +15,7 @@
 - **证据式抽取条款**：每断言须原文引+章号（B4 无证据不入库，make_candidate 构造期强制；Bad/Good 例句见 docstring）——claude-book。
 - **`//原文未提及`占位+"反推"标注**：字段级置信三态（未提及=占位/推断=（反推）/直证=原文）——worldbook 四规则。
 - **别名四分类**（`alias_merge_policy`）：proper_name=可合并／nickname=须同指证据且置信≥0.85／descriptor·title=永不合并／存疑=分开建（宁可分裂不可误合）——oh-story 规则层（算法层在 cbb-store/U-B07）。
-- **长篇施工参数**（`CONSTRUCTION_PARAMS`+`plan_batches`+`merge_plan`，<目标作品> 517 章直接可用）：章节边界以 manifest 切片为真值；5-8 章/批新上下文子代理（no accumulation；**尾批允许 <5——尾批不摊薄不凑数**）；降维聚合 15KB/章→≤8K 回传→√N 合并——oh-story。
+- **长篇施工参数**（`CONSTRUCTION_PARAMS`+`plan_batches`+`merge_plan`，迷深 517 章直接可用）：章节边界以 manifest 切片为真值；5-8 章/批新上下文子代理（no accumulation；**尾批允许 <5——尾批不摊薄不凑数**）；降维聚合 15KB/章→≤8K 回传→√N 合并——oh-story。
 - **机械硬检查**（`verify_evidence`）：落盘后证据引文回原文坐标 grep 复核+计数核对，**不依赖抽取器自报**——oh-story。
 - **编写前重读纪律**：`reread_before_write` 施工条款（生成条目前重读对应章节原文）——worldbook Step 4。
 
