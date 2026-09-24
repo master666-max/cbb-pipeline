@@ -78,11 +78,17 @@ flowchart TB
 5. **待确认清单**——可疑内容不进库，集中列成清单（按影响大小排序），人工裁定后才放行。
 6. **全书画完自动对账**——全书级别扫硬伤＋抽取样本回原文核对，出报告交给你做最终检查。
 
-## 你要做的（三步）
+## 你要做的（四步）
 
 ```bash
+# 0. 自检：先探清楚外部环境，尤其是「这台机器上的图库是不是本项目的」
+py -X utf8 scripts/cbb/tools/环境自检.py --project-token <本书命名空间> --json --out 工作区/环境自检.json
+#    → 回执给 carrier：归属已判=graph，未判定/共享库/不可达=file 兜底（同一套规则，两载体）
+#    → 退出码 2 = 主链必需项缺失或判定面为空；主链本身零外部服务，增值件 BLOCKED 不阻断开书
+
 # 1. 安装：复制本目录到 AI 助手的技能目录即可（项目内直接用也行）
 cp -r . ~/.zcode/skills/cbb-pipeline
+#    Qoder 侧无用户级技能目录，需按插件位装：<配置目录>/plugins/cache/local/cbb-pipeline/<版本>/skills/cbb-pipeline/
 
 # 2. 配置：复制下面这份模板，填上书名和正文文件路径
 cp assets/project.template.yaml project.yaml
@@ -90,6 +96,10 @@ cp assets/project.template.yaml project.yaml
 # 3. 开跑：一条命令生成工作目录，然后按 SKILL.md 的说明逐章推进
 py -X utf8 scripts/init_project.py project.yaml
 ```
+
+> 关于知识图谱：L4 参考层（图/索引/摘要视图）是**强制参考面**——入库不依赖它，**终审必须依赖它**
+> （导出债务清零才许进终审，见 SKILL.md 步骤⓪ 与 `references/架构与profile.md` 六层不变式）。
+> 所以"要不要装 Neo4j"不是可有可无的问题：只做抽取入库可以先不装；要出终审结论就得有可用且**归属明确**的图库。
 
 ## 资料库最后长什么样
 
