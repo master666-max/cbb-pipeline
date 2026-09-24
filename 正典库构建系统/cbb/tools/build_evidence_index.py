@@ -50,8 +50,8 @@ def collect_evidence(store: Path) -> list[dict]:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="evidence 级片段索引（批量·可续）")
-    ap.add_argument("--store", default=str(HERE.parent / "迷深实战-本体库"))
-    ap.add_argument("--index", default=str(HERE.parent / "迷深实战-工作区" / "索引" / "lancedb"))
+    ap.add_argument("--store", default=str(HERE.parent.parent / "迷深实战-本体库"))
+    ap.add_argument("--index", default=str(HERE.parent.parent / "迷深实战-工作区" / "索引" / "lancedb"))
     ap.add_argument("--batch", type=int, default=16)
     ns = ap.parse_args(argv)
 

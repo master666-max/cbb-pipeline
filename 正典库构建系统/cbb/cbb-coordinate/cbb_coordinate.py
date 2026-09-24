@@ -115,7 +115,7 @@ def process_file(source: Path, cache_dir: Path, vol: int = 1) -> dict:
     断点协议：长篇分批处理时，已处理分块直接命中缓存跳过（graphify-novel 批处理扫章
     的『强制重读磁盘、不靠上下文累积』同思路——状态在盘不在内存）。"""
     raw = source.read_bytes()
-    text = raw.decode("utf-8")
+    text = raw.decode("utf-8-sig")  # A8 修复（审计 R4）：剥 BOM（记事本默认带 BOM → 首章标记失配 → 全库坐标偏移）
     key = sha256_text(f"{sha256_text(text)}|vol={vol}|algo=coord-v1")
     cache_dir.mkdir(parents=True, exist_ok=True)
     cpath = cache_dir / f"{key}.json"

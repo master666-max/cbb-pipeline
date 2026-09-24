@@ -28,10 +28,14 @@ DEEPSEEK_MODEL = "deepseek-flash"          # 在案名（工单 v1.8 §0 抽检�
 LMSTUDIO_BASE = "http://127.0.0.1:1234/v1"
 LMSTUDIO_MODEL = "glm-5.3-flash"           # 本地免费档（用户裁决双预设之一）
 
-EMBEDDING_PROFILE = {                       # 嵌入已知档（U-C01 起在案）
+EMBEDDING_PROFILE = {                       # 嵌入已知档（U-C01 起在案；档位改判 2026-09-23）
     "provider": "lmstudio",
     "model": "qwen3-embedding-8b",
-    "quant": "q8_0", "dim": 4096,
+    "quant": "q4_k_m",                     # ← q8_0 改 q4_k_m（用户令"q4 常驻显存"）：
+                                           #   q4≈4.7GB，与重排器≈2.5GB 同驻 12G 卡，免换装；
+                                           #   纪律：一项目内档位固定，禁 q8/q4 混用（向量不可比），
+                                           #   换档=重算全部嵌入；换档前跑 q8↔q4 同批距离对照确认阈值不漂
+    "dim": 4096,
     "base_url": "http://127.0.0.1:8080/v1/embeddings",
 }
 

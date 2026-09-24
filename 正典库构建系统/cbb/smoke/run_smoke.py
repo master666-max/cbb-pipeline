@@ -193,8 +193,9 @@ def run_chain(out_root: Path) -> dict:
     _, pa2 = store.record_appearance("缇达", 14)
     check("UNIQUE 出场防重", pa2 is False)
     stale = store.stale_records({"smoke/corpus-v2.txt": "f" * 40})
+    # A12 修复（审计 R4）：删恒真子句 `or len(stale) >= 0`（该项原为空转）
     check("漂移钩子（SHA 变更→stale）", any(s["record_id"].startswith("rec-entity")
-                                          for s in stale) or len(stale) >= 0)
+                                          for s in stale))
     # 注：make_generic_record 占位 sha=0000000，与 fff… 不同 → 全库 stale ≥1
     check("漂移扫描捕获 ≥1", len(stale) >= 1, f"got {len(stale)}")
     store.log_state_change("缇达", "location", "地下城三层", chapter=20)

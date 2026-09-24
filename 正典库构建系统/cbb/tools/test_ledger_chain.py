@@ -155,6 +155,25 @@ def test_rebaseline_idempotent():
         assert led.verify(store)["ok"]
 
 
+def test_c1_rows_cached_and_consistent():
+    """C1 反例：原实现每次 _rows/_tail/has_key 全量重读解析（O(n²)）。
+    契约=实例内缓存复用（同一对象）＋追加在缓存内续行＋缓存与盘逐字一致。"""
+    with tempfile.TemporaryDirectory() as tmp:
+        led = lc.LedgerChain(Path(tmp) / "ledger.jsonl")
+        for i in range(5):
+            led.record_append("libraries/x.jsonl", f"k{i}", lc.EMPTY_SHA, "a" * 64)
+        rows = led._rows()
+        assert led._rows() is rows                        # 旧实现：每次新列表（恒 False）
+        assert [r["seq"] for r in rows] == [1, 2, 3, 4, 5]
+        assert led._tail()["seq"] == 5                    # 追加后缓存内同步看得见
+        assert led.has_key("libraries/x.jsonl", "k4")
+        disk = [json.loads(x) for x in
+                (Path(tmp) / "ledger.jsonl").read_text(encoding="utf-8").splitlines()
+                if x.strip()]
+        assert disk == rows                               # 缓存 == 盘（无漂移）
+        assert lc._line_hash(disk[-1]) == disk[-1]["hash"]  # 链自洽
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted({k: v for k, v in globals().items()
