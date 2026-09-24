@@ -229,13 +229,25 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
     return summary
 
 
+def _verify_gate(when: str) -> None:
+    """BUG-0 门（02-bugs）：磁盘 sha 与账本对账。上一轮留下的旁路直写会在
+    「跑前」拦截；本轮内部的旁路写入会在「跑后」拦截——不再静默累积。"""
+    sys.path.insert(0, str(CBB / "tools"))
+    import ledger_chain as _lc
+    v = _lc.LedgedStore(STORE_ROOT).ledger.verify(STORE_ROOT)
+    if not v.get("ok"):
+        raise SystemExit(f"run_chapter {when} verify 未过（账本外改动，先处置再产数据）：{v.get('errors')}")
+
+
 def main() -> int:
     import argparse
     ap = argparse.ArgumentParser()
     ap.add_argument("--chapter", type=int, required=True)
     ap.add_argument("--no-aux", action="store_true")
     args = ap.parse_args()
+    _verify_gate("前置")
     run(args.chapter, no_aux=args.no_aux)
+    _verify_gate("后置")
     return 0
 
 
