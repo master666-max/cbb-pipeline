@@ -54,7 +54,8 @@ async def _embed_batch(texts: list[str]) -> list[list[float]]:
         CNT["emb_calls"] += 1
         print(f"  embed {i + len(b)}/{len(texts)}", flush=True)
     CNT["emb_texts"] += len(texts)
-    return out
+    import numpy as np
+    return np.asarray(out, dtype=np.float32)  # 1.5.7 契约：EmbeddingFunc.__call__ 取 result.size
 
 
 async def _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001

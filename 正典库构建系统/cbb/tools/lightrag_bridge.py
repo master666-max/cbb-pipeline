@@ -11,6 +11,7 @@ from __future__ import annotations
 import asyncio
 import json
 import re
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -51,7 +52,8 @@ async def _embed_batch(texts: list[str]) -> list[list[float]]:
         out.extend(await asyncio.to_thread(_http, b))
         CNT["emb_calls"] += 1
     CNT["emb_texts"] += len(texts)
-    return out
+    import numpy as np
+    return np.asarray(out, dtype=np.float32)  # 1.5.7 契约：EmbeddingFunc.__call__ 取 result.size
 
 
 def mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[str]]:
@@ -78,17 +80,23 @@ def get_rag():
     return _rag
 
 
+_rid2name_cache: dict[Path, dict[str, str]] = {}
+
+
 def _rid2name(store_root: Path) -> dict[str, str]:
-    m: dict[str, str] = {}
-    for f in Path(store_root).glob("libraries/*/*/*.json"):
-        try:
-            rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        nm = (rec.get("canonical") or {}).get("name")
-        if nm:
-            m[rec.get("record_id")] = nm
-    return m
+    key = Path(store_root).resolve()
+    if key not in _rid2name_cache:
+        m: dict[str, str] = {}
+        for f in Path(store_root).glob("libraries/*/*/*.json"):
+            try:
+                rec = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            nm = (rec.get("canonical") or {}).get("name")
+            if nm:
+                m[rec.get("record_id")] = nm
+        _rid2name_cache[key] = m
+    return _rid2name_cache[key]
 
 
 async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode: str = "local") -> dict:
@@ -104,6 +112,8 @@ async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode
     param = QueryParam(mode=mode, only_need_context=True, top_k=top_k,
                        ll_keywords=ll, hl_keywords=hl, enable_rerank=False)
     data = await rag.aquery_data(query, param=param)
+    if isinstance(data, dict) and isinstance(data.get("data"), dict):
+        data = data["data"]  # aquery_data 外层是 {status,message,data,metadata}
     ents, rels, chunks = [], [], []
     if isinstance(data, dict):
         ents = data.get("entities") or []
@@ -114,6 +124,12 @@ async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode
         n = e.get("entity_id") or e.get("entity_name") if isinstance(e, dict) else str(e)
         if n and n not in names:
             names.append(n)
+    for r in rels:  # 关系端点并入（类2 需两端名齐）
+        if isinstance(r, dict):
+            for k in ("src_id", "tgt_id"):
+                n = r.get(k)
+                if n and n not in names:
+                    names.append(n)
     m = _rid2name(store_root)
     for c in chunks:
         rid = (c.get("source_id") or c.get("id") or "") if isinstance(c, dict) else ""
