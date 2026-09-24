@@ -153,9 +153,14 @@ def trigger_sentinel(store_root: Path | str, logs_dir: Path | str | None = None,
     iq = store / "quarantine-zone" / "items.jsonl"
     if iq.exists():
         items = [json.loads(x) for x in iq.read_text(encoding="utf-8").splitlines() if x.strip()]
-    contradiction = sum(1 for r in items
-                        if r.get("status") == "pending" and r.get("group") == "entity_unalignable")
-    dated = sorted(it["at"] for it in items if it.get("at"))
+    # A6 修复（审计 R4）：口径与 cbb_quarantine.status_report 对齐——按 adjudications 差集取 pending；
+    # 原静态 status 过滤含已裁件 → RED 随时间必然触发且不可逆（信号失真）
+    aq = store / "quarantine-zone" / "adjudications.jsonl"
+    adj_ids = {json.loads(x)["item_id"] for x in aq.read_text(encoding="utf-8").splitlines() if x.strip()} \
+        if aq.exists() else set()
+    pend = [r for r in items if r.get("item_id") not in adj_ids]
+    contradiction = sum(1 for r in pend if r.get("group") == "entity_unalignable")
+    dated = sorted(it["at"] for it in pend if it.get("at"))
     today = _date.today()
     if dated:
         lag = (today - _date.fromisoformat(dated[0])).days
@@ -165,7 +170,7 @@ def trigger_sentinel(store_root: Path | str, logs_dir: Path | str | None = None,
         lag_out = {"days": None, "since": None,
                    "口径": "UNKNOWN（在库条目均无日期位——历史件，不得编造）"}
     d = {"trigger": "D 隔离矛盾积压",
-         "value": {"contradiction_pending": contradiction, "pending_total": len(items),
+         "value": {"contradiction_pending": contradiction, "pending_total": len(pend),
                    "裁决滞后": lag_out},
          "state": "RED" if contradiction > 50 or (lag_out["days"] or 0) > 14 else
                   ("AMBER" if contradiction > 0 else "GREEN"),

@@ -178,5 +178,19 @@ class TestNumberingDedupOccupy(unittest.TestCase):
             self.assertNotIn(banned, blob)
 
 
+class TestAuditR4Fixes(unittest.TestCase):
+    """R4 审计修复批反例（A8）。"""
+
+    def test_a8_bom_stripped_no_coordinate_shift(self):
+        """反例：记事本 BOM 使首章标记失配 → 首章掉块、全库坐标偏移；修复=utf-8-sig 剥离。"""
+        with tempfile.TemporaryDirectory() as td:
+            d = Path(td)
+            src = d / "corpus.txt"
+            src.write_bytes(b"\xef\xbb\xbf" + SAMPLE.encode("utf-8"))
+            man = cc.process_file(src, d / "cache")
+            self.assertEqual(man["chapters"][0]["chapter"], 1)  # 旧实现：0（preamble 伪章吞首章）
+            self.assertEqual(man["chapter_count"], 2)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

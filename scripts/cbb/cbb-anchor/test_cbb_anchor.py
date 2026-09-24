@@ -223,5 +223,19 @@ class TestCountdowns(unittest.TestCase):
         self.assertEqual([c["key"] for c in due12], ["burned-letter", "lineage"])  # 超期持续浮出
 
 
+class TestAuditR4Fixes(unittest.TestCase):
+    """R4 审计修复批反例（A7）。"""
+
+    def test_a7_numeric_version_sort(self):
+        """反例：原字典序 versions[-1] 在 v10+ 取到 v9（本树降级）；修复=按版本号数值排序。"""
+        with tempfile.TemporaryDirectory() as td:
+            d = Path(td)
+            (d / "anchor-tree.v9.json").write_text('{"version": 9, "tag": "old"}',
+                                                   encoding="utf-8")
+            (d / "anchor-tree.v10.json").write_text('{"version": 10, "tag": "new"}',
+                                                    encoding="utf-8")
+            self.assertEqual(ca.load_latest_tree(d)["tag"], "new")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

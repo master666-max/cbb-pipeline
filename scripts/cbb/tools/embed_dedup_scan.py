@@ -96,18 +96,23 @@ def collect_entity_names(cands: dict, store_root: Path) -> tuple[list[str], list
             if c.get("record_type") == "entity" and isinstance(c.get("canonical"), dict)
             and c["canonical"].get("name")]
     lib = set()
-    for f in Path(store_root).glob("libraries/*/provisional/*.json"):
-        rec = json.loads(f.read_text(encoding="utf-8"))
+    unreadable = []
+    # 2026-09-22 超长路径防御：批20 前旧连缀命名文件 glob 可枚举但 open 失败——跳过并计数（非静默）
+    for f in list(Path(store_root).glob("libraries/*/provisional/*.json")) +               list(Path(store_root).glob("libraries/*/confirmed/*.json")):
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except OSError:
+            unreadable.append(f.name)
+            continue
         if rec.get("record_type") == "entity" and (rec.get("canonical") or {}).get("name"):
             lib.add(rec["canonical"]["name"])
-    for f in Path(store_root).glob("libraries/*/confirmed/*.json"):
-        rec = json.loads(f.read_text(encoding="utf-8"))
-        if rec.get("record_type") == "entity" and (rec.get("canonical") or {}).get("name"):
-            lib.add(rec["canonical"]["name"])
+    if unreadable:
+        print(json.dumps({"skipped_unreadable": len(unreadable)}, ensure_ascii=False))
     for ln in (Path(store_root) / "aliases.jsonl").read_text(encoding="utf-8").splitlines() if \
             (Path(store_root) / "aliases.jsonl").exists() else []:
         a = json.loads(ln)
-        lib.add(a["alias"])
+        if isinstance(a.get("alias"), str):  # ch0121 脏行(dict)防御跳过，脏行留档不删
+            lib.add(a["alias"])
     return cand, sorted(lib)
 
 

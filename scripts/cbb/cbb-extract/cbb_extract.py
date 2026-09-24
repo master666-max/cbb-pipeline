@@ -289,7 +289,8 @@ def _find_line(block: dict, term: str):
 
 
 def extract_stub(blocks: list[dict], lexicon=None, event_patterns=None,
-                 chapter_titles: dict | None = None) -> list[dict]:
+                 chapter_titles: dict | None = None,
+                 skipped_out: list[dict] | None = None) -> list[dict]:
     """stub 确定性抽取：词典实体 + 关键词事件。
     防御并配：元文本章整章跳过（①读入侧）+ 内嵌指令块拒抽（④安全侧）。
     返回 candidate 列表（每提及一条；实体消歧归 P3 Canonicalizer）。"""
@@ -300,8 +301,17 @@ def extract_stub(blocks: list[dict], lexicon=None, event_patterns=None,
     for block in blocks:
         title = chapter_titles.get(block.get("chapter"), "")
         if is_metatext(title=title, text_sample=block["text"]):
+            # A9 修复（审计 R4）：B6「绝不静默丢弃」——跳过块登记（skipped_out 或调用方入 quarantine）
+            if skipped_out is not None:
+                skipped_out.append({"chapter": block.get("chapter"),
+                                    "line_start": block.get("line_start"),
+                                    "reason": "metatext"})
             continue  # ①R6 对应 stub 闸：元文本零抽取
         if has_embedded_instruction(block["text"]):
+            if skipped_out is not None:
+                skipped_out.append({"chapter": block.get("chapter"),
+                                    "line_start": block.get("line_start"),
+                                    "reason": "embedded_instruction"})
             continue  # ④安全侧：注入污染块整块拒抽
         for name in lexicon:
             line_no, _ = _find_line(block, name)

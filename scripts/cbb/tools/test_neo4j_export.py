@@ -3,6 +3,7 @@
 py -X utf8 cbb/tools/test_neo4j_export.py
 """
 import json
+import os
 import sys
 import tempfile
 import unittest
@@ -178,6 +179,18 @@ class TestChapterNodes(unittest.TestCase):
         rec2 = Recorder()
         m.export_graph(graph, rec2)
         self.assertEqual([b for b in rec.batches], [b for b in rec2.batches])
+
+
+class TestAuditR4Fixes(unittest.TestCase):
+    """R4 审计修复批反例（A13）。"""
+
+    def test_a13_default_base_port_aligned(self):
+        """反例：导出器默认 7474 而巡检默认 7695（容器实映射 7695→7474）——其一必错。"""
+        if "NEO4J_HTTP" not in os.environ:
+            self.assertEqual(m.DEFAULT_BASE, "http://localhost:7695")
+        # 跨件口径对齐：巡检同一变量默认值必须与导出器一致（分歧即测试红）
+        patrol_src = (HERE / "连续性巡检.py").read_text(encoding="utf-8")
+        self.assertIn('os.environ.get("NEO4J_HTTP", "http://localhost:7695")', patrol_src)
 
 
 if __name__ == "__main__":

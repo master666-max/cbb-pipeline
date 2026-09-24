@@ -3,12 +3,12 @@
 
 设计：实体→(:Entity {name,…}) 节点、关系记录→[:REL {rel_type,…}] 边，全部 MERGE（幂等，重放零增殖）；
 Cypher 走 Neo4j HTTP 端点（stdlib urllib，零驱动依赖）。探活降级链（§0④）：
-  HTTP 7474 探活 → 不在且 docker daemon 在 → docker start neo4j-step0 重探 → 仍不在 → blocked 退出码 2 不阻塞。
+  宿主 http 7695（映射容器 7474）探活 → 不在且 docker daemon 在 → docker start neo4j-step0 重探 → 仍不在 → blocked 退出码 2 不阻塞。
 凭据（D-004 不落文件）：--password > 环境变量 NEO4J_PASSWORD > docker inspect 运行时读取。
 纯函数核心（collect_graph/cypher 构造/export_graph）单测见 test_neo4j_export.py（零网络）。
 
 用法：
-  py -X utf8 cbb/tools/neo4j_export.py --store <本体库根> [--base http://localhost:7474] \
+  py -X utf8 cbb/tools/neo4j_export.py --store <本体库根> [--base http://localhost:7695] \
       [--user neo4j] [--out export-report.json] [--no-start]
 """
 import argparse
@@ -24,6 +24,8 @@ from pathlib import Path
 
 CONTAINER = "neo4j-step0"
 BATCH = 250
+# A13：现役容器映射 7695→7474(HTTP)/7694→7687(Bolt)；与连续性巡检同默认（NEO4J_HTTP 可覆盖）
+DEFAULT_BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7695")
 
 CONSTRAINT_CYPHER = ("CREATE CONSTRAINT entity_name_unique IF NOT EXISTS "
                      "FOR (e:Entity) REQUIRE e.name IS UNIQUE")
@@ -260,7 +262,9 @@ def ensure_server(base: str, allow_start: bool) -> bool:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="本体库→Neo4j 增量 MERGE 导出（探活失败 blocked 不阻塞主链）")
     ap.add_argument("--store", required=True)
-    ap.add_argument("--base", default=os.environ.get("NEO4J_HTTP", "http://localhost:7474"))
+    # A13 修复（审计 R4）：与连续性巡检对齐——端口漂移记录（工单 §0④）现役 http=7695；
+    # 原 7474 默认与巡检的 7695 同名变量两默认值，其一必错
+    ap.add_argument("--base", default=DEFAULT_BASE)
     ap.add_argument("--user", default="neo4j")
     ap.add_argument("--password", default="")
     ap.add_argument("--out")
