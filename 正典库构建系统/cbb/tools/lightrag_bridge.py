@@ -1,0 +1,141 @@
+# -*- coding: utf-8 -*-
+"""lightrag_bridge.py — 实验件：LightRAG 第五路召回（读副本，零查询期 LLM）。
+
+纪律：
+  · 关键词全部外部传入（hl/ll_keywords）→ 查询期 LLM 调用必须为 0（llm_calls() 断言）；
+  · 只取结构化上下文（aquery_data），不生成、不裁决——产物并回主检索 RRF；
+  · 副本只读（本件对正典库与 LightRAG 库均无写入）。
+"""
+from __future__ import annotations
+
+import asyncio
+import json
+import re
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent.parent
+WORK = ROOT / "迷深实战-工作区" / "索引" / "lightrag-exp"
+
+_rag = None
+_initialized = False
+CNT = {"llm_calls": 0, "emb_calls": 0, "emb_texts": 0}
+
+
+def llm_calls() -> int:
+    return CNT["llm_calls"]
+
+
+async def _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001
+    CNT["llm_calls"] += 1
+    return ""
+
+
+async def _embed_batch(texts: list[str]) -> list[list[float]]:
+    # 同导出件：1.5.7 队列 await 用户函数 → 协程 + to_thread（防堵看门狗）
+    import urllib.request
+
+    def _http(b):
+        payload = json.dumps({"model": "text-embedding-qwen3-embedding-8b@q4_k_m", "input": b},
+                             ensure_ascii=False).encode("utf-8")
+        req = urllib.request.Request("http://127.0.0.1:8080/v1/embeddings", data=payload,
+                                     headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=300) as r:
+            d = json.loads(r.read().decode("utf-8"))
+        return [x["embedding"] for x in sorted(d["data"], key=lambda x: x["index"])]
+
+    out: list[list[float]] = []
+    B = 16
+    for i in range(0, len(texts), B):
+        b = texts[i:i + B]
+        out.extend(await asyncio.to_thread(_http, b))
+        CNT["emb_calls"] += 1
+    CNT["emb_texts"] += len(texts)
+    return out
+
+
+def mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[str]]:
+    """ll=实体级关键词（别名命中+分词项）；hl=主题级（本实验为空——主题词表未建，如实留空）。"""
+    sys.path.insert(0, str(HERE))
+    import 检索层 as jl
+    ll = [h["name"] for h in jl.alias_recall(query, Path(store_root))]
+    terms = [t for t in re.split(r"[\s，。？！、「」·]+", query) if len(t) >= 2]
+    for t in terms:
+        if t not in ll:
+            ll.append(t)
+    return [], ll[:20]
+
+
+def get_rag():
+    global _rag
+    if _rag is None:
+        from lightrag import LightRAG
+        from lightrag.utils import EmbeddingFunc
+        WORK.mkdir(parents=True, exist_ok=True)
+        _rag = LightRAG(working_dir=str(WORK),
+                        embedding_func=EmbeddingFunc(embedding_dim=4096, func=_embed_batch),
+                        llm_model_func=_llm_stub, llm_model_name="stub-no-llm")
+    return _rag
+
+
+def _rid2name(store_root: Path) -> dict[str, str]:
+    m: dict[str, str] = {}
+    for f in Path(store_root).glob("libraries/*/*/*.json"):
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        nm = (rec.get("canonical") or {}).get("name")
+        if nm:
+            m[rec.get("record_id")] = nm
+    return m
+
+
+async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode: str = "local") -> dict:
+    """第五路（协程版）：调用方须在**同一个事件循环**内连续调用（跨 loop 会撞存储锁）。"""
+    global _initialized
+    rag = get_rag()
+    if not _initialized:
+        # 1.5.7 实测：存储不自动初始化（_storage_lock=None 崩）——显式 initialize
+        await rag.initialize_storages()
+        _initialized = True
+    hl, ll = mechanical_keywords(query, store_root)
+    from lightrag import QueryParam
+    param = QueryParam(mode=mode, only_need_context=True, top_k=top_k,
+                       ll_keywords=ll, hl_keywords=hl, enable_rerank=False)
+    data = await rag.aquery_data(query, param=param)
+    ents, rels, chunks = [], [], []
+    if isinstance(data, dict):
+        ents = data.get("entities") or []
+        rels = data.get("relationships") or []
+        chunks = data.get("chunks") or []
+    names: list[str] = []
+    for e in ents:
+        n = e.get("entity_id") or e.get("entity_name") if isinstance(e, dict) else str(e)
+        if n and n not in names:
+            names.append(n)
+    m = _rid2name(store_root)
+    for c in chunks:
+        rid = (c.get("source_id") or c.get("id") or "") if isinstance(c, dict) else ""
+        for piece in str(rid).split("<SEP>"):
+            nm = m.get(piece.strip())
+            if nm and nm not in names:
+                names.append(nm)
+    return {"names": names[:top_k], "entities": len(ents), "relationships": len(rels),
+            "chunks": len(chunks), "mode": mode, "ll_keywords": ll}
+
+
+def fifth_recall(query: str, store_root: Path, top_k: int = 10, mode: str = "local") -> dict:
+    """第五路（单发便捷版）：自带事件循环；批量请用 fifth_recall_async。"""
+    return asyncio.run(fifth_recall_async(query, store_root, top_k, mode))
+
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--store", default=str(ROOT / "迷深实战-本体库"))
+    ap.add_argument("--q", required=True)
+    ns = ap.parse_args()
+    rep = fifth_recall(ns.q, Path(ns.store))
+    rep["llm_calls"] = CNT["llm_calls"]
+    print(json.dumps(rep, ensure_ascii=False, indent=1))
