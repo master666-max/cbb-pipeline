@@ -19,8 +19,11 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const ROOT = "d:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/";
-const DECISION_LOG = "d:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/决策账.jsonl";
+// 可移植：项目根由 env CBB_GUARD_ROOT 指定（另一台机器/另一路径直接设这个变量即可）；
+// 缺省回落到本机原路径（向后兼容，不改既有行为）。
+const ROOT = (process.env.CBB_GUARD_ROOT || "d:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/")
+  .replace(/\\/g, "/").toLowerCase().replace(/\/+$/, "") + "/";  // 归一并**保证**尾斜杠（缺则补）
+const DECISION_LOG = ROOT + "决策账.jsonl";
 const FROZEN_DIRS = [ROOT + "迷深实战-本体库/", ROOT + "迷深实战-工作区/"];
 const FROZEN_FILES = [ROOT + "迷深实战-工单.md", ROOT + "迷深实战-发车件.md",
                       ROOT + "迷深实战-build-state.md"];
@@ -45,6 +48,11 @@ const fp = norm(rawPath);
 const cmd = String(ti.command || "");
 
 const bypass = (process.env.CBB_HOOK_BYPASS || "").trim();
+
+if (process.env.CBB_GUARD_DEBUG) {  // 排查用：CBB_GUARD_DEBUG=1 时打印比对内部值
+  process.stderr.write(`[cbb-guard:debug] tool=${tool} ROOT=${ROOT} fp=${fp}\n` +
+    `[cbb-guard:debug] frozen=${isFrozen(fp)} redzone_write=${isRedzoneWrite(fp)} exists=${fs.existsSync(rawPath)}\n`);
+}
 
 function bypassLog(action, target) {
   try {

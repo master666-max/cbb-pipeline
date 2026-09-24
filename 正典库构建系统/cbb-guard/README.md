@@ -26,6 +26,14 @@
 注册表已登记：`known_marketplaces.json`（cbb-local → `cbb-marketplace/`）＋ `installed_plugins.json`（cbb-guard@cbb-local，installPath=版本源本体）。**新会话生效**（当前会话的插件加载是启动时快照）。
 卸载＝删两条注册表项＋删 `.bak` 前缀的备份恢复。
 
+## 另一台机器的安装与验证（两端同用）
+
+1. 加市场（把本地路径换成 GitHub 仓）：marketplace 源＝`github.com/master666-max/cbb-marketplace`（或本目录）；
+2. 装插件 `cbb-guard`；**新会话生效**；
+3. **路径参数化**：另一端项目根不同——设 env `CBB_GUARD_ROOT=<那台机器的项目根>`（不带尾斜杠也行，脚本会归一）；不设则回落到本机默认路径；
+4. 验证（两发正负对照）：拿一个**已存在**的冻结件路径发 Write → 应拦（exit 2）；新建路径 → 应放（exit 0）；红区 schema 的 Edit（追加）→ 应放。
+5. 排查：设 `CBB_GUARD_DEBUG=1` 可打印 ROOT/命中内部值。
+
 ## 自检
 
 ```bash
