@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -158,6 +159,7 @@ class ThreeStateStore:
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
         self.zone = QuarantineZone(self.root / "quarantine-zone")
+        self.iter_skipped = []  # 全库遍历不可读文件名（超长路径），显式披露非静默
 
     # ---- 写入安全围栏：根围栏+符号链接拒绝 ----
     def _assert_within_root(self, path: Path) -> Path:
@@ -193,8 +195,15 @@ class ThreeStateStore:
         if path.exists():
             return path, False
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(obj, ensure_ascii=False, sort_keys=True, indent=1),
-                        encoding="utf-8")
+        # A2 修复：temp+rename 原子写——中途崩溃不留半截 JSON（防单件撕裂阻断全链）
+        tmp = path.with_suffix(path.suffix + ".tmp")
+        tmp.write_text(json.dumps(obj, ensure_ascii=False, sort_keys=True, indent=1),
+                       encoding="utf-8")
+        try:
+            os.replace(tmp, path)
+        except OSError:
+            tmp.unlink(missing_ok=True)  # 落定失败不留旁车残件（硬 kill 残件由批次自检兜）
+            raise
         return path, True
 
     # ---- UNIQUE 约束族（schema 层防重的文件后端等价） ----
@@ -391,10 +400,11 @@ class ThreeStateStore:
         current = self._find(record_id)
         if current is None:
             raise KeyError(f"记录不在库: {record_id}")
-        if self.effective_status(record_id) == to_status:
+        eff = self.effective_status(record_id)  # A4 修复：from 记有效态（原记文件态，迁移两次后轨迹失真）
+        if eff == to_status:
             return {"record_id": record_id, "from": to_status, "to": to_status,
                     "by": by, "note": note, "repeated": True}  # 幂等：目标态已达则不重复入账
-        entry = {"record_id": record_id, "from": current["status"], "to": to_status,
+        entry = {"record_id": record_id, "from": eff, "to": to_status,
                  "by": by, "note": note}
         self._append("transitions.jsonl", entry)
         return entry
@@ -448,12 +458,18 @@ class ThreeStateStore:
 
     # ---- 查询 ----
     def iter_records(self):
+        """遍历全库记录。2026-09-22 U-C04 段收口修复：批20 前旧连缀命名的超长路径文件
+        （如 77×'-m'，绝对路径>Windows 260）glob 可枚举但 open 失败——收集进 iter_skipped
+        显式披露（非静默跳过），供 calibration_report 等全库遍历调用方附带报告。"""
         for lib in LIBRARIES:
             for status in ("confirmed", "provisional"):
                 d = self.root / "libraries" / lib / status
                 if d.exists():
                     for p in sorted(d.glob("*.json")):
-                        yield json.loads(p.read_text(encoding="utf-8"))
+                        try:
+                            yield json.loads(p.read_text(encoding="utf-8"))
+                        except (OSError, json.JSONDecodeError, UnicodeDecodeError):  # A2 修复：撕裂/坏编码 JSON 也入披露（原只捕 OSError）
+                            self.iter_skipped.append(p.name)
 
     def _find(self, record_id: str):
         for lib in LIBRARIES:
@@ -494,6 +510,7 @@ class ThreeStateStore:
             "min": min(confs) if confs else None,
             "max": max(confs) if confs else None,
             "mean": round(sum(confs) / len(confs), 4) if confs else None,
+            "iter_skipped_unreadable": list(self.iter_skipped),
         }
         q_group = self.zone.by_group()
         q_sub = self.zone.by_subclass()

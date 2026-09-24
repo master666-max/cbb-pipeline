@@ -64,10 +64,17 @@ def propose(store_root: Path | str, limit: int | None = None) -> dict:
     iq = Path(store_root) / "quarantine-zone" / "items.jsonl"
     items = [json.loads(x) for x in iq.read_text(encoding="utf-8").splitlines() if x.strip()] \
         if iq.exists() else []
+    # A5 修复（审计 R4）：pending 判定按 adjudications 差集——items.status 写死后永不回写，
+    # 静态过滤会让已裁件重入机械档（违反终态不可再动）
+    aq = Path(store_root) / "quarantine-zone" / "adjudications.jsonl"
+    adjudicated = {json.loads(x)["item_id"] for x in aq.read_text(encoding="utf-8").splitlines() if x.strip()} \
+        if aq.exists() else set()
     by_cls: dict[str, int] = {c: 0 for c in CLASSES}
     proposals: list[dict] = []
     for it in items:
-        if it.get("status") != "pending" or it.get("subclass") != "contradiction_pending":
+        if it.get("item_id") in adjudicated:
+            continue
+        if it.get("subclass") != "contradiction_pending":
             continue
         parsed = parse_dual_track_detail(it.get("detail", ""))
         if not parsed:
@@ -104,11 +111,19 @@ def apply(proposals: list[dict], mode: str, confirmations: list[str] | None = No
         raise ValueError(f"非法 mode={mode!r}，合法=auto | batch_confirm")
     conf = set(confirmations or [])
     ledger_path = (Path(store_root) / "处置台账.jsonl") if store_root else None
-    executed = skipped_cls = skipped_not_confirmed = 0
+    # A5b 修复：台账 item_id 幂等——重放不重复落账
+    done_ids = set()
+    if ledger_path is not None and ledger_path.exists():
+        done_ids = {json.loads(x).get("item_id")
+                    for x in ledger_path.read_text(encoding="utf-8").splitlines() if x.strip()}
+    executed = skipped_cls = skipped_not_confirmed = skipped_dup = 0
     rows: list[dict] = []
     for p in proposals:
         if not p.get("mechanical"):
             skipped_cls += 1
+            continue
+        if p["item_id"] in done_ids:
+            skipped_dup += 1
             continue
         if mode == "batch_confirm" and p["item_id"] not in conf:
             skipped_not_confirmed += 1
@@ -126,6 +141,7 @@ def apply(proposals: list[dict], mode: str, confirmations: list[str] | None = No
             for r in rows:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
     return {"executed": executed, "skipped_direct_conflict": skipped_cls,
+            "skipped_already_in_ledger": skipped_dup,
             "skipped_not_confirmed": skipped_not_confirmed,
             "ledger": str(ledger_path) if ledger_path else None,
             "口径": f"mode={mode}；direct_conflict 永不机械执行；记录级改写由管线按台账重抽落地"}

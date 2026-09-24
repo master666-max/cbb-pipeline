@@ -329,7 +329,9 @@ def load_latest_tree(tree_dir: Path):
     tree_dir = Path(tree_dir)
     if not tree_dir.exists():
         return None
-    versions = sorted(p for p in tree_dir.glob("anchor-tree.v*.json"))
+    # A7 修复（审计 R4）：数值排序——原字典序在 v10+ 时 versions[-1] 取到 v9
+    versions = sorted(tree_dir.glob("anchor-tree.v*.json"),
+                      key=lambda p: int(re.search(r"v(\d+)", p.stem).group(1)))
     if not versions:
         return None
     return json.loads(versions[-1].read_text(encoding="utf-8"))

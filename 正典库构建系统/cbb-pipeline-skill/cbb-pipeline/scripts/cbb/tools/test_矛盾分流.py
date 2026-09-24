@@ -57,14 +57,16 @@ def test_apply_auto_vs_batch_confirm(tmp_path):
          "mechanical": False, "align_to": None, "why": "真冲突"},
     ]
     # auto：机械档执行，direct_conflict 永不执行（正对照成对）
-    s1 = m.apply(props, "auto", store_root=tmp_path, at="2026-09-22")
+    r1 = tmp_path / "s1"  # 场景各自独立 root：A5b 幂等后同根重放会被台账拦截（见下条）
+    s1 = m.apply(props, "auto", store_root=r1, at="2026-09-22")
     assert s1["executed"] == 1 and s1["skipped_direct_conflict"] == 1
-    ledger = [json.loads(x) for x in (tmp_path / "处置台账.jsonl").read_text(encoding="utf-8").splitlines()]
+    ledger = [json.loads(x) for x in (r1 / "处置台账.jsonl").read_text(encoding="utf-8").splitlines()]
     assert ledger[0]["to"] == "人物(迷宫生物)" and ledger[0]["at"] == "2026-09-22"
     # batch_confirm：未确认不执行（负对照）＋确认后执行（正对照）
-    s2 = m.apply(props, "batch_confirm", confirmations=[], store_root=tmp_path)
+    r2 = tmp_path / "s2"
+    s2 = m.apply(props, "batch_confirm", confirmations=[], store_root=r2)
     assert s2["executed"] == 0 and s2["skipped_not_confirmed"] == 1
-    s3 = m.apply(props, "batch_confirm", confirmations=["q1"], store_root=tmp_path)
+    s3 = m.apply(props, "batch_confirm", confirmations=["q1"], store_root=r2)
     assert s3["executed"] == 1
     try:
         m.apply(props, "yolo")
@@ -79,6 +81,34 @@ def test_align_candidate_pure_function():
     assert out["canonical"]["entity_type"] == "人物(迷宫生物)"
     assert out["_meta"]["alignment"]["aligned_to"] == "人物(迷宫生物)"
     assert rec["canonical"]["entity_type"] == "人物"  # 纯函数：入参不动
+
+
+def test_propose_excludes_adjudicated(tmp_path):
+    """A5 反例：已裁件（adjudications 有 item_id）不得重入机械档——items.status 写死 pending 也不认。"""
+    q = tmp_path / "quarantine-zone"
+    q.mkdir(parents=True)
+    items = [{"item_id": "q1", "status": "pending", "subclass": "contradiction_pending",
+              "record_id": "r1", "detail": "entity_type: 入库='人物' vs 库内='人物(迷宫生物)'"}]
+    (q / "items.jsonl").write_text("\n".join(json.dumps(x, ensure_ascii=False) for x in items),
+                                   encoding="utf-8")
+    assert len(m.propose(tmp_path)["proposals"]) == 1          # 未裁：照进
+    (q / "adjudications.jsonl").write_text(
+        json.dumps({"item_id": "q1", "verdict": "align"}, ensure_ascii=False), encoding="utf-8")
+    assert m.propose(tmp_path)["proposals"] == []              # 旧实现：仍 1 条（重入）
+
+
+def test_apply_replay_idempotent(tmp_path):
+    """A5b 反例：同提案重放不得重复落账（旧实现每次重放都追加一行）。"""
+    props = [{"item_id": "q1", "record_id": "r1", "field": "entity_type",
+              "val_in": "人物", "val_stored": "人物(迷宫生物)", "cls": "granularity",
+              "mechanical": True, "align_to": "人物(迷宫生物)", "why": "粒度差异"}]
+    s1 = m.apply(props, "auto", store_root=tmp_path, at="2026-09-23")
+    s2 = m.apply(props, "auto", store_root=tmp_path, at="2026-09-24")
+    assert s1["executed"] == 1
+    assert s2["executed"] == 0 and s2["skipped_already_in_ledger"] == 1
+    rows = [json.loads(x) for x in
+            (tmp_path / "处置台账.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
+    assert len(rows) == 1 and rows[0]["at"] == "2026-09-23"    # 首次落账，重放零增殖
 
 
 if __name__ == "__main__":

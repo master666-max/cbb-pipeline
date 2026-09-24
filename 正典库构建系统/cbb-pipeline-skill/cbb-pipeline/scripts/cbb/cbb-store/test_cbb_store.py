@@ -5,6 +5,7 @@
 保留面：三态写入/旁车迁移/幂等/supersede 版本化/置信度路由。
 新增：UNIQUE 约束族/时序回放/写入安全围栏/multiversion 四动作合并。
 """
+import json
 import os
 import sys
 import tempfile
@@ -297,6 +298,55 @@ class TestTransitionAndSupersede(unittest.TestCase):
         self.assertEqual(latest["supersedes"], "tr-1")
         with self.assertRaises(ValueError):
             store.supersede("tr-1", entity_rec("缇达", rid="tr-1"))  # 不换 id=拒
+
+
+class TestAuditR4Fixes(unittest.TestCase):
+    """R4 审计修复批反例（A2a/A2b/A4——每项都能证伪旧实现）。"""
+
+    def test_a2a_torn_json_disclosed_not_crash(self):
+        """反例：撕裂/坏编码 JSON 原抛异常崩掉全库遍历；修复=入 iter_skipped 显式披露。"""
+        store, td = make_store()
+        self.addCleanup(td.cleanup)
+        store.admit(entity_rec("缇达", rid="ok-1"), "provisional")
+        d = store.root / "libraries" / "character" / "provisional"
+        (d / "torn.json").write_text('{"record_id": "tor', encoding="utf-8")
+        (d / "badenc.json").write_bytes(b'{"x": "\xff\xfe"}')  # 非法 UTF-8
+        got = list(store.iter_records())  # 旧实现：此处抛 JSONDecodeError / UnicodeDecodeError
+        self.assertTrue(any(r["record_id"] == "ok-1" for r in got))
+        self.assertIn("torn.json", store.iter_skipped)
+        self.assertIn("badenc.json", store.iter_skipped)
+
+    def test_a2b_crash_leaves_no_partial_file(self):
+        """反例：原 write_text 直写——崩在落定前留半截 JSON（阻断全链）；修复=rename-or-nothing。"""
+        store, td = make_store()
+        self.addCleanup(td.cleanup)
+        target = store._lib_path("character", "provisional", "atomic-1")
+
+        def boom(*_a, **_k):
+            raise OSError("模拟崩在 rename 前")
+
+        real = cs.os.replace
+        cs.os.replace = boom
+        try:
+            with self.assertRaises(OSError):
+                store._write_immutable(target, {"record_id": "atomic-1"})
+        finally:
+            cs.os.replace = real
+        self.assertFalse(target.exists(), "崩溃后不得留半截定稿文件（旧实现此处 True）")
+        self.assertEqual(list(target.parent.glob("*.tmp")), [])
+
+    def test_a4_transition_from_is_effective_state(self):
+        """反例：原 from 记文件态——降级后轨迹成 provisional→provisional 自环失真。"""
+        store, td = make_store()
+        self.addCleanup(td.cleanup)
+        store.admit(entity_rec("缇达", rid="tr-9"), "provisional")
+        store.status_transition("tr-9", "confirmed", by="promotion")
+        store.status_transition("tr-9", "provisional", by="shadow")
+        rows = [json.loads(x) for x in
+                (store.root / "transitions.jsonl").read_text(encoding="utf-8").splitlines()
+                if x.strip()]
+        self.assertEqual([(r["from"], r["to"]) for r in rows],
+                         [("provisional", "confirmed"), ("confirmed", "provisional")])
 
 
 if __name__ == "__main__":

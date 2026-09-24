@@ -50,8 +50,17 @@ class LedgerChain:
             self.path.touch()
 
     def _rows(self) -> list[dict]:
-        return [json.loads(ln) for ln in
-                self.path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        # C1 修复（审计 R4）：实例内缓存——原实现每次追加/查键全量重读解析（O(n²)）；
+        # 单写者假设（跨进程并发写见审计 B1 挂账），本实例追加后缓存内同步续行
+        if getattr(self, "_cache", None) is None:
+            self._cache = [json.loads(ln) for ln in
+                           self.path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        return self._cache
+
+    def _rows_fresh(self) -> list[dict]:
+        """作废实例缓存后重载——篡改检测/校验等只读场景专用（缓存不得掩盖账本外改动）。"""
+        self._cache = None
+        return self._rows()
 
     def _tail(self) -> dict | None:
         rows = self._rows()
@@ -74,6 +83,8 @@ class LedgerChain:
         payload["hash"] = _line_hash(payload)
         with self.path.open("a", encoding="utf-8") as f:
             f.write(json.dumps(payload, ensure_ascii=False, sort_keys=True) + "\n")
+        if getattr(self, "_cache", None) is not None:
+            self._cache.append(payload)
         return payload
 
     def record_append(self, target: str, idempotency_key: str,
@@ -108,7 +119,7 @@ class LedgerChain:
                    if r["op"] == "skip" and (target is None or r["target"] == target))
 
     def verify(self, store_root: Path | None = None) -> dict:
-        rows = self._rows()
+        rows = self._rows_fresh()  # C1 补强：校验面读盘，不信任实例缓存
         errors = []
         prev_hash = EMPTY_SHA
         for i, r in enumerate(rows):
