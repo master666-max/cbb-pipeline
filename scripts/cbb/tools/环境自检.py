@@ -6,19 +6,35 @@
 但"这台机器上到底有没有那些服务""那台在跑的图库是不是本项目的"这两问，此前只能在跑起来之后靠猜。
 本件把这两问变成一次可复算、可留痕的判定。
 
-三态严格区分（不许互相顶替）：
-  READY     探到了、凭证在、归属已判
-  BLOCKED   该件不可用——写清缺哪一项、怎么补；**未探＝未探，不许写 N/A 蒙过**
-  N/A       仅当命令行显式声明不用（--disable embed,rerank,graph），并记入未达项口径
+四态严格区分（不许互相顶替）：
+  READY     闸门件通过：探到了、凭证在、归属已判
+  BLOCKED   闸门件不通过——写清缺哪一项、怎么补；**未探＝未检＝BLOCKED，不许写 N/A 蒙过**
+  N/A       仅当命令行显式声明不用（--disable embed,rerank,graph），并保留原状态痕、记入未达项
+  OBSERVED  观察项（推理端点等）：只报告事实，永不参与闸门
+
+三件基础设施（B-图／B-嵌入／B-重排）按 2026-09-24 裁定为**不可抛弃、全程随流程跑**：
+  任一项不是 READY ⇒ 默认阻断（退出码 2），不许"先跑起来再说"；
+  确需降级必须 --allow-degraded "<理由>"，本件会自动往 导出债务.jsonl 追加一笔 infra-degraded，
+  且回执 overall=DEGRADED、终审可用=false——降级只能带着债走，不能无痕通行。
+  **未探＝未检＝BLOCKED**：基础设施不许以"没查"过关。
+
+推理端点是**观察项**，不参与闸门：这套流程的判定者与执行者是宿主 Agent（J1 记身份）。
+  本地聊天模型要不要接手 NLI 预筛，属于选型问题，用 --exam 真打三题微考给参考——
+  依据（本机实测）：① 拿三分判定题问 gemma-3-1b-it，它答「迷宫」；② 问 35B-A3B 档，三题只对两题，
+  错的正是「实体类型=人物（迷宫生物）」vs「实体类型=人物」这种**粒度冲突应判 contradicts** 的形态。
+  ⇒ 服务在听、模型清单有货，都不等于能当判定器；但也⇒ 不许因为它判不准就把它当闸门卡住开书。
+  另注：上游默认的 :1234 在本机属 Windows 保留端口段（1209–1308 被 Hyper-V/WinNAT 排除，
+  `lms server start --port 1234` 报 EACCES），而 :8080 实为 Docker 转发在应答 ⇒ 候选端口取 1234/8080 探哪个通用哪个。
 
 退出码：
-  0 = 可以开书（主链必需项全 READY；增值项 BLOCKED 不阻断，但逐条出现在「未达项」里）
-  2 = 主链必需项缺失，或判定面为空（**空判定不许读成通过**）
+  0 = 可以开书（三件基础设施皆 READY；观察项/增值件 BLOCKED 不阻断，但逐条出现在「未达项」里）
+  2 = 主链必需项缺失、基础设施缺项且未给 --allow-degraded，或判定面为空（**空判定不许读成通过**）
 
 用法：
   py -X utf8 环境自检.py --project-token zhongmo-canon [--store 本体库] [--json]
+  py -X utf8 环境自检.py --allow-degraded "图库归属本周内解决"   # 带债继续：自动记一笔导出债务
   py -X utf8 环境自检.py --probe-only            # 只探环境不判归属（不许拿这个当终审依据）
-  py -X utf8 环境自检.py --judge agent           # 声明语义判定者=宿主 Agent（写进回执，防冒称本地模型）
+  py -X utf8 环境自检.py --exam --model <模型名>  # 给本地推理端点做选型微考（观察项）
 
 端点与环境变量（与包内既有件同一套名字，不另造）：
   NEO4J_HTTP（默认 http://localhost:7695）· NEO4J_PASSWORD / NEO4J_AUTH ·
@@ -228,14 +244,76 @@ def check_rerank(http_get=http_json) -> dict:
         return item("R1 重排端点", "BLOCKED", f"{url} 不可用：{type(e).__name__} {str(e)[:60]}")
 
 
-def check_llm(preset: str) -> dict:
+# ---- 本地 LLM：必须真打一发微考，不许"端口在听就算 READY" ----
+# 依据（本机实测）：LM Studio :8080 TCP 在听、/v1/models 有响应，但拿三分判定题问 gemma-3-1b-it
+# 它答「迷宫」——完全没按输出格式来。⇒ TCP/模型清单只证明"服务活着"，不证明"能当判定器"。
+NLI_EXAM = [  # (前提, 假设, 期望标签)——覆盖三类各一，含粒度冲突这一最容易放过的形态
+    ("缇达的实体类型为人物（迷宫生物）", "缇达的实体类型为人物", "contradicts"),
+    ("拉丝缇娅拉是苍之学园的剑术教官", "拉丝缇娅拉擅长剑术", "entails"),
+    ("言万心叶是苍之学园的学生", "店长关掉了店里的灯", "neutral"),
+]
+LLM_CANDIDATE_PORTS = (1234, 8080)     # 1234=上游默认；8080=本机 LM Studio 实听端口
+
+
+def _chat(port: int, model: str, prompt: str, timeout: float = 90.0, http_get=http_json) -> str:
+    body, _ = http_get(f"http://127.0.0.1:{port}/v1/chat/completions",
+                       {"model": model, "temperature": 0,
+                        "messages": [{"role": "user", "content": prompt}]}, timeout=timeout)
+    return (body["choices"][0]["message"]["content"] or "").strip()
+
+
+def _classify(port: int, model: str, premise: str, hypothesis: str, http_get=http_json) -> str:
+    raw = _chat(port, model,
+                "只回答一个词：entails、neutral 或 contradicts。\n"
+                f"前提：{premise}\n假设：{hypothesis}", http_get=http_get)
+    low = raw.lower()
+    for lab in ("contradicts", "entails", "neutral"):
+        if lab in low:
+            return lab
+    return f"<未按要求输出：{raw[:24]}>"
+
+
+def check_llm(preset: str, model: str | None = None, exam: bool = False, http_get=http_json) -> dict:
+    """推理端点＝**观察项**（判定者是宿主 Agent，见 J1），默认只列清单不考试、永不闸门。
+    --exam 才真打三题微考——用途是"要不要把本地模型接进 NLI 预筛"的选型参考，不是开书条件。"""
+    tag = "（观察项，不闸门）"
     if os.environ.get("DEEPSEEK_API_KEY"):
-        return item("L1 语义判定端点", "READY", "preset=deepseek · 凭证在位（值不读出）")
-    if tcp_ok("127.0.0.1", int(os.environ.get("LMSTUDIO_PORT", "1234"))):
-        return item("L1 语义判定端点", "READY", "LM Studio :1234 在听（NLI 判定器可走本地）")
-    return item("L1 语义判定端点", "BLOCKED",
-                f"既无 DEEPSEEK_API_KEY，:1234 也不通 ⇒ NLI 矛盾预筛不可用；"
-                "若改由宿主 Agent 代判，必须 --judge agent 声明身份并在报告同口径写出")
+        return item("L1 推理端点(付费)", "READY", "preset=deepseek · 凭证在位（值不读出）" + tag)
+    ports = [int(os.environ.get("LMSTUDIO_PORT"))] if os.environ.get("LMSTUDIO_PORT") else list(LLM_CANDIDATE_PORTS)
+    for p in ports:
+        if not tcp_ok("127.0.0.1", p):
+            continue
+        try:
+            models, _ = http_get(f"http://127.0.0.1:{p}/v1/models", timeout=6)
+            ids = [m.get("id") for m in models.get("data", [])]
+            chat = [i for i in ids if i and "embed" not in i.lower() and "rerank" not in i.lower()]
+        except Exception as e:
+            continue  # 端口被别的进程占着（本机 :8080 实为 Docker 转发）也是"非推理端点"
+        if not exam:
+            return item("L1 推理端点(本地)", "OBSERVED",
+                        f":{p} 在听 · 可对话模型 {len(chat)} 个（前 5：{'、'.join(chat[:5])}）"
+                        f"；默认不考试——要选型加 --exam {tag}")
+        pick = model or (chat[0] if len(chat) == 1 else None)
+        if not pick:
+            return item("L1 推理端点(本地)", "BLOCKED",
+                        f":{p} 有多个可对话模型，--exam 必须配 --model 指定一个。候选（前 6 个）："
+                        + "、".join(chat[:6]) + f"　⇒ 不许默认拿最小的那个凑数 {tag}")
+        got = []
+        for prem, hypo, want in NLI_EXAM:
+            try:
+                lab = _classify(p, pick, prem, hypo, http_get=http_get)
+            except Exception as e:
+                lab = f"<调用失败 {type(e).__name__}>"
+            got.append((want, lab))
+        good = sum(1 for w, g in got if w == g)
+        detail = "；".join(f"期望{w}/实得{g}" for w, g in got)
+        st = "READY" if good == len(NLI_EXAM) else "BLOCKED"
+        note = (f":{p} · model={pick} · 微考 {good}/{len(NLI_EXAM)}（temp=0）"
+                + ("" if good == len(NLI_EXAM) else " ⇒ 服务活着但判不准：粒度冲突这类最容易放过的形态它错了"))
+        return item("L1 推理端点(本地)", st, note + tag, 端口=p, 模型=pick, 微考=detail)
+    return item("L1 推理端点(本地)", "OBSERVED",
+                "未发现可用推理端点（本机无 DEEPSEEK_API_KEY，候选端口 "
+                + "/".join(f":{p}" for p in ports) + f" 不通）⇒ 判定者照旧是宿主 Agent {tag}")
 
 
 def check_graphiti() -> dict:
@@ -260,7 +338,35 @@ DISABLE_ALIAS = {"embed": "E1", "rerank": "R1", "graph": "G", "llm": "L1", "grap
                  "judge": "J1"}
 
 
-def evaluate(items: list[dict], disable: set[str], store: Path | None = None) -> dict:
+# 三件基础设施：按用户裁定（2026-09-24）——**不可抛弃、全程随流程跑**，缺失即阻断，降级必留债。
+# 只含 图／嵌入／重排。**推理端点不在闸门内**：本书流程的判定者与执行者是宿主 Agent（见 J1），
+# 本地聊天模型只是 L1 的一项可选体检（--exam），它 BLOCKED 绝不许卡住开书或终审。
+INFRA = {
+    "graph": ("B-图 知识库图载体", [("G1 Neo4j HTTP",), ("G4 图库归属",)]),
+    "embed": ("B-嵌入 向量模型", [("E1 嵌入端点",)]),
+    "rerank": ("B-重排 重排模型", [("R1 重排端点",)]),
+}
+OBSERVE_ONLY = ("L1", "P1", "J1")   # 只报告、不闸门
+
+
+def _slot_state(items: list[dict], alts: tuple[str, ...]) -> str:
+    hit = [i for i in items if any(i["item"].startswith(a) for a in alts)]
+    if not hit:
+        return "NOT_PROBED"
+    return "READY" if any(i["state"] == "READY" for i in hit) else "BLOCKED"
+
+
+def _infra_state(items: list[dict], slots: list[tuple[str, ...]]) -> str:
+    """所有槽位都 READY 才算就绪；少探一个槽位＝NOT_PROBED，任一 BLOCKED 即 BLOCKED。
+    （图这条尤其不能松：G1 连通 ≠ G4 归属已判——把"能连上"当"可以用"正是共享库事故的入口。）"""
+    st = [_slot_state(items, s) for s in slots]
+    if "NOT_PROBED" in st:
+        return "NOT_PROBED"
+    return "READY" if all(x == "READY" for x in st) else "BLOCKED"
+
+
+def evaluate(items: list[dict], disable: set[str], store: Path | None = None,
+             allow_degraded: str | None = None) -> dict:
     # 禁用名写错（如 embedt）若被静默忽略，就等于"以为关了其实没关"⇒ 显式现形为 BLOCKED
     unknown = sorted(s for s in disable if s.lower() not in DISABLE_ALIAS)
     for short in disable:
@@ -275,26 +381,59 @@ def evaluate(items: list[dict], disable: set[str], store: Path | None = None) ->
                           "；这条没生效，不要以为已经禁掉了对应件"))
     if not items:
         return {"overall": "FAIL", "items": [], "未达项": ["判定面为空：什么都没查"],
-                "carrier": "file", "exit": 2, "口径": "空判定不许读成通过"}
+                "carrier": "file", "基础设施": {}, "基础设施缺": ["判定面为空"],
+                "exit": 2, "口径": "空判定不许读成通过"}
+
     miss_req = [i["item"] for i in items if i["item"].startswith("M") and i["state"] != "READY"]
-    graph_ready = any(i["item"] == "G4 图库归属" and i["state"] == "READY" for i in items)
+    graph_ready = _infra_state(items, INFRA["graph"][1]) == "READY"
+    infra = {k: _infra_state(items, pres) for k, (label, pres) in INFRA.items()}
+    infra_missing = [INFRA[k][0] for k, st in infra.items() if st != "READY"]
+
+    debt_file = (Path(store) / "导出债务.jsonl") if store else None
     debt = None
-    if store:
-        f = Path(store) / "导出债务.jsonl"
-        debt = sum(1 for x in f.read_text(encoding="utf-8").splitlines() if x.strip()) if f.exists() else 0
+    if debt_file:
+        debt = sum(1 for x in debt_file.read_text(encoding="utf-8").splitlines() if x.strip()) \
+            if debt_file.exists() else 0
+
+    # 降级闸门：基础设施不齐 ⇒ 默认阻断（exit 2）；给了 --allow-degraded 才放行，但强制记一笔欠账
+    degraded = bool(infra_missing) and bool(allow_degraded)
+    if degraded and debt_file is not None:
+        debt_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(debt_file, "a", encoding="utf-8", newline="\n") as f:
+            f.write(json.dumps({"type": "infra-degraded", "缺": infra_missing,
+                                "理由": allow_degraded,
+                                "口径": "降级运行：基础设施缺失期间产出的收口/终审结论均记未达项"},
+                               ensure_ascii=False) + "\n")
+        debt = (debt or 0) + 1
+    blocked_hard = bool(infra_missing) and not allow_degraded
+
     not_done = [i for i in items if i["state"] in ("BLOCKED", "N/A")]
-    exit_code = 2 if miss_req else 0
-    overall = "READY" if not not_done else ("PARTIAL" if not miss_req else "FAIL")
+    exit_code = 2 if (miss_req or blocked_hard) else 0
+    if miss_req:
+        overall = "FAIL"
+    elif blocked_hard:
+        overall = "BLOCKED_INFRA"
+    elif degraded:
+        overall = "DEGRADED"
+    else:
+        overall = "READY" if not not_done else "PARTIAL"
     return {
         "overall": overall,
         "carrier": "graph" if graph_ready else "file",
-        "carrier_reason": ("G4 归属已判定为本项目 ⇒ 可走图"
-                           if graph_ready else "归属未判定或图不可用 ⇒ 走文件兜底（深融②允许同一套规则）"),
+        "carrier_reason": ("G4 归属已判为本项目 ⇒ 走图" if graph_ready
+                           else "归属未判/图不可用 ⇒ 降级走文件兜底（同一套规则，两载体），且已记未达项"),
+        "基础设施": infra,
+        "基础设施缺": infra_missing,
+        "降级运行": (f"是（--allow-degraded 理由：{allow_degraded}）⇒ 已写入导出债务台账"
+                     if degraded else ("否" if not infra_missing else
+                                       "否（未给 --allow-degraded ⇒ 阻断，退出码 2）")),
         "主链必需缺": miss_req,
         "未达项": [{"item": i["item"], "state": i["state"], "note": i["note"]} for i in not_done],
-        "终审可用": bool(graph_ready) and (debt == 0 if debt is not None else False),
+        "终审可用": bool(graph_ready) and infra["embed"] == "READY" and infra["rerank"] == "READY"
+                    and (debt == 0 if debt is not None else False),
         "导出债务": debt if debt is not None else "未查（未给 --store）",
-        "口径": "终审可用=归属已判 且 导出债务为 0；任一不成立 ⇒ ⑦ 不许判通过，只能记未达项",
+        "口径": "终审可用=图归属已判 且 嵌入/重排就绪 且 导出债务=0；任一不成立 ⇒ ⑦ 记未达项不许判通过。"
+                "基础设施缺项默认阻断开书（exit 2），--allow-degraded 只能带着债务继续",
         "exit": exit_code,
         "items": items,
     }
@@ -308,9 +447,15 @@ def main(argv=None) -> int:
     ap.add_argument("--workspace", default="工作区")
     ap.add_argument("--store", default=None, help="本体库根（给了才查导出债务）")
     ap.add_argument("--preset", default="deepseek", choices=["deepseek", "lmstudio-flash"])
-    ap.add_argument("--judge", default="endpoint", choices=["endpoint", "agent"],
-                    help="语义判定者：endpoint=本地/付费端点；agent=宿主 Agent 代判（须声明）")
+    ap.add_argument("--judge", default="agent", choices=["endpoint", "agent"],
+                    help="语义判定者：默认 agent＝宿主 Agent（这套流程的正常形态）；"
+                         "只有真把判定接进本地/付费端点时才填 endpoint")
     ap.add_argument("--probe-only", action="store_true", help="只探环境不判归属（结果不得用于终审）")
+    ap.add_argument("--model", default=None, help="做 --exam 微考时指定的本地对话模型名")
+    ap.add_argument("--exam", action="store_true",
+                    help="给本地推理端点真打三题 NLI 微考（选型参考用；推理端点是观察项，**不参与闸门**）")
+    ap.add_argument("--allow-degraded", default=None, metavar="理由",
+                    help="基础设施缺项时带债继续（必须写理由；会自动追加一笔导出债务）。不给就阻断，退出码 2")
     ap.add_argument("--disable", default="", help="显式不用的件，逗号分隔，如 embed,rerank,graph")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--out", default=None, help="回执落盘路径（建议 工作区/环境自检.json）")
@@ -319,8 +464,10 @@ def main(argv=None) -> int:
     ws, store = Path(ns.workspace), (Path(ns.store) if ns.store else None)
     items = check_required(ws, (store or ws) / "ledger.jsonl")
     items += check_graph(ns.project_token, ns.probe_only)
-    items += [check_embed(), check_rerank(), check_llm(ns.preset), check_graphiti(), check_judge(ns.judge)]
-    rep = evaluate(items, {x.strip() for x in ns.disable.split(",") if x.strip()}, store)
+    items += [check_embed(), check_rerank(), check_llm(ns.preset, ns.model, ns.exam), check_graphiti(),
+              check_judge(ns.judge)]
+    rep = evaluate(items, {x.strip() for x in ns.disable.split(",") if x.strip()}, store,
+                   allow_degraded=ns.allow_degraded)
     text = json.dumps(rep, ensure_ascii=False, indent=1 if not ns.json else None)
     print(text)
     if ns.out:
