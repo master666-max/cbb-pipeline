@@ -149,7 +149,7 @@ class 归属判定(unittest.TestCase):
         its = graph_items(routes=g_routes([[50]], []), env={"NEO4J_PASSWORD": "x"})
         g = find(its, "G4 图库归属")
         self.assertEqual(g["state"], "BLOCKED", "总数>0 而归属分布零回行 ⇒ 未判定")
-        self.assertIn("零回行", g["note"])
+        self.assertIn("未判定", g["note"])
 
     def test_负对照_cypher报错不许吞(self):
         its = graph_items(routes=g_routes(errors=[{"code": "Neo.ClientError", "message": "no such"}]),

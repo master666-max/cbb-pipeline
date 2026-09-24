@@ -62,6 +62,9 @@ metadata:
    会让跨单元巡检一条查询扫到别人的实体，产出"零孤悬/零矛盾"的**假干净**。判据＝库内节点是否带本项目
    `group_id/canon_group` 标记；总数>0 而归属分布零回行 ⇒ 未判定 ⇒ `BLOCKED`，只许带债降级或走 `file` 兜底。
    （实测：本机 Neo4j 5.26.30 **community 版**，无多库隔离能力，901 节点里 0 个带本项目标记。）
+   正解不是"每条查询记得加过滤"（纸闸门），而是**另起实例**：`scripts/cbb/tools/图库隔离.py create
+   --project-token <名> --auth-none --run`——只绑 127.0.0.1、发布端口先预检、口令只走仓外 env-file；
+   建完 `verify` 复验归属，`plan` 可先看不动手。归属判据与 G4 共用一份实现（`ownership_verdict`）。
 2. **"连通"与"就绪"是两个槽位。** 图这项必须 G1（连通）与 G4（归属）都过才算 READY——
    只看连通就是把"能连上"当"可以用"，正是共享库事故的入口。
 3. **bolt 端口别信 discovery 自报值。** `bolt_routing` 常返回容器内地址（`localhost:7687`），宿主机映射在别处；

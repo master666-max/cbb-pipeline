@@ -53,6 +53,11 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+import 图库隔离 as gi  # noqa: E402  图归属判据的单一事实源（规则一份，两处复用）
+
 NEO4J_HTTP_DEFAULT = "http://localhost:7695"
 EMBED_DEFAULT = "http://127.0.0.1:8080/v1/embeddings"
 RERANK_DEFAULT = "http://127.0.0.1:8081/v1/rerank"
@@ -184,36 +189,23 @@ def check_graph(project_token: str, probe_only: bool, http_get=http_json) -> lis
         out.append(item("G4 图库归属", "BLOCKED", f"计数查询失败：{type(e).__name__} {str(e)[:70]}"))
         return out
 
-    owned = foreign = 0
+    dist = {}
     try:
         for g, c in _one("MATCH (n) RETURN DISTINCT coalesce(n.group_id, n.canon_group, '<无归属标记>') "
                          "AS g, count(n) AS c LIMIT 50"):
-            if g == project_token:
-                owned += int(c)
-            else:
-                foreign += int(c)
+            dist[str(g)] = int(c)
     except Exception as e:
         out.append(item("G4 图库归属", "BLOCKED",
                         f"归属分布查询失败（共 {total} 节点，无法区分本/他项目）：{type(e).__name__} {str(e)[:60]}"))
         return out
 
-    # 分布查询一条都没回而总数>0 ⇒ 无法归因，按未判定处理（空结果面不许读成"全属本项目"）
-    if total > 0 and owned + foreign == 0:
-        out.append(item("G4 图库归属", "BLOCKED",
-                        f"库有 {total} 节点但归属分布查询零回行 ⇒ 未判定；须显式带 group_id/canon_group 标记或换独立 database"))
-        return out
-
-    if total == 0:
-        out.append(item("G4 图库归属", "READY", f"库为空（0 节点）；本项目命名空间={project_token}（尚未写入）",
-                        节点总数=0, 本项目节点=0, 他项目节点=0))
-    elif foreign == 0:
-        out.append(item("G4 图库归属", "READY", f"库内节点全部带本项目标记（{owned}/{total}）",
-                        节点总数=total, 本项目节点=owned, 他项目节点=0))
-    else:
-        out.append(item("G4 图库归属", "BLOCKED",
-                        f"库内有 {foreign} 个节点不带本项目标记「{project_token}」（共 {total}）"
-                        "⇒ 这是别的项目/共享的图库，跨库巡检会产出假干净；须换独立 database 或走文件兜底",
-                        节点总数=total, 本项目节点=owned, 他项目节点=foreign))
+    # 归属判定走 图库隔离.ownership_verdict —— 规则一份，两处共用，不许各写一版再漂
+    owned = dist.get(project_token, 0) + dist.get("<无归属标记>", 0)   # 无标记算脏，见 ownership_verdict 入参
+    foreign = {g: c for g, c in dist.items() if g != project_token}
+    v = gi.ownership_verdict(total, dist.get(project_token, 0), foreign, project_token)
+    out.append(item("G4 图库归属", "READY" if v["verdict"] == "LEGIT" else "BLOCKED", v["结论"],
+                    节点总数=v["总节点"], 本项目节点=v["本项目节点"], 他项目节点=sum(foreign.values()),
+                    归属分布=dist))
     return out
 
 
