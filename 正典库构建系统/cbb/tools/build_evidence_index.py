@@ -48,23 +48,32 @@ def collect_evidence(store: Path) -> list[dict]:
     return rows
 
 
+def _k(r: dict) -> str:
+    """去重/续传键（与进度件落盘键同构）。"""
+    return f"{r['record_id']}|{r['line']}|{r['quote'][:40]}"
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="evidence 级片段索引（批量·可续）")
     ap.add_argument("--store", default=str(HERE.parent.parent / "迷深实战-本体库"))
     ap.add_argument("--index", default=str(HERE.parent.parent / "迷深实战-工作区" / "索引" / "lancedb"))
     ap.add_argument("--batch", type=int, default=16)
+    ap.add_argument("--chunk", type=int, default=1000,
+                    help="落表分块行数（内存上限≈chunk×dim×24B；2026-09-24 A-新:原一次性建 11 万行表 → ArrowMemoryError 3.87GB）")
     ns = ap.parse_args(argv)
 
     rows = collect_evidence(Path(ns.store))
+    meta = {_k(r): r for r in rows}          # 仅文本元数据（小）；向量一律不驻留内存
     prog = Path(ns.index).parent / "_evidence-progress.jsonl"
-    done: dict[str, list[float]] = {}
+    done_keys: set[str] = set()
     if prog.exists():
-        for ln in prog.read_text(encoding="utf-8").splitlines():
-            if ln.strip():
-                r = json.loads(ln)
-                done[r["k"]] = r["vec"]
-        print(f"续传：已有 {len(done)} 条")
-    todo = [r for r in rows if f"{r['record_id']}|{r['line']}|{r['quote'][:40]}" not in done]
+        # 只扫键（逐行 parse 即弃向量）：进度件可达 10GB 级，全读入内存必崩
+        with prog.open(encoding="utf-8") as pf:
+            for ln in pf:
+                if ln.strip():
+                    done_keys.add(json.loads(ln)["k"])
+        print(f"续传：已有 {len(done_keys)} 条（键扫描，不载向量）")
+    todo = [r for r in rows if _k(r) not in done_keys]
     print(f"待嵌入 {len(todo)} / {len(rows)}（批量任务，可随时中断续跑）")
     prog.parent.mkdir(parents=True, exist_ok=True)
     with prog.open("a", encoding="utf-8") as pf:
@@ -79,32 +88,64 @@ def main(argv=None) -> int:
                     d = json.loads(urllib.request.urlopen(req, timeout=300).read().decode("utf-8"))
                     arr = sorted(d["data"], key=lambda x: x["index"])
                     for r, x in zip(b, arr):
-                        k = f"{r['record_id']}|{r['line']}|{r['quote'][:40]}"
-                        done[k] = x["embedding"]
-                        pf.write(json.dumps({"k": k, "vec": x["embedding"]}, ensure_ascii=False) + "\n")
+                        pf.write(json.dumps({"k": _k(r), "vec": x["embedding"]},
+                                            ensure_ascii=False) + "\n")
                     pf.flush()
                     break
                 except Exception as e:
                     print(f"  批 {i} 第 {attempt+1} 次失败: {str(e)[:50]}；重试")
                     time.sleep(5)
             else:
-                raise SystemExit(f"批 {i} 三连失败；进度已落盘，重跑续传（已完成 {len(done)}）")
+                raise SystemExit(f"批 {i} 三连失败；进度已落盘，重跑续传"
+                                 f"（已完成 {len(done_keys) + i}）")
             if (i // ns.batch) % 50 == 0:
                 print(f"  进度 {i + len(b)}/{len(todo)}")
 
     import lancedb
     import pyarrow as pa
-    final = [r for r in rows if f"{r['record_id']}|{r['line']}|{r['quote'][:40]}" in done]
     db = lancedb.connect(ns.index)
-    tbl = db.create_table("evidence", pa.table({
-        "record_id": [r["record_id"] for r in final],
-        "chapter": [r["chapter"] for r in final],
-        "line": [r["line"] for r in final],
-        "quote": [r["quote"] for r in final],
-        "vector": [done[f"{r['record_id']}|{r['line']}|{r['quote'][:40]}"] for r in final],
-    }), mode="overwrite")
-    print("evidence 索引落盘:", tbl.count_rows(), "行")
-    prog.unlink(missing_ok=True)
+    tbl = None
+    buf: list[tuple[str, list[float]]] = []
+    n_rows = 0
+
+    def flush() -> None:
+        """分块落表：首块建表（overwrite），后续 add——峰值内存=一块。"""
+        nonlocal tbl, buf, n_rows
+        if not buf:
+            return
+        keys = [k for k, _ in buf]
+        vecs = [v for _, v in buf]
+        chunk = pa.table({
+            "record_id": [meta[k]["record_id"] for k in keys],
+            "chapter": pa.array([meta[k]["chapter"] for k in keys], type=pa.int64()),
+            "line": pa.array([meta[k]["line"] for k in keys], type=pa.int64()),
+            "quote": [meta[k]["quote"] for k in keys],
+            "vector": pa.array(vecs, type=pa.list_(pa.float32(), len(vecs[0]))),
+        })
+        if tbl is None:
+            tbl = db.create_table("evidence", chunk, mode="overwrite")
+        else:
+            tbl.add(chunk)
+        n_rows += len(keys)
+        buf = []
+
+    if prog.exists():
+        seen: set[str] = set()
+        with prog.open(encoding="utf-8") as pf:
+            for ln in pf:
+                if not ln.strip():
+                    continue
+                r = json.loads(ln)
+                if r["k"] in seen or r["k"] not in meta:
+                    continue  # 去重（进度件可含重复行）／库外键跳过（三数在输出注明，不静默）
+                seen.add(r["k"])
+                buf.append((r["k"], r["vec"]))
+                if len(buf) >= ns.chunk:
+                    flush()
+        flush()
+    print("evidence 索引落盘:", tbl.count_rows() if tbl is not None else 0,
+          f"行（进度件 {len(done_keys)} 键 / 当前库 {len(rows)} 行）")
+    prog.unlink(missing_ok=True)  # 索引建成，10GB 级进度件清掉
     return 0
 
 
