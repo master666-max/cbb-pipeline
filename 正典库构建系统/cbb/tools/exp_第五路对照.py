@@ -165,7 +165,7 @@ def _hit(gt: list[str], top: list[str]) -> tuple[bool, int]:
     return (len(ranks) == len(gt)), (min(ranks) if ranks else 0)
 
 
-def run(outdir: Path = EXPDIR, top_k: int = 10) -> None:
+def run(outdir: Path = EXPDIR, top_k: int = 10, tag: str = "v1") -> None:
     import asyncio
     qset = json.loads((outdir / "查询集-v1.json").read_text(encoding="utf-8"))
     queries = qset["queries"]
@@ -179,7 +179,8 @@ def run(outdir: Path = EXPDIR, top_k: int = 10) -> None:
     results = {"arms": {}, "env": {}}
 
     def _acc(store: dict, arm: str, qi: int, q: dict, top: list[str], lat: float):
-        c = store[arm].setdefault(q["cls"], {"n": 0, "hits": 0, "ranks": [], "cases": []})
+        c = store[arm]["per_cls"].setdefault(
+            q["cls"], {"n": 0, "hits": 0, "ranks": [], "cases": []})
         ok, rank = _hit(q["gt"], top)
         c["n"] += 1
         c["hits"] += int(ok)
@@ -244,9 +245,9 @@ def run(outdir: Path = EXPDIR, top_k: int = 10) -> None:
     verdict = "胜（并轨继续）" if b - a >= 0.05 else ("平（保留按需件）" if b >= a else "负（实验件下架）")
     results["verdict"] = {"A": a, "B": b, "delta_pp": round((b - a) * 100, 2), "判定": verdict}
     outdir.mkdir(parents=True, exist_ok=True)
-    (outdir / "结果-v1.json").write_text(json.dumps(results, ensure_ascii=False, indent=1),
+    (outdir / f"结果-{tag}.json").write_text(json.dumps(results, ensure_ascii=False, indent=1),
                                          encoding="utf-8")
-    lines = [f"# 第五路对照实验结果 v1（{time.strftime('%Y-%m-%d %H:%M')}）", "",
+    lines = [f"# 第五路对照实验结果 {tag}（{time.strftime('%Y-%m-%d %H:%M')}）", "",
              f"**判定：{verdict}**（A {a:.1%} → B {b:.1%}，Δ={results['verdict']['delta_pp']}pp）", "",
              "| 臂 | 实体名直查 | 关系对查 | 描述反查 | 宏平均 | 时延/查询 |", "|---|---|---|---|---|---|"]
     for arm, r in results["arms"].items():
@@ -257,12 +258,13 @@ def run(outdir: Path = EXPDIR, top_k: int = 10) -> None:
     lines += ["", f"llm_calls={results['env']['llm_calls']}（必须 0）｜第五路嵌入调用 "
               f"{results['env']['fifth_emb_calls']} 次/{results['env']['fifth_emb_texts']} 文本",
               "", "口径：" + results["env"]["口径"]]
-    (outdir / "结果-v1.md").write_text("\n".join(lines), encoding="utf-8")
+    (outdir / f"结果-{tag}.md").write_text("\n".join(lines), encoding="utf-8")
     print("\n".join(lines))
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["gen", "run"])
+    ap.add_argument("--tag", default="v1")
     ns = ap.parse_args()
-    {"gen": gen, "run": run}[ns.cmd]()
+    {"gen": gen, "run": run}[ns.cmd](tag=ns.tag) if ns.cmd == "run" else gen()

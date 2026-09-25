@@ -56,16 +56,87 @@ async def _embed_batch(texts: list[str]) -> list[list[float]]:
     return np.asarray(out, dtype=np.float32)  # 1.5.7 契约：EmbeddingFunc.__call__ 取 result.size
 
 
-def mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[str]]:
-    """ll=实体级关键词（别名命中+分词项）；hl=主题级（本实验为空——主题词表未建，如实留空）。"""
-    sys.path.insert(0, str(HERE))
-    import 检索层 as jl
-    ll = [h["name"] for h in jl.alias_recall(query, Path(store_root))]
-    terms = [t for t in re.split(r"[\s，。？！、「」·]+", query) if len(t) >= 2]
-    for t in terms:
-        if t not in ll:
-            ll.append(t)
-    return [], ll[:20]
+LEX_CACHE: dict[str, tuple[set, dict]] = {}
+
+
+def _canon_lexicon(store_root: Path):
+    """canon 词表 = 全库实体名 ∪ 别名（跨库全集）。
+    注：master 路①的 id2name 只扫 character 库，别名指向其他库实体时回退记录号——
+    既有缺口在此不复制，本表全集扫。"""
+    key = str(Path(store_root).resolve())
+    if key in LEX_CACHE:
+        return LEX_CACHE[key]
+    store = Path(store_root)
+    rid2name: dict[str, str] = {}
+    names: set[str] = set()
+    for f in sorted(store.glob("libraries/*/*/*.json")):
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        nm = (rec.get("canonical") or {}).get("name")
+        rid = rec.get("record_id")
+        if nm and rid:
+            rid2name[rid] = nm
+            names.add(nm)
+    alias2name: dict[str, str] = {}
+    for row in (lambda p: [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
+                if p.exists() else [])(store / "aliases.jsonl"):
+        al, rid = row.get("alias"), row.get("entity_id")
+        nm = rid2name.get(rid)
+        if isinstance(al, str) and al and nm:
+            alias2name[al] = nm
+    LEX_CACHE[key] = (names, alias2name)
+    return LEX_CACHE[key]
+
+
+_IDISH = re.compile(r"cand-|rec-|[0-9a-f]{12}", re.I)
+
+
+def mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[str], dict]:
+    """ll=实体级关键词——**只收词表内词，自造词零准入**：
+    ① 别名/实体名在 query 中的精确命中（引号变体归一到 canon 原形）；
+    ② 分词项仅当含 canon 词才收，且以 canon 原形入列；
+       记录号形态（cand-*）与查询套语（"之间有什么关系"等非词表碎句）一律丢弃并计数。
+    hl=主题级（本实验为空——主题词表未建，如实留空）。"""
+    names, alias2name = _canon_lexicon(store_root)
+    ll: list[str] = []
+    dropped = {"record_id": 0, "非词表碎句": 0}
+
+    def push(s: str):
+        s = s.strip("『』「」···")
+        if len(s) < 2:
+            return
+        if _IDISH.search(s):
+            dropped["record_id"] += 1
+            return
+        if s not in names:  # 非 canon 原形 → 归一到含它的 canon 词
+            canon = next((nm for nm in names if nm and (nm in s or s in nm)), None)
+            if not canon:
+                dropped["非词表碎句"] += 1
+                return
+            s = canon
+        if s not in ll:
+            ll.append(s)
+
+    for al, nm in alias2name.items():
+        if al in query:
+            push(nm)
+    for nm in names:
+        if len(nm) >= 2 and nm in query:
+            push(nm)
+    for t in re.split(r"[\s，。？！、「」『』·]+", query):
+        if len(t.strip("『』「」···")) >= 2:
+            push(t)
+    if not ll:
+        # 非空兜底（v3）：纯描述式查询词表准入全空 → 碎句降级准入并披露口径，
+        # **绝不落查询期 LLM**（v2 实测：空表会让 LightRAG 回退调 LLM 抽关键词，违零-LLM 判据）
+        for t in re.split(r"[\s，。？！、「」『』·]+", query):
+            tt = t.strip("『』「」···")
+            if len(tt) >= 2 and not _IDISH.search(tt) and tt not in ll:
+                ll.append(tt)
+        dropped["空表碎句兜底"] = len(ll[:20])
+    return [], ll[:20], dropped
 
 
 def get_rag():
@@ -107,7 +178,7 @@ async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode
         # 1.5.7 实测：存储不自动初始化（_storage_lock=None 崩）——显式 initialize
         await rag.initialize_storages()
         _initialized = True
-    hl, ll = mechanical_keywords(query, store_root)
+    hl, ll, kw_dropped = mechanical_keywords(query, store_root)
     from lightrag import QueryParam
     param = QueryParam(mode=mode, only_need_context=True, top_k=top_k,
                        ll_keywords=ll, hl_keywords=hl, enable_rerank=False)
@@ -138,7 +209,7 @@ async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode
             if nm and nm not in names:
                 names.append(nm)
     return {"names": names[:top_k], "entities": len(ents), "relationships": len(rels),
-            "chunks": len(chunks), "mode": mode, "ll_keywords": ll}
+            "chunks": len(chunks), "mode": mode, "ll_keywords": ll, "kw_dropped": kw_dropped}
 
 
 def fifth_recall(query: str, store_root: Path, top_k: int = 10, mode: str = "local") -> dict:
