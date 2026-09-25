@@ -22,9 +22,15 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 from neo4j_export import derive_password  # noqa: E402
 
-LLM_BASE = "http://127.0.0.1:8080/v1"
-LLM_MODEL = "tifa-deepsex-14b-cot-chat"
-EMB_MODEL = "text-embedding-qwen3-embedding-8b@q4_k_m"
+# 路线开关=环境变量（换路线不改码）：SPIKE_LLM_MODEL / SPIKE_LLM_BASE 可覆盖；
+# DeepSeek 路线：SPIKE_LLM_MODEL=deepseek-chat SPIKE_LLM_BASE=https://api.deepseek.com
+# key 只走环境变量 DEEPSEEK_API_KEY（D-004 不落文件；本地路线填 "local" 占位）
+import os as _os
+LLM_BASE = _os.environ.get("SPIKE_LLM_BASE", "http://127.0.0.1:8080/v1")
+LLM_MODEL = _os.environ.get("SPIKE_LLM_MODEL", "tifa-deepsex-14b-cot-chat")
+API_KEY = _os.environ.get("DEEPSEEK_API_KEY", "local")
+EMB_MODEL = "text-embedding-qwen3-embedding-8b@q4_k_m"   # 嵌入恒本地（DeepSeek 无嵌入端点）
+EMB_BASE = _os.environ.get("SPIKE_EMB_BASE", "http://127.0.0.1:8080/v1")  # 嵌入端点恒本地，不随 LLM 路线走
 BOLT = "bolt://localhost:7693"
 
 
@@ -36,15 +42,18 @@ async def main() -> dict:
     from graphiti_core.nodes import EpisodeType
 
     pw = derive_password(None)
-    llm_cfg = LLMConfig(api_key="local", model=LLM_MODEL, base_url=LLM_BASE,
+    llm_cfg = LLMConfig(api_key=API_KEY, model=LLM_MODEL, base_url=LLM_BASE,
                         small_model=LLM_MODEL)
     from graphiti_core.cross_encoder.openai_reranker_client import OpenAIRerankerClient
     graphiti = Graphiti(uri=BOLT, user="neo4j", password=pw,
-                        llm_client=OpenAIGenericClient(config=llm_cfg),
+                        llm_client=OpenAIGenericClient(
+                            config=llm_cfg,
+                            structured_output_mode=_os.environ.get(
+                                "SPIKE_STRUCTURED", "json_schema")),  # DeepSeek 只吃 json_object
                         embedder=OpenAIEmbedder(config=OpenAIEmbedderConfig(
-                            api_key="local", base_url=LLM_BASE,
+                            api_key="local", base_url=EMB_BASE,
                             embedding_model=EMB_MODEL, embedding_dim=4096)),
-                        cross_encoder=OpenAIRerankerClient(config=llm_cfg))  # 缺省会用 OPENAI_API_KEY，显式指本地
+                        cross_encoder=OpenAIRerankerClient(config=llm_cfg))  # 缺省会用 OPENAI_API_KEY，显式随路线
     await graphiti.build_indices_and_constraints()
 
     # 真章节切片（第三章前 600 字）+ 伪锚点参考时间（第3章=序2 → 2000-01-03）
@@ -53,12 +62,27 @@ async def main() -> dict:
             else "缇达在迷宫边缘拔出了剑。卢卡守在地下城三层的入口。")
     ref = datetime(2000, 1, 3, tzinfo=timezone.utc)
 
+    USAGE = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
+    _orig_create = graphiti.llm_client.client.chat.completions.create
+
+    async def _counting_create(*a, **kw):
+        r = await _orig_create(*a, **kw)
+        u = getattr(r, "usage", None)
+        if u is not None:
+            USAGE["calls"] += 1
+            USAGE["prompt_tokens"] += getattr(u, "prompt_tokens", 0) or 0
+            USAGE["completion_tokens"] += getattr(u, "completion_tokens", 0) or 0
+        return r
+
+    graphiti.llm_client.client.chat.completions.create = _counting_create
+
     t0 = asyncio.get_event_loop().time()
-    await graphiti.add_episode(name="spike-ch0003",
+    await graphiti.add_episode(name=f"spike-ch0003-{_os.environ.get('SPIKE_GROUP', 'local14b')}",
                                episode_body=body,
                                source=EpisodeType.text,
                                source_description="迷深 第三章切片（接线 spike）",
-                               reference_time=ref)
+                               reference_time=ref,
+                               group_id=_os.environ.get("SPIKE_GROUP") or None)
     dt = asyncio.get_event_loop().time() - t0
 
     # 结果清点（graphiti 专用实例）
@@ -73,8 +97,8 @@ async def main() -> dict:
             rec = await result.single()
             counts[label] = rec["c"]
     await driver.close()
-    return {"episode_s": round(dt, 1), "counts": counts,
-            "body_head": body[:40]}
+    return {"model": LLM_MODEL, "episode_s": round(dt, 1), "counts": counts,
+            "usage": USAGE, "body_head": body[:40]}
 
 
 if __name__ == "__main__":
