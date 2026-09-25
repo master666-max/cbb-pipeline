@@ -186,7 +186,7 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
         json.dumps({"candidates": cands, "meta": raw["_meta"]}, ensure_ascii=False, sort_keys=True, indent=1),
         encoding="utf-8")
 
-    aux = {"embedding": None, "neo4j": None}
+    aux = {"embedding": None, "neo4j": None, "lightrag": None}
     if not no_aux:
         # 嵌入扫描（探活降级：blocked 不阻塞）
         r = subprocess.run([sys.executable, "-X", "utf8", str(CBB / "tools" / "embed_dedup_scan.py"),
@@ -207,6 +207,16 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
             aux["neo4j"] = json.loads(r2.stdout.strip().splitlines()[-1])
         except Exception:
             aux["neo4j"] = {"status": "error", "stderr": r2.stderr[-200:]}
+        # LightRAG 副本增量同步（探活降级：blocked 不阻塞；2026-09-25 并轨新增——
+        # delta 由 sidecar 记账判定，无新增=零嵌入调用；副作用仅派生副本，正典库只读）
+        try:
+            r3 = subprocess.run([sys.executable, "-X", "utf8", str(CBB / "tools" / "lightrag_delta_sync.py"),
+                                 "--store", str(STORE_ROOT), "--work", str(WORK / "索引" / "lightrag-exp")],
+                                capture_output=True, text=True, encoding="utf-8", timeout=900)
+            aux["lightrag"] = (json.loads(r3.stdout.strip().splitlines()[-1])
+                               if r3.stdout.strip() else {"status": "blocked"})
+        except Exception as e:
+            aux["lightrag"] = {"status": "error", "stderr": str(e)[-200:]}
 
     summary = {"unit": unit, "chapter": chapter_no,
                "ingestion_index": ch["ingestion_index"], "title": ch["title"],

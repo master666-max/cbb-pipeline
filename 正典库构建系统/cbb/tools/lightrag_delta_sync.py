@@ -102,7 +102,18 @@ def main(argv=None) -> int:  # pragma: no cover
     ap.add_argument("--store", default=str(le.STORE))
     ap.add_argument("--work", default=str(le.WORK))
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--bootstrap", action="store_true",
+                    help="副本已含当前全量时使用：只把现状写入 sidecar 记账，不喂（防首章全量重嵌）")
     ns = ap.parse_args(argv)
+    if ns.bootstrap:
+        le.STORE = Path(ns.store)
+        kg, stats = le.build_kg(Path(ns.store))
+        fed = _merge_sidecar(_load_sidecar(Path(ns.work)), kg)
+        Path(ns.work).mkdir(parents=True, exist_ok=True)
+        (Path(ns.work) / "_fed-sources.json").write_text(
+            json.dumps(fed, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(json.dumps({"bootstrapped": True, **stats}, ensure_ascii=False))
+        return 0
     rep = sync(Path(ns.store), Path(ns.work), feed=not ns.dry_run)
     print(json.dumps(rep, ensure_ascii=False, indent=1))
     return 0
