@@ -308,12 +308,63 @@ def check_llm(preset: str, model: str | None = None, exam: bool = False, http_ge
                 + "/".join(f":{p}" for p in ports) + f" 不通）⇒ 判定者照旧是宿主 Agent {tag}")
 
 
+# ---- Graphiti 双时序层（P1 观察项 · 2026-09-25 内化三条实战经验） ----
+EPISODIC_LABEL = "Episodic"   # 经验③：episode 节点标签是 Episodic 不是 Episode（清点/统计一律用此常量）
+EMB_BASE_PINNED = "http://127.0.0.1:8080/v1"  # 经验②：嵌入器 base_url 必须钉死本地，不随 LLM 路线走
+
+
+def graphiti_route_probe(base_url: str | None = None, model: str | None = None,
+                         api_key: str | None = None) -> dict:
+    """机械探测 LLM 端点的 json_schema 支持度 → 返回 graphiti 接线路由。
+    支持 json_schema → "native"（graphiti 原生抽取管线）；
+    不支持（如 DeepSeek 400）→ "fact_triple"（自用管线：自管抽取三元组 → fact_triple 模式喂入，
+    实测 4/4 落图；graphiti 0.30 的 json_object 抽取管线会静默产出空，勿用）。
+    key 只从环境变量/参数进（D-004）。"""
+    base_url = base_url or os.environ.get("SPIKE_LLM_BASE", "http://127.0.0.1:8080/v1")
+    model = model or os.environ.get("SPIKE_LLM_MODEL", "tifa-deepsex-14b-cot-chat")
+    api_key = api_key or os.environ.get("DEEPSEEK_API_KEY", "local")
+    payload = {"model": model,
+               "messages": [{"role": "user", "content": "回复 JSON：{\"ok\": true}"}],
+               "response_format": {"type": "json_schema",
+                                   "json_schema": {"name": "probe",
+                                                   "schema": {"type": "object",
+                                                              "properties": {"ok": {"type": "boolean"}},
+                                                              "required": ["ok"]}}},
+               "max_tokens": 20}
+    req = urllib.request.Request(base_url.rstrip("/") + "/chat/completions",
+                                 data=json.dumps(payload).encode("utf-8"),
+                                 headers={"Content-Type": "application/json"})
+    if api_key and api_key != "local":
+        req.add_header("Authorization", "Bearer " + api_key)
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            r.read()
+        return {"route": "native", "json_schema": True, "base": base_url, "model": model}
+    except urllib.error.HTTPError as e:
+        unsupported = e.code in (400, 422)
+        return {"route": "fact_triple" if unsupported else f"unknown(http {e.code})",
+                "json_schema": False, "base": base_url, "model": model,
+                "probe": f"http {e.code}"}
+    except Exception as e:
+        return {"route": "unknown", "json_schema": None, "base": base_url, "model": model,
+                "probe": f"{type(e).__name__}: {str(e)[:80]}"}
+
+
 def check_graphiti() -> dict:
     try:
         import graphiti_core  # noqa: F401
-        return item("P1 graphiti 包", "READY", "graphiti_core 可导入")
     except ImportError:
         return item("P1 graphiti 包", "BLOCKED", "未安装：py -m pip install graphiti-core ⇒ 深融⑤ 增值层无实现")
+    probe = graphiti_route_probe()
+    route = probe["route"]
+    notes = (f"graphiti_core 可导入；路由探测：{route}"
+             f"（json_schema={probe['json_schema']} @ {probe['model']}）"
+             + ("——native=原生抽取管线" if route == "native" else
+                "——fact_triple=自用管线（自管抽取三元组喂入；0.30 json_object 抽取会静默空产出，勿用）"
+                if route == "fact_triple" else f"——探针异常 {probe.get('probe')}"))
+    notes += f"；纪律：嵌入器 base_url 钉死 {EMB_BASE_PINNED}（不随 LLM 路线走）；episode 清点用 {EPISODIC_LABEL} 标签"
+    state = "READY" if route in ("native", "fact_triple") else "BLOCKED"
+    return item("P1 graphiti 包＋路由", state, notes, route=route)
 
 
 def check_judge(judge: str) -> dict:

@@ -16,7 +16,8 @@ import urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-BASE = "http://localhost:7695"
+import os
+BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7695")  # 跨机：env 覆盖
 _PW = None
 
 

@@ -24,7 +24,9 @@ sys.path.insert(0, str(HERE.parent / "contracts"))
 from neo4j_export import collect_graph  # noqa: E402
 
 
-def audit(store_root: Path, base: str = "http://localhost:7695") -> dict:
+def audit(store_root: Path, base: str | None = None) -> dict:
+    import os
+    base = base or os.environ.get("NEO4J_HTTP", "http://localhost:7695")
     import graph_chain as gc  # 复用鉴权与 _cypher
     gc.BASE = base
     store_root = Path(store_root)
