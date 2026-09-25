@@ -19,10 +19,13 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import threading
 import urllib.request
 from pathlib import Path
 
 import 重排器 as rr
+
+EMB_LOCK = threading.Lock()  # 本地单模型嵌入端点全局串行化——并发请求实测触发 400（LM Studio）
 
 
 # ---------- 嵌入（本地端点） ----------
@@ -42,8 +45,9 @@ def embed(texts: list[str], base: str | None = None, model: str = "text-embeddin
 
 def _http_post(url: str, payload: bytes, timeout: float) -> str:
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8")
+    with EMB_LOCK:  # 与第五路共享同一端点——并发 400 防线
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.read().decode("utf-8")
 
 
 def os_env(k: str, d: str) -> str:  # 便于测试注入

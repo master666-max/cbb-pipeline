@@ -41,8 +41,11 @@ async def _embed_batch(texts: list[str]) -> list[list[float]]:
                              ensure_ascii=False).encode("utf-8")
         req = urllib.request.Request("http://127.0.0.1:8080/v1/embeddings", data=payload,
                                      headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=300) as r:
-            d = json.loads(r.read().decode("utf-8"))
+        sys.path.insert(0, str(HERE))
+        import 检索层 as jl
+        with jl.EMB_LOCK:  # 与四路共享端点——并发 400 防线
+            with urllib.request.urlopen(req, timeout=300) as r:
+                d = json.loads(r.read().decode("utf-8"))
         return [x["embedding"] for x in sorted(d["data"], key=lambda x: x["index"])]
 
     out: list[list[float]] = []
@@ -170,8 +173,11 @@ def _rid2name(store_root: Path) -> dict[str, str]:
     return _rid2name_cache[key]
 
 
-async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode: str = "local") -> dict:
-    """第五路（协程版）：调用方须在**同一个事件循环**内连续调用（跨 loop 会撞存储锁）。"""
+async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode: str = "local",
+                             chain_depth: int = 0) -> dict:
+    """第五路（协程版）：调用方须在**同一个事件循环**内连续调用（跨 loop 会撞存储锁）。
+    chain_depth>0 时附带图证据链（graph_chain，读 Neo4j 真源）——深度=推断步长，
+    链与 top-k 并列交付（不进 RRF 摊平），是推理的结构化原料。"""
     global _initialized
     rag = get_rag()
     if not _initialized:
@@ -208,13 +214,47 @@ async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode
             nm = m.get(piece.strip())
             if nm and nm not in names:
                 names.append(nm)
-    return {"names": names[:top_k], "entities": len(ents), "relationships": len(rels),
-            "chunks": len(chunks), "mode": mode, "ll_keywords": ll, "kw_dropped": kw_dropped}
+    out = {"names": names[:top_k], "entities": len(ents), "relationships": len(rels),
+           "chunks": len(chunks), "mode": mode, "ll_keywords": ll, "kw_dropped": kw_dropped}
+    if chain_depth:
+        from graph_chain import chains as _chains
+        out["chains"] = _chains(names[:3], depth=chain_depth)
+    return out
 
 
-def fifth_recall(query: str, store_root: Path, top_k: int = 10, mode: str = "local") -> dict:
-    """第五路（单发便捷版）：自带事件循环；批量请用 fifth_recall_async。"""
-    return asyncio.run(fifth_recall_async(query, store_root, top_k, mode))
+def fifth_recall(query: str, store_root: Path, top_k: int = 10, mode: str = "local",
+                 chain_depth: int = 0) -> dict:
+    """第五路（生产形态）：投递到**常驻线程常驻循环**——LightRAG 1.5.7 内部队列绑定事件循环，
+    跨 asyncio.run 复用必炸（实测 'PriorityQueue is bound to a different event loop'）。"""
+    return _worker().run(fifth_recall_async(query, store_root, top_k, mode, chain_depth))
+
+
+class _LoopWorker:
+    """常驻线程 + 常驻循环：第五路全部调用在同一循环上排队执行。"""
+
+    def __init__(self):
+        import threading
+        self.loop = asyncio.new_event_loop()
+        self._thread = threading.Thread(target=self._run, daemon=True, name="lightrag-fifth")
+        self._thread.start()
+
+    def _run(self):
+        asyncio.set_event_loop(self.loop)
+        self.loop.run_forever()
+
+    def run(self, coro, timeout: float = 300.0):
+        import concurrent.futures
+        return asyncio.run_coroutine_threadsafe(coro, self.loop).result(timeout)
+
+
+_worker_inst = None
+
+
+def _worker() -> _LoopWorker:
+    global _worker_inst
+    if _worker_inst is None:
+        _worker_inst = _LoopWorker()
+    return _worker_inst
 
 
 if __name__ == "__main__":
