@@ -119,7 +119,11 @@ def main():
     # ── 分层重编 event_id
     buckets = {l: [] for l in LAYER_ORDER}
     for ev in dedup:
-        buckets.get(ev.get("timeline_layer", "T3"), []).append(ev)
+        _layer = ev.get("timeline_layer", "T3")
+        if _layer not in buckets:   # 02-bugs R7-P1：非法层级原 .get 默认返回一次性列表=静默丢事件
+            print(f"⚠ 非法 timeline_layer={_layer!r}（事件 {ev.get(chr(101)+chr(118)+chr(101)+chr(110)+chr(116)+chr(95)+chr(105)+chr(100))} 归 T3 兜底）")
+            _layer = "T3"
+        buckets[_layer].append(ev)
     for l, arr in buckets.items():
         arr.sort(key=sort_key)
     final = []

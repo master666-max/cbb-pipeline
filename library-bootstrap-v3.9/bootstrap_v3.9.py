@@ -914,6 +914,12 @@ def _all_entries(lib):
 def _rank_entries(lib, q: str, as_of_tick=None):
     """v3.3/Y-005：检索打分抽取（retrieve 与 eval 共用）——keywords ×3 / content ×1 / [[links]] 一跳扩散"""
     lib = Path(lib); entries = []
+    _lp = {}
+    try:   # W-2 接线（02-bugs R6-①）：检索读 state.law_params 法层快照；无 state/缺键回退出厂
+        _lp = json.loads((lib / "state.json").read_text(encoding="utf-8")).get("law_params") or {}
+    except Exception:
+        _lp = {}
+    _lw = lambda k: _lp.get(k, TUNABLES[k]["value"])   # 勿名 _w：分词循环同名覆盖致 str 调用崩溃
     _toks = []  # v3.10/M3：CJK-bigram 查询分词（W-11 达门件，与衔尾蛇 tok_eval S2 同源；自然中文句词法通道恢复）
     for _w in q.split():
         _cj = [ch for ch in _w if "\u4e00" <= ch <= "\u9fff"]
@@ -941,15 +947,15 @@ def _rank_entries(lib, q: str, as_of_tick=None):
         c = e["content"]; kw_hit = sum(1 for w in q.split() if w in " ".join(e["keywords"]))
         c_hit = sum(1 for w in q.split() if w in c)
         if kw_hit: c_hit = max(c_hit, 1)
-        if TUNABLES["law_filter_zero"]["value"] and kw_hit == 0 and c_hit == 0:
+        if _lw("law_filter_zero") and kw_hit == 0 and c_hit == 0:
             continue                                          # v3.9/W-1：零命中过滤（双世界证据，默认开）
         try:
             if time.strptime(e["created_at"][:10], "%Y-%m-%d"): pass
         except Exception:
             bad_ts.append(f.name)
-        scored[f.stem] = (kw_hit * TUNABLES["law_w_kw"]["value"] + c_hit * TUNABLES["law_w_content"]["value"]
-                          + e.get("importance", 0) * TUNABLES["law_w_imp"]["value"]
-                          - TUNABLES["law_w_age"]["value"] * age_days, e, c)   # v3.9/W-1：法层参数外置
+        scored[f.stem] = (kw_hit * _lw("law_w_kw") + c_hit * _lw("law_w_content")
+                          + e.get("importance", 0) * _lw("law_w_imp")
+                          - _lw("law_w_age") * age_days, e, c)   # v3.9/W-1 法层参数外置；W-2 接线 state 快照
     # [[links]] 一跳扩散：被直接命中的条目向其 links 指向的条目传播分数的一半
     for fid, (s, e, c) in list(scored.items()):
         if s <= 0: continue
