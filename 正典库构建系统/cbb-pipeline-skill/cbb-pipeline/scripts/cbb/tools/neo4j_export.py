@@ -92,9 +92,38 @@ def collect_graph(store_root: Path) -> dict:
             for ch in chapters:  # 关系两端都算"本章提及"
                 mentions.add((ch, canon["subject"]))
                 mentions.add((ch, canon["object"]))
+    # 悬挂端点归一（2026-09-25 裁决落地；确定性零裁量）：边端点/提及名不在实体名集时，
+    # 取双向子串命中的现役实体名（最长优先）；无命中→悬挂如实保留（审计披露+隔离区候选）。
+    node_names = {n["name"] for n in nodes}
+
+    def _norm(nm: str) -> str:
+        if nm in node_names:
+            return nm
+        cands = [c for c in node_names
+                 if len(c) >= 2 and (c in nm or (len(nm) >= 3 and nm in c))]
+        return max(cands, key=len) if cands else nm
+
+    normalized = 0
+    for e in edges:
+        s2, o2 = _norm(e["subject"]), _norm(e["object"])
+        if (s2, o2) != (e["subject"], e["object"]):
+            normalized += 1
+        e["subject"], e["object"] = s2, o2
+        e["edge_id"] = edge_id_for(e["subject"], e["rel_type"], e["object"])
+    mentions = {(c, _norm(n)) for c, n in mentions}
+    seen_edge: set[tuple] = set()
+    uniq_edges = []
+    for e in edges:
+        key = (e["subject"], e["rel_type"], e["object"])
+        if key in seen_edge:
+            continue
+        seen_edge.add(key)
+        uniq_edges.append(e)
+    edges = uniq_edges
     return {"nodes": nodes, "edges": edges,
             "mentions": [{"chapter": c, "name": n} for c, n in sorted(mentions)],
-            "skipped_files": skipped}
+            "skipped_files": skipped,
+            "normalized_endpoints": normalized}
 
 
 def node_statement(n: dict) -> dict:
