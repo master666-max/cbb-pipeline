@@ -244,7 +244,7 @@
 - 实例：大审查/衔尾蛇/reports/W-4_首报警案例_判定链-20260916.md §五.1（E1 回退完整判定链）；library-bootstrap-v3.9/RELEASE.md 2026-09-16 修订节（事故登记）；knowledge/trajectories/2026-09-16/task-058（第二例：引擎升级模板重写抹 AGENTS.md 演化授权节）
 - 关键词：生成链回退、静默回退、再生成、补丁链、谱系断裂、make_v39、supersede
 - 关联：[[P-018]]（静默失败家族——本条为其构建管线特例：无报错的谱系断裂）、[[P-012]]（登记层自错——hash/谱系登记失真同族）、[[PT-015]]（监控口径联动——参数变更须进机器可读历史）
-- 版本：v2（2026-09-16 增补第二例：引擎升级按模板重写 库调试工作区/AGENTS.md，手工增补的演化授权节被抹——部署文件的手工层永远在模板再生成水线以下；git 历史逐字恢复，模板补丁化列工单候选）
+- 版本：v3（2026-09-16 第二例：引擎升级按模板重写 库调试工作区/AGENTS.md，手工增补的演化授权节被抹——部署文件的手工层永远在模板再生成水线以下；git 历史逐字恢复，模板补丁化列工单候选；2026-09-19 第三例：发布区 blob 40f88584 被 WP-C C-1 手改（structured.md 白名单行+CRLF），按 M6 补丁吸收入链了结；2026-09-25 第四例：发布件 2169c677 被直改应用 B-R2（R6-① law_params 接线，35 行逐字）+全文 CRLF，未入链未登记【直改会话待确认】——内容正确路径违例，按 M6 先例吸收入链（B-R2a/b/c），原字节 .bak 存证；四例共性=修的内容对、修的载体错，手改会话与补丁链会话互不知情是常态）
 - schema_version：3
 - 状态：active
 
@@ -295,5 +295,30 @@
 - 关键词：手抄错、绑定断言、自测锚失绑、版本间数据传递、内部一致性对账、验收FAIL
 - 关联：[[P-012]]（登记层自错同族：手抄/自填）、[[P-011]]（自测门拦手算——本条为其失效面补全）、[[P-018]]（静默失败清单 A3 自证）、[[PT-007]]（对账先行须覆盖自身产出）、[[R-010]]（证据语气分离）
 - 版本：v1（2026-09-19 建立，验收 FAIL 事故）
+- schema_version：3
+- 状态：active
+
+---
+
+### P-025 / 2026-09-20 / hosts 钉 127.0.0.1 的本地反代死亡=全家桶瘫痪且故障伪装成应用层问题——排障先查传输层再修应用层
+- 根因：hosts 把 github 系全部域名指到 127.0.0.1 后，本机反代（GitHubAccel gh-proxy.py :443）成了唯一通路；进程一死（机器重启且计划任务未注册）所有连接被本机拒绝，而 gh 等工具把「连不上」呈现为「keyring token invalid」这类应用层报错——**症状与病因隔了一层，直接修应用层（重登/换 token）永远修不好**。
+- 事故链（task-074 本会话实测）：`gh auth refresh` 报 `dial tcp 127.0.0.1:443 connectex 拒绝`（不是网络断！）→ 查 hosts 发现 `gh-proxy BEGIN` 段 → netstat 无 443 监听、gh-proxy.pid=67656 已死（日志停在 09-19 07:57，机器重启过）→ python.exe 直跑拉起新实例（PID 54776）→ curl(schannel) 又报 `CRYPT_E_NO_REVOCATION_CHECK`（自签证书无吊销源，非代理坏）→ `--ssl-no-revoke` 后 github.com 200，认证刷新+gist 写读全通；修复全程零应用层操作。
+- 对策：三步排障序——①hosts 有没有把目标域钉到 127.0.0.1（`grep -i 域名 hosts`）；②netstat 查锚定端口监听在不在、pid 文件对不对得上活进程；③传输层通了再碰应用层（认证/重试/换 token）。修复动作：后台 `python.exe gh-proxy.py --port 443` 直跑（run-proxy.cmd 的 pythonw 路径静默拉不起【待确认】）；Git Bash curl 加 `--ssl-no-revoke`；治本=管理员注册 `D:\GitHubAccel\开机自启.bat` 计划任务。
+- 实例：D:\GitHubAccel\（gh-proxy.pid / gh-proxy.log / WO-SEC-GHACCEL-001-修复工单.md）；knowledge/trajectories/2026-09-20/task-074-GitHubAccel反代复活与官方GitHub插件冒烟.md；冒烟 gist b4d71dc847a191d7bc55e522183309fa
+- 关键词：hosts 反代、GitHubAccel、127.0.0.1、排障分层、token 失效伪装、CRYPT_E_NO_REVOCATION_CHECK、pythonw 静默失败
+- 关联：[[P-010]]（异常归因先想环境再想人）、[[P-008]]（环境层故障伪装应用层同族：Electron 秒崩）、[[P-009]]（MSYS 工具链路径与开关）、[[P-018]]（静默失败：pythonw 无日志退出）
+- 版本：v1（2026-09-20 建立）
+- schema_version：3
+- 状态：active
+
+
+### P-026 / 2026-09-25 / Windows 锁目录两处竞态：释放用 rmtree 有打开-删除窗口；delete-pending 期 mkdir 报 PermissionError 而非 FileExistsError
+- 场景：跨进程文件锁用「锁目录 mkdir 原子创建」原语（bootstrap_v3.9 W-4/M7 同族）；Windows 上高并发写者排队场景。
+- 根因：①`shutil.rmtree` 是「先开目录流再删」的两步操作，与他方 mkdir 竞态可产生 WinError 5 崩溃——写已提交却死于释锁；②`os.rmdir` 后目录短暂处于 delete-pending 态，此刻他方 `mkdir` 报 **PermissionError（WinError 5）**而非 POSIX 语义的 FileExistsError——只捕 FileExistsError 的重试循环在此窗口直接裸崩。
+- 对策：释放=按名 `os.rmdir`（锁目录恒空，单系统调用）+ 短重试 + 最终失败不上抛（数据已提交，残留锁由 mtime 陈锁回收兜底）；获取侧 `except (FileExistsError, PermissionError)` 两态同等视作「锁在位」重试。修前 38 分叉+丢更新、修后 10 轮全 PASS 的完整过程见实例。
+- 实例：大审查/衔尾蛇/reports/M7_五路径补锁执行报告-20260925.md §三（两起插曲完整栈+修法）；proto/m7_stress_ledger.txt（10 轮压测件）
+- 关键词：Windows、锁目录、delete-pending、WinError 5、PermissionError、rmtree、并发锁
+- 关联：[[R-015]]（共享账本并发写纪律——流程层，本条为其 Windows 原语层补充）、[[P-010]]（异常归因先想环境：本条即平台语义差异）
+- 版本：v1（2026-09-25 建立）
 - schema_version：3
 - 状态：active
