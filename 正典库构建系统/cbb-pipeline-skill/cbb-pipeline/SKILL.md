@@ -87,6 +87,7 @@ metadata:
 | [references/抽取规范.md](references/抽取规范.md) | 执行者逐单元抽取规范（R6 四面防御/契约/别名四分类/引文预检/封套纪律） | 每单元抽取前（子代理必读） |
 | [references/编排与并发.md](references/编排与并发.md) | 调度员编排/上下文包/并发与单元认领/限流挂死诊断/NLI 预筛 | 派工与遇阻时 |
 | [references/审查与收口.md](references/审查与收口.md) | 单位收口三件套/批次机械自检/五层证据门/抽样公式/十条纪律 | 收口与终审时 |
+| [references/检索增强与图谱对账.md](references/检索增强与图谱对账.md) | 多路检索路间纪律（第五路图游走/零查询期LLM/自造词准入门）/图对账四断言面与悬挂端点两分法/网络补充层三闸/增量同步契约 | 接检索增强与图谱对账时 |
 | [references/判例模板.md](references/判例模板.md) | 跨单元裁决判例集格式（封顶 30 条） | 裁决时 |
 | [scripts/cbb/](scripts/cbb/) | 六模块+四契约（coordinate/anchor/extract/gate1/quarantine/store） | 实现与校验 |
 | [scripts/cbb/tools/](scripts/cbb/tools/) | 上下文包/嵌入查重/图导出/账本链/NLI 矛盾对/图桥（各配单测） | 对应场景直接运行 |
