@@ -19,10 +19,13 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import threading
 import urllib.request
 from pathlib import Path
 
 import 重排器 as rr
+
+EMB_LOCK = threading.Lock()  # 本地单模型嵌入端点全局串行化——并发请求实测触发 400（LM Studio）
 
 
 # ---------- 嵌入（本地端点） ----------
@@ -42,8 +45,9 @@ def embed(texts: list[str], base: str | None = None, model: str = "text-embeddin
 
 def _http_post(url: str, payload: bytes, timeout: float) -> str:
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8")
+    with EMB_LOCK:  # 与第五路共享同一端点——并发 400 防线
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.read().decode("utf-8")
 
 
 def os_env(k: str, d: str) -> str:  # 便于测试注入
@@ -129,10 +133,12 @@ def verify_citations(citations: list[dict], store_root: Path) -> dict:
 
 def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
                   top_k: int = 10, rerank: bool = True,
-                  graph_expand=None, embed_fn=embed, rerank_transport=None) -> dict:
+                  graph_expand=None, embed_fn=embed, rerank_transport=None,
+                  extra_paths: list[list[str]] | None = None) -> dict:
     """四路召回→RRF→（可选）重排→核验占位。
     graph_expand: callable(seed_names) -> list[name]（由调用方接 Neo4j；缺席=None 跳过）。
-    向量路需要 index_dir 且 lancedb 可用且嵌入端点在线——任一缺席→该路跳过并在口径注明。"""
+    向量路需要 index_dir 且 lancedb 可用且嵌入端点在线——任一缺席→该路跳过并在口径注明。
+    extra_paths: 实验钩子（exp/lightrag-fifth-path 分支）——追加名次列表参与 RRF；默认 None=行为不变。"""
     notes: list[str] = []
     paths: list[list[str]] = []
 
@@ -172,6 +178,12 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
         paths.append(ext)
         if ext:
             notes.append(f"图扩展 {len(ext)} 项")
+
+    if extra_paths:
+        for i, p in enumerate(extra_paths):
+            if p:
+                paths.append(list(p))
+                notes.append(f"实验第{5 + i}路并入 {len(p)} 项")
 
     fused = rrf([p for p in paths if p])
     ranked = [(n, s) for n, s in fused]
