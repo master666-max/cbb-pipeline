@@ -17,7 +17,8 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 from neo4j_export import derive_password  # noqa: E402
 
-BOLT = "bolt://localhost:7693"
+import os
+BOLT = os.environ.get("GRAPHITI_BOLT", "bolt://localhost:7693")  # 跨机：env 覆盖
 STORE = HERE.parent.parent / "迷深实战-本体库"
 
 

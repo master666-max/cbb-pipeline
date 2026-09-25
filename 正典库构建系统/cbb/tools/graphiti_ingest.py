@@ -33,9 +33,9 @@ from cbb_anchor import pseudo_anchor  # noqa: E402
 
 ROOT = HERE.parent.parent
 WORK = ROOT / "迷深实战-工作区"
-BOLT = "bolt://localhost:7693"
-EMB_BASE = "http://127.0.0.1:8080/v1"          # 钉死本地（经验②）
-EMB_MODEL = "text-embedding-qwen3-embedding-8b@q4_k_m"
+BOLT = os.environ.get("GRAPHITI_BOLT", "bolt://localhost:7693")   # 跨机：env 覆盖
+EMB_BASE = os.environ.get("EMBED_HTTP", "http://127.0.0.1:8080/v1")  # 钉死本地（经验②）；端点可 env 换
+EMB_MODEL = os.environ.get("EMBED_MODEL", "text-embedding-qwen3-embedding-8b@q4_k_m")
 EPISODIC_LABEL = "Episodic"                    # 经验③
 
 
@@ -55,7 +55,7 @@ def extract(chapter_text: str) -> tuple[list[dict], list[dict], dict]:
     from openai import OpenAI
     client = OpenAI(api_key=_key(), base_url="https://api.deepseek.com")
     r = client.chat.completions.create(
-        model="deepseek-chat",
+        model=os.environ.get("GRAPHITI_LLM_MODEL", "deepseek-chat"),
         response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": (
@@ -89,8 +89,9 @@ async def _feed(group: str, chapter: int, ents: list[dict], rels: list[dict]) ->
     from graphiti_core.nodes import EpisodeType
     pw = derive_password(None)
     key = _key()
-    llm_cfg = LLMConfig(api_key=key, model="deepseek-chat", base_url="https://api.deepseek.com",
-                        small_model="deepseek-chat")
+    llm_cfg = LLMConfig(api_key=key, model=os.environ.get("GRAPHITI_LLM_MODEL", "deepseek-chat"),
+                        base_url=os.environ.get("GRAPHITI_LLM_BASE", "https://api.deepseek.com"),
+                        small_model=os.environ.get("GRAPHITI_LLM_MODEL", "deepseek-chat"))
     graphiti = Graphiti(uri=BOLT, user="neo4j", password=pw,
                         llm_client=OpenAIGenericClient(config=llm_cfg, structured_output_mode="json_object"),
                         embedder=OpenAIEmbedder(config=OpenAIEmbedderConfig(

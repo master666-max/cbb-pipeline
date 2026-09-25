@@ -1,0 +1,67 @@
+async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: dict) -> dict:
+    """单轮观察：mtime 扫描 → 变更记录构建 → sidecar 差集 → 喂入。无变更=零成本。"""
+    from lightrag_delta_sync import _load_sidecar, _merge_sidecar
+    library = store / "libraries"
+    state = interval_state
+    changed: list[Path] = []
+    max_mt = state.get("last_poll", 0.0)
+    prev_poll = state.get("last_poll", 0.0)
+    for f in library.glob("*/*/*.json"):
+        try:
+            mt = f.stat().st_mtime
+        except OSError:
+            continue
+        if mt > state.get("last_poll", 0.0):
+            changed.append(f)
+        max_mt = max(max_mt, mt)
+    if not changed:
+        return {"changed": 0, "fed": False, "口径": "无写入"}
+
+    ents, rels, chunks = [], [], []
+    names = interval_state.setdefault("names", _canon_names(store))
+    parsed = []
+    for f in changed:
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue  # 极端竞态：下一轮 mtime 仍新会再处理（不静默丢失，最终一致）
+        parsed.append(rec)
+        nm = (rec.get("canonical") or {}).get("name")
+        if nm and nm not in names:
+            names.add(nm)
+    for rec in parsed:
+        a, b, c = _record_entries(rec, names)
+        ents.extend(a)
+        rels.extend(b)
+        chunks.extend(c)
+    fed = _load_sidecar(work)
+    delta_e = [e for e in ents if sorted(str(e["source_id"]).split(SEP)) != fed["entities"].get(e["entity_name"])]
+    delta_r = [r for r in rels
+               if sorted(str(r["source_id"]).split(SEP)) !=
+               fed["relationships"].get(f"{r['src_id']}\u0001{r['keywords']}\u0001{r['tgt_id']}")]
+    have = set(fed["chunks"])
+    delta_c = [c for c in chunks if c["source_id"] not in have]
+    rep = {"changed": len(changed), "delta_entities": len(delta_e),
+           "delta_relationships": len(delta_r), "delta_chunks": len(delta_c)}
+    if not (delta_e or delta_r or delta_c):
+        return {**rep, "fed": False, "口径": "变更件无新 delta（重写同内容）"}
+
+    rag = rag_holder.get("rag")
+    if rag is None:
+        raise SystemExit("rag 未初始化（常驻循环内调用）")
+
+    try:
+        await rag.ainsert_custom_kg({"entities": delta_e, "relationships": delta_r,
+                                     "chunks": delta_c})
+    except Exception:
+        # 喂入失败：不前进重试位（下一轮重试同批），也不更新 sidecar——绝不静默丢批
+        state["last_poll"] = prev_poll
+        raise
+    _merge_sidecar(fed, {"entities": delta_e, "relationships": delta_r,
+                         "chunks": [c for c in delta_c]})
+    work.mkdir(parents=True, exist_ok=True)
+    (work / "_fed-sources.json").write_text(json.dumps(fed, ensure_ascii=False, indent=1),
+                                            encoding="utf-8")
+    return {**rep, "fed": True, "llm_calls": le.CNT["llm_calls"]}
+
+

@@ -37,9 +37,11 @@ async def _embed_batch(texts: list[str]) -> list[list[float]]:
     import urllib.request
 
     def _http(b):
-        payload = json.dumps({"model": "text-embedding-qwen3-embedding-8b@q4_k_m", "input": b},
-                             ensure_ascii=False).encode("utf-8")
-        req = urllib.request.Request("http://127.0.0.1:8080/v1/embeddings", data=payload,
+        import os as _os
+        _emb = _os.environ.get("EMBED_HTTP", "http://127.0.0.1:8080/v1/embeddings")
+        _mdl = _os.environ.get("EMBED_MODEL", "text-embedding-qwen3-embedding-8b@q4_k_m")
+        payload = json.dumps({"model": _mdl, "input": b}, ensure_ascii=False).encode("utf-8")
+        req = urllib.request.Request(_emb, data=payload,
                                      headers={"Content-Type": "application/json"})
         sys.path.insert(0, str(HERE))
         import 检索层 as jl

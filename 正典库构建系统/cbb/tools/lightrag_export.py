@@ -30,8 +30,9 @@ from neo4j_export import collect_graph  # noqa: E402
 ROOT = HERE.parent.parent                    # 正典库构建系统/
 STORE = ROOT / "迷深实战-本体库"
 WORK = ROOT / "迷深实战-工作区" / "索引" / "lightrag-exp"
-EMB = "http://127.0.0.1:8080/v1/embeddings"
-MODEL = "text-embedding-qwen3-embedding-8b@q4_k_m"
+import os
+EMB = os.environ.get("EMBED_HTTP", "http://127.0.0.1:8080/v1/embeddings")
+MODEL = os.environ.get("EMBED_MODEL", "text-embedding-qwen3-embedding-8b@q4_k_m")
 BATCH = 16
 
 CNT = {"emb_calls": 0, "emb_texts": 0, "llm_calls": 0}
