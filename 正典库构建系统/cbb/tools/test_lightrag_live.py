@@ -56,11 +56,30 @@ def main():
         await asyncio.sleep(0.05)
         r3 = await lv.poll_once(store, work, holder, state)       # 增量：只喂新件
         assert r3["delta_entities"] == 1 and r3["fed"] and r3["llm_calls"] == 0, r3
-        return r1, r2, r3
+        # 第四段：喂入失败 → 重试位不前进 → 下一轮补喂成功
+        (d / "e4.json").write_text(json.dumps(mk("e4", "丁"), ensure_ascii=False), encoding="utf-8")
+        await asyncio.sleep(0.05)
+        orig = holder["rag"].ainsert_custom_kg
 
-    r1, r2, r3 = asyncio.run(drive())
+        async def boom(*a, **k):
+            raise RuntimeError("模拟端点故障")
+
+        holder["rag"].ainsert_custom_kg = boom
+        failed = False
+        try:
+            await lv.poll_once(store, work, holder, state)
+        except RuntimeError:
+            failed = True
+        holder["rag"].ainsert_custom_kg = orig
+        assert failed, "故障注入未生效"
+        r5 = await lv.poll_once(store, work, holder, state)       # 重试位未前进 → 本轮补喂
+        assert r5["delta_entities"] == 1 and r5["fed"], r5
+        return r1, r2, r3, r5
+
+    r1, r2, r3, r5 = asyncio.run(drive())
     print(json.dumps({"首喂": r1["delta_entities"], "幂等轮变更": r2["changed"],
-                      "增量": r3["delta_entities"], "llm总调用": le.CNT["llm_calls"]},
+                      "增量": r3["delta_entities"], "故障重试补喂": r5["delta_entities"],
+                      "llm总调用": le.CNT["llm_calls"]},
                      ensure_ascii=False))
     print("OK live_sync 三段全过（首喂2E / 幂等0 / 增量1E）")
 

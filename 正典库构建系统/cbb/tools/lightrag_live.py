@@ -51,9 +51,10 @@ def _record_entries(rec: dict, names: set[str]) -> tuple[list[dict], list[dict],
         ents.append({"entity_name": canon["name"], "entity_type": canon.get("entity_type") or "unknown",
                      "description": txt or canon["name"], "source_id": rid})
     elif rec.get("record_type") == "relation" and all(canon.get(k) for k in ("subject", "rel_type", "object")):
-        if canon["subject"] != canon["object"]:
+        s2, t2 = norm(canon["subject"]), norm(canon["object"])
+        if s2 != t2:  # 归一后自环（两变体名同归一）→ 跳过，审计走对账披露
             fact = ((rec.get("observations") or [{}])[0].get("text")) or canon["rel_type"]
-            rels.append({"src_id": norm(canon["subject"]), "tgt_id": norm(canon["object"]),
+            rels.append({"src_id": s2, "tgt_id": t2,
                          "keywords": canon["rel_type"], "description": fact,
                          "source_id": rid, "weight": 1.0})
     if txt:
@@ -82,12 +83,14 @@ def _sidecar(work: Path) -> dict:
 
 
 async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: dict) -> dict:
-    """单轮观察：mtime 扫描 → 变更记录构建 → sidecar 差集 → 喂入。无变更=零成本。"""
+    """单轮观察：mtime 扫描 → 变更记录构建 → sidecar 差集 → 喂入。
+    重试位语义：last_poll 只在**成功**后推进——喂入失败保持原位，下一轮重试同批（毒批不静默丢）。"""
     from lightrag_delta_sync import _load_sidecar, _merge_sidecar
     library = store / "libraries"
     state = interval_state
+    prev_poll = state.get("last_poll", 0.0)
+    max_mt = prev_poll
     changed: list[Path] = []
-    max_mt = state.get("last_poll", 0.0)
     for f in library.glob("*/*/*.json"):
         try:
             mt = f.stat().st_mtime
@@ -96,18 +99,18 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
         if mt > state.get("last_poll", 0.0):
             changed.append(f)
         max_mt = max(max_mt, mt)
-    state["last_poll"] = max_mt
     if not changed:
+        state["last_poll"] = max_mt  # 无写入：推进到当前（空转零成本）
         return {"changed": 0, "fed": False, "口径": "无写入"}
 
     ents, rels, chunks = [], [], []
-    names = interval_state.setdefault("names", _canon_names(store))
+    names = state.setdefault("names", _canon_names(store))
     parsed = []
     for f in changed:
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
         except Exception:
-            continue  # 极端竞态：下一轮 mtime 仍新会再处理（不静默丢失，最终一致）
+            continue  # 极端竞态：下一轮 mtime 仍新会再处理（最终一致）
         parsed.append(rec)
         nm = (rec.get("canonical") or {}).get("name")
         if nm and nm not in names:
@@ -121,25 +124,29 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
     delta_e = [e for e in ents if sorted(str(e["source_id"]).split(SEP)) != fed["entities"].get(e["entity_name"])]
     delta_r = [r for r in rels
                if sorted(str(r["source_id"]).split(SEP)) !=
-               fed["relationships"].get(f"{r['src_id']}\u0001{r['keywords']}\u0001{r['tgt_id']}")]
+               fed["relationships"].get(f"{r['src_id']}{r['keywords']}{r['tgt_id']}")]
     have = set(fed["chunks"])
     delta_c = [c for c in chunks if c["source_id"] not in have]
     rep = {"changed": len(changed), "delta_entities": len(delta_e),
            "delta_relationships": len(delta_r), "delta_chunks": len(delta_c)}
     if not (delta_e or delta_r or delta_c):
+        state["last_poll"] = max_mt
         return {**rep, "fed": False, "口径": "变更件无新 delta（重写同内容）"}
 
     rag = rag_holder.get("rag")
     if rag is None:
         raise SystemExit("rag 未初始化（常驻循环内调用）")
-
-    await rag.ainsert_custom_kg({"entities": delta_e, "relationships": delta_r,
-                                 "chunks": delta_c})
-    _merge_sidecar(fed, {"entities": delta_e, "relationships": delta_r,
-                         "chunks": [c for c in delta_c]})
+    try:
+        await rag.ainsert_custom_kg({"entities": delta_e, "relationships": delta_r,
+                                     "chunks": delta_c})
+    except Exception:
+        state["last_poll"] = prev_poll  # 失败：重试位不前进，下一轮重试同批
+        raise
+    _merge_sidecar(fed, {"entities": delta_e, "relationships": delta_r, "chunks": delta_c})
     work.mkdir(parents=True, exist_ok=True)
     (work / "_fed-sources.json").write_text(json.dumps(fed, ensure_ascii=False, indent=1),
                                             encoding="utf-8")
+    state["last_poll"] = max_mt  # 成功才推进
     return {**rep, "fed": True, "llm_calls": le.CNT["llm_calls"]}
 
 
@@ -167,18 +174,27 @@ def main(argv=None) -> int:
     async def _loop():
         await _setup()
         state: dict = {}
-        hb = work / "_live-heartbeat"
         work.mkdir(parents=True, exist_ok=True)
-        while True:
-            hb.write_text(str(time.time()), encoding="utf-8")  # 心跳：章收口同步见此让位（防双写）
-            try:
-                rep = await poll_once(store, work, rag_holder, state)
-                if rep.get("changed") or rep.get("fed"):
-                    print(json.dumps(rep, ensure_ascii=False), flush=True)
-            except Exception as e:
-                print(json.dumps({"error": f"{type(e).__name__}: {str(e)[:120]}"},
-                                 ensure_ascii=False), flush=True)
-            await asyncio.sleep(ns.interval)
+
+        async def _hb():  # 心跳独立任务：长喂入期间也持续刷新（否则会被误判死亡→章收口并发写副本）
+            hb = work / "_live-heartbeat"
+            while True:
+                hb.write_text(str(time.time()), encoding="utf-8")
+                await asyncio.sleep(10)
+
+        hb_task = asyncio.create_task(_hb())
+        try:
+            while True:
+                try:
+                    rep = await poll_once(store, work, rag_holder, state)
+                    if rep.get("changed") or rep.get("fed"):
+                        print(json.dumps(rep, ensure_ascii=False), flush=True)
+                except Exception as e:
+                    print(json.dumps({"error": f"{type(e).__name__}: {str(e)[:120]}"},
+                                     ensure_ascii=False), flush=True)
+                await asyncio.sleep(ns.interval)
+        finally:
+            hb_task.cancel()
 
     if ns.once:
         # --once 也走常驻循环（实例必须在同一 loop）；last_poll=-1 ⇒ 首轮全量比对（delta 仍由 sidecar 差集裁决）

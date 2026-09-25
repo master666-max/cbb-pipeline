@@ -239,12 +239,13 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
                "anchor": {"tick": ch["ingestion_index"],
                           "pseudo_date": anchor_rec["canonical"]["pseudo_date"],
                           "track": (anchor_admit or {}).get("track", "intercepted")},
-               "aux": aux}
+               "aux": aux, "lightrag_live": live_state}
     (WORK / "logs" / f"{unit}-pipeline-summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps({"unit": unit, "counts": summary["counts"], "tracks": summary["tracks"],
                       "anchor_tick": ch["ingestion_index"],
-                      "aux": {k: (v or {}).get("status", "?") for k, v in aux.items()}},
+                      "aux": {k: (v or {}).get("status", "?") for k, v in aux.items()},
+                      "lightrag_live": live_state},
                      ensure_ascii=False))
     return summary
 
@@ -259,6 +260,36 @@ def _verify_gate(when: str) -> None:
         raise SystemExit(f"run_chapter {when} verify 未过（账本外改动，先处置再产数据）：{v.get('errors')}")
 
 
+def _ensure_live_sentinel() -> str:
+    """自唤起 LightRAG 实时同步哨（单例）：心跳 120s 内=在岗不重复拉起；陈旧/缺席=拉起新哨。
+    DETACHED 分离进程——不随 runner 退出而死；哨日志=logs/lightrag-live.log。"""
+    import time as _t
+    work_lt = WORK / "索引" / "lightrag-exp"
+    hb = work_lt / "_live-heartbeat"
+    if hb.exists():
+        try:
+            if _t.time() - hb.stat().st_mtime < 120:
+                return "already-running"
+        except OSError:
+            pass
+    work_lt.mkdir(parents=True, exist_ok=True)
+    pidf = work_lt / "_live.pid"
+    if pidf.exists():
+        try:
+            pidf.unlink()  # 心跳已陈旧=旧哨已死，清 pid 位
+        except OSError:
+            pass
+    logf = open(WORK / "logs" / "lightrag-live.log", "ab")
+    flags = 0
+    for f_name in ("DETACHED_PROCESS", "CREATE_NEW_PROCESS_GROUP"):
+        flags |= getattr(subprocess, f_name, 0)
+    subprocess.Popen([sys.executable, "-X", "utf8", str(CBB / "tools" / "lightrag_live.py"),
+                      "--store", str(STORE_ROOT), "--work", str(work_lt), "--interval", "10"],
+                     stdout=logf, stderr=logf, creationflags=flags, close_fds=True)
+    _t.sleep(1.5)  # 给哨起心跳
+    return "spawned"
+
+
 def main() -> int:
     import argparse
     ap = argparse.ArgumentParser()
@@ -266,6 +297,10 @@ def main() -> int:
     ap.add_argument("--no-aux", action="store_true")
     args = ap.parse_args()
     _verify_gate("前置")
+    try:
+        live_state = _ensure_live_sentinel()  # 自唤起实时哨（失败不阻塞主链）
+    except Exception as e:
+        live_state = f"error: {str(e)[:80]}"
     run(args.chapter, no_aux=args.no_aux)
     _verify_gate("后置")
     return 0
