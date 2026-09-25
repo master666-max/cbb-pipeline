@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * guard.mjs — cbb-guard PreToolUse 守门钩子（U-G02 · 裁定 2026-09-24）
+ * guard.mjs — cbb-guard PreToolUse 守门钩子（v0.1.2 · 跨项目通用：根解析四级+惯例谓词保护面）
  *
  * 规则（裁定原文见《形态升级-工单-插件化-20260923.md》U-G02；分级=二拦二警照准）：
  *   拦 A  冻结线"覆盖已有文件"——原位保全语义：冻结目录下**新建文件放行、覆盖已有文件拦截**；
@@ -19,21 +19,54 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// 可移植：项目根由 env CBB_GUARD_ROOT 指定（另一台机器/另一路径直接设这个变量即可）；
-// 缺省回落到本机原路径（向后兼容，不改既有行为）。
-const ROOT = (process.env.CBB_GUARD_ROOT || "d:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/")
-  .replace(/\\/g, "/").toLowerCase().replace(/\/+$/, "") + "/";  // 归一并**保证**尾斜杠（缺则补）
-const DECISION_LOG = ROOT + "决策账.jsonl";
-const FROZEN_DIRS = [ROOT + "迷深实战-本体库/", ROOT + "迷深实战-工作区/"];
-const FROZEN_FILES = [ROOT + "迷深实战-工单.md", ROOT + "迷深实战-发车件.md",
-                      ROOT + "迷深实战-build-state.md"];
-// 红区（Write 拦）：契约 schema + 两份在案工单（本体构筑-工单 亦为在案工单）+ 决策账
-const REDZONE_WRITE = [ROOT + "cbb/contracts/", ROOT + "本体构筑-工单.md",
-                       ROOT + "迷深实战-工单.md", ROOT + "决策账.jsonl"];
+// 根解析（0.1.2 · 跨项目通用）：**不再硬编码任何实例路径**。四级解析：
+//   ① env CBB_GUARD_ROOT（显式指定，兼容既有部署）
+//   ② cwd 向上 ≤6 级找 CBB 项目标记（决策账.jsonl / *-本体库 / *-工作区）
+//   ③ 上找失败 → cwd 直接子目录里找（仓库根模式：agent 停在 git 根、项目在其下）
+//   ④ 仍无 → cwd 本身（保护面按命名惯例谓词判定；找不到惯例面=无可保护，如实告警一次）
+function isCbbRootDir(dir) {
+  try {
+    const names = fs.readdirSync(dir);
+    return names.includes("决策账.jsonl") ||
+           names.some((n) => n.endsWith("-本体库") || n.endsWith("-工作区"));
+  } catch { return false; }
+}
+
+function resolveRoots() {
+  // 只用于决定「旁通账落在谁的决策账」；保护面由命名惯例谓词全局判定（与根解耦）。
+  // **刻意不下探子目录**：下探会让守卫认领无关项目（对样教训：连测试夹具都会被抢）。
+  const nrm = (r) => r.replace(/\\/g, "/").toLowerCase().replace(/\/+$/, "") + "/";
+  const env = (process.env.CBB_GUARD_ROOT || "").trim();
+  if (env) return [nrm(env)];
+  const start = path.resolve(process.cwd());
+  let dir = start;
+  for (let i = 0; i < 6 && dir; i++) {
+    if (isCbbRootDir(dir)) return [nrm(dir)];
+    dir = path.dirname(dir);
+  }
+  return [nrm(start)];
+}
+
+const ROOTS = resolveRoots();
+const ROOT = ROOTS[0];  // 主根：告警/日志缺省落点
 
 const norm = (p) => String(p || "").replace(/\\/g, "/").toLowerCase();
-const isFrozen = (p) => FROZEN_DIRS.some((d) => p.startsWith(d)) || FROZEN_FILES.includes(p);
-const isRedzoneWrite = (p) => REDZONE_WRITE.some((d) => p === d || p.startsWith(d));
+
+// 保护面 = **命名惯例谓词**（纯文本判定，跨项目通用，无需扫描磁盘、对测试夹具友好）：
+//   冻结线：任何 *-本体库/ *-工作区/ 目录与其下文件（原位保全：新建放行、覆盖拦截），
+//           以及 *-工单.md *-发车件.md *-build-state.md 三类文书（覆盖即拦）。
+const isFrozen = (p) => /(^|\/)[^/]*-(?:本体库|工作区)\//.test(p)
+                     || /-(?:工单|发车件|build-state)\.md$/.test(p);
+//   红区（Write 整体覆盖拦）：cbb/contracts/ 契约、在案工单、决策账（只许 Edit 追加）。
+const isRedzoneWrite = (p) => /\/cbb\/contracts\//.test(p)
+                           || /-工单\.md$/.test(p)
+                           || /(^|\/)决策账\.jsonl$/.test(p);
+
+// 旁通留痕落点：选"包含被越权路径的那个根"的决策账；兜底主根。
+function ledgerFor(targetPath) {
+  const hit = ROOTS.find((r) => targetPath.startsWith(r));
+  return (hit || ROOT) + "决策账.jsonl";
+}
 
 let raw = "";
 process.stdin.setEncoding("utf8");
@@ -81,10 +114,11 @@ if (bypass && !fs.existsSync(ROOT)) {
 
 function bypassLog(action, target, extra) {
   try {
-    fs.appendFileSync(DECISION_LOG, JSON.stringify({
+    const log = ledgerFor(target) || (ROOT + "决策账.jsonl");
+    fs.appendFileSync(log, JSON.stringify({
       type: "hook-bypass", ref: BP.ref, action, target, ...extra, at: new Date().toISOString(),
     }) + "\n");
-    return fs.existsSync(DECISION_LOG) ? null : "写后回读：账文件不存在";
+    return fs.existsSync(log) ? null : "写后回读：账文件不存在";
   } catch (e) { return e && e.code ? e.code : String(e).slice(0, 60); }
 }
 
@@ -107,7 +141,7 @@ function refuseBypassBecauseNoTrail(err, v) {
   // 却一条账都没留——唯一该有痕迹的越权通道，恰好在这种时候没有痕迹（为空被读成通过）。
   process.stderr.write(
     `[cbb-guard] 拒绝旁通：留痕写不进去，无留痕不越权（0.1.0 的行为是静默放行）\n` +
-    `  落点：${DECISION_LOG}\n  原因：${err}\n` +
+    `  落点：${ledgerFor(v.target) || "决策账.jsonl"}\n  原因：${err}\n` +
     `  处置：核对 CBB_GUARD_ROOT 是否指向真实项目根（当前归一值 ${ROOT}），且决策账须可追加\n` +
     `  被挡下的这次越权：${v.rule} · ${v.target.slice(0, 100)}\n`);
   process.exit(2);
@@ -123,7 +157,7 @@ const isBash = tool === "bash";
 // 现改两条：① 动词必须是**独立词**（前后都不接单词字符），② 真删除的 API 写法单独认。
 const RM_WORD = /(?<![\w.~-])(?:rm|rmdir|del|erase|rd|move|ren|mv|unlink)(?![\w-])/i;
 const RM_API = /\b(?:os\.(?:remove|unlink|replace|rename)|shutil\.(?:rmtree|move|remove)|fs\.(?:unlinkSync|unlink|rmSync|rm|rename)|Remove-Item)\b/i;
-const FROZEN_NAME = /迷深实战-(本体库|工作区|工单|发车件|build-state)/i;
+const FROZEN_NAME = /(?:本体库|工作区|工单|发车件|build-state)/i;  // 惯例词直接认（跨项目通用）
 
 function findViolation() {
   const rmHit = cmd.match(RM_WORD) || cmd.match(RM_API);
@@ -131,20 +165,20 @@ function findViolation() {
   if (isBash && rmHit && frozenHit) {
     const from = Math.max(0, rmHit.index - 14);
     return { rule: "拦A/bash", target: cmd.slice(0, 200),
-      msg: "冻结线清理/移动操作（迷深实战-* 为资料档，原位保全）",
+      msg: "冻结线清理/移动操作（项目冻结线为资料档，原位保全）",
       hit: `动词「${rmHit[0]}」于 …${cmd.slice(from, rmHit.index + rmHit[0].length + 14)}… × 冻结名「${frozenHit[0]}」` };
   }
   if ((tool === "write" || tool === "edit" || tool === "multiedit") && isFrozen(fp)) {
     // 原位保全语义：冻结目录下**新建放行、覆盖已有拦截**
     if (fs.existsSync(rawPath) || fs.existsSync(fp)) {
       return { rule: "拦A/write", target: fp,
-        msg: `冻结线文件覆盖（${fp.slice(ROOT.length)}）——迷深实战线已冻结为资料档（原位保全），新建文件不受限`,
+        msg: `冻结线文件覆盖（项目冻结线原位保全）——新建文件不受限`,
         hit: "路径落在冻结清单内且文件已存在" };
     }
   }
   if (tool === "write" && isRedzoneWrite(fp)) {
     return { rule: "拦B/write", target: fp,
-      msg: `红区文件 Write 整体覆盖（${fp.slice(ROOT.length)}）——契约/在案工单/决策账只许追加段（Edit）与账引用旁通`,
+      msg: `红区文件 Write 整体覆盖——契约/在案工单/决策账只许追加段（Edit）与账引用旁通`,
       hit: "路径前缀命中红区清单" };
   }
   return null;
