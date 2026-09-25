@@ -18,13 +18,14 @@
    积压继续人工消化。
 
 用法：
-  py -X utf8 矛盾对生成.py pairs  [--store 迷深实战-本体库] [--out pairs.jsonl]
+  py -X utf8 矛盾对生成.py pairs  [--store <本项目>-本体库] [--out pairs.jsonl]
   py -X utf8 矛盾对生成.py exam   [--store …] [--names 名录.json] [--out-dir …]
   py -X utf8 矛盾对生成.py grade  --paper 考卷.jsonl --verdicts 判定.jsonl [--out 报告.json]
 """
 import argparse
 import json
 import re
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -35,9 +36,11 @@ sys.path.insert(0, str(HERE.parent / "contracts"))
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 import cbb_store  # noqa: E402
 
-DEFAULT_STORE = ROOT / "迷深实战-本体库"
-DEFAULT_CANDS = ROOT / "迷深实战-工作区" / "candidates"
-DEFAULT_NLI_DIR = ROOT / "迷深实战-工作区" / "评分" / "nli"
+import 路径惯例 as 惯
+_S = 惯.store_of(Path(os.environ.get("CBB_STORE") or ROOT))
+DEFAULT_STORE = _S
+DEFAULT_CANDS = 惯.workspace_of(_S) / "candidates"
+DEFAULT_NLI_DIR = 惯.workspace_of(_S) / "评分" / "nli"
 
 CONFLICT_RE = re.compile(r"^(\S+?): 入库='(.*)' vs 库内='(.*)'$")
 SIM_RE = re.compile(r"([^：:]*?) vs ([^：:]*?) sim=\d")
