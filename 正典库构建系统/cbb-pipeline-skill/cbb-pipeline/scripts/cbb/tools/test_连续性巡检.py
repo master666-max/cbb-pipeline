@@ -95,6 +95,35 @@ def test_rules_single_source():
     assert "parent" in 巡检.RELATIONSHIP_INVERSES
 
 
+def test_read_only_guard_rejects_writes():
+    """本件走的是 /tx/commit（能写的端点），所以"只读"必须机械断言，不能只写在注释里。"""
+    for bad in ("MERGE (e:Entity {name:'x'}) SET e.a=1",
+               "CREATE (e:Entity) RETURN e",
+               "MATCH (e) DELETE e"):
+        try:
+            巡检._assert_read_only(bad)
+        except ValueError:
+            continue
+        raise AssertionError(f"写语句未被拒：{bad}")
+    巡检._assert_read_only("MATCH (e:Entity) WHERE e.ns=$ns RETURN e.name")  # 正常读不报
+
+
+def test_graph_loader_requires_namespace():
+    """读侧不带命名空间＝把别的项目的实体算进自己的对账，必须拒（假干净的头号来源）。"""
+    import os
+    had = os.environ.pop("CBB_NAMESPACE", None)
+    try:
+        try:
+            巡检.graph_loader(base="http://127.0.0.1:1", password="x", ns=None)
+        except RuntimeError as e:
+            assert "命名空间" in str(e), str(e)
+        else:
+            raise AssertionError("无命名空间竟放行")
+    finally:
+        if had is not None:
+            os.environ["CBB_NAMESPACE"] = had
+
+
 if __name__ == "__main__":
     import tempfile
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]

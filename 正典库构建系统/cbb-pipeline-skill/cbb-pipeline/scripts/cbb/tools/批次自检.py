@@ -96,33 +96,97 @@ def _walk_strings(obj, path="$"):
 
 # ---------- 十项检查（每项 → {no,name,status,detail}） ----------
 
-def c1_three_way(store: Path, ws: Path) -> dict:
+# STATE 的两种惯例名。裸名排第一：`init_project.py` 默认产出的就是 `BUILD-STATE.md`。
+STATE_PATTERNS = ("BUILD-STATE.md", "*-BUILD-STATE.md")
+
+
+def find_state(ws: Path, explicit=None) -> tuple[Path | None, list[str]]:
+    """定位 BUILD-STATE：显式 --state 优先，否则在项目根按两种惯例名找。
+
+    为什么必须重写这一段：旧实现把**上一个项目的实例名**写死成
+    `ws.parent / "迷深实战-BUILD-STATE.md"`，于是换任何项目都永远读不到 STATE，
+    而"库/STATE/commit 三方对账"照样返回 PASS——实际只对了两方。
+    （外部审计 2026-09-25 实测：detail 里明明写着 `STATE 游标=None`，判据却不消费它。）
+    返回 (路径或 None, 试过的形态清单)，找不到时把清单写进 detail，好回答"该放哪"。
+    """
+    root = ws.parent
+    tried: list[str] = []
+    if explicit:
+        p = Path(explicit)
+        return (p if p.exists() else None), [str(p)]
+    for pat in STATE_PATTERNS:
+        tried.append(str(root / pat))
+        hits = sorted(root.glob(pat))
+        if hits:
+            return hits[0], tried
+    return None, tried
+
+
+def _git_state(store: Path) -> tuple[bool | None, str]:
+    """git 侧三态：True=干净 / False=有未提交变更 / None=判不了（不是仓、git 不在、超时）。
+
+    旧实现 `git_clean = (r.stdout.strip() == "")` 把"命令失败、stdout 自然为空"记成 True——
+    在一个没建 git 仓的目录里，"库目录 git-clean=True" 是纯假阳性。
+    """
+    def _run(args):
+        try:
+            p = subprocess.run(["git", *args], capture_output=True, text=True,
+                               timeout=30, cwd=str(store.parent))
+            return p, ""
+        except Exception as e:  # git 不在 PATH / 超时
+            return None, f"git 调用异常 {type(e).__name__}"
+    p, err = _run(["rev-parse", "--is-inside-work-tree"])
+    if p is None:
+        return None, err
+    if p.returncode != 0 or p.stdout.strip().lower() != "true":
+        return None, "项目根不在 git 仓内"
+    p2, err2 = _run(["status", "--porcelain", "--", str(store)])
+    if p2 is None:
+        return None, err2
+    if p2.returncode != 0:
+        return None, f"git status 退出码 {p2.returncode}"
+    return (p2.stdout.strip() == ""), "git 可判"
+
+
+def c1_three_way(store: Path, ws: Path, state=None) -> dict:
     ledger = _jsonl(store / "ledger.jsonl")
     head_seq = 0
     if ledger:
         last = ledger[-1]
         head_seq = int(last.get("seq") or last.get("n") or len(ledger))
-    st = ws.parent / "迷深实战-BUILD-STATE.md"
-    cursor = None
-    if st.exists():
-        mtxt = st.read_text(encoding="utf-8", errors="replace")
-        ms = re.findall(r"游标[：:=＝]*\s*(\d+)", mtxt)
-        cursor = int(ms[-1]) if ms else None  # 取最后一次（STATE 里历史游标会残留早段）
-    git_clean = None
-    try:
-        r = subprocess.run(["git", "status", "--porcelain", "--", str(store)],
-                           capture_output=True, text=True, timeout=30, cwd=str(store.parent))
-        git_clean = (r.stdout.strip() == "")
-    except Exception:
-        git_clean = None
-    fails = []
+    st, tried = find_state(ws, state)
+    if st is None:
+        # 三方缺一角 ⇒ SKIP（不是 PASS）：缺席与通过不许同形
+        return {"no": 1, "name": "库/STATE/commit 三方对账", "status": "SKIP",
+                "detail": (f"无 STATE 可判（试过 {tried}），账本头 seq={head_seq}"
+                           "——三方缺一角，不许读成三方一致"),
+                "口径": "STATE=缓存，磁盘+git=事实；找不到 STATE 记 SKIP"}
+    mtxt = st.read_text(encoding="utf-8", errors="replace")
+    ms = re.findall(r"游标[：:=＝]*\s*(\d+)", mtxt)
+    cursor = int(ms[-1]) if ms else None  # 取最后一次（STATE 里历史游标会残留早段）
+    git_clean, git_note = _git_state(store)
+    fails, warns = [], []
+    if cursor is None:
+        fails.append(f"STATE 在（{st.name}）但无游标行——三方对账少一角")
     if cursor is not None and head_seq and cursor == 0:
         fails.append("游标为 0 但账本非空")
     if git_clean is False:
-        fails.append(f"本体库目录有未提交变更（git porcelain 非空）")
-    return {"no": 1, "name": "库/STATE/commit 三方对账", "status": "FAIL" if fails else "PASS",
-            "detail": "; ".join(fails) or f"账本头 seq={head_seq}，STATE 游标={cursor}，库目录 git-clean={git_clean}",
-            "口径": "STATE=缓存，磁盘+git=事实"}
+        fails.append("本体库目录有未提交变更（git porcelain 非空）")
+    if cursor is not None and cursor > head_seq:
+        # 游标声称处理过的单元数不该超过账本追加数（每单元至少一笔 append）
+        warns.append(f"游标 {cursor} > 账本头 {head_seq}：声称的进度超过落账量")
+    if git_clean is None:
+        # 三方里 git 这一角判不了 ⇒ 也是缺一角，记 WARN（旧实现把它读成 True）
+        warns.append(f"git 侧不可判（{git_note}）")
+    status = "FAIL" if fails else ("WARN" if warns else "PASS")
+    # 数字面**永远先摆出来**：旧实现在有问题时只写原因、把三个读数挤掉，
+    # 于是"游标到底读到没读到"这种关键事实在报告里看不见。
+    读数 = (f"账本头 seq={head_seq}｜STATE({st.name}) 游标={cursor}｜git-clean={git_clean}")
+    detail = 读数 + (f"｜{'；'.join(fails + warns)}" if (fails or warns) else "")
+    return {"no": 1, "name": "库/STATE/commit 三方对账", "status": status,
+            "detail": detail,          # git 不可判的原因已在 warns 里带出，不再重复一遍
+            "口径": "STATE=缓存，磁盘+git=事实；git 不可判记 None 不记 True；"
+                    "游标与 seq 不同域，故只在游标>账本头时报 WARN（等值不是硬判据）"}
 
 
 def c2_chapter_boundary(ws: Path, corpus: set[int] | None) -> dict:
@@ -231,6 +295,11 @@ def c8_quote_falls_back(ws: Path) -> dict:
             q = (ev.get("quote") or "").strip()
             if q and q not in sl:
                 fail.append(f"{c['file']} ch{c['chapter']} 行{ev.get('line')}：{q[:24]}…")
+    if not total:
+        # 判定面为空不许读成通过：零条引文可回落 ≠ 全部引文都能回落
+        return {"no": 8, "name": "证据引文回落（全量）", "status": "SKIP",
+                "detail": f"候选件 {len(cands)} 份、可判引文 0 条——无面可判（不是通过）",
+                "口径": "全量机器回落；引文数为 0 时记 SKIP"}
     return {"no": 8, "name": "证据引文回落（全量）", "status": "FAIL" if fail else "PASS",
             "detail": f"回落 {total} 条引文，失败 {len(fail)} 条" + (f"：{fail[:3]}" if fail else ""),
             "口径": "全量机器回落（旧'抽 2 条'零强度，已按裁定升级）"}
@@ -246,14 +315,20 @@ def _walk_evidence(data):
 
 def c9_verified_against(store: Path) -> dict:
     bad = []
-    for rec in _records(store):
+    recs = list(_records(store))
+    for rec in recs:
         va = rec.get("verified_against") or {}
         if not va.get("path") or not va.get("sha") or not va.get("verified_at"):
             bad.append(rec.get("record_id"))
         elif set(va.get("sha", "")) == {"0"}:
             bad.append(rec.get("record_id"))
+    if not recs:
+        return {"no": 9, "name": "verified_against 真实三件套", "status": "SKIP",
+                "detail": "库内记录 0 条——无面可判（不是『三件套齐』）",
+                "口径": "记录数为 0 时记 SKIP；空库刷不出绿"}
     return {"no": 9, "name": "verified_against 真实三件套", "status": "FAIL" if bad else "PASS",
-            "detail": f"缺失/占位 {len(bad)} 条" + (f"：{bad[:3]}" if bad else "（全库记录三件套齐）")}
+            "detail": f"记录 {len(recs)} 条，缺失/占位 {len(bad)} 条"
+                      + (f"：{bad[:3]}" if bad else "（全库记录三件套齐）")}
 
 
 def c10_commit_and_export(ws: Path, store: Path) -> dict:
@@ -272,11 +347,12 @@ ALL_CHECKS = [c1_three_way, c2_chapter_boundary, c3_metatext, c4_wallclock, c5_e
               c6_routing, c7_dedup_trace, c8_quote_falls_back, c9_verified_against, c10_commit_and_export]
 
 
-def run(store_root: Path, ws: Path, corpus: Path | None = None) -> dict:
+def run(store_root: Path, ws: Path, corpus: Path | None = None,
+        state: str | Path | None = None) -> dict:
     store, ws = Path(store_root), Path(ws)
     corpus_ch = _corpus_chapters(Path(corpus)) if corpus else None
     jobs = [
-        (c1_three_way, (store, ws)),
+        (c1_three_way, (store, ws, state)),
         (c2_chapter_boundary, (ws, corpus_ch)),
         (c3_metatext, (ws,)),
         (c4_wallclock, (ws, store)),
@@ -297,9 +373,12 @@ def run(store_root: Path, ws: Path, corpus: Path | None = None) -> dict:
         results.append(r)
     fails = [r for r in results if r["status"] == "FAIL"]
     warns = [r for r in results if r["status"] == "WARN"]
-    return {"checks": results, "fail": len(fails), "warn": len(warns),
+    skips = [r for r in results if r["status"] == "SKIP"]
+    return {"checks": results, "fail": len(fails), "warn": len(warns), "skip": len(skips),
             "exit_hint": 1 if fails else 0,
-            "口径": "留痕=本输出；合法例外须有登记依据；SKIP=检查器异常（T-6 现形）"}
+            "未达项": [f"#{r['no']} {r['name']}：{r['detail'][:70]}" for r in skips + warns],
+            "口径": "留痕=本输出；合法例外须有登记依据；SKIP＝检查器异常或无面可判（T-6 现形），"
+                    "SKIP 不算过——收口报告必须把「未达项」逐条抄进去"}
 
 
 def main(argv=None) -> int:
@@ -307,12 +386,17 @@ def main(argv=None) -> int:
     ap.add_argument("--store", required=True)
     ap.add_argument("--workspace", required=True)
     ap.add_argument("--corpus")
+    ap.add_argument("--state", default=None,
+                    help="BUILD-STATE 路径；缺省在项目根按两种惯例名找（裸名 BUILD-STATE.md 优先）")
     ap.add_argument("--json", action="store_true")
     ns = ap.parse_args(argv)
-    rep = run(Path(ns.store), Path(ns.workspace), Path(ns.corpus) if ns.corpus else None)
+    rep = run(Path(ns.store), Path(ns.workspace), Path(ns.corpus) if ns.corpus else None,
+              ns.state)
     print(json.dumps(rep, ensure_ascii=False, indent=1))
     for r in rep["checks"]:
         print(f"  [{r['status']:4s}] #{r['no']:>2} {r['name']}｜{r['detail'][:80]}")
+    if rep.get("skip"):
+        print(f"  未达项 {rep['skip']} 条 SKIP（不算过，须逐条抄进收口报告）")
     return rep["exit_hint"]
 
 

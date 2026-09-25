@@ -10,6 +10,16 @@ import unittest
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+
+# 本模块统一给一个测试命名空间；"不给就拒绝"另有专测（TestNamespace）。
+def setUpModule():
+    import os
+    os.environ["CBB_NAMESPACE"] = "ut-ns"
+
+
+def tearDownModule():
+    import os
+    os.environ.pop("CBB_NAMESPACE", None)
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE.parent / "contracts"))
 sys.path.insert(0, str(HERE))
@@ -92,16 +102,18 @@ class TestCypher(unittest.TestCase):
     def test_node_merges_on_name_key(self):
         st = m.node_statement({"name": "基督", "entity_type": "人物", "lib": "character",
                                "status": "provisional", "version": 1})
-        self.assertIn("MERGE (e:Entity {name:$name})", st["statement"])
+        self.assertIn("MERGE (e:Entity {ns:$ns, name:$name})", st["statement"])   # 键里必须带命名空间
         self.assertEqual(st["parameters"]["name"], "基督")
+        self.assertEqual(st["parameters"]["ns"], "ut-ns")
+        self.assertIn("SET e.ns=$ns", st["statement"])          # 命名空间还要落到属性上，读侧才过滤得到
 
     def test_edge_merges_both_endpoints_and_rel(self):
         st = m.edge_statement({"subject": "a", "rel_type": "朋友", "object": "b",
                                "claim": False, "fact": "f"})
         s = st["statement"]
-        self.assertIn("MERGE (s:Entity {name:$subject})", s)
-        self.assertIn("MERGE (o:Entity {name:$object})", s)
-        self.assertIn("MERGE (s)-[r:REL {rel_type:$rel_type}]->(o)", s)
+        self.assertIn("MERGE (s:Entity {ns:$ns, name:$subject})", s)
+        self.assertIn("MERGE (o:Entity {ns:$ns, name:$object})", s)
+        self.assertIn("MERGE (s)-[r:REL {ns:$ns, rel_type:$rel_type}]->(o)", s)
 
     def test_constraint_idempotent_if_not_exists(self):
         self.assertIn("IF NOT EXISTS", m.CONSTRAINT_CYPHER)
@@ -160,11 +172,11 @@ class TestChapterNodes(unittest.TestCase):
     def test_chapter_statement_merge_only_shape(self):
         st = m.chapter_statement({"chapter": 14, "name": "涡波"})
         s = st["statement"]
-        self.assertIn("MERGE (c:Chapter {no:$no})", s)
-        self.assertIn("MERGE (e:Entity {name:$name})", s)
-        self.assertIn("MERGE (c)-[:MENTIONS]->(e)", s)
+        self.assertIn("MERGE (c:Chapter {ns:$ns, no:$no})", s)          # 两本书的第 1 章不该是同一个节点
+        self.assertIn("MERGE (e:Entity {ns:$ns, name:$name})", s)
+        self.assertIn("MERGE (c)-[:MENTIONS {ns:$ns}]->(e)", s)
         self.assertNotIn("CREATE ", s.replace("ON CREATE", ""))  # 纯 MERGE＝重放零增殖
-        self.assertEqual(st["parameters"], {"no": 14, "name": "涡波"})
+        self.assertEqual(st["parameters"], {"ns": "ut-ns", "no": 14, "name": "涡波"})
 
     def test_export_graph_commits_chapters_and_counts(self):
         graph = {"nodes": [], "edges": [],
@@ -185,12 +197,13 @@ class TestAuditR4Fixes(unittest.TestCase):
     """R4 审计修复批反例（A13）。"""
 
     def test_a13_default_base_port_aligned(self):
-        """反例：导出器默认 7474 而巡检默认 7695（容器实映射 7695→7474）——其一必错。"""
+        """不变量＝两件工具的默认基址一致（端口值本身不该是某台机器的容器映射）。
+        旧断言把 7695 钉进发布件＝那台机器上映射给上一项目容器的端口，换机即错。"""
         if "NEO4J_HTTP" not in os.environ:
-            self.assertEqual(m.DEFAULT_BASE, "http://localhost:7695")
+            self.assertEqual(m.DEFAULT_BASE, "http://localhost:7474")  # 出厂默认；钉具体映射端口＝把某台机器写进发布件
         # 跨件口径对齐：巡检同一变量默认值必须与导出器一致（分歧即测试红）
         patrol_src = (HERE / "连续性巡检.py").read_text(encoding="utf-8")
-        self.assertIn('os.environ.get("NEO4J_HTTP", "http://localhost:7695")', patrol_src)
+        self.assertIn('os.environ.get("NEO4J_HTTP", "http://localhost:7474")', patrol_src)
 
 
 
@@ -231,6 +244,26 @@ class TestDanglingEndpointNormalization(unittest.TestCase):
             self.assertEqual([(e["subject"], e["object"]) for e in g["edges"]],
                              [("持有物品", "缇达")])  # 两变体归一且合并为一条
             self.assertEqual(g["normalized_endpoints"], 2)
+
+
+
+class TestNamespace(unittest.TestCase):
+    """命名空间是写侧的硬前置：不给就拒，不许拿无命名空间的 MERGE 键写共享库。"""
+
+    def setUp(self):
+        import os
+        self.os = os
+        self.had = os.environ.pop("CBB_NAMESPACE", None)
+
+    def tearDown(self):
+        if self.had is not None:
+            self.os.environ["CBB_NAMESPACE"] = self.had
+
+    def test_无命名空间拒绝生成节点语句(self):
+        with self.assertRaises(RuntimeError) as cm:
+            m.node_statement({"name": "a", "entity_type": "人物", "lib": "character",
+                              "status": "provisional", "version": 1})
+        self.assertIn("命名空间", str(cm.exception))
 
 
 if __name__ == "__main__":

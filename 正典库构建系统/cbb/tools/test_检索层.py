@@ -111,6 +111,59 @@ def test_rerank_uses_rich_text_not_name(tmp_path):
     assert any("神秘眼睛" in d for d in seen["docs"]), f"精排打分对象不是富文本: {seen['docs']}"
 
 
+def test_第五路状态必落口径(tmp_path):
+    """启用/关闭/副本缺席/调用失败四种情形必须能分开——旧实现只在命中时才落一行。"""
+    import os
+    store = mk_store(tmp_path)
+    原 = os.environ.pop("CBB_FIFTH", None)
+    try:
+        r = 检索.hybrid_search("涡波", store, index_dir=None, top_k=3, rerank=False,
+                               embed_fn=lambda ts: [[0.5] * 8])
+        assert "第五路：" in r["口径"], r["口径"]
+        assert ("未启用" in r["口径"]) or ("缺席" in r["口径"]), r["口径"]
+        os.environ["CBB_FIFTH"] = "0"
+        r2 = 检索.hybrid_search("涡波", store, index_dir=tmp_path / "idx", top_k=3, rerank=False,
+                                embed_fn=lambda ts: [[0.5] * 8])
+        assert "关闭" in r2["口径"], r2["口径"]
+        os.environ.pop("CBB_FIFTH", None)
+        r3 = 检索.hybrid_search("涡波", store, index_dir=tmp_path / "idx", top_k=3, rerank=False,
+                                embed_fn=lambda ts: [[0.5] * 8])
+        assert "副本缺席" in r3["口径"], r3["口径"]   # 副本/桥件不在 ⇒ 明说，不静默
+    finally:
+        os.environ.pop("CBB_FIFTH", None)
+        if 原 is not None:
+            os.environ["CBB_FIFTH"] = 原
+
+
+def test_查询日志默认不写显式才写(tmp_path):
+    """默认零写入；给路径才写（旧版：默认开＋落点写死成别的项目的实例名＋失败静默）。"""
+    import os
+    store = mk_store(tmp_path)
+    os.environ.pop("CBB_QUERY_LOG", None)
+    检索.hybrid_search("涡波", store, index_dir=None, top_k=3, rerank=False,
+                       embed_fn=lambda ts: [[0.5] * 8])
+    assert list(tmp_path.rglob("query-log.jsonl")) == [], "默认不该写盘，却写出了文件"
+    out = tmp_path / "工作区" / "logs" / "query-log.jsonl"
+    r = 检索.hybrid_search("涡波", store, index_dir=None, top_k=3, rerank=False,
+                           embed_fn=lambda ts: [[0.5] * 8], query_log=out)
+    assert out.exists() and len(out.read_text(encoding="utf-8").splitlines()) == 1
+    assert "查询日志已写" in r["口径"], r["口径"]
+    os.environ["CBB_QUERY_LOG"] = str(tmp_path / "via-env" / "q.jsonl")
+    try:
+        检索.hybrid_search("涡波", store, index_dir=None, top_k=3, rerank=False,
+                           embed_fn=lambda ts: [[0.5] * 8])
+        assert (tmp_path / "via-env" / "q.jsonl").exists(), "env 形态没生效"
+    finally:
+        os.environ.pop("CBB_QUERY_LOG", None)
+
+
+def test_富文本投影要报原因(tmp_path):
+    """投影失败/缺席不再静默退回 name——降级本身必须是可读的一句话。"""
+    got, note = 检索._text_lookup(tmp_path / "没有这个目录", ["甲", "乙"])
+    assert got == ["甲", "乙"] and "缺席" in note, note
+    assert "name 串" in note, note
+
+
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for fn in fns:

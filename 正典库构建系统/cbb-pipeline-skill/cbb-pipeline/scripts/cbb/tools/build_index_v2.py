@@ -13,9 +13,12 @@ if sys_path not in __import__("sys").path:
     __import__("sys").path.insert(0, sys_path)
 
 m = importlib.import_module("neo4j_export")
-STORE = HERE.parent.parent / "迷深实战-本体库"      # cbb/tools → cbb → 项目根
-IDX = HERE.parent.parent / "迷深实战-工作区" / "索引" / "lancedb"
-PROG = HERE.parent.parent / "迷深实战-工作区" / "索引" / "_embed-progress.jsonl"
+import 路径惯例 as 惯  # 同级件：项目根/工作区按惯例推导，不再写死上一项目的实例名
+_STORE_ENV = __import__("os").environ.get("CBB_STORE")
+STORE = Path(_STORE_ENV) if _STORE_ENV else 惯.store_of(HERE.parent.parent)
+WS = 惯.workspace_of(STORE)
+IDX = WS / "索引" / "lancedb"
+PROG = WS / "索引" / "_embed-progress.jsonl"
 EMB = "http://127.0.0.1:8080/v1/embeddings"
 BATCH = 8
 TIMEOUT = 300

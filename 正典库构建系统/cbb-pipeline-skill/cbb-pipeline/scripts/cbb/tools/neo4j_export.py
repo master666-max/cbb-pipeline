@@ -25,7 +25,21 @@ from pathlib import Path
 CONTAINER = "neo4j-step0"
 BATCH = 250
 # A13：现役容器映射 7695→7474(HTTP)/7694→7687(Bolt)；与连续性巡检同默认（NEO4J_HTTP 可覆盖）
-DEFAULT_BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7695")
+DEFAULT_BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7474")  # 7474=Neo4j 出厂默认，非某项目的映射端口
+
+NS_HELP = "命名空间：同机共用一个图库时，MERGE 键不带 ns 就会把两本书的同名实体合并成一个节点、SET 互相覆盖；读侧不带 ns 就会把别的项目的实体算进自己的对账。"
+
+
+def namespace(cli: str | None = None) -> str:
+    """本项目唯一命名空间：--namespace 或 env CBB_NAMESPACE，二者皆无 ⇒ 拒绝导出。
+
+    旧版 MERGE 键只有 name/no ⇒ 同机多项目必串图（外部审计 2026-09-25 复查）。
+    与 环境自检.py 的图库归属判据同源：没有命名空间就谈不上"归属已判"。
+    """
+    ns = (cli or os.environ.get("CBB_NAMESPACE") or "").strip()
+    if not ns:
+        raise RuntimeError("缺命名空间：给 --namespace 或设 env CBB_NAMESPACE。"                           "无命名空间不许写共享图库")
+    return ns
 
 CONSTRAINT_CYPHER = ("CREATE CONSTRAINT entity_name_unique IF NOT EXISTS "
                      "FOR (e:Entity) REQUIRE e.name IS UNIQUE")
@@ -126,22 +140,25 @@ def collect_graph(store_root: Path) -> dict:
             "normalized_endpoints": normalized}
 
 
-def node_statement(n: dict) -> dict:
-    return {"statement": ("MERGE (e:Entity {name:$name}) "
+def node_statement(n: dict, ns: str | None = None) -> dict:
+    return {"statement": ("MERGE (e:Entity {ns:$ns, name:$name}) "
                           "ON CREATE SET e.created_tick = timestamp() "
-                          "SET e.entity_type=$entity_type, e.lib=$lib, e.status=$status, e.version=$version"),
-            "parameters": {"name": n["name"], "entity_type": n["entity_type"], "lib": n["lib"],
+                          "SET e.ns=$ns, e.entity_type=$entity_type, e.lib=$lib, "
+                          "e.status=$status, e.version=$version"),
+            "parameters": {"ns": namespace(ns), "name": n["name"],
+                           "entity_type": n["entity_type"], "lib": n["lib"],
                            "status": n["status"], "version": n["version"]}}
 
 
-def edge_statement(e: dict) -> dict:
+def edge_statement(e: dict, ns: str | None = None) -> dict:
     edge_id = e.get("edge_id") or edge_id_for(e["subject"], e["rel_type"], e["object"])
-    return {"statement": ("MERGE (s:Entity {name:$subject}) "
-                          "MERGE (o:Entity {name:$object}) "
-                          "MERGE (s)-[r:REL {rel_type:$rel_type}]->(o) "
-                          "SET r.claim=$claim, r.fact=$fact, r.edge_id=$edge_id, "
+    return {"statement": ("MERGE (s:Entity {ns:$ns, name:$subject}) "
+                          "MERGE (o:Entity {ns:$ns, name:$object}) "
+                          "MERGE (s)-[r:REL {ns:$ns, rel_type:$rel_type}]->(o) "
+                          "SET r.ns=$ns, r.claim=$claim, r.fact=$fact, r.edge_id=$edge_id, "
                           "r.valid_at=$valid_at, r.invalid_at=$invalid_at"),
-            "parameters": {"subject": e["subject"], "object": e["object"], "rel_type": e["rel_type"],
+            "parameters": {"ns": namespace(e.get("ns")), "subject": e["subject"],
+                           "object": e["object"], "rel_type": e["rel_type"],
                            "claim": e["claim"], "fact": e["fact"],
                            "edge_id": edge_id,
                            "valid_at": e.get("valid_at"), "invalid_at": e.get("invalid_at")}}
@@ -201,13 +218,13 @@ def chunks(seq, n):
         yield seq[i:i + n]
 
 
-def chapter_statement(m: dict) -> dict:
+def chapter_statement(m: dict, ns: str | None = None) -> dict:
     """U-F03：章节点 + (章)-[:MENTIONS]->(实体) 边（MERGE 全幂等，重放零增殖）。
     "某一章出现了什么"＝一条查询；章节点的编号与锚点章的 chapter 同轴。"""
-    return {"statement": ("MERGE (c:Chapter {no:$no}) "
-                          "MERGE (e:Entity {name:$name}) "
-                          "MERGE (c)-[:MENTIONS]->(e)"),
-            "parameters": {"no": m["chapter"], "name": m["name"]}}
+    return {"statement": ("MERGE (c:Chapter {ns:$ns, no:$no}) "
+                          "MERGE (e:Entity {ns:$ns, name:$name}) "
+                          "MERGE (c)-[:MENTIONS {ns:$ns}]->(e)"),
+            "parameters": {"ns": namespace(m.get("ns")), "no": m["chapter"], "name": m["name"]}}
 
 
 def export_graph(graph: dict, commit) -> dict:

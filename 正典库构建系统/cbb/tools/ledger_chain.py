@@ -11,8 +11,8 @@
    仪器身份标识（R-025 同精神：换配置=换仪器）。
 
 用法：
-  py -X utf8 ledger_chain.py genesis --store 迷深实战-本体库   # 存量库基线登记（幂等）
-  py -X utf8 ledger_chain.py verify  --store 迷深实战-本体库   # 全链校验+当前文件 sha 复核
+  py -X utf8 ledger_chain.py genesis --store <本项目>-本体库   # 存量库基线登记（幂等）
+  py -X utf8 ledger_chain.py verify  --store <本项目>-本体库   # 全链校验+当前文件 sha 复核
   py -X utf8 ledger_chain.py fingerprint --ranker R --criterion C --sort S --params-json '{}'
 """
 from __future__ import annotations

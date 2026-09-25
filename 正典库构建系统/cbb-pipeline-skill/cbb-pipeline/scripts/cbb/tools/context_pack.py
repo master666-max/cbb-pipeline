@@ -10,12 +10,12 @@
   ③ 最近 N 章一行提要（rolling-summary.md 尾部 30 章；文件不存在则占位）
   ④ 判例指针
 
-种子双源：jsonl 库（aliases.jsonl/appearances.jsonl/foreshadow 库）+ 迷深清洗工作
+种子双源：jsonl 库（aliases.jsonl/appearances.jsonl/foreshadow 库）+ 可选外部统合表
 《_alias25.json》（异名统合表——canonical 匹配合并，库内优先）。
 生成全程机械规则零裁量；超预算截断顺序=②尾部→①尾部（确定性）。
 
-用法：py -X utf8 context_pack.py --store 迷深实战-本体库 \
-        --alias-seed "…/_alias25.json" --out 迷深实战-工作区/context-pack.md
+用法：py -X utf8 context_pack.py --store <本项目>-本体库 \
+        --alias-seed <统合表.json> --out <工作区>/context-pack.md
 """
 from __future__ import annotations
 
@@ -112,7 +112,8 @@ def build(store: Path, alias_seed: Path | None, rolling: Path | None,
     不可用→机械序（同形）。不提供→行为与历史版本逐字节一致。"""
     sec1 = entity_roster(store, alias_seed)
     sec2 = active_foreshadows(store)
-    sec3 = rolling_digest(rolling or store.parent / "迷深实战-工作区" / "rolling-summary.md")
+    import 路径惯例 as 惯
+    sec3 = rolling_digest(rolling or 惯.workspace_of(store) / "rolling-summary.md")
     prec = Path(__file__).resolve().parent / "判例.md"
     n_prec = len(re.findall(r"^\d+\. ", prec.read_text(encoding="utf-8"), re.M)) if prec.exists() else 0
     sec4 = [f"- cbb/tools/判例.md（当前 {n_prec} 条，连读《抽取规范.md》）"]
@@ -149,12 +150,16 @@ def build(store: Path, alias_seed: Path | None, rolling: Path | None,
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="上下文包生成器（确定性）")
-    ap.add_argument("--store", default="迷深实战-本体库")
-    ap.add_argument("--alias-seed",
-                    default=r"..\..\迷深清洗工作\异世界迷宫最深部_知识库\分析\_角色语料库\_alias25.json")
-    ap.add_argument("--rolling", default=r"迷深实战-工作区\rolling-summary.md")
-    ap.add_argument("--out", default=r"迷深实战-工作区\context-pack.md")
+    import 路径惯例 as 惯
+    ap.add_argument("--store", default=os.environ.get("CBB_STORE") or str(惯.store_of(Path.cwd())),
+                    help="本项目本体库（缺省：env CBB_STORE > 按惯例名从 cwd 推）")
+    ap.add_argument("--alias-seed", default=None,
+                    help="别名统合表 json；不给就只用库内别名（旧默认是某台机器上的仓外长路径）")
+    ap.add_argument("--rolling", default=None, help="缺省＝<工作区>/rolling-summary.md")
+    ap.add_argument("--out", default=None, help="缺省＝<工作区>/context-pack.md")
     ns = ap.parse_args(argv)
+    if not ns.out:   # 不给 --out 就落到本项目工作区（旧默认是写死的上一项目路径）
+        ns.out = str(惯.workspace_of(Path(ns.store)) / "context-pack.md")
     text = build(Path(ns.store), Path(ns.alias_seed) if ns.alias_seed else None,
                  Path(ns.rolling) if ns.rolling else None)
     Path(ns.out).write_text(text, encoding="utf-8")

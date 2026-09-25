@@ -91,8 +91,25 @@ def file_loader(store_root: Path | str) -> dict:
             "backend": "file", "skipped_alias_rows": skipped}
 
 
-def _cypher(base: str, database: str, statement: str, user: str, password: str) -> list[dict]:
-    payload = json.dumps({"statements": [{"statement": statement}]}).encode("utf-8")
+READ_ONLY_FORBIDDEN = ("create", "merge", "set ", "delete", "remove", "drop", "call {",
+                       "load csv", "foreach", "import csv")
+
+
+def _assert_read_only(statement: str) -> None:
+    """本件自称"只读巡检"，但走的是 `/db/{db}/tx/commit`——那是**能写**的端点。
+    旧版只靠注释声明只读；现在把它变成机械断言：写关键字出现即拒发，
+    免得一次正则写错的 Cypher 把派生层变成改写层（图与真源从此两头不一致，还没人知道）。"""
+    low = " " + statement.lower() + " "
+    hit = [k for k in READ_ONLY_FORBIDDEN if k in low]
+    if hit:
+        raise ValueError(f"连续性巡检只允许读查询，语句含写关键字 {hit}：{statement[:90]}")
+
+
+def _cypher(base: str, database: str, statement: str, user: str, password: str,
+            parameters: dict | None = None) -> list[dict]:
+    _assert_read_only(statement)
+    stmt = {"statement": statement, "parameters": parameters or {}}
+    payload = json.dumps({"statements": [stmt]}).encode("utf-8")
     req = urllib.request.Request(base.rstrip("/") + f"/db/{database}/tx/commit", data=payload,
                                  headers={"Content-Type": "application/json",
                                           "Authorization": "Basic " + base64.b64encode(
@@ -105,17 +122,26 @@ def _cypher(base: str, database: str, statement: str, user: str, password: str) 
 
 
 def graph_loader(base: str | None = None, database: str = "neo4j",
-                 user: str | None = None, password: str | None = None) -> dict:
-    base = base or os.environ.get("NEO4J_HTTP", "http://localhost:7695")
+                 user: str | None = None, password: str | None = None,
+                 ns: str | None = None) -> dict:
+    base = base or os.environ.get("NEO4J_HTTP", "http://localhost:7474")  # 7474=Neo4j 出厂默认，非某项目的映射端口
     user = user or os.environ.get("NEO4J_USER", "neo4j")
     password = password or os.environ.get("NEO4J_PASSWORD")
     if not password:
         raise RuntimeError("缺 NEO4J_PASSWORD（D-004：凭证只走环境变量）")
-    ents = [r["row"][0] for r in _cypher(base, database, "MATCH (e:Entity) RETURN e.name", user, password)]
+    # 读侧必须带命名空间过滤：不带就是"一条查询扫到别人项目的实体"，产出零孤悬零矛盾的假干净
+    ns = (ns or os.environ.get("CBB_NAMESPACE") or "").strip()
+    if not ns:
+        raise RuntimeError("缺命名空间：graph 载体需 --namespace/env CBB_NAMESPACE；"
+                           "无过滤的全库读不许当巡检依据（改用 --backend file）")
+    ents = [r["row"][0] for r in _cypher(base, database,
+                                         "MATCH (e:Entity) WHERE e.ns=$ns RETURN e.name",
+                                         user, password, {"ns": ns})]
     rels = [{"subject": r["row"][0], "object": r["row"][1], "rel_type": r["row"][2], "record_id": None}
             for r in _cypher(base, database,
-                             "MATCH (s:Entity)-[r:REL]->(o:Entity) RETURN s.name, o.name, r.rel_type",
-                             user, password)]
+                             "MATCH (s:Entity)-[r:REL]->(o:Entity) "
+                             "WHERE s.ns=$ns AND o.ns=$ns RETURN s.name, o.name, r.rel_type",
+                             user, password, {"ns": ns})]
     return {"entities": set(ents), "aliases": {}, "relations": rels,
             "appearances": None, "deaths": {},
             "capabilities": {"entities": True, "aliases": False, "relations": True,
@@ -127,7 +153,7 @@ def graph_loader(base: str | None = None, database: str = "neo4j",
 
 
 def probe_graph(base: str | None = None, timeout: float = 4.0) -> bool:
-    base = base or os.environ.get("NEO4J_HTTP", "http://localhost:7695")
+    base = base or os.environ.get("NEO4J_HTTP", "http://localhost:7474")  # 7474=Neo4j 出厂默认，非某项目的映射端口
     try:
         with urllib.request.urlopen(base.rstrip("/") + "/", timeout=timeout) as r:
             return r.status == 200

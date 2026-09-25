@@ -60,6 +60,8 @@ def search(query: str, n: int = 5, engine: str = "cn.bing") -> dict:
 
 def guard_block_admission(item: dict) -> None:
     """准入闸（供调用方显式调用）：任何试图把网络补充材料当正典证据的动作在此拦下。"""
+    if not item or not any(k in item for k in ("admissible", "confidence", "record_id", "source")):
+        raise ValueError("准入闸收到无来源、无标记的条目：判不了就不放行"                               "（缺席/为空/通过不许同形）")
     if item.get("admissible") is False or item.get("confidence") == "low":
         raise PermissionError("web_supplement 材料不可入正典（admissible=False 硬标记）")
 

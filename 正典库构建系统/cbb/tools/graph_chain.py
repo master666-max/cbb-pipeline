@@ -17,7 +17,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 import os
-BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7695")  # 跨机：env 覆盖
+BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7474")  # 7474=Neo4j 出厂默认，非某项目的映射端口  # 跨机：env 覆盖
 _PW = None
 
 

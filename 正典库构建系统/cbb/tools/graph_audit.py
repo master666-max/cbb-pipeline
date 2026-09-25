@@ -24,19 +24,27 @@ sys.path.insert(0, str(HERE.parent / "contracts"))
 from neo4j_export import collect_graph  # noqa: E402
 
 
-def audit(store_root: Path, base: str | None = None) -> dict:
+def audit(store_root: Path, base: str | None = None, ns: str | None = None,
+          run=None) -> dict:
+    """run=(stmt, params)->rows 是可注入接缝：无图库环境下也能验四断言面的算术（测试用）。"""
     import os
-    base = base or os.environ.get("NEO4J_HTTP", "http://localhost:7695")
+    base = base or os.environ.get("NEO4J_HTTP", "http://localhost:7474")  # 7474=Neo4j 出厂默认，非某项目的映射端口
     import graph_chain as gc  # 复用鉴权与 _cypher
     gc.BASE = base
+    ns = (ns or os.environ.get("CBB_NAMESPACE") or "").strip()
+    if not ns:
+        raise RuntimeError("缺命名空间：图对账必须限定在本项目命名空间内，否则是把别的项目的节点算进自己的差异清单")
+    _q = run or (lambda stmt, params=None: gc._cypher(stmt, params or {}))
     store_root = Path(store_root)
     graph = collect_graph(store_root)
     lib_nodes = {n["name"] for n in graph["nodes"]}
     lib_edges = {(e["subject"], e["rel_type"], e["object"]) for e in graph["edges"]}
 
-    g_nodes = {d["row"][0] for d in gc._cypher("MATCH (a:Entity) RETURN a.name AS n", {})}
-    g_edges = {(d["row"][0], d["row"][1], d["row"][2]) for d in gc._cypher(
-        "MATCH (a:Entity)-[r:REL]->(b:Entity) RETURN a.name, r.rel_type, b.name", {})}
+    g_nodes = {d["row"][0] for d in _q(
+        "MATCH (a:Entity) WHERE a.ns=$ns RETURN a.name AS n", {"ns": ns})}
+    g_edges = {(d["row"][0], d["row"][1], d["row"][2]) for d in _q(
+        "MATCH (a:Entity)-[r:REL]->(b:Entity) "
+        "WHERE a.ns=$ns AND b.ns=$ns RETURN a.name, r.rel_type, b.name", {"ns": ns})}
 
     extra_nodes = sorted(g_nodes - lib_nodes)
     missing_nodes = sorted(lib_nodes - g_nodes)
@@ -49,8 +57,10 @@ def audit(store_root: Path, base: str | None = None) -> dict:
         lib_temporal[(e["subject"], e["rel_type"], e["object"])] = (
             e.get("valid_at"), e.get("invalid_at"))
     temporal_mismatch = []
-    for d in gc._cypher("MATCH (a:Entity)-[r:REL]->(b:Entity) "
-                        "RETURN a.name, r.rel_type, b.name, r.valid_at, r.invalid_at LIMIT 5000", {}):
+    for d in _q("MATCH (a:Entity)-[r:REL]->(b:Entity) "
+                "WHERE a.ns=$ns AND b.ns=$ns "
+                "RETURN a.name, r.rel_type, b.name, r.valid_at, r.invalid_at LIMIT 5000",
+                {"ns": ns}):
         row = d["row"]
         key = (row[0], row[1], row[2])
         if key in lib_temporal and lib_temporal[key] != (row[3], row[4]):
@@ -68,8 +78,8 @@ def audit(store_root: Path, base: str | None = None) -> dict:
             if eid:
                 sidecar_ids.add(eid)
     if sidecar_ids:
-        graph_edge_ids = {d["row"][0] for d in gc._cypher(
-            "MATCH ()-[r:REL]->() RETURN r.edge_id AS e", {})}
+        graph_edge_ids = {d["row"][0] for d in _q(
+            "MATCH ()-[r:REL]->() WHERE r.ns=$ns RETURN r.edge_id AS e", {"ns": ns})}
         unknown_edge_ids = sorted(sidecar_ids - graph_edge_ids)[:20]
 
     report = {
@@ -83,7 +93,9 @@ def audit(store_root: Path, base: str | None = None) -> dict:
         "时序不一致数": len(temporal_mismatch), "时序不一致样例": temporal_mismatch[:5],
         "D2侧车": {"edge_id 数": len(sidecar_ids), "图上无此 edge_id 数": len(unknown_edge_ids),
                    "样例": unknown_edge_ids},
-        "口径": "图=neo4j_export 派生（章收口增量）；差异披露不改写——导出缺口走重导，库外节点走隔离区裁决",
+        "命名空间": ns,
+        "口径": "图=neo4j_export 派生（章收口增量），且**读侧已按 ns 过滤**；"
+                "差异披露不改写——导出缺口走重导，库外节点走隔离区裁决",
     }
     return report
 
@@ -91,7 +103,7 @@ def audit(store_root: Path, base: str | None = None) -> dict:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--store", required=True)
-    ap.add_argument("--base", default="http://localhost:7695",
+    ap.add_argument("--base", default=os.environ.get("NEO4J_HTTP", ""),
                     help="派生图 HTTP 端点（与实例解耦——通用件，无实例默认值）")
     ap.add_argument("--out", default="")
     ns = ap.parse_args(argv)
