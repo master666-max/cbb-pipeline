@@ -14,7 +14,7 @@
 
 版本与变更史：见同目录 RELEASE.md（本文件头不承载修复流水账——v3.8.2 中性化修正）
 """
-import sys, os, re, json, hashlib, time, argparse, urllib.request, tempfile, shutil, contextlib  # v3.10/M7：写锁上下文依赖
+import sys, os, re, json, hashlib, time, argparse, urllib.request, tempfile, shutil
 from pathlib import Path
 
 VERSION = "3.9"  # v3.9/衔尾蛇工单：法层参数外置(W-1/W-2)+run-tests修复(W-3)+state并发锁(W-4)+反思前提注记(W-6)
@@ -231,28 +231,22 @@ def line_hash(prev: str, text: str) -> str: return sha((prev + "\x00" + text).en
 
 def chain_append(audit_dir: Path, text: str, prev_override: str = None) -> str:
     """向 audit 目录追加一行并保证跨月链连续：新月首行 prev=上月文件末行哈希（P1-3/X-018 的根治形态）。
-    prev_override 仅用于 migrate 首次续接 legacy 链（目录已有 v3 行时忽略，防分叉）。
-    v3.10/M7（R6-②）：读尾→追加全程持 .chain.lock——并发双写者排队而非同读尾哈希分叉。"""
+    prev_override 仅用于 migrate 首次续接 legacy 链（目录已有 v3 行时忽略，防分叉）。"""
     audit_dir.mkdir(parents=True, exist_ok=True)
-    _lk = audit_dir / ".chain.lock"
-    _acquire_lock_dir(_lk, "chain")
-    try:
-        files = sorted(audit_dir.glob("lifelog-*.md"))
-        if prev_override is not None and not files:
-            prev = prev_override
-        else:
-            prev = ""
-            if files:
-                last = files[-1].read_text(encoding="utf-8").strip().splitlines()
-                if last:
-                    m = re.search(r"h:([0-9a-f]{64})", last[-1]);  prev = m.group(1) if m else ""
-        h = line_hash(prev, text)
-        stamp = time.strftime("%Y-%m")
-        f = audit_dir / f"lifelog-{stamp}.md"
-        with f.open("a", encoding="utf-8") as fh:
-            fh.write(f"- {time.strftime('%Y-%m-%d %H:%M')} | prev:{prev or 'genesis'} | h:{h} | {text}\n")
-    finally:
-        _release_lock_dir(_lk)
+    files = sorted(audit_dir.glob("lifelog-*.md"))
+    if prev_override is not None and not files:
+        prev = prev_override
+    else:
+        prev = ""
+        if files:
+            last = files[-1].read_text(encoding="utf-8").strip().splitlines()
+            if last:
+                m = re.search(r"h:([0-9a-f]{64})", last[-1]);  prev = m.group(1) if m else ""
+    h = line_hash(prev, text)
+    stamp = time.strftime("%Y-%m")
+    f = audit_dir / f"lifelog-{stamp}.md"
+    with f.open("a", encoding="utf-8") as fh:
+        fh.write(f"- {time.strftime('%Y-%m-%d %H:%M')} | prev:{prev or 'genesis'} | h:{h} | {text}\n")
     return h
 
 def validate_entry(e: dict) -> list:
@@ -677,14 +671,13 @@ def cmd_build(out, lib=None):
         lib = Path(lib)
         if not (lib / "state.json").exists():  # v3.6/K-005
             sys.exit(f"build-docs: --lib 需为已安装库（{lib} 缺 state.json）")
-        with _write_lock(lib, "build-docs"):  # v3.10/M7：R6-② 补锁——渲染+state RMW 全程互斥
-            st = json.loads((lib / "state.json").read_text(encoding="utf-8"))
-            (lib / "AGENTS.md").write_text(render_entrypoint(st["level"]), encoding="utf-8")
-            (lib / "README.md").write_text(render_readme(st["level"]), encoding="utf-8")
-            st["version"] = VERSION; st["package_sha256"] = self_hash()  # v3.5/J-005：state 随包升级
-            st["law_params"] = {k: TUNABLES[k]["value"] for k in ("law_w_kw", "law_w_content", "law_w_imp", "law_w_age", "law_filter_zero")}  # v3.9/W-2：存量库升级时同步法层快照
-            st["merkle_root"] = merkle_root(lib, exclude={"state.json"})  # v3.4 补丁：渲染件刷新也是写操作，Y-001 时序对齐
-            (lib / "state.json").write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+        st = json.loads((lib / "state.json").read_text(encoding="utf-8"))
+        (lib / "AGENTS.md").write_text(render_entrypoint(st["level"]), encoding="utf-8")
+        (lib / "README.md").write_text(render_readme(st["level"]), encoding="utf-8")
+        st["version"] = VERSION; st["package_sha256"] = self_hash()  # v3.5/J-005：state 随包升级
+        st["law_params"] = {k: TUNABLES[k]["value"] for k in ("law_w_kw", "law_w_content", "law_w_imp", "law_w_age", "law_filter_zero")}  # v3.9/W-2：存量库升级时同步法层快照
+        st["merkle_root"] = merkle_root(lib, exclude={"state.json"})  # v3.4 补丁：渲染件刷新也是写操作，Y-001 时序对齐
+        (lib / "state.json").write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
         msg += f"；库渲染件已按 v{VERSION} 刷新（AGENTS.md / README.md，level={st['level']}）"
     print(msg)
 
@@ -785,59 +778,12 @@ def _deliver(b: dict, mods: list, packages: list, level: str, target: Path):
         (target / ".library-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")  # v3.2/C-003：回写不漏账
     return delivered, slot_files, new_pkgs
 
-def _acquire_lock_dir(lk: Path, tag: str):
-    """v3.10/M7（R6-② 补锁）：原子锁目录获取（W-4 沙盒X4原语通用化）——并发写者排队而非互踩；
-    10s 超时；锁目录 mtime 超 60s 视为持有者崩溃残留，回收重试（防陈锁死守）。
-    Windows 注（2×50 压测实证）：rmdir 后目录短暂处于 delete-pending，此刻 mkdir 报
-    WinError 5（PermissionError）而非 FileExistsError——两态同等视作「锁在位」重试。"""
-    _t0 = time.time()
-    while True:
-        try:
-            lk.mkdir(parents=True); return
-        except (FileExistsError, PermissionError):
-            if time.time() - _t0 > 10:
-                try:
-                    if time.time() - lk.stat().st_mtime > 60:
-                        _release_lock_dir(lk); _t0 = time.time(); continue
-                except OSError:
-                    continue
-                sys.exit(f"v3.10/M7：{tag} 锁获取超时（10s，锁非陈旧不夺）")
-            time.sleep(0.005)
-
-def _release_lock_dir(lk: Path):
-    """v3.10/M7：锁释放=按名 os.rmdir（锁目录恒空，单系统调用无 rmtree 的打开-删除窗口）；
-    短重试吞瞬时 WinError 5（实测 2×50 并发压测：rmtree 释放可撞他方 mkdir 竞态致写者崩溃）；
-    最终失败不抛——数据写已提交，残留锁由获取侧 60s 陈锁回收兜底。"""
-    for _ in range(20):
-        try:
-            os.rmdir(lk); return
-        except FileNotFoundError:
-            return
-        except OSError:
-            time.sleep(0.01)
-
-@contextlib.contextmanager
-def _write_lock(lib: Path, why: str):
-    """v3.10/M7（R6-②）：state 写锁上下文——五处 state 写路径与 append 共用同一互斥面。
-    锁序恒为 state → chain/ledger（后两者助手不反向取 state 锁），无死锁面。"""
-    _lk = lib / ".state.lock"
-    _acquire_lock_dir(_lk, f"state({why})")
-    try:
-        yield
-    finally:
-        _release_lock_dir(_lk)
-
 def _ledger_append(target: Path, action: str, detail: str):
     """v3.2/C-005：公理 C 落地——ledger/changes.jsonl 是唯一变更账本（audit 是审计面，账本是变更面）"""
     ledger = target / "ledger" / "changes.jsonl"
     ledger.parent.mkdir(parents=True, exist_ok=True)
-    _lk2 = target / ".ledger.lock"
-    _acquire_lock_dir(_lk2, "ledger")  # v3.10/M7：账本行写互斥（防并发交错半行）
-    try:
-        with ledger.open("a", encoding="utf-8") as fh:
-            fh.write(json.dumps({"ts": time.strftime("%F %T"), "action": action, "detail": detail}, ensure_ascii=False) + "\n")
-    finally:
-        _release_lock_dir(_lk2)
+    with ledger.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps({"ts": time.strftime("%F %T"), "action": action, "detail": detail}, ensure_ascii=False) + "\n")
 
 def cmd_install(level: str, packages: list, target: Path, yes: bool, redeliver: bool = False):
     if level not in LEVELS: sys.exit(f"未知档位 {level}")
@@ -1068,11 +1014,21 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5, as_of_tick=None):
         _ledger_append(lib, "append", f"entry={e['id']} → {dest.name}")  # v3.3：账本先于根（根须含账本行）
         st_path = lib / "state.json"
         if st_path.exists():
-            with _write_lock(lib, "append"):  # v3.10/M7：共用锁助手（原 W-4 内联块等价重构，行为不变）
+            _lock = lib / ".state.lock"                       # v3.9/W-4：锁目录原子创建（沙盒X4验证的原语）
+            _t0 = time.time()
+            while True:
+                try:
+                    _lock.mkdir(parents=True); break
+                except FileExistsError:
+                    if time.time() - _t0 > 10: sys.exit("v3.9/W-4：state 锁获取超时（10s）")
+                    time.sleep(0.005)
+            try:
                 st = json.loads(st_path.read_text(encoding="utf-8"))
                 st["importance_accum"] = st.get("importance_accum", 0) + int(e.get("importance", 0))
                 st["merkle_root"] = merkle_root(lib, exclude={"state.json"})  # v3.3/Y-001：写后刷根（audit+ledger 均已入根）
                 st_path.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+            finally:
+                shutil.rmtree(_lock, ignore_errors=True)
         print(f"append: {e['id']} 事件哈希 {h[:16]}…")
     elif op == "retrieve":
         scored, bad_ts = _rank_entries(lib, text, as_of_tick=as_of_tick)
@@ -1104,16 +1060,15 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5, as_of_tick=None):
         print(f"eval: n={n}  recall@5={base['recall@5']}  MRR={base['MRR']}（基线写入 evals/baseline.json，misses {len(misses)} 条；v2.x 参照线 recall@5=0.455——条目集不同，仅参照）{degrade}")
         if degrade: sys.exit(2)
     elif op == "wrapup":
-        with _write_lock(lib, "wrapup"):  # v3.10/M7：R6-② 补锁——state RMW+audit+ledger 全程互斥
-            st = lib / "state.json"; s = json.loads(st.read_text(encoding="utf-8"))
-            decay = TUNABLES["emotion_decay"]["value"]
-            emo = s.get("emotion") or {"valence": 0.0, "arousal": 0.5, "certainty": 0.5, "stakes": 0.0}
-            for k4 in emo: emo[k4] = round(emo[k4] * decay, 3)  # v3.1/V-005：四维统一衰减
-            s["emotion"] = emo
-            chain_append(lib / "audit", f"wrap-up emotion={emo}（根随链后重算）")  # v3.3/Y-001：先 audit 后算根
-            _ledger_append(lib, "wrapup", f"emotion={emo}")  # 账本先于根
-            s["merkle_root"] = merkle_root(lib, exclude={"state.json"})
-            st.write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding="utf-8")
+        st = lib / "state.json"; s = json.loads(st.read_text(encoding="utf-8"))
+        decay = TUNABLES["emotion_decay"]["value"]
+        emo = s.get("emotion") or {"valence": 0.0, "arousal": 0.5, "certainty": 0.5, "stakes": 0.0}
+        for k4 in emo: emo[k4] = round(emo[k4] * decay, 3)  # v3.1/V-005：四维统一衰减
+        s["emotion"] = emo
+        chain_append(lib / "audit", f"wrap-up emotion={emo}（根随链后重算）")  # v3.3/Y-001：先 audit 后算根
+        _ledger_append(lib, "wrapup", f"emotion={emo}")  # 账本先于根
+        s["merkle_root"] = merkle_root(lib, exclude={"state.json"})
+        st.write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding="utf-8")
         msg = f"wrap-up 完成，四维情绪 ×{decay}，库根 {s['merkle_root'][:16]}…"
         thr = TUNABLES["reflect_importance_threshold"]["value"]  # v3.2/C-007：主轨触发判定
         if s.get("importance_accum", 0) >= thr:
@@ -1157,13 +1112,12 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5, as_of_tick=None):
         _ledger_append(lib, "reflect", f"materials={fn.name}")
         print(f"reflect: 素材已打包 → {fn}（触发：importance_accum={acc}；合成后重置 accum）")
     elif op == "reflect-done":  # v3.6/K-003：合成完成的重置走账本（消灭手工编辑 state.json 的绕行）
-        with _write_lock(lib, "reflect-done"):  # v3.10/M7：R6-② 补锁
-            st_path = lib / "state.json"; s = json.loads(st_path.read_text(encoding="utf-8"))
-            s["importance_accum"] = 0
-            _ledger_append(lib, "reflect-done", "accum→0（反思合成已入库）")
-            chain_append(lib / "audit", "reflect-done：importance_accum 置 0")
-            s["merkle_root"] = merkle_root(lib, exclude={"state.json"})
-            st_path.write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding="utf-8")
+        st_path = lib / "state.json"; s = json.loads(st_path.read_text(encoding="utf-8"))
+        s["importance_accum"] = 0
+        _ledger_append(lib, "reflect-done", "accum→0（反思合成已入库）")
+        chain_append(lib / "audit", "reflect-done：importance_accum 置 0")
+        s["merkle_root"] = merkle_root(lib, exclude={"state.json"})
+        st_path.write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding="utf-8")
         print("reflect-done: importance_accum 已重置并入账本/审计链")
     elif op == "doctor":  # v3.4/H-006：三方对账（memory↔audit↔ledger），只报告不自动修
         mem = {f.stem for f in (lib / "memory").rglob("*.json")}
@@ -1188,8 +1142,8 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5, as_of_tick=None):
                 m = re.search(r"prev:(\S+) \| h:([0-9a-f]{64}) \| (.*)$", line)
                 if not m: chain_bad.append(f"{ap.name}:{idx}（格式异常）"); prev_tail = None; continue
                 p2, h2, text = (m.group(1) if m.group(1) != "genesis" else ""), m.group(2), m.group(3)
-                if prev_tail is not None and p2 != prev_tail:  # v3.10/M7：月内行间连续性并入（R6-② 分叉不可检闭）
-                    chain_bad.append(f"{ap.name}:{idx}（{'跨月断链' if idx == 1 else '月内断链/分叉'}）")
+                if idx == 1 and prev_tail is not None and p2 != prev_tail:
+                    chain_bad.append(f"{ap.name}:{idx}（跨月断链）")
                 if line_hash(p2, text) != h2: chain_bad.append(f"{ap.name}:{idx}")
                 prev_tail = h2
         st_path5 = lib / "state.json"  # v3.8/N-003：第五态——state 根对账
@@ -1211,42 +1165,40 @@ def cmd_engine(op: str, lib, text: str = "", k: int = 5, as_of_tick=None):
         if not (o1 or o2 or o3 or o4) and not chain_bad and not state_bad: print("  五态 全一致")
         else: print("  → 差异等用户裁决，不自动修（铁律1）")
     elif op == "tombstone":  # v3.10/M3 件五：墓碑状态机（v893 对等）——标记退出检索，原位保留审计窗口
-        with _write_lock(lib, "tombstone"):  # v3.10/M7：R6-② 补锁——条目改写+账本+state 全程互斥
-            tid = text.strip()
-            tp = None
-            for f in (lib / "memory").rglob("*.json"):
-                if f.stem == tid: tp = f; break
-            if not tp: sys.exit(f"engine tombstone: 条目不存在 {tid}")
-            te = json.loads(tp.read_text(encoding="utf-8"))
-            te.setdefault("validity", {})["tombstone"] = True
-            te["validity"]["tombstoned_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
-            tp.write_text(json.dumps(te, ensure_ascii=False, indent=1), encoding="utf-8")
-            _ledger_append(lib, "tombstone", f"entry={tid} → tombstone（原位保留）")
-            if (lib / "state.json").exists():
-                st = json.loads((lib / "state.json").read_text(encoding="utf-8"))
-                st["merkle_root"] = merkle_root(lib, exclude={"state.json"})  # v3.3/Y-001：写后刷根
-                (lib / "state.json").write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+        tid = text.strip()
+        tp = None
+        for f in (lib / "memory").rglob("*.json"):
+            if f.stem == tid: tp = f; break
+        if not tp: sys.exit(f"engine tombstone: 条目不存在 {tid}")
+        te = json.loads(tp.read_text(encoding="utf-8"))
+        te.setdefault("validity", {})["tombstone"] = True
+        te["validity"]["tombstoned_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        tp.write_text(json.dumps(te, ensure_ascii=False, indent=1), encoding="utf-8")
+        _ledger_append(lib, "tombstone", f"entry={tid} → tombstone（原位保留）")
+        if (lib / "state.json").exists():
+            st = json.loads((lib / "state.json").read_text(encoding="utf-8"))
+            st["merkle_root"] = merkle_root(lib, exclude={"state.json"})  # v3.3/Y-001：写后刷根
+            (lib / "state.json").write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"tombstone: {tid} 已标记（退出检索，原位保留审计窗口）")
     elif op == "retire":  # v3.1/V-013：失效条目 TTL 出仓（移 attic，留痕）
-        with _write_lock(lib, "retire"):  # v3.10/M7：R6-② 补锁——扫描+移动+账本+state 全程互斥
-            ttl = TUNABLES["invalid_ttl_days"]["value"]; moved = []  # v3.2/C-008 改名
-            for f in (lib / "memory").rglob("*.json"):
-                e = json.loads(f.read_text(encoding="utf-8"))
-                inv = (e.get("validity") or {}).get("t_invalid")
-                if not inv: continue
-                try: ts = time.mktime(time.strptime(str(inv)[:10], "%Y-%m-%d"))
-                except Exception: continue
-                if (time.time() - ts) / 86400 >= ttl:
-                    dest = lib / "memory" / "attic" / f.name
-                    dest.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.move(str(f), str(dest)); moved.append(f.name)
-            chain_append(lib / "audit", f"retire: {len(moved)} 条失效超 {ttl} 天移入 attic（留痕不销毁）")
-            _ledger_append(lib, "retire", f"moved={len(moved)} ttl={ttl}")  # 账本先于根
-            st_path = lib / "state.json"  # v3.3/Y-001：写后刷根（audit+ledger 均已入根）
-            if st_path.exists():
-                st = json.loads(st_path.read_text(encoding="utf-8"))
-                st["merkle_root"] = merkle_root(lib, exclude={"state.json"})
-                st_path.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+        ttl = TUNABLES["invalid_ttl_days"]["value"]; moved = []  # v3.2/C-008 改名
+        for f in (lib / "memory").rglob("*.json"):
+            e = json.loads(f.read_text(encoding="utf-8"))
+            inv = (e.get("validity") or {}).get("t_invalid")
+            if not inv: continue
+            try: ts = time.mktime(time.strptime(str(inv)[:10], "%Y-%m-%d"))
+            except Exception: continue
+            if (time.time() - ts) / 86400 >= ttl:
+                dest = lib / "memory" / "attic" / f.name
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(str(f), str(dest)); moved.append(f.name)
+        chain_append(lib / "audit", f"retire: {len(moved)} 条失效超 {ttl} 天移入 attic（留痕不销毁）")
+        _ledger_append(lib, "retire", f"moved={len(moved)} ttl={ttl}")  # 账本先于根
+        st_path = lib / "state.json"  # v3.3/Y-001：写后刷根（audit+ledger 均已入根）
+        if st_path.exists():
+            st = json.loads(st_path.read_text(encoding="utf-8"))
+            st["merkle_root"] = merkle_root(lib, exclude={"state.json"})
+            st_path.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"retire: 移动 {len(moved)} 条 → memory/attic/{','.join(moved[:5])}")
     elif op == "shadow":
         chain_append(lib / "audit", f"shadow: {text} [只记日志，不改状态——公理G]")
@@ -1756,86 +1708,6 @@ def t_root_refresh_on_write():
         with contextlib.redirect_stdout(_io.StringIO()): cmd_engine("retire", tmp)
         st = json.loads((tmp / "state.json").read_text(encoding="utf-8"))
         assert st["merkle_root"] == merkle_root(tmp, exclude={"state.json"}), "retire 后根未刷新"
-    finally:
-        shutil.rmtree(tmp, ignore_errors=True)
-
-@t
-def t_br2_law_params_wiring():
-    """B-R2/R6-①：检索读 state.law_params 快照、缺省回退出厂——双路径判别实测"""
-    import io as _io, contextlib
-    tmp = _tmpdir("_bsv3t_brr2")
-    try:
-        cmd_install("L2", [], tmp, True)
-        fresh = {"id": "z9", "created_at": time.strftime("%Y-%m-%d"), "updated_at": "", "content": "占位内容",
-                 "keywords": ["锚词"], "links": [], "source_event_id": "gen", "importance": 3,
-                 "confidence": "高", "validity": {}}
-        old = dict(fresh, id="a1", created_at=time.strftime("%Y-%m-%d", time.localtime(time.time() - 86400 * 60)))
-        cmd_engine("append", tmp, json.dumps(fresh, ensure_ascii=False))
-        cmd_engine("append", tmp, json.dumps(old, ensure_ascii=False))
-        def _top1():
-            buf = _io.StringIO()
-            with contextlib.redirect_stdout(buf): cmd_engine("retrieve", tmp, "锚词")
-            return buf.getvalue().splitlines()[0].split()[1]
-        assert _top1() == "z9", f"出厂权重（w_age=0.05）应新鲜条目居首，得 {_top1()}"
-        st = json.loads((tmp / "state.json").read_text(encoding="utf-8"))
-        st["law_params"]["law_w_age"] = 0  # 快照置零老化：两条同分→确定性破序 a1<z9 → a1 居首
-        (tmp / "state.json").write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
-        assert _top1() == "a1", f"快照权重未生效（接线失效？）: {_top1()}"
-    finally:
-        shutil.rmtree(tmp, ignore_errors=True)
-
-@t
-def t_m7_concurrent_chain_nofork():
-    """v3.10/M7（R6-②）：并发 chain_append 不分叉——2 线程×25 追加，月内 prev 连续性逐行成立"""
-    import threading
-    tmp = _tmpdir("_bsv3t_m7chain")
-    try:
-        def _w(tag):
-            for i in range(25): chain_append(tmp / "audit", f"m7:{tag}-{i}")
-        ths = [threading.Thread(target=_w, args=(x,)) for x in ("A", "B")]
-        for x in ths: x.start()
-        for x in ths: x.join()
-        f = sorted((tmp / "audit").glob("lifelog-*.md"))[-1]
-        prev_tail, n = None, 0
-        for line in f.read_text(encoding="utf-8").strip().splitlines():
-            m = re.search(r"prev:(\S+) \| h:([0-9a-f]{64}) \| (.*)$", line)
-            assert m, f"行格式异常: {line}"
-            p2, h2, text = (m.group(1) if m.group(1) != "genesis" else ""), m.group(2), m.group(3)
-            if prev_tail is not None: assert p2 == prev_tail, f"链分叉: {line}"
-            assert line_hash(p2, text) == h2, "行哈希不匹配"
-            prev_tail, n = h2, n + 1
-        assert n == 50, f"应 50 行，实 {n}"
-    finally:
-        shutil.rmtree(tmp, ignore_errors=True)
-
-@t
-def t_m7_concurrent_wrapup_nolost():
-    """v3.10/M7（R6-②）：并发 wrapup 无丢失更新——2 线程×10 次，情绪衰减恰 20 次、wrap-up 链行恰 20"""
-    import threading, io as _io, contextlib
-    tmp = _tmpdir("_bsv3t_m7wrap")
-    try:
-        cmd_install("L2", [], tmp, True)
-        def _w():
-            for _ in range(10): cmd_engine("wrapup", tmp)
-        buf = _io.StringIO()
-        with contextlib.redirect_stdout(buf):
-            ths = [threading.Thread(target=_w) for _ in range(2)]
-            for x in ths: x.start()
-            for x in ths: x.join()
-        st = json.loads((tmp / "state.json").read_text(encoding="utf-8"))
-        d = TUNABLES["emotion_decay"]["value"]; v = 0.5
-        for _ in range(20): v = round(v * d, 3)
-        assert st["emotion"]["arousal"] == v, f"丢失更新: arousal={st['emotion']['arousal']} 期望 {v}"
-        lines = sorted((tmp / "audit").glob("lifelog-*.md"))[-1].read_text(encoding="utf-8").strip().splitlines()
-        prev_tail = None
-        for line in lines:
-            m = re.search(r"prev:(\S+) \| h:([0-9a-f]{64}) \| (.*)$", line)
-            assert m, f"行格式异常: {line}"
-            p2, h2, text = (m.group(1) if m.group(1) != "genesis" else ""), m.group(2), m.group(3)
-            if prev_tail is not None: assert p2 == prev_tail, f"链分叉: {line}"
-            assert line_hash(p2, text) == h2, "行哈希不匹配"
-            prev_tail = h2
-        assert sum(1 for l in lines if "wrap-up" in l) == 20, f"wrap-up 链行应 20，实 {sum(1 for l in lines if 'wrap-up' in l)}"
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 

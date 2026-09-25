@@ -66,3 +66,16 @@ W-5（轨迹撞号，知识库侧）不在本包范围，【待确认】搁置�
 
 **变更**：make_v39 新增八补丁（实施插曲两起被锚点断言+回归门拦截：M4-2 锚点注释"Zep式"无空格/M4-3 首版误引 args 作用域）——①件四 as-of-tick（`_rank_entries` 加参+缺坐标判不可见+append 自动写 tick+CLI `--as-of-tick`）；②件四 verified_against 漂移钩子（`_stale_entries`+doctor stale 段）；③件五 content_hash 查重（`_content_dupes`，append warn 级）；④件五墓碑状态机（`engine tombstone`：退出检索原位保留+账本+刷根）；⑤新测试 ×3。
 **当前发布锚点 = sha256 前 16 位 8de8fb1f**（27 补丁全锚点命中，vendor ≡ 发布区逐位一致），run-tests **76/76**（原始输出归档=088 残留项整改），参数正典不变。c2d1f2ea 退役归档。**零读数设计实证**：金标重测 0.758/0.683 逐位不变，监控段不换段继续。v893 对等移植语义差异（tick 轴 vs 世界版本号/warn 级起步/instant 查询入口待归一器）详见实施报告。v3.10 六件至此全部出清（一二三 M3 早批+四五六本波；Shewhart 激活维持 off 留变异样本）。报告：`大审查/衔尾蛇/reports/M3_件四五实施报告+ROI评估-20260919.md`。
+
+## 修订记录（2026-09-21 晚 · M6：P-020 第三例了结——C-1/WP-C structured 白名单吸收入链）
+
+**变更**：make_v39 新增 M6 补丁——cmd_absorb_md 白名单元组追加 `("structured.md", "S")`（C-1/WP-C 手工修订按 P-020 纪律吸收入链，工作不丢）。**当前发布锚点 = sha256 前 16 位 47b762c7**（28 补丁全锚点命中，vendor ≡ 发布区逐位一致），run-tests **76/76**（原始输出 `runtests-47b762c7-20260921.log` 归档），参数正典不变。8de8fb1f 退役归档（谱系：…→c2d1f2ea→8de8fb1f→47b762c7）。
+**库调试工作区同步**：engine wrapup 刷根（库根 1b83e61b）→ doctor **五态全一致**（两日 open 异常闭合）。执行报告：`大审查/衔尾蛇/reports/M3追加_裁决三件执行报告-20260921.md`。
+
+## 修订记录（2026-09-25 · M7：R6-② 五处 state 写路径补锁 + B-R2 吸收——工单-x2evolve五无锁补锁-20260925）
+
+**变更**：make_v39 新增 14 补丁（B-R2a/b/c + M7-0~10）——①B-R2 吸收：law_params 接线（R6-①，检索读 state 快照缺省回退出厂）按 P-020 纪律入链，取代 09-25 12:22 出现的发布件直改（sha16 2169c677，全文 CRLF，未登记未入链=P-020 第 4 例嫌疑；原字节留 `bootstrap_v3.9.2169c677-手改存证-20260925.py.bak`）；②M7 补锁：锁助手 `_acquire_lock_dir`/`_release_lock_dir`/`_write_lock`（锁序 state→chain/ledger 无死锁面），wrapup/reflect-done/tombstone/retire/build-docs 五处 state 写路径全程持锁，append 原 W-4 内联锁等价重构共用助手，chain_append 读尾→追加持 `.chain.lock`（链分叉根治），`_ledger_append` 行写互斥，doctor 月内行间 prev 连续性并入（"分叉不可检"闭）；③新测试三件（B-R2 双路径判别/并发链不分叉/并发 wrapup 无丢失更新）。工单所列 x2_evolve 不在本引擎（audit-kit 侧同族 R6-④），引擎第五路径实为 reflect-done——回执如实注记。
+**实施插曲两起（压测拦截，未出闸）**：①释放用 `shutil.rmtree` 在并发下撞 Windows 竞态 WinError 5 致写者崩溃——改按名 `os.rmdir`+短重试+释放失败不抛（写已提交，残留锁 60s 陈锁回收兜底）；②Windows delete-pending 窗口内 mkdir 报 PermissionError 而非 FileExistsError——两态同等视作「锁在位」重试。
+**当前发布锚点 = sha256 前 16 位 11266419**（42 补丁全锚点命中，vendor ≡ 发布区逐位一致），run-tests **79/79**（原始输出 `runtests-11266419-20260925.log` 归档），参数正典不变。47b762c7 退役归档（谱系：…→8de8fb1f→47b762c7→11266419）。
+**验证门（工单 §三）**：①79/79 ✓；②并发压测 2 进程×（50 链追加+25 wrapup）×10 轮全 PASS（分叉 0/丢失更新 0/行数恰 151/衰减恰 50 次），修前对照 47b762c7 同压测 38 处分叉+丢失更新实锤（4 次 wrapup 仅 2 次生效：arousal 0.245≠0.12）+1 行链丢失；③五路径+append 产线 CLI 走查 ✓、6 进程并发 append 冒烟 doctor 五态全一致 ✓、真库零漂移对拍 4/4 查询新旧引擎 top-5 逐位一致 ✓（B-R2 接线在快照=正典参数时行为等价）、真库 wrapup 刷根（新库根 d04c776f）→ doctor 五态全一致（09-21 裁决件二 sidecar 后落盘所致的根不一致残留一并闭环）。
+执行报告：`大审查/衔尾蛇/reports/M7_五路径补锁执行报告-20260925.md`。
