@@ -1,6 +1,0 @@
-# Cursor 会话入口（{{SLOT:WORKSPACE_NAME}}）
-
-- 每次会话开始，先读 knowledge/_index.md（知识库总索引），再开始任务。
-- 任务开始/结束分别调用 knowledge/skills/task-start/SKILL.md 与 wrap-up/SKILL.md（如已安装）。
-- 铁律：永不删除/覆盖已有文件；经验必须有真实依据；拿不准标【待确认】；移动先出清单；密钥不入库。
-- 工具（如已安装 m-tools）：{{SLOT:PY_RUNNER}} tools/lint_library.txt / tools/search_knowledge.txt 关键词。

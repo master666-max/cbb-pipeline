@@ -1,8 +1,0 @@
-[verified] env_check.py on Python 3.14.7 / bootstrap_v3 VERSION=3.8.1 (2026-09)
-append routing : importance>=7 -> memory/longterm ; else memory/intermediate  (e_a1(8.0),e_old(9.0)->longterm ; e_a2(5.0),e_b1(6.0)->intermediate)
-retrieve 'alpha': top = e_a1(11.81) e_a2(8.81) e_b1(5.81)   [kw x3 + content + importance - 0.1*age]
-eval golden n=2  : recall@5=1.0 MRR=1.0 -> evals/baseline.json
-doctor after eval: memory 4 / audit 4 / ledger 4 / chain OK / state 根不一致  <= 复现报告 2.4(健康信号过载): eval 写 ledger+baseline 但未刷根
-retire (t_invalid=2020-01-01, TTL=90d, real clock) : e_old -> memory/attic ; 之后 doctor 五态 全一致 (retire 刷根)
-retrieve 'obsolete': e_old 不再返回 (validity.t_invalid 跳过, attic 内文件仍在 rglob 扫描集但被过滤)
-lib_bytes=3086 ; audit: lifelog-2026-09.md
