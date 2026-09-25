@@ -1,0 +1,19 @@
+{
+  "description": "cbb-guard hooks（Qoder 方言版 · v0.1.3）。与 hooks/hooks.json（ZCode 方言）同一套规则，只差宿主字段：type=command、timeout 单位为秒、插件根变量是 QODER_PLUGIN_ROOT、async=false（钩子必须同步返回才拦得住）。装到 Qoder 时把本文件复制为安装位里的 hooks/hooks.json，装完按 README「装完必验」打一发已知越权载荷，拿不到 exit 2 就是门没装上。",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${QODER_PLUGIN_ROOT}/hooks/guard.mjs"],
+            "timeout": 5,
+            "async": false
+          }
+        ]
+      }
+    ]
+  }
+}

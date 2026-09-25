@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * guard-suites.mjs — cbb-guard 的回归夹具（38 例），自包含、零外部依赖
+ * guard-suites.mjs — cbb-guard 的回归夹具（42 例），自包含、零外部依赖
  *
  * 跑法：node cbb-guard/tests/guard-suites.mjs [guard.mjs 路径]     默认取 ../hooks/guard.mjs
- * 旧版基线对照：git show ecb15f2:cbb-guard/hooks/guard.mjs > /tmp/guard-0.1.0.mjs
- *              node cbb-guard/tests/guard-suites.mjs /tmp/guard-0.1.0.mjs
- *   实测 2026-09-24：本版 38/38 合预期；v0.1.0 只有 22/38（不符 16 ＝ 误伤 7／漏拦 1／
- *   拦截缺命中面 1／旁通作用域 5／旁通路数 2）
+ * 旧版基线对照：git show fccc5c6:cbb-guard/hooks/guard.mjs > /tmp/guard-0.1.2.mjs
+ *              node cbb-guard/tests/guard-suites.mjs /tmp/guard-0.1.2.mjs
+ *   ⇒ 0.1.2 版在"覆盖裸名 BUILD-STATE.md"一项必报不符（那正是 0.1.3 修的门洞），其余项不受影响。
+ * 实测 2026-09-25：本版 42/42 合预期；0.1.2 基线 41/42（漏拦 1＝裸名 BUILD-STATE.md）
+ *   再往前 v0.1.0 只有 22/38（不符 16 ＝ 误伤 7／漏拦 1／拦截缺命中面 1／旁通作用域 5／旁通路数 2）
  *
  * 全部写入只发生在一个临时夹具根里（跑完自删），不碰真实项目根；
  * CBB_GUARD_ROOT 逐次注入，所以"根路径指错"这类环境错配也能判。
@@ -45,6 +46,8 @@ function fresh(opts = {}) {
   fs.mkdirSync(path.join(FIX, "cbb/contracts"), { recursive: true });
   fs.writeFileSync(FROZEN_FILE, "{}\n");
   fs.writeFileSync(SCHEMA, "{}\n");
+  fs.writeFileSync(FIX + "/BUILD-STATE.md", "# BUILD-STATE\n");           // 0.1.3：裸名（init_project 默认产出）
+  fs.writeFileSync(FIX + "/迷深实战-BUILD-STATE.md", "# BUILD-STATE\n");   // 0.1.3：带前缀形态
   if (opts.ledgerIsDir) fs.mkdirSync(LED); else fs.writeFileSync(LED, "");
 }
 const call = (tool, payload, env = {}) => spawnSync("node", [GUARD], {
@@ -77,6 +80,11 @@ chk(call("write", { file_path: FROZEN_FILE }).status === 2, "主套/该拦", "Wr
 chk(call("write", { file_path: SCHEMA }).status === 2, "主套/该拦", "红区 schema 整写");
 chk(call("write", { file_path: FIX + "/cbb/contracts/新建件.json" }).status === 2, "主套/该拦", "红区前缀下新文件");
 chk(call("write", { file_path: LED }).status === 2, "主套/该拦", "红区决策账整写");
+// 0.1.3 修 G-5：BUILD-STATE 两种形态都要拦。旧谓词只认带连字符前缀那种，而
+// `init_project.py` 实际产出的是裸名 `BUILD-STATE.md` ⇒ 最该护的那份恰好不拦；旧 38 例里没有这条用例，
+// 所以"38/38 全绿"与"门有洞"同时成立——夹具绿不等于保护面完整。
+chk(call("write", { file_path: FIX + "/BUILD-STATE.md" }).status === 2, "主套/该拦", "覆盖裸名 BUILD-STATE.md");
+chk(call("write", { file_path: FIX + "/迷深实战-BUILD-STATE.md" }).status === 2, "主套/该拦", "覆盖带前缀 BUILD-STATE.md");
 
 const INNOCENT = [
   [`ls ${FIX}/迷深实战-本体库 # cbb-guard 排查`, "词尾 rd（guard，含插件自身名）"],
@@ -90,6 +98,9 @@ const INNOCENT = [
 for (const [cmd, note] of INNOCENT)
   chk(call("bash", { command: cmd }).status === 0, "主套/应放", note);
 chk(call("write", { file_path: FIX + "/迷深实战-本体库/新件.json" }).status === 0, "主套/应放", "冻结目录下新建（additive）");
+// 0.1.3 新谓词的反面护栏：裸名规则只作用于"覆盖已有"，不得把开书时首次写 STATE 也打死
+chk(call("write", { file_path: FIX + "/notes/BUILD-STATE.md" }).status === 0, "主套/应放", "子目录下首次新建 BUILD-STATE.md");
+chk(call("write", { file_path: FIX + "/build-status.md" }).status === 0, "主套/应放", "近似词 build-status 不误伤");
 chk(call("edit", { file_path: SCHEMA }).status === 0, "主套/应放", "红区 Edit 追加段");
 chk(call("bash", { command: `rm -rf ${path.join(os.tmpdir(), "cbb-x").replace(/\\/g, "/")}` }).status === 0, "主套/应放", "有 rm 无冻结名");
 chk(call("bash", { command: "ls ~/plugins/cache/local/cbb-guard/0.1.0" }).status === 0, "主套/应放", "有词尾 rd 无冻结名");

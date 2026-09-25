@@ -1,20 +1,23 @@
 #!/usr/bin/env node
 /**
- * guard.mjs — cbb-guard PreToolUse 守门钩子（v0.1.2 · 跨项目通用：根解析四级+惯例谓词保护面）
+ * guard.mjs — cbb-guard PreToolUse 守门钩子（v0.1.3 · 跨项目通用：根解析四级＋惯例谓词保护面）
  *
  * 规则（裁定原文见《形态升级-工单-插件化-20260923.md》U-G02；分级=二拦二警照准）：
  *   拦 A  冻结线"覆盖已有文件"——原位保全语义：冻结目录下**新建文件放行、覆盖已有文件拦截**；
- *         Bash 的 rm/del/mv/clean 指向冻结线 → 拦。覆盖范围：迷深实战-{本体库,工作区} 目录
- *         与 迷深实战-{工单,发车件,BUILD-STATE}.md 三件。
- *   拦 B  红区文件 **Write 整体覆盖**——cbb/contracts/*.schema.json、两份在案工单、决策账本身；
+ *         Bash 的 rm/del/mv/clean 指向冻结线 → 拦。覆盖面按命名惯例判定（与实例名无关）：
+ *         任何 `*-本体库/`、`*-工作区/` 目录及其下文件，加上 `工单/发车件/build-state` 三类
+ *         文书——**带连字符前缀与裸名两种形态都认**（v0.1.3 补裸名，见下方 isFrozen 注）。
+ *   拦 B  红区文件 **Write 整体覆盖**——cbb/contracts/*.schema.json、在案工单、决策账本身；
  *         Edit 放行（追加段靠 Edit 的 old_string 语义）。
- *   旁通  env CBB_HOOK_BYPASS=<裁定引用> 非空 → 放行，并自动追加"旁通"条目到 决策账.jsonl。
+ *   旁通  env CBB_HOOK_BYPASS=<裁定引用>（或绑定式 `<目标前缀>=<裁定引用>`）→ 放行并自动入决策账；
  *         无账引用的绕过 = 硬拦（账引用解锁是唯一合法旁通道）。
  *   其余  exit 0 静默（不加噪音；example-plugin 的 additionalContext 模式会产生每调一行噪音，弃用）。
  *
- * 自检（正负对照）：
- *   printf '%s' '{"tool_name":"Write","tool_input":{"file_path":"D:/…/迷深实战-本体库/ledger.jsonl"}}' | node guard.mjs   → exit 2
- *   printf '%s' '{"tool_name":"Write","tool_input":{"file_path":"D:/…/新建件.md"}}' | node guard.mjs                      → exit 0
+ * 自检（正负对照，路径用占位符，装到哪台机器都能照打）：
+ *   printf '%s' '{"tool_name":"Write","tool_input":{"file_path":"<项目根>/X-本体库/ledger.jsonl"}}' | node guard.mjs   → exit 2
+ *   printf '%s' '{"tool_name":"Write","tool_input":{"file_path":"<项目根>/BUILD-STATE.md"}}'          | node guard.mjs   → exit 2（v0.1.3 起）
+ *   printf '%s' '{"tool_name":"Write","tool_input":{"file_path":"<项目根>/新建件.md"}}'                | node guard.mjs   → exit 0
+ *   装到宿主后还须在宿主里复现一次 exit 2——钩子方言不对时门是哑的，本机跑绿不代表宿主会执行（见 README「装完必验」）。
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -54,9 +57,13 @@ const norm = (p) => String(p || "").replace(/\\/g, "/").toLowerCase();
 
 // 保护面 = **命名惯例谓词**（纯文本判定，跨项目通用，无需扫描磁盘、对测试夹具友好）：
 //   冻结线：任何 *-本体库/ *-工作区/ 目录与其下文件（原位保全：新建放行、覆盖拦截），
-//           以及 *-工单.md *-发车件.md *-build-state.md 三类文书（覆盖即拦）。
+//           以及 工单/发车件/build-state 三类文书（覆盖即拦）。
+// v0.1.3 修 G-5（实测缺陷）：build-state 必须**同时认裸名**——`init_project.py` 产出的文件名是
+//   `BUILD-STATE.md`（无连字符前缀），旧谓词 `-(?:…|build-state)\.md$` 要求前面有连字符，
+//   于是"覆盖项目状态文件"这条最容易出的事故恰好不拦（38 例夹具里也没有该用例，全绿照漏）。
 const isFrozen = (p) => /(^|\/)[^/]*-(?:本体库|工作区)\//.test(p)
-                     || /-(?:工单|发车件|build-state)\.md$/.test(p);
+                     || /(^|\/)(?:[^/]*-)?build-state\.md$/.test(p)
+                     || /-(?:工单|发车件)\.md$/.test(p);
 //   红区（Write 整体覆盖拦）：cbb/contracts/ 契约、在案工单、决策账（只许 Edit 追加）。
 const isRedzoneWrite = (p) => /\/cbb\/contracts\//.test(p)
                            || /-工单\.md$/.test(p)
