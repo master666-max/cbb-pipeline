@@ -284,7 +284,7 @@ def _ensure_live_sentinel() -> str:
     for f_name in ("DETACHED_PROCESS", "CREATE_NEW_PROCESS_GROUP"):
         flags |= getattr(subprocess, f_name, 0)
     subprocess.Popen([sys.executable, "-X", "utf8", str(CBB / "tools" / "lightrag_live.py"),
-                      "--store", str(STORE_ROOT), "--work", str(work_lt), "--interval", "10"],
+                      "--store", str(STORE_ROOT), "--work", str(work_lt), "--interval", "1"],
                      stdout=logf, stderr=logf, creationflags=flags, close_fds=True)
     _t.sleep(1.5)  # 给哨起心跳
     return "spawned"

@@ -57,7 +57,9 @@ def _record_entries(rec: dict, names: set[str]) -> tuple[list[dict], list[dict],
             rels.append({"src_id": s2, "tgt_id": t2,
                          "keywords": canon["rel_type"], "description": fact,
                          "source_id": rid, "weight": 1.0})
-    if txt:
+    if txt and rec.get("record_type") in ("entity", "relation"):
+        # chunk 口径与 bootstrap 同构（仅实体/关系记录）——event/foreshadow 等其他类型
+        # 不入副本，否则首启膨胀数千 chunk 塞爆嵌入端点（2026-09-25 实测教训）
         chunks.append({"content": txt, "source_id": rid})
     return ents, rels, chunks
 
@@ -86,19 +88,24 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
     """单轮观察：mtime 扫描 → 变更记录构建 → sidecar 差集 → 喂入。
     重试位语义：last_poll 只在**成功**后推进——喂入失败保持原位，下一轮重试同批（毒批不静默丢）。"""
     from lightrag_delta_sync import _load_sidecar, _merge_sidecar
-    library = store / "libraries"
+    library = str(store / "libraries")
     state = interval_state
     prev_poll = state.get("last_poll", 0.0)
     max_mt = prev_poll
     changed: list[Path] = []
-    for f in library.glob("*/*/*.json"):
-        try:
-            mt = f.stat().st_mtime
-        except OSError:
-            continue
-        if mt > state.get("last_poll", 0.0):
-            changed.append(f)
-        max_mt = max(max_mt, mt)
+    import os as _os
+    try:
+        for lib in _os.scandir(library):                 # Windows: DirEntry.stat 走缓存，全库扫描 ~百毫秒
+            for status in _os.scandir(lib):
+                for f in _os.scandir(status):
+                    if f.name.endswith(".json"):
+                        mt = f.stat().st_mtime
+                        if mt > state.get("last_poll", 0.0):
+                            changed.append(Path(f.path))
+                        if mt > max_mt:
+                            max_mt = mt
+    except FileNotFoundError:
+        pass
     if not changed:
         state["last_poll"] = max_mt  # 无写入：推进到当前（空转零成本）
         return {"changed": 0, "fed": False, "口径": "无写入"}
@@ -154,7 +161,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--store", default=str(le.STORE))
     ap.add_argument("--work", default=str(le.WORK))
-    ap.add_argument("--interval", type=float, default=10.0)
+    ap.add_argument("--interval", type=float, default=1.0)
     ap.add_argument("--once", action="store_true")
     ns = ap.parse_args(argv)
     store, work = Path(ns.store), Path(ns.work)
