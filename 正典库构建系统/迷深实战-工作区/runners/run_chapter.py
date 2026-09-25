@@ -186,7 +186,7 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
         json.dumps({"candidates": cands, "meta": raw["_meta"]}, ensure_ascii=False, sort_keys=True, indent=1),
         encoding="utf-8")
 
-    aux = {"embedding": None, "neo4j": None, "lightrag": None}
+    aux = {"embedding": None, "neo4j": None, "lightrag": None, "graphiti": None}
     if not no_aux:
         # 嵌入扫描（探活降级：blocked 不阻塞）
         r = subprocess.run([sys.executable, "-X", "utf8", str(CBB / "tools" / "embed_dedup_scan.py"),
@@ -217,6 +217,16 @@ def run(chapter_no: int, no_aux: bool = False) -> dict:
                                if r3.stdout.strip() else {"status": "blocked"})
         except Exception as e:
             aux["lightrag"] = {"status": "error", "stderr": str(e)[-200:]}
+        # Graphiti 双时序抽取（对样 19✓/1✗ 过门后铺开；探活降级不阻塞；
+        # 抽取自管=DeepSeek 裸调用，存储=fact_triple 模式，只写 7693 隔离实例）
+        try:
+            r4 = subprocess.run([sys.executable, "-X", "utf8", str(CBB / "tools" / "graphiti_ingest.py"),
+                                 "--chapter", str(chapter_no), "--group", f"ch{chapter_no:04d}-gt"],
+                                capture_output=True, text=True, encoding="utf-8", timeout=1500)
+            aux["graphiti"] = (json.loads(r4.stdout.strip().splitlines()[-1])
+                               if r4.stdout.strip() else {"status": "blocked"})
+        except Exception as e:
+            aux["graphiti"] = {"status": "error", "stderr": str(e)[-200:]}
 
     summary = {"unit": unit, "chapter": chapter_no,
                "ingestion_index": ch["ingestion_index"], "title": ch["title"],

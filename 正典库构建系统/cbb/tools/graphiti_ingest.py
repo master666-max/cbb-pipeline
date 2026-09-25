@@ -60,15 +60,21 @@ def extract(chapter_text: str) -> tuple[list[dict], list[dict], dict]:
             {"role": "system", "content": (
                 "从小说文本抽取实体与关系，只输出 JSON："
                 '{"entities": [{"name": "...", "type": "人物|地点|物品|组织|概念"}], '
-                '"relations": [{"source": "...", "rel": "...", "target": "...", "fact": "..."}]}'
-                "。要求：实体名用原文写法、单指实体（人/地/物/组织/称号），抽具体名词"
-                "（数值/武器/建筑/阵营）；关系带一句 fact（原文依据的转写）；宁缺勿滥。")},
+                '"relations": [{"source": "...", "rel": "...", "target": "...", '
+                '"quote": "来源原文逐字句", "fact": "..."}]}'
+                "。硬性要求（v2，2026-09-25 对样教训）："
+                "①relations.quote 必须是原文**逐字复制**的支撑句（含第一人称原样，禁止改写）——无逐字句支撑的关系不要输出；"
+                "②物品/战利品的名称必须以**本次掉落/提及事件的原文**为准，名称未确认就写描述形态"
+                "（如『翠色光芒的结晶』），**禁止把后文其他事件的物品名补到前文事件上**（跨事件补名=张冠李戴）；"
+                "③每次掉落/获得独立成关系，禁止合并；"
+                "④实体名用原文写法；宁缺勿滥。")},
             {"role": "user", "content": chapter_text}])
     u = r.usage
     d = json.loads(r.choices[0].message.content)
     ents = [{"name": e["name"], "type": e.get("type", "概念")} for e in d.get("entities", [])]
     rels = [{"source": x["source"], "rel": x["rel"], "target": x["target"],
-             "fact": x.get("fact", x["rel"])} for x in d.get("relations", [])]
+             "quote": x.get("quote", ""), "fact": x.get("fact", x["rel"])}
+            for x in d.get("relations", [])]
     return ents, rels, {"prompt_tokens": u.prompt_tokens, "completion_tokens": u.completion_tokens,
                         "calls": 1}
 
@@ -91,7 +97,8 @@ async def _feed(group: str, chapter: int, ents: list[dict], rels: list[dict]) ->
                             embedding_model=EMB_MODEL, embedding_dim=4096)),
                         cross_encoder=OpenAIRerankerClient(config=llm_cfg))
     await graphiti.build_indices_and_constraints()
-    triples = [{"fact": f"{r['source']}{r['rel']}{r['target']}——{r['fact']}"} for r in rels]
+    triples = [{"fact": f"{r['source']}{r['rel']}{r['target']}——{r['fact']}"
+               f"〔原文：{r.get('quote', '')}〕"} for r in rels]
     if not triples:
         return {"fed": False, "口径": "零三元组，不喂空集"}
     ref = datetime.combine(pseudo_anchor(chapter - 1), datetime.min.time(), tzinfo=timezone.utc)
