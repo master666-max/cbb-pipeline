@@ -110,7 +110,6 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
         state["last_poll"] = max_mt  # 无写入：推进到当前（空转零成本）
         return {"changed": 0, "fed": False, "口径": "无写入"}
 
-    ents, rels, chunks = [], [], []
     names = state.setdefault("names", _canon_names(store))
     parsed = []
     for f in changed:
@@ -122,18 +121,46 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
         nm = (rec.get("canonical") or {}).get("name")
         if nm and nm not in names:
             names.add(nm)
+    fed = _load_sidecar(work)
+    # 按 sidecar 的**累积语义**聚合变更记录（同名实体/同三元组关系并集）——
+    # 否则多来源实体永远"有 delta"→ 无限重喂刷爆嵌入端点（2026-09-25 实测教训）
+    gents: dict[str, dict] = {}
+    grels: dict[tuple, dict] = {}
+    gchunks: dict[str, dict] = {}
     for rec in parsed:
         a, b, c = _record_entries(rec, names)
-        ents.extend(a)
-        rels.extend(b)
-        chunks.extend(c)
-    fed = _load_sidecar(work)
-    delta_e = [e for e in ents if sorted(str(e["source_id"]).split(SEP)) != fed["entities"].get(e["entity_name"])]
-    delta_r = [r for r in rels
-               if sorted(str(r["source_id"]).split(SEP)) !=
-               fed["relationships"].get(f"{r['src_id']}{r['keywords']}{r['tgt_id']}")]
-    have = set(fed["chunks"])
-    delta_c = [c for c in chunks if c["source_id"] not in have]
+        for e in a:
+            g = gents.setdefault(e["entity_name"], {"entity_type": e["entity_type"],
+                                                    "descs": [], "srcs": set()})
+            g["descs"].append(e["description"])
+            g["srcs"].add(str(e["source_id"]))
+        for r in b:
+            key = (r["src_id"], r["keywords"], r["tgt_id"])
+            g = grels.setdefault(key, {"src_id": r["src_id"], "keywords": r["keywords"],
+                                       "tgt_id": r["tgt_id"], "descs": [], "srcs": set()})
+            g["descs"].append(r["description"])
+            g["srcs"].add(str(r["source_id"]))
+        for c in c:
+            gchunks.setdefault(c["source_id"], c)
+    delta_e = []
+    for name, g in gents.items():
+        prev = set(fed["entities"].get(name, []))
+        if g["srcs"] <= prev:
+            continue  # 无新增 source → 无 delta
+        all_srcs = sorted(prev | g["srcs"])
+        delta_e.append({"entity_name": name, "entity_type": g["entity_type"],
+                        "description": SEP.join(dict.fromkeys(g["descs"])),
+                        "source_id": SEP.join(all_srcs)})
+    delta_r = []
+    for key, g in grels.items():
+        prev = set(fed["relationships"].get(f"{key[0]}{key[1]}{key[2]}", []))
+        if g["srcs"] <= prev:
+            continue
+        all_srcs = sorted(prev | g["srcs"])
+        delta_r.append({"src_id": g["src_id"], "tgt_id": g["tgt_id"], "keywords": g["keywords"],
+                        "description": SEP.join(dict.fromkeys(g["descs"])),
+                        "source_id": SEP.join(all_srcs), "weight": float(len(all_srcs))})
+    delta_c = [c for cid, c in gchunks.items() if cid not in set(fed["chunks"])]
     rep = {"changed": len(changed), "delta_entities": len(delta_e),
            "delta_relationships": len(delta_r), "delta_chunks": len(delta_c)}
     if not (delta_e or delta_r or delta_c):
@@ -149,7 +176,11 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
     except Exception:
         state["last_poll"] = prev_poll  # 失败：重试位不前进，下一轮重试同批
         raise
-    _merge_sidecar(fed, {"entities": delta_e, "relationships": delta_r, "chunks": delta_c})
+    for e in delta_e:  # sidecar 记累积集（含旧 source）——与 LightRAG 合并态对齐
+        fed["entities"][e["entity_name"]] = sorted(str(e["source_id"]).split(SEP))
+    for r in delta_r:
+        fed["relationships"][f"{r['src_id']}{r['keywords']}{r['tgt_id']}"] =             sorted(str(r["source_id"]).split(SEP))
+    fed["chunks"] = sorted(set(fed["chunks"]) | {c["source_id"] for c in delta_c})
     work.mkdir(parents=True, exist_ok=True)
     (work / "_fed-sources.json").write_text(json.dumps(fed, ensure_ascii=False, indent=1),
                                             encoding="utf-8")
