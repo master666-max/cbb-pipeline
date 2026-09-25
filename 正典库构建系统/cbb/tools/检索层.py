@@ -179,6 +179,11 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
         if ext:
             notes.append(f"图扩展 {len(ext)} 项")
 
+    if extra_paths is None:  # 调用方未接管时：第五路自动并入（默认开，CBB_FIFTH=0 关）
+        auto = _fifth_auto(query, store_root, index_dir, top_k)
+        if auto:
+            extra_paths = [auto]
+            notes.append("第五路自动并入（LightRAG 图游走）")
     if extra_paths:
         for i, p in enumerate(extra_paths):
             if p:
@@ -216,6 +221,25 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
             pass
     return {"top": top, "backend": backend, "paths": len([p for p in paths if p]),
             "口径": "；".join(notes) or "无降级"}
+
+
+def _fifth_auto(query: str, store_root: Path, index_dir: Path | None, top_k: int) -> list[str] | None:
+    """第五路自动并入（2026-09-25 融入裁定：默认开，CBB_FIFTH=0 关）。
+    副本定位=index_dir 同级 lightrag-exp（派生索引同册）；副本缺席/任何失败→None（同形降级不阻断）。"""
+    if os_env("CBB_FIFTH", "1") == "0" or index_dir is None:
+        return None
+    try:
+        work = Path(index_dir).parent / "lightrag-exp"
+        if not (work / "vdb_entities.json").exists():
+            return None
+        sys_path = str(Path(__file__).resolve().parent)
+        if sys_path not in __import__("sys").path:
+            __import__("sys").path.insert(0, sys_path)
+        import lightrag_bridge as lb
+        rep = lb.fifth_recall(query, store_root, top_k)
+        return list(rep["names"])
+    except Exception:
+        return None
 
 
 def _text_lookup(index_dir: Path | None, names: list[str]) -> list[str]:
