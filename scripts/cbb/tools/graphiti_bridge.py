@@ -88,7 +88,10 @@ def episode_body_of(chapter_no: int, records: list[dict]) -> str:
 
 
 def ingest_candidates(graphiti, chapter_records: dict[int, list[dict]],
-                      group_id: str = "mishen-canon") -> dict:
+                      group_id: str | None = None) -> dict:
+    """group_id 必填：写进别人的命名空间＝跨项目串图，且产出看着像"零矛盾"的假干净。"""
+    if not group_id:
+        raise ValueError("ingest_candidates 需要显式 group_id（本项目命名空间），不给默认值")
     """候选批量入 graphiti：每章一个 add_episode，kwargs 全部经
     cbb_extract.build_episode_kwargs 组装（已测形态：伪锚点 reference_time+R6 标配）。
     graphiti 参数=任意具备 add_episode(**kwargs) 协议的对象（stub 单测即用此协议）。"""
@@ -100,7 +103,7 @@ def ingest_candidates(graphiti, chapter_records: dict[int, list[dict]],
             episode_body=episode_body_of(chapter_no, recs),
             episode_name=f"ch{chapter_no:04d}",
             group_id=group_id,
-            source_description="cbb jsonl 本体库 · 迷深实战",
+            source_description="cbb jsonl 本体库",   # 项目名走 group_id，不写进来源描述
         )
         results[chapter_no] = graphiti.add_episode(**kwargs)
     return results

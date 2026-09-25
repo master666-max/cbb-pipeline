@@ -134,11 +134,16 @@ def verify_citations(citations: list[dict], store_root: Path) -> dict:
 def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
                   top_k: int = 10, rerank: bool = True,
                   graph_expand=None, embed_fn=embed, rerank_transport=None,
-                  extra_paths: list[list[str]] | None = None) -> dict:
+                  extra_paths: list[list[str]] | None = None,
+                  query_log: str | Path | None = None) -> dict:
     """四路召回→RRF→（可选）重排→核验占位。
     graph_expand: callable(seed_names) -> list[name]（由调用方接 Neo4j；缺席=None 跳过）。
     向量路需要 index_dir 且 lancedb 可用且嵌入端点在线——任一缺席→该路跳过并在口径注明。
-    extra_paths: 实验钩子（exp/lightrag-fifth-path 分支）——追加名次列表参与 RRF；默认 None=行为不变。"""
+    extra_paths: 实验钩子（exp/lightrag-fifth-path 分支）——追加名次列表参与 RRF；默认 None=行为不变。
+    query_log: 查询日志落点；**默认不写**。要留负载底座就显式传路径，或设
+               `CBB_QUERY_LOG=<路径>`（写 `1`/`true` 则落到本项目 `<store 同级>/工作区/logs/`）。
+               旧实现默认开且把落点写死成上一个项目的实例名（`迷深实战-工作区/…`），
+               且写失败静默吞掉——见下方日志段的注。"""
     notes: list[str] = []
     paths: list[list[str]] = []
 
@@ -180,10 +185,10 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
             notes.append(f"图扩展 {len(ext)} 项")
 
     if extra_paths is None:  # 调用方未接管时：第五路自动并入（默认开，CBB_FIFTH=0 关）
-        auto = _fifth_auto(query, store_root, index_dir, top_k)
+        auto, state = _fifth_auto(query, store_root, index_dir, top_k)
+        notes.append(f"第五路：{state}")   # **无论成不成都落一行**——"启用"与"缺席"不许同形
         if auto:
             extra_paths = [auto]
-            notes.append("第五路自动并入（LightRAG 图游走）")
     if extra_paths:
         for i, p in enumerate(extra_paths):
             if p:
@@ -198,7 +203,8 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
     backend = "rrf"
     if rerank and ranked:
         names = [n for n, _ in ranked]
-        texts = _text_lookup(index_dir, names)
+        texts, tk_note = _text_lookup(index_dir, names)
+        notes.append(tk_note)          # 打分对象到底是富文本还是 name 串，必须看得见
         o, bk = rr.rerank_order_or_mechanical(query, texts, list(range(len(names))),
                                               transport=rerank_transport)
         ranked = [(names[i], ranked[i][1] if i < len(ranked) else 0.0) for i in o]
@@ -207,58 +213,87 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
             notes.append("精排打分对象=富文本")
 
     top = [{"name": n, "rrf": round(s, 6)} for n, s in ranked[:top_k]]
-    # 查询日志（第二期真实负载复核的数据底座）：env CBB_QUERY_LOG=1 显式开启；
-    # 落 工作区/logs/query-log.jsonl（非库文件，无禁墙钟约束）；失败不阻断检索
-    if os_env("CBB_QUERY_LOG", "1") != "0":  # 默认开（第二期负载复核底座）；CBB_QUERY_LOG=0 显式关
+    # 查询日志：第三期真实负载复核的数据底座。三条改过的行为，都来自实测教训：
+    #   ① 默认**关**（旧版默认开，且失败静默 ⇒ 底座可能根本不存在还是绿的）；
+    #   ② 落点由参数/env 给，**绝不写死别项目的实例名**（旧版硬编码 `迷深实战-工作区/logs/`，
+    #      在别的项目旁边凭空造出上一项目的目录树）；
+    #   ③ 写失败不阻断检索，但必须在口径里落一行——静默失败＝没有底座还以为有。
+    log_spec = str(query_log or os_env("CBB_QUERY_LOG", "") or "").strip()
+    if log_spec and log_spec.lower() not in {"0", "off", "false", "no"}:
         try:
-            logp = Path(store_root).parent / "迷深实战-工作区" / "logs" / "query-log.jsonl"
+            if log_spec.lower() in {"1", "true", "on", "yes"}:
+                logp = Path(store_root).parent / "工作区" / "logs" / "query-log.jsonl"
+            else:
+                logp = Path(log_spec)
             logp.parent.mkdir(parents=True, exist_ok=True)
             with logp.open("a", encoding="utf-8") as f:
                 f.write(json.dumps({"q": query, "top": [t["name"] for t in top],
                                     "backend": backend, "paths": len([p for p in paths if p])},
                                    ensure_ascii=False) + "\n")
-        except Exception:
-            pass
+            notes.append(f"查询日志已写 {logp.name}")
+        except Exception as e:
+            notes.append(f"查询日志写入失败（{str(e)[:40]}）：负载底座不可信，须修")
     return {"top": top, "backend": backend, "paths": len([p for p in paths if p]),
             "口径": "；".join(notes) or "无降级"}
 
 
-def _fifth_auto(query: str, store_root: Path, index_dir: Path | None, top_k: int) -> list[str] | None:
+def _fifth_auto(query: str, store_root: Path, index_dir: Path | None,
+                top_k: int) -> tuple[list[str] | None, str]:
     """第五路自动并入（2026-09-25 融入裁定：默认开，CBB_FIFTH=0 关）。
-    副本定位=index_dir 同级 lightrag-exp（派生索引同册）；副本缺席/任何失败→None（同形降级不阻断）。"""
-    if os_env("CBB_FIFTH", "1") == "0" or index_dir is None:
-        return None
+    副本定位=index_dir 同级 lightrag-exp（派生索引同册）。
+
+    返回 (名单或 None, 状态文字)。**状态必须被调用方写进口径**——旧实现只在整个分支
+    "返回非空"时才落一行，于是"关了/没副本/桥件不在/游走失败"四种情形与"这一路命中 0 项"
+    在输出上完全同形（本包纪律里这叫"缺席／为空／通过同形"）。
+    """
+    if os_env("CBB_FIFTH", "1") == "0":
+        return None, "关闭（CBB_FIFTH=0）"
+    if index_dir is None:
+        return None, "未启用（调用方未给 index_dir）"
+    work = Path(index_dir).parent / "lightrag-exp"
+    if not (work / "vdb_entities.json").exists():
+        return None, f"副本缺席（无 {work.name}/vdb_entities.json）"
     try:
-        work = Path(index_dir).parent / "lightrag-exp"
-        if not (work / "vdb_entities.json").exists():
-            return None
         sys_path = str(Path(__file__).resolve().parent)
         if sys_path not in __import__("sys").path:
             __import__("sys").path.insert(0, sys_path)
-        import lightrag_bridge as lb
+        import lightrag_bridge as lb   # 图游走桥件；未随发布件安装时这里会 ImportError
         rep = lb.fifth_recall(query, store_root, top_k)
-        return list(rep["names"])
-    except Exception:
-        return None
+        names = list(rep["names"])
+        return (names or None), f"游走返回 {len(names)} 项" + ("" if names else "（空面，未并入）")
+    except Exception as e:
+        return None, f"调用失败（{type(e).__name__}: {str(e)[:40]}）"
 
 
-def _text_lookup(index_dir: Path | None, names: list[str]) -> list[str]:
-    """按名取富文本（列投影，不拉向量列）；任何失败→返回原名列表（同形降级）。"""
+def _text_lookup(index_dir: Path | None, names: list[str]) -> tuple[list[str], str]:
+    """按名取富文本（列投影，不拉向量列）。返回 (文本列表, 口径一句)。
+
+    为什么不再用 `tbl.to_lance()`：那条路要可选依赖 pylance，缺了就 ImportError，
+    而旧实现外面裹着 `except Exception: return names` ⇒ 把"精排对象=富文本"这个 v3 修正
+    静默降级回 name 串，输出上完全看不出来（仓内自带用例因此在无 pylance 的环境里是红的）。
+    现在改用 lancedb 本体的 `search(None).select([...])` 列裁剪，并把降级写成明话。
+    """
     if not index_dir or not Path(index_dir).exists():
-        return names
+        return names, "索引目录缺席：精排退回 name 串"
     try:
         import lancedb
         tbl = _open_table(lancedb.connect(str(index_dir)), "records")
         if tbl is None:
-            return names
-        arrow = tbl.to_lance().to_table(columns=["name", "text"])
-        cols = {c: arrow.column(c).to_pylist() for c in ("name", "text")}
+            return names, "records 表缺席：精排退回 name 串"
+        cap = max(len(names) * 50, 500)
+        rows = tbl.search(None).select(["name", "text"]).limit(cap).to_list()
         tmap: dict[str, str] = {}
-        for n, t in zip(cols["name"], cols["text"]):
-            tmap.setdefault(n, t or n)
-        return [tmap.get(n, n) for n in names]
-    except Exception:
-        return names
+        for r in rows:
+            n = r.get("name")
+            if n is not None:
+                tmap.setdefault(str(n), str(r.get("text") or n))
+        got = sum(1 for n in names if n in tmap)
+        note = f"富文本投影 {got}/{len(names)} 命中"
+        if len(rows) >= cap:
+            note += f"（扫描上限 {cap} 触顶，超出部分未投影——命中数偏低时先想这里）"
+        return [tmap.get(n, n) for n in names], note
+    except Exception as e:
+        return names, f"富文本投影失败（{type(e).__name__}: {str(e)[:44]}）：精排退回 name 串"
 
 
 def keyword_recall(query: str, store_root: Path, limit: int = 10) -> list[dict]:

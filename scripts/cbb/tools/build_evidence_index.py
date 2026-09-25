@@ -13,6 +13,7 @@ import argparse
 import importlib
 import json
 import time
+import os
 import urllib.request
 from pathlib import Path
 
@@ -55,8 +56,11 @@ def _k(r: dict) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="evidence 级片段索引（批量·可续）")
-    ap.add_argument("--store", default=str(HERE.parent.parent / "迷深实战-本体库"))
-    ap.add_argument("--index", default=str(HERE.parent.parent / "迷深实战-工作区" / "索引" / "lancedb"))
+    import 路径惯例 as 惯
+    _s = os.environ.get("CBB_STORE") or str(惯.store_of(HERE.parent.parent))
+    ap.add_argument("--store", default=_s)
+    ap.add_argument("--index", default=os.environ.get("CBB_INDEX")
+                    or str(惯.workspace_of(Path(_s)) / "索引" / "lancedb"))
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--chunk", type=int, default=1000,
                     help="落表分块行数（内存上限≈chunk×dim×24B；2026-09-24 A-新:原一次性建 11 万行表 → ArrowMemoryError 3.87GB）")

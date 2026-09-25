@@ -58,7 +58,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 import 图库隔离 as gi  # noqa: E402  图归属判据的单一事实源（规则一份，两处复用）
 
-NEO4J_HTTP_DEFAULT = "http://localhost:7695"
+NEO4J_HTTP_DEFAULT = "http://localhost:7474"  # 出厂默认；探针探不到就报 BLOCKED，不猜映射端口
 EMBED_DEFAULT = "http://127.0.0.1:8080/v1/embeddings"
 RERANK_DEFAULT = "http://127.0.0.1:8081/v1/rerank"
 LMSTUDIO_DEFAULT = "http://127.0.0.1:1234/v1"
