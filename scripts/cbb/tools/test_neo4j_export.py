@@ -193,5 +193,45 @@ class TestAuditR4Fixes(unittest.TestCase):
         self.assertIn('os.environ.get("NEO4J_HTTP", "http://localhost:7695")', patrol_src)
 
 
+
+class TestDanglingEndpointNormalization(unittest.TestCase):
+    """悬挂端点归一（2026-09-25 裁决内化）：边端点不在实体名集时，
+    双向子串命中现役名（最长优先）归一；同三元组合并；计数披露。"""
+
+    def _write(self, store, rel_dir, rid, obj):
+        d = store / "libraries" / rel_dir / "provisional"
+        d.mkdir(parents=True, exist_ok=True)
+        (d / f"{rid}.json").write_text(json.dumps(obj, ensure_ascii=False), encoding="utf-8")
+
+    def test_variant_normalized_and_deduped(self):
+        with tempfile.TemporaryDirectory() as td:
+            store = Path(td)
+            self._write(store, "character", "e1", {
+                "record_id": "e1", "record_type": "entity", "library": "character",
+                "status": "provisional", "version": 1,
+                "canonical": {"name": "持有物品", "entity_type": "物品"},
+                "evidence": [{"vol": 1, "chapter": 1, "line": 1, "quote": "持有物品出场"}]})
+            self._write(store, "character", "e2", {
+                "record_id": "e2", "record_type": "entity", "library": "character",
+                "status": "provisional", "version": 1,
+                "canonical": {"name": "缇达", "entity_type": "人物"},
+                "evidence": [{"vol": 1, "chapter": 1, "line": 1, "quote": "缇达出场"}]})
+            self._write(store, "relation", "r1", {
+                "record_id": "r1", "record_type": "relation", "library": "relation",
+                "status": "provisional", "version": 1,
+                "canonical": {"subject": "《持有物品》", "rel_type": "属于", "object": "缇达"},
+                "evidence": [{"vol": 1, "chapter": 1, "line": 2, "quote": "属于缇达"}]})
+            self._write(store, "relation", "r2", {
+                "record_id": "r2", "record_type": "relation", "library": "relation",
+                "status": "provisional", "version": 1,
+                "canonical": {"subject": "『持有物品』", "rel_type": "属于", "object": "缇达"},
+                "evidence": [{"vol": 1, "chapter": 2, "line": 1, "quote": "仍属于缇达"}]})
+            g = m.collect_graph(store)
+            self.assertEqual({n["name"] for n in g["nodes"]}, {"持有物品", "缇达"})
+            self.assertEqual([(e["subject"], e["object"]) for e in g["edges"]],
+                             [("持有物品", "缇达")])  # 两变体归一且合并为一条
+            self.assertEqual(g["normalized_endpoints"], 2)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
