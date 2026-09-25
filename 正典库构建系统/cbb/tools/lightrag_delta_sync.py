@@ -64,6 +64,11 @@ def _merge_sidecar(fed: dict, kg: dict) -> dict:
 
 
 def sync(store_root: Path, work: Path, feed: bool = True) -> dict:
+    import time as _t
+    hb = Path(work) / "_live-heartbeat"
+    if feed and hb.exists() and (_t.time() - hb.stat().st_mtime) < 120:
+        return {"fed": False, "llm_calls": 0, "emb_calls": 0,
+                "口径": "live 哨在岗（心跳 120s 内）——章收口同步让位，避免双进程写副本"}
     le.STORE = Path(store_root)
     kg, stats = le.build_kg(Path(store_root))
     fed = _load_sidecar(Path(work))
