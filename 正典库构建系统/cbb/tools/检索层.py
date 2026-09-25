@@ -202,6 +202,18 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
             notes.append("精排打分对象=富文本")
 
     top = [{"name": n, "rrf": round(s, 6)} for n, s in ranked[:top_k]]
+    # 查询日志（第二期真实负载复核的数据底座）：env CBB_QUERY_LOG=1 显式开启；
+    # 落 工作区/logs/query-log.jsonl（非库文件，无禁墙钟约束）；失败不阻断检索
+    if os_env("CBB_QUERY_LOG", "") == "1":
+        try:
+            logp = Path(store_root).parent / "迷深实战-工作区" / "logs" / "query-log.jsonl"
+            logp.parent.mkdir(parents=True, exist_ok=True)
+            with logp.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"q": query, "top": [t["name"] for t in top],
+                                    "backend": backend, "paths": len([p for p in paths if p])},
+                                   ensure_ascii=False) + "\n")
+        except Exception:
+            pass
     return {"top": top, "backend": backend, "paths": len([p for p in paths if p]),
             "口径": "；".join(notes) or "无降级"}
 
