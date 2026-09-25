@@ -204,7 +204,7 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
     top = [{"name": n, "rrf": round(s, 6)} for n, s in ranked[:top_k]]
     # 查询日志（第二期真实负载复核的数据底座）：env CBB_QUERY_LOG=1 显式开启；
     # 落 工作区/logs/query-log.jsonl（非库文件，无禁墙钟约束）；失败不阻断检索
-    if os_env("CBB_QUERY_LOG", "") == "1":
+    if os_env("CBB_QUERY_LOG", "1") != "0":  # 默认开（第二期负载复核底座）；CBB_QUERY_LOG=0 显式关
         try:
             logp = Path(store_root).parent / "迷深实战-工作区" / "logs" / "query-log.jsonl"
             logp.parent.mkdir(parents=True, exist_ok=True)

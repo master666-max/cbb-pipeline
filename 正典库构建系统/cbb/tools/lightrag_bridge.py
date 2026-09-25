@@ -216,6 +216,15 @@ async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode
                 names.append(nm)
     out = {"names": names[:top_k], "entities": len(ents), "relationships": len(rels),
            "chunks": len(chunks), "mode": mode, "ll_keywords": ll, "kw_dropped": kw_dropped}
+    try:  # 第五路同入查询日志（默认开；与四路日志同文件，path 字段区分）
+        logp = Path(store_root).parent / "迷深实战-工作区" / "logs" / "query-log.jsonl"
+        logp.parent.mkdir(parents=True, exist_ok=True)
+        with logp.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"q": query, "path": "第五路", "top": out["names"],
+                                "mode": mode, "kw_dropped": kw_dropped},
+                               ensure_ascii=False) + "\n")
+    except Exception:
+        pass  # 日志失败不阻断检索
     if chain_depth:
         from graph_chain import chains as _chains
         out["chains"] = _chains(names[:3], depth=chain_depth)
