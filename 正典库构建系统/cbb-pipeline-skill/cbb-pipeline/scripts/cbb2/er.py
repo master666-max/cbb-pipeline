@@ -85,8 +85,10 @@ class MergeLog:
                 if a != b:
                     parent[b] = a
             elif r["op"] == "split":
-                v = r["variant"]
-                parent[v] = v  # 拆分=变体脱离合并组，重新自成根（回滚一等公民）
+                root = find(r["variant"])  # B10：拆根=解散整组合并（回滚语义完备）
+                for k in list(parent):
+                    if find(k) == root:
+                        parent[k] = k
         return find(name)
 
     def groups(self) -> dict[str, list[str]]:

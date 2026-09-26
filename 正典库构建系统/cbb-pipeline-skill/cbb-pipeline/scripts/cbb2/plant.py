@@ -14,18 +14,26 @@ STATE = "植物捕获-金标.jsonl"
 
 
 def plant(store_root: Path, seeds: list[dict], at: str) -> list[dict]:
-    """登记金标植物：每株 {plant_id, expect(字段断言), source_chapter, at}。返回带 id 的清单。"""
+    """登记金标植物：每株 {plant_id, expect(字段断言), source_chapter, at}。返回带 id 的清单。
+    B14：plant_id 幂等——重复播种自动去重。"""
     p = Path(store_root) / STATE
+    existing = set()
+    if p.exists():
+        existing = {json.loads(x)["plant_id"]
+                    for x in p.read_text(encoding="utf-8").splitlines() if x.strip()}
     out = []
     for s in seeds:
         pid = "plant-" + hashlib.sha256(json.dumps(s, sort_keys=True, ensure_ascii=False)
                                         .encode()).hexdigest()[:12]
+        if pid in existing:
+            continue
         row = {"plant_id": pid, "expect": s.get("expect") or {}, "name": s.get("name", ""),
                "source_chapter": s.get("source_chapter"), "at": at, "captured": False}
         out.append(row)
-    with p.open("a", encoding="utf-8") as f:
-        for row in out:
-            f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+    if out:
+        with p.open("a", encoding="utf-8") as f:
+            for row in out:
+                f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
     return out
 
 

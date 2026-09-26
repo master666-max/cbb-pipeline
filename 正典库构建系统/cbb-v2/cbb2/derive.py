@@ -42,12 +42,13 @@ def upsert_node_cypher(rec: dict, ns: str, invalidation: dict | None = None) -> 
 
 
 def upsert_edge_cypher(rec: dict, ns: str, invalidation: dict | None = None) -> tuple[str, dict]:
-    """关系记录→边 upsert（MERGE 键=edge_id；双时序同节点）。"""
+    """关系记录→边挂接（B1 修复：端点用 MATCH 不 MERGE——绝不自动创建空实体节点；
+    端点缺席时语句零生效，调用方据 results 计数登记 ER 缺口）。"""
     c = rec.get("canonical") or {}
     invalid_at = (invalidation or {}).get("t_invalid") or rec.get("t_invalid") or None
     cypher = (
-        "MERGE (s:Entity {name:$subject, `$NS`:$ns}) ".replace("$NS", NS_PROPERTY) +
-        "MERGE (o:Entity {name:$object, `$NS`:$ns}) ".replace("$NS", NS_PROPERTY) +
+        f"MATCH (s:Entity {{name:$subject, `{NS_PROPERTY}`:$ns}}) "
+        f"MATCH (o:Entity {{name:$object, `{NS_PROPERTY}`:$ns}}) "
         "MERGE (s)-[r:REL {edge_id:$edge_id}]->(o) "
         f"SET r.`{NS_PROPERTY}`=$ns, r.rel_type=$rel_type, "
         "r.valid_at=$valid_at, "
@@ -90,10 +91,11 @@ class ProjectionCheckpoint:
         return cp
 
     def replay_needed(self, current_ledger_rows: int) -> bool:
+        """B2 修复：检查点偏移 ≠ 当前账本行数（无论前进还是回卷）⇒ 视图需要重放/重喂。"""
         cp = self.load()
         if cp is None:
             return True
-        return cp["ledger_offset"] > current_ledger_rows  # 账本回卷=检查点失效
+        return cp["ledger_offset"] != current_ledger_rows
 
 
 # ---- U-B03 导出债务（D-14 根治：incur/repay 双向行，open 可归零） ----

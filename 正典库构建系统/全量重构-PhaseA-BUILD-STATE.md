@@ -135,3 +135,59 @@
 
 - **v3.0.0 发版**：tag 于 refactor/phase-a 远端提交（REST）；Qoder 消费者按 RELEASE-NOTES V6 节重放验收
 - 全局：Phase A→E 全部收口；59 v3 测试全绿；PROVEN 等价锚不回退；开放缺陷 13 条修 11（余 4 条随后续批次）
+
+
+---
+
+# 多角度自我审查（2026-09-27 · 三路独立审查 + 修复批）
+
+## 审查构成
+
+红队攻击（写入决策树）/ 代码正确性（cbb2 全模块）/ 外部消费者验收+宣称一致性——三路独立并行，全程读码实证。
+
+## 结论：v3.0.0 发布判定=不通过 → 修复批执行 → 复审通过
+
+### 红队（2 P0 + 9 P1 + 9 P2，全部读码实证）
+
+- P0-1 rid 撞名静默吞件+假成功回执 → **修复**：_admit_unique 撞名改派 -x{n}
+- P0-2 version/status 伪造劫持身份解析 → **修复**：①⑤④分支强制 provisional+version=1+剥 supersedes
+- P1-1 自报 t_valid 洗白 → **修复**：时序只信证据章推导+格式校验
+- P1-3 互补 event_id 哈希域过窄 → **修复**：哈希域含 about/field/at/证据
+- P1-4 relation 身份缺 library → **修复**：键含 library
+- P1-5 confirmed 免审直入 → **修复**（同 P0-2）
+- P1-6 无 name 实体身份分裂 → **修复**：拒绝而非分裂
+- P1-8 plain Store sidecar 零幂等 → 登记"生产路径必须 LedgedStore"（口径）
+- P1-9 invalidations 幂等键域 → **修复**：显式 key 字段含时序
+- P1-2/P1-7/P2-1..9 → 登记移交（P1-7 陈述位建模洗白=NLI 闸3 巡检靶；P2 并发锁=单写者纪律覆盖）
+- 防线有效证明 12 条（D1-D12 攻击全防）一并列档
+
+### 正确性（2 高 + 2 中 + 5 低 + 未接线登记）
+
+- B1 边投影 MERGE 自动造空节点 → **修复**：端点 MATCH 不 MERGE，缺席零生效（缺口队列管）
+- B2 refeed 漏判账本前进 → **修复**：offset != rows 即重喂（测试同步改）
+- B3 失效记账幂等键碰撞 → **修复**（同 P1-9）
+- B4 上下文包预算失守 → **修复**：滚动/近窗先留配额
+- B5 cooldown 只读不写 → **修复**：落选者写冷却
+- B6 incoming 独有键静默丢弃 → **修复**：互补事件保全
+- B7 混合冲突陈述位丢失 → **修复**：断言位处置前先落 sidecar
+- B8 runner 缺 import sys → 证伪（本就有）
+- B10 拆根空操作 → **修复**：split 解散整组
+- B12 缺口队列无幂等 → **修复**：(type,evidence) 去重
+- B13 单考官可晋升 → **修复**：需票按满编制+双考官下限
+- B14 植物播种无幂等 → **修复**：plant_id 去重
+- 未接线登记：er.blocking_key/margin_decision（等 ER 批）、promote 面板（等 G5 投产）、gate 契约校验死代码（v3 校验在 profiles+决策树）
+
+### 消费者验收（判定=不通过 → 修复批）
+
+- P0-1 双 store 无指引 → **修复**：SKILL.md v3.0+「v3 差异与迁移」七条必读节
+- P0-2 三个测试 import 缺失模块 → **修复**：构建排除 test_graphiti_/test_lightrag_
+- P0-3 "59 测试"假宣称 → **更正**：实际 43 v3 测试；**随包可复算**（cbb2-tests 43 测试+指纹基线+verify_release.py 随包，消费者侧实测 18/18+PROVEN）
+- P0-4 env 表错名（CBB_SPLIT_THETA_*→CBB_THETA_*）+只列 16/27 → **修复**：全量表+依赖声明（PyYAML）
+- P0-5 无 requirements → **修复**：requirements.txt 随包
+- P1 披露批：D-8 关闭-by-design / **D-9 未修在包内已警告** / D-10 移交 / RELEASE-NOTES 入 manifest / 说明书口径指向 v3 节 / ACKNOWLEDGMENTS 补 / 缺席声明（web_console/lightrag/graphiti）
+
+## 修复批后回归
+
+- **56 v3 测试**全绿（新增红队回归 8 条+预算/冷却等）；PROVEN 锚不回退
+- 发布树重建：133 件 manifest+verify_release 逐位一致+消费者侧测试实跑通过（18/18+PROVEN）
+- 残余登记：P2 并发锁（单写者纪律覆盖）、P1-7 建模洗白（NLI 闸3 靶）、D-9/D-10/D-18/19/20/27（后续批）、er 接线批

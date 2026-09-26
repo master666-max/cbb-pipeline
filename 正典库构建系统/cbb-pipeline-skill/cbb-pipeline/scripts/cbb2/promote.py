@@ -78,11 +78,11 @@ def vote(conclusion: str, evidence: str, panel: list, full_size: int = 3) -> dic
                 "degraded": True, "口径": "无可用考官——G5 BLOCKED"}
     support = sum(1 for v in votes.values() if v == "support")
     against = sum(1 for v in votes.values() if v == "against")
-    need = math.ceil(2 * n / 3)
+    need = math.ceil(2 * full_size / 3)  # B13：需票按满编制算——缩员不得自动降门槛
     if against > 0:
         verdict = "human"  # 任何异构反对=真分歧信号，必须人工裁决
-    elif support >= need:
-        verdict = "promote"
+    elif support >= need and n >= 2:
+        verdict = "promote"  # B13：单考官无异构性可言，不得单独晋升
     else:
         verdict = "hold"
     degraded = len(errors) > 0 or n < full_size

@@ -25,7 +25,7 @@ def identity_key(record: dict) -> tuple:
     if rt == "entity" and c.get("name"):
         return ("entity", record.get("library"), c["name"])
     if rt == "relation" and all(c.get(k) for k in ("subject", "rel_type", "object")):
-        return ("relation", c["subject"], c["rel_type"], c["object"])
+        return ("relation", record.get("library"), c["subject"], c["rel_type"], c["object"])
     return ("id", record.get("record_id"))
 
 
@@ -214,58 +214,66 @@ class Store:
         if not at or not contract.is_pseudo_date(at):
             raise ValueError(f"at 必须为伪锚点日历取值（YYYY-MM-DD|chNNNN），收到 {at!r}——禁墙钟")
         prof = contract.load_profile(incoming.get("library") or "")
+        c0 = incoming.get("canonical") or {}
+        rt = incoming.get("record_type")
+        if rt == "entity" and not c0.get("name"):
+            raise ValueError("entity 记录缺 canonical.name——身份键无法建立（红队 P1-6）")
+        if rt == "relation" and not all(c0.get(k) for k in ("subject", "rel_type", "object")):
+            raise ValueError("relation 记录三元组不全——身份键无法建立（红队 P1-6）")
+        tv_self = incoming.get("t_valid")
+        if tv_self is not None and not contract.is_pseudo_date(tv_self):
+            raise ValueError(f"t_valid 非伪锚点格式：{tv_self!r}（红队 P1-1）")
         if existing is _EXISTING_UNSET:
             existing = self.find_by_identity(incoming)
         if existing is None:
             rec = dict(incoming)
             rec["at"] = at
+            rec["status"] = "provisional"  # 红队 P1-5：confirmed 仅能由 G5 晋升产生
+            rec["version"] = 1             # 红队 P0-2：版本链由系统掌管，不信 incoming
+            rec.pop("supersedes", None)
             rec.setdefault("t_valid", self._derive_t_valid(incoming))
-            path, created = self.admit(rec, rec.get("status", "provisional"))
-            return {"track": "on-create", "new_id": rec["record_id"],
+            path, created, rid = self._admit_unique(rec, "provisional")
+            return {"track": "on-create", "new_id": rid,
                     "path": str(path), "created": created}
 
         conflicts = contract.classify_conflicts(prof, incoming, existing)
+        ca, cb = incoming.get("canonical") or {}, existing.get("canonical") or {}
+        extra_keys = sorted((set(ca) - set(cb)) - {"name"})
         if not conflicts:
+            for k in extra_keys:  # B6：incoming 独有键=互补信息，sidecar 保全不丢弃
+                self._append_complementary(existing, incoming, k, ca[k], at)
             if nli_merge_gate is not None and nli_merge_gate(incoming, existing) == "contradicts":
                 return self._gate_to_quarantine(incoming, existing, at, why="merge-gate(闸2)")
             return self._consistent_duplicate_v1(incoming, existing)
 
         stmt = [c for c in conflicts if c["kind"] == "statement"]
         assert_c = [c for c in conflicts if c["kind"] != "statement"]
-        if stmt and not assert_c:
-            import hashlib
-            digest = hashlib.sha256(json.dumps(
-                {c["field"]: c["in"] for c in stmt}, ensure_ascii=False,
-                sort_keys=True).encode()).hexdigest()[:12]
-            evt = {"event_id": f"ce-{digest}", "about": existing["record_id"],
-                   "library": incoming.get("library"),
-                   "fields": {c["field"]: c["in"] for c in stmt},
-                   "evidence": incoming.get("evidence") or [],
-                   "at": at, "t_valid": incoming.get("t_valid") or self._derive_t_valid(incoming)}
-            self._append("complementary-statements.jsonl", evt)
-            return {"track": "complementary-statement", "event_id": evt["event_id"],
-                    "about": existing["record_id"]}
+        if stmt:
+            # 红队 P1-3：event_id 哈希域含 about/field/at/证据——不同记录/时点不碰撞
+            evt_ids = [self._append_complementary(existing, incoming, c["field"], c["in"], at)
+                       for c in stmt]
+            if not assert_c:
+                return {"track": "complementary-statement", "event_id": evt_ids[0],
+                        "event_ids": evt_ids, "about": existing["record_id"]}
 
         mut = [c for c in assert_c if c["kind"] == "mutable"]
         imm = [c for c in assert_c if c["kind"] in ("immutable", "unclassified")]
         old_tv = existing.get("t_valid") or self._derive_t_valid(existing)
-        new_tv = incoming.get("t_valid") or self._derive_t_valid(incoming)
+        new_tv = self._derive_t_valid(incoming)  # 红队 P1-1：时序只信证据章推导，不信 caller 自报
         if not imm and mut and self._tv_lt(old_tv, new_tv):
             self._append("invalidations.jsonl", {
                 "record_id": existing["record_id"], "t_invalid": new_tv,
-                "fields": [c["field"] for c in mut], "at": at})
+                "fields": [c["field"] for c in mut], "at": at,
+                "key": f"{existing['record_id']}|{new_tv}|{at}"})  # 红队 P1-9：幂等键含时序，第二笔失效不被吞
             rec = dict(incoming)
             rec["at"] = at
-            rec.setdefault("t_valid", new_tv)
-            if rec.get("record_id") == existing["record_id"]:
-                n = 1 + sum(1 for e in self._load_all("invalidations.jsonl")
-                            if e["record_id"] == existing["record_id"])
-                rec["record_id"] = f"{_chain_base(existing['record_id'])}-i{n}"
+            rec["status"] = "provisional"  # 红队 P1-5
+            rec["t_valid"] = new_tv
             rec.pop("supersedes", None)
             rec["version"] = 1
-            path, created = self.admit(rec, rec.get("status", "provisional"))
+            path, created, rid = self._admit_unique(rec, "provisional")  # 红队 P0-1：撞名改派，不静默吞
             return {"track": "invalidation-update", "invalidated": existing["record_id"],
-                    "new_id": rec["record_id"], "path": str(path), "created": created}
+                    "new_id": rid, "path": str(path), "created": created}
 
         if nli_gate is None:
             verdict = "contradicts"  # 无闸保守回落=v1 行为
@@ -276,11 +284,14 @@ class Store:
         if verdict == "neutral":
             rec = dict(incoming)
             rec["at"] = at
+            rec["status"] = "provisional"  # 红队 P1-5
+            rec["version"] = 1             # 红队 P0-2
+            rec.pop("supersedes", None)
             rec.setdefault("t_valid", new_tv)
             rec.setdefault("_meta", {})["uncertain"] = {
                 "vs": existing["record_id"], "fields": [c["field"] for c in assert_c], "at": at}
-            path, created = self.admit(rec, "provisional")
-            return {"track": "uncertain-coexist", "new_id": rec["record_id"],
+            path, created, rid = self._admit_unique(rec, "provisional")
+            return {"track": "uncertain-coexist", "new_id": rid,
                     "path": str(path), "created": created}
         why = "；".join(f"{c['field']}: 入库={c['in']!r} vs 库内={c['stored']!r}" for c in assert_c)
         if not register_conflict:  # 重分流等场景：不反向造新隔离件，交调用方处置
@@ -324,6 +335,32 @@ class Store:
         self._append("拦截件全文.jsonl", {  # D-6：拦截件全文留存可重放
             "item_id": iid, "about": existing["record_id"], "record": incoming, "at": at})
         return {"track": "contradiction", "quarantine_item": iid, "created": created}
+
+    def _append_complementary(self, existing: dict, incoming: dict,
+                              field: str, value, at: str) -> str:
+        """红队 P1-3 修复：event_id 哈希域=about+field+value+at+证据——不同记录/不同时点不碰撞。"""
+        import hashlib
+        payload = json.dumps({"about": existing["record_id"], "field": field, "value": value,
+                              "at": at, "ev": incoming.get("evidence") or []},
+                             ensure_ascii=False, sort_keys=True).encode()
+        evt = {"event_id": f"ce-{hashlib.sha256(payload).hexdigest()[:12]}",
+               "about": existing["record_id"], "library": incoming.get("library"),
+               "fields": {field: value},
+               "evidence": incoming.get("evidence") or [],
+               "at": at, "t_valid": incoming.get("t_valid") or self._derive_t_valid(incoming)}
+        self._append("complementary-statements.jsonl", evt)
+        return evt["event_id"]
+
+    def _admit_unique(self, rec: dict, status: str) -> tuple[Path, bool, str]:
+        """红队 P0-1 修复：目标 rid 已有文件时改派 -x{n} 后缀重写，绝不静默吞件。"""
+        base_rid = rec.get("record_id") or "rec"
+        path, created = self.admit(rec, status)
+        n = 0
+        while not created:
+            n += 1
+            rec["record_id"] = f"{base_rid}-x{n}"
+            path, created = self.admit(rec, status)
+        return path, created, rec["record_id"]
 
 
     # ---- 状态迁移（R13：旁车日志，文件不动） ----

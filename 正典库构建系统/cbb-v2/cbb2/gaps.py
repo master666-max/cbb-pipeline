@@ -15,6 +15,13 @@ QUEUE = "缺口队列.jsonl"
 def _append(store_root: Path, row: dict):
     p = Path(store_root) / QUEUE
     p.parent.mkdir(parents=True, exist_ok=True)
+    if p.exists():  # B12：按 (type,evidence) 幂等——重复扫描不膨胀队列
+        for x in p.read_text(encoding="utf-8").splitlines():
+            if not x.strip():
+                continue
+            old = json.loads(x)
+            if old.get("type") == row.get("type") and old.get("evidence") == row.get("evidence"):
+                return
     with p.open("a", encoding="utf-8") as f:
         f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
 

@@ -27,12 +27,38 @@ SRC_V2 = ROOT / "cbb-v2"
 MANIFEST = REL / "HASHES.json"
 VERSION = "v3.0.0"
 
+VERIFY_SCRIPT = '''# -*- coding: utf-8 -*-
+"""verify_release.py — 发布树完整性自检：HASHES.json 逐件 sha256 核对（手改即 FAIL）。"""
+import hashlib, json, sys
+from pathlib import Path
+
+root = Path(__file__).resolve().parent.parent
+m = json.loads((root / "HASHES.json").read_text(encoding="utf-8"))
+actual = {}
+for p in root.rglob("*"):
+    if p.is_file() and "__pycache__" not in p.parts and p.name != "HASHES.json":
+        actual[p.relative_to(root).as_posix()] = hashlib.sha256(p.read_bytes()).hexdigest()
+errors = []
+for rel, sha in m["files"].items():
+    if rel not in actual:
+        errors.append(f"缺失: {rel}")
+    elif actual[rel] != sha:
+        errors.append(f"漂移: {rel}")
+for rel in actual:
+    if rel not in m["files"]:
+        errors.append(f"多出(构建区外新增): {rel}")
+if errors:
+    print("FAIL\\n" + "\\n".join(errors[:20]))
+    sys.exit(1)
+print(f"OK 发布树与 manifest 逐位一致（{len(m['files'])} 件）")
+'''
+
 SYNC_DIRS = [("cbb-anchor", "cbb-anchor"), ("cbb-coordinate", "cbb-coordinate"),
              ("cbb-extract", "cbb-extract"), ("cbb-gate1", "cbb-gate1"),
              ("cbb-quarantine", "cbb-quarantine"), ("cbb-store", "cbb-store"),
              ("contracts", "contracts"), ("tools", "tools")]
 EXCLUDE_PREFIX = ("exp_", "graphiti_", "lightrag_", "web_console", "adapt_record",
-                  "_", "test_d2", "test_图链")
+                  "_", "test_d2", "test_图链", "test_graphiti_", "test_lightrag_")
 EXCLUDE_NAMES = {"判例.md"}  # 判例=实例侧资产，不进发布包（references/判例模板.md 为模板）
 
 
@@ -93,6 +119,18 @@ def build() -> dict:
     report["synced"]["cbb2"] = {"copied": copied, "removed": removed}
     report["removed_total"] += removed
 
+    # 消费者可复算宣称（P1-3）：随包 v3 测试 + 指纹基线 + verify 脚本 + 依赖清单
+    tests_dst = REL / "scripts" / "cbb2-tests"
+    tests_dst.mkdir(parents=True, exist_ok=True)
+    for t in sorted((SRC_V2 / "tests").glob("*.py")):
+        shutil.copyfile(t, tests_dst / t.name)
+    baseline = ROOT / "analysis" / "characterization-baseline.json"
+    if baseline.exists():
+        shutil.copyfile(baseline, tests_dst / "characterization-baseline.json")
+    (REL / "scripts" / "verify_release.py").write_text(
+        VERIFY_SCRIPT, encoding="utf-8")
+    (REL / "requirements.txt").write_text("pyyaml>=6\n", encoding="utf-8")
+
     files = {}
     for p in sorted(REL.rglob("*")):
         if p.is_file() and "__pycache__" not in p.parts and p.name != "HASHES.json":
@@ -110,6 +148,9 @@ def build() -> dict:
             continue
         py_compile.compile(str(p), doraise=True)
         n_py += 1
+    for p in sorted(REL.rglob("__pycache__"), reverse=True):  # P2：pyc 不进发布树
+        shutil.rmtree(p, ignore_errors=True)
+    report["py_compiled"] = n_py
     report["py_compiled"] = n_py
     report["files_in_manifest"] = len(files)
     report["status"] = "BUILT"

@@ -59,21 +59,36 @@ def save_state(store_root: Path, state: dict):
         json.dumps(state, ensure_ascii=False, sort_keys=True, indent=1), encoding="utf-8")
 
 
+def save_state(store_root: Path, state: dict):
+    p = Path(store_root) / STATE_FILE
+    p.parent.mkdir(parents=True, exist_ok=True)  # B9：store 根不存在时自建
+    p.write_text(json.dumps(state, ensure_ascii=False, sort_keys=True, indent=1),
+                 encoding="utf-8")
+
+
 def activation_filter(store_root: Path, chapter: int, entity_names: list[str]) -> list[str]:
-    """sticky/cooldown：激活过的实体粘滞到 sticky_until；冷却中（cooldown_until≥chapter）剔除。"""
+    """sticky/cooldown：入选实体粘滞 sticky_n 章；**被挤出者写 cooldown**（B5：防幽灵占位）。"""
     st = _load_state(store_root)
+    sticky_n = int(st.get("_sticky_n", 2))
     out = []
     for nm in entity_names:
         e = st.get(nm, {})
         if e.get("cooldown_until", 0) >= chapter:
             continue
         out.append(nm)
-        if chapter > e.get("sticky_until", 0):
-            sticky = int(st.get("_sticky_n", 2))
-            e["sticky_until"] = chapter + sticky
+    picked = out[:12]
+    for nm in entity_names:
+        e = st.get(nm, {})
+        if nm in picked:
+            if chapter > e.get("sticky_until", 0):
+                e["sticky_until"] = chapter + sticky_n
+                st[nm] = e
+        elif nm in st:  # 落选即冷却两章（B5：sticky/cooldown 成对生效）
+            e = st.get(nm, {})
+            e["cooldown_until"] = chapter + 2
             st[nm] = e
     save_state(store_root, st)
-    return out
+    return picked
 
 
 def build_context_pack(store_root: Path, chapter: int, prev_slice_tail: str = "",
@@ -99,19 +114,22 @@ def build_context_pack(store_root: Path, chapter: int, prev_slice_tail: str = ""
             line = f"第{ch}章:{len([1]) and (c.get('name') or c.get('subject') or '')}"
             rolling.append(line)
     names = sorted(by_ent, key=lambda n: -max(by_ent[n]["chapters"]))
-    picked = activation_filter(store_root, chapter, names[:12])
+    picked = activation_filter(store_root, chapter, names)
+    roll_quota = budget // 3
+    tail_quota = budget - roll_quota  # B4：先给滚动/近窗留配额，卡片吃剩余——预算硬顶真硬
+    roll = "｜".join(rolling[-3:])[:roll_quota]
+    tail = (prev_slice_tail or "")[-tail_quota:]
     cards = []
-    used = 0
+    used = len(roll) + len(tail)
+    card_quota = budget - used
     for nm in picked:
         g = by_ent[nm]
         card = f"{nm}({g.get('entity_type', '')},{g.get('status', '')}) chapters={sorted(g['chapters'])[-3:]}"
-        if used + len(card) > budget:
+        if used + len(card) > card_quota + len(roll) + len(tail):
             break
         cards.append(card)
         used += len(card)
-    roll = "｜".join(rolling[-3:])[:budget // 3]
-    tail = (prev_slice_tail or "")[-budget // 3:]
-    used += len(roll) + len(tail)
+    used = len(roll) + len(tail) + sum(len(c) for c in cards)
     return {"实体卡": cards, "滚动摘要": roll, "近窗": tail,
             "budget_used": used, "budget": budget,
             "口径": "先验非事实源——与原文冲突以原文为准（指代已显式化为规范名）"}

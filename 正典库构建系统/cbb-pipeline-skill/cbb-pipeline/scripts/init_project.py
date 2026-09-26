@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """init_project.py — 开书脚手架：读 project.yaml 生成工作区+本体库+BUILD-STATE 骨架
 用法：py -X utf8 init_project.py <project.yaml 路径>
-零第三方依赖；幂等（已存在即跳过，不覆盖任何文件）。
+依赖：PyYAML（唯一第三方依赖，pip install pyyaml）；幂等（已存在即跳过，不覆盖任何文件）。
 唯一例外：0 字节的 BUILD-STATE.md 视为「未落地」并回填——它只能是崩在半路的残留。
 校验全部前置：参数不齐或语料不存在时一个目录都不建。
+已知缺陷 D-9（未修，披露于 RELEASE-NOTES-v3）：本章数为子串匹配（"<<<CHAPTER" in line），
+正文提及标记词会误计——**章数权威=边界表/manifest，不用本件计数值**。
 """
 import io, os, sys, yaml
 

@@ -14,10 +14,15 @@
 7. **runner 编排**：门控动态切分（θ 三条件，旗标 CBB_DYNAMIC_SPLIT 默认 off=整章等价）+场景软标签+承接摘要 ≤200 字+三层上下文包（实体卡/滚动摘要/近窗+sticky/cooldown）。
 8. **治理层**：对样双轨（发现轨/估计轨分离，Wilson 95% 区间——"30 全过=95%"的点宣称从此禁用）+植物捕获金标+缺口队列+ER 归一三段（合并可撤销，0.85 绝对带废弃）+**票数晋升 G5**（三考官 env 编制 LOCAL/DEEPSEEK/QWEN，隔离评审+答案对调，against>0 即 human）。
 9. **安全拔除**：发布件不再写死任何实例/容器名（CBB_NEO4J_CONTAINER env 化）；**docker inspect 抠凭据通道删除**；Graphiti 五件退役（上游三雷未修+add_triplet 不绕失效/去重）。
+10. **随包缺席声明**：web_console、lightrag 桥族（export/bridge/delta_sync/live）、graphiti 族不在本包（源仓保留）——全流程说明书相应段落按 SKILL「v3 差异与迁移」口径读；一致性佐证由 `cbb2/derive` 投影检查点承担。
 
-## 修复的缺陷（外来消费者实测 29 条中的 13 条开放项）
+## 修复的缺陷（消费者实测 13 条开放项 + 清单外加分）
 
-D-1 ✅ D-2 ✅ D-6 ✅ D-13 ✅ D-14 ✅ D-15 ✅ D-21 ✅ D-23 ✅ D-24 ✅ D-25 ✅ D-28（机制）✅ D-29（判据面）✅；移交：D-18/19/20/27（Phase C runner/CLI 卫生批后续）、D-5/D-12 上游版本面。全程修前反例先红（PT-020）。
+- **✅ 已修 9**（13 清单内）：D-13 D-14 D-15 D-21 D-23 D-24 D-25 D-28（机制）D-29（判据面）
+- **✅ 加分 3**（清单外）：D-1 D-2 D-6（拦截件全文留存）
+- **🔜 移交后续批** 4：D-18 D-19 D-20 D-27（runner 上下文包/CLI 卫生批）
+- **补登记（此前未披露）**：D-8 关闭-by-design（v3 write_decision 直调隔离区，admit 短路已不存在）；**D-9 未修仍在包内**（init_project 子串数章，docstring 已警告，章数权威=边界表）；D-10 未修（embed_dedup_scan 字段归一，移交后续批）
+- 全程修前反例先红（PT-020）。随包测试：`scripts/cbb2-tests/`（43 测试+acceptance 指纹基线）与 `scripts/verify_release.py`——**宣称可复算**。
 
 ## 破坏性变更
 
@@ -29,13 +34,19 @@ D-1 ✅ D-2 ✅ D-6 ✅ D-13 ✅ D-14 ✅ D-15 ✅ D-21 ✅ D-23 ✅ D-24 ✅ D-
 ## env 契约（全部 env 注入，零硬编码）
 
 ```
-CBB_NAMESPACE / CBB_STORE / NEO4J_HTTP / NEO4J_PASSWORD / CBB_NEO4J_CONTAINER
+CBB_NAMESPACE / CBB_STORE / CBB_INDEX / NEO4J_HTTP / NEO4J_PASSWORD / NEO4J_USER / NEO4J_AUTH / CBB_NEO4J_CONTAINER / NEO4J_ISOLATED_PASSWORD
+EMBED_HTTP / EMBED_MODEL / RERANK_HTTP / RERANK_MODEL / LMSTUDIO_PORT
+NLI_LLM_BASE / NLI_LLM_MODEL / NLI_LLM_API_KEY / NLI_LOCAL_MODEL
 EXAMINER_LOCAL_BASE / EXAMINER_LOCAL_MODEL
 EXAMINER_DEEPSEEK_BASE / EXAMINER_DEEPSEEK_MODEL / EXAMINER_DEEPSEEK_API_KEY
 EXAMINER_QWEN_BASE / EXAMINER_QWEN_MODEL / EXAMINER_QWEN_API_KEY（回落 DASHSCOPE_API_KEY）
-CBB_DYNAMIC_SPLIT（默认 off）/ CBB_SPLIT_THETA_*
+DEEPSEEK_API_KEY / CBB_DYNAMIC_SPLIT / CBB_THETA_LEN / CBB_THETA_SCENES / CBB_THETA_NEWENT
+CBB_QUERY_LOG / CBB_FIFTH / SPIKE_LLM_BASE / SPIKE_LLM_MODEL
 ```
+第三方依赖：PyYAML（init_project 需要，`pip install pyyaml`）——其余 stdlib。
 
 ## 外部消费者验收指引（V6）
 
-重放 R000/R001 五单元（判据：假矛盾=0、互补陈述入 event、失效记账非隔离、不触发整库作废）；本版 BUILD-STATE：`正典库构建系统/全量重构-PhaseA-BUILD-STATE.md`（A→D 四相收口记录）。
+- **宣称复算（随包可跑）**：`py scripts/verify_release.py`（HASHES.json 逐件核对）；`py scripts/cbb2-tests/acceptance.py`（指纹 aafe3804 基线随包）；43 个 v3 测试 `py scripts/cbb2-tests/test_v3_*.py` 逐件运行。
+- **重放验收**：R000/R001 五单元夹具在消费者侧（qoder 工作区）——判据=假矛盾 0、互补陈述入 event、失效记账非隔离、不触发整库作废。
+- **已知未修披露**：D-9（子串数章，权威=边界表）、D-10（嵌入扫描字段归一）、D-18/19/20/27（后续批）；随包缺席件见「新东西」第 10 条。
