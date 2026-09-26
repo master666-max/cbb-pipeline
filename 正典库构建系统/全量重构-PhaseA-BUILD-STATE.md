@@ -119,3 +119,19 @@
 - 遗留：信息保全 186 review / 人工桶 268 处置 / profiles 人工审定 / 共进化闭环旗标（待重抽窗）
 
 - **G5 满编活体评审**：三考官（LOCAL=tifa-14b/DEEPSEEK=deepseek-chat/QWEN=qwen3.8-flash）全部在列无缺席；真评一例：LOCAL=unsure、DEEPSEEK=support → verdict=hold（判据会响实证）；QWEN 缺票=端点 403（maas.qianwenaiapi.com 镜像与 key 配对待用户核对，官方兼容端点备选 dashscope.aliyuncs.com/compatible-mode/v1）——通道架构已通，仅凭据配对问题
+
+
+---
+
+# Phase E 发布产物化（2026-09-27 收口 · 全量重构主体完成）
+
+| 单元 | 状态 | 判据留痕 |
+|---|---|---|
+| E01 单命令构建 | ✅ | tools/build_release.py：build-managed 区同步（生产 cbb 六技能+contracts+tools、cbb-v2/cbb2 包）+退役族排除+HASHES.json manifest（123 件/89 py 编译）+--verify 复算模式——手改发布树即 FAIL（病1 拷贝漂移根治落地） |
+| E02 发布树纠偏 | ✅ | test_graph_chain.py 从发布侧回收至生产源（发布独有件归源纪律）+重建 BUILT/verify ok |
+| E03 import 冒烟 | ✅ | 发布布局 import：cbb2 全模块+六技能+contracts+核心工具全 OK（含负控制） |
+| E04 发版说明 | ✅ | RELEASE-NOTES-v3.md：新东西 9 条/缺陷修复 13 条表/破坏性变更/env 契约/V6 重放指引 |
+| E05 QWEN 诊断 | ✅ | 403=免费额度耗尽（端点/key 配对正确，/models 200 实证）；充值或关"仅免费"即激活；当前面板 LOCAL+DEEPSEEK 双编降级可用（判据会响） |
+
+- **v3.0.0 发版**：tag 于 refactor/phase-a 远端提交（REST）；Qoder 消费者按 RELEASE-NOTES V6 节重放验收
+- 全局：Phase A→E 全部收口；59 v3 测试全绿；PROVEN 等价锚不回退；开放缺陷 13 条修 11（余 4 条随后续批次）

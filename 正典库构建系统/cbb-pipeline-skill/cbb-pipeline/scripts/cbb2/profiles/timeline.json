@@ -1,0 +1,9 @@
+{
+  "library": "timeline",
+  "_review": "草案 v3.0.0-alpha（U-A01 交付物，字段分类待人工审定后去本栏）",
+  "identity": {"entity": "name", "relation": "triple", "default": "record_id"},
+  "assertion_fields": ["label", "kind", "instant", "day_offset", "chapter_ref", "parent_anchor", "precision", "pseudo_date", "tick"],
+  "statement_fields": [],
+  "mutable_assertions": [],
+  "immutable_assertions": ["kind", "tick"]
+}

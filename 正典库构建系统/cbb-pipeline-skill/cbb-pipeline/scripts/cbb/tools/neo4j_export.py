@@ -279,9 +279,11 @@ def docker_start() -> bool:
 
 
 def derive_password(cli_pw: str) -> str | None:
+    """D-21 拔除：凭据只来自 --password 或 NEO4J_PASSWORD env。
+    docker inspect 运行时抠凭据通道已删——那会从**别项目的容器**里抠出口令。"""
     if cli_pw:
         return cli_pw
-    return os.environ.get("NEO4J_PASSWORD")  # D-21 拔除：docker inspect 抠凭据通道已删
+    return os.environ.get("NEO4J_PASSWORD")
 
 
 def ensure_server(base: str, allow_start: bool) -> bool:

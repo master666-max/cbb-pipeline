@@ -12,8 +12,8 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
-import time
 import os
+import time
 import urllib.request
 from pathlib import Path
 

@@ -1,0 +1,10 @@
+{
+  "library": "setting",
+  "_review": "草案 v3.0.0-alpha（U-A01 交付物，字段分类待人工审定后去本栏）",
+  "identity": {"entity": "name", "relation": "triple", "default": "record_id"},
+  "assertion_fields": ["name", "entity_type", "chapter", "tick"],
+  "statement_fields": ["fact"],
+  "mutable_assertions": ["entity_type"],
+  "immutable_assertions": [],
+  "_note": "同 character：entity_type 实证为随剧情精化"
+}
