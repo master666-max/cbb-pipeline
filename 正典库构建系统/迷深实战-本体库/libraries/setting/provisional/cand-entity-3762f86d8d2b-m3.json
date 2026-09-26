@@ -1,0 +1,102 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "『Dimension』"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 4,
+   "quote": "毕竟仅靠『Dimension』旁听所获取的信息较抵达20层而言还是有所欠缺。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 143,
+   "quote": "就算数值上有些许的差距，通过『Dimension』也能轻松弥补。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 150,
+   "quote": "「——魔法『Dimension·决战演算』、魔法『Foam』。」",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 167,
+   "quote": "对接下来将不得不应对此前从未见过的次元魔法的她",
+   "vol": 1
+  },
+  {
+   "chapter": 12,
+   "line": 30,
+   "quote": "能够对周围的情况进行观测的魔法『Dimension』同样掌握了迷宫内的敌情。",
+   "vol": 1
+  },
+  {
+   "chapter": 12,
+   "line": 162,
+   "quote": "「——魔法『Dimension·决战演算』！」",
+   "vol": 1
+  },
+  {
+   "chapter": 93,
+   "line": 224,
+   "quote": "但我还是能用『Dimension』掌握碎片的全部轨迹，并用剑一一将之挡开。",
+   "vol": 1
+  },
+  {
+   "chapter": 93,
+   "line": 229,
+   "quote": "我将『Dimension』的范围稍稍拓展到了外部，窥探佩艾希亚城内的状况。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "主角的空间系魔法：可旁听情报、把握空间；数值差距可借此弥补（L4/L143）"
+  },
+  {
+   "category": "technique",
+   "chapter": 14,
+   "text": "决斗中与『Foam』并列咏唱为『Dimension·决战演算』（L150）"
+  },
+  {
+   "category": "alias",
+   "chapter": 14,
+   "text": "别名：Dimension·决战演算（L150）／次元魔法（L167 叙述称）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 4.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-3762f86d8d2b",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-3762f86d8d2b-m3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-3762f86d8d2b-m",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 3
+}

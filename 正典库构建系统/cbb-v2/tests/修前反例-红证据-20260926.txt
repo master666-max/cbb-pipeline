@@ -1,0 +1,20 @@
+=== 修前反例红证据（U-A05，2026-09-26，PT-020） ===
+
+--- D-23 病灶演示：v1 门面 admit_or_merge 把互补陈述判矛盾且 incoming 不入库 ---
+track = contradiction
+incoming(claim=乙) 是否在库 = False
+隔离区件数 = 1
+
+--- 新行为反例（write_decision/contract/ensure_input 能力缺席=红） ---
+"[test_v3_store]"
+    st.write_decision(rec)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'Store' object has no attribute 'write_decision'
+"[test_v3_contract]"
+    from cbb2 import contract  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'contract' from 'cbb2' (D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb-v2\cbb2\__init__.py)
+"[test_v3_gate]"
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1335, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'cbb2.contract'

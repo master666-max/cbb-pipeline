@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "火炎魔法"
+ },
+ "evidence": [
+  {
+   "chapter": 16,
+   "line": 388,
+   "quote": "先天技能：炯眼1.45",
+   "vol": 1
+  },
+  {
+   "chapter": 16,
+   "line": 389,
+   "quote": "后天技能：狩猎0.67料理1.08火·炎·魔·法1.00",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 546,
+   "quote": "在她放出火炎魔法的同时，我钻向西斯的怀中，并且增强了『Dimension』用以找寻其破绽。",
+   "vol": 1
+  },
+  {
+   "chapter": 79,
+   "line": 543,
+   "quote": "「那样好吗，会把这一带烧尽的哦！？」",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 16,
+   "text": "玛利亚新获得的后天技能（1.00）——阿尔缇亲授+赠魔石；主角首次目击他人技能增加（技能增量=一辈子难得一见的珍稀品）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.85,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-22f06b84bfea-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-22f06b84bfea",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

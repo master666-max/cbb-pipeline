@@ -94,11 +94,32 @@ class LedgedStore:
         self.store = Store(root)
         self.ledger = LedgerChain(Path(root) / "ledger.jsonl")
         self._skips: dict[str, int] = {}
+        self._wrap_appends()
         self._wrap_zone()
 
     def _sha(self, p: Path) -> str:
         import hashlib
         return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else EMPTY_SHA
+
+    def _wrap_appends(self):
+        """通用侧车入账：store._append 全部 name 走账本（幂等键跳过+sha_before/after）。
+        U-A02 起 write_decision 的 complementary-statements/invalidations/拦截件全文
+        经此自动入账——无需逐名注册。"""
+        store = self.store
+        led = self.ledger
+        orig = store._append
+        root = Path(store.root)
+
+        def lappend(name, obj, _orig=orig):
+            key = idempotency_key_of(obj)
+            if led.has_key(name, key):
+                self._skips[name] = self._skips.get(name, 0) + 1
+                return
+            sha_before = self._sha(root / name)
+            _orig(name, obj)
+            led.record_append(name, key, sha_before, self._sha(root / name))
+
+        store._append = lappend
 
     def _append(self, name: str, obj: dict):
         target = Path(self.store.root) / name
@@ -125,6 +146,23 @@ class LedgedStore:
             _orig(item)
             _led.record_append(rel, key, sha_before, self._sha(zone.items_path))
         zone._append = zappend
+
+        orig_adj = zone.adjudicate
+
+        def zadjudicate(iid, verdict, note="", by="human", _orig=orig_adj, _led=led):
+            key = f"{iid}|{verdict}"
+            if _led.has_key("quarantine-zone/adjudications.jsonl", key):
+                return {"item_id": iid, "repeated": True}
+            sha_b_items = self._sha(zone.items_path)
+            adj_path = zone.root / "adjudications.jsonl"
+            sha_b_adj = self._sha(adj_path)
+            out = _orig(iid, verdict, note=note, by=by)
+            _led.record_append("quarantine-zone/items.jsonl", key,
+                               sha_b_items, self._sha(zone.items_path))
+            _led.record_append("quarantine-zone/adjudications.jsonl", key + "|adj",
+                               sha_b_adj, self._sha(adj_path))
+            return out
+        zone.adjudicate = zadjudicate
 
     def __getattr__(self, name):
         return getattr(self.store, name)

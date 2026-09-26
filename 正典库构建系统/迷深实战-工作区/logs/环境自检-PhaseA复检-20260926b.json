@@ -1,0 +1,106 @@
+{
+ "overall": "BLOCKED_INFRA",
+ "carrier": "file",
+ "carrier_reason": "归属未判/图不可用 ⇒ 降级走文件兜底（同一套规则，两载体），且已记未达项",
+ "基础设施": {
+  "graph": "BLOCKED",
+  "embed": "READY",
+  "rerank": "BLOCKED"
+ },
+ "基础设施缺": [
+  "B-图 知识库图载体",
+  "B-重排 重排模型"
+ ],
+ "降级运行": "否（未给 --allow-degraded ⇒ 阻断，退出码 2）",
+ "主链必需缺": [],
+ "未达项": [
+  {
+   "item": "G1 Neo4j HTTP",
+   "state": "BLOCKED",
+   "note": "http://localhost:7695 不通：ConnectionAbortedError [WinError 10053] 你的主机中的软件中止了一个已建立的连接。"
+  },
+  {
+   "item": "G2 bolt 端口",
+   "state": "BLOCKED",
+   "note": "G1 不通 ⇒ 无从解析 bolt 地址"
+  },
+  {
+   "item": "G4 图库归属",
+   "state": "BLOCKED",
+   "note": "库不可达 ⇒ 归属未判定；未判定不得启用 graph 载体"
+  },
+  {
+   "item": "R1 重排端点",
+   "state": "BLOCKED",
+   "note": "http://127.0.0.1:8081/v1/rerank 不可用：URLError <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>"
+  }
+ ],
+ "终审可用": false,
+ "导出债务": "未查（未给 --store）",
+ "口径": "终审可用=图归属已判 且 嵌入/重排就绪 且 导出债务=0；任一不成立 ⇒ ⑦ 记未达项不许判通过。基础设施缺项默认阻断开书（exit 2），--allow-degraded 只能带着债务继续",
+ "exit": 2,
+ "items": [
+  {
+   "item": "M1 解释器",
+   "state": "READY",
+   "note": "Python 3.14.7（需 ≥3.10）"
+  },
+  {
+   "item": "M2 依赖 yaml",
+   "state": "READY",
+   "note": "可导入"
+  },
+  {
+   "item": "M3 工作区可写",
+   "state": "READY",
+   "note": "真写一发再删：工作区"
+  },
+  {
+   "item": "M4 账本可追加",
+   "state": "READY",
+   "note": "账本尚不存在（首写方）：工作区\\ledger.jsonl"
+  },
+  {
+   "item": "G1 Neo4j HTTP",
+   "state": "BLOCKED",
+   "note": "http://localhost:7695 不通：ConnectionAbortedError [WinError 10053] 你的主机中的软件中止了一个已建立的连接。"
+  },
+  {
+   "item": "G2 bolt 端口",
+   "state": "BLOCKED",
+   "note": "G1 不通 ⇒ 无从解析 bolt 地址"
+  },
+  {
+   "item": "G4 图库归属",
+   "state": "BLOCKED",
+   "note": "库不可达 ⇒ 归属未判定；未判定不得启用 graph 载体"
+  },
+  {
+   "item": "E1 嵌入端点",
+   "state": "READY",
+   "note": "4096 维 · 19.87s（首含模型载入，慢≠不通）",
+   "维度": 4096
+  },
+  {
+   "item": "R1 重排端点",
+   "state": "BLOCKED",
+   "note": "http://127.0.0.1:8081/v1/rerank 不可用：URLError <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>"
+  },
+  {
+   "item": "L1 推理端点(付费)",
+   "state": "READY",
+   "note": "preset=deepseek · 凭证在位（值不读出）（观察项，不闸门）"
+  },
+  {
+   "item": "P1 graphiti 包＋路由",
+   "state": "READY",
+   "note": "graphiti_core 可导入；路由探测：native（json_schema=True @ tifa-deepsex-14b-cot-chat）——native=原生抽取管线；纪律：嵌入器 base_url 钉死 http://127.0.0.1:8080/v1（不随 LLM 路线走）；episode 清点用 Episodic 标签",
+   "route": "native"
+  },
+  {
+   "item": "J1 判定者身份",
+   "state": "DECLARED",
+   "note": "语义类判定（NLI/评分）由宿主 Agent 执行，非本地模型；须在报告里同口径声明，并固定 prompt 版本＋逐对独立判定"
+  }
+ ]
+}

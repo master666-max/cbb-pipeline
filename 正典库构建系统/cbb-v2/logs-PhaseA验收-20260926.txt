@@ -1,0 +1,16 @@
+=== Phase A 全套验收（2026-09-26） ===
+[tests/test_v3_contract.py]
+4 tests PASS
+[tests/test_v3_gate.py]
+5 tests PASS
+[tests/test_v3_store.py]
+10 tests PASS
+[tests/test_v3_ops_nli.py]
+5 tests PASS
+[acceptance 等价锚]
+PROVEN 行为等价 (aafe38042b28f0c2)：v1 基线五面指纹与 cbb-v2 逐位相等
+[金丝雀: 改坏 is_metatext → 期望 FAIL]
+canary-broken exit=1 (期望非0)
+restored exit=0 (期望0)
+[真库现状]
+库件: 6278 | 隔离区状态: {'pending': 1037, 'confirmed': 336}

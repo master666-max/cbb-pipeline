@@ -1,0 +1,63 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "血术"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 286,
+   "quote": "魔法战斗2.27血术5.00神圣魔法1.03",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 405,
+   "quote": "魔法战斗2.27血术5.00神圣魔法1.03",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 911,
+   "quote": "但是拉丝缇娅拉的血中记录着多种多样的魔法和经验。",
+   "vol": 1
+  },
+  {
+   "chapter": 70,
+   "line": 1010,
+   "quote": "她的秀发发出五颜六色的光芒，最后演变为白银色。看来是借用了更多人的经验。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "拉丝缇娅拉先天技能 5.00（面板最高值——效果未详，大伏笔级数值）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-fa732bcc7329-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-fa732bcc7329",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

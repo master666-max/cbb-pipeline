@@ -1,0 +1,69 @@
+{
+ "canonical": {
+  "entity_type": "技能(分析魔法)",
+  "name": "技能『表示』"
+ },
+ "evidence": [
+  {
+   "chapter": 116,
+   "line": 148,
+   "quote": "「然后就是关于涡波的能力的事情了呢⋯⋯⋯感觉涡波的『表示』，要比我的『拟神之眼』级别更高啊⋯⋯」",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 152,
+   "quote": "就我来说，能够将状态的数值一直表示到小数点后两位0.00的地步。但是拉丝缇娅拉则根本看不到小数点。而且装备物品和道具也看不了。怪物这类生物的情报虽然在某种程度上能够看到，但是无机物的情报则完全得不到。",
+   "vol": 1
+  },
+  {
+   "chapter": 116,
+   "line": 240,
+   "quote": "就定为『注视（Analyze）』『持有物品（The・Pouch）』了。",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 39,
+   "quote": "对放在仓库里的装备也都一一使用了『表示』",
+   "vol": 1
+  },
+  {
+   "chapter": 122,
+   "line": 50,
+   "quote": "使用『表示』看一下，发现赛莉酱的衣服算是件不错的东西。",
+   "vol": 1
+  }
+ ],
+ "library": "character",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 116,
+   "text": "本章被涡波正式更名为『注视（Analyze）』（据游戏联想起名，拉丝缇娅拉好评）；据涡波自述其性能优于拉丝缇娅拉『拟神之眼』（数值可显示至小数点后两位0.00）；单看不出所学魔法列表（故请同伴详述能力）；更名由拉丝缇娅拉起名大会引出、久议未决由涡波擅自定名"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.87,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-7f6f64b99c29-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-7f6f64b99c29",
+ "verified_against": {
+  "path": "迷深实战-工作区/slice/ch0116.txt",
+  "sha": "9d78d469cedf94551ac1db011307055592819381",
+  "verified_at": "2026-09-19"
+ },
+ "version": 2
+}

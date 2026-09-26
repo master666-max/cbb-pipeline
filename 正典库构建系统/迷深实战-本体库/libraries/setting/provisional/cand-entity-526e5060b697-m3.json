@@ -1,0 +1,74 @@
+{
+ "canonical": {
+  "entity_type": "地点",
+  "name": "大圣堂"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 104,
+   "quote": "竟然在大圣堂里三句不离你！",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 295,
+   "quote": "我想肯定是在大圣堂吧？",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 318,
+   "quote": "正好那家伙就在大圣堂，离这里也不算远。",
+   "vol": 1
+  },
+  {
+   "chapter": 210,
+   "line": 332,
+   "quote": "事到如今，就凭大圣堂附近的戒备根本不成问题。想见她根本易如反掌。",
+   "vol": 1
+  },
+  {
+   "chapter": 214,
+   "line": 16,
+   "quote": "在大圣堂的告白之后，我们被好好地款待了一番，之后也得到了周详的礼送。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "拉丝缇娅拉日常念叨主角的地点（据塞拉声称，L104）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 4.88,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   },
+   {
+    "by": "promotion",
+    "from": "superseded:cand-entity-526e5060b697",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-526e5060b697-m3",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-526e5060b697-m2",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 3
+}

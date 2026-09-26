@@ -1,0 +1,68 @@
+{
+ "canonical": {
+  "entity_type": "组织",
+  "name": "天上之七骑士"
+ },
+ "evidence": [
+  {
+   "chapter": 14,
+   "line": 38,
+   "quote": "是隶属于弗茨亚茨的『天上之七骑士』的一员。",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 104,
+   "quote": "都在我们七骑士耳边念叨着",
+   "vol": 1
+  },
+  {
+   "chapter": 14,
+   "line": 111,
+   "quote": "除非你把我们七骑士全部挑于马下",
+   "vol": 1
+  },
+  {
+   "chapter": 195,
+   "line": 24,
+   "quote": "这礼仪端正的姿态和那份强大的实力，让我不由的想起地上的『天上的七骑士』。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 14,
+   "text": "弗茨亚茨的骑士团，塞拉·雷迪安特为其一员；名号让酒馆众人吃惊（L38-41）"
+  },
+  {
+   "category": "alias",
+   "chapter": 14,
+   "text": "别名：七骑士（L104/L111）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-4fac374d05a2-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-4fac374d05a2",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}

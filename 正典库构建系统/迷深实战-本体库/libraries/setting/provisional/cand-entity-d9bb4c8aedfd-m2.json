@@ -1,0 +1,57 @@
+{
+ "canonical": {
+  "entity_type": "技能魔法",
+  "name": "技能『魔力冰结化』"
+ },
+ "evidence": [
+  {
+   "chapter": 42,
+   "line": 337,
+   "quote": "「——叫技能『魔力冰结化』比较好吧？」",
+   "vol": 1
+  },
+  {
+   "chapter": 42,
+   "line": 335,
+   "quote": "我跟诺文一样挥剑，用冰刃斩落了本来无法触及的花。",
+   "vol": 1
+  },
+  {
+   "chapter": 125,
+   "line": 236,
+   "quote": "技能『魔力冻结化』延长剑身，在冰沙中舞动，将袭来的触手全部切断，伤口在冰沙的影响下又被瞬间冻结。冻伤一并剥夺了伽鲁夫纳多杰里的再生能力。",
+   "vol": 1
+  }
+ ],
+ "library": "setting",
+ "observations": [
+  {
+   "category": "summary",
+   "chapter": 42,
+   "text": "涡波自创（魔力物质化的替代技）：以惯用的『冰』属性魔力包裹剑身+吸收空中水分冻结=『固态化的魔力』替代品→剑身任意延长/缩短（停止分子运动溶冰缩剑）；完成度勉强、硬度锋利不及原版（诺文评'完全变成别的技能/更接近魔法'——含Ice与Freeze的术式）"
+  }
+ ],
+ "provenance": {
+  "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+  "extractor_confidence": 2.9,
+  "gate_trace": [],
+  "precedent_refs": [],
+  "status_history": [
+   {
+    "by": "promotion",
+    "from": "candidate",
+    "to": "provisional"
+   }
+  ]
+ },
+ "record_id": "cand-entity-d9bb4c8aedfd-m2",
+ "record_type": "entity",
+ "status": "provisional",
+ "supersedes": "cand-entity-d9bb4c8aedfd",
+ "verified_against": {
+  "path": "语料分析/corpus/clean_full.txt",
+  "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+  "verified_at": "2026-09-16"
+ },
+ "version": 2
+}
