@@ -86,3 +86,17 @@
 
 - 验收：test_v3_derive 5/5 + test_neo4j_export OK + test_环境自检 OK + D-13 活体烟测 PASS
 - 遗留：投影检查点与 lightrag_live 接线随 Phase C（runner 编排）；ns 写侧历史节点补钉（SET group_id 回填）待下轮图导出时顺带
+
+---
+
+# Phase C runner 编排层（2026-09-27 收口）
+
+| 单元 | 状态 | 判据留痕 |
+|---|---|---|
+| C01 门控动态切分 | ✅ | cbb2/splitting：场景软标签（分隔符/时间跳变/对话密度机械信号）+split_decision θ 三条件（θ_len/θ_scenes/θ_newent env 可调）+segment_blocks 保段切分；**旗标 CBB_DYNAMIC_SPLIT 默认 off**（off=整章+无分段，行为与 v2 等价） |
+| C02 承接摘要+三层上下文包 | ✅ | cbb2/context：carry_summary ≤200 字机械生成；三层包（实体卡新颖性门控+滚动摘要+近窗）预算硬顶；**sticky/cooldown 时间性激活**（lorebook 移植）；先验非事实源口径随包 |
+| C03 runner 总装 | ✅ | prepare_chapter（派工卡=切分判定+软标签+承接+包）/finalize_chapter（身份缓存批量 write_decision→lightrag 检查点推进）；幂等重放测试过（P-017 repeated） |
+| C05 D-29 判据面 | ✅ | 检索层双拷贝：rerank=True 却降级 mechanical ⇒ 口径显式登记"D-29 判据：能力未接线"；结果增 rerank_requested 字段；test_检索层 10/10 回归 |
+
+- 验收：test_v3_phasec 6/6 + test_检索层 10/10 回归 + 既有套件不回退
+- 遗留：模型路由/输出两段式旗标（§7.3，待重抽窗定标）；检索层 rerank 活体探活依赖 8081 llama-server（本轮未启，降级判据会响）

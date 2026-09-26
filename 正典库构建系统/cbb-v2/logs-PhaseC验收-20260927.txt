@@ -1,0 +1,15 @@
+=== Phase C 全套验收（2026-09-27） ===
+[tests/test_v3_contract.py]
+4 tests PASS
+[tests/test_v3_gate.py]
+5 tests PASS
+[tests/test_v3_store.py]
+10 tests PASS
+[tests/test_v3_ops_nli.py]
+5 tests PASS
+[tests/test_v3_derive.py]
+5 tests PASS
+[tests/test_v3_phasec.py]
+6 tests PASS
+[acceptance 等价锚]
+PROVEN 行为等价 (aafe38042b28f0c2)：v1 基线五面指纹与 cbb-v2 逐位相等

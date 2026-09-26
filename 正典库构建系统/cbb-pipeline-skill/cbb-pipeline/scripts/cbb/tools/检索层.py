@@ -211,6 +211,8 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
         backend = bk
         if bk == "rerank":
             notes.append("精排打分对象=富文本")
+        else:  # D-29 判据面：请求了重排却降级=能力未接线，必须响，不许静默
+            notes.append("D-29 判据：rerank=True 但重排降级为 mechanical（端点/transport 缺席）")
 
     top = [{"name": n, "rrf": round(s, 6)} for n, s in ranked[:top_k]]
     # 查询日志：第三期真实负载复核的数据底座。三条改过的行为，都来自实测教训：
@@ -233,7 +235,7 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
             notes.append(f"查询日志已写 {logp.name}")
         except Exception as e:
             notes.append(f"查询日志写入失败（{str(e)[:40]}）：负载底座不可信，须修")
-    return {"top": top, "backend": backend, "paths": len([p for p in paths if p]),
+    return {"top": top, "backend": backend, "rerank_requested": bool(rerank), "paths": len([p for p in paths if p]),
             "口径": "；".join(notes) or "无降级"}
 
 
