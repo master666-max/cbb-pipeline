@@ -37,7 +37,7 @@
   py -X utf8 环境自检.py --exam --model <模型名>  # 给本地推理端点做选型微考（观察项）
 
 端点与环境变量（与包内既有件同一套名字，不另造）：
-  NEO4J_HTTP（默认 http://localhost:7695）· NEO4J_PASSWORD / NEO4J_AUTH ·
+  NEO4J_HTTP（出厂默认 http://localhost:7474；实例映射端口走 env 覆盖，如 7695）· NEO4J_PASSWORD / NEO4J_AUTH ·
   EMBED_HTTP（默认 http://127.0.0.1:8080/v1/embeddings）·
   RERANK_HTTP（默认 http://127.0.0.1:8081/v1/rerank）· LMSTUDIO_BASE :1234 · DEEPSEEK_API_KEY
 """

@@ -2,12 +2,12 @@
 """rest_push_phasea.py — REST 通道推送 Phase A（git smart-http 被反代阻，P-025 先例）。
 基 = 远端 refactor/reimagine tip fd0fd6a（= 本地 v2-baseline），增量 146 件。
 """
-import io, json, os, subprocess, time
+import io, json, os, subprocess, sys, time
 
 REPO = "master666-max/cbb-pipeline"
 REPO_ROOT = r"D:\zcode专用！！！！危险！！！！！！！！！"
-BASE = "fd0fd6a"
-BRANCH = "refactor/phase-a"
+BASE = sys.argv[1] if len(sys.argv) > 1 else "fd0fd6a"
+BRANCH = sys.argv[2] if len(sys.argv) > 2 else "refactor/phase-a"
 TMP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_rest_phasea_tmp.json")
 
 def gh(args, input_file=None):
@@ -24,16 +24,19 @@ def gh_json(args, payload):
     return gh(args, input_file=TMP)
 
 os.chdir(REPO_ROOT)
-files = subprocess.run(["git", "diff", "--name-only", "v2-baseline..master"],
+rng = f"{BASE}..master"
+files = subprocess.run(["git", "diff", "--name-only", rng],
                        capture_output=True, text=True, encoding="utf-8").stdout.split()
-deleted = set(subprocess.run(["git", "diff", "--name-only", "--diff-filter=D",
-                              "v2-baseline..master"],
+deleted = set(subprocess.run(["git", "diff", "--name-only", "--diff-filter=D", rng],
                              capture_output=True, text=True, encoding="utf-8").stdout.split())
 print(f"diff {len(files)} files (deleted {len(deleted)})")
 
 for attempt in range(1, 4):
     try:
-        ref = gh([f"repos/{REPO}/git/ref/heads/refactor/reimagine"])
+        try:
+            ref = gh([f"repos/{REPO}/git/ref/heads/{BRANCH}"])
+        except RuntimeError:
+            ref = gh([f"repos/{REPO}/git/ref/heads/refactor/reimagine"])
         parent = ref["object"]["sha"]
         tree = gh([f"repos/{REPO}/git/commits/{parent}"])["tree"]["sha"]
         entries = []

@@ -3,8 +3,9 @@
 
 设计：实体→(:Entity {name,…}) 节点、关系记录→[:REL {rel_type,…}] 边，全部 MERGE（幂等，重放零增殖）；
 Cypher 走 Neo4j HTTP 端点（stdlib urllib，零驱动依赖）。探活降级链（§0④）：
-  宿主 http 7695（映射容器 7474）探活 → 不在且 docker daemon 在 → docker start neo4j-step0 重探 → 仍不在 → blocked 退出码 2 不阻塞。
-凭据（D-004 不落文件）：--password > 环境变量 NEO4J_PASSWORD > docker inspect 运行时读取。
+  NEO4J_HTTP 探活 → 不在且 docker daemon 在且配置了容器名 → docker start $CBB_NEO4J_CONTAINER 重探 → 仍不在 → blocked 退出码 2 不阻塞。
+凭据（D-004 不落文件）：--password > 环境变量 NEO4J_PASSWORD（Phase B/D-21 拔除：docker inspect 抠凭据通道已删——不从别家容器抠口令）。
+容器名（Phase B/D-21）：env CBB_NEO4J_CONTAINER，**无默认**——发布件写死实例名=会去拉起别项目的容器（qoder D-21 实证）。
 纯函数核心（collect_graph/cypher 构造/export_graph）单测见 test_neo4j_export.py（零网络）。
 
 用法：
@@ -22,7 +23,7 @@ import time
 import urllib.request
 from pathlib import Path
 
-CONTAINER = "neo4j-step0"
+CONTAINER = os.environ.get("CBB_NEO4J_CONTAINER", "")  # D-21：无默认——写死实例名=发布件会去拉起别项目的容器
 BATCH = 250
 # A13：现役容器映射 7695→7474(HTTP)/7694→7687(Bolt)；与连续性巡检同默认（NEO4J_HTTP 可覆盖）
 DEFAULT_BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7474")  # 7474=Neo4j 出厂默认，非某项目的映射端口
@@ -272,24 +273,15 @@ def docker_daemon_up() -> bool:
 
 
 def docker_start() -> bool:
+    if not CONTAINER:  # D-21：未配容器名=不许猜着拉起
+        return False
     return subprocess.run(["docker", "start", CONTAINER], capture_output=True, timeout=60).returncode == 0
 
 
 def derive_password(cli_pw: str) -> str | None:
     if cli_pw:
         return cli_pw
-    import os
-    if os.environ.get("NEO4J_PASSWORD"):
-        return os.environ["NEO4J_PASSWORD"]
-    try:  # 运行时读容器 env（NEO4J_AUTH=neo4j/<pw>）；凭据不落任何文件（D-004）
-        out = subprocess.run(["docker", "inspect", "-f", "{{range .Config.Env}}{{println .}}{{end}}", CONTAINER],
-                             capture_output=True, timeout=30)
-        for ln in out.stdout.decode("utf-8", "ignore").splitlines():
-            if ln.startswith("NEO4J_AUTH="):
-                return ln.split("=", 1)[1].split("/", 1)[1]
-    except Exception:
-        pass
-    return None
+    return os.environ.get("NEO4J_PASSWORD")  # D-21 拔除：docker inspect 抠凭据通道已删
 
 
 def ensure_server(base: str, allow_start: bool) -> bool:
@@ -323,7 +315,7 @@ def main(argv=None) -> int:
         return 2
     pw = derive_password(args.password)
     if pw is None:
-        print(json.dumps({"status": "blocked", "reason": "凭据不可得（--password/NEO4J_PASSWORD/docker inspect 均无）"},
+        print(json.dumps({"status": "blocked", "reason": "凭据不可得（--password/NEO4J_PASSWORD 均无；D-21 已删 docker inspect 通道）"},
                          ensure_ascii=False))
         return 2
     graph = collect_graph(Path(args.store))

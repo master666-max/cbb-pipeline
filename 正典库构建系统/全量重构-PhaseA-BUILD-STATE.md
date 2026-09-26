@@ -66,8 +66,23 @@
 
 ## 遗留与移交
 
-- GitHub 推送：git 协议两种后端均被阻（反代不吃 smart-http POST，P-025 同族）；REST 通道脚本 `tools/rest_push_phasea.py`（146 件 diff，基=远端 fd0fd6a 树）
+- GitHub 推送：git 协议两种后端均被阻（反代不吃 smart-http POST，P-025 同族）；REST 通道脚本 `tools/rest_push_phasea.py`（146 件 diff，基=远端 fd0fd6a 树）——**已执行**，远端确认 e297db6
 - 人工桶 268 件清单待用户/下相处置（词根全异 71 建议逐条裁决；无 detail 188 建议按 detail 类型分桶）
 - 信息保全 186 条：被舍弃更富值 human review（预期大头是「人物→人物(xxx)」精化值的反向情形）
 - profiles `_review` 标记待人工审定后去除
 - Phase B 入口：derive 模块（归属单键 ns/双时序列/债务 repay/D-21 拔除）
+
+---
+
+# Phase B 投影派生层（2026-09-27 收口）
+
+| 单元 | 状态 | 判据留痕 |
+|---|---|---|
+| B01 投影检查点 | ✅ | ProjectionCheckpoint 原子写/回卷检测，5/5 测试 |
+| B02 归属单键+双时序 | ✅ | NS_PROPERTY="group_id" 写读同源（D-13 根治）；**真图端到端烟测 PASS**（owned=1/valid_at=ch0014 读回，烟测件已清理） |
+| B03 债务 repay | ✅ | DebtLedger incur/repay FIFO、open_count 归零可达（D-14 根治） |
+| B04 D-21/D-15 拔除 | ✅ | neo4j_export 双拷贝：CONTAINER 改 env CBB_NEO4J_CONTAINER 无默认、docker inspect 凭据通道删除、docker_start 无容器名拒猜；环境自检 docstring 对齐出厂默认 7474；编译+回归 OK |
+| B05 Graphiti 退役 | ✅ | 退役登记 cbb/tools/legacy-退役-GRAPHITI-裁四-20260927.md（复活条件在案；文件迁移 legacy/ 随 Phase E 构建产物化） |
+
+- 验收：test_v3_derive 5/5 + test_neo4j_export OK + test_环境自检 OK + D-13 活体烟测 PASS
+- 遗留：投影检查点与 lightrag_live 接线随 Phase C（runner 编排）；ns 写侧历史节点补钉（SET group_id 回填）待下轮图导出时顺带
