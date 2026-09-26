@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>CBB 产出控制台（只读）</title>
+<style>
+  body{font-family:system-ui,"Microsoft YaHei";background:#141821;color:#d8dee9;margin:0}
+  h1{font-size:18px;padding:12px 16px;margin:0;background:#1b2230;border-bottom:1px solid #2a3447}
+  nav{display:flex;gap:4px;padding:8px 16px;background:#1b2230;flex-wrap:wrap}
+  nav button{background:#2a3447;color:#d8dee9;border:0;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:14px}
+  nav button.on{background:#4c6ef5;color:#fff}
+  main{padding:16px;max-width:1100px;margin:0 auto}
+  .bar{display:flex;gap:8px;margin-bottom:12px}
+  input,select{background:#1b2230;color:#d8dee9;border:1px solid #2a3447;padding:8px;border-radius:6px;font-size:14px}
+  input{flex:1}
+  button.go{background:#4c6ef5;color:#fff;border:0;padding:8px 18px;border-radius:6px;cursor:pointer}
+  .card{background:#1b2230;border:1px solid #2a3447;border-radius:8px;padding:12px;margin:8px 0}
+  .mut{color:#8b949e;font-size:12px}
+  .hit{padding:6px 0;border-bottom:1px solid #2a3447}
+  svg{background:#0d1117;border-radius:8px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  td,th{border-bottom:1px solid #2a3447;padding:6px;text-align:left;vertical-align:top}
+  th{color:#8b949e}
+  .stub{color:#f0b72f}
+  pre{white-space:pre-wrap;word-break:break-all;font-size:12px}
+</style>
+</head>
+<body>
+<h1>📚 CBB 产出控制台 <span class="mut">只读 · 正典库=唯一真源</span></h1>
+<nav id="tabs"></nav>
+<main id="main"></main>
+<script>
+const TABS = ["检索","图谱+链","决策账","隔离区","产出总览"];
+let tab = "检索";
+const modes = [["keyword","关键词（正典库）"],["hybrid","混合五路+重排"],["lightrag","LightRAG 快速"],
+               ["graphrag","GraphRAG 完整（未建）"],["skeleton","骨架图（未建）"],["wiki","LLM wiki（未建）"]];
+function render(){
+  document.getElementById("tabs").innerHTML = TABS.map(t =>
+    `<button class="${t===tab?'on':''}" onclick="tab='${t}';render()">${t}</button>`).join("");
+  const m = document.getElementById("main");
+  if (tab === "检索") m.innerHTML = `
+    <div class="bar"><select id="mode">${modes.map(x=>`<option value="${x[0]}">${x[1]}</option>`).join("")}</select>
+    <input id="q" placeholder="查询…" onkeydown="if(event.key==='Enter')doSearch()"><button class="go" onclick="doSearch()">检索</button></div>
+    <div id="res" class="mut">选择模式，输入查询。</div>`;
+  else if (tab === "图谱+链") m.innerHTML = `
+    <div class="bar"><input id="seed" placeholder="种子实体名（如 相川涡波）"><button class="go" onclick="chain()">链（深度2）</button>
+    <button class="go" onclick="graph()">载入全图</button></div>
+    <svg id="gv" width="1060" height="520"></svg><div id="ginfo" class="mut"></div>`;
+  else if (tab === "决策账") { m.innerHTML = "<div class=mut>载入…</div>"; fetch("/api/decisions?limit=50").then(r=>r.json()).then(d=>{
+    m.innerHTML = `<div class="mut">共 ${d.total} 条，显示尾部 ${d.tail.length} 条</div>` + d.tail.map(x=>
+      `<div class="card"><pre>${JSON.stringify(x, null, 1).slice(0,400)}</pre></div>`).join("");});}
+  else if (tab === "隔离区") { m.innerHTML = "<div class=mut>载入…</div>"; fetch("/api/quarantine").then(r=>r.json()).then(d=>{
+    m.innerHTML = `<div class="card">总数 ${d.total} ｜ 待裁 ${d.pending} ｜ 分类 ${JSON.stringify(d.by_subclass)}</div>` +
+      d["pending样例"].map(x=>`<div class="hit">${x.item_id} · ${x.subclass}<br><span class=mut>${x.detail}</span></div>`).join("");});}
+  else if (tab === "产出总览") { m.innerHTML = "<div class=mut>载入…</div>"; fetch("/api/outputs").then(r=>r.json()).then(d=>{
+    m.innerHTML = "<pre>" + JSON.stringify(d.outputs, null, 2) + "</pre><div class=mut>" + d.口径 + "</div>";});}
+}
+async function doSearch(){
+  const mode = document.getElementById("mode").value, q = document.getElementById("q").value;
+  const res = document.getElementById("res");
+  res.className = "mut"; res.textContent = "检索中…";
+  try {
+    const r = await fetch(`/api/search?mode=${mode}&q=${encodeURIComponent(q)}&k=10`);
+    const d = await r.json();
+    res.className = "";
+    if (d.status) { res.innerHTML = `<div class="stub">${d.mode}：${d.status}（${d.口径||""}）</div>`; return; }
+    const items = d.top ? d.top.map(t=>`<div class="hit">${t.name} <span class=mut>score=${t.score??""}</span></div>`).join("")
+      : d.hits ? d.hits.map(h=>`<div class="hit">${h.name} <span class=mut>${h.score??""}</span></div>`).join("")
+      : d.names ? d.names.map(n=>`<div class="hit">${n}</div>`).join("")
+      : "<div class=mut>无结果</div>";
+    res.innerHTML = `<div class=mut>模式=${d.mode||mode} ${d.backend?("backend="+d.backend):""}</div>` + items;
+  } catch(e) { res.textContent = "错误: " + e; }
+}
+async function graph(){
+  const r = await fetch("/api/graph"); const d = await r.json();
+  const svg = document.getElementById("gv"); svg.innerHTML = "";
+  const W = 1040, H = 500, N = d.nodes.length;
+  d.nodes.forEach((n,i)=>{ const a = 2*Math.PI*i/N;
+    n.x = W/2 + 380*Math.cos(a) + 120*Math.sin(3*a); n.y = H/2 + 210*Math.sin(a) + 60*Math.cos(5*a); });
+  const pos = Object.fromEntries(d.nodes.map(n=>[n.name,n]));
+  let edges = "";
+  for (const e of d.edges){ const s=pos[e.s], t=pos[e.t]; if(!s||!t) continue;
+    edges += `<line x1="${s.x}" y1="${s.y}" x2="${t.x}" y2="${t.y}" stroke="#2a3447" stroke-width="0.6"/>
+      <circle cx="${(s.x+t.x)/2}" cy="${(s.y+t.y)/2}" r="2" fill="#4c6ef5"><title>${e.s} —${e.r}→ ${e.t}\n${e.fact||""}</title></circle>`; }
+  let nodes = "";
+  for (const n of d.nodes){ const p = pos[n.name];
+    nodes += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="#d8dee9"><title>${n.name}（${n.type}）</title></circle>
+      <text x="${p.x+6}" y="${p.y+3}" fill="#8b949e" font-size="9">${n.name.slice(0,10)}</text>`; }
+  svg.innerHTML = edges + nodes;
+  document.getElementById("ginfo").textContent = `节点 ${N} / 边 ${d.edges.length}（悬停圆点看名字，蓝点=边中点含事实）`;
+}
+async function chain(){
+  const seed = document.getElementById("seed").value || document.getElementById("q").value;
+  const r = await fetch(`/api/chain?seed=${encodeURIComponent(seed)}&depth=2`); const d = await r.json();
+  document.getElementById("ginfo").innerHTML = (d.chains||[]).map(c=>
+    `<div class="hit">${c.nodes.join(" → ")}</div>`).join("") || "无链";
+}
+render();
+</script>
+</body>
+</html>
