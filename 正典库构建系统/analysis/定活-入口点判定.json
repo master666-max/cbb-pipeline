@@ -1,0 +1,383 @@
+{
+ "入口点数": 75,
+ "判定": {
+  "cbb/cbb-anchor/cbb_anchor.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/cbb-anchor/test_cbb_anchor.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/cbb-coordinate/cbb_coordinate.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/cbb-coordinate/test_cbb_coordinate.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/cbb-extract/cbb_extract.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/cbb-extract/test_cbb_extract.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/cbb-gate1/cbb_gate1.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/cbb-gate1/test_cbb_gate1.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/cbb-quarantine/cbb_quarantine.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/cbb-quarantine/test_cbb_quarantine.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/cbb-store/cbb_store.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/cbb-store/test_cbb_store.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/cbb-store/test_w4_thresholds.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/contracts/test_contracts.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/smoke/run_smoke.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/adapt_record_to_tier1.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/build_evidence_index.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/build_index_v2.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/context_pack.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/embed_dedup_scan.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/tools/exp_第五路对照.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/graph_audit.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/graphiti_bridge.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/graphiti_dump.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/graphiti_ingest.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": false
+  },
+  "cbb/tools/graphiti_ready.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/graphiti_spike.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/ledger_chain.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/tools/lightrag_bridge.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": false
+  },
+  "cbb/tools/lightrag_delta_sync.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": false
+  },
+  "cbb/tools/lightrag_export.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/lightrag_live.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": false
+  },
+  "cbb/tools/neo4j_export.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/tools/test_build_evidence_index.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_context_pack.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_d2_graph_edge.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/test_embed_dedup_scan.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_graph_audit.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_graphiti_bridge.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_graphiti_ready.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_ledger_chain.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/tools/test_lightrag_live.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/test_neo4j_export.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_web_supplement.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_匹配建议.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_图库隔离.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_图链增量网络.py": {
+   "UNKNOWN": true,
+   "cited_by_runner": false,
+   "in_pkg": false
+  },
+  "cbb/tools/test_失效宣告.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_实体名归因.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_批次自检.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_抽样排序.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_捕获再捕获.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_检索层.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_派生层对账.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_环境自检.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_矛盾分流.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_矛盾对生成.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_诊断员.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_词表.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_路径惯例.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_连续性巡检.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/test_重排器.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/web_console.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": false
+  },
+  "cbb/tools/web_supplement.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/图库隔离.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/失效宣告.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/实体名归因.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/批次自检.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/检索层.py": {
+   "LIVE": true,
+   "cited_by_runner": true,
+   "in_pkg": true
+  },
+  "cbb/tools/派生层对账.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/环境自检.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/矛盾分流.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/矛盾对生成.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/词表.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  },
+  "cbb/tools/连续性巡检.py": {
+   "LIVE": true,
+   "cited_by_runner": false,
+   "in_pkg": true
+  }
+ },
+ "外部活入口": [
+  "迷深实战-工作区/runners/run_chapter.py"
+ ]
+}

@@ -1,0 +1,453 @@
+{
+ "模块数": 46,
+ "总行数": 9740,
+ "被引用模块(importers)": {
+  "cbb_contracts": [
+   "cbb.cbb-anchor.cbb_anchor",
+   "cbb.cbb-extract.cbb_extract",
+   "cbb.cbb-gate1.cbb_gate1",
+   "cbb.cbb-store.cbb_store",
+   "cbb.smoke.run_smoke"
+  ],
+  "cbb_coordinate": [
+   "cbb.cbb-gate1.cbb_gate1",
+   "cbb.smoke.run_smoke"
+  ],
+  "cbb_quarantine": [
+   "cbb.cbb-store.cbb_store",
+   "cbb.smoke.run_smoke",
+   "cbb.tools.web_console"
+  ],
+  "cbb_extract": [
+   "cbb.smoke.run_smoke",
+   "cbb.tools.graphiti_bridge"
+  ],
+  "cbb_gate1": [
+   "cbb.smoke.run_smoke",
+   "cbb.tools.连续性巡检"
+  ],
+  "cbb_store": [
+   "cbb.smoke.run_smoke",
+   "cbb.tools.ledger_chain",
+   "cbb.tools.矛盾对生成"
+  ],
+  "检索层": [
+   "cbb.tools.exp_第五路对照",
+   "cbb.tools.lightrag_bridge",
+   "cbb.tools.web_console"
+  ]
+ },
+ "属性调用Top15": [
+  [
+   "cbb_gate1.make_generic_record",
+   6
+  ],
+  [
+   "cbb_store.ThreeStateStore",
+   2
+  ],
+  [
+   "cbb_coordinate.process_file",
+   2
+  ],
+  [
+   "cbb_coordinate.locate_quote",
+   1
+  ],
+  [
+   "cbb_quarantine.QuarantineZone",
+   1
+  ],
+  [
+   "cbb_coordinate.NumberingRegistry",
+   1
+  ],
+  [
+   "cbb_extract.extract_stub",
+   1
+  ],
+  [
+   "cbb_extract.screen_candidate",
+   1
+  ],
+  [
+   "cbb_extract.no_prior_fill",
+   1
+  ],
+  [
+   "cbb_extract.plan_batches",
+   1
+  ],
+  [
+   "cbb_gate1.check_batch",
+   1
+  ],
+  [
+   "cbb_quarantine.scan_inline_unsure",
+   1
+  ],
+  [
+   "cbb_store.multiversion_merge",
+   1
+  ],
+  [
+   "cbb_extract.env_probe",
+   1
+  ],
+  [
+   "cbb_extract.verify_evidence",
+   1
+  ]
+ ],
+ "公共接口面(每模块前20)": {
+  "cbb.cbb-anchor.cbb_anchor": [
+   "cn_num",
+   "pseudo_anchor",
+   "story_date",
+   "make_anchor_record",
+   "build_pseudo_tree",
+   "normalize_relative",
+   "instant_from_relative",
+   "compare_story_time",
+   "make_entry",
+   "build_timeline",
+   "asof",
+   "story_order",
+   "replay",
+   "countdowns_due",
+   "save_tree",
+   "load_latest_tree",
+   "main"
+  ],
+  "cbb.cbb-coordinate.cbb_coordinate": [
+   "sha256_text",
+   "parse_chapter_marker",
+   "clean_lines",
+   "coordinate",
+   "locate_quote",
+   "process_file",
+   "main"
+  ],
+  "cbb.cbb-extract.cbb_extract": [
+   "is_metatext",
+   "has_embedded_instruction",
+   "scan_banned",
+   "no_prior_fill",
+   "screen_candidate",
+   "alias_merge_policy",
+   "plan_batches",
+   "merge_plan",
+   "verify_evidence",
+   "make_candidate",
+   "extract_stub",
+   "build_episode_kwargs",
+   "run_graphiti_extraction",
+   "env_probe",
+   "main"
+  ],
+  "cbb.cbb-gate1.cbb_gate1": [
+   "check_record",
+   "to_issue",
+   "check_batch",
+   "make_generic_record",
+   "main"
+  ],
+  "cbb.cbb-quarantine.cbb_quarantine": [
+   "urgency_of",
+   "urgency_status",
+   "scan_inline_unsure",
+   "inline_report",
+   "main"
+  ],
+  "cbb.cbb-store.cbb_store": [
+   "route_by_confidence",
+   "identity_key",
+   "canonical_conflicts",
+   "multiversion_merge",
+   "main"
+  ],
+  "cbb.contracts.cbb_contracts": [
+   "confidence_band",
+   "load_schema",
+   "validate",
+   "validate_record",
+   "validate_issue",
+   "validate_verdict",
+   "validate_case",
+   "evidence_ok"
+  ],
+  "cbb.smoke.run_smoke": [
+   "check",
+   "run_chain",
+   "snapshot",
+   "probe_real_pipeline",
+   "main"
+  ],
+  "cbb.tools.adapt_record_to_tier1": [
+   "adapt",
+   "main"
+  ],
+  "cbb.tools.build_evidence_index": [
+   "collect_evidence",
+   "main"
+  ],
+  "cbb.tools.build_index_v2": [
+   "main"
+  ],
+  "cbb.tools.context_pack": [
+   "entity_roster",
+   "active_foreshadows",
+   "rolling_digest",
+   "build",
+   "main"
+  ],
+  "cbb.tools.embed_dedup_scan": [
+   "cosine",
+   "bucket",
+   "scan",
+   "http_get",
+   "http_embed",
+   "probe",
+   "collect_entity_names",
+   "main"
+  ],
+  "cbb.tools.exp_第五路对照": [
+   "gen",
+   "graph_expand_1hop",
+   "run"
+  ],
+  "cbb.tools.graph_audit": [
+   "audit",
+   "main"
+  ],
+  "cbb.tools.graph_chain": [
+   "chains"
+  ],
+  "cbb.tools.graphiti_bridge": [
+   "llm_config",
+   "embedding_config",
+   "make_graphiti",
+   "episode_body_of",
+   "ingest_candidates",
+   "main"
+  ],
+  "cbb.tools.graphiti_dump": [
+   "canon_set",
+   "dump"
+  ],
+  "cbb.tools.graphiti_ingest": [
+   "extract",
+   "main"
+  ],
+  "cbb.tools.graphiti_ready": [
+   "check_graphiti_import",
+   "check_neo4j",
+   "check_llm",
+   "check_embedding",
+   "ready_report",
+   "trigger_sentinel",
+   "main"
+  ],
+  "cbb.tools.graphiti_spike": [
+   "main"
+  ],
+  "cbb.tools.ledger_chain": [
+   "idempotency_key_of",
+   "instrument_fingerprint",
+   "main"
+  ],
+  "cbb.tools.lightrag_bridge": [
+   "llm_calls",
+   "mechanical_keywords",
+   "get_rag",
+   "fifth_recall_async",
+   "fifth_recall"
+  ],
+  "cbb.tools.lightrag_delta_sync": [
+   "sync",
+   "main"
+  ],
+  "cbb.tools.lightrag_export": [
+   "build_kg",
+   "main"
+  ],
+  "cbb.tools.lightrag_live": [
+   "poll_once",
+   "main"
+  ],
+  "cbb.tools.neo4j_export": [
+   "namespace",
+   "edge_id_for",
+   "collect_graph",
+   "node_statement",
+   "edge_statement",
+   "evidence_edge_backfill",
+   "append_backfill_sidecar",
+   "chunks",
+   "chapter_statement",
+   "export_graph",
+   "http_commit",
+   "probe",
+   "docker_daemon_up",
+   "docker_start",
+   "derive_password",
+   "ensure_server",
+   "main"
+  ],
+  "cbb.tools.web_console": [
+   "api_search",
+   "api_chain",
+   "api_decisions",
+   "api_quarantine",
+   "api_outputs",
+   "main"
+  ],
+  "cbb.tools.web_supplement": [
+   "search",
+   "guard_block_admission"
+  ],
+  "cbb.tools.匹配建议": [
+   "strip_suggestions",
+   "suggest_matches"
+  ],
+  "cbb.tools.图库隔离": [
+   "port_free",
+   "pick_ports",
+   "build_command",
+   "http_query",
+   "ownership_verdict",
+   "probe",
+   "instance_name",
+   "main"
+  ],
+  "cbb.tools.失效宣告": [
+   "write_invalidation",
+   "load_invalidations",
+   "apply_to_edges",
+   "main"
+  ],
+  "cbb.tools.实体名归因": [
+   "canon",
+   "load_rows",
+   "pick",
+   "support_of",
+   "walk_strings",
+   "raw_spellings",
+   "classify",
+   "main"
+  ],
+  "cbb.tools.批次自检": [
+   "find_state",
+   "c1_three_way",
+   "c2_chapter_boundary",
+   "c3_metatext",
+   "c4_wallclock",
+   "c5_empty_units",
+   "c6_routing",
+   "c7_dedup_trace",
+   "c8_quote_falls_back",
+   "c9_verified_against",
+   "c10_commit_and_export",
+   "run",
+   "main"
+  ],
+  "cbb.tools.抽样排序": [
+   "rank_for_review"
+  ],
+  "cbb.tools.捕获再捕获": [
+   "chapman",
+   "agreement",
+   "batch_report"
+  ],
+  "cbb.tools.检索层": [
+   "embed",
+   "os_env",
+   "alias_recall",
+   "rrf",
+   "verify_citations",
+   "hybrid_search",
+   "keyword_recall",
+   "main"
+  ],
+  "cbb.tools.派生层对账": [
+   "canon",
+   "graphml_nodes",
+   "jsonl_rows",
+   "load_graph",
+   "vdb_count",
+   "name_of",
+   "main"
+  ],
+  "cbb.tools.环境自检": [
+   "item",
+   "tcp_ok",
+   "http_json",
+   "check_required",
+   "check_graph",
+   "check_embed",
+   "check_rerank",
+   "check_llm",
+   "graphiti_route_probe",
+   "check_graphiti",
+   "check_judge",
+   "evaluate",
+   "main"
+  ],
+  "cbb.tools.矛盾分流": [
+   "classify_pair",
+   "parse_dual_track_detail",
+   "propose",
+   "align_candidate",
+   "apply",
+   "main"
+  ],
+  "cbb.tools.矛盾对生成": [
+   "render_claim",
+   "evidence_quads",
+   "live_by_name",
+   "index_current_cands",
+   "index_git_blobs",
+   "build_pairs",
+   "build_exam",
+   "grade",
+   "main"
+  ],
+  "cbb.tools.诊断员": [
+   "prepare",
+   "validate_attribution",
+   "record_decision",
+   "confirm",
+   "prior_packages"
+  ],
+  "cbb.tools.词表": [
+   "normalize",
+   "iter_records",
+   "bootstrap",
+   "lint_vocab",
+   "check_record",
+   "check_store",
+   "main"
+  ],
+  "cbb.tools.路径惯例": [
+   "sibling_by_convention",
+   "project_root",
+   "workspace_of",
+   "store_of",
+   "graph_base"
+  ],
+  "cbb.tools.连续性巡检": [
+   "file_loader",
+   "graph_loader",
+   "probe_graph",
+   "evaluate",
+   "run",
+   "main"
+  ],
+  "cbb.tools.重排器": [
+   "score",
+   "order",
+   "available",
+   "rerank_order_or_mechanical"
+  ]
+ }
+}
