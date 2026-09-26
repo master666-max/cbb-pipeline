@@ -100,3 +100,22 @@
 
 - 验收：test_v3_phasec 6/6 + test_检索层 10/10 回归 + 既有套件不回退
 - 遗留：模型路由/输出两段式旗标（§7.3，待重抽窗定标）；检索层 rerank 活体探活依赖 8081 llama-server（本轮未启，降级判据会响）
+
+
+---
+
+# Phase D 治理层（2026-09-27 收口）
+
+| 单元 | 状态 | 判据留痕 |
+|---|---|---|
+| D01 票数晋升 G5 | ✅ | cbb2/promote：考官 env 编制（LOCAL/DEEPSEEK/QWEN，base/model 全 env 禁硬编码；**QWEN key 回落 DASHSCOPE_API_KEY**）+隔离评审答案对调+against>0 即 human+缩员/缺席降级显式标注；8/8 测试 |
+| D02 对样双轨 | ✅ | cbb2/audit：发现轨 suspicious_rank / 估计轨 stratified_sample+LQAS（失败数≤d 验收）/ **Wilson 95% 区间**（30/30 下限 ≈0.887 实证，点宣称禁用） |
+| D03 植物捕获 | ✅ | cbb2/plant：plant/capture_rate 往返+miss 清单（独立性假设绕开） |
+| D04 缺口队列 | ✅ | cbb2/gaps：契诃夫超期/词表缺口/植物 miss/NLI 分歧 四扫描器→缺口队列.jsonl |
+| D05 ER 归一三段 | ✅ | cbb2/er：NFKC+括注剥离归一/blocking 键/margin 判决（0.85 绝对带废弃）+MergeLog 可撤销（split 一等公民） |
+
+- 验收：test_v3_phased 8/8 + test_v3_ops_nli 5/5 回归
+- 待外部条件：DASHSCOPE_API_KEY 设入用户级 env 后 QWEN 考官通道即激活（当前编制=LOCAL+DEEPSEEK 满足 ≥2/3；QWEN 入编=3/3 满编）；植物捕获实际运行为下一抽取窗
+- 遗留：信息保全 186 review / 人工桶 268 处置 / profiles 人工审定 / 共进化闭环旗标（待重抽窗）
+
+- **G5 满编活体评审**：三考官（LOCAL=tifa-14b/DEEPSEEK=deepseek-chat/QWEN=qwen3.8-flash）全部在列无缺席；真评一例：LOCAL=unsure、DEEPSEEK=support → verdict=hold（判据会响实证）；QWEN 缺票=端点 403（maas.qianwenaiapi.com 镜像与 key 配对待用户核对，官方兼容端点备选 dashscope.aliyuncs.com/compatible-mode/v1）——通道架构已通，仅凭据配对问题

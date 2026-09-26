@@ -13,10 +13,16 @@ import urllib.request
 
 
 def examiner_env(kind: str) -> dict:
-    """考官 env 三件套（base/model/key 变量名按编制定）——值不落文件。"""
+    """考官 env 三件套（base/model/key 变量名按编制定）——值不落文件。
+    key 回落：EXAMINER_<K>_API_KEY 缺失时回落既定公共变量（QWEN→DASHSCOPE_API_KEY，
+    DEEPSEEK→DEEPSEEK_API_KEY，LOCAL→无）；base/model 无默认（BLOCKED 而非硬编码）。"""
+    fallback = {"QWEN": "DASHSCOPE_API_KEY", "DEEPSEEK": "DEEPSEEK_API_KEY"}.get(kind, "")
+    key = os.environ.get(f"EXAMINER_{kind}_API_KEY") or os.environ.get(fallback, "")
     return {"base": os.environ.get(f"EXAMINER_{kind}_BASE", ""),
             "model": os.environ.get(f"EXAMINER_{kind}_MODEL", ""),
-            "key_var": f"EXAMINER_{kind}_API_KEY"}
+            "key": key,
+            "key_source": f"EXAMINER_{kind}_API_KEY" if os.environ.get(f"EXAMINER_{kind}_API_KEY")
+                          else (fallback if key else "")}
 
 
 def capability_gate(capability: str, *, endpoint_alive: bool, artifact_exists: bool,
