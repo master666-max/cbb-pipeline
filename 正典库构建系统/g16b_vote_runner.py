@@ -33,12 +33,20 @@ def main():
     limit = None
     if "--limit" in sys.argv:
         limit = int(sys.argv[sys.argv.index("--limit") + 1])
+    panel_kinds = ("LOCAL", "DEEPSEEK", "QWEN")
+    if "--panel" in sys.argv:  # 编制可裁：--panel DEEPSEEK,QWEN（2026-09-28 起 LOCAL 除役——
+        panel_kinds = tuple(sys.argv[sys.argv.index("--panel") + 1].split(","))  # 1B 判力弱+33%超时拖垮工人池）
+    workers = 6
+    if "--workers" in sys.argv:
+        workers = int(sys.argv[sys.argv.index("--workers") + 1])
 
-    done = set()
+    done = {}
     if JOURNAL.exists():
         for l in JOURNAL.read_text(encoding="utf-8").splitlines():
             if l.strip():
-                done.add(json.loads(l)["record_id"])
+                r = json.loads(l)
+                done[r["record_id"]] = r["verdict"]  # 后行覆盖前行——末行=现势判定
+    revote_holds = "--revote-holds" in sys.argv  # 编制升级后重审历史 hold（如双考官期 unsure 致 hold）
 
     records = []
     for p in sorted(STORE.glob("libraries/*/*/*.json")):
@@ -46,7 +54,10 @@ def main():
             r = json.loads(p.read_text(encoding="utf-8"))
         except Exception:  # noqa: BLE001 — 坏件计数不拖批
             continue
-        if r.get("status") != "provisional" or r.get("record_id") in done:
+        if r.get("status") != "provisional":
+            continue
+        rid = r.get("record_id")
+        if rid in done and not (revote_holds and done[rid] == "hold"):
             continue
         ev = "；".join(e.get("quote", "") for e in (r.get("evidence") or []))
         if not ev.strip():
@@ -57,11 +68,13 @@ def main():
     total_lib = len(list(STORE.glob("libraries/*/*/*.json")))
     print(f"主库 json {total_lib} 件；本轮评审 {len(records)}（已评审跳过 {len(done)}）")
 
-    panel, missing = promote.build_panel()
+    panel, missing = promote.build_panel(panel_kinds)
     print(f"考官编制: {[c.kind for c in panel]}（缺席: {missing or '无'}）")
     if not panel or not records:
         print("G16b BLOCKED 或无可评件")
         return
+
+    full_size = 3  # B13 需票按满编制 3 算——编制裁到 2 名时 promote=双 support，门槛不降
 
     weights = {}
     if G13.exists():
@@ -74,7 +87,7 @@ def main():
     def review_one(rec):
         conclusion = json.dumps(rec.get("canonical") or {}, ensure_ascii=False, sort_keys=True)
         evidence = "；".join(e.get("quote", "") for e in (rec.get("evidence") or []))
-        res = promote.vote(conclusion, evidence, panel, full_size=3,
+        res = promote.vote(conclusion, evidence, panel, full_size=full_size,
                            weights=weights or None)
         res["record_id"] = rec.get("record_id")
         res["library"] = rec.get("library")
@@ -83,7 +96,7 @@ def main():
     t0 = time.time()
     results = []
     with JOURNAL.open("a", encoding="utf-8") as jf, \
-            ThreadPoolExecutor(max_workers=6) as ex:
+            ThreadPoolExecutor(max_workers=workers) as ex:
         futs = {ex.submit(review_one, r): r for r in records}
         for n, fu in enumerate(as_completed(futs), 1):
             try:

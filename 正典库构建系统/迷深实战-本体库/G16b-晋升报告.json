@@ -1,0 +1,36 @@
+{
+ "unit": "G16b",
+ "at": "2026-09-28T01:03:07",
+ "panel": [
+  "DEEPSEEK",
+  "QWEN"
+ ],
+ "panel_missing": [],
+ "weights": {
+  "LOCAL": 1.5,
+  "DEEPSEEK": 1.5,
+  "QWEN": 1.5
+ },
+ "主库json总数": 6278,
+ "本轮评审": 4438,
+ "历史已评审": 1840,
+ "判定分布": {
+  "hold": 4366,
+  "promote": 19,
+  "human": 53
+ },
+ "考官消费回执": {
+  "DEEPSEEK": {
+   "calls": 8876,
+   "errors": 0,
+   "latency_s": 0.0
+  },
+  "QWEN": {
+   "calls": 1434,
+   "errors": 3721,
+   "latency_s": 0.0
+  }
+ },
+ "tenure口径": "首晋升批——tenure 自确认日起算，G17 首圈巡检承接存续核证",
+ "耗时s": 1655.2
+}
