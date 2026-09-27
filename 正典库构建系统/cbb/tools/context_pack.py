@@ -1,6 +1,7 @@
 """context_pack.py — 上下文包生成器（工单 v1.6 §0 编排 · 确定性脚本 R-018 · 2026-09-18）
 
-库喂抽取的闭环：主代理派工前机械生成上下文包（≤2K tokens≈1300 字封顶），子代理视为
+库喂抽取的闭环：主代理派工前机械生成上下文包（≤2K tokens，BUDGET_CHARS=2600 字封顶——
+2026-09-19 勘误后口径，1300 为旧数），子代理视为
 **先验而非事实源**（与原文冲突以原文为准+存疑分开建，防先验污染）。
 
 四节（工单 §0 v1.6 原文）：
@@ -14,7 +15,8 @@
 生成全程机械规则零裁量；超预算截断顺序=②尾部→①尾部（确定性）。
 
 用法：py -X utf8 context_pack.py --store <本项目>-本体库 \
-        --alias-seed <统合表.json> --out <工作区>/context-pack.md
+        --alias-seed <统合表.json> --out <工作区>/context-pack.md \
+        [--precedent <判例.md 路径>]（缺省：env CBB_PRECEDENT > 脚本同级 判例.md）
 """
 from __future__ import annotations
 
@@ -106,17 +108,21 @@ def rolling_digest(rolling: Path) -> list[str]:
 
 
 def build(store: Path, alias_seed: Path | None, rolling: Path | None,
-          reranker=None, rerank_query: str | None = None) -> str:
+          reranker=None, rerank_query: str | None = None, precedent: Path | None = None) -> str:
     """reranker（U-F04 岗位①，可选）：callable(query, docs, mechanical_order) -> (order, backend)。
     提供时对①人物册/②伏笔清单按与 rerank_query（缺省=滚动摘要尾部）的相关性重排——预算花在最相关条目上；
-    不可用→机械序（同形）。不提供→行为与历史版本逐字节一致。"""
+    不可用→机械序（同形）。不提供→行为与历史版本逐字节一致。
+    precedent（D-19 参数化）：判例文件路径——显式参 > env CBB_PRECEDENT > 脚本同级 判例.md（历史默认）。"""
     sec1 = entity_roster(store, alias_seed)
     sec2 = active_foreshadows(store)
     import 路径惯例 as 惯
     sec3 = rolling_digest(rolling or 惯.workspace_of(store) / "rolling-summary.md")
-    prec = Path(__file__).resolve().parent / "判例.md"
+    prec = Path(precedent or os.environ.get("CBB_PRECEDENT")
+                or Path(__file__).resolve().parent / "判例.md")
     n_prec = len(re.findall(r"^\d+\. ", prec.read_text(encoding="utf-8"), re.MULTILINE)) if prec.exists() else 0
-    sec4 = [f"- cbb/tools/判例.md（当前 {n_prec} 条，连读《抽取规范.md》）"]
+    # 指针文案：默认件沿用历史字面（cbb/tools/判例.md），外置判例显示全路径（D-19）
+    prec_label = f"cbb/tools/{prec.name}" if prec.parent == Path(__file__).resolve().parent else str(prec)
+    sec4 = [f"- {prec_label}（当前 {n_prec} 条，连读《抽取规范.md》）"]
 
     rr_note = "off"
     if reranker is not None:
@@ -156,12 +162,15 @@ def main(argv=None) -> int:
     ap.add_argument("--alias-seed", default=None,
                     help="别名统合表 json；不给就只用库内别名（旧默认是某台机器上的仓外长路径）")
     ap.add_argument("--rolling", default=None, help="缺省＝<工作区>/rolling-summary.md")
+    ap.add_argument("--precedent", default=os.environ.get("CBB_PRECEDENT"),
+                    help="判例文件路径（D-19：缺省＝env CBB_PRECEDENT > 脚本同级 判例.md）")
     ap.add_argument("--out", default=None, help="缺省＝<工作区>/context-pack.md")
     ns = ap.parse_args(argv)
     if not ns.out:   # 不给 --out 就落到本项目工作区（旧默认是写死的上一项目路径）
         ns.out = str(惯.workspace_of(Path(ns.store)) / "context-pack.md")
     text = build(Path(ns.store), Path(ns.alias_seed) if ns.alias_seed else None,
-                 Path(ns.rolling) if ns.rolling else None)
+                 Path(ns.rolling) if ns.rolling else None,
+                 precedent=Path(ns.precedent) if ns.precedent else None)
     Path(ns.out).write_text(text, encoding="utf-8")
     print(json.dumps({"out": ns.out, "chars": len(text)}, ensure_ascii=False))
     return 0

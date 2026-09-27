@@ -5,7 +5,8 @@
 检索模式：关键词（正典库）/ 混合五路 / LightRAG 快速 / GraphRAG 完整（未建·哨兵A门控）/
 骨架图（未建）/ LLM wiki（未建·规划中）；图谱页含链构造器（深度2）。
 
-用法：py -X utf8 web_console.py [--port 8090] [--store <本体库>]
+用法：py -X utf8 web_console.py [--port 8090] [--store <本体库>] [--dry-run]
+退役件（2026-09-27）：替代路径见 legacy-退役说明.md（读面走 cbb-v2/cbb2/search.py+lens.py）。
 """
 from __future__ import annotations
 
@@ -155,9 +156,17 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description="CBB 产出网页控制台（只读）——退役件，替代路径见 legacy-退役说明.md")
     ap.add_argument("--port", type=int, default=8090)
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只打印配置与数据面在位情况即退出，不绑端口不启服务")
     ns = ap.parse_args(argv)
+    if ns.dry_run:  # 卫生口：零绑定零监听（本件对库本就只读，dry-run 供探活/CI smoke）
+        print(json.dumps({"web_console": True, "dry_run": True, "port": ns.port,
+                          "store": str(STORE), "store_exists": STORE.exists(),
+                          "index": str(INDEX), "index_exists": INDEX.exists(),
+                          "纪律": "只读"}, ensure_ascii=False))
+        return 0
     print(json.dumps({"web_console": True, "url": f"http://127.0.0.1:{ns.port}",
                       "store": str(STORE), "纪律": "只读"}, ensure_ascii=False))
     ThreadingHTTPServer(("127.0.0.1", ns.port), Handler).serve_forever()

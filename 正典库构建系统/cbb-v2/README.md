@@ -1,5 +1,6 @@
 # cbb-v2 · 包化重建版（reimagine 产物）
 
+> 版本：v3.0（2026-09-27 同步）——本包（`cbb2/`）即 v3.0.0 发版（tag 于 `refactor/phase-a`，见 `../cbb-pipeline-skill/cbb-pipeline/RELEASE-NOTES-v3.md`）的核心引擎；v2 验收面（下文 PROVEN 判决与指纹基线）保持不回退。
 > 判决：**PROVEN** —— `tests/acceptance.py` 对 v1 特征基线（`analysis/characterization-baseline.json`，指纹 `aafe38042b28f0c2`）五面逐位相等；金丝雀对 v2 有效（改坏=1/还原=0）。
 
 ## 这是什么

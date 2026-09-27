@@ -163,18 +163,23 @@ class LedgedStore:
         orig_adj = zone.adjudicate
 
         def zadjudicate(iid, verdict, note="", by="human", _orig=orig_adj, _led=led):
+            from .quarantine import adjudicate_lock
             key = f"{iid}|{verdict}"
-            if _led.has_key("quarantine-zone/adjudications.jsonl", key):
-                return {"item_id": iid, "repeated": True}
-            sha_b_items = self._sha(zone.items_path)
-            adj_path = zone.root / "adjudications.jsonl"
-            sha_b_adj = self._sha(adj_path)
-            out = _orig(iid, verdict, note=note, by=by)
-            _led.record_append("quarantine-zone/items.jsonl", key,
-                               sha_b_items, self._sha(zone.items_path))
-            _led.record_append("quarantine-zone/adjudications.jsonl", key + "|adj",
-                               sha_b_adj, self._sha(adj_path))
-            return out
+            # G25：幂等检查+裁决内核+账本双记全程同锁——并发双写与丢更新同根除；
+            # 内核直呼 _adjudicate_inner（其外层公开法自带同锁，嵌套会死锁）
+            with adjudicate_lock(zone.root):
+                # 检查键=记账键（key|adj）——原检查用裸 key 与记账键错位，重复裁决从未被拦（本批修复）
+                if _led.has_key("quarantine-zone/adjudications.jsonl", key + "|adj"):
+                    return {"item_id": iid, "repeated": True}
+                sha_b_items = self._sha(zone.items_path)
+                adj_path = zone.root / "adjudications.jsonl"
+                sha_b_adj = self._sha(adj_path)
+                out = zone._adjudicate_inner(iid, verdict, note, by)
+                _led.record_append("quarantine-zone/items.jsonl", key,
+                                   sha_b_items, self._sha(zone.items_path))
+                _led.record_append("quarantine-zone/adjudications.jsonl", key + "|adj",
+                                   sha_b_adj, self._sha(adj_path))
+                return out
         zone.adjudicate = zadjudicate
 
     def __getattr__(self, name):

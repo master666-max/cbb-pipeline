@@ -19,3 +19,11 @@
 - 待推清单（本地 master 领先远端镜像部分）：0a58df93（phaseF 全套）、27311158
   （调研矩阵）、a5f319e8（G16 首跑）、4606445a（fix-P028）及后续收束期批。
   推送动作=REST 通道续传，独立单元执行（非本登记范围）。
+
+## 续推完成（2026-09-27 补记）
+
+- 基线勘定：远端 refactor/phase-a tip 内容态=本地 `16b9faaa`（远端已含其独有件
+  REVIEWS/regression-base.txt 实证；27311158→16b9faaa 历史序经 git log 域核实）。
+- `tools/rest_push_phasea.py 16b9faaa refactor/phase-a` 原脚本续推：**27 件增量
+  （本会话 4 提交 a5f319e8/bc439343/4606445a/8a6c52bf 全部文件）上传成功，远端新头
+  `db65f82`**，回读确认在案。推送通道正式重建 ✓（后续续推=同脚本换基线参数）。

@@ -110,11 +110,14 @@ def ingest_candidates(graphiti, chapter_records: dict[int, list[dict]],
 
 def main(argv=None) -> int:  # pragma: no cover（CLI 便捷口）
     import argparse
-    ap = argparse.ArgumentParser(description="graphiti 桥（U-C03.7）")
+    ap = argparse.ArgumentParser(description="graphiti 桥（U-C03.7）——退役件，替代路径见 legacy-退役说明.md")
     ap.add_argument("--print-presets", action="store_true")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只打印预设配置即退出，不连 Graphiti/Neo4j（退役件卫生口）")
     ns = ap.parse_args(argv)
-    if ns.print_presets:
+    if ns.print_presets or ns.dry_run:
         print(json.dumps({
+            "dry_run": ns.dry_run or None,
             "presets": {"deepseek": {"api_base": DEEPSEEK_BASE, "model": DEEPSEEK_MODEL,
                                      "env": "DEEPSEEK_API_KEY"},
                         "lmstudio-flash": {"api_base": LMSTUDIO_BASE, "model": LMSTUDIO_MODEL,

@@ -89,10 +89,16 @@ def probe(api: str) -> str | None:
     return None
 
 
+def _rtype(r: dict) -> str:
+    """D-10 字段归一（2026-09-27）：读侧双键兼容——record_type 主键，type 兼容读
+    （旧批候选文件/外部统合件只带 type；不写回，只读面归一）。"""
+    return r.get("record_type") or r.get("type") or ""
+
+
 def collect_entity_names(cands: dict, store_root: Path) -> tuple[list[str], list[str]]:
     """候选实体名（本批）与库内活实体名（含别名表）。"""
     cand = [c["canonical"]["name"] for c in cands.get("candidates", [])
-            if c.get("record_type") == "entity" and isinstance(c.get("canonical"), dict)
+            if _rtype(c) == "entity" and isinstance(c.get("canonical"), dict)
             and c["canonical"].get("name")]
     lib = set()
     unreadable = []
@@ -103,7 +109,7 @@ def collect_entity_names(cands: dict, store_root: Path) -> tuple[list[str], list
         except OSError:
             unreadable.append(f.name)
             continue
-        if rec.get("record_type") == "entity" and (rec.get("canonical") or {}).get("name"):
+        if _rtype(rec) == "entity" and (rec.get("canonical") or {}).get("name"):
             lib.add(rec["canonical"]["name"])
     if unreadable:
         print(json.dumps({"skipped_unreadable": len(unreadable)}, ensure_ascii=False))

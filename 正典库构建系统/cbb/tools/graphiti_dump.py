@@ -66,10 +66,16 @@ async def dump(group: str | None) -> dict:
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description="graphiti 摄入内容导出——退役件，替代路径见 legacy-退役说明.md")
     ap.add_argument("--group", default=None)
     ap.add_argument("--out", default="")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只打印将查询的 group/out 即退出，不连 Neo4j（退役件卫生口）")
     ns = ap.parse_args()
+    if ns.dry_run:
+        print(json.dumps({"dry_run": True, "group": ns.group, "out": ns.out or None},
+                         ensure_ascii=False))
+        raise SystemExit(0)
     rep = asyncio.run(dump(ns.group))
     print(json.dumps(rep, ensure_ascii=False, indent=1))
     if ns.out:

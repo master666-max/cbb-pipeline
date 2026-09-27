@@ -1,4 +1,8 @@
-"""build_index_v2.py — U-F07 v2 富文本索引构建（可断点续传：进度落盘 sidecar，重跑跳过已完成）"""
+"""build_index_v2.py — U-F07 v2 富文本索引构建（可断点续传：进度落盘 sidecar，重跑跳过已完成）
+退役件（D-27 修复 2026-09-27）：argparse+--dry-run 就位——--help 不再触达写盘路径；
+替代路径见 legacy-退役说明.md（读面走 cbb-v2/cbb2/fastscan.py+search.py）。
+"""
+import argparse
 import importlib
 import json
 import time
@@ -24,7 +28,18 @@ BATCH = 8
 TIMEOUT = 300
 
 
-def main() -> int:
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description="v2 富文本索引构建（断点续传）——退役件，替代路径见 legacy-退役说明.md")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只盘点行数并打印即退出：不写进度盘、不连嵌入端点、不落索引")
+    ap.add_argument("--store", default=None, help="覆盖缺省本体库根（缺省：env CBB_STORE > 惯例推导）")
+    ns = ap.parse_args(argv)
+    if ns.store:  # 覆盖缺省根：WS/进度盘/索引路径一并随迁，避免进度写进别家工作区
+        global STORE, WS, IDX, PROG
+        STORE = Path(ns.store)
+        WS = 惯.workspace_of(STORE)
+        IDX = WS / "索引" / "lancedb"
+        PROG = WS / "索引" / "_embed-progress.jsonl"
     g = m.collect_graph(STORE)
     rows, seen = [], set()
     for n in g["nodes"]:
@@ -52,6 +67,10 @@ def main() -> int:
         print(f"续传：已有 {len(done)} 条嵌入")
     todo = [r for r in rows if r["record_id"] not in done]
     print("待嵌入:", len(todo), "/", len(rows))
+    if ns.dry_run:  # D-27：盘点口——零写盘零网络（历史行为：无 argparse，--help 即 mkdir+写进度）
+        print(json.dumps({"dry_run": True, "rows": len(rows), "todo": len(todo),
+                          "done": len(done), "store": str(STORE)}, ensure_ascii=False))
+        return 0
 
     PROG.parent.mkdir(parents=True, exist_ok=True)
     with PROG.open("a", encoding="utf-8") as prog:

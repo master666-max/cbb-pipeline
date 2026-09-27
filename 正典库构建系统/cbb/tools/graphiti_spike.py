@@ -102,5 +102,15 @@ async def main() -> dict:
 
 
 if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description="Graphiti 接线 spike——退役件，替代路径见 legacy-退役说明.md（cbb2/derive 双时序）")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只打印路线配置（LLM/嵌入/图库端点）即退出，不 import graphiti_core 不连 Neo4j")
+    ns = ap.parse_args()
+    if ns.dry_run:
+        print(json.dumps({"dry_run": True, "LLM_BASE": LLM_BASE, "LLM_MODEL": LLM_MODEL,
+                          "EMB_BASE": EMB_BASE, "EMB_MODEL": EMB_MODEL, "BOLT": BOLT},
+                         ensure_ascii=False, indent=1))
+        raise SystemExit(0)
     rep = asyncio.run(main())
     print(json.dumps(rep, ensure_ascii=False, indent=1))

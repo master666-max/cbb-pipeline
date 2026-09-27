@@ -185,14 +185,20 @@ def trigger_sentinel(store_root: Path | str, logs_dir: Path | str | None = None,
 
 def main(argv=None) -> int:
     import argparse
-    ap = argparse.ArgumentParser(description="graphiti 就绪自检+四触发器哨兵（U-C03.7）")
+    ap = argparse.ArgumentParser(description="graphiti 就绪自检+四触发器哨兵（U-C03.7）——退役件，替代路径见 legacy-退役说明.md")
     import 路径惯例 as 惯
     ap.add_argument("--store", default=os.environ.get("CBB_STORE")
                              or str(惯.store_of(Path.cwd())))
     ap.add_argument("--preset", default="deepseek", choices=["deepseek", "lmstudio-flash"])
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--sentinel", action="store_true")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只打印 store/preset 即退出（本件本就只读，零写路径）")
     ns = ap.parse_args(argv)
+    if ns.dry_run:
+        print(json.dumps({"dry_run": True, "store": ns.store, "preset": ns.preset,
+                          "口径": "只读哨件，无写路径"}, ensure_ascii=False))
+        return 0
     if ns.sentinel:
         rep = trigger_sentinel(ns.store)
         print(json.dumps(rep, ensure_ascii=False, indent=1 if not ns.json else None))
