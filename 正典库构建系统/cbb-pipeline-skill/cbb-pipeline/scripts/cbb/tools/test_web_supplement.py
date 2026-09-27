@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_web_supplement.py — 网络补充层的闸门必须可测（零网络：HTTP 打桩）
 
 上游提交语称本件带"admissible=False 硬标记／准入闸／引文核验必拒"，但随仓无同名测试。

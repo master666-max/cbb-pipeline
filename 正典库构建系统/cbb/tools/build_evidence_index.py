@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """build_evidence_index.py — evidence 级片段索引构建（U-F07 v2 续件 · 批量任务 · 可断点续传）
 
 把全库记录的证据引文（10 万级）逐条嵌入写入 LanceDB `evidence` 表——
@@ -19,6 +18,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 import sys
+
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 m = importlib.import_module("neo4j_export")
@@ -33,7 +33,7 @@ def collect_evidence(store: Path) -> list[dict]:
     for f in sorted(store.glob("libraries/*/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         rid = rec.get("record_id")
         for ev in rec.get("evidence") or []:
@@ -96,7 +96,7 @@ def main(argv=None) -> int:
                                             ensure_ascii=False) + "\n")
                     pf.flush()
                     break
-                except Exception as e:
+                except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
                     print(f"  批 {i} 第 {attempt+1} 次失败: {str(e)[:50]}；重试")
                     time.sleep(5)
             else:

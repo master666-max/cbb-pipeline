@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_graphiti_bridge.py — U-C03.7 stub 单测（离线：不装 graphiti、不联网）。"""
 import json
 import sys
@@ -8,8 +7,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-import graphiti_bridge as gb  # noqa: E402
-import graphiti_ready as gr   # noqa: E402
+import graphiti_bridge as gb
+import graphiti_ready as gr
 
 
 class StubGraphiti:

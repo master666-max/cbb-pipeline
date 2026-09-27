@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """graph_audit.py — 图谱↔正典库对账（段收口常态断言；不干扰图谱：只读+披露，不改写任何一侧）。
 
 断言面：
@@ -12,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -21,7 +21,7 @@ if str(HERE) not in sys.path:
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE.parent / "contracts"))
 
-from neo4j_export import collect_graph  # noqa: E402
+from neo4j_export import collect_graph
 
 
 def audit(store_root: Path, base: str | None = None, ns: str | None = None,

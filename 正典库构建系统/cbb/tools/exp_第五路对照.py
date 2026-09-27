@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """exp_第五路对照.py — 预注册对照实验：四路基线 vs 四路+LightRAG 第五路（exp/lightrag-fifth-path 分支）。
 
 子命令：
@@ -36,8 +35,8 @@ sys_path = str(HERE.parent / "cbb-store")
 if sys_path not in __import__("sys").path:
     __import__("sys").path.insert(0, sys_path)
 
-import 检索层 as jl  # noqa: E402
-from neo4j_export import derive_password  # noqa: E402
+import 检索层 as jl
+from neo4j_export import derive_password
 
 ROOT = HERE.parent.parent
 STORE = ROOT / "迷深实战-本体库"
@@ -66,7 +65,7 @@ def _rec_text(rid: str) -> str:
         return ""
     try:
         rec = json.loads(hits[0].read_text(encoding="utf-8"))
-    except Exception:
+    except (OSError, json.JSONDecodeError):
         return ""
     obs = [o.get("text", "") for o in (rec.get("observations") or []) if o.get("text")]
     return "；".join(obs)
@@ -172,8 +171,8 @@ def run(outdir: Path = EXPDIR, top_k: int = 10, tag: str = "v1") -> None:
     import lightrag_bridge as lb
 
     # 环境预拨：Neo4j 鉴权/图扩展必须真实可用（失败=中止，不让基线静默缺路④）
-    g0, ents0, _ = _entity_records()
-    probe = graph_expand_1hop([sorted(ents0)[0]])
+    _g0, ents0, _ = _entity_records()
+    probe = graph_expand_1hop([min(ents0)])
     print(f"环境预拨：图扩展 1-hop 返回 {len(probe)} 项")
 
     results = {"arms": {}, "env": {}}
@@ -255,8 +254,8 @@ def run(outdir: Path = EXPDIR, top_k: int = 10, tag: str = "v1") -> None:
         lines.append(f"| {arm} | {p['实体名直查']['hit@10']:.1%} | {p['关系对查']['hit@10']:.1%} "
                      f"| {p['描述反查']['hit@10']:.1%} | **{r['macro_hit@10']:.1%}** "
                      f"| {r['latency_avg_s']}s |")
-    lines += ["", f"llm_calls={results['env']['llm_calls']}（必须 0）｜第五路嵌入调用 "
-              f"{results['env']['fifth_emb_calls']} 次/{results['env']['fifth_emb_texts']} 文本",
+    lines += ["", (f"llm_calls={results['env']['llm_calls']}（必须 0）｜第五路嵌入调用 "
+              f"{results['env']['fifth_emb_calls']} 次/{results['env']['fifth_emb_texts']} 文本"),
               "", "口径：" + results["env"]["口径"]]
     (outdir / f"结果-{tag}.md").write_text("\n".join(lines), encoding="utf-8")
     print("\n".join(lines))

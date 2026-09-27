@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.gaps — 缺口队列生成器（Phase D·U-D07；进化闭环唯一入口，流程设计 P5）。
 
 扫描来源：契诃夫超期（foreshadow）/ 词表缺口（quarantine 自创值）/ NLI 分歧簇（人审队列）/
@@ -31,7 +30,7 @@ def scan_foreshadow_overdue(store_root: Path, current_chapter: int, grace: int =
     for f in sorted(Path(store_root).glob("libraries/foreshadow/*/*.json")):
         try:
             r = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         c = r.get("canonical") or {}
         setup, payoff = c.get("setup_chapter"), c.get("payoff_chapter")

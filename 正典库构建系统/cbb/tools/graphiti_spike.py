@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """graphiti_spike.py — Graphiti 双时序框架接线 spike（P2 准备件 · 2026-09-25）。
 
 目的：打通"正典语料切片 → Graphiti episode → 双时序图"的最小管道，验证
@@ -20,12 +19,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
-from neo4j_export import derive_password  # noqa: E402
-
 # 路线开关=环境变量（换路线不改码）：SPIKE_LLM_MODEL / SPIKE_LLM_BASE 可覆盖；
 # DeepSeek 路线：SPIKE_LLM_MODEL=deepseek-chat SPIKE_LLM_BASE=https://api.deepseek.com
 # key 只走环境变量 DEEPSEEK_API_KEY（D-004 不落文件；本地路线填 "local" 占位）
 import os as _os
+
+from neo4j_export import derive_password
+
 LLM_BASE = _os.environ.get("SPIKE_LLM_BASE", "http://127.0.0.1:8080/v1")
 LLM_MODEL = _os.environ.get("SPIKE_LLM_MODEL", "tifa-deepsex-14b-cot-chat")
 API_KEY = _os.environ.get("DEEPSEEK_API_KEY", "local")
@@ -36,9 +36,9 @@ BOLT = "bolt://localhost:7693"
 
 async def main() -> dict:
     from graphiti_core import Graphiti
+    from graphiti_core.embedder.openai import OpenAIEmbedder, OpenAIEmbedderConfig
     from graphiti_core.llm_client.config import LLMConfig
     from graphiti_core.llm_client.openai_generic_client import OpenAIGenericClient
-    from graphiti_core.embedder.openai import OpenAIEmbedder, OpenAIEmbedderConfig
     from graphiti_core.nodes import EpisodeType
 
     pw = derive_password(None)

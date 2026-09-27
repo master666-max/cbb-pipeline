@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.audit — 对样双轨 + Wilson 区间（Phase D·U-D05；流程设计 P5）。
 
 发现轨=可疑优先排序（找错，通过率不可外推——Northcutt 模式）；
@@ -57,7 +56,7 @@ def lqas(passed: int, n: int, p0: float = 0.95) -> dict:
     d = 0
     while d <= n:
         # P(失败数 ≤ d | 真实通过率 = p0) ≤ 0.05 的最大 d —— 二项累计
-        prob = sum(math.comb(n, k) * (1 - p0) ** k * p0 ** (n - k) for k in range(0, d + 1))
+        prob = sum(math.comb(n, k) * (1 - p0) ** k * p0 ** (n - k) for k in range(d + 1))
         if prob > 0.05:
             break
         d += 1

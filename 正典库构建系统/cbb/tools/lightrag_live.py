@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """lightrag_live.py — LightRAG 副本实时同步哨（时间颗粒度拉到顶：随写随同步）。
 
 机制（2026-09-25 用户裁定"颗粒度拉到顶"）：
@@ -27,7 +26,7 @@ if str(HERE) not in sys.path:
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE.parent / "cbb-quarantine"))
 
-import lightrag_export as le  # noqa: E402  复用嵌入/桩/常量
+import lightrag_export as le
 
 SEP = "<SEP>"
 _IDISH = None  # 延迟编译
@@ -35,7 +34,6 @@ _IDISH = None  # 延迟编译
 
 def _record_entries(rec: dict, names: set[str]) -> tuple[list[dict], list[dict], list[dict]]:
     """单记录 → kg 条目（与 build_kg 同构；悬挂端点就地归一，无候选如实保留）。"""
-    import re
     rid = rec.get("record_id")
     canon = rec.get("canonical") or {}
     txt = "；".join(o.get("text", "") for o in (rec.get("observations") or []) if o.get("text"))
@@ -72,7 +70,7 @@ def _canon_names(store: Path) -> set[str]:
             nm = (rec.get("canonical") or {}).get("name")
             if nm:
                 names.add(nm)
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
     return names
 
@@ -87,7 +85,7 @@ def _sidecar(work: Path) -> dict:
 async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: dict) -> dict:
     """单轮观察：mtime 扫描 → 变更记录构建 → sidecar 差集 → 喂入。
     重试位语义：last_poll 只在**成功**后推进——喂入失败保持原位，下一轮重试同批（毒批不静默丢）。"""
-    from lightrag_delta_sync import _load_sidecar, _merge_sidecar
+    from lightrag_delta_sync import _load_sidecar
     library = str(store / "libraries")
     state = interval_state
     prev_poll = state.get("last_poll", 0.0)
@@ -102,8 +100,7 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
                         mt = f.stat().st_mtime
                         if mt > state.get("last_poll", 0.0):
                             changed.append(Path(f.path))
-                        if mt > max_mt:
-                            max_mt = mt
+                        max_mt = max(max_mt, mt)
     except FileNotFoundError:
         pass
     if not changed:
@@ -115,7 +112,7 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
     for f in changed:
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue  # 极端竞态：下一轮 mtime 仍新会再处理（最终一致）
         parsed.append(rec)
         nm = (rec.get("canonical") or {}).get("name")
@@ -140,7 +137,7 @@ async def poll_once(store: Path, work: Path, rag_holder: dict, interval_state: d
                                        "tgt_id": r["tgt_id"], "descs": [], "srcs": set()})
             g["descs"].append(r["description"])
             g["srcs"].add(str(r["source_id"]))
-        for c in c:
+        for c in c:  # noqa: B020 — 解包可读性
             gchunks.setdefault(c["source_id"], c)
     delta_e = []
     for name, g in gents.items():
@@ -227,7 +224,7 @@ def main(argv=None) -> int:
                     rep = await poll_once(store, work, rag_holder, state)
                     if rep.get("changed") or rep.get("fed"):
                         print(json.dumps(rep, ensure_ascii=False), flush=True)
-                except Exception as e:
+                except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
                     print(json.dumps({"error": f"{type(e).__name__}: {str(e)[:120]}"},
                                      ensure_ascii=False), flush=True)
                 await asyncio.sleep(ns.interval)

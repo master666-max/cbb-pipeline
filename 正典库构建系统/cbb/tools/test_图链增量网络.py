@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_图链与增量与网络补充.py — R4 分支三新件的单测（活依赖缺席→如实跳过）。"""
 import json
 import sys
@@ -16,7 +15,7 @@ def _neo4j_up() -> bool:
         import urllib.request
         with urllib.request.urlopen("http://localhost:7695/", timeout=3):
             return True
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return False
 
 
@@ -81,7 +80,6 @@ def test_web_supplement_discipline():
 
 def test_delta_sync_idempotent():
     import lightrag_delta_sync as ds
-    import lightrag_export as le
 
     def mk_rec(rid, name, etype="人物"):
         return {"record_id": rid, "record_type": "entity", "library": "character",
@@ -120,7 +118,7 @@ if __name__ == "__main__":
         except AssertionError as e:
             fails += 1
             print(f"FAIL {name}: {e}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
             fails += 1
             print(f"ERROR {name}: {type(e).__name__}: {str(e)[:150]}")
     raise SystemExit(1 if fails else 0)

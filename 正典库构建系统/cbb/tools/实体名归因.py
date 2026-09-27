@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """实体名归因.py — 把图谱产物里"名字在原文找不到"拆成四类，各给处置，不许一刀切
 
 为什么需要它（2026-09-25 本机实测，GraphRAG 卷1 冒烟 102 个实体）：
@@ -135,13 +134,13 @@ def raw_spellings(d: Path | None) -> dict[str, list[str]]:
             continue
         try:
             t = f.read_text(encoding="utf-8")
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         strings: list[str] = []
         if t.lstrip().startswith(("{", "[")):
             try:
                 strings = walk_strings(json.loads(t))
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 strings = [t]
         else:
             strings = [t]

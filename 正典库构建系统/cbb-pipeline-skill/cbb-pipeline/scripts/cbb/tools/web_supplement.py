@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """web_supplement.py — 网络搜索补充层（用户检索面的**低置信度**补充推断材料）。
 
 纪律（本件的存在前提，违反即撤）：
@@ -39,20 +38,20 @@ def search(query: str, n: int = 5, engine: str = "cn.bing") -> dict:
         if engine == "cn.bing":
             html = _http("https://cn.bing.com/search?q=" + urllib.parse.quote(query)
                          + "&setlang=zh-hans&count=10")
-            for m in re.finditer(r'<li class="b_algo".*?</li>', html, re.S):
+            for m in re.finditer(r'<li class="b_algo".*?</li>', html, re.DOTALL):
                 block = m.group(0)
-                a = re.search(r'<h2[^>]*><a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', block, re.S)
+                a = re.search(r'<h2[^>]*><a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', block, re.DOTALL)
                 if not a:
                     continue
                 url, title = a.group(1), _strip_tags(a.group(2))
-                p = re.search(r'<p[^>]*>(.*?)</p>', block, re.S)
+                p = re.search(r'<p[^>]*>(.*?)</p>', block, re.DOTALL)
                 snippet = _strip_tags(p.group(1)) if p else ""
                 results.append({"title": title, "url": url, "snippet": snippet[:300]})
                 if len(results) >= n:
                     break
         else:
             errors.append(f"未知引擎 {engine}")
-    except Exception as e:  # 网络失败如实披露
+    except Exception as e:  # 网络失败如实披露  # noqa: BLE001 — 宽捕获=显式报错/降级语义
         errors.append(f"{type(e).__name__}: {str(e)[:120]}")
     return {"admissible": False, "confidence": "low", "engine": engine,
             "results": results[:n], "errors": errors, "口径": 口径}

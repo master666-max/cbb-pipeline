@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 """build_index_v2.py — U-F07 v2 富文本索引构建（可断点续传：进度落盘 sidecar，重跑跳过已完成）"""
 import importlib
 import json
 import time
-import urllib.request
 import urllib.error
+import urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -14,6 +13,7 @@ if sys_path not in __import__("sys").path:
 
 m = importlib.import_module("neo4j_export")
 import 路径惯例 as 惯  # 同级件：项目根/工作区按惯例推导，不再写死上一项目的实例名
+
 _STORE_ENV = __import__("os").environ.get("CBB_STORE")
 STORE = Path(_STORE_ENV) if _STORE_ENV else 惯.store_of(HERE.parent.parent)
 WS = 惯.workspace_of(STORE)

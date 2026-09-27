@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_捕获再捕获.py — Chapman 估计量的数学正确性（手算对账）"""
 import importlib
 import sys

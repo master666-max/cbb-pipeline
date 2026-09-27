@@ -1,0 +1,29 @@
+=== R1 功能正确性：全套回归基线 ===
+[cbb2 12 套件]
+test_v3_contract: 4 tests PASS
+test_v3_gate: 5 tests PASS
+test_v3_store: 18 tests PASS
+test_v3_ops_nli: 5 tests PASS
+test_v3_derive: 5 tests PASS
+test_v3_phasec: 6 tests PASS
+test_v3_phased: 8 tests PASS
+test_v3_notary: 4 tests PASS
+test_v3_lens: 4 tests PASS
+test_v3_fastscan_coldstore: 4 tests PASS
+test_v3_schedule: 5 tests PASS
+test_v3_governance: 4 tests PASS
+acceptance: PROVEN 行为等价 (aafe38042b28f0c2)：v1 基线五面指纹与 cbb-v2 逐位相等
+[tools 13 套件]
+test_批次自检: 7 tests PASS
+test_检索层: 10 tests PASS
+test_环境自检: rc=0
+test_图库隔离: rc=0
+test_词表: 4 tests PASS
+test_重排器: 5 tests PASS
+test_失效宣告: 6 tests PASS
+test_派生层对账: rc=0
+test_矛盾分流: 7 tests PASS
+test_实体名归因: rc=0
+test_路径惯例: rc=0
+test_连续性巡检: 6 tests PASS
+test_web_supplement: rc=0

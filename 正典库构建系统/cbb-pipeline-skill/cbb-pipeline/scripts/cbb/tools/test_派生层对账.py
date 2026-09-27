@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_派生层对账.py — 半途写必须现形（夹具全自造，零网络零服务）
 
 锚的实测事实：LightRAG 在嵌入端点挂掉时把节点写进了图、没写进向量库，
@@ -14,7 +13,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import 派生层对账 as m  # noqa: E402
+import 派生层对账 as m
 
 GRAPHML = """<?xml version="1.0" ?>
 <graphml>
@@ -90,14 +89,14 @@ class 四道检查(unittest.TestCase):
         self.assertEqual(rep["差集"]["图有向量无"], ["裸节点"], "图里有、向量库里没有的那条要点名")
 
     def test_C3无坐标节点(self):
-        rc, rep = _run({"g.graphml": GRAPHML, "vdb_entities.json": VDB3,
+        _rc, rep = _run({"g.graphml": GRAPHML, "vdb_entities.json": VDB3,
                         "vdb_rel.json": VDBREL1})
         self.assertIn("裸节点", rep["缺坐标清单"])
         self.assertTrue(any("C3" in x for x in rep["未过项"]))
 
     def test_全等且带坐标时只剩C3不过(self):
         # 第三个节点无坐标 ⇒ 仍 FAIL；证明 C1/C2 与 C3 是分开报的，不是一锅端
-        rc, rep = _run({"g.graphml": GRAPHML, "vdb_entities.json": VDB3,
+        _rc, rep = _run({"g.graphml": GRAPHML, "vdb_entities.json": VDB3,
                         "vdb_rel.json": VDBREL1})
         self.assertFalse(any("C1" in x for x in rep["未过项"]))
         self.assertFalse(any("C2" in x for x in rep["未过项"]))
@@ -112,7 +111,7 @@ class 四道检查(unittest.TestCase):
     def test_与正典对账只报数(self):
         canon = "\n".join(json.dumps({"canonical_name": n}, ensure_ascii=False)
                           for n in ["梅芙", "沙姆希尔"])
-        rc, rep = _run({"g.graphml": GRAPHML, "vdb_entities.json": VDB3,
+        _rc, rep = _run({"g.graphml": GRAPHML, "vdb_entities.json": VDB3,
                         "vdb_rel.json": VDBREL1, "canon.jsonl": canon})
         self.assertIn("派生层名字命中正典", rep["与正典对账"])
         self.assertIn("口径上界", rep["与正典对账"])

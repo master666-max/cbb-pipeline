@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_矛盾分流.py — 裁决 ⑤ 四分类与双模式执行的机械测试（正对照成对）"""
 import json
 import sys
@@ -6,6 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import importlib
+
 m = importlib.import_module("矛盾分流")
 
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """lightrag_delta_sync.py — 增量同步：章收口把新增/变化的图谱元素喂给 LightRAG 副本。
 
 机制：
@@ -20,7 +19,7 @@ sys_dir = str(HERE)
 if sys_dir not in __import__("sys").path:
     __import__("sys").path.insert(0, sys_dir)
 
-import lightrag_export as le  # noqa: E402  复用 build_kg/嵌入/桩
+import lightrag_export as le
 
 
 def _load_sidecar(work: Path) -> dict:

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_批次自检.py — 十项断言的正负对照（栽好的问题必须被抓，干净的必须全绿）"""
 import importlib
 import json

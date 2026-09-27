@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.gate — 记录构造与证据门（R9 消费侧；make_record 移植 v1 gate1 同构）。
 
 U-A03 健壮档：ensure_input——畸形输入**出码不崩**（D-1 canonical 串→G1-SCHEMA 码；
@@ -18,7 +17,7 @@ _V1_CONTRACTS = Path(__file__).resolve().parents[2] / "cbb" / "contracts"
 if _V1_CONTRACTS.exists() and str(_V1_CONTRACTS) not in sys.path:
     sys.path.insert(0, str(_V1_CONTRACTS))
 try:
-    import cbb_contracts  # noqa: F401  proven 契约校验器（v1 在案 33 测试）
+    import cbb_contracts
     _HAVE_V1 = True
 except ImportError:
     _HAVE_V1 = False

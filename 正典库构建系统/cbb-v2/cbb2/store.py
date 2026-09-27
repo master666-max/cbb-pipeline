@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.store — 三态存储 + 双轨合并（R1-R5/R13；算法忠实移植 v1，数据布局逐字节兼容）。
 
 v1 兼容面：libraries/<lib>/<status>/<rid>.json 布局、supersede-index.jsonl、

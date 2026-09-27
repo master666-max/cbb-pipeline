@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
 """cbb2.search — 机械检索面：别名精确 + 关键词 + RRF + 引文核验（R11；端点相关路不在核心包）。"""
 from __future__ import annotations
 
 import json
-import re
 from pathlib import Path
 
 
@@ -15,7 +13,7 @@ def alias_recall(query: str, store_root: Path) -> list[dict]:
     for f in sorted(store.glob("libraries/character/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         nm = (rec.get("canonical") or {}).get("name")
         if nm:
@@ -49,7 +47,7 @@ def verify_citations(citations: list[dict], store_root: Path) -> dict:
     for f in sorted(store.glob("libraries/*/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         rid = rec.get("record_id")
         for ev in rec.get("evidence") or []:

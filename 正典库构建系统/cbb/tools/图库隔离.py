@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """图库隔离.py — 给本项目起一个独立的 Neo4j 实例（解决 community 版无多库隔离）
 
 为什么要它：Neo4j 社区版只有一个用户库 ⇒ "给本书单开 database"做不到；唯一真隔离方式是**另起实例**。
@@ -28,7 +27,6 @@ import argparse
 import json
 import os
 import socket
-import sys
 import time
 import urllib.request
 from pathlib import Path
@@ -120,7 +118,7 @@ def probe(base: str, token: str, user: str | None = None, password: str | None =
         total = int(http_query(base, "MATCH (n) RETURN count(n) AS c", user, password)["rows"][0][0])
         rows = http_query(base, "MATCH (n) RETURN coalesce(n.group_id, n.canon_group, '<无标记>') AS g, "
                                 "count(*) AS c", user, password)["rows"]
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return {"verdict": "UNREACHABLE", "note": f"{type(e).__name__} {str(e)[:80]}", "uri": base}
     groups = {g: int(c) for g, c in rows}
     foreign = {g: c for g, c in groups.items() if g not in (token, "<无标记>")}
@@ -167,8 +165,8 @@ def main(argv=None) -> int:
             print("（未加 --run ⇒ 只打计划，什么都没创建）")
             return 0
         import subprocess
-        r = subprocess.run(cmd, capture_output=True, text=True)
-        print("docker run rc=%s %s" % (r.returncode, (r.stderr or r.stdout).strip()[:200]))
+        r = subprocess.run(cmd, capture_output=True, text=True, check=False)
+        print(f"docker run rc={r.returncode} {(r.stderr or r.stdout).strip()[:200]}")
         if r.returncode:
             return 1
         for _ in range(30):                                # 等就绪，最长 60s
@@ -186,8 +184,7 @@ def main(argv=None) -> int:
 
     pw = None if ns.auth_none else os.environ.get(ns.auth_env)
     if ns.action == "env":
-        print("setx NEO4J_HTTP \"%s\"\nsetx NEO4J_PASSWORD \"<与 env 文件同一个值，勿写进脚本>\"%s"
-              % (base, "" if pw is None else ""))
+        print("setx NEO4J_HTTP \"{}\"\nsetx NEO4J_PASSWORD \"<与 env 文件同一个值，勿写进脚本>\"{}".format(base, ""))
         return 0
     p = probe(base, ns.project_token, password=pw)
     print(json.dumps(p, ensure_ascii=False, indent=1))

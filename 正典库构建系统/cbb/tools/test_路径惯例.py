@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_路径惯例.py — 三条判据可测：能推的推、推不出报错、绝不凭空建上一项目的目录"""
 import importlib
 import os

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.splitting — 门控动态切分 + 场景软标签（Phase C·U-C01；流程设计 P1）。
 
 证据口径：语义切分全面替代被证伪（NAACL 2025）而大块掉实体召回（GraphRAG 实证）

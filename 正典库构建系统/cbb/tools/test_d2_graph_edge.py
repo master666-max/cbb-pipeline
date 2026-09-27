@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_d2_graph_edge.py — 漂移修正 D2 单测（工单 v1.4 §0；2026-09-17 U-C03.5）。
 
 覆盖三件：
@@ -9,7 +8,6 @@
      侧车追加键级去重（重放零增殖）；库内记录文件不被回填触碰（旧件字节不动）。
 评分器与金标零改动（本测试不触碰 step0 评分链）。
 """
-import json
 import sys
 import tempfile
 import unittest
@@ -19,9 +17,10 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "contracts"))
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE))
-import cbb_contracts  # noqa: E402
-import cbb_store      # noqa: E402
-import neo4j_export as m  # noqa: E402
+import cbb_contracts
+import cbb_store
+
+import neo4j_export as m
 
 
 def mk_record(evidence):

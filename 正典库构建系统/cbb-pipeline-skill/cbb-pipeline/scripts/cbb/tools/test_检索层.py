@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_检索层.py — U-F07：别名召回/RRF/关键词/降级/引文核验（零网络；LanceDB 用例条件跳过）"""
 import importlib
 import json

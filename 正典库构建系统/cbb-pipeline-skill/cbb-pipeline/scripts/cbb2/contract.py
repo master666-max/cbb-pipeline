@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.contract — 契约 v3：profile 加载 + 断言/陈述位分类 + 时间位校验（U-A01）。
 
 六库 profile 草案见 profiles/（_review 栏=待人工审定标记）。

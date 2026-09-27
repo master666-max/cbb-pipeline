@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.nli — NLI 双通道矛盾预筛（U-A04）：只分流不裁决（R-019），两通道不一致才人审。
 
 通道：
@@ -12,7 +11,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import urllib.request
 
 VERDICTS = ("entails", "neutral", "contradicts")
 _PROMPT = (
@@ -73,7 +71,7 @@ class TransformersChannel:
             try:
                 from transformers import pipeline
                 self._pipe = pipeline("text-classification", model=self.model_id)
-            except Exception as e:  # 模型下载失败/不兼容 ⇒ 通道降级
+            except Exception as e:  # noqa: BLE001 — 模型下载/推理异常族宽捕获=通道降级语义（设计决定）
                 raise ChannelUnavailable(f"本地 NLI 通道不可用: {type(e).__name__}: {str(e)[:120]}")
         return self._pipe
 

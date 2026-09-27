@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """neo4j_export.py — 本体库 → Neo4j 图层增量 MERGE 导出（工单 v1.2 §0④；U-C01 工具件2）。
 
 设计：实体→(:Entity {name,…}) 节点、关系记录→[:REL {rel_type,…}] 边，全部 MERGE（幂等，重放零增殖）；
@@ -48,7 +47,7 @@ CONSTRAINT_CYPHER = ("CREATE CONSTRAINT entity_name_unique IF NOT EXISTS "
 
 def edge_id_for(subject: str, rel_type: str, object: str) -> str:
     """D2：确定性边 id（三元组内容哈希）——MERGE 世界里同一 (s,r,o) 恒同 id，回填可 join。"""
-    h = hashlib.sha256(f"{subject}|{rel_type}|{object}".encode("utf-8")).hexdigest()[:12]
+    h = hashlib.sha256(f"{subject}|{rel_type}|{object}".encode()).hexdigest()[:12]
     return f"e-{h}"
 
 
@@ -79,7 +78,7 @@ def collect_graph(store_root: Path) -> dict:
             # → 走扩展长度前缀重试；仍失败则跳过并计数（T-5：不静默）
             try:
                 text = Path("\\\\?\\" + str(f.resolve())).read_text(encoding="utf-8")
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 skipped.append(f.name)
                 continue
         rec = json.loads(text)
@@ -264,18 +263,18 @@ def probe(base: str, timeout: int = 4) -> bool:
     try:
         with urllib.request.urlopen(base, timeout=timeout) as r:
             return r.status == 200
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return False
 
 
 def docker_daemon_up() -> bool:
-    return subprocess.run(["docker", "info"], capture_output=True, timeout=15).returncode == 0
+    return subprocess.run(["docker", "info"], capture_output=True, timeout=15, check=False).returncode == 0
 
 
 def docker_start() -> bool:
     if not CONTAINER:  # D-21：未配容器名=不许猜着拉起
         return False
-    return subprocess.run(["docker", "start", CONTAINER], capture_output=True, timeout=60).returncode == 0
+    return subprocess.run(["docker", "start", CONTAINER], capture_output=True, timeout=60, check=False).returncode == 0
 
 
 def derive_password(cli_pw: str) -> str | None:

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """检索层.py — L6 混合检索（U-F07 · 引擎=LanceDB 已裁 · 2026-09-23）
 
 四路召回 → RRF 融合（纯公式）→ 本地重排精排（岗位④）→ **引文核验**。
@@ -39,15 +38,14 @@ def embed(texts: list[str], base: str | None = None, model: str = "text-embeddin
         data = json.loads(raw)
         arr = sorted(data["data"], key=lambda x: x["index"])
         return [d["embedding"] for d in arr]
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return None
 
 
 def _http_post(url: str, payload: bytes, timeout: float) -> str:
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    with EMB_LOCK:  # 与第五路共享同一端点——并发 400 防线
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.read().decode("utf-8")
+    with EMB_LOCK, urllib.request.urlopen(req, timeout=timeout) as r:  # SIM117 合并；EMB_LOCK=与第五路共享端点的并发 400 防线
+        return r.read().decode("utf-8")
 
 
 def os_env(k: str, d: str) -> str:  # 便于测试注入
@@ -66,7 +64,7 @@ def alias_recall(query: str, store_root: Path) -> list[dict]:
     for f in sorted(store.glob("libraries/character/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         nm = (rec.get("canonical") or {}).get("name")
         if nm:
@@ -116,7 +114,7 @@ def verify_citations(citations: list[dict], store_root: Path) -> dict:
             store.glob("libraries/timeline/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         rid = rec.get("record_id")
         for ev in rec.get("evidence") or []:
@@ -171,7 +169,7 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
                     res = tbl.search(qv[0]).limit(top_k).to_list()
                     paths.append([r.get("name") for r in res])
                     notes.append("向量路命中")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
             notes.append(f"向量路缺席（{str(e)[:40]}）")
     else:
         notes.append("向量路缺席：索引未建")
@@ -233,7 +231,7 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
                                     "backend": backend, "paths": len([p for p in paths if p])},
                                    ensure_ascii=False) + "\n")
             notes.append(f"查询日志已写 {logp.name}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
             notes.append(f"查询日志写入失败（{str(e)[:40]}）：负载底座不可信，须修")
     return {"top": top, "backend": backend, "rerank_requested": bool(rerank), "paths": len([p for p in paths if p]),
             "口径": "；".join(notes) or "无降级"}
@@ -259,11 +257,11 @@ def _fifth_auto(query: str, store_root: Path, index_dir: Path | None,
         sys_path = str(Path(__file__).resolve().parent)
         if sys_path not in __import__("sys").path:
             __import__("sys").path.insert(0, sys_path)
-        import lightrag_bridge as lb   # 图游走桥件；未随发布件安装时这里会 ImportError
+        import lightrag_bridge as lb  # 图游走桥件；未随发布件安装时这里会 ImportError
         rep = lb.fifth_recall(query, store_root, top_k)
         names = list(rep["names"])
         return (names or None), f"游走返回 {len(names)} 项" + ("" if names else "（空面，未并入）")
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return None, f"调用失败（{type(e).__name__}: {str(e)[:40]}）"
 
 
@@ -294,7 +292,7 @@ def _text_lookup(index_dir: Path | None, names: list[str]) -> tuple[list[str], s
         if len(rows) >= cap:
             note += f"（扫描上限 {cap} 触顶，超出部分未投影——命中数偏低时先想这里）"
         return [tmap.get(n, n) for n in names], note
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return names, f"富文本投影失败（{type(e).__name__}: {str(e)[:44]}）：精排退回 name 串"
 
 
@@ -311,7 +309,7 @@ def keyword_recall(query: str, store_root: Path, limit: int = 10) -> list[dict]:
     for f in sorted(store.glob("libraries/character/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         nm = (rec.get("canonical") or {}).get("name") or ""
         if nm in seen:
@@ -333,7 +331,7 @@ def _db(index_dir: Path):
 def _open_table(db, name: str):
     try:
         return db.open_table(name)
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return None
 
 

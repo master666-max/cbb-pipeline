@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """批次自检.py — 批次机械自检器（终审方法论 §11.2 · 十项失效模式逐项断言 · 2026-09-24）
 
 十查的机器替身：检查面与十查相同（失效模式穷举），执行载体＝机器。
@@ -38,7 +37,7 @@ def _records(store: Path):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
             out.append(rec)
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue  # 超长路径等由读取方各自兜底；此处计数在 C7
     return out
 
@@ -52,7 +51,7 @@ def _candidates(ws: Path) -> list[dict]:
         try:
             out.append({"file": f.name, "chapter": int(re.search(r"ch(\d+)", f.name).group(1)),
                         "data": json.loads(f.read_text(encoding="utf-8"))})
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
     return out
 
@@ -67,7 +66,7 @@ def _slices(ws: Path) -> dict[int, str]:
         if mnum:
             try:
                 out[int(mnum.group(1))] = f.read_text(encoding="utf-8", errors="replace")
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 pass
     return out
 
@@ -131,9 +130,9 @@ def _git_state(store: Path) -> tuple[bool | None, str]:
     def _run(args):
         try:
             p = subprocess.run(["git", *args], capture_output=True, text=True,
-                               timeout=30, cwd=str(store.parent))
+                               timeout=30, cwd=str(store.parent), check=False)
             return p, ""
-        except Exception as e:  # git 不在 PATH / 超时
+        except Exception as e:  # git 不在 PATH / 超时  # noqa: BLE001 — 宽捕获=显式报错/降级语义
             return None, f"git 调用异常 {type(e).__name__}"
     p, err = _run(["rev-parse", "--is-inside-work-tree"])
     if p is None:
@@ -318,9 +317,7 @@ def c9_verified_against(store: Path) -> dict:
     recs = list(_records(store))
     for rec in recs:
         va = rec.get("verified_against") or {}
-        if not va.get("path") or not va.get("sha") or not va.get("verified_at"):
-            bad.append(rec.get("record_id"))
-        elif set(va.get("sha", "")) == {"0"}:
+        if not va.get("path") or not va.get("sha") or not va.get("verified_at") or set(va.get("sha", "")) == {"0"}:
             bad.append(rec.get("record_id"))
     if not recs:
         return {"no": 9, "name": "verified_against 真实三件套", "status": "SKIP",
@@ -335,9 +332,9 @@ def c10_commit_and_export(ws: Path, store: Path) -> dict:
     exports = list((ws / "logs").glob("neo4j-export-*.json")) if (ws / "logs").exists() else []
     try:
         r = subprocess.run(["git", "log", "--oneline", "-1", "--", str(store)],
-                           capture_output=True, text=True, timeout=30, cwd=str(store.parent))
+                           capture_output=True, text=True, timeout=30, cwd=str(store.parent), check=False)
         head = r.stdout.strip().splitlines()[0] if r.stdout.strip() else "（无）"
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         head = "（git 不可用）"
     return {"no": 10, "name": "断点与导出存在性", "status": "PASS",
             "detail": f"库目录最近 commit={head[:50]}；图导出产物 {len(exports)} 件（导出债务口径：缺席记债务）"}
@@ -367,7 +364,7 @@ def run(store_root: Path, ws: Path, corpus: Path | None = None,
     for i, (fn, args) in enumerate(jobs, 1):
         try:
             r = fn(*args)
-        except Exception as e:  # 检查器自身崩溃=SKIP 并留痕（T-6：判据侧的错也要现形）
+        except Exception as e:  # 检查器自身崩溃=SKIP 并留痕（T-6：判据侧的错也要现形）  # noqa: BLE001 — 宽捕获=显式报错/降级语义
             r = {"no": i, "name": fn.__name__, "status": "SKIP", "detail": f"检查器异常：{str(e)[:80]}"}
         r["no"] = i
         results.append(r)

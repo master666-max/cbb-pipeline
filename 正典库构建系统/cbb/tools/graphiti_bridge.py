@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """graphiti_bridge.py — U-C03.7 graphiti 就绪层（工单 v1.8 §0 · 2026-09-18）
 
 用户裁决："接口端口准备好，加个 LLM 就能用"。本件=端口，不含运行时依赖：
@@ -21,7 +20,7 @@ from pathlib import Path
 CBB = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(CBB / "cbb-extract"))
 sys.path.insert(0, str(CBB / "cbb-anchor"))
-import cbb_extract  # noqa: E402  build_episode_kwargs 单一事实源
+import cbb_extract
 
 DEEPSEEK_BASE = "https://api.deepseek.com/v1"
 DEEPSEEK_MODEL = "deepseek-flash"          # 在案名（工单 v1.8 §0 抽检条款同款）

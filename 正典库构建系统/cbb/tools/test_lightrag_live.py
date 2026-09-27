@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_lightrag_live.py — 实时同步哨三段实测（temp store，零网络依赖端点除外）：首喂/幂等/增量。"""
 import asyncio
 import json
@@ -12,8 +11,8 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE.parent / "cbb-quarantine"))
 
-import lightrag_live as lv  # noqa: E402
-import lightrag_export as le  # noqa: E402
+import lightrag_export as le
+import lightrag_live as lv
 
 
 def mk(rid, name, etype="人物"):
@@ -49,7 +48,7 @@ def main():
         r1 = await lv.poll_once(store, work, holder, state)       # 首喂
         assert r1["delta_entities"] == 2 and r1["fed"], r1
         assert r1["llm_calls"] == 0
-        time.sleep(1.1)
+        time.sleep(1.1)  # noqa: ASYNC251 — 测试等待语义
         r2 = await lv.poll_once(store, work, holder, state)       # 幂等：无新 mtime
         assert r2["changed"] == 0 and not r2["fed"], r2
         (d / "e3.json").write_text(json.dumps(mk("e3", "丙"), ensure_ascii=False), encoding="utf-8")

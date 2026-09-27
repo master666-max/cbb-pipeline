@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """失效宣告.py — 事实演化的"宣告失效"写入件（2026-09-22 用户裁定 ①A 严格三情形）
 
 语义（裁定 ①A，逐条执行）：
@@ -22,7 +21,6 @@
 from __future__ import annotations
 
 import json
-import sys
 from datetime import date as _date
 from pathlib import Path
 
@@ -36,7 +34,7 @@ FORBIDDEN_WHY = {
 
 
 def _today() -> str:
-    return _date.today().isoformat()
+    return _date.today().isoformat()  # noqa: DTZ011 — 显示用墙钟不入正典
 
 
 def _load(path: Path) -> list[dict]:
@@ -98,11 +96,7 @@ def apply_to_edges(edges_path: Path | str, invalidations: list[dict],
     for r in rows:
         for inv in by_rec.get(r.get("record_id"), []):
             cur = r.get("invalid_at")
-            if cur is None:
-                r["invalid_at"] = inv["invalid_at"]
-                r["invalidation_ref"] = inv["verdict_ref"]
-                hit += 1
-            elif inv["invalid_at"] < cur:
+            if cur is None or inv["invalid_at"] < cur:
                 r["invalid_at"] = inv["invalid_at"]
                 r["invalidation_ref"] = inv["verdict_ref"]
                 hit += 1

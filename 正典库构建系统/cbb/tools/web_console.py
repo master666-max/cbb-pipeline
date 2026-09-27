@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """web_console.py — CBB 产出网页控制台（只读；标准库零依赖）。
 
 把 CBB 全部产出搬上一个网页：六种检索模式 + 图谱可视化 + 决策账/隔离区/产出总览。
@@ -25,10 +24,11 @@ sys.path.insert(0, str(HERE.parent / "cbb-anchor"))
 sys.path.insert(0, str(HERE.parent / "cbb-quarantine"))
 
 import os
+
 STORE = Path(os.environ.get("CBB_STORE") or (HERE.parent.parent / "迷深实战-本体库"))
 INDEX = STORE.parent / "迷深实战-工作区" / "索引" / "lancedb"
 
-import 检索层 as jl  # noqa: E402
+import 检索层 as jl
 
 
 def _graph_snapshot():
@@ -80,12 +80,10 @@ def api_decisions(limit: int = 50):
 
 
 def api_quarantine():
-    import cbb_quarantine as cq  # noqa: E402
     q = STORE / "quarantine-zone"
     items = [json.loads(x) for x in (q / "items.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
     adjud = [json.loads(x) for x in (q / "adjudications.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
     pend = [i for i in items if not any(a.get("item_id") == i.get("item_id") for a in adjud)]
-    from collections import Counter
     return {"total": len(items), "pending": len(pend),
             "by_subclass": dict(__import__("collections").Counter(i.get("subclass") for i in items)),
             "pending样例": [{"item_id": i.get("item_id"), "subclass": i.get("subclass"),
@@ -117,7 +115,7 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(raw)
 
-    def do_GET(self):  # noqa: N802
+    def do_GET(self):
         try:
             u = urllib.parse.urlparse(self.path)
             q = dict(urllib.parse.parse_qsl(u.query))
@@ -138,11 +136,12 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, json.dumps(api_quarantine(), ensure_ascii=False))
             if u.path == "/api/debug":
                 import urllib.request as _u
+
                 import graph_chain as _gc
                 try:
                     with _u.urlopen("http://localhost:7695/", timeout=5) as r:
                         neo = "ok " + str(r.status)
-                except Exception as _e:
+                except Exception as _e:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
                     neo = f"{type(_e).__name__}: {str(_e)[:80]}"
                 return self._send(200, json.dumps({"proxies": _u.getproxies(),
                     "neo4j_http_direct": neo, "gc_BASE": _gc.BASE,

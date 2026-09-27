@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 """连续性巡检.py — 门1 连续性域的**双载体**实现（U-F02；2026-09-23）
 
 设计（对应工单判据：①双载体一致 ②图缺席自动兜底且同形 ③规则只存一处）：
     · **一套规则、两个装载器、一个求值器**：
-        file_loader(store)  → 视图
+        filx_loader(store)  → 视图
         graph_loader(neo4j) → 视图
         evaluate(视图)      → findings          ← 规则只在这一处实现
     · 逆类型/对称表**从 cbb-gate1 导入**（禁止抄第二份）：
@@ -34,7 +33,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "cbb-gate1"))
 try:  # 规则单一来源：门1 的表（缺失时明确报错，不静默降级成"没有规则"）
     from cbb_gate1 import RELATIONSHIP_INVERSES, SYMMETRIC_RELATIONSHIPS  # type: ignore
-except Exception as e:  # pragma: no cover
+except Exception as e:  # noqa: BLE001 — 导入失败即 SystemExit 显式报错（fail-fast 语义）
     raise SystemExit(f"无法从 cbb-gate1 导入逆类型/对称表（规则单一来源）：{e}")
 
 LIBS = ("character", "relation", "setting", "event", "foreshadow", "timeline")
@@ -49,7 +48,7 @@ def _records(store: Path, lib: str):
         for f in sorted((d / status).glob("*.json")):
             try:
                 yield json.loads(f.read_text(encoding="utf-8"))
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 continue
 
 
@@ -157,7 +156,7 @@ def probe_graph(base: str | None = None, timeout: float = 4.0) -> bool:
     try:
         with urllib.request.urlopen(base.rstrip("/") + "/", timeout=timeout) as r:
             return r.status == 200
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return False
 
 
@@ -169,7 +168,7 @@ def evaluate(view: dict) -> list[dict]:
     ents = view["entities"]
     alias_names = set(view["aliases"].keys())
 
-    names_ok = lambda n: (n in ents) or (n in alias_names)  # noqa: E731
+    names_ok = lambda n: (n in ents) or (n in alias_names)
 
     if view["capabilities"].get("orphan_detectable", True):
         for rel in view["relations"]:

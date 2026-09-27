@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_图库隔离.py — 建实例前的三条硬规矩必须可测（零 Docker、零网络）
 
 判据锚：① 只绑回环 ② 端口先预检不许硬抢 ③ 口令不落 argv/仓内；
@@ -10,7 +9,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import 图库隔离 as g  # noqa: E402
+import 图库隔离 as g
 
 
 class 端口(unittest.TestCase):

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """lightrag_bridge.py — 实验件：LightRAG 第五路召回（读副本，零查询期 LLM）。
 
 纪律：
@@ -27,7 +26,9 @@ def llm_calls() -> int:
     return CNT["llm_calls"]
 
 
-async def _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001
+async def _llm_stub(prompt, system_prompt=None, history_messages=None, **kwargs):
+    if history_messages is None:
+        history_messages = []
     CNT["llm_calls"] += 1
     return ""
 
@@ -45,7 +46,7 @@ async def _embed_batch(texts: list[str]) -> list[list[float]]:
                                      headers={"Content-Type": "application/json"})
         sys.path.insert(0, str(HERE))
         import 检索层 as jl
-        with jl.EMB_LOCK:  # 与四路共享端点——并发 400 防线
+        with jl.EMB_LOCK:  # 与四路共享端点——并发 400 防线  # noqa: SIM117 — 退役族注记
             with urllib.request.urlopen(req, timeout=300) as r:
                 d = json.loads(r.read().decode("utf-8"))
         return [x["embedding"] for x in sorted(d["data"], key=lambda x: x["index"])]
@@ -77,7 +78,7 @@ def _canon_lexicon(store_root: Path):
     for f in sorted(store.glob("libraries/*/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         nm = (rec.get("canonical") or {}).get("name")
         rid = rec.get("record_id")
@@ -85,7 +86,7 @@ def _canon_lexicon(store_root: Path):
             rid2name[rid] = nm
             names.add(nm)
     alias2name: dict[str, str] = {}
-    for row in (lambda p: [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
+    for row in (lambda p: [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]  # noqa: PLC3002 — 退役族
                 if p.exists() else [])(store / "aliases.jsonl"):
         al, rid = row.get("alias"), row.get("entity_id")
         nm = rid2name.get(rid)
@@ -95,7 +96,7 @@ def _canon_lexicon(store_root: Path):
     return LEX_CACHE[key]
 
 
-_IDISH = re.compile(r"cand-|rec-|[0-9a-f]{12}", re.I)
+_IDISH = re.compile(r"cand-|rec-|[0-9a-f]{12}", re.IGNORECASE)
 
 
 def mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[str], dict]:
@@ -109,7 +110,7 @@ def mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[s
     dropped = {"record_id": 0, "非词表碎句": 0}
 
     def push(s: str):
-        s = s.strip("『』「」···")
+        s = s.strip("『』「」···")  # noqa: B005, PLE1310 — 分隔符剥离意图明确
         if len(s) < 2:
             return
         if _IDISH.search(s):
@@ -131,13 +132,13 @@ def mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[s
         if len(nm) >= 2 and nm in query:
             push(nm)
     for t in re.split(r"[\s，。？！、「」『』·]+", query):
-        if len(t.strip("『』「」···")) >= 2:
+        if len(t.strip("『』「」···")) >= 2:  # noqa: B005 — 分隔符剥离意图明确
             push(t)
     if not ll:
         # 非空兜底（v3）：纯描述式查询词表准入全空 → 碎句降级准入并披露口径，
         # **绝不落查询期 LLM**（v2 实测：空表会让 LightRAG 回退调 LLM 抽关键词，违零-LLM 判据）
         for t in re.split(r"[\s，。？！、「」『』·]+", query):
-            tt = t.strip("『』「」···")
+            tt = t.strip("『』「」···")  # noqa: B005 — 分隔符剥离意图明确
             if len(tt) >= 2 and not _IDISH.search(tt) and tt not in ll:
                 ll.append(tt)
         dropped["空表碎句兜底"] = len(ll[:20])
@@ -166,7 +167,7 @@ def _rid2name(store_root: Path) -> dict[str, str]:
         for f in Path(store_root).glob("libraries/*/*/*.json"):
             try:
                 rec = json.loads(f.read_text(encoding="utf-8"))
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 continue
             nm = (rec.get("canonical") or {}).get("name")
             if nm:
@@ -225,8 +226,8 @@ async def fifth_recall_async(query: str, store_root: Path, top_k: int = 10, mode
             f.write(json.dumps({"q": query, "path": "第五路", "top": out["names"],
                                 "mode": mode, "kw_dropped": kw_dropped},
                                ensure_ascii=False) + "\n")
-    except Exception:
-        pass  # 日志失败不阻断检索
+    except Exception:  # noqa: BLE001, S110 — 日志写失败静默容错（不阻断检索主链）
+        pass
     if chain_depth:
         from graph_chain import chains as _chains
         out["chains"] = _chains(names[:3], depth=chain_depth)
@@ -254,7 +255,6 @@ class _LoopWorker:
         self.loop.run_forever()
 
     def run(self, coro, timeout: float = 300.0):
-        import concurrent.futures
         return asyncio.run_coroutine_threadsafe(coro, self.loop).result(timeout)
 
 

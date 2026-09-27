@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.defenses — 抽取四面防御的读入/安全/输出三侧（R6/R7/R8/R15；移植 v1 cbb_extract）。"""
 from __future__ import annotations
 
@@ -46,7 +45,7 @@ def scan_banned(value: str) -> list[dict]:
     hits = []
     if not isinstance(value, str) or not value:
         return hits
-    for cat, (_action, _desc) in BANNED_EIGHT.items():
+    for cat in BANNED_EIGHT:  # PERF102：只迭代键
         for rx in _BANNED_COMPILED[cat]:
             m = rx.search(value)
             if m:

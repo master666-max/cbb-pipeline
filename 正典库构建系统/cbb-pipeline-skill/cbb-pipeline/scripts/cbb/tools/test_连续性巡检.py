@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_连续性巡检.py — U-F02 判据测试：双载体一致（夹具）、图缺席兜底、规则单一来源"""
 import importlib
 import json
@@ -76,7 +75,6 @@ def test_double_carrier_consistency(tmp_path, monkeypatch=None):
 def test_graph_absent_falls_back_to_file(tmp_path, monkeypatch=None):
     """判据②：图不可用 → auto 自动落文件，输出同形且口径注明。"""
     store = _mk_fixture_store(tmp_path)
-    import types
     m = 巡检
     orig_probe, orig_gl = m.probe_graph, m.graph_loader
     m.probe_graph = lambda base=None, timeout=4.0: False          # 图探活失败

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """embed_dedup_scan.py — 批收口嵌入相似度查重扫描（工单 v1.2 §0②；U-C01 工具件1）。
 
 新候选实体 vs 库内实体：Qwen3-Embedding-8B（LM Studio /v1/embeddings，127.0.0.1:8080）+余弦。
@@ -63,7 +62,7 @@ def http_get(url: str, timeout: int = 4) -> dict | None:
     try:
         with urllib.request.urlopen(url, timeout=timeout) as r:
             return json.loads(r.read().decode("utf-8"))
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return None
 
 

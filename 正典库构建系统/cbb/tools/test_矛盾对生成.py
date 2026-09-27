@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_矛盾对生成.py — U-C03.8 准备件单测：矛盾对生成（两族群+回收三层）+考卷确定性+判卷双门。
 离线：临时目录全链路，不碰真库；git 回收层用 --no-git 语义（index_git_blobs 对非 git 目录静默空）。"""
 import json
@@ -11,8 +10,9 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "contracts"))
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 
-import cbb_store  # noqa: E402
-import 矛盾对生成 as mp  # noqa: E402
+import cbb_store
+
+import 矛盾对生成 as mp
 
 
 def _entity(rid, name, etype, chapter=7, quote="某物为某类"):
@@ -37,7 +37,7 @@ def _fixture(tmp: str):
 def test_pairs_dual_track_full_recovery():
     with tempfile.TemporaryDirectory() as tmp:
         root, store = _fixture(tmp)
-        iid, _ = store.zone.register(
+        _iid, _ = store.zone.register(
             group="entity_unalignable",
             detail="entity_type: 入库='人物' vs 库内='人物(迷宫生物)'",
             record_id="cand-entity-e9", source="cbb-store-dual-track",
@@ -62,8 +62,8 @@ def test_pairs_dual_track_full_recovery():
 
 def test_pairs_reconstructed_when_body_missing():
     with tempfile.TemporaryDirectory() as tmp:
-        root, store = _fixture(tmp)
-        iid, _ = store.zone.register(
+        _root, store = _fixture(tmp)
+        _iid, _ = store.zone.register(
             group="entity_unalignable",
             detail="entity_type: 入库='概念(大会)' vs 库内='概念'",
             record_id="cand-entity-gone", source="cbb-store-dual-track",
@@ -81,7 +81,7 @@ def test_pairs_reconstructed_when_body_missing():
 
 def test_pairs_embedding_family_and_name_miss():
     with tempfile.TemporaryDirectory() as tmp:
-        root, store = _fixture(tmp)
+        _root, store = _fixture(tmp)
         store.zone.register(
             group="low_confidence",
             detail="嵌入存疑(0.85-0.95)：缇亚 vs 缇达 sim=0.898（测试批收口扫描，只提示不静默）",
@@ -107,7 +107,7 @@ def test_pairs_embedding_family_and_name_miss():
 
 def test_exam_deterministic_rows_and_expected_labels():
     with tempfile.TemporaryDirectory() as tmp:
-        root, store = _fixture(tmp)
+        _root, store = _fixture(tmp)
         for i in range(3):
             iid, _ = store.zone.register(
                 group="entity_unalignable",
@@ -115,7 +115,7 @@ def test_exam_deterministic_rows_and_expected_labels():
                 record_id=f"cand-entity-x{i}", source="cbb-store-dual-track",
                 subclass="contradiction_pending")
             store.zone.adjudicate(iid, "rejected", note=f"案{i}作废")
-        names = {it["item_id"]: "缇达" for it in store.zone.adjudicated()}
+        _names = {it["item_id"]: "缇达" for it in store.zone.adjudicated()}
         paper1 = mp.build_exam(store, None, min_real=3)
         paper2 = mp.build_exam(store, None, min_real=3)
         assert paper1["rows"] == paper2["rows"], "考卷必须确定性（无 RNG）"

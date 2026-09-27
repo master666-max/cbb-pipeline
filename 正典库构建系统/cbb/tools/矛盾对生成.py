@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """矛盾对生成.py — U-C03.8 NLI 预筛准备件①③（工单 v1.9 §0；触发器 D=RED：矛盾积压>50）。
 
 ① pairs：从隔离区矛盾子类（contradiction_pending）导出 NLI 配对 JSONL——
@@ -24,8 +23,8 @@
 """
 import argparse
 import json
-import re
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -34,9 +33,10 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent  # 正典库构建系统
 sys.path.insert(0, str(HERE.parent / "contracts"))
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
-import cbb_store  # noqa: E402
+import cbb_store
 
 import 路径惯例 as 惯
+
 _S = 惯.store_of(Path(os.environ.get("CBB_STORE") or ROOT))
 DEFAULT_STORE = _S
 DEFAULT_CANDS = 惯.workspace_of(_S) / "candidates"
@@ -87,7 +87,7 @@ def index_current_cands(cands_dir: Path) -> dict:
     for p in sorted(cands_dir.glob("cands-*.json")):
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         for rec in d.get("candidates", []):
             idx.setdefault(rec["record_id"], (rec, p.name))
@@ -100,15 +100,15 @@ def index_git_blobs(repo_root: Path, cands_dir: Path) -> dict:
     idx = {}
     try:
         rel = cands_dir.resolve().relative_to(repo_root.resolve()).as_posix()
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return idx
     try:
         out = subprocess.run(
             ["git", "-c", "core.quotepath=off", "log", "--format=%H", "--name-only",
              "--", rel + "/"],
             cwd=repo_root, capture_output=True, text=True, encoding="utf-8",
-            errors="replace", timeout=120).stdout
-    except Exception:
+            errors="replace", timeout=120, check=False).stdout
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return idx
     commits_by_file, commit = {}, None
     for ln in out.splitlines():
@@ -125,9 +125,9 @@ def index_git_blobs(repo_root: Path, cands_dir: Path) -> dict:
                 r = subprocess.run(
                     ["git", "-c", "core.quotepath=off", "show", f"{c}:{rel}/{fname}"],
                     cwd=repo_root, capture_output=True, text=True, encoding="utf-8",
-                    errors="replace", timeout=120)
+                    errors="replace", timeout=120, check=False)
                 d = json.loads(r.stdout)
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 continue
             for rec in d.get("candidates", []):
                 idx.setdefault(rec["record_id"], (rec, f"{fname}@{c[:8]}"))

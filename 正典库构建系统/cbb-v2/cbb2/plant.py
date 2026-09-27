@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.plant — 植物捕获金标（Phase D·U-D06；plant capture，arXiv:2403.04058 思路）。
 
 向待抽域注入已知答案的合成记录（"植物"），抽取完成后测捕获率——

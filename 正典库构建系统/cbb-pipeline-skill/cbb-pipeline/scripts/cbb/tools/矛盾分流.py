@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """矛盾分流.py — 四分类分流＋机械档处置（2026-09-22 用户裁决 ⑤：新项目 auto／存量 batch_confirm）
 
 四分类（Kontrast 语义落地，裁定采纳）：
@@ -32,7 +31,7 @@ _DUAL = re.compile(r"^(.*?):\s*入库='(.*)'\s*vs\s*库内='(.*)'$")
 
 
 def _today() -> str:
-    return _date.today().isoformat()
+    return _date.today().isoformat()  # noqa: DTZ011 — 显示用墙钟不入正典
 
 
 def classify_pair(field: str, val_in: str, val_stored: str) -> dict:

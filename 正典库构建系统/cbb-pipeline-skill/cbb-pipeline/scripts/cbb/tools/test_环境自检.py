@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_环境自检.py — 步骤⓪ 判定件的正负对照（零网络：HTTP/端口/环境全注入）
 
 判据锚（三条，全是这次实战换来的）：
@@ -16,7 +15,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import 环境自检 as es  # noqa: E402
+import 环境自检 as es
 
 
 def fake_http(routes):

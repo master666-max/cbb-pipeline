@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.ledger — 哈希链账本（R12；移植 v1 ledger_chain 核心，verify 读盘不信任缓存）。"""
 from __future__ import annotations
 
@@ -134,7 +133,6 @@ class LedgedStore:
     def _wrap_zone(self):
         zone = self.store.zone
         orig = zone._append
-        root = Path(self.store.root)
         led = self.ledger
 
         def zappend(item, _orig=orig, _led=led):

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.context — 承接摘要 + 三层上下文包（Phase C·U-C02；流程设计 P2·⑤.1）。
 
 三层（Context by Distinct Information 实证：混合省一半 token 保效果）：
@@ -19,7 +18,7 @@ def _records(store_root: Path):
     for f in sorted(Path(store_root).glob("libraries/*/*/*.json")):
         try:
             yield json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
 
 
@@ -52,11 +51,6 @@ def _load_state(store_root: Path) -> dict:
     if p.exists():
         return json.loads(p.read_text(encoding="utf-8"))
     return {}
-
-
-def save_state(store_root: Path, state: dict):
-    (Path(store_root) / STATE_FILE).write_text(
-        json.dumps(state, ensure_ascii=False, sort_keys=True, indent=1), encoding="utf-8")
 
 
 def save_state(store_root: Path, state: dict):

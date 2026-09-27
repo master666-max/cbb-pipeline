@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_匹配建议.py — 岗位③测试：建议排序＋**红区隔离**（结构性证明建议不进判定路径）"""
 import importlib
 import json
@@ -10,7 +9,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE))
 建议 = importlib.import_module("匹配建议")
-import cbb_store  # noqa: E402
+import cbb_store
 
 
 def test_suggestion_order_rerank_and_fallback():

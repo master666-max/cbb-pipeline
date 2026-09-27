@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.runner — 章管线编排（Phase C 总装）。
 
 prepare_chapter：派工卡=动态切分判定+场景软标签+承接摘要+三层上下文包（旗标 off=整章+空包降级）。
@@ -10,10 +9,10 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from . import config, contract, context, splitting
+from . import config, context, splitting
 from .derive import ProjectionCheckpoint
-from .ledger import LedgerChain, LedgedStore
-from .store import Store, identity_key
+from .ledger import LedgedStore, LedgerChain
+from .store import identity_key
 
 
 def prepare_chapter(chapter_no: int, prev_chapter_text: str = "",
@@ -45,7 +44,6 @@ def finalize_chapter(store_root: Path, candidates: list[dict], at: str,
     ls = LedgedStore(store_root)
     cache = {}
     inv = {e["record_id"] for e in ls._load_all("invalidations.jsonl")}
-    chain = {e["old_id"]: e["new_id"] for e in ls._load_all("supersede-index.jsonl")}
     for rec in ls.iter_records():
         if rec.get("record_id") in inv:
             continue
@@ -94,14 +92,15 @@ def run_chapter(chapter_no: int, store: Path | None = None, no_aux: bool = False
             try:
                 import subprocess
                 r = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8",
-                                   timeout=600, cwd=str(store.parent))
+                                   timeout=600, cwd=str(store.parent), check=False)  # aux 降级语义
                 aux[key] = (json.loads(r.stdout.strip().splitlines()[-1])
                             if r.stdout.strip() else {"status": "blocked"})
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 — aux 探活降级：子进程异常族全捕获不阻塞主链
                 aux[key] = {"status": "error", "stderr": str(e)[-200:]}
     return {"chapter": chapter_no, "aux": aux,
             "口径": "v2 骨架——长尾工具仍由 cbb/ 提供（D1 裁决：增量迁移）"}
 
 
 if __name__ == "__main__":
+    import sys
     raise SystemExit(run_chapter(int(sys.argv[1]) if len(sys.argv) > 1 else 0) and 0)

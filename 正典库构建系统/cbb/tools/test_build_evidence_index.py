@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_build_evidence_index.py — evidence 级索引构建件单测（零网络：预置进度件→走落表段）。
 
 判据（2026-09-24 内存修复配套）：

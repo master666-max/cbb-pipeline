@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_重排器.py — 统一客户端测试（传输层注入，零网络；正负对照成对）"""
 import importlib
 import json
@@ -63,7 +62,6 @@ def test_payload_is_utf8_and_carry_query():
 
 
 if __name__ == "__main__":
-    import tempfile
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for fn in fns:
         fn()

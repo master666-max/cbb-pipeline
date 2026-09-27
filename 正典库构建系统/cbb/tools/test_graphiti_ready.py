@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_graphiti_ready.py — 哨兵 D（隔离矛盾积压）口径回归：R4 审计 A6 修复件。
 
 判据：pending 一律按 adjudications 差集算（与 cbb_quarantine.status_report 同口径）——
@@ -14,7 +13,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-import graphiti_ready as gr  # noqa: E402
+import graphiti_ready as gr
 
 
 def _store_with(tmp: str, items: list[dict], adjudicated: list[str]) -> Path:

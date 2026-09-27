@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """adapt_record_to_tier1.py — Record v2.0 候选 → Step0 Tier1 评分形态适配器（R-018）。
 
 背景：score_tier1.py（P1执行区/step0-抽取精度实验/脚本/）消费 Tier1 形态

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """graphiti_ready.py — U-C03.7 一键就绪自检 + 四触发器哨兵（工单 v1.8 §0）
 
 自检四项 → READY/BLOCKED 清单：
@@ -16,6 +15,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re as _re
 import socket
 import sys
@@ -25,7 +25,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import graphiti_bridge as gb  # noqa: E402
+import graphiti_bridge as gb
 
 NEO4J_HOST, NEO4J_PORT = "127.0.0.1", 7687
 LMSTUDIO_PORT = 1234
@@ -76,7 +76,7 @@ def check_embedding() -> dict:
     try:
         with urllib.request.urlopen(url, timeout=2):
             return {"item": "嵌入端点", "state": "READY", "note": f"{gb.EMBEDDING_PROFILE['model']} @8080 在位"}
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return {"item": "嵌入端点", "state": "BLOCKED",
                 "note": f"{gb.EMBEDDING_PROFILE['model']} @8080 不通"}
 
@@ -130,7 +130,7 @@ def trigger_sentinel(store_root: Path | str, logs_dir: Path | str | None = None,
                         excluded.append(p)
                         continue
                     versions.setdefault(sha, p)
-                except Exception:
+                except (OSError, json.JSONDecodeError):
                     continue
         b_note = "口径=排除切片/分区局部视图后的不同内容哈希数；切片明细见 excluded（截断 20 条）"
     b_multi = len(versions) > 1
@@ -162,7 +162,7 @@ def trigger_sentinel(store_root: Path | str, logs_dir: Path | str | None = None,
     pend = [r for r in items if r.get("item_id") not in adj_ids]
     contradiction = sum(1 for r in pend if r.get("group") == "entity_unalignable")
     dated = sorted(it["at"] for it in pend if it.get("at"))
-    today = _date.today()
+    today = _date.today()  # noqa: DTZ011 — 显示用墙钟不入正典
     if dated:
         lag = (today - _date.fromisoformat(dated[0])).days
         lag_out = {"days": lag, "since": dated[0],

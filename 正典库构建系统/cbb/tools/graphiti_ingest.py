@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """graphiti_ingest.py — 全章摄入（P2 生产件 · 抽取自管 + graphiti 双时序存储）。
 提示词=通用纪律 v2（quote 逐字锚点/禁跨事件补名/事件独立），非迷深专属；源自对样教训，字面已去题材化。
 
@@ -28,8 +27,9 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "cbb-anchor"))
 
-from neo4j_export import derive_password  # noqa: E402
-from cbb_anchor import pseudo_anchor  # noqa: E402
+from cbb_anchor import pseudo_anchor
+
+from neo4j_export import derive_password
 
 ROOT = HERE.parent.parent
 WORK = ROOT / "迷深实战-工作区"
@@ -82,10 +82,10 @@ def extract(chapter_text: str) -> tuple[list[dict], list[dict], dict]:
 
 async def _feed(group: str, chapter: int, ents: list[dict], rels: list[dict]) -> dict:
     from graphiti_core import Graphiti
+    from graphiti_core.cross_encoder.openai_reranker_client import OpenAIRerankerClient
+    from graphiti_core.embedder.openai import OpenAIEmbedder, OpenAIEmbedderConfig
     from graphiti_core.llm_client.config import LLMConfig
     from graphiti_core.llm_client.openai_generic_client import OpenAIGenericClient
-    from graphiti_core.embedder.openai import OpenAIEmbedder, OpenAIEmbedderConfig
-    from graphiti_core.cross_encoder.openai_reranker_client import OpenAIRerankerClient
     from graphiti_core.nodes import EpisodeType
     pw = derive_password(None)
     key = _key()

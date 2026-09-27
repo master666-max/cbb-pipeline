@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.promote — 票数晋升制（Phase D·U-D05；流程设计 P6·G5）。
 
 confirmed := provisional ∧ gate1 零违例(调用方核) ∧ **≥⌈2/3⌉ 异构考官隔离评审一致**
@@ -70,7 +69,7 @@ def vote(conclusion: str, evidence: str, panel: list, full_size: int = 3) -> dic
     for ch in panel:
         try:
             votes[ch.kind] = judge_isolated(ch, conclusion, evidence)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — LLM 端点异常族宽捕获=缩员降级语义（设计决定）
             errors.append({"examiner": ch.kind, "reason": str(e)[:100]})
     n = len(votes)
     if n == 0:

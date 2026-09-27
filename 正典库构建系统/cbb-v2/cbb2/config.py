@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.config — 包级唯一配置源（env-first，无实例默认；吸收 路径惯例.py 判据）。
 
 v1 的头号债务：46 个模块各自 sys.path.insert + 散落 19 处实例名默认 + 7 处写死端口。

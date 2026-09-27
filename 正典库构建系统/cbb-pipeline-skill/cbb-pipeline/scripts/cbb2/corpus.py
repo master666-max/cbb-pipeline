@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.corpus — 坐标/引文回落（R9/R10；算法忠实移植 v1 cbb_coordinate，语义=章内物理行 1-based）。"""
 from __future__ import annotations
 

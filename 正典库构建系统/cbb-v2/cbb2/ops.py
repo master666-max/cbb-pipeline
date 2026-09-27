@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.ops — 运行契约闸（U-A04）：治"凭证在位≠能力接线"（qoder D-26/28/29 三连教训）。
 
 四条件缺一即 BLOCKED：端点在位 / 消费件存在 / 已接线 / 本批有回执。
@@ -50,7 +49,7 @@ def probe_http(url: str, timeout: float = 4.0) -> bool:
     try:
         with urllib.request.urlopen(url, timeout=timeout) as r:
             return 200 <= r.status < 500  # 4xx 也是"端点在"
-    except Exception:
+    except Exception:  # noqa: BLE001 — 探活语义：任何异常=不在（URLError/超时/SSL/ConnectionReset 多源）
         return False
 
 

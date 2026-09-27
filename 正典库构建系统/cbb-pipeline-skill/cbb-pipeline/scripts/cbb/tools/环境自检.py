@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """环境自检.py — 步骤⓪：外部环境自检 ＋ 知识图谱归属判定（先于开书）
 
 为什么要这一步：L4 参考层（图/索引/摘要视图）在 `references/架构与profile.md` 的六层不变式里是
@@ -56,7 +55,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
-import 图库隔离 as gi  # noqa: E402  图归属判据的单一事实源（规则一份，两处复用）
+import 图库隔离 as gi
 
 NEO4J_HTTP_DEFAULT = "http://localhost:7474"  # 出厂默认；探针探不到就报 BLOCKED，不猜映射端口
 EMBED_DEFAULT = "http://127.0.0.1:8080/v1/embeddings"
@@ -144,7 +143,7 @@ def check_graph(project_token: str, probe_only: bool, http_get=http_json) -> lis
         bolt_uri = disc.get("bolt_routing") or disc.get("bolt") or ""
         out.append(item("G1 Neo4j HTTP", "READY", f"{base} 回 discovery（{el:.2f}s）",
                         bolt_routing=bolt_uri))
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         out.append(item("G1 Neo4j HTTP", "BLOCKED", f"{base} 不通：{type(e).__name__} {str(e)[:60]}"))
         out.append(item("G2 bolt 端口", "BLOCKED", "G1 不通 ⇒ 无从解析 bolt 地址"))
         out.append(item("G4 图库归属", "BLOCKED", "库不可达 ⇒ 归属未判定；未判定不得启用 graph 载体"))
@@ -185,7 +184,7 @@ def check_graph(project_token: str, probe_only: bool, http_get=http_json) -> lis
 
     try:
         total = int(_one("MATCH (n) RETURN count(n) AS c")[0][0])
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         out.append(item("G4 图库归属", "BLOCKED", f"计数查询失败：{type(e).__name__} {str(e)[:70]}"))
         return out
 
@@ -194,13 +193,13 @@ def check_graph(project_token: str, probe_only: bool, http_get=http_json) -> lis
         for g, c in _one("MATCH (n) RETURN DISTINCT coalesce(n.group_id, n.canon_group, '<无归属标记>') "
                          "AS g, count(n) AS c LIMIT 50"):
             dist[str(g)] = int(c)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         out.append(item("G4 图库归属", "BLOCKED",
                         f"归属分布查询失败（共 {total} 节点，无法区分本/他项目）：{type(e).__name__} {str(e)[:60]}"))
         return out
 
     # 归属判定走 图库隔离.ownership_verdict —— 规则一份，两处共用，不许各写一版再漂
-    owned = dist.get(project_token, 0) + dist.get("<无归属标记>", 0)   # 无标记算脏，见 ownership_verdict 入参
+# 注：owned 值经 ownership_verdict 内部计算，此处不重复（F841 清理）
     foreign = {g: c for g, c in dist.items() if g != project_token}
     v = gi.ownership_verdict(total, dist.get(project_token, 0), foreign, project_token)
     out.append(item("G4 图库归属", "READY" if v["verdict"] == "LEGIT" else "BLOCKED", v["结论"],
@@ -218,7 +217,7 @@ def check_embed(http_get=http_json) -> dict:
                                  "input": ["环境自检"]}, timeout=60)
         dim = len(res["data"][0]["embedding"])
         return item("E1 嵌入端点", "READY", f"{dim} 维 · {el:.2f}s（首含模型载入，慢≠不通）", 维度=dim)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return item("E1 嵌入端点", "BLOCKED", f"{url} 不可用：{type(e).__name__} {str(e)[:60]}"
                                              "（首包超时请把 timeout 调大后重试，别一次失败就记永久不可用）")
 
@@ -232,7 +231,7 @@ def check_rerank(http_get=http_json) -> dict:
         ok = bool(order) and order[0] == 1
         return item("R1 重排端点", "READY" if ok else "BLOCKED",
                     f"{el:.2f}s · 排序={order}（判据：最相关文档排到首位）")
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return item("R1 重排端点", "BLOCKED", f"{url} 不可用：{type(e).__name__} {str(e)[:60]}")
 
 
@@ -279,7 +278,7 @@ def check_llm(preset: str, model: str | None = None, exam: bool = False, http_ge
             models, _ = http_get(f"http://127.0.0.1:{p}/v1/models", timeout=6)
             ids = [m.get("id") for m in models.get("data", [])]
             chat = [i for i in ids if i and "embed" not in i.lower() and "rerank" not in i.lower()]
-        except Exception as e:
+        except (OSError, json.JSONDecodeError):
             continue  # 端口被别的进程占着（本机 :8080 实为 Docker 转发）也是"非推理端点"
         if not exam:
             return item("L1 推理端点(本地)", "OBSERVED",
@@ -294,7 +293,7 @@ def check_llm(preset: str, model: str | None = None, exam: bool = False, http_ge
         for prem, hypo, want in NLI_EXAM:
             try:
                 lab = _classify(p, pick, prem, hypo, http_get=http_get)
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
                 lab = f"<调用失败 {type(e).__name__}>"
             got.append((want, lab))
         good = sum(1 for w, g in got if w == g)
@@ -345,7 +344,7 @@ def graphiti_route_probe(base_url: str | None = None, model: str | None = None,
         return {"route": "fact_triple" if unsupported else f"unknown(http {e.code})",
                 "json_schema": False, "base": base_url, "model": model,
                 "probe": f"http {e.code}"}
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return {"route": "unknown", "json_schema": None, "base": base_url, "model": model,
                 "probe": f"{type(e).__name__}: {str(e)[:80]}"}
 

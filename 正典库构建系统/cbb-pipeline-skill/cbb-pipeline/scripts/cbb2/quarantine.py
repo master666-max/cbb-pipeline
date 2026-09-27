@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """cbb2.quarantine — 隔离区（R14；数据格式与 v1 逐字节兼容——同 items.jsonl 可互操作）。"""
 from __future__ import annotations
 
@@ -18,11 +17,11 @@ GROUP_TO_SUBCLASS = {
 
 
 def _today() -> str:
-    return date.today().isoformat()
+    return date.today().isoformat()  # noqa: DTZ011 — v1 兼容锚：墙钟仅作回退默认，主路径显式 at 透传
 
 
 def item_id(group: str, record_id: str, detail: str) -> str:
-    h = hashlib.sha256(f"{group}|{record_id}|{detail}".encode("utf-8")).hexdigest()[:12]
+    h = hashlib.sha256(f"{group}|{record_id}|{detail}".encode()).hexdigest()[:12]
     return f"q-{h}"
 
 
@@ -42,9 +41,9 @@ class QuarantineZone:
         with self.items_path.open("a", encoding="utf-8") as f:
             f.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n")
 
-    def register(self, group: str, detail: str, record_id: str = None,
-                 source: str = None, blocks: list | None = None,
-                 subclass: str = None, at: str = None):
+    def register(self, group: str, detail: str, record_id: str | None = None,
+                 source: str | None = None, blocks: list | None = None,
+                 subclass: str | None = None, at: str | None = None):
         if group not in GROUPS:
             raise ValueError(f"非法隔离分组 {group!r}，合法={GROUPS}")
         sub = subclass or GROUP_TO_SUBCLASS.get(group, "extrapolation_unverified")

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_ledger_chain.py — U-C03.6 吸收件单测（账本哈希链+仪器指纹）。
 离线：临时目录全链路，不碰真库。"""
 import json
@@ -9,7 +8,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-import ledger_chain as lc  # noqa: E402
+import ledger_chain as lc
 
 
 def _fresh(tmp: str):
@@ -55,7 +54,7 @@ def test_collision_skip_no_target_growth():
 def test_store_semantics_equivalent():
     """LedgedStore 与裸 ThreeStateStore 行为等价：同操作同库内容。"""
     with tempfile.TemporaryDirectory() as tmp:
-        plain = _fresh(tmp)
+        _plain = _fresh(tmp)
         rec = {"record_id": "cand-entity-abcd", "record_type": "entity",
                "library": "character", "status": "candidate",
                "canonical": {"name": "测试者", "entity_type": "人物"},
@@ -68,6 +67,7 @@ def test_store_semantics_equivalent():
                               "status_history": []},
                "version": 1, "supersedes": None}
         import copy
+
         import cbb_store
         (Path(tmp) / "plain").mkdir()
         plain2 = cbb_store.ThreeStateStore(Path(tmp) / "plain")

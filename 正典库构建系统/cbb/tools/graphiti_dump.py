@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """graphiti_dump.py — 按 group 导出 graphiti 图的实体/关系清单 + canon 命中率（质量评估件）。
 
 用法：py -X utf8 graphiti_dump.py --group <group_id> [--out <json>]
@@ -15,9 +14,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
-from neo4j_export import derive_password  # noqa: E402
-
 import os
+
+from neo4j_export import derive_password
+
 BOLT = os.environ.get("GRAPHITI_BOLT", "bolt://localhost:7693")  # 跨机：env 覆盖
 STORE = HERE.parent.parent / "迷深实战-本体库"
 
@@ -27,7 +27,7 @@ def canon_set() -> set[str]:
     for f in STORE.glob("libraries/*/*/*.json"):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         nm = (rec.get("canonical") or {}).get("name")
         if nm:

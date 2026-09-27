@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """context_pack.py — 上下文包生成器（工单 v1.6 §0 编排 · 确定性脚本 R-018 · 2026-09-18）
 
 库喂抽取的闭环：主代理派工前机械生成上下文包（≤2K tokens≈1300 字封顶），子代理视为
@@ -21,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -48,7 +48,7 @@ def _load_records(lib: str, store: Path) -> list[dict]:
     for f in sorted(d.glob("*.json")) if d.exists() else []:
         try:
             out.append(json.loads(f.read_text(encoding="utf-8")))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
     return out
 
@@ -115,7 +115,7 @@ def build(store: Path, alias_seed: Path | None, rolling: Path | None,
     import 路径惯例 as 惯
     sec3 = rolling_digest(rolling or 惯.workspace_of(store) / "rolling-summary.md")
     prec = Path(__file__).resolve().parent / "判例.md"
-    n_prec = len(re.findall(r"^\d+\. ", prec.read_text(encoding="utf-8"), re.M)) if prec.exists() else 0
+    n_prec = len(re.findall(r"^\d+\. ", prec.read_text(encoding="utf-8"), re.MULTILINE)) if prec.exists() else 0
     sec4 = [f"- cbb/tools/判例.md（当前 {n_prec} 条，连读《抽取规范.md》）"]
 
     rr_note = "off"

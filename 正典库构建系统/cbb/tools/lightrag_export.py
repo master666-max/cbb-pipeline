@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """lightrag_export.py — 实验件：把 CBB 知识图谱喂给 LightRAG（insert_custom_kg 路径，零 LLM）。
 
 真源=正典库（collect_graph 与 Neo4j 导出同源）；LightRAG working_dir=派生索引副本，
@@ -25,12 +24,13 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE.parent / "contracts"))
 
-from neo4j_export import collect_graph  # noqa: E402
+from neo4j_export import collect_graph
 
 ROOT = HERE.parent.parent                    # 正典库构建系统/
 STORE = ROOT / "迷深实战-本体库"
 WORK = ROOT / "迷深实战-工作区" / "索引" / "lightrag-exp"
 import os
+
 EMB = os.environ.get("EMBED_HTTP", "http://127.0.0.1:8080/v1/embeddings")
 MODEL = os.environ.get("EMBED_MODEL", "text-embedding-qwen3-embedding-8b@q4_k_m")
 BATCH = 16
@@ -59,7 +59,9 @@ async def _embed_batch(texts: list[str]) -> list[list[float]]:
     return np.asarray(out, dtype=np.float32)  # 1.5.7 契约：EmbeddingFunc.__call__ 取 result.size
 
 
-async def _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001
+async def _llm_stub(prompt, system_prompt=None, history_messages=None, **kwargs):
+    if history_messages is None:
+        history_messages = []
     CNT["llm_calls"] += 1
     return ""
 
@@ -82,7 +84,7 @@ def build_kg(store_root: Path) -> tuple[dict, dict]:
         if hits:
             try:
                 rec = json.loads(hits[0].read_text(encoding="utf-8"))
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 rec = {}
         rid2rec[rid] = rec
         return rec
@@ -112,7 +114,6 @@ def build_kg(store_root: Path) -> tuple[dict, dict]:
         txt = e["fact"] or e["rel_type"]
         r["description"].append(txt)
         r["source_id"].append(e["record_id"])
-    SEP = "\u0001"  # 占位，下面统一换成 LightRAG 的 <SEP>
     kg_entities, kg_rels, kg_chunks = [], [], []
     for e in ents.values():
         descs, srcs = _dedup(e["description"]), _dedup(e["source_id"])
