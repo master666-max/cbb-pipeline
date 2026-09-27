@@ -1,0 +1,57 @@
+{
+ "unit": "G13",
+ "at": "2026-09-27",
+ "口径": "质量后验=与其他考官多数票一致率的 Beta(2,1) 后验代理（GLAD 简化版，无逐条金标）；金标审计 n=10 全站得住作旁证；扩样 n≥80 后应复核权重",
+ "数据源": "G16-晋升报告.json 票面矩阵（658 件×3 考官）",
+ "examiners": {
+  "LOCAL": {
+   "votes": 514,
+   "support": 393,
+   "unsure": 82,
+   "against": 39,
+   "errors": 4,
+   "agree_majority": 420,
+   "comparable": 432,
+   "unsure_rate": 0.1595,
+   "error_rate": 0.0077,
+   "agreement_proxy": 0.9722,
+   "quality_posterior": 0.9722,
+   "weight_建议": 1.5,
+   "anomalies": []
+  },
+  "DEEPSEEK": {
+   "votes": 518,
+   "support": 356,
+   "unsure": 160,
+   "against": 2,
+   "errors": 0,
+   "agree_majority": 355,
+   "comparable": 358,
+   "unsure_rate": 0.3089,
+   "error_rate": 0.0,
+   "agreement_proxy": 0.9916,
+   "quality_posterior": 0.9916,
+   "weight_建议": 1.5,
+   "anomalies": []
+  },
+  "QWEN": {
+   "votes": 488,
+   "support": 179,
+   "unsure": 293,
+   "against": 16,
+   "errors": 30,
+   "agree_majority": 184,
+   "comparable": 195,
+   "unsure_rate": 0.6004,
+   "error_rate": 0.0579,
+   "agreement_proxy": 0.9436,
+   "quality_posterior": 0.9436,
+   "weight_建议": 1.5,
+   "anomalies": [
+    "错误率 0.0579 显著偏离（单考官异常可检）",
+    "unsure 率 0.6004 偏高"
+   ]
+  }
+ },
+ "接线状态": "promote.vote 已支持可选 weights 入参（缺省等权，行为不变）；G16b 主库大批起按 weight_建议 传入"
+}

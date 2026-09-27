@@ -62,9 +62,12 @@ def judge_isolated(examiner, conclusion: str, evidence: str) -> str:
     return a if a == b else "unsure"
 
 
-def vote(conclusion: str, evidence: str, panel: list, full_size: int = 3) -> dict:
+def vote(conclusion: str, evidence: str, panel: list, full_size: int = 3,
+         weights: dict | None = None) -> dict:
     """全员隔离投票：≥⌈2/3⌉ support 且 against=0 ⇒ promote；任何 against>0 ⇒ human；
-    其余 hold（存续待巡检）。通道异常/编制不满员=降级（显式标注）。"""
+    其余 hold（存续待巡检）。通道异常/编制不满员=降级（显式标注）。
+    weights（G13 可选）：{考官kind: 权重}——加权路径下需票=满编权重和×2/3，
+    against=0 与 n≥2 硬门不变；None=等权旧行为逐位保持。"""
     votes, errors = {}, []
     for ch in panel:
         try:
@@ -75,19 +78,31 @@ def vote(conclusion: str, evidence: str, panel: list, full_size: int = 3) -> dic
     if n == 0:
         return {"verdict": "blocked", "votes": {}, "errors": errors,
                 "degraded": True, "口径": "无可用考官——G5 BLOCKED"}
-    support = sum(1 for v in votes.values() if v == "support")
     against = sum(1 for v in votes.values() if v == "against")
-    need = math.ceil(2 * full_size / 3)  # B13：需票按满编制算——缩员不得自动降门槛
+    if weights:
+        full_w = sum(float(weights.get(ch.kind, 1.0)) for ch in panel) or float(full_size)
+        support = sum(float(weights.get(k, 1.0)) for k, v in votes.items() if v == "support")
+        need = math.ceil(2 * full_w / 3 * 100) / 100  # 加权需票按满编权重算——缩员不降门槛
+        promote_ok = support >= need
+        口径 = f"加权评审：support_w={round(support, 2)}/{round(need, 2)}（满编权重 {round(full_w, 2)}）"
+    else:
+        support = sum(1 for v in votes.values() if v == "support")
+        need = math.ceil(2 * full_size / 3)  # B13：需票按满编制算——缩员不得自动降门槛
+        promote_ok = support >= need
+        口径 = None
     if against > 0:
         verdict = "human"  # 任何异构反对=真分歧信号，必须人工裁决
-    elif support >= need and n >= 2:
+    elif promote_ok and n >= 2:
         verdict = "promote"  # B13：单考官无异构性可言，不得单独晋升
     else:
         verdict = "hold"
     degraded = len(errors) > 0 or n < full_size
-    return {"verdict": verdict, "votes": votes, "need": need, "against": against,
-            "errors": errors, "degraded": degraded,
-            "口径": ("降级标注：编制不满或有通道缺席" if degraded else "满编评审")}
+    out = {"verdict": verdict, "votes": votes, "need": need, "against": against,
+           "errors": errors, "degraded": degraded,
+           "口径": ("降级标注：编制不满或有通道缺席" if degraded else "满编评审")}
+    if 口径:
+        out["加权口径"] = 口径
+    return out
 
 
 def promotion_check(record: dict, panel: list, *, tenure_ok: bool,

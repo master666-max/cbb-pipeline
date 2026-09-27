@@ -1,0 +1,204 @@
+{
+ "pending指针": 769,
+ "唯一rid": 724,
+ "本体在库": 658,
+ "本体缺失": [
+  "cand-entity-10e4ef860df6",
+  "cand-entity-1780c6c750a3",
+  "cand-entity-28a0913dbdaa",
+  "cand-entity-28eb60a8f486",
+  "cand-entity-34a8eb41fd6d",
+  "cand-entity-39e6f657ef87",
+  "cand-entity-3e21b83a3f6a",
+  "cand-entity-4011e8990561",
+  "cand-entity-5f0cd0ca0346",
+  "cand-entity-6045361d2316",
+  "cand-entity-6465a182d025",
+  "cand-entity-79b6a22e3f29",
+  "cand-entity-7eedede57a95",
+  "cand-entity-8215f57b9eb6",
+  "cand-entity-8258b3531c76",
+  "cand-entity-90f74c80a284",
+  "cand-entity-91bad6de7310",
+  "cand-entity-a4948ccd0748",
+  "cand-entity-aa7156377aa2",
+  "cand-entity-ac6f46eaeb30",
+  "cand-entity-ae33320b94a5",
+  "cand-entity-bcc812610213",
+  "cand-entity-bf7a7eda4c3d",
+  "cand-entity-cd1497b82490",
+  "cand-entity-fbd38916c2a9",
+  "cand-event-120a72d3e2cf",
+  "cand-event-3bca0d213c2b",
+  "cand-event-685e1e624e1d",
+  "cand-event-728a47b41b52",
+  "cand-event-7689b217e5cf",
+  "cand-event-8c695eec775e",
+  "cand-event-8deaa665bfa9",
+  "cand-event-9acc1c889a9d",
+  "cand-event-b7e8530a05b8",
+  "cand-event-cbb685ec1799",
+  "cand-event-d2298d436266",
+  "cand-event-e43e37d2c7d1",
+  "cand-foreshadow-264baf1c2d15",
+  "cand-foreshadow-27e6ed231196",
+  "cand-foreshadow-31c8a6ee8680",
+  "cand-foreshadow-713fcc27e0c5",
+  "cand-foreshadow-783d44f0dd71",
+  "cand-foreshadow-a4e5143e0e32",
+  "cand-foreshadow-ef016759651b",
+  "cand-relation-06865923f1ab",
+  "cand-relation-256ad4fa54ed",
+  "cand-relation-2b21548b3ea9",
+  "cand-relation-2f36f20065a6",
+  "cand-relation-3a852900d32e",
+  "cand-relation-4c0e6dac110c",
+  "cand-relation-6265b977b457",
+  "cand-relation-66db42535eee",
+  "cand-relation-775c9b943393",
+  "cand-relation-b9bd7fff116b",
+  "cand-relation-be846666a0bf",
+  "cand-relation-de2da00f19ce",
+  "cand-relation-e80203cc6c19",
+  "cand-relation-f3ed50f23b74",
+  "cand-setting-301046718b15",
+  "cand-setting-5b22010b9fd6",
+  "cand-setting-5ec454d74ca8",
+  "cand-setting-8b6081be4a8d",
+  "cand-setting-8c0da1978459",
+  "cand-setting-a2d6b45f382c",
+  "cand-setting-aa47a75dacc9",
+  "cand-setting-d17cdfd8125f"
+ ],
+ "证据为空": [],
+ "gate脏": [],
+ "样例": [
+  {
+   "canonical": {
+    "claim": true,
+    "object": "弗茨亚茨",
+    "rel_type": "离家出走",
+    "subject": "拉丝缇娅拉"
+   },
+   "evidence": [
+    {
+     "chapter": 14,
+     "line": 99,
+     "quote": "大小姐出走之后",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 14,
+     "text": "据塞拉一方陈述『大小姐出走之后』留信；对象=弗茨亚茨系由其大小姐身份与七骑士归属反推（反推标注）；主角推测或只是离家出走找乐子（L107-108）"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.8,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-9cab81768ef7",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-16"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "entity_type": "实体(地名/人物·未判明)",
+    "name": "斐勒卢托"
+   },
+   "evidence": [
+    {
+     "chapter": 78,
+     "line": 298,
+     "quote": "如果不是从斐勒卢托或者弗茨亚茨的神官之类的可疑人物",
+     "vol": 1
+    }
+   ],
+   "library": "character",
+   "observations": [
+    {
+     "category": "summary",
+     "chapter": 78,
+     "text": "仅一处对照级提及：涡波以『如果不是从斐勒卢托或者弗茨亚茨的神官之类的可疑人物，而是从拥有当事人记忆的人物那儿听说了圣诞祭的经过』为据推断莱纳的误会应已解开——斐勒卢托（或其神官）被归为可疑情报源。本体未出场。【类别原文未判明【待确认】：行文与弗茨亚茨（地名）之神官并列，倾向地名解】"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.8,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-entity-c2fc2fcd6e7d",
+   "record_type": "entity",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-18"
+   },
+   "version": 1
+  },
+  {
+   "canonical": {
+    "claim": true,
+    "object": "玛利亚",
+    "rel_type": "后备之王资格认定(放弃)",
+    "subject": "艾德"
+   },
+   "evidence": [
+    {
+     "chapter": 78,
+     "line": 1221,
+     "quote": "「虽说是光辉照人的原石，但是这样是没法做『后备之王』的。实在是太过扭曲了……要说有这个资格的，就只有这位盲眼的少女而已了吗——」",
+     "vol": 1
+    },
+    {
+     "chapter": 78,
+     "line": 1224,
+     "quote": "「——算了，还是不要重蹈一样的覆辙了。」",
+     "vol": 1
+    }
+   ],
+   "library": "relation",
+   "observations": [
+    {
+     "category": "relation",
+     "chapter": 78,
+     "text": "据艾德鉴定后自语：涡波太过扭曲，『要说有这个资格的，就只有这位盲眼的少女而已了吗』（言毕朝玛利亚瞥了一眼）；随即『——算了，还是不要重蹈一样的覆辙了』放弃起意。玛利亚全程保持火焰警戒、以同伴安全为最优先未出手"
+    }
+   ],
+   "provenance": {
+    "extractor": "glm-zcode-agent-v1（工单v1.2§0亲抽路线）",
+    "extractor_confidence": 0.8,
+    "gate_trace": [],
+    "precedent_refs": [],
+    "status_history": []
+   },
+   "record_id": "cand-relation-618ec3c65f89",
+   "record_type": "relation",
+   "status": "candidate",
+   "supersedes": null,
+   "verified_against": {
+    "path": "语料分析/corpus/clean_full.txt",
+    "sha": "e1a96061d25b0016094dd8daec82769ee80fc3bb",
+    "verified_at": "2026-09-18"
+   },
+   "version": 1
+  }
+ ]
+}

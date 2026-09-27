@@ -1,0 +1,6560 @@
+{
+ "unit": "G16",
+ "at": "2026-09-27T16:57:52",
+ "panel": [
+  "LOCAL",
+  "DEEPSEEK",
+  "QWEN"
+ ],
+ "panel_missing": [],
+ "full_size": 3,
+ "pending指针总数": 758,
+ "本轮评审": 628,
+ "判定分布": {
+  "promote": 316,
+  "hold": 202,
+  "human": 110
+ },
+ "本体缺失": [
+  "cand-entity-10e4ef860df6",
+  "cand-entity-1780c6c750a3",
+  "cand-entity-28a0913dbdaa",
+  "cand-entity-28eb60a8f486",
+  "cand-entity-34a8eb41fd6d",
+  "cand-entity-39e6f657ef87",
+  "cand-entity-3e21b83a3f6a",
+  "cand-entity-4011e8990561",
+  "cand-entity-5f0cd0ca0346",
+  "cand-entity-6045361d2316",
+  "cand-entity-6465a182d025",
+  "cand-entity-79b6a22e3f29",
+  "cand-entity-7eedede57a95",
+  "cand-entity-8215f57b9eb6",
+  "cand-entity-8258b3531c76",
+  "cand-entity-90f74c80a284",
+  "cand-entity-91bad6de7310",
+  "cand-entity-a4948ccd0748",
+  "cand-entity-aa7156377aa2",
+  "cand-entity-ac6f46eaeb30",
+  "cand-entity-ae33320b94a5",
+  "cand-entity-bcc812610213",
+  "cand-entity-bf7a7eda4c3d",
+  "cand-entity-cd1497b82490",
+  "cand-entity-fbd38916c2a9",
+  "cand-event-120a72d3e2cf",
+  "cand-event-3bca0d213c2b",
+  "cand-event-685e1e624e1d",
+  "cand-event-728a47b41b52",
+  "cand-event-7689b217e5cf",
+  "cand-event-8c695eec775e",
+  "cand-event-8deaa665bfa9",
+  "cand-event-9acc1c889a9d",
+  "cand-event-b7e8530a05b8",
+  "cand-event-cbb685ec1799",
+  "cand-event-d2298d436266",
+  "cand-event-e43e37d2c7d1",
+  "cand-foreshadow-264baf1c2d15",
+  "cand-foreshadow-27e6ed231196",
+  "cand-foreshadow-31c8a6ee8680",
+  "cand-foreshadow-713fcc27e0c5",
+  "cand-foreshadow-783d44f0dd71",
+  "cand-foreshadow-a4e5143e0e32",
+  "cand-foreshadow-ef016759651b",
+  "cand-relation-06865923f1ab",
+  "cand-relation-256ad4fa54ed",
+  "cand-relation-2b21548b3ea9",
+  "cand-relation-2f36f20065a6",
+  "cand-relation-3a852900d32e",
+  "cand-relation-4c0e6dac110c",
+  "cand-relation-6265b977b457",
+  "cand-relation-66db42535eee",
+  "cand-relation-775c9b943393",
+  "cand-relation-b9bd7fff116b",
+  "cand-relation-be846666a0bf",
+  "cand-relation-de2da00f19ce",
+  "cand-relation-e80203cc6c19",
+  "cand-relation-f3ed50f23b74",
+  "cand-setting-301046718b15",
+  "cand-setting-5b22010b9fd6",
+  "cand-setting-5ec454d74ca8",
+  "cand-setting-8b6081be4a8d",
+  "cand-setting-8c0da1978459",
+  "cand-setting-a2d6b45f382c",
+  "cand-setting-aa47a75dacc9",
+  "cand-setting-d17cdfd8125f"
+ ],
+ "证据为空": [],
+ "gate脏": [],
+ "票面": {
+  "cand-entity-18838d4bee78": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ba4b7ec20dd6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-34bf3e61d9c0": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-98243a61e58e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-04277022e993": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-36e58aad8c11": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-37689250c20b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-b160cef0021c": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f613a2b280c1": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-642dd73afc67": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ce5ef7ac7a73": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-a49da5f87f6e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-47ac6f13de56": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-fbcdc7433598": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-7d9405eb22e8": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3a51e209c7be": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-53e557380227": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-cb2d9a7d37f7": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-d4dc43e24920": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-6a3e7bfe50d6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-af3991b1199c": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-8fe56ac18f08": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7a9deb9f71ee": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-cc39e39bce47": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-26fb9c20ce59": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-867f91470b3a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-1e79d653464c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-496522c8ef92": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-2d4eb93d26fe": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-b75f86d359a8": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-26d483873c53": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-342736fbe8de": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7ff93e44c552": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9502036ef10f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-02e6b8aa22a8": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-a13b66c3af5a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-65edd2d9f1a6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-6875ed40a568": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-6a276d067e35": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7f74c0a2dbff": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-b348769339a1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-4d551bc6edcb": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c4ec4d786b7f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-8df48c9a5e36": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ea894fb9fd70": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-82ab2e4bc0e4": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-083bf7a4094c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-aab40cc23e7d": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d78cc800fb08": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7d396a8bcc83": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-619849808ff3": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-dd78b0690ed4": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-373afa8f6d75": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-fd47cea8a475": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-c67d5f1f6ba9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-46bc17585b08": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-913dabb3cec1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-9e77dd53260e": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-00f4c049539f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-6edb8da6c028": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-f16d77675948": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-foreshadow-eb4aeb925eb8": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-4c882e333963": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a16212fac002": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-559111df8f5d": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-722556fe0eb2": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d3aae32d668b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-0942968e5d6d": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-8b4c61d7e863": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-1deb47456309": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-cdf997694ed7": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-407256805f8c": {
+   "verdict": "hold",
+   "votes": {
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "LOCAL",
+     "reason": "LOCAL 考官输出非 JSON：'verdict: against'"
+    }
+   ]
+  },
+  "cand-entity-b8729bd72fcf": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-71bc81ec0552": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-631b3c2eedf7": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-8f1cbcbfd78b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-5d4e70265ed4": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-e91cc13ae536": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7863f19f9528": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-849bce06c441": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-340c3111a246": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-05843582383d": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-393b1db838e6": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-679fdf2b1299": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b9646e27c5bf": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-13250c727c36": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-95f815e020dc": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-e3ead8cd227a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-97cc78f354da": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-68acee07c6f2": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3b898a7cb084": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-aaeebebf35c1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-fb29a5e0fff2": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-011491509fde": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-824e7efa12b0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-db5f50d955e4": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-7a7e194d840d": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-45986d76d92f": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-0a21a3f29839": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-3a7cc078c421": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-d0c1ba6f65e2": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-d130bacb0d57": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f36657fba66e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-15fab55e342b": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-8e3116e6f693": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-7920eef57b0a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-bb357ba70d31": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-ecc8bff93dbf": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-909d8b649f8b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-fd6843625ab2": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-eb01b3000e06": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-0550ba433efb": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-1df2d32555be": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c1de59ccd252": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-82661ccd9887": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-cd1c6d063fd2": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-ffb373e0bd86": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c6ed8384c197": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-2b4acd1060b7": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-90d57f48d8d3": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a707f25dfeb5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c1866cc3d765": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-d92cb1a74986": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-956a6a19e58c": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-3bed0dd44f4c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-1d3d019b0a60": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-dcf845df6974": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-531db625782b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-5ce26b7d82a5": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-12930fa55c69": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-438a0b8be5d8": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "against",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-e8c914356252": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f0ea60f9de2c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-45e9d69bb499": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-8c20b33e3e16": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-543babdccbbc": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-7057f3478d2c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-2e9512c7cee5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-485fd502c9cd": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-50f5f1b64935": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7ad05414e645": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-20ec7c776693": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-47152ec32758": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-5922a58e6975": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-f911b508f287": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b8183378ac1a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2bec4fe1d05f": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-3624828a7532": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-aa671d83ba2e": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ae906c41642e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-event-fe84eeb2c4c1": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-7a9ea0011692": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-1fc179863f7b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-20cb9097d852": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-34f5cc275d54": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-55b92aa27489": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9a6d0dbb7ee9": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-48fa599c2d71": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-872f3cb7e909": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-fd8f39cb1728": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-6008a30f5fb3": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-23c25ee552e6": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-e8204702a444": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-00ee4fb60892": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-1fd1096da05c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-50ecc4482a62": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-dc2aecea8cf5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-067acf51181f": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-2e7f8edeeff9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f7da4c1c890d": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-a43c6d42b4a0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ec6ce9d6a315": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-55081b79245f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-09096617f8a6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-1539a7609ef5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-dbb68989c872": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-a352bdf69226": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-setting-39bcb68b226c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-05a80ab5328f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-27d8ea6a9374": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ec9408d6de2f": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-5f27d63d3d8d": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-72a72fe09e2b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-bc656762c18b": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ce5cb4731a20": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-d898202390bc": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-96068d78950c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-e890191872b9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-903b8a5c4e90": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ea5236c16174": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-fc31bf00b37c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a36a7ef8ec54": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-76169cd52f51": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-60263743e904": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-204ecfb61d4b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-8c8e80746f49": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-fe71012cbfd9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-31280b619236": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-16d311a40f11": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-af3407f3846c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-fec83a156187": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-81b416b8396e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2af6e53c685d": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-setting-ac71452cfabc": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-e93ff08c408b": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-f2addae0cb66": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-ae800cb2e7bb": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b96945aefcd6": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-4354d3ae613e": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-1ceec481a3e3": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-setting-40402b13ff60": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ababeeb9f5ab": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-3158f2389642": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-84ce7d25ba44": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-e540ff14e5de": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-999eae9e6684": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-ee40aadc172a": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-4ca24e6a8e82": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ae6b97267b12": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-26f4120ea6a2": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-af791342b770": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9ae2d2c61bb6": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-8d430d80c7a6": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7707b8a08596": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-46aa71656d4d": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-86669fd31f6b": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-60d7f194ced6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-e2d2484aabce": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-b3f41eb3fe00": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-57b1244c8431": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-fe3f342dffdc": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-77ecbe179d19": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-e8e728cde871": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-d3d5b50b61d1": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d3832a3b4334": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-169d9e2a3086": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-5e2b54a7ea99": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-fe7e18c3fc63": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-6680acc73c70": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-c1c0358badd6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-61a7c88ce91f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-957efb67267e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-640f190fd2ef": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-a0e03aa38f8e": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-2a501f94139e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3a68901d9132": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-e6c849bf8245": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-1e80bc5202b3": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-a60a42338a9d": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c899fe1e6ab0": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-event-d2d68ff47b95": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-97b309b604a4": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-978e14c2ce18": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-5164afff403b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-31b612784d82": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-a92105f9e984": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-85a74207fbbd": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-0c79cceb4896": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-18bcef982005": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-a88597a52800": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-5c925b74cdfb": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-3491e363b90e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-845f9fc08689": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-0fc2310d8715": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-f72554241b02": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-setting-5343b19d6fe5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-c0e4770fe433": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-f97b77d8b158": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-3bcb668678b3": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-foreshadow-cdc639202aa4": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-181763712a13": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-077040dcd664": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-19315ba4d7f9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b88d0bf9cf45": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c9782ba915f4": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-d662929ffbd5": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-49014e505e17": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-setting-66f6175acab6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-7691542de922": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a43d43711331": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-998604b5efae": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b820718cf566": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-4d1e82d2729c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-68af8aa46bd2": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-89e1bd47e3ad": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-59b82c548142": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f726a29f6cf4": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c26f85973156": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c576a535d702": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-e4b9ccb211d1": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-aeb11356fb94": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c27d68d80538": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-29f1ef50aa8c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-7ed64dfe1881": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a227d017b797": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2677f4f1afa5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-5719dbc5267c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-4af14d0a8660": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-603dc7c4a5ef": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-77182e2c76b1": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-da82da065dbe": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-69642d452bf1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-832cfe616814": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-65c79292b698": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-cdbbf503eb90": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-4016fae895a5": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-2da63df3c395": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-e6d3e80a4d96": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-9fbb2329d756": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7687697749f4": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-9b07f2c80081": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-03c7290a57bc": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ccf0d9f7d745": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-382fc4c71a3a": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-66647c548421": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-12fcff6f7f9b": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-23baa7458c60": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-b59906676706": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-e3eb2a375133": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b989a5164d4a": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-0f0c084fc5f7": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-f315b4551b59": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-28011845c95e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-9867da8113e3": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-02a92007af84": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d64853151edc": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-aa39106dd67b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-6cfd86504e45": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-bda89f43df8f": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3da383043031": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c576c02b3ec3": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-2478a4bb7d48": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-0b343cac128c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-c8b9540b4464": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-3697911aa8b2": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-130d4c83492b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-419755a7d94f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-2366bf28a159": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-b4c642fcfb48": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-e8157649858e": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-511a201fccb2": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-15bc9e85a841": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-9243a92314bc": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-1318de9c8e04": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-4efadc584417": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-138ebafab717": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-b49def04ab03": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-bae49b091c73": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-3efb39e2b3ca": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-5546bc790f82": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-95f7b70269e8": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-acac3dc375f6": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3974c8008b55": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-fa8b5d9bbbf3": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f1e3e07567cb": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-2b3c9a0a3524": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-a58fac28c020": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-205b89582217": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-406d6dabd6ed": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-c175b0203ee5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-271a115a2294": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-4007ce65adb6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-90ab2f8f16b6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-72c741d92295": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-73cc9b46da24": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-92cade94ef77": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-0faad55e843f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c7e28afde680": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-de6f21685371": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-d1494276b85c": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-6888d05887f0": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-8157e8c0fdfe": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-46c3af858280": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-5210575a7a9c": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-b9af9ec9439e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9aa75f1fe292": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ab236d077917": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-80c97d27d367": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-c11aee79df2a": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-820b652e8c21": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-10c43bf7d936": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-10596c9bd6a2": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2396b24bdb6f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-13e7fb9f18f5": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-04aa16ce2565": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d693408203dd": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-7cc1a01f709e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-44646b095cdd": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-31662c65def9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ded8c5cdb306": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9b65ca6a5d7d": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-dff11fbcbf05": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-7934df502a3d": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-419da0965050": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c51b3c8bb580": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7d795fd6233d": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ee4c1e65f625": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f21e8c5db4ad": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-57f01adb1215": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-4bcce20dea15": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-2bbb91a51d46": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-de2bb746a0d9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-1831c1916f28": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-5788d5a2a917": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-16acfb81b183": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b4a048760ec8": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-e9025dba591a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9e417634080f": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-992278f61141": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-efce62554348": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "against",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-cfec174f979c": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d51b709b981c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-6bfd38d6f87d": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-d91b23d9456c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-18e69c7deacb": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c54b3252b56d": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3e90ef099b7f": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f75c2d48a7e9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7c45c8c54d0f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-78a5c3878b90": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-82f51e6ced75": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-81d8c0691450": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-775462a4f504": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-8065e84ae5d5": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-9d0a65aad3cc": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-4d7218f967af": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-db4a75c8242f": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-452ec9052684": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-024aa487aba5": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-f89e688c6c5a": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-79621849464c": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-9d5c8fca4ea0": {
+   "verdict": "hold",
+   "votes": {
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "LOCAL",
+     "reason": "LOCAL 考官输出非 JSON：'support\\n'"
+    }
+   ]
+  },
+  "cand-entity-b63f4dabe598": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ee619616b658": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7b7b01f706c1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-b7af6e4c1a94": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9dc707e19758": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-96ad05a9640e": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ded006d6c435": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-007d2750c968": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-4a7182a891f3": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-aaaa9e0b98f8": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-fc3cb9039c67": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-19c50adcb3ce": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-5f7949dc94e2": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-3bf5890c4ea1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a7a72cc37380": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-83d73dc2b5e8": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-0449f5356d55": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-67a3caea81fb": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-04a4121ab929": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-4c2ec763e10e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-81d63e66b4a0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-77819288ad50": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-foreshadow-b9a0aed562b1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-1649071127d4": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ccf6c3da7534": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-e491d993c506": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-5d85d0f139f0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-09b45ef30039": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-0a8b4240d592": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-a60b8750fe12": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-f4c5f0b98b54": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-78fb572632e3": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-75d3545ca8bc": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-38700ae8f8c7": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-65d24adfe1ee": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3f1c0db11bfc": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-308944133c1b": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-13379dd7303b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9fc48f9f7dba": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-9157a9f2fcb2": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-7bd3b2299b26": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-aea6e27c984f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-a68be20ea7cd": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c69039821df7": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-16747c0a6cac": {
+   "verdict": "promote",
+   "votes": {
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "LOCAL",
+     "reason": "LOCAL 考官判定非法：'support|against|unsure'"
+    }
+   ]
+  },
+  "cand-relation-6fcddb617fd6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9fd8b1d70a3b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-90472f03e9d8": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-51bf26ec1b36": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-6f9fa2e2de53": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-53af009dd61b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-2c4c697c54e0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-1f4e9c2406db": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2486d5b29458": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-716aaf048189": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-cdf313e40863": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-19c345c96127": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-d40e312b3b72": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-fd4abf127447": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-25828a25b8ae": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-78c8de71487f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-9f219205aa3e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-86ae41531e80": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-foreshadow-b8db438a63af": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7ba3109adde5": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-30bdcc699663": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2b77b869083c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-51e7f3dbc3b7": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-fc1cdf754ed0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-8e7673bb0a0e": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-e93285a78e9d": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-737a90d88b2a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-f66bee53c40b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-68925839d2f9": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-840b5f6ee1e6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-3e3c867a16fe": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-2ebafa5a84fe": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "against"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-setting-12b4e921926e": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7e79b17ae8b9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-cd38638dba8b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-becf70a0284c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-0a7495aa2c62": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-23ac0a6692be": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-a8f01a259a05": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-89bc885e2db9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2eab003dbf75": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-e2c9942ab8bb": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-d6fe2cc2b3d7": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-f25cb997f16e": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c245cc5b90bc": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-32b69e4fbed7": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-c58ad0ae9a5e": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-3eb64adeb68a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-df1c6f31335e": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-276315b137ff": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-54410e91c3b2": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-3dcc4587942f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-e25fa51ccc4a": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "against",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a24ece0a1fdf": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c2cab33a9600": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-81e413699fcd": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-05ed86445764": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-bb3947007be6": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-e342a39444c9": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-31d89c1557a9": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7e23e8155adb": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-f96a7ef7c1d6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-9c191e578947": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-fc57a585747a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-74edbb31ff5f": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ae75a7f22cec": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-c9fe67bbf6df": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-3992e7704748": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ceb583d5d10b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-relation-a0500aef40bc": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-foreshadow-b3e8004713e7": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-897772ca2260": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-751ef588fb5f": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-5102cdbbf8be": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-4c7b054bd0b1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-d9b1db65af0c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-68ec55994c99": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-84edb7f348ef": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-646ded744bfe": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-67fe5cb77fec": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-48f66ee94739": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c6d2f829b546": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-9b922dc319fd": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-c68f7b7f6a76": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-76785d6bf5e6": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-a8f768c9ceed": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-b5d16712ae6b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-ad4a2f31c1c6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-b9f8e017fd3b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-ffb66af6a8ef": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-76be1740b3b5": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-2b832747dd89": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-03fce01913f4": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-9ce6c08be291": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-9c32b1729169": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-8ea5c32d6689": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-4fe9fd91f716": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-2dd504d5a10b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-e06310a8bef5": {
+   "verdict": "hold",
+   "votes": {
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "LOCAL",
+     "reason": "LOCAL 考官输出非 JSON：'support\\n'"
+    }
+   ]
+  },
+  "cand-setting-4fb00dc00013": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-ffca841101b8": {
+   "verdict": "promote",
+   "votes": {
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "LOCAL",
+     "reason": "LOCAL 考官输出非 JSON：'support\\n'"
+    }
+   ]
+  },
+  "cand-relation-456a1f1e3492": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-50c8f05ce743": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-911186dfe645": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-265302b65658": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-1e2eb3c132f4": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-5f86231a3a93": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-47e82b3692a6": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-c74ec1133353": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-3ca2144bccdd": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-entity-1a6cd63935e1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-f5d0fa00646a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-0a57408f16c8": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-8efed41ed38a": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-6ee617eec082": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-3f97069279e4": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-4125ccb2a9f1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-4dfdab4940b3": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support"
+   },
+   "degraded": true,
+   "errors": [
+    {
+     "examiner": "QWEN",
+     "reason": "The read operation timed out"
+    }
+   ]
+  },
+  "cand-foreshadow-261cde2eb9cb": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-6e7a241836d7": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ee1ee810f6f9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-eb7e50ef3095": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-0eeea45d19b3": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7bc45ac77b39": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d18b4f29afc0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-cd57a17dd36a": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-b1d993ca4768": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-4c5fed0474a8": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-c8262f4d59c4": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-0a42f3fbe95c": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ecc2fdf001d6": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-338a0ecc72c6": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-481f0270beb0": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-03833938126e": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-da607fef19f9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-d18a9a42335f": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-7943c88ebde9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-ef4dfd78898a": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-98d0836f407b": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "unsure",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-fb52981bf810": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-13118986f29b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-a79d37b6dbcf": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-setting-65365552ced9": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-6f21f424adf3": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "against"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-event-3a791cbeb9fe": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-85c2309b508c": {
+   "verdict": "human",
+   "votes": {
+    "LOCAL": "against",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-entity-ef523e0c1ecf": {
+   "verdict": "hold",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "unsure",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-6880ed14133a": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "support"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-foreshadow-652ebee6353b": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-b67181064757": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  },
+  "cand-relation-1ca4238d6bd1": {
+   "verdict": "promote",
+   "votes": {
+    "LOCAL": "support",
+    "DEEPSEEK": "support",
+    "QWEN": "unsure"
+   },
+   "degraded": false,
+   "errors": []
+  }
+ },
+ "耗时s": 2746.9,
+ "tenure口径": "首晋升批——tenure 自确认日起算，G17 首圈巡检承接存续核证"
+}

@@ -32,8 +32,19 @@ class LedgerChain:
 
     def _rows(self) -> list[dict]:
         if self._cache is None:
-            self._cache = [json.loads(x) for x in
-                           self.path.read_text(encoding="utf-8").splitlines() if x.strip()]
+            rows: list[dict] = []
+            raw = self.path.read_bytes() if self.path.exists() else b""
+            # 只按 \n 切行——JSON 字符串可合法含 U+0085/U+2028 等 Unicode 行分隔符，
+            # str.splitlines() 会把它们当行界撕碎 JSON（P-028）；坏行以标记占位不崩，
+            # 由 verify() 判"行损坏"（审计工具对任意输入必须给判定，不许抛异常）。
+            for line in raw.split(b"\n"):
+                if not line.strip():
+                    continue
+                try:
+                    rows.append(json.loads(line.decode("utf-8")))
+                except (UnicodeDecodeError, json.JSONDecodeError):
+                    rows.append({"corrupt": line.decode("utf-8", "replace")[:32]})
+            self._cache = rows
         return self._cache
 
     def _rows_fresh(self) -> list[dict]:
@@ -41,8 +52,8 @@ class LedgerChain:
         return self._rows()
 
     def has_key(self, target: str, key: str) -> bool:
-        return any(r["op"] == "append" and r["target"] == target
-                   and r["idempotency_key"] == key for r in self._rows())
+        return any(r.get("op") == "append" and r.get("target") == target
+                   and r.get("idempotency_key") == key for r in self._rows())
 
     def _append_row(self, op: str, target: str, key: str,
                     sha_before: str, sha_after: str) -> dict:
@@ -64,13 +75,17 @@ class LedgerChain:
         rows = self._rows_fresh()
         errors, prev_hash = [], EMPTY_SHA
         for i, r in enumerate(rows):
-            if r["prev_hash"] != prev_hash:
-                errors.append(f"seq{r['seq']}: prev_hash 断链")
-            if r["hash"] != line_hash(r):
-                errors.append(f"seq{r['seq']}: 行哈希不匹配（被篡改？）")
-            if r["seq"] != i + 1:
-                errors.append(f"seq{r['seq']}: 序号不连续")
-            prev_hash = r["hash"]
+            if r.get("corrupt") is not None and "corrupt" in r:
+                errors.append(f"line{i+1}: 行损坏无法解析（{r['corrupt']!r}…）")
+                prev_hash = None  # 后续行 prev_hash 必不一致——让断链误差显式暴露
+                continue
+            if r.get("prev_hash") != prev_hash:
+                errors.append(f"seq{r.get('seq')}: prev_hash 断链")
+            if r.get("hash") != line_hash(r):
+                errors.append(f"seq{r.get('seq')}: 行哈希不匹配（被篡改？）")
+            if r.get("seq") != i + 1:
+                errors.append(f"seq{r.get('seq')}: 序号不连续")
+            prev_hash = r.get("hash")
         if store_root is not None:
             import hashlib as _h
             last = {}

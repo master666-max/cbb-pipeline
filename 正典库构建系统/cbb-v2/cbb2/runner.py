@@ -7,6 +7,7 @@ finalize_chapter：候选批量 write_decision（身份缓存+at 伪锚点）→
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from . import config, context, splitting
@@ -36,6 +37,24 @@ def prepare_chapter(chapter_no: int, prev_chapter_text: str = "",
     return {"chapter": chapter_no, "动态切分": decision, "场景软标签": tags,
             "分段": segments, "承接摘要": carry, "上下文包": pack,
             "口径": "先验非事实源；抽取出候选后交 finalize_chapter"}
+
+
+def close_out_gap_queue(store_root: Path, current_chapter: int | None = None,
+                        capture_report: dict | None = None,
+                        dual_results: list[dict] | None = None) -> int:
+    """区段收口：四扫描器→缺口队列（wire_gap_queue 幂等追加，同 type+evidence 不重复）。
+    缺输入的扫描器按缺席跳过（plant 需 capture_report / NLI 需 dual_results）——显式缩员不臆测。"""
+    from . import gaps
+    from .governance import wire_gap_queue
+    findings: list[dict] = []
+    if current_chapter is not None:
+        findings += gaps.scan_foreshadow_overdue(store_root, current_chapter)
+    findings += gaps.scan_vocab_gaps(store_root)
+    if capture_report is not None:
+        findings += gaps.scan_plant_miss(store_root, capture_report)
+    if dual_results is not None:
+        findings += gaps.scan_nli_disagreement(store_root, dual_results)
+    return wire_gap_queue(store_root, findings)
 
 
 def finalize_chapter(store_root: Path, candidates: list[dict], at: str,
@@ -68,8 +87,14 @@ def finalize_chapter(store_root: Path, candidates: list[dict], at: str,
     rows = len(ledger._rows_fresh())
     cp = ProjectionCheckpoint(Path(store_root), "lightrag")
     cp.commit(ledger_offset=rows, sha=at, at=at)
+    try:  # G15：区段收口顺带产出缺口队列——扫描失败不拖垮收口本体，-1 显式暴露降级
+        m = re.fullmatch(r"ch(\d+)", at or "")
+        gap_added = close_out_gap_queue(store_root,
+                                        current_chapter=int(m.group(1)) if m else None)
+    except Exception:  # noqa: BLE001 — 收口辅助面宽捕获=降级语义（设计决定）
+        gap_added = -1
     return {"chapters_written_at": at, "tracks": tracks, "results": results,
-            "checkpoint": rows}
+            "checkpoint": rows, "gap_queue_added": gap_added}
 
 
 def refeed_needed(store_root: Path, view: str = "lightrag") -> bool:
