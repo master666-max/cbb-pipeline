@@ -24,6 +24,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "contracts"))
+try:  # C2 锚定谓词单一来源：cbb2.anchor_check（缺席=warn 域静默跳过，gate1 保持零依赖可跑）
+    sys.path.insert(0, str(HERE.parents[1] / "cbb-v2"))
+    from cbb2 import anchor_check as _anchor_check
+except Exception:
+    _anchor_check = None
 sys.path.insert(0, str(HERE.parent / "cbb-coordinate"))
 sys.path.insert(0, str(HERE.parent / "cbb-anchor"))
 import cbb_contracts  # noqa: E402
@@ -35,6 +40,8 @@ REASON_CODES = (
     "G1-TIME_INVERSION", "G1-DEAD-WALK", "G1-FORESHADOW-ORDER",
     "G1-CHEKHOV-OVERDUE", "G1-CONTRADICTION",
 )
+
+WARN_CODES = ("E-ANCHOR-ENTITIES", "E-SHACL-OBJECT")  # C2/C3：warn 级不拦截不隔离
 
 # 拦截 → 隔离区三子类（U-A17 采纳的 quarantine 三子类；v1 暂定映射就此收敛）
 REASON_TO_QUARANTINE_SUBCLASS = {
@@ -274,9 +281,16 @@ def check_record(rec: dict, ctx: dict) -> dict:
         + _check_contradiction(rec, ctx.get("seen_statuses") or {})           # continuity 域
     )
     codes = [v["code"] for v in violations]
+    warns = []
+    if _anchor_check is not None:
+        warns = _anchor_check.check_anchor_entities(rec)
+        names = ctx.get("entity_names_normed")
+        if names:
+            warns += _anchor_check.check_relation_object_in_entities(rec, set(names))
     return {
         "record_id": rec.get("record_id", "?"),
         "verdict": "intercept" if violations else "pass",
+        "warnings": warns,
         "violations": violations,
         "quarantine_subclass": REASON_TO_QUARANTINE_SUBCLASS.get(codes[0]) if codes else None,
         "gate_trace_entry": {"gate": "1", "verdict_id": _vid(rec.get("record_id", "?"), codes)},

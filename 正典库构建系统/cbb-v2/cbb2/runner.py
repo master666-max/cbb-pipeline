@@ -39,6 +39,32 @@ def prepare_chapter(chapter_no: int, prev_chapter_text: str = "",
             "口径": "先验非事实源；抽取出候选后交 finalize_chapter"}
 
 
+def nli_merge_gate_factory():
+    """D2 NLI 合并前复核闸（改判5 第二道闸）：本地 LLM 通道可用时返回判定闭包，
+    不可用返回 None（降级显式——finalize 结果口径标注 nli_merge_gate=False）。"""
+    from . import nli
+    ch = nli.LLMChannel()
+    if not ch.available():
+        return None
+    def gate(incoming, existing):
+        premise = json.dumps(existing.get("canonical") or {}, ensure_ascii=False, sort_keys=True)
+        hypothesis = json.dumps(incoming.get("canonical") or {}, ensure_ascii=False, sort_keys=True)
+        return ch.judge(premise=premise, hypothesis=hypothesis)
+    return gate
+
+
+def patrol_nli_check(store_root: Path, record: dict) -> dict:
+    """D2 NLI 巡检闸（改判5 第三道闸）：G17 巡检重推导时的 NLI 复核。
+    premise=记录全量引文，hypothesis=canonical——矛盾即改判候选（只出信号，裁决权在人工/票面）。"""
+    from . import nli
+    ch = nli.LLMChannel()
+    if not ch.available():
+        return {"channel": "unavailable", "verdict": None}
+    premise = "；".join(e.get("quote", "") for e in (record.get("evidence") or []))
+    hypothesis = json.dumps(record.get("canonical") or {}, ensure_ascii=False, sort_keys=True)
+    return {"channel": "llm", "verdict": ch.judge(premise=premise, hypothesis=hypothesis)}
+
+
 def close_out_gap_queue(store_root: Path, current_chapter: int | None = None,
                         capture_report: dict | None = None,
                         dual_results: list[dict] | None = None) -> int:
@@ -70,12 +96,14 @@ def finalize_chapter(store_root: Path, candidates: list[dict], at: str,
         cur = cache.get(k)
         if cur is None or rec.get("version", 1) > cur.get("version", 1):
             cache[k] = rec
+    merge_gate = nli_merge_gate_factory()  # D2：合并前复核闸（通道缺席=None=降级显式）
     tracks: dict[str, int] = {}
     results = []
     for cand in candidates:
         k = identity_key(cand)
         r = ls.write_decision(cand, at=at, existing=cache.get(k),
-                              register_conflict=register_conflict)
+                              register_conflict=register_conflict,
+                              nli_merge_gate=merge_gate)
         tracks[r["track"]] = tracks.get(r["track"], 0) + 1
         if r.get("new_id"):
             fresh = ls._find(r["new_id"])
@@ -94,7 +122,8 @@ def finalize_chapter(store_root: Path, candidates: list[dict], at: str,
     except Exception:  # noqa: BLE001 — 收口辅助面宽捕获=降级语义（设计决定）
         gap_added = -1
     return {"chapters_written_at": at, "tracks": tracks, "results": results,
-            "checkpoint": rows, "gap_queue_added": gap_added}
+            "checkpoint": rows, "gap_queue_added": gap_added,
+            "nli_merge_gate": merge_gate is not None}
 
 
 def refeed_needed(store_root: Path, view: str = "lightrag") -> bool:

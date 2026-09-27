@@ -36,6 +36,19 @@ def norm(s):
     return re.sub(r"[『』「」\[\]（）()………\.\.\—─\-、，。？！?!：:；;\s\"\"''~～·　]", "", str(s))
 
 
+def norm_with_index(s: str):
+    """B2 span grounding：返回（规范化串, 规范化字符→原始下标映射）。
+    变体在规范化串命中后可精确回落到原文 char 区间——gate1 可按偏移机械复核。"""
+    drop = re.compile(r"[『』「」\[\]（）()………\.\.\—─\-、，。？！?!：:；;\s\"\"''~～·　]")
+    out, idx = [], []
+    for i, ch in enumerate(s):
+        if drop.match(ch):
+            continue
+        out.append(ch)
+        idx.append(i)
+    return "".join(out), idx
+
+
 def variants(k):
     vs = {k}
     if len(k) >= 4:
@@ -152,11 +165,20 @@ def main():
                 if hit:
                     dist, ln = hit
                     text = lines[ln - 1]
+                    # B2：key 在原文行内的精确 char span（规范化索引映射回落）
+                    ntext, idx = norm_with_index(text)
+                    span = None
+                    for v in sorted(variants(key), key=len, reverse=True):
+                        pos = ntext.find(v)
+                        if pos >= 0:
+                            span = {"line_abs": ln, "start": idx[pos],
+                                    "end": idx[pos + len(v) - 1] + 1}
+                            break
                     sent = next((s for s in split_sentences(text)
                                  if any(v in norm(s) for v in variants(key))), text)
                     cands.append({"key": key, "strategy": strat, "distance": dist,
                                   "chapter": ev["chapter"], "line_rel": ln - ch["line_start"] + 1,
-                                  "quote": sent.strip()})
+                                  "quote": sent.strip(), "span": span})
         # 每 key 取最优（window 优先、距离近优先）
         best = {}
         for cd in sorted(cands, key=lambda x: (x["strategy"] != "window", x["distance"] or 99)):
@@ -164,7 +186,7 @@ def main():
         supplements = [{"vol": 1, "chapter": v["chapter"], "line": v["line_rel"],
                         "quote": v["quote"], "backfill": True,
                         "for_key": v["key"], "strategy": v["strategy"],
-                        "distance": v["distance"]}
+                        "distance": v["distance"], "span": v.get("span")}
                        for v in best.values()]
         covered = {s["for_key"] for s in supplements}
         status = "full" if covered >= set(rec["missing"]) else \
