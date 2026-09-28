@@ -82,7 +82,11 @@ for attempt in range(1, 6):
             if rel in deleted:
                 entries.append({"path": rel, "mode": "100644", "type": "blob", "sha": None})
                 continue
-            raw = open(os.path.join(REPO_ROOT, rel), "rb").read()
+            raw = subprocess.run(["git", "cat-file", "blob", f"{TARGET}:{rel}"],
+                                 capture_output=True)
+            if raw.returncode != 0:
+                raise RuntimeError(f"cat-file 失败 {rel}: {raw.stderr[:100]}")
+            raw = raw.stdout  # 提交内容字节级（LF 原样）——非工作树读（隔离 EOL 漂移与未提交变更）
             csha = hashlib.sha1(raw).hexdigest()
             if csha in cache:
                 bsha = cache[csha]
