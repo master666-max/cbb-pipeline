@@ -1,0 +1,104 @@
+检索与核实完成（共 20+ 次检索、6 次原文核实；Hugging Face 站点在本环境超时，相关条目已降级标注）。以下为调研报告。
+
+---
+
+# 技术情报预调研报告：知识库一致性机制 SOTA（2025–2026）
+
+**检索环境说明**：搜索服务多次 429 限流，已通过换词重试覆盖全部 5 题；关键论文（Finch-Zk、ContraDoc、RAG 矛盾检测、MiniCheck、Zep）已回读 arXiv 原文页核实日期与结论。可信度分级：**高**=已核实原文页；**中**=多源搜索摘要一致但未开原文；**【待确认】**=单源或未能核实。
+
+---
+
+## A. 逐题发现
+
+### Q1. NLI 用于知识库一致性：模型选项与管线位置
+
+**A1-1. 中文 NLI 小模型可用选项（中，多源一致）**
+- `IDEA-CCNL/Erlangshen-RoBERTa-110M-NLI`：~110M 参数，CMNLI/OCNLI 微调，模型卡报告 CMNLI dev ~79–80%。中文 NLI 小模型的事实标准。出处：[Fengshenbang-LM 文档](https://fengshenbang-doc.readthedocs.io)（2021 起持续维护）；另有 Longformer-110M/330M-NLI 长文本变体。
+- `MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7`：~279M，XNLI+MNLI+ANLI+FEVER-NLI 等 287 万对训练，含中文，但中文训练主要来自翻译语料（对自然发生的中文矛盾偏弱）。出处：[Hugging Face 模型卡](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7)（本环境超时未能直接核实，**中**）。
+- 数据集基准：CMNLI（CLUE）与 OCNLI（自然语料前提）仍是标准；2025 年 12 月仍有新论文在 OCNLI+CMNLI 上训练 RoBERTa 系模型。HF 直连核实失败，数字标**【待确认】**。
+
+**A1-2. NLI 校验的管线位置：claim 级、逐条验证优于整段（高）**
+- 2025 年多条管线的共识顺序是：**claim 抽取 → 证据配对 → 逐 claim 的 NLI/entailment 判定 → 聚合**；per-claim 验证显著优于整段送 NLI。出处：JointCQ（OpenReview，引 arXiv:2503.19786）、SemEval-2025 Task 3 多语言幻觉检测管线（claim→verify 顺序）等（检索日期 2026-09）。
+- **最直接可搬运的实证：MiniCheck**（EMNLP 2024，arXiv:2404.10774，v2 2024-10-01，**高**）：770M 小模型（MiniCheck-FT5）做“输出是否被 grounding 文档支撑”的二分判定，达到 GPT-4 级准确率、成本约 **1/400**，明确面向“塞进管线当廉价过滤器”。[arXiv](https://arxiv.org/abs/2404.10774)。2025 年后续：Paladin-mini（3.8B grounding 模型，2025-06，ResearchGate，**中**）。
+- 中文场景先例：WebCiteS（中文 attributed summarization）用 NLI 模型 φ 做“生成 claim vs 来源”的 entailment 判定并算归因指标（alphaXiv 检索快照，**【待确认】**——未核实原文）。
+- **入库前 vs 定期巡检**：未找到 2025-2026 直接对比“哪个位置更有效”的对照实验；但 Zep/Mem0 等生产系统把一致性判定放在**写入路径**（见 Q4），定期巡检类文献较少。此处明说：**位置对比缺实证，属开放问题**。
+
+### Q2. LLM-as-judge 做事实核验：校准、偏见、异构交叉验证
+
+**A2-1. 异构模型交叉验证有实测数据、效果显著（高）**
+- **Finch-Zk**（arXiv:2508.14314，v1 2025-08-19，v2 2025-11-01，EMNLP 2025 Industry Track，**高**）：黑盒框架，用**细粒度跨模型一致性**（语义等价 prompt 下比对多个异构模型输出）检测幻觉；FELM 数据集检测 F1 比既有方法**提升 6–39%**；GPQA-diamond 上定向修正后答案准确率**+9 个绝对百分点**。测试模型含 Llama 4 Maverick、Claude 4 Sonnet（真异构）。[arXiv](https://arxiv.org/abs/2508.14314)。**这是“异构外部考官”路线目前最强的正面实证。**
+
+**A2-2. Judge 系统性不可靠：偏见与校准（高/中混合）**
+- 位置偏见：**"Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge"**（arXiv:2406.07791，2024-06 首发正式版 2025，IJCNLP-AACL 2025 正式录用，pp.292–314）：位置偏见受**模型家族、上下文长度、任务类型**调节；标准缓解是答案对调取均值。[arXiv](https://arxiv.org/abs/2406.07791)（**中高**）。
+- "Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges"（GenEval workshop 2024/2025）：15 个 judge 模型 × 22 任务，发现与人类评审分歧明显、易受风格偏见影响（**中**）。
+- 校准：LLM verbalized confidence 系统性**过自信**（多文一致结论）；**ConfTuner**（2025-11，arXiv）微调校准口头置信度（**中**）；**"Calibrating LLM Judges: Linear Probes"**（2025-12，arXiv）指出口头置信与多采样法“要么校准差要么算不起”，提出轻量线性探针校准 judge（**中**）；"Mind the Confidence Gap"（2025-02）：RLHF 倾向诱发口头过自信（**中**）。
+- **对多考官聚合的直接警告**："Diversity Collapse and Manufactured Overconfidence in Multi-Agent LLM Debate"（KDD Eval Workshop）：**多智能体辩论中的一致性≠正确性**——辩论提高置信度但不提高事实性（**中**）。→ 异构考官必须独立评审后聚合，不能互相看见。
+- judge 自身可靠性诊断：IRT（item response theory）方法（arXiv，2026-05，**中**）；"Judicial Hallucination"（2025，对 judge 错误分类）（**中**）。
+
+### Q3. 叙事/长程一致性：novel 级矛盾检测与 story bible 系统
+
+**A3-1. 文档级自相矛盾检测（高）**
+- **ContraDoc**（NAACL 2024 main，arXiv:2311.09182，v1 2023-11-15，**高**）：首个长文档自相矛盾人工标注数据集；GPT-4 在“指出矛盾句”时可比人类强，但**自主定位长文档中的矛盾仍不可靠**，尤其需要跨段落语境的微妙矛盾。[arXiv](https://arxiv.org/abs/2311.09182) → 直接支持“候选记录配对送检”而不是“整卷扫描”。
+- **RAG 矛盾检测评估**（arXiv:2504.00180，2025-03-31，**高**）：LLM 做 context validator 检测检索文档间矛盾——**对 SOTA 模型仍是难任务，不同矛盾类型表现差异大；大模型优于小模型；CoT 提示对不同架构效果不稳定**。[arXiv](https://arxiv.org/abs/2504.00180) → 支持 CBB 的“NLI 只分流不裁决”：纯 LLM 判矛盾本身不可靠。
+
+**A3-2. Story bible 维护系统（中，工程系统为主、学术基准缺）**
+- **LoreWeave**（github.com/letuhao/lore-weave，开源）：自动抽取人物/地点/事件/关系到知识图谱，手稿+大纲+story bible+检索一体化（**中**，开源工具、无同行评审）。
+- **DOME**（NAACL 2025）："Generating Long-form Story Using Dynamic Hierarchical Outline with Memory"，用层级大纲+记忆维护长篇一致性——机制是大纲记忆而非 entailment 门（**中**；经 Korean 论文评论博客与综述交叉印证）。
+- 综述："Narrative Consistency in LLM-Generated Stories: A Survey"（ResearchGate 2025/2026，**中**）；另有 ConStory-Bench（叙事一致性基准，HF Daily Papers 快照，**【待确认】**）。
+- 交互叙事侧：Jenova 分支叙事状态记忆（plot flags/character knowledge/relationship state，2026-09，jenova.ai，**低**，产品博客性质）。
+- **明说**：2025-2026 **没有找到**“novel 级 contradiction detection + 正典库维护”的成熟学术系统或公开基准；该领域最接近的仍是 ContraDoc（2024）+ 知识图谱抽取式工具。
+
+### Q4. 知识置信度与晋升/降级/重验证
+
+**A4-1. 矛盾处理的生产范式：失效而非覆盖（高）**
+- **Zep/Graphiti**（arXiv:2501.13956，2025-01-20，**高**）：双时间线（bi-temporal）——每条边带 valid time（事实在现实世界为真的区间 t_valid/t_invalid）与 transaction time（系统习得时间）；矛盾**不覆盖不删除，做显式 edge invalidation**，保留演化历史。DMR 94.8%（vs MemGPT 93.4%），LongMemEval +18.5% 准确率、延迟 -90%。[arXiv](https://arxiv.org/abs/2501.13956)、[GitHub](https://github.com/getzep/graphiti)。
+- **Mem0**（arXiv:2504.19413，2025-04，**中**）：写入路径用 LLM 四分决策 **ADD / UPDATE / DELETE / NOOP**——先检索语义相似旧记忆，再判定新事实是新建、更新、忽略还是删除；时间戳辅助消解冲突版本；较 OpenAI 记忆方案准确率 +26%、延迟 -91%。安全警告：ER-MIA（2026）指出基于语义相似度的 UPDATE/DELETE 策略可被记忆注入攻击利用（**中**）。
+- **对 CBB 的启发**：“死亡行走”类事实在 Graphiti 范式里根本不是“矛盾”，而是**旧状态失效 + 新状态生效**——这正好映射到时序倒置/死亡九码问题。
+
+**A4-2. 置信度分带与证据累积（中，无统一成熟模型）**
+- 不确定性管理综述：**"Uncertainty Management in the Construction of Knowledge Graphs"**（Jarnac，TGDK vol.3 iss.1，Dagstuhl，2025）：KG 抽取中的置信度管理、置信感知嵌入（**中**）。[PDF](https://drops.dagstuhl.de/storage/08tgdk/tgdk-vol003/tgdk-vol003-issue001/TGDK.3.1.3/TGDK.3.1.3.pdf)
+- **多源异构证据的三元组置信度**（ResearchGate，基于 DBpedia，**中**）：与“evidence accrual”直接对应——用多条异构证据合成三元组置信分。
+- 基础文献：Triple Trustworthiness Measurement（Jia et al. 2018，134+ 引）——语义正确度+真度量化（**高**，但较旧）。
+- Trust-Aware Multi-Agent Traceability（alphaXiv 2606.17203，2026-06，**中**）：共享 KG 做语义记忆+置信跟踪的协调面。
+- **明说**：**没有找到**2025-2026 年被广泛引用的“trust decay + evidence accrual + 自动晋升”统一分带标准模型；文献是分散的构件（失效机制、多证据聚合、校准），需自行组装。CBB 现有的 provisional/confirmed 分带在公开文献中没有直接同构物，也**没有证据表明 0.97 单门限是通行做法**。
+
+### Q5. 革命性候选：生成时校验 / verifier-in-the-loop
+
+- **跨模型一致性作为验证原语**（Finch-Zk，见 Q2，**高**）：把“一致”而非“正确”作为可观测信号——对无法访问内部状态的 API 考官是唯一可行路线。
+- **Verifier-guided recombination search**（arXiv:2510.06410，2025-10，**中**）：verifier 在测试时引导推理轨迹的搜索与重组，token 级过程监督路线（Lightman "Let's Verify Step by Step" 的后继）。
+- **Trust, But Verify**（OpenReview，2025-09，**中**）：单模型经 RL 同时学会生成与验证，用在线解生成验证信号。
+- **CCD: Confidence-Driven Contrastive Decoding**（arXiv，2026-02-20，**中**）：解码时统一 token 置信估计与对比解码。
+- **Chance-Constrained Inference for Hallucination Risk Control**（OpenReview，**中**）：把幻觉风险形式化为生成时的机会约束控制。
+- **MiniTruePrefixes**（轻量 NLI 模型对**未完成前缀**做事实性评估、解码中实时转向，检索快照提及，**【待确认】**——未能定位原文，谨慎引用）。
+- **MarginGate**（arXiv，2026-05，**中**）：margin 触发的稀疏验证——但目标是**数值确定性解码**（batch 不变性），与事实一致性无关，对 CBB 仅方法学启发（“只验证低裕度步骤”）。
+- **判定**：存在明确的“验证内化进解码/生成循环”趋势，但**没有单一范式已成熟到可直接搬进生产知识库**；对 CBB 最相关的仍是输出级的跨模型一致性 + 写入级失效机制。
+
+---
+
+## B. 对 CBB 的可执行建议（4 条）
+
+1. **NLI 放三道闸，全部 claim 级化**：现有“候选 vs 同实体库内记录”的入库前预筛保留；增加 ② 合并执行前（置信上调写库前）做一次 NLI 复核（防止合并本身制造矛盾）；③ 定期巡检闸对 provisional 带记录做 claim 抽取→配对→逐 claim NLI。依据：per-claim 优于整段（Q1-A1-2）、ContraDoc“长文档自主定位矛盾不可靠”→ 拆小再验。模型侧：GLM 三分判定可保留为分流器，但加一个本地 Erlangshen-RoBERTa-110M-NLI 或 MiniCheck 式小模型做**廉价第二通道**（成本 1/400 量级，可全量跑），两通道不一致才升级人工。
+
+2. **“死亡行走/时序倒置”改判为状态失效，不是矛盾**：借鉴 Graphiti bi-temporal——旧事实不进隔离区，标记 t_invalid 并保留；新事实正常写入。这既消掉一大类假阳性矛盾，也让“死亡行走”九码从“裁决问题”变成“失效记账问题”。同时参考 Mem0 的 ADD/UPDATE/DELETE/NOOP 四分，把 CBB 三态写入扩出显式 NOOP（纯重复不调置信）并警惕其语义相似度判定被注入攻击利用（ER-MIA 2026）。
+
+3. **confirmed 0.97 永不晋升的解法：把单点置信换成异构票数累积（evidence accrual）**：晋升条件改为“≥2/3 异构考官独立一致 + gate1 零违例 + 库内 NLI 无矛盾 + 存续 N 次巡检”。依据：Finch-Zk 实证跨模型一致 F1 +6–39%；单模型 verbalized confidence 系统过自信（Q2），0.97 自报置信不可达是校准问题而非机制问题——**换计量单位而不是调阈值**。考官之间必须隔离评审（辩论一致性≠正确性，KDD Eval Workshop）。
+
+4. **judge 机制的必配纠偏**：候选-库记录顺序对调取均值（位置偏见，IJCNLP-AACL 2025）；上岗小考除“分离度≥0.70”外加一层 judge 自身校准检查（linear probe 或分桶校准曲线，2025-12 方法）；judge 的置信输出单独校准后再进入置信合并，禁止把未校准的 judge 分数直接当概率写库。
+
+（另：终审判卷用异构 API 考官的规划**有实证背书**，可优先实证——这是本次调研中与现有计划最直接互相印证的一条。）
+
+---
+
+## C. 颠覆性候选清单
+
+| 候选 | 一句话 | 证据强度 |
+|---|---|---|
+| 跨模型一致性原语（Finch-Zk 路线） | 用“异构模型互相同意”替代“模型自报正确”，黑盒可部署 | 高（实测 F1+6–39%、GPQA+9pp） |
+| 双时间线失效制（Graphiti 范式） | 知识库从“纠错型”变“记账型”：矛盾=失效事件，历史全保留 | 高（生产系统+论文） |
+| 写入路径 LLM 四分决策（Mem0 范式） | 每次写入都过一次 update/delete/noop 判定，库天然保持紧凑一致 | 中（论文+生产，含安全警告） |
+| 解码中实时 NLI 转向（MiniTruePrefixes 类） | 生成时用小 NLI 对未完成前缀逐段卡事实性 | 【待确认】（未定位原文） |
+| 稀疏触发验证（margin-gate 思想） | 只对低裕度/低置信步骤花验证预算，开销减半 | 中（但目标是数值确定性，迁移需改造） |
+
+**未找到/缺口明示**：① NLI 校验“入库前 vs 巡检”的位置对照实验；② novel 级正典库维护的公开学术系统/基准（只有工具与 2024 年的 ContraDoc）；③ 现成的 trust-decay 分带标准模型。这三项均为真实空白，非检索失败。
+
+**主要信源**：[Finch-Zk (arXiv:2508.14314)](https://arxiv.org/abs/2508.14314) · [ContraDoc (arXiv:2311.09182)](https://arxiv.org/abs/2311.09182) · [RAG 矛盾检测 (arXiv:2504.00180)](https://arxiv.org/abs/2504.00180) · [MiniCheck (arXiv:2404.10774)](https://arxiv.org/abs/2404.10774) · [Zep (arXiv:2501.13956)](https://arxiv.org/abs/2501.13956) · [Graphiti GitHub](https://github.com/getzep/graphiti) · [Mem0 (arXiv:2504.19413)](https://arxiv.org/abs/2504.19413) · [位置偏见 (arXiv:2406.07791)](https://arxiv.org/abs/2406.07791) · [TGDK 不确定性管理 (2025)](https://drops.dagstuhl.de/storage/08tgdk/tgdk-vol003/tgdk-vol003-issue001/TGDK.3.1.3/TGDK.3.1.3.pdf) · [Fengshenbang-LM](https://fengshenbang-doc.readthedocs.io) · [LoreWeave](https://github.com/letuhao/lore-weave)

@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\run_tier2_pipeline.py", line 102, in <module>
+    asyncio.run(main())
+  File "C:\Users\26672\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\26672\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\26672\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\run_tier2_pipeline.py", line 48, in main
+    graphiti = Graphiti("bolt://localhost:7687", "neo4j", NEO_PASS,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\venv312\Lib\site-packages\graphiti_core\graphiti.py", line 227, in __init__
+    self.cross_encoder = OpenAIRerankerClient()
+                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\venv312\Lib\site-packages\graphiti_core\cross_encoder\openai_reranker_client.py", line 55, in __init__
+    self.client = AsyncOpenAI(api_key=config.api_key, base_url=config.base_url)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\venv312\Lib\site-packages\openai\_client.py", line 1027, in __init__
+    raise OpenAIError(
+openai.OpenAIError: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable.
+sys:1: RuntimeWarning: coroutine 'Neo4jDriver._execute_index_query' was never awaited

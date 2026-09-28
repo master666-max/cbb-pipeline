@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-23T17:07:14.000Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_捕获再捕获.py — Chapman 估计量的数学正确性（手算对账）\"\"\"\nimport importlib\nimport sys\nfrom pathlib import Path\n\nsys.path.insert(0, str(Path(__file__).resolve().parent))\ncc = importlib.import_module(\"捕获再捕获\")\n\n\ndef test_chapman_known_values():\n    \"\"\"手算对账：n1=n2=40, m=10 → N̂=(41×41)/11−1≈151.8；m=16 → (41×41)/17−1≈97.9。\"\"\"\n    r10 = cc.chapman(40, 40, 10)\n    assert abs(r10[\"N_hat\"] - 151.8) < 0.1, r10\n    r16 = cc.chapman(40, 40, 16)\n    assert abs(r16[\"N_hat\"] - 97.9) < 0.1, r16\n    assert r16[\"residual\"] == round(max(97.9 - 40, 0), 1)\n\n\ndef test_chapman_edge_cases():\n    try:\n        cc.chapman(40, 40, 50)\n        raise AssertionError(\"m 超界应拒\")\n    except ValueError as e:\n        assert \"不能超过\" in str(e)\n    try:\n        cc.chapman(0, 40, 0)\n        raise AssertionError(\"n1=0 应拒\")\n    except ValueError:\n        pass\n\n\ndef test_agreement_independence_check():\n    a = {\"r1\", \"r2\", \"r3\"}\n    b = {\"r1\", \"r2\", \"r4\"}\n    agg = cc.agreement(a, b)\n    assert agg[\"共同\"] == 2 and agg[\"jaccard\"] == 0.5  # 低重叠=独立性可\n\n\ndef test_batch_report():\n    rep = cc.batch_report([{\"n1\": 40, \"n2\": 40, \"m\": 10}, {\"n1\": 40, \"n2\": 40, \"m\": 16}],\n                          sample_size=40)\n    assert rep[\"avg_N_hat\"] == round((151.8 + 97.9) / 2, 1)\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        fn()\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "afterContentLength": 1457,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\test_捕获再捕获.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_ddc087c86da14ee5a5ba5f28",
+  "toolName": "Write",
+  "version": 1
+}

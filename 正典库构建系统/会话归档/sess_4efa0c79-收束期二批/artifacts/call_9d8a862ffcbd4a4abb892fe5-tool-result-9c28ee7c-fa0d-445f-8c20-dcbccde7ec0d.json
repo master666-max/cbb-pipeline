@@ -1,0 +1,41 @@
+{
+  "createdAt": "2026-09-13T20:47:04.017Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"run_tier1_deepseek.py — Tier 1 DeepSeek 抽取（graphiti 真实提示词装配）\n用法: DEEPSEEK_API_KEY=sk-xxx <venv312>/Scripts/python.exe -X utf8 run_tier1_deepseek.py\nkey 只从环境变量读取，不写入任何文件（D-004）。\n\"\"\"\nimport json, os, sys, re, time\nimport httpx\n\nBASE = os.path.dirname(os.path.abspath(__file__))\nROOT = os.path.dirname(BASE)\nEXCERPT = os.path.join(ROOT, \"材料\", \"excerpt1-CHAPTER0014.md\")\nOUT = os.path.join(ROOT, \"结果\", \"extraction-tier1-deepseek-flash.json\")\n\nAPI = \"https://api.deepseek.com/chat/completions\"\nMODEL = \"deepseek-flash\"\nKEY = os.environ.get(\"DEEPSEEK_API_KEY\")\nif not KEY:\n    sys.exit(\"FATAL: DEEPSEEK_API_KEY not set\")\n\nfrom graphiti_core.prompts import extract_nodes as EN\nfrom graphiti_core.prompts import extract_edges as EE\n\nENTITY_TYPES = \"\"\"人物 - 具名的角色或人物（同一人的别名/称谓归并于主名）\n地点 - 具名的场所、区域、国度，以及迷宫本身与其各层级\n组织 - 具名的团体、机构、店铺\n物品 - 具名的物件\n技能魔法 - 具名的技能、魔法、招式\n概念 - 具名的独特术语或专有概念\"\"\"\n\ndef to_dicts(messages):\n    out = []\n    for m in messages:\n        if isinstance(m, dict):\n            out.append({\"role\": m[\"role\"], \"content\": m[\"content\"]})\n        else:\n            out.append({\"role\": m.role, \"content\": m.content})\n    return out\n\nMISSING = set()\nclass Ctx(dict):\n    \"\"\"缺键返回空串并记录——模板可选项的兜底（透明：缺失键会打印）\"\"\"\n    def __missing__(self, k):\n        MISSING.add(k)\n        return \"\"\n\ndef call(client, messages, max_tokens=32768, use_json_mode=True):\n    payload = {\"model\": MODEL, \"messages\": messages, \"temperature\": 0, \"max_tokens\": max_tokens}\n    if use_json_mode:\n        payload[\"response_format\"] = {\"type\": \"json_object\"}\n    r = client.post(API, json=payload, headers={\"Authorization\": f\"Bearer {KEY}\"}, timeout=480)\n    if r.status_code in (429, 500, 502, 503):\n        time.sleep(20)\n        r = client.post(API, json=payload, headers={\"Authorization\": f\"Bearer {KEY}\"}, timeout=480)\n    r.raise_for_status()\n    data = r.json()\n    ch = data[\"choices\"][0]\n    content = (ch[\"message\"].get(\"content\") or \"\").strip()\n    txt = content\n    m = re.search(r\"```(?:json)?\\s*(.*?)```\", txt, re.S)\n    if m:\n        txt = m.group(1).strip()\n    return txt, data.get(\"usage\", {}), ch.get(\"finish_reason\")\n\ndef parse_json(txt):\n    try:\n        return json.loads(txt)\n    except Exception as e:\n        raise SystemExit(f\"JSON parse failed: {e}\\n--- head 500 ---\\n{txt[:500]}\")\n\ndef pick_list(obj, *keys):\n    if isinstance(obj, list):\n        return obj\n    if isinstance(obj, dict):\n        for k in (*keys,):\n            if k in obj and isinstance(obj[k], list):\n                return obj[k]\n        for v in obj.values():\n            if isinstance(v, list):\n                return v\n    return []\n\ndef main():\n    text = open(EXCERPT, encoding=\"utf-8\").read()\n    client = httpx.Client()\n\n    # ---- 阶段1: 实体抽取（graphiti extract_message 原装模板） ----\n    ctx1 = Ctx({\"entity_types\": ENTITY_TYPES, \"previous_episodes\": [], \"episode_content\": text})\n    msgs1 = to_dicts(EN.extract_message(ctx1))\n    print(f\"[nodes] missing_keys={sorted(MISSING)}\", flush=True)\n    print(f\"[nodes] messages={len(msgs1)} prompt_chars={sum(len(m['content']) for m in msgs1)}\", flush=True)\n    try:\n        txt1, usage1, fin1 = call(client, msgs1)\n    except httpx.HTTPStatusError as e:\n        if e.response.status_code == 400 and \"json\" in e.response.text.lower():\n            txt1, usage1, fin1 = call(client, msgs1, use_json_mode=False)\n        else:\n            raise\n    print(f\"[nodes] finish={fin1} usage={json.dumps(usage1)}\", flush=True)\n    nodes_raw = parse_json(txt1)\n    entities = pick_list(nodes_raw, \"entities\", \"nodes\")\n    print(f\"[nodes] extracted entities={len(entities)}\", flush=True)\n\n    # ---- 阶段2: 关系抽取（graphiti edge 原装模板） ----\n    ctx2 = Ctx({\n        \"previous_episodes\": [],\n        \"episode_content\": text,\n        \"nodes\": entities,\n        \"reference_time\": \"2026-09-14T00:00:00Z\",\n    })\n    MISSING.clear()\n    msgs2 = to_dicts(EE.edge(ctx2))\n    print(f\"[edges] missing_keys={sorted(MISSING)}\", flush=True)\n    print(f\"[edges] messages={len(msgs2)} prompt_chars={sum(len(m['content']) for m in msgs2)}\", flush=True)\n    try:\n        txt2, usage2, fin2 = call(client, msgs2)\n        if fin2 == \"length\":  # 思维链吃光预算 → 翻倍重试\n            print(\"[edges] length-capped, retry max_tokens=65536\", flush=True)\n            txt2, usage2, fin2 = call(client, msgs2, max_tokens=65536)\n    except httpx.HTTPStatusError as e:\n        if e.response.status_code == 400 and \"json\" in e.response.text.lower():\n            txt2, usage2, fin2 = call(client, msgs2, use_json_mode=False)\n        else:\n            raise\n    if fin2 == \"length\":\n        # 仍截断 → 对半分块抽边合并\n        print(\"[edges] still length-capped -> chunk into halves\", flush=True)\n        mid = len(text) // 2\n        cut = text.rfind(\"\\n\", 0, mid)\n        halves = [text[:cut], text[cut:]]\n        edges = []\n        usage2, fin2 = {}, \"chunked\"\n        for hi, h in enumerate(halves):\n            cx = Ctx({\"previous_episodes\": [], \"episode_content\": h, \"nodes\": entities,\n                      \"reference_time\": \"2026-09-14T00:00:00Z\"})\n            t, u, f = call(client, to_dicts(EE.edge(cx)))\n            usage2[f\"chunk{hi}\"] = u\n            pr = parse_json(t)\n            edges.extend(pick_list(pr, \"edges\", \"facts\"))\n        edges_raw = {\"edges\": edges, \"chunked\": True}\n    else:\n        edges_raw = parse_json(txt2)\n    edges = pick_list(edges_raw, \"edges\", \"facts\")\n    print(f\"[edges] extracted edges={len(edges)}\", flush=True)\n\n    result = {\n        \"meta\": {\n            \"model\": MODEL,\n            \"endpoint\": \"https://api.deepseek.com\",\n            \"temperature\": 0,\n            \"prompt_source\": \"graphiti_core.prompts extract_message / edge（原装模板装配，自定义实体类型）\",\n            \"excerpt\": \"excerpt1-CHAPTER0014.md\",\n            \"excerpt_sha256_16\": \"08cc9036f03ec9ee\",\n            \"usage_nodes\": usage1,\n            \"usage_edges\": usage2,\n        },\n        \"entities\": entities,\n        \"edges\": edges,\n        \"raw_nodes\": nodes_raw,\n        \"raw_edges\": edges_raw,\n    }\n    with open(OUT, \"w\", encoding=\"utf-8\") as f:\n        json.dump(result, f, ensure_ascii=False, indent=1)\n    print(f\"[done] entities={len(result['entities'])} edges={len(result['edges'])} -> {OUT}\", flush=True)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\P1执行区\\step0-抽取精度实验\\脚本\\run_tier1_deepseek.py",
+      "structuredPatch": [
+        {
+          "oldStart": 8,
+          "oldLines": 8,
+          "newStart": 8,
+          "newLines": 15,
+          "lines": [
+            " ",
+            " BASE = os.path.dirname(os.path.abspath(__file__))",
+            " ROOT = os.path.dirname(BASE)",
+            "-EXCERPT = os.path.join(ROOT, \"材料\", \"excerpt1-CHAPTER0014.md\")",
+            "-OUT = os.path.join(ROOT, \"结果\", \"extraction-tier1-deepseek-flash.json\")",
+            "+EXCERPTS = {",
+            "+    \"excerpt1\": \"excerpt1-CHAPTER0014.md\",",
+            "+    \"excerpt2\": \"excerpt2-CHAPTER0038.md\",",
+            "+    \"excerpt3\": \"excerpt3-CHAPTER0114.md\",",
+            "+    \"excerpt4\": \"excerpt4-CHAPTER0001-序章型.md\",",
+            "+}",
+            "+NAME = sys.argv[1] if len(sys.argv) > 1 else \"excerpt1\"",
+            "+EXCERPT = os.path.join(ROOT, \"材料\", EXCERPTS[NAME])",
+            "+OUT = os.path.join(ROOT, \"结果\", f\"extraction-tier1-{NAME}-deepseek-flash.json\")",
+            " ",
+            " API = \"https://api.deepseek.com/chat/completions\"",
+            " MODEL = \"deepseek-flash\""
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_9d8a862ffcbd4a4abb892fe5",
+  "toolName": "Edit",
+  "version": 1
+}

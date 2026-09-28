@@ -1,0 +1,26 @@
+wrapper exit=0
+exit= 1
+
+ython314\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 155, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb\tools\graphiti_spike.py", line 65, in _counting_create
+    r = await _orig_create(*a, **kw)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2714, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<49 lines>...
+    )
+    ^
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\site-packages\openai\_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\site-packages\openai\_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'This response_format type is unavailable now (request_id: 96bf86ac-f92c-4e5a-aa45-889be937b426)', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+[PostHog] analytics lane flush ran out of budget (1.0s granted) with 1 items pending.
+

@@ -1,0 +1,153 @@
+调研完成。以下为深度报告。
+
+# 深度调研报告：心理测量学/记忆科学/认知负荷/信号检测论 → 正典库管线
+
+**核验说明**：本次调研期间搜索后端间歇限流、GitHub 直连有证书故障，故所有关键结论改经 **PyPI、Crossref API、NeurIPS 官方、Anki 官方文档、arXiv、PMC** 等一手源交叉核验；凡未能一手核验处均已标注。
+
+---
+
+## A. 逐题深度发现
+
+### Q1 评分者一致性
+
+**1a. krippendorff 包（Python 现状）**
+- [krippendorff on PyPI](https://pypi.org/project/krippendorff/)：v0.8.2（2025-11-03 发布），**GPL-3.0-or-later**，维护者 Santiago Castro（bryant1410），基于 Thomas Grill 实现（repo: pln-fing-udelar/fast-krippendorff）。2017 年起 18 个发版，近一年多次发版，**活跃**。要求 Python ≥3.10。核心卖点：不依赖评分者齐全的矩阵——天然支持**缺失数据、任意人数、nominal/ordinal/interval/ratio 四种度量**（α 的定义即基于成对可用单元）。注意：值空间 V 大时会建 V×V 矩阵，判定类（票型少）场景无碍。
+- Cohen's kappa 基线：`sklearn.metrics.cohen_kappa_score`（支持 ordinal weights）；[pingouin](https://pingouin-stats.org)（MIT）亦有实现。kappa 的已知缺陷（高一致时悖论）见 Gwet 2008。
+- Gwet AC1 补充指标：Gwet, K.L. (2008) "Computing inter-rater reliability and its variance in the presence of high agreement", *British Journal of Mathematical and Statistical Psychology*，已核验 DOI: [10.1348/000711006x126600](https://api.crossref.org/works?query.bibliographic=computing+inter-rater+reliability+variance+presence+of+high+agreement+Gwet)。Python 包 `irrCAC`（Gwet 本人维护，含 AC1/AC2/kappa/pi/alpha 及置信区间）——PyPI 页本次抓取失败，license/活跃度【待确认】。
+
+**1b. Dawid-Skene 之外的聚合**
+- [crowd-kit on PyPI](https://pypi.org/project/crowd-kit/)：v1.4.2（2025-10-13），**Apache-2.0**，Toloka 维护，**活跃**。已核验实现清单：Majority Vote、Dawid-Skene、One-coin DS、Gold MV、**GLAD**、MACE、KOS、M-MSR、Wawa、Zero-Based Skill、Bradley-Terry，以及学习式方法 CrowdLayer/CoNAL。**不含 HMM 类方法**。
+- GLAD 原文：Whitehill, Wu, Bergsma, Movellan, Ruvolo (2009) "Whose Vote Should Count More: Optimal Integration of Labels from Labelers of Unknown Expertise", NIPS 2009，官方页已核验：[neurips.cc/paper_files/paper/2009/hash/f899139df5e1059396431415e770c6dd-Abstract.html](https://neurips.cc/paper_files/paper/2009/hash/f899139df5e1059396431415e770c6dd-Abstract.html)。GLAD 联合估计**条目难度 × 考官能力 × 真标签**——与“三考官票数晋升”天然同构。
+- HMMCrowd：Venanzi, Guiver, Kazai, Kohli, Shokouhi (2014) "Community-Based Bayesian Aggregation Models for Crowdsourcing", WWW 2014：[MSR 页面](https://www.microsoft.com/en-us/research/publication/community-based-bayesian-aggregation-models-for-crowdsourcing)、[正式 PDF（IW3C2）](https://archives.iw3c2.org/www2014/proceedings/proceedings/p155.pdf)；时间敏感扩展见 [JAIR 2016](https://www.jair.org/index.php/jair/article/view/11016/26178)。用 HMM 追踪“考官群体随时间漂移”——与“考官群体长期巡检会漂移”问题对应，但**无维护实现**（代码可得性【待确认】）。
+
+**1c. α≥0.667 / α≥0.8 的出处**
+- Hayes, A.F. & Krippendorff, K. (2007) "Answering the call for a standard reliability measure for coding data", *Communication Methods and Measures* 1(1):77-89。判定基准：**α≥.800 可据以结论；.667≤α<.800 仅探索性/低代价结论可用；α<.667 视为不可靠**。且原文强调这是“暂定基准”，应结合“错误结论的代价”校准——对晋升类高代价决策应取 .800 线。
+- 佐证源：[Krippendorff (2011) "Agreement and Information in the Reliability of Coding Data"（UPenn 仓储全文）](https://repository.upenn.edu/bitstreams/86b17550-83f8-422c-9ff0-628df92e1120/download)、[statisticshowto 条目](https://www.statisticshowto.com/krippendorffs-alpha)。
+
+### Q2 信号检测论
+
+**2a. Python 实现谱系**
+- [psignifit on PyPI](https://pypi.org/project/psignifit/)：v4.3（2025-01-29），**GPLv3**，Wichmann 实验室（guillermoaguilar 等）维护，**活跃**。贝叶斯 psychometric function 估计（含过离散与 lapse），方法论出处 Schütt et al. (2016) *Vision Research* 122:105-123（doi:10.1016/j.visres.2016.02.002）。适合拟合“通道分数→判定概率”曲线。
+- [metadPy on PyPI](https://pypi.org/project/metadpy/)：v0.1.2（2024-01-15），**GPL-3.0**，Nicolas Legrand。SDT 指标（**d'、criterion、rates、ROC AUC**）+ meta-d‘（置信度与成绩解耦程度，PyMC 层级贝叶斯）。中等活跃。meta-d’ 对本管线尤其有价值：度量“考官的置信是否携带其正确率之外的信息”。
+- PsychoPy 本身定位是实验平台，**不是**判定校准工具（现代 SDT 计算不内置于其中）——用 metadPy 或直接公式替代。
+- "pystu"：**未找到**该名包（疑为 pystan / psych 误记）；层级 SDT 可用 PyMC 自建（metadPy 已带 PyMC 层级 meta-d' 范式）。
+
+**2b. hit/false-alarm → d' 的标准实践**
+- Stanislaw, H. & Todorov, N. (1999) "Calculation of signal detection theory measures", *Behavior Research Methods, Instruments, & Computers* 31(1):137-149，已核验 DOI: [10.3758/bf03207704](https://api.crossref.org/works?query.bibliographic=calculation+of+signal+detection+theory+measures+Stanislaw+Todorov)。d'=Z(H)−Z(FA)、c=−0.5[Z(H)+Z(FA)]；极值率须用 **loglinear 修正**（0→1/2N，1→1−1/2N）——直接可移植为“NLI 通道误放行/误拦截率→d'”的换算规范。
+
+**2c. 中文场景案例**
+- **未找到**“中文 NLI + d' 校准”的直接公开案例（不硬凑）。最近的三个相邻锚点：
+  - 心理学报 2024《基于信号检测论的认知诊断评估》：[journal.psych.ac.cn，DOI 10.3724/SP.J.1041.2024.00339](https://journal.psych.ac.cn/xlxb/CN/10.3724/SP.J.1041.2024.00339)——把“作答=从噪音中提信号”用于中文测评场景，SDT 词汇在中文心理测量界的标准用法可参照。
+  - arXiv 2603.14893《Sensitivity, Bias, and the Temperature–Criterion Analogy》（[arxiv.org/html/2603.14893v1](https://arxiv.org/html/2603.14893v1)）：**对 LLM 做 d'/c 分解**，并论证“仅看校准指标（ECE）无法区分高敏感低标准 vs 低敏感高标准两个模型”——这是把 SDT 引入 NLI 校准的最直接方法论背书。
+  - [ACL 2021 "Issues with Entailment-based Zero-shot Text Classification"](https://aclanthology.org/2021.acl-short.99)——NLI 判定阈值选择的工程陷阱。
+
+### Q3 记忆科学 → 重验证调度
+
+**3a. FSRS 与 py-fsrs 现状**
+- [fsrs (py-fsrs) on PyPI](https://pypi.org/project/fsrs/)：**v6.3.2（2026-08-09），MIT license**，Python ≥3.10，**非常活跃**。API 已核验：`Scheduler`（21 个模型权重、`desired_retention` 默认 0.9）、`Card/Rating/ReviewLog`（全部 JSON 可序列化）、`get_card_retrievability()`（幂遗忘曲线）、`reschedule_card()`；**优化器内置**为 extra：`pip install "fsrs[optimizer]"`，用自己的 ReviewLog 拟合权重、可算最优 retention。Anki 官方用的是 Rust 版 fsrs-rs，数值可能略有差异。
+- 学术出处（Crossref 已核验，注意年份纠正）：
+  - Su, Ye, Nie, Cao, Chen (2023) "Optimizing Spaced Repetition Schedule by Capturing the Dynamics of Memory", **IEEE TKDE**，DOI: [10.1109/tkde.2023.3251721](https://api.crossref.org/works?query.bibliographic=optimizing+spaced+repetition+schedule+capturing+dynamics+of+memory)——DSR（Difficulty/Stability/Retrievability）三分量记忆模型，FSRS 的数学骨架。
+  - Ye, Su, Cao (2022) "A Stochastic Shortest Path Algorithm for Optimizing Spaced Repetition Scheduling", **KDD 2022**，DOI: [10.1145/3534678.3539081](https://api.crossref.org/works?query.bibliographic=stochastic%20shortest%20path%20optimizing%20spaced%20repetition%20scheduling)——把调度问题形式化为随机最短路径（最小化记忆成本）。**注意：此前流传的"KDD 2024"为误记。**
+- Anki 集成（[官方 deck-options 文档](https://docs.ankiweb.net/deck-options.html)已核验）：Anki 23.10+；desired retention 默认 90%、建议勿超 97%（工作量非线性暴涨）；参数须由优化器从**自有复习历史**拟合，建议**每月重优化**——这个节奏可直接抄给巡检调度。
+
+**3b. 间隔重复数学的形式化迁移**
+- 结论：**可以**。FSRS 的 DSR 模型给了完整可迁移的数学：可提取性 R(t)=幂遗忘曲线（由稳定性 S 与流逝时间 t 决定）；成功提取→S 增长（增长与难度 D、当前 R 相关）；失败→S 重置。把“记录存活 N 个区段”改写为“以区段为时间单位的 R(t,S) 衰减”，N 就由 S 和目标可提取率**反解**出来，而不是拍脑袋。
+- 简版备胎：Duolingo HLR（Settles & Meeder, ACL 2016），[duolingo/halflife-regression](https://github.com/duolingo/halflife-regression)（repo 已核验存在；license【待确认】，惯常标 Apache-2.0）：p=2^(−Δt/H)，半衰期由特征回归——比 FSRS 少状态，适合冷启动基线。
+- 新近佐证：Kannan & Ravi (2026) "Evaluation of Memory Decay Models in Spaced Repetition Data"（[OSF, DOI 10.35542/osf.io/5hqc9](https://api.crossref.org/works?query.bibliographic=optimizing%20spaced%20repetition%20schedule%20capturing%20dynamics%20of%20memory) 结果集中出现），表明幂型遗忘仍是当前最优谱系之一。
+
+**3c. 检索练习/测试效应 → 对样频次**
+- Rowland, C.A. (2014) "The Effect of Testing Versus Restudy on Retention", *Psychological Bulletin* 140(6):1432-1463，159 个实验、**g≈0.50**，且**保持间隔越长测试效应越大**（[EPFL 全文 PDF](https://courseware.epfl.ch/assets/courseware/v1/fdde2f0aa590bf3b1324077a6bf1540c/asset-v1%3AEPFL%2BDEMO%2B2020%2Btype%40asset%2Bblock/Rowland2014-meta-analysis.pdf)、[ResearchGate](https://www.researchgate.net/publication/264988491)）。启示：对样巡检应当是“重推导”而非“复读旧结论”，且巡检间隔拉长本身不伤判别力、反而巩固。
+- Cepeda, Vul, Rohrer, Wixted, Pashler (2008) "Spacing Effects in Learning: A Temporal Ridgeline of Optimal Retention", *Psychological Science* 19(11):1095-1102：**最优间隔≈保持间隔的 10–20%**（[PubMed 19076480](https://pubmed.ncbi.nlm.nih.gov/19076480)、[eScholarship 全文](https://escholarship.org/uc/item/0kp5q19x)）。这是“对样双轨抽样频次”的无参数速算规则：预期还要存续 100 个区段的记录，巡检间隔取 10–20 区段。
+
+### Q4 认知负荷与上下文预算
+
+**4a. 定量锚点**
+- Cowan, N. (2001) "The magical number 4 in short-term memory", *Behavioral and Brain Sciences* 24(1)，已核验 DOI: [10.1017/s0140525x01003922](https://api.crossref.org/works?query.bibliographic=magical+number+4+short-term+memory+mental+storage+capacity+Cowan)——工作记忆容量 4±1 个**组块**（chunk），组块化程度是唯一可操纵变量。
+- Sweller, van Merriënboer & Paas (2019) "Cognitive Architecture and Instructional Design: 20 Years Later", *Educational Psychology Review*，已核验 DOI: [10.1007/s10648-019-09465-5](https://api.crossref.org/works?query.bibliographic=cognitive+architecture+instructional+design+20+years+later+Sweller)——CLT 现行表述：内在（元素交互数）/外在（冗余、注意力分裂）/相关三类负荷；教学设计=压外在、管内在。
+- LLM 侧实证锚点：Liu et al. (2023) "Lost in the Middle"（[arXiv:2307.03172](https://arxiv.org/abs/2307.03172)，TACL 2024）——长上下文呈 U 形位置效应，关键信息在**首尾**时最好、中段可掉 20+ 点。这是 CLT“注意力分裂”在 LLM 上的直接对应物。
+
+**4b. Surprisal 工具化与中文可用性**
+- [minicons on PyPI](https://pypi.org/project/minicons/)：v0.3.39（2026-07-10），**MIT**，Kanishka Misra，**活跃**。对任意 HuggingFace causal LM 计算**逐 token surprisal/条件对数概率**——中文模型（Qwen、uer/gpt2-chinese 等）直接可用，**这是当前中文 surprisal 的最省力正道**。
+- lm-zoo（MIT，MIT CL 实验室）提供 surprisal API，但维护活跃度未能一手核验【待确认】，且模型偏英文。
+- 理论：Hale (2001)、Levy (2008) surprisal theory——难度=负对数概率。中文关键坑是**单位选择**（字 vs 词 vs 子词）：ACL Anthology 有专文 "On the Proper Treatment of Units in Surprisal Theory"（本次仅定位到 [aclanthology.org](https://aclanthology.org) 站内，精确 ID【待确认】）；中文阅读实证常用 [Beijing Sentence Corpus] 类眼动语料。**未发现现成“中文 surprisal 包”**——用 minicons+中文字级模型自建是务实解（约几十行代码）。
+- 番外核验：Li et al. (ACL 2019) "Is Word Segmentation Necessary for Deep Learning of Chinese Representations?"——支持**免分词、字级**计算中文惊奇度。
+
+### Q5 判断与决策心理学
+
+**5a. 校准/overconfidence 测量工具**
+- Brier 分解（Murphy 1973：可靠性−分辨率+不确定性）：
+  - [netcal](https://pypi.org/project/netcal)（PyPI 页本次抓取失败，但 license 经两篇论文背书核验为 **Apache-2.0**：[arXiv 2411.02988](https://arxiv.org/html/2411.02988v1)、arXiv 2211.00582；GitHub: EFS-OpenSource/calibration-framework）：ECE/MCE/ACE、可靠性图、直方分箱/isotonic/温度/Beta/Dirichlet 校准，2024–2025 仍被活跃引用。
+  - properscoring（Climate Corporation，**Apache-2.0**，含 `brier_decomposition`）：多年低维护【待确认是否弃更】。
+  - model-diagnostics（lorentzenchr，Murphy/Fissler 分解）：license 标称 MIT【待复核】；scikit-learn 自带 `brier_score_loss` 可做底线。
+- **LEPS**（Linear Error in Probability Score）：气象学评分，ML 校准文献中几乎不用——出处存疑【待确认】。本项目用 ECE+Brier 分解+可靠性图即可覆盖“overconfidence 测量”。
+
+**5b. 实证去偏见手法（考点随机化/答案对调之外的增量）**
+- **Consider-the-opposite**：
+  - Koriat, Lichtenstein & Fischhoff (1980)——列“反方理由”降低过度自信（列正方理由无效）；
+  - Mussweiler, Strack & Pfeiffer (2000) "Overcoming the inevitable anchoring effect…", *Personality and Social Psychology Bulletin* 26(9):1142-1150（期刊归属经核验纠正——不是 JEP:Applied；见引用它的 [Simulation & Gaming 论文](https://journals.sagepub.com/doi/10.1177/1046878116662955)）——对**锚定**有效。
+- **交互式训练类干预**：Morewedge et al. (2015) "Debiasing decisions: Improved decision making with a single training intervention", *Policy Insights from the Behavioral and Brain Sciences* 2(1):129-140（期刊归属经核验纠正——**不是 PNAS**）：单次约 90 分钟**互动**训练对锚定/确认偏等六种偏见产生大幅、数月持续的削减；纯“告知偏见存在”基本无效。可移植为“考点案例库考官热身训练”。
+- 综述与工程应用：Lilienfeld, Ammirati & Landfield (2009, *Psychological Science in the Public Interest*)（CTO 属最有希望的一档但证据异质）；Ferretti et al. (2023, *EJOR*)：[sciencedirect.com/science/article/pii/S0377221722003046](https://www.sciencedirect.com/science/article/pii/S0377221722003046)——决策分析中的去偏见技术编目，含 Herzog & Hertwig (2009) dialectical bootstrapping（自评一次→反方说服自己→再评→取均值，对量化判断有效）。
+
+### Q6 脑科学/神经学可迁移面
+
+**6a. 预测加工（predictive processing）**
+- 概念框架（层级化“自上而下预测+自下而上预测误差”，误差沿层级上送、昂贵资源投向误差大处）：Clark (2013) "Whatever next?" *BBS*；Rao & Ballard (1999) *Nature Neuroscience*。两条 DOI 未能在线一手核验【待确认】。
+- **可借鉴的是结构，不是测量**：cheap 先验筛选（NLI 双通道低分=预测误差小）→ 高误差样本升级到昂贵 deliberation（三考官）——这与“证据门预筛”同构；active inference 一支还支持“预算花在预测误差期望最大处”=不确定性采样。
+- **结论（明说）**：预测加工**没有任何可直接移植的可计算指标**进入本管线；只作设计隐喻与采样策略辩护词。
+
+**6b. 神经效率与“练习→自动化判别”**
+- 神经效率文献本体：Haier et al. (1988, *Intelligence*) 起源；Neubauer & Fink (2009) "Intelligence and neural efficiency", *Neuroscience & Biobehavioral Reviews*，已核验 DOI: [10.1016/j.neubiorev.2009.04.001](https://api.crossref.org/works?query.bibliographic=intelligence+neural+efficiency+Neubauer+Fink+review)（**注意期刊是 NBR 不是 TICS**）。核心：练习自动化后**脑激活反而下降**（Haier 1992 Tetris 练习→葡萄糖代谢下降）。
+- **神经指标（fMRI/PET/EEG）在文本管线中不可计算——明说，不硬凑。** 但该文献丛有一支纯行为的可计算代理，且与“考官模型自动化”精确对应：
+  - **练习幂律**：Newell & Rosenbloom (1981) "Mechanisms of Skill Acquisition and the Law of Practice"（[CMU 仓储 PDF](http://iiif.library.cmu.edu/file/Newell_box00032_fld02190_doc0001/Newell_box00032_fld02190_doc0001.pdf)）；Heathcote, Brown & Mewhort (2000) 指出个体数据常更合**指数律**（[Springer PDF](https://link.springer.com/content/pdf/10.3758/BF03212979.pdf)）；Donner & Hardy (2015) 个体系数会分段跳变（[PMC4577530](https://pmc.ncbi.nlm.nih.gov/articles/PMC4577530/)）。
+  - **DDM 参数化自动化**：Reinhartz et al. (2023) "Mechanisms of Training-Related Change in Processing Speed"（[PMC10437139](https://www PMC10437139 即 https://pmc.ncbi.nlm.nih.gov/articles/PMC10437139/）——练习早期 **drift rate/boundary separation/non-decision time 同时变化**；DDM 入门见 [Frontiers 2022 实用导论](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.1039172/full)。
+  - 可计算方案：给考官/考官模型记录“判定用时+结论”，随批次数拟合幂/指数学习曲线；**斜率坍缩+错误率不升=自动化达成**；用时继续下降但错误率抬头=过度自动化（提示重校准）。这同时喂给 Q1 的一致性监控。
+
+---
+
+## B. 对管线四大机制的接入建议
+
+**B1. NLI 双通道判定 + 人审队列 → SDT 校准**
+- **定理**：hit/false-alarm → d'/c 分解（Stanislaw & Todorov 1999，loglinear 修正）。人审队列的最终裁定=金标，按通道滚动统计 H/FA。
+- **工具**：metadPy（d'/criterion）；psignifit 拟合“通道分数→裁定概率”曲线（含 lapse）；netcal（温度/Beta/Dirichlet）把 NLI 分数校准为概率；ECE+可靠性图上 SPC 看板。
+- **怎么接**：(1) c 作为“队列容量旋钮”——把 c 调到人审预算能吸收的 FA 率，而不是拍固定阈值；(2) arXiv 2603.14893 的论点写进设计文档：**ECE 单独不构成通道对比依据，必须 d'/c 成对报告**；(3) 你们待上线的 CUSUM 直接监控 d‘ 序列（SDT 供统计量、CUSUM 供报警线）；(4) 每月随巡检重估一次（对齐 Anki 官方“月度重优化”节奏）。
+- **代价**：全部 GPL/MIT/Apache 工具链，内部使用无合规负担。
+
+**B2. 考官一致性（G5 三考官）**
+- **定理**：Krippendorff α（判定用 nominal、评分用 ordinal）+ Gwet AC1 双报（防高一致悖论，Gwet 2008）；GLAD/Dawid-Skene 的考官质量潜变量估计。
+- **工具**：krippendorff 包（v0.8.2，缺失数据友好——票数不满 3 也不丢样本）；crowd-kit（v1.4.2，Apache-2.0）的 GLAD/MACE。
+- **怎么接**：(1) 每晋升批次算 α，**α≥0.667 只是探索线；晋升类高代价决策取 α≥0.800**（Hayes & Krippendorff 2007 原文即按“错误代价”分档）；(2) 用 GLAD 估出每位考官的判别力与条目难度，把 G5 从“裸票数”升级为“**票数不变、票权=考官质量后验**”的加权晋升（MACE 可额外压制定向乱投者）；(3) 考官提示词增量：投票前强制“先列此条不达标理由”（consider-the-opposite），量化判断用 dialectical bootstrapping（两次自评取均）；(4) 每月用考点案例库做一次 Morewedge 式互动热身（纯告知无效，须互动）。
+- **许可注意**：krippendorff 是 GPL-3——内部管线无碍；若未来把判定服务对外分发，需隔离进程调用。
+
+**B3. G5 重验证调度（confirmed 存续 N 区段巡检）**
+- **定理**：DSR 三分量记忆模型（TKDE 2023）+ 随机最短路径（KDD 2022）；测试效应（Rowland 2014：重推导优于复读，g≈0.5）；Cepeda 2008 的 10–20% 经验律。
+- **工具**：py-fsrs（fsrs v6.3.2，MIT）+ 内置 optimizer 在自有巡检历史上拟合 21 权重；备胎 HLR（p=2^(−Δt/H)）。
+- **怎么接**：(1) confirmed 记录=Card，**区段号=时间轴**，一次巡检=一次 review（改判=Again，维持=Good）；(2) **N 的解析式**：给定目标可提取率 r（建议 0.90，勿超 0.97——Anki 文档明示工作量非线性暴涨），由幂遗忘曲线反解 N=f(S,r)（常数 DECAY/FACTOR 以 py-fsrs 源码为准【待确认】）；(3) 巡检通过→S 增长→N 自动拉长；改判→S 重置回巡检密集区，天然形成“新 confirm 冷、老 confirm 稀”的巡检预算曲线；(4) 冷启动无历史时用 Cepeda 律：N≈0.1–0.2×预期存续区段数；(5) **巡检动作=隐藏旧判定、从上下文包重推导结论再对比**（测试效应的核心迁移，复读旧结论在文献中等价于 restudy，巩固效果显著弱）；(6) 巡检产生的改判率序列接 CUSUM——它本身就是该记录族 d' 漂移的传感器。
+
+**B4. 上下文包预算（≤2K 字符）**
+- **定理**：Cowan 4±1（组块上限）；Sweller CLT（压外在负荷=删冗余/证据与主张相邻摆放；内在负荷=按元素交互数分包）；Lost in the Middle 的 U 形位置效应。
+- **工具**：minicons（MIT，v0.3.39，活跃）+ 中文 causal LM 逐 token NLL → 段级 surprisal（bits/字）。
+- **怎么接**：(1) **≤4 个语义块/包**，每块单一角色（主张/证据/上下文/指令），证据与主张物理相邻；(2) 关键证据置于**包首与包尾**，永不置于中段；(3) 候选段按 surprisal 降序入包、以 2K 字符为硬顶——等同“每字符信息量最大化”；(4) 包级平均 surprisal 登记为该记录的“难度”协变量：喂给 GLAD 的 difficulty 先验（B2）与 py-fsrs 的初始稳定性（B3），让**难记录自动获得更大预算与更密巡检**——四机制在此闭环。
+
+---
+
+## C. 排除与【待确认】项
+
+**排除（明说不硬凑）**
+1. **神经效率的神经指标**（BOLD/葡萄糖/EEG 相干）——文本管线无生理信号，不可计算；只取行为代理（学习曲线斜率、DDM drift rate、d' 时序稳定）。
+2. **预测加工的任何量化指标**——无可移植测量工具；仅保留“预测误差升级制”作为预筛架构的设计隐喻。
+3. **PsychoPy 作为 SDT 校准工具**——定位是实验平台，不承担判定校准职能。
+4. **HMMCrowd 直接落地**——无维护实现（crowd-kit 不含 HMM 类）；其“群体漂移”思想由每月重估（B1/B2）替代。
+
+**【待确认】**
+1. "pystu" 包：未找到，疑为 pystan/psych 误记——请提供出处。
+2. LEPS 的出处与用意：气象学 Linear Error in Probability Score，ML 校准文献罕见。
+3. `irrCAC` 的 license 与活跃度（PyPI 页面抓取失败）。
+4. `model-diagnostics` 的 license（标称 MIT 未经 PyPI 一手复核）；properscoring 是否已弃更。
+5. lm-zoo 当前维护活跃度；"On the Proper Treatment of Units in Surprisal Theory" 的精确 anthology ID。
+6. FSRS 幂曲线常数（DECAY=−0.5、FACTOR=19/81 等）与 21 权重语义——**实施前以 py-fsrs v6.3.2 源码为准**。
+7. `duolingo/halflife-regression` 的 license（repo 存在已核验，license 未复核）。
+8. Clark 2013 / Rao & Ballard 1999 的 DOI（本报告仅引用其概念地位）。
+9. 中文 NLI 直接 d' 校准的公开案例：确认不存在，需自建（B1 方案即自建路径）。
+10. 环境备注：本次 GitHub 直连失败（证书链问题）——若后续要克隆上述 repo，先修该代理/证书。
+
+**许可汇总**：MIT（fsrs、minicons、pingouin、model-diagnostics?）｜Apache-2.0（crowd-kit、netcal、properscoring）｜GPL-3 族（krippendorff、psignifit、metadPy）——内部管线均可直接用；对外分发时 GPL 组件需隔离。

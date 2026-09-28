@@ -1,0 +1,112 @@
+所有一手源已核实完毕，汇总报告。
+
+---
+
+# 图结构/结构化 RAG 赛道调研报告
+
+数据采集日 2026-09-25；星标均为 GitHub API 实查值；机制描述均来自 arXiv 摘要页或官方 README。
+
+## 一、机制族谱（5 族）
+
+| 机制家族 | 共同思想（一句话） | 成员 |
+|---|---|---|
+| **摘要层级族** | 不建实体图，靠“聚类→摘要→再聚类”造多级摘要树，让检索能跨抽象层取上下文 | RAPTOR（GraphRAG 的社区递归摘要属同一思想，但层级长在实体图上） |
+| **图上扩散/结构搜索族** | 把知识组织成图，检索时在图上做算法化遍历（扩散、取子图、beam search），用图结构替代多轮 LLM 迭代 | HippoRAG/HippoRAG 2（PPR 扩散）、G-Retriever（Steiner 树取子图）、PropRAG（命题路径 beam search） |
+| **低成本图索引族** | 承认 GraphRAG 索引太贵，用“部分建图+廉价替身结构”逼近其检索质量 | KET-RAG（骨架图+文本-关键词二部图） |
+| **检索决策/自反思族（Agentic）** | 让模型自己决定何时检索、评估检索质量、对坏结果纠错，而非无条件检索 | Self-RAG、CRAG、Adaptive-RAG |
+| **上下文增强族** | 不改索引结构，在索引前给每个 chunk 注入生成的情境说明，修复“分块丢上下文” | Anthropic Contextual Retrieval |
+
+领域协同（DALK、KAG）与框架级实现见下表，归为“图构建协同/平台化”两类。
+
+## 二、逐系统卡片
+
+**1. RAPTOR**（arXiv 2401.18059，斯坦福，Parth Sarthi 等）
+- 机制：对 chunk 递归做 embedding→聚类→摘要，自底向上建摘要树；检索时在树的细粒度与摘要节点间取上下文。
+- 与 GraphRAG 差别：层级靠 embedding 聚类而非实体图+社区检测；索引不需要实体抽取，但失去实体级链接；两者同属“为全局问题造分层摘要”路线。
+- 证据：摘要称 QuALITY 基准绝对准确率 +20%（配合 GPT-4）。官方仓库 parthsarthi03/raptor 1,760 星，**最后 push 2024-09-03，已两年未动**。
+
+**2. HippoRAG / HippoRAG 2**（arXiv 2405.14831 NeurIPS'24 / 2502.14802 ICML'25，OSU NLP）
+- 一句话：LLM 开放抽取建 KG，用 Personalized PageRank 在图上扩散实现单步多跳检索；2 代加深段落整合、修复 KG 法在基础事实任务上的退化，联想记忆任务超 SOTA 嵌入模型约 7%。
+- 与 GraphRAG 差别：GraphRAG 靠社区摘要做全局问答，HippoRAG 靠图扩散做多跳定向检索，索引也更省（无社区摘要步骤）。
+- 证据：摘要称多跳问答超当时 SOTA 最高 +20%，比 IRCoT 迭代检索便宜 10–30 倍、快 6–13 倍。仓库 OSU-NLP-Group/HippoRAG 4,022 星，2026-09-03 仍在 push（活跃）。
+
+**3. KET-RAG**（arXiv 2502.09304，Yiqian Huang/Xiaokui Xiao 等，NUS；搜索称 SIGKDD 2025 接收，arXiv 页未显示【待确认】）
+- 机制：LLM 只处理 PageRank 选出的关键 chunk 建“知识图谱骨架”，其余用“文本-关键词二部图”模拟 GraphRAG 局部搜索，双通道检索。
+- 实测数字（摘要）：对比微软 GraphRAG，检索质量相当或更优，索引成本降“超过一个数量级”；另一配置生成质量最高 +32.4%、索引成本约 -20%；对比 13 个方案、3 个数据集。
+- 仓库 waetr/KET-RAG：204 星，最后 push 2025-06-02。
+
+**4. PropRAG**（arXiv 2504.18070，EMNLP 2025 Main；仓库 ReLink-Inc/PropRAG，35 星）
+- 机制：用上下文丰富的“命题”取代三元组（避免 context collapse），在线检索用免 LLM 的 beam search 在命题路径上显式找多跳推理链。
+- 证据：摘要称 2Wiki/HotpotQA/MuSiQue 零样本 Recall@5 与 F1 SOTA，**未给具体数值**（第三方转述的 Recall@5 数字未经一手核实，不采信）。代码改自 HippoRAG 仓库。
+
+**5. DALK**（arXiv **2405.04819**，EMNLP 2024 Findings——注意：搜索结果普遍误标为 2409.13731，该号实为蚂蚁 KAG）
+- 机制：LLM 从阿尔茨海默病文献构建演化中的领域 KG，经粗到细采样与自感知知识检索反哺 LLM，双向增强；在自建 ADQA 基准验证，摘要无具体数字。
+- 与 GraphRAG 差别：垂直领域定制（自适应回调机制适配生物医学 KG），非通用管线。仓库 David-Li0406/DALK 66 星，2025-01 后停滞。
+
+**6. G-Retriever**（arXiv 2402.07630，NeurIPS 2024）
+- 机制：面向“文本图问答”（场景图、KG 等），GNN 嵌入 + 基于 Prize-Collecting Steiner Tree 的子图检索，把子图投影进 LLM 上下文，可微调。
+- 与 GraphRAG 差别：输入本来就是图（GraphQA），不是从文档建图，属另一问题设定。仓库 XiaoxinHe/G-Retriever 552 星。
+
+**7. 微软 GraphRAG 生态分叉**
+- microsoft/graphrag：36,094 星，2026-09-24 仍在 push（活跃，38 个 open issue）。
+- gusye1234/nano-graphrag（注：HKUDS/nano-graphrag 已 404）：3,989 星，自我定位“约 1100 行代码、易读易改的 GraphRAG 精简复刻，保留核心功能”。最后 push 2026-01-27，约 8 个月未更新，**趋于停滞**（未 archived）。
+- circlemind-ai/fast-graphrag：3,952 星。README 机制：可解释图+PageRank 图探索+增量更新，宣称 Wizard of Oz 上 $0.08 vs 官方 $0.48（6 倍省）。最后 push 2025-11-01，约 11 个月未更新，**趋于停滞**。
+
+**8. 框架级实现**
+- LlamaIndex PropertyGraphIndex（run-llama/llama_index 52,307 星）：官方文档定位为“图构建+图查询编排层”——多个 KG 抽取器（默认 SimpleLLMPathExtractor 三元组+ImplicitPathExtractor），可插拔图存储（Simple/Neo4j/Nebula/TiDB/FalkorDB），检索器组合（同义词+向量沿路径扩展、Text-to-Cypher 等）。是通用编排框架，不是单一算法。
+- neo4j/neo4j-graphrag-python（1,294 星，2026-09-24 活跃）：官方 Python SDK "Neo4j GraphRAG for Python"。
+- neo4j-labs/llm-graph-builder（5,266 星，2026-09-16 活跃）：非结构化文档→Neo4j 图构建工具。
+- FalkorDB/GraphRAG-SDK（1,001 星，2026-09-22 活跃）：基于 FalkorDB 的生产化 SDK，主打本体约束抽取、`MENTIONED_IN` 溯源边、证据不足时弃答（abstention）。
+- cognee（30,962 星，活跃）：已另行调研，定位“给 agent 持久记忆的开源 AI memory 平台”。
+
+**9. Agentic RAG 一族**
+- Self-RAG（arXiv 2310.11511）：训练单个 LM 生成反思令牌做自我批评，按需决定是否检索；7B/13B 超越 ChatGPT 与检索增强 Llama2-chat。
+- CRAG（arXiv 2401.15884）：轻量检索评估器打分→按置信度触发改写重检或转网络搜索，配合 decompose-then-recompose 精炼，即插即用。
+- Adaptive-RAG（arXiv 2403.14403，NAACL 2024）：小分类器按查询复杂度在“不检/单步/迭代多步”间路由，标签自动收集免人工标注。
+- 三者共同点：均不改索引结构，改“检索时机与纠错决策”，与图结构路线正交。
+
+**10. 上下文增强：Anthropic Contextual Retrieval**（官方博客）
+- 做法：分块后、嵌入/BM25 索引前，用 Claude 3 Haiku 读“整文档+该 chunk”生成 50–100 token 的情境说明前置到 chunk；prompt caching 使一次性成本约 $1.02/百万文档 token。
+- 官方数字（top-20，基线失败率 5.7%）：Contextual Embeddings 降 35%；+Contextual BM25 降 49%；再+reranking 降 67%（至 1.9%）。
+
+**11. 检索中额外发现的重要同类：KAG**（蚂蚁集团，arXiv 2409.13731；OpenSPG/KAG 9,074 星，2026-01 push）
+- 机制：LLM 友好知识表示、KG 与原始 chunk 互索引、逻辑形式引导的混合推理引擎；多跳 QA 相对 RAG 在 2wiki F1 +19.6%、HotpotQA +33.5%。工业级、逻辑推理导向，与 GraphRAG 的统计摘要路线差异明显，值得纳入视野。
+
+## 三、谁真有增量（证据判断）
+
+- **机制真不同**：HippoRAG 2（PPR 扩散+段落整合，有跨代对比数字）、KET-RAG（骨架+二部图降本路线，有 13 方案对比与一个数量级索引成本差）、PropRAG（命题路径+免 LLM 在线 beam search，SOTA 声明但摘要无数值）、Self-RAG/CRAG/Adaptive-RAG（决策层创新，与图路线正交）、Contextual Retrieval（索引预处理层创新，数字来自厂商自报）、KAG（逻辑形式推理，工业验证）。
+- **工程复刻/平台化，非新机制**：nano-graphrag（自我定位就是精简可读复刻）、fast-graphrag（机制=GraphRAG 管线+PageRank 探索+增量更新，增量在工程与成本）、FalkorDB SDK、neo4j 两项目、LlamaIndex PGI（编排层）。fast-graphrag 与 nano-graphrag 均约一年内停更。
+- **换皮嫌疑**：DALK（思路=领域版“建图+图增强”，创新点在生物医学定制，社区采用度低，66 星）；G-Retriever 机制独（PCST）但问题设定不同，非 GraphRAG 直接竞品。
+- **注意**：RAPTOR 官方代码两年未维护，但思想已广泛吸收（多级摘要路线的代表作）。
+
+## 四、来源清单
+
+- RAPTOR 论文 — https://arxiv.org/abs/2401.18059
+- RAPTOR 仓库 — https://github.com/parthsarthi03/raptor
+- HippoRAG 论文 — https://arxiv.org/abs/2405.14831
+- HippoRAG 2 论文 — https://arxiv.org/abs/2502.14802
+- HippoRAG 仓库 — https://github.com/OSU-NLP-Group/HippoRAG
+- KET-RAG 论文 — https://arxiv.org/abs/2502.09304
+- KET-RAG 仓库 — https://github.com/waetr/KET-RAG
+- PropRAG 论文 — https://arxiv.org/abs/2504.18070
+- PropRAG 仓库 — https://github.com/ReLink-Inc/PropRAG
+- DALK 论文 — https://arxiv.org/abs/2405.04819
+- DALK 仓库 — https://github.com/David-Li0406/DALK
+- G-Retriever 论文 — https://arxiv.org/abs/2402.07630
+- G-Retriever 仓库 — https://github.com/XiaoxinHe/G-Retriever
+- 微软 GraphRAG — https://github.com/microsoft/graphrag
+- nano-graphrag — https://github.com/gusye1234/nano-graphrag
+- fast-graphrag — https://github.com/circlemind-ai/fast-graphrag
+- LlamaIndex PropertyGraphIndex 文档 — https://developers.llamaindex.ai/python/framework/module_guides/indexing/lpg_index_guide/
+- neo4j-graphrag-python — https://github.com/neo4j/neo4j-graphrag-python
+- llm-graph-builder — https://github.com/neo4j-labs/llm-graph-builder
+- FalkorDB GraphRAG-SDK — https://github.com/FalkorDB/GraphRAG-SDK
+- Self-RAG — https://arxiv.org/abs/2310.11511
+- CRAG — https://arxiv.org/abs/2401.15884
+- Adaptive-RAG — https://arxiv.org/abs/2403.14403
+- Anthropic Contextual Retrieval — https://www.anthropic.com/news/contextual-retrieval
+- KAG 论文 — https://arxiv.org/abs/2409.13731
+- KAG 仓库 — https://github.com/OpenSPG/KAG
+- cognee — https://github.com/topoteretes/cognee
+
+**核实中的坑（供后续引用者注意）**：多个二手源把 DALK 的 arXiv 号误标为 2409.13731（实为 KAG）、把 PropRAG 误标为 2505.16409（实为 FREESON，一篇免检索器 MCTS 论文）；PropRAG 的具体 Recall@5 数字只在 ResearchGate 等二手页出现，论文摘要未列。

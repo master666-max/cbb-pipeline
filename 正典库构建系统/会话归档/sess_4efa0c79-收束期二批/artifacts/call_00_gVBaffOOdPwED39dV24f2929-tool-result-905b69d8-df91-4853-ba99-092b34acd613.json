@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-23T12:07:28.780Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"patch_rerank_gguf.py — 给 LM Studio 转的 Qwen3-Reranker GGUF 补 rerank 元数据（原件不动，输出副本）\n\n背景：llama.cpp 的 rerank 路径只认 GGUF 里**具名**的 chat template（llama_model_chat_template(model, \"rerank\")），\n     且需要 classifier_output_labels。LM Studio 的转换未含这两项 → 打分失效（实测：排序为噪声）。\n模板与标签照抄 llama.cpp 官方转换器 conversion/qwen.py 的 Qwen3Model.set_gguf_parameters() 原文。\n用法：py -X utf8 patch_rerank_gguf.py\n\"\"\"\nimport json\nimport subprocess\nimport sys\n\nimport gguf\nfrom gguf.scripts.gguf_new_metadata import MetadataDetails, copy_with_new_metadata, get_field_data\n\nSRC = r\"D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m.gguf\"\nDST = r\"D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m-rerank.gguf\"\n\n# 照抄 conversion/qwen.py（llama.cpp 官方转换器）的 rerank 模板原文，含 <think> 段\nTEMPLATE = (\n    \"<|im_start|>system\\n\"\n    \"Judge whether the Document meets the requirements based on the Query and the Instruct provided. \"\n    \"Note that the answer can only be \\\"yes\\\" or \\\"no\\\".<|im_end|>\\n\"\n    \"<|im_start|>user\\n\"\n    \"<Instruct>: Given a web search query, retrieve relevant passages that answer the query\\n\"\n    \"<Query>: {query}\\n\"\n    \"<Document>: {document}<|im_end|>\\n\"\n    \"<|im_start|>assistant\\n<think>\\n\\n</think>\\n\\n\"\n)\n\n\ndef main() -> int:\n    reader = gguf.GGUFReader(SRC, \"r\")\n    arch = get_field_data(reader, gguf.Keys.General.ARCHITECTURE)\n    writer = gguf.GGUFWriter(DST, arch)\n    new_metadata = {\n        gguf.Keys.Tokenizer.CHAT_TEMPLATE: MetadataDetails(\n            gguf.GGUFValueType.STRING,\n            json.dumps([{\"name\": \"rerank\", \"template\": TEMPLATE}], ensure_ascii=False),\n            \"rerank named template (patched)\",\n        ),\n        \"classifier_output_labels\": MetadataDetails(\n            gguf.GGUFValueType.ARRAY, [\"yes\", \"no\"], \"yes/no classifier labels (patched)\",\n            sub_type=gguf.GGUFValueType.STRING,\n        ),\n    }\n    copy_with_new_metadata(reader, writer, new_metadata, [])\n    print(\"完成 →\", DST)\n\n    # 自检：重读输出，确认两项元数据在位（T-3 正对照纪律）\n    chk = gguf.GGUFReader(DST)\n    names = [f.name for f in chk.fields.values()]\n    print(\"rerank 具名模板在场:\", any(\"chat_template.rerank\" in n for n in names))\n    print(\"分类标签在场:\", \"classifier_output_labels\" in names)\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "afterContentLength": 2290,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\tools\\patch_rerank_gguf.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_gVBaffOOdPwED39dV24f2929",
+  "toolName": "Write",
+  "version": 1
+}

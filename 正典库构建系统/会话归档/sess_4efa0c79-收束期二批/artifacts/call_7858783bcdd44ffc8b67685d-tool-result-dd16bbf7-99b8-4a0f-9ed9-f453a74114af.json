@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T15:08:43.133Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_gate.py — U-A03 候选态输入档：畸形输入出码不崩（D-1/D-25）。运行：py -X utf8 test_v3_gate.py\"\"\"\nimport sys\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom cbb2 import gate  # noqa: E402\n\n\ndef test_canonical_string_gets_code_not_crash():\n    \"\"\"D-1：canonical 写成字符串 ⇒ G1-SCHEMA 码，不抛异常。\"\"\"\n    out = gate.ensure_input({\"record_type\": \"entity\", \"canonical\": \"人物\", \"evidence\": []})\n    assert \"G1-SCHEMA\" in out[\"codes\"]\n    assert isinstance(out[\"record\"][\"canonical\"], dict) and \"_raw\" in out[\"record\"][\"canonical\"]\n\n\ndef test_null_record_id_gets_deterministic_placeholder():\n    \"\"\"D-25：record_id=null ⇒ 哈希占位（同输入同占位）。\"\"\"\n    a = gate.ensure_input({\"record_type\": \"entity\", \"canonical\": {\"name\": \"缇达\"}, \"evidence\": []})\n    b = gate.ensure_input({\"record_type\": \"entity\", \"canonical\": {\"name\": \"缇达\"}, \"evidence\": []})\n    assert a[\"record\"][\"record_id\"].startswith(\"rec-auto-\")\n    assert a[\"record\"][\"record_id\"] == b[\"record\"][\"record_id\"]\n    assert \"ID-PLACEHOLDER\" in a[\"codes\"]\n\n\ndef test_clean_input_zero_codes():\n    out = gate.ensure_input({\"record_id\": \"x1\", \"record_type\": \"entity\",\n                             \"canonical\": {\"name\": \"卢卡\"}, \"evidence\": [{\"vol\": 1}]})\n    assert out[\"codes\"] == [] and out[\"record\"][\"record_id\"] == \"x1\"\n\n\ndef test_make_record_survives_malformed_canonical():\n    rec = gate.make_record(\"entity\", \"character\", \"人物\", [])\n    assert isinstance(rec[\"canonical\"], dict)\n\n\ndef test_all_modules_import_clean():\n    \"\"\"D-18 族守卫：全模块导入零 NameError。\"\"\"\n    import importlib\n    for mod in (\"config\", \"contract\", \"corpus\", \"defenses\", \"gate\", \"ledger\",\n                \"quarantine\", \"search\", \"store\"):\n        importlib.import_module(f\"cbb2.{mod}\")\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        fn()\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "afterContentLength": 1961,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_gate.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_7858783bcdd44ffc8b67685d",
+  "toolName": "Write",
+  "version": 1
+}

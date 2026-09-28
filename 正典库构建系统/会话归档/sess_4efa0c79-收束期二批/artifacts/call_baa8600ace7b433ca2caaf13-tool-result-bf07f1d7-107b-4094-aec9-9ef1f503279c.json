@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-23T15:08:06.760Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_抽样排序.py — 岗位②测试（桩传输；正负对照成对）\"\"\"\nimport importlib\nimport json\nimport sys\nfrom pathlib import Path\n\nsys.path.insert(0, str(Path(__file__).resolve().parent))\n排序 = importlib.import_module(\"抽样排序\")\n\n\ndef _items():\n    return [\n        {\"record_id\": \"r1\", \"claim\": \"甲在第四章死亡\", \"quote\": \"甲倒在血泊中再也没有起来。\"},   # 支撑高\n        {\"record_id\": \"r2\", \"claim\": \"甲乙结为兄弟\", \"quote\": \"今天天气不错，适合出门散步。\"},  # 支撑≈0（最可疑）\n        {\"record_id\": \"r3\", \"claim\": \"甲持有手环\", \"quote\": \"甲接过手环看了看。\"},              # 支撑中\n    ]\n\n\ndef _transport_by_doc(doc_keyword_score):\n    \"\"\"按 document 内容关键词回分数的桩（确定性）。\"\"\"\n    def t(endpoint, payload, timeout):\n        d = json.loads(payload.decode(\"utf-8\"))\n        doc = d[\"documents\"][0]\n        s = 0.9\n        for k, v in doc_keyword_score.items():\n            if k in doc:\n                s = v\n        return json.dumps({\"results\": [{\"index\": 0, \"relevance_score\": s}]}).encode(\"utf-8\")\n    return t\n\n\ndef test_suspicious_first_when_rerank_available():\n    t = _transport_by_doc({\"血泊\": 0.95, \"手环\": 0.6, \"天气\": 0.01})\n    rep = 排序.rank_for_review(_items(), transport=t)\n    assert rep[\"backend\"] == \"rerank\"\n    first = rep[\"order\"][0]\n    assert _items()[first][\"record_id\"] == \"r2\"  # 支撑≈0 的最可疑排最前（正对照）\n    assert len(rep[\"order\"]) == 3 and set(rep[\"order\"]) == {0, 1, 2}  # 集合不变\n    assert rep[\"supports\"][\"r2\"] == 0.01\n\n\ndef test_mechanical_fallback_keeps_original_order():\n    \"\"\"判据：缺席即降级——保持原序，backend 如实标注（负对照）。\"\"\"\n    def t(endpoint, payload, timeout):\n        raise OSError(\"端点不在\")\n    rep = 排序.rank_for_review(_items(), transport=t)\n    assert rep[\"backend\"] == \"mechanical\" and rep[\"order\"] == [0, 1, 2]\n\n\ndef test_missing_text_forces_mechanical():\n    items = _items() + [{\"record_id\": \"r4\", \"claim\": \"\", \"quote\": \"\"}]\n    t = _transport_by_doc({\"血泊\": 0.95})\n    rep = 排序.rank_for_review(items, transport=t)\n    assert rep[\"backend\"] == \"mechanical\" and rep[\"order\"] == [0, 1, 2, 3]\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        fn()\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "afterContentLength": 2136,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\test_抽样排序.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_baa8600ace7b433ca2caaf13",
+  "toolName": "Write",
+  "version": 1
+}

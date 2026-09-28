@@ -1,0 +1,45 @@
+{
+  "createdAt": "2026-09-27T16:41:54.693Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"qwen_prompt_ab.py — 提示词 A/B：旧 JUDGE_PROMPT vs 明确判定规则版，真实 hold 件翻转率。\n判读：明确规则版把\"真清晰\"件从 unsure 拉回 support ⇒ 现提示词有缺陷，采纳；\n      仍 unsure ⇒ 这些 hold 本就模糊，强制投票只会生产假自信，维持升级段设计。\n\"\"\"\nimport json\nimport os\nimport sys\nimport urllib.request\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\n\n\ndef _env():\n    return (os.environ[\"EXAMINER_QWEN_BASE\"],\n            os.environ.get(\"EXAMINER_QWEN_API_KEY\") or os.environ.get(\"DASHSCOPE_API_KEY\", \"\"),\n            os.environ[\"EXAMINER_QWEN_MODEL\"])\n\nOLD = (\"你是正典库独立考官。给定【证据摘录】与【记录断言】，判定证据是否支持断言。\\n\"\n       \"只输出 JSON：{\\\"verdict\\\":\\\"support|against|unsure\\\"}。支持=support；\"\n       \"证据与断言不可同真=against；证据不足=unsure。禁止其他文字。\")\nNEW = (\"你是正典库独立考官。给定【证据摘录】与【记录断言】，按下列规则判定：\\n\"\n       \"1) 证据摘录的原文**明确陈述**了断言内容（人名/地名/事件/关系可直接从原文指出）→ support\\n\"\n       \"2) 证据原文与断言**明确矛盾**（不可同真）→ against\\n\"\n       \"3) 证据与断言相关但原文**没有明说**（需要推测、反推、脑补才能得出）→ unsure\\n\"\n       \"只输出 JSON：{\\\"verdict\\\":\\\"support|against|unsure\\\"}。禁止其他文字。\")\n\n\ndef judge(prompt, conclusion, evidence, order):\n    ev, cc = (evidence, conclusion) if order == \"ev\" else (conclusion, evidence)\n    body = json.dumps({\"model\": MODEL, \"temperature\": 0, \"stream\": False,\n                       \"messages\": [{\"role\": \"user\",\n                                     \"content\": f\"{prompt}\\n【证据摘录】{ev}\\n【记录断言】{cc}\"\n                                     if order == \"ev\" else\n                                     f\"{prompt}\\n【记录断言】{cc}\\n【证据摘录】{ev}\"}]}).encode()\n    req = urllib.request.Request(BASE + \"/chat/completions\", data=body,\n                                 headers={\"Content-Type\": \"application/json\",\n                                          \"Authorization\": \"Bearer \" + KEY})\n    import re\n    with urllib.request.urlopen(req, timeout=60) as r:\n        raw = json.loads(r.read().decode(\"utf-8\"))[\"choices\"][0][\"message\"][\"content\"]\n    m = re.search(r\"\\{[^}]*\\}\", raw, re.DOTALL)\n    return json.loads(m.group(0)).get(\"verdict\") if m else \"parse_err\"\n\n\ndef main():\n    rows = [json.loads(l) for l in\n            (ROOT / \"迷深实战-本体库\" / \"G16b-票面台账.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n            if l.strip()]\n    last = {}\n    for r in rows:\n        last[r[\"record_id\"]] = r\n    holds = [r for r in last.values() if r[\"verdict\"] == \"hold\"][:10]\n    bodies = {}\n    for f in ROOT.glob(\"迷深实战-本体库/libraries/*/*/*.json\"):\n        try:\n            d = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        rid = d.get(\"record_id\")\n        if rid in {h[\"record_id\"] for h in holds} and rid not in bodies:\n            bodies[rid] = d\n    flips = {\"A_unsure->B_support\": 0, \"A_unsure->B_against\": 0, \"stay_unsure\": 0, \"other\": 0}\n    for h in holds:\n        d = bodies.get(h[\"record_id\"])\n        if not d:\n            continue\n        cc = json.dumps(d.get(\"canonical\") or {}, ensure_ascii=False, sort_keys=True)\n        ev = \"；\".join(e.get(\"quote\", \"\") for e in (d.get(\"evidence\") or []))\n        try:\n            b = judge(NEW, cc, ev, \"ev\")\n            b2 = judge(NEW, cc, ev, \"concl\")\n            vb = b if b == b2 else \"unsure\"\n        except Exception as e:  # noqa: BLE001 — 探针面\n            vb = f\"err:{str(e)[:40]}\"\n        key = (f\"A_unsure->B_{vb}\" if vb in (\"support\", \"against\")\n               else \"stay_unsure\" if vb == \"unsure\" else f\"other:{vb}\")\n        flips[key] = flips.get(key, 0) + 1\n        print(f\"{h['record_id']}: A=unsure → B={vb}\")\n    print(\"\\n汇总:\", flips)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\qwen_prompt_ab.py",
+      "structuredPatch": [
+        {
+          "oldStart": 27,
+          "oldLines": 16,
+          "newStart": 27,
+          "newLines": 17,
+          "lines": [
+            "        \"只输出 JSON：{\\\"verdict\\\":\\\"support|against|unsure\\\"}。禁止其他文字。\")",
+            " ",
+            " ",
+            "-def judge(prompt, conclusion, evidence, order):",
+            "+def judge(prompt, conclusion, evidence, order, channel=None):",
+            "+    base, key, model = channel or _env()",
+            "     ev, cc = (evidence, conclusion) if order == \"ev\" else (conclusion, evidence)",
+            "-    body = json.dumps({\"model\": MODEL, \"temperature\": 0, \"stream\": False,",
+            "+    body = json.dumps({\"model\": model, \"temperature\": 0, \"stream\": False,",
+            "                        \"messages\": [{\"role\": \"user\",",
+            "                                      \"content\": f\"{prompt}\\n【证据摘录】{ev}\\n【记录断言】{cc}\"",
+            "                                      if order == \"ev\" else",
+            "                                      f\"{prompt}\\n【记录断言】{cc}\\n【证据摘录】{ev}\"}]}).encode()",
+            "-    req = urllib.request.Request(BASE + \"/chat/completions\", data=body,",
+            "+    req = urllib.request.Request(base + \"/chat/completions\", data=body,",
+            "                                  headers={\"Content-Type\": \"application/json\",",
+            "-                                          \"Authorization\": \"Bearer \" + KEY})",
+            "+                                          \"Authorization\": \"Bearer \" + key})",
+            "     import re",
+            "     with urllib.request.urlopen(req, timeout=60) as r:",
+            "         raw = json.loads(r.read().decode(\"utf-8\"))[\"choices\"][0][\"message\"][\"content\"]"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_64e1305a2af34c2a977a6515",
+  "toolName": "Edit",
+  "version": 1
+}

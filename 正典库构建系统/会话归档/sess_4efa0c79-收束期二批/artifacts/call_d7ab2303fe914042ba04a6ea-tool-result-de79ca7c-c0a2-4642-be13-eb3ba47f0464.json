@@ -1,0 +1,52 @@
+{
+  "createdAt": "2026-09-26T17:23:10.619Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.context — 承接摘要 + 三层上下文包（Phase C·U-C02；流程设计 P2·⑤.1）。\n\n三层（Context by Distinct Information 实证：混合省一半 token 保效果）：\n  实体卡（内容寻址+新颖性门控）⊕ 滚动摘要（递归状态）⊕ 近窗（上一章尾）。\n时间性激活（lorebook 移植）：sticky 激活后粘滞 N 章 / cooldown 冷却——防重复挤占预算。\n指代显式化：包内一律用规范名，别名仅注记。先验非事实源（v1.6 铁律不动）。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nfrom pathlib import Path\n\nCARRY_MAX = 200\nSTATE_FILE = \"上下文激活状态.json\"\n\n\ndef _records(store_root: Path):\n    for f in sorted(Path(store_root).glob(\"libraries/*/*/*.json\")):\n        try:\n            yield json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n\n\ndef _max_chapter(rec: dict) -> int:\n    chs = [e.get(\"chapter\") for e in (rec.get(\"evidence\") or []) if isinstance(e.get(\"chapter\"), int)]\n    return max(chs) if chs else 0\n\n\ndef carry_summary(store_root: Path, prev_chapter: int) -> str:\n    \"\"\"上一章在场实体+最新事件尾部——机械生成 ≤200 字（边界信息损失对策）。\"\"\"\n    ents, events = [], []\n    for rec in _records(store_root):\n        if _max_chapter(rec) != prev_chapter:\n            continue\n        c = rec.get(\"canonical\") or {}\n        if rec.get(\"record_type\") == \"entity\" and c.get(\"name\"):\n            ents.append(c[\"name\"])\n        elif rec.get(\"record_type\") == \"event\":\n            tail = (rec.get(\"observations\") or [{}])[-1].get(\"text\", \"\")\n            if tail:\n                events.append(tail)\n    names = \"、\".join(dict.fromkeys(ents))[:80]\n    ev = (events[-1] if events else \"\")[:80]\n    s = f\"承接第{prev_chapter}章：在场={names or '（无新记录）'}；{('最近事件=' + ev) if ev else ''}\".strip()\n    return s[:CARRY_MAX]\n\n\ndef _load_state(store_root: Path) -> dict:\n    p = Path(store_root) / STATE_FILE\n    if p.exists():\n        return json.loads(p.read_text(encoding=\"utf-8\"))\n    return {}\n\n\ndef save_state(store_root: Path, state: dict):\n    (Path(store_root) / STATE_FILE).write_text(\n        json.dumps(state, ensure_ascii=False, sort_keys=True, indent=1), encoding=\"utf-8\")\n\n\ndef save_state(store_root: Path, state: dict):\n    p = Path(store_root) / STATE_FILE\n    p.parent.mkdir(parents=True, exist_ok=True)  # B9：store 根不存在时自建\n    p.write_text(json.dumps(state, ensure_ascii=False, sort_keys=True, indent=1),\n                 encoding=\"utf-8\")\n\n\ndef activation_filter(store_root: Path, chapter: int, entity_names: list[str]) -> list[str]:\n    \"\"\"sticky/cooldown：入选实体粘滞 sticky_n 章；**被挤出者写 cooldown**（B5：防幽灵占位）。\"\"\"\n    st = _load_state(store_root)\n    sticky_n = int(st.get(\"_sticky_n\", 2))\n    out = []\n    for nm in entity_names:\n        e = st.get(nm, {})\n        if e.get(\"cooldown_until\", 0) >= chapter:\n            continue\n        out.append(nm)\n    picked = out[:12]\n    for nm in entity_names:\n        e = st.get(nm, {})\n        if nm in picked:\n            if chapter > e.get(\"sticky_until\", 0):\n                e[\"sticky_until\"] = chapter + sticky_n\n                st[nm] = e\n        elif nm in st:  # 落选即冷却两章（B5：sticky/cooldown 成对生效）\n            e = st.get(nm, {})\n            e[\"cooldown_until\"] = chapter + 2\n            st[nm] = e\n    save_state(store_root, st)\n    return picked\n\n\ndef build_context_pack(store_root: Path, chapter: int, prev_slice_tail: str = \"\",\n                       budget: int = 2000, sticky_n: int = 2) -> dict:\n    \"\"\"三层包：实体卡+滚动摘要+近窗；预算硬顶（字符）；先验非事实源标注。\"\"\"\n    st = _load_state(store_root)\n    st[\"_sticky_n\"] = sticky_n\n    save_state(store_root, st)\n    by_ent: dict[str, dict] = {}\n    rolling: list[str] = []\n    for rec in _records(store_root):\n        ch = _max_chapter(rec)\n        if ch >= chapter:\n            continue\n        c = rec.get(\"canonical\") or {}\n        if rec.get(\"record_type\") == \"entity\" and c.get(\"name\"):\n            g = by_ent.setdefault(c[\"name\"], {\"name\": c[\"name\"], \"chapters\": set()})\n            g[\"chapters\"].add(ch)\n            for k in (\"status\", \"entity_type\"):\n                if c.get(k):\n                    g[k] = c[k]\n        if ch >= chapter - 3:\n            line = f\"第{ch}章:{len([1]) and (c.get('name') or c.get('subject') or '')}\"\n            rolling.append(line)\n    names = sorted(by_ent, key=lambda n: -max(by_ent[n][\"chapters\"]))\n    picked = activation_filter(store_root, chapter, names[:12])\n    cards = []\n    used = 0\n    for nm in picked:\n        g = by_ent[nm]\n        card = f\"{nm}({g.get('entity_type', '')},{g.get('status', '')}) chapters={sorted(g['chapters'])[-3:]}\"\n        if used + len(card) > budget:\n            break\n        cards.append(card)\n        used += len(card)\n    roll = \"｜\".join(rolling[-3:])[:budget // 3]\n    tail = (prev_slice_tail or \"\")[-budget // 3:]\n    used += len(roll) + len(tail)\n    return {\"实体卡\": cards, \"滚动摘要\": roll, \"近窗\": tail,\n            \"budget_used\": used, \"budget\": budget,\n            \"口径\": \"先验非事实源——与原文冲突以原文为准（指代已显式化为规范名）\"}\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\context.py",
+      "structuredPatch": [
+        {
+          "oldStart": 114,
+          "oldLines": 19,
+          "newStart": 114,
+          "newLines": 22,
+          "lines": [
+            "             line = f\"第{ch}章:{len([1]) and (c.get('name') or c.get('subject') or '')}\"",
+            "             rolling.append(line)",
+            "     names = sorted(by_ent, key=lambda n: -max(by_ent[n][\"chapters\"]))",
+            "-    picked = activation_filter(store_root, chapter, names[:12])",
+            "+    picked = activation_filter(store_root, chapter, names)",
+            "+    roll_quota = budget // 3",
+            "+    tail_quota = budget - roll_quota  # B4：先给滚动/近窗留配额，卡片吃剩余——预算硬顶真硬",
+            "+    roll = \"｜\".join(rolling[-3:])[:roll_quota]",
+            "+    tail = (prev_slice_tail or \"\")[-tail_quota:]",
+            "     cards = []",
+            "-    used = 0",
+            "+    used = len(roll) + len(tail)",
+            "+    card_quota = budget - used",
+            "     for nm in picked:",
+            "         g = by_ent[nm]",
+            "         card = f\"{nm}({g.get('entity_type', '')},{g.get('status', '')}) chapters={sorted(g['chapters'])[-3:]}\"",
+            "-        if used + len(card) > budget:",
+            "+        if used + len(card) > card_quota + len(roll) + len(tail):",
+            "             break",
+            "         cards.append(card)",
+            "         used += len(card)",
+            "-    roll = \"｜\".join(rolling[-3:])[:budget // 3]",
+            "-    tail = (prev_slice_tail or \"\")[-budget // 3:]",
+            "-    used += len(roll) + len(tail)",
+            "+    used = len(roll) + len(tail) + sum(len(c) for c in cards)",
+            "     return {\"实体卡\": cards, \"滚动摘要\": roll, \"近窗\": tail,",
+            "             \"budget_used\": used, \"budget\": budget,",
+            "             \"口径\": \"先验非事实源——与原文冲突以原文为准（指代已显式化为规范名）\"}"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_d7ab2303fe914042ba04a6ea",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T15:28:55.608Z",
+  "files": [
+    {
+      "afterContent": "# G11 conformal NLI 校准 — BLOCKED 登记（2026-09-27）\n\n## 状态：BLOCKED（缺数据，非缺依赖）\n\n- 代码就绪：`cbb-v2/cbb2/governance.py` `ConformalNLICalibrator`（标准 conformal 语义，\n  nonconformity=1-score 不掺标签；测试 `test_v3_governance.py` 绿）。\n- 判据要求：校准报告（覆盖率/错误率/预测集分布）——需要 **≥10 条人工核验判例**\n  `(premise, hypothesis, label, score)`，其中 **score 必须来自 NLI 通道的真实打分**。\n\n## 缺口实况（2026-09-27 盘点）\n\n| 数据源 | 有无标签 | 有无通道分数 | 可用性 |\n|---|---|---|---|\n| 隔离区 604 矛盾件人工裁决（416 confirmed/188 rejected） | 有（human decision） | **无**（矛盾判定走嵌入相似度，NLI 未打分） | ✗ |\n| G16/G16b 考官票面 | 无金标 | 票面非分数 | ✗ |\n| A04 NLI 双通道 | 测试判例有标签 | 测试内即兴分数，非沉淀判例集 | ✗ |\n\n结论：**分数-bearing 人工判例集=0**，校准无从谈起。不臆造判例（D-004 同族纪律：\n数据缺口显式登记，不生产假信任）。\n\n## 解锁路径\n\n1. 从 G16b 晋升批抽取 30-50 件，人工复核为 (premise=证据摘录, hypothesis=canonical, label)；\n2. 同批跑 NLI 通道留 score；\n3. `ConformalNLICalibrator(alpha=0.10).calibrate(labeled)` → 校准报告落\n   `迷深实战-本体库/G11-NLI校准报告.json`（覆盖率/错误率/预测集分布三件齐）。\n\n预计工作量：半轮人工复核窗。触发条件：G16b 大批完成、人工审计窗开启时顺路产出\n（与 Wilson 形式审计 n≥80 同窗复用同一批判例）。\n",
+      "afterContentLength": 954,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-本体库\\G11-NLI校准-BLOCKED登记.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_622a469011614f5194b21268",
+  "toolName": "Write",
+  "version": 1
+}

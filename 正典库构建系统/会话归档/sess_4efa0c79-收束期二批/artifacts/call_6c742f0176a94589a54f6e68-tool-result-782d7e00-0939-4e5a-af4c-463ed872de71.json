@@ -1,0 +1,57 @@
+{
+  "createdAt": "2026-09-27T15:47:38.595Z",
+  "files": [
+    {
+      "beforeContent": "\"\"\"cbb2.ledger — 哈希链账本（R12；移植 v1 ledger_chain 核心，verify 读盘不信任缓存）。\"\"\"\nfrom __future__ import annotations\n\nimport hashlib\nimport json\nfrom pathlib import Path\n\nEMPTY_SHA = \"0\" * 64\n\n\ndef line_hash(payload: dict) -> str:\n    core = {k: v for k, v in payload.items() if k != \"hash\"}\n    return hashlib.sha256(json.dumps(core, ensure_ascii=False, sort_keys=True)\n                          .encode(\"utf-8\")).hexdigest()\n\n\ndef idempotency_key_of(obj: dict) -> str:\n    for k in (\"key\", \"item_id\", \"record_id\"):\n        if obj.get(k):\n            return str(obj[k])\n    return hashlib.sha256(json.dumps(obj, ensure_ascii=False, sort_keys=True)\n                          .encode(\"utf-8\")).hexdigest()[:16]\n\n\nclass LedgerChain:\n    def __init__(self, path: Path):\n        self.path = Path(path)\n        if not self.path.exists():\n            self.path.parent.mkdir(parents=True, exist_ok=True)\n            self.path.touch()\n        self._cache: list[dict] | None = None\n\n    def _rows(self) -> list[dict]:\n        if self._cache is None:\n            rows: list[dict] = []\n            raw = self.path.read_bytes() if self.path.exists() else b\"\"\n            # 只按 \\n 切行——JSON 字符串可合法含 U+0085/U+2028 等 Unicode 行分隔符，\n            # str.splitlines() 会把它们当行界撕碎 JSON（P-028）；坏行以标记占位不崩，\n            # 由 verify() 判\"行损坏\"（审计工具对任意输入必须给判定，不许抛异常）。\n            for line in raw.split(b\"\\n\"):\n                if not line.strip():\n                    continue\n                try:\n                    rows.append(json.loads(line.decode(\"utf-8\")))\n                except (UnicodeDecodeError, json.JSONDecodeError):\n                    rows.append({\"corrupt\": line.decode(\"utf-8\", \"replace\")[:32]})\n            self._cache = rows\n        return self._cache\n\n    def _rows_fresh(self) -> list[dict]:\n        self._cache = None  # 篡改检测面读盘——缓存不得掩盖账本外改动\n        return self._rows()\n\n    def has_key(self, target: str, key: str) -> bool:\n        return any(r.get(\"op\") == \"append\" and r.get(\"target\") == target\n                   and r.get(\"idempotency_key\") == key for r in self._rows())\n\n    def _append_row(self, op: str, target: str, key: str,\n                    sha_before: str, sha_after: str) -> dict:\n        prev = self._rows()[-1] if self._rows() else None\n        payload = {\"seq\": (prev[\"seq\"] + 1) if prev else 1, \"op\": op, \"target\": target,\n                   \"idempotency_key\": key, \"sha_before\": sha_before, \"sha_after\": sha_after,\n                   \"prev_hash\": prev[\"hash\"] if prev else EMPTY_SHA}\n        payload[\"hash\"] = line_hash(payload)\n        with self.path.open(\"a\", encoding=\"utf-8\") as f:\n            f.write(json.dumps(payload, ensure_ascii=False, sort_keys=True) + \"\\n\")\n        if self._cache is not None:\n            self._cache.append(payload)\n        return payload\n\n    def record_append(self, target: str, key: str, sha_before: str, sha_after: str):\n        return self._append_row(\"append\", target, key, sha_before, sha_after)\n\n    def verify(self, store_root: Path | None = None) -> dict:\n        rows = self._rows_fresh()\n        errors, prev_hash = [], EMPTY_SHA\n        for i, r in enumerate(rows):\n            if r.get(\"corrupt\") is not None and \"corrupt\" in r:\n                errors.append(f\"line{i+1}: 行损坏无法解析（{r['corrupt']!r}…）\")\n                prev_hash = None  # 后续行 prev_hash 必不一致——让断链误差显式暴露\n                continue\n            if r.get(\"prev_hash\") != prev_hash:\n                errors.append(f\"seq{r.get('seq')}: prev_hash 断链\")\n            if r.get(\"hash\") != line_hash(r):\n                errors.append(f\"seq{r.get('seq')}: 行哈希不匹配（被篡改？）\")\n            if r.get(\"seq\") != i + 1:\n                errors.append(f\"seq{r.get('seq')}: 序号不连续\")\n            prev_hash = r.get(\"hash\")\n        if store_root is not None:\n            import hashlib as _h\n            last = {}\n            for r in rows:\n                if r[\"op\"] in (\"append\", \"genesis\", \"rebaseline\"):\n                    last[r[\"target\"]] = r[\"sha_after\"]\n            for target, sha in sorted(last.items()):\n                actual = _h.sha256((Path(store_root) / target).read_bytes()).hexdigest() \\\n                    if (Path(store_root) / target).exists() else EMPTY_SHA\n                if actual != sha:\n                    errors.append(f\"{target}: 当前 sha 与账本不符（账本外改动）\")\n        return {\"ok\": not errors, \"rows\": len(rows), \"errors\": errors}\n\n\nclass LedgedStore:\n    \"\"\"Store + 账本：侧车 _append 汇聚点自动入账（库文件写入不入账——与 v1 A3 口径一致）。\"\"\"\n\n    def __init__(self, root: Path):\n        from .store import Store\n        self.store = Store(root)\n        self.ledger = LedgerChain(Path(root) / \"ledger.jsonl\")\n        self._skips: dict[str, int] = {}\n        self._wrap_appends()\n        self._wrap_zone()\n\n    def _sha(self, p: Path) -> str:\n        import hashlib\n        return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else EMPTY_SHA\n\n    def _wrap_appends(self):\n        \"\"\"通用侧车入账：store._append 全部 name 走账本（幂等键跳过+sha_before/after）。\n        U-A02 起 write_decision 的 complementary-statements/invalidations/拦截件全文\n        经此自动入账——无需逐名注册。\"\"\"\n        store = self.store\n        led = self.ledger\n        orig = store._append\n        root = Path(store.root)\n\n        def lappend(name, obj, _orig=orig):\n            key = idempotency_key_of(obj)\n            if led.has_key(name, key):\n                self._skips[name] = self._skips.get(name, 0) + 1\n                return\n            sha_before = self._sha(root / name)\n            _orig(name, obj)\n            led.record_append(name, key, sha_before, self._sha(root / name))\n\n        store._append = lappend\n\n    def _append(self, name: str, obj: dict):\n        target = Path(self.store.root) / name\n        key = idempotency_key_of(obj)\n        if self.ledger.has_key(name, key):\n            self._skips[name] = self._skips.get(name, 0) + 1\n            return\n        sha_before = self._sha(target)\n        self.store._append(name, obj)\n        self.ledger.record_append(name, key, sha_before, self._sha(target))\n\n    def _wrap_zone(self):\n        zone = self.store.zone\n        orig = zone._append\n        led = self.ledger\n\n        def zappend(item, _orig=orig, _led=led):\n            rel = \"quarantine-zone/items.jsonl\"\n            key = item.get(\"item_id\") or idempotency_key_of(item)\n            if _led.has_key(rel, key):\n                return\n            sha_before = self._sha(zone.items_path)\n            _orig(item)\n            _led.record_append(rel, key, sha_before, self._sha(zone.items_path))\n        zone._append = zappend\n\n        orig_adj = zone.adjudicate\n\n        def zadjudicate(iid, verdict, note=\"\", by=\"human\", _orig=orig_adj, _led=led):\n            key = f\"{iid}|{verdict}\"\n            if _led.has_key(\"quarantine-zone/adjudications.jsonl\", key):\n                return {\"item_id\": iid, \"repeated\": True}\n            sha_b_items = self._sha(zone.items_path)\n            adj_path = zone.root / \"adjudications.jsonl\"\n            sha_b_adj = self._sha(adj_path)\n            out = _orig(iid, verdict, note=note, by=by)\n            _led.record_append(\"quarantine-zone/items.jsonl\", key,\n                               sha_b_items, self._sha(zone.items_path))\n            _led.record_append(\"quarantine-zone/adjudications.jsonl\", key + \"|adj\",\n                               sha_b_adj, self._sha(adj_path))\n            return out\n        zone.adjudicate = zadjudicate\n\n    def __getattr__(self, name):\n        return getattr(self.store, name)\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\ledger.py",
+      "structuredPatch": [
+        {
+          "oldStart": 163,
+          "oldLines": 18,
+          "newStart": 163,
+          "newLines": 22,
+          "lines": [
+            "         orig_adj = zone.adjudicate",
+            " ",
+            "         def zadjudicate(iid, verdict, note=\"\", by=\"human\", _orig=orig_adj, _led=led):",
+            "+            from .quarantine import adjudicate_lock",
+            "             key = f\"{iid}|{verdict}\"",
+            "-            if _led.has_key(\"quarantine-zone/adjudications.jsonl\", key):",
+            "-                return {\"item_id\": iid, \"repeated\": True}",
+            "-            sha_b_items = self._sha(zone.items_path)",
+            "-            adj_path = zone.root / \"adjudications.jsonl\"",
+            "-            sha_b_adj = self._sha(adj_path)",
+            "-            out = _orig(iid, verdict, note=note, by=by)",
+            "-            _led.record_append(\"quarantine-zone/items.jsonl\", key,",
+            "-                               sha_b_items, self._sha(zone.items_path))",
+            "-            _led.record_append(\"quarantine-zone/adjudications.jsonl\", key + \"|adj\",",
+            "-                               sha_b_adj, self._sha(adj_path))",
+            "-            return out",
+            "+            # G25：幂等检查+裁决内核+账本双记全程同锁——并发双写与丢更新同根除；",
+            "+            # 内核直呼 _adjudicate_inner（其外层公开法自带同锁，嵌套会死锁）",
+            "+            with adjudicate_lock(zone.root):",
+            "+                if _led.has_key(\"quarantine-zone/adjudications.jsonl\", key):",
+            "+                    return {\"item_id\": iid, \"repeated\": True}",
+            "+                sha_b_items = self._sha(zone.items_path)",
+            "+                adj_path = zone.root / \"adjudications.jsonl\"",
+            "+                sha_b_adj = self._sha(adj_path)",
+            "+                out = zone._adjudicate_inner(iid, verdict, note, by)",
+            "+                _led.record_append(\"quarantine-zone/items.jsonl\", key,",
+            "+                                   sha_b_items, self._sha(zone.items_path))",
+            "+                _led.record_append(\"quarantine-zone/adjudications.jsonl\", key + \"|adj\",",
+            "+                                   sha_b_adj, self._sha(adj_path))",
+            "+                return out",
+            "         zone.adjudicate = zadjudicate",
+            " ",
+            "     def __getattr__(self, name):"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_6c742f0176a94589a54f6e68",
+  "toolName": "Edit",
+  "version": 1
+}

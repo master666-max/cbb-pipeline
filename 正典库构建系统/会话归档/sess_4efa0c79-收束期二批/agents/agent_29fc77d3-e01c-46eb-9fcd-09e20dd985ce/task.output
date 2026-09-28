@@ -1,0 +1,92 @@
+# CBB 系统质量机制网络预调研报告（调研日期：2026-09-26）
+
+方法说明：WebSearch 限流严重，改用 arXiv API 逐篇验证标题/日期/摘要（下称“已验证”），WebSearch 结果仅采信带完整 URL 者。凡未能打开原文核实的，均标【待确认】。
+
+---
+
+## A. 逐题发现
+
+### Q1 审计抽样：分层 vs 风险排序；样本量怎么定
+
+**发现 1：没有单一权威共识文件明说“分层 vs 风险排序谁赢”，跨领域证据指向“混合：风险排序找错 + 分层随机估错率，两轨分开”。**（可信度：中高，多域一致但无统一文献）
+
+- 财务审计标准层面：PCAOB AS 2315 把抽样风险与非抽样风险分开处理，允许判断性（targeted）抽样，但要求为“表达意见”的抽样负责——即“发现导向”和“估计导向”是两种不同用途（[AS 2315: Audit Sampling](https://pcaobus.org/oversight/standards/auditing-standards/details/AS2315)，标准文件，访问 2026-09-26，可信度高）。
+- 临床数据质量（2024）：风险导向质量管理（RBQM）已是共识框架，强调风险比例化、集中化监控（[Risk-Based Quality Management: A Case for Centralization, PMC, 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11880074)，可信度高）。
+- eDiscovery（2026-06，最新反例警告）：ACEDS 文章《The Elusion Illusion and the AI Revolution》（Douglas Forrest，2026-06-25）论证：只用“漏检率抽样”（elusion sampling，简单随机抽被丢弃集合）会系统性高估 TAR 2.0 的召回率，主张改用**分层抽样**做验证（[ACEDS 原文](https://aceds.org/the-elusion-illusion-and-the-ai-revolution-aceds-blog)，可信度中高——行业协会博客，非同行评审）。
+
+**发现 2：defensible sample size 的通行做法不是拍固定 n，而是“置信度 + 边际误差 + 判定阈值”三要素推导；小样本只能做“可接受/不可接受”分类判定（LQAS），不能支持精确通过率宣称。**
+
+- eDiscovery 实务：JD Supra《There Is No One Size Fits All Sample Size》（2020）明说：样本量可辩解性取决于置信水平和误差边际的透明论证，无普适 n；同样本下召回估计可从 83% 摆到 99%（[JD Supra](https://www.jdsupra.com)，通过搜索摘要采信，原文 URL 未逐字核实【待确认】，可信度中）。
+- 公共卫生数据质量审计：WHO Data Quality Review 工具包 Module 3（WHO 2017，ISBN 9789240115408，[WHO IRIS](https://iris.who.int) 检索可得）是机构记录核对抽样的国际标准；配套的 LQAS（验收抽样）标准设计为**每“批”仅 19 条记录 × 5 批 = 95 条**，用于二项判定“该批合格/不合格”而非估计精确错误率（[Gavi Zero-Dose Learning Hub LQAS 工具包](https://zdlh.gavi.org)，访问 2026-09-26，可信度高——LQAS 是成熟方法学）。
+- “最可疑优先”排序有强先例：Northcutt 等《Pervasive Label Errors in Test Sets Destabilize ML Benchmarks》（[arXiv 2103.14749](https://arxiv.org/abs/2103.14749)，2021-03-26，已验证，NeurIPS D&B）用模型置信度把疑似错标样本排到最前，人工验证确认大量真实错标——CBB 的“可疑度排序”与此同构。但注意：该排序只能用于**发现**，由它找到的样本算出的“通过率”不可外推（发现偏倚）。
+
+### Q2 Capture-recapture 用于知识库完整性：适用性与坑
+
+**发现 3：2026 年出现了直接先例——用生态物种丰富度估计（Chao1/ACE，捕获再捕获家族）估计 LLM 抽取知识图谱的覆盖率。**（可信度：中，单篇已验证 + 搜索线索若干）
+
+- **直接先例（已验证）**：《Coverage-Aware Web Crawling for Domain-Specific Supplier Discovery via a Web–Knowledge–Web Pipeline》（[arXiv 2602.24262](https://arxiv.org/abs/2602.24262)，2026-02-27 提交，v4，已验证摘要）——用少样本 LLM 提示抽取实体入知识图谱，引入生态学 Chao1、ACE 估计器量化“发现完整性”。
+- **其它 2026 线索（未逐一验证【待确认】）**：HAL hal-05658462《Can Frontier AI Build a Statistical Register?》——用分层捕获再捕获从 LLM 抽取结果恢复未抽取项下界；《Reverse Engineering of Chatbot Behaviour》（Springer 2026）——用 Mh(JE2) 估计器跨 4 次 LLM 运行估计功能空间覆盖率；"Failure Ecology: Capture-Recapture Certificates for Red-Team Coverage"（2026）。共同点：都靠**跨模型/跨运行**的变异制造“多次捕获”。
+- **未找到**：把 capture-recapture 用于**文学作品知识库抽取**（实体/关系/事件三态写入）的先例，2024-2026 均未见。明说：这一空白本身是机会。
+
+**发现 4：独立性假设是已知的核心坑，且记录链接错误直接污染重叠计数。**（可信度：高，官方统计方法学文献）
+
+- 《Models of linkage error for capture-recapture estimation without clerical reviews》（[arXiv 2403.11438](https://arxiv.org/abs/2403.11438)，2024-03-18，已验证摘要）：捕获再捕获应用于行政/大数据源时，链接错误（假阳性链接=把两个不同实体合并；假阴性=同一实体未合并）都是偏倚源；现有解法要么靠昂贵的人工复核，要么依赖“限制性的条件独立假设”；该文提出对每条记录的链接数建模来放松此假设。**对 CBB 的映射：同指消解/实体合并的错与漏，会同时出现在重叠计数 m 里。**
+- 生态学标准结论（多源一致，如《Refining capture-recapture methods to estimate case counts in a finite population setting》 [arXiv 2510.27580](https://arxiv.org/abs/2510.27580) 2025-10-31、《A capture-recapture HMM framework for register-based inference》 [arXiv 2603.24643](https://arxiv.org/abs/2603.24643) 2026-03-25，均已验证）：正相依（两次捕获高度相似）→ 重叠被高估 → 总量 N̂ 被低估 → **覆盖率被高估**。异质捕获概率（不同实体类型抽取难度不同）同样使简单估计器有偏，需 log-linear / Chao 类模型。
+- 单源情形有专门工具：R 包 singleRcapture（《[arXiv 2411.11032](https://arxiv.org/abs/2411.11032)》2024-11-17，已验证）支持单源捕获再捕获模型——若 CBB 只有一个抽取器，也有参数化出路。
+- **植物捕获（plant capture）**：《Plant-Capture Methods for Estimating Population Size from Uncertain Plant Captures》（[arXiv 2403.04058](https://arxiv.org/abs/2403.04058) 2024-03-06，已验证）——向总体中“投放”已知个体再测捕获率，是绕开独立性假设的校准手段。
+
+### Q3 Human-in-the-loop 裁决队列设计
+
+**发现 5：2023-2026 的收敛模式是“不确定性引导的人机分工 + 分歧即信号 + 带理由的队列”。**（可信度：高，学术 + 工具文档双线印证）
+
+- 学术：CoAnnotating《Uncertainty-Guided Work Allocation between Human and LLMs for Data Annotation》（[arXiv 2310.15638](https://arxiv.org/abs/2310.15638)，2023-10-24，已验证，EMNLP 2023）——按 LLM 置信度逐条决定“机器标注还是人标注”，是排队优先级的形式化。2026 年延续：《Using Human-LLM Disagreement to Improve Checklist-Based Quality Appraisal》（[arXiv 2608.20385](https://arxiv.org/abs/2608.20385) 2026-06-30，已验证）——人机分歧模式本身被用来发现**模糊的判据条款**；《CoALFake》（[arXiv 2604.04174](https://arxiv.org/abs/2604.04174) 2026-04-05，已验证）——人机协同主动学习，按信息量排队列。
+- 工业级范式：Netflix《The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations》（[arXiv 2608.18300](https://arxiv.org/abs/2608.18300) 2026-08-18，已验证摘要）——LLM 评审担任“质量门”，持续 HITL 对齐监测评审漂移，触发重调优时**必须过人工评审门**。
+- 工具实践（文档级证据）：Prodigy 的 `review` recipe——“review 数据、解决冲突、算标注者间一致率”，并把多个模型当作虚拟标注者（`.model-annotate`，v1.13.1+），再对模型分歧处人工裁决（[Prodi.gy Docs](https://prodi.gy/docs/recipes)，访问 2026-09-26）；Argilla 的 `rg.Suggestion` 把模型预审建议连同理由呈现给标注者，配 guidelines、任务分配（task distribution）与记录过滤（[Argilla Docs](https://docs.argilla.io/latest/)，访问 2026-09-26）；Label Studio 支持导入模型预标注供人工修正（[Label Studio Guide](https://labelstud.io/guide)，访问 2026-09-26；企业版一致率功能在付费层，细节未核实【待确认】）。
+- 通用设计要点（跨源归纳）：队列按“最不确定优先”排序；每条任务带模型理由串供快速裁决；批量界面 + 原文上下文并排；裁决结果回流更新判据。
+
+### Q4 SPC/CUSUM 用于 LLM/数据管线质量监控
+
+**发现 6：2025-2026 有真实案例与框架论文，但“CUSUM+LLM”的直接文献极少（arXiv 全库仅 2 篇边缘命中）——这是新领地，不是成熟实务。**（可信度：中高）
+
+- 框架论文（已验证）：《Sequential statistical inference for Large Language Models: Representation, validity, and monitoring》（[arXiv 2606.07624](https://arxiv.org/abs/2606.07624) 2026-05-30）——明确把可信 LLM 部署表述为**统计过程控制问题**：用序贯告警与变点检测监控校准、幻觉率、拒答率等指标；同时指出 LLM 是**相依随机过程而非独立同分布**（上下文演化、模型更新、反馈回路）。
+- 方法工具（已验证）：《Bootstrapped Control Limits for Score-Based Concept Drift Control Charts》（[arXiv 2507.16749](https://arxiv.org/abs/2507.16749) 2025-07-22）——对模型分数建 MEWMA 控制图，用嵌套 bootstrap 校准控制限，解决“没有大样本干净基线期”的实际困难。
+- 工业案例（已验证）：上述 Netflix 论文第 IV 阶段——对 LLM 评审做持续漂移监测 + 人工门重调优，每周十万级样本在线运行。
+- 非平稳性对 SPC 假设的破坏（已验证）：《Evolving Machine Learning in Non-Stationary Environments: A Unified Survey of Drift, Forgetting, and Adaptation》（[arXiv 2505.17902](https://arxiv.org/abs/2505.17902) 2025-05-23）系统综述非平稳环境下“in-control 分布恒定”假设失效的三来源：漂移、遗忘、适应。对 LLM 具体为：API 背后模型悄悄换版、上下文相关输出（同一记录两次判可以不同）、章节难度差异造成的假告警。
+- 明说：**未找到** 2024-2026 把经典 CUSUM 直接用于 LLM 输出质量并报告运行特性的公开案例；现有实践都用“分数控制图 + bootstrap/序贯检验”的变体。
+
+### Q5 评测仪器/基准的版本化与防漂移
+
+**发现 7：2024-2026 已形成可借鉴的工程惯例：仪器版本化 + 冻结归档 + 重跑桥接 + 误差条。**（可信度：高）
+
+- 方法学（已验证）：EleutherAI《Lessons from the Trenches on Reproducible Evaluation of Language Models》（[arXiv 2405.14782](https://arxiv.org/abs/2405.14782) 2024-05-23）——评测可复现的全套工程纪律（版本固定、公开提示、完整配置输出）。
+- 统计学（已验证）：Anthropic《Adding Error Bars to Evals》（[arXiv 2411.00640](https://arxiv.org/abs/2411.00640) 2024-11-01）——没有误差条的分数比较不成立；仪器变更后的一切“历史对比”都需要统计处理。
+- 标准化（已验证）：OLMES《A Standard for Language Model Evaluations》（[arXiv 2406.08446](https://arxiv.org/abs/2406.08446) 2024-06-12）——提示格式、few-shot 数、答案抽取方式任一不同即导致结果“与以往工作不可比”。
+- 治理反面教材（已验证）：《The Leaderboard Illusion》（[arXiv 2504.20879](https://arxiv.org/abs/2504.20879) 2025-04-29）——私有评测、选择性披露、版本不透明如何系统性扭曲可比性。
+- 版本切换的标准动作（搜索摘要采信 + 已知博客，可信度中高）：Hugging Face Open LLM Leaderboard v2（2024-06，[博客](https://huggingface.co/blog/open-llm-leaderboard-v2)，多次抓取超时未能逐字核验【待确认】）——换全套基准 + 升级 lm-evaluation-harness v0.4.x，**官方明确 v1/v2 分数不可比，v1 归档，所有模型在 v2 下重跑**，而不是转换旧分。
+- 仪器仓库实践（已验证）：[lm-evaluation-harness README](https://github.com/EleutherAI/lm-evaluation-harness)（访问 2026-09-26）——维护带日期的 breaking-change 日志（如 2025/12 CLI 重构、2025/07 参数变更），并声明“公开可用的提示保证跨论文可复现与可比”。
+
+---
+
+## B. 对 CBB 系统的可执行建议（5 条）
+
+1. **对样/终判改为“双轨记账”，通过率宣称降级为区间。** 现行 20 条对样、30 条终判在统计上只能支持极粗判定（30 条全过 → 95% 置信下真实通过率下限仅约 82-86% 区间，取决于方法）。建议：保留“可疑优先”抽样用于**发现错误**（Northcutt 模式，[arXiv 2103.14749](https://arxiv.org/abs/2103.14749)），另设独立的**分层随机抽样**（按章节×实体类型分层）专用于**估计错误率**；若要省样本，改用 LQAS 判定框架（每层 n=19，只输出“合格/不合格”而非精确率，WHO DQR 模式）。两轨样本分开标记，禁止混算。
+
+2. **捕获再捕获必须“去相关”：两次抽取用不同捕获器，并把链接错误显式建模。** CBB 现行 Chapman 估计假设两次抽取独立；同一模型+相似提示的两次抽取是正相关 → 重叠高估 → 漏抽率被低估（[arXiv 2403.11438](https://arxiv.org/abs/2403.11438) 的链接错误分析直接适用：CBB 的同指消解假阳性/假阴性会同时污染重叠计数 m）。可执行：①两次抽取改用不同模型家族或不同切分粒度；②总量估计改用 log-linear/Chao-Mh 类异质性模型（[arXiv 2411.11032](https://arxiv.org/abs/2411.11032) 提供单源实现）；③报告估计值时给区间并标注“独立性未验证”。
+
+3. **向库里“埋种子”（植物捕获）做召回直接测量。** 参照 [arXiv 2403.04058](https://arxiv.org/abs/2403.04058) 与 2026 年 LLM 抽取覆盖率先例（[arXiv 2602.24262](https://arxiv.org/abs/2602.24262)）：定期向待抽取文本域注入 30-50 条已知答案的合成记录（金标实体/关系/事件），测抽取器捕获率。这绕开独立性假设、成本可控、可自动化，是对 Chapman 估计的交叉验证。
+
+4. **SPC 上线前先做三件事，否则 CUSUM 会假告警刷屏。** ①控制限用 bootstrap 校准而非正态假设（[arXiv 2507.16749](https://arxiv.org/abs/2507.16749)）；②明确列出 CBB 的非平稳源（模型版本、提示词改动、章节难度），任何已知变更后重置基线窗口并在数据流上打“变更标记”；③优先监控**相对指标**（LLM 预审与人审一致率、两次抽取重叠率、仪器间差值）而非绝对通过率——相对量对模型换版更稳健（[arXiv 2606.07624](https://arxiv.org/abs/2606.07624) 的相依过程论证）。
+
+5. **把仪器指纹四元组升级为“语义版本 + 桥接样本 + 误差条”三件套。** 参照 HF Leaderboard v1→v2 与 lm-eval-harness 的治理（见 Q5）：每次改动 ranker/criterion/sort/params 递增版本号并冻结旧版配置；新旧仪器各跑同一“桥接样本”（50-100 条含已知裁决结果的记录），发布桥接对照表；所有跨版本分数比较必须带置信区间，且历史分数只标注旧版本号、不做 silently 重算（[arXiv 2411.00640](https://arxiv.org/abs/2411.00640)、[arXiv 2405.14782](https://arxiv.org/abs/2405.14782)）。
+
+---
+
+## C. 颠覆性候选
+
+1. **把“人机分歧率”从噪声变成质量信号源**（颠覆“分歧=待裁决错误”的定位）：Netflix RART 与 [arXiv 2608.20385](https://arxiv.org/abs/2608.20385) 表明，分歧集中的地方往往是**判据条款本身模糊**——定期把高分歧簇回流去修订 criterion 文件（并 bump 仪器版本），相当于让“尺子”自己进化。CBB 的矛盾隔离区可以兼任这个分歧探测器。
+
+2. **“评审生命周期”替代一次性关卡**：Netflix 模式（[arXiv 2608.18300](https://arxiv.org/abs/2608.18300)）中终审不是验收动作而是持续校准回路——终判结果触发预审器重调优、重调优再过人工门。CBB 的“终判”可从“毕业考试”改为“仪表盘+再校准触发器”。
+
+3. **用物种丰富度估计器族（Chao1/ACE）替代/补充 Chapman**：2026 年 LLM 抽取覆盖率先例（[arXiv 2602.24262](https://arxiv.org/abs/2602.24262)）用的是**多次抽取的累积发现曲线**而非两次重叠——对 CBB 更自然：每次批量抽取本来就有时间序列，画“新实体发现率 vs 抽入量”的稀疏曲线，尾部趋平即为覆盖饱和证据，无需严格独立性假设。
+
+**未找到/存疑清单（诚实声明）**：①capture-recapture 用于文学知识库抽取的直接先例：未找到；②CUSUM 直接用于 LLM 质量监控的运行案例：未找到（只有 SPC 框架论文与控制图变体）；③HAL hal-05658462、Springer 2026 chatbot 反推、"Failure Ecology" 三条 2026 线索未经原文核验【待确认】；④HF v2 博客原文因超时未逐字核验，其“v1/v2 不可比”结论由多源搜索交叉采信。

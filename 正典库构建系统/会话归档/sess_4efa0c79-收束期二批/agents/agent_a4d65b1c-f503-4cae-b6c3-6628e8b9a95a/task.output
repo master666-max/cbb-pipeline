@@ -1,0 +1,88 @@
+调研完成。以下为深度报告（所有活跃度/license 均于 2026-09-27 通过 GitHub API（gh 认证通道）、PyPI JSON、官方站点实抓核验；未能核验处标【待确认】）。
+
+# A. 逐题深度发现
+
+## 1. Merkle 透明日志（CT 谱系）
+
+**现状谱系（均为实抓核验）：**
+
+- **Trillian**（[github.com/google/trillian](https://github.com/google/trillian)）：**未归档，仍活着**——v1.8.0 发布于 2026-09-21，Apache-2.0，3.7k stars。历史上是 CT 公共日志的事实后端（Google Argon/Xenon）。但它是多写者、带 DB 后端的服务器系统，单机场景不适用，只适合抄它的数据结构语义。
+- **Tessera**（[github.com/transparency-dev/tessera](https://github.com/transparency-dev/tessera)）：Trillian 原班人马（transparency-dev 组织）的新一代实现，自述"Go library for building tile-based transparency logs (tlogs)"。v1.0.4（2026-07-16），Apache-2.0，2026-09 仍在 push。是当前 tlog 社区的活跃主轴。
+- **Sunlight**（[github.com/FiloSottile/sunlight](https://github.com/FiloSottile/sunlight)）：Filippo Valsorda 的**静态文件 CT 日志**实现，ISC license，v0.10.0（2026-09-24），Let's Encrypt 赞助，设计文档在 [sunlight.dev](https://sunlight.dev)。关键洞察：**日志不需要服务器 API——把 Merkle 树切成静态 tile 文件放到任何静态托管上即可**。
+- **C2SP tlog-tiles 规范**（[c2sp.org/tlog-tiles](https://c2sp.org/tlog-tiles)）：社区规范（[github.com/C2SP/C2SP](https://github.com/C2SP/C2SP)）。定义：tile 静态文件布局（每层 256 哈希、entry bundle 长度前缀）、`/checkpoint` 端点放**签名树头（≥1 个 Ed25519 签名）**。这是“单机/离线做公开可审计追加日志”的标准答案：静态目录 + checkpoint 文本文件。
+- **Cloudflare 谱系**：CT 由 Google/Cloudflare/Mozilla 共同运营（Cloudflare 的 Nimbus 是大型公共日志）；其开源 PKI 工具 cfssl（[github.com/cloudflare/cfssl](https://github.com/cloudflare/cfssl)，BSD-2，2026-09 活跃）可作旁证，但 Cloudflare 自家日志实现细节未开源成独立可引用项目；其 CT 监控工具 ct-woodpecker 的仓库现已查不到【待确认：可能已归档或改名】。**结论：tlog 社区的重心已移到 transparency-dev / C2SP。**
+- **Go 参考实现**（[github.com/transparency-dev/merkle](https://github.com/transparency-dev/merkle)）：RFC 6962/9162 inclusion/consistency proof 的参考实现，Apache-2.0，2026-09 活跃。
+
+**Python 侧现成库：**
+
+- **pymerkle**（[PyPI](https://pypi.org/project/pymerkle/) v6.1.0，2023-08-30；[github.com/FoteinosMerg/pymerkle](https://github.com/FoteinosMerg/pymerkle)，2025-10 仍有 push）：**GPL-3.0-or-later**（注意传染性），树拓扑严格对齐 RFC 9162 §2，`tree.prove_inclusion(...)`/`prove_consistency(...)` + 对应 verify 函数，含防二前像域分离、防 CVE-2012-2459。单维护者、Beta 状态。
+- merkletools（[PyPI](https://pypi.org/project/merkletools/)，MIT）：2018 年后停更，不推荐。
+- **务实方案**：proof **验证**逻辑照 RFC 9162 §2.1.3–2.1.4 自己写约 80–100 行纯 Python（无依赖、好审计），用 transparency-dev/merkle 的 Go 测试向量对照。生成端与验证端都可控，比引入 GPL 库更贴合“零依赖”约束。
+
+## 2. OpenTimestamps
+
+- **项目**（[opentimestamps.org](https://opentimestamps.org/)）：把哈希经日历服务器聚合后锚进比特币区块链。**创建免费**：公共日历“free to use, no registration or api key”，靠捐赠运营、日历代付链上手续费；也可自己写链（自付 satoshi，忽略不计）。当前仅支持 Bitcoin 锚。
+- **CLI**（[github.com/opentimestamps/opentimestamps-client](https://github.com/opentimestamps/opentimestamps-client)）：v0.7.2（2024-12-31），LGPL-3.0，2026-02 仍有 push。`ots stamp file` 产出几字节~几百字节的 `.ots` 证明；README 明确：**创建无需本地节点；完全自验需本地 Bitcoin Core（pruned 即可）**，否则是"incomplete"式验证（由日历提供区块头路径，信任弱一档，可缓存后离线复验）。
+- **Python 库**（[github.com/opentimestamps/python-opentimestamps](https://github.com/opentimestamps/python-opentimestamps)，PyPI 包名 `opentimestamps`）：v0.4.5（2023-01-25），LGPL-3.0。架构刻意分成共识关键的 `opentimestamps.core.*` 与外围模块——core 极稳定。日历服务端（[opentimestamps-server](https://github.com/opentimestamps/opentimestamps-server)）2026-08 仍在维护。
+- **结论**：真·零货币成本成立；**延迟是数小时**（等 Bitcoin 出块），非即时。对“记录 t′created 不可抵赖”**适用，但只适合低频锚定**（按 release/按日锚定 HASHES 或 checkpoint，而非逐行）。证明文件小、验证离线长期可做（哪怕未来项目停维，已锚证明仍可独立验证）——这正是它的工程价值。
+
+## 3. 供应链证明（in-toto / SLSA / sigstore）
+
+- **in-toto**（[github.com/in-toto/in-toto](https://github.com/in-toto/in-toto)）：**CNCF graduated**（[in-toto.io](https://in-toto.io/) 官宣），Apache-2.0。Python 库 PyPI `in-toto` v3.1.0（2026-04-25 上传，py≥3.9），非常活跃（v3.1.0 发布 2026-05-04）。link metadata 记录：步骤、执行命令、byproducts、materials/products（原料与产物哈希）——“谁在何时用什么源构建了什么”的原始形态。
+- **in-toto Attestation Framework**（[github.com/in-toto/attestation](https://github.com/in-toto/attestation)）：ITE-5 谱系的通用 statement 格式（subject + predicateType + predicate），v1.2.0（2026-03-18）。注意 PyPI 绑定 `in-toto-attestation` 0.9.3（2023-12）落后于 spec——绑定库偏旧，但 statement 本身就是纯 JSON，可手写。
+- **SLSA**（[slsa.dev](https://slsa.dev/)）：当前规范 **v1.2**（v1.1 仍在导航中；Build track L0–L3 + Source track）。Provenance v1 predicate（[slsa.dev/spec/v1.0/provenance](https://slsa.dev/spec/v1.0/provenance)）字段已核验：`buildDefinition`（buildType / externalParameters=源仓库与 ref / resolvedDependencies=解析后的源 commit）+ `runDetails`（builder.id / metadata.startedOn / finishedOn / invocationId）。**正是“谁在何时用什么源构建了什么”的标准词汇表**。
+- **sigstore/cosign**（[github.com/sigstore/cosign](https://github.com/sigstore/cosign)）：v3.1.3（2026-08-06），Apache-2.0，6.3k stars，极活跃。**keyless 签名需要网络**：OIDC 身份 → Fulcio 短时证书 → Rekor 透明日志（[docs.sigstore.dev](https://docs.sigstore.dev/)；fulcio/rekor/gitsign 仓库均活跃已核验）。**验证可离线**：cosign v3 把证书链+签名+Rekor inclusion 数据打成 bundle，可不查 Rekor 离线验（Red Hat 开发者文档等多源）。但整套依赖外部基础设施（OIDC、Fulcio、Rekor、TUF 根信任），与“零服务依赖单机”根本冲突。sigstore-python（v4.5.0，2026-07-28）同理。
+
+**结论**：HASHES.json 升级成 in-toto attestation **可行且低成本**（就是换个 JSON 壳 + 签名）；sigstore/cosign 对你们**不适用**（签名时依赖外部服务），排除。
+
+## 4. C2PA 内容凭证
+
+- **规范**（[spec.c2pa.org](https://spec.c2pa.org/specifications/specifications/)）：最新已到 **2.4**（版本列表已核验；主站主推 2.3 为 adoption 版），含 "Guidance for Artificial Intelligence and Machine Learning" 专章。2.x 引入 AI 相关断言（如 trainedAlgorithmicMedia，声明“由模型生成/训练数据来源”）——具体断言名出自规范正文，索引页未逐条列出【断言细节待确认，机制本身多源确认】。
+- **SDK**：c2pa-python（[PyPI](https://pypi.org/pypi/c2pa-python/json) v0.37.12，2026-09-24 上传，**MIT OR Apache-2.0**，py≥3.10；[github.com/contentauth/c2pa-python](https://github.com/contentauth/c2pa-python) 当日仍有 push）绑定 Rust 核心 c2pa-rs（Adobe 主导，极活跃）。功能：读取/校验 manifest、创建/签名 manifest、加 assertion 与 ingredient。
+- **可借鉴的核心做法**：C2PA 的 manifest 本质是**清单式断言列表**——claim（谁、何时、签名）+ assertions（来源哈希 c2pa.hashData、操作历史 c2pa.actions、AI 声明、ingredient 嵌套引用父代资产）+ 不可变 ingredient 链。这个“导出物自带结构化来源清单”的模式对你们导出的图谱/百科页面直接可借鉴。
+- **代价**：完整 C2PA 集成要 JUMBF 容器、证书信任链、规范合规校验——对内部正典库是重依赖。**借结构、不借容器**是性价比路线（见 B-5）。
+
+## 5. 轻量签名与密钥管理
+
+- **minisign**（[github.com/jedisct1/minisign](https://github.com/jedisct1/minisign)）：Rust 重写版，0.12（2025-01-15），ISC，2026-08 活跃，有预编译包（Windows 可用）；Ed25519、单文件签名、纯文本公钥、与 OpenBSD signify 格式兼容。纯 Rust 库 rust-minisign 也在维护（2026-09 活跃）。portable signify（[github.com/aperezdc/signify](https://github.com/aperezdc/signify)，ISC，v32）作为备选。
+- **SSH 签名（SSHSIG）**（[man.openbsd.org/ssh-keygen](https://man.openbsd.org/ssh-keygen)，已核验）：`ssh-keygen -Y sign -n namespace file` / `-Y verify -s sig -I identity -f allowed_signers`。**关键发现：allowed_signers 文件原生支持 `valid-after=` / `valid-before=` 选项，`-O verify-time=` 可按任意历史时点验证**——密钥轮换的时间窗机制是内建的。Windows 10/11 自带 OpenSSH，这是单机 Windows 上**零安装**的最简路径。
+- **git 集成**（[git-scm.com/docs/git-commit](https://git-scm.com/docs/git-commit)，已核验）：`git commit -S` 配 `gpg.format=ssh`（Git ≥2.34，详见 git-config 文档）即用 SSH key 签 commit。OpenTimestamps client 还能顺带给 PGP/签名 git 提交打时间戳。
+- **密钥轮换与信任锚**：成熟做法 = 仓库内**版本化信任锚文档**（如 `TRUSTED_KEYS.md`：公钥、key id、生效区间、用途 namespace），轮换期新旧两把 key 双签同一批 checkpoint/tag 形成过渡链；历史签名永远用“签名当时有效”的 key 验（SSH 的 verify-time / signify 的 key 区间注释都支持此语义）。这本质是 TUF 思想的单机极简版，不需要引入 TUF 本身。
+
+## 6. 哈希链的形式化与检查点纪律
+
+- **RFC 9162（CT v2）**（[rfc-editor.org/rfc/rfc9162](https://www.rfc-editor.org/rfc/rfc9162.html)，已抓取核验章节）：MTH 定义 §2.1.1（0x00/0x01 域分离）；inclusion proof §2.1.3；**consistency proof §2.1.4（证明“新树是旧树的追加扩展”）**；Signed Tree Head §4.9–4.10；Monitor §8.2 / Auditing §8.3。**RFC 自己声明：防日志方作弊（split view）的 gossip 机制超出范围（§1.6）**——即“检查点必须发到日志之外”是有明确出处的设计纪律。
+- **hash chain vs Merkle 链**：你们的每行 prev_hash 链 = 线性哈希链，篡改可见但要**全量重放**，且无高效的“某行在某版本中存在”证明；Merkle 追加日志 = O(log n) inclusion/consistency proof。学术源头是 Crosby & Wallach 的 history trees（USENIX Security 2009，[论文页](https://www.usenix.org/legacy/event/sec09/tech/full_papers/crosby.pdf)）【PDF 链接待确认，结论由 RFC 9162 与上述实现间接锚定】。
+- **检查点纪律的生产谱系**（Key Transparency 一系，全部实抓）：
+  - WhatsApp：2023-04 上线 KT（[Meta 工程博客](https://engineering.fb.com/2023/04/13/security/whatsapp-key-transparency/)），基于 CONIKS→SEEMless→Parakeet 谱系的 Auditable Key Directory，**每个 epoch 原子提交 + 审计记录发到第三方公开存储**；实现开源 facebook/akd（[github.com/facebook/akd](https://github.com/facebook/akd)，Apache-2.0，v0.13.0，2026-08 活跃）。
+  - Apple iMessage Contact Key Verification（[security.apple.com](https://security.apple.com/blog/imessage-contact-key-verification/)）：CONIKS 型 log-backed map，**48 小时 Maximum Merge Delay + 客户端互传 log hash（gossip）抓 split-view**。
+  - 注意：Google 旧 repo key-transparency **2021 年已归档**（已核验 archived=true），别再引用为现役；现役生态在 transparency-dev（witness 工具：[github.com/transparency-dev/witness](https://github.com/transparency-dev/witness)，Apache-2.0，2026-09 活跃）和 Sigsum（[sigsum.org](https://www.sigsum.org/)，Glasklar 运营，GitHub 镜像 2026-09 活跃——极简化 CT 设计，强制 witness 共签检查点）。
+
+**一句话形式化结论**：防篡改证明成立条件 = ①追加日志（Merkle 或哈希链）＋ ②**周期性把签名树头/链头检查点发布到日志存储之外的外部追加通道**。缺 ②，任何链都可被持有者整体重写——这是纯机内账本的唯一真正弱点。
+
+# B. 对账本与构建/发布链的升级建议
+
+按性价比排序（每条：接什么 → 预期防什么）：
+
+1. **检查点发布纪律（最高优先，零新依赖）**：每次 build/release 对账本算一次头（当前行数+链头哈希），写成 C2SP checkpoint 风格文本（origin、size、hash、时间、签名），推到一个**独立的外部追加通道**（公开只读 git 仓库、静态站、或邮件存档均可）→ 防：账本持有者事后整体重写链（split-view/重写攻击），这是现有 sha256 链唯一的漏洞，RFC 9162 §1.6 与 Apple/WhatsApp 的实践都指向这一步。
+2. **OTS 低频锚定**：对每次 release 的 HASHES.json（或第 1 条的 checkpoint）跑一次 `ots stamp`，`.ots` 随产物一起发布 → 防：t′created 时间倒签、发布记录不可抵赖；成本 0，延迟数小时，验证端最好有 pruned Bitcoin Core（退一步接受日历辅助验证）。
+3. **账本并行加 Merkle 索引列**：每 N 行算一次 RFC 9162 树根并写入 checkpoint → 防：篡改定位从“全量重放”降为 O(log n)，并让第三方能验“某行在某版本存在”而不用拿到全库；实现自写 ~100 行（照 RFC §2.1）或用 pymerkle（注意 GPL-3.0，内部工具无所谓、对外发布慎用）。
+4. **HASHES.json → in-toto attestation**：升级为 statement JSON（subject=内容寻址 id+sha256；predicate 自定义 canon-build/v1：源快照哈希、构建命令、startedOn/finishedOn、builder=机器指纹），用 minisign/SSH 签名 → 防：构建产物与构建事实脱钩被偷换；同时获得与 in-toto/SLSA 生态互认的标准词汇表，不需要上 SLSA 分级。
+5. **签名件与导出凭证**：Windows 自带 `ssh-keygen -Y`（SSHSIG）做日常签名（namespace 区分用途：`canon-checkpoint`/`canon-release`），发布密钥单独一把；`git commit -S`（gpg.format=ssh）让 git 历史自带签名。导出的图谱/百科页借鉴 C2PA 的断言清单结构，在 HTML meta / PNG tEXt / JSON 旁车文件里嵌"来源 manifest"（条目 id 列表、版本、build attestation 哈希、签名）→ 防：导出物来源被剥离或替换，且清单机可读可验。
+6. **信任锚文档**：仓库内 `TRUSTED_KEYS.md` 版本化管理（公钥+key id+生效区间+namespace），轮换期双签过渡，历史验证按时点匹配（SSH valid-after/valid-before 原生支持）→ 防：单把密钥泄露后无法无声换锁。
+
+# C. 排除项
+
+- **代币/直接上链**：明确排除（OTS 属于“用链不发币”——只借 Bitcoin 出块做时间锚，不持有任何代币资产，与约束相容）。
+- **停维/落后件**：google/key-transparency（2021 归档）、merkletools（2018 停更）、in-toto-attestation PyPI 绑定（落后 spec v1.2）、Cloudflare ct-woodpecker（仓库已查不到【待确认】）——均不推荐接入。
+- **过度工程**：Trillian/Tessera/Sunlight 日志**服务器**部署（为多写者公开日志设计；单机取其 tlog-tiles/checkpoint 数据格式即可，不部署服务）；SLSA Build L2/L3 与 hosted builder（需要 CI 基础设施）；sigstore keyless 全家桶（OIDC+Fulcio+Rekor 外部依赖，与零服务依赖冲突）；完整 C2PA SDK 容器集成（JUMBF+证书链，除非要 Photoshop 等外部工具互认 AI 标注）；TUF/ptuf 完整框架（取其轮换思想即可）。
+- **许可陷阱**：pymerkle 为 GPL-3.0-or-later——内部管线无碍，若正典库工具链未来对外分发需注意传染性（替代：自写 RFC 9162 验证器）。
+
+Sources:
+- [google/trillian](https://github.com/google/trillian) · [transparency-dev/tessera](https://github.com/transparency-dev/tessera) · [transparency-dev/merkle](https://github.com/transparency-dev/merkle) · [transparency-dev/witness](https://github.com/transparency-dev/witness) · [FiloSottile/sunlight](https://github.com/FiloSottile/sunlight) · [sunlight.dev](https://sunlight.dev) · [C2SP tlog-tiles](https://c2sp.org/tlog-tiles) · [google/certificate-transparency-go](https://github.com/google/certificate-transparency-go) · [cloudflare/cfssl](https://github.com/cloudflare/cfssl)
+- [pymerkle (PyPI)](https://pypi.org/project/pymerkle/) · [merkletools (PyPI)](https://pypi.org/project/merkletools/)
+- [OpenTimestamps 官网](https://opentimestamps.org/) · [opentimestamps-client](https://github.com/opentimestamps/opentimestamps-client) · [python-opentimestamps](https://github.com/opentimestamps/python-opentimestamps) · [opentimestamps-server](https://github.com/opentimestamps/opentimestamps-server)
+- [in-toto.io](https://in-toto.io/) · [in-toto/in-toto](https://github.com/in-toto/in-toto) · [in-toto/attestation](https://github.com/in-toto/attestation) · [SLSA](https://slsa.dev/) · [SLSA Provenance v1](https://slsa.dev/spec/v1.0/provenance) · [sigstore docs](https://docs.sigstore.dev/) · [sigstore/cosign](https://github.com/sigstore/cosign) · [sigstore/sigstore-python](https://github.com/sigstore/sigstore-python) · [Red Hat: cosign v3 offline bundles](https://developers.redhat.com)
+- [C2PA 主站](https://c2pa.org/) · [C2PA 规范索引（2.4/2.3）](https://spec.c2pa.org/specifications/specifications/) · [contentauth/c2pa-python](https://github.com/contentauth/c2pa-python)
+- [jedisct1/minisign](https://github.com/jedisct1/minisign) · [jedisct1/rust-minisign](https://github.com/jedisct1/rust-minisign) · [aperezdc/signify](https://github.com/aperezdc/signify) · [ssh-keygen 手册（SSHSIG）](https://man.openbsd.org/ssh-keygen) · [git-commit 手册](https://git-scm.com/docs/git-commit)
+- [RFC 9162](https://www.rfc-editor.org/rfc/rfc9162.html) · [WhatsApp Key Transparency（Meta 工程博客）](https://engineering.fb.com/2023/04/13/security/whatsapp-key-transparency/) · [facebook/akd](https://github.com/facebook/akd) · [Apple iMessage Contact Key Verification](https://security.apple.com/blog/imessage-contact-key-verification/) · [Sigsum](https://www.sigsum.org/) · [Crosby & Wallach, USENIX Security 2009](https://www.usenix.org/legacy/event/sec09/tech/full_papers/crosby.pdf)

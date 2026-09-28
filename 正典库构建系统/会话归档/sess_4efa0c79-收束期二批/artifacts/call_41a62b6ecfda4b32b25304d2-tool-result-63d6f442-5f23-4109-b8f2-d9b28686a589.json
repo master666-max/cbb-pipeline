@@ -1,0 +1,37 @@
+{
+  "createdAt": "2026-09-27T03:05:08.222Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2/governance.py — 治理闭环（Phase F·G08-G15）。\n\n人工桶处置 / 信息保全 review / conformal NLI 校准 / 票权加权 / 缺口队列接线。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport math\nfrom collections import defaultdict\nfrom pathlib import Path\n\n\n# ---- G08 人工桶处置 ----\n\ndef classify_manual_bucket(items: list[dict]) -> dict:\n    \"\"\"将无 detail 的矛盾件按 detail 特征分桶：\n    - artifact: detail 含嵌入相似度（嵌入阈值假阳性）\n    - empty_claim: claim 为空或 None\n    - unknown: 无法归类\n    \"\"\"\n    buckets = {\"artifact\": [], \"empty_claim\": [], \"unknown\": []}\n    for it in items:\n        d = it.get(\"detail\", \"\")\n        if \"嵌入相似度\" in d or \"sim=\" in d:\n            buckets[\"artifact\"].append(it)\n        elif not d.strip():\n            buckets[\"empty_claim\"].append(it)\n        else:\n            buckets[\"unknown\"].append(it)\n    return buckets\n\n\n# ---- G11 conformal NLI 校准 ----\n\nclass ConformalNLICalibrator:\n    \"\"\"把 NLI 三分判定包装成带覆盖率保证的分流器。\n    校准集=人工核验判例（(premise, hypothesis, label) 三元组）。\n    预测集>1（如 contains both entails & contradicts）⇒ 降级人审。\n    \"\"\"\n\n    def __init__(self, alpha: float = 0.10):\n        self.alpha = alpha  # 允许的错误率\n        self.calibration_set: list[dict] = []\n        self._threshold: float | None = None\n\n    def calibrate(self, labeled: list[dict]):\n        \"\"\"用人工核验判例校准 nonconformity score 阈值。\n        labeled: [{premise, hypothesis, label(str), score(float)}]\n        score = 通道给出的\"最优类\"得分（越高越自信）。\n        \"\"\"\n        if len(labeled) < 10:\n            raise ValueError(f\"校准集过小（{len(labeled)}<10）\")\n        scores = []\n        for r in labeled:\n            correct = r[\"predicted\"] == r[\"label\"]\n            # nonconformity = 1 - score if correct, 1 if wrong\n            nc = 1.0 - r[\"score\"] if correct else 1.0\n            scores.append(nc)\n        scores.sort()\n        n = len(scores)\n        idx = min(n - 1, math.ceil((n + 1) * (1 - self.alpha)))\n        self._threshold = scores[idx - 1] if idx > 0 else scores[0]\n        return {\"n\": n, \"threshold\": round(self._threshold, 4), \"alpha\": self.alpha}\n\n    def predict(self, score: float, predicted: str) -> dict:\n        \"\"\"单条预测：score 高于阈值→采纳 predicted；否则降级人审。\"\"\"\n        if self._threshold is None:\n            return {\"verdict\": predicted, \"abstain\": False, \"reason\": \"未校准\"}\n        nc = 1.0 - score\n        abstain = nc > self._threshold\n        return {\"verdict\": predicted, \"abstain\": abstain,\n                \"score\": round(score, 4), \"threshold\": round(self._threshold, 4)}\n\n\n# ---- G13 票权加权（GLAD 简化版） ----\n\nclass ExaminerQualityTracker:\n    \"\"\"追踪每位考官的投票历史，计算质量权重。\n    quality = (correct_votes + prior_a) / (total_votes + prior_a + prior_b)\n    Beta 先验 Beta(a=2, b=1)——初始偏乐观，随数据收敛。\n    \"\"\"\n\n    def __init__(self, prior_a: float = 2.0, prior_b: float = 1.0):\n        self.prior_a = prior_a\n        self.prior_b = prior_b\n        self.history: dict[str, list[bool]] = defaultdict(lambda: [])\n\n    def record(self, examiner: str, correct: bool):\n        self.history[examiner].append(correct)\n\n    def quality(self, examiner: str) -> float:\n        h = self.history.get(examiner, [])\n        n = len(h)\n        if n == 0:\n            return 0.5  # 无数据=中性\n        return sum(h) / n\n\n    def all_quality(self) -> dict:\n        return {k: round(self.quality(k), 4) for k in self.history}\n\n\n# ---- G15 缺口队列接线 ----\n\ndef wire_gap_queue(store_root: Path, findings: list[dict]) -> int:\n    \"\"\"将治理闭环产出的 findings 追加到缺口队列（幂等：同 type+evidence 不重复）。\"\"\"\n    q_path = Path(store_root) / \"缺口队列.jsonl\"\n    existing = set()\n    if q_path.exists():\n        for x in q_path.read_text(encoding=\"utf-8\").splitlines():\n            if x.strip():\n                r = json.loads(x)\n                existing.add((r.get(\"type\"), r.get(\"evidence\")))\n    added = 0\n    with q_path.open(\"a\", encoding=\"utf-8\") as f:\n        for fd in findings:\n            key = (fd.get(\"type\"), fd.get(\"evidence\"))\n            if key not in existing:\n                f.write(json.dumps(fd, ensure_ascii=False, sort_keys=True) + \"\\n\")\n                existing.add(key)\n                added += 1\n    return added\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\governance.py",
+      "structuredPatch": [
+        {
+          "oldStart": 59,
+          "oldLines": 8,
+          "newStart": 59,
+          "newLines": 11,
+          "lines": [
+            "             scores.append(nc)",
+            "         scores.sort()",
+            "         n = len(scores)",
+            "-        idx = min(n - 1, math.ceil((n + 1) * (1 - self.alpha)))",
+            "-        self._threshold = scores[idx - 1] if idx > 0 else scores[0]",
+            "+        # 分位数取（1-α）分位——不用 max：校准集含错判样本时 max=1.0 会堵死弃权",
+            "+        import math as _m",
+            "+        q = _m.ceil((n + 1) * (1 - self.alpha)) - 1",
+            "+        idx = max(0, min(n - 1, q))",
+            "+        self._threshold = scores[idx]",
+            "         return {\"n\": n, \"threshold\": round(self._threshold, 4), \"alpha\": self.alpha}",
+            " ",
+            "     def predict(self, score: float, predicted: str) -> dict:"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_41a62b6ecfda4b32b25304d2",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T04:30:56.550Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.corpus — 坐标/引文回落（R9/R10；算法移植自 v1 cbb_coordinate，proven）。\"\"\"\nfrom __future__ import annotations\n\nimport hashlib\nimport re\nfrom pathlib import Path\n\n_MARKER = re.compile(r\"^<<<CHAPTER\\s+(\\d+)\\s*\\|\\s*(.*?)>>>\\s*$\")\n\n\ndef parse_chapter_marker(line: str):\n    m = _MARKER.match(line.strip())\n    return (int(m.group(1)), m.group(2).strip()) if m else None\n\n\ndef sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\n\n\ndef coordinate(text: str, vol: int = 1) -> dict:\n    lines = [ln.rstrip(\"\\r\") for ln in text.split(\"\\n\")]\n    chapters, cur, para_buf, para_start = [], None, [], 0\n\n    def flush():\n        nonlocal para_buf, para_start\n        if cur is not None and any(l.strip() for l in para_buf):\n            body = \"\\n\".join(para_buf)\n            cur[\"paragraphs\"].append({\"para\": len(cur[\"paragraphs\"]) + 1,\n                                      \"line_start\": para_start,\n                                      \"line_end\": para_start + len(para_buf) - 1,\n                                      \"text\": body, \"sha256\": sha256_text(body)})\n        para_buf, para_start = [], 0\n\n    for ln in lines:\n        mk = parse_chapter_marker(ln)\n        if mk:\n            flush()\n            cur = {\"vol\": vol, \"chapter\": mk[0], \"title\": mk[1], \"paragraphs\": []}\n            chapters.append(cur)\n            continue\n        if cur is None:\n            if not ln.strip():\n                continue\n            cur = {\"vol\": vol, \"chapter\": 0, \"title\": \"(preamble-无章标记)\", \"paragraphs\": []}\n            chapters.append(cur)\n        if ln.strip() == \"\":\n            flush()\n        else:\n            if not para_buf:\n                para_start = len(cur[\"paragraphs\"]) + 1 and para_start or 0\n            para_buf.append(ln)\n    flush()\n\n    # 行号=章内物理行 1-based（与 v1 语义一致：para_start 由章内行计数给）\n    for ch in chapters:\n        n = 0\n        for p in ch[\"paragraphs\"]:\n            p[\"line_start\"], p[\"line_end\"] = n + 1, n + len(p[\"text\"].split(\"\\n\"))\n            n = p[\"line_end\"]\n    blocks = [{\"block_id\": f\"v{ch['vol']:02d}c{ch['chapter']:04d}p{p['para']:04d}\",\n               \"vol\": ch[\"vol\"], \"chapter\": ch[\"chapter\"], \"para\": p[\"para\"],\n               \"line_start\": p[\"line_start\"], \"line_end\": p[\"line_end\"],\n               \"text\": p[\"text\"], \"sha256\": p[\"sha256\"]}\n              for ch in chapters for p in ch[\"paragraphs\"]]\n    return {\"vol_default\": vol, \"chapter_count\": len(chapters), \"chapters\": chapters,\n            \"block_count\": len(blocks), \"blocks\": blocks}\n\n\ndef locate_quote(blocks: list[dict], vol: int, chapter: int, quote: str):\n    for b in blocks:\n        if b[\"vol\"] == vol and b[\"chapter\"] == chapter and quote in b[\"text\"]:\n            return b\n    return None\n\n\ndef process_bytes(raw: bytes, vol: int = 1) -> dict:\n    text = raw.decode(\"utf-8-sig\")  # R10：剥 BOM（记事本默认带 BOM→首章失配→全库偏移）\n    return coordinate(text, vol=vol)\n",
+      "afterContentLength": 2904,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\corpus.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_4f881f0c3e0f4845b96f3b11",
+  "toolName": "Write",
+  "version": 1
+}

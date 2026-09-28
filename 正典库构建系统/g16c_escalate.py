@@ -32,7 +32,7 @@ PROMPT = ("你是正典库独立考官。给定【证据摘录】与【记录断
 def chat(conclusion, evidence, order):
     ev, cc = (evidence, conclusion) if order == "ev" else (conclusion, evidence)
     body = json.dumps({"model": MODEL, "temperature": 0, "stream": False,
-                       "max_tokens": 64,
+                       "max_tokens": 1536,  # CoT 模型 reasoning 先行——768 在部分输入上仍被吃光（非确定性，B5c 实证）
                        "messages": [{"role": "user",
                                      "content": f"{PROMPT}\n【证据摘录】{ev}\n【记录断言】{cc}"
                                      if order == "ev" else
@@ -40,12 +40,16 @@ def chat(conclusion, evidence, order):
     req = urllib.request.Request(BASE.rstrip("/") + "/chat/completions", data=body,
                                  headers={"Content-Type": "application/json",
                                           "Authorization": f"Bearer {KEY}" if KEY else ""})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        raw = json.loads(r.read().decode("utf-8"))["choices"][0]["message"]["content"]
-    m = re.search(r"\{[^}]*\}", raw, re.DOTALL)
-    if not m:
-        raise ValueError(f"非 JSON 输出：{raw[:60]!r}")
-    return json.loads(m.group(0)).get("verdict")
+    raw = ""
+    for attempt in range(2):  # 空输出非确定性（Bonsai 服务态竞态）——空则重试一次
+        with urllib.request.urlopen(req, timeout=180) as r:
+            raw = json.loads(r.read().decode("utf-8"))["choices"][0]["message"].get("content", "") or ""
+        m = re.search(r"\{[^}]*\}", raw, re.DOTALL)
+        if m:
+            return json.loads(m.group(0)).get("verdict")
+        if attempt == 0:
+            time.sleep(1)
+    raise ValueError(f"非 JSON 输出：{raw[:60]!r}")
 
 
 def main():

@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-09-27T03:03:44.430Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.runner — 章管线编排（Phase C 总装）。\n\nprepare_chapter：派工卡=动态切分判定+场景软标签+承接摘要+三层上下文包（旗标 off=整章+空包降级）。\nfinalize_chapter：候选批量 write_decision（身份缓存+at 伪锚点）→投影检查点推进→LightRAG 重喂判定。\n抽取本体仍由宿主 Agent 按派工卡执行（判定权在人；runner 只编排与机械判定）。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nfrom pathlib import Path\n\nfrom . import config, context, splitting\nfrom .derive import ProjectionCheckpoint\nfrom .ledger import LedgerChain, LedgedStore\nfrom .store import identity_key\n\n\ndef prepare_chapter(chapter_no: int, prev_chapter_text: str = \"\",\n                    chapter_text: str = \"\", blocks: list[dict] | None = None,\n                    store: Path | None = None, new_entity_hint: int | None = None) -> dict:\n    store = Path(store or config.store_of(Path(__file__).parents[2]))\n    blocks = blocks or []\n    tags = splitting.scene_tags(blocks) if blocks else {\"scene_count\": 1, \"boundaries\": [],\n                                                        \"dialogue_ratio\": 0.0, \"time_jumps\": 0}\n    if splitting.enabled():\n        decision = splitting.split_decision(chapter_text or \"\", tags,\n                                            new_entity_hint=new_entity_hint)\n        segments = (splitting.segment_blocks(blocks, tags[\"boundaries\"])\n                    if decision[\"split\"] and blocks else None)\n    else:\n        decision = {\"split\": False, \"reasons\": [\"旗标 CBB_DYNAMIC_SPLIT=off\"], \"theta\": splitting.theta()}\n        segments = None\n    carry = context.carry_summary(store, chapter_no - 1)\n    pack = context.build_context_pack(store, chapter_no,\n                                      prev_slice_tail=prev_chapter_text[-400:])\n    return {\"chapter\": chapter_no, \"动态切分\": decision, \"场景软标签\": tags,\n            \"分段\": segments, \"承接摘要\": carry, \"上下文包\": pack,\n            \"口径\": \"先验非事实源；抽取出候选后交 finalize_chapter\"}\n\n\ndef finalize_chapter(store_root: Path, candidates: list[dict], at: str,\n                     register_conflict: bool = True) -> dict:\n    \"\"\"批量 write_decision（身份缓存免全库扫描）→ lightrag 投影检查点推进。\"\"\"\n    ls = LedgedStore(store_root)\n    cache = {}\n    inv = {e[\"record_id\"] for e in ls._load_all(\"invalidations.jsonl\")}\n    chain = {e[\"old_id\"]: e[\"new_id\"] for e in ls._load_all(\"supersede-index.jsonl\")}\n    for rec in ls.iter_records():\n        if rec.get(\"record_id\") in inv:\n            continue\n        k = identity_key(rec)\n        cur = cache.get(k)\n        if cur is None or rec.get(\"version\", 1) > cur.get(\"version\", 1):\n            cache[k] = rec\n    tracks: dict[str, int] = {}\n    results = []\n    for cand in candidates:\n        k = identity_key(cand)\n        r = ls.write_decision(cand, at=at, existing=cache.get(k),\n                              register_conflict=register_conflict)\n        tracks[r[\"track\"]] = tracks.get(r[\"track\"], 0) + 1\n        if r.get(\"new_id\"):\n            fresh = ls._find(r[\"new_id\"])\n            if fresh:\n                cache[k] = fresh\n        results.append({\"record_id\": cand.get(\"record_id\"), \"track\": r[\"track\"],\n                        \"new_id\": r.get(\"new_id\") or r.get(\"event_id\")})\n    ledger = LedgerChain(Path(store_root) / \"ledger.jsonl\")\n    rows = len(ledger._rows_fresh())\n    cp = ProjectionCheckpoint(Path(store_root), \"lightrag\")\n    cp.commit(ledger_offset=rows, sha=at, at=at)\n    return {\"chapters_written_at\": at, \"tracks\": tracks, \"results\": results,\n            \"checkpoint\": rows}\n\n\ndef refeed_needed(store_root: Path, view: str = \"lightrag\") -> bool:\n    \"\"\"账本自上次检查点以来有任何行 ⇒ 派生视图需重喂（整批重喂语义）。\"\"\"\n    ledger = LedgerChain(Path(store_root) / \"ledger.jsonl\")\n    rows = len(ledger._rows_fresh())\n    return ProjectionCheckpoint(Path(store_root), view).replay_needed(rows)\n\n\ndef run_chapter(chapter_no: int, store: Path | None = None, no_aux: bool = False) -> dict:\n    \"\"\"v2 编排骨架（aux 四件探活降级；保留兼容 Phase A 前调用面）。\"\"\"\n    store = store or config.store_of(Path(__file__).parents[2])\n    aux = {\"embedding\": None, \"graph\": None, \"replica\": None, \"temporal\": None}\n    if not no_aux:\n        aux_steps = [\n            (\"embedding\", [\"py\", \"-X\", \"utf8\", \"cbb/tools/embed_dedup_scan.py\"]),\n            (\"graph\", [\"py\", \"-X\", \"utf8\", \"cbb/tools/neo4j_export.py\"]),\n        ]\n        for key, cmd in aux_steps:\n            try:\n                import subprocess\n                r = subprocess.run(cmd, capture_output=True, text=True, encoding=\"utf-8\",\n                                   timeout=600, cwd=str(store.parent))\n                aux[key] = (json.loads(r.stdout.strip().splitlines()[-1])\n                            if r.stdout.strip() else {\"status\": \"blocked\"})\n            except Exception as e:\n                aux[key] = {\"status\": \"error\", \"stderr\": str(e)[-200:]}\n    return {\"chapter\": chapter_no, \"aux\": aux,\n            \"口径\": \"v2 骨架——长尾工具仍由 cbb/ 提供（D1 裁决：增量迁移）\"}\n\n\nif __name__ == \"__main__\":\n    import sys\n    raise SystemExit(run_chapter(int(sys.argv[1]) if len(sys.argv) > 1 else 0) and 0)\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\runner.py",
+      "structuredPatch": [
+        {
+          "oldStart": 45,
+          "oldLines": 7,
+          "newStart": 45,
+          "newLines": 6,
+          "lines": [
+            "     ls = LedgedStore(store_root)",
+            "     cache = {}",
+            "     inv = {e[\"record_id\"] for e in ls._load_all(\"invalidations.jsonl\")}",
+            "-    chain = {e[\"old_id\"]: e[\"new_id\"] for e in ls._load_all(\"supersede-index.jsonl\")}",
+            "     for rec in ls.iter_records():",
+            "         if rec.get(\"record_id\") in inv:",
+            "             continue"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_9ffcdf8e5e024f19ad19dfc4",
+  "toolName": "Edit",
+  "version": 1
+}

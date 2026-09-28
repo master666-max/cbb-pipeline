@@ -123,6 +123,33 @@ def main():
                 and last[r["record_id"]].get("verdict") == "human"]
         print(f"B5c 契约缺陷重判模式: {len(full)}/{before} 件（JUDGE_PROMPT v2）")
 
+    if "--revote-panel" in sys.argv:
+        # B5d：新面板（GLM+DS）全量重判一切非晋升件（含 v1.3 契约缺陷受染 human）
+        last = {}
+        if JOURNAL_FULL.exists():
+            for l in JOURNAL_FULL.read_text(encoding="utf-8").splitlines():
+                if l.strip():
+                    r = json.loads(l)
+                    last[r["record_id"]] = r
+        pre_route = {}
+        ps = STORE / "补充证据-NLI预筛.jsonl"
+        if ps.exists():
+            for l in ps.read_text(encoding="utf-8").splitlines():
+                if l.strip():
+                    r = json.loads(l)
+                    pre_route[r["record_id"]] = r.get("route")
+        before = len(full)
+        keep = []
+        for r in full:
+            rid = r["record_id"]
+            if pre_route.get(rid) == "human_nli":
+                continue  # NLI 矛盾件：维持人工直送，不重判
+            lr = last.get(rid)
+            if lr is None or lr.get("verdict") != "promote":
+                keep.append(r)
+        full = keep
+        print(f"B5d 新面板全量重判: {len(full)}/{before}（晋升件不再重判）")
+
     if "--revote-incomplete" in sys.argv:
         # B5b 补判模式：只重判 QWEN 缺席的持票不完整件（末行 hold 且票数<2）
         last = {}

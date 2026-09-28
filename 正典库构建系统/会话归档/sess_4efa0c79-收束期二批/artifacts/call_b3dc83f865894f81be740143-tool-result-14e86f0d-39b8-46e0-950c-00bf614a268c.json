@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T18:35:07.646Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.anchor_check — 实体锚定谓词·单一来源（收束期二批 C2/C3）。\n\n所有锚定判定（回填件/gate1 E-ANCHOR-ENTITIES/巡检抽检）都 import 本模块，\n禁止各处复制正则漂移。库分形谓词：\n  character/setting → canonical.name 必须可在引文集锚定\n  relation          → subject∧object\n  event/foreshadow  → entities 全员（name 为标签型豁免——见预调研路 5/研讨报告 §2.2）\n\"\"\"\nfrom __future__ import annotations\n\nimport re\n\n_DROP = re.compile(r\"[『』「」\\[\\]（）()………\\.\\.\\—─\\-、，。？！?!：:；;\\s\\\"\\\"''~～·　]\")\n\n\ndef norm(s) -> str:\n    return _DROP.sub(\"\", str(s))\n\n\ndef norm_with_index(s: str):\n    \"\"\"规范化 + 原文下标映射（span 精确回落用）。\"\"\"\n    out, idx = [], []\n    for i, ch in enumerate(s):\n        if _DROP.match(ch):\n            continue\n        out.append(ch)\n        idx.append(i)\n    return \"\".join(out), idx\n\n\ndef variants(k: str) -> set:\n    \"\"\"容错变体：全名/去双字姓/末二字/末三字（G14 调研路 5 的变体归一机械段）。\"\"\"\n    vs = {k}\n    if len(k) >= 4:\n        vs.add(k[:-2])\n    if len(k) >= 3:\n        vs.add(k[-2:])\n    if len(k) >= 4:\n        vs.add(k[-3:])\n    return {v for v in vs if len(v) >= 2}\n\n\ndef anchor_keys(lib: str, canonical: dict) -> list:\n    \"\"\"库分形：返回必须可锚定的表面名 keys（标签型 name 不在其中）。\"\"\"\n    if lib == \"relation\":\n        return [norm(canonical.get(k, \"\")) for k in (\"subject\", \"object\") if canonical.get(k)]\n    if lib in (\"event\", \"foreshadow\"):\n        return [norm(e) for e in (canonical.get(\"entities\") or [])]\n    k = norm(canonical.get(\"name\", \"\"))\n    return [k] if k else []\n\n\ndef missing_keys(lib: str, canonical: dict, quotes_normed: str) -> list:\n    return [k for k in anchor_keys(lib, canonical)\n            if not any(v in quotes_normed for v in variants(k))]\n\n\ndef anchored(lib: str, canonical: dict, evidence: list) -> bool:\n    quotes = norm(\"；\".join(e.get(\"quote\", \"\") for e in (evidence or [])))\n    keys = anchor_keys(lib, canonical)\n    return bool(keys) and not missing_keys(lib, canonical, quotes)\n\n\ndef check_anchor_entities(rec: dict) -> list:\n    \"\"\"gate1 E-ANCHOR-ENTITIES（warn 级）：候选断言实体在引文集零命中即告警。\n    返回 warn 字典列表（不进 violations——不拦截，降置信语义在调用侧）。\"\"\"\n    lib = rec.get(\"library\") or \"\"\n    c = rec.get(\"canonical\") or {}\n    quotes = norm(\"；\".join(e.get(\"quote\", \"\") for e in (rec.get(\"evidence\") or [])))\n    warns = []\n    for k in missing_keys(lib, c, quotes):\n        warns.append({\"code\": \"E-ANCHOR-ENTITIES\", \"detail\": f\"实体 {k!r} 在引文集零命中\",\n                      \"key\": k})\n    return warns\n\n\ndef check_relation_object_in_entities(rec: dict, entity_names: set) -> list:\n    \"\"\"C3 SHACL 固化：关系 object 应在实体表（名称级；变体容错）。\n    entity_names=规范名集合（已 norm）。缺则 warn——实体可能后建，由调用侧定严级。\"\"\"\n    if (rec.get(\"library\") or \"\") != \"relation\":\n        return []\n    c = rec.get(\"canonical\") or {}\n    obj = norm(c.get(\"object\", \"\"))\n    if not obj:\n        return []\n    if any(v in entity_names for v in variants(obj)):\n        return []\n    return [{\"code\": \"E-SHACL-OBJECT\", \"detail\": f\"关系 object {obj!r} 不在实体表\"}]\n",
+      "afterContentLength": 2827,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\anchor_check.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_b3dc83f865894f81be740143",
+  "toolName": "Write",
+  "version": 1
+}

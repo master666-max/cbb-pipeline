@@ -1,0 +1,4 @@
+exit=1
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\site-packages\lightrag\lightrag.py", line 3405, in _flush_one
+    raise IndexFlushError(type(storage_inst).__name__, namespace, e) from e
+lightrag.exceptions.IndexFlushError: JsonKVStorage[full_docs] index flush failed: 'NoneType' object does not support the asynchronous context manager protocol (missed __aexit__ method)

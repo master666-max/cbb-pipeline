@@ -1,0 +1,45 @@
+{
+  "agentId": "agent_9be39b32-c4bc-458c-a77b-a1530fa250fb",
+  "childSessionId": "sess_subagent_agent_9be39b32-c4bc-458c-a77b-a1530fa250fb",
+  "createdAt": "2026-09-27T17:40:26.829Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "串行·机制预调研报告适配扫",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_9be39b32-c4bc-458c-a77b-a1530fa250fb\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_9be39b32-c4bc-458c-a77b-a1530fa250fb\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_f980eba822a743b7b423c2d7",
+  "profileId": "Explore",
+  "profileSnapshot": {
+    "name": "Explore",
+    "description": "Read-only search agent for broad fan-out searches - when answering means sweeping many files, directories, or naming conventions and you only need the conclusion, not the file dumps. It reads excerpts rather than whole files, so it locates code; it doesn't review or audit it. Specify search breadth: \"medium\" for moderate exploration, \"very thorough\" for multiple locations and naming conventions.",
+    "color": "cyan",
+    "injectAgentsMd": false,
+    "source": "built-in",
+    "systemPrompt": "",
+    "tools": [
+      "Bash",
+      "Glob",
+      "Grep",
+      "Read",
+      "WebFetch",
+      "WebSearch",
+      "TodoWrite"
+    ]
+  },
+  "prompt": "你在 D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统 工作目录。任务：通读《流程机制合理性-预调研与第一性原理报告-20260926.md》（200 行，**重点读第一性原理推导/逐机制判定表/组合架构/革命性候选排序/落地衔接五节，即 103-190 行区间——此前只精读过路1-7 发现节**）+《裁决信息包-流程设计六项-20260926.md》全文，把其中所有机制/改判/组合架构建议/革命性候选逐个提取，判定对本阶段的适配性。\n\n## 本阶段背景（判定基准）\n中文小说正典库项目（517 章《迷深》，库 6,278 件）收束期，活口与痛点：\n1. G16b 全库终审完成：1,273 晋升 / 4,887 hold / 118 人审——hold 主体=缺锚件（引文里没有断言实体，中文零指代），双考官（DEEPSEEK+QWEN）齐弃权\n2. 证据回填试点已通（40 件：命中 87.5%、9 营救、零假晋升），全量回填+重审待发车\n3. 抽取锚定条款+gate1 E-ANCHOR-ENTITIES 校验待落地（严级 warn vs 拦截待拍板）\n4. G17 FSRS 首圈巡检、G18 v3.1 发布、G19 外部验收（qoder 重放）待做\n5. G10 profiles 措辞审定、G11 conformal 校准、Wilson n≥80 审计共用一个待开的人工判例窗\n6. G26 GEPA 共进化闭环刚立项（gate1 缺锚率当 reward，波 5 触发器驱动）\n\n## 已判定项（不必重复报告，直接跳过）\n- GEPA/PARSE/DIAL-KG → 已立项 G26\n- MiniCheck/Erlangshen 预筛、LangExtract span、Label Studio、仪器治理三件套、CNCTST 五段式 → 已入\"现做 7 件\"\n- plant capture/CUSUM/onlineFDR/NovelQA/alibi-detect/confseq/iNEXT → 已挂触发器\n- LightRAG 替换对照/DoWhy/CollateX/HistWords/CBDB → 已判不做\n- 65 例 ER 金标名单落盘、SHACL 常态校验、图链三参数 → 已登记\n\n## 输出格式\n结构化清单，每条：`机制/改判/候选名 | 出处（文档+节） | 本阶段适配点（具体到活口） | 前置条件 | 成本 | 建议档位[现在做/触发器挂起(写触发器)/不做(理由)]`\n- 重点挖：逐机制判定表（116-146 行）里判\"调整/升级/保留+观察\"的项、组合架构（147-168）的有机组合建议、革命性候选排序（169-182）里排前但未立项的、落地衔接（183-189）的未尽事项、裁决信息包六项的悬置条款\n- 用 grep 在 cbb-v2/、工单 md 里核实\"是否已落地\"，别把已实现的重复报\n- 宁可多列不要漏报，每条给理由\n\n你的最终消息=完整清单（主会话直接合成的原料，不用客套）。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_9be39b32-c4bc-458c-a77b-a1530fa250fb\\task.output",
+  "updatedAt": "2026-09-27T17:52:39.992Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-27T17:52:39.992Z",
+  "totalDurationMs": 732968,
+  "totalTokens": 513672,
+  "totalToolUseCount": 27,
+  "usage": {
+    "inputTokens": 495893,
+    "outputTokens": 17779,
+    "totalTokens": 513672,
+    "cacheReadTokens": 445760,
+    "cacheWriteTokens": 0
+  }
+}

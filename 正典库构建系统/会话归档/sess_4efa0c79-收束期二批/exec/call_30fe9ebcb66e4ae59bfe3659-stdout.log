@@ -1,0 +1,7 @@
+2 failed, 4 passed in 0.61s
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\site-packages\transformers\models\bert\modeling_bert.py", line 104, in forward
+    embeddings = embeddings + position_embeddings
+                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+RuntimeError: The size of tensor a (708) must match the size of tensor b (512) at non-singleton dimension 1

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-24T15:30:10.715Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"fetch_remote_changes.py — 把远端领先文件拉到本地镜像目录，供与工作区逐件 diff。\n\n用法：py -X utf8 tools/fetch_remote_changes.py <repo> <ref> <本地输出根> <path1> <path2> ...\n输出：<输出根>/<repo path 原样>；并打印每件 sha。\n\"\"\"\nimport base64\nimport json\nimport os\nimport subprocess\nimport sys\n\nREPO, REF, OUT = sys.argv[1], sys.argv[2], sys.argv[3]\nPATHS = sys.argv[4:]\n\n\ndef gh(args):\n    r = subprocess.run([\"gh\", \"api\"] + args, capture_output=True, text=True, encoding=\"utf-8\")\n    if r.returncode != 0:\n        raise RuntimeError(r.stderr[:300])\n    return json.loads(r.stdout)\n\n\nos.makedirs(OUT, exist_ok=True)\nfor p in PATHS:\n    blob = gh([f\"repos/{REPO}/contents/{p}?ref={REF}\"])\n    data = gh([f\"repos/{REPO}/git/blobs/{blob['sha']}\"])\n    content = base64.b64decode(data[\"content\"])\n    dst = os.path.join(OUT, p.replace(\"/\", os.sep))\n    os.makedirs(os.path.dirname(dst), exist_ok=True)\n    with open(dst, \"wb\") as f:\n        f.write(content)\n    print(f\"  {p}  ({len(content)}B, sha {data['sha'][:10]})\")\nprint(f\"✓ {len(PATHS)} 件 → {OUT}\")\n",
+      "afterContentLength": 1032,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\fetch_remote_changes.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_74fe810abfef4306a5719b1a",
+  "toolName": "Write",
+  "version": 1
+}

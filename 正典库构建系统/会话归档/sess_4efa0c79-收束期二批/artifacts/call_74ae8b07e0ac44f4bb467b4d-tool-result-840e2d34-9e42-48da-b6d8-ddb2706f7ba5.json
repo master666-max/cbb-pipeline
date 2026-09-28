@@ -1,0 +1,37 @@
+{
+  "createdAt": "2026-09-13T21:23:31.132Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"run_tier2_pipeline.py — Tier 2 原装 add_episode 管道验证\n用法: DEEPSEEK_API_KEY=... NEO4J_PASSWORD=... venv312/Scripts/python.exe -X utf8 run_tier2_pipeline.py\n叙事伪锚点：reference_time = 2000-01-01 + 集序i天（保章节顺序，不冒充真实日期——报告披露）\nR6 领域规则经 add_episode 原生 custom_extraction_instructions 注入\n\"\"\"\nimport asyncio, json, os, sys\nfrom datetime import datetime, timedelta, timezone\n\nBASE = os.path.dirname(os.path.abspath(__file__))\nROOT = os.path.dirname(BASE)\nOUT = os.path.join(ROOT, \"结果\", \"tier2\")\nos.makedirs(OUT, exist_ok=True)\n\nDS_KEY = os.environ.get(\"DEEPSEEK_API_KEY\")\nNEO_PASS = os.environ.get(\"NEO4J_PASSWORD\")\nif not DS_KEY or not NEO_PASS:\n    sys.exit(\"FATAL: need DEEPSEEK_API_KEY + NEO4J_PASSWORD env\")\n\nEPISODES = [\n    (\"excerpt1-CHAPTER0014\", \"excerpt1-CHAPTER0014.md\"),\n    (\"excerpt2-CHAPTER0038\", \"excerpt2-CHAPTER0038.md\"),\n    (\"excerpt3-CHAPTER0114\", \"excerpt3-CHAPTER0114.md\"),\n    (\"excerpt4-CHAPTER0001\", \"excerpt4-CHAPTER0001-序章型.md\"),\n]\nSHA = {\"excerpt1-CHAPTER0014\": \"08cc9036f03ec9ee\", \"excerpt2-CHAPTER0038\": \"15dc13a4c11870b0\",\n       \"excerpt3-CHAPTER0114\": \"0dca88d75c99eaaa\", \"excerpt4-CHAPTER0001\": \"9b0d2d0c7b4d2c4b\"}\n\nfrom graphiti_core import Graphiti\nfrom graphiti_core.llm_client import LLMConfig, OpenAIClient\nfrom graphiti_core.embedder import OpenAIEmbedder, OpenAIEmbedderConfig\nfrom graphiti_core.nodes import EpisodeType\n\nR6 = \"\"\"领域规则（中文小说《迷深》正典库构建）：\n1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；\n2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；\n3) 专有名词（人名/地名/魔法名/道具名）保留原文写法，不翻译不改写；\n4) 信件/传闻/指控中的声称按文本事实抽取，并在 fact 中标注'据某某声称'。\"\"\"\n\nasync def main():\n    llm_cfg = LLMConfig(api_key=DS_KEY, model=\"deepseek-flash\",\n                        base_url=\"https://api.deepseek.com/v1\", small_model=\"deepseek-flash\")\n    llm = OpenAIClient(config=llm_cfg, max_tokens=32768)\n    emb_cfg = OpenAIEmbedderConfig(api_key=\"lmstudio-local\",\n                                   embedding_model=\"text-embedding-qwen3-embedding-8b@q8_0\",\n                                   embedding_dim=4096, base_url=\"http://127.0.0.1:8080/v1\")\n    embedder = OpenAIEmbedder(config=emb_cfg)\n    graphiti = Graphiti(\"bolt://localhost:7687\", \"neo4j\", NEO_PASS,\n                        llm_client=llm, embedder=embedder)\n    await graphiti.build_indices_and_constraints()\n    print(\"[init] indices/constraints built\", flush=True)\n\n    log = []\n    for i, (name, fname) in enumerate(EPISODES):\n        text = open(os.path.join(ROOT, \"材料\", fname), encoding=\"utf-8\").read()\n        ref = datetime(2000, 1, 1, tzinfo=timezone.utc) + timedelta(days=i)\n        # 断点续跑：已入库的集跳过\n        async with driver.session(database=\"neo4j\") as s:\n            chk = await s.run(\"MATCH (e:Episodic {name:$n}) RETURN count(e) AS c\", n=name)\n            rec = [r.data() async for r in chk]\n            if rec and rec[0][\"c\"] > 0:\n                log.append({\"episode\": name, \"status\": \"skipped(已入库)\"})\n                print(f\"[ep{i+1}] {name} SKIP(已入库)\", flush=True)\n                continue\n        t0 = datetime.now()\n        try:\n            await graphiti.add_episode(\n                name=name, episode_body=text,\n                source_description=\"中文小说《迷深》正文切样（Step0-Tier2 实验）\",\n                reference_time=ref, source=EpisodeType.text,\n                group_id=\"mishen-step0\",\n                custom_extraction_instructions=R6,\n            )\n            dt = (datetime.now() - t0).total_seconds()\n            log.append({\"episode\": name, \"status\": \"ok\", \"seconds\": dt})\n            print(f\"[ep{i+1}] {name} OK {dt:.0f}s\", flush=True)\n        except Exception as e:\n            log.append({\"episode\": name, \"status\": \"error\", \"error\": repr(e)[:300]})\n            print(f\"[ep{i+1}] {name} ERROR: {repr(e)[:200]}\", flush=True)\n\n    # ---- 导出全图 ----\n    driver = graphiti.graph_driver\n    async with driver.session(database=\"neo4j\") as session:\n        nodes = await session.run(\"MATCH (n:Entity) RETURN n.name AS name, n.summary AS summary, labels(n) AS labels\")\n        ent_rows = [r.data() async for r in nodes]\n        edges = await session.run(\"MATCH (a:Entity)-[r:RELATES_TO]->(b:Entity) \"\n                                  \"RETURN a.name AS src, b.name AS dst, r.fact AS fact, \"\n                                  \"r.valid_at AS valid_at, r.invalid_at AS invalid_at\")\n        edge_rows = [r.data() async for r in edges]\n        ep_count = await session.run(\"MATCH (e:Episodic) RETURN count(e) AS c\")\n        ep_c = [r.data() async for r in ep_count]\n\n    result = {\"meta\": {\"model\": \"deepseek-flash\", \"embedder\": \"text-embedding-qwen3-embedding-8b@q8_0@LMStudio:4096\",\n                       \"backend\": \"neo4j-docker\", \"r6\": R6[:40] + \"...\",\n                       \"reference_time_policy\": \"2000-01-01+集序天(叙事伪锚点)\"},\n              \"episode_log\": log, \"episodic_count\": ep_c,\n              \"entities\": ent_rows, \"edges\": edge_rows}\n    with open(os.path.join(OUT, \"tier2-graph-export.json\"), \"w\", encoding=\"utf-8\") as f:\n        json.dump(result, f, ensure_ascii=False, indent=1)\n    print(f\"[done] entities={len(ent_rows)} edges={len(edge_rows)} episodic={ep_c}\", flush=True)\n\nasyncio.run(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\P1执行区\\step0-抽取精度实验\\脚本\\run_tier2_pipeline.py",
+      "structuredPatch": [
+        {
+          "oldStart": 30,
+          "oldLines": 7,
+          "newStart": 30,
+          "newLines": 13,
+          "lines": [
+            " from graphiti_core.llm_client import LLMConfig, OpenAIClient",
+            " from graphiti_core.embedder import OpenAIEmbedder, OpenAIEmbedderConfig",
+            " from graphiti_core.nodes import EpisodeType",
+            "+from graphiti_core.cross_encoder.client import CrossEncoderClient",
+            " ",
+            "+class NoopCrossEncoder(CrossEncoderClient):",
+            "+    \"\"\"Tier 2 只入库不检索：reranker 槽位用空转实现占位\"\"\"",
+            "+    async def rank(self, cross_encoder_query, passages):",
+            "+        return []",
+            "+",
+            " R6 = \"\"\"领域规则（中文小说《迷深》正典库构建）：",
+            " 1) 元文本（作者杂谈/翻译组公告/论坛吐槽/现实日期/话数卷数/平台与作品名）一律不得抽取任何实体或关系；",
+            " 2) 无专名但固定出场且有关键行为的职务称呼（如店长）应抽取为实体；"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_74ae8b07e0ac44f4bb467b4d",
+  "toolName": "Edit",
+  "version": 1
+}

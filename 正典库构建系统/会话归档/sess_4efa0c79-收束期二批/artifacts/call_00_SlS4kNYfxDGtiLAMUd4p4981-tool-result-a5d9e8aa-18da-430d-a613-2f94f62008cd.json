@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-09-23T12:09:31.045Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"patch_rerank_gguf_v2.py — v2：具名模板（列表形式）+ 分类标签 + cls.weight 张量\n\nv1 教训：add_chat_template 收到 JSON 字符串会走\"默认模板\"分支；必须传 **list** 才会写\n`tokenizer.chat_template.rerank` 具名键（llama.cpp 的 rerank 路径只查具名模板）。\n另按官方转换器补 `cls.weight` 张量：从输出头（output.weight / token_embd.weight）里\n取 \"yes\"/\"no\" 两行（Q4_K 行对齐，按块切片反量化，避免整表 1.5GB 展开）。\n用法：py -X utf8 patch_rerank_gguf_v2.py\n\"\"\"\nimport json\nimport math\n\nimport numpy as np\nimport gguf\nfrom gguf.quants import dequantize\nfrom gguf.scripts.gguf_new_metadata import get_field_data\n\nSRC = r\"D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m.gguf\"\nDST = r\"D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m-rerank.gguf\"\n\nTEMPLATE = (\n    \"<|im_start|>system\\n\"\n    \"Judge whether the Document meets the requirements based on the Query and the Instruct provided. \"\n    \"Note that the answer can only be \\\"yes\\\" or \\\"no\\\".<|im_end|>\\n\"\n    \"<|im_start|>user\\n\"\n    \"<Instruct>: Given a web search query, retrieve relevant passages that answer the query\\n\"\n    \"<Query>: {query}\\n\"\n    \"<Document>: {document}<|im_end|>\\n\"\n    \"<|im_start|>assistant\\n<think>\\n\\n</think>\\n\\n\"\n)\n\n\ndef token_id(vocab_tokens, s: str):\n    for i, t in enumerate(vocab_tokens):\n        if t == s:\n            return i\n    raise SystemExit(f\"词表里找不到 {s!r}\")\n\n\ndef main() -> int:\n    reader = gguf.GGUFReader(SRC, \"r\")\n    arch = get_field_data(reader, gguf.Keys.General.ARCHITECTURE)\n    tokens = get_field_data(reader, gguf.Keys.Tokenizer.LIST)\n\n    # 找输出头张量（tied → token_embd.weight；否则 output.weight）\n    by_name = {t.name: t for t in reader.tensors}\n    head = by_name.get(\"output.weight\") or by_name.get(\"token_embd.weight\")\n    if head is None:\n        raise SystemExit(\"找不到输出头张量\")\n    print(\"输出头:\", head.name, head.shape, head.tensor_type)\n\n    hidden = int(head.shape[1]) if len(head.shape) > 1 else None\n    t_yes, t_no = token_id(tokens, \"yes\"), token_id(tokens, \"no\")\n    print(\"token id: yes =\", t_yes, \"| no =\", t_no)\n\n    block = 256  # Q4_K/Q5_K/Q6_K 等 K 量化的块大小\n    bpr = math.ceil(hidden / block)\n    raw = np.asarray(head.data).reshape(-1, head.data.shape[-1])\n\n    def row_vec(tid: int) -> np.ndarray:\n        v = dequantize(raw[tid * bpr:(tid + 1) * bpr], head.tensor_type)\n        return np.asarray(v, dtype=np.float32)[:hidden]\n\n    cls = np.stack([row_vec(t_yes), row_vec(t_no)])  # [yes; no] 与官方转换器同序\n    print(\"cls.weight:\", cls.shape, cls.dtype)\n\n    writer = gguf.GGUFWriter(DST, arch)\n    # 1) 复制全部元数据（跳过旧 chat_template 与 architecture）\n    for field in reader.fields.values():\n        if field.name == gguf.Keys.General.ARCHITECTURE or field.name.startswith(\"GGUF.\"):\n            continue\n        if field.name.startswith(gguf.Keys.Tokenizer.CHAT_TEMPLATE):\n            continue\n        vt = field.types[0]\n        sub = field.types[-1] if vt == gguf.GGUFValueType.ARRAY else None\n        writer.add_key_value(field.name, field.contents(), vt, sub_type=sub)\n    # 2) 具名模板（列表形式！）+ 分类标签\n    writer.add_chat_template([{\"name\": \"rerank\", \"template\": TEMPLATE}])\n    writer.add_key_value(\"classifier_output_labels\", [\"yes\", \"no\"],\n                         gguf.GGUFValueType.ARRAY, sub_type=gguf.GGUFValueType.STRING)\n    # 3) 张量：原样复制 + 追加 cls.weight\n    for t in reader.tensors:\n        writer.add_tensor_info(t.name, t.data.shape, t.data.dtype, t.data.nbytes, t.tensor_type)\n    writer.add_tensor_info(\"cls.weight\", cls.shape, cls.dtype, cls.nbytes, gguf.GGMLQuantizationType.F32)\n    writer.write_header_to_file()\n    writer.write_kv_data_to_file()\n    writer.write_ti_data_to_file()\n    for t in reader.tensors:\n        writer.write_tensor_data(t.data, tensor_type=t.tensor_type)\n    writer.write_tensor_data(cls, tensor_type=gguf.GGMLQuantizationType.F32)\n    writer.close()\n    print(\"完成 →\", DST)\n\n    chk = gguf.GGUFReader(DST)\n    names = [f.name for f in chk.fields.values()]\n    tn = [t.name for t in chk.tensors]\n    print(\"具名模板键在场:\", any(n.startswith(\"tokenizer.chat_template.rerank\") for n in names))\n    print(\"分类标签在场:\", \"classifier_output_labels\" in names)\n    print(\"cls.weight 在场:\", \"cls.weight\" in tn)\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\tools\\patch_rerank_gguf_v2.py",
+      "structuredPatch": [
+        {
+          "oldStart": 58,
+          "oldLines": 7,
+          "newStart": 58,
+          "newLines": 8,
+          "lines": [
+            "     raw = np.asarray(head.data).reshape(-1, head.data.shape[-1])",
+            " ",
+            "     def row_vec(tid: int) -> np.ndarray:",
+            "-        v = dequantize(raw[tid * bpr:(tid + 1) * bpr], head.tensor_type)",
+            "+        seg = raw[tid * bpr:(tid + 1) * bpr].reshape(-1)  # dequantize 要一维字节流",
+            "+        v = dequantize(seg, head.tensor_type)",
+            "         return np.asarray(v, dtype=np.float32)[:hidden]",
+            " ",
+            "     cls = np.stack([row_vec(t_yes), row_vec(t_no)])  # [yes; no] 与官方转换器同序"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_SlS4kNYfxDGtiLAMUd4p4981",
+  "toolName": "Edit",
+  "version": 1
+}

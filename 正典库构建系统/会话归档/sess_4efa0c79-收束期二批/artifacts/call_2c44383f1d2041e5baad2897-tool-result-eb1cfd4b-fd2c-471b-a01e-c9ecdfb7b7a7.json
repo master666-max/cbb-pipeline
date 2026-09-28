@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T09:05:38.276Z",
+  "files": [
+    {
+      "afterContent": "# task-079 · G16 三考官全库首跑（G5 票数晋升收口）· 2026-09-27\n\n## 一句话\n推断层 769 件 pending 经三考官（LOCAL gemma-3-1b / DEEPSEEK deepseek-chat / QWEN qwen3.8-flash）隔离双序评审收口：658 件评审 → **327 晋升 / 217 hold / 114 人审**，分层抽审 10/10 票面站得住；同轮三通道 smoke 实测终结「QWEN 未配置」误报（P-027）。\n\n## 背景\n- 隔离区 `迷深实战-本体库/quarantine-zone/items.jsonl` 中 `extrapolation_unverified/pending` 769 行=抽取期置信度路由（<0.85）拦下的推断断言，等 G5 票数晋升闸门。\n- 总工单收束期 G16：对隔离推断层跑三考官隔离评审（≥2/3+零反对才晋升）。\n\n## 执行链\n1. **env 编制核实**：EXAMINER_QWEN/DEEPSEEK/LOCAL_{BASE,MODEL} 用户级注册表**不在**，key（DASHSCOPE/DEEPSEEK）**在**——base/model 进程 env 注入、key 注册表回落（D-004 零硬编码）。Git Bash 会话快照读不到 key 曾致误报「未配置」→ PowerShell 注册表直读+管道注入解决。\n2. **smoke 实测**（`cbb-v2/smoke_examiners.py`）：三通道各一轮隔离双序——QWEN support 14.0s / DEEPSEEK support 1.2s / LOCAL support 6.3s（gemma-3-1b-it；35B MoE 冷加载 60s 超时弃用）。三通道满编。\n3. **dry-run 盘点**（`g16_vote_runner.py --dry-run`）：769 指针→724 唯一 rid（45 行无 record_id）；本体在库 658、缺失 66；证据空缺 0、gate_trace 脏 0。**111 件留守不臆断**。\n4. **试点批 30 件**：169s，11 晋升/15 hold/4 人审；抽审 4/4 票面站得住（考官逮住「据引言反推」「过度诠释」型断言——隔离区该有的保守行为）。\n5. **全量批 628 件**：2747s（46 min，6 线程），316 晋升/202 hold/110 人审。\n6. **落账**：adjudications.jsonl +658 行 G16 裁决（票面逐考官记录）；items.jsonl 原位状态更新（extrapolation：327 confirmed / 442 pending=hold 217+人审 114+缺本体 66+无指针 45）。\n7. **提交**：a5f319e8（含 runner/smoke/报告/台账/268 处置台账补票）。\n\n## 票面质量\n- 满编三票 581 件，其中全票支持晋升 98；双票件 47（QWEN 超时 42 / LOCAL 错 5），21 件双票晋升全部显式 degraded 标注且双 support 才放行（B13：need 按满编制 3 算，缩员不降门槛）。\n- 分层抽审 10/10：晋升件证据直陈支持断言；hold 件典型=「【反推·非原文直陈】事件链同构」型复杂类比（三考官全 unsure→留守）；人审件典型=断言超出证据承载（LOCAL against 拦「联合国=组织」这类存疑实体）。\n- QWEN 42 次错误全是超时（非配额），无 403。\n\n## 沉淀\n- **PT-022** 三考官隔离双序批量核证跑批法（dry-run→试点→全量三段放行+降级显式标注+幂等续跑）。\n- **P-027** 会话环境快照过期伪装成「外部服务未配置」（注册表直读+端点实测，用户口径优先于探测阴性）。\n- 待办：Wilson 下限形式门需 n≥80 审计扩样（当前 n=10 点估计 100%）；hold 217 件与缺本体 111 件留人工/下圈队列；G17 区段巡检首圈承接 confirmed 队伍存续核证。\n\n## 争议与如实登记\n- LOCAL 用 gemma-3-1b（1B 小模型）考官判力弱于 35B——但其角色是第三异构票+超时兜底，against 才触发人审（保守方向），unsure 不影响双外部考官晋升路径；未见其误杀证据（抽审 0 误杀）。\n- 本 clone 无 git remote，推送未执行（历史推送走别的通道）；本地 master a5f319e8。\n",
+      "afterContentLength": 1976,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\knowledge\\trajectories\\2026-09-27\\task-079-G16三考官全库首跑.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_2c44383f1d2041e5baad2897",
+  "toolName": "Write",
+  "version": 1
+}

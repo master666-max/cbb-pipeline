@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-23T16:54:59.011Z",
+  "files": [
+    {
+      "afterContent": "---\ndescription: 批次机械自检（薄壳）——运行既有检查脚本并汇总；脚本缺席时报明确错误（不静默）\n---\n\n执行 **批次机械自检**（U-F02 交付件），把结果汇总成一份带口径的报告。按顺序运行并汇总：\n\n1. `py -X utf8 cbb/tools/连续性巡检.py --store <本体库> --backend auto` —— 连续性规则巡检（双载体自动选择）\n2. `git status --porcelain` 与 `git log --oneline -1` —— 工作区健康与游标对账的 git 侧\n3. 若 `迷深实战-工作区/logs/批次自检*.json` 存在则读取最新一份；不存在则明确报告\"批次自检器脚本未落地（U-F 线），当前为部分覆盖\"\n\n汇总格式：每项一行 `PASS/FAIL/SKIP + 一句话`；FAIL 项给出精确命令与原因。**禁止**把\"没跑\"报成\"通过\"（判定面非空纪律）。\n\n参数：$ARGUMENTS（可覆盖 --store 路径）\n",
+      "afterContentLength": 458,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-guard\\commands\\批次自检.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_e3469886f7d242ed83453ceb",
+  "toolName": "Write",
+  "version": 1
+}

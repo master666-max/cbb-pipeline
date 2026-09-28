@@ -1,0 +1,10 @@
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 720, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb\tools\graphiti_spike.py", line 68, in main
+    with driver.session(database="neo4j") as s:
+         ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: 'neo4j._async.work.session.AsyncSession' object does not support the context manager protocol (missed __exit__ method) but it supports the asynchronous context manager protocol. Did you mean to use 'async with'?

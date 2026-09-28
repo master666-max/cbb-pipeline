@@ -1,0 +1,32 @@
+PASS ./cbb-coordinate/test_cbb_coordinate.py
+PASS ./cbb-extract/test_cbb_extract.py
+PASS ./cbb-gate1/test_cbb_gate1.py
+PASS ./cbb-quarantine/test_cbb_quarantine.py
+PASS ./cbb-store/test_cbb_store.py
+PASS ./cbb-store/test_w4_thresholds.py
+PASS ./contracts/test_contracts.py
+PASS ./tools/test_context_pack.py
+PASS ./tools/test_d2_graph_edge.py
+PASS ./tools/test_embed_dedup_scan.py
+PASS ./tools/test_graphiti_bridge.py
+PASS ./tools/test_graphiti_ready.py
+PASS ./tools/test_ledger_chain.py
+PASS ./tools/test_neo4j_export.py
+PASS ./tools/test_匹配建议.py
+PASS ./tools/test_失效宣告.py
+PASS ./tools/test_批次自检.py
+PASS ./tools/test_抽样排序.py
+PASS ./tools/test_捕获再捕获.py
+PASS ./tools/test_检索层.py
+PASS ./tools/test_矛盾分流.py
+X FAIL ./tools/test_矛盾对生成.py
+PASS test_exam_deterministic_rows_and_expected_labels
+PASS test_grade_dual_gate
+PASS test_pairs_dual_track_full_recovery
+PASS test_pairs_embedding_family_and_name_miss
+PASS test_pairs_reconstructed_when_body_missing
+FAIL test_real_store_smoke_no_git: (468, 539, {'dual_track': 403, 'embedding': 65, 'unparsed': 71, 'recovery_full': 463, 'recovery_partial': 0, 'name_miss': 5})
+PASS ./tools/test_诊断员.py
+PASS ./tools/test_词表.py
+PASS ./tools/test_连续性巡检.py
+PASS ./tools/test_重排器.py

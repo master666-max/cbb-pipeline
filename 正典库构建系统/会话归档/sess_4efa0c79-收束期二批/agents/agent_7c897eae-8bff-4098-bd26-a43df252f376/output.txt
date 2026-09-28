@@ -1,0 +1,23 @@
+G14 完成。报告如下。
+
+## 文件清单（全部新建，未删改任何已有文件）
+
+| 文件 | 说明 |
+|---|---|
+| `D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb-v2\cbb2\tei.py` | 模块：`to_tei(aliases, registry=None)->str`（TEI 命名空间；人物走 listPerson/person/persName+addName[type][nymRef][cert]，非人物走 list/item/name）、`validate_alias`（原因码五类）、`expand_kinship(relations)->dict`（一跳展开）、`gate1_tables`（单源导入）、`load_registry`、`export_store`（报告+样件，FileExistsError 护栏永不覆盖）、CLI main |
+| `D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb-v2\tests\test_v3_tei.py` | 15 件测试 |
+| `D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\迷深实战-本体库\G14-TEI样件.xml` | 前 50 条别名，22960 字节，ET 可解析（33 个 addName 全带 nymRef+attestation） |
+| `D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\迷深实战-本体库\G14-TEI别名报告.json` | aliases总数 539 / 样件 22960 字节 / 亲属表 24 条 / 金标状态“65例金标在案” / 生成时间 |
+
+## 判据自查
+
+- **schema 正负对照：过**。正例用真实在库两形态（534 条 str 形+5 条 dict 形实测照录），dict 形 kind→type、confidence→cert 映射有断言；负例五种非法输入全部拒绝并带原因码（E-ALIAS-MISSING/TYPE/EMPTY、E-ENTITY-MISSING），非法件不进 XML。
+- **亲属展开：过**。逆类型（parent→child、mentor→student）与对称（spouse、sibling）补边、反向去重、在库形键（subject/rel_type/object）兼容；实测库内 1544 种中文 rel_type 无一命中 gate1 英文词表，未命中类型原样保留不静默丢弃。表从 `cbb/cbb-gate1/cbb_gate1.py:66-77` import 复用（12 对+12 项），gate1 不可导入时显式 ValueError（测试真实制造了不可导入场景验证）；relationship.js 不引入的裁决已登记模块 docstring（【待确认】未来完整亲属推演再评估）。
+- **全量测试绿**：`py -X utf8 -m pytest cbb-v2/tests/ -q` → **96 passed**。基线 76 + 本任务 15 + 并行会话新增的 `test_v3_g21_context_pack.py` 5 件（76+5+15=96，数目差已查明，零回归）。
+
+## 金标侦察结论
+
+- **65 例金标在案**：计数与口径在 `迷深实战-工作区\logs\graph-audit-20260925.json`（节点.图外节点数=65）；但**该日志全名单仅存 20 例样例**（收口后的 final 日志存 22 例口径），余约 45 例名单未落盘——已在报告金标明细中如实注记【待确认】。
+- 名单样例精确同名命中率 **2/20**（18 未命中多为『剑术』『狂王』类带『』引号的技能/称号名，与“43 变体归一待落导出层”的在案叙事一致）。
+- 附带发现：aliases.jsonl 现字段无章回证据，attestation 按工单口径置空元素+注记；记录若带 evidence 字段则升级输出 bibl（测试覆盖）。
+- 会话级 wrap-up（知识库归档/复盘，需整库去重比对与用户确认清场）留待主控统一执行；本任务无临时文件残留，未执行任何 git add/commit。

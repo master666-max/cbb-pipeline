@@ -54,10 +54,15 @@ def probe_http(url: str, timeout: float = 4.0) -> bool:
 
 
 def chat_once(base: str, model: str, api_key: str, prompt: str,
-              timeout: float = 60.0) -> str:
-    """OpenAI 兼容 chat 单发（非流式）。调用方负责系统提示词锚定。"""
-    body = json.dumps({"model": model, "messages": [{"role": "user", "content": prompt}],
-                       "temperature": 0, "stream": False}).encode()
+              timeout: float = 60.0, max_tokens: int | None = None) -> str:
+    """OpenAI 兼容 chat 单发（非流式）。调用方负责系统提示词锚定。
+    max_tokens：思考型模型（GLM-5.3/Qwen3 系）必须给足——reasoning 先行，
+    缺省不传=服务端默认。"""
+    payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
+               "temperature": 0, "stream": False}
+    if max_tokens:
+        payload["max_tokens"] = max_tokens
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(
         base.rstrip("/") + "/chat/completions", data=body,
         headers={"Content-Type": "application/json",

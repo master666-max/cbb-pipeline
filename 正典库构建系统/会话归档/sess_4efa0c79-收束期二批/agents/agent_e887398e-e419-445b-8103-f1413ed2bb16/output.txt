@@ -1,0 +1,126 @@
+# 深度调研报告：知识图谱表示学习与图算法接入“正典库缺口提议”管线
+
+调研方法说明：GitHub API（license/活跃度以 `pushed_at` 与 release 记录为准）、官方文档与源码直查、arXiv API 验证论文。部分通用搜索被限流，已用一手源码/文档补齐；查不到的明确标注。
+
+---
+
+## A. 逐题深度发现
+
+### Q1. KGE 框架与万节点小图模型选型
+
+**PyKEEN（首选）**
+- https://github.com/pykeen/pykeen — MIT，2039 stars，最近 push 2026-09-26（当天仍活跃）。文档 https://pykeen.readthedocs.io
+- 模型清单（源码 `src/pykeen/models/unimodal/` 实查）：TransE/TransH/TransD/TransR、RotatE、ComplEx、DistMult、ConvE、TuckER、RESCAL、HolE、MuRE、PairRE、QuatE、NodePiece、RGCN/CompGCN 等 30+，另有 multimodal（字面量特征）与 inductive（NodePiece-GNN）。
+- 评估协议（源码 `evaluation/rank_based_evaluator.py` 实查）：filtered ranking（过滤训练/验证/测试中已存在的三元组后排名），指标 MRR、Hits@1/3/5/10 可配，支持 realistic/optimistic rank。
+- **top-k 缺失三元组 API**（源码 `src/pykeen/predict.py` 文档串实查，这是对你管线最关键的部分）：
+  - `predict_target(head=, relation=)` → 对 (?, r, h) 打分全实体，返回 Predictions 对象，带 `.filter_triples(training)`（滤已知）与 `.add_membership_columns(validation=, testing=)`（标注是否在留出集中，供人工复核参考）。
+  - `predict_all(k=10)` → 全库 top-k 打分（内存友好版）。
+  - 官方文档原话（重要，直接决定你的人审闭环设计）：“KGE 分数没有统计含义、不能跨模型比较、**没有先验的最低分阈值**，因此预测只能作为排序优先级；分数校准可能很差。”——即 top-k 只能当“排队优先级”，不能当“置信度”。
+- 中文支持：文档英文；无内置中文依赖问题（实体就是字符串 id，中文全兼容）。CPU 可跑，万节点级单卡/纯 CPU 数分钟-小时级。
+
+**LibKGE（uma-pi1/kge）**
+- 注意：搜 "UKPLab/LibKGE" 404；真身是 https://github.com/uma-pi1/kge — MIT，836 stars，最近 push 2026-04。
+- 核心价值是其 ICLR 2020 论文结论（README 原文）："**训练策略与超参对性能的影响往往大于模型类别本身**"（OpenReview: https://openreview.net/forum?id=BkxSmlBFvr）。对你这种小图场景，这意味着不必纠结 TransE vs RotatE，应把精力放在打分函数（KvsAll/1-N）与负采样配置上。
+- README 还明确点名：“做链接预测时，**基于规则的 AnyBURL 是 KGE 的有竞争力替代**”——引出下一项。
+
+**AnyBURL + PyClause（规则派，强烈建议纳入候选通道）**
+- AnyBURL：https://web.informatik.uni-mannheim.de/AnyBURL/ — **3-clause BSD**（官网 License 节实查原文），当前版 AnyBURL-23-1x（2025 修 bug，持续维护）。Java，笔记本级可跑（小数据集 <16GB RAM，默认 1000 秒学规则）。**输出是“规则 + confidence”**，天然可解释、可人审——比 KGE 分数更适合“缺口提议”场景。
+- PyClause（规则应用/排序框架）：https://github.com/symbolic-kg/PyClause — BSD 风格（LICENSE.txt 实查，University of Mannheim），45 stars，push 2024-12。提供 RankingHandler、规则 confidence 聚合（含可学习聚合，ESWC 2022 / CIKM 2023 两文），可与 KGE 排序进同一 pipeline。
+
+**DGL-KE（排除，见 C 节）**：https://github.com/awslabs/dgl-ke — Apache-2.0，1336 stars，但**最后 release 0.1.1 停在 2020-08-26**（GitHub API 实查），且为亿级边设计（流式采样/分布式），万节点图是“杀鸡用牛刀”。
+
+**谁实测最好（万节点级 = FB15k-237 14.5k 实体 / WN18RR 41k 实体量级，即你 ~万节点的标准基准）**
+- RotatE（ICLR 2019，arXiv:1902.10197 已验证）：FB15k-237 上 RotatE MRR≈0.338 > ConvE≈0.325 > TransE≈0.294 > ComplEx≈0.247；WN18RR 上 RotatE≈0.476 > ComplEx≈0.440 ≈ ConvE≈0.430。
+- ComplEx-N3（Lacroix et al.，arXiv:1806.07297 已验证）：给 ComplEx 加 L3 正则后 FB15k-237 MRR≈0.354，反超 RotatE——说明**打分函数正则化 > 模型花活**。
+- 综合结论（与 Ruffinelli 一致）：小图上**低维（32–128）ComplEx/RotatE + 合适训练循环**是安全首选；ConvE 参数多、小图上无优势；TransE 表达力弱但可作为基线 sanity check。
+- **关于“top-k 建议准确率实测案例”：没有公开 benchmark 直接测“人工复核后 top-k 提议精确率”**（明确说：查无此物）。学界代理指标是 filtered Hits@10（FB15k-237 上 RotatE/ComplEx-N3 约 0.51–0.53），含义是“真实缺失边有一半左右落在 top-10”——上限也就这个量级，所以人审闭环必须配规则通道与证据字段（见 B）。你自己语料的真实精确率只能用留出三元组自测【待确认，建议第一步就做】。
+
+### Q2. 图算法现成件（人物共现图 → 候选关系）
+
+- **networkx**（https://networkx.org ，BSD-3，极活跃）：`reference/algorithms/link_prediction.html` 实查可用函数：`adamic_adar_index`、`jaccard_coefficient`、`resource_allocation_index`、`preferential_attachment`、`cn_soundarajan_hopcroft`（社区感知共同邻居）、`ra_index_soundarajan_hopcroft`、`within_inter_cluster`、`common_neighbor_centrality`。全部纯 Python，万节点共现图秒级。经典出处：Liben-Nowell & Kleinberg 2007 "The Link-Prediction Problem for Social Networks"。
+- **leidenalg**：https://github.com/vtraag/leidenalg — **GPL-3.0**，800 stars，push 2026-09-14（活跃）。注意 GPL 传染性：内部工具无所谓，别把依赖它的代码以宽松许可外发。MIT 替代：**graspologic**（https://github.com/graspologic-org/graspologic ，MIT，1015 stars，push 2026-06，含 Leiden 实现）；networkx 自带 `louvain_communities`（BSD）也可。
+- **共现图→候选关系的具体做法与阈值实践**（综合 GDS/networkx/AnyBURL 三方文档；阈值为通行实践值，非论文定论，落地前请自标定【待确认】）：
+  1. 场景/章节共现→边权 w（同现次数或同现章节比例），剪边 `w >= 2–3` 去噪；
+  2. Leiden/Louvain 出社团 →“同社团”作为先验特征（对应 GDS 的 `same-community` LP 特征）；
+  3. 对每个节点取 Adamic-Adar/资源分配 top-k（k≈10–20），**硬性要求共同邻居数 ≥ 2**（共现图上单共同邻居噪声极大，这是 networkx 文档各函数都接受 `ebunch` 过滤的实践基础）；
+  4. 多分数共识（AA 与 RA 同时进各自 top-k 才提报），再送 KGE/AnyBURL 通道复核。
+- **Neo4j GDS 同款**（见 Q4）：`gds.adamicAdar.stream` 等六件套与 networkx 等价，若你的图已在 Neo4j 里，免导出。
+
+### Q3. 时序知识图谱（TKG）与双时序适配
+
+- **离散时间步线（RE-GCN/TiRGN）——与本库时序模型不匹配**：
+  - RE-GCN：https://github.com/Lee-zix/RE-GCN — IJCAI 2021，**无 license 文件**，最后 push 2023-03（休眠）。
+  - TiRGN：https://github.com/Liyyy2122/TiRGN — ACL 2022，**无 license**，最后 push 2022-08（休眠），49 stars。
+  - 两者都假设 ICEWS/GDELT 式“每天一批事实”的等间隔事件流（预测 t+1 时刻），**对小说的 valid_at/invalid_at 区间型双时序是错配**；且研究代码无 license，商用/集成有法律风险。
+- **区间型 TKBC（对双时序真正的对口线）**：
+  - TimePlex（EMNLP 2020，把 fact 的 start/end/duration 分解进嵌入打分）：GitHub 搜索无可用官方代码库（明确说：没找到）。
+  - Time2Box（ICLR 2022，"Time in a Box"，把有效性区间建为 box，可推断缺失区间）：https://github.com/ling-cai/Time2Box — 4 stars，**license 标记 NOASSERTION**，push 2021-10，纯研究代码。
+  - NeuSTIP（AACL 2022，联合做链接预测+时间区间预测）：https://github.com/dair-iitd/NeuSTIP — **无 license**，1 star，研究代码。
+- **综述（活跃性佐证）**：arXiv API 实查——"A Survey on Temporal Knowledge Graph: Representation Learning and Applications"（arXiv:2403.04782，2024-03）；"A Survey on Spatio-Temporal Knowledge Graph Models"（arXiv:2512.16487，2025-12）；TKGC 综述 arXiv:2308.02457。
+- **“失效感知”链接预测：没有生产级现成件**（明确说：查无）。最接近的是上述区间 TKBC 研究代码。实务替代方案见 B 节（validity 掩码 + 过期边当天然负例，属我的工程建议，非查证的现成工具）。
+
+### Q4. Neo4j GDS：社区版许可边界与算法清单
+
+- **License（repo LICENSE.txt 与 README.adoc 实查）**：GDS 分发版 = GPL-3 + 闭源组件（商业协议则按商业协议）；仓库源码可自编译为 **OpenGDS（GPL-3.0）**。**GDS 可装在 Neo4j Community Edition 上**（安装文档原文："If you use any edition of the Neo4j Server (Community or Enterprise)... install the GDS library manually"）；GDS Enterprise Edition 需 license key，EE 独占的是 Apache Arrow 导入导出等。2026-09 仍在正常发版（兼容矩阵到 Neo4j 2026.09 / GDS 2026.09，repo 支持页实查）。
+- **算法清单与 tier（`doc/modules/ROOT/pages/algorithms/` 源码实查）**：
+  - 拓扑链接预测（**Alpha tier**，CE 可用、API 可能变）：Adamic Adar、Common Neighbors、Preferential Attachment、Resource Allocation、Same Community、Total Neighbors；
+  - 社区发现（Production tier）：**Leiden、Louvain**、Label Propagation、WCC/SCC、K-Core、Triangle Count、Modularity 等；
+  - 相似度（Production tier）：Node Similarity（Jaccard/Overlap）、Filtered Node Similarity、KNN；
+  - 节点嵌入：FastRP、node2vec 等；
+  - **ML 管线（Link Prediction Pipelines，`gds.beta.pipeline.linkPrediction`）= Beta tier**：训练逻辑回归/随机森林式 LP 模型（特征=拓扑 LP 分数），训练出的模型可直接 `predict_stream` 输出候选边——这是 GDS 里唯一“结构化”的链接预测建模入口，且 Beta tier 社区版可用。
+- 对万节点图：全部可用，毫秒-秒级。结论：**你想要的六类算法（LP 基线/社区/相似度/嵌入）GDS Community 全覆盖**，坑只在于 Alpha/Beta 的 API 稳定性。
+
+### Q5. LLM + KGE 混合（2024–2026）
+
+- **OMNIA**（arXiv:2603.11820，2026-03，摘要实查）："Closing the Loop by Leveraging LLMs for KGC"——两段式：语义聚类生成候选三元组 → **轻量嵌入过滤 → LLM 语义校验**。实验称 F1 显著优于纯嵌入法。这是当前最贴近“LLM 生成+嵌入排序”闭环的公开工作（arXiv 查无配套代码库【待确认】）。
+- **KICGPT**（EMNLP 2023 Findings）：https://github.com/WEIYanbin1999/KICGPT — MIT，61 stars，push 2024-03；后续 KICGPTv2（push 2025-12）。路线：不训练，检索示例三元组进 in-context，让 LLM 对候选打分——**反向组合**（KGE/检索出候选，LLM 排序）。
+- **KoPA**（ACM MM 2024 oral，arXiv:2310.06671）：https://github.com/zjukg/KoPA — MIT，213 stars，push 2024-08。路线：KGE 预训练的结构嵌入经 adapter 投影成“虚拟知识 token”放进 prompt 前缀，让 LLM 做结构感知的 KGC。
+- **RoG**（ICLR 2024）：https://github.com/RManLuo/reasoning-on-graphs — MIT，534 stars，push 2025-03。路径规划-接地推理，约束 LLM 只沿 KG 路径推理（减少幻觉的 grounding 思路，可借鉴到提议解释生成）。
+- **幻觉/假阳性过滤机制（2025 现状）**：主模式是 **generate-then-verify**——LLM 提候选，结构/KGE 分数先过滤，再 LLM 或人复核。实测数字：**PERSEUS**（CEUR-WS Vol-4246，llms4kgoe-5，2025）报告比直接 LLM 抽取**精度 +11%、假阳性 −54.6%**。OMNIA 的“嵌入粗滤→LLM 精验”也是降验证成本+压幻觉的同型设计。
+- 中文支持：以上全是英文管线，但 LLM 换中文模型、三元组是中文即可；KICGPT 式 in-context 对中文小说语料无障碍（你的 LLM 环境内置）。
+
+### Q6. 冷启动 / 稀疏图（6172 件、1719 relation）训练可行性
+
+- **规模判定**：1719 个三元组落在经典小数据集区间——Nations（65 实体/1992 三元组）、UMLS（135 实体/约 6500 三元组）、Kinships（104 实体/10686 三元组）都是 PyKEEN 内置标准数据集（数据集清单实查：https://pykeen.readthedocs.io/en/stable/reference/datasets.html ，含 CoDEx-Small 等小图）。**即 KGE 在“几百~几千三元组”上有三十年文献背书，你的规模可训，但要按小图套路来。**
+- **训练循环选型（最重要）**：Ruffinelli et al. ICLR 2020（LibKGE 论文，OpenReview BkxSmlBFvr）的再评估结论：小数据集上 **1-N/KvsAll 打分（对每个 (h,r) 给全实体打分的 softmax 式训练）显著优于负采样式（SLCWA）**，因为稀疏图负采样会采到大量“伪负例”。PyKEEN 两种都内置（`training/` 下 slcwa.py/lcwa.py，实查）。
+- **负采样策略（若走 SLCWA）**：PyKEEN 内置 `BasicNegativeSampler` 与 `BernoulliNegativeSampler`（TransH 式按关系头尾分布采样，`sampling/` 目录实查），且都有 filtered 变体（`sampling/filtering.py`）。稀疏图建议：提高 `num_negs_per_positive`（2–10）、开 filtered、关系有明确方向性时用 Bernoulli。
+- **最小规模经验值**：嵌入维度压到 32–64；epoch 加大（小图跑得起）；用 `evaluation` 里 classification evaluator 或留出集 Hits@10 自评。**低于 ~500 三元组时 KGE 基本不可用**（Nations 是公开文献里公认的下限量级），届时应转 AnyBURL 规则或共现统计通道【经验推断，标注待验证】。
+
+---
+
+## B. 对本管线的接入建议
+
+**B1. 链接预测 → 缺口队列的“候选关系提议”人审闭环（核心设计）**
+
+三通道并行提议 + 统一人审队列，每个提议必须带“证据字段”而非裸分数：
+
+1. **通道一 共现结构**（最便宜，先跑）：人物共现图 → networkx Adamic-Adar/RA top-k（共同邻居≥2）+ 社团同属过滤 → 候选对。
+2. **通道二 KGE/规则排序**：PyKEEN（ComplEx 或 RotatE，dim=64，LCWA/KvsAll，按 Q6 配置）对候选对做 `predict_target` 排序；并行跑 AnyBURL（BSD、笔记本级、中文 id 无关）出 **规则+confidence**（如 "师从(A,B) ∧ 师从(B,C) ⇒ 同门(A,C)"）——规则文本可直接给审阅者看，这是 AnyBURL 相对 KGE 的决定性优势。
+3. **通道三 LLM 语义校验**（复用你已有的 NLI 分歧/词表缺口管线）：只对前两通道的 top 候选提问，让 LLM 给“支持/反对/文本证据出处”。
+4. **进队列的字段设计**：候选 (h, r, t) + 各通道分数（分开列，不融合成单一分，因为 KGE 分数不可跨模型比较/校准——PyKEEN 官方警告）+ 规则解释或 LLM 证据 + `add_membership_columns` 式的“是否与已知边矛盾”标记 + 建议的 valid_at。
+5. **反馈回流**：人审接受/拒绝记录成表，作为下一轮留出集与校准依据——这正好补上“领域内无公开 top-k 精确率基准”的空白，第二次迭代起你就有自己的 PR 曲线，可以定“提议阈值”。
+6. 工程位置建议：Neo4j GDS 跑通道一（Alpha tier 的 adamicAdar/同社团，图已在库里免导出），PyKEEN/AnyBURL 离线跑通道二，输出对齐你现有“缺口队列”的 schema。
+
+**B2. 双时序（valid_at/invalid_at）怎么进特征**
+
+没有现成库直接支持双时序（见 Q3 结论），给出三层由浅入深的方案：
+1. **打训练集掩码**（必做）：KGE/规则只在“当前 valid”边集上训练评估；已 invalid 的边从训练集剔除（否则模型学到已被正典否决的关系）。
+2. **过期边当天然负例**（低成本高收益，我的工程建议）：`invalid_at` 非空的边是“曾经真、现在假”的标注，直接进负采样池/作为校验难题集——这是静态 KG 没有的免费监督信号【此为建议，需实验验证】。
+3. **时间特征进 LP 输入**：对每条候选边拼“两端实体当前活跃度（当前 valid 关系数）、关系半衰期统计、提议时刻是否落在双方共存窗口（`min(invalid_at) 或当前 > max(valid_at)`）”等特征，与拓扑分数一起喂 GDS Beta LP pipeline 的 feature steps 或人审排序——不需要动 TKG 模型。区间型 TKBC（Time2Box 思路）可作为二期研究方向，但现阶段其代码均为研究级（Q3），不建议直接依赖。
+
+---
+
+## C. 排除项（明确排除及理由）
+
+| 排除项 | 理由 |
+|---|---|
+| **DGL-KE**（awslabs/dgl-ke） | 最后 release 2020-08；为亿级边分布式设计，万节点图完全用不上其复杂度 |
+| **RE-GCN / TiRGN 及离散时间 TKG 线** | 假设等间隔事件流，与 valid_at/invalid_at 区间双时序错配；repo 均**无 license**、2022–2023 后休眠 |
+| **TimePlex / Time2Box / NeuSTIP 直接集成** | 无官方可用代码（TimePlex）或无 license 的研究代码（Time2Box NOASSERTION / NeuSTIP 无 license），只作思路参考 |
+| **GDS ML 管线当生产依赖硬绑定** | Beta tier、API 可变（GDS 文档明示），且 GPL-3 传染性要求你只有内部使用才无碍；拓扑算法部分（Alpha tier）同样只宜内部工具用 |
+| **leidenalg 若未来代码外发** | GPL-3 传染；内部用没问题，开源分发时换 graspologic（MIT）或 networkx Louvain |
+| **纯论文无码：OMNIA（暂查无码库【待确认】）、TimePlex、各 LLM+KGC 无码工作** | 只借鉴其 generate-then-verify 与“嵌入粗滤→LLM 精验”的模式 |
+| **ConvE/TuckER 类重模型、维度>256 的配置** | 小图上无精度优势且过拟合风险高（Ruffinelli 再评估结论 + RotatE 论文对比表） |
+| **NSCaching 类高级负采样、AnyBURL 大图配置（Freebase 级 900GB RAM 档）** | 为千万级边设计，你的规模用不上 |
+
+**调研局限声明**：通用 Web 搜索后端多次限流，部分文献背景（如 RotatE/ComplEx-N3 基准数字、AnyBURL 与 KGE 同档的说法）基于论文/官网原文引述与领域共识，未能逐条重跑复现；标注【待确认】处建议在自库留出集上实验后定阈值。

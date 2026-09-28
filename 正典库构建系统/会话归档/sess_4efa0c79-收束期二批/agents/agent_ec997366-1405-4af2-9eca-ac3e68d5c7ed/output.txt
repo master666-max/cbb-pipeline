@@ -1,0 +1,88 @@
+调研完成。以下为最终报告。
+
+---
+
+# 技术情报报告：CBB 正典库实体治理的外部参照(2026-09)
+
+**方法说明**：基于 WebSearch + WebFetch 完成；搜索服务多次限流(429),每个问题均经过多轮重试；所有关键 DOI/编号均经二次核实(其中一处被证伪后剔除)。标注规则：【已核实】= 本会话直接抓取或跨源确认；【搜索摘要级】= 仅搜索引擎摘要背书，未抓原文；【未找到】= 明确告知缺口。
+
+---
+
+## A. 逐题发现
+
+### Q1:ER 2025-2026 SOTA——“嵌入召回 + LLM 判决”两阶段是否成共识
+
+**结论：两阶段(blocking/召回 → matching/判决)架构是标准形态，“embedding 做召回、LLM 做判决”是主流模式，但 LLM 并未全面取代微调小模型——“共识”要打折扣地接受。**
+
+- Peeters & Bizer《Entity Matching using Large Language Models》,arXiv 2023-10,正式版 EDBT 2025。【已核实】零/少样本 LLM 匹配可行但大模型结果不稳定，微调小模型显著提升。https://arxiv.org/abs/2310.11244 ;正式版 PDF: https://openproceedings.org/2025/conf/edbt/paper-81.pdf ;续作《Fine-Tuning LLMs for Entity Matching》arXiv 2024-09: https://arxiv.org/abs/2409.08185
+- 《Match, Compare, or Select?》,COLING 2025,arXiv 2405.16884。【搜索摘要级】系统比较三种 LLM 匹配范式；同类新工作《Structured Multi-Step Reasoning for Entity Matching》(arXiv 2511.22832,2025-11)把判决拆成显式推理步骤。https://aclanthology.org/2025.coling-main.8.pdf ; https://arxiv.org/html/2511.22832
+- **Blocking 侧**：Sparkly(VLDB 2023,简单 TF/IDF blocking 出奇地强，https://pages.cs.wisc.edu/~anhai/papers1/sparkly-vldb2023.pdf 【已核实 URL,内容为搜索摘要级】);Sudowoodo(ICDE 2023,对比自监督，blocking+matching 共用表征，https://arxiv.org/pdf/2207.04122 );SC-Block(ESWC 2024,监督对比 blocking,Mannheim 组，https://www.bwl.uni-mannheim.de/media/Einrichtungen/dws/Files_Research/Web-based_Systems/pub/Brinkmann-etal-ESWC2024_SC_Block_Supervised_Contrastive_Blocking_within_Entity_Resolution_Pipelines.pdf );blocking 综述(Gurevich et al. 2024,https://raw.githubusercontent.com/imvladikon/imvladikon/master/articles/entity_resolution_blocking_survey.pdf 【搜索摘要级】)。趋势：简单统计 blocking 仍是强基线，深度/对比 blocking 是增量改进而非碾压。
+- 综述：Karapiperis et al.《A Comprehensive Survey of Deep Learning for Entity Resolution》,ACM(https://dl.acm.org/doi/10.1145/3828660 ,DOI 10.1145/3828660 已验证解析到 ACM DL【已核实 DOI 存在；具体年份未在会话内核实】)。另有 IEEE Access 2025《LLMs for Semantic Join》综述提到 LLM-based blocking 与 BoostER:https://ieeexplore.ieee.org/iel8/6287639/10820123/11218142.pdf ;2026-02 的《Cost-Efficient RAG for Entity Matching》(https://arxiv.org/html/2602.05708v1 )说明前沿已转向“省 LLM 调用”的检索增强匹配。
+- **中文 ER 特殊坑：【未找到】**。多轮检索未命中可引用的中文 ER 专题综述(限流+结果质量差)。工程上通用的做法——全半角用 Unicode NFKC 归一(Unicode Standard Annex #15,https://www.unicode.org/reports/tr15/ ,标准文本，常识级引用)——本次无学术新源佐证。此条按“找不到明说”处理，不编造出处。
+
+### Q2:create-or-link 联合决策(NEL + 发现)
+
+**结论：文献把“新建实体”形式化为 NIL 问题的两步——NIL-detection(判定不属于任何已有实体)+ NIL-clustering(把同属一个新实体的 NIL 提及聚在一起，等价于“创建”)；判据是多信号的，没有单一相似度阈值权威。**
+
+- NIL 两步法：【搜索摘要级】IndEL 基准(ACM DL,2024-09)明确 NIL 分 detection 与 clustering 两个子任务(**原文 URL 本次未捕获，诚实标注**)；此分法与 TAC EDL 时代一致。
+- **“候补而非丢弃”的直接先例**：Graciotti, Lazzari, Daga, Presutti《Lost and Found: Enriching Knowledge Graphs with "NIL" Persons from Historical Documents》,Semantic Web Journal,2026-01-14 投稿、2026-07-10 录用【已核实，经 SWJ 官网状态页】：从历史文档中提取的无法链接人物提及被作为**新增节点进入 KG**而非舍弃。https://semantic-web-journal.net
+- 贝叶斯式无阈值方案：d-blink(Distributed End-to-End Bayesian ER,arXiv【搜索摘要级】)——不设固定阈值，用 MCMC 在聚类空间上做 merge/split 提案，create/link 由后验概率决定。对“0.85~0.95 存疑带”是个思路参照。
+- 运营级先例：《Name Disambiguation in AMiner》,KDD 2018,DOI 10.1145/3219819.3219859【已核实，经 Crossref API;注意：不是某些渠道说的 AAAI】——把名字消歧做成“聚类 + 持续维护 + 人工在环”的长期系统：新名字持续进入、定期重聚类、人审增量处理。这正是“候补队列”工程化的最近亲。
+- 反查结果："To Merge or Not to Merge" 作为 ER 论文**不存在**(检索多轮只有 CVPR 2013 同名视觉论文等)，此为负结果，如实报告。
+
+### Q3:小说/叙事文本角色别名与指称归一
+
+**结论：英文有一整条成熟管线；中文侧现成工具/数据集本次未拿到可引用出处，如实报告缺口。**
+
+- **BookNLP(Bamman et al. 2014)**:长篇小说标准管线(tokenize→NER→coref→角色聚类→引语归属)，角色聚类输出即“本名/绰号/代词归一后的角色实体”。多个独立评测(Dekker & Kuhn 对小说 NER 工具的评测【搜索摘要级】)认定其对小说角色抽取最优。参照实现：fanfiction-nlp(Yoder et al. 2021,https://github.com/michaelmilleryoder/fanfiction-nlp 【已核实 URL,内容搜索摘要级】)明确以 BookNLP 为蓝本，含 character identification + coreference + quote attribution。
+- 数据集/语料(均为【搜索摘要级】，未抓原文 URL):FantasyCoref(CRAC 2021,奇幻文本 coref 标注规范，全知视角)；BookCoref(2025,书级尺度 coref);KoCoNovel(50 部韩国现代小说角色 coref);LitBank(100 段 Project Gutenberg 小说，ACE 标注)；GOLEM 多语小说语料。
+- **中文：【未找到】**。HanLP/LTP/HanLP 2.x coref 等被搜索助手提及但未能给出可核实出处；中文绰号/别名词语料(如 Wikidata 别名表、重定向表)属常识级工程做法，本次无学术源。建议后续用知网/ACL Anthology 定向补查"Chinese nickname normalization / 中文简称预测(CASIA 缩略语语料)"。
+
+### Q4:悬挂引用/悬空边的治理
+
+**结论：检测走 schema 约束(SHACL),修复是“决策”而非“清洗”；存在“隔离+人审晋升”的先例，但“禁自动删除”作为明文原则未被直接找到——只找到强间接支撑。**
+
+- 检测层：W3C SHACL 标准(https://www.w3.org/TR/shacl )——对关系边的对象端做 shape 约束即可机械捕获全部 65 个悬挂端点(等价于“每个关系对象的名称必须在实体表存在”的约束检查)。【已核实，标准文本】
+- 自动修复：Ahmetaj et al.《Repairing SHACL Constraint Violations Using ASP》,ISWC 2022(https://iswc2022.semanticweb.org/wp-content/uploads/2022/11/978-3-031-19433-7_22.pdf 【已核实 URL】);David et al.《Knowledge Graph Repair》,ESWC 2024(https://2024.eswc-conferences.org/wp-content/uploads/2024/05/77770375.pdf )。注意：自动修复文献倾向于**自动改写**，与 CBB“禁自动删除”原则相悖，只能借鉴其“修复方案枚举+择优”形式。
+- 规模化人审：SHACLens(2025,PMC,https://pmc.ncbi.nlm.nih.gov/articles/PMC13051243 )——工业级 KG 的违规报告大到无法人工通读，做**违规报告的可视化分诊/优先级队列**。这就是“候补队列+人审”形态的直接参照。【搜索摘要级 URL,内容摘要级】
+- 增量一致性：《SHACL Validation under Graph Updates》,arXiv 2508.00137,2025-08——图更新后约束是否仍成立，支持“每条新边写入前跑约束”的工作流。
+- "禁自动删除”明文先例：【未找到】字面对应；最接近的是 Lost and Found(SWJ 2026)的“NIL 候选晋升为新实体”与 AMiner KDD 2018 的“人工在环维护”。
+
+### Q5:质量评估与人工校正环(false merge 检测)
+
+**结论：工具界有成熟的“聚类→人审→合并→重聚类”循环；学术上 false merge 的 downstream 反查没有找到直接文献，只有相邻证据。**
+
+- OpenRefine 的 Cluster & Edit / Merge Selected & Re-Cluster 是交互式聚类校正界面的原型(每次合并后自动重跑聚类；https://openrefine.org/docs/manual/cellediting 与 https://openrefine.org/docs/technical-reference/clustering-in-depth ,活文档无日期)【已核实 URL,内容摘要级】。
+- Splink:预测聚类给置信度分数 + Cluster Studio 仪表盘供人审 + 人审标签回流训练模型(GitHub issue #2093 等【搜索摘要级】);`dedupe` 库是主动学习式成对标注的标准件(本次搜索未直接命中其文档页，如实标注)。
+- AMiner KDD 2018(同上)：大规模作者消歧中人工校正与聚类的持续维护协议——校正结果回流、后续自动应用。
+- **Downstream 一致性反查 false merge:【未找到】**直接文献。可用作替代的相邻做法：SHACL 属性约束(合并后单实体出现互斥属性即报警)+ SHACLens 式分诊。此建议落地时按“工程推断”标注，勿引为文献结论。
+
+---
+
+## B. 对 CBB 的可执行建议(5 条)
+
+**B1. 43 个写法变体的归一机械化：先规则后模型，别名表只增不改。**
+三段流水线:(a) **确定性归一层**——Unicode NFKC(全半角)、去空白/零宽字符、括注修饰剥离(“诺斯菲·弗茨亚茨(血族)”→主名+括注字段)、连接符/中点变体折叠、拉丁部分大小写折叠；这层能无风险消化大部分 43 个。(b) **Blocking 层**——用归一键 + 首字/拼音键做候选召回(Sparkly 证明 TF/IDF 级 blocking 已足够强)。(c) **LLM 判决层**——只对 blocking 后仍多候选或零候选的残余，输入上下文证据(出现章节、共现关系)输出结构化判定 {写法变体|别名|新候选|错字} + 置信度(参照 COLING 2025 三范式与 2511.22832 的多步推理)。**关键纪律**：任何归一成功都写入 aliases.jsonl 并记录来源边(provenance),规范名永不改写——这正是 BookNLP"角色聚类+别名投影”与 OpenRefine“合并可撤销”的合成。
+
+**B2. 22 个真缺失候选的判定：照搬 NIL 两步法。**
+第一步 detection:对每个悬挂名跑 B1 的归一+blocking,若最近邻距离近而第二名远(**看 margin 不看绝对值**)→ 判变体；距离远且在叙事上下文中反复出现、关系类型自洽 → 判真缺失。第二步 clustering:把判为真缺失的名字两两比较，同指的合并为一个候选(Lost and Found 的 NIL 晋升路径)。所有候选进**隔离区队列**(带触发边、上下文、LLM 判据作为证据包)，人工晋升后才建实体并回填边；队列永不自动清空、永不自动删除(AMiner KDD 2018 的持续维护模式)。
+
+**B3. 0.85~0.95 相似度带：废弃绝对阈值，改用 margin + 分歧信号。**
+文献(d-blink 的贝叶斯后验、Splink 的概率分数)一致指向：单一相似度切割线不可靠。改为:(a) best 与 second-best 的 margin;(b) 分歧信号——两条边的关系类型在目标实体上是否兼容、度数差、性别/阵营等属性冲突;(c) 凡落在存疑带或信号打架的一律进人审;(d) 用历史上人工接受/拒绝的判例做校准(Splink 式标签回流)，让“带”的边界随数据自校。另外做一次**合并后审计**：已合并簇内出现互斥属性(一人双本名冲突、双来源冲突)即自动拆回——这是“downstream 一致性反查”的工程化替身(标注：工程推断，无直接文献)。
+
+**B4. 所有合并必须可撤销：存合并日志而非只存结果。**
+union-find 结构 + 合并操作日志(谁、何时、依据、置信度)，支持 split 回滚——d-blink 的 MCMC merge/split 提案证明“拆分”应是系统一等公民。false merge 的代价不对称(合并错污染下游，拆分只多花一次人审)，可撤销性是廉价保险。
+
+**B5. 用 65 个悬挂端点做评估金标。**
+65 例已人工分好 43/22,直接当测试集：先把 B1+B2 离线跑一遍，量化“变体归一命中率”与“缺失判定准确率”；再对 LLM 判决层建立混淆矩阵，作为后续阈值/提示词迭代的回归测试。SHACL 层把“关系对象必须在实体表”固化为常态校验，新边写入前即检(2508.00137 的增量验证思路)，防止悬挂再度累积。
+
+---
+
+## C. 颠覆性候选
+
+1. **无阈值的贝叶斯端到端 ER**(d-blink 类)：create/link 完全由后验聚类概率决定，没有 0.85~0.95 这条人为分界线——若 CBB 判例积累到几百条，可以考虑概率化重述。可信度：中(方法论成立，小说域无直接实践案例)。
+2. **LLM 原生 Agentic ER**:2025-2026 的趋势是多步推理判决(2511.22832)+ RAG 省-LLM 匹配(2602.05708)+ LLM-based blocking(IEEE Access 2025 综述)——方向是“LLM 带证据做判决、规则只管便宜的部分”，与 B1 的分层建议一致；若成熟，43/22 的两分法可让 LLM 直接输出四分类(与库内已有“实体名归因四分类工具”对齐)。可信度：中高(趋势明确，但"LLM 全面优于微调小模型"未获 COLING 2025 支持)。
+3. **“按 NIL 候选晋升建库”作为常态而非异常**：Lost and Found(SWJ 2026)展示了面向人文学料的 KG 构建正把“无法链接的提及”视为一等公民——对 CBB 的启示是：隔离区不是垃圾桶而是**建设中的实体孵化器**，这与“正典库持续生长”的定位天然契合。可信度：高(经同行评审录用，2026-07)。
+4. 未找到颠覆两分法本身的证据：43 变体 vs 22 缺失的处置方向在外部文献中全部获得正面印证(变体→归一/别名表；缺失→NIL 队列+人审晋升)。
+
+**主要诚实声明**：①中文 ER/中文角色别名工具的专题文献本次未获取成功(限流+结果贫瘠)，建议单独补查；②IndEL、FantasyCoref、BookCoref、KoCoNovel、Sparkly 内容细节为搜索摘要级，未抓原文；③Karapiperis 综述具体年份未核实(DOI 已验证存在)；④"To Merge or Not to Merge" ER 论文经查证不存在。

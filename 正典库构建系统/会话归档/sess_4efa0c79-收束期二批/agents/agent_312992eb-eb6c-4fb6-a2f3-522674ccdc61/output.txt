@@ -1,0 +1,127 @@
+# 深度调研报告：语言/文学/数据三学科资产 × 中文长篇正典库
+
+调研方式说明：搜索后端多轮限流，主力改为**一手权威页直连核实**（UD 官网、TEI P5、gensim/BERTopic/PrefixSpan 官方文档、CATMA/CollateX 官网、SPMF、HistWords、JCLS、arXiv API、CRAN），关键 license 均以页面原文为准；未能直核处全部标【待确认】。
+
+---
+
+## A. 逐题深度发现
+
+### Q1 语言资源深挖（关系抽取先验 + 谓词框架）
+
+**1. HowNet / OpenHowNet —— 可用（研究用），义原先验成立**
+- 现状：OpenHowNet 是 THUNLP 2019 年开源的知网义原库（EMNLP 2019，arXiv:1901.09957），约 10 万词/2,400+ 义原，配 Python API 与网页平台。官网 https://openhownet.thunlp.org/ ；仓库 https://github.com/thunlp/OpenHowNet
+- License：**代码开源；义原数据版权归董振东，历史上仅限非商业研究用途，商用需单独授权**。本次 GitHub 直连被证书链拦截、官网首页为 JS 空壳，license 原文未逐字核【待确认：商用边界；研究用途按现行共识可用】。
+- 中文适配：原生中文。对本库的正确用法不是当 NER 词典，而是**谓词论元先验**：「铸造」= hand|手 + manufacture|制造、「授予」含 give|给予 + person|人 论元槽，可从义原位/角色位（agent/patient/target）推导关系类型约束。Babel HowNet 是其 75+ 语多语扩展【待确认：Babel 版本发布状态】。
+
+**2. Chinese FrameNet（CFN，山西大学）—— 框架定义可抄，数据库本体需申请**
+- 现状：CFN 含 **323 框架、3,947 词汇单位、约 1.8 万标注句**，分框架库/句子库/语篇库三部分（规模数据见 LREC 2018 迁移研究 https://www.cs.nccu.edu.tw/~hhhuang/docs/lrec2018b.pdf ；奠基文献 You & Liu "Building Chinese FrameNet database"，https://www.semanticscholar.org/paper/a970920c065c205349f5eb14de01b3e4a127bdda ；角色标注方法 https://aclanthology.org/W10-3204.pdf ；诗歌应用案例 https://arxiv.org/pdf/2210.05772 ）
+- License：**未开放自由下载，历来按申请发放**；官网域名（cfn.*）本次直连证书过期【待确认：当前申请入口与条款】。**开源替代品**：台大 NTU CFN-Lex，约 3.6 万汉语 LU 对齐 779 个英文 FN 框架，GitHub https://github.com/ntunlplab/FrameNet-CFN-Lex 【待确认：该仓库 license 条文】。
+- 中文适配：原生。框架元素（Donor/Theme/Recipient 等）正是「授予/继承/铸造」类谓词的论元结构先验，可直接映射成六库关系 schema 的槽位约束。
+
+**3. Universal Dependencies 中文树库 —— 可自由使用（本次核实最干净的一件）**
+- [UD_Chinese-GSD](https://universaldependencies.org/treebanks/zh_gsd/index.html)：**CC BY-SA 4.0**，4,997 句 / 123,289 词，Google wiki 语料转 UD；UPOS/依存人工标注后自动转换。注意 **CC BY-SA 的传染性**：衍生标注需同许可共享。
+- [UD_Chinese-CFL](https://universaldependencies.org/treebanks/zh_cfl/index.html)：CC BY-SA 4.0，451 句，对外汉语学习者作文（母语者小说域适配差，仅作参考）。
+- 另有 GSDSimp/PUD/HK 等中文树库未逐一核【待确认】。中文适配：简体书面/wiki 域，章回对白风格需自行微调；定位是**校验基准**而非训练主力。
+
+**4. 汉语 SRL / 依存 —— 三条路，推荐 LTP4 作运行时、LDC 语料只本地用**
+- [LTP4（哈工大）](https://ltp.readthedocs.io/zh-cn/latest/)：`pip install ltp`，开箱即用 **SRL F1 80.6（CPB3.0）**、依存 LAS 89.5、语义依存 LAS 75.2（CCL2020）。文档页未写模型许可【待确认：模型权重条款；代码为开源】。
+- CPB/CPPB（Xue & Palmer 谱系）：CoNLL-2008/2009 中文数据现由 **LDC 发行（LDC2012T03/T04）**，受 LDC 用户协议约束、不可重分发（https://ufal.mff.cuni.cz/conll2009-st/ ；条款原文未逐字核【待确认】）。
+- Brandeis CPPB 官网证书过期未能访问【待确认】。
+- 结论：**合法用于“关系抽取先验+谓词框架”的组合 = LTP4（运行时 SRL）+ CFN/CFN-Lex（框架槽位）+ HowNet 义原（角色语义偏置）+ UD-GSD（校验）**。LDC 语料可用于本地训模型，但不能进库分发。
+
+### Q2 文学研究基础设施
+
+**1. TEI P5 文本结构 —— 直接可抄的章回 schema**
+- 出处：TEI P5 Default Text Structure，https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html （规范文件开放；guidelines 整体许可条款【待确认】）
+- 核心可借鉴点（页面原文核实）：`front/body/back`；两种层级法——**无编号 `<div>` 递归嵌套（type="part"/"chapter" + n 属性）或编号 `div1–div7`（7 层封顶，不可混用）**；`head/trailer`（回目/收尾诗位置）；**`quote/q/cit`（引文+出处对）**；**`floatingText`（叙事中嵌入的独立文本——正是章回体诗赞/判词/书信的编码位）**；`att.divLike` 的 part/sample/org 属性处理跨章断裂文本。
+
+**2. CATMA —— 人工终审标注台现成方案**
+- 出处：https://catma.de/ 。汉堡大学/TU Darmstadt（Evelyn Gius 团队），**免费、纯浏览器、开源**（GPL 系，GPL-3.0 或 AGPL【待确认：具体条文】），v7.3.0 有 Zenodo DOI（10.5281/zenodo.1470118）。
+- 关键能力：自定义标签集、可重叠任意多次标注、**Git 底座版本化 + GitMA Python 包 + TEI-XML standoff 导出**——天然契合“终审后回填六库”的工作流。
+
+**3. Critical edition 变体处理（别名/版本链的形式化范本）**
+- [CollateX](https://collatex.net/) / [PyPI 页](https://pypi.org/project/collatex/)：**GPLv3 已核实**，v2.3（2023-11），Python+Java。token 对齐 → **alignment table / variant graph（变体图）**，支持移位检测与 near-matching（Levenshtein），可输出 **TEI 格式校勘记**。变体图对“同一实体多称谓链”“多版本章文本差分”是现成的数学结构。
+- EVT（比萨大学校勘本可视化）官网连接被拒，license 未核【待确认】。
+
+**4. Distant reading 谱系 → 2024-2026 现状**
+- 谱系：Moretti "Conjectures on World Literature"（New Left Review, 2000）→ "Distant Reading"（2013）；Stanford Literary Lab 小册子系列（https://litlab.stanford.edu/ ，已核实当前仍活跃，Mellan 资助"Literary Theory and Criticism"课题）；反方：Nan Z. Da "The Digital Humanities Debacle"（Critical Inquiry, 2019）。
+- 2024-2026 现状（arXiv API 核实）：**LLM 辅助量化成为主叙事**——Karjus "Machine-assisted quantitizing designs"（https://arxiv.org/abs/2309.14379 ，9 语种、假设驱动分类替代朴素远读）；"PEEL"（https://arxiv.org/abs/2606.04152 ，确定性远读工具 Voyant + LLM 解释，警句 "fluency is not fidelity"）；Textarium（https://arxiv.org/abs/2509.13191 ，标注-抽象-论证一体）。**期刊落点：Journal of Computational Literary Studies（JCLS），diamond OA，TU Darmstadt 出版，ISSN 2940-1348，https://jcls.io/ ，2026 卷含 LLM 诗解读、人物原型、对话分布等**——这是远读谱系当前的旗舰阵地。
+
+### Q3 叙事学形式化
+
+**1. Genette 计算化 —— 已有可运行的部分解，分散在 NLP 会议**
+- 总纲：Meister "Computational Narratology"（Living Handbook of Narratology / De Gruyter Handbook of Narratology 章节）为学科定位文献【LHN 具体节点 URL 未核，待确认】；Elson《Modeling Narrative Discourse》（Columbia 博论 2012，Scheherazade 系统，story/discourse token 分离）是奠基工程【个人页 URL 未核，待确认】。
+- **时序/时距（order/duration）可计算件**：Go Back in Time（NAACL 2022，事件时序 prompt 生成倒叙）；**NEST**（EMNLP 2026，1,005 部电影、每部约 103 个叙事事件的时序关系 benchmark，含层级与长程依赖）——其“事件对 before/after/vague 分类”可平移为正典库时间线的**一致性校验门**。
+- **fabula/syuzhet 情节弧**：Jockers `syuzhet` R 包（CRAN 已核实：GPL-3，DCT 平滑情节弧，v1.0.7）；Reagan et al. 2016 情节弧六形状（EPJ Data Science, OA，DOI 10.1140/epjds/s13688-016-0093-1）。
+- **最直接先例**：NS-ST-GraphRAG（2026, Zheng Kui Lin）——本体引导抽取 + **"dual temporal coordinates"双时间坐标（故事时间 vs 话语时间）** + 时效约束检索，附**《红楼梦》Red-Chamber-QA 中文基准**。这实质是 Genette order 的 GraphRAG 化，且是中文。
+- 语式/语态（focalization/voice）：arXiv 上“focalization 检测”专文为零（本次全量查询确认）——**该维度尚无成熟计算件，属真空区**。
+
+**2. Storyworld 计量**
+- 最接近的可度量物：**TLDM 基准**（2025, Hamilton/Hicke/Wilkens/Mimno）：LLM 对长篇小说的情节摘要、**storyworld 配置、流逝叙事时间**三项度量，结论是 64k token 后无一模型稳定——直接支持“长篇必须外置六库而非靠上下文”的立库前提。"How LLMs Build Fictional Worlds"（2026）：五类叙事空间 BERT 分类器。形式模型仅有 "Towards a Formal Model of Narratives"（2021, Castricato 等）一档，**无工具化产物**。
+
+**3. 中文叙事学定量现状**
+- 刘洋（重庆大学）：261 篇中文科幻的标记+情感计算，发现叙事视角的性别差异（《中国比较文学》等，https://lac.cqu.edu.cn/info/1209/9445.htm ）。
+- 《数字人文研究》（人大，http://dhr.ruc.edu.cn ）刊数字叙事跨媒介研究；《计算与细读：数字时代的文学批评》（中国社会科学网 2024，https://www.cssn.cn/skgz/bwyc/202410/t20241009_5789617.shtml ）；社科院文学所《中国文学数字人文发展报告》（2025-07，四十年脉络综述，http://literature.cass.cn/kxyj/xscg/llypp/202507/t20250729_5907494.shtml ）。
+- CNKI 学位论文级“计算叙事学/计量叙事学”个案未能直接核【待确认】。整体判断：中文定量叙事学**期刊级已有单点实证、无系统化工具链**。
+
+### Q4 数据分析方法迁移
+
+**1. 主题演化中文实现 —— 三代可选**
+- 传统代：gensim `LdaSeqModel`（Blei-Lafferty DTM 复现，https://radimrehurek.com/gensim/models/ldaseqmodel.html ；gensim 为 LGPL-2.1【按仓库标注，文档页未示】）。输入仅 `corpus`+`time_slice`（每片文档数），带 `dtm_vis/dtm_coherence`。中文适配：自备分词+词袋即可，无语言绑定。
+- 变换器代：**BERTopic**（仓库标 MIT【文档页未示】），`.topics_over_time(docs, timestamps)` + `.partial_fit` 在线模式；中文走 `language="multilingual"` 或直接换 BGE/text2vec 嵌入——**章序即 timestamps，接缝最短**。
+- 2024-2026 新一代（arXiv 核实）：CoNTM（在线持续神经主题模型）、KeyNMF（CHR 2024）、**BERTilda**（ECML PKDD 2026，逐窗嵌入主题模型+时间图，显式检测主题**分裂/合并/消亡**——适合“支线剧情分化”）、DTECT（开源可视化，LLM 自动命名主题）。评估警告：2026 有专文证明词汇共现指标会误导 DTM 评测，建议 LLM 语义相似度 coherence。
+
+**2. HistWords 谱系 → 称谓漂移 —— 高度可移植**
+- 出处：https://nlp.stanford.edu/projects/histwords/ （Hamilton/Leskovec/Jurafsky，ACL 2016）。**数据集 ODC-PDDL v1.0（公有领域贡献）已核实；代码仓库 license 因 GitHub 证书拦截未核【待确认，论文页仅承诺数据 PDDL】**。
+- 关键事实：**官方就含简体中文嵌入（Google N-Grams chi-sim，1950s–1990s 逐十年）**；方法 = 逐十年 SGNS + 正交 Procrustes 对齐 + 三指标（1NN 相似度位移/频次/多义性），并给出两条统计律（高频词变化慢、多义词变化快）。
+- 移植方案：本库以“卷/部”为时间片自训 SGNS，对称谓词（“老爷→老头子→他爹”）画 1NN-shift 曲线，拐点自动触发上下文包。中文适配注意：专名/称谓切分需自备词典。中文语义演变近作参考：文言词类演变（https://arxiv.org/abs/2009.11144 ）。
+
+**3. 序列模式挖掘（事件共现）—— MIT 包 + GPL 引擎双轨**
+- `prefixspan`（PyPI 已核实：**MIT**，Chuancong Gao，v0.5.2/2018，https://github.com/chuanconggao/PrefixSpan-py ）：PrefixSpan + **BIDE 闭序列模式**（输出规模可控）+ FEAT 生成子模式，top-k、自定义 filter/callback，PyPy 提速 10 倍。久未更新但 API 稳定。
+- [SPMF](https://www.philippe-fournier-viger.com/spmf/)：**GPL-3 已核实**，Java，v2.66（2026-06 活跃维护），342 算法**含 SPADE/PrefixSpan/GSP/SPAM**，CLI 可从 Python 调。
+- 分布式替代：Spark MLlib PrefixSpan（Apache-2.0，https://spark.apache.org/docs/latest/ml-frequent-pattern-mining.html ）。
+- 明说：**Python 原生无维护良好的 SPADE 实现**——带 maxGap 间隔约束的挖掘走 SPMF CLI，纯 PrefixSpan 走 MIT 包。事件序列按章序编码后，“伏笔→兑现”“结拜→反目”类模式是典型输出。
+
+### Q5 中文文学计量个案（2024-2026）
+
+- **NS-ST-GraphRAG（2026）**：神经符号时空 GraphRAG，双时间坐标 + 约束校验，附《红楼梦》QA 基准——**“人物关系网络×时间线联合”的直接中文先例**，且其“关系随叙事时间演化、检索按时间范围选图状态”正是本库六库联查的设计目标。（arXiv 2026，经 API 核实）
+- **GraphLit（2026）**：动态异质人物网络（DHCN），时间定位图 + 掩码图自编码器，Gutenberg 约 2 万张图训练——网络+时间线联合表示学习先例（arXiv 经 API 核实）。
+- **WebNovelBench（https://arxiv.org/abs/2505.14818 ，2025）**：4,000+ 中文网文语料，LLM-as-Judge 8 维长篇质量排序——**网文规模化语料+评价维度的可抄清单**。姊妹件 DITING（https://arxiv.org/abs/2510.09116 ，中英网文翻译 6 维 18k 句对）偏翻译工程。
+- **Renard（JOSS 2024，DOI 10.21105/joss.06574，https://arxiv.org/abs/2407.02284 ）**：模块化人物网络抽取 Python 库，**同时支持静态与动态网络**，各 NLP 组件可插拔——用它做“组件误差→网络质量”消融。
+- **COLING 2024 "The Role of NLP Tasks in Automatic Literary Character Network Construction"**：量化 NER/共指误差对人物网络的污染——校验门设计的直接依据。综述底座：Labatut & Bresson, ACM Computing Surveys 2019。
+- 旁证件：冰与火之歌跨媒介网络对比（2024，跨版本角色匹配+叙事单元匹配——“版本链×网络”先例）；"Grounding Characters and Places in Narrative Texts"（ACL 2023，Bamman 实验室，2,500 段空间关系标注）；JCLS 2026 卷含瑞典小说对话分布、Calderón 人物原型（非中文但方法论可抄）。
+- **LC/DSH/JLCL 级 2024-2026 中文个案：未能直接核实到具体篇目**（期刊档案不可达+检索限流，见 C 节）。中文侧已确认的就近阵地是《数字人文》《数字人文研究》与上列 arXiv 中文工作。
+
+---
+
+## B. 可立即接入管线的具体件（按学科，指明接缝）
+
+**语言学**
+1. **LTP4 SRL → 抽取先验 + 校验门**：对“授予/继承/铸造”类谓词建 SRL 论元槽→六库关系类型映射表；抽取出的三元组回代 SRL 论元做主/宾一致性检查，不一致者进缺口队列。接缝成本最低（`pip install ltp`）。
+2. **UD_Chinese-GSD（CC BY-SA 4.0）→ 校验门**：抽 500 句做 gold 子集，每次换解析模型跑 UAS/LAS 回归，防模型升级静默回退。注意 BY-SA 衍生标注须同许可。
+3. **CFN 框架定义 + NTU CFN-Lex → 抽取先验/缺口队列**：用框架元素（Donor/Theme/Recipient…）补全关系 schema 槽位；CFN 覆盖不到的谓词（古雅动词尤甚）自动进缺口队列。CFN 1.1 本体按申请获取【待确认】。
+
+**文学研究**
+1. **TEI div/quote/floatingText → 抽取先验 + 上下文包**：章回层级 schema 直接落地为 `div type="part"/"chapter"` + 诗赞/判词用 `floatingText`；六库所有证据的行号引用升级为 TEI path，使“上下文包”可跨工具交换（CATMA/CollatEx 均认 TEI）。
+2. **CollatEx 变体图（GPLv3）→ 校验门/版本链**：多版本（如连载版/修订版）章节先 collate 出变体图，实体别名链与版本差分在图上做，校勘记输出 TEI 格式。
+3. **CATMA 7.3（Git 版本化）→ 终审**：人工复核台即取即用；标签集=六库关系类型表，审完 GitMA/TEI standoff 导出回填，全程留痕。
+
+**数据分析**
+1. **prefixspan（MIT）+ SPMF（GPL-3）→ 抽取先验 + 缺口队列**：六库事件按章序编成序列库，BIDE 挖闭模式（“伏笔→兑现”）；不属于任何高频模式的孤立事件自动进缺口队列。带间隔约束用 SPMF 的 SPADE（CLI 调用）。
+2. **HistWords 方法（数据 PDDL）→ 上下文包**：按卷分片 SGNS + Procrustes 对齐，称谓词 1NN-shift 曲线拐点触发“该词本卷上下文包”自动生成。
+3. **BERTopic `.topics_over_time`（MIT）或 gensim LdaSeq（LGPL-2.1）→ 校验门 + 终审**：主题漂移突变点与大纲时间线事件对账；无事件可解释的主题突变进终审人工判定。
+
+---
+
+## C. 找不到 / 不适用（明说）
+
+1. **EVT（比萨校勘本可视化）**：官网连接被拒，license 与版本未核【待确认】。
+2. **HowNet 商用条款原文、CFN 1.1 下载入口**：官网证书过期/GitHub 本地证书拦截，均未逐字核实；按“研究可用、商用需授权、CFN 需申请”的共识处理【待确认】。
+3. **LDC 发行件（CoNLL-2009 中文 = LDC2012T03/T04）**：条款原文未核，默认“不可重分发、仅本地研究”。
+4. **LTP 模型权重许可**：文档页未载明【待确认】；代码开源无争议。
+5. **CATMA 确切 license（GPL-3.0 vs AGPL）**：未定。
+6. **Python 原生 SPADE**：无维护良好的实现——不是没找到，是不存在；用 SPMF/Spark 替代。
+7. **Genette“语式/语态”（focalization/voice）计算件**：arXiv 全量查询为零命中，该维度无成熟可抄资产；时序维度（order）反而超预期（NEST、NS-ST-GraphRAG 双坐标）。
+8. **Storyworld 计量模型**：只有基准（TLDM）与形式提案（2021 Formal Model），**无工具化成品**——不建议等待现成件，直接用 TLDM 三指标自建度量。
+9. **LC/DSH/JLCL 级 2024-2026 中文网文/严肃文学定量实证篇目**：本次未能打开期刊档案逐卷核实（OUP 不可达、搜索通道限流），**不提供未经核实的篇目清单**；已给出的中文个案均来自 arXiv API 与中文机构页直核。CNKI 学位论文级中文定量叙事学同此【待确认】。
+10. HistWords 的**代码** license 未核（数据 PDDL 已核）；BERTopic/gensim 的 license 取自仓库标注而非文档页，均已在正文标注。

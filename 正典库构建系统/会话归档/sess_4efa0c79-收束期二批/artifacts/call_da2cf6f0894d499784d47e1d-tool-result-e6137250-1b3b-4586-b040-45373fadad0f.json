@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-13T20:14:30.647Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"aggregate_adversarial.py — 汇总对抗挑战 → 裁决摘要清单（按严重度排序）\"\"\"\nimport json, os, glob\n\nOUTDIR = os.path.join(ROOT := os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), \"结果\", \"adversarial\")\nGOLD = os.path.dirname(OUTDIR + \"/..\")\n\nrows = []\nfor p in sorted(glob.glob(os.path.join(OUTDIR, \"excerpt*_R*.json\"))):\n    d = json.load(open(p, encoding=\"utf-8\"))\n    base = os.path.basename(p).replace(\".json\", \"\")\n    gname, rnd = base.rsplit(\"_R\", 1)\n    for c in d.get(\"challenges\", []):\n        rows.append({\"gold\": gname, \"round\": int(rnd),\n                     \"sev\": c.get(\"severity\", \"?\"), \"type\": c.get(\"type\", \"?\"),\n                     \"target\": (c.get(\"target\") or \"\")[:40],\n                     \"claim\": (c.get(\"claim\") or \"\")[:90],\n                     \"evidence\": (c.get(\"evidence\") or \"\")[:70],\n                     \"fix\": (c.get(\"proposed_fix\") or \"\")[:70]})\n\nsev_order = {\"high\": 0, \"medium\": 1, \"low\": 2, \"?\": 3}\nrows.sort(key=lambda r: (r[\"gold\"], sev_order.get(r[\"sev\"], 9), r[\"round\"]))\n\nstats = {}\nfor r in rows:\n    stats[(r[\"gold\"], r[\"sev\"])] = stats.get((r[\"gold\"], r[\"sev\"]), 0) + 1\nprint(\"=== 统计 (gold × severity) ===\")\nfor k in sorted(stats):\n    print(k, stats[k])\nprint(\"total:\", len(rows))\n\nout = os.path.join(OUTDIR, \"_digest.md\")\nwith open(out, \"w\", encoding=\"utf-8\") as f:\n    f.write(f\"# 对抗挑战摘要（{len(rows)} 条，按 gold+严重度排序）\\n\\n\")\n    cur = None\n    for i, r in enumerate(rows):\n        if r[\"gold\"] != cur:\n            cur = r[\"gold\"]\n            f.write(f\"\\n## {cur}\\n\")\n        f.write(f\"- [{i}] R{r['round']} [{r['sev']}/{r['type']}] 目标:`{r['target']}` → {r['claim']} | 证:{r['evidence']} | 修:{r['fix']}\\n\")\nprint(\"written:\", out)\n",
+      "afterContentLength": 1704,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\P1执行区\\step0-抽取精度实验\\脚本\\aggregate_adversarial.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_da2cf6f0894d499784d47e1d",
+  "toolName": "Write",
+  "version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T20:49:21.575Z",
+  "files": [
+    {
+      "afterContent": "# E2 缺口队列 → 人工窗分发口径表（2026-09-28）\n\n> 缺口队列（`缺口队列.jsonl`，四扫描器产出）的消费端契约——每类缺口去哪个窗、谁拍板、何时清。\n\n| 缺口 type | 去向窗 | 拍板人 | 处置动作 | 清空条件 |\n|---|---|---|---|---|\n| 契诃夫超期（伏笔回收超 3 章未兑现） | 锚定/伏笔人工队列 | 用户 | 逐条判「真伏笔待兑 / 抽取噪声」 | 真伏笔转 foreshadow 库跟踪；噪声 rejected |\n| 词表缺口（entity_type 落词表外） | G10 措辞审定窗 | 用户+GEPA 共进化 | 词表升级提案（进 CNCTST 式五段流程） | 词表版本 +1 并全量重放 gate1 |\n| NLI 分歧（预筛与通道判定不一致） | G11 判例窗 | 用户 | 判例 (premise,hypothesis,label) 入校准集 | 校准集 ≥10 条触发 conformal 校准 |\n| 植物 miss（注入金标未捕获） | 管线质量警报 | 用户 | **BLOCKED 级**——抽取捕获率异常，停批排查 | 根因修复+复测捕获率恢复 |\n| 回填 miss（核心指代仍找不到先行语） | 锚定人工队列 | 用户 | 判「真缺证据/实体本身存疑」 | 存疑实体 rejected 或人工补证 |\n\n## 伴随纪律\n\n- 分发是**复制不搬移**：缺口队列行保留原状（append-only），人工窗行带 source 指针回链。\n- 每窗清空条件达成后在窗内记 disposition 行（与 B7 队列同格式）。\n- E3 措辞审计 checklist 是 G10 窗的附加工序：每次词表升级逐字段过「中性化/粒度/互斥」三查（PARSE：措辞动精度数十点）。\n",
+      "afterContentLength": 787,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\E2-缺口队列分发口径表.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_88e4dc997dbb41c9ba005669",
+  "toolName": "Write",
+  "version": 1
+}

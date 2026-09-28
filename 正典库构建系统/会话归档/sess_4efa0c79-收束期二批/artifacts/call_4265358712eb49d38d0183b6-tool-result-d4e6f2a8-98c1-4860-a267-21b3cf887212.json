@@ -1,0 +1,58 @@
+{
+  "createdAt": "2026-09-24T20:59:57.445Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"lightrag_export.py — 实验件：把 CBB 知识图谱喂给 LightRAG（insert_custom_kg 路径，零 LLM）。\n\n真源=正典库（collect_graph 与 Neo4j 导出同源）；LightRAG working_dir=派生索引副本，\n与 LanceDB 索引同级（派生件、可重建、位于 gitignore 的 索引/ 下）。\n纪律：\n  · 零查询期/写入期 LLM——llm_model_func 为计数桩，任何调用都会被记录并暴露；\n  · 自环/缺字段行跳过并计数（T-5 不静默）；\n  · weight=去重 source 数（LightRAG 语义下界）。\n用法：\n  py -X utf8 lightrag_export.py --dry-run     # 只导出计数，不写\n  py -X utf8 lightrag_export.py --feed        # 导出并喂入（含嵌入，分钟级）\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport asyncio\nimport json\nimport sys\nimport urllib.request\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE))\nsys.path.insert(0, str(HERE.parent / \"cbb-store\"))\nsys.path.insert(0, str(HERE.parent / \"contracts\"))\n\nfrom neo4j_export import collect_graph  # noqa: E402\n\nROOT = HERE.parent.parent                    # 正典库构建系统/\nSTORE = ROOT / \"迷深实战-本体库\"\nWORK = ROOT / \"迷深实战-工作区\" / \"索引\" / \"lightrag-exp\"\nEMB = \"http://127.0.0.1:8080/v1/embeddings\"\nMODEL = \"text-embedding-qwen3-embedding-8b@q4_k_m\"\nBATCH = 16\n\nCNT = {\"emb_calls\": 0, \"emb_texts\": 0, \"llm_calls\": 0}\n\n\ndef _embed_batch(texts: list[str]) -> list[list[float]]:\n    out: list[list[float]] = []\n    for i in range(0, len(texts), BATCH):\n        b = texts[i:i + BATCH]\n        payload = json.dumps({\"model\": MODEL, \"input\": b}, ensure_ascii=False).encode(\"utf-8\")\n        req = urllib.request.Request(EMB, data=payload, headers={\"Content-Type\": \"application/json\"})\n        with urllib.request.urlopen(req, timeout=300) as r:\n            d = json.loads(r.read().decode(\"utf-8\"))\n        arr = sorted(d[\"data\"], key=lambda x: x[\"index\"])\n        out.extend(x[\"embedding\"] for x in arr)\n        CNT[\"emb_calls\"] += 1\n        print(f\"  embed {i + len(b)}/{len(texts)}\", flush=True)\n    CNT[\"emb_texts\"] += len(texts)\n    return out\n\n\ndef _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001\n    CNT[\"llm_calls\"] += 1\n    return \"\"\n\n\ndef _record_text(rec: dict) -> str:\n    obs = [o.get(\"text\", \"\") for o in (rec.get(\"observations\") or []) if o.get(\"text\")]\n    return \"；\".join(obs) if obs else \"\"\n\n\ndef build_kg(store_root: Path) -> tuple[dict, dict]:\n    \"\"\"库 → ({entities,relationships,chunks}, 统计)。同名实体/同三元组关系做 <SEP> 合并。\"\"\"\n    graph = collect_graph(store_root)\n    rid2rec: dict[str, dict] = {}\n\n    def rec_of(rid):\n        if rid in rid2rec:\n            return rid2rec[rid]\n        hits = list(store_root.glob(f\"libraries/*/*/{rid}.json\"))\n        rec = {}\n        if hits:\n            try:\n                rec = json.loads(hits[0].read_text(encoding=\"utf-8\"))\n            except Exception:\n                rec = {}\n        rid2rec[rid] = rec\n        return rec\n\n    stats = {\"nodes\": len(graph[\"nodes\"]), \"edges\": len(graph[\"edges\"]),\n             \"skipped_selfloop\": 0, \"merged_entity\": 0, \"merged_rel\": 0}\n    ents: dict[str, dict] = {}\n    for n in graph[\"nodes\"]:\n        e = ents.setdefault(n[\"name\"], {\"entity_name\": n[\"name\"], \"entity_type\": n[\"entity_type\"] or \"unknown\",\n                                        \"description\": [], \"source_id\": []})\n        if e[\"entity_type\"] == \"unknown\":\n            e[\"entity_type\"] = n[\"entity_type\"] or \"unknown\"\n        txt = _record_text(rec_of(n[\"record_id\"])) or n[\"name\"]\n        e[\"description\"].append(txt)\n        e[\"source_id\"].append(n[\"record_id\"])\n    rels: dict[tuple, dict] = {}\n    for e in graph[\"edges\"]:\n        if e[\"subject\"] == e[\"object\"]:\n            stats[\"skipped_selfloop\"] += 1\n            continue\n        if e[\"subject\"] not in ents or e[\"object\"] not in ents:\n            stats[\"skipped_selfloop\"] += 1  # 端点实体不在库（悬挂边）——同槽披露\n            continue\n        key = (e[\"subject\"], e[\"rel_type\"], e[\"object\"])\n        r = rels.setdefault(key, {\"src_id\": e[\"subject\"], \"tgt_id\": e[\"object\"], \"keywords\": e[\"rel_type\"],\n                                  \"description\": [], \"source_id\": [], \"weight\": 0})\n        txt = e[\"fact\"] or e[\"rel_type\"]\n        r[\"description\"].append(txt)\n        r[\"source_id\"].append(e[\"record_id\"])\n    SEP = \"\\u0001\"  # 占位，下面统一换成 LightRAG 的 <SEP>\n    kg_entities, kg_rels, kg_chunks = [], [], []\n    for e in ents.values():\n        descs, srcs = _dedup(e[\"description\"]), _dedup(e[\"source_id\"])\n        stats[\"merged_entity\"] += len(e[\"description\"]) - len(descs)\n        kg_entities.append({\"entity_name\": e[\"entity_name\"], \"entity_type\": e[\"entity_type\"],\n                            \"description\": SEP_TXT.join(descs), \"source_id\": SEP_TXT.join(srcs)})\n    for r in rels.values():\n        descs, srcs = _dedup(r[\"description\"]), _dedup(r[\"source_id\"])\n        stats[\"merged_rel\"] += len(r[\"description\"]) - len(descs)\n        kg_rels.append({\"src_id\": r[\"src_id\"], \"tgt_id\": r[\"tgt_id\"], \"keywords\": r[\"keywords\"],\n                        \"description\": SEP_TXT.join(descs), \"source_id\": SEP_TXT.join(srcs),\n                        \"weight\": float(len(set(srcs)))})\n    for rid in sorted({s for e in ents.values() for s in e[\"source_id\"]}\n                      | {s for r in rels.values() for s in r[\"source_id\"]}):\n        rec = rec_of(rid)\n        txt = _record_text(rec)\n        if txt:\n            kg_chunks.append({\"content\": txt, \"source_id\": rid})\n    stats.update({\"entities\": len(kg_entities), \"relationships\": len(kg_rels), \"chunks\": len(kg_chunks)})\n    return {\"entities\": kg_entities, \"relationships\": kg_rels, \"chunks\": kg_chunks}, stats\n\n\nSEP_TXT = \"<SEP>\"\n\n\ndef _dedup(seq: list[str]) -> list[str]:\n    seen, out = set(), []\n    for x in seq:\n        if x not in seen:\n            seen.add(x)\n            out.append(x)\n    return out\n\n\ndef main(argv=None) -> int:\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--dry-run\", action=\"store_true\")\n    ap.add_argument(\"--feed\", action=\"store_true\")\n    ns = ap.parse_args(argv)\n    kg, stats = build_kg(STORE)\n    print(json.dumps(stats, ensure_ascii=False))\n    if ns.dry_run or not ns.feed:\n        return 0\n    WORK.mkdir(parents=True, exist_ok=True)\n    from lightrag import LightRAG\n    from lightrag.utils import EmbeddingFunc\n    rag = LightRAG(working_dir=str(WORK),\n                   embedding_func=EmbeddingFunc(embedding_dim=4096, func=_embed_batch),\n                   llm_model_func=_llm_stub, llm_model_name=\"stub-no-llm\")\n\n    async def _feed():\n        # 1.5.7 实测：custom-KG 路径不会自动初始化存储（JsonKVStorage._storage_lock=None\n        # → index_done_callback 崩 NoneType async CM）。必须显式 initialize。\n        await rag.initialize_storages()\n        try:\n            await rag.ainsert_custom_kg(kg)\n        finally:\n            await rag.finalize_storages()\n\n    asyncio.run(_feed())\n    print(json.dumps({\"fed\": True, **CNT, **stats}, ensure_ascii=False))\n    (WORK / \"_feed-report.json\").write_text(\n        json.dumps({\"cnt\": CNT, \"stats\": stats}, ensure_ascii=False, indent=1), encoding=\"utf-8\")\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\lightrag_export.py",
+      "structuredPatch": [
+        {
+          "oldStart": 37,
+          "oldLines": 23,
+          "newStart": 37,
+          "newLines": 27,
+          "lines": [
+            " CNT = {\"emb_calls\": 0, \"emb_texts\": 0, \"llm_calls\": 0}",
+            " ",
+            " ",
+            "-def _embed_batch(texts: list[str]) -> list[list[float]]:",
+            "-    out: list[list[float]] = []",
+            "-    for i in range(0, len(texts), BATCH):",
+            "-        b = texts[i:i + BATCH]",
+            "+async def _embed_batch(texts: list[str]) -> list[list[float]]:",
+            "+    # LightRAG 1.5.7 的任务队列 await 用户函数——嵌入函数必须是协程；",
+            "+    # 阻塞 HTTP 放 to_thread，防堵队列看门狗",
+            "+    def _http(b):",
+            "         payload = json.dumps({\"model\": MODEL, \"input\": b}, ensure_ascii=False).encode(\"utf-8\")",
+            "         req = urllib.request.Request(EMB, data=payload, headers={\"Content-Type\": \"application/json\"})",
+            "         with urllib.request.urlopen(req, timeout=300) as r:",
+            "             d = json.loads(r.read().decode(\"utf-8\"))",
+            "-        arr = sorted(d[\"data\"], key=lambda x: x[\"index\"])",
+            "-        out.extend(x[\"embedding\"] for x in arr)",
+            "+        return [x[\"embedding\"] for x in sorted(d[\"data\"], key=lambda x: x[\"index\"])]",
+            "+",
+            "+    out: list[list[float]] = []",
+            "+    for i in range(0, len(texts), BATCH):",
+            "+        b = texts[i:i + BATCH]",
+            "+        out.extend(await asyncio.to_thread(_http, b))",
+            "         CNT[\"emb_calls\"] += 1",
+            "         print(f\"  embed {i + len(b)}/{len(texts)}\", flush=True)",
+            "     CNT[\"emb_texts\"] += len(texts)",
+            "     return out",
+            " ",
+            " ",
+            "-def _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001",
+            "+async def _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001",
+            "     CNT[\"llm_calls\"] += 1",
+            "     return \"\"",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_4265358712eb49d38d0183b6",
+  "toolName": "Edit",
+  "version": 1
+}

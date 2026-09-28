@@ -1,0 +1,41 @@
+{
+  "createdAt": "2026-09-24T04:03:59.536Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"build_evidence_index.py — evidence 级片段索引构建（U-F07 v2 续件 · 批量任务 · 可断点续传）\n\n把全库记录的证据引文（10 万级）逐条嵌入写入 LanceDB `evidence` 表——\n用途：G2 证据门的片段级检索、引文核验辅助、双复查的样本采集。\n**小时级批量件**：建议挂夜间/闲时窗口跑；进度落盘可续（中断重跑自动跳过已完成）。\n\n用法：py -X utf8 build_evidence_index.py [--store <本体库>] [--index <索引目录>] [--batch 16]\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport importlib\nimport json\nimport time\nimport urllib.request\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nimport sys\nif str(HERE) not in sys.path:\n    sys.path.insert(0, str(HERE))\nm = importlib.import_module(\"neo4j_export\")\n\nEMB = \"http://127.0.0.1:8080/v1/embeddings\"\nMODEL = \"text-embedding-qwen3-embedding-8b@q4_k_m\"\n\n\ndef collect_evidence(store: Path) -> list[dict]:\n    \"\"\"全库记录的 evidence 四元组 → 待嵌入行（去重键＝record_id+line+quote 前 80 字）。\"\"\"\n    rows, seen = [], set()\n    for f in sorted(store.glob(\"libraries/*/*/*.json\")):\n        try:\n            rec = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        rid = rec.get(\"record_id\")\n        for ev in rec.get(\"evidence\") or []:\n            q = (ev.get(\"quote\") or \"\").strip()\n            if not q:\n                continue\n            key = (rid, ev.get(\"line\"), q[:80])\n            if key in seen:\n                continue\n            seen.add(key)\n            rows.append({\"record_id\": rid, \"chapter\": ev.get(\"chapter\"), \"line\": ev.get(\"line\"),\n                         \"vol\": ev.get(\"vol\"), \"quote\": q})\n    return rows\n\n\ndef _k(r: dict) -> str:\n    \"\"\"去重/续传键（与进度件落盘键同构）。\"\"\"\n    return f\"{r['record_id']}|{r['line']}|{r['quote'][:40]}\"\n\n\ndef main(argv=None) -> int:\n    ap = argparse.ArgumentParser(description=\"evidence 级片段索引（批量·可续）\")\n    ap.add_argument(\"--store\", default=str(HERE.parent.parent / \"迷深实战-本体库\"))\n    ap.add_argument(\"--index\", default=str(HERE.parent.parent / \"迷深实战-工作区\" / \"索引\" / \"lancedb\"))\n    ap.add_argument(\"--batch\", type=int, default=16)\n    ap.add_argument(\"--chunk\", type=int, default=1000,\n                    help=\"落表分块行数（内存上限≈chunk×dim×24B；2026-09-24 A-新:原一次性建 11 万行表 → ArrowMemoryError 3.87GB）\")\n    ns = ap.parse_args(argv)\n\n    rows = collect_evidence(Path(ns.store))\n    meta = {_k(r): r for r in rows}          # 仅文本元数据（小）；向量一律不驻留内存\n    prog = Path(ns.index).parent / \"_evidence-progress.jsonl\"\n    done_keys: set[str] = set()\n    if prog.exists():\n        # 只扫键（逐行 parse 即弃向量）：进度件可达 10GB 级，全读入内存必崩\n        with prog.open(encoding=\"utf-8\") as pf:\n            for ln in pf:\n                if ln.strip():\n                    done_keys.add(json.loads(ln)[\"k\"])\n        print(f\"续传：已有 {len(done_keys)} 条（键扫描，不载向量）\")\n    todo = [r for r in rows if _k(r) not in done_keys]\n    print(f\"待嵌入 {len(todo)} / {len(rows)}（批量任务，可随时中断续跑）\")\n    prog.parent.mkdir(parents=True, exist_ok=True)\n    with prog.open(\"a\", encoding=\"utf-8\") as pf:\n        for i in range(0, len(todo), ns.batch):\n            b = todo[i:i + ns.batch]\n            payload = json.dumps({\"model\": MODEL, \"input\": [r[\"quote\"] for r in b]},\n                                 ensure_ascii=False).encode(\"utf-8\")\n            for attempt in range(3):\n                try:\n                    req = urllib.request.Request(EMB, data=payload,\n                                                 headers={\"Content-Type\": \"application/json\"})\n                    d = json.loads(urllib.request.urlopen(req, timeout=300).read().decode(\"utf-8\"))\n                    arr = sorted(d[\"data\"], key=lambda x: x[\"index\"])\n                    for r, x in zip(b, arr):\n                        pf.write(json.dumps({\"k\": _k(r), \"vec\": x[\"embedding\"]},\n                                            ensure_ascii=False) + \"\\n\")\n                    pf.flush()\n                    break\n                except Exception as e:\n                    print(f\"  批 {i} 第 {attempt+1} 次失败: {str(e)[:50]}；重试\")\n                    time.sleep(5)\n            else:\n                raise SystemExit(f\"批 {i} 三连失败；进度已落盘，重跑续传\"\n                                 f\"（已完成 {len(done_keys) + i}）\")\n            if (i // ns.batch) % 50 == 0:\n                print(f\"  进度 {i + len(b)}/{len(todo)}\")\n\n    import lancedb\n    import pyarrow as pa\n    db = lancedb.connect(ns.index)\n    tbl = None\n    buf: list[tuple[str, list[float]]] = []\n    n_rows = 0\n\n    def flush() -> None:\n        \"\"\"分块落表：首块建表（overwrite），后续 add——峰值内存=一块。\"\"\"\n        nonlocal tbl, buf, n_rows\n        if not buf:\n            return\n        keys = [k for k, _ in buf]\n        vecs = [v for _, v in buf]\n        chunk = pa.table({\n            \"record_id\": [meta[k][\"record_id\"] for k in keys],\n            \"chapter\": pa.array([meta[k][\"chapter\"] for k in keys], type=pa.int64()),\n            \"line\": pa.array([meta[k][\"line\"] for k in keys], type=pa.int64()),\n            \"quote\": [meta[k][\"quote\"] for k in keys],\n            \"vector\": pa.array(vecs, type=pa.list_(pa.float32(), len(vecs[0]))),\n        })\n        if tbl is None:\n            tbl = db.create_table(\"evidence\", chunk, mode=\"overwrite\")\n        else:\n            tbl.add(chunk)\n        n_rows += len(keys)\n        buf = []\n\n    if prog.exists():\n        with prog.open(encoding=\"utf-8\") as pf:\n            for ln in pf:\n                if not ln.strip():\n                    continue\n                r = json.loads(ln)\n                if r[\"k\"] in meta:                     # 进度件里已不属当前库的键跳过（不静默：计入行数差）\n                    buf.append((r[\"k\"], r[\"vec\"]))\n                if len(buf) >= ns.chunk:\n                    flush()\n        flush()\n    print(\"evidence 索引落盘:\", tbl.count_rows() if tbl is not None else 0,\n          f\"行（进度件 {len(done_keys)} 键 / 当前库 {len(rows)} 行）\")\n    prog.unlink(missing_ok=True)  # 索引建成，10GB 级进度件清掉\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\build_evidence_index.py",
+      "structuredPatch": [
+        {
+          "oldStart": 130,
+          "oldLines": 12,
+          "newStart": 130,
+          "newLines": 16,
+          "lines": [
+            "         buf = []",
+            " ",
+            "     if prog.exists():",
+            "+        seen: set[str] = set()",
+            "         with prog.open(encoding=\"utf-8\") as pf:",
+            "             for ln in pf:",
+            "                 if not ln.strip():",
+            "                     continue",
+            "                 r = json.loads(ln)",
+            "-                if r[\"k\"] in meta:                     # 进度件里已不属当前库的键跳过（不静默：计入行数差）",
+            "+                if r[\"k\"] in seen:                     # 进度件可能含重复行（并发/重复批写入）→ 表内键唯一",
+            "+                    continue",
+            "+                if r[\"k\"] in meta:                     # 进度件里已不属当前库的键跳过（不静默：三数在输出注明）",
+            "+                    seen.add(r[\"k\"])",
+            "                     buf.append((r[\"k\"], r[\"vec\"]))",
+            "                 if len(buf) >= ns.chunk:",
+            "                     flush()"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_ET_omkLn0BWl2jtp48yxIGg7720",
+  "toolName": "Edit",
+  "version": 1
+}

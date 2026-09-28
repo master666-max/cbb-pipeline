@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-23T15:04:59.797Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"重排器.py — 本地重排模型统一客户端（U-F04~F06 共用；2026-09-23）\n\n职责（能力落地-工单 深融条款）：给四个岗位提供\"分数/排序\"能力，**只影响先看谁，不影响算不算对**。\n端点：llama.cpp `/v1/rerank`（U-F01 已打通，CUDA 常驻 8081）；响应 `results[{index, relevance_score}]`。\n\n纪律：\n  · **缺席即降级**：端点不可用/格式异常 → 返回 None，调用方落机械排序（产出同形）——绝不抛异常打断主链\n  · **可注入传输层**：测试零网络（transport 注入）；真调用走 urllib，请求体强制 UTF-8\n  · **确定性**：同输入同分数（评分模型无采样）；并列名次用稳定排序\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport os\nimport urllib.request\n\nDEFAULT_ENDPOINT = os.environ.get(\"RERANK_HTTP\", \"http://127.0.0.1:8081/v1/rerank\")\nDEFAULT_MODEL = \"qwen3-reranker-4b\"\n\n\ndef _http(endpoint: str, payload: bytes, timeout: float) -> str:\n    req = urllib.request.Request(endpoint, data=payload,\n                                 headers={\"Content-Type\": \"application/json\"})\n    with urllib.request.urlopen(req, timeout=timeout) as r:\n        return r.read().decode(\"utf-8\")\n\n\ndef score(query: str, documents: list[str], endpoint: str | None = None,\n          timeout: float = 120.0, transport=None) -> list[float] | None:\n    \"\"\"批量打分：返回与 documents 对齐的相关分列表；**任何异常→None**（调用方降级）。\"\"\"\n    if not documents:\n        return []\n    payload = json.dumps({\"model\": DEFAULT_MODEL, \"query\": query,\n                          \"documents\": documents}, ensure_ascii=False).encode(\"utf-8\")\n    try:\n        raw = (transport or _http)(endpoint or DEFAULT_ENDPOINT, payload, timeout)\n        data = json.loads(raw)\n        results = data.get(\"results\") or []\n        if len(results) != len(documents):\n            return None\n        out = [0.0] * len(documents)\n        for r in results:\n            out[int(r[\"index\"])] = float(r.get(\"relevance_score\") or 0.0)\n        return out\n    except Exception:\n        return None\n\n\ndef order(query: str, documents: list[str], endpoint: str | None = None,\n          timeout: float = 120.0, transport=None) -> list[int] | None:\n    \"\"\"返回按相关分降序的**下标序列**（稳定排序）；不可用→None。\"\"\"\n    scores = score(query, documents, endpoint, timeout, transport)\n    if scores is None:\n        return None\n    return sorted(range(len(documents)), key=lambda i: -scores[i])\n\n\ndef available(endpoint: str | None = None, timeout: float = 8.0) -> bool:\n    \"\"\"探活：一次真实单对打分是否成功。\"\"\"\n    return score(\"探活\", [\"测试文档\"], endpoint, timeout) is not None\n\n\ndef rerank_order_or_mechanical(query: str, docs: list[str], mechanical_order: list[int],\n                               endpoint: str | None = None, transport=None) -> tuple[list[int], str]:\n    \"\"\"岗位共用入口：重排可用→重排序；不可用→机械序。**返回 (顺序, backend)**——两载体同形由调用方保证。\"\"\"\n    o = order(query, docs, endpoint, transport=transport)\n    return (o, \"rerank\") if o is not None else (mechanical_order, \"mechanical\")\n",
+      "afterContentLength": 2656,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\重排器.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_0c8f5b09379b45bcb9167daa",
+  "toolName": "Write",
+  "version": 1
+}

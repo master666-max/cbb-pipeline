@@ -1,0 +1,88 @@
+调研完成。说明两点方法学事实：WebSearch 后端间歇 429，我改以 GitHub API（gh 认证通道）+ PyPI JSON + raw README + arXiv 核验为主信源，所有 license/星数/pushed 时间均为 2026-09-26 实测值；搜索类结论均给出可回访 URL。
+
+---
+
+# A. 逐题发现
+
+## Q1 流式算法/概要数据结构
+| 工具 | 状态（实测） | 要点 |
+|---|---|---|
+| [pyprobables](https://github.com/barrust/pyprobables) | MIT，★123，pushed 2026-07-23，v0.7.0（2026-02-08）| 一个库集齐：Bloom/CountingBloom/ScalableBloom、Count-Min Sketch（含 count-mean 变体）、HyperLogLog/HyperLogLog++、CuckooFilter（支持删除、可扩容）、HeavyHitters、滚动过滤器；纯 Python + 可选 C 加速。[文档](https://pyprobables.readthedocs.io/) |
+| [datasketch](https://github.com/ekzhu/datasketch) | MIT，★2969，pushed 2026-08-09，**v2.0.0（2026-07-05）**| 2.0 是近期大版本（改默认 MinHash 置换方案）；HyperLogLog/HyperLogLog++ 仍在清单（[HLL 文档](https://ekzhu.github.io/datasketch/hyperloglog.html)），另有 MinHash/MinHashLSH |
+| [FastFilter/pyfusefilter](https://github.com/FastFilter/pyfusefilter)（原 pyxorfilter）| Apache-2.0，pushed 2026-09-21；上游 [xorfilter](https://github.com/FastFilter/xorfilter) ★764 | Xor/Binary Fuse 过滤器——布谷鸟的现代继任者：静态 FPR 0.39% 下约 9-10 bits/键，比 Bloom 省约一半内存 |
+
+结论：三库全活跃。判“库内见过没”的现代答案是 Bloom/Cuckoo（pyprobables，需动态插入）或 Binary Fuse（pyfusefilter，静态最优）；datasketch 的 HLL 适合“不同 n-gram/实体基数”估计（覆盖率探针）。
+
+## Q2 多模式串匹配（Aho-Corasick）
+- [pyahocorasick](https://github.com/WojciechMula/pyahocorasick)：BSD-3，★1126，**v2.3.1（2026-04-27）**，pushed 2026-04-27——仍活跃维护（[文档](https://pyahocorasick.readthedocs.io/)）。
+- [ahocorasick_rs](https://github.com/G-Research/ahocorasick_rs)：Apache-2.0，★234，v1.0.3（2025-10-08），pushed 2026-09-07。Rust `aho-corasick`（BurntSushi）绑定，自述快于 pyahocorasick；关键差异是 **MatchKind：Standard/LeftmostFirst/LeftmostLongest**（LeftmostLongest 即“最长整词”语义，正合中文）；注意 overlapping 匹配仅 Standard 模式支持（README 明示）。
+- [Intel hyperscan](https://github.com/intel/hyperscan)（★5492）/ [vectorscan](https://github.com/VectorCamp/vectorscan)（★764，2026-09 仍推）：正则级多模式天花板，但 Python 绑定陈旧、Windows 构建麻烦——性能上限参考，不建议接。
+- **中文整词适配**：AC 本质是子串匹配；中文无空格，flashtext 的 `\b` 词边界机制失效；工程做法 = AC 命中位置 + LeftmostLongest（ahocorasick_rs）取最长词典词，或命中窗口内二次校验。
+- [flashtext](https://github.com/vi3k6i5/flashtext)：★5706 名气大，但 PyPI 末版 2.7 停在 **2018-02**，repo 2025 年仅杂项提交——**停维 + 中文不适配，双杀，排除**。
+
+天花板结论：R6 把“固定字面词表”交给 AC（GB/s 量级/核，比逐条正则快 10-100×），正则只对 AC 命中的小窗口跑。
+
+## Q3 ANN（2025-2026，单机百万级 4096 维）
+- [hnswlib](https://github.com/nmslib/hnswlib)：Apache-2.0，★5335，v0.10.0-rc.2（2026-09-14）——迟但稳。
+- [faiss](https://github.com/facebookresearch/faiss)：MIT，★40986，**pushed 2026-09-26（日更级）**；功能最全（IVF-PQ/SQ/HNSW/OPQ），4096 维是其常规工况。
+- [USearch](https://github.com/unum-cloud/USearch)：Apache-2.0，★4320，v2.26.2（2026-08-31）；**f16/bf16/i8/i4/i1 原生量化**，单头 C++ 多语言绑定。自述对 FAISS 最高 100×（[UForm README](https://github.com/unum-cloud/uform) 组合量化+切片时）；第三方旁证：2025 ACM 论文 "Bang for the Buck: Vector Search on Cloud CPUs" 报 Zen4 上 USearch 约 3× QPS 于 FAISS IVF；HN 社区提醒其自述基准对 recall/维度/线程敏感，宜自测（[VectorDBBench](https://github.com/zilliztech/VectorDBBench)）。
+- [DiskANN](https://github.com/microsoft/DiskANN)：MIT，★1936，v5.0.3（2026-09-22）——磁盘扩展设计最优，但 C++ 构建在 Windows 单机上摩擦大。
+- **LanceDB 内置**（[lancedb](https://github.com/lancedb/lancedb) ★11535，[lance](https://github.com/lance-format/lance) ★7117，Apache-2.0，均 2026-09 活跃）：原生索引现为 **IVF_PQ / IVF_HNSW / 纯 HNSW**（[官方文档](https://docs.lancedb.com/search/vector-search)页关键词实测命中 IVF_PQ、HNSW、quantization；[第三方对照](https://opengauntlet.com)亦列三者）。
+- 内存算术：1M×4096×fp32 = 16GB；i8 量化后 4GB；HNSW 图开销（M=32 双向）约 +0.3GB。
+
+结论：已在 LanceDB 上 → 首选内置 IVF_PQ/IVF_HNSW（零迁移）；要纯内存低延迟 → usearch i8；faiss 当“功能兜底”。
+
+## Q4 大规模字符串相似度
+- [RapidFuzz](https://github.com/rapidfuzz/RapidFuzz)：MIT，★4138，v3.14.6（2026-08-30），pushed 2026-09-12——C++ 实现、免 GPL 传染（对比 FuzzyWuzzy），`process.cdist` 批量矩阵是实体变体主力。
+- [datasketch MinHashLSH](https://github.com/ekzhu/datasketch)：v2.0.0（2026-07-05）——段落/陈述级 Jaccard 召回标准件。
+- [rensa](https://github.com/beowolx/rensa)：MIT，★362，v0.5.0（2026-09-06），Rust 后端；自述 rho 批处理比 datasketch 快 **608×**、比 FastSketch 11.9×（[README 基准](https://github.com/beowolx/rensa)，自测口径，取保守 1-2 个量级收益）；提供 C-MinHash/R-MinHash 与内置去重器。
+- [text-dedup](https://github.com/ChenghaoMou/text-dedup)：Apache-2.0，★762，pushed 2026-03-09——LLM 预训练去重实战框架，四路齐备：**MinHash+LSH / 64-128bit SimHash / SuffixArray 子串精确去重 / Bloom 精确去重**（TOML 配置），是"组合拳"最佳参考实现。
+- [1e0ng/simhash](https://github.com/1e0ng/simhash)：MIT ★1038 但 pushed 停在 **2022-03**——能用，停维，作备选。
+
+最佳组合：实体名变体 = RapidFuzz（字符级相似，中文无需分词）；段落/陈述去重 = MinHashLSH（datasketch 或 rensa）召回 + 嵌入余弦确认（复用你已有能力）。
+
+## Q5 物理学启发的可落地方法
+优化器谱系（均为实测活跃）：
+- [optuna](https://github.com/optuna/optuna)：MIT，★14851，**v5.0.0（2026-09-07）**。采样器实测清单（[v5 文档](https://optuna.readthedocs.io/)）：TPESampler、GPSampler、**CmaEsSampler**（进化策略/连续阈值）、Grid/Random/BruteForce/PartialFixed。
+- [nevergrad](https://github.com/facebookresearch/nevergrad)：MIT，★4208，pushed 2026-07-24。官方选型表（[文档](https://facebookresearch.github.io/nevergrad/optimizers.html)）：**NgIohTuned**（meta 自适应默认）、**PortfolioDiscreteOnePlusOne**（离散/混合超参，正配“选哪种切分策略”）、OnePlusOne、CMA、TBPSA（噪声场景）、PSO、`Chaining(LHS→DE→CMA)`；离散参数用 `Choice/TransitionChoice`。
+- Ising/QUBO：[OpenJij](https://github.com/Jij-Inc/OpenJij)（Apache-2.0，★138，pushed 2026-08-25）、[dwave-samplers](https://github.com/dwavesystems/dwave-samplers)（Apache-2.0，pushed 2026-08-04，含模拟退火 Ising/QUBO，即原 neal）、[dimod](https://github.com/dwavesystems/dimod)（Apache-2.0，建模层）。
+- [simanneal](https://github.com/perrygeo/simanneal)：ISC ★692，pushed 停在 2024-05——半停维，仅作参考。
+
+物理/信息论衍生做**文本质量判定（非生成）**——有真实可落地件：
+- **压缩即判分**：[npc_gzip](https://github.com/bazingagin/npc_gzip)（ACL 2023 Findings，[论文](https://aclanthology.org/2023.findings-acl.426.pdf)，170+ 引用；2025 增强 [arXiv:2502.14444](https://arxiv.org/html/2502.14444v1)）——gzip+NCD+kNN 零训练分类/异常检测，可直接当“文体漂移/质量带”探针。
+- [Language Modeling Is Compression](https://arxiv.org/abs/2309.10668)（DeepMind）——压缩率作为能力/质量代理的理论依据。
+- [InfoLM](https://arxiv.org/abs/2112.01589)（ICLR 2022）——用预训练 LM + 统计信息论度量（Fisher/Rényi）评文本质量，不需训练。
+- **扩散 LM 判分**：[LLaDA](https://github.com/ML-GSAI/LLaDA)（**MIT 许可**，★3989；[arXiv:2502.09992](https://arxiv.org/abs/2502.09992)）——离散扩散 LM 可给序列似然（ELBO 估计），可作 PPL 替代的“第二意见”判分器；代价：8B 本地推理偏重，单机可行但慢——列前沿可选项。
+
+## Q6 文本算法新前沿
+- 后缀结构：[pydivsufsort](https://github.com/louisabraham/pydivsufsort)（MIT，★52，PyPI 0.0.20 **2025-12-12**）——divsufsort 绑定，全库 O(n log n) 后缀数组；[marisa-trie](https://github.com/pytries/marisa-trie)（MIT，★1124，pushed 2026-07-20）——海量 n-gram 词典紧凑存储。**诚实结论：PyPI 上 suffix automaton 无成熟实现（全是 toy 级）**；中文全库 n-gram 统计的实用路线 = 字符 n-gram + pydivsufsort 后缀数组（LCP/Kasai 找重复串）或 marisa-trie 计数。
+- 实战参考：text-dedup 的 `suffix_array` 子串精确去重路径（[configs/suffix_array.toml](https://github.com/ChenghaoMou/text-dedup/blob/main/configs/suffix_array.toml)、`src/text_dedup/suffix_array.py`）——预训练去重里被验证过。
+- 互补陈述去重：datasketch MinHashLSH（v2.0，2026-07）为标准实现；中文注意先做字符级 shingle（2-4 字窗口）再 MinHash。
+- 近重复章节 SimHash：成熟实现 = text-dedup simhash 路径（64/128bit）；算法出处 Manku et al. 2007（WWW，Google 近重复检测）。
+
+## Q7 压缩与熵
+- [zstd](https://github.com/facebook/zstd)：★27945，pushed 2026-09-18。官方基准（README 实测表，Silesia 语料）：zstd level 1 压缩率 **2.896** @ 510MB/s vs zlib 2.743 @ 105MB/s；**字典训练模式**官方明示“小数据压缩率 dramatic 提升”（10K×1KB 样本训练示例；每类数据单独训字典，收益集中在前几 KB——正配 jsonl 短记录）。
+- [python-zstandard](https://github.com/indygreg/python-zstandard)：BSD-3，★642，pushed 2026-09-26——`train_dictionary`/`ZstdCompressionDict` API 齐全。
+- 压缩熵作复杂度代理：无专门维护库，但公式与工具链完备——`C(x)` 即 zstd/gzip 压缩长，NCD = (C(xy)−min)/max（npc_gzip 即现成实现，见 Q5）；zstd 自身就是“熵代理计算器”。
+- 中文 jsonl 实践预期：结构化行 + 中文文本，字典化 zstd level 12-19 压缩率经验区间约 4-8×（纯文本中文 zstd 19 可更高），冷账本体积可降 60-85%——具体以你账本实测为准。
+
+# B. 对 6 个接缝的接入建议
+
+1. **幂等去重（配哈希链/P-017）**：接 pyprobables 的 CuckooFilter（可删除、可扩容）或 ScalableBloom；账本 commit 时插入内容哈希，管线入口 O(1) 判“见过没”。FPR 1e-6、1M 键约 3.6MB 内存；哈希链全量重放即过滤器重建路径，天然幂等。收益：去重查询从图/向量库点查降为纳秒级内存操作，全库预检从分钟级到秒级。
+2. **R6 扫描性能**：ahocorasick_rs（LeftmostLongest 适配中文整词）做字面词表粗筛，命中窗口内才跑现有元文本正则。收益：数千模式 × 全库文本从正则循环的慢路径提 1-2 个数量级；C 级内存占用可忽略。
+3. **向量检索（1M×4096）**：主案 LanceDB 内置 IVF_PQ/IVF_HNSW + 量化（内存 16GB→约 2-4GB）；若要纯内存低延迟，usearch i8 单文件接入（4GB、毫秒级）。收益：暴力余弦秒级→ANN 毫秒级，约 10³×。
+4. **实体名变体**：RapidFuzz `cdist`（字符级，中文免分词）做批量确认，MinHashLSH（datasketch/rensa）做候选召回；text-dedup 当参考实现。收益：O(n²) 不可行 → 全库秒-分钟级。
+5. **账本存储**：python-zstandard 字典压缩——用账本前 ~100 条 jsonl 训字典，level 12 写入、冷数据 level 19 + 长距离匹配归档；账本演化后周期性重训字典。收益：冷账本体积约降 60-85%，短记录（字典收益集中区）提升最明显。
+6. **参数调优**：optuna v5（TPE 默认；门控/切分阈值等连续参数用 CmaEsSampler）为第一梯队；nevergrad 的 PortfolioDiscreteOnePlusOne 处理“策略离散选型”类参数；目标函数直接用 Chapman 覆盖率 + RRF 指标组合。Ising/QUBO（dwave-samplers SA / OpenJij）仅当出现组合分配问题（章节-实体指派、全局切分边界）才上——现阶段后备。文本判分：npc_gzip 式 NCD 探针零成本可先试；LLaDA 判分列为前沿选项（8B 单机可跑但慢）。
+
+# C. 排除项（及理由）
+- **FlashText**：PyPI 停更（末版 2018-02）、`\b` 词边界对中文失效——排除，用 ahocorasick_rs/pyahocorasick 替代。
+- **spotify/annoy**（Apache-2.0，★14305，功能冻结）：4096 维高维性能退化、无增量更新——排除。
+- **nmslib**（Apache-2.0，★3591）：近年仅零星提交、末次功能发布约 2021（2.1.1【待确认】）、新 Python/Windows wheel 摩擦——排除，社区事实标准已移 hnswlib。
+- **DiskANN**：非 license 问题（MIT、活跃），但 Windows 单机构建摩擦 + 面向磁盘扩展场景，你的数据面已有 LanceDB——条件排除（C 级备选）。
+- **hyperscan/vectorscan Python 绑定**：绑定陈旧、Windows 自编成本高——R6 场景用 AC 即可，C 级。
+- **1e0ng/simhash、simanneal**：停维（2022 / 2024-05）——备选不首选。
+- **纯论文无可用实现**：SEDD 类 score-entropy 扩散似然依赖专用 checkpoint；suffix automaton 的 PyPI 实现全是 toy 级——分别以 LLaDA（MIT，可用）与 pydivsufsort 后缀数组路线替代。
+- **pyqubo**：建模层可选，但其 GitHub 仓库位置本次未能核实（Jij-Inc/pyqubo 返回 404）【待确认】，用 dimod 替代建模层更稳。
+
+**一句话总览**：全部 6 个接缝都有活跃、宽松 license（MIT/Apache-2.0/BSD-3）、可 pip 的接件——pyprobables/pyfusefilter（幂等）、ahocorasick_rs（R6）、LanceDB 内置/usearch（检索）、RapidFuzz+datasketch/text-dedup（变体与去重）、python-zstandard（账本）、optuna v5/nevergrad（调优）；扩散判分（LLaDA，MIT）是唯一“能但重”的前沿件。

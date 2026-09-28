@@ -1,0 +1,85 @@
+核查完毕。以下为外部消费者验收报告（只读走查，全部证据来自发布包与对照源实文件）。
+
+---
+
+# CBB v3.0.0 发布包 · 外部消费者验收报告
+
+**总体结论：不通过（Accept = No）。** 发布包文档层（SKILL.md/README/说明书）整体停留在 v2 口径，与 v3 代码（cbb2）脱节；发版宣称存在可证伪的数字错误（59 测试 vs 实际 43）；3 个随包测试文件 import 的模块根本不在包内；env 契约表与代码不一致（含一个写错名字的变量族）；3 条已知缺陷（D-8/D-9/D-10）未披露且 D-9 实证仍在包内。
+
+---
+
+## P0 — 消费者必然踩坑
+
+**P0-1 文档指向的是“带缺陷冻结版”入库路径，修复只存在于文档从未提及的 cbb2 里**
+- SKILL.md 全流程（目录地图 L96、步骤⑤“store 双轨入库”、验收判据 L131）全部指向 `scripts/cbb` 六模块；grep `cbb2|write_decision|runner` 于 SKILL.md / README.md / 全流程说明书.md = **0 命中**。
+- 而 `scripts/cbb/cbb-store/cbb_store.py` 的 `canonical_conflicts`（L92-98，全键比对）与 `dual_track`（L298，无 at 透传）仍是被登记为 D-23/D-2/D-24 病灶的旧逻辑——RELEASE-NOTES L9 自己说该路径“冻结为 v1 等价锚”，即**故意保留缺陷行为**；修复后的五分支 `write_decision` 在 `scripts/cbb2/store.py:205`。
+- 后果：照文档走的消费者会精确复现 qoder“陈述位当断言位→假矛盾→整库作废”事故级（调研报告 L91-92 定性为 P0）。发布件内两套 store 并存、零选择指引。
+
+**P0-2 随包 3 个测试文件 import 不存在的模块，开箱即崩**
+- `scripts/cbb/tools/test_graphiti_bridge.py:19-20` → `import graphiti_bridge / graphiti_ready`；`test_graphiti_ready.py:17` → `import graphiti_ready`；`test_lightrag_live.py:15` → `import lightrag_live`。三个实现模块均不在包内（Graphiti 五件退役、lightrag 家族未随包），共 7 个测试函数 + 1 个脚本式文件必然 ImportError。
+
+**P0-3 “59 v3 测试全绿”为假宣称，且消费者无从复跑**
+- 实测 `cbb-v2/tests/` 测试函数：contract 4 + gate 5 + store 10 + ops_nli 5 + derive 5 + phasec 6 + phased 8 = **43**；`cbb-v2/logs-PhaseD验收-20260927.txt` 逐行合计 43 PASS。BUILD-STATE:137 的"59"无任何产物支撑（疑与 `assets/project.template.yaml:50` 的 LQAS 样本量"≤5%→59 条”撞数）。
+- 更糟：**43 个测试与 acceptance.py 全部不在发布包内**（包内 cbb2 零测试），消费者拿到的是无法验证的裸宣称。
+- 同文件:137 "开放缺陷 13 条修 11（余 4 条）”自身 11+4=15≠13，与 RELEASE-NOTES 也对不上（见 P1-2）。
+
+**P0-4 env 契约表与代码不一致，含写错名字的变量族**
+- 代码实际读取（非测试代码 grep）：`NEO4J_HTTP/PASSWORD/USER/AUTH/DATABASE`、`CBB_NAMESPACE/STORE/INDEX/NEO4J_CONTAINER`、`EMBED_HTTP/MODEL`、`RERANK_HTTP/MODEL`、`LMSTUDIO_PORT`、`SPIKE_LLM_BASE/MODEL`、`DEEPSEEK_API_KEY`、`NLI_LLM_BASE/MODEL/API_KEY`、`NLI_LOCAL_MODEL`、`CBB_DYNAMIC_SPLIT`、`CBB_THETA_LEN/SCENES/NEWENT`、`EXAMINER_{LOCAL,DEEPSEEK,QWEN}_{BASE,MODEL,API_KEY}`、`DASHSCOPE_API_KEY`、`NEO4J_ISOLATED_PASSWORD`（图库隔离.py:143 默认 auth-env）——约 27 个，RELEASE-NOTES 只列 16 个。
+- 硬伤：RELEASE-NOTES L36 写 `CBB_SPLIT_THETA_*`，代码实际读 `CBB_THETA_LEN/CBB_THETA_SCENES/CBB_THETA_NEWENT`（`scripts/cbb2/splitting.py:26-29`，`f"CBB_{k.upper()}"`）。**按文档设置静默无效**。
+- 步骤⓪是阻断闸（exit 2），`EMBED_HTTP/RERANK_HTTP` 必须可配，但仅在 SKILL.md 判据#5 一处顺带出现；`references/*.md` 与 `assets/project.template.yaml` 中 env 变量提及数为 **0**。
+
+**P0-5 无依赖清单，README 第 3 步开箱即 ImportError**
+- 包内无 requirements.txt/pyproject.toml/setup.py（find = 0）；`scripts/init_project.py:8` `import yaml`，而其 docstring L4 宣称“零第三方依赖”。未装 PyYAML 的消费者在 README 快速上手第 3 步即崩。
+
+---
+
+## P1 — 信息缺口
+
+**P1-1 D-8/D-9/D-10 未披露，D-9 实证仍在发布包内**
+- 登记源 `全量重构-架构与流程调研报告-20260926.md:127`：“另有 4 条发布包旧版独有（D-1/D-2/D-8/D-9/D-10 待逐条复核）"（该行自身“4 条”列了 5 个号）。RELEASE-NOTES 只披露 D-1/D-2 已修，D-8/D-9/D-10 只字未提（未修也未挂账）。
+- D-9（数章子串匹配）验证仍在：`scripts/init_project.py:38-39` `if "<<<CHAPTER" in line: n += 1` —— 正文提及标记词即误计，且与模板 `unit_pattern` 正则（project.template.yaml:9）完全脱钩，改切分规则的消费者拿到的章数与边界解析器必然分叉。
+
+**P1-2 缺陷修复口径三处互相矛盾**
+- RELEASE-NOTES:18 标题“13 条开放项"但 ✅ 只列 **12** 个（D-1,2,6,13,14,15,21,23,24,25,28,29）；13 条开放项中实际修 9（D-13/14/15/21/23/24/25/28/29）、缓 4（D-18/19/20/27 只出现在句尾“移交”，无 ✅/❌ 标记，易读成已处理）；BUILD-STATE:137 又写“修 11"。三份口径（12/13/11）无一自洽。
+
+**P1-3 PROVEN 指纹消费者不可验证**
+- "aafe3804 不回退”（RELEASE-NOTES:9）的验证器 `cbb-v2/tests/acceptance.py` 及基线 `analysis/characterization-baseline.json`（acceptance.py:20）均不在包内；包内 `aafe3804` 仅出现在 RELEASE-NOTES 自己身上。宣称不可复算。
+
+**P1-4 `--verify` 承诺未随包交付**
+- RELEASE-NOTES:4 “HASHES.json manifest，--verify 可复算；手改即 FAIL"——校验器 `tools/build_release.py` 在仓库 `tools/` 下、包外；包内无任何脚本接受 `--verify`（grep = 0）。消费者拿到裸 sha256 字典需自写校验。
+
+**P1-5 HASHES.json 覆盖缺口：RELEASE-NOTES 本身不在清单内**
+- manifest 123 件，逐件重算 sha256 **全部吻合**（我复算 123/123 通过）；但盘上非 pycache 文件 125 件，未覆盖的 2 件 = HASHES.json（不可避免）+ **RELEASE-NOTES-v3.md**（发版说明可被篡改而不触发 FAIL）。
+
+**P1-6 模块移除披露不全 + 随包文档仍指向已移除件**
+- RELEASE-NOTES 第 9 条只披露“Graphiti 五件退役"；`lightrag_bridge/delta_sync/export/live` 与 `web_console.py/html`（v1 生产树 `cbb/tools/` 在案）同样从包内消失，无一句说明。
+- 随包 `全流程说明书.md:14` 总图仍画"LightRAG 同步（live哨 1s）"与“Graphiti 摄入（双时序）"，L120 整节教消费者用 `lightrag_live.py`——该文件不在包内。说明书版本停在 2026-09-25（L3），先于 v3。
+
+**P1-7 全套随包文档版本口径停在 v2**
+- SKILL.md frontmatter `version: "2.0"`（L7）；README “> **v2.0**"（L5）；模板"v2.0 通用八项”（L1）。v3 的核心概念（canonical 断言位/陈述位二分、t_valid/t_invalid/at、invalidations.jsonl、MergeLog、Wilson、G5 三考官）在 references/ 与说明书中 **0 命中**——“失效记账制”作为头号卖点只活在 RELEASE-NOTES 4 行与 cbb2 代码里。
+
+**P1-8 验收指引（V6 节）不可执行**
+- “重放 R000/R001 五单元”：包内无 R000/R001 语料/夹具（grep 唯一命中是 RELEASE-NOTES 自己）；指引指向的 BUILD-STATE 路径 `正典库构建系统/...` 是发布方仓内路径，不在包内。
+
+**P1-9 README 死链接涉及许可合规**
+- README.md:123 链接 `ACKNOWLEDGMENTS.md`——包内不存在（ls 确认）。CC-BY-4.0/MIT 归属文件缺失，对再分发者是合规缺口。
+
+---
+
+## P2 — 建议
+
+1. **模板死键**：`assets/project.template.yaml:45` `graph.neo4j_uri` 在包内代码零读取者（grep = 0）；图访问已全面 env 化（NEO4J_HTTP），模板应删除或注明已废弃。
+2. **90 个 .pyc / 10 个 __pycache__ 混入发布树**（cpython-314 专用），且不在 manifest 内——建议构建时清除；与“发布树=构建产物”的口径（HASHES.json `口径` 字段）自相矛盾。
+3. **cbb2 无 `__init__.py`、无安装方式说明**；随包 v2 测试用 sys.path hack，消费者无“跑测试”的文档化入口。
+4. **runner 入口靠猜**：`scripts/cbb2/runner.py` 末行 `run_chapter(int(sys.argv[1]) ...)`，无 argparse、无文档；默认 store 从 `Path(__file__).parents[2]` 惯例上溯（config.py:24-38），推不出会报 RuntimeError（行为尚可），但整个 v3 编排入口应在 SKILL.md 目录地图登记。
+5. **D-28/D-29 的 ✅ 是限定性修复**（“机制”/“判据面”）：BUILD-STATE:99 显示 D-29 实际只是把“rerank=True 却降级 mechanical”登记为显式口径，重排接线本身未通（Phase C 遗留 L102）；建议在 NOTES 中把“修复”与“接线待办”分开陈述。
+6. 说明书/README/SKILL 三件套应随 v3 重写或至少加“v3 差异与迁移”一章（当前三者版本标记均 ≤ v2.0）。
+
+---
+
+## 附：四项任务直答
+
+- **A 冷启动**：v2 流程可猜通（README 四步的命令参数与环境自检 argparse 实际对得上：`--project-token/--json/--out/--allow-degraded` 均在 环境自检.py:488-504；图库隔离 create/verify/plan/--run 在图库隔离.py:139-147）——但会走上有 D-23 病灶的冻结路径（P0-1），且第 3 步缺 PyYAML 即崩（P0-5）。v3 流程（runner/promote/audit/write_decision）从任何随包文档出发都**不可发现**。
+- **B 宣称核验**：59 = 假（实际 43，且不在包内）；13 条修复 = 列 12/口径 11/实际开放项修 9；PROVEN 锚 = 开发仓内每个 Phase 都验过（PhaseA/C/D 日志在案），但发布包不可复算；D-8/D-9/D-10 未披露，D-9 仍在包内。
+- **C 包完整性**：123 件 manifest 全部哈希吻合；未覆盖 RELEASE-NOTES 本身；90 pyc 混入；3 个测试 import 缺失模块；说明书仍指向已移除的 lightrag/graphiti 工具，消费者会被误导找不存在的件。
+- **D 破坏性变更**：4 条 bullets 本身准确（at 必填 ValueError 在 cbb2/store.py:215 实证，格式 `YYYY-MM-DD|chNNNN` 只在报错信息里可见；MergeLog/split 在 cbb2/er.py:44,64 实证）。缺的是迁移面：该迁去哪个入口（P0-1）、旧隔离区积压怎么按 v3 重处分（重分流工具 `cbb-v2/tools/积压重分流.py` 未随包）、invalidations/supersede-index/MergeLog 的落盘格式无任何文档、双 store 并存的时序纪律差异（冻结路径仍收墙钟日期）无警示。

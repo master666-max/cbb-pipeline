@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-24T04:04:08.690Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"dedup_evidence_table.py — 一次性：evidence 表去重（键=(record_id,line,quote[:40]) 唯一）。\n\n背景：进度件曾被两次并发批写 → 118232 行中 43 个键各出现两次。\n做法：流式（分批）读旧表 → 去重写入 evidence_tmp → 校验 → drop 旧表 → rename。\n全程分块，峰值内存=一批；旧表在新表校验通过前不动（失败可停）。\n\"\"\"\nimport lancedb\nimport pyarrow as pa\n\nIDX = r\"D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/迷深实战-工作区/索引/lancedb\"\nCH = 2000\n\n\ndef key_of(batch):\n    rid = batch.column(\"record_id\").to_pylist()\n    line = batch.column(\"line\").to_pylist()\n    quote = batch.column(\"quote\").to_pylist()\n    return [f\"{r}|{l}|{q[:40]}\" for r, l, q in zip(rid, line, quote)]\n\n\ndb = lancedb.connect(IDX)\nsrc = db.open_table(\"evidence\")\nn_src = src.count_rows()\nds = src.to_lance()\n\ntbl = None\nseen: set[str] = set()\nn_out = n_dup = 0\nbuf = []\n\n\ndef flush():\n    global tbl, n_out, buf\n    if not buf:\n        return\n    chunk = pa.Table.from_batches(buf)\n    if tbl is None:\n        tbl = db.create_table(\"evidence_tmp\", chunk, mode=\"overwrite\")\n    else:\n        tbl.add(chunk)\n    n_out += chunk.num_rows\n    buf = []\n\n\nfor b in ds.to_batches(batch_size=CH):\n    keys = key_of(b)\n    mask, keep_keys = [], []\n    for k in keys:\n        if k in seen:\n            n_dup += 1\n            mask.append(False)\n        else:\n            seen.add(k)\n            keep_keys.append(k)\n            mask.append(True)\n    if all(mask):\n        buf.append(b)\n    else:\n        idxs = [i for i, m in enumerate(mask) if m]\n        if idxs:\n            buf.append(b.take(pa.array(idxs, type=pa.int64())))\n    if sum(x.num_rows for x in buf) >= CH:\n        flush()\nflush()\n\ngot = tbl.count_rows()\nprint(f\"旧表 {n_src} 行 → 去重 {n_dup} 行 → 新表 {got} 行（唯一键 {len(seen)}）\")\nassert got == len(seen) == n_src - n_dup, \"计数不闭合\"\ndb.drop_table(\"evidence\")\ndb.rename_table(\"evidence_tmp\", \"evidence\")\nt2 = db.open_table(\"evidence\")\nprint(f\"✓ 已切换：evidence = {t2.count_rows()} 行（唯一键）\")\n",
+      "afterContentLength": 1854,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\dedup_evidence_table.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_GGaykhtB39ExlFw5tJZA7952",
+  "toolName": "Write",
+  "version": 1
+}

@@ -1,0 +1,133 @@
+# 深度调研报告：正典库数据面候选技术（2026-09-27）
+
+**调研方式如实声明**：内置 WebSearch 后端全程 429 限流，本次改为 GitHub API（gh 认证通道）直查 16 个候选仓库元数据 + 官方文档站直查（WebFetch/curl），关键论断均取自官方仓库原文或文档原文，非搜索摘要。标注【推断】处为本报告分析，非信源。HN 情报经 Algolia API 检索。
+
+---
+
+## A. 逐题深度发现
+
+### A1. 时间旅行/版本化数据系统（Git-for-data 谱系 2025-2026 现状）
+
+**结论先行：谱系已收敛为“Dolt 一家独活”。Noms 已死（2021 归档）、lakeFS 转服务化+BSL、TerminusDB 活但换主+必须 Docker。唯一与“append-only+哈希链+分支回溯”原生同构的是 Dolt，且 2026 年已有原生 Windows 安装包——这推翻了“Dolt 不支持 Windows”的旧认知。**
+
+**Dolt（DoltHub，Git for Data）—— 活跃，v2.3.5（2026-09-16）**
+- 仓库元数据实测：Apache-2.0、24,519 stars、最近推送 2026-09-25（日活级）。
+- **Windows 是一等公民**：官方文档给出 `winget install dolt` / `choco install dolt` / `scoop install dolt`，且每个 release 附 `dolt-windows-amd64.msi/.zip/.7z`（实测 release 资产清单）。无任何“建议 WSL”的措辞。
+- 架构与你们手搓账本的对应关系（这是关键）：Dolt 存储引擎三层 = **Commit Graph（提交 DAG，每个提交内容寻址、父提交哈希链）+ Prolly Trees（content-addressed 概率性 B 树，状态快照的结构共享）+ Block Store（chunk 存储）**（官方架构页：[prolly-tree](https://www.dolthub.com/docs/architecture/storage-engine/prolly-tree)、[commit-graph](https://www.dolthub.com/docs/architecture/storage-engine/commit-graph)）。也就是说：**“append-only + 哈希链 + 按哈希回溯任意版本”这三件事在 Dolt 里不是特性而是存储基底**——你们的 jsonl 哈希链是“事件级哈希链”，Dolt 是“状态级哈希链 + 提交级哈希链”，语义上是你们的超集。
+- 可无服务使用：CLI 直接对 `.dolt` 目录操作（commit/branch/diff/merge/log/checkout，README 命令表实测），MySQL wire 的 `dolt sql-server` 是可选项。
+- 语义差距/迁移代价【推断】：数据模型是 SQL 表，不是“目录树+小 JSON”。迁移 = 把本体三态建模成表（或 JSON 列）+ 把账本变成 insert-only 表；你们“从账本重建投影”的纪律对应 `dolt checkout <commit>` 后重跑管道。代价中等，但有一个隐性损失：**小 JSON 文件的 grep/diff 人肉可读性**（Dolt 二进制 chunk 不像目录树那样可直接浏览）。
+- 出处：https://github.com/dolthub/dolt ；https://www.dolthub.com/docs/introduction/installation/windows
+
+**Noms（Attic Labs）—— 已死，谱系源头**
+- 仓库实测：archived=true，最后推送 2021-08-27。README 明言其高效索引即 "Noms prolly-trees (probabilistic B-trees)"——**Prolly Tree 是 Noms 发明、Dolt 继承**，Dolt 是该谱系唯一活体后代。出处：https://github.com/attic-labs/noms
+
+**lakeFS（Treeverse）—— 活跃但已不适合你们**
+- 仓库实测（treeverse/lakeFS）：活跃（v1.87+，5,542 stars），**但根 LICENSE 实测为 Business Source License 1.1**，且 Additional Use Grant 限定“生产使用仅限未修改版”（Unmodified Licensed Work）——连配置外改都需逐条对照条件。
+- README 实测定位："transforms your object storage into a Git-like repository"，底层存储仅支持 S3/Azure Blob/GCS——**为云对象存储而生，与单机 Windows 目录树形态根本错配**。出处：https://github.com/treeverse/lakeFS ；https://docs.lakefs.io/
+
+**TerminusDB —— 活跃但刚换主**
+- 仓库实测：Apache-2.0、v12.0.7（2026-08-10）、"Project Overview (Updated May 2026)" 显示维护权已交给 DFRNT。特性实测（README）：每次更新产生 commit、diff-as-patch、push/pull/clone、**任意 commit 时点查询（time-travel）**、"JSON Git-for-Data"，文档+知识图谱双形态——**在“目录树+小 JSON+分支回溯”的语义贴合度上是全场最高的**。
+- 但：部署是 Docker 服务端（端口 6363，TERMINUSDB_ADMIN_PASS 强制），Windows 官方路线就是 Docker——违反零服务纪律；且 v12 起依赖单一新维护方，连续性风险中等。出处：https://github.com/terminusdb/terminusdb ；https://terminusdb.org
+
+**加分发现：XTDB（JUXT）—— 唯一可能整体吞掉“账本+审计”语义的单机选项**
+- 实测：MPL-2.0（宽松）、v2.1.0（2025-12-01）、活跃。README 原文："open-source **immutable** SQL database with comprehensive **time-travel**"、bitemporal（系统时间+业务有效时间双轴，SQL:2011 标准）、列存引擎基于 Apache Arrow。
+- **单机拓扑已核实**：官方配置支持 `log: !Local path:` + `storage: !Local path:`（本地文件事务日志+本地对象存储，默认纯内存），单 JVM 进程，本机暴露 Postgres wire（默认仅 127.0.0.1:5432）+ Flight SQL。出处：https://github.com/xtdb/xtdb ；https://docs.xtdb.com/ops/config.html
+
+### A2. 嵌入式分析引擎：DuckDB
+
+**结论先行：DuckDB 是本次调研性价比最高的“换现成件”，且它不需要替换任何东西——直接只读挂到现有 jsonl 上即可，零迁移。**
+
+- 实测：MIT、v1.5.5（2026-07-22）、41,717 stars、推送 2026-09-25；官方 Windows 安装页在（https://duckdb.org/docs/installation/ ）。
+- **对 jsonl/NDJSON 的原生支持（文档原文逐条核实）**：`json` 扩展随发行版自带自动加载；可直接 `SELECT * FROM 'x.json'`；函数族 `read_json` / `read_json_auto` / `read_ndjson`（= `format='newline_delimited'` 别名）；**压缩参数 `compression` 可选 `none/gzip/zstd/auto_detect`，默认按扩展名自动识别**；`ignore_errors`（仅 newline_delimited 格式可用，= 撕裂尾行的读侧容错）；`maximum_object_size`；v1.3.0 起 JSON 读取器返回 `filename` 虚拟列（= 分段文件 glob 读取时自带段标识）。出处：https://duckdb.org/docs/current/data/json/overview.html ；https://duckdb.org/docs/current/data/json/loading_json.html
+- **“目录树小文件”的替代形态**：DuckDB 支持多库 `ATTACH`（https://duckdb.org/docs/current/sql/statements/attach.html ），即“目录树+小 JSON”可折叠为“单 DuckDB 库文件 + 按目录语义建 VIEW”，或干脆保持目录树、用 glob 只读查询（`filename` 列承担路径语义）。SQLite 官方“何时该用单文件库替代散文件”的论证同样适用（https://www.sqlite.org/whentouse.html ）。
+- **与 Parquet 的取舍（格式级事实）**：Parquet 官方格式文档原文——数据后写 footer（"File metadata is written after the data to allow for single pass writing"），读取方"first read the file metadata"；**不经 footer 重写的物理追加，新行组对读者不可见**。=> Parquet 是快照格式不是追加格式，“账本”不能是 Parquet，但“账本的只读分析快照”应该可以是。出处：https://parquet.apache.org/docs/file-format/
+- **演化终点已就位：DuckLake**（DuckDB 官方湖格式）：v1.0（2026-04）"production-ready with guaranteed backward-compatibility"，MIT；架构 = **SQL 数据库当目录（catalog 可选 PostgreSQL/MySQL/SQLite/DuckDB，“No custom catalog server required”）+ 普通 Parquet 文件（与 Iceberg 兼容）**，自带快照/时间旅行/跨表 ACID。=> 单机形态下它就是“分段 Parquet + manifest”的现成品。出处：https://ducklake.select/ ；https://ducklake.select/docs/
+- Windows 单机口碑【推断，基于部署形态】：单文件嵌入、无服务，与 SQLite 同级部署复杂度；进程级单写约束与你们“单写者账本”纪律天然一致。
+
+### A3. 图数据库谱系：嵌入式能否替代 Neo4j 服务依赖
+
+**结论先行：2025-10 之后这个问题的答案变了——Kùzu（唯一成熟的嵌入式 Cypher 图库）已停摆并被苹果收购。嵌入式路线剩两条：冻结版 Kùzu（能撑但无人修）或 DuckDB + DuckPGQ（SQL/PGQ 改写 Cypher）。你们的图是纯派生投影且 ~万节点，这个量级是 DuckPGQ 的舒适区。**
+
+**Kùzu —— 停摆全时间线（多源核实）**
+- 仓库实测：**archived=true，2025-10-10 归档，终版 v0.11.3（打包了主要扩展）**，MIT 许可。README 顶栏公告原文："We are archiving the KuzuDB project...prior Kuzu releases will continue to be usable"，文档/博客迁至 kuzudb.github.io。
+- 社区侧：HN "We will no longer be actively supporting KuzuDB"（2025-10-12，https://news.ycombinator.com/item?id=45560036 ）；The Register《KuzuDB says so long and thanks for all the commits, marooning community》（2025-10-14，https://www.theregister.com/2025/10/14/kuzudb_abandoned/ ）；**苹果收购**（MacRumors 2026-02-11《Apple Acquires graph database company Kuzu》，https://www.macrumors.com/2026/02/11/apple-acquires-new-database-app/ ）；之后出现社区分叉（Vela Partners 2026-03，加并发写，https://www.vela.partners/blog/kuzudb-ai-agent-memory-graph-... ）与迁移指南（ArcadeDB 2026-02-25）。
+- 判定：MIT + 已归档 = 事实上冻结可用，但“归档+收购”意味着安全修复与 Cypher 演进双停。**现有部署可冻结，新依赖应排除。**
+
+**FalkorDB —— 排除**
+- 实测：**SSPL v1**（LICENSE 原文核实）；README 原文："You can call FalkorDB's commands from **any Redis client**"——Redis 服务依赖；查询语言为 openCypher 兼容+私有扩展；活跃（v4.20.7）。出处：https://github.com/FalkorDB/FalkorDB
+
+**Memgraph —— 排除**
+- 实测：**BSL 1.1 + Memgraph Enterprise License**（LICENSE 原文核实）；README："high-performance, **in-memory** graph database"、"fully compatible with Neo4j's Cypher"；服务进程形态。内存态+重启回放与你们“账本为准、投影可弃”在职责上重叠且许可不友好。出处：https://github.com/Memgraph/memgraph
+
+**DuckPGQ —— 嵌入式零服务路线的现役选项**
+- 实测：MIT、CWIDA（CWI 数据组）研究项目、**DuckDB 官方 community extension**（`INSTALL duckpgq FROM community`）、推送 2026-09-17（活跃）；实现 ISO **SQL/PGQ** 标准（`CREATE PROPERTY GRAPH` + `FROM GRAPH_TABLE(...)`），跑在 DuckDB 进程内。README 自认"research project and a work in progress"。
+- 迁移代价【推断】：Cypher → SQL/PGQ 是一次性的查询改写（语法换、模式同）；万节点规模下 DuckDB 关系引擎+递归 CTE/PGQ 性能不是瓶颈。出处：https://github.com/cwida/duckpgq-extension ；https://duckpgq.org/
+- Neo4j 本体：社区版 GPL-3.0（API 实测），服务依赖不变。
+
+### A4. 溯源感知存储与事件溯源
+
+**结论先行：provenance-aware storage 学术谱系（why-provenance→PASS→GProM）在 2024-2026 没有出现通用工程化新品，工程能量转移到了管道级 lineage（OpenLineage/W3C PROV）。你们手搓的“哈希链+sidecar 记账”就是 why-provenance 的事件级实现，且没有现成件能整体替换它。事件溯源数据库中 EventStoreDB 语义对口但许可+服务形态不符；XTDB 的双时态不可变模型反而更贴。**
+
+- **why-provenance 起点**：Buneman, Khanna, Wang, "Why and Where: A Characterization of Data Provenance"（ICDT 2001）——https://dblp.org/rec/conf/icdt/BunemanKW01.html （可达性实测 200）。
+- **PASS 系统**（Provenance-Aware Storage Systems，USENIX Security 2006，操作系统级自动溯源采集的标杆）——https://www.eecs.harvard.edu/~margo/papers/usenix06-prise/ （200）。该方向此后 20 年没有产出可单机部署的通用存储产品。
+- **唯一活体学术工程：GProM**——数据库中间件，把带溯源请求的查询编译成 SQL 在后端执行（README 原文："adds provenance support to multiple database backends...capture from which rows it was derived"），Apache-2.0，实测仍维护（推送 2026-09-11）但 12 stars 学术体量——引入即过度工程。出处：https://github.com/IITDBGroup/GProM
+- **2024-2026 工程化现状**：主流落在管道级血缘标准 **OpenLineage**（https://openlineage.io/docs/ ）与 **W3C PROV** 模型（https://www.w3.org/TR/prov-overview/ ）——都是“作业级元数据交换格式”，不是你们要的“陈述级 why-provenance 存储”。【诚实声明：本项受搜索后端限流影响，基于定向直查+领域结构推断，“无新品”为有限检索下的否定，置信度中高。】
+- **EventStoreDB → Kurrent**：仓库实测活跃（v26.1.2，2026-08-11），**LICENSE.md 原文 = "Kurrent License v1"**（源可用许可，禁止将其作为托管服务提供）；产品形态为独立服务（Docker/Linux/Windows），语义=流追加+投影+订阅，“审计链+重放”对口。但对你们是负资产：把账本主权交给一个非 OSI 许可的外部服务，违反零服务纪律。出处：https://github.com/EventStore/EventStore ；LICENSE.md 实测；https://docs.kurrent.io/
+- **XTDB 再提**：不可变+双时态+SQL，`!Local` 单机拓扑——“过去任意时点可审计”是产品核心卖点（文档含 Immutability Walkthrough 专章）。它是唯一在语义上可能**整体吞掉**你们账本+失效记账的选项，代价是引入 JVM 单进程+放弃 jsonl 直读性。出处：https://xtdb/xtdb → https://github.com/xtdb/xtdb ；https://docs.xtdb.com/
+
+### A5. 向量库：LanceDB vs sqlite-vec vs usearch（4096 维、1 万-10 万向量）
+
+**结论先行：LanceDB 仍是主力选型（活跃、Apache-2.0、过滤+持久化+版本化三全）；sqlite-vec 是值得评估的“降复杂度”备选（万级暴力检索+int8 量化即可）；usearch 因无元数据存储应排除出存储选型。**
+
+- **LanceDB**：Apache-2.0、Rust、v0.39.0（2026-09-17）、11,535 stars、日活推送。README 实测能力清单：向量相似+全文+SQL 三检索、"Store, query and **filter** vectors, metadata and multimodal data"、零拷贝、**automatic versioning（数据版本化，与你们可重建投影纪律同构）**、索引构建 GPU 支持。Lance 格式已移交给独立 lance-format 组织（lance.org，实测 200）——治理中性化是加分。出处：https://github.com/lancedb/lancedb ；https://lance.org ；https://docs.lancedb.com/
+- **sqlite-vec**：Apache-2.0、纯 C 零依赖、"runs anywhere SQLite runs（含 Windows）"。README 实测：vec0 虚拟表支持 **float/int8/binary 三种向量编码**、**metadata/auxiliary/partition-key 列**（= 原生元数据过滤+分区剪枝）；明确定位 "extremely small, 'fast enough'"（暴力扫描路线，无 ANN 索引）；README 顶部警示 "pre-v1, expect breaking changes"。**节奏红旗：最新版仍 v0.1.9（2026-03-31），仓库最近推送 2026-05-18**——Mozilla Builders 赞助期后开发明显放缓。出处：https://github.com/asg017/sqlite-vec
+- **usearch**：Apache-2.0、活跃（v2.26.2，2026-08-31）。README 实测：单文件引擎、**序列化到 memory-mapped 文件可不经 RAM 直接服务索引**、过滤为"external containers + predicates during index traversal"（**索引里不存元数据，过滤谓词需自带容器**）。出处：https://github.com/unum-cloud/usearch
+- **4096 维量级分析【推断】**：4096 维 float32 单向量 16KB，10 万条 ≈ 1.6GB——HNSW 全内存图不可行，暴力全精度也不可行；两种解法恰好对应两个候选：sqlite-vec 的 int8 量化（16KB→4KB/向量，10 万条≈400MB，SQLite mmap 按页加载，万级延迟可接受）vs LanceDB 的量化 ANN 索引（PQ 类，磁盘友好+标量过滤下推）。10 万级+复合元数据过滤 → LanceDB；万级+求简 → sqlite-vec。
+
+### A6. append-only jsonl 的天花板与演化路径
+
+**结论先行：jsonl 的天花板不在写侧（追加是 O(1)，无写放大），而在三处：哈希链决定的线性校验成本、崩溃撕裂尾行、文本压缩比。业界稳妥路径不是换成 Parquet 追加（格式上不成立），而是“分段 jsonl + manifest”，且这条路的现成品（DuckLake 模式）已经 production-ready。你们 4488 行距离所有天花板都还很远。**
+
+- **逐项拆解**（事实+推断分离）：
+  - 撕裂写：崩溃时尾部半行。读侧 DuckDB 官方给了 `ignore_errors`（仅 newline_delimited，文档原文已核）；写侧纪律你们已有（链锁/chain_append，见知识库 M7）。
+  - 校验成本【推断】：哈希链验证天然全文件线性，千万行 ≈ 数 GB 文本 + 数分钟级全扫——**分段后每段带段头链哈希（前段尾哈希入段首记录），校验可并行可增量**，这是与 Kafka 分段日志/LSM WAL 同构、也与你们“投影检查点”同构的业界形态。
+  - 压缩比【推断+旁证】：jsonl 逐行自重复字段名，zstd 后仍远大于列存（字典/RLE）；旁证=DuckLake 整个产品以 Parquet 为存储层、以“统计+谓词下推”为卖点（官方已核）。
+- **ndjson+zstd 是合规中间态**：jsonlines 规范（https://jsonlines.org/ ）与 NDJSON 规范（https://github.com/ndjson/ndjson-spec ）均为稳定标准；DuckDB 原生 `compression='zstd'` 直读（文档已核）——**账本可以原样换 .ndjson.zst 而不破坏任何消费方**（DuckDB 自动识别扩展名）。
+- **Parquet 行组追加为何不是路**：官方格式文档原文（已核）——footer 存全部列块位置，读取先读 footer；不重写 footer 的追加不可见，重写 footer = 违反 append-only。=> 业界正解是“旧文件永不改，新数据写新文件+目录层记账”，这正是 DuckLake（catalog=SQLite/DuckDB 文件 + Parquet 分片 + 快照时间旅行，MIT，v1.0 2026-04 已核）。
+
+---
+
+## B. 对你们数据面的建议
+
+**保留手搓（无现成件可替，且已是资产）：**
+1. **jsonl 追加账本+哈希链**：4488 行远未到天花板；三态+sidecar 记账语义（互补陈述/失效/合并日志/缺口队列）在调研全谱系中**没有任何现成件对口**——这正是 PT-033/PT-034 “三态门禁/证据四元组无现成件”结论的存储层重演。何时重估：账本到 50 万行或全链校验超 1 分钟时，启分段 jsonl+manifest（段头携带前段尾哈希）。
+2. **本体目录树+小 JSON**：它的版本化其实已被 git 覆盖——Dolt/TerminusDB 的增量价值只在“对内容做提交语义+SQL 查询”，而你们要的是文件可读性+审计，git 已给。别动。
+3. **sidecar 家族与投影检查点**：同上，这是你们架构的差异化本体。
+
+**换现成件（低风险增量）：**
+1. **DuckDB 立即引入（第一步，零迁移）**：只读挂现有 jsonl（`read_ndjson`，可 zstd），把“投影重建/抽查/统计”从手搓脚本升级为 SQL 视图；与现有 Neo4j 并存不冲突。DuckLake 可作为“账本只读分析快照”的目标形态（catalog 直接用 DuckDB/SQLite 文件，MIT）。
+2. **图投影双轨试点（第二步）**：Neo4j 保持现役的同时，用 DuckPGQ 建平行投影（Cypher→SQL/PGQ 一次性改写），跑对照。若精度/性能达标，Neo4j 服务依赖退役，正典库回到“纯文件+单 DuckDB 库文件”的零服务形态。
+3. **向量层维持 LanceDB**（活跃+版本化+过滤），万级以下场景可评估 sqlite-vec int8 量化做简化。
+
+**观察项（不迁，留触发器）：**
+- **XTDB**：若未来需要“SQL 级双时态审计”（业务有效时间≠记录时间的需求真出现），它是唯一单机可选件（MPL-2.0、`!Local` 拓扑已核实）；触发器=审计需求文档化时重评。
+- **Dolt**：若未来出现“分支级数据协作/合并”（多人或多 AI 线并行写本体需要 merge 语义），Dolt 的提交 DAG 比手搓强一个世代；触发器=多写者场景出现时重评。
+
+**迁移路径总原则**：账本层永远最后动；先在派生层（投影/分析）换现成件，跑出对照数据后再裁决账本层是否演化（分段 jsonl）——与 PT-021“演练副本彩排后真库执行”纪律一致。
+
+## C. 排除项
+
+| 项 | 排除理由（均实测） |
+|---|---|
+| lakeFS | 根 LICENSE=BSL 1.1 且生产使用限“未修改版”；定位云对象存储（S3/Azure/GCS），需服务端——许可+形态双杀 |
+| FalkorDB | SSPL v1 + Redis 服务依赖 |
+| Memgraph | BSL 1.1/MEL + 内存态服务（与账本为准架构职责重叠） |
+| EventStoreDB/KurrentDB | Kurrent License v1（源可用，非 OSI）+ 独立服务；语义对口但主权外包 |
+| Noms | archived（2021-08），已死；谱系由 Dolt 继承 |
+| Kùzu（新依赖） | 2025-10-10 归档 + 团队被苹果收购 + 无官方维护；已有部署可冻结 0.11.3（MIT） |
+| TerminusDB | Docker 服务端 + 维护权 2026 年易主 DFRNT（连续性观察中）；单机纪律不符 |
+| GProM | 12 星学术件，引入即过度工程 |
+| usearch（作向量存储） | 无元数据存储、过滤需自带谓词容器——存储选型过度工程（作纯索引内核另议） |
+| Kùzu 社区分叉（vela 等） | 收购后数月内新起，动机与存续未验证，观察不接入 |
+
+**调研局限如实披露**：WebSearch 后端全程限流，“provenance 工程化无新品”与“jsonl 压缩比”两条为有限检索+结构推断（已标注）；其余全部论断均有一手 URL 支撑并经可达性核验。

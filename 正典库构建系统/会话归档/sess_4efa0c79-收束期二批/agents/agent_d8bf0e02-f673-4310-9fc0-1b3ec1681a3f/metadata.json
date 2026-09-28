@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_d8bf0e02-f673-4310-9fc0-1b3ec1681a3f",
+  "childSessionId": "sess_subagent_agent_d8bf0e02-f673-4310-9fc0-1b3ec1681a3f",
+  "createdAt": "2026-09-22T13:08:42.157Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "Research community canon practices",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_d8bf0e02-f673-4310-9fc0-1b3ec1681a3f\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_d8bf0e02-f673-4310-9fc0-1b3ec1681a3f\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_03_59YBUmEgrXaiBh39DiQM1149",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是研究助理，做一次联网调研（WebSearch + WebFetch，必须给可核验出处）。输出中文。这次重点是**社区实践**（非论文）：跑了多年的成熟做法、踩过的坑、以及能直接抄的工程机制。\n\n## 被服务的系统（CBB）背景，务必读准\n目标：把一部 517 章中文长篇网络小说构造成\"证据可核验\"的正典知识库，供 AI 角色扮演/问答/写作使用。要点：每条事实带原文引文证据；三态（默认/人工晋升/隔离待裁）；逐章由 LLM 子代理抽取；六库（角色/事件/关系/伏笔/设定/时间轴）；活跃伏笔清单；滚动摘要 30 章；隔离区带裁决账；零预算、纯本地、结果要可审计。\n\n## 调研范围（社区实践，要\"具体机制\"和\"坑\"）\n1. **SillyTavern / NovelAI 的世界书（World Info / Lorebook）生态**：关键词与次级关键词触发、递归/链式插入、插入位置与深度、token 预算与优先级、条目的\"常驻 vs 按需\"策略、防止上下文爆炸的做法、社区对\"设定数据库如何组织\"的公认最佳实践与常见事故。\n2. **长篇小说 / 同人创作社区的知识管理**：fan wiki（如萌娘百科、Fandom、Wikipedia 小说条目）的**治理制度**——\"正典/非正典\"分级、来源引用规范、时间线页面、角色资料页的字段设计、**retcon（吃设定）如何登记与呈现**、多版本/多改编并存的处理、以及\"传闻/推测\"内容的标注方式。\n3. **数据工程的踩坑经验**：长时间运行的批处理/断点续跑（checkpoint/resume、幂等键、失败重试与死信队列）、append-only 日志与哈希链的实践教训、多写者并发下的冲突处理、以及\"如何让流水线在被掐停后无损续跑\"。\n4. **LLM 抽取流水线的社区经验**：prompt/规范外置为文件（防漂移）、判例库（把裁决沉淀成后续案例）、抽样人工审计该抽多少、如何做\"上手考试\"验证判分器可用（judge 校准）、上下文包/共享指引文件（GUIDE）这类让多子代理保持一致的做法——社区（Reddit、HN、GitHub issue、博客、中文技术社区）里有哪些被反复验证或反复踩坑的结论。\n5. 中文网文特有：名词译名不一、称谓变化（敬称/爱称/直呼）、繁简与异体字、多版本（web版/文库版）对齐。\n\n## 输出格式（中文，≤900 词）\n一条实践一段，每段含：**做法名** ｜ **出处**（URL；社区帖/文档/仓库都行，必须可核验；没核实到标【未核实】）｜ **一句话内容** ｜ **抄它的成本** ｜ **对 CBB 的适配点** ｜ **已知的坑**（如果社区明确记录过失败模式，一定要写）。\n最后给\"**看着好但别抄**\"一节（诱人但有坑或与本系统约束冲突的）。禁止编造来源。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_d8bf0e02-f673-4310-9fc0-1b3ec1681a3f\\task.output",
+  "updatedAt": "2026-09-22T13:25:43.530Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-22T13:25:43.530Z",
+  "totalDurationMs": 1021200,
+  "totalTokens": 984833,
+  "totalToolUseCount": 39,
+  "usage": {
+    "inputTokens": 951832,
+    "outputTokens": 33001,
+    "totalTokens": 984833,
+    "cacheReadTokens": 919040,
+    "reasoningTokens": 20569
+  }
+}

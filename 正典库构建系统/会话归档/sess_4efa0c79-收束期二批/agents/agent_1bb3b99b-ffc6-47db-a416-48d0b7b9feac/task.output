@@ -1,0 +1,82 @@
+# 技术情报报告：CBB 机制合理性重构的 SOTA 证据预调研（2026-09）
+
+检索方法说明：WebSearch 服务多次 429 限流，故 GitHub 证据改用 GitHub API + raw.githubusercontent 直接核验（一手来源，可信度最高）；开放评审论文经 OpenReview API 核验；个别博客仅有域名级出处已注明。
+
+---
+
+## A. 各调研问题发现
+
+### Q1 Microsoft GraphRAG 增量更新现状
+
+**结论：增量 = 批式 delta 合并，非流式；社区结构仍是全局重算；有已知合并 bug；删除仍非一等公民。**
+
+- GraphRAG 1.0（2025）新增 `update` 命令：对既有索引与新内容计算 delta 并“智能合并以最小化重索引”；但官方博客自己承认新内容会使社区结构漂移、导致“索引的大部分需要重算”。**全文未提任何流式摄取支持**。可信度：高（官方）。出处：[Microsoft Research Blog: Moving to GraphRAG 1.0](https://www.microsoft.com/en-us/research/blog/moving-to-graphrag-1-0-streamlining-ergonomics-for-developers-and-users)（2025）
+- 增量机制的真实实现（来自 2026-09 仍 open 的 bug 报告 #2540 的最小复现）：`update` **只对新文档单独跑全管线、铸造全新 UUID**，再按标题碰撞合并回旧索引；社区合并步骤拿不到 `{delta_id: old_id}` 映射，导致**社区行的 entity_ids/relationship_ids 悬空指向已丢弃的 UUID**。这直接证明其 delta 之间互不知晓、合并靠脆弱的名字碰撞。可信度：高（含可复现示例）。出处：[graphrag#2540](https://github.com/microsoft/graphrag/issues/2540)（2026-09-03, open）
+- 实体去重按“同标题”粗暴合并的历史 bug（同标题不同类型被错并）：[graphrag#1718](https://github.com/microsoft/graphrag/issues/1718)（2025-02-18, closed）；文档删除支持至今仍在“分析方案”阶段：[graphrag#2078](https://github.com/microsoft/graphrag/issues/2078)（2025-09-26, closed）；增量需求史：[#741](https://github.com/microsoft/graphrag/issues/741)、[discussion #511](https://github.com/microsoft/graphrag/discussions/511)。可信度：高。
+- 成本替代路线 LazyGraphRAG：索引期零 LLM（成本≈向量 RAG，约全量 GraphRAG 的 0.1%），LLM 推迟到查询期。出处：[MSR Blog: LazyGraphRAG](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost)（2024-11）；集成进度见 [graphrag#3843](https://github.com/microsoft/graphrag/issues/3843)。可信度：高（官方）。
+- 综述背书：[Graph Engineering in the Era of LLM Agents, arXiv:2608.21156](https://arxiv.org/abs/2608.21156)（2026-08-26，64 页，附 [Awesome-Graph-Engineering](https://github.com/DEEP-JLU/Awesome-Graph-Engineering)）。可信度：高（学术综述）。
+
+### Q2 LightRAG 增量插入的真实表现
+
+**结论：官方主打“增量插入/选择性删除”，但部分更新需整文档重插；实体按名字精确合并；项目自己已放弃依赖社区报告——“社区退化”顾虑在官方路线里被绕开而非解决。**
+
+- 官方 README（main 分支，2026-09 抓取）原话："**Incremental Updates & Selective Deletion**"；且 "LightRAG does not rely on inefficient community reports or multi-hop reasoning for complex queries" —— 即当前查询模式已不再以社区报告为支柱。可信度：高（官方仓库）。出处：[HKUDS/LightRAG README](https://github.com/HKUDS/LightRAG)
+- 文档级部分更新能力**缺失中**：2026-09-23 才有 open PR 增加块级 add/delete/modify（"changing part of a processed document without deleting and re-inserting all of it"），尚未合并。可信度：高。出处：[LightRAG#4054](https://github.com/HKUDS/LightRAG/pull/4054)（2026-09-23, open）
+- 持续/并发插入的持久化状态管理曾被报“Critical Issues"：[LightRAG#1968](https://github.com/HKUDS/LightRAG/issues/1968)（2025-08-17, closed）。可信度：中高（已修复关闭，说明曾是真实痛点）。
+- `insert_custom_kg`（CBB 实际使用的路径）公开 issue 极少：仅 [#1413](https://github.com/HKUDS/LightRAG/issues/1413)（2025-04-19, closed，问实体/关系如何挂多个 chunk）——说明该路径社区使用面窄、实战反馈少。可信度：中。
+- **未找到公开方案/直接证据**：针对 `insert_custom_kg` 持续 append 下“层级社区索引退化”“重复实体未合并”的专门公开 issue，检索（duplicate entity merge / community rebuild / custom_kg 三组关键词，96+ 命中中筛）未命中直接案例，只有间接证据（合并前校验钩子 PR [#3700](https://github.com/HKUDS/LightRAG/pull/3700)、工作区隔离 RFC [#3511](https://github.com/HKUDS/LightRAG/issues/3511) 暗示多租户下状态串扰曾发生）。
+
+### Q3 Graphiti/Zep 双时序 KG 最新架构
+
+**结论：双时序（valid_at/invalid_at × created_at）+ 边失效机制是真实且被文献称道的架构；但 edge invalidation 存在严重的全图误杀 bug（截至 2026-09 未修）；中文/CJK 去重有未合并的修复；摄取有静默丢失风险；add_triplet 是官方支持的“绕过抽取”通道。**
+
+- 架构与论文：[Zep: A Temporal Knowledge Graph Architecture for Agent Memory, arXiv:2501.13956](https://arxiv.org/abs/2501.13956)（2025-01）；边带 bi-temporal 元数据，新信息矛盾时失效旧边而非覆盖。可信度：高（官方论文）。2026-08 综述称其为"strongest existing temporal KG framework"（见 [arXiv:2608.21156](https://arxiv.org/abs/2608.21156) 引用）。
+- **edge invalidation 误杀（本调研最重的单条证据）**：失效检索扫全图，只要提到同一实体就可能 retirement 无关仍真的事实；一个约 3,950 条事实的生产图里 **41%（1,616 条）带 invalid_at**，人工审计 4 条样本 **3 条是误杀**。可信度：极高（含代码级分析与审计表）。出处：[graphiti#1728](https://github.com/getzep/graphiti/issues/1728)（2026-08-04, open）；修复尝试 [#1729](https://github.com/getzep/graphiti/pull/1729)、[#1772](https://github.com/getzep/graphiti/pull/1772) 均 open —— **截至 2026-08 未合入**。
+- **摄取静默丢失**：`add_memory` 返回成功但 episode 可能被静默丢弃，无失败信号回传调用方。出处：[graphiti#1707](https://github.com/getzep/graphiti/issues/1707)（2026-07-30, open）。可信度：高。
+- **中文质量**：CJK 字符导致 MinHash 模糊去重失败的修复 PR 仍 open：[#1357](https://github.com/getzep/graphiti/pull/1357)（2026-03-29, open）；多语言支持为 open 需求 [#1141](https://github.com/getzep/graphiti/issues/1141)（2026-01-09）；中文支持官方答复 [#312](https://github.com/getzep/graphiti/issues/312)（2025-03-31, closed）。**社区实测中文抽取质量的系统性评测：未找到公开方案**，只有上述碎片证据。可信度：高（均为一手 issue）。
+- add_triplet 官方定位（MCP README main 分支，2026-09 抓取）："`add_triplet`: Add a single fact (source entity → fact → target entity) **directly, bypassing extraction**"，配套 `get_episode_entities` 溯源、`valid_at/invalid_at` 过滤。注意：bypass extraction 指绕过 LLM 抽取，**不绕过去重/失效管线**——上面两个 bug 仍会作用于喂入的三元组。可信度：高（官方文档）。出处：[graphiti mcp_server README](https://github.com/getzep/graphiti/tree/main/mcp_server)
+
+### Q4 “一个写模型 + 多个派生读模型”模式
+
+**结论：CBB 的架构（单一事实源 → 确定性门 → 哈希链账本 → 多派生视图 + 对账）与业界 event sourcing/CQRS-for-RAG 模式完全同构，且是该模式的教科书实现；增量索引的主流做法是内容哈希比对 + delta upsert + 投影检查点。**
+
+- CQRS + event sourcing 组合的官方工程指引：[AWS Prescriptive Guidance — CQRS 和 event sourcing 模式](https://docs.aws.amazon.com)（官方，高可信）；“RAG 索引视为由事件重建的派生数据”的实践文档：[Ironflow docs](https://docs.ironflow.run)（厂商文档，中低可信）。
+- 增量索引标准语义：LlamaIndex 的 `refresh_ref_docs` 按 doc_id + 内容变化判定，只重处理变更文档（"only updating documents that have any changes"，节省 LLM/嵌入调用）；配套 `insert`/`delete_ref_doc`/`update_ref_doc`。可信度：高（官方文档）。出处：[LlamaIndex Document Management](https://docs.llamaindex.ai)；镜像引文见 [llamaindexxx.readthedocs.io](https://llamaindexxx.readthedocs.io)。
+- 大规模实践："Scaling RAG from 50 to 10M documents"（Utkarsh Bajaj, LinkedIn）：变更文档只处理受影响 chunk，upsert 进小 delta 索引。可信度：中（从业者文章）。
+- 轮询 vs CDC：[The RAG Freshness Problem](https://tianpan.co)（2026-04-10）：CDC（Debezium 等，事务日志/WAL，亚分钟延迟、能捕获删除）是陈旧嵌入的对症方案，代价是 Kafka/连接器基础设施；轮询/批作业简单但延迟至轮询间隔、删除检测弱。同类：[llms.blog — Data Ingestion and Incremental Sync for Production RAG](https://llms.blog)、最简形态 [pgxn incremental-pgvector](https://pgxn.org)（夜间"找昨天以来变更"批作业）。可信度：中高。**对单机本地文件源、零成本约束的场景，文献没有反对轮询的证据**；文件监听（inotify/ReadDirectoryChangesW）是文件源上的 CDC 等价物。
+
+### Q5 革命性新方案对“小说级叙事知识库”的适用性
+
+- **最直接的颠覆候选：叙事学接地记忆。** [Narrative World Model: Narratology-Grounded Writer Memory for Long-Form Fiction](https://openreview.net/forum?id=1l6zA2zoWm)（Saifullah et al., OpenReview，forum id 1l6zA2zoWm，经 OpenReview API 核验）：声称在**多跳故事状态 QA 上显著击败最强时序 KG 框架**（即 Zep/Graphiti）。这是目前唯一正面以“长篇虚构叙事”为靶子、且拿出对比实验的工作。可信度：中高（OpenReview 在审/公开稿，非正式出版）。
+- **超图表示**：[HyperGraphRAG, arXiv:2503.21322](https://arxiv.org/abs/2503.21322)（2025，[代码](https://github.com/lhrlab/hypergraphrag)）：用超边表示 n 元关系事实（“多个角色在同一事件中”天然是超边）；衍生工作 OKH-RAG（序感知超图，含**叙事**实验）、Cog-RAG（双超图+主题建模）、HyCE-RAG（证据链）。可信度：高（arXiv+开源）；对 CBB 的适配度：事件-多角色建模，但均需 LLM 建库。
+- **Agentic memory 横评（2026）**：[Letta 官方基准博客](https://www.letta.com/blog/benchmarking-ai-agent-memory)称纯文件系统存储在 LoCoMo 上得 74.0% 胜过专用记忆层（厂商基准，各家互有胜负、争议大）；[Mem0 vs Zep 官方对比](https://mem0.ai/blog/zep-vs-mem0-which-ai-memory-layer-should-you-choose)（Mem0=抽取式事实记忆，Zep=时序图）；第三方横评：[developersdigest 2026](https://www.developersdigest.tech/blog/best-ai-agent-memory-providers-2026)、[The AI Engineer: cognee vs Mem0 vs Zep vs Letta](https://theaiengineer.substack.com/p/cognee-vs-zep-vs-mem0-vs-letta)、[Vectorize 2026 综述](https://vectorize.io/articles/best-ai-agent-memory-systems)。**注意：这些系统的靶场景是对话式 agent 记忆（用户偏好、会话事实），不是固定语料的正典库构建** —— 对 CBB 属于可借鉴机制而非可替换方案。
+- 新方向观察：Graphiti 自己在做的"judged graph traversal: agentic multi-hop search without generative inference"([graphiti#1924](https://github.com/getzep/graphiti/issues/1924), 2026-09-25)；层次化图式 agentic 记忆 GAM（2026，Semantic Scholar 索引）；AriGraph（KG 世界模型+情景记忆，叙事环境验证，2024/2025）。
+- **“持续学习型/自更新知识库”取代确定性管线：未找到公开方案。** 2025-2026 没有任何工作以“固定语料+确定性证据门+零 LLM 增量”为靶点提出替代；所有自更新路线（Mem0/Zep/Letta/Cognee）都以 LLM 抽取为前提，与零 API 成本约束相反。
+
+---
+
+## B. 对 CBB 系统的可执行建议
+
+1. **保留：确定性证据门 + 哈希链账本作为唯一写侧（核心机制，文献背书最强）。** 这正是 AWS CQRS/event-sourcing 指引与"RAG 索引=派生投影"实践的标准形态，三方计数对账即投影一致性检查。需补强的一点：把每个派生视图的**投影检查点（账本 offset/序号）**显式写入对账哨，实现"崩溃后从检查点重放"而非靠 mtime 猜。代价：低（对账哨加 2-3 个字段）。
+
+2. **调整：Neo4j 骨架图的 MERGE 键策略——用稳定业务键，杜绝 GraphRAG 式"delta 铸新 UUID"坑。** GraphRAG #2540 的悬空 ID bug 正是增量合并铸造新 UUID、旧 ID 映射丢失所致；CBB 每章收口 MERGE 若键稳定（实体名+类型规范键）则天然免疫，建议显式文档化 MERGE 键并加一条"悬空边"对账查询。代价：低。
+
+3. **重点调整：Graphiti 视图降级为“实验视图”，或收紧其失效与去重管线。** 三个在 2026-09 仍未修复的缺陷直接命中 CBB 的用法：(a) edge invalidation 全图误杀（#1728，实测 41% 误标）会污染事实时间线；(b) CJK MinHash 去重 bug（#1357 open）会让中文别名实体裂成多节点；(c) 摄入静默丢失（#1707）绕过任何对账。可选做法：等 #1729/#1772/#1357 合入后再恢复信任；或禁用 invalidation 对 fact_triple 边的作用，双时序改为在 Neo4j 侧自建 valid_at/invalid_at 两列（CBB 写侧三元组本是确定性产物，成本极低）。代价：中（若自建双时序，是一次 schema 迁移 + 收口逻辑小改）。
+
+4. **保留（微调）：1 秒 mtime 轮询 + LightRAG 视图整批重喂。** 文献对轮询的批评（延迟、删检弱）在“本地单机文件源+哈希链可全量对账”前提下不成立；而 LightRAG 到 2026-09 仍无合入的块级部分更新（#4054），零 LLM `insert_custom_kg` 整批重喂是与其能力对齐的做法，不必追求子文档增量。唯一注意点：官方已不依赖社区报告，若 CBB 查询走 community 报告语义需自行重建社区，否则只依赖 local/global/hybrid 检索即可。代价：低。
+
+5. **新增（可选，中期）：在派生层加“叙事超边投影”。** 叙事学接地记忆在多跳故事状态 QA 上击败时序 KG（OpenReview 1l6zA2zoWm），超边适合“事件-多角色”n 元事实（arXiv:2503.21322）。CBB 可用证据门已产出的确定性三元组**聚合**出超边视图（零新增 LLM 调用），先做只读投影验证检索增益，再决定是否上升为第四视图。代价：中高（新投影视图 + 新查询路径）。
+
+---
+
+## C. 颠覆性候选清单
+
+| 候选 | 一句话 | 对 CBB 的关系 | 来源 |
+|---|---|---|---|
+| Narrative World Model（叙事学接地写手记忆） | 在多跳故事状态 QA 上击败 Zep/Graphiti | **最高威胁/最高启发**：若 CBB 需要叙事推理（前后矛盾检测、故事状态追踪），纯事实三元组图可能不够，需叙事结构层 | [OpenReview 1l6zA2zoWm](https://openreview.net/forum?id=1l6zA2zoWm) |
+| HyperGraphRAG 及超图系（OKH-RAG/Cog-RAG/HyCE-RAG） | n 元事实用超边表示 | 启发“事件-多角色”建模；但建库需 LLM，只能做派生层 | [arXiv:2503.21322](https://arxiv.org/abs/2503.21322) |
+| LazyGraphRAG（延迟物化） | 索引零 LLM、查询期按预算调 LLM | 与零成本约束冲突，但“按需物化社区报告”思想可用于 CBB 冷热分层 | [MSR Blog](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost)（2024-11） |
+| Letta 文件系统反思 | 纯文件存储在 LoCoMo 上 74.0% 胜专用记忆层 | 提醒勿过度工程化：CBB 的 markdown/账本本体就是有效知识形态 | [Letta blog](https://www.letta.com/blog/benchmarking-ai-agent-memory) |
+| Graphiti judged traversal（#1924） | 无生成式推理的判定式多跳图遍历 | 若成熟，可给 CBB 查询层加多跳能力而不引入生成成本 | [graphiti#1924](https://github.com/getzep/graphiti/issues/1924)（2026-09-25） |
+
+**未找到公开方案的项**：Graphiti 社区实测中文抽取质量的系统评测；LightRAG custom_kg 长期 append 下社区退化的直接案例；任何能替代“确定性证据门管线”的持续学习型知识库。

@@ -1,0 +1,100 @@
+调研完成。以下为汇总报告。
+
+---
+
+# LLM 记忆层 / Agent 知识库赛道调研报告
+
+**核实口径**：星标均为 GitHub API 实查（2026-09-24/25）；论文均为 arXiv 页面直读；官方文档直读；未能核实处已标注。
+
+## 一、机制族谱（5 族）
+
+| 族 | 共同思想 | 成员 |
+|---|---|---|
+| **分页上下文族（OS 派）** | 把上下文窗口当 RAM，记忆分层分页，LLM 自己调页 | MemGPT/Letta、MemOS |
+| **抽取-操作族（写入管线派）** | 每轮对话由 LLM 抽取候选记忆，用一组受限操作（ADD/UPDATE/DELETE/NOOP）维护一致性 | Mem0、MIRIX、memobase、LangMem |
+| **时序图族（图谱派）** | 把事实建模为带时间戳的知识图谱，冲突不覆盖、保留历史版本 | Zep/Graphiti、cognee（横跨 RAG）、WeKnora（wiki+图谱+回滚） |
+| **互链页面族** | 记忆是自动建链、可演化的笔记页（Zettelkasten） | A-MEM |
+| **文件即记忆族（上下文工程派）** | 不建外部记忆系统，纯文本文件+agent 自主读写就是记忆 | Manus、Claude Code（CLAUDE.md/auto memory）、Letta 的“文件系统够用论” |
+
+## 二、逐系统卡片
+
+**1. MemGPT / Letta**（letta-ai/letta，★24,868）
+- 机制：虚拟上下文管理——仿 OS 分层存储，在有限窗口内管理记忆层级，靠**中断**让 LLM 主动调页（arXiv 2310.08560，2023-10-12，UC Berkeley 系作者）。
+- 与朴素 RAG 差别：检索/换页由 agent 运行时自主决策，而非查询时一次性向量召回。
+- 现状：已改名 Letta，主仓库归档 V1 API（archive 分支），当前源码在 letta-ai/letta-code（npm `@letta-ai/letta-code`），有 chat.letta.com 与桌面端；追加论文 Sleep-time Compute（arXiv 2504.13171：离线预计算使同等精度测试时算力降约 5x）。
+
+**2. Mem0**（mem0ai/mem0，★65,947）
+- 机制：两阶段——**抽取阶段**用消息对 (mₜ₋₁, mₜ)+摘要+近期历史提出候选事实；**更新阶段**向量检索 top-s 相似旧记忆后，LLM 经 tool call 在 **ADD/UPDATE/DELETE/NOOP** 四操作中选择（arXiv 2504.19413，2025-04-28，Mem0 团队）。
+- 与朴素 RAG 差别：写入时有“抽取+冲突裁决”操作集，记忆库是被维护的，不是只追加的文档块。
+- 论文数字（Table 2，Overall J）：Mem0 66.88%，Mem0g（图变体）68.44%，**full-context 基线 72.90%**（约 26k tokens，p95 约 17 秒）；官方卖点为 vs OpenAI 26% 相对提升、p95 延迟降 91%、token 成本省 90%+。
+
+**3. Zep / Graphiti**（getzep/graphiti，★31,130）
+- 一句话：Graphiti 是时序感知知识图谱引擎，动态融合对话与结构化数据并**保留历史关系**（双时序）；论文报 DMR 94.8%（MemGPT 93.4%）、LongMemEval 准确率最高 +18.5%、延迟较全上下文降 90%（arXiv 2501.13956，2025-01-20）。
+
+**4. A-MEM**（agiresearch/A-mem，★1,184）
+- 一句话：新记忆生成带结构化属性（上下文/关键词/标签）的“笔记”，自动建链并触发历史记忆属性演化——Zettelkasten 式互链网络（arXiv 2502.12110，已中 NeurIPS 2025）。
+
+**5. MemOS / MIRIX**
+- **MemOS**（MemTensor/MemOS，★11,569）：把记忆当一等系统资源调度的“记忆操作系统”，提出 MemCube 统一参数/激活/明文三种记忆的存取管理（arXiv 2507.03724，2025-07-04）。
+- **MIRIX**（Mirix-AI/MIRIX，★3,448）：多智能体控制六类记忆（Core/Episodic/Semantic/Procedural/Resource/Knowledge Vault），支持屏幕截图多模态监控；报 ScreenshotVQA 比 RAG 基线 +35% 且存储省 99.9%、LOCOMO 85.4%（arXiv 2507.07957，2025-07-10）。
+
+**6. cognee**（topoteretes/cognee，★30,962）
+- 机制：**ECL 管线**（Extract → Cognify → Load）：从文档/代码/会话抽取内容，Cognify 阶段用 LLM 建实体-关系知识图谱+嵌入，Load 写入可选的图库与向量库；检索时图+向量并用（官方文档口径）。
+- 定位：横跨 RAG 与记忆——它建的是可查询记忆图，但管线本质是增强型 ETL-RAG；配论文 arXiv 2505.24478（README 自链）。
+
+**7. WeKnora**（Tencent，★29,678）
+- 一句话：同一知识库上跑三种模式——RAG 查询、agent 多步任务、**Wiki 模式（文档自动组织成带知识图谱、可回滚的 wiki）**；另有跨会话长期记忆与“分块可编辑/diff/回滚”的策展机制，自动同步飞书/Confluence/Notion 等源。**未找到论文**。与“朴素 RAG”差别：知识库可被维护、可回滚，wiki 层做了自动组织。
+
+**8. 产品级记忆（官方文档口径）**
+- **ChatGPT Memory**：两种机制并存——"Saved memories"（显式记忆条目，直接注入 system prompt 的 Memory Notes 块）与"Reference chat history"（对历史会话做检索引用）；Settings > Personalization > Memory 可查看/增删；Temporary chat 不读写记忆；API/企业版默认不含或可关（OpenAI Help Center "Memory FAQ"）。
+- **Claude memory**：Settings > Memory，两个开关"Search and reference chats"与"Generate memory"，可主动让 Claude 搜过往会话，支持记忆导入/导出（support.claude.com 官方文章，2026-09 更新）。套餐细则**未核实到官方页面全文**。
+- **Gemini "Personal context"**：官方公告（blog.google，2025-08-13）——Settings > Personal context > "Your past chats with Gemini"，Temporary Chats 不进历史；第三方口径为默认开启（opt-out），由过往会话记忆+自定义指令+关联应用三部分组成。
+
+**9. 上下文工程派**
+- **Claude Code**（code.claude.com/docs/en/memory）：CLAUDE.md 四层级（managed policy / 用户 / 项目 / 本地）拼接加载，`@path` 导入最多 4 层（不省上下文，只做组织）；**v2.1.277+ 原生支持 AGENTS.md**（无 CLAUDE.md 时直接读）；新增 **auto memory**——agent 自动把学到的东西写成笔记存 `~/.claude/projects/<project>/memory/`，MEMORY.md 索引前 200 行/25KB 随会话加载。建议单文件 ≤200 行。这就是“文件系统即记忆”的工程化样板（本工作区的 AGENTS.md+knowledge/ 即此族的实践）。
+- **Manus**（manus.im 博客，2025-07-18，Yichao "Peak" Ji）：① KV-cache 命中率是第一指标（缓存 token 便宜约 10 倍），三实践=前缀稳定/上下文 append-only/确定性序列化；② "file system is the ultimate context"——文件系统是结构化外部记忆，压缩必须可恢复（丢弃网页留 URL、丢文档留路径）；③ "Recitation"——持续重写 todo.md 把目标推到注意力末尾，对抗 lost-in-the-middle（平均任务约 50 次工具调用）。
+
+**10. 检索中发现的其他同类**（星标均 API 实查）：supermemory（★30,875，“记忆与上下文引擎”）、memU（★14,427，个人跨 agent 记忆）、memobase（★2,918，用户画像式记忆，且公开了 LOCOMO 复现仓库）、LangMem（langchain-ai/langmem，★1,684）。
+
+## 三、已知反例 / 争议
+
+1. **Mem0 自己论文里 full-context 赢了 Mem0**：Table 2 中 full-context 72.90% > Mem0g 68.44% > Mem0 66.88%——Zep 博客（2025-05-06）据此发难《Lies, Damn Lies, & Statistics: Is Mem0 Really SOTA in Agent Memory?》，并称正确复现下 Zep 达约 84%。
+2. **Mem0 反击**：以 getzep/zep-papers 仓库 Issue #5《Revisiting Zep's 84% LoCoMo Claim》回击，称复现 Zep 仅得 **58.44%**，指其评估流程有技术缺陷。双方至今各执一词。
+3. **Letta 文件系统实验**（2025-08-12）：把对话历史放文件、用 grep/open/close 工具+GPT-4o mini，LOCOMO 达 74.0%，高于 Mem0g 68.5%；并质疑 Mem0 论文中 MemGPT 复现数字（Mem0 未回应澄清）。结论：agent 能力比记忆工具本身更重要。
+4. **基准本身失效**：LOCOMO 仅 10 段对话/约 26k tokens，趋于饱和且各家分数不可比（Mem0 官网宣称 92.5、Zep 论文口径不同、MIRIX 85.4），社区转向 LongMemEval/BEAM；Vectorize.io（2026-03）等第三方独立评测显示图方法在部分 LongMemEval 任务上并不占优。
+5. **Mem0 图记忆 token 成本问题**：mem0ai/mem0 Issue #2066（经 Atlan 对比页二手转述，未直读原 issue）。
+6. **商品营销与论文数字脱节**：Mem0 营销页宣称 LoCoMo 92.5/LongMemEval 94.4，与其 2025 论文 Table 2（66.88/68.44）差距显著，口径不透明。
+
+## 四、来源清单
+
+- MemGPT 论文 — https://arxiv.org/abs/2310.08560
+- Mem0 论文 — https://arxiv.org/abs/2504.19413 （HTML 全文： https://arxiv.org/html/2504.19413v1）
+- Zep 论文 — https://arxiv.org/abs/2501.13956
+- A-MEM 论文 — https://arxiv.org/abs/2502.12110
+- MemOS 论文 — https://arxiv.org/abs/2507.03724
+- MIRIX 论文 — https://arxiv.org/abs/2507.07957
+- Sleep-time Compute — https://arxiv.org/abs/2504.13171
+- cognee 论文 — https://arxiv.org/abs/2505.24478
+- Letta 仓库 — https://github.com/letta-ai/letta
+- Mem0 仓库 — https://github.com/mem0ai/mem0
+- Graphiti 仓库 — https://github.com/getzep/graphiti
+- A-MEM 仓库 — https://github.com/agiresearch/A-mem
+- MemOS 仓库 — https://github.com/MemTensor/MemOS
+- MIRIX 仓库 — https://github.com/Mirix-AI/MIRIX
+- cognee 仓库 — https://github.com/topoteretes/cognee
+- WeKnora 仓库 — https://github.com/Tencent/WeKnora
+- supermemory — https://github.com/supermemoryai/supermemory
+- memU — https://github.com/NevaMind-AI/memU
+- memobase — https://github.com/memodb-io/memobase
+- LangMem — https://github.com/langchain-ai/langmem
+- ChatGPT Memory FAQ — https://help.openai.com/en/articles/8590148-memory-in-chatgpt-faq
+- Claude 记忆官方文章 — https://support.claude.com/en/articles/10398522（标题：Use Claude's chat search and memory…）
+- Gemini Personal context 官方公告 — https://blog.google（2025-08-13，Gemini adds Temporary Chats and new personalization）
+- Manus 上下文工程博客 — https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus
+- Claude Code 记忆文档 — https://code.claude.com/docs/en/memory
+- Zep 反驳 Mem0 — https://blog.getzep.com/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory/
+- Mem0 反驳 Zep — https://github.com/getzep/zep-papers/issues/5
+- Letta 文件系统实验 — https://www.letta.com/blog/benchmarking-ai-agent-memory
+- cognee ECL 官方口径 — https://www.cognee.ai/grounding-ai-memory
+
+**主要未决项**：WeKnora 无论文（未找到）；Claude 消费级记忆的套餐门槛与 APEX-MEM（88.88% LoCoMo）仅有二手来源；mem0 Issue #2066 未直读原文。

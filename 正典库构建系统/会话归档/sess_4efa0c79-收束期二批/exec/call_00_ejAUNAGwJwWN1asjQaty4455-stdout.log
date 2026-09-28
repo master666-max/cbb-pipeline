@@ -1,0 +1,70 @@
+PASS  ./cbb-anchor/test_cbb_anchor.py  (OK)
+PASS  ./cbb-coordinate/test_cbb_coordinate.py  (OK)
+PASS  ./cbb-extract/test_cbb_extract.py  (OK)
+PASS  ./cbb-gate1/test_cbb_gate1.py  (OK)
+PASS  ./cbb-quarantine/test_cbb_quarantine.py  (OK)
+PASS  ./cbb-store/test_cbb_store.py  (OK)
+PASS  ./cbb-store/test_w4_thresholds.py  (OK)
+=== ./contracts/test_contracts.py ===
+test_verified_at_iso_prefix (__main__.TestRecordV2.test_verified_at_iso_prefix) ... ok
+test_all_four_load_v2 (__main__.TestSchemasLoad.test_all_four_load_v2) ... ok
+test_band_boundaries (__main__.TestVerdictV2.test_band_boundaries) ... ok
+test_band_consistency (__main__.TestVerdictV2.test_band_consistency) ... ok
+test_confidence_scale_maximum (__main__.TestVerdictV2.test_confidence_scale_maximum) ... ok
+test_conflict_requires_rule_applied (__main__.TestVerdictV2.test_conflict_requires_rule_applied) ... ok
+test_consistent_label_without_rule_ok (__main__.TestVerdictV2.test_consistent_label_without_rule_ok) ... ok
+test_critique_order_enforced (__main__.TestVerdictV2.test_critique_order_enforced) ... ok
+test_ok_conflict_with_rule (__main__.TestVerdictV2.test_ok_conflict_with_rule) ... ok
+test_rule_school_enum (__main__.TestVerdictV2.test_rule_school_enum) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.016s
+
+OK
+PASS  ./tools/test_context_pack.py  (4 tests PASS)
+PASS  ./tools/test_d2_graph_edge.py  (OK)
+PASS  ./tools/test_embed_dedup_scan.py  (OK)
+PASS  ./tools/test_graphiti_bridge.py  (PASS test_trigger_sentinel)
+=== ./tools/test_ledger_chain.py ===
+PASS test_append_records_sha_before_after
+PASS test_collision_skip_no_target_growth
+PASS test_genesis_idempotent_and_offledger_change_detected
+PASS test_instrument_fingerprint
+PASS test_rebaseline_idempotent
+PASS test_store_semantics_equivalent
+FAIL test_tamper_detected: 
+PASS test_zone_writes_ledgered
+PASS  ./tools/test_neo4j_export.py  (OK)
+PASS  ./tools/test_匹配建议.py  (2 tests PASS)
+PASS  ./tools/test_失效宣告.py  (6 tests PASS)
+PASS  ./tools/test_批次自检.py  (3 tests PASS)
+PASS  ./tools/test_抽样排序.py  (3 tests PASS)
+PASS  ./tools/test_捕获再捕获.py  (4 tests PASS)
+PASS  ./tools/test_检索层.py  (7 tests PASS)
+=== ./tools/test_矛盾分流.py ===
+OK test_align_candidate_pure_function
+Traceback (most recent call last):
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb\tools\test_矛盾分流.py", line 90, in <module>
+    fn(Path(td))
+    ~~^^^^^^^^^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb\tools\test_矛盾分流.py", line 66, in test_apply_auto_vs_batch_confirm
+    assert s2["executed"] == 0 and s2["skipped_not_confirmed"] == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+=== ./tools/test_矛盾对生成.py ===
+PASS test_exam_deterministic_rows_and_expected_labels
+PASS test_grade_dual_gate
+PASS test_pairs_dual_track_full_recovery
+PASS test_pairs_embedding_family_and_name_miss
+PASS test_pairs_reconstructed_when_body_missing
+FAIL test_real_store_smoke_no_git: (468, 539, {'dual_track': 403, 'embedding': 65, 'unparsed': 71, 'recovery_full': 463, 'recovery_partial': 0, 'name_miss': 5})
+PASS  ./tools/test_诊断员.py  (4 tests PASS)
+PASS  ./tools/test_词表.py  (4 tests PASS)
+PASS  ./tools/test_连续性巡检.py  (4 tests PASS)
+=== ./tools/test_重排器.py ===
+OK test_order_stable_desc
+OK test_payload_is_utf8_and_carry_query
+OK test_rerank_or_mechanical_both_paths
+OK test_score_none_on_mismatch_and_error
+OK test_score_parses_standard_shape
+5 tests PASS

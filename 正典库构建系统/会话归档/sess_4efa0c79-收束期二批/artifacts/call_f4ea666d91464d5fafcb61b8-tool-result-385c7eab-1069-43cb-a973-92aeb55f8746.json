@@ -1,0 +1,38 @@
+{
+  "createdAt": "2026-09-27T23:01:08.824Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"b7_human_queue.py — B7 人工队列成军（总工单二批·波 B 收口件）。\n\n汇聚全部终审线状态成单一人工队列，audit.suspicious_rank 最可疑优先：\n  ①G16b hold 且未进 B5 面板（锚定 OK 但考官 unsure/诠释型）\n  ②B5 NLI 直送（证据自相矛盾，human_nli 路由）\n  ③G16c/B5b 重审后仍 hold/human\n  ④B6 升级段仍 hold\n  ⑤核心指代补充证据后仍未消解（unbackfillable 终态）\n每件附全套引文（原+回填+核心指代）+前情提要（carry_summary 盲点先验已注明）。\n产出：迷深实战-本体库/人工队列.jsonl（suspicion 升序=最可疑最后写入顶部可翻）\n\"\"\"\nimport json\nimport sys\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\nsys.path.insert(0, str(ROOT / \"cbb-v2\"))\n\nfrom cbb2 import audit  # noqa: E402\n\nSTORE = ROOT / \"迷深实战-本体库\"\nOUT = STORE / \"人工队列.jsonl\"\n\n\ndef load_last(path: Path) -> dict:\n    last = {}\n    if path.exists():\n        for l in path.read_text(encoding=\"utf-8\").splitlines():\n            if l.strip():\n                r = json.loads(l)\n                last[r[\"record_id\"]] = r\n    return last\n\n\ndef main():\n    g16b = load_last(STORE / \"G16b-票面台账.jsonl\")\n    g16c = load_last(STORE / \"G16c-重审台账.jsonl\")\n    esc = load_last(STORE / \"G16c-升级台账.jsonl\")\n    pre = load_last(STORE / \"补充证据-NLI预筛.jsonl\")\n    bf = load_last(STORE / \"补充证据-回填.jsonl\")\n    coref_dir = ROOT / \"迷深实战-工作区\" / \"coref_batches\" / \"results\"\n    coref = {}\n    if coref_dir.exists():\n        for f in coref_dir.glob(\"batch-*.json\"):\n            d = json.loads(f.read_text(encoding=\"utf-8\"))\n            for r in (d.get(\"results\", []) if isinstance(d, dict) else d):\n                coref[r[\"record_id\"]] = r\n\n    confirmed = {rid for rid, v in {**g16b, **g16c, **esc}.items()\n                 if v.get(\"verdict\") == \"promote\"}\n    queue = []\n    for rid, verdict in g16b.items():\n        if rid in confirmed or verdict != \"hold\" and verdict != \"human\":\n            continue\n        if verdict == \"promote\":\n            continue\n        lib = None\n        rec = None\n        for f in STORE.glob(f\"libraries/*/*/{rid}.json\"):\n            rec = json.loads(f.read_text(encoding=\"utf-8\"))\n            lib = f.parent.parent.stem\n            break\n        if rec is None:\n            continue\n        supplements = (bf.get(rid) or {}).get(\"supplements\", [])\n        coref_pairs = (coref.get(rid) or {}).get(\"pairs\", [])\n        row = {\n            \"record_id\": rid, \"library\": lib,\n            \"g16b\": verdict,\n            \"g16c\": (g16c.get(rid) or {}).get(\"verdict\"),\n            \"escalated\": (esc.get(rid) or {}).get(\"verdict\"),\n            \"nli_route\": (pre.get(rid) or {}).get(\"route\"),\n            \"nli_label\": (pre.get(rid) or {}).get(\"label\"),\n            \"canonical\": rec.get(\"canonical\") or {},\n            \"evidence\": rec.get(\"evidence\") or [],\n            \"supplements\": supplements,\n            \"coref_pairs\": coref_pairs,\n            \"record\": rec,\n        }\n        queue.append(row)\n\n    ranked = audit.suspicious_rank(queue)  # 证据少/置信低排前=最可疑优先\n    with OUT.open(\"w\", encoding=\"utf-8\") as f:\n        for row in ranked:\n            row[\"record\"].pop(\"evidence\", None)  # 队列行自带 evidence，避免双份\n            f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + \"\\n\")\n\n    from collections import Counter\n    c = Counter((r.get(\"nli_route\") or \"panel_line\", r.get(\"g16b\")) for r in ranked)\n    print(f\"人工队列: {len(ranked)} 件 → {OUT}\")\n    for k, v in c.most_common(8):\n        print(f\"  {k}: {v}\")\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\b7_human_queue.py",
+      "structuredPatch": [
+        {
+          "oldStart": 50,
+          "oldLines": 11,
+          "newStart": 50,
+          "newLines": 10,
+          "lines": [
+            "     confirmed = {rid for rid, v in {**g16b, **g16c, **esc}.items()",
+            "                  if v.get(\"verdict\") == \"promote\"}",
+            "     queue = []",
+            "-    for rid, verdict in g16b.items():",
+            "-        if rid in confirmed or verdict != \"hold\" and verdict != \"human\":",
+            "+    for rid, brow in g16b.items():",
+            "+        verdict = brow.get(\"verdict\") if isinstance(brow, dict) else brow",
+            "+        if rid in confirmed or verdict not in (\"hold\", \"human\"):",
+            "             continue",
+            "-        if verdict == \"promote\":",
+            "-            continue",
+            "         lib = None",
+            "         rec = None",
+            "         for f in STORE.glob(f\"libraries/*/*/{rid}.json\"):"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_f4ea666d91464d5fafcb61b8",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,41 @@
+{
+  "createdAt": "2026-09-26T19:38:25.440Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.lens — DuckDB 只读分析层（Phase F·G02；数据库路 A2）。\n\n直接 read_ndjson 挂现有 jsonl（零迁移、零写入），SQL 化投影重建/抽查/统计。\n可选依赖：pip install duckdb——缺席时 lens 显式 BLOCKED。\n\"\"\"\nfrom __future__ import annotations\n\nfrom pathlib import Path\n\n_DUCK = None\n\n\ndef _conn():\n    global _DUCK\n    if _DUCK is None:\n        try:\n            import duckdb\n        except ImportError:\n            raise RuntimeError(\"duckdb 未安装——pip install duckdb（可选依赖）\")\n        _DUCK = duckdb.connect()\n    return _DUCK\n\n\ndef tri_state_counts(store_root: Path) -> dict:\n    root = Path(store_root)\n    q = root / \"quarantine-zone\" / \"items.jsonl\"\n    if not q.exists():\n        return {\"provisional\": 0, \"confirmed\": 0, \"quarantine_pending\": 0, \"quarantine_confirmed\": 0}\n    import json\n    st = {\"provisional\": 0, \"confirmed\": 0, \"quarantine_pending\": 0, \"quarantine_confirmed\": 0}\n    for line in q.read_text(encoding=\"utf-8\").splitlines():\n        if not line.strip():\n            continue\n        it = json.loads(line)\n        if it.get(\"status\") == \"pending\":\n            st[\"quarantine_pending\"] += 1\n        elif it.get(\"status\") == \"confirmed\":\n            st[\"quarantine_confirmed\"] += 1\n    for lib_dir in (root / \"libraries\").iterdir():\n        for status_dir in lib_dir.iterdir():\n            if status_dir.is_dir():\n                st[status_dir.name] = st.get(status_dir.name, 0) + sum(1 for f in status_dir.glob(\"*.json\"))\n    return st\n\n\ndef invalidation_chain(store_root: Path) -> list[dict]:\n    \"\"\"失效链全量——从 invalidations.jsonl 读，供\"记录 X 在第 N 章失效\"查询。\"\"\"\n    p = Path(store_root) / \"invalidations.jsonl\"\n    if not p.exists():\n        return []\n    return [json.loads(x) for x in p.read_text(encoding=\"utf-8\").splitlines() if x.strip()]\n\n\ndef complementary_count(store_root: Path) -> int:\n    p = Path(store_root) / \"complementary-statements.jsonl\"\n    if not p.exists():\n        return 0\n    return sum(1 for x in p.read_text(encoding=\"utf-8\").splitlines() if x.strip())\n\n\ndef full_report(store_root: Path) -> dict:\n    import json\n    root = Path(store_root)\n    st = tri_state_counts(root)\n    inv = invalidation_chain(root)\n    comp = complementary_count(root)\n    libs = {}\n    for lib_dir in (root / \"libraries\").iterdir():\n        for status in (\"provisional\", \"confirmed\"):\n            d = lib_dir / status\n            if d.exists():\n                libs[f\"{lib_dir.name}/{status}\"] = sum(1 for f in d.glob(\"*.json\"))\n    return {\"tri_state\": st, \"invalidations\": len(inv), \"complementary\": comp,\n            \"libraries\": libs}\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\lens.py",
+      "structuredPatch": [
+        {
+          "oldStart": 66,
+          "oldLines": 10,
+          "newStart": 66,
+          "newLines": 12,
+          "lines": [
+            "     inv = invalidation_chain(root)",
+            "     comp = complementary_count(root)",
+            "     libs = {}",
+            "-    for lib_dir in (root / \"libraries\").iterdir():",
+            "-        for status in (\"provisional\", \"confirmed\"):",
+            "-            d = lib_dir / status",
+            "-            if d.exists():",
+            "-                libs[f\"{lib_dir.name}/{status}\"] = sum(1 for f in d.glob(\"*.json\"))",
+            "+    lib_base = root / \"libraries\"",
+            "+    if lib_base.exists():",
+            "+        for lib_dir in lib_base.iterdir():",
+            "+            for status in (\"provisional\", \"confirmed\"):",
+            "+                d = lib_dir / status",
+            "+                if d.exists():",
+            "+                    libs[f\"{lib_dir.name}/{status}\"] = sum(1 for f in d.glob(\"*.json\"))",
+            "     return {\"tri_state\": st, \"invalidations\": len(inv), \"complementary\": comp,",
+            "             \"libraries\": libs}"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_1f9aabe77a3d49289867ef21",
+  "toolName": "Edit",
+  "version": 1
+}

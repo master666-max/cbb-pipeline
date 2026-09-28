@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_8668a6c0-6cf4-4c60-a9ea-c6c8cdd40e7a",
+  "childSessionId": "sess_subagent_agent_8668a6c0-6cf4-4c60-a9ea-c6c8cdd40e7a",
+  "createdAt": "2026-09-22T13:08:42.155Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "Research novel-scale extraction",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_8668a6c0-6cf4-4c60-a9ea-c6c8cdd40e7a\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_8668a6c0-6cf4-4c60-a9ea-c6c8cdd40e7a\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_01_zlVq7mFvI77xn3yyptVo7257",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是研究助理，做一次联网调研（WebSearch + WebFetch，必须给可核验出处）。输出中文。\n\n## 被服务的系统（CBB）背景，务必读准\n目标：把一部 517 章、约 16MB 的中文网络小说全文，构建成\"证据可核验\"的正典知识库。要点：\n- 逐章抽取：每章派一个**全新上下文的 LLM 子代理**，只读四样东西——抽取规范+判例（≤30 条）、上下文包（≤2K tokens：主要人物册/活跃伏笔清单/最近 30 章提要/判例指针）、本章原文切片；候选写盘、回执 ≤200 tokens。\n- 记录六库（角色/事件/关系/伏笔/设定/时间轴），每条带证据四元组（卷/章/行/原文引文）。\n- 已有：活跃伏笔清单+开环管理；契诃夫枪\"超期未兑现\"检查；滚动摘要（30 章封顶）；\"死人走路\"等连续性检查；嵌入相似度扫描做去重提示。\n- 已知痛点：①**全书级/全局归纳没做**（\"主角的成长弧光\"\"某个主题如何演变\"这类跨几百章的问题答不了）；②跨章的身份维护靠别名表与嵌入提示，弱；③伏笔回收的判定粗糙；④长程因果链（A 导致 B 导致 C 跨 200 章）无法表达。\n- 硬约束：**零预算、不能训练、不能常驻 GPU**；只能用 LLM 代理 + 确定性脚本离线跑；一切结论要可回溯到原文。\n\n## 调研范围（只要\"具体机制\"，不要泛泛方向）\n2023 年底至 2026 年，**长篇/书籍级知识抽取与叙事理解**的可搬机制。重点：\n1. **GraphRAG 家族及其后继**：Microsoft GraphRAG（社区检测+分层摘要）、LightRAG、HippoRAG / HippoRAG 2、StructRAG、KAG、RAPTOR、以及 2025-2026 的新变体——它们各自**为了解决\"全局问题/多跳问题\"引入了什么具体机制**（增量更新、社区层级、个性化 PageRank、图结构索引、摘要树的构建算法），以及这些机制的**成本**。\n2. **长上下文 / 长文档抽取**：chunk 之间的信息衔接（overlap/父子块/记忆），跨块实体一致性，抽取聚合（map-reduce 之外的办法），以及\"抽取时给模型喂多少先验\"的实证结论。\n3. **叙事学取向**：事件抽取与事件链、剧情状态追踪（character state tracking）、角色关系演化追踪、伏笔/铺垫-回收（setup-payoff）的自动识别、narrative arc 的建模。有没有专门的 benchmark 和已被验证的机制。\n4. **增量/在线更新**：知识库随新章节增量更新时，如何只重算受影响部分（图增量的局部重算、摘要树的部分重建）——注意\"成本可控\"是硬要求。\n5. 中文/网文特有的问题：译名与异名、称谓随关系变化（尊称→直呼）、敬语层级——有没有现成机制或数据集。\n\n## 输出格式（中文，≤900 词，不要填充废话）\n一条机制一段，每段必须包含：**机制名** ｜ **出处**（arXiv id 或 URL，必须可核验；没核验到标【未核实】）｜ **一句话原理** ｜ **落地成本**（训练/GPU/付费 API；能否只用 LLM 代理离线跑；对 517 章的调用量级估算）｜ **对 CBB 的适配点**（改哪个环节、解决哪条痛点）｜ **风险**。\n最后给\"**明确不适用**\"一节。禁止编造论文标题或 id。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_8668a6c0-6cf4-4c60-a9ea-c6c8cdd40e7a\\task.output",
+  "updatedAt": "2026-09-22T13:21:14.341Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-22T13:21:14.341Z",
+  "totalDurationMs": 752066,
+  "totalTokens": 1469459,
+  "totalToolUseCount": 42,
+  "usage": {
+    "inputTokens": 1435481,
+    "outputTokens": 33978,
+    "totalTokens": 1469459,
+    "cacheReadTokens": 1418368,
+    "reasoningTokens": 21492
+  }
+}

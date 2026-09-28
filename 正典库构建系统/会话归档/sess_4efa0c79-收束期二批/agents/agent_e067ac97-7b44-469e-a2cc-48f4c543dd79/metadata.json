@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_e067ac97-7b44-469e-a2cc-48f4c543dd79",
+  "childSessionId": "sess_subagent_agent_e067ac97-7b44-469e-a2cc-48f4c543dd79",
+  "createdAt": "2026-09-24T07:11:44.693Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "Research GraphRAG core ideas",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_e067ac97-7b44-469e-a2cc-48f4c543dd79\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_e067ac97-7b44-469e-a2cc-48f4c543dd79\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_00_A8PRatDmuRNBAR4AuA3B4621",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是调研员。任务：把 **GraphRAG** 的核心理念查清并如实汇报。用 WebSearch + WebFetch 广泛检索一手源，**只报能核实的内容，任何拿不准的标【未核实】**，禁止编造数字或引文。\n\n必查一手源（尽量都打开原文/官方页，取其原话要点）：\n1. 论文 \"From Local to Global: A Graph RAG Approach to Query-Focused Summarization\"（arXiv 2404.16130，Microsoft Research，2024-04）：核心动机、索引期流程、查询期两种模式、评估方法（三个指标叫什么）、关键结论数字。\n2. microsoft/graphrag 仓库 README + 官方文档站（microsoft.github.io/graphrag）：indexing pipeline 的步骤名（如 text units / entity & relationship extraction / community detection / community reports）、默认用 Leiden 还是 Louvain、local search 与 global search 的区别、DRIFT Search 是什么、LazyGraphRAG 是什么（微软研究院博客，2024-11 前后）及其成本主张数字。\n3. 主要变体各自主张的核心机制与差异（能查到就查，查不到就标未核实）：LightRAG（arXiv 2410.05779，双层检索/关键词级）、HippoRAG 与 HippoRAG 2（海马索引/个性化 PageRank，arXiv 2405.14831 / 2502.14802）、KAG（蚂蚁，arXiv 2409.13731）、以及至少一篇 GraphRAG 综述（例如 arXiv 2501.00309 或同类）。\n4. 明确的成本/局限证据：索引期 LLM 调用量与金额量级（微软官方对 1M token 级语料的成本说法）、token 消耗、图质量依赖抽取质量、增量更新困难等。\n\n输出格式（中文，紧凑，事实密度高）：\n- **核心理念 5~7 条**：每条一句话 + 一句话支撑（来自哪个源）。\n- **索引期流水线**：步骤清单（用官方英文步骤名）+ 各步产物。\n- **查询期模式对比**：local / global / DRIFT（+ LazyGraphRAG 若存在）各自的适用问题类型与代价。\n- **评估方法**：指标名 + 与 baseline RAG 的对照方式。\n- **变体差异表**：系统名 | 一句话核心机制 | 与微软 GraphRAG 的关键差别 | 来源 URL。\n- **成本与局限**：分条，带数字与出处 URL。\n- **来源清单**：每条一行「标题 — URL （日期若有）」。凡我可能想核对的数字都要能回溯到具体 URL。\n如果某项检索不到权威来源，写「未找到权威来源」，不要用推测填空。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_e067ac97-7b44-469e-a2cc-48f4c543dd79\\task.output",
+  "updatedAt": "2026-09-24T07:15:39.952Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-24T07:15:39.952Z",
+  "totalDurationMs": 234801,
+  "totalTokens": 1583532,
+  "totalToolUseCount": 70,
+  "usage": {
+    "inputTokens": 1564715,
+    "outputTokens": 18817,
+    "totalTokens": 1583532,
+    "cacheReadTokens": 1540480,
+    "reasoningTokens": 3027
+  }
+}

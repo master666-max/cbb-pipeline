@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\run_tier1_deepseek.py", line 137, in <module>
+    main()
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\run_tier1_deepseek.py", line 81, in main
+    msgs1 = to_dicts(EN.extract_message(ctx1))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\脚本\venv312\Lib\site-packages\graphiti_core\prompts\extract_nodes.py", line 205, in extract_message
+    {context['custom_extraction_instructions']}
+     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'custom_extraction_instructions'

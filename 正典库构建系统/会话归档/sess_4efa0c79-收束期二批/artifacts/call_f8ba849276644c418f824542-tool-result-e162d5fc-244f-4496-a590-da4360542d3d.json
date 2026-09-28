@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T19:45:46.806Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2/fastscan.py — 多模式字面匹配粗筛（Phase F·G04；物理算法路 Q2）。\n\n双实现：ahocorasick_rs（Rust，LeftmostLongest 适配中文）> pyahocorasick > 正则回落。\n用法：粗筛命中的小窗口才跑正则——大词表场景比逐条正则快 1-2 个量级。\n缺席降级：AC 库不可用 → 纯正则（行为等价，性能回落）。\n\"\"\"\nfrom __future__ import annotations\n\nimport re\n\n_ENGINE = None\n_engine_checked = False\n\n\ndef _try_ac():\n    global _ENGINE, _engine_checked\n    if _engine_checked:\n        return _ENGINE\n    _engine_checked = True\n    for mod in (\"ahocorasick_rs\", \"ahocorasick\"):\n        try:\n            _ENGINE = __import__(mod)\n            _ENGINE._name = mod\n            return _ENGINE\n        except ImportError:\n            continue\n    _ENGINE = None\n    return None\n\n\ndef ac_available() -> bool:\n    return _try_ac() is not None\n\n\ndef ac_scan(text: str, patterns: list[str]) -> list[dict]:\n    \"\"\"AC 多模式匹配；命中返回 [{pattern, start, end}]。\"\"\"\n    ac = _try_ac()\n    if ac is None or not patterns:\n        return _regex_scan(text, patterns)\n    if hasattr(ac, \"AhoCorasick\"):\n        # ahocorasick_rs\n        acm = ac.AhoCorasick(patterns, matchkind=ac.MatchKind.LeftmostLongest if hasattr(ac, \"MatchKind\") else None)\n        return [{\"pattern\": patterns[p], \"start\": s, \"end\": e}\n                for p, s, e in acm.find_matches_as_tuples(text)]\n    # pyahocorasick\n    auto = ac.automaton()\n    for p in patterns:\n        auto.add_word(p, (p,))\n    auto.make_automaton()\n    out = []\n    for end, (p,) in auto.iter(text):\n        out.append({\"pattern\": p, \"start\": end - len(p) + 1, \"end\": end + 1})\n    return out\n\n\ndef _regex_scan(text: str, patterns: list[str]) -> list[dict]:\n    out = []\n    for p in patterns:\n        start = 0\n        while True:\n            idx = text.find(p, start)\n            if idx == -1:\n                break\n            out.append({\"pattern\": p, \"start\": idx, \"end\": idx + len(p)})\n            start = idx + 1\n    return out\n\n\ndef scan_patterns(text: str, patterns: list[str]) -> list[dict]:\n    \"\"\"统一入口：AC 可用→AC；不可用→字符串查找（纯 Python，零依赖回落）。\"\"\"\n    if not patterns or not text:\n        return []\n    ac = _try_ac()\n    if ac is not None and hasattr(ac, \"AhoCorasick\"):\n        try:\n            return ac_scan(text, patterns)\n        except Exception:\n            pass\n    return _regex_scan(text, patterns)\n",
+      "afterContentLength": 2246,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\fastscan.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_f8ba849276644c418f824542",
+  "toolName": "Write",
+  "version": 1
+}

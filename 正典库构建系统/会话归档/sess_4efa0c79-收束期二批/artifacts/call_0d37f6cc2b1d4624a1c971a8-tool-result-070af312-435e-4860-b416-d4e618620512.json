@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-17T15:49:47.693Z",
+  "files": [
+    {
+      "afterContent": "import io, re\n\nbase = r\"D:\\zcode专用！！！！危险！！！！！！！！！\"\np = base + r\"\\knowledge\\_index.md\"\ns = io.open(p, encoding=\"utf-8\").read()\n\n# 1) 计数 6 -> 5（第二次运行是误触发）\ns = s.replace(\"wrap-up 次数：6（\", \"wrap-up 次数：5（\", 1)\n\n# 2) 去重 task-064 索引行（保留第一处）\nlines = s.splitlines()\nseen = False\nout = []\nremoved = 0\nfor l in lines:\n    if \"task-064-上下文包编排v1.6\" in l and l.startswith(\"- `\"):\n        if seen:\n            removed += 1\n            continue\n        seen = True\n    out.append(l)\ns = \"\\n\".join(out) + (\"\\n\" if s.endswith(\"\\n\") else \"\")\n\nio.open(p, \"w\", encoding=\"utf-8\", newline=\"\\n\").write(s)\nprint(f\"fixed: count 6->5, removed {removed} duplicate line(s)\")\n",
+      "afterContentLength": 645,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\fix_index_dup.txt",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_0d37f6cc2b1d4624a1c971a8",
+  "toolName": "Write",
+  "version": 1
+}

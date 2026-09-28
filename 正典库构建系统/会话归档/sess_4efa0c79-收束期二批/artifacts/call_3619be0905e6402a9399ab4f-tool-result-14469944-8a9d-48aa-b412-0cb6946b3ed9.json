@@ -1,0 +1,63 @@
+{
+  "createdAt": "2026-09-26T19:38:03.601Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_lens.py — Phase F·G02 只读分析层。运行：py -X utf8 test_v3_lens.py\"\"\"\nimport json\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom cbb2 import lens  # noqa: E402\n\n\ndef test_tri_state_counts():\n    with tempfile.TemporaryDirectory() as td:\n        root = Path(td)\n        lib = root / \"libraries\" / \"character\" / \"provisional\"\n        lib.mkdir(parents=True)\n        for i in range(5):\n            (lib / f\"c{i}.json\").write_text(\"{}\", encoding=\"utf-8\")\n        qz = root / \"quarantine-zone\"\n        qz.mkdir(parents=True)\n        (qz / \"items.jsonl\").write_text(\n            json.dumps({\"item_id\": \"q1\", \"status\": \"pending\", \"subclass\": \"contradiction_pending\"}) + \"\\n\" +\n            json.dumps({\"item_id\": \"q2\", \"status\": \"confirmed\", \"subclass\": \"contradiction_pending\"}) + \"\\n\",\n            encoding=\"utf-8\")\n        r = lens.tri_state_counts(root)\n        assert r[\"provisional\"] == 5 and r[\"quarantine_pending\"] == 1 and r[\"quarantine_confirmed\"] == 1\n\n\ndef test_invalidation_chain():\n    with tempfile.TemporaryDirectory() as td:\n        root = Path(td)\n        root.mkdir()\n        (root / \"invalidations.jsonl\").write_text(\n            json.dumps({\"record_id\": \"e1\", \"t_invalid\": \"ch0020\"}) + \"\\n\", encoding=\"utf-8\")\n        r = lens.invalidation_chain(root)\n        assert len(r) == 1 and r[0][\"record_id\"] == \"e1\"\n\n\ndef test_complementary_count():\n    with tempfile.TemporaryDirectory() as td:\n        root = Path(td)\n        root.mkdir()\n        (root / \"complementary-statements.jsonl\").write_text(\n            json.dumps({\"event_id\": \"ce-1\"}) + \"\\n\" +\n            json.dumps({\"event_id\": \"ce-2\"}) + \"\\n\", encoding=\"utf-8\")\n        assert lens.complementary_count(root) == 2\n\n\ndef test_full_report():\n    with tempfile.TemporaryDirectory() as td:\n        root = Path(td)\n        root.mkdir()\n        r = lens.full_report(root)\n        assert \"tri_state\" in r and \"invalidations\" in r and \"complementary\" in r\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        fn()\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_lens.py",
+      "structuredPatch": [
+        {
+          "oldStart": 31,
+          "oldLines": 7,
+          "newStart": 31,
+          "newLines": 6,
+          "lines": [
+            " def test_invalidation_chain():",
+            "     with tempfile.TemporaryDirectory() as td:",
+            "         root = Path(td)",
+            "-        root.mkdir()",
+            "         (root / \"invalidations.jsonl\").write_text(",
+            "             json.dumps({\"record_id\": \"e1\", \"t_invalid\": \"ch0020\"}) + \"\\n\", encoding=\"utf-8\")",
+            "         r = lens.invalidation_chain(root)"
+          ]
+        },
+        {
+          "oldStart": 41,
+          "oldLines": 7,
+          "newStart": 40,
+          "newLines": 7,
+          "lines": [
+            " def test_complementary_count():",
+            "     with tempfile.TemporaryDirectory() as td:",
+            "         root = Path(td)",
+            "-        root.mkdir()",
+            "+        root.mkdir(exist_ok=True)",
+            "         (root / \"complementary-statements.jsonl\").write_text(",
+            "             json.dumps({\"event_id\": \"ce-1\"}) + \"\\n\" +",
+            "             json.dumps({\"event_id\": \"ce-2\"}) + \"\\n\", encoding=\"utf-8\")"
+          ]
+        },
+        {
+          "oldStart": 51,
+          "oldLines": 7,
+          "newStart": 50,
+          "newLines": 7,
+          "lines": [
+            " def test_full_report():",
+            "     with tempfile.TemporaryDirectory() as td:",
+            "         root = Path(td)",
+            "-        root.mkdir()",
+            "+        root.mkdir(exist_ok=True)",
+            "         r = lens.full_report(root)",
+            "         assert \"tri_state\" in r and \"invalidations\" in r and \"complementary\" in r",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_3619be0905e6402a9399ab4f",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,45 @@
+{
+  "agentId": "agent_3728163e-4982-4ed5-876d-bb180f73365a",
+  "childSessionId": "sess_subagent_agent_3728163e-4982-4ed5-876d-bb180f73365a",
+  "createdAt": "2026-09-27T17:53:02.127Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "串行·主流程休眠机制盘点",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_3728163e-4982-4ed5-876d-bb180f73365a\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_3728163e-4982-4ed5-876d-bb180f73365a\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_1a4e12b2c48f4db384efc31a",
+  "profileId": "Explore",
+  "profileSnapshot": {
+    "name": "Explore",
+    "description": "Read-only search agent for broad fan-out searches - when answering means sweeping many files, directories, or naming conventions and you only need the conclusion, not the file dumps. It reads excerpts rather than whole files, so it locates code; it doesn't review or audit it. Specify search breadth: \"medium\" for moderate exploration, \"very thorough\" for multiple locations and naming conventions.",
+    "color": "cyan",
+    "injectAgentsMd": false,
+    "source": "built-in",
+    "systemPrompt": "",
+    "tools": [
+      "Bash",
+      "Glob",
+      "Grep",
+      "Read",
+      "WebFetch",
+      "WebSearch",
+      "TodoWrite"
+    ]
+  },
+  "prompt": "你在 D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统 工作目录。任务：盘点**主流程里已建成但休眠/半接线/旗标关闭的机制**，判定哪些能在当前收束期激活复用。\n\n## 信息源（按序通读）\n1. 《全量重构-PhaseA-BUILD-STATE.md》——A/B/C/D/E 五相全部机制表（注意 B01 投影检查点/C01 门控动态切分（旗标 CBB_DYNAMIC_SPLIT 默认 off）/C02 上下文包/C05 检索层双拷贝/D01-D05/E01-E05）\n2. 《CBB全流程说明书-20260925.md》的 v3 差异章（文件尾部 2026-09-27 追加）——全机制清单\n3. 用 grep 在 `cbb-v2/cbb2/` 逐模块核实现状：plant.py/coldstore.py/notary.py/audit.py/er.py/fastscan.py/schedule.py/governance.py/lens.py/context.py/splitting.py/nli.py/derive.py 各有哪些公开函数、被谁调用（grep 调用点）——\"定义了但零调用点\"=休眠\n\n## 本阶段背景\n中文小说正典库（517 章，库 6,278 件）收束期：G16b 终审完成（1,273 晋升/4,887 hold——缺锚件为主，回填试点 87.5% 命中待全量）、U1 证据回填全量+G16c 重审待发车、G17 FSRS 首圈巡检待启动（schedule.py 就绪、队列 903 卡）、G18 v3.1 发布待做（build_release+E01 基建在）、G19 外部验收待发、G10/G11/Wilson 共用人工判例窗。\n\n## 已被其他路判定过的（跳过，不重复报）\n- NLI 三道闸后两道（合并前复核/巡检闸）、判卷掺植物、CUSUM 三前提、措辞偏置审计程序化、切分三档 A/B 协议、模型路由 CBB_MODEL_ROUTE、缺口队列人工窗分发口径——这些已由机制预调研路覆盖\n- plant capture→G17 锚定注入、audit.py 发现轨 hold 排序——已入\"现做\"清单\n- conformal 校准（G11 BLOCKED 等人工判例）——已知\n\n## 输出格式\n结构化清单，每条：`机制（模块.函数） | 现状（休眠/半接线/旗标关，附 grep 证据） | 本阶段适配点 | 激活成本 | 建议档位[现在激活/触发器挂起/保持休眠(理由)]`\n- 例：coldstore 压缩能否给 G18 发布包瘦身？notary 检查点能否当 G19 重放的验收锚？fastscan 能否给回填件的原句搜索提速？context.py 的 carry_summary 能否给人工窗当\"前情提要\"？\n- 每条必须 grep 实证调用现状，不许凭印象\n\n你的最终消息=完整清单（主会话直接合成的原料）。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_3728163e-4982-4ed5-876d-bb180f73365a\\task.output",
+  "updatedAt": "2026-09-27T18:06:45.381Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-27T18:06:45.380Z",
+  "totalDurationMs": 823048,
+  "totalTokens": 811899,
+  "totalToolUseCount": 35,
+  "usage": {
+    "inputTokens": 792227,
+    "outputTokens": 19672,
+    "totalTokens": 811899,
+    "cacheReadTokens": 740160,
+    "cacheWriteTokens": 0
+  }
+}

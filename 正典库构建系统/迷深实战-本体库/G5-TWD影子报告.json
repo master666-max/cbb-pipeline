@@ -1,0 +1,439 @@
+{
+ "summary": {
+  "unit": "G5-TWD-shadow",
+  "at": "2026-09-28T21:35:15",
+  "样本": 48,
+  "损失": {
+   "PP": 0.0,
+   "PN": 10.0,
+   "BP": 2.0,
+   "BN": 2.0,
+   "NP": 4.0,
+   "NN": 0.0,
+   "口径": "占位未标定——上线前必须 G10 判例窗口重标（工单四.1）"
+  },
+  "alpha": 0.8,
+  "beta": 0.5,
+  "prior_P(θ+)": 0.748,
+  "考官发射": {
+   "DEEPSEEK": {
+    "P(support|θ+)": 0.173,
+    "P(support|θ−)": 0.037,
+    "P(unsure|θ+)": 0.813,
+    "P(unsure|θ−)": 0.926
+   },
+   "GLM": {
+    "P(support|θ+)": 0.893,
+    "P(support|θ−)": 0.185,
+    "P(unsure|θ+)": 0.093,
+    "P(unsure|θ−)": 0.704
+   },
+   "THIRD": {
+    "P(support|θ+)": 0.893,
+    "P(support|θ−)": 0.04,
+    "P(unsure|θ+)": 0.093,
+    "P(unsure|θ−)": 0.76
+   }
+  },
+  "与B5一致率": "36/48",
+  "提前收线": "48/48 件双票即可三支定夺，其中与三票终判一致 43",
+  "建议隔离件": [
+   "cand-entity-6aca64481a1a",
+   "cand-event-03c18524d614",
+   "cand-event-04e2bb5aa366",
+   "cand-event-053ed2143000",
+   "cand-event-07dca361e6ca",
+   "plant-neg-00",
+   "plant-neg-01",
+   "plant-neg-02",
+   "plant-neg-03"
+  ],
+  "口径": "影子模式：只记分不判票，线上 ⌈2/3⌉ 继续服役（工单第五节）"
+ },
+ "rows": [
+  {
+   "record_id": "cand-entity-6aca64481a1a",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-entity-79f3a664b39c",
+   "b5": "hold",
+   "p": 0.8854,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-entity-c86a35fed1d4",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0070bd7c157b",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-00bc81320fdd",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-011d8f4be699",
+   "b5": "hold",
+   "p": 0.8854,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-014e95d4fc49",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-028916a1759a",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-02d0303f7ba4",
+   "b5": "human",
+   "p": 0.4561,
+   "twd": "abstain-gate",
+   "mapped": "human",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-02e2d7319ebd",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-02f29d9482a9",
+   "b5": "promote",
+   "p": 0.9993,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-031748880ab6",
+   "b5": "promote",
+   "p": 0.9993,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-031e9ac61274",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-03a7cab93827",
+   "b5": "hold",
+   "p": 0.8854,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-03c18524d614",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-03ed6ec5337e",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-03f0d2ab4bd5",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-04282a0c289e",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0440d2e03260",
+   "b5": "hold",
+   "p": 0.6071,
+   "twd": "boundary",
+   "mapped": "hold",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-04b702c6804b",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-04cfd6f544a2",
+   "b5": "hold",
+   "p": 0.6071,
+   "twd": "boundary",
+   "mapped": "hold",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-04d5345cc781",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-04e2bb5aa366",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-053ed2143000",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-06b4eb6be2b9",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-06fe6eaeef7e",
+   "b5": "hold",
+   "p": 0.6071,
+   "twd": "boundary",
+   "mapped": "hold",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-07406249f621",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-07671f093b19",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0797666fd3e5",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-07a9e6a3b23d",
+   "b5": "human",
+   "p": 0.2383,
+   "twd": "abstain-gate",
+   "mapped": "human",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-07dca361e6ca",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-08404a9fc694",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-08919fb42316",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-08bb87631c22",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0a0fd655d385",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0aca3c09c6d6",
+   "b5": "human",
+   "p": 0.4561,
+   "twd": "abstain-gate",
+   "mapped": "human",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0ae7d9d1f0b4",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0ae7fcd355a3",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0b3a18a29d47",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "cand-event-0c40c341c3bb",
+   "b5": "promote",
+   "p": 0.9965,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": false
+  },
+  {
+   "record_id": "plant-pos-00--m-m-m-m",
+   "b5": "promote",
+   "p": 0.9993,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": true
+  },
+  {
+   "record_id": "plant-pos-01-285b-m50",
+   "b5": "promote",
+   "p": 0.9993,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": true
+  },
+  {
+   "record_id": "plant-pos-02--m-m-m-m",
+   "b5": "promote",
+   "p": 0.9993,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": true
+  },
+  {
+   "record_id": "plant-pos-03--m-m-m-m",
+   "b5": "promote",
+   "p": 0.9993,
+   "twd": "positive",
+   "mapped": "promote",
+   "is_plant": true
+  },
+  {
+   "record_id": "plant-neg-00",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": true
+  },
+  {
+   "record_id": "plant-neg-01",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": true
+  },
+  {
+   "record_id": "plant-neg-02",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": true
+  },
+  {
+   "record_id": "plant-neg-03",
+   "b5": "hold",
+   "p": 0.0407,
+   "twd": "negative",
+   "mapped": "quarantine",
+   "is_plant": true
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-09-24T20:53:03.091Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"lightrag_bridge.py — 实验件：LightRAG 第五路召回（读副本，零查询期 LLM）。\n\n纪律：\n  · 关键词全部外部传入（hl/ll_keywords）→ 查询期 LLM 调用必须为 0（llm_calls() 断言）；\n  · 只取结构化上下文（aquery_data），不生成、不裁决——产物并回主检索 RRF；\n  · 副本只读（本件对正典库与 LightRAG 库均无写入）。\n\"\"\"\nfrom __future__ import annotations\n\nimport asyncio\nimport json\nimport re\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nROOT = HERE.parent.parent\nWORK = ROOT / \"迷深实战-工作区\" / \"索引\" / \"lightrag-exp\"\n\n_rag = None\nCNT = {\"llm_calls\": 0, \"emb_calls\": 0, \"emb_texts\": 0}\n\n\ndef llm_calls() -> int:\n    return CNT[\"llm_calls\"]\n\n\ndef _llm_stub(prompt, system_prompt=None, history_messages=[], **kwargs):  # noqa: ANN001\n    CNT[\"llm_calls\"] += 1\n    return \"\"\n\n\ndef _embed_batch(texts: list[str]) -> list[list[float]]:\n    import urllib.request\n    out: list[list[float]] = []\n    B = 16\n    for i in range(0, len(texts), B):\n        b = texts[i:i + B]\n        payload = json.dumps({\"model\": \"text-embedding-qwen3-embedding-8b@q4_k_m\", \"input\": b},\n                             ensure_ascii=False).encode(\"utf-8\")\n        req = urllib.request.Request(\"http://127.0.0.1:8080/v1/embeddings\", data=payload,\n                                     headers={\"Content-Type\": \"application/json\"})\n        with urllib.request.urlopen(req, timeout=300) as r:\n            d = json.loads(r.read().decode(\"utf-8\"))\n        arr = sorted(d[\"data\"], key=lambda x: x[\"index\"])\n        out.extend(x[\"embedding\"] for x in arr)\n        CNT[\"emb_calls\"] += 1\n    CNT[\"emb_texts\"] += len(texts)\n    return out\n\n\ndef mechanical_keywords(query: str, store_root: Path) -> tuple[list[str], list[str]]:\n    \"\"\"ll=实体级关键词（别名命中+分词项）；hl=主题级（本实验为空——主题词表未建，如实留空）。\"\"\"\n    sys.path.insert(0, str(HERE))\n    import 检索层 as jl\n    ll = [h[\"name\"] for h in jl.alias_recall(query, Path(store_root))]\n    terms = [t for t in re.split(r\"[\\s，。？！、「」·]+\", query) if len(t) >= 2]\n    for t in terms:\n        if t not in ll:\n            ll.append(t)\n    return [], ll[:20]\n\n\ndef get_rag():\n    global _rag\n    if _rag is None:\n        from lightrag import LightRAG\n        from lightrag.utils import EmbeddingFunc\n        WORK.mkdir(parents=True, exist_ok=True)\n        _rag = LightRAG(working_dir=str(WORK),\n                        embedding_func=EmbeddingFunc(embedding_dim=4096, func=_embed_batch),\n                        llm_model_func=_llm_stub, llm_model_name=\"stub-no-llm\")\n    return _rag\n\n\ndef _rid2name(store_root: Path) -> dict[str, str]:\n    m: dict[str, str] = {}\n    for f in Path(store_root).glob(\"libraries/*/*/*.json\"):\n        try:\n            rec = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        nm = (rec.get(\"canonical\") or {}).get(\"name\")\n        if nm:\n            m[rec.get(\"record_id\")] = nm\n    return m\n\n\ndef fifth_recall(query: str, store_root: Path, top_k: int = 10, mode: str = \"local\") -> dict:\n    \"\"\"第五路：LightRAG 图游走 → 实体名列表（并给出结构化明细供链组装）。\"\"\"\n    rag = get_rag()\n    hl, ll = mechanical_keywords(query, store_root)\n    from lightrag import QueryParam\n    param = QueryParam(mode=mode, only_need_context=True, top_k=top_k,\n                       ll_keywords=ll, hl_keywords=hl, enable_rerank=False)\n    data = asyncio.run(rag.aquery_data(query, param=param))\n    ents, rels, chunks = [], [], []\n    if isinstance(data, dict):\n        ents = data.get(\"entities\") or []\n        rels = data.get(\"relationships\") or []\n        chunks = data.get(\"chunks\") or []\n    names: list[str] = []\n    for e in ents:\n        n = e.get(\"entity_id\") or e.get(\"entity_name\") if isinstance(e, dict) else str(e)\n        if n and n not in names:\n            names.append(n)\n    m = _rid2name(store_root)\n    for c in chunks:\n        rid = (c.get(\"source_id\") or c.get(\"id\") or \"\") if isinstance(c, dict) else \"\"\n        for piece in str(rid).split(\"<SEP>\"):\n            nm = m.get(piece.strip())\n            if nm and nm not in names:\n                names.append(nm)\n    return {\"names\": names[:top_k], \"entities\": len(ents), \"relationships\": len(rels),\n            \"chunks\": len(chunks), \"mode\": mode, \"ll_keywords\": ll}\n\n\nif __name__ == \"__main__\":\n    import argparse\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--store\", default=str(ROOT / \"迷深实战-本体库\"))\n    ap.add_argument(\"--q\", required=True)\n    ns = ap.parse_args()\n    rep = fifth_recall(ns.q, Path(ns.store))\n    rep[\"llm_calls\"] = CNT[\"llm_calls\"]\n    print(json.dumps(rep, ensure_ascii=False, indent=1))\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\lightrag_bridge.py",
+      "structuredPatch": [
+        {
+          "oldStart": 18,
+          "oldLines": 6,
+          "newStart": 18,
+          "newLines": 7,
+          "lines": [
+            " WORK = ROOT / \"迷深实战-工作区\" / \"索引\" / \"lightrag-exp\"",
+            " ",
+            " _rag = None",
+            "+_initialized = False",
+            " CNT = {\"llm_calls\": 0, \"emb_calls\": 0, \"emb_texts\": 0}",
+            " ",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_b95ed0d348804e18a5e9ce88",
+  "toolName": "Edit",
+  "version": 1
+}

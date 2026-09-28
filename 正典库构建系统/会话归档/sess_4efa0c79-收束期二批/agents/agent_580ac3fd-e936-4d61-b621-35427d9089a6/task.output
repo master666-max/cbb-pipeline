@@ -1,0 +1,57 @@
+I have all the primary sources verified. Here is the report.
+
+---
+
+# Graphiti/Zep 与 Neo4j SimpleKGPipeline 摄取管线对照
+
+## (a) Graphiti 摄取管线（`add_episode`，逐步）
+
+代码主序见 `graphiti_core/graphiti.py::add_episode`（约 L1043–1290）：
+
+1. **取上下文**：`retrieve_episodes(reference_time, last_n=RELEVANT_SCHEMA_LIMIT=10, group_ids=[group_id])`，或直接用调用方传入的 `previous_episode_uuids`。
+2. **建/取 episode 节点**：`EpisodeType.text | message | json`（message 需 `role: message` 格式，json 必须传 JSON 字符串）；未给 `uuid` 则 uuid4，`valid_at=reference_time`。
+3. **LLM 抽实体**：`extract_nodes()`（`utils/maintenance/node_operations.py:70`），同时生成实体摘要。
+4. **实体消解（对已有图）**：`resolve_extracted_nodes()`（同文件 L627）：先按名做向量召回（`NODE_DEDUP_CANDIDATE_LIMIT=15`、cosine≥0.6）+ 归一化名精确匹配 + MinHash/LSH 模糊匹配（`dedup_helpers.py`），仍歧义才升级一次 LLM 去重提示。
+5. **LLM 抽边**：`extract_edges()`（`edge_operations.py:117`），单次调用抽三元组 + `valid_at/invalid_at`；受 `edge_type_map`/`edge_types` 约束。
+6. **边去重/矛盾判定**：`resolve_extracted_edges()`→`resolve_extracted_edge()`（`edge_operations.py:325/623`）。先"逐字相同 + 同端点"快速路径复用旧边并追加 episode uuid；否则用 `EDGE_HYBRID_SEARCH_RRF` 取 related_edges 与 invalidation candidates，一次 LLM 返回 `duplicate_facts` / `contradicted_facts`（`prompts/dedupe_edges.py`）。
+7. **失效不删除**：`resolve_edge_contradictions()`（L538）把被否定旧边的 `invalid_at` 设为新边 `valid_at`；若新边早于更晚的已存在边，则新边自身被置 `expired_at/invalid_at`——旧边永久留在图中（双时间：`created_at/expired_at/valid_at/invalid_at`）。
+8. **抽属性/摘要**：`extract_attributes_from_nodes()`（`node_operations.py:726`），按实体类型的 Pydantic 模型抽属性并批量更新摘要。
+9. **落库**：`_process_episode_data()` 写 episode + `MENTIONS` episodic edges + entity edges（含被失效边）；社区更新可选。
+
+**批量**：`add_episode_bulk` 顺序为"存全部 episode → 取各自前文 → 抽节点/边（可合并为单次 combined_extraction）→ bulk 去重 → 对已有图消解 → 一次写入"。⚠️ 文档写"bulk 不做边失效"（adding-episodes），而当前 main 的 docstring 与实现明确走 `resolve_extracted_edges`/`dedupe_edges_bulk` 并把 `invalidated_edges` 一并落库——**文档与代码不一致**（以 main 源码为准）。
+
+**并发/幂等**：`SEMAPHORE_LIMIT` 控并发（README 称默认 10，`helpers.py:38` 默认 20，**不一致**）；单个 episode 需顺序 await；可传 `uuid` 复用同一 episode 节点（幂等），`group_id` 做分区隔离（检索均带 group_ids 过滤）。节点 uuid 为 uuid4，**不存在 name+group_id 的确定性 uuid5**（全库 grep 无 `uuid5`）。
+
+**成本/风险**（源码计数，非官方数字）：每 episode 至少 2 次 LLM 调用，另加节点去重 1 次、**每条边 1 次去重/矛盾判定 + 每条新边 1 次时间戳**、每节点 1 次属性抽取，量级为 O(节点+边)。文档化限制：强依赖结构化 JSON 输出，小模型本地模型易失败；默认低并发以避 429。
+
+## (b) Neo4j SimpleKGPipeline（`neo4j-graphrag-python`）
+
+组件顺序固定（`simple_kg_builder.py:104-112`）：`file_loader → splitter → chunk_embedder → schema → extractor → pruner → writer → resolver`（resolver 可用 `perform_entity_resolution=False` 关闭）。
+
+- loader：内置 .pdf/.md/.markdown；splitter 默认 `FixedSizeSplitter`；chunk_embedder 仅嵌入 chunk。
+- schema：手动 `GraphSchema`（node/relationship types + properties + patterns），或 `FREE`/`EXTRACTED`，缺省时用 LLM 自动抽 schema；`additional_node_types` 控制是否放行 schema 外类型。
+- extractor：`LLMEntityRelationExtractor` 逐 chunk 抽实体/关系，支持 structured output，`on_error` 默认 `IGNORE`（失败 chunk 跳过），可建 Document/Chunk 词法图。
+- pruner：`GraphPruning` 按 schema 清理，理由枚举 `NOT_IN_SCHEMA / MISSING_REQUIRED_PROPERTY / NO_PROPERTY_LEFT / INVALID_START_OR_END_NODE / INVALID_PATTERN / MISSING_LABEL`。
+- resolver：**写库之后**运行；默认 `SinglePropertyExactMatchResolver`（同 label + `name` 完全一致，用 `apoc.refactor.mergeNodes(properties:'discard', mergeRels:true)` 合并），可选 `SpaCySemanticMatchResolver` / `FuzzyMatchResolver`。
+
+注：当前包中**没有** `KnowledgeGraphBuilder` 类（PyPI 描述与文档仅 `SimpleKGPipeline`）；"Knowledge Graph Builder" 是文档页名。【未核实：旧称/Neo4j Labs LLM Graph Builder 应用的说法】
+
+## (c) 与"纯抽取→入库"的差异
+
+| 能力 | Graphiti | SimpleKGPipeline |
+|---|---|---|
+| 抽前先检索已有图 | 有（前文 episode + 已有节点/边候选） | 无，抽取只读 chunk |
+| 对已有图做实体消解 | 抽取后立即消解（向量+确定性+LLM 升级） | 写库后库内按 label+属性精确/模糊合并 |
+| 显式边失效 | 有，`invalid_at` 保留历史；重述=复用旧边、矛盾=失效旧边 | 无（无时间戳、无矛盾概念） |
+| 模式约束抽取 | Pydantic `entity_types/edge_types`+`edge_type_map` | schema 前置约束 **+** 抽取后剪枝校验，可 FREE 放开 |
+| 属性/时间戳 | 每边双时间 + 类型化属性 + 单独时间戳 pass | 仅 schema 声明的属性，无有效期 |
+| 溯源与分区 | episode（原文可查）+ `group_id` | Document/Chunk 词法图，无分区 |
+
+## (d) 来源
+
+- Graphiti 源码/README：https://github.com/getzep/graphiti （`graphiti_core/graphiti.py`、`utils/maintenance/node_operations.py`、`utils/maintenance/edge_operations.py`、`utils/maintenance/dedup_helpers.py`、`utils/bulk_utils.py`、`prompts/dedupe_edges.py`、`helpers.py`）
+- 官方文档：https://help.getzep.com/graphiti/core-concepts/adding-episodes.md ；https://help.getzep.com/how-graph-creation-works.md ；https://help.getzep.com/adding-batch-data.md （Batch API：单批 50,000 条、每次 `batch.add` ≤350、`strict_ontology`）；https://help.getzep.com/zep-ingest.md ；https://help.getzep.com/prepare-data-for-ingestion.md （episode ≤10,000 字符、消息 4,096 字符）；https://help.getzep.com/facts.md
+- 论文：https://arxiv.org/abs/2501.13956 （双时间四戳、`t_invalid = t_valid(新边)`、前文 n=4；论文的 reflexion 步骤在当前源码中已不存在）
+- Neo4j：https://neo4j.com/docs/neo4j-graphrag-python/current/user_guide_kg_builder.html ；https://github.com/neo4j/neo4j-graphrag-python （`src/neo4j_graphrag/experimental/pipeline/config/template_pipeline/simple_kg_builder.py`、`src/neo4j_graphrag/components/{resolver.py,graph_pruning.py,entity_relation_extractor.py}`）；https://pypi.org/project/neo4j-graphrag/
+
+【未核实】：Graphiti 每 episode 的官方 LLM 调用数/成本数字（论文与文档均未给出，上文为源码推导）；SimpleKGPipeline 的"KnowledgeGraphBuilder"旧称来源。

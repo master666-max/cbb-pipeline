@@ -1,0 +1,135 @@
+调研完成，信息已足够交叉验证。以下为最终深度报告。
+
+---
+
+# 中文小说正典库管线 · 语言学/校勘学双线深度调研报告
+（调研日 2026-09-26/27；所有 GitHub 元数据、license、版本号均经 api/raw 通道实测核实；未能实测处以【待确认】标注）
+
+## A. 逐题深度发现
+
+### 1. 校勘学（textual criticism）工具化
+
+**1.1 CollateX 现状**
+- 现状确认：仍在维护。仓库 [interedition/collatex](https://github.com/interedition/collatex)（GPL-3.0，100 stars，最近 push **2026-01-22**）；Python 版 [PyPI collatex 2.3](https://pypi.org/project/collatex/)（2023-11 发布，changelog 2023-09-08，已修 Python 3.10+ 兼容）。功能：读入 ≥2 个版本（witness）→ 分词 → 对齐（含移位/换位检测）→ 输出对齐表、变体图（SVG）、JSON、HTML 及 **TEI parallel segmentation XML**；近邻匹配需 python-levenshtein。官网 [collatex.net](http://collatex.net/)。
+- 中文适配：CollateX 按空白/内建规则切分，**不内建中文分词**——中文案例需预分词（jieba/字级）后喂入；未检索到权威中文 CollateX 案例论文（检索通道受限）【待确认】。字级切分对版本校对（异文多为单字）反而合适，建议字级 + 可选词级双层。
+
+**1.2 Stemma/谱系构建算法**
+- [CRAN stemmatology 0.3.2](https://cran.r-project.org/web/packages/stemmatology/index.html)（GPL-3，Camps & Cafiero，2019-04-10 发布，依赖 igraph/xml2）：实现“基于分歧（disagreement-based）”的谱系算法，方法论文 DOI [10.1484/M.LECTIO-EB.5.102565](https://doi.org/10.1484/M.LECTIO-EB.5.102565)；代码 [Jean-Baptiste-Camps/stemmatology](https://github.com/Jean-Baptiste-Camps/stemmatology)。2019 年后未再发版——**算法思想可借鉴，工程上建议按其论文自实现**（Python）。
+- 谱系学奠基件（形式化参照）：Barbrook, Howe, Robinson & Parkinson, "The phylogeny of The Canterbury Tales", *Nature* 394 (1998)，DOI [10.1038/29667](https://doi.org/10.1038/29667)——用最大简约法建抄本谱系，关键结论：抄本传统存在 **contamination（混染）**，即线性谱系无法解释的横向借用。这**正是 supersede 链的形式化分界**：混染存在 ⇒ 版本关系是网络不是链。
+- 中文文本复用/谱系近邻：2025 年新件 AncientTRD（古汉语文本复用检测，*Applied Sciences* 2025，DOI [10.3390/app151910475](https://doi.org/10.3390/app151910475)）；MARKUS/COMPARATIVUS 工具链（De Weerdt 等，*Journal of Chinese History* 2020，DOI [10.1017/jch.2020.23](https://doi.org/10.1017/jch.2020.23)，标注+复用分析）。用户点名的 CHI-knowledge：本环境访问 [chi-knowledge.org](https://chi-knowledge.org) 返回空（JS-only/网络不可达），GitHub org 亦 404，其现状【待确认】。
+
+**1.3 “异文登记”传统规范 → schema 借鉴**
+- TEI P5（当前版 **4.12.0**，2026-07-28，rev 113e933e2，各元素页实测）校勘模块 textcrit：[\<app\>（apparatus entry）](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-app.html)——一条校勘记录 = 可选 lemma（基准文）+ 一或多个 rdg（异文）+ wit（见证版本）+ witDetail（异文评注），支持 **location-referenced 与 double-end-point 两种定位法**、rdgGrp 按版本聚类异文。这是六百年学术史沉淀的“异文登记”形式 schema：**互补陈述事件 ≙ 一条 app；别名 ≙ 同位 rdg 的规范化登记**。
+
+### 2. 人类语言学资源
+
+**2.1 Universal Dependencies 中文树库**（全部实测，当前 UD 2.18 周期，仓库 push 2026-05-06）
+- [UD_Chinese-GSD](https://universaldependencies.org/treebanks/zh_gsd/index.html)：**CC BY-SA 4.0**，4997 句/123,289 token，wiki 语域，繁体底本（Google 转换）。
+- UD_Chinese-GSDSimp：**CC BY-SA 4.0**，同内容的简体版（4997 句/123,289 token）。
+- [UD_Chinese-PUD](https://universaldependencies.org/treebanks/zh_pud/index.html)：**CC BY-SA 3.0**，1000 句/21,415 token，CoNLL 2017 并行测试集，news+wiki，**当前无 maintainer**。
+- UD_Chinese-HK（粤语书面）、UD_Chinese-CFL（中文二语学习者语料）均存在（仓库实测）。
+- 中文适配：语域为 wiki/news，**无小说语域树库**（见 C）；CC BY-SA 的 share-alike 对“抽取句法模式/谓词模板”无碍， redistribution 数据需同许可。
+- 注：GitHub 仓库 license 字段 NOASSERTION（UD 惯例，license 声明在树库页内），以树库页为准。
+
+**2.2 HowNet 知网 / OpenHowNet**（[thunlp/OpenHowNet](https://github.com/thunlp/OpenHowNet) 实测）
+- 代码 **MIT**，641 stars；数据：**HowNet 词典 237,973 个概念**（中英双语词/短语），约 2,000 个义原（sememe），每条含 W_C（中文词）/G_C（词性）/S_C（情感极性）/E_C（例句）/DEF（义原式定义，如 `{willing|愿意}`），[openhownet.thunlp.org/download](https://openhownet.thunlp.org/download) 直接下载；pip 装 `OpenHowNet`；引 Qi et al. 2019（arXiv:1901.09957）。董振东官方站 [keenage.com](http://www.keenage.com) 仍在线（HTTP 200 实测）。
+- 中文适配：原生中文资源，无适配成本。**注意**：HowNet 数据本体历史上限研究用途，repo 的 MIT 只覆盖 API 代码，**数据条款【待确认】**（建议管线内用、不对外重分发）。
+
+**2.3 中文 FrameNet（CFN）**
+- 项目方为山西大学（李茹团队，Global FrameNet 成员）。**官方在线平台在本环境不可达**（cfn.mitlab.cn DNS 解析失败；cfn.hit.edu.cn 旧站死亡；cfn.sxu.edu.cn 仅回学校主页）——**数据可得性为本次最大空白**【待确认】。
+- 学术锚点："Automatic Labeling of Semantic Roles on Chinese FrameNet"，《软件学报》2010，DOI [10.3724/sp.j.1001.2010.03756](https://doi.org/10.3724/sp.j.1001.2010.03756)；可用镜像/衍生物：[ntunlplab/FrameNet-CFN-Lex](https://github.com/ntunlplab/FrameNet-CFN-Lex)（36K 词元、779 框架，2022，**未声明 license**，仅可作参考不作依赖）。CFN 数据历史惯例为申请制、限研究用途【待确认】。
+
+**2.4 谓词-论元结构（CAS/CPB）**
+- 中文命题库 CPB（Chinese Proposition Bank，基于 CTB 的动词论元标注；OntoNotes 5.0 系内含中文 PropBank 与 CKB 命题知识库）为 LDC 发行物：**需 LDC 会员/签约付费**，本环境访问 LDC 目录页被拒（404/拦截），具体编目号【待确认】——**不建议作为管线直接依赖**，见 B3 替代方案（CFN 框架 + HowNet 义原 + UD 句法验证）。
+
+### 3. 称谓学与专名学
+
+**3.1 可计算称谓本体（实测最强的开源件）**
+- [mumuy/relationship](https://github.com/mumuy/relationship)（**MIT**，3,729 stars，**最近 push 2026-09-21，高度活跃**；npm 包 `relationship.js`；演示 [passer-by.com/relationship](https://passer-by.com/relationship/)）：中文亲属称谓计算引擎。实测能力（README 验证）：正向（`妈妈的妈妈的哥哥` → `舅外公`）、**逆向查找**（`七舅姥爷`+reverse → `甥外孙`）、关系链分解（type:'chain'）、双方合称（type:'pair'）、**本人性别参数、最短关系、地区模式（setMode 定制方言/地域叫法）**；底层为 JSON 数据驱动的称谓本体。这可直接充当“称谓变体归一”的计算内核。
+- 学术侧：CBDB 的亲属关系类型表（KINSHIP 码表）是历史人物域的称谓/亲属关系编码体系（见 3.2）；社交称谓/头衔的计算本体**未发现公开标准件**（空白，见 C）。
+
+**3.2 人名结构（姓+名+字+号+绰号）形式化**
+- **TEI P5 namesdates 模块**（4.12.0 实测）：[\<persName\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-persName.html)（"forenames, surnames, honorifics, added names"）、**[\<addName\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-addName.html)（"nickname, epithet, or alias"，带 @type 分类、@nymRef 指向规范名 <nym>、att.canonical @key/@ref）**、[\<listPerson\>/\<person\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPerson.html)（人物注册表）。这就是别名表的现成国际 schema：**规范名 = nym/canonical key；字/号/绰号 = addName[@type]**。
+- **CBDB（中国历代人物传记资料库）**：约 **649,533 人**（2025 年 5 月），含别名（字/号/室名/谥号）、亲属关系、仕宦等字段；主站 [cbdb.hsites.harvard.edu](https://cbdb.hsites.harvard.edu/)（经其 README 验证）；分发主通道已迁 **HuggingFace [datasets/cbdb/cbdb-sqlite](https://huggingface.co/datasets/cbdb/cbdb-sqlite)**（latest.zip + SHA-256 清单，[cbdb-project/cbdb_sqlite](https://github.com/cbdb-project/cbdb_sqlite) README 验证）；组织活跃：在线主服务器 repo push **2026-09-24**，[named-entities-for-premodern-chinese-history-research](https://github.com/cbdb-project/named-entities-for-premodern-chinese-history-research)（古汉语文史专名 NER 词库，push 2026-09-19）、CBDB-disambiguation-automation（人名消歧自动化，2026-07）、CIDOC-CRM 实验映射（2018）。使用条款为学术免费【待确认原文】。**CBDB 的 alias 类型枚举（字/号/…）+ 人名消歧实践是最贴近本管线的先例**。
+- 拼写/结构规范：GB/T 28039-2011《中国人名汉语拼音字母拼写规则》存在但 openstd 在线检索页未能抓取验证【待确认】。
+
+### 4. 心理语言学可迁移面
+
+**4.1 Surprisal / 加工难度**
+- 理论-工具化基线（实测文献）：Oh & Schuler, "Transformer-Based LM Surprisal Predicts Human Reading Times Best with About Two Billion Training Tokens"（[Findings EMNLP 2023](https://aclanthology.org/2023.findings-emnlp.128/)，DOI 10.18653/v1/2023.findings-emnlp.128）——给出 surprisal 估计器的模型规模配比；"The Linearity of the Effect of Surprisal on Reading Times across Languages"（[Findings EMNLP 2023](https://aclanthology.org/2023.findings-emnlp.1052/)，DOI 10.18653/v1/2023.findings-emnlp.1052，跨语言眼动证据，是否含中文【待确认】）；CoNLL 2024 重复阅读/信息搜寻中的 surprisal-阅读时间效应（DOI 10.18653/v1/2024.conll-1.17）。
+- **中文适配：任何 causal LM（中文 GPT 系）可逐字算 surprisal，方法可直接迁移；但公开的中文眼动/自步阅读标注语料未验证到理想开源件**（著名的 Dundee 为英语，CMCL 2021 DOI 10.18653/v1/2021.cmcl-1.21 经核验即英语 Dundee）→ 空白，见 C。
+- 落地建议形态：不用阅读时间校准，直接把“逐字 surprisal 分布”作为**章节文本难度特征**之一。
+
+**4.2 文本难度分级与 AoA**
+- AoA 词典（实测命中）：**"Age of acquisition ratings for 19,716 simplified Chinese words"，Behavior Research Methods 2020，DOI [10.3758/s13428-020-01455-8](https://doi.org/10.3758/s13428-020-01455-8)**——简体词 AoA 主流大件，随文补充材料分发（license 未单列【待确认】）；辅件："A Database of Chinese-English Bilingual Speakers: Ratings of AoA and Familiarity"，Frontiers in Psychology 2020，DOI [10.3389/fpsyg.2020.554785](https://doi.org/10.3389/fpsyg.2020.554785)。用途：“早期章节用词 vs 后期章节”可用 AoA 分层 + 频率分层做纵向对比。
+- 频率基线：SUBTLEX-CH（影视字幕词频），PLoS ONE 2010，DOI [10.1371/journal.pone.0010729](https://doi.org/10.1371/journal.pone.0010729)（PLoS 开放获取）。
+- 中文可读性分级：开源工具 [leileibama/AlphaReadabilityChinese](https://github.com/leileibama/AlphaReadabilityChinese)（句长/词长/易读性公式，2024-03 有 push，**未声明 license**）；数据集：**CSS 中文句子简化数据集（ACL 2023，DOI 10.18653/v1/2023.acl-long.462，人工简化对）**与 CSSWiki（LREC，DOI 10.63317/37ni46z23snp）；官方分级词汇锚点：GF0025-2021《国际中文教育中文水平等级标准》（三等九级词表，正式出版物，在线全文未验证【待确认】）；GitHub 上 HSK 词表件多为无 license（实测数件均 none/NOASSERTION）。iFlytek 类商业分级：无公开可验证件 → 排除。
+
+### 5. 语法化与术语演变
+
+**5.1 HistWords 语义演变谱系**（[nlp.stanford.edu/projects/histwords](https://nlp.stanford.edu/projects/histwords/) 实测）
+- 语言覆盖：英/法/德 + **简体中文（Google N-Grams chi-sim-all，1950s–1990s，逐十年 SGNS 词向量）**。**数据 license：ODC PDDL 1.0（公有领域贡献，无署名义务）**；代码 [williamleif/histwords](https://github.com/williamleif/histwords) **Apache-2.0**（仓库实测）。配套统计律：Law of conformity（高频词变化慢）、Law of innovation（多义词变化快）——可直接改造成**词表漂移预警指标**。
+- 中文适配局限：仅 1950s–1990s 简体，不含古汉/网络文学语域；年代分辨率十年粒度。
+
+**5.2 全国科技名词委（CNCTST）术语审定流程学**
+- 实测：[cnctst.cn](https://www.cnctst.cn/) 在线（栏目：机构概况/审定公布/宣传推广（含“术语在线”）/学术科研（《中国科技术语》、术语学建设书系）/两岸名词对照/出版物）；现役门户指向 [www.cnterm.cn](https://www.cnterm.cn/)（审定公布/审定动态栏目实测）；**[术语在线 termonline.cn](https://www.termonline.cn) 实测在线，页面自述“由全国科学技术名词审定委员会主办”**。
+- 流程阶段（立项→征求意见稿→初审→终审→统一公布）：出自《科学技术名词审定规则及方法》，**原文页在本网络不可达，阶段描述【待确认】**——但其流程骨架与“两岸名词对照”实践是可借的**流程学模板**：术语状态分态（征求意见/送审/公布/替代）、公布带生效版本、繁简/两岸对照并行记账。管线映射见 B4。
+
+### 6. 数字人文基础设施
+
+**6.1 TEI P5 对小说层级的编码细节**（全部实测，P5 **4.12.0**，2026-07-28）
+- 层级：`text/body` 下 `div[@type=volume|chapter|scene]`（Default Text Structure 章）；说话人两种武器：
+  - **[\<sp\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sp.html)**：定义明文写有 "an individual speech in a performance text, **or a passage presented as such in a prose or verse text**"——即散文小说中的对话段也用 `sp`，带 @who/@toWhom 指向人物 ID；
+  - **[\<said\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-said.html)**："passages thought or spoken aloud… **whether by real people or fictional characters**"，带 @who/@toWhom/**@aloud（心声 vs 出声）**——对“心理描写 vs 对白”的区分是现成属性。
+- 人物注册表：`profileDesc/particDesc` 下 [\<listPerson\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPerson.html)（"participants… people referred to in a historical source"），内嵌 `<person>` + `<persName>` 群 + `<addName[@type][@nymRef]>`——**卷/章/场景/说话人/别名注册表全套齐备**；跨层链接用 att.global.linking 的 @corresp/@sameAs/@next/@prev（各元素属性表实测在列），可做 standoff 化的互补陈述挂接。
+
+**6.2 DH 工具链 2025–2026 可借清单**（均实测存活）
+- CBDB 全家桶（SQLite 周更于 HF、古文史 NER 词库 2026-09 更新、人名消歧自动化）——专名消歧与别名记账直接可借；
+- [CollateX](https://github.com/interedition/collatex)（2026-01 仍在维护）——版本校对引擎；
+- MARKUS/COMPARATIVUS（DOI [10.1017/jch.2020.23](https://doi.org/10.1017/jch.2020.23)）——古汉语文本标注与复用对比；
+- AncientTRD（DOI [10.3390/app151910475](https://doi.org/10.3390/app151910475)，2025）——古汉语文本复用检测新件；
+- [termonline.cn](https://www.termonline.cn)——术语状态查询的权威界面；
+- DocuSky（[docusky.org.tw](https://docusky.org.tw) 根域 200，但具体入口路径未确证【待确认】）——中文学术文本整理平台参照；
+- CHI-knowledge 不可达【待确认】（见 A1.2 替代锚点）。
+
+---
+
+## B. 对管线 4 接缝的接入建议
+
+**B1. 别名表 schema（接 TEI namesdates + CBDB + relationship.js）**
+- 采纳 TEI 三元结构为 schema 骨架：`canonical key（nym）← addName[@type][@nymRef]`；`type` 枚举直接沿用/扩展 CBDB 别名类型：`字|号|室名|谥号|绰号|昵称|译名|称谓`——与 TEI `<addName>` 的 "nickname, epithet, or alias" 语义对齐，未来可无损导出 TEI。
+- 每条别名附：`attestation`（首见章节定位，复用 @corresp）、`cert`（置信度，TEI att.global.responsibility）、`lang/variant`（简繁、译名源语言）。
+- 称谓变体归一：引入 relationship.js（MIT，可嵌入）作计算内核——把“亲属称谓链”（如“妈妈的妈妈的哥哥”）与角色/身份键对接，`type:'chain'` 的分解能力可把叙述性称谓（“七舅姥爷”）规约为 结构化亲属路径 + 称谓词，是别名表到**实体身份键**的桥。地区模式（setMode）处理方言叫法差异。
+
+**B2. 版本链形式化（接 stemmatology + TEI textcrit）**
+- 把 supersede/失效记账建模为**带见证的校勘条目**：一条互补陈述事件 = TEI `<app>`（lem=正典当前陈述；rdg[@wit=版本ID]=各版本陈述；witDetail=失效原因/被谁取代）。定位法选 double-end-point（版本链有明确区间语义）。
+- 关键形式化借鉴：**stemma 的 contamination 概念 = 线性 supersede 链的失效判据**。用 Camps–Cafiero 分歧法（或最小生成树/最大简约）对“版本的版本”做谱系检测：谱系为树/链 ⇒ 纯 supersede 语义成立；出现网状混染 ⇒ 降级为“互补陈述并存”，并在记账里把横向来源记为 `derived_from` 边而非 supersede 边。`rdgGrp` 聚类可直接用于“同源衍生版本分组”。
+- 工程建议：算法自实现（R 包 2019 年停更），但输出对齐 TEI parallel segmentation，与 CollateX 输出互通。
+
+**B3. 谓词先验（接 CFN/HowNet/UD，绕开 LDC 付费墙）**
+- 关系谓词的论元框架先验建议三层合成：
+  1. **框架层**：若 CFN 可得（申请制），“铸造/继承/授予”分别挂 Create/Inheritance/Granting 类框架，框架元素（施事/受事/与事/受惠者）即槽位先验；
+  2. **义原层（免申请，MIT 代码+PDDL 近似开放）**：HowNet DEF 义原式做兜底先验——授予 `{give|给予}`、继承/获得 `{get|得到}`、铸造 `{produce|制造}`，用 OpenHowNet API 按词取义原，构造谓词-槽位映射的最低保障版；
+  3. **句法验证层**：UD_Chinese-GSDSimp（CC BY-SA 4.0）上抽取的 nsubj/obj/iobj 分布模板做“谓词-论元”抽取结果的一致性校验。
+- CPB/CAS 若后续确需：走 LDC 签约，或等 CFN 官方平台恢复；在此之前不要把 LDC 数据设为管线硬依赖。
+
+**B4. 词表演化流程（接 CNCTST 流程学 + HistWords/AoA 数据）**
+- 把“词表升级 + 措辞偏置审计”流程对齐术语审定五段式：**立项（变更提案+影响面统计）→ 征求意见稿（审计日志留痕，映射“征求意见”）→ 初审（自动检查：HistWords 漂移分 + AoA/频率分层 + 偏置词扫描）→ 终审（规则化门槛）→ 公布（版本号 + 生效日期 + 繁简/新旧对照表）**。
+- 每个受控词条加状态机：`draft → under_review → approved → superseded（指向替代词）`——与 termonline 的审定状态观感一致，且和 B2 的 supersede 链共用同一套失效记账。
+- 数据底座：HistWords 简体中文 1950s–1990s 逐十年 SGNS（PDDL 1.0，无署名义务，适合入库派生）做语义漂移先验；AoA（BRM 2020，19,716 简体词）+ SUBTLEX-CH 频率做“早期/后期章节”词汇剖面基线。
+
+---
+
+## C. 排除与空白（明说）
+
+1. **CFN 官方数据当前不可达**（cfn.mitlab.cn DNS 失败，旧站已死）——本管线最大资源空白；CFN-CFN-Lex 等镜像无 license，不可依赖。【待确认：官方平台是否迁移】
+2. **CPB/CAS 属 LDC 付费发行**，本环境无法验证编目页；不作为依赖。中文谓词先验以 HowNet+UD 兜底。
+3. **中文 surprisal 校准语料**：未找到理想公开中文眼动/自步阅读大库（Dundee 为英语已核实）；中文难度分级建议走 AoA+频率+CSS 简化对组合，而非阅读时间校准。EMNLP 2023 跨语言论文是否覆盖中文【待确认】。
+4. **CHI-knowledge 站点与 GitHub org 均不可达**（本环境），现状不明；以 AncientTRD 2025、MARKUS/COMPARATIVUS 为替代锚点。
+5. **CollateX 中文案例论文**、**iFlytek 类商业分级件的公开许可版**：均未检索到可验证信源 → 排除。
+6. **GB/T 28039-2011、《科学技术名词审定规则及方法》原文**：在线全文未能验证（openstd/cnterm 页面拦取失败），引用时标【待确认】。
+7. **语域空白**：UD 中文树库无小说语域；HistWords 中文止于 1990s 简体——对网络文学/古风文本需自建漂移基线。
+8. **HowNet 数据条款、CBDB 使用条款原文、AoA 补充材料 license**：均按惯例标注研究用途【待确认】，管线内使用、避免对外重分发原始数据。
+9. stemmatology R 包（0.3.2，2019）与 UD_Chinese-PUD（无 maintainer）均处低维护态——借用思想/数据，不押注其工程演进。
+
+**信源总表（主要）**：[CollateX PyPI](https://pypi.org/project/collatex/) · [collatex repo](https://github.com/interedition/collatex) · [CRAN stemmatology](https://cran.r-project.org/web/packages/stemmatology/index.html) · [Nature 1998 Canterbury](https://doi.org/10.1038/29667) · [TEI \<app\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-app.html) · [TEI \<said\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-said.html) · [TEI \<sp\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sp.html) · [TEI \<addName\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-addName.html) · [TEI \<listPerson\>](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPerson.html) · [UD zh-GSD](https://universaldependencies.org/treebanks/zh_gsd/index.html) · [UD zh-PUD](https://universaldependencies.org/treebanks/zh_pud/index.html) · [OpenHowNet](https://github.com/thunlp/OpenHowNet) · [HistWords](https://nlp.stanford.edu/projects/histwords/) · [histwords repo](https://github.com/williamleif/histwords) · [relationship.js](https://github.com/mumuy/relationship) · [CBDB sqlite](https://github.com/cbdb-project/cbdb_sqlite) · [CBDB NER](https://github.com/cbdb-project/named-entities-for-premodern-chinese-history-research) · [CNCTST](https://www.cnctst.cn/) · [术语在线](https://www.termonline.cn) · [AoA 19,716 简体词](https://doi.org/10.3758/s13428-020-01455-8) · [SUBTLEX-CH](https://doi.org/10.1371/journal.pone.0010729) · [CSS ACL 2023](https://aclanthology.org/2023.acl-long.462/) · [AlphaReadabilityChinese](https://github.com/leileibama/AlphaReadabilityChinese) · [AncientTRD 2025](https://doi.org/10.3390/app151910475) · [MARKUS/COMPARATIVUS](https://doi.org/10.1017/jch.2020.23) · [CFN 语义角色标注](https://doi.org/10.3724/sp.j.1001.2010.03756) · [Oh & Schuler 2023](https://aclanthology.org/2023.findings-emnlp.128/) · [Surprisal linearity](https://aclanthology.org/2023.findings-emnlp.1052/)

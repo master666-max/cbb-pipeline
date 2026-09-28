@@ -332,3 +332,25 @@
 - 版本：v1（2026-09-27 建立）
 - schema_version：3
 - 状态：active
+
+### P-028 / 2026-09-28 / 多进程并发 append 同一 jsonl 行级撕裂：O_APPEND 行写非原子——分片文件+合票容错双防线
+- 场景：判卷工作流 12 个 DeepSeek 批次并发追加同一 ds_votes.jsonl（每行一票）。
+- 根因：Windows/Python 文本 append 非原子，并发交错产生断尾行（`l}`、`}` 尾碎片）——2182 行损毁 8 行；单进程 append 无此问题，故试点期不可见、放量并发期才现形。
+- 对策：①每批次独立输出文件（`ds_votes_<from>_<to>.jsonl`），合票器 glob 聚合；②合票器逐行 try/except 容错读 + 坏行计数入摘要（撕裂可观测）；③done-set 幂等读全部历史文件，缺失件单进程补票重跑。
+- 实例：正典库构建系统/wf_ds_vote.py（分片+done-set）、wf_join_full.py（容错读+坏行跳过计数）；放量试车 ds_votes.jsonl 8 坏行实测
+- 关键词：并发追加、撕裂行、O_APPEND、jsonl、分片文件、容错读
+- 关联：[[R-015]]（共享账本并发写纪律——本条为其工程原语层）、[[P-026]]（Windows 并发原语同族）
+- 版本：v1（2026-09-28 建立）
+- schema_version：3
+- 状态：active
+
+### P-029 / 2026-09-28 / REST 铸造的远端 tip 不在本地对象库：git diff 静默空 → Invalid tree info 422——树哈希定位本地同树提交
+- 场景：rest_push_phasea.py REST 推送（git smart-http 被反代阻，P-025 通道）以远端分支 tip 做 `git diff BASE..master` 的 BASE。
+- 根因：REST 通道的远端提交是 GitHub API 铸造，哈希与本地提交不同源——远端 tip 在本地无此对象，git diff 静默失败返回空（脚本只取 stdout 不查 stderr）→ 空 tree POST → 422 Invalid tree info。本会话为第二次触发（首次 0b895845 教训只在会话记忆未立条）。
+- 对策：①取远端 tip 的 tree sha（`gh api .../commits/<tip> --jq .commit.tree.sha`）；②`git log --all --format="%H %T"` grep 该树哈希得**本地同树提交**；③以本地同树提交为 BASE。工程防御：diff 文件数为 0 应视为异常中止而非照常推送（待入脚本）。
+- 实例：正典库构建系统 tools/rest_push_phasea.py——远端 f72c5349 树 5ea2da62 → 本地 ae0d15b9 同树，BASE 改后推送正常排队
+- 关键词：REST 推送、远端哈希、树哈希、同树提交、git diff 静默失败、422
+- 关联：[[P-025]]（同通道传输层先例）、[[P-018]]（静默失败——diff 空本应触发中止）
+- 版本：v1（2026-09-28 建立；吸收 0b895845 未立条教训）
+- schema_version：3
+- 状态：active

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T16:09:40.609Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"qwen_latency_probe.py — QWEN 通道时延实测（单发 vs 并发），定位慢的根源。\"\"\"\nimport json\nimport os\nimport sys\nimport threading\nimport time\nimport urllib.request\n\nBASE = os.environ.get(\"EXAMINER_QWEN_BASE\", \"\")\nKEY = os.environ.get(\"EXAMINER_QWEN_API_KEY\") or os.environ.get(\"DASHSCOPE_API_KEY\", \"\")\nMODEL = os.environ.get(\"EXAMINER_QWEN_MODEL\", \"\")\n\n\ndef call(i, results):\n    body = json.dumps({\"model\": MODEL,\n                       \"messages\": [{\"role\": \"user\",\n                                     \"content\": '只输出JSON：{\"verdict\":\"support\"}'}],\n                       \"temperature\": 0, \"stream\": False, \"max_tokens\": 10}).encode()\n    req = urllib.request.Request(BASE + \"/chat/completions\", data=body,\n                                 headers={\"Content-Type\": \"application/json\",\n                                          \"Authorization\": \"Bearer \" + KEY})\n    t0 = time.time()\n    try:\n        with urllib.request.urlopen(req, timeout=60) as r:\n            json.loads(r.read().decode(\"utf-8\"))\n        results[i] = round(time.time() - t0, 2)\n    except Exception as e:  # noqa: BLE001 — 探针面\n        results[i] = \"ERR:\" + str(e)[:60]\n\n\ndef main():\n    res = {}\n    call(\"serial\", res)\n    print(\"单发:\", res[\"serial\"], \"s\")\n    for n in (6, 12):\n        res = {}\n        ths = [threading.Thread(target=call, args=(i, res)) for i in range(n)]\n        t0 = time.time()\n        for t in ths:\n            t.start()\n        for t in ths:\n            t.join()\n        lat = sorted(v for v in res.values() if isinstance(v, float))\n        errs = [v for v in res.values() if not isinstance(v, float)]\n        print(f\"{n}并发: 中位={lat[len(lat)//2] if lat else '-'}s 最大={lat[-1] if lat else '-'}s \"\n              f\"错误{len(errs)} 总{round(time.time()-t0,2)}s\"\n              + (f\" 错误样例={errs[0]}\" if errs else \"\"))\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "afterContentLength": 1849,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\qwen_latency_probe.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_91289aebaa554f149f4a5bcc",
+  "toolName": "Write",
+  "version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T15:59:03.447Z",
+  "files": [
+    {
+      "afterContent": "# G10 profiles 人工审定·决策信息包（2026-09-27）\n\n> 用法：每行拍板即可（✓采纳/✗改判/✍改写建议）。全部拍板后我执行：写回六库+去 `_review` 栏+回归测试，G10 收口。\n> 走查口径：断言字段必须落在「可变」或「不可变」之一（悬空=审定缺口）；措辞偏置走查含实储样本对照（G16 票面 915 件+隔离区 769 件）。\n\n## 一、六库现势与悬空字段（核心裁决面）\n\n| 库 | 断言字段 | 已分类 | **悬空未分类** | 我的建议 |\n|---|---|---|---|---|\n| character | name/entity_type/status | status·entity_type→可变 | **name** | name→**不可变**（正典名不随剧情变，别名走 aliases 表） |\n| event | name/kind/tick/instant/entities | kind·tick·instant→不可变 | **name, entities** | name→**不可变**；entities→**可变**（后文补认参与者=精化非翻案） |\n| foreshadow | name/tier/setup_chapter/payoff_chapter/entities/chapter | tier·setup_chapter→不可变；payoff_chapter→可变 | **name, entities, chapter** | name→**不可变**；entities→**可变**；chapter→**建议与 setup_chapter 语义合并**（见问题③） |\n| relation | subject/rel_type/object | rel_type→不可变 | **subject, object** | subject/object→**不可变**（三元组身份位，改动=另一条关系） |\n| setting | name/entity_type/chapter/tick | entity_type→可变 | **name, chapter, tick** | name→**不可变**；chapter/tick→**不可变**（记录时点锚） |\n| timeline | label/kind/instant/day_offset/chapter_ref/parent_anchor/precision/pseudo_date/tick | kind·tick→不可变 | **label, instant, day_offset, chapter_ref, parent_anchor, precision, pseudo_date** | 全部→**不可变**（时间轴锚记录；修历史=失效记账另起新锚，不改原锚） |\n\n## 二、需要你确认口径的三个问题\n\n1. **relation.rel_type=不可变的语义**：关系演化（相识→盟友）按现行为=**新关系记录**（旧记录不自动失效）。采纳请 ✓；若想改为\"同 subject-object 下 rel_type 可变走失效记账\"，请 ✍。\n2. **relation.claim 作陈述字段**：`claim:false`（反推标记）现归陈述位（D-23 根治口径：认识论标记≠断言内容）。维持请 ✓。\n3. **foreshadow.chapter 与 setup_chapter 疑冗余**：两者同时挂账，语义未文档化。建议：chapter 注记为\"抽取时点章\"→不可变；或删 chapter 字段。选哪个请拍板。\n\n## 三、对照过的实证依据（免翻案）\n\n- entity_type→可变：R-030 精化链实证（人物→人物(迷宫生物)→人物(迷宫守护者)），真库 186 件信息保全皆此形态。\n- payoff_chapter→可变：伏笔未回收→回收时回填，G16 票面见\"未启用的最高级次元魔法\"等待回收件。\n- time_verbatim/fact/note/claim→陈述位：D-23 根治（陈述位不当断言位），互补陈述事件已在真库运行（2+186 笔）。\n- 悬空字段现状风险：write_decision 分类函数对悬空字段走 unclassified→按不可变从严拦截——**当前全库 915 件票面零误判实证从严路径安全**，故本包全部建议若你不逐条改，仅消除悬空性、不改变现有拦截行为（低风险纯形式化）。\n\n## 四、拍板后的执行清单（我来做）\n\n1. 六库写回 mutable/immutable 断言名单（含本包建议或你的改判）；\n2. 删除六库 `_review` 栏（G10 判据）；\n3. `py -X utf8 -m pytest cbb-v2/tests/ -q` 全量回归（110 件）；\n4. 审定记录入决策账（`DECISIONS.md` 追加行）+ scoped commit + REST 续推。\n",
+      "afterContentLength": 2115,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\G10-profiles审定决策信息包.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_28f712c4e41c4995938d5a8f",
+  "toolName": "Write",
+  "version": 1
+}

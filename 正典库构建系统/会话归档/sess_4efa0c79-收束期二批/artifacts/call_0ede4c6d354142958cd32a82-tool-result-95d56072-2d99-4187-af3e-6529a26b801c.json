@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T07:10:53.203Z",
+  "files": [
+    {
+      "afterContent": "# G 单元交付物实际落盘清单（Phase F 执行审计 2026-09-27）\n\n> 检查基线：全量重构-总工单-收束期-20260927.md §三 G01-G25 单元\n> 审计方式：Path.exists() 逐件核实（非宣称——盘面实物为准）\n\n## 已落盘 ✅\n\n| 件 | 路径 |\n|---|---|\n| 检查点（真库 5268 行链头） | `正典库-公开检查点/迷深实战-checkpoint-0005268.txt` |\n| TRUSTED_KEYS.md | `正典库-公开检查点/TRUSTED_KEYS.md` |\n| notary 模块 | `cbb-v2/cbb2/notary.py` + `tests/test_v3_notary.py` |\n| lens 模块 | `cbb-v2/cbb2/lens.py` + `tests/test_v3_lens.py` |\n| fastscan 模块 | `cbb-v2/cbb2/fastscan.py` + `tests/test_v3_fastscan_coldstore.py` |\n| coldstore 模块 | `cbb-v2/cbb2/coldstore.py` |\n| schedule 模块 | `cbb-v2/cbb2/schedule.py` + `tests/test_v3_schedule.py` |\n| promote 模块 | `cbb-v2/cbb2/promote.py`（票权加权 GLAD 简化版） |\n| governance 模块 | `cbb-v2/cbb2/governance.py`（ConformalNLICalibrator/classify_manual_bucket/wire_gap_queue） |\n| er 模块 | `cbb-v2/cbb2/er.py`（normalize/blocking/margin/MergeLog） |\n| gaps 模块 | `cbb-v2/cbb2/gaps.py`（四扫描器） |\n| 属性测试 | `cbb-v2/tests/test_v3_properties.py`（实验件） |\n| fastscan_coldstore 测试 | `cbb-v2/tests/test_v3_fastscan_coldstore.py` |\n| schedule 测试 | `cbb-v2/tests/test_v3_schedule.py` |\n| governance 测试 | `cbb-v2/tests/test_v3_governance.py` |\n| lens 测试 | `cbb-v2/tests/test_v3_lens.py` |\n| 批量处置件 | `batch_dispose_268.py` |\n| 处置台账 | `迷深实战-本体库/处置台账-268.jsonl`（268 行） |\n| 词表类型映射 | `迷深实战-工作区/词表类型映射-20260926.json` |\n| RELEASE-NOTES-v3 | `cbb-pipeline-skill/cbb-pipeline/RELEASE-NOTES-v3.md` |\n| ACKNOWLEDGMENTS | `cbb-pipeline-skill/cbb-pipeline/ACKNOWLEDGMENTS.md` |\n| verify_release | `cbb-pipeline-skill/cbb-pipeline/scripts/verify_release.py` |\n| cbb2-tests 随包 | `cbb-pipeline-skill/cbb-pipeline/scripts/cbb2-tests/`（12 套件+基线） |\n| CONVENTIONS.md | `CONVENTIONS.md` |\n| 10 份调研归档 | `前沿工具调研-*.md` × 10 |\n| DECISIONS.md | `DECISIONS.md` |\n| 回归基线 | `cbb-v2/logs-PhaseF全套回归-v3-20260927.txt` + `REVIEWS/regression-base.txt` |\n\n## 计划在案但尚未落盘（后续批次/触发器）\n\n| 件 | 计划位置 | 阻塞原因 |\n|---|---|---|\n| specs/ 三不变式规格文档（TLA+/Alloy 伪代码） | `cbb-v2/cbb2/specs/` | G03 审计哲学路提案——伪代码已在总工单 §C，待正式落盘 |\n| 缺口队列.jsonl（真库） | `迷深实战-本体库/缺口队列.jsonl` | 四扫描器已在 gaps.py，待 runner 接线后首次产出 |\n| 植物捕获金标.jsonl | `迷深实战-本体库/` | 待下一抽取窗注入 |\n| 检索金标集（50-100 query） | 规划中 | 待 LLM 合成 query 循环执行 |\n| in-toto attestation | 规划中 | 待 U-F09 触发 |\n| OTS .ots 文件 | 规划中 | 需网络+ots CLI |\n| CONVENTIONS.md→CONVENTIONS | 已写于根目录 | — |\n",
+      "afterContentLength": 2240,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\交付物落盘清单-20260927.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_0ede4c6d354142958cd32a82",
+  "toolName": "Write",
+  "version": 1
+}

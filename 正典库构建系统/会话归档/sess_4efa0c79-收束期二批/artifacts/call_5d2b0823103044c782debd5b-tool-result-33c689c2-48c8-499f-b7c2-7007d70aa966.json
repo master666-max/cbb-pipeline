@@ -1,0 +1,35 @@
+{
+  "createdAt": "2026-09-26T15:45:10.432Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_contract.py — U-A01 profile 加载/字段分类/时间位校验。运行：py -X utf8 test_v3_contract.py\"\"\"\nimport sys\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom cbb2 import contract  # noqa: E402\n\n\ndef test_load_profile_ok_and_missing():\n    p = contract.load_profile(\"character\")\n    assert p[\"assertion_fields\"] and \"status\" in p[\"mutable_assertions\"]\n    try:\n        contract.load_profile(\"no-such-lib\")\n        raise AssertionError(\"缺 profile 未拒\")\n    except KeyError:\n        pass\n\n\ndef test_field_kind_four_way():\n    p = contract.load_profile(\"character\")\n    assert contract.field_kind(p, \"status\") == \"mutable\"\n    assert contract.field_kind(p, \"entity_type\") == \"immutable\"\n    assert contract.field_kind(p, \"unknown_field\") == \"unclassified\"\n    pr = contract.load_profile(\"relation\")\n    assert contract.field_kind(pr, \"claim\") == \"statement\"\n\n\ndef test_classify_conflicts_common_keys_sorted():\n    pr = contract.load_profile(\"relation\")\n    a = {\"canonical\": {\"subject\": \"卢卡\", \"rel_type\": \"同盟\", \"object\": \"缇达\", \"claim\": \"乙\"}}\n    b = {\"canonical\": {\"subject\": \"卢卡\", \"rel_type\": \"同盟\", \"object\": \"缇达\", \"claim\": \"甲\"}}\n    out = contract.classify_conflicts(pr, a, b)\n    assert [o[\"field\"] for o in out] == [\"claim\"] and out[0][\"kind\"] == \"statement\"\n\n\ndef test_time_fields_lenient_read_strict_write():\n    errs = contract.check_time_fields({\"at\": \"ch0014\", \"t_valid\": \"ch0014\"}, writing=True)\n    assert errs == []\n    assert contract.check_time_fields({}, writing=False) == []  # 宽容读旧\n    errs = contract.check_time_fields({\"t_valid\": \"ch0014\"}, writing=True)\n    assert errs and \"at\" in errs[0]\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        fn()\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_contract.py",
+      "structuredPatch": [
+        {
+          "oldStart": 22,
+          "oldLines": 8,
+          "newStart": 22,
+          "newLines": 10,
+          "lines": [
+            " def test_field_kind_four_way():",
+            "     p = contract.load_profile(\"character\")",
+            "     assert contract.field_kind(p, \"status\") == \"mutable\"",
+            "-    assert contract.field_kind(p, \"entity_type\") == \"immutable\"",
+            "+    assert contract.field_kind(p, \"entity_type\") == \"mutable\"  # 实证：随剧情精化（U-A07 彩排）",
+            "     assert contract.field_kind(p, \"unknown_field\") == \"unclassified\"",
+            "+    pe = contract.load_profile(\"event\")",
+            "+    assert contract.field_kind(pe, \"kind\") == \"immutable\"",
+            "     pr = contract.load_profile(\"relation\")",
+            "     assert contract.field_kind(pr, \"claim\") == \"statement\"",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_5d2b0823103044c782debd5b",
+  "toolName": "Edit",
+  "version": 1
+}

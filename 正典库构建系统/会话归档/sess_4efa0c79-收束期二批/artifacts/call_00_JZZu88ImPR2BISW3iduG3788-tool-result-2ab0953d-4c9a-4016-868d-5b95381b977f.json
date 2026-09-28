@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-22T01:59:56.683Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"rest_push_readme.py — 经 Git Data REST 更新 cbb-pipeline 仓 README（git 协议被阻时的通道）\"\"\"\nimport io, json, os, subprocess, time\n\nREPO = \"master666-max/cbb-pipeline\"\nSRC = r\"C:\\Users\\26672\\AppData\\Local\\Temp\\cbb-pipeline-pub\\README.md\"\nTMP = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"_rest_readme_tmp.json\")\n\ndef gh(args, input_file=None):\n    cmd = [\"gh\", \"api\"] + args\n    if input_file:\n        cmd += [\"--input\", input_file]\n    r = subprocess.run(cmd, capture_output=True, text=True, encoding=\"utf-8\")\n    if r.returncode != 0:\n        raise RuntimeError(f\"gh fail: {' '.join(args[:3])} :: {r.stderr[:300]}\")\n    return json.loads(r.stdout) if r.stdout.strip() else {}\n\ndef gh_json(args, payload):\n    io.open(TMP, \"w\", encoding=\"utf-8\").write(json.dumps(payload, ensure_ascii=False))\n    return gh(args, input_file=TMP)\n\nfor i in range(1, 9):\n    try:\n        ref = gh([f\"repos/{REPO}/git/refs/heads/main\"])\n        parent = ref[\"object\"][\"sha\"]\n        tree = gh([f\"repos/{REPO}/git/commits/{parent}\"])[\"tree\"][\"sha\"]\n        content = io.open(SRC, encoding=\"utf-8\").read()\n        blob = gh([\"-X\", \"POST\", f\"repos/{REPO}/git/blobs\",\n                   \"-f\", f\"content={content}\", \"-f\", \"encoding=utf-8\"])\n        newtree = gh_json([\"-X\", \"POST\", f\"repos/{REPO}/git/trees\"],\n                          {\"base_tree\": tree,\n                           \"tree\": [{\"path\": \"README.md\", \"mode\": \"100644\",\n                                     \"type\": \"blob\", \"sha\": blob[\"sha\"]}]})\n        commit = gh_json([\"-X\", \"POST\", f\"repos/{REPO}/git/commits\"],\n                         {\"message\": \"docs: plain-language README (人话版门面) — 治什么病/怎么治/三步开跑/术语对照表\",\n                          \"tree\": newtree[\"sha\"], \"parents\": [parent]})\n        gh_json([\"-X\", \"PATCH\", f\"repos/{REPO}/git/refs/heads/main\"],\n                {\"sha\": commit[\"sha\"], \"force\": False})\n        time.sleep(2)\n        chk = gh([f\"repos/{REPO}/commits/{commit['sha']}\"])\n        print(f\"✓ README 已更新并远端确认 {chk['sha'][:7]}\")\n        break\n    except Exception as e:\n        print(f\"第{i}轮失败：{str(e)[:180]}；重试\")\n        time.sleep(4)\nelse:\n    print(\"✗ 八轮未成功\")\n",
+      "afterContentLength": 2147,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\rest_push_readme.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_JZZu88ImPR2BISW3iduG3788",
+  "toolName": "Write",
+  "version": 1
+}

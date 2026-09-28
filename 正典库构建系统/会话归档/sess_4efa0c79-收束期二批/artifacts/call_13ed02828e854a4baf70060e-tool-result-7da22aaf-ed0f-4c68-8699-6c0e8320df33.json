@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-23T15:08:06.748Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"抽样排序.py — 审查抽样的\"最可疑优先\"排序（岗位②·U-F05；2026-09-23）\n\n场景：G2 证据门/人工抽检要看的样本很多，人先看最值得看的。\n原理：重排器打\"**引文对断言的支撑度**\"分——支撑度**越低越可疑**，升序排列＝最可疑最先。\n纪律（深融条款）：\n  · **只定顺序，不定结论**：不改样本集合、不判对错、不进任何红区；\n  · **缺席即降级**：重排器不可用 → 保持原序（机械），backend 如实标注；\n  · 分数只作内部排序，不外报（judge 红线同源）。\n\"\"\"\nfrom __future__ import annotations\n\nimport 重排器 as rr\n\n\ndef rank_for_review(items: list[dict], endpoint: str | None = None,\n                    transport=None) -> dict:\n    \"\"\"items: [{\"record_id\":…, \"claim\": 断言文本, \"quote\": 引文文本}, …]（顺序=原抽样序）。\n    返回 {\"order\": [下标序列·最可疑最先], \"backend\": \"rerank|mechanical\", \"supports\": {record_id: 分}}。\n    断言/引文缺文本的条目按机械原序处理（不虚构分数）。\"\"\"\n    supports: dict[int, float] = {}\n    backend = \"rerank\"\n    for i, it in enumerate(items):\n        claim = (it.get(\"claim\") or \"\").strip()\n        quote = (it.get(\"quote\") or \"\").strip()\n        if not claim or not quote:\n            backend = \"mechanical\"  # 有缺文本项 → 整体转机械（同形、口径注明）\n            break\n        s = rr.score(claim, [quote], endpoint, transport=transport)\n        if s is None:\n            backend = \"mechanical\"\n            break\n        supports[i] = s[0]\n    if backend == \"rerank\":\n        order = sorted(range(len(items)), key=lambda i: supports.get(i, 0.0))\n    else:\n        order = list(range(len(items)))\n    sup_out = {items[i].get(\"record_id\"): round(supports[i], 6) for i in supports}\n    return {\"order\": order, \"backend\": backend, \"supports\": sup_out,\n            \"口径\": \"支撑度升序＝最可疑最先；重排只定顺序不定结论；缺席降级保持原序\"}\n",
+      "afterContentLength": 1489,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\抽样排序.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_13ed02828e854a4baf70060e",
+  "toolName": "Write",
+  "version": 1
+}

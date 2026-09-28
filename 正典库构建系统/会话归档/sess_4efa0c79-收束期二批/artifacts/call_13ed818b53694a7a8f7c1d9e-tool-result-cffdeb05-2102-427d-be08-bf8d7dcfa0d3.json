@@ -1,0 +1,126 @@
+{
+  "createdAt": "2026-09-22T16:04:07.790Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb_quarantine.py — CBB B6 隔离区管理器（本体版 v2）\n\n保留（v1.0）：五类分组请你确认报告 + append-only 裁决通道（终态留档不删）+\n登记幂等（item_id 内容哈希）+ 报告确定性（无时钟字段）。\n吸收（U-A17 §3，三子类为用户裁决案）：\n  - **quarantine 三子类**：contradiction_pending（矛盾待裁决）/\n    extrapolation_unverified（外推待证）/ overdue_omission（超期遗漏）——\n    五分组保留为细粒度入口（gate1/anchor 原因码），三子类为分流层（路由与统计）；\n  - **urgency 公式**（webnovel-writer status_reporter.py:507-546 转译）：\n    urgency=(已过章节/目标回收章节)×层级权重——核心 3.0（必须回收否则剧情崩塌）/\n    支线 2.0（否则显得作者健忘）/装饰 1.0（可回收可不回收仅增加真实感）；\n    状态 🔴已超期（current≥target）/🟡警告（进度比≥0.8，CBB 定约）/\n    🟢正常；top_urgent 只取前 N 条（写前注入 urgent_loops 前 3 条同思想）；\n  - **🔴超期态（遗漏告警）**（danghuangshang）：超期项在报告中置顶且带 🔴；\n  - **`[?]` 内联标记+行号汇总报告**（graphify-novel）：字段级轻量隔离——\n    scan_inline_unsure 扫描 `[?]` 标记按行号汇总，供人工裁决（与记录级隔离互补）。\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport hashlib\nimport json\nimport sys\nfrom pathlib import Path\n\nGROUPS = (\"unresolved_time\", \"missing_anchor\", \"ambiguous_reference\",\n          \"entity_unalignable\", \"low_confidence\")\nSUBCLASSES = (\"contradiction_pending\", \"extrapolation_unverified\", \"overdue_omission\")\nSUBCLASS_CN = {\"contradiction_pending\": \"矛盾待裁决\",\n               \"extrapolation_unverified\": \"外推待证\",\n               \"overdue_omission\": \"超期遗漏\"}\n# 五分组 → 三子类默认分流（gate1 已带子类时以其为准）\nGROUP_TO_SUBCLASS = {\n    \"unresolved_time\": \"extrapolation_unverified\",\n    \"missing_anchor\": \"extrapolation_unverified\",\n    \"ambiguous_reference\": \"extrapolation_unverified\",\n    \"entity_unalignable\": \"contradiction_pending\",  # 实体不可归一=潜在同名冲突，须裁决\n    \"low_confidence\": \"extrapolation_unverified\",\n}\nDECISIONS = (\"confirmed\", \"rejected\")  # Part V：quarantine ──人工裁决──→ confirmed|rejected（终态）\n\n# urgency 层级权重（webnovel-writer config.py:305-307 语义转译）\nURGENCY_TIERS = {\"core\": 3.0, \"subplot\": 2.0, \"decorative\": 1.0}\nURGENCY_WARNING_RATIO = 0.8  # 🟡 警戒线：进度比 ≥0.8（CBB 定约：🔴=current≥target）\nTOP_URGENT_N = 3             # 写前注入只取前 3 条（urgent_loops 同思想）\n\n\ndef _item_id(group: str, record_id: str, detail: str) -> str:\n    h = hashlib.sha256(f\"{group}|{record_id}|{detail}\".encode(\"utf-8\")).hexdigest()[:12]\n    return f\"q-{h}\"\n\n\ndef urgency_of(item: dict, current_chapter: int) -> float | None:\n    \"\"\"urgency=(已过章节/目标回收章节)×层级权重。\n    需 item 带 tier/planted_chapter/target_chapter 与 current_chapter；否则 None。\"\"\"\n    tier = item.get(\"tier\")\n    planted, target = item.get(\"planted_chapter\"), item.get(\"target_chapter\")\n    if tier not in URGENCY_TIERS or not all(isinstance(x, int) for x in (planted, target, current_chapter)):\n        return None\n    span = target - planted\n    if span <= 0:\n        return None  # 目标不晚于埋设：期限数据非法，不参与排序（交给 gate1 时序域）\n    ratio = (current_chapter - planted) / span\n    return ratio * URGENCY_TIERS[tier]\n\n\ndef urgency_status(item: dict, current_chapter: int) -> str | None:\n    \"\"\"🔴已超期（current≥target，到点即超期——与 anchor.countdowns_due 同口径）/\n    🟡警告（进度比≥0.8）/🟢正常；非期限项返回 None。\"\"\"\n    target = item.get(\"target_chapter\")\n    if not (isinstance(target, int) and isinstance(current_chapter, int)):\n        return None\n    if current_chapter >= target:\n        return \"🔴\"\n    u = urgency_of(item, current_chapter)\n    if u is not None and u / URGENCY_TIERS[item[\"tier\"]] >= URGENCY_WARNING_RATIO:\n        return \"🟡\"\n    return \"🟢\"\n\n\ndef scan_inline_unsure(text: str) -> list[dict]:\n    \"\"\"`[?]` 内联标记扫描（graphify-novel 字段级轻量隔离）：返回 [{line, excerpt}]。\n    行号=物理行 1-based；标记不删不改（P-003：半角方括号是标记不可删）。\"\"\"\n    hits = []\n    for i, ln in enumerate((text or \"\").split(\"\\n\"), 1):\n        if \"[?]\" in ln:\n            hits.append({\"line\": i,\n                         \"excerpt\": ln.strip()[:60]})\n    return hits\n\n\ndef inline_report(scans: dict[str, list[dict]]) -> str:\n    \"\"\"`[?]` 行号汇总报告：{文件名: scan_inline_unsure 结果} → markdown。\"\"\"\n    total = sum(len(v) for v in scans.values())\n    lines = [f\"## `[?]` 内联不确定标记汇总（{total} 处，待人工裁决）\", \"\"]\n    for fname, hits in sorted(scans.items()):\n        for h in hits:\n            lines.append(f\"- {fname} — line {h['line']}: {h['excerpt']}\")\n    if total == 0:\n        lines.append(\"- （无）\")\n    return \"\\n\".join(lines)\n\n\nclass QuarantineZone:\n    \"\"\"隔离区：register / adjudicate / report。同一 root 可多实例（每次读盘对账）。\"\"\"\n\n    def __init__(self, root: Path):\n        self.root = Path(root)\n        self.root.mkdir(parents=True, exist_ok=True)\n        self.items_path = self.root / \"items.jsonl\"\n        self.adj_path = self.root / \"adjudications.jsonl\"\n\n    # ---- 落盘基元（append-only） ----\n    def _append(self, path: Path, obj: dict) -> None:\n        with path.open(\"a\", encoding=\"utf-8\") as f:\n            f.write(json.dumps(obj, ensure_ascii=False, sort_keys=True) + \"\\n\")\n\n    def _load(self, path: Path) -> list[dict]:\n        if not path.exists():\n            return []\n        return [json.loads(ln) for ln in path.read_text(encoding=\"utf-8\").splitlines() if ln.strip()]\n\n    # ---- 登记 ----\n    def register(self, group: str, detail: str, record_id: str = None,\n                 source: str = None, blocks: list | None = None,\n                 subclass: str = None, tier: str = None,\n                 planted_chapter: int = None, target_chapter: int = None):\n        \"\"\"登记隔离条目。幂等：同 (group,record_id,detail) 已在册 → (item_id, False)。\n        subclass 三子类：显式传入（gate1 携带）或按五分组默认分流；\n        tier/planted/target 为期限项（超期遗漏类）参数，供 urgency 计算。\"\"\"\n        if group not in GROUPS:\n            raise ValueError(f\"非法隔离分组 {group!r}，合法={GROUPS}\")\n        if tier is not None and tier not in URGENCY_TIERS:\n            raise ValueError(f\"非法层级 {tier!r}，合法={tuple(URGENCY_TIERS)}\")\n        sub = subclass or GROUP_TO_SUBCLASS[group]\n        if sub not in SUBCLASSES:\n            raise ValueError(f\"非法子类 {sub!r}，合法={SUBCLASSES}\")\n        if tier is not None:  # 期限项自动归超期遗漏子类（除非显式指定）\n            sub = subclass or \"overdue_omission\"\n        item_id = _item_id(group, record_id or \"\", detail)\n        if any(it[\"item_id\"] == item_id for it in self._load(self.items_path)):\n            return item_id, False\n        item = {\n            \"item_id\": item_id,\n            \"group\": group,\n            \"subclass\": sub,\n            \"source\": source,\n            \"record_id\": record_id,\n            \"detail\": detail,\n            \"blocks_downstream\": sorted(set(blocks or [])),\n            \"status\": \"pending\",\n        }\n        if tier is not None:\n            item.update(tier=tier, planted_chapter=planted_chapter,\n                        target_chapter=target_chapter)\n        self._append(self.items_path, item)\n        return item_id, True\n\n    # ---- 裁决（人工通道） ----\n    def adjudicate(self, item_id: str, decision: str, note: str = \"\", by: str = \"human\") -> dict:\n        \"\"\"人工裁决：confirmed | rejected。终态留档不删；同条不可二次裁决。\"\"\"\n        if decision not in DECISIONS:\n            raise ValueError(f\"非法裁决 {decision!r}，合法={DECISIONS}\")\n        items = self._load(self.items_path)\n        if not any(it[\"item_id\"] == item_id for it in items):\n            raise KeyError(f\"隔离条目不存在: {item_id}\")\n        if any(a[\"item_id\"] == item_id for a in self._load(self.adj_path)):\n            raise ValueError(f\"条目已裁决（终态不可再裁）: {item_id}\")\n        adj = {\"item_id\": item_id, \"decision\": decision, \"note\": note, \"by\": by}\n        self._append(self.adj_path, adj)\n        return adj\n\n    # ---- 视图 ----\n    def pending(self) -> list[dict]:\n        done = {a[\"item_id\"] for a in self._load(self.adj_path)}\n        return [it for it in self._load(self.items_path) if it[\"item_id\"] not in done]\n\n    def adjudicated(self) -> list[dict]:\n        items = {it[\"item_id\"]: it for it in self._load(self.items_path)}\n        out = []\n        for a in self._load(self.adj_path):\n            merged = dict(a)\n            merged[\"group\"] = items.get(a[\"item_id\"], {}).get(\"group\")\n            out.append(merged)\n        return out\n\n    def by_group(self) -> dict:\n        counts = {g: 0 for g in GROUPS}\n        for it in self.pending():\n            counts[it[\"group\"]] = counts.get(it[\"group\"], 0) + 1\n        return counts\n\n    def by_subclass(self) -> dict:\n        counts = {s: 0 for s in SUBCLASSES}\n        for it in self.pending():\n            counts[it.get(\"subclass\")] = counts.get(it.get(\"subclass\"), 0) + 1\n        return counts\n\n    def top_urgent(self, current_chapter: int, n: int = TOP_URGENT_N) -> list[dict]:\n        \"\"\"urgency 排序前 N 条（只取前 3 条纪律）：🔴 超期优先（遗漏告警置顶），\n        同 urgency 按 item_id 确定性排序。\"\"\"\n        scored = []\n        for it in self.pending():\n            u = urgency_of(it, current_chapter)\n            if u is None:\n                continue\n            scored.append((u, it[\"item_id\"], it))\n        scored.sort(key=lambda t: (-t[0], t[1]))\n        return [it for _, _, it in scored[:n]]\n\n    # ---- 报告（第一产出） ----\n    def report_markdown(self, current_chapter: int | None = None) -> str:\n        pending = sorted(self.pending(),\n                         key=lambda it: (-len(it[\"blocks_downstream\"]), it[\"item_id\"]))\n        counts = self.by_group()\n        subs = self.by_subclass()\n        lines = [\n            \"# 隔离区报告（请你确认清单）\",\n            \"\",\n            f\"> cbb-quarantine v2 ｜ 待裁决 {len(pending)} 项 ｜ 已裁决 {len(self.adjudicated())} 项\",\n            \"> 纪律：显式隔离，绝不静默丢弃（B6）；以下条目按**阻塞下游计数降序**排列。\",\n            \"\",\n            \"## 三子类分流统计\",\n        ]\n        for s in SUBCLASSES:\n            lines.append(f\"- **{SUBCLASS_CN[s]}**（{s}）: {subs.get(s, 0)} 项\")\n        lines += [\"\", \"## 分组统计\"]\n        for g in GROUPS:\n            if counts.get(g):\n                lines.append(f\"- **{g}**: {counts[g]} 项\")\n        if not any(counts.values()):\n            lines.append(\"- （空）\")\n\n        if current_chapter is not None:\n            lines += [\"\", f\"## 🔴 超期与 urgency 排序（当前章={current_chapter}，只列前 {TOP_URGENT_N} 条）\"]\n            top = self.top_urgent(current_chapter)\n            if top:\n                for it in top:\n                    u = urgency_of(it, current_chapter)\n                    st = urgency_status(it, current_chapter)\n                    lines.append(f\"- {st} `{it['item_id']}` [{it.get('tier')}] \"\n                                 f\"urgency={u:.2f}（第{it.get('planted_chapter')}章埋设→\"\n                                 f\"目标第{it.get('target_chapter')}章）：{it['detail']}\")\n            else:\n                lines.append(\"- （无期限项）\")\n\n        lines += [\"\", \"## 待裁决清单（按阻塞下游计数降序）\"]\n        for i, it in enumerate(pending, 1):\n            lines += [\n                \"\",\n                f\"### {i}. [{it['group']}→{SUBCLASS_CN.get(it.get('subclass'), it.get('subclass'))}] \"\n                f\"`{it['item_id']}`（阻塞下游 {len(it['blocks_downstream'])} 项）\",\n                f\"- 详情：{it['detail']}\",\n                f\"- 来源：{it['source'] or '（未注明）'} ｜ 关联记录：{it['record_id'] or '（无）'}\",\n            ]\n            if it[\"blocks_downstream\"]:\n                lines.append(f\"- 阻塞：{', '.join(it['blocks_downstream'])}\")\n            lines.append(\"- **请你确认**：该条应判 confirmed 入库，还是 rejected 作废？\")\n        adj = self.adjudicated()\n        lines += [\"\", \"## 已裁决（终态留档，不删）\"]\n        if adj:\n            for a in adj:\n                lines.append(f\"- `{a['item_id']}` → **{a['decision']}**（{a['by']}）：{a['note'] or '无注记'}\")\n        else:\n            lines.append(\"- （无）\")\n        lines.append(\"\")\n        return \"\\n\".join(lines)\n\n\ndef main(argv=None) -> int:\n    ap = argparse.ArgumentParser(description=\"CBB B6 隔离区（本体版 v2 · 三子类+urgency）\")\n    ap.add_argument(\"--root\", required=True, help=\"隔离区目录\")\n    ap.add_argument(\"--register\", nargs=4, metavar=(\"GROUP\", \"DETAIL\", \"RECORD_ID\", \"SOURCE\"),\n                    help=\"登记一条隔离条目（RECORD_ID/SOURCE 可填 -）\")\n    ap.add_argument(\"--adjudicate\", nargs=3, metavar=(\"ITEM_ID\", \"DECISION\", \"NOTE\"),\n                    help=\"人工裁决（confirmed|rejected）\")\n    ap.add_argument(\"--current-chapter\", type=int, default=None,\n                    help=\"当前推进章号（urgency 排序/超期态判定）\")\n    ap.add_argument(\"--report\", action=\"store_true\", help=\"打印报告 markdown\")\n    args = ap.parse_args(argv)\n\n    zone = QuarantineZone(Path(args.root))\n    if args.register:\n        group, detail, rid, source = args.register\n        iid, created = zone.register(group, detail,\n                                     record_id=None if rid == \"-\" else rid,\n                                     source=None if source == \"-\" else source)\n        print(f\"[quarantine] item={iid} created={created} subclass={GROUP_TO_SUBCLASS[group]}\")\n    if args.adjudicate:\n        iid, decision, note = args.adjudicate\n        zone.adjudicate(iid, decision, note)\n        print(f\"[quarantine] adjudicated {iid} -> {decision}\")\n    if args.report:\n        print(zone.report_markdown(current_chapter=args.current_chapter))\n    if not (args.register or args.adjudicate or args.report):\n        print(f\"[quarantine] pending={len(zone.pending())} adjudicated={len(zone.adjudicated())} \"\n              f\"by_subclass={zone.by_subclass()}\")\n    return 0\n\n\nif __name__ == \"__main__\":\n    sys.exit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\cbb-quarantine\\cbb_quarantine.py",
+      "structuredPatch": [
+        {
+          "oldStart": 125,
+          "oldLines": 10,
+          "newStart": 125,
+          "newLines": 13,
+          "lines": [
+            "     def register(self, group: str, detail: str, record_id: str = None,",
+            "                  source: str = None, blocks: list | None = None,",
+            "                  subclass: str = None, tier: str = None,",
+            "-                 planted_chapter: int = None, target_chapter: int = None):",
+            "+                 planted_chapter: int = None, target_chapter: int = None,",
+            "+                 at: str = None):",
+            "         \"\"\"登记隔离条目。幂等：同 (group,record_id,detail) 已在册 → (item_id, False)。",
+            "         subclass 三子类：显式传入（gate1 携带）或按五分组默认分流；",
+            "-        tier/planted/target 为期限项（超期遗漏类）参数，供 urgency 计算。\"\"\"",
+            "+        tier/planted/target 为期限项（超期遗漏类）参数，供 urgency 计算。",
+            "+        at=登记日期（v2.1 裁决②附带，2026-09-22）：裁决滞后计算依赖此位；",
+            "+        缺省=今日；item_id 不含 at（幂等键不变，旧库兼容）。\"\"\"",
+            "         if group not in GROUPS:",
+            "             raise ValueError(f\"非法隔离分组 {group!r}，合法={GROUPS}\")",
+            "         if tier is not None and tier not in URGENCY_TIERS:"
+          ]
+        },
+        {
+          "oldStart": 150,
+          "oldLines": 6,
+          "newStart": 153,
+          "newLines": 7,
+          "lines": [
+            "             \"detail\": detail,",
+            "             \"blocks_downstream\": sorted(set(blocks or [])),",
+            "             \"status\": \"pending\",",
+            "+            \"at\": at or _today(),  # v2.1：登记日期位（滞后计算依赖；历史件无此位）",
+            "         }",
+            "         if tier is not None:",
+            "             item.update(tier=tier, planted_chapter=planted_chapter,"
+          ]
+        },
+        {
+          "oldStart": 158,
+          "oldLines": 8,
+          "newStart": 162,
+          "newLines": 11,
+          "lines": [
+            "         return item_id, True",
+            " ",
+            "     # ---- 裁决（人工通道） ----",
+            "-    def adjudicate(self, item_id: str, decision: str, note: str = \"\", by: str = \"human\") -> dict:",
+            "-        \"\"\"人工裁决：confirmed | rejected。终态留档不删；同条不可二次裁决。\"\"\"",
+            "+    def adjudicate(self, item_id: str, decision: str, note: str = \"\", by: str = \"human\",",
+            "+                   at: str = None) -> dict:",
+            "+        \"\"\"人工裁决：confirmed | rejected。终态留档不删；同条不可二次裁决。",
+            "+        at=裁决日期（v2.1 裁决②附带）：触发器 D 的\"裁决滞后\"由此可算；",
+            "+        缺省=今日；历史补录只许填实际日期，不得编造。\"\"\"",
+            "         if decision not in DECISIONS:",
+            "             raise ValueError(f\"非法裁决 {decision!r}，合法={DECISIONS}\")",
+            "         items = self._load(self.items_path)"
+          ]
+        },
+        {
+          "oldStart": 167,
+          "oldLines": 7,
+          "newStart": 174,
+          "newLines": 8,
+          "lines": [
+            "             raise KeyError(f\"隔离条目不存在: {item_id}\")",
+            "         if any(a[\"item_id\"] == item_id for a in self._load(self.adj_path)):",
+            "             raise ValueError(f\"条目已裁决（终态不可再裁）: {item_id}\")",
+            "-        adj = {\"item_id\": item_id, \"decision\": decision, \"note\": note, \"by\": by}",
+            "+        adj = {\"item_id\": item_id, \"decision\": decision, \"note\": note, \"by\": by,",
+            "+               \"at\": at or _today()}  # v2.1：裁决日期位",
+            "         self._append(self.adj_path, adj)",
+            "         return adj",
+            " "
+          ]
+        },
+        {
+          "oldStart": 185,
+          "oldLines": 6,
+          "newStart": 193,
+          "newLines": 26,
+          "lines": [
+            "             out.append(merged)",
+            "         return out",
+            " ",
+            "+    def status_report(self, today: str = None) -> dict:",
+            "+        \"\"\"状态对账（v2.1 裁决②附带，2026-09-22）：未裁/已裁两数可分＋裁决滞后可算。",
+            "+        滞后口径（T-5：标签与量对账）＝今日 − 最早未裁条目的登记日（仅计带 at 位的条目）；",
+            "+        历史件无 at 位不计入，并在口径中如实披露计入比例。\"\"\"",
+            "+        from datetime import date as _date",
+            "+        t = today or _today().isoformat()",
+            "+        pend, adj = self.pending(), self.adjudicated()",
+            "+        dated = [it[\"at\"] for it in pend if it.get(\"at\")]",
+            "+        if dated:",
+            "+            d0 = min(dated)",
+            "+            lag = (_date.fromisoformat(t) - _date.fromisoformat(d0)).days",
+            "+            lag_out = {\"days\": lag, \"since\": d0,",
+            "+                       \"口径\": f\"按最早未裁登记日计；带日期位 {len(dated)}/{len(pend)} 条\"}",
+            "+        else:",
+            "+            lag_out = {\"days\": None, \"since\": None,",
+            "+                       \"口径\": \"UNKNOWN（在库条目均无日期位——历史件，不得编造）\"}",
+            "+        return {\"pending_total\": len(pend), \"adjudicated_total\": len(adj),",
+            "+                \"裁决滞后\": lag_out,",
+            "+                \"adjudicated_with_date\": sum(1 for a in adj if a.get(\"at\"))}",
+            "+",
+            "     def by_group(self) -> dict:",
+            "         counts = {g: 0 for g in GROUPS}",
+            "         for it in self.pending():"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_13ed818b53694a7a8f7c1d9e",
+  "toolName": "Edit",
+  "version": 1
+}

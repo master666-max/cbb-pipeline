@@ -1,0 +1,61 @@
+# 社区实践调研：可抄的机制与已记录的坑
+
+**取证说明**：Google/Bing/DDG/Reddit/Wikipedia 主体在本地网络不可达；改用 Mojeek、HN Algolia API、GitHub Search API、Wikipedia 镜像（everything.explained.today）直连取证。以下每条均为实际抓取到的页面内容。
+
+## 一、世界书（World Info / Lorebook）生态
+
+**1. 双键触发 + 选择性逻辑**｜https://docs.sillytavern.app/usage/core-concepts/worldinfo/ ｜主键列表 + 次键（AND ANY / NOT ANY / NOT ALL），均支持正则。｜成本：低，规则可直接搬。｜适配：六库条目统一"触发词表 + 排除词表"，伏笔按章号触发。｜坑：**Match whole words 默认开启且对中日文有害**（文档明示"detrimental... languages that don't use whitespace"），中文库必须关。
+
+**2. 递归链式插入 + 逐条熔断**｜同上 ｜A 条命中后其正文可再触发 B 条；每条可选 Non-recursable / Prevent further recursion / Delay until recursion，全局 Max Recursion Steps 限次。｜成本：中（多一轮扫描）。｜适配：可用于"角色→其关系→其伏笔"的链式召回。｜坑：文档自承 Outlet 宏嵌套"may lead to infinite loops"；Max Recursion Steps 与 Min Activations 互斥。
+
+**3. token 预算做硬截断，常驻优先**｜同上 ｜Context %/Budget 为绝对或相对上限，超支即停；先插常驻（🔵），再按 order 大者优先。｜成本：低。｜适配：给"每章上下文包"设硬预算，呼应滚动摘要 30 章。｜坑：**预算耗尽后关键词命中也不再插入，且静默发生**——审计时必须记录"因预算被裁掉的条目"。
+
+**4. 条目级状态机：Sticky / Cooldown / Delay / 概率 / Inclusion Group**｜同上 ｜Sticky=命中后 N 条消息内持续有效；Cooldown 禁再触发；Inclusion Group 同组只进一条。｜成本：低。｜适配：**"活跃伏笔清单"可直接用 Sticky 语义**（伏笔在 N 章窗口内保持可见），Delay 可做"第 X 章后才允许出现"。｜坑：概率 <100% 会使同一输入两次运行结果不同，与可复现冲突。
+
+**5. 三个已被记录的规模/确定性事故**｜插入顺序未文档化、裁切按优先级而非语义：https://github.com/SillyTavern/SillyTavern/issues/5655 ；大书排序 O(n²log n) 热路径：https://github.com/SillyTavern/SillyTavern/pull/5809 ；聊天级与全局库混用串味：https://github.com/SillyTavern/SillyTavern/issues/6027 ｜成本：低（照抄结论即可）。｜适配：CBB 的隔离区/正式库务必**物理分库**，禁止同作用域混放。｜坑：issue 5655 明确"constant 条目可能被裁掉""用户无法预测截断"——凡截断必须落审计日志。
+
+## 二、同人 wiki 的治理制度
+
+**6. 两级正典 + 上位覆盖 + 冲突取新 + "verified"限定**｜https://awoiaf.westeros.org/index.php/Canon ｜Canon（作者亲笔）> Semi-canon（作者外证言/授权衍生），**上位级覆盖下级**；两条次级冲突时"最近给出的为准"；半正典必须"已确证出自作者"，不能默认。｜成本：低（制度移植）。｜适配：近乎可直接映射"CBB 三态 + 人工晋升 + 裁决账"。｜坑：该 wiki 明写"来源不明者一律不算正典"——等于承认大量社区传闻不可收录，需预留"传闻标注"而非硬删。
+
+**7. 多载体并存的分层先例**｜https://everything.explained.today/Canon_(fiction)/ ｜Star Wars 曾把 continuity 分成离散 tier；Star Trek 官方明示 tie-in 小说/游戏不属正典，但"canon is not something set in stone"。｜成本：低。｜适配：web 版/文库版/改编共存时，用 tier 字段而非删并。｜坑：无分层时社区会陷入"谁说了算"的长期编辑战。
+
+**8. retcon 的两种登记语义**｜https://tvtropes.org/pmwiki/pmwiki.php/Main/Retcon 与 .../Main/CanonDiscontinuity ｜前者=追溯改写（"当作一直都在"），后者=官方宣布作废。｜成本：低。｜适配：隔离区裁决账应区分"改写/作废"两类动作，并在条目上保留旧证据链。｜坑：社区惯例是**保留被改设定并在页内说明**，直接覆盖会毁掉可核验性。
+
+**9. 中文条目命名与别名归一**｜https://zh.moegirl.org.cn/萌娘百科:条目命名指引 ｜官方译名 > 正式译名 > 常用称呼；简体 > 繁体 ≫ 外文；**明令禁止繁简混排**（"简体的消歧义后缀+繁体人物名"会破坏搜索与转换）；定不下来先挂 {{暂定标题}} 并入待更名分类。｜成本：低。｜适配：角色别名表 + 称谓变化（敬称/爱称/直呼）以"多别名指向同一实体"处理。｜坑：译名差、质量差的官方译名可弃用，但必须写清弃用理由——否则后续编辑反复推翻。
+
+## 三、数据工程（断点续跑/幂等/哈希链）
+
+**10. exactly-once 不可能，只做 at-least-once + 幂等**｜https://bravenewgeek.com/you-cannot-have-exactly-once-delivery/ ｜两将军/FLP 决定论；协调成本换不来 exactly-once。｜成本：低（认知）。｜适配：抽取任务按"章号 + 规范版本"做幂等键，重跑覆盖而非追加。
+
+**11. 幂等键语义要点**｜https://docs.stripe.com/api/idempotent_requests ｜保存首次响应（**含 5xx**），同键同参重放同结果，参数不同即报错；键可 24h 后清理。｜成本：低。｜适配：隔离区裁决与抽取写入都用"请求指纹"去重。｜坑：HN 讨论提醒须显式设计去重窗口 TTL，过期重用会产生新执行（https://news.ycombinator.com/item?id=47175746 ）。
+
+**12. DLQ 参数化**｜https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html ｜maxReceiveCount 决定重试几次后进死信；redrive 允许/拒绝策略限源队列。｜成本：低。｜适配：失败章节进"待裁区"而非丢弃。｜坑：文档警告**顺序敏感的任务不要配 DLQ**（乱序会改变后续语义）——时间轴/伏笔抽取属顺序敏感，进 DLQ 前必须冻结其下游。
+
+**13. 并发双写：光查 flag 不够**｜https://news.ycombinator.com/item?id=47175746 ｜社区共识：原子记录 + fence token（**"进程可能在检查与执行之间冻结，租约过期后两个都执行"**），并对无幂等能力的第三方 API 做"先查后写"。｜成本：中。｜适配：一条流水线单写者 + 显式租约。｜坑：Temporal 只解决编排，"外部调用幂等要你自己做"（同帖）。
+
+**14. 可重放编排的硬约束**｜https://docs.temporal.io/workflow-definition ｜工作流必须确定性；**API 调用、LLM 调用等非确定性操作必须放进 Activity**，否则 replay 报错。｜成本：低（直接照做）。｜适配：抽取流程 = 确定性调度 + 非确定性 Activity（LLM），被掐停后按日志重放。
+
+**15. 哈希链的诚实边界**｜https://news.ycombinator.com/item?id=48818098 ｜作者自己在项目里写明并被讨论引用：自持有的链**只能证明"未被篡改/重排"，不能证明"没有遗漏"**——运营者可删掉坏日志再重封。｜成本：低（记账 + 每日链头外部备份）。｜适配：CBB 审计日志应加"条目计数 + 章节覆盖矩阵"证明完整性，仅链式哈希不够。
+
+## 四、LLM 抽取流水线
+
+**16. 人工审计抽多少**｜https://hamel.dev/blog/posts/evals/ ｜早期"至少全看测试集与线上 trace"，之后**每次 25–50 条**做模型-人一致；偏好二分类标注而非多级评分。｜成本：低。｜适配：验收判分器时抽 25–50 章做"上手考试"。｜坑：类别不平衡时 raw agreement 会骗人，要分开算 precision/recall。
+
+**17. judge 校准的量化口径**｜https://eugeneyan.com/writing/llm-evaluators/ ｜Cohen's κ 解释区间（0.21–0.40 尚可、0.41–0.60 中等），优先分类指标（TPR/FPR）而非相关系数。｜成本：低。｜适配：判分器上线门槛设为 κ 达标。｜坑：few-shot 示例数量/顺序变动会使表现不稳，示例必须版本化固定。
+
+**18. 规范与 prompt 外置 + 无状态可重放**｜https://raw.githubusercontent.com/humanlayer/12-factor-agents/main/content/factor-02-own-your-prompts.md （另有 factor-03 上下文自有、factor-06 可暂停恢复、factor-12 无状态 reducer）｜"不要把 prompt 工程外包给框架"。｜成本：低。｜适配：规范文件 + 版本号写进每条证据。｜坑：规范一改，历史抽取结果需按版本重放校验。
+
+**19. 共享指引文件**｜https://agents.md/ ｜单一可预测的 AGENTS.md 承载约定，已被 6 万+ 项目采用。｜成本：极低。｜适配：多子代理共享 GUIDE/规范文件，天然防漂移。
+
+**20. 失败样本回灌成回归集（判例库工程化）**｜https://www.promptfoo.dev/docs/configuration/expected-outputs/model-graded/ ｜模型判分断言（llm-rubric 等）配合"把失败样例加入测试集"（同 hamel 文）。｜成本：低。｜适配：裁决账 → 判例库 → 回归集，闭环可核验。
+
+**21. 中文触发的两个基础件**｜分词（精确/全/搜索引擎/paddle 四模式）：https://github.com/fxsjy/jieba ；繁简/地区用词转换：https://github.com/BYVoid/OpenCC ｜成本：低。｜适配：触发匹配先分词再比对，繁简统一入库。｜坑：全词匹配对中文失效（见第 1 条），异体字必须归一否则漏召。
+
+## 看着好但别抄
+
+- **递归/链式插入**：抽取期禁用——触发链会让"这条证据为什么被取出"不可预测，且官方文档自承可无限循环；只允许在渲染问答期作为可选开关。
+- **概率触发、Group Weight 随机择一**：破坏可复现性，与"证据可核验"直接冲突。
+- **向量化条目（语义召回）**：ST 文档原话"retrieval quality is unpredictable"——不可核验的召回不该进正典库；改显式别名表。
+- **外部见证/第三方时间戳让链自证完整**：HN 讨论指出没有大机构会替你托管 witness（零预算不可行）；本地链 + 覆盖矩阵 + 人工抽检足够。
+- **托管 ledger / 商用幂等网关**：与零预算、纯本地约束冲突；本地文件 + 幂等键语义即可。

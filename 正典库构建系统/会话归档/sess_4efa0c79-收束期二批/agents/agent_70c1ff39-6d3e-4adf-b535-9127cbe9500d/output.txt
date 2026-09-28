@@ -1,0 +1,131 @@
+调研取证完成，证据链齐了。汇总报告如下。
+
+---
+
+# 数据管线编排层深度调研报告（2026-09-27）
+
+## A. 逐题深度发现
+
+### A1. Dagster 软件定义资产（SDA）
+
+**现状与活跃度**（GitHub API 直查，`gh api repos/dagster-io/dagster`）
+- 版本 1.13.24（2026-09-21 发布），16,202 stars，Apache-2.0，最后 push 2026-09-25；release 节奏约每周一版（1.13.20→1.13.24 覆盖 2026-08-27 至 09-21）。**非常活跃，无停维迹象**。
+- 术语已演进：SDA 现在就是 `@asset`/`@multi_asset` 资产定义，配套“声明式自动化”（Declarative Automation）取代旧 auto-materialize policy。
+
+**对“账本→四投影”的映射**（官方文档实证）
+- 资产图：[https://docs.dagster.io/guides/build/assets](https://docs.dagster.io/guides/build/assets)（200 实测）——每个投影（Neo4j 图/LightRAG/嵌入索引/DuckDB 快照）= 一个 `@asset`，`deps=[账本资产]` 即声明依赖。
+- **自动失效重建正是 `AutomationCondition.eager()` 的官方语义**：[声明式自动化指南](https://docs.dagster.io/guides/automate/declarative-automation)原文——eager 条件"whenever any of its dependencies are updated"即向上游变更自动传播下游物化，且会等在途 run 结束、上游数据版本未变（observed assets）不触发。**这与“账本追加→按 offset/哈希失效→重建受影响投影”的痛点一一对应**。
+- 分区（[partitions-and-backfills](https://docs.dagster.io/guides/build/partitions-and-backfills)，200 实测）：可把“账本 offset 区间/章”映射为分区做增量回填——但你们的账本是 append-only 单调流，用“最新分区”语义硬套会有阻抗，**不分区+全量重建小投影反而更简单**。
+- 失败传播：资产检查（asset checks）+ UI 血缘图开箱即得。
+
+**单机 Windows 最低配置**
+- 官方安装页（[docs.dagster.io/getting-started/installation](https://docs.dagster.io/getting-started/installation)）**直接提供 Windows 标签页的 PowerShell/uv 安装命令**（`pip install dagster dagster-webserver dagster-dg-cli`），无 Docker 要求。
+- 本地运行：[running-dagster-locally](https://docs.dagster.io/deployment/oss/deployment-options/running-dagster-locally)——`dg dev`（旧 `dagster dev`）一键起 UI+守护进程；不设 `DAGSTER_HOME` 时用临时目录的 ephemeral instance，**设 `DAGSTER_HOME` 后默认持久化为 SQLite**（`SqliteRunStorage`/`SqliteEventLogStorage`/`SqliteScheduleStorage`，见 [dagster-yaml 文档](https://docs.dagster.io/deployment/oss/dagster-yaml)源码级确认）。**零云、零容器依赖**。
+- **Windows 实测口碑的暗面**（GitHub issues）：官方**无 Windows CI**（[#1733](https://github.com/dagster-io/dagster/issues/1733) 自 2019 open）、`dagster-shell` 在 Windows 不可用（[#15202](https://github.com/dagster-io/dagster/issues/15202)，open）、Windows 用户内容缺口 issue 挂了四年（[#6497](https://github.com/dagster-io/dagster/issues/6497)）。核心 Python 侧普遍可用，shell 类集成是雷区。文档对 Windows **没有任何“官方支持”声明**（只有安装指引）——按“社区尽力支持”理解。
+- **学习曲线口碑**（多信源）：[r/dataengineering "Dagster vs Airflow 3.0"](https://www.reddit.com/r/dataengineering/comments/1ndhhyj/dagster_vs_airflow_30)：“dev experience is better in Dagster but the learning curve is steep”；反方["Myth: Dagster is harder than Airflow"](https://www.reddit.com/r/dataengineering/comments/1imjtro/myth_dagster_is_harder_than_airflow) 认为陡感来自 asset 范式而非工具本身；[三方对比帖](https://www.reddit.com/r/dataengineering/comments/1le9ltm/airflow_vs_prefect_vs_dagster_which_one_do_you)与[DataCamp](https://www.datacamp.com/blog/dagster-vs-airflow)（称 Dagster 反而更平缓）。共识：**资产概念入门快，IO manager/分区/resources 精通慢；上手成本数天，不是数周**。
+
+### A2. Prefect 2/3
+
+**现状**（GitHub API + PyPI）：3.8.6（2026-09-14），23,931 stars，Apache-2.0，pushed 2026-09-26，日更 dev 构建。**极活跃**。Prefect 2 已停新功能：2.x 最终线 2.20.x，最后补丁 2.20.26（2026-09-02，前一个 2.20.25 是 2025-12-08，PyPI 实查）——**仅维护状态**；官方 EOL 精确日期**未找到公开声明页【待确认】**。新项目无理由选 2。
+
+**flow/task + 缓存策略**（[缓存概念页](https://docs.prefect.io/v3/concepts/caching) 与 [缓存 how-to](https://docs.prefect.io/v3/how-to-guides/workflows/cache-workflow-steps.md) 实证）
+- 内置 policy：`DEFAULT = INPUTS + TASK_SOURCE + RUN_ID`（仅同 run 内命中）、`INPUTS`（跨 run 按入参命中）、`TASK_SOURCE`、`FLOW_PARAMETERS`、`NO_CACHE`；可用 `+`/`-` 组合（如 `INPUTS - 'debug'`）。
+- **自定义 cache key = 你们检查点语义的等价物**：`cache_key_fn(context, parameters)` 返回任意字符串——直接返回 `账本最后 offset` 或尾部哈希即可。命中时"without executing the body of the function"（官方原文），即跳过重建；`refresh_cache=True` 强制重算，`cache_expiration` 定时失效。结果默认落 `~/.prefect/storage/`，可 `key_storage=` 分离。
+- 多任务 all-or-nothing：v3 [transactions](https://docs.prefect.io/v3/advanced/transactions.md)（llms.txt 索引确认）支持同事务写缓存。
+- **注意**：缓存依赖 result 持久化（默认关，需 `PREFECT_RESULTS_PERSIST_BY_DEFAULT=true`）。
+
+**Windows 适配**（官方专页 [server-windows](https://docs.prefect.io/v3/how-to-guides/self-hosted/server-windows) 原文）
+- "Prefect provides **first-class Windows support** with native PowerShell integration and full feature parity"。默认 SQLite at `%USERPROFILE%\.prefect\prefect.db`；支持 UNC/映射盘路径；NSSM 装成 Windows 服务；**坑位明示**：杀软需排除 `.prefect` 目录否则拖慢、防火墙 4200 端口、`PYTHONIOENCODING=UTF-8` 防编码错。**六题中 Windows 口碑最硬的编排器**。
+- 单机嵌入部署：`prefect server start` + `flow.serve()` 即可，无 Docker。但**它是常驻服务架构**（server API + 背景 worker），比 Dagster `dg dev` 和 doit 多一层常驻运维。
+
+### A3. 轻量级替代（Makefile / just / doit / Invoke）
+
+| 工具 | 活跃度（实查） | License | Windows | 依赖图能力 |
+|---|---|---|---|---|
+| **just** 1.58.0（2026-08-03） | 36,022 stars，pushed 2026-09-26，Rust | CC0-1.0 | 官方支持：Git Bash 的 sh 或 `set shell := ["powershell.exe","-c"]`（[README Windows 节](https://github.com/casey/just)原文，推荐 PowerShell） | **无文件时间戳依赖图**——它是命令运行器，不是构建系统；只解决“命令别名+参数化” |
+| **doit** 0.37.0 | 2,087 stars，MIT，pushed 2026-09-21（活跃维护，0.x 语义） | MIT | 纯 Python，action 可全用 python-action，无 shell 依赖 | **有完整文件依赖图**：`file_dep`/`targets`/`uptodate`/`calc_dep` |
+| **Invoke** 3.0.3 | 4,778 stars，BSD-2，**最后 push 2026-04-07（5 个月无动静）** | BSD-2 | 纯 Python 无碍 | 无依赖图，仅任务组织+fabfile 式参数 |
+| **GNU Make** | Windows 无原生发行，需 choco/GnuWin + sh.exe；CRLF/路径/空格雷区 | GPL | 口碑差 | mtime 精度+时间戳不可靠是经典坑 |
+
+**doit 关键语义**（[pydoit.org/dependencies](https://pydoit.org/dependencies.html) + 源码 doc/tasks.rst 原文）：
+- 上游判定规则原文："a file_dep changed since last successful execution"、"a missing target"；`doit saves the **MD5** of a file_dep after the actions are executed`（**内容哈希，不是 mtime**）——比 Make 的时间戳强，**正好匹配“账本内容哈希变化才重建”**。
+- `calc_dep` 支持运行时计算依赖（可以把“读账本 offset→决定哪些投影过期”写成 calc_dep）；`task_dep` 只管顺序，`result_dep` 比结果。
+- **与自写拓扑排序的取舍**：doit 本质=你们手写 runner 的“依赖声明+MD5 脏检查+并行执行+增量跳过”的标准化封装，`dodo.py` 单文件即用（`py -m doit`）。代价：0.x 版本号（API 偶有破坏性变更，changelog 需跟）、社区小（2k stars，出问题靠自己读源码）。自写拓扑的优势是零依赖+完全贴合账本语义，劣势是每次新增投影要手改失效逻辑——这正是当前痛点。
+
+### A4. DVC
+
+**现状**：仓库**已从 `iterative/dvc` 转移到 `treeverse/dvc`**（GitHub 301 跳转，实查确认），15,885 stars，Apache-2.0，pushed 2026-09-21；**最新 release 3.67.1 是 2026-03-31——近 6 个月无新版**（此前为月更节奏），2026 年发版明显放缓（活跃开发仍在，issue #11106 于 2026-09-20 还在修）。组织层面 Iterative 仍存在，但旗舰仓库易主 Treeverse（lakeFS 同门）是事实。
+
+**Windows**（[安装页](https://dvc.org/doc/install/windows) + [How to Run DVC on Windows](https://dvc.org/doc/user-guide/how-to/run-dvc-on-windows) 官方专页实证）
+- winget/choco/scoop/pip/独立安装器全覆盖；安装器默认开启 symlink 权限。
+- 官方专页承认 **NTFS 与 Windows 安全机制导致的系统性性能问题**；**CRLF 雷区原文**：“DVC is using content-based checksums... depending on your Git configuration (core.autocrlf)，DVC might see Git-tracked files as changed, thus triggering pipeline reproduction on one system and not on another"——跨机 LF 强制。推荐 WSL2 优先。**可用但不如 Linux 顺**。
+
+**6172 个小 JSON 的实际开销**（官方文档原文，[large-dataset-optimization](https://github.com/treeverse/dvc.org/blob/main/content/docs/user-guide/data-management/large-dataset-optimization.md)）
+- 官方原话："DVC still has **overhead when scanning, hashing, downloading, or staging many files**. For **tens of thousands of small files** or object-store-scale datasets, prefer directory targets where possible. If that workflow becomes too costly, **consider lakeFS**."——官方自己承认小文件多是其弱项。
+- 实锤 issues：[#10629](https://github.com/treeverse/dvc/issues/10629) "dvc commit is slow when there are many stages"（2024-11，已由 #10927 于 2025-12 缓解）、[#8895](https://github.com/treeverse/dvc/issues/8895) "DVCFileSystem.find very slow with many files"（仍 open）。6172 文件量级在“可忍受但每条命令都有 O(N) 哈希/扫描税”区间。
+- **与“账本 offset 检查点”的语义重叠**（分析，非引文）：`dvc repro` 的 dep MD5 缓存=内容寻址失效，与你们哈希链天然重叠且是**弱化版**——账本 offset 是单调序号，能表达“从第 N 条起增量”，DVC 的 md5 只能表达“变了/没变”，无增量位置概念。版本控制价值点在“大二进制多版本+远端同步”，你们 6172 个小 JSON 纯 git 完全扛得住（总量小），**DVC 引入的是双份存储（cache 副本）+一层额外心智，当前无收益**。
+
+### A5. 管道可观测性（OpenLineage / Marquez）
+
+**OpenLineage**：2675 stars，Apache-2.0，1.53.0（2026-09-01），pushed 2026-09-26，**活跃**。
+- **单机最小集成不需要 Marquez**：Python 客户端 transport 源码实查（`client/python/src/openlineage/client/transport/` 目录）含 **`console.py`、`file.py`、`http.py`、`composite.py`、`kafka.py`**——`file`/`console` transport 可零服务器本地落 JSONL 血缘事件（`pip install openlineage-python`，openlineage.yml 配 transport）。与你们“jsonl 唯一写模型”的技术栈同构。
+- 集成方式：在投影 runner 内手动构造 `RunEvent/Job/Dataset`（约几十行），或用现成的 Prefect/Dagster 集成。对“投影血缘+失败传播”的价值：**事件格式标准化**（run 级 started/failed/completed + input/output dataset），拿到后接任何消费端都行；但你们投影只有 4 个、血缘就是账本 DAG 本身，**当前信息增量小**。
+
+**Marquez**：2,281 stars，Apache-2.0；**最新 release 0.50.0 停在 2024-10-24，最后实质提交 2026-04-12**（实查 commits API），Renovate 升级 openlinejava 依赖的 PR [#3002](https://github.com/MarquezProject/marquez/pull/3002) 自 2025-01 挂到现在没合。README 仍自称 "under active development"，**官方从未正式宣布停维【待确认】——但发布停滞近 2 年是事实**。架构：Java + PostgreSQL + Docker（`docker/up.sh`；Windows 用户被要求配 Git Bash/PostgreSQL 手动装，[README Quickstart](https://github.com/MarquezProject/marquez)原文）。**单机 Windows 成本最高、风险最大，排除**。
+
+### A6. 事件驱动文件监听（watchdog / ReadDirectoryChangesW）
+
+**watchdog**：7,417 stars，Apache-2.0，v6.0.0（2024-11-01，低频稳定线），pushed 2026-09-22，**活跃维护**。
+
+**Windows 可靠性口碑——2026 年仍在修的实锤 issue 列表**（GitHub search API 实查，全部 open）：
+- [#1234](https://github.com/gorakhargosh/watchdog/pull/1234)（2026-08-31）修复 **ReadDirectoryChangesW 缓冲区溢出**；
+- [#1286](https://github.com/gorakhargosh/watchdog/pull/1286)（2026-09-14）**重命名源路径跨 get_events 批次丢失**；
+- [#1215](https://github.com/gorakhargosh/watchdog/pull/1215)（2026-08-15）WindowsApiEmitter 线程不安全访问；
+- [#1156](https://github.com/gorakhargosh/watchdog/issues/1156)（2026-01 起 open）**Windows 上删除目录不触发 DirDeletedEvent**；
+- [#92](https://github.com/gorakhargosh/watchdog/issues/92)（2012 年挂至今）删除目录误报 FileDeleteEvent；
+- [#1221](https://github.com/gorakhargosh/watchdog/issues/1221) watchmedo auto-restart 在 Windows 收不到 stop 信号且孙进程泄漏。
+
+**底层 API 语义**（[Microsoft Learn: ReadDirectoryChangesW](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readdirectorychangesw) 原文）："**If the buffer overflows, ReadDirectoryChangesW will still return true, but the entire contents of the buffer are discarded** and lpBytesReturned will be zero... **you should compute the changes by enumerating the directory or subtree**"；另有 `ERROR_NOTIFY_ENUM_DIR`（系统未能记录全部变更→必须全量枚举）与 **64KB 网络目录缓冲上限**。**即：事件驱动在 Windows 上存在“静默丢事件、不报错”的官方设计语义**——对账本这种“绝不能漏”的场景，事件流不能当唯一真相源。
+
+**防抖与原子写联动**：watchdog 内置防抖组件 `src/watchdog/utils/event_debouncer.py`（源码实查，docs 有 [debounced.py 示例](https://github.com/gorakhargosh/watchdog/tree/main/docs/source/examples)）。原子写（tmp+rename）在 Windows 会产生 MOVED_FROM/MOVED_TO 事件对，叠加 #1286 的重命名批次 bug，**必须**：防抖窗口聚合 + 收到事件后以账本尾部哈希校验兜底（这正是你们“轮询哨+哈希”已在做的事）。**结论：现有 mtime 轮询哨比纯事件驱动更符合本管线可靠性需求；watchdog 最优用法是“低延迟唤醒轮询器”的 hybrid，而非替代轮询。**
+
+---
+
+## B. 对本管线的建议
+
+**判据维度**（先给尺子再给结论）：任务节点数、触发模式（账本追加→内容寻址失效）、常驻进程预算（0 或 1）、Windows 原生度、失效语义（offset 序号 ≠ 时间戳 ≠ 事件流）。
+
+**核心判断：引“薄编排层”，不引“平台型编排器”。当前痛点（投影间依赖+失效重建靠手写脚本）的本质是缺一层声明式依赖图，而不是缺调度平台——你们的失效语义已经由哈希链免费提供了，买编排器是把免费的东西再实现一遍。**
+
+具体分档：
+
+1. **首选（低成本引编排层）：doit 薄层**。`dodo.py` 单文件：账本资产 `file_dep=[账本尾部哈希文件]`（doit 自动 MD5 对比，内容变了才下游重建，天然等价投影检查点）；四投影各一个 task，`task_dep` 声明 DAG；`calc_dep` 动态读 offset 决定失效范围。纯 pip、纯 Python、无常驻进程、Windows 无雷。现有 `tools/积压重分流.py`、`lightrag_live.py` 的轮询哨保留为“账本变更检测器”，检测到变更就 `doit` 增量跑——手写拓扑排序部分被 doit 替换，检查点语义不丢。
+2. **不引 Dagster（现阶段）**。触发器满足任意一条时升级到 Dagster（用 SDA + `eager` automation，SQLite 本地实例，Windows 可跑但 shell 集成有雷）：投影数量从 4 涨到约 8+ 且出现两跳以上传递失效；需要按“章/offset 区间”分区回填；需要 UI 级重跑/回填/血缘认知（多人协作或 AI agent 接管重建时 UI 价值陡增）。学习曲线按数天预算。
+3. **不引 Prefect（现阶段）**。它的 `cache_key_fn=账本 offset` 确实是检查点语义的等价实现且 Windows 口碑最硬，但**常驻 server 架构与你们“单机、零常驻”纪律冲突**。触发器：需要远程触发/定时调度/重试策略托管、或未来上第二台机器时再评估（选 3.x，别选 2——2.20.x 已是维护线）。
+4. **DVC 不引**。官方自认小文件开销、与 offset 检查点语义重叠且更弱、git 已覆盖版本化需求。触发器：出现大体积派生物（向量索引快照/音频）需多机同步或对象存储版本化时，连同 lakeFS 一起重评。
+5. **OpenLineage：可选、按最小形态引**。`openlineage-python` + file transport 把每次投影重建写成 JSONL 血缘事件（落账本同目录），零服务器、与现有技术栈同构；收益是事件格式标准化，为将来换编排器/DuckDB 分析快照留接口。不接 Marquez。
+6. **文件监听：保持 mtime 轮询为主**。若要低延迟，用 watchdog 做唤醒器（EventDebouncer 防抖 + 账本哈希校验兜底），依据是 MS 官方文档的静默丢事件语义 + watchdog 2026 年仍在修的 Windows 边缘 bug。**不要把事件流当失效依据**。
+
+---
+
+## C. 排除项（云依赖/停维/重量级）
+
+- **Marquez**：release 停滞近 2 年（0.50.0，2024-10）+ Java/PostgreSQL/Docker 三重栈，单机 Windows 最重路径。【“官方停维声明”未找到，标待确认】
+- **Prefect Cloud / Dagster+**：云依赖，违反单机纪律。
+- **Prefect 2.x**：维护线（2.20.x），无新功能，勿新引入。
+- **Airflow**：无原生 Windows、重量级调度器，节点个位数场景纯属过度工程。
+- **Kubernetes/Docker 部署路径**（Dagster 的 k8s/Celery/Docker deployment options、Prefect work pools）：全部排除。
+- **lakeFS / Kafka transport / Datadog、AWS DataZone 等 OpenLineage 云端 transport**：服务器或云依赖，排除。
+- **watchmedo auto-restart on Windows**：#1221 信号不送达+进程泄漏，排除。
+- **GNU Make 原生 Windows 方案**：无官方原生版+sh 依赖+CRLF 雷区，排除。
+- **Invoke**：无依赖图（不解决痛点）+ 活跃度下滑（5 个月无 push），不作为编排层候选。
+
+**明确说“没找到”的三项**：Prefect 2 官方 EOL 精确日期（仅 PyPI 证据表明 2.20.x 为维护线）；Marquez 官方停维/maintenance-mode 声明（只有发布停滞的间接证据）；Dagster 对 Windows 的官方支持性声明（文档只给安装指引，无“支持/不支持”表述，无 Windows CI）。
+
+Sources（主要）：
+- [Dagster GitHub](https://github.com/dagster-io/dagster) / [声明式自动化](https://docs.dagster.io/guides/automate/declarative-automation) / [本地运行](https://docs.dagster.io/deployment/oss/deployment-options/running-dagster-locally) / [dagster-yaml](https://docs.dagster.io/deployment/oss/dagster-yaml) / [安装](https://docs.dagster.io/getting-started/installation) / [Reddit 口碑1](https://www.reddit.com/r/dataengineering/comments/1ndhhyj/dagster_vs_airflow_30) [口碑2](https://www.reddit.com/r/dataengineering/comments/1imjtro/myth_dagster_is_harder_than_airflow) [口碑3](https://www.reddit.com/r/dataengineering/comments/1le9ltm/airflow_vs_prefect_vs_dagster_which_one_do_you) [DataCamp](https://www.datacamp.com/blog/dagster-vs-airflow)
+- [Prefect GitHub](https://github.com/PrefectHQ/prefect) / [缓存概念](https://docs.prefect.io/v3/concepts/caching) / [缓存 how-to](https://docs.prefect.io/v3/how-to-guides/workflows/cache-workflow-steps.md) / [Windows 专页](https://docs.prefect.io/v3/how-to-guides/self-hosted/server-windows)
+- [just](https://github.com/casey/just) / [doit 依赖](https://pydoit.org/dependencies.html) / [doit GitHub](https://github.com/pydoit/doit) / [Invoke](https://github.com/pyinvoke/invoke)
+- [DVC](https://github.com/treeverse/dvc) / [大文档优化（源）](https://github.com/treeverse/dvc.org/blob/main/content/docs/user-guide/data-management/large-dataset-optimization.md) / [Windows 安装](https://dvc.org/doc/install/windows) / [Windows 实践](https://dvc.org/doc/user-guide/how-to/run-dvc-on-windows.md) / [#10629](https://github.com/treeverse/dvc/issues/10629) [#8895](https://github.com/treeverse/dvc/issues/8895)
+- [OpenLineage](https://github.com/OpenLineage/OpenLineage) / [Python 客户端](https://openlineage.io/docs/client/python) / [Marquez](https://github.com/MarquezProject/marquez)
+- [watchdog](https://github.com/gorakhargosh/watchdog) / [ReadDirectoryChangesW（MS Learn）](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readdirectorychangesw) / [watchdog #1234](https://github.com/gorakhargosh/watchdog/pull/1234) [#1156](https://github.com/gorakhargosh/watchdog/issues/1156) [#1286](https://github.com/gorakhargosh/watchdog/pull/1286)

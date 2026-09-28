@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-25T14:18:23.823Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_graph_chain.py — 链构造器包内自洽测试（Neo4j 缺席→如实 SKIP，不计过）。\"\"\"\nimport importlib\nimport sys\nimport unittest\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE))\n\ntry:\n    import graph_chain as gc\nexcept Exception as e:  # 依赖缺席\n    gc = None\n    _import_err = str(e)\n\n\n@unittest.skipIf(gc is None, f\"graph_chain 不可导入: {_import_err if gc is None else ''}\")\nclass TestGraphChain(unittest.TestCase):\n    def test_depth_guard(self):\n        with self.assertRaises(ValueError):\n            gc.chains([\"任意\"], depth=3)\n\n    def test_empty_seeds(self):\n        self.assertEqual(gc.chains([], depth=1), [])\n\n    def test_live_if_available(self):\n        try:\n            import urllib.request\n            with urllib.request.urlopen(gc.BASE + \"/\", timeout=3):\n                pass\n        except Exception:\n            self.skipTest(\"Neo4j 缺席（如实跳过，不计过）\")\n        import graph_chain as gc2\n        rows = gc2._cypher(\"MATCH (a:Entity)-[r:REL]-() WITH a, count(r) AS d \"\n                           \"RETURN a.name AS n ORDER BY d DESC LIMIT 1\", {})\n        if not rows:\n            self.skipTest(\"图为空\")\n        seed = rows[0][\"row\"][0]\n        c1 = gc2.chains([seed], depth=1, max_chains=3)\n        for c in c1:\n            self.assertEqual(len(c[\"nodes\"]), 2)\n            self.assertTrue(c[\"hops\"][0][\"rel\"])\n\n\nif __name__ == \"__main__\":\n    unittest.main(verbosity=2)\n",
+      "afterContentLength": 1421,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-pipeline-skill\\cbb-pipeline\\scripts\\cbb\\tools\\test_graph_chain.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_0e6d462f3b9d49dab0c17308",
+  "toolName": "Write",
+  "version": 1
+}

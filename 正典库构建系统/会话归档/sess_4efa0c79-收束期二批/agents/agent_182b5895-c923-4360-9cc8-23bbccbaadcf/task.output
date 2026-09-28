@@ -1,0 +1,81 @@
+调研完毕。信源核查方式说明：仓库元数据全部走认证 GitHub API（gh @ master666-max，2026-09-26/27 现值）、R 包走 CRAN/Bioconductor 官方页、许可证以 LICENSE 原文核验；WebSearch 上游间歇限流（429），成功批次的文献链接均已逐条留 URL。
+
+# A 逐题发现
+
+## 1. 不确定性量化（conformal prediction / 贝叶斯证据累积）
+
+| 工具 | 许可 | 星数 | 活跃度 | 地址 |
+|---|---|---|---|---|
+| MAPIE | BSD-3 | 1596 | 推送 2026-09-25，很活跃 | https://github.com/scikit-learn-contrib/MAPIE |
+| crepes | BSD-3 | 584 | 推送 2026-07，稳定维护 | https://github.com/henrikbostrom/crepes |
+| puncc (deel-ai) | MIT（PyPI 核验） | 410 | 0.9.3 发布 2026-06 | https://github.com/deel-ai/puncc |
+| TorchCP | LGPL-3 | 479 | 推送 2026-08 | https://github.com/ml-stat-Sustech/TorchCP |
+
+文本判定方向的 2024-2026 应用文献面成熟：[ConU：Conformal Uncertainty in LLMs](https://arxiv.org/html/2407.00499v3)（把启发式不确定度转成有覆盖保证的预测集）、[Conformal Abstention（NeurIPS 2024）](https://arxiv.org/html/2405.01563v1)（自洽性+conformal 决定何时弃权，控制错误弃权率）、[Enhanced Conformal Prediction for LLM validity（ACM 2024）](https://dl.acm.org)、[UQ for Hallucination Detection（2025）](https://arxiv.org/html/2510.12040)。
+
+**贝叶斯证据累积模型：找不到可直接落地的库。** 最形似的 PyDDM（MIT，114 星，2026-06 活跃，https://github.com/mwshinn/PyDDM ）和 HDDM（BSD-3，308 星，2024-04 停更，https://github.com/hddm-devs/hddm ）是心理物理学**反应时**漂移扩散模型，证据累积的数学同形但领域假设（RT 分布）完全不同，移植属研究项目。可落地替代：confseq 的 e-process/赌博检验（见第 2 题）或 PyMC 自建 Beta-Binomial 序贯更新。
+
+## 2. 多重检验与批质量（BH/FDR 新库 + anytime-valid/e-value）
+
+- **onlineFDR**（R/Bioconductor，GPL-3，2.20.0，入库 8 年持续维护）：LORD/LOND/SAFFRON/ADDIS 全家桶，流式在线 FDR 控制。https://bioconductor.org/packages/release/bioc/html/onlineFDR.html 、https://dsrobertson.github.io/onlineFDR/ 。方法源头 Javanmard & Montanari 2015（https://arxiv.org/abs/1502.06197 ），综述 Robertson et al. 2023（https://pmc.ncbi.nlm.nih.gov/articles/PMC7615519/ ）。Python 侧有早期移植 online-fdr（PyPI 0.0.3，2025-07，https://pypi.org/project/online-fdr/ ，尚不成熟）。
+- **confseq**（MIT，84 星，https://github.com/gostevehoward/confseq ）：anytime-valid 置信序列、e-process、赌博式检验（Howard/Ramdas 系），功能独特但 2023 后更新慢（alpha 档）。
+- **safestats**（R，**LGPL-3**，0.8.8，2026-09-05 发布，很活跃；https://cran.r-project.org/web/packages/safestats/index.html ）：Grünwald/Ly 系 safe tests 与 e-variables（t/比例/2x2）。
+- **sprtt**（R，0.3.1，2026-05 活跃，CRAN）：SPRT 仿真与序贯设计。**gsDesign**（R，GPL-3，3.11.0，2026-08-29 活跃，https://github.com/keaven/gsDesign ）：组序贯设计事实标准。PyPI 上的 sprt（2017）/sequential（2014）是死包，msprt（0.1.2，2023-11）半死。
+
+## 3. 变点检测与 LLM 输出质量监控
+
+- **ruptures**：BSD-2，2086 星，推送 2026-07——处于维护模式但活着，离线变点事实标准。https://github.com/deepcharles/ruptures
+- **bayesian_changepoint_detection**（BOCPD）：MIT，776 星，**推送 2026-09-24（活跃）**。https://github.com/hildensia/bayesian_changepoint_detection
+- **Rbeast/rbeast**：GPL-2|GPL-3，CRAN 1.0.2（2025-12），Python 绑定 rbeast 0.1.25（PyPI，2026-04）都在活跃发布；贝叶斯趋势突变+周期分解，输出“变化有多大可能真实”。https://github.com/zhaokg/Rbeast
+- LLM 输出质量监控（区别于经典 CUSUM 的实践）：**evidently**（Apache-2，7942 星，2026-09 活跃，https://github.com/evidentlyai/evidently ，数据漂移+LLM judge 评测面）；**giskard-oss**（Apache-2，5838 星，2026-09 活跃，https://github.com/Giskard-AI/giskard-oss ，部署前 LLM 扫描/幻觉测试）；**river**（BSD-3，6109 星，2026-09 活跃，https://github.com/online-ml/river ，在线漂移：ADWIN/Page-Hinkley/DDM）。注意 **Arize phoenix**（11628 星）LICENSE 原文是 **Elastic License 2.0 非 OSI 开源**（已读原文核验）。
+
+## 4. 网络科学（角色网络）
+
+- **networkx**：BSD-3（LICENSE 原文核对，GitHub 探测为 NOASSERTION 是格式误判），17290 星，2026-09 活跃——Louvain/中心性/个性化 PageRank 全内置。https://github.com/networkx/networkx
+- **igraph**：GPL-2，2010 星，活跃；**leidenalg**：GPL-3，800 星，活跃；**infomap**：GPL-3，493 星，活跃；**graph-tool**：GPL-3，独立站点 git.skewed.de（C++，贝叶斯随机块模型社区发现最强）。https://github.com/igraph/igraph 、https://github.com/vtraag/leidenalg 、https://github.com/mapequation/infomap 、https://graph-tool.skewed.de/
+- **中文小说角色网公开案例：没有成熟可复用的库**，只有案例级仓库：[chizhu/KGQA_HLM](https://github.com/chizhu/KGQA_HLM)（1339 星，红楼梦人物关系知识图谱+问答，**无 license**）、[yangminz/HLMAnalysis](https://github.com/yangminz/HLMAnalysis)（94 星，红楼梦 NLP 分析，无 license）、[aayi/The-Tale-of-Li-Wa](https://github.com/aayi/The-Tale-of-Li-Wa)（GPL-3，古典小说数字人文 KG 框架）、[King-of-Infinite-Space/genshin-social-network](https://github.com/King-of-Infinite-Space/genshin-social-network)（角色社交网方法论同构）。管线参照：[booknlp/booknlp](https://github.com/booknlp/booknlp)（MIT，939 星，2024-07 后放缓，英文角色共指→共现图；中文需自建 NER/共指，与 task-038“社区无中文精度实测”结论一致）。方法综述：Labatut & Bost, *Extraction and Analysis of Fictional Character Networks: A Survey*, ACM CSUR 2019（https://arxiv.org/abs/1907.02704 ，附数据集 figshare 7993040）。
+
+## 5. 信息论与分布距离
+
+- **POT**：MIT，2846 星，2026-09 活跃——Wasserstein/Sinkhorn/非平衡 OT。https://github.com/PythonOT/POT
+- **alibi-detect**：Apache-2（LICENSE 原文核验），2548 星，0.13.0（2025-12）——即插即用 MMD 置换检验/KS/卡方漂移检测，就是“两批抽取是否同源”的成品判定器。https://github.com/SeldonIO/alibi-detect
+- 两样本检验前沿代码：[antoninschrab/mmdagg](https://github.com/antoninschrab/mmdagg) 与 [mmdfuse](https://github.com/antoninschrab/mmdfuse)（均 MIT，Schrab/Gretton 系 MMD 聚合与 deep-kernel 检验）。
+- 熵估计：**NPEET**（MIT，434 星，2022-10 停更，KSG 连续估计器，https://github.com/gregversteeg/NPEET ）；**dit**（BSD-3，581 星，活跃，离散分布精确信息量计算）；**IDTxl**（GPL-3，301 星，2026-05）；**scikit-bio**（BSD-3，1245 星，活跃，Chao1 等多样性）。**小样本可靠性结论**：KSG 类连续估计器 n<100 时偏差显著（Kraskov 2004 原文适用条件即大样本近似），离散熵小样本同样受离散化偏置支配——**裸 JS/KL 点比较在小样本上噪声大，建议走置换检验框架（alibi-detect/MMD/KS）而非裸熵值对比**。
+
+## 6. 实验设计与因果（组件消融）
+
+- **DoWhy**：MIT，8328 星，2026-09-26 推送（非常活跃）。https://github.com/py-why/dowhy
+- **EconML**：MIT（LICENSE 原文核验），4800 星，0.17.0（2026-07），微软维护。https://github.com/py-why/EconML
+- **causal-learn**：MIT，1689 星，活跃。**pingouin**：GPL-3，1931 星，2026-09 活跃（TOST 等效检验/置换检验/贝叶斯因子）。**crowd-kit**：Apache-2（原文核验），254 星，1.4.2（2025-10）。https://github.com/py-why/causal-learn 、https://github.com/raphaelvallat/pingouin 、https://github.com/Toloka/crowd-kit
+- 结论：组件消融本身是**受控干预**，RCT/序贯检验逻辑即可（Q2 库），DoWhy 全套属 overkill；但两处真有用——非随机对照的稳健性审计（DoWhy refutation/placebo）与异质效应（EconML CATE：“哪类章节从组件 X 获益”）。
+
+## 7. 记录链接概率模型（splink 之外）
+
+- **fastLink**（R，GPL-3，CRAN 0.6.1 2023-11，GitHub 292 星 2026-02 活跃）：Imai 团队的 Fellegi-Sunter 快速实现，**splink 之外最正统的 FS**。https://github.com/kosukeimai/fastLink
+- **recordlinkage**（Python，BSD-3，1062 星，2024-02 停更）：FS+EM 教科书实现。https://github.com/J535D165/recordlinkage
+- **dedupe**（MIT，4516 星，2025-07）：主动学习+概率聚类，非 FS 但生产可用。https://github.com/dedupeio/dedupe
+- **reclin**（R，0.1.2，2021 停更）、**anonlink**（Apache-2，隐私保护概率链接，https://github.com/data61/anonlink ）、**NHS England 概率链接参考实现**（MIT，2025-02，https://github.com/nhsengland/NHSE_probabilistic_linkage ）。
+- **贝叶斯 ER：无活跃维护的工程库**。resteorts/bayesian-record-linkage（Steorts 实验室，2021 停更）、blink（R，CRAN 1.1.0，2020 停更）、BayesianRecordLinkage.jl（停更）——学术可用、工程不可落地，明说。另核销一个坑：CRAN 的 **BayesERtools** 名字像实体消解，实为**药代暴露-反应（exposure-response）分析**包（已读 CRAN 页核实），与本题无关。zingg 是 AGPL-3（许可红线，见 C）。
+
+# B 对管线 6 机制的升级建议
+
+1. **NLI 双通道（矛盾预筛）**：升级为“带覆盖率保证的分流”。用 **crepes**（BSD-3）把 NLI 三分判定包成 Mondrian conformal classifier，校准集就用现有人工核验矛盾判例库；预测集大小>1（如“矛盾 or 中立”不可分）的样本自动降级人工桶，保证错误分流率 ≤ 预设 α。MAPIE 适合接 sklearn 化的评分通道；TorchCP 若给嵌入通道上深度 conformal（注意 LGPL-3，进程/依赖隔离评估）。方法依据 ConU/Conformal Abstention（见 A1）。
+2. **对样双轨**：发现轨每个“升级为错误”的判定流式记一个 p 值接 **onlineFDR（LOND）**，在线控 FDR——解决“可疑优先轨错误数是下界”的记账偏差；发现轨样本对总体的代表性用 **alibi-detect** 的 MMD/KS 漂移检测做常设仪表（选择偏移超带→估计轨口径修正）；分层随机轨沿用 Wilson+LQAS，加 iNEXT 覆盖率曲线（见 4）。
+3. **票数晋升**：多数决升级为概率聚合——**crowd-kit**（Apache-2）的 Dawid-Skene/GLAD 直接吃（任务，考官，判定）三元组，在线估计各考官混淆矩阵，晋升分=聚合后验；“异构考官”正是 DS 模型的设计场景。考官能力长期标定可加 **girth**（MIT，IRT；2022 后停更，仅作标定参考）。有争议案例再叠一层 conformal 保证（与机制 1 共用校准基建）。
+4. **覆盖率估计（Chapman/Chao1）**：点估计升级为**基于覆盖率的抽样曲线**——**iNEXT**（R，GPL-3，2025-07 活跃）给出“到样本覆盖 95% 还需抽多少章”的外推与置信带（比单点 Chao1 信息量大得多）；Python 侧 **scikit-bio** 可算 Chao1，iNEXT 走 rpy2 桥。模型化不确定性（异质性大时 Chao1 低估）用 **breakaway**（R，GPL-2）。双通道交叉估计漏检率可上捕获-再捕获 **Rcapture**（R，GPL-2）。GPL 系建议以独立 R 进程调用，保持库内干净。
+5. **SPC（CUSUM/SPC 待上线）**：三层升级——(a) 阈值换成 **confseq** 的 anytime-valid 置信序列（逐章流式监控无多次窥视惩罚，替代固定 CUSUM 阈值）；(b) 在线检测器直接嵌 **river**（ADWIN/Page-Hinkley，BSD-3）；(c) 检测“趋势+周期性批次效应”（如周期性重roll）用 **rbeast**（Python 绑定活跃），它输出“变化真实性概率”，恰好呼应已登记的“σ 地板耦合/Shewhart 不可直接激活”教训。仪表盘与 LLM 特化漂移用 **evidently**+**giskard**（均 Apache-2，避开 ELv2 的 phoenix）。
+6. **组件消融**：主检验=配对置换+TOST 等效（**pingouin**）+序贯监控（confseq/gsDesign 做样本量与 ARL 预注册）；“NLI 通道上线后最终错误率下降是否归因于它而非章节难度混杂”这类**观测性**问题才上 **DoWhy**（画因果图+refutation 套件审计），**EconML** CATE 估“哪类章节获益最大”。明确不建议把整条管线塞进 EconML 的 DML——消融是干预实验，不是观察性因果。
+
+# C 排除项（核实后主动排除）
+
+- **Arize phoenix**：Elastic License 2.0，非 OSI 开源（LICENSE 原文核验）——干净库纪律下排除。
+- **zingg**：AGPL-3（API 核验）——R-022 GPL/AGPL 高危许可纪律，排除。
+- **PyDDM/HDDM**：漂移扩散是心理物理学 RT 模型，移植是研究项目非工程——排除；**贝叶斯证据累积无 turnkey 库，明说**。
+- **BayesERtools**：药代暴露-反应分析，与实体消解无关——排除。
+- **PyPI sprt（2017）/sequential（2014）**：死包——用 safestats/sprtt/confseq 替代。
+- **recordlinkage**：2024-02 停更（可用但别指望修复）；**reclin** 2021 停更；**NPEET** 2022-10 停更（稳定可fork）；**blink/resteorts 系**贝叶斯 ER 全线停更。
+- **febrl、py_entitymatching**：Python2 时代停更——排除。
+- **multipy** 等 2017 停更多重检验库——用 onlineFDR。
+- **KGQA_HLM/HLMAnalysis**：无 license 且是应用不是库——只作方法参照不引码。
+- **BookNLP**：英文管线，中文角色网无可复用现成件（与既有 task-038 结论互证）——分析框架可借（Labatut & Bost 综述），实现自建。
+- **igraph/leidenalg/graph-tool/fastLink/iNEXT 等全 GPL 系**：不作“不可用”排除，但按“力求绝对干净”口径标注——**库内 import 违红线，独立进程/CLI 调用是可接受形态**；纯 BSD/MIT 干净替代：networkx（内置 louvain_communities+个性化 PageRank）、MAPIE/crepes、confseq、river、evidently、crowd-kit、pingouin 例外是 GPL-3（进程隔离同上）。

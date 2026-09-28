@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T15:01:09.096Z",
+  "files": [
+    {
+      "afterContent": "# PHASE-A BUILD-STATE（全量重构·Phase A 地基）\n\n- 契约: v3.0.0-alpha | 词表: 待 U-A07 bump | 指纹: ranker/criterion/sort/params 待首验时入账 | 锚: v2-baseline(fd0fd6a0)\n- 工单: 《全量重构-工单-PhaseA-地基-20260926.md》v1.0\n- 开工: 2026-09-26\n\n## 开工门记录（2026-09-26）\n\n- git tag `v2-baseline` → fd0fd6a0 ✅\n- 环境自检两跑：第一跑 exit=0（E1/R1 READY）；**开工复跑 exit=2**——G1/G2/G4/E1/R1/P1 全 BLOCKED。\n  **根因诊断**：docker daemon 未运行（`dockerDesktopLinuxEngine` 管道缺失）+ 7695/7694/8080/8081 全端口无监听（LM Studio/llama-server 进程未运行）。**属本机服务停机，非代码回归。**\n  **处置（偏差登记，不洗白）**：M1-M4 READY；G/E/R 显式 BLOCKED。Phase A 按依赖切分——**离线单元（A01/A02/A03/A05/A07 映射构建/A08）先行**；U-A04 实测、U-A06 执行前**必须复跑自检至相关项 READY**；Neo4j（G 面）本相不依赖，Phase B 前拉起。\n- env：`DEEPSEEK_API_KEY`/`CBB_NAMESPACE=迷深实战` 在 HKCU 在案、会话未继承（按命令注入，不落文件）；`DASHSCOPE_API_KEY` 未设（qwen3.8-flash 考官通道 BLOCKED，不阻塞本相）。\n- 事故登记：reg query 原始输出曾将 DEEPSEEK key 值带入会话记录（未进文件）；整改=凭据命令输出按列过滤。同轮 L1(付费) 因凭证在位即 READY——D-28 病灶现行复现，已入反例包。\n\n## 单元进度\n\n| 单元 | 状态 | 判据留痕 |\n|---|---|---|\n| A00 开工门 | ✅ | tag+本文件+自检留痕 logs/环境自检-PhaseA开工-20260926.json |\n| A01 契约v3+profile | pending | |\n| A02 store 写入决策树 | pending | |\n| A03 gate 健壮档 | pending | |\n| A04 NLI 双通道+契约闸 | pending（代码+桩测可离线；实测待服务） | |\n| A05 修前反例包 | pending | |\n| A07 词表类型映射 | pending | |\n| A06 604 重分流执行 | pending（白名单写；前置=A04 READY?否——A06 仅需文件面+A07） | |\n| A08 特征基线扩展 | pending | |\n| A09 收口 | pending | |\n\n## 反例包（13 条开放缺陷）状态\n\n（U-A05 填写）\n",
+      "afterContentLength": 1346,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\全量重构-PhaseA-BUILD-STATE.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_3d9658433dac4e79b3ea5e5c",
+  "toolName": "Write",
+  "version": 1
+}

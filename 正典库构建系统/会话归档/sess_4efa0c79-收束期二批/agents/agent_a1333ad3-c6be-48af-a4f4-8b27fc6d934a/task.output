@@ -1,0 +1,207 @@
+# 图增强检索生产实践调研报告
+
+**方法说明**：本环境可直连的源为 arXiv / GitHub API / microsoft.com / hn.algolia.com / cn.bing.com / Wikipedia API（阻塞），Google 域、SearXNG、DuckDuckGo 均不可达。所有数字均逐条打开原文核实，未见原文支持的写「未找到」。
+
+---
+
+## 一、反例/边界条件
+
+**1. 商业 GraphRAG 在大多数常规问题上打不过朴素向量 RAG，只在推理密集/多跳问题上赢**
+
+- 证据：MultiHop-RAG 整体准确率 RAG 67.02 vs Community-GraphRAG(Local) 69.01 vs Community-GraphRAG(Global) 64.40；NQ F1: RAG 64.78 vs Global 54.48；NovelQA 平均准确率 RAG 57.12 vs Global 39.17。KG-GraphRAG（纯三元组）灾难性落后：NQ F1 34.28、HotpotQA 25.02。
+- 反向边界：MultiHop-RAG 上 Local 版以 69.01 反超 RAG；70B 生成模型下提升到 71.17。
+- 论文自己的结论：RAG 在「单跳、事实型、需精确取细节」场景持续更强；GraphRAG 在「推理密集、多跳」场景更强，其多文档摘要更全面。
+- 评测设置：语料 NQ / HotpotQA / MultiHop-RAG / NovelQA（QA）+ SQuALITY / QMSum / ODSum-story / ODSum-meeting（摘要）；生成模型 Llama-3.1-8B（主）/ 70B（附表）；图构建 GPT-4o-mini（默认）、GPT-4o（对比）；embedding text-embedding-ada-002；reranker bge-reranker-large。
+- URL: https://arxiv.org/html/2502.11371v3
+
+**2. 独立基准 GraphRAG-Bench：最好 GraphRAG 比朴素基线只高 ~1.9 个百分点，且在两类题型上更差**
+
+- 证据：平均准确率——TF-IDF 71.71、BM-25 71.66、GPT-4o-mini(无检索) 70.68、最佳 GraphRAG（RAPTOR）**73.58**。逐类型：多选 TF-IDF 77.88 / BM-25 78.80 / GPT-4o-mini 81.11 **均高于 RAPTOR 80.65**；判断题 TF-IDF 84.17、BM-25 84.49 **均高于 RAPTOR 82.28**。DALK（69.30）、G-Retriever（69.84）直接**低于不用检索的 LLM 基线 70.68**。
+- 论文原文结论：「GraphRAG 的检索式增强可能引入冗余或弱相关信息……这种检索噪声会干扰模型决策，最终降低多选题准确率」「除非检索高度准确，否则 GraphRAG 收益有限」「所有 GraphRAG 方法都在数学领域降低了 LLM 的生成准确率」。
+- 评测设置：语料 = 20 本计算机教材、约 700 万词；1,018 道题、5 种题型（填空/单选/多选/判断/开放）、16 个学科；judge = GPT-4o-mini。
+- URL: https://arxiv.org/html/2506.02404v1
+
+**3. 「GraphRAG vs 向量 RAG」的胜负对语料/嵌入器/裁判高度敏感，文献结论互相矛盾**
+
+- 证据：GraphRAG 的 graph walk「以 precision 0.12–0.23 淹没上下文窗口」，但综合器「以 precision 0.48–0.65 选择性引用」；**把检索集合当作引用集合来评分会反转架构排名**。GraphRAG 在短跳 DO-178C 查询上与朴素版打平、在 MuSiQue 各层全胜；agentic 管线只在 3 跳以上领先。
+- 裁判脆弱性（关键）：GPT-5.4 跨嵌入器的 self-kappa 仅 **0.137（41% 判定翻转）**，同日 test-retest 下限是 0.76；11 周后重判冻结输入，两个裁判 kappa 均 ≤0.14。
+- 评测设置：2×4,440 主矩阵 + 600 跨语料运行 + 5,000+ 忠实度判定；语料 DO-178C 需求 vs Wikipedia/MuSiQue；嵌入器 local e5-small vs Azure text-embedding-3-small；裁判 GPT-5.4 × GPT-4.1。
+- URL: https://arxiv.org/abs/2608.00705
+
+**4. 记忆场景下，带图的系统被纯向量 RAG 大幅击败**
+
+- 证据：LongMemEval 上 ICE v2 **50.8% vs 纯向量 RAG 72.8%**（evidence-only oracle），**43.0% vs 69.5%**（full-S）；配对差 −22.0 分（95% CI [−26.6, −17.4]）与 −26.5 分（[−31.3, −21.8]）。论文结论原文：「**graph utility is not established**」。另有：在三个普通密度数据集上质量几乎无差，但「少选 32% 片段却多用 6.6% 估计 prompt token」——作者将其定性为「质量-成本权衡，而非效率优越」。
+- 评测设置：LongMemEval；私有单用户 1,985 轮对话、219 探针、1,211 条探针-检查点观测、52 个检查点；协议 LSREP（有序回放 + 生命周期调度 + 演化参考答案）。
+- URL: https://arxiv.org/abs/2609.16730
+
+**5. 图 RAG 的瓶颈是推理而非检索——多数失败与图无关**
+
+- 证据：在 HotpotQA / MuSiQue / 2WikiMultiHopQA 上评 KET-RAG，**77%–91% 的问题 gold answer 已在检索上下文中，但准确率只有 35%–78%**；**73%–84% 的错误属于推理失败**。
+- 评测设置：三大多跳 QA 基准，复制实验也在 LightRAG 上做过；增强手段为 SPARQL chain-of-thought 与图游走压缩（上下文减约 60%）。
+- URL: https://arxiv.org/abs/2603.14045
+
+**6. Microsoft 自己承认全量 GraphRAG 索引成本「可能对部分用户不可承受」**
+
+- 证据（官方原文）：LazyGraphRAG「data indexing costs are identical to vector RAG and **0.1% of the costs of full GraphRAG**」；查询侧「comparable answer quality to GraphRAG Global Search, but **more than 700 times lower query cost**」；低预算档位为 C2 查询成本的 **4%**。动态社区选择把 level-1 社区报告从约 **1,500 个**降到平均 **470 个**，**平均降本 77%**，质量无统计显著差异。
+- 评测设置：5,590 篇 AP 新闻（授权使用）；100 条合成查询（50 局部 / 50 全局）；LLM evaluator 按 Comprehensiveness / Diversity / Empowerment 三项评 win rate。
+- URL: https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/ ；https://www.microsoft.com/en-us/research/blog/graphrag-improving-global-search-via-dynamic-community-selection/
+
+**7. 工程侧「钱花了但退场」的可核实信号**
+
+- 「GraphRAG is overkill」复盘（作者立场文，非同行评审）：纯向量索引成本约为全量 GraphRAG 索引的 **0.1%**（三个数量级的前置支出）；明确说「The wins are narrow」；点名 Microsoft 产品化的 GraphRAG accelerator「was even archived in 2025」；实体消解错误会「poison everything downstream」；图库额外带来「another system to run, back up, secure, and keep consistent……multiplied by every tenant」。
+- 该「archived」说法我已独立核实：**Azure-Samples/graphrag-accelerator 已 archived=true，2,408 stars，最后推送 2025-05-27**（GitHub API 核实）。
+- URL: https://www.minimumviablefounder.com/p/why-ai-company-brains-fail ；https://github.com/Azure-Samples/graphrag-accelerator
+- 另有 HN 一线讨论「Is anyone deploying GraphRAG in prod?」（13 分），有开发者称「performance and $ cost really hurt」，最终改用本地微调小模型做事实抽取：https://news.ycombinator.com/item?id=41597587
+
+**8. 检索成本差：GraphRAG 单次查询的 token/调用量级远高于轻量图 RAG**
+
+- 证据：LightRAG 论文在 legal 数据集上给出 GraphRAG 检索侧公式——1,399 个社区、实际用 610 个 level-2 社区、每报告约 1,000 token，**单次检索约 610,000 token 且要几百次 API 调用**；LightRAG 为「**<100 token + 1 次 API 调用**」。增量更新场景：GraphRAG 需重建 1,399 × 2 × 5,000 ≈ **1,399 万 token**。
+- 评测设置：UltraDomain 的 legal 子集（该基准源于 428 本大学教材）；对比基线为 GraphRAG。
+- URL: https://arxiv.org/html/2410.05779v3
+
+---
+
+## 二、成本量级表
+
+| 场景 | 数字 | 来源 URL |
+|---|---|---|
+| **GraphRAG 官方论文是否披露美元成本** | **从未披露**。第三方审计原文：「Zero dollar figures; reports only wall-clock indexing time (**281 minutes**, one small dataset)」 | https://arxiv.org/html/2608.16096v1 |
+| **gpt-4o-mini 索引 3.2MB HotpotQA 样本** | **$21**（KET-RAG 引言作为动机引用） | https://arxiv.org/html/2502.09304v2 |
+| **外推：单个 5GB 法律案卷** | **约 $33K**（同上，KET-RAG 估算） | https://arxiv.org/html/2502.09304v2 |
+| **MS-Graph-RAG 索引一次 5.64MB 语料（≈1.27M token，11,656 段）** | **低配 $2.30 / 高配 $24.94** —— 同一篇第三方论文内 **11 倍差**（配置差异：chunk ℓ=1200 vs ℓ=150） | https://arxiv.org/html/2502.09304v2 ；审计方 https://arxiv.org/html/2608.16096v1 |
+| **同上，token 重建值** | **$19.49–$38.99**（k 括住 $24.94） | https://arxiv.org/html/2608.16096v1 |
+| **同语料其他系统（含对比）** | KET-RAG $1.89、PropRAG ~$4、HippoRAG-2 $1.59（其自报 9.2M 输入/3.0M 输出 token，按 gpt-4o-mini batch 价换算）、Text-RAG **$0.02** | https://arxiv.org/html/2608.16096v1 ；https://arxiv.org/html/2502.09304v2 |
+| **标准化的 $/MB 索引率** | HippoRAG-2 $0.28/MB；GraphRAG 低配 **$0.41/MB**；GraphRAG 高配 **$4.42/MB**；KET-RAG $0.34/MB；GraphRAG token 重建 $3.46/MB；PropRAG $0.71/MB | https://arxiv.org/html/2608.16096v1 |
+| **线性外推到 1TB（一次性索引）** | GraphRAG 低配 **≈$428K** vs 高配 **≈$4.6M**（同一语料外推的 11 倍不确定带）；HippoRAG-2 ≈$296K；PropRAG ≈$744K；KET-RAG ≈$351K | https://arxiv.org/html/2608.16096v1 |
+| **外推：100GB** | GraphRAG $41.8K（低配） / $452.8K（高配） | https://arxiv.org/html/2608.16096v1 |
+| **外推：5GB** | GraphRAG $2,090（低配） / $22,600（高配） | https://arxiv.org/html/2608.16096v1 |
+| **嵌入成本（一次性），per 1M token** | text-embedding-3-small **$0.02**；voyage-3.5 $0.06；Gemini embedding-001(batch) $0.075；Cohere Embed v4 $0.12；text-embedding-3-large $0.13；Gemini standard $0.15。10GB 全量重索引合 **$46–$346** | https://arxiv.org/html/2608.16096v1 |
+| **查询/回答成本（可复现）** | gpt-4o-mini 跑 1,000 题、k=5 batch **$0.053–$0.060**；standard $0.105–$0.120。k=5→k=10 成本比均值 **1.89×**（区间 1.86–1.93）。折算 10,000 次查询/天/年 = **$361–$836/年** | https://arxiv.org/html/2608.16096v1 |
+| **成本构成关系（1TB）** | 嵌入成本比图构建低 **7.5×–900×**；而一整年（10,000 查询/天）的问答成本比图构建仍低 **350× 以上** | https://arxiv.org/html/2608.16096v1 |
+| **微软官方 · 索引** | LazyGraphRAG 索引成本 = 向量 RAG 成本 = **全量 GraphRAG 的 0.1%** | https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/ |
+| **微软官方 · 查询** | LazyGraphRAG 质量持平 Global Search，查询成本低 **>700×**；低预算档位 = C2 成本的 **4%** | 同上 |
+| **微软官方 · 优化收益** | 动态社区选择平均降 token 成本 **77%**；map-reduce 输入从 ~1,500 报告降到 ~470 | https://www.microsoft.com/en-us/research/blog/graphrag-improving-global-search-via-dynamic-community-selection/ |
+| **构建/检索耗时（MultiHop-RAG，实测表 4）** | 构建时间：RAG **135s** vs KG-GraphRAG **7,702s** vs Community-GraphRAG **5,560s**；检索时间：RAG 1,724s vs KG-GraphRAG 14,434s vs Community-GraphRAG 1,249s；存储：127MB / 117MB / 165MB | https://arxiv.org/html/2502.11371v3 |
+| **检索注入 token（表 31）** | MultiHop-RAG：RAG **3,631** vs Community-GraphRAG **9,770**；ODSum-Story：RAG **2,279** vs **10,244** | https://arxiv.org/html/2502.11371v3 |
+| **检索侧 token 量级（LightRAG 测算）** | GraphRAG 单次检索约 **610,000 token + 数百次 API 调用**；LightRAG <100 token + 1 次调用；增量更新 GraphRAG 需 ≈**1,399 万 token** | https://arxiv.org/html/2410.05779v3 |
+| **你问的「10 万 token 语料花多少钱」** | **未找到直接实测**。按上面 5.64MB≈1.27M token 的锚点线性折算：10 万 token ≈ 0.079 倍语料 → GraphRAG 低配 **≈$0.18**、高配 **≈$1.96**（**此为我的推算，非原文，请标【推算】**） | 推算依据 https://arxiv.org/html/2608.16096v1 |
+| **你问的「百万 token 级的量级」** | 有锚点：1.27M token 语料索引 **$2.30–$24.94**；1TB 外推 **$428K–$4.6M**。按 $/MB 折算 = 低配 **≈$1.8 / 百万 token**、高配 **≈$19.6 / 百万 token**（**同样为推算**） | 同上 |
+| **金额口径本身不可靠（关键元结论）** | 审计的 5 个系统里 **3 个不披露索引成本**；唯一公开的 GraphRAG 美元数字在同一篇论文内跨 **11 倍**；SAG 号称「数亿条目生产部署」却零美元数字 | https://arxiv.org/html/2608.16096v1 |
+
+> 成本口径警告（原文立场）：唯一差别是「undisclosed configuration choice」，即 chunk 大小。ℓ=1200 → $2.30，ℓ=150 → $24.94，**同一语料、同一系统、同一论文内 11 倍**。
+
+---
+
+## 三、Zep / Graphiti
+
+**双时序（bi-temporal）具体是哪两条轴**
+
+- **时间轴 T**：事件本身的**时间顺序**（chronological ordering of events）——事实在现实世界中何时为真。`t_valid` / `t_invalid` 落在这条轴上。
+- **时间轴 T′**：Zep **数据摄取的事务顺序**（transactional order of data ingestion）——「承担传统数据库审计的目的」。`t'created` / `t'expired` 落在这条轴上。
+- 每条事实因此带 **4 个时间戳**：T 上的 `t_valid`、`t_invalid` + T′ 上的 `t'created`、`t'expired`。
+- 每个 episode（原始消息/文本/JSON）带 `t_ref` 参考时间戳，用于解析「下周四」这类相对时间。
+- URL: https://arxiv.org/html/2501.13956v1
+
+**失效（invalidated）边怎么处理**
+
+- LLM 检测到「时间上重叠的矛盾」（temporally overlapping contradictions）时，**把旧边的 `t_invalid` 设为新无效化边的 `t_valid`**——即旧事实的失效时刻 = 新事实的生效时刻。
+- Graphiti「一致地优先采用新信息」（consistently prioritizes new information），按 T′ 轴裁决。
+- 旧边**不删除，只标记失效**；官方 README 明确：事实有 validity window，「当信息变化时，旧事实被 invalidate —— 不是删除」，可查「现在为真」或「任意历史时点为真」。
+- URL: https://arxiv.org/html/2501.13956v1 ；https://github.com/getzep/graphiti
+
+**检索时怎么用**
+
+- 检索形式化为 **f(α)=χ(ρ(φ(α)))=β**，三段：**search → rerank → construct**。
+- Constructor 返回的内容里**携带时间信息**：边返回 facts 连同 `t_valid`/`t_invalid`；实体返回 name/summary；社区返回 summary。
+- 混合检索 = **semantic embedding + BM25 关键词 + 图遍历**，官方强调「without reliance on LLM summarization」，这是它敢称亚秒延迟的原因。
+- 官方 README 称检索「Typically sub-second latency」、Zep 托管版「sub-200ms performance at scale」（**这是厂商自述，未见独立第三方复现**）。
+- URL: https://arxiv.org/html/2501.13956v1 ；https://github.com/getzep/graphiti
+
+**图结构构建要点**
+
+- 三层子图：episode 子图、semantic entity 子图、community 子图。
+- 实体抽取用当前消息 + 前 **n=4** 条消息；带 reflexion 式反思降低幻觉。
+- 实体 embedding 维度 **1024**，用 cosine + full-text search 候选，再由 LLM 做消解。
+- 事实成为边，带 key predicate；多实体事实用 hyper-edge。
+- 插入用**预定义 Cypher**，不让 LLM 生成 Cypher。
+- 社区检测用 **label propagation**（非 Leiden）+ 动态扩展。
+- URL: https://arxiv.org/html/2501.13956v1
+
+**与 Neo4j 的关系**
+
+- Graphiti 是**开源框架，自带 BYO 图库**：要求 Neo4j 5.26 / FalkorDB 1.1.2 / Amazon Neptune（+OpenSearch Serverless 做全文检索）/ Kuzu 0.11.2（**已 deprecated，上游 Kuzu 项目不再维护**）。
+- Zep（商业托管版）**不再用第三方图库**，改用自研专有 **Context Graph Engine**；官方称专为数百万个 context graph 与低延迟检索而建。即：**Graphiti 依赖 Neo4j，Zep 已与 Neo4j 解耦**。
+- URL: https://github.com/getzep/graphiti
+
+**相对微软 GraphRAG 的定位差异（官方对照表原文）**
+
+| 维度 | GraphRAG | Graphiti |
+|---|---|---|
+| 主要用途 | 静态文档摘要 | 动态、持续演化的时序知识图谱 |
+| 数据处理 | 批处理导向 | 连续增量更新 |
+| 知识结构 | 实体簇 + 社区摘要 | 时序 context graph：实体、带有效期的事实、episodes、社区 |
+| 检索方式 | 顺序 LLM 摘要 | 混合语义 + 关键词 + 图搜索 |
+| 适应性 | 低 | 高 |
+| 时间处理 | 基础时间戳记录 | **显式双时序追踪 + 自动事实失效** |
+| 矛盾处理 | LLM 驱动的摘要判断 | 自动失效，保留完整时序历史 |
+| 查询延迟 | 秒级到数十秒 | 通常亚秒级 |
+| 自定义实体类型 | 无 | 有（Pydantic 模型） |
+| 可扩展性 | 中等 | 高 |
+
+- URL: https://github.com/getzep/graphiti
+- 论文侧的定位表述：社区检测与 map-reduce 式摘要**沿用 GraphRAG**，但社区算法换成 label propagation（非 Leiden），且检索「differ[s] substantially from GraphRAG's map-reduce approach」。**注意：论文本体并未点名对比 Microsoft GraphRAG，对照表是仓库 README 给的。**
+
+**效果数字（务必带上评测设置）**
+
+| 基准 | 设置 | 结果 |
+|---|---|---|
+| DMR | 500 段对话 × 5 session × ≤12 条消息；gpt-4-turbo | Zep **94.8%** vs MemGPT **93.4%**；full-conversation 94.4%；summaries 78.6%；recursive summarization 35.3% |
+| DMR | gpt-4o-mini | Zep **98.2%** vs full-conversation 98.0% vs summaries 88.0% |
+| LongMemEval | 平均 ~115,000 token；top 20 edges/entities；GPT-4o judge | gpt-4o-mini：Zep **63.8%** vs baseline **55.4%**（延迟 **3.20s vs 31.3s**）；gpt-4o：Zep **71.2%** vs **60.2%**（**2.58s vs 28.9s**），token **~1.6k vs 115k** |
+| LongMemEval 分层 | — | 增益最大：single-session-preference、temporal-reasoning、multi-session；**single-session-assistant 反而下降**（gpt-4o 17.7%、mini 9.06%） |
+
+- URL: https://arxiv.org/html/2501.13956v1
+- 第三方对照（可作参考）：有论文以 Graphiti/Zep 为「最强时序 KG agent memory 基线」做对比，声称 NWM 在多跳叙事 QA 上「substantially and significantly outperforms」——URL: https://arxiv.org/abs/2607.05577
+
+---
+
+## 四、wiki 形态实践
+
+| 案例 | 机制 | 已知问题 | URL |
+|---|---|---|---|
+| **DeepWiki（Cognition / Devin）** | 把 `github.com` 换成 `deepwiki.com` 即得互链 wiki；预索引「**over 50,000** 个顶级公开 repo」；Fast 模式走代码图即时回答，Deep Research 模式跨文件多跳；答案带行级可点击引用回溯源码；提供免认证 MCP server | **幻觉具体且有复现案例**：HN 用户实测 LLVM 仓库——高层编译管线图**错误**（漏掉 GlobalISel、InstCombine 等关键 pass），完全没有讲 LLVM IR、pass manager、TableGen；Clp 仓库的 pivot tolerance 解释**答错**；另一位维护者收到 DeepWiki 生成的「AI-slop bug report」（针对小项目 PureLB），「about an hour」被浪费；有维护者称「我抓到 DeepWiki 非常有说服力地幻觉，不止一次」，根因是结构/函数名沿用了旧语义。另有历史风险提示：OCaml/Julia 曾被 LLM 生成的错误 wiki 做 SEO 压过正规学习资料 | https://cognition.com/blog/deepwiki ；https://news.ycombinator.com/item?id=45002092 |
+| **NotebookLM / Gemini Notebook（Google）** | 源接地（source-grounded）的笔记助手：只在你上传的 source 内作答、给引用、生成 Notes/Guide 类产物 | **13% 输出含至少一次幻觉**——评估语料 300 篇 TikTok 诉讼与美国政策文档，句级标注幻觉类型与严重度；ChatGPT 与 Gemini 约 **40%**（约为 NotebookLM 的 3 倍）。错误形态主要不是编造实体/数字，而是「**interpretive overconfidence**」：添加无来源支撑的刻画、把有归属的观点泛化成一般陈述。论文主张新闻工具应优化「准确归属」而非「流畅度」 | https://arxiv.org/abs/2509.25498 |
+| **Wikipedia × 生成式 AI（真实 wiki 生态的失败模式）** | 人工审阅 + Pangram 检测 + WikiProject AI Cleanup 清理流程 | **量化数据**：3,078 篇 2022 年后新建条目中 **178 篇**被标记为 AI 生成（无一早于 ChatGPT 发布）；其中 **超过三分之二「failed verification」**——句子看似合理、引用真实来源，但该信息**并不在**被引来源里；**仅 7%** 是伪造来源；秋季学期 1,406 条 AI 编辑告警，仅 314 条（22%）在正文命名空间；员工花约**一个月**清理这 178 篇 | https://wikiedu.org/blog/2026/01/29/generative-ai-and-wikipedia-editing-what-we-learned-in-2025/ |
+
+**未找到**：权威来源支撑的「企业内由 LLM 维护的内部 wiki」具体案例（含机制与陈旧/幻觉/维护成本的量化数据）。尝试过 cn.bing 多组查询与 HN Algolia 检索，均未命中可核实的案例研究。
+
+**未找到**：NotebookLM 的 Google 官方文档原文（support.google.com / notebooklm.google.com / blog.google 在本环境全部不可达，超时或连接失败）。上面 NotebookLM 一行的机制描述来自第三方评估论文与搜索引擎片段，**机制部分建议标【待确认】**；幻觉率数字有 arXiv 论文支撑，可放心引用。
+
+---
+
+## 五、来源清单
+
+- RAG vs. GraphRAG: A Systematic Evaluation and Key Insights — https://arxiv.org/html/2502.11371v3
+- GraphRAG-Bench — https://arxiv.org/html/2506.02404v1
+- A Triple-Robustness Analysis of RAG for Multi-Hop Requirements Traceability — https://arxiv.org/abs/2608.00705
+- LSREP: A Longitudinal State-Replay Protocol for Evaluating Conversational Memory — https://arxiv.org/abs/2609.16730
+- The Reasoning Bottleneck in Graph-RAG — https://arxiv.org/abs/2603.14045
+- KET-RAG: A Cost-Efficient Multi-Granular Indexing Framework for Graph-RAG — https://arxiv.org/html/2502.09304v2
+- The Commercial Tax: Rent-vs-Own Blind Spots in Multi-Hop Retrieval Benchmarks — https://arxiv.org/html/2608.16096v1
+- LightRAG — https://arxiv.org/html/2410.05779v3
+- Zep: A Temporal Knowledge Graph Architecture for Agent Memory — https://arxiv.org/html/2501.13956v1
+- graphiti README — https://github.com/getzep/graphiti
+- LazyGraphRAG: Setting a new standard for quality and cost（MS 官方）— https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/
+- GraphRAG: Improving global search via dynamic community selection（MS 官方）— https://www.microsoft.com/en-us/research/blog/graphrag-improving-global-search-via-dynamic-community-selection/
+- GraphRAG: Unlocking LLM discovery on narrative private data（MS 官方，**经核实无任何成本/美元数字**）— https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/
+- From Local to Global（GraphRAG 原论文，**经核实全文无 USD/dollar 字样**）— https://arxiv.org/html/2404.16130v2
+- Azure-Samples/graphrag-accelerator（archived=true, 2,408 stars）— https://github.com/Azure-Samples/graphrag-accelerator
+- GraphRAG is overkill 复盘 — https://www.minimumviablefounder.com/p/why-ai-company-brains-fail
+- HN: Is anyone deploying GraphRAG in prod? — https://news.ycombinator.com/item?id=41597587
+- microsoft/graphrag 成本相关 issue（#1153 / #1917 / #1429，**均无实际美元数字**）— https://github.com/microsoft/graphrag/issues/1153
+- DeepWiki 官方发布 — https://cognition.com/blog/deepwiki
+- HN: DeepWiki: Understand Any Codebase（批评来源）— https://news.ycombinator.com/item?id=45002092
+- Not Wrong, But Untrue: LLM Overconfidence in Document-Based Queries — https://arxiv.org/abs/2509.25498
+- Generative AI and Wikipedia editing: What we learned in 2025 — https://wikiedu.org/blog/2026/01/29/generative-ai-and-wikipedia-editing-what-we-learned-in-2025/
+
+**三点必须带走的元结论**：(1) 唯一同时有「美元数字 + 同语料 + 同配置说明」的 GraphRAG 索引成本锚点是 5.64MB/1.27M token 语料的 **$2.30–$24.94**，而 11 倍差**完全来自未披露的 chunk 配置**；(2) 五个被审计系统里三个**根本不披露索引成本，GraphRAG 官方论文零美元数字**，所以任何「GraphRAG 每百万 token 多少钱」的说法都应要求给出配置；(3) 反例研究的共识不是「GraphRAG 无用」，而是**增益窄且在特定问题类型（多跳/全局摘要）上才成立，同时败因多是推理而非检索**——这一点由「77%–91% 有金答案在上下文但准确率只有 35%–78%」直接支持。

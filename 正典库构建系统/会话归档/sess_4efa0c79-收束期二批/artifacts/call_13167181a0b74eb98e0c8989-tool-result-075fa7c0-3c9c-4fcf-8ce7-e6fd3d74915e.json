@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T04:34:55.389Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.search — 机械检索面：别名精确 + 关键词 + RRF + 引文核验（R11；端点相关路不在核心包）。\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport re\nfrom pathlib import Path\n\n\ndef alias_recall(query: str, store_root: Path) -> list[dict]:\n    q = query\n    hits: dict[str, dict] = {}\n    id2name: dict[str, str] = {}\n    store = Path(store_root)\n    for f in sorted(store.glob(\"libraries/character/*/*.json\")):\n        try:\n            rec = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        nm = (rec.get(\"canonical\") or {}).get(\"name\")\n        if nm:\n            id2name[rec.get(\"record_id\")] = nm\n    aliases = store / \"aliases.jsonl\"\n    if aliases.exists():\n        for row in [json.loads(x) for x in aliases.read_text(encoding=\"utf-8\").splitlines() if x.strip()]:\n            al = row.get(\"alias\")\n            if isinstance(al, str) and al and al in q:\n                rid = row.get(\"entity_id\")\n                nm = id2name.get(rid)\n                if nm:\n                    hits[nm] = {\"name\": nm, \"record_id\": rid, \"via\": \"alias\"}\n    for nm in id2name.values():\n        if len(nm) >= 2 and nm in q:\n            hits[nm] = {\"name\": nm, \"record_id\": None, \"via\": \"exact\"}\n    return list(hits.values())\n\n\ndef rrf(rank_lists: list[list[str]], k: int = 60) -> list[tuple[str, float]]:\n    acc: dict[str, float] = {}\n    for lst in rank_lists:\n        for rank, item in enumerate(lst):\n            acc[item] = acc.get(item, 0.0) + 1.0 / (k + rank + 1)\n    return sorted(acc.items(), key=lambda x: -x[1])\n\n\ndef verify_citations(citations: list[dict], store_root: Path) -> dict:\n    pool: set[tuple[str, str]] = set()\n    store = Path(store_root)\n    for f in sorted(store.glob(\"libraries/*/*/*.json\")):\n        try:\n            rec = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        rid = rec.get(\"record_id\")\n        for ev in rec.get(\"evidence\") or []:\n            pool.add((rid, ev.get(\"quote\")))\n    ok, bad = [], []\n    for c in citations:\n        (ok if (c.get(\"record_id\"), c.get(\"quote\")) in pool else bad).append(c)\n    return {\"verified\": ok, \"unverified\": bad,\n            \"口径\": \"核验=record_id+quote 在库内证据集中逐字存在\"}\n",
+      "afterContentLength": 2223,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\search.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_13167181a0b74eb98e0c8989",
+  "toolName": "Write",
+  "version": 1
+}

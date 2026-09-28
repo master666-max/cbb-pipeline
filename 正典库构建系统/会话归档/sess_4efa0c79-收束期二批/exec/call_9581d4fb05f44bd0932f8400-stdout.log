@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\b4_prescreen.py", line 78, in <module>
+    main()
+    ~~~~^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\b4_prescreen.py", line 59, in main
+    out = nli({"text": quotes[:MAX_CHARS], "text_pair": hypo[:MAX_CHARS]})[0]
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+KeyError: 0

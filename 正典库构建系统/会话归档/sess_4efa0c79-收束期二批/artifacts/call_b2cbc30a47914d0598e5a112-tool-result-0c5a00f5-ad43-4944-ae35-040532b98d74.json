@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-25T04:02:02.714Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"web_supplement.py — 网络搜索补充层（用户检索面的**低置信度**补充推断材料）。\n\n纪律（本件的存在前提，违反即撤）：\n  1. **绝不入正典库**——返回体 `admissible=False` 为硬标记；本件不 import 任何写库模块；\n  2. **不参与引文核验**——网络来源不在库内证据池，verify_citations 必然判 unverified；\n  3. **不进 RRF/不与 canon 结果混排**——调用方必须将其单列\"低置信度补充\"区呈现；\n  4. 每条带 URL 溯源；无来源的模型转述不在本件产物里。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport re\nimport urllib.parse\nimport urllib.request\n\nUA = (\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \"\n      \"(KHTML, like Gecko) Chrome/126.0 Safari/537.36\")\n口径 = \"网络补充推断材料：低置信度；绝不入正典库、不参与引文核验、不与正典结果混排（单列呈现）\"\n\n\ndef _http(url: str, timeout: float = 15.0) -> str:\n    req = urllib.request.Request(url, headers={\"User-Agent\": UA, \"Accept-Language\": \"zh-CN,zh;q=0.9\"})\n    with urllib.request.urlopen(req, timeout=timeout) as r:\n        return r.read().decode(\"utf-8\", \"ignore\")\n\n\ndef _strip_tags(s: str) -> str:\n    s = re.sub(r\"<[^>]+>\", \"\", s)\n    return re.sub(r\"\\s+\", \" \", s).strip()\n\n\ndef search(query: str, n: int = 5, engine: str = \"cn.bing\") -> dict:\n    \"\"\"web 搜索 → {admissible: False, confidence: \"low\", results: [{title,url,snippet}]}。\n    引擎失败→ results=[] 且 errors 如实披露（不静默、不伪造）。\"\"\"\n    results: list[dict] = []\n    errors: list[str] = []\n    try:\n        if engine == \"cn.bing\":\n            html = _http(\"https://cn.bing.com/search?q=\" + urllib.parse.quote(query)\n                         + \"&setlang=zh-hans&count=10\")\n            for m in re.finditer(r'<li class=\"b_algo\".*?</li>', html, re.S):\n                block = m.group(0)\n                a = re.search(r'<h2[^>]*><a[^>]+href=\"([^\"]+)\"[^>]*>(.*?)</a>', block, re.S)\n                if not a:\n                    continue\n                url, title = a.group(1), _strip_tags(a.group(2))\n                p = re.search(r'<p[^>]*>(.*?)</p>', block, re.S)\n                snippet = _strip_tags(p.group(1)) if p else \"\"\n                results.append({\"title\": title, \"url\": url, \"snippet\": snippet[:300]})\n                if len(results) >= n:\n                    break\n        else:\n            errors.append(f\"未知引擎 {engine}\")\n    except Exception as e:  # 网络失败如实披露\n        errors.append(f\"{type(e).__name__}: {str(e)[:120]}\")\n    return {\"admissible\": False, \"confidence\": \"low\", \"engine\": engine,\n            \"results\": results[:n], \"errors\": errors, \"口径\": 口径}\n\n\ndef guard_block_admission(item: dict) -> None:\n    \"\"\"准入闸（供调用方显式调用）：任何试图把网络补充材料当正典证据的动作在此拦下。\"\"\"\n    if item.get(\"admissible\") is False or item.get(\"confidence\") == \"low\":\n        raise PermissionError(\"web_supplement 材料不可入正典（admissible=False 硬标记）\")\n\n\nif __name__ == \"__main__\":  # pragma: no cover\n    import argparse\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--q\", required=True)\n    ap.add_argument(\"--n\", type=int, default=5)\n    ns = ap.parse_args()\n    print(json.dumps(search(ns.q, ns.n), ensure_ascii=False, indent=1))\n",
+      "afterContentLength": 2853,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\web_supplement.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_b2cbc30a47914d0598e5a112",
+  "toolName": "Write",
+  "version": 1
+}

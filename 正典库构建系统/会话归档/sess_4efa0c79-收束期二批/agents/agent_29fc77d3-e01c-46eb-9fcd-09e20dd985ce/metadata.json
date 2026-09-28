@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_29fc77d3-e01c-46eb-9fcd-09e20dd985ce",
+  "childSessionId": "sess_subagent_agent_29fc77d3-e01c-46eb-9fcd-09e20dd985ce",
+  "createdAt": "2026-09-26T09:19:58.723Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "预调研：审计抽样与覆盖率",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_29fc77d3-e01c-46eb-9fcd-09e20dd985ce\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_29fc77d3-e01c-46eb-9fcd-09e20dd985ce\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_2a04af4446b842d1a6043249",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是技术情报研究员。用 WebSearch/WebFetch 做网络预调研。今天是 2026-09。\n\n背景（被研究系统 CBB）：中文小说正典库（6000+ 条实体/关系/事件记录，三态写入，矛盾隔离区）。已有质量机制：①人工\"对样\"：随机抽 20 条记录对照原文核验；②\"终判\"：抽 30 条 confirmed 候选≥95% 通过率；③抽样排序工具：按\"最可疑优先\"排序（启发式）；④捕获再捕获（Chapman 无偏估计）：用两次独立抽取的重叠估计库的覆盖率/漏抽率；⑤CUSUM/Shewhart 统计过程控制监控抽取质量漂移（设计中）；⑥评测仪器指纹四元组（ranker/criterion/sort/params）防止\"改尺子\"不被发现。\n\n调研问题（每题≥2 信源，带 URL+日期）：\n1. 知识库/数据质量审计抽样 2024-2026：分层抽样 vs 风险排序抽样（risk-ranked/targeted sampling）的实践共识；审计抽样量怎么定（defensible sample size）。\n2. Capture-recapture / record-linkage 重叠估计用于知识库完整性（completeness estimation）的适用性与坑（独立性假设在 LLM 抽取下成立吗）；有没有 2024-2026 用它评估 LLM 抽取覆盖率的先例。\n3. Human-in-the-loop 裁决队列设计：adjudication queue 的优先级策略、人机分工（LLM 预审+人终审）、批量裁决界面/协议的实践。\n4. SPC（统计过程控制）/CUSUM/漂移检测应用于 LLM 输出质量或数据管线质量监控的案例（2024-2026）；LLM 输出的非平稳性对 SPC 假设的破坏。\n5. 评测基准/仪器的版本化与防漂移：benchmark versioning、evaluation harness 治理、防止\"评估器被改动后历史分数失去可比性\"的工程实践。\n\n输出：A 逐题发现（+出处+可信度，找不到明说）；B 对被研究系统的可执行建议 3-5 条；C 颠覆性候选（若有）。不许编。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_29fc77d3-e01c-46eb-9fcd-09e20dd985ce\\task.output",
+  "updatedAt": "2026-09-26T09:38:43.089Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-26T09:38:43.089Z",
+  "totalDurationMs": 1124167,
+  "totalTokens": 1111566,
+  "totalToolUseCount": 48,
+  "usage": {
+    "inputTokens": 1081595,
+    "outputTokens": 29971,
+    "totalTokens": 1111566,
+    "cacheReadTokens": 986432,
+    "cacheWriteTokens": 0
+  }
+}

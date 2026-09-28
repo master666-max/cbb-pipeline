@@ -1,0 +1,240 @@
+调研完成。以下为深度报告。
+
+---
+
+# 跨学科深度调研报告（审计学 × 分析哲学 × 形式化方法 → 正典库管线）
+
+**通道说明**：WebSearch 与 Wikipedia/SEP 页面多次限流或超时，故全部结论优先来自官方原文直抓（PCAOB/IAASB/NIST/argdown.org/alloytools.org 等）、arXiv API、OpenAlex API、PubMed E-utilities、GitHub API（`gh` 认证通道）。未能核实处均标【待确认】。
+
+---
+
+## A. 逐题深度发现
+
+### Q1 审计学理论资产
+
+**1a. “充分性与适当性”的形式化定义（可直接映射为证据分级判据）**
+
+PCAOB AS 1105 原文直抓（[AS 1105: Audit Evidence](https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105)）：
+- **充分性 = 数量**（¶.05）："Sufficiency is the measure of the quantity of audit evidence"，随重大错报风险上升而上升；关键句："**Obtaining more of the same type of audit evidence, however, cannot compensate for the poor quality of that evidence**"（同质证据的数量不能补偿质量）——这可以直接写成你们五层证据门的硬性不等式：L 不升级不因 L 级条数增多而放行。
+- **适当性 = 相关性 + 可靠性**（¶.06）。¶.08 给出**可靠性的序结构**（这是可形式化的偏序）：外部独立来源 > 内部来源；审计者亲自取得 > 间接取得；**原件 > 复印件/数字化转换件**（转换件可靠性取决于转换控制）；公司自产信息在控制有效时更可靠（¶.10、¶.10A——电子形态外部信息须测篡改或测控制）。
+- ¶.17 注：仅询问（inquiry alone）不足以降低审计风险——对应“自述不构成证据级晋升”。
+- ¶.27：**特定项目选择的结果不得外推至总体**——对应“对样”与“估计”分离的准则依据。
+
+**1b. 审计工作底稿标准 → BUILD-STATE/台账纪律**
+
+PCAOB AS 1215 原文直抓（[AS 1215: Audit Documentation](https://pcaobus.org/oversight/standards/auditing-standards/details/AS1215)）：
+- **有经验审计师测试**（¶.06A）：底稿须让"an experienced auditor, having no previous connection with the engagement"能理解程序、结果、执行/复核人及日期——即“断言自包含性”：任何断言条目须让陌生考官无需会话上下文即可复算。
+- **矛盾信息强制入档**（¶.08）：与最终结论不一致的信息、应对程序、咨询记录必须入档——即“修前反例”义务的准则原型。
+- **完成后只增不删**（¶.16）："Audit documentation must not be deleted or discarded after the documentation completion date, however, information may be added"，且任何增补须标日期、增补人、原因——**这正是你们“失效记账制 + 哈希链 append-only”的行业对应物**（注意：该准则不用 "superseded" 一词，删除被整体禁止而非标记替换）。
+- 时限纪律：报告日后 **14 天**内完成定稿归档（¶.15，2024-005/2024-004 号修订分阶段生效）；保存 **7 年**（¶.14）。
+
+**1c. IAASB 侧现状（2024-2026 动态）**
+
+[IAASB standards-pronouncements](https://www.iaasb.org/standards-pronouncements) 直抓：2025 年 9 月出版 2025 版国际准则手册；**ISA 240 (Revised)（舞弊责任）2025-07-08 发布**；ISA 570 (Revised 2024)（持续经营）2025-04-09；**ISSA 5000（可持续性鉴证）2024-11-12 发布**——说明“证据准则正在向非财务记录/非财务声明扩展”，与你们的知识库场景同构。ISA 500 系列的修订（AE&RR 项目，涉及 ISA 330/500/520，重点是**外部信息与 IT 派生证据**）于 2025 年末处于批准/采纳流程【生效日期常见报道为 2028-12-15 起的会计期间，待确认——见 [iaasb.org](https://www.iaasb.org)、加拿大 AASB 决议摘要 [frascanada.ca](https://www.frascanada.ca)、[isca.org.sg](https://isca.org.sg)】。
+
+**1d. 持续审计 2024-2026 框架文献**
+
+arXiv API 直查（按时间倒序）收获两篇高相关：
+- [**A Benchmark for Strategic Auditee Gaming Under Continuous Compliance Monitoring**（arXiv:2605.06340, 2026）](http://arxiv.org/abs/2605.06340)：把持续审计形式化为 **Stackelberg 博弈**，证明存在"cover regime"——覆盖度与粒度缺口不能同时闭合（审计方-被审方对抗下的结构性盲区）。这是“对样双轨 + 预注册判据”对抗被审方策略性适应的现成理论。
+- [**Global Sequential Testing for Multi-Stream Auditing**（arXiv:2602.21479, 2026）](http://arxiv.org/abs/2602.21479)：k 路流式审计的序贯检验，优于 Bonferroni——对应多考官/多源并行投票的显著性预算问题。
+会计/软件工程侧（OpenAlex 直查）：[Patience is Key…（Issues in Accounting Education, 2024, doi:10.2308/horizons-2023-060）](https://doi.org/10.2308/horizons-2023-060)（持续审计收益滞后性）、[政府药品采购持续审计案例（2024, doi:10.1016/j.accinf.2024.100713）](https://doi.org/10.1016/j.accinf.2024.100713)、[负责任 ML 应用的持续审计日志需求（EMSE 2025, doi:10.1007/s10664-025-10656-8）](https://doi.org/10.1007/s10664-025-10656-8)（**日志即底稿**的 SE 版本）、专著 [Continuous Auditing with AI in the Public Sector（Routledge 2024, doi:10.1201/9781003382706）](https://doi.org/10.1201/9781003382706)。
+
+### Q2 审计抽样数学
+
+**2a. 准则侧**。[AS 2315](https://pcaobus.org/oversight/standards/auditing-standards/details/AS2315) 直抓：统计/非统计两法均可（¶.03/¶.45）；错报投影公式 = 样本错报 ÷ 抽样比例（¶.26）；控制测试偏差率 = 总体偏差率最佳估计（¶.41）；PPS 仅在脚注 4 中被承认为合法随机选样法。**准则层面没有 PPS 用于非货币总体的条文**——移植先例要到统计学/数据库文献找（见 2c）。
+
+**2b. MUS→非货币的移植先例**。arXiv API 直查：
+- [**Exact PPS Sampling with Bounded Sample Size**（Hentschel, Haas, Tian；arXiv:2105.10809）](http://arxiv.org/abs/2105.10809)：把 PPS 一般化到**任意条目/流式记录**（数据库场景，单遍、摊还 O(1)、样本量有界）——这就是“把货币单位换成‘权重单位’（字数/引证数/事件频次）”的数学可行性证明。
+- [PPS 簇抽样的 HT 估计量无偏性（arXiv:2002.08009）](http://arxiv.org/abs/2002.08009)、[PPS 超几何 vs SRS 效率（arXiv:2101.00548）](http://arxiv.org/abs/2101.00548)。
+审计侧统计软件佐证：[**jfa** R 包](https://koenderks.github.io/jfa/)（[GitHub koenderks/jfa](https://github.com/koenderks/jfa)，2025-12 仍在推送，已并入 JASP 审计模块）原文："functions for **planning, performing, and evaluating audit samples compliant with international auditing standards**"，且同时提供经典与**贝叶斯**版本——审计抽样（含 MUS）的贝叶斯化有成熟先例：[Bayesian Bounds for MUS（JRSS-A 1984, doi:10.2307/2490661）](https://doi.org/10.2307/2490661)、[Robust Bayesian Bounds for MUS（1985, doi:10.2307/2347368）](https://doi.org/10.2307/2347368)、[MUS: Improving estimation of the total audit error（2009, doi:10.1016/j.adiac.2009.06.001）](https://doi.org/10.1016/j.adiac.2009.06.001)。
+
+**2c. 发现抽样（discovery sampling）公式**。审计学界的两条学术线索（OpenAlex 直查）：[Game Theoretic Analysis of Discovery Sampling for Internal Fraud Control Auditing（CAFR 1994, doi:10.1111/j.1911-3846.1994.tb00438.x）](https://doi.org/10.1111/j.1911-3846.1994.tb00438.x)与[Bayesian Discovery Sampling in Financial Auditing（1994, doi:10.2307/2348936）](https://doi.org/10.2307/2348936)。公式本身（n = ln(1−置信度)/ln(1−缺陷率)，零命中 ⇒ 有该置信度断言“总体缺陷率 ≤ p"）在数学上**恒等于 c=0 单式抽验方案**（NIST/SEMATECH 计量验收抽样章：[6.2.2](https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc22.htm)、[6.2.4](https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc24.htm)；注意 NIST 页面只给 AOQ/ATI 公式，c=0 闭式 P_a=(1−p)^n 是标准结论，页面未明写），其大样本近似即医学统计的 **"rule of three"**：[Hanley & Lippman-Hand, JAMA 1983, PMID 6827763](https://pubmed.ncbi.nlm.nih.gov/6827763/)（"If nothing goes wrong, is everything all right? Interpreting zero numerators"，n ≈ 3/p @95%）。
+
+**2d. 与 LQAS/Wilson 双轨的互补性（数学刻画）**。LQAS 权威源：[Lemeshow & Taber, Statistics in Medicine 1991, "LQAS: single- and double-sampling plans"（PMID 1949879）](https://pubmed.ncbi.nlm.nih.gov/1949879/)、[1984–2004 全球 LQAS 应用综述（Soc Sci Med 2006, doi:10.1016/j.socscimed.2006.04.011）](https://doi.org/10.1016/j.socscimed.2006.04.011)、WHO 免疫覆盖 LQAS 文档（[BVS-WHO 镜像 who-66867](https://pesquisa.bvsalud.org/portal/resource/pt/who-66867)；WHO/IRIS 原始编号未复核成功【待确认】）。互补结构可精确表述为三支：
+1. **LQAS（决策轨）**：固定 n、判决阈值 d*，是验收抽样问题——回答“放行/不放行”；
+2. **Wilson（估计轨）**：[Wilson 1927, "Probable inference, the law of succession, and statistical inference", JASA 22:209–212, doi:10.1080/01621459.1927.10502953](https://doi.org/10.1080/01621459.1927.10502953)（DOI 已验证解析）——小样本比例的区间估计，回答“缺陷率是多少”；
+3. **发现抽样（筛查轨）**：c=0 方案，回答“稀有缺陷（如引文造假）是否存在”。
+三者共享同一二项/超几何底座，仅是损失函数不同（0-1 判决 vs 平方损失估计 vs 检出概率），可在同一抽样框架内参数化复用（jfa 即如此实现）。
+
+### Q3 论证映射与逻辑工具
+
+**3a. Argdown 现状**。[argdown.org](https://argdown.org) 直抓：**v2.0 已于 2025 年 12 月发布**；工具链含 VS Code 扩展（实时预览/高亮/linting/导出）、浏览器 Sandbox、CLI、`@argdown/core`/`@argdown/node` API、PDF/图片/web-component 输出。[GitHub argdown/argdown](https://github.com/argdown/argdown)：**1041 stars，最后推送 2026-09-10**（活跃）。形式化能力：支持命名推理规则的逻辑重构、dialectical relations（support/attack/contradiction）编译为 statement-argument 图并做 lint 校验，但**不做自动有效性证明**（定位是重构+校验器，不是定理证明器）。中文支持：官网与文档未提及任何翻译【待确认】；生态里有两件对你们直接有用：[obsidian-argdown-plugin](https://github.com/amdecker/obsidian-argdown-plugin)（79★）与 [Argdown-for-MediaWiki](https://github.com/Scriptura-org/Argdown-for-MediaWiki)（把论证图嵌入 wiki 并**跟踪其随时间的变化**——即论证图的三态/版本化先例）；仓库根目录含 `llms.txt` 与 `context7.json`（面向 AI 工具的文档就绪）。
+
+**3b. AIF 谱系**。规范仓库 [github.com/arg-tech/AIF](https://github.com/arg-tech/AIF)（最后推送 2024-03-28）；学术谱系（OpenAlex 直查）：[Towards an argument interchange format（Knowledge-Based Systems? — Knowledge Eng. Review 2006, doi:10.1017/s0269888906001044）](https://doi.org/10.1017/s0269888906001044) → [The Argument Interchange Format（2009 书章, doi:10.1007/978-0-387-98197-0_19）](https://doi.org/10.1007/978-0-387-98197-0_19) → [AIF+: Dialogue in the AIF（邓迪大学页面](https://discovery.dundee.ac.uk/en/publications/02eaefdd-9ee7-42f4-acdb-e5cad95ea25f)）。AIF 本体（I-node 命题/应用、S-node 方案、CA-node 支击）即“断言-支持-攻击”图的最小 schema，且是 XML 可交换格式。
+
+**3c. 机器可查的裁决/投票/矛盾表达**。**能，且有三层现成形式化**：
+- **Carneades**（最适合票数晋升）：[The Carneades model of argument and burden of proof（AIJ 2007, doi:10.1016/j.artint.2007.04.010）](https://doi.org/10.1016/j.artint.2007.04.010) 把**证明标准（preponderance / clear-and-convincing / beyond-reasonable-doubt）+ 举证责任**形式化为论证图上的可计算谓词——你们的“≥2/3 隔离评审一致 + 五层门”就是 Carneades 意义上的一个 proof standard 参数化。工程实现：[carneades/carneades-4](https://github.com/carneades/carneades-4)（Go，最后推送 2024-10-15，64★）。
+- **ASPIC+**（矛盾判定的类型学）：[An abstract framework for argumentation with structured arguments（Argument & Computation 2010, doi:10.1080/19462160903564592）](https://doi.org/10.1080/19462160903564592)——rebut（结论冲突）/undermine（前提冲突）/undercut（推理冲突）三分，正好承载你们“矛盾判定”的三种机器可查情形。
+- **Argdown**（人机两读的文本层）：作为知识库内的论证图源格式，编译后接 Carneades/ASPIC+ 求值器。
+- 证据合并的数学与谬误（供矛盾仲裁参照）：SEP [Legal Probabilism](https://plato.stanford.edu/entries/legal-probabilism/)（见 Q5）。
+
+### Q4 形式化验证轻量件
+
+**4a. 谱系与实用门槛**（全部为 2026-09 实时活跃度）：
+- **TLA+**：[Lamport 官方页](https://lamport.azurewebsites.net/tla/tla.html)："TLA+ and its tools are useful for eliminating fundamental design errors, which are hard to find and expensive to correct in code"；现由 TLA+ Foundation 维护；[tlaplus/tlaplus](https://github.com/tlaplus/tlaplus)（TLC 模型检查器 + Toolbox，3083★，推送于 2026-09-26）。工业门槛的权威证词：[How Amazon Web Services Uses Formal Methods（CACM 2015, doi:10.1145/2699417，DOI 已验证）](https://dl.acm.org/doi/10.1145/2699417)。
+- **Quint（TLA+ 的可执行方言，最轻量）**：[quint.sh](https://quint.sh) / [quint-co/quint](https://github.com/quint-co/quint)（1704★，推送 2026-09-23），"executable specification language with delightful tooling based on the temporal logic of actions (TLA)"——规格可直接 `quint test/run` 仿真，Apalache 也已支持它（[apalache-mc.org](https://apalache-mc.org/)，[apalache-mc/apalache](https://github.com/apalache-mc/apalache)，602★，推送 2026-09-24，自述"symbolic model checker for TLA+ **and Quint**"）。
+- **Alloy**：[alloytools.org](https://alloytools.org)——**Alloy 6** 新增可变状态 + 时序逻辑；6.2.0 发布于 2025-01-09；2025-02-19 宣布新书草稿 *Practical Alloy*（Cunha/Macedo/Brunel/Chemouil）——关系一阶逻辑 + SAT，设计级“不变式+小模型”路线，门槛低于 TLA+。
+- **P 语言（状态机+事件驱动，最贴近“隔离区状态机”）**：[p-org/P](https://github.com/p-org/P)（3694★，推送 2026-09-03），官网 [p-org.github.io/P/](https://p-org.github.io/P/)——以状态机为原语、事件驱动异步系统，内建 P Checker 运行时监视器（monitors），域含机器人/网络协议/分布式系统。
+
+**4b. 值得抄的轻量运行时不变式框架**（三件，均验证活跃）：
+- **Hypothesis rule-based stateful testing**（Python）：[官方文档](https://hypothesis.readthedocs.io/en/latest/stateful.html)确认 API：`RuleBasedStateMachine` + `@initialize` / `@rule` / **`@invariant`**——把状态机模型写成规则+不变式，测试引擎自动生成操作序列做**运行时不变式检查**。这是“账本/三态迁移”进 CI 的最低门槛路径。
+- **icontract**：[Parquery/icontract](https://github.com/Parquery/icontract)（416★，推送 2026-01-29），Python 契约式设计，支持契约继承与 informative violation messages——适合把“每条断言须带逐字引证”写成前置条件。
+- **deal**：[life4/deal](https://github.com/life4/deal)（915★，推送 2025-11-30），装饰器式契约 + 静态分析 + 属性测试联动。
+
+### Q5 认识论 / 证据哲学
+
+**5a. Evidence hierarchy 的哲学形式化现状**：GRADE 官网（[gradeworkinggroup.org](https://www.gradeworkinggroup.org)）本次抓取超时，其“随机化试验起点高、观察性低 + 五项降级因素（偏倚风险/不一致/间接/不精确/发表偏倚）→ 高/中/低/极低”框架未能原文核验【待确认】；但可用的形式化替代是法庭证据的概率化指南：[Fundamentals of probability and statistical evidence in criminal proceedings（Aitken et al., 诺丁汉大学 eprints）](http://eprints.nottingham.ac.uk/1859/)。要点：**层级本质上是序数偏序而非度量**，形式化时应该建模为“门”而非“分数”——与你们五层门设计一致。
+
+**5b. Corroboration 的贝叶斯形式化与陷阱**：SEP [Legal Probabilism](https://plato.stanford.edu/entries/legal-probabilism/) 原文直抓：
+- §1.2.1 "Assuming independence"：合取 Pr(A∧B)=Pr(A)×Pr(B) **仅在独立时成立**——“无正当理由假设独立”被列为概率推理第一谬误；经典 **Collins 案**演示了把相关证人陈述当独立连乘导致的 1/12,000,000 谬误。
+- 检察官谬误的区分：Pr(match|innocent) ≠ Pr(innocent|match)——对应“考官一致通过”≠“断言为真概率”。
+- 实证佐证：[Strange but true: Corroboration and base rate neglect（JEP:LMC 2020, doi:10.1037/xlm0000816）](https://doi.org/10.1037/xlm0000816)——多源一致仍有底速忽略问题。Popper 侧（SEP [Popper 条目](https://plato.stanford.edu/entries/popper/)直抓）：确证仅在"the positive result of a genuinely **risky** prediction"时才有科学计数——这是“预注册判据（先写可失败判据）”的哲学根据；且“所有观察陈述皆负载理论”，故**考官间仍需程序性隔离**。
+
+**5c. Condorcet 陪审团定理对票数晋升制的数学适用性**：SEP [Democracy 条目](https://plato.stanford.edu/entries/democracy/)直抓 CJT 三假设原文：**competence**（每人正确概率 > 1/2）、**sincerity**（投其所信）、**independence**（票统计独立）→ 多数正确概率随人数 →1。**致命限定**：[Dietrich & List, "A Model of Jury Decisions Where All Jurors Have the Same Evidence"（Synthese 2004, doi:10.1007/s11229-004-1276-z）](https://doi.org/10.1007/s11229-004-1276-z)证明：**当全体评审共享同一证据时，独立性假设自动崩塌，多数决可能系统性错**——推论：你们的 ≥2/3 晋升制有效的前提是（i）评审信息隔离（不共享中间结论）、（ii）评审来源异质（不同模型/不同提示/不同语料切片），否则“一致”只是共因偏差的伪独立。近年形式化进展（OpenAlex 直查）：[On the degree of generalizability of Condorcet jury theorem（Theory and Decision 2025, doi:10.1007/s11238-025-10076-6）](https://doi.org/10.1007/s11238-025-10076-6)、[A Constructive Condorcet Jury Theorem（Episteme 2026, doi:10.1017/epi.2026.10133）](https://doi.org/10.1017/epi.2026.10133)；**LLM 特别相关**：[Examining Independence in Ensemble Sentiment Analysis…Using the Condorcet Jury Theorem（arXiv:2409.00094）](http://arxiv.org/abs/2409.00094)——实证同源 LLM 集成不满足 CJT 独立性（同一基座的“异构考官”是伪异构）。
+
+### Q6 概念工程的可计算化路径
+
+**6a. 2024-2026 概念工程前沿**（OpenAlex 直查）：[Conceptual engineering and conceptual innovation（Inquiry 2024, doi:10.1080/0020174x.2024.2384066）](https://doi.org/10.1080/0020174x.2024.2384066)、[Conceptual engineering is old news（Philosophical Quarterly 2024, doi:10.1093/pq/pqae087）](https://doi.org/10.1093/pq/pqae087)、[The Anti-Conceptual Engineering Argument and the **Problem of Implementation**（2024, doi:10.5406/21521123.61.1.06）](https://doi.org/10.5406/21521123.61.1.06)——最后这篇正中要害：**“实施问题”是该领域公认的未决缺口，即“改概念”如何落地为可执行/可核查的操作**——你们的三态写入+词表演化审计恰是一条实施路线。（SEP 无 conceptual-engineering 条目，`/entries/conceptual-engineering/` 返回 404，已实测。）
+
+**6b. 词表演化的可计算化（成熟工具链，全部实测存在）**：
+- 共享任务与基准：[SemEval-2020 Task 1 数据与 UiO-UVA 参赛实现（akutuzov/semeval2020）](https://github.com/akutuzov/semeval2020)、[LSCDetection 基准数据与模型（Garrafao/LSCDetection）](https://github.com/Garrafao/LSCDetection)、[上下文词表征做 LSC（glnmario/cwr4lsc）](https://github.com/glnmario/cwr4lsc)、[跨语言 XL-Lexeme](https://github.com/pierluigic/xl-lexeme)、[鲁棒时间引用模型 TemporalReferencing](https://github.com/Garrafao/TemporalReferencing)。
+- 2024 前沿（ACL 系，OpenAlex 直查）：[Definition generation for lexical semantic change detection（Findings of ACL 2024, doi:10.18653/v1/2024.findings-acl.339）](https://doi.org/10.18653/v1/2024.findings-acl.339)——**让模型为“旧义/新义各生成定义再比对”**，这条路线对中文小说正典的“术语裁决演化”最可操作；[Few-shot GPT-4 LSC（2024 LChange workshop, doi:10.18653/v1/2024.lchange-1.18）](https://doi.org/10.18653/v1/2024.lchange-1.18)、[语义距离度量学习（arXiv:2403.00226）](http://arxiv.org/abs/2403.00226)。
+- 结论：**可计算化路径存在且现成**——语料按版本切片 → 上下文嵌入/定义生成比对打分 → 词义漂移超阈即触发“措辞偏置审计断言”（三态写入，旧措辞学失效）。
+
+---
+
+## B. 学科 → 管线映射表
+
+| 学科概念 | 出处锚点 | → 正典库机制 |
+|---|---|---|
+| Sufficiency（数量）/ Appropriateness（质量），且“数量不补质量” | AS 1105 ¶.05–.06 | 五层证据门：门是**偏序硬门**，重复同级条数不触发升级 |
+| 可靠性序（外部独立>内部；直接>间接；原件>转录；控制有效加分） | AS 1105 ¶.08/.10/.10A | 逐字引证的分级规则表（原文引证=原件层；转述=转录层降级） |
+| 仅询问不足以降险 | AS 1105 ¶.17 注 | 模型自述/作者口头说法不得单独构成证据级 |
+| 特定项目结果不得外推总体 | AS 1105 ¶.27；AS 2315 ¶.26 | “对样”与“估计”分离：非抽样命中不得写入全库估计断言 |
+| Experienced auditor test | AS 1215 ¶.06A | 断言自包含性 lint：陌生考官可独立复算 |
+| 矛盾信息强制入档 | AS 1215 ¶.08 | 修前反例义务（修改断言前必须显式列出反例及其处置） |
+| 完成后只增不删、增补留痕（人/日/因） | AS 1215 ¶.16–.17 | 失效记账制：supersede=旧失效+新生效成对原子写入 |
+| 14 天定稿 / 7 年保存 | AS 1215 ¶.14–.15 | 版本冻结节奏与归档 SLA |
+| MUS/PPS 非货币移植 | arXiv:2105.10809；jfa | 按字数/引证数加权的 PPS 断言抽样 |
+| 发现抽样 n=ln(1−C)/ln(1−p) | PMID 6827763；doi:10.2307/2348936 | 稀有缺陷（引文造假）筛查轨样本量 |
+| LQAS（c=0/双抽样）+ Wilson 区间 | PMID 1949879；Wilson 1927 | 决策轨（卷册放行）+ 估计轨（缺陷率区间）双轨 |
+| Carneades 证明标准+举证责任 | doi:10.1016/j.artint.2007.04.010 | 票数晋升制的形式化（≥2/3 = 一个 proof standard 实例） |
+| ASPIC+ rebut/undermine/undercut | doi:10.1080/19462160903564592 | 矛盾判定三型的机器可查分类 |
+| Argdown / AIF I-S-CA 节点 | argdown.org；arg-tech/AIF | 知识库内论证图的文本 schema 与交换格式 |
+| CJT 独立性失效（同证据评审） | doi:10.1007/s11229-004-1276-z | 隔离评审：信息隔离 + 来源异质是 2/3 制有效的**前提条件**而非默认 |
+| 同源 LLM 集成伪独立 | arXiv:2409.00094 | 考官异构须按基座/数据切片双重异构 |
+| Popper "risky prediction" 确证观 | SEP Popper | 预注册判据：先写可失败判据，后跑评审 |
+| 检察官谬误（一致性≠概率） | SEP Legal Probabilism | 晋升报告须报告条件概率方向，防“一致即真” |
+| Stackelberg "cover regime" | arXiv:2605.06340 | 对样双轨的反博弈设计依据：预注册+估计/发现分离 |
+| 持续审计日志需求 | doi:10.1007/s10664-025-10656-8 | 管线运行日志直接作为审计底稿层 |
+| LSC 检测 + 定义生成比对 | doi:10.18653/v1/2024.findings-acl.339 | 词表演化审计的可计算实现 |
+| 概念工程“实施问题” | doi:10.5406/21521123.61.1.06 | 把“改术语”实现为三态写入+措辞审计断言 |
+
+---
+
+## C. 三个值得形式化的不变式提案（TLA+/Alloy 伪代码级）
+
+**建议工具位**：设计级用 TLA+/Quint 跑 TLC/Apalache（Quint 可 `quint test` 进 CI）；结构级小模型用 Alloy 6（时序版）；生产运行时用 Hypothesis `@invariant` 复刻同一谓词（一式两份，规格与运行时同源）。
+
+### 提案 1：三态迁移合法性（断言状态机）
+
+```
+------------------- MODULE ClaimLifecycle -------------------
+EXTENDS Naturals
+CONSTANT Claims
+VARIABLES status        \* [c ∈ Claims |-> {"draft","active","superseded","void"}]
+
+Init == status = [c \in Claims |-> "draft"]
+
+\* 唯一合法迁移：draft->active（生效），active->superseded（失效记账），active->void（整条作废）
+Next ==
+  \/ \E c \in Claims : status[c] = "draft"      /\ status' = [status EXCEPT ![c] = "active"]
+  \/ \E c \in Claims : status[c] = "active"     /\ status' = [status EXCEPT ![c] = "superseded"]
+  \/ \E c \in Claims : status[c] = "active"     /\ status' = [status EXCEPT ![c] = "void"]
+
+TypeOK   == status \in [Claims -> {"draft","active","superseded","void"}]
+StateInv ==
+  \A c \in Claims :
+    \* 终态不可复活：superseded/void 是 sink
+    ~((status[c] \in {"superseded","void"}) /\ (status'[c] \in {"draft","active"}))
+Spec == Init /\ [][Next]_status /\ []TypeOK
+=============================================================
+```
+Alloy 6 时序版（对应 `fact`）：
+```alloy
+abstract sig Status {}
+one sig Draft, Active, Superseded, Void extends Status {}
+sig Claim { st: Status -> Time }
+fact Transition {
+  always all c: Claim {
+    // draft->active；active->superseded|void；superseded/Void 为终态
+    (c.st.t = Superseded or c.st.t = Void) implies c.st.next[t] = c.st.t
+    c.st.t = Draft implies c.st.next[t] in {Draft, Active}
+    c.st.t = Active implies c.st.next[t] in {Active, Superseded, Void}
+  }
+}
+```
+**映射**：AS 1215 ¶.16"只增不删"= superseded 是 sink；`StateInv` 用 TLC 可在分钟级验证。
+
+### 提案 2：失效记账完整性（supersede 原子对 + 无孤儿）
+
+```
+VARIABLES claims, supersedeLog
+\* claims[c] = [text, evidenceRefs, gateLevel]; supersedeLog = 失效事件序列
+
+Supersede(c_old, c_new) ==
+  /\ status[c_old] = "active"
+  /\ c_new.text 引用 c_old.id                  \* 新断言必须显式接续旧断言
+  /\ evidenceRefs[c_new] # {}                  \* 新断言必须自带逐字引证
+  /\ supersedeLog' = append(supersedeLog, [old |-> c_old, new |-> c_new, ts |-> Now])
+  /\ status' = [status EXCEPT ![c_old]="superseded", ![c_new]="active"]
+
+LedgerInv ==
+  \A e \in supersedeLog :
+    status[e.new] = "active"                          \* 接任者必须存活
+    /\ e.old \notin {e.new}                           \* 不自接
+  \* 无孤儿：每个 active 断言要么是创生要么有唯一接续链
+  \A c \in {c \in Claims : status[c]="active"} :
+    c \in创生集 \/ \A e \in supersedeLog : (e.new = c <=> ~(\E f : f#e /\ f.new = c))
+```
+**数学性质**：supersedeLog 按时间序构成森林（每失效节点出度 ≤1），`LedgerInv` 保证任何 active 断言可回溯到创生断言的**完整失效链**——这正是审计底稿 ¶.08（矛盾入档）+ ¶.16（增补留痕）的组合机器化。
+
+### 提案 3：哈希链账本 append-only 与链完整性
+
+```
+CONSTANT MaxLen
+VARIABLES ledger          \* seq of [payload, prevHash, hash]
+hash(e) == 哈希函数占位    \* TLC 中用 FNV/简单折叠替身
+
+Append(e) ==
+  /\ Len(ledger) < MaxLen
+  /\ ledger' = Append(ledger, [payload |-> e, prevHash |-> ledger[Len(ledger)].hash, hash |-> ...])
+  \* 关键：无任何删除/改写算子 —— Next 中不存在对 ledger 前缀的赋值
+
+ChainIntegrity ==
+  ledger[1].prevHash = Genesis
+  /\ \A i \in 2..Len(ledger) :
+       ledger[i].prevHash = ledger[i-1].hash /\ ledger[i].hash = hash(ledger[i])
+
+AppendOnly == [][ \A i \in 1..Len(ledger) : ledger'[i] = ledger[i] ]_ledger
+```
+Alloy 6 版：
+```alloy
+sig Entry { payload: Payload, prev: Entry, hash: Hash } 
+one sig Genesis extends Entry {}
+fact chain { all e: Entry - Genesis | some prev[e] and e.hash = digest(e.payload + prev[e].hash) }
+fact appendOnly { always all e: Entry | always e in Entry }   // 无删改
+assert noRewrite { always all e: Entry | always (e.payload' = e.payload) } check noRewrite
+```
+**交叉印证**：AS 1215 ¶.16 的"must not be deleted... additions must show the date added, who added it, and why"逐字对应 `AppendOnly + 元数据必填`——该提案不是发明，是把 PCAOB 底稿纪律无损翻译为时序逻辑。
+
+**门槛评估**：三案规模都远小于 AWS 场景（[CACM 2015](https://dl.acm.org/doi/10.1145/2699417)），TLC 状态空间在 Claims≤10²、链长≤10³ 时秒级；运行时侧用 Hypothesis `RuleBasedStateMachine` 把 `StateInv/LedgerInv/ChainIntegrity` 各写为 `@invariant` 即得 CI 级回归。
+
+---
+
+## 未找到 / 待确认清单
+1. ISA 500 (Revised) 的最终批准文号与确切生效日（报道指向 2028-12-15 起期间）【待确认】。
+2. Argdown 官方中文翻译：官网/文档/代码库均未见证据【待确认】；如需中文论证图，语法本身为纯文本标记，中文节点名可直接用（社区 Obsidian/MediaWiki 插件已验证可用）。
+3. GRADE 官网本次抓取超时，其分级框架原文未核验【待确认】；建议改抓 GRADE 手册 PDF 或其在 JCE 的系列论文。
+4. WHO/IVB/06.13 的 IRIS 原始 handle 未定位成功（现有 BVS 镜像链接可用）；WHO 文档年份在 BVS 显示 2001，与常见的 2006 说法不一致【待确认】。
+5. NIST e-Handbook 页面未明写 c=0 闭式公式 P_a=(1−p)^n（只给 AOQ/ATI 与 (n,c) 定义）；该公式是验收抽样标准结论，引用时请标教科书来源（如 Dodge–Romig 或 AICPA Audit Sampling 指南附录）而非 NIST 页。

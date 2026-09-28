@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-21T15:22:44.110Z",
+  "files": [
+    {
+      "afterContent": "# 被测件锚 · CBB 正典库构建（hub 约定 #4：被测对象不复制，只锚 commit+哈希）\n\n> 锚定时点：2026-09-17～09-21（本线建立期）。所有锚指向〈工作区〉`D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\` 与公开仓。\n\n## 1. 运行态（迷深实战）\n- 工作区 git HEAD（锚定基线）= `ea791f94`（2026-09-21 21:41）\n- 迷深实战工单 = v1.9.4（两段式并发+无上限连跑）\n- 主队列游标 = 活跃进行中：磁盘已见 ch0208 切片/候选（STATE 行内自报 147/171 不一致——**磁盘先行于 STATE，以下一收口 commit 为准**，见 R-025 仪器身份纪律）\n- 本体库盘面 provisional ≈ 4900+（supersede 旧版留档含内）；隔离区 items 1133 行/adjudications 129 行\n- 质量门快照：A/B 首测 FAIL（覆盖 75%）｜judge 补考 FAIL（0.5455）停用｜NLI 预筛满分上岗｜召回探针 PASS（0.90/0.9714）\n\n## 2. 本体（cbb/ 六技能+契约）\n- 阶段二验收锚：工单 v1.4 时代，161 单测+冒烟 74 断言（task-050 判定 10/10）\n- U-C03.5/03.6/03.7/03.8 增补件已合入（graph_edge/三阈值/账本链/graphiti 桥/NLI，各配单测）\n\n## 3. 方法发布件（公开仓）\n- `github.com/master666-max/cbb-pipeline` = **commit `14b5b7c`**（含 genericize 清扫+LICENSE+ACKNOWLEDGMENTS+README）\n- 可见性 PUBLIC；许可 MIT（代码）+CC-BY-4.0（文档）\n\n## 4. 实验版（FROZEN 对照组）\n- `cbb-skills/`（P1-M1，73 单测基线）冻结于外层仓 commit `5fac3275` 前后，FROZEN-实验版声明在目录内\n\n## 5. 16 仓被测源码\n- `现成技能侦察/源码/`（16 仓完整工作副本，随外层仓 HEAD 锚定）；许可红线见工单 §0-附 16 裁决登记表\n",
+      "afterContentLength": 1005,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "/tmp/research-hub/CBB-正典库构建/被测件锚.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_20189e4da29544c0bca2fda2",
+  "toolName": "Write",
+  "version": 1
+}

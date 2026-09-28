@@ -1,0 +1,65 @@
+{
+  "createdAt": "2026-09-23T15:06:44.160Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"context_pack.py — 上下文包生成器（工单 v1.6 §0 编排 · 确定性脚本 R-018 · 2026-09-18）\n\n库喂抽取的闭环：主代理派工前机械生成上下文包（≤2K tokens≈1300 字封顶），子代理视为\n**先验而非事实源**（与原文冲突以原文为准+存疑分开建，防先验污染）。\n\n四节（工单 §0 v1.6 原文）：\n  ① 主要人物册（canonical+别名，出场频次排序）\n  ② 活跃伏笔/开环清单（payoff 未回收；核心 tier 优先，setup_chapter 新→旧）\n  ③ 最近 N 章一行提要（rolling-summary.md 尾部 30 章；文件不存在则占位）\n  ④ 判例指针\n\n种子双源：jsonl 库（aliases.jsonl/appearances.jsonl/foreshadow 库）+ 迷深清洗工作\n《_alias25.json》（异名统合表——canonical 匹配合并，库内优先）。\n生成全程机械规则零裁量；超预算截断顺序=②尾部→①尾部（确定性）。\n\n用法：py -X utf8 context_pack.py --store 迷深实战-本体库 \\\n        --alias-seed \"…/_alias25.json\" --out 迷深实战-工作区/context-pack.md\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport json\nimport re\nfrom collections import Counter\nfrom pathlib import Path\n\nTOP_ENTITIES = 25\nTOP_FORESHADOWS = 12\nROLLING_KEEP = 30\nBUDGET_CHARS = 2600  # ≤2K token 封顶（中文≈1.5-1.8字/token，2600字≈1.4-1.7K token 保守）；\n# 2026-09-19 勘误：原 1300 字+②→①→③裁剪序会把①人物册整节裁空（③30行即超预算）——\n# 人物册是异名消歧核心先验，裁剪序改为 ③旧章行→②尾→①尾（①最后牺牲）。\n\nHEADER = (\"# 上下文包（机械生成 · 先验而非事实源：与原文冲突以原文为准+存疑分开建）\\n\"\n          \"> 生成器=cbb/tools/context_pack.py（确定性脚本 R-018）；子代理必读但不得当作事实源。\\n\")\n\n\ndef _load_jsonl(p: Path) -> list[dict]:\n    if not p.exists():\n        return []\n    return [json.loads(x) for x in p.read_text(encoding=\"utf-8\").splitlines() if x.strip()]\n\n\ndef _load_records(lib: str, store: Path) -> list[dict]:\n    out = []\n    d = store / \"libraries\" / lib / \"provisional\"\n    for f in sorted(d.glob(\"*.json\")) if d.exists() else []:\n        try:\n            out.append(json.loads(f.read_text(encoding=\"utf-8\")))\n        except Exception:\n            continue\n    return out\n\n\ndef entity_roster(store: Path, alias_seed: Path | None) -> list[str]:\n    \"\"\"① 人物册行：出场频次 desc，名(频次)=别名1/别名2…（库内别名∪种子统合表）。\"\"\"\n    freq = Counter(r[\"entity\"] for r in _load_jsonl(store / \"appearances.jsonl\"))\n    # 库内别名：aliases.jsonl(entity_id) → character 库 record_id→canonical.name 映射到名字级\n    id2name = {r[\"record_id\"]: r[\"canonical\"][\"name\"] for r in _load_records(\"character\", store)}\n    lib_alias: dict[str, set[str]] = {}\n    for a in _load_jsonl(store / \"aliases.jsonl\"):\n        al = a.get(\"alias\")\n        if not isinstance(al, str):  # 历史脏行防御（2026-09-19 勘误：5 条 dict 型 alias 留档不删，干净行已补录）\n            continue\n        nm = id2name.get(a.get(\"entity_id\"))\n        if nm:\n            lib_alias.setdefault(nm, set()).add(al)\n    seed: dict[str, list[str]] = {}\n    if alias_seed and Path(alias_seed).exists():\n        raw = json.loads(Path(alias_seed).read_text(encoding=\"utf-8\"))\n        seed = {k: [x for x in v if x != k] for k, v in raw.items()}\n    # 类型（从 character 库取 entity_type）\n    types = {r[\"canonical\"][\"name\"]: r[\"canonical\"].get(\"entity_type\", \"\")\n             for r in _load_records(\"character\", store)}\n    lines = []\n    for name, n in freq.most_common(TOP_ENTITIES):\n        al = sorted((lib_alias.get(name, set()) | set(seed.get(name, []))) - {name})[:4]\n        t = types.get(name, \"\")\n        lines.append(f\"- {name}{'(' + t + ')' if t else ''}×{n}\"\n                     + (f\"＝{'/'.join(al)}\" if al else \"\"))\n    return lines\n\n\ndef active_foreshadows(store: Path) -> list[str]:\n    \"\"\"② 活跃伏笔/开环：payoff_chapter 为空；核心 tier 优先，setup_chapter 新→旧。\"\"\"\n    recs = [r for r in _load_records(\"foreshadow\", store)\n            if r.get(\"canonical\", {}).get(\"payoff_chapter\") is None]\n    recs.sort(key=lambda r: (0 if r[\"canonical\"].get(\"tier\") == \"核心\" else 1,\n                             -(r[\"canonical\"].get(\"setup_chapter\") or 0)))\n    lines = []\n    for r in recs[:TOP_FORESHADOWS]:\n        c = r[\"canonical\"]\n        note = re.sub(r\"\\s+\", \" \", str(c.get(\"note\", \"\")))[:38]\n        lines.append(f\"- [{c.get('tier', '')}] {c['name']}（ch{c.get('setup_chapter')}）{note}\")\n    return lines\n\n\ndef rolling_digest(rolling: Path) -> list[str]:\n    \"\"\"③ 最近 30 章一行提要：文件格式=每行 'chNNNN｜提要'；取尾部 30。\"\"\"\n    if not Path(rolling).exists():\n        return [\"（滚动摘要未建——首班主代理种子化，见 rolling-summary.md）\"]\n    rows = [x.strip() for x in Path(rolling).read_text(encoding=\"utf-8\").splitlines()\n            if re.match(r\"^ch\\d{4}[｜|]\", x.strip())]\n    return rows[-ROLLING_KEEP:]\n\n\ndef build(store: Path, alias_seed: Path | None, rolling: Path | None) -> str:\n    sec1 = entity_roster(store, alias_seed)\n    sec2 = active_foreshadows(store)\n    sec3 = rolling_digest(rolling or store.parent / \"迷深实战-工作区\" / \"rolling-summary.md\")\n    prec = Path(__file__).resolve().parent / \"判例.md\"\n    n_prec = len(re.findall(r\"^\\d+\\. \", prec.read_text(encoding=\"utf-8\"), re.M)) if prec.exists() else 0\n    sec4 = [f\"- cbb/tools/判例.md（当前 {n_prec} 条，连读《抽取规范.md》）\"]\n\n    def render(s2, s1, s3):\n        parts = [HEADER, \"## ① 主要人物册（频次排序）\\n\" + (\"\\n\".join(s1) if s1 else \"（空）\")]\n        parts.append(\"## ② 活跃伏笔/开环\\n\" + (\"\\n\".join(s2) if s2 else \"（空）\"))\n        parts.append(\"## ③ 最近章提要\\n\" + \"\\n\".join(s3))\n        parts.append(\"## ④ 判例指针\\n\" + \"\\n\".join(sec4))\n        return \"\\n\\n\".join(parts) + \"\\n\"\n\n    text = render(sec2, sec1, sec3)\n    # 预算裁剪（确定性顺序：③旧章行→②尾部→①尾部——①人物册最后牺牲）\n    while len(text) > BUDGET_CHARS and len(sec3) > 1:\n        sec3.pop(0); text = render(sec2, sec1, sec3)\n    while len(text) > BUDGET_CHARS and len(sec2) > 0:\n        sec2.pop(); text = render(sec2, sec1, sec3)\n    while len(text) > BUDGET_CHARS and len(sec1) > 0:\n        sec1.pop(); text = render(sec2, sec1, sec3)\n    return text\n\n\ndef main(argv=None) -> int:\n    ap = argparse.ArgumentParser(description=\"上下文包生成器（确定性）\")\n    ap.add_argument(\"--store\", default=\"迷深实战-本体库\")\n    ap.add_argument(\"--alias-seed\",\n                    default=r\"..\\..\\迷深清洗工作\\异世界迷宫最深部_知识库\\分析\\_角色语料库\\_alias25.json\")\n    ap.add_argument(\"--rolling\", default=r\"迷深实战-工作区\\rolling-summary.md\")\n    ap.add_argument(\"--out\", default=r\"迷深实战-工作区\\context-pack.md\")\n    ns = ap.parse_args(argv)\n    text = build(Path(ns.store), Path(ns.alias_seed) if ns.alias_seed else None,\n                 Path(ns.rolling) if ns.rolling else None)\n    Path(ns.out).write_text(text, encoding=\"utf-8\")\n    print(json.dumps({\"out\": ns.out, \"chars\": len(text)}, ensure_ascii=False))\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\context_pack.py",
+      "structuredPatch": [
+        {
+          "oldStart": 105,
+          "oldLines": 7,
+          "newStart": 105,
+          "newLines": 11,
+          "lines": [
+            "     return rows[-ROLLING_KEEP:]",
+            " ",
+            " ",
+            "-def build(store: Path, alias_seed: Path | None, rolling: Path | None) -> str:",
+            "+def build(store: Path, alias_seed: Path | None, rolling: Path | None,",
+            "+          reranker=None, rerank_query: str | None = None) -> str:",
+            "+    \"\"\"reranker（U-F04 岗位①，可选）：callable(query, docs, mechanical_order) -> (order, backend)。",
+            "+    提供时对①人物册/②伏笔清单按与 rerank_query（缺省=滚动摘要尾部）的相关性重排——预算花在最相关条目上；",
+            "+    不可用→机械序（同形）。不提供→行为与历史版本逐字节一致。\"\"\"",
+            "     sec1 = entity_roster(store, alias_seed)",
+            "     sec2 = active_foreshadows(store)",
+            "     sec3 = rolling_digest(rolling or store.parent / \"迷深实战-工作区\" / \"rolling-summary.md\")"
+          ]
+        },
+        {
+          "oldStart": 113,
+          "oldLines": 8,
+          "newStart": 117,
+          "newLines": 20,
+          "lines": [
+            "     n_prec = len(re.findall(r\"^\\d+\\. \", prec.read_text(encoding=\"utf-8\"), re.M)) if prec.exists() else 0",
+            "     sec4 = [f\"- cbb/tools/判例.md（当前 {n_prec} 条，连读《抽取规范.md》）\"]",
+            " ",
+            "+    rr_note = \"off\"",
+            "+    if reranker is not None:",
+            "+        q = (rerank_query or \" \".join(sec3[-5:])).strip()",
+            "+        if q:",
+            "+            o1, bk1 = reranker(q, sec1, list(range(len(sec1))))",
+            "+            sec1 = [sec1[i] for i in o1]",
+            "+            o2, bk2 = reranker(q, sec2, list(range(len(sec2))))",
+            "+            sec2 = [sec2[i] for i in o2]",
+            "+            rr_note = bk1 if bk1 == bk2 else f\"{bk1}/{bk2}\"",
+            "+",
+            "     def render(s2, s1, s3):",
+            "-        parts = [HEADER, \"## ① 主要人物册（频次排序）\\n\" + (\"\\n\".join(s1) if s1 else \"（空）\")]",
+            "+        parts = [HEADER + f\"> 预算内重排：{rr_note}（岗位①·U-F04）\\n\"",
+            "+                 if rr_note != \"off\" else HEADER,",
+            "+                 \"## ① 主要人物册（频次排序）\\n\" + (\"\\n\".join(s1) if s1 else \"（空）\")]",
+            "         parts.append(\"## ② 活跃伏笔/开环\\n\" + (\"\\n\".join(s2) if s2 else \"（空）\"))",
+            "         parts.append(\"## ③ 最近章提要\\n\" + \"\\n\".join(s3))",
+            "         parts.append(\"## ④ 判例指针\\n\" + \"\\n\".join(sec4))"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_8fbc012081a04260a5a18ab0",
+  "toolName": "Edit",
+  "version": 1
+}

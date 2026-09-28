@@ -1,0 +1,107 @@
+{
+  "createdAt": "2026-09-26T19:40:27.571Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_properties.py — Phase F·G03：Hypothesis 属性测试（决策树+三态迁移+账本链）。\"\"\"\nimport json\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom hypothesis import given, settings, strategies as st, HealthCheck  # noqa: E402\nfrom cbb2.store import Store  # noqa: E402\nfrom cbb2.ledger import LedgedStore, line_hash  # noqa: E402\n\nrecord_strategy = st.fixed_dictionaries({\n    \"record_id\": st.text(min_size=1, max_size=12).filter(lambda s: s.isalnum()),\n    \"record_type\": st.sampled_from([\"entity\", \"relation\", \"event\"]),\n    \"library\": st.sampled_from([\"character\", \"relation\", \"event\"]),\n    \"status\": st.just(\"provisional\"),\n    \"canonical\": st.fixed_dictionaries({\n        \"name\": st.text(min_size=1, max_size=8).filter(lambda s: s.isprintable()),\n        \"entity_type\": st.sampled_from([\"人物\", \"组织\", \"地点\"]),\n        \"status\": st.sampled_from([\"alive\", \"dead\", \"missing\"]),\n    }),\n    \"evidence\": st.lists(st.fixed_dictionaries({\n        \"vol\": st.just(1), \"chapter\": st.integers(1, 100), \"line\": st.integers(1, 200),\n        \"quote\": st.text(min_size=1, max_size=20),\n    }), min_size=1, max_size=3),\n    \"provenance\": st.fixed_dictionaries({\"extractor_confidence\": st.integers(60, 95)}),\n    \"version\": st.just(1), \"supersedes\": st.none(),\n    \"verified_against\": st.fixed_dictionaries({\n        \"path\": st.just(\"t\"), \"sha\": st.just(\"a\" * 7), \"verified_at\": st.just(\"2000-01-01\")}),\n})\n\nentry_strategy = st.fixed_dictionaries({\n    \"seq\": st.integers(1, 1000),\n    \"op\": st.just(\"append\"),\n    \"target\": st.sampled_from([\"libraries/character/provisional\", \"quarantine-zone/items.jsonl\"]),\n    \"idempotency_key\": st.text(min_size=1, max_size=10).filter(lambda s: s.isalnum()),\n    \"sha_before\": st.text(min_size=64, max_size=64),\n    \"sha_after\": st.text(min_size=64, max_size=64),\n    \"prev_hash\": st.text(min_size=64, max_size=64),\n    \"hash\": st.text(min_size=64, max_size=64),\n})\n\n\nclass TestWriteDecisionProperties:\n    def setup_method(self):\n        self.tmp = tempfile.TemporaryDirectory()\n        self.store = Store(Path(self.tmp.name))\n\n    def teardown_method(self):\n        self.tmp.cleanup()\n\n    @given(rec=record_strategy, at=st.sampled_from([\"ch0014\", \"ch0020\", \"ch0050\"]))\n    @settings(max_examples=30, suppress_health_check=[HealthCheck.too_slow, HealthCheck.function_scoped_fixture])\n    def test_total(self, rec, at):\n        out = self.store.write_decision(rec, at=at, register_conflict=False)\n        assert out[\"track\"] in (\n            \"on-create\", \"consistent-duplicate\", \"complementary-statement\",\n            \"invalidation-update\", \"uncertain-coexist\", \"contradiction\")\n\n    def test_idempotent(self, rec, at):\n        pass\n\n\nclass TestLedgerChainProperties:\n    @given(entries=st.lists(entry_strategy, max_size=30))\n    @settings(max_examples=30, suppress_health_check=[HealthCheck.too_slow, HealthCheck.data_too_large, HealthCheck.filter_too_much])\n    def test_chain_recompute(self, entries):\n        ls = LedgedStore(Path(tempfile.mkdtemp()))\n        for e in entries:\n            ls.ledger.record_append(e[\"target\"], e[\"idempotency_key\"], e[\"sha_before\"], e[\"sha_after\"])\n        v = ls.ledger.verify()\n        assert v[\"ok\"]\n\n\nif __name__ == \"__main__\":\n    print(\"run via pytest for class-based tests\")\n",
+      "afterContentLength": 3341,
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_properties.py — Phase F·G03：Hypothesis 属性测试（决策树+三态迁移+账本链）。\n运行：py -X utf8 test_v3_properties.py\n\"\"\"\nimport json\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom hypothesis import given, settings, strategies as st, HealthCheck  # noqa: E402\nfrom cbb2.store import Store, identity_key  # noqa: E402\nfrom cbb2.ledger import LedgedStore, line_hash  # noqa: E402\n\nrecord_strategy = st.fixed_dictionaries({\n    \"record_id\": st.text(min_size=1, max_size=12).filter(lambda s: s.isalnum()),\n    \"record_type\": st.sampled_from([\"entity\", \"relation\", \"event\"]),\n    \"library\": st.sampled_from([\"character\", \"relation\", \"event\"]),\n    \"status\": st.just(\"provisional\"),\n    \"canonical\": st.fixed_dictionaries({\n        \"name\": st.text(min_size=1, max_size=8).filter(lambda s: s.isprintable()),\n        \"entity_type\": st.sampled_from([\"人物\", \"组织\", \"地点\"]),\n        \"status\": st.sampled_from([\"alive\", \"dead\", \"missing\"]),\n    }),\n    \"evidence\": st.lists(st.fixed_dictionaries({\n        \"vol\": st.just(1), \"chapter\": st.integers(1, 100), \"line\": st.integers(1, 200),\n        \"quote\": st.text(min_size=1, max_size=20),\n    }), min_size=1, max_size=3),\n    \"provenance\": st.fixed_dictionaries({\"extractor_confidence\": st.integers(60, 95)}),\n    \"version\": st.just(1), \"supersedes\": st.none(),\n    \"verified_against\": st.fixed_dictionaries({\n        \"path\": st.just(\"t\"), \"sha\": st.just(\"a\" * 7), \"verified_at\": st.just(\"2000-01-01\")}),\n})\n\nentry_strategy = st.fixed_dictionaries({\n    \"seq\": st.integers(1, 1000),\n    \"op\": st.just(\"append\"),\n    \"target\": st.sampled_from([\"libraries/character/provisional\", \"quarantine-zone/items.jsonl\"]),\n    \"idempotency_key\": st.text(min_size=1, max_size=10).filter(lambda s: s.isalnum()),\n    \"sha_before\": st.text(min_size=64, max_size=64),\n    \"sha_after\": st.text(min_size=64, max_size=64),\n    \"prev_hash\": st.text(min_size=64, max_size=64),\n    \"hash\": st.text(min_size=64, max_size=64),\n})\n\n\nclass TestWriteDecisionProperties:\n    \"\"\"决策树五分支性质：任意输入必落五轨之一且不崩。\"\"\"\n\n    def setup_method(self):\n        self.tmp = tempfile.TemporaryDirectory()\n        self.store = Store(Path(self.tmp.name))\n\n    def teardown_method(self):\n        self.tmp.cleanup()\n\n    @given(rec=record_strategy, at=st.sampled_from([\"ch0014\", \"ch0020\", \"ch0050\"]))\n    @settings(max_examples=30, suppress_health_check=[HealthCheck too_slow] if False else [])\n    def test_total(self, rec, at):\n        out = self.store.write_decision(rec, at=at, register_conflict=False)\n        assert out[\"track\"] in (\n            \"on-create\", \"consistent-duplicate\", \"complementary-statement\",\n            \"invalidation-update\", \"uncertain-coexist\", \"contradiction\")\n\n    def test_idempotent(self, rec, at):\n        pass\n\n\nif __name__ == \"__main__\":\n    print(\"skip standalone — run via pytest\")\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_properties.py",
+      "structuredPatch": [
+        {
+          "oldStart": 1,
+          "oldLines": 7,
+          "newStart": 1,
+          "newLines": 5,
+          "lines": [
+            " # -*- coding: utf-8 -*-",
+            "-\"\"\"test_v3_properties.py — Phase F·G03：Hypothesis 属性测试（决策树+三态迁移+账本链）。",
+            "-运行：py -X utf8 test_v3_properties.py",
+            "-\"\"\"",
+            "+\"\"\"test_v3_properties.py — Phase F·G03：Hypothesis 属性测试（决策树+三态迁移+账本链）。\"\"\"",
+            " import json",
+            " import sys",
+            " import tempfile"
+          ]
+        },
+        {
+          "oldStart": 11,
+          "oldLines": 7,
+          "newStart": 9,
+          "newLines": 7,
+          "lines": [
+            " sys.path.insert(0, str(HERE.parent))",
+            " ",
+            " from hypothesis import given, settings, strategies as st, HealthCheck  # noqa: E402",
+            "-from cbb2.store import Store, identity_key  # noqa: E402",
+            "+from cbb2.store import Store  # noqa: E402",
+            " from cbb2.ledger import LedgedStore, line_hash  # noqa: E402",
+            " ",
+            " record_strategy = st.fixed_dictionaries({"
+          ]
+        },
+        {
+          "oldStart": 47,
+          "oldLines": 8,
+          "newStart": 45,
+          "newLines": 6,
+          "lines": [
+            " ",
+            " ",
+            " class TestWriteDecisionProperties:",
+            "-    \"\"\"决策树五分支性质：任意输入必落五轨之一且不崩。\"\"\"",
+            "-",
+            "     def setup_method(self):",
+            "         self.tmp = tempfile.TemporaryDirectory()",
+            "         self.store = Store(Path(self.tmp.name))"
+          ]
+        },
+        {
+          "oldStart": 57,
+          "oldLines": 7,
+          "newStart": 53,
+          "newLines": 7,
+          "lines": [
+            "         self.tmp.cleanup()",
+            " ",
+            "     @given(rec=record_strategy, at=st.sampled_from([\"ch0014\", \"ch0020\", \"ch0050\"]))",
+            "-    @settings(max_examples=30, suppress_health_check=[HealthCheck too_slow] if False else [])",
+            "+    @settings(max_examples=30, suppress_health_check=[HealthCheck.too_slow, HealthCheck.function_scoped_fixture])",
+            "     def test_total(self, rec, at):",
+            "         out = self.store.write_decision(rec, at=at, register_conflict=False)",
+            "         assert out[\"track\"] in ("
+          ]
+        },
+        {
+          "oldStart": 68,
+          "oldLines": 5,
+          "newStart": 64,
+          "newLines": 16,
+          "lines": [
+            "         pass",
+            " ",
+            " ",
+            "+class TestLedgerChainProperties:",
+            "+    @given(entries=st.lists(entry_strategy, max_size=30))",
+            "+    @settings(max_examples=30, suppress_health_check=[HealthCheck.too_slow, HealthCheck.data_too_large, HealthCheck.filter_too_much])",
+            "+    def test_chain_recompute(self, entries):",
+            "+        ls = LedgedStore(Path(tempfile.mkdtemp()))",
+            "+        for e in entries:",
+            "+            ls.ledger.record_append(e[\"target\"], e[\"idempotency_key\"], e[\"sha_before\"], e[\"sha_after\"])",
+            "+        v = ls.ledger.verify()",
+            "+        assert v[\"ok\"]",
+            "+",
+            "+",
+            " if __name__ == \"__main__\":",
+            "-    print(\"skip standalone — run via pytest\")",
+            "+    print(\"run via pytest for class-based tests\")"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_a5d50a5a897444fbbb0befb4",
+  "toolName": "Write",
+  "version": 1
+}

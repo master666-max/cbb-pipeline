@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-21T17:11:38.659Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"rest_push_cbb.py — 绕开 git 协议，经 GitHub Git Data REST API 推送 CBB 三根文件\n用 api.github.com（gh api 通道，本机稳定），竞态时自动重试。\n\"\"\"\nimport base64, io, json, os, subprocess, sys, time\n\nREPO = \"master666-max/research-hub\"\nBASE = \"CBB-正典库构建\"\nFILES = [\"START-HERE.md\", \"INDEX.md\", \"被测件锚.md\"]\nSRC = r\"C:\\Users\\26672\\AppData\\Local\\Temp\\research-hub\"\n\ndef gh(args, input_file=None):\n    cmd = [\"gh\", \"api\"] + args\n    if input_file:\n        cmd += [\"--input\", input_file]\n    r = subprocess.run(cmd, capture_output=True, text=True, encoding=\"utf-8\")\n    if r.returncode != 0:\n        raise RuntimeError(f\"gh fail: {' '.join(args[:3])} :: {r.stderr[:300]}\")\n    return json.loads(r.stdout) if r.stdout.strip() else {}\n\ndef attempt(round_no):\n    head = gh([f\"repos/{REPO}/commits/main\"])\n    parent = head[\"sha\"]; tree = head[\"tree\"][\"sha\"]\n    print(f\"[{round_no}] parent={parent[:7]} tree={tree[:7]}\")\n    # 幂等：若三文件已在树中则检查内容是否一致（简化：直接覆盖式新建 blob/tree/commit）\n    entries = []\n    for f in FILES:\n        p = os.path.join(SRC, BASE, f)\n        content = io.open(p, encoding=\"utf-8\").read()\n        blob = gh([\"-X\", \"POST\", f\"repos/{REPO}/git/blobs\", \"-f\", f\"content={content}\", \"-f\", \"encoding=utf-8\"])\n        entries.append({\"path\": f\"{BASE}/{f}\", \"mode\": \"100644\", \"type\": \"blob\", \"sha\": blob[\"sha\"]})\n        print(f\"  blob {f} -> {blob['sha'][:7]}\")\n    newtree = gh([\"-X\", \"POST\", f\"repos/{REPO}/git/trees\", \"-f\", f\"base_tree={tree}\",\n                  \"-f\", f\"tree={json.dumps(entries, ensure_ascii=False)}\"])\n    commit = gh([\"-X\", \"POST\", f\"repos/{REPO}/git/commits\",\n                 \"-f\", f\"message=CBB线：补入三根文件（START-HERE/INDEX/被测件锚）——只加本线文件，不改他线行/表\",\n                 \"-f\", f\"tree={newtree['sha']}\", \"-f\", f\"parents[]={parent}\"])\n    csha = commit[\"sha\"]\n    print(f\"  commit -> {csha[:7]}\")\n    # 更新 ref（fast-forward only；被抢则异常重试）\n    gh([\"-X\", \"PATCH\", f\"repos/{REPO}/git/refs/heads/main\", \"-f\", f\"sha={csha}\", \"-F\", \"force=false\"])\n    return csha\n\nfor i in range(1, 9):\n    try:\n        csha = attempt(i)\n        time.sleep(2)\n        chk = gh([f\"repos/{REPO}/commits/{csha}\"])\n        print(f\"✓ 远端已确认提交 {chk['sha'][:7]}\")\n        break\n    except Exception as e:\n        print(f\"第{i}轮失败：{str(e)[:200]}；重试\")\n        time.sleep(4)\nelse:\n    print(\"✗ 八轮未成功\")\n",
+      "afterContentLength": 2274,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\rest_push_cbb.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_pbfAWdpcF0iyQjoagD563874",
+  "toolName": "Write",
+  "version": 1
+}

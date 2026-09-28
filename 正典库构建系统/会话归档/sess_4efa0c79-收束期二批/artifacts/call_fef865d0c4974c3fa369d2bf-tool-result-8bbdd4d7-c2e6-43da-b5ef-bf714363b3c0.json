@@ -1,0 +1,42 @@
+{
+  "createdAt": "2026-09-25T04:22:59.026Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"lightrag_delta_sync.py — 增量同步：章收口把新增/变化的图谱元素喂给 LightRAG 副本。\n\n机制：\n  · sidecar 记账（<work>/_fed-sources.json）：每个实体名/关系三元组记录**已喂的 source 集**；\n  · delta = 当前库状态 vs sidecar——source 集有增变即整条重喂（upsert 语义），\n    全新条目正常喂；sidecar 没有的一律视为新；\n  · **幂等**：无变化 → delta=0 → 零嵌入调用（可反复跑）；\n  · 挂点：章收口/段收口的 aux 段调用（与 Neo4j 导出同批）。\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport asyncio\nimport json\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys_dir = str(HERE)\nif sys_dir not in __import__(\"sys\").path:\n    __import__(\"sys\").path.insert(0, sys_dir)\n\nimport lightrag_export as le  # noqa: E402  复用 build_kg/嵌入/桩\n\n\ndef _load_sidecar(work: Path) -> dict:\n    p = work / \"_fed-sources.json\"\n    if p.exists():\n        return json.loads(p.read_text(encoding=\"utf-8\"))\n    return {\"entities\": {}, \"relationships\": {}, \"chunks\": []}\n\n\ndef _diff(kg: dict, fed: dict) -> tuple[dict, dict]:\n    \"\"\"当前 vs 已喂 → (delta_kg, 统计)。实体/关系按 source 集变化判定；chunk 按 record_id 新增判定。\"\"\"\n    d_ent, d_rel, d_chunk = [], [], []\n    for e in kg[\"entities\"]:\n        key = e[\"entity_name\"]\n        srcs = sorted(str(e[\"source_id\"]).split(\"<SEP>\"))\n        if fed[\"entities\"].get(key) != srcs:\n            d_ent.append(e)\n    for r in kg[\"relationships\"]:\n        key = f\"{r['src_id']}\\u0001{r['keywords']}\\u0001{r['tgt_id']}\"\n        srcs = sorted(str(r[\"source_id\"]).split(\"<SEP>\"))\n        if fed[\"relationships\"].get(key) != srcs:\n            d_rel.append(r)\n    fed_chunks = set(fed[\"chunks\"])\n    for c in kg[\"chunks\"]:\n        if c[\"source_id\"] not in fed_chunks:\n            d_chunk.append(c)\n    stats = {\"delta_entities\": len(d_ent), \"delta_relationships\": len(d_rel),\n             \"delta_chunks\": len(d_chunk)}\n    delta = {\"entities\": d_ent, \"relationships\": d_rel, \"chunks\": d_chunk}\n    return delta, stats\n\n\ndef _merge_sidecar(fed: dict, kg: dict) -> dict:\n    for e in kg[\"entities\"]:\n        fed[\"entities\"][e[\"entity_name\"]] = sorted(str(e[\"source_id\"]).split(\"<SEP>\"))\n    for r in kg[\"relationships\"]:\n        fed[\"relationships\"][f\"{r['src_id']}\\u0001{r['keywords']}\\u0001{r['tgt_id']}\"] = \\\n            sorted(str(r[\"source_id\"]).split(\"<SEP>\"))\n    fed[\"chunks\"] = sorted({c[\"source_id\"] for c in kg[\"chunks\"]} | set(fed[\"chunks\"]))\n    return fed\n\n\ndef sync(store_root: Path, work: Path, feed: bool = True) -> dict:\n    le.STORE = Path(store_root)\n    kg, stats = le.build_kg(Path(store_root))\n    fed = _load_sidecar(Path(work))\n    delta, dstats = _diff(kg, fed)\n    report = {\"stats\": stats, **dstats, \"fed\": False, \"llm_calls\": le.CNT[\"llm_calls\"],\n              \"emb_calls\": le.CNT[\"emb_calls\"]}\n    if feed and (dstats[\"delta_entities\"] or dstats[\"delta_relationships\"] or dstats[\"delta_chunks\"]):\n        Path(work).mkdir(parents=True, exist_ok=True)\n        from lightrag import LightRAG\n        from lightrag.utils import EmbeddingFunc\n        rag = LightRAG(working_dir=str(work),\n                       embedding_func=EmbeddingFunc(embedding_dim=4096, func=le._embed_batch),\n                       llm_model_func=le._llm_stub, llm_model_name=\"stub-no-llm\")\n\n        async def _feed():\n            await rag.initialize_storages()\n            try:\n                await rag.ainsert_custom_kg(delta)\n            finally:\n                await rag.finalize_storages()\n\n        asyncio.run(_feed())\n        _merge_sidecar(fed, kg)\n        Path(work).mkdir(parents=True, exist_ok=True)\n        (Path(work) / \"_fed-sources.json\").write_text(\n            json.dumps(fed, ensure_ascii=False, indent=1), encoding=\"utf-8\")\n        report.update({\"fed\": True, \"llm_calls\": le.CNT[\"llm_calls\"],\n                       \"emb_calls\": le.CNT[\"emb_calls\"]})\n    elif feed:\n        report[\"口径\"] = \"无 delta（幂等：零嵌入调用）\"\n    return report\n\n\ndef main(argv=None) -> int:  # pragma: no cover\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--store\", default=str(le.STORE))\n    ap.add_argument(\"--work\", default=str(le.WORK))\n    ap.add_argument(\"--dry-run\", action=\"store_true\")\n    ns = ap.parse_args(argv)\n    rep = sync(Path(ns.store), Path(ns.work), feed=not ns.dry_run)\n    print(json.dumps(rep, ensure_ascii=False, indent=1))\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\lightrag_delta_sync.py",
+      "structuredPatch": [
+        {
+          "oldStart": 102,
+          "oldLines": 7,
+          "newStart": 102,
+          "newLines": 18,
+          "lines": [
+            "     ap.add_argument(\"--store\", default=str(le.STORE))",
+            "     ap.add_argument(\"--work\", default=str(le.WORK))",
+            "     ap.add_argument(\"--dry-run\", action=\"store_true\")",
+            "+    ap.add_argument(\"--bootstrap\", action=\"store_true\",",
+            "+                    help=\"副本已含当前全量时使用：只把现状写入 sidecar 记账，不喂（防首章全量重嵌）\")",
+            "     ns = ap.parse_args(argv)",
+            "+    if ns.bootstrap:",
+            "+        le.STORE = Path(ns.store)",
+            "+        kg, stats = le.build_kg(Path(ns.store))",
+            "+        fed = _merge_sidecar(_load_sidecar(Path(ns.work)), kg)",
+            "+        Path(ns.work).mkdir(parents=True, exist_ok=True)",
+            "+        (Path(ns.work) / \"_fed-sources.json\").write_text(",
+            "+            json.dumps(fed, ensure_ascii=False, indent=1), encoding=\"utf-8\")",
+            "+        print(json.dumps({\"bootstrapped\": True, **stats}, ensure_ascii=False))",
+            "+        return 0",
+            "     rep = sync(Path(ns.store), Path(ns.work), feed=not ns.dry_run)",
+            "     print(json.dumps(rep, ensure_ascii=False, indent=1))",
+            "     return 0"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_fef865d0c4974c3fa369d2bf",
+  "toolName": "Edit",
+  "version": 1
+}

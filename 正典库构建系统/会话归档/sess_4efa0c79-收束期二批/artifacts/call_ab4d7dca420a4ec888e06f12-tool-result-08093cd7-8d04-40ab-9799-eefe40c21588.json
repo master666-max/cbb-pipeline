@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T16:41:38.920Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"deepseek_strict_probe.py — 同批 hold 件对 DEEPSEEK 做旧/严提示词 A/B。\n回答：DEEPSEEK 的 support 是\"读出了原文说了\"还是\"把不矛盾当支持\"——\n      若严格规则下 DEEPSEEK 也翻转成 unsure ⇒ 它此前把 plausibility 当 entailment；\n      若仍 support ⇒ 它判断的依据与 QWEN 不同（异构性本身，非宽松）。\n\"\"\"\nimport json\nimport os\nimport re\nimport sys\nimport urllib.request\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\n\nBASE = os.environ[\"EXAMINER_DEEPSEEK_BASE\"]\nKEY = os.environ[\"DEEPSEEK_API_KEY\"]\nMODEL = os.environ[\"EXAMINER_DEEPSEEK_MODEL\"]\n\nsys.path.insert(0, str(ROOT))\nfrom qwen_prompt_ab import OLD, NEW, judge  # noqa: E402\n\n\ndef main():\n    rows = [json.loads(l) for l in\n            (ROOT / \"迷深实战-本体库\" / \"G16b-票面台账.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n            if l.strip()]\n    last = {}\n    for r in rows:\n        last[r[\"record_id\"]] = r\n    holds = [r for r in last.values() if r[\"verdict\"] == \"hold\"][:6]\n    bodies = {}\n    for f in ROOT.glob(\"迷深实战-本体库/libraries/*/*/*.json\"):\n        try:\n            d = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        rid = d.get(\"record_id\")\n        if rid in {h[\"record_id\"] for h in holds} and rid not in bodies:\n            bodies[rid] = d\n    c = {\"old_support\": 0, \"old_other\": 0, \"new_support\": 0, \"new_unsure\": 0,\n         \"new_against\": 0, \"new_other\": 0}\n    for h in holds:\n        d = bodies.get(h[\"record_id\"])\n        if not d:\n            continue\n        cc = json.dumps(d.get(\"canonical\") or {}, ensure_ascii=False, sort_keys=True)\n        ev = \"；\".join(e.get(\"quote\", \"\") for e in (d.get(\"evidence\") or []))\n        vo = judge(OLD, cc, ev, \"ev\")\n        vn = judge(NEW, cc, ev, \"ev\")\n        if vo == \"support\":\n            c[\"old_support\"] += 1\n        else:\n            c[\"old_other\"] += 1\n        if vn == \"support\":\n            c[\"new_support\"] += 1\n        elif vn == \"unsure\":\n            c[\"new_unsure\"] += 1\n        elif vn == \"against\":\n            c[\"new_against\"] += 1\n        else:\n            c[\"new_other\"] += 1\n        print(f\"{h['record_id']}: DS旧={vo} → DS严={vn}\")\n    print(\"\\n汇总:\", c)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "afterContentLength": 2144,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\deepseek_strict_probe.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_ab4d7dca420a4ec888e06f12",
+  "toolName": "Write",
+  "version": 1
+}

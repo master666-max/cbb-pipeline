@@ -1,0 +1,46 @@
+{
+  "createdAt": "2026-09-26T15:28:36.398Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.nli — NLI 双通道矛盾预筛（U-A04）：只分流不裁决（R-019），两通道不一致才人审。\n\n通道：\n  LLMChannel   —— OpenAI 兼容本地端点（env NLI_LLM_BASE/NLI_LLM_MODEL；三分判定 JSON）；\n  TransformersChannel —— Erlangshen-RoBERTa-110M-NLI 本地小模型（惰性加载；缺 transformers/模型\n                          ⇒ ChannelUnavailable ⇒ 降级单通道并显式标注）。\n上岗小考 exam()：分离度 ≥0.70 才启用（judge 补考 0.5455 停用先例）；附分桶校准。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport os\nimport re\nimport urllib.request\n\nVERDICTS = (\"entails\", \"neutral\", \"contradicts\")\n_PROMPT = (\n    \"你是中文自然语言推理判定器。给定【前提】与【假设】，只输出一个 JSON 对象：\"\n    '{\"verdict\":\"entails|neutral|contradicts\"}。'\n    \"前提能推出假设=entails；前提与假设不可同真=contradicts；其余=neutral。\"\n    \"禁止输出任何其他文字。\"\n)\n\n\nclass ChannelUnavailable(RuntimeError):\n    \"\"\"通道不可用（缺依赖/缺 env/端点不在位）——降级单通道并标注，不崩。\"\"\"\n\n\nclass LLMChannel:\n    name = \"llm\"\n\n    def __init__(self, base: str | None = None, model: str | None = None, api_key: str = \"\"):\n        self.base = base or os.environ.get(\"NLI_LLM_BASE\", \"http://127.0.0.1:8080/v1\")\n        self.model = model or os.environ.get(\"NLI_LLM_MODEL\", \"\")\n        self.api_key = api_key or os.environ.get(\"NLI_LLM_API_KEY\", \"\")\n\n    def available(self) -> bool:\n        return bool(self.base and self.model)\n\n    def judge(self, premise: str, hypothesis: str) -> str:\n        if not self.available():\n            raise ChannelUnavailable(\"NLI_LLM_BASE/NLI_LLM_MODEL 未配置\")\n        from .ops import chat_once\n        raw = chat_once(self.base, self.model, self.api_key,\n                        f\"{_PROMPT}\\n【前提】{premise}\\n【假设】{hypothesis}\")\n        m = re.search(r\"\\{[^}]*\\}\", raw, re.DOTALL)\n        if not m:\n            raise ValueError(f\"LLM 判定非 JSON：{raw[:80]!r}\")\n        verdict = json.loads(m.group(0)).get(\"verdict\")\n        if verdict not in VERDICTS:\n            raise ValueError(f\"LLM 判定非法：{verdict!r}\")\n        return verdict\n\n\nclass TransformersChannel:\n    name = \"roberta-nli\"\n\n    def __init__(self, model_id: str | None = None):\n        self.model_id = model_id or os.environ.get(\n            \"NLI_LOCAL_MODEL\", \"IDEA-CCNL/Erlangshen-RoBERTa-110M-NLI\")\n        self._pipe = None\n\n    def available(self) -> bool:\n        try:\n            import transformers  # noqa: F401\n            return True\n        except ImportError:\n            return False\n\n    def _load(self):\n        if self._pipe is None:\n            try:\n                from transformers import pipeline\n                self._pipe = pipeline(\"text-classification\", model=self.model_id)\n            except Exception as e:  # 模型下载失败/不兼容 ⇒ 通道降级\n                raise ChannelUnavailable(f\"本地 NLI 通道不可用: {type(e).__name__}: {str(e)[:120]}\")\n        return self._pipe\n\n    def judge(self, premise: str, hypothesis: str) -> str:\n        pipe = self._load()\n        out = pipe({\"text\": premise, \"text_pair\": hypothesis}, top_k=None)\n        scores = {x[\"label\"].lower(): float(x[\"score\"]) for x in out}\n        label_map = {\"entailment\": \"entails\", \"neutral\": \"neutral\",\n                     \"contradiction\": \"contradicts\"}\n        best = max(scores, key=scores.get)\n        return label_map.get(best, best)\n\n\ndef dual_judge(premise: str, hypothesis: str,\n               channels: list) -> dict:\n    \"\"\"两通道独立判定：一致→采纳；不一致→verdict=None（人审队列）；单通道可用→降级标注。\"\"\"\n    votes, unavailable = {}, []\n    for ch in channels:\n        try:\n            votes[ch.name] = ch.judge(premise, hypothesis)\n        except ChannelUnavailable as e:\n            unavailable.append({\"channel\": ch.name, \"reason\": str(e)[:120]})\n    if not votes:\n        return {\"verdict\": None, \"agree\": False, \"votes\": {}, \"degraded\": True,\n                \"unavailable\": unavailable, \"human_queue\": True}\n    agree = len(set(votes.values())) == 1 and len(votes) >= 2\n    return {\"verdict\": next(iter(votes.values())) if agree else None,\n            \"agree\": agree, \"votes\": votes,\n            \"degraded\": len(votes) < 2, \"unavailable\": unavailable,\n            \"human_queue\": not agree}\n\n\ndef exam(judge_fn, cases: list[dict]) -> dict:\n    \"\"\"上岗小考：cases=[{premise,hypothesis,label(entails|contradicts)}+]（neutral 不计分离度）。\n    分离度=与标签一致率；<0.70 ⇒ {\"pass\": False}（停用保守路由）。附置信分桶校准\n    （judge_fn 返回 (verdict, confidence|None)；confidence=None 记 uncalibrated 桶）。\"\"\"\n    total = hit = 0\n    buckets: dict[str, dict] = {}\n    for c in cases:\n        out = judge_fn(c[\"premise\"], c[\"hypothesis\"])\n        verdict, conf = out if isinstance(out, tuple) else (out, None)\n        total += 1\n        ok = verdict == c[\"label\"]\n        hit += ok\n        key = \"uncalibrated\" if conf is None else f\"{min(0.99, max(0.0, conf)):.1f}\"\n        b = buckets.setdefault(key, {\"n\": 0, \"hit\": 0})\n        b[\"n\"] += 1\n        b[\"hit\"] += ok\n    separation = hit / total if total else 0.0\n    calib = {k: {\"n\": v[\"n\"], \"accuracy\": round(v[\"hit\"] / v[\"n\"], 3)}\n             for k, v in sorted(buckets.items())}\n    return {\"separation\": round(separation, 4), \"pass\": separation >= 0.70,\n            \"total\": total, \"calibration\": calib}\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\nli.py",
+      "structuredPatch": [
+        {
+          "oldStart": 89,
+          "oldLines": 17,
+          "newStart": 89,
+          "newLines": 18,
+          "lines": [
+            " ",
+            " def dual_judge(premise: str, hypothesis: str,",
+            "                channels: list) -> dict:",
+            "-    \"\"\"两通道独立判定：一致→采纳；不一致→verdict=None（人审队列）；单通道可用→降级标注。\"\"\"",
+            "+    \"\"\"两通道独立判定：一致→采纳；不一致→verdict=None（人审队列）；单通道可用→降级标注。",
+            "+    计票键=序号:通道名（同名通道不互相覆盖）。\"\"\"",
+            "     votes, unavailable = {}, []",
+            "-    for ch in channels:",
+            "+    for i, ch in enumerate(channels):",
+            "         try:",
+            "-            votes[ch.name] = ch.judge(premise, hypothesis)",
+            "+            votes[f\"{i}:{ch.name}\"] = ch.judge(premise, hypothesis)",
+            "         except ChannelUnavailable as e:",
+            "             unavailable.append({\"channel\": ch.name, \"reason\": str(e)[:120]})",
+            "     if not votes:",
+            "         return {\"verdict\": None, \"agree\": False, \"votes\": {}, \"degraded\": True,",
+            "                 \"unavailable\": unavailable, \"human_queue\": True}",
+            "-    agree = len(set(votes.values())) == 1 and len(votes) >= 2",
+            "+    agree = len(votes) >= 2 and len(set(votes.values())) == 1",
+            "     return {\"verdict\": next(iter(votes.values())) if agree else None,",
+            "             \"agree\": agree, \"votes\": votes,",
+            "             \"degraded\": len(votes) < 2, \"unavailable\": unavailable,"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_7c203080fb074198a6e979fe",
+  "toolName": "Edit",
+  "version": 1
+}

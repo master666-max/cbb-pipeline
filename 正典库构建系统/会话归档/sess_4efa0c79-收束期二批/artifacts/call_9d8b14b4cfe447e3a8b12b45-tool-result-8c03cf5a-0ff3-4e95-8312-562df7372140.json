@@ -1,0 +1,30 @@
+{
+  "createdAt": "2026-09-27T18:49:27.137Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_c4_input_audit.py — 波C·C4：考官输入审计白名单 + 锚定谓词单源回归。\n\"\"\"\nimport importlib.util\nimport sys\nfrom pathlib import Path\n\nimport pytest\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\n# g16c_rejudge 在仓库根，用 spec 加载（避免把根目录当包）\n_spec = importlib.util.spec_from_file_location(\n    \"g16c_rejudge\", HERE.parents[1] / \"g16c_rejudge.py\")\ng16c = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(g16c)  # 模块自身会把 cbb-v2 插进 sys.path\n\nfrom cbb2 import anchor_check as ac  # noqa: E402\n\n\ndef test_payload_whitelist_accepts_quotes_only():\n    rec = {\"canonical\": {\"name\": \"甲\"}, \"evidence\": [{\"quote\": \"甲来了。\"}]}\n    payload = g16c.build_payload(rec, [{\"quote\": \"甲笑了笑。\"}])\n    assert set(payload) <= g16c.ALLOWED_PAYLOAD_KEYS\n    assert payload[\"evidence_quotes\"] == [\"甲来了。\", \"甲笑了笑。\"]\n\n\ndef test_payload_rejects_graph_derived_keys():\n    rec = {\"canonical\": {\"name\": \"甲\"}, \"evidence\": [],\n           \"neighbors\": [\"乙\"], \"edges\": [{\"s\": \"甲\"}]}\n    with pytest.raises(AssertionError, match=\"考官输入审计\"):\n        g16c.build_payload(rec, [])\n\n\ndef test_variants_single_char_name_not_empty():\n    assert ac.variants(\"甲\") == {\"甲\"}  # 负对照抓过的空集永缺 bug\n\n\ndef test_missing_keys_tolerant_matching():\n    c = {\"subject\": \"相川涡波\", \"object\": \"玛利亚\"}\n    quotes = ac.norm(\"涡波对玛利亚点了点头\")  # 去姓变体命中\n    assert ac.missing_keys(\"relation\", c, quotes) == []\n    assert ac.missing_keys(\"relation\", c, ac.norm(\"玛利亚独自离开\")) == [\"相川涡波\"]\n\n\ndef test_shacl_object_in_entities():\n    rec = {\"library\": \"relation\", \"canonical\": {\"object\": \"乙\"}}\n    assert ac.check_relation_object_in_entities(rec, {ac.norm(\"乙\")}) == []\n    ws = ac.check_relation_object_in_entities(rec, {ac.norm(\"丙\")})\n    assert ws[0][\"code\"] == \"E-SHACL-OBJECT\"\n\n\ndef test_span_grounding_maps_back_to_raw():\n    raw = \"「我是从法尼亚过来的，您知道吗？」她说。\"\n    n, idx = ac.norm_with_index(raw)\n    pos = n.find(\"法尼亚\")\n    assert pos >= 0\n    seg = raw[idx[pos]:idx[pos + 2]]\n    assert seg == \"法尼亚\"  # 规范化下标精确回落原文\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_c4_input_audit.py",
+      "structuredPatch": [
+        {
+          "oldStart": 56,
+          "oldLines": 5,
+          "newStart": 56,
+          "newLines": 5,
+          "lines": [
+            "     n, idx = ac.norm_with_index(raw)",
+            "     pos = n.find(\"法尼亚\")",
+            "     assert pos >= 0",
+            "-    seg = raw[idx[pos]:idx[pos + 2]]",
+            "+    seg = raw[idx[pos]:idx[pos + 2] + 1]",
+            "     assert seg == \"法尼亚\"  # 规范化下标精确回落原文"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_9d8b14b4cfe447e3a8b12b45",
+  "toolName": "Edit",
+  "version": 1
+}

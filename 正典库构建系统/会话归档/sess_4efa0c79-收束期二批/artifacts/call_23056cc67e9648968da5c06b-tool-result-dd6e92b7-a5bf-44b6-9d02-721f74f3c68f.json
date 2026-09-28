@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T11:04:50.894Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"_dryrun_604.py — 604 件矛盾积压 dry-run 分布报告（零写入，只读+出报告）\"\"\"\nimport json, sys, re, collections\nfrom pathlib import Path\n\nsys.path.insert(0, str(Path(__file__).resolve().parent / 'cbb' / 'tools'))\nimport importlib\nm = importlib.import_module('矛盾分流')\n\nroot = Path(__file__).resolve().parent / '迷深实战-本体库'\nitems = [json.loads(l) for l in (root / 'quarantine-zone' / 'items.jsonl').read_text(encoding='utf-8').splitlines() if l.strip()]\ncons = [i for i in items if i.get('subclass') == 'contradiction_pending']\nstatuses = collections.Counter(i.get('status') for i in items)\nprint('总件数', len(items), '| 矛盾件', len(cons), '| 状态分布', dict(statuses))\n\n# 官方解析器口径\nfields = collections.Counter(); parsed = 0\nsamples = collections.defaultdict(list)\nfor i in cons:\n    p = m.parse_dual_track_detail(i.get('detail', '') or '')\n    if p:\n        parsed += 1\n        fields[p[0]] += 1\n        if len(samples[p[0]]) < 2:\n            samples[p[0]].append((i.get('detail', '')[:110]))\n\n# 兜底正则口径（防官方解析器吃不下历史格式）\nfb = collections.Counter()\nfor i in cons:\n    d = i.get('detail', '') or ''\n    if '入库=' in d:\n        mt = re.match(r'\\s*([^:：]+)[:：]', d)\n        fb[mt.group(1).strip() if mt else 'UNKNOWN'] += 1\n\nprint('官方解析器可解析:', parsed, '/', len(cons))\nfor f, c in fields.most_common():\n    print(f'  {f}: {c}  样例: {samples[f][0] if samples.get(f) else \"\"}')\nprint('兜底正则口径字段分布:', dict(fb.most_common()))\n\ntry:\n    rep = m.propose(root)\n    print('矛盾分流.propose by_cls:', json.dumps(rep.get('by_cls', {}), ensure_ascii=False))\n    print('机械档 proposals:', len(rep.get('proposals', [])))\nexcept Exception as e:\n    print('propose 真库跑失败(不影响原始统计):', type(e).__name__, str(e)[:200])\n\nout = {'total': len(items), 'contradiction': len(cons), 'status': dict(statuses),\n       'parsed_by_official': parsed, 'fields_official': dict(fields),\n       'fields_fallback': dict(fb), 'samples': {k: v for k, v in samples.items()}}\ndest = Path(__file__).resolve().parent / '迷深实战-工作区' / 'logs' / '积压重分流-dryrun分布-20260926.json'\ndest.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')\nprint('报告已落盘', dest.name)\n",
+      "afterContentLength": 2111,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\_dryrun_604.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_23056cc67e9648968da5c06b",
+  "toolName": "Write",
+  "version": 1
+}

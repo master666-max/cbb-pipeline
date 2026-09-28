@@ -1,0 +1,153 @@
+研究完成。以下是汇报。
+
+---
+
+# GraphRAG 调研报告
+
+## 核心理念（7 条）
+
+1. **标准 RAG 在"全局问题"上结构性失效**——支撑：论文原文 "RAG fails on global questions directed at an entire text corpus, such as 'What are the main themes in the dataset?', since this is inherently a query-focused summarization (QFS) task, rather than an explicit retrieval task."（arXiv:2404.16130）
+2. **同时解决"泛化性"与"语料规模"两个轴**——支撑：论文自述 "a graph-based approach to question answering over private text corpora that scales with both the generality of user questions and the quantity of source text"；因为既有 QFS 方法 "do not scale to the quantities of text indexed by typical RAG systems"（同上）
+3. **用 LLM 在索引期"预摘要"，把查询期成本前置**——支撑：论文两阶段索引 "first, to derive an entity knowledge graph from the source documents, then to pregenerate community summaries for all groups of closely related entities"；查询时每个社区摘要生成部分回答，再汇总为最终回答（同上）
+4. **层次化社区结构 = 可调节粒度的"摘要分辨率旋钮"**——支撑：官方文档称其用 "Hierarchical Leiden Algorithm" 做 "recursive community-clustering" 形成 "a hierarchy of entity communities"，以便 "navigate and summarize the graph at different levels of granularity"（microsoft.github.io/graphrag/index/default_dataflow/）
+5. **图结构是"连接散点"的手段，而非检索全文本**——支撑：官方博客称 baseline RAG "struggles to connect the dots" 且 "performs poorly when being asked to holistically understand summarized semantic concepts"（2024-02-13 官方博客）
+6. **答案是"部分回答的再汇总"（map-reduce over summaries）**——支撑：Global Search 官方描述为搜索 "all AI-generated community reports in a map-reduce fashion"（microsoft.github.io/graphrag/query/overview/）
+7. **代价被官方明确承认为"索引期昂贵"**——支撑：README 原文 "⚠️ Warning: GraphRAG indexing can be an expensive operation, please read all of the documentation to understand the process and costs involved, and start small."；RAI 文档称 "Indexing is a relatively expensive operation."（github.com/microsoft/graphrag README / RAI_TRANSPARENCY.md）
+
+---
+
+## 索引期流水线（官方英文名 + 产物）
+
+官方文档分两个层次表述：**索引总览页**用 4 个动词，**default dataflow 页**用 6 个 Phase。两套都与代码库工作流名对应（如 `LoadDocuments` / `ExtractGraph` / `DetectCommunities` / `GenerateReports`，见 index/architecture 页图示）。
+
+| # | 官方步骤名 | 做什么 | 产物 |
+|---|---|---|---|
+| 1 | **Slice / Compose TextUnits** | 把语料切成 TextUnit（块） | Text Units（默认块大小 **1200 tokens**，可配） |
+| 2 | **Extract / Document Processing** | — | Documents Table（文档↔TextUnit 链接） |
+| 3 | **Extract**（Graph Extraction） | LLM 抽取实体、关系、关键声明（claims）；子图合并；描述列表摘要 | Graph Tables：**Entities / Relationships**；claims 作为 **Covariates**（`extract_claims` **默认关闭**） |
+| 4 | **Cluster**（Graph Augmentation） | **Hierarchical Leiden** 层次社区检测，"recursive community-clustering until we reach a community-size threshold" | **Communities Table** |
+| 5 | **Summarize**（Community Summarization） | 逐社区用 LLM 生成社区报告，并再摘要为简写版 | **Community Reports Table** |
+| 6 | **Text Embedding** | 对需下游向量检索的产物生成嵌入 | 实体描述 / text unit / 社区报告 文本的嵌入，默认存 Parquet + 向配置的 vector store |
+
+- **聚类算法：Leiden（不是 Louvain）**。确认路径三处：文档正文写 "Hierarchical Leiden Algorithm"；配置文档 `cluster_graph` 节写 "These are the settings used for Leiden hierarchical clustering"；仓库代码树存在 `packages/graphrag/graphrag/graphs/hierarchical_leiden.py`。**官方文档与代码中均未出现 Louvain**（我检索到的页面中）。
+- **当前仓库默认模型**（`packages/graphrag/graphrag/config/defaults.py`）：completion = **gpt-4.1**，embedding = **text-embedding-3-large**，provider = openai。
+- **重要状态**：README 顶部警告本仓库 "is largely in maintenance mode, and won't be accepting new PRs or implementing new features"。
+
+---
+
+## 查询期模式对比
+
+| 模式 | 适用问题类型 | 机制 | 代价 |
+|---|---|---|---|
+| **Global Search** | 整体性/主题性（"本数据集最重要的主题是什么"） | 对**全部 AI 生成的社区报告**做 map-reduce | 官方称 "a resource-intensive method"（resource-intensive 为其原话） |
+| **Local Search** | 特定实体（"洋甘菊有什么疗效"） | "combines relevant data from the AI-extracted knowledge-graph with text chunks of the raw documents"，向邻居扇出 | 未在官方页找到量化代价；论文 Table 2 显示其上下文 token 量远低于 global 的低层级社区 |
+| **DRIFT Search** | 需要比 local 更全面的本地问题 | **Dynamic Reasoning and Inference with Flexible Traversal**。三阶段：primer（与 top-K 语义最相关社区报告比对，产出初步答案+跟进问题）→ follow-up（用 local search 细化）→ output hierarchy（按相关性排序的问答层级） | 官方定位为 "balance computational costs with quality outcomes"，是 local 的 "more comprehensive option" |
+| **Basic Search** | 与 baseline RAG 等价的普通问题 | 标准 top-k 向量检索 | 最低 |
+
+- DRIFT 官方数据（2024-10-31 博客）：AP 新闻 5K+ 篇、50 个 local 问题，**Comprehensiveness 胜 local search 78%，Diversity 胜 81%**。该博客**未给出**对 global search 的成本降低百分比。
+- 补充证据——**Dynamic Community Selection**（2024-11-15 博客）：用 GPT-4o-mini 做社区筛选，level 1 从约 **1,500** 份社区报告降到平均 **470** 份，**平均成本降低 77%**（相对静态 global search at level 1）；但 **level 3 时反而高 34%**。level 3 三项指标胜率 58.8% / 48.0% / 60.0%，level 1 为 49.5% / 46.0% / 48.0%（即低层级下质量未必提升）。
+
+---
+
+## 评估方法
+
+- **指标名（3 个目标 + 1 个控制）**：**Comprehensiveness**（覆盖全部方面与细节的程度）、**Diversity**（视角与洞见是否多样丰富）、**Empowerment**（是否帮助读者理解并做出知情判断）；控制指标 **Directness**（是否具体清晰地回答）。三者均以问句形式在论文中给出原话。
+- **对照方式**：LLM 评估器做**头对头（head-to-head）比较**——原话是给评估器 "the question, the generated answers from two competing systems, and prompted to compare the two answers according to the criterion before giving a final judgment of which answer is preferred"；每对比较跑**多次重复**（5 次/比较），在 **125 个问题**上取平均。
+- **基线**：共 6 个条件——GraphRAG 四个社区层级（C0/C1/C2/C3）、对源文本直接做 map-reduce 的文本摘要法（TS）、以及向量 RAG 语义搜索（SS，即 conventional RAG baseline）。
+- **数据集**：Podcast transcripts（Behind the Tech with Kevin Scott，约 100 万 tokens）与 News articles（约 170 万 tokens）。
+- **关键结果数字**（论文）：
+  - 全局方法 comprehensiveness 胜率 **72–83%（p<.001，Podcast）/ 72–80%（p<.001，News）**；diversity **75–82%（p<.001）/ 62–71%（p<.01）**。
+  - 社区摘要 vs 源文本：Podcast 中间层级摘要 comprehensiveness **57%（p<.001）**；News 低层级 **64%（p<.001）**。
+  - Root 层（C0）对向量 RAG 仍保持 **72% comprehensiveness / 62% diversity** 胜率。
+  - 论文另做**基于 claim 的独立验证**（Exp.2）：LLM 标签与 claim 标签在 comprehensiveness 上 **78%** 的成对比较一致，diversity 上 **69–70%**。
+- 官方博客口径（2024-07-02）：对 naive RAG "~70–80% win rate"。
+
+---
+
+## 变体差异表
+
+| 系统 | 一句话核心机制 | 与微软 GraphRAG 的关键差别 | 来源 URL |
+|---|---|---|---|
+| **LightRAG**（arXiv 2410.05779，2024-10） | **双层检索**：低层级（具体实体/属性）+ 高层级（抽象概念/主题）关键词，图结构与向量表示结合；带**增量更新算法** | 不预先为所有社区生成报告；检索期用关键词级双通道而非社区报告 map-reduce。论文 Table 2 称 Legal 数据集检索仅 **<100 tokens、1 次 API 调用**，而 GraphRAG 用 610 个 level-2 社区 × 约 1,000 tokens ≈ **610,000 tokens**；增量更新 GraphRAG 需约 **1,399 × 2 × 5,000 tokens** 重建社区报告，LightRAG 仅需抽取开销 | https://arxiv.org/abs/2410.05779 ；https://arxiv.org/html/2410.05779v3 |
+| **HippoRAG**（arXiv 2405.14831，2024-05） | 借**海马索引理论**，协同 LLM + 知识图谱 + **Personalized PageRank** 做单步多跳检索 | 不做社区检测/预摘要；检索是图上 PPR 扩散而非社区报告汇总。声称多跳 QA 比 SOTA 高 **"up to 20%"**；单步检索比 IRCoT 类迭代检索 **便宜 10–30 倍、快 6–13 倍** | https://arxiv.org/abs/2405.14831 |
+| **HippoRAG 2**（arXiv 2502.14802，2025-02；ICML 2025） | 面向 LLM 的**非参数持续学习**；KG 中区分 **phrase nodes 与 passage nodes**（以 "contains" 上下文边相连），查询改成 **query-to-triple** 匹配（消融显示 Recall@5 平均提升 **12.5%**），并加 **recognition memory** 式 LLM 三元组过滤；passage 节点权重因子默认 0.05 | 修正了 HippoRAG 1 "unintended deterioration"（结构化 RAG 在基础事实记忆上反而低于标准 RAG）的问题；声称在事实/感知/联想记忆三类任务全面超标准 RAG，联想记忆超 SOTA 嵌入模型 **7%** | https://arxiv.org/abs/2502.14802 ；https://arxiv.org/html/2502.14802v2 |
+| **KAG**（蚂蚁，arXiv 2409.13731） | 专业领域知识服务框架：LLM 友好知识表示 + KG 与原始 chunk **互索引** + **逻辑形式引导的混合推理引擎** | 强调**逻辑形式引导的混合推理**与数值/时间/专家规则敏感性，而非社区摘要层次。声称 2wiki F1 相对提升 **19.6%**、HotpotQA **33.5%**（摘要页**未提 GraphRAG**，差异需另证） | https://arxiv.org/abs/2409.13731 |
+| **LazyGraphRAG**（微软研究院，2024-11-25） | "requires no prior summarization of the source data, avoiding the up-front indexing costs"；索引用 **NLP 名词短语抽取**概念共现 + 图统计做层次社区，**LLM 推迟到查询期**；查询用 best-first（向量 RAG）与 breadth-first（图 RAG）**迭代加深**混合，带相关度测试预算 | 取消索引期 LLM 摘要；质量通过 "relevance test budget" 调节 | https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/ |
+| **GraphRAG 综述**（arXiv 2501.00309，2024-12-31） | 提出 holisitic 框架，五组件：**query processor / retriever / organizer / generator / data source**；并按图类型分十个领域（Knowledge Graph、Document Graph、Scientific、Social、Planning and Reasoning、Tabular、Infrastructure、Biological、Scene、Random Graph） | 无 | https://arxiv.org/abs/2501.00309 |
+| **RAG vs. GraphRAG 系统评估**（arXiv 2502.11371，2025-02-17） | 统一评估协议（标准化数据预处理、检索配置、生成设置）对比 RAG 与 GraphRAG | 结论为两者各有优势、组合可稳定提升 | https://arxiv.org/abs/2502.11371 |
+
+---
+
+## 成本与局限
+
+**官方明示的警告与局限**
+- README 原文警告："GraphRAG indexing can be an expensive operation ... and **start small**."（https://github.com/microsoft/graphrag）
+- RAI 文档："**Indexing is a relatively expensive operation.** To mitigate its cost, create a small test dataset in the target domain to evaluate indexer performance before running large indexing operations."；同时指出局限："GraphRAG depends on **well-constructed indexing prompts**."（https://github.com/microsoft/graphrag/blob/main/RAI_TRANSPARENCY.md）
+- 官方文档另警告开箱效果不佳："Using GraphRAG with your data out of the box may not yield the best possible results. We strongly recommend to fine-tune your prompts."（README）
+
+**量化数字（有出处的）**
+- **令牌节约（官方博客，2024-07-02）**：GraphRAG 每查询约 **"~20–70% token use per query"**，最高层社区约 **"~2–3% token use per query"**（对比 source text summarization）。（https://www.microsoft.com/en-us/research/blog/graphrag-new-tool-for-complex-data-discovery-now-on-github/）
+- **论文 Table 2 上下文 token 对比**（同一问题、8k 固定窗口）：Podcast C0 26,657 / C1 225,756 / C2 565,720 / C3 746,100 / TS 1,014,611；News C0 39,770 / C1 352,641 / C2 980,898 / C3 1,140,266 / TS 1,707,694。论文结论原话：低层级社区摘要（C3）"required 26-33% fewer context tokens"，root 层（C0）"required over 97% fewer tokens"。（https://arxiv.org/html/2404.16130v2）
+- **图规模**（同数据）：Podcast **8,564 nodes / 20,691 edges**；News **15,754 nodes / 19,520 edges**。
+- **Dynamic community selection**：level 1 平均成本降低 **77%**（但 level 3 反增 **34%**）。（https://www.microsoft.com/en-us/research/blog/graphrag-improving-global-search-via-dynamic-community-selection/）
+- **LightRAG 对 GraphRAG 的成本对比**（注意是竞品论文的自述，非微软数据）：检索期 **<100 tokens / 1 次 API 调用** vs GraphRAG 约 **610,000 tokens / 数百次 API 调用**；增量更新 GraphRAG 约 **1,399 × 2 × 5,000 tokens**。（https://arxiv.org/html/2410.05779v3）
+- **LazyGraphRAG 自述**："LazyGraphRAG data indexing costs are **identical to vector RAG and 0.1% of the costs of full GraphRAG**"；对 global queries 与 GraphRAG Global Search "**more than 700 times lower query cost**"；"For **4% of the query cost** of GraphRAG global search, LazyGraphRAG significantly outperforms all competing methods on both local and global query types"。数据集：**5,590 篇 AP 新闻**，**100 条合成查询（50 local / 50 global）**，预算档位 100/500/1500。（https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/，2024-11-25）
+- **LLM 调用量公式**（社区/维护者讨论中的经验式，**非官方文档**，标【未核实】）：社区成员 huqianghui 给出 `LLM call count ≈ chunk 数 × 3 + community 数 + entity 数 +（可选 claim 数）`，来自 issue #671；同一用户称"用 prompt flow trace 拿到了总 token 数"。（https://github.com/microsoft/graphrag/issues/671）
+
+**关于"1M token 级语料的美元成本"**
+- **未找到权威来源给出官方美元数字。** 我检索了 arXiv 论文、官方博客（2024-02-13 / 2024-07-02）、官方文档、RAI 文档、microsoft/graphrag 仓库 issues，**均无官方$金额**。论文只在 token 层面讨论"1 million token range"的语料。
+- 能找到的只有用户个案与二手转述，**均标【未核实】**：
+  - issue #431 用户自述 "it just used **$15** for a very small amount of text to index on openai API"（2024-07-08）。（https://github.com/microsoft/graphrag/issues/431）
+  - 同线程另一用户转述 "They did run a demo showing that they used **$12 indexing a book**"——**二手转述，我未找到该 demo 的一手出处**，标【未核实】。
+- Microsoft Tech Community 有一篇题为 "GraphRAG Costs Explained: What You Need to Know" 的文章被官方 issue 引用（https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/graphrag-costs-explained-what-you-need-to-know/ba-p/4207978），但**该页返回 403，我无法打开正文**，故不引用其中任何数字。
+
+**其他局限证据**
+- **成本可观测性长期缺失**：issue #1153（2024-09）用户称能追踪查询 token 但无法追踪索引成本；维护者 natoverse 2026-02-17 才回复 "Consumption is now written to indexing-engine.log at the end of all pipeline runs"。（https://github.com/microsoft/graphrag/issues/1153、https://github.com/microsoft/graphrag/issues/581）
+- **增量更新困难**：LightRAG 论文指出 GraphRAG 增同样规模数据需拆除并重建社区结构（约 1,399 × 2 × 5,000 tokens）。另有社区 issue #2078 "Analysis for document delete support approach"（2025-09）。（来源见上）
+- **图质量依赖抽取质量**：RAI 文档明言依赖 "well-constructed indexing prompts"，且对独特数据集"effective indexing can depend on properly identifying domain-specific concepts"；auto-tuning 博客显示同一语料换 prompt 后实体数从 **1,796 → 4,896**、关系 **2,851 → 8,210**、社区 **352 → 1,027**，说明抽取结果对提示词高度敏感。（https://www.microsoft.com/en-us/research/blog/graphrag-auto-tuning-provides-rapid-adaptation-to-new-domains/）
+- **项目已进入维护模式**（不再接受新 PR / 新功能）。（README）
+- **LazyGraphRAG 在官方仓库中仍是研究公告**：我能确认仓库存在名词短语抽取相关代码（`packages/graphrag/graphrag/index/operations/build_noun_graph/np_extractors/regex_extractor.py`）与 "LazyGraphRAG" 提及，但**未找到 LazyGraphRAG 的 arXiv 论文**（尝试 arXiv 作者页/检索页均未命中，标【未找到权威来源】），也未找到官方确认其在主仓库完整落地。issue #1512 "When will LazyGraphRAG arrive?"（2024-12-13）已被关闭，**我未读到官方给出落地答复**。
+
+---
+
+## 来源清单
+
+1. From Local to Global: A Graph RAG Approach to Query-Focused Summarization — https://arxiv.org/abs/2404.16130 （v1 2024-04-24；v2 2025-02-19）
+2. 同上，全文 HTML（评估与 Table 2 数字来源） — https://arxiv.org/html/2404.16130v2
+3. GraphRAG 官方文档首页 — https://microsoft.github.io/graphrag/
+4. 官方文档 · Indexing Overview — https://microsoft.github.io/graphrag/index/overview/
+5. 官方文档 · Default Dataflow（六阶段、1200 token、Hierarchical Leiden） — https://microsoft.github.io/graphrag/index/default_dataflow/
+6. 官方文档 · Index Architecture（工作流步骤名） — https://microsoft.github.io/graphrag/index/architecture/
+7. 官方文档 · Query Overview（local/global/DRIFT/basic 原话） — https://microsoft.github.io/graphrag/query/overview/
+8. 官方文档 · DRIFT Search 专页 — https://microsoft.github.io/graphrag/query/drift_search/
+9. 官方文档 · Config YAML（cluster_graph = Leiden hierarchical clustering） — https://microsoft.github.io/graphrag/config/yaml/
+10. microsoft/graphrag README（维护模式警告 + 成本警告） — https://github.com/microsoft/graphrag
+11. microsoft/graphrag RAI_TRANSPARENCY.md（局限与成本） — https://github.com/microsoft/graphrag/blob/main/RAI_TRANSPARENCY.md
+12. 仓库默认配置（gpt-4.1 / text-embedding-3-large / max_cluster_size=10） — https://github.com/microsoft/graphrag/blob/main/packages/graphrag/graphrag/config/defaults.py
+13. MSR 博客 · GraphRAG: Unlocking LLM discovery on narrative private data （2024-02-13） — https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/
+14. MSR 博客 · GraphRAG: New tool for complex data discovery now on GitHub（~20–70% / ~2–3% token 原话，2024-07-02） — https://www.microsoft.com/en-us/research/blog/graphrag-new-tool-for-complex-data-discovery-now-on-github/
+15. MSR 博客 · GraphRAG auto-tuning（实体/关系/社区计数对比，2024-09-09） — https://www.microsoft.com/en-us/research/blog/graphrag-auto-tuning-provides-rapid-adaptation-to-new-domains/
+16. MSR 博客 · Introducing DRIFT Search（78% / 81% 胜率，2024-10-31） — https://www.microsoft.com/en-us/research/blog/introducing-drift-search-combining-global-and-local-search-methods-to-improve-quality-and-efficiency/
+17. MSR 博客 · Improving global search via dynamic community selection（77% / +34%，2024-11-15） — https://www.microsoft.com/en-us/research/blog/graphrag-improving-global-search-via-dynamic-community-selection/
+18. MSR 博客 · LazyGraphRAG: Setting a new standard for quality and cost（0.1% / 700x / 4% 原话，2024-11-25） — https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/
+19. LightRAG 论文 — https://arxiv.org/abs/2410.05779 ；全文（Table 2 成本对比） — https://arxiv.org/html/2410.05779v3
+20. HippoRAG 论文 — https://arxiv.org/abs/2405.14831
+21. HippoRAG 2 论文 — https://arxiv.org/abs/2502.14802 ；全文（机制细节与基准数） — https://arxiv.org/html/2502.14802v2
+22. KAG 论文 — https://arxiv.org/abs/2409.13731
+23. 综述 · Retrieval-Augmented Generation with Graphs (GraphRAG) — https://arxiv.org/abs/2501.00309 ；HTML 分类体系 — https://arxiv.org/html/2501.00309v2
+24. 系统评估 · RAG vs. GraphRAG: A Systematic Evaluation and Key Insights — https://arxiv.org/abs/2502.11371
+25. GitHub Issue #431（$15 个案 / $12 二手转述） — https://github.com/microsoft/graphrag/issues/431
+26. GitHub Issue #1153（索引成本追踪请求） — https://github.com/microsoft/graphrag/issues/1153
+27. GitHub Issue #671（LLM 调用量公式，社区经验式） — https://github.com/microsoft/graphrag/issues/671
+28. GitHub Issue #581（token 追踪，维护者 2026-02-17 回复） — https://github.com/microsoft/graphrag/issues/581
+29. GitHub Issue #1512（LazyGraphRAG 何时落地，已关闭） — https://github.com/microsoft/graphrag/issues/1512
+
+---
+
+## 需要你知道的核实缺口
+
+- **美元成本：官方无数字。** "1M token 语料要花多少钱"在网络流传的 $10–15 级说法均出自用户 issue 或二手 demo 转述，**不是微软官方口径**，我不予背书。上面第 14 条博客的 "~20–70% / ~2–3%" 是**查询期** token 相对量，**不是索引期成本**，勿混用。
+- **LazyGraphRAG 无 arXiv 论文**：官方只有博客（2024-11-25）与营销性数字；**0.1% / 700x / 4% 三个数字目前仅有博客一处一手源**，无同行评审或论文交叉验证。
+- **DRIFT 全称**为官方文档所写 "Dynamic Reasoning and Inference with Flexible Traversal"（文档页原文）；我未在论文中找到该缩写的学术定义。
+- **微软官方对 DRIFT 的成本主张**：官方只说 "balance computational costs with quality outcomes"，**没有给出百分比**，请在引用时避免给它安上成本数字。
+- 关于 KAG "与 GraphRAG 的关键差别"：arXiv 摘要页**未提** GraphRAG，我表中该列属**机制层面的推断性对比**，标【未核实】。

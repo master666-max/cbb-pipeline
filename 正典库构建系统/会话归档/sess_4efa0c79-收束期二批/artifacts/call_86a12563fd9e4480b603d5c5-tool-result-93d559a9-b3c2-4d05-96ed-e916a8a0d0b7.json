@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-09-28T01:17:23.493Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"g16d_prep.py — 核指结果后核+成军（B1 收口件）。\n\n①每条引文对语料原文后核（line_abs 定位+归一包含，extended/窗口内一视同仁）\n②核验通过的写 补充证据-核心指代.jsonl（status=full——核心指代补充后锚定达标）\n③供 G16d 重审：g16c_rejudge --sidecar 补充证据-核心指代.jsonl\n\"\"\"\nimport json\nimport sys\nfrom collections import Counter\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\nsys.path.insert(0, str(ROOT / \"cbb-v2\"))\nfrom cbb2.anchor_check import norm  # noqa: E402\n\nSTORE = ROOT / \"迷深实战-本体库\"\nRESULTS = ROOT / \"迷深实战-工作区\" / \"coref_batches\"\nCORPUS = ROOT.parent / \"语料分析\" / \"corpus\" / \"clean_full.txt\"\nBOUNDARY = ROOT / \"迷深实战-工作区\" / \"manifest\" / \"boundary-table-v1.json\"\nOUT = STORE / \"补充证据-核心指代.jsonl\"\n\n\ndef main():\n    boundary = json.loads(BOUNDARY.read_text(encoding=\"utf-8\"))\n    chap_of = {c[\"chapter_no\"]: c for c in boundary[\"chapters\"]}\n    lines = CORPUS.read_text(encoding=\"utf-8\").splitlines()\n\n    # 批文件元数据：record_id → (library, chapter)\n    meta = {}\n    for bf in sorted(RESULTS.glob(\"../batch-*.json\")):\n        for rec in json.loads(bf.read_text(encoding=\"utf-8\")):\n            meta[rec[\"record_id\"]] = {\"library\": rec[\"library\"], \"chapter\": rec[\"chapter\"]}\n\n    out_rows = []\n    stats = Counter()\n    for rf in sorted(RESULTS.glob(\"results/batch-*.json\")):\n        data = json.loads(rf.read_text(encoding=\"utf-8\"))\n        results = data.get(\"results\", []) if isinstance(data, dict) else data\n        for rr in results:\n            rid = rr[\"record_id\"]\n            m = meta.get(rid)\n            if not m:\n                stats[\"no_meta\"] += 1\n                continue\n            supplements = []\n            ok = True\n            for pair in rr.get(\"pairs\", []):\n                if not pair.get(\"found\") or not pair.get(\"quote\") or not pair.get(\"line_abs\"):\n                    ok = False\n                    continue\n                line_abs = pair[\"line_abs\"]\n                q = pair[\"quote\"]\n                if line_abs > len(lines) or norm(q) not in norm(lines[line_abs - 1]):\n                    ok = False  # 后核 FAIL：语料对应行没有这句（防编造）\n                    stats[\"postverify_fail\"] += 1\n                    continue\n                ch_no = next((cn for cn, c in chap_of.items()\n                              if c[\"line_start\"] <= line_abs <= c[\"line_end\"]), None)\n                if ch_no is None:\n                    ok = False\n                    continue\n                supplements.append({\n                    \"vol\": 1, \"chapter\": ch_no,\n                    \"line\": line_abs - chap_of[ch_no][\"line_start\"] + 1,\n                    \"quote\": q, \"backfill\": True, \"coref\": True,\n                    \"for_key\": pair[\"key\"],\n                })\n            if supplements and ok:\n                out_rows.append({\"record_id\": rid, \"status\": \"full\",\n                                 \"library\": m[\"library\"],\n                                 \"supplements\": supplements, \"via\": \"llm-coref\",\n                                 \"idem\": rid})\n                stats[\"verified_full\"] += 1\n            elif supplements:\n                stats[\"partial\"] += 1\n            else:\n                stats[\"no_coref\"] += 1\n\n    with OUT.open(\"w\", encoding=\"utf-8\") as f:\n        for r in out_rows:\n            f.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + \"\\n\")\n    print(f\"核心指代成军: {dict(stats)} → {OUT}（{len(out_rows)} 行）\")\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\g16d_prep.py",
+      "structuredPatch": [
+        {
+          "oldStart": 28,
+          "oldLines": 7,
+          "newStart": 28,
+          "newLines": 7,
+          "lines": [
+            " ",
+            "     # 批文件元数据：record_id → (library, chapter)",
+            "     meta = {}",
+            "-    for bf in sorted(RESULTS.glob(\"../batch-*.json\")):",
+            "+    for bf in sorted(RESULTS.glob(\"batch-*.json\")):",
+            "         for rec in json.loads(bf.read_text(encoding=\"utf-8\")):",
+            "             meta[rec[\"record_id\"]] = {\"library\": rec[\"library\"], \"chapter\": rec[\"chapter\"]}",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_86a12563fd9e4480b603d5c5",
+  "toolName": "Edit",
+  "version": 1
+}

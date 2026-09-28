@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-21T13:39:45.764Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"init_project.py — 开书脚手架：读 project.yaml 生成工作区+本体库+BUILD-STATE 骨架\n用法：py -X utf8 init_project.py <project.yaml 路径>\n零第三方依赖；幂等（已存在即跳过，不覆盖任何文件）。\n\"\"\"\nimport io, os, sys, yaml\n\ndef main(cfg_path):\n    cfg = yaml.safe_load(io.open(cfg_path, encoding=\"utf-8\"))\n    proj = cfg[\"project\"]\n    root = os.path.dirname(os.path.abspath(cfg_path))\n    ws = proj.get(\"workspace_path\") or os.path.join(root, \"工作区\")\n    lib = proj.get(\"library_path\") or os.path.join(root, \"本体库\")\n    for d in (ws, lib,\n              os.path.join(ws, \"candidates\"), os.path.join(ws, \"slice\"),\n              os.path.join(ws, \"logs\"), os.path.join(ws, \"manifest\"),\n              os.path.join(lib, \"libraries\"), os.path.join(lib, \"quarantine-zone\")):\n        os.makedirs(d, exist_ok=True)\n    src = proj[\"source_path\"]\n    assert os.path.exists(src), f\"语料不存在：{src}\"\n    n = 0\n    for line in io.open(src, encoding=\"utf-8\"):\n        if \"<<<CHAPTER\" in line:\n            n += 1\n    state = os.path.join(root, \"BUILD-STATE.md\")\n    if not os.path.exists(state):\n        io.open(state, \"w\", encoding=\"utf-8\", newline=\"\\n\").write(\n            \"# BUILD-STATE（缓存，事实以磁盘+git为准）\\n\\n\"\n            f\"> 书：{proj['book_name']}｜语料：{src}｜章数标记：{n}\\n\"\n            \"> 目标判据：<开书时填写，全库入库+终审十轮+抽检≥95%>\\n\\n单位清单：（待填）\\n阻塞登记：（无）\\n勘误日志：（无）\\n\")\n    print(f\"OK 书房就绪：语料标记 {n} 章｜工作区={ws}｜本体库={lib}｜STATE={state}\")\n\nif __name__ == \"__main__\":\n    main(sys.argv[1] if len(sys.argv) > 1 else \"project.yaml\")\n",
+      "afterContentLength": 1459,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-pipeline-skill\\cbb-pipeline\\scripts\\init_project.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_061f178e9faf4652bb68b56e",
+  "toolName": "Write",
+  "version": 1
+}

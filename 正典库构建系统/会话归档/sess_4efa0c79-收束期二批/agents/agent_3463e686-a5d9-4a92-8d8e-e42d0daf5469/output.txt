@@ -1,0 +1,84 @@
+调研完成，证据已交叉核实(GitHub API 直查 + arXiv API + 网络搜索)。以下为最终报告。
+
+# 中文长篇小说正典库管线 · 技术情报调研报告(2026-09-27)
+
+## A. 逐题发现
+
+### 题1 中文 NLP 基础栈(2025-2026 现状)
+
+| 组件 | 活性(核实方式) | License | 结论 |
+|---|---|---|---|
+| [HanLP](https://github.com/hankcs/HanLP) | push 2026-09-15;最新 release v2.1.1(2025-01，宣布 130 语种+古汉语开放模型)；36.5k stars | Apache-2.0 | **首选**，分词+NER+依存+共指全家桶 |
+| [stanza](https://github.com/stanfordnlp/stanza) | push 2026-09-25(LICENSE 文件确认 Apache 2.0 文本)；7.9k stars | Apache-2.0 | 活跃，中文模型齐全，可做交叉校验 |
+| [LTP (HIT-SCIR)](https://github.com/HIT-SCIR/ltp) | push 2026-03-11 但 [README 明文](https://github.com/HIT-SCIR/ltp/blob/master/README.md)：「用于商业目的需付费」；最后 release v4.2.0 停在 2022-08 | 限制性(非标准 OSI) | 商用排除，见 C 节 |
+| [PaddleNLP](https://github.com/PaddlePaddle/PaddleNLP) | push 2026-05-23;13k stars | Apache-2.0 | Taskflow 的 UIE/LAC 可用作抽取先验 |
+| fastNLP | push 停在 2023-06-05 | Apache-2.0 | 停维，排除 |
+| [jieba](https://github.com/fxsjy/jieba) | push 停在 2024-08-21,700+ open issues | MIT | 停维(词典仍可参考) |
+| [baidu/lac](https://github.com/baidu/lac) | push 停在 2021-05 | Apache-2.0 | 独立库停维(能力已并入 PaddleNLP) |
+
+- **HanLP 共指解消确认存在**：仓库含 `hanlp/datasets/coref/loaders/conll12coref.py` 与 RESTful 客户端的 `CoreferenceResolutionOutput.java`(直接代码检索核实)，即中文代词回指有现成模型可用。
+- **最佳开源组合**：HanLP 2.x(分词+NER+依存+共指)+ stanza 双跑对比 + PaddleNLP UIE 做信息抽取对照。
+- **网文/轻小说适应性：未找到任何公开系统性实测报告**(多路检索只有零散经验帖：[CSDN 工程化解析](https://bbs.csdn.net)、[funNLP 资源汇总](https://github.com/zjb4800/fork_from_funNLP)、知乎 OOV 未登录词讨论)。共识性经验是生造词/音译名属 OOV,需自定义词典+高频挖掘回灌。[WebNovelBench](https://arxiv.org/abs/2505.14818)(2025)与 [DITING](https://arxiv.org/abs/2510.09116)(2025)是网文生成/翻译评测，不覆盖实体抽取。**此缺口需自建评测集**。
+
+### 题2 角色网络 / 对话归属(BookNLP 谱系)
+
+- [BookNLP](https://github.com/booknlp/booknlp):MIT,939 stars,但 push 停在 2024-07-31、无正式 release 节奏，英文专用 → **半休眠，中文不可直接用**。
+- kehua1116/Chinese-BookNLP:2020 停维、无 license、2 stars → 排除。
+- [Renard](https://github.com/CompNet/Renard)(JOSS 2024,论文 [arXiv:2407.02284](https://arxiv.org/abs/2407.02284)):Python,模块化角色网络管线(角色检测→名字归一→交互抽取)，**push 2026-09-12 仍活跃**，但 **GPL-3.0**(进程隔离调用可规避传染)，英文为主、组件可换。
+- 新论文:[CREFT](https://arxiv.org/abs/2505.24553)(2025-05,多智能体 LLM 角色关系抽取)、[GraphLit](https://arxiv.org/abs/2605.28643)(2026-05,动态角色网络表示)、综述 [2412.11560](https://arxiv.org/abs/2412.11560)(2024-12,角色网络构建中的 NLP 任务)。
+- **结论：不存在维护中的中文 BookNLP 对等物。2024-2026 的趋势是 LLM 直接做角色关系抽取(CREFT 路线)，而非改造 BookNLP。对话归属需自组装。**
+
+### 题3 篇章/话语解析(CDTB 谱系)、场景边界、话题推进
+
+- **CDTB 原版无公开可维护仓库**：GitHub 搜索仅得 [oisc/ChineseDiscourseParser](https://github.com/oisc/ChineseDiscourseParser)(Apache-2.0,2019 停维)与 NLP-Discourse-SoochowU/cdtb_dp2018(2020)。NTU-Chinese-Causal-Corpus(2022,因果对语料，3 stars)。
+- [GCDT](https://arxiv.org/abs/2210.10449)(2022,中文 RST treebank,多体裁)：论文在，未检到公开代码仓库 → 数据需按论文联系作者。
+- 话题推进:[2305.14790](https://arxiv.org/abs/2305.14790)(2023,中文段级话题切分语料+benchmark)——论文在，abs 页未挂仓库，数据可得性【待确认】。
+- [中文会话篇章解析](https://arxiv.org/abs/2106.03345)(2021,对话场景)、[CUE-Bench](https://arxiv.org/abs/2608.10810)(2026-08,中文立场，边缘相关)。
+- **场景切分：中文小说场景边界数据集/模型：未找到，明说。** 英文有 SceneSeg novels(2023)和影视场景切分(如 [2608.28699](https://arxiv.org/abs/2608.28699)),均不可迁移直接用。
+
+### 题4 中文实体链接与别名词典
+
+- **[Wikidata](https://www.wikidata.org/wiki/Wikidata:Licensing):CC0(已核实)——labels/aliases/descriptions 全部公有领域**，zh 标签+别名可经 SPARQL/dumps 无法律负担接入，这是最干净的别名源。
+- [Chinese-Names-Corpus](https://github.com/wainshine/Chinese-Names-Corpus):Apache-2.0,push 2025-11,4.3k stars,含中文人名(500万+)、词典语料 → 人名词典合法可用。
+- [THUOCL](https://github.com/thunlp/THUOCL)(清华开放词表，含人名词)：MIT,2023 后停维但词表静态可用。
+- [OpenCC](https://github.com/BYVoid/OpenCC):Apache-2.0,push 2026-09-25,活跃 → 繁简/变体归一。
+- **中文维基百科重定向**：文本层 CC BY-SA 3.0(与 Wikidata 的 CC0 不同)，作别名表需署名+同方式共享，用于管线内部可行、对外分发衍生数据集时需评估【待确认具体分发形态】。
+- **百度百科：无开放 API,批量结构化抓取违反百度用户协议**；中国司法有抓取数据构成不正当竞争的判例(微博诉蚁坊，北京知产法院二审)→ 排除，见 C 节。
+- [Hansel](https://arxiv.org/abs/2207.13005):中文 few-shot/zero-shot 实体链接基准，可作自建评测参照。
+
+### 题5 LLM 时代标注平台(裁决队列)
+
+- [Label Studio](https://github.com/HumanSignal/label-studio):Apache-2.0,**release 1.23.1 于 2026-09-25,最活跃**；中文界面靠社区汉化补丁([label-studio-zh-cn](https://github.com/haoxiangdong/label-studio-zh-cn),2026-08 更新)；支持 ML backend 挂模型预审、span/relation 结构化标注、多人仲裁。
+- [LabelU](https://github.com/opendatalab/labelU)(上海AI实验室 OpenDataLab):Apache-2.0,push 2026-07-28,1.7k stars,**中文原生 UI,自带 AI 预标注** → 中文团队体验最好。
+- [Argilla](https://github.com/argilla-io/argilla):Apache-2.0,但 **release 停在 v2.8.0(2025-03),仓库有 "Update project status" 提交(2025-05-16),最后实质提交 2025-08 → 维护收缩**；团队现役产品是 [distilabel](https://github.com/argilla-io/distilabel)(Apache-2.0,push 2026-09-21,活跃，做 LLM 预标注/合成数据管线)。
+- [doccano](https://github.com/doccano/doccano):MIT,最后 release v1.8.5(2026-01),399 open issues,缓慢维护，内置中文界面。
+- Prodigy:闭源商业(按席位付费)→ 见 C 节。
+
+## B. 对管线 5 个接缝的具体建议
+
+1. **抽取先验**:HanLP 2.x NER+自定义词典打底；词典源用 Chinese-Names-Corpus(Apache-2.0)+ THUOCL 人名词 + 已抽取正典专名高频回灌(网文生造词的唯一可靠解法);PaddleNLP UIE(中文，Apache-2.0)作 schema 化抽取对照；GLiNER([urchade/GLiNER](https://github.com/urchade/GLiNER),Apache-2.0,push 2026-09-23,zero-shot NER)做域外召回——注意中文专用 GLiNER 模型目前只有无 license 的个人仓库(gliner-chinese-train),中文效果【待确认】，建议仅作离线对照不作依赖。
+2. **校验门(引文逐字回落)**：引文比对前统一 NFC+OpenCC 繁简归一；实体名回落用 HanLP 分词边界做确定性对齐(避免 LLM 返回的实体名与原文边界不一致导致假阴性);LTP 若采用只能在个人科研语境，不可进默认栈。
+3. **上下文包**：用 HanLP 共指(ConLL-12 谱系模型)生成章内代词回指链，与实体卡、前情摘要打包；对话归属无现成中文件 → 用「说话人候选=同段角色+对话密度启发式」的 LLM 提示，参照 CREFT 的多智能体分解思路；场景切分无开源件，用时间副词/地点词/空行结构的启发式+LLM 混合，并把边界不确定度写入上下文包。
+4. **缺口队列**：别名缺口检测参照 Hansel 的 coarse-to-fine 词典检索思路；外部别名建议用 Wikidata CC0 SPARQL 查 zh aliases(零法律成本)；维基重定向表作二级来源(CCY BY-SA 注意对外分发)；查不到的实体进入人审。
+5. **裁决队列**：首选 Label Studio(1.23 活跃、ML backend 可挂 LLM 预审、span+relation+逐字引文核验可配)，全中文团队可选 LabelU;批量预标注用 distilabel(活跃、Apache-2.0)搭 LLM 预审流水线;Argilla 仅在已有部署时续用，不建议新部署。
+
+## C. 排除项(license 或停维)
+
+- **LTP**:README 明文商用付费；release 停在 2022-08。个人科研可用，管线商业化/开源分发即排除。
+- **fastNLP**(2023-06 停维)、**baidu/lac 独立库**(2021 停维)、**jieba**(2024-08 停维，词典可借鉴但工具不依赖)。
+- **kehua1116/Chinese-BookNLP**:2020 停维 + 无 license。
+- **百度百科结构化数据**：违反用户协议 + 不正当竞争判例风险，不可接入。
+- **Prodigy**:闭源商业 license。
+- **中文场景切分/CDTB 谱系现成模型**：不存在维护中的公开件(CDTB 数据需申请、GCDT 无公开仓库)——不是排除而是**空白**。
+- **MAVEN/MAVEN-ERE**(清华事件数据集)：GitHub 仓库已 404,license 疑似 NC【待确认】，不建议依赖。
+- **Renard**:未排除但注意 GPL-3.0——只允许进程隔离/命令行调用，不可链接进闭源代码。
+
+Sources:
+- [HanLP](https://github.com/hankcs/HanLP) / [LTP](https://github.com/HIT-SCIR/ltp) / [stanza](https://github.com/stanfordnlp/stanza) / [PaddleNLP](https://github.com/PaddlePaddle/PaddleNLP) / [fastNLP](https://github.com/fastnlp/fastNLP) / [jieba](https://github.com/fxsjy/jieba) / [baidu/lac](https://github.com/baidu/lac)
+- [BookNLP](https://github.com/booknlp/booknlp) / [Renard](https://github.com/CompNet/Renard) / [CREFT](https://arxiv.org/abs/2505.24553) / [GraphLit](https://arxiv.org/abs/2605.28643) / [角色网络综述](https://arxiv.org/abs/2412.11560)
+- [GCDT](https://arxiv.org/abs/2210.10449) / [中文话题切分](https://arxiv.org/abs/2305.14790) / [中文会话篇章解析](https://arxiv.org/abs/2106.03345) / [CUE-Bench](https://arxiv.org/abs/2608.10810) / [oisc/ChineseDiscourseParser](https://github.com/oisc/ChineseDiscourseParser)
+- [Wikidata licensing (CC0)](https://www.wikidata.org/wiki/Wikidata:Licensing) / [Chinese-Names-Corpus](https://github.com/wainshine/Chinese-Names-Corpus) / [THUOCL](https://github.com/thunlp/THUOCL) / [OpenCC](https://github.com/BYVoid/OpenCC) / [Hansel](https://arxiv.org/abs/2207.13005)
+- [Label Studio](https://github.com/HumanSignal/label-studio) / [LabelU](https://github.com/opendatalab/labelU) / [Argilla](https://github.com/argilla-io/argilla) / [distilabel](https://github.com/argilla-io/distilabel) / [doccano](https://github.com/doccano/doccano) / [label-studio-zh-cn](https://github.com/haoxiangdong/label-studio-zh-cn) / [GLiNER](https://github.com/urchade/GLiNER)
+- [WebNovelBench](https://arxiv.org/abs/2505.14818) / [DITING](https://arxiv.org/abs/2510.09116) / [funNLP](https://github.com/zjb4800/fork_from_funNLP)
+
+**总体结论**：基础栈(HanLP/stanza/PaddleNLP)与裁决队列(Label Studio/LabelU)生态健康；三个硬空白需要自研或 LLM 方案——中文对话归属、中文场景切分、网文体适应性评测集；两个法律雷区已标定(LTP 商用、百度百科)。

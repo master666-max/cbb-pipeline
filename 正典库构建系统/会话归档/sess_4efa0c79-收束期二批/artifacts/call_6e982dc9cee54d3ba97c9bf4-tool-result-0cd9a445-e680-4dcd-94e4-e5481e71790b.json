@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-09-26T04:31:49.735Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.defenses — 抽取四面防御的读入/安全/输出三侧（R6/R7/R8/R15；移植 v1 cbb_extract）。\"\"\"\nfrom __future__ import annotations\n\nMETATEXT_TITLE_PATTERNS = (\"章末说\", \"本章说\", \"作者的话\", \"请假条\", \"插图页\")\nMETATEXT_BODY_PATTERNS = (\"翻译：\", \"校对：\", \"转载请注明\", \"本章说\", \"评论区\",\n                          \"点赞\", \"收藏\", \"月票\")\nINSTRUCTION_INJECTION_PATTERNS = (\"ignore previous\", \"disregard above\", \"忽略之前\", \"忽略以上\",\n                                  \"请忽略上文\", \"system prompt\", \"系统提示词\", \"rm -rf\",\n                                  \"<script\", \"```\")\nBANNED_EIGHT = {\"情绪词\": (\"愤怒\", \"喜悦\", \"悲伤\", \"恐惧\"),\n                \"值表\": (\"力量：\", \"敏捷：\", \"智力：\")}\n\n\ndef is_metatext(title: str = \"\", text_sample: str = \"\") -> bool:\n    for pat in METATEXT_TITLE_PATTERNS:\n        if pat in (title or \"\"):\n            return True\n    for pat in METATEXT_BODY_PATTERNS:\n        if pat in (text_sample or \"\"):\n            return True\n    return False\n\n\ndef has_embedded_instruction(text_sample: str) -> bool:\n    low = (text_sample or \"\").lower()\n    for pat in INJECTION_INJECTION if False else INSTRUCTION_INJECTION_PATTERNS:\n        if pat in low or pat in (text_sample or \"\"):\n            return True\n    return False\n\n\ndef scan_banned(value: str) -> list[dict]:\n    hits = []\n    for cat, words in BANNED_EIGHT.items():\n        for w in words:\n            if w in (value or \"\"):\n                hits.append({\"category\": cat, \"word\": w})\n    return hits\n\n\ndef plan_batches(n: int, batch_size: int = 8) -> list[list[int]]:\n    return [list(range(i + 1, min(i + batch_size, n) + 1)) for i in range(0, n, batch_size)]\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\defenses.py",
+      "structuredPatch": [
+        {
+          "oldStart": 24,
+          "oldLines": 7,
+          "newStart": 24,
+          "newLines": 7,
+          "lines": [
+            " ",
+            " def has_embedded_instruction(text_sample: str) -> bool:",
+            "     low = (text_sample or \"\").lower()",
+            "-    for pat in INJECTION_INJECTION if False else INSTRUCTION_INJECTION_PATTERNS:",
+            "+    for pat in INSTRUCTION_INJECTION_PATTERNS:",
+            "         if pat in low or pat in (text_sample or \"\"):",
+            "             return True",
+            "     return False"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_6e982dc9cee54d3ba97c9bf4",
+  "toolName": "Edit",
+  "version": 1
+}

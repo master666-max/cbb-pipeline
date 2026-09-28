@@ -1,0 +1,15 @@
+routing wired
+Traceback (most recent call last):
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\g16c_rejudge.py", line 196, in <module>
+    main()
+    ~~~~^^
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\g16c_rejudge.py", line 97, in main
+    rows = [json.loads(l) for l in sidecar.read_text(encoding="utf-8").splitlines() if l.strip()]
+                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\26672\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '补充证据-回填.jsonl'

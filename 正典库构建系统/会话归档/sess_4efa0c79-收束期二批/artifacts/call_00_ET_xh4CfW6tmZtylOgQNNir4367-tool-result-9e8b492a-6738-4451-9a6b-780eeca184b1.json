@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-09-24T04:04:51.609Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_build_evidence_index.py — evidence 级索引构建件单测（零网络：预置进度件→走落表段）。\n\n判据（2026-09-24 内存修复配套）：\n①分块落表（--chunk 小于总行数时仍全量落，schema 稳定）；\n②续传按**键扫描**（进度件可达 10GB，禁全载向量）；\n③进度件里已不属当前库的键被过滤（不静默：落表行数与库内行数口径在输出注明）；\n④建成即清进度件。\n\"\"\"\nimport importlib\nimport json\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE))\nm = importlib.import_module(\"build_evidence_index\")\n\n\ndef test_chunked_build_key_only_resume(tmp_path):\n    store = tmp_path / \"store\" / \"libraries\" / \"character\" / \"provisional\"\n    store.mkdir(parents=True)\n    rec = {\"record_id\": \"rec-1\",\n           \"evidence\": [{\"vol\": 1, \"chapter\": 1, \"line\": 2, \"quote\": \"甲\" * 60},\n                        {\"vol\": 1, \"chapter\": 1, \"line\": 3, \"quote\": \"乙\" * 60}]}\n    (store / \"rec-1.json\").write_text(json.dumps(rec, ensure_ascii=False), encoding=\"utf-8\")\n\n    idx = tmp_path / \"idx\"\n    idx.mkdir()\n    prog = idx / \"_evidence-progress.jsonl\"\n    rows = [{\"record_id\": \"rec-1\", \"chapter\": 1, \"line\": 2, \"quote\": \"甲\" * 60},\n            {\"record_id\": \"rec-1\", \"chapter\": 1, \"line\": 3, \"quote\": \"乙\" * 60},\n            {\"record_id\": \"ghost\", \"chapter\": 9, \"line\": 9, \"quote\": \"丙\" * 60}]  # 库外键\n    with prog.open(\"w\", encoding=\"utf-8\") as f:\n        for r in rows:\n            f.write(json.dumps({\"k\": m._k(r), \"vec\": [0.1, 0.2, 0.3, 0.4]},\n                               ensure_ascii=False) + \"\\n\")\n\n    rc = m.main([\"--store\", str(tmp_path / \"store\"), \"--index\", str(idx / \"lancedb\"),\n                 \"--chunk\", \"1\"])  # chunk=1：强制多块（首块建表+后续 add 路径）\n    assert rc == 0\n    assert not prog.exists(), \"建成后进度件应清除\"\n\n    import lancedb\n    t = lancedb.connect(str(idx / \"lancedb\")).open_table(\"evidence\")\n    assert t.count_rows() == 2, f\"库外键应被过滤，实得 {t.count_rows()}\"\n    assert {\"record_id\", \"chapter\", \"line\", \"quote\", \"vector\"} <= set(t.schema.names)\n    df = t.to_pandas()\n    assert set(df[\"line\"]) == {2, 3}\n    assert list(df[\"vector\"][0]) == [0.1, 0.2, 0.3, 0.4]\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        with tempfile.TemporaryDirectory() as td:\n            fn(Path(td))\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\test_build_evidence_index.py",
+      "structuredPatch": [
+        {
+          "oldStart": 31,
+          "oldLines": 6,
+          "newStart": 31,
+          "newLines": 7,
+          "lines": [
+            "     prog = idx / \"_evidence-progress.jsonl\"",
+            "     rows = [{\"record_id\": \"rec-1\", \"chapter\": 1, \"line\": 2, \"quote\": \"甲\" * 60},",
+            "             {\"record_id\": \"rec-1\", \"chapter\": 1, \"line\": 3, \"quote\": \"乙\" * 60},",
+            "+            {\"record_id\": \"rec-1\", \"chapter\": 1, \"line\": 3, \"quote\": \"乙\" * 60},  # 重复键（并发批写的现实形态）",
+            "             {\"record_id\": \"ghost\", \"chapter\": 9, \"line\": 9, \"quote\": \"丙\" * 60}]  # 库外键",
+            "     with prog.open(\"w\", encoding=\"utf-8\") as f:",
+            "         for r in rows:"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_ET_xh4CfW6tmZtylOgQNNir4367",
+  "toolName": "Edit",
+  "version": 1
+}

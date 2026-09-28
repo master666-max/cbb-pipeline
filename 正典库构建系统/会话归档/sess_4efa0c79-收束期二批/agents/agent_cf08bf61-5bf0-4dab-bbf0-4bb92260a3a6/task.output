@@ -1,0 +1,184 @@
+# 「LLM wiki」词义辨析报告
+
+**核实手段说明**：本机网络可直连 GitHub/GitHub API、gist、Cognition 官网、deepwiki.com、arxiv.org/abs、HN Algolia API、cn.bing.com；**不可直连** Google、DuckDuckGo、x.com、Wikipedia、Substack/Medium、Google Developers Blog。凡标【直接核实】的是我抓到原文的；标【仅搜索摘要】的是只见搜索摘要、未能打开原页。
+
+---
+
+## 含义 A（当前主流）：Karpathy 的「LLM Wiki」= LLM 增量维护的互链 markdown wiki 知识库
+
+- **定义**：一种"个人知识库"方法论——原始资料保持不变，中间由 LLM 不断生成并维护一层互相链接的 markdown 页面（wiki），知识被"编译一次并持续保鲜"，而非每次查询重新检索。
+- **原始出处（一手）：Andrej Karpathy 的 gist，标题就叫 `LLM Wiki`**【直接核实】。文件 `llm-wiki.md`，页面内标注 "created by karpathy on 04:25PM on April 04"（2026-04-04），开篇自述原文：
+  > "A pattern for building personal knowledge bases using LLMs. This is an idea file, it is designed to be copy pasted to your own LLM Agent…"
+  URL: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+- **机制要点**【直接核实，均出自该 gist 原文】：
+  - 三层：`raw/`（原始资料，不可变，source of truth）+ `wiki/`（LLM 生成的 markdown 页面：summary/entity/concept/comparison/overview）+ `schema`（`CLAUDE.md` / `AGENTS.md`，规定结构与工作流）。
+  - 操作：Ingest（摄入新资料→更新实体页、修订主题摘要、标注新旧矛盾）/ Query / Lint。
+  - 自我定位：**明确与 RAG 对立**，原文点名 "NotebookLM, ChatGPT file uploads, and most RAG systems work this way"（即这些属于 RAG 那一侧）。
+  - 人机分工原话："Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase."
+  - 思想谱系自述：Vannevar Bush 的 Memex (1945)——他说当年没解决的是"谁来做维护"，LLM 接手了。
+- **配套 X 推文**【仅搜索摘要】：https://x.com/karpathy/status/2039805659525644595 （x.com 本机不可达；该链接由 starmorph 长文引用给出）
+- **传播量级**：
+  - HN 头条 "LLM Wiki – example of an 'idea file'"（指向该 gist），**296 分、35 评论、2026-04-04**【直接核实】：https://news.ycombinator.com/item?id=47640875
+  - HN 上跟随的 Show HN 生态（Memento、CacheZero、Mcptube、LLM Wiki Compiler、Memoriki、CodeAlmanac 等）【直接核实，见来源清单】
+  - GitHub 实现（星标与首次 commit 均【直接核实】）：`nashsu/llm_wiki` 19.9k★（首次 commit 2026-04-05，**晚于 gist 一天**）、`inkeep/open-knowledge` 4.3k★（tagline 直接写 "LLM wikis"）、`SamurAIGPT/llm-wiki-agent` 3.5k★（注：仓库历史可追到 2023-04-21，疑为旧仓库改名复用，**未核实改名记录**）、`atomicstrata/llm-wiki-compiler` 2.1k★、`Astro-Han/karpathy-llm-wiki` 2.4k★、`lucasastorian/llmwiki` 1.6k★、`sdyckjq-lab/llm-wiki-skill` 2.5k★；站点 `llmwiki.app`【直接核实】首屏自述 "Open-source implementation of Karpathy's LLM Wiki"。
+  - 英文科普长文：starmorph《How to Build Karpathy's LLM Wiki》2026-04-09，原话 "is a pattern — not a product"，并称该 X 帖 1600 万+ 浏览、gist 数日内 5,000+ star、他本人某研究主题的 wiki 已约 100 篇文章/40 万字【直接核实】：https://blog.starmorph.com/blog/karpathy-llm-wiki-knowledge-base-guide
+  - 中文圈是主要扩散地【仅搜索摘要】：掘金、知乎（多篇）、CSDN、博客园、ai-bot.cn 均以「LLM Wiki」为标题，例如 CSDN 2026-06-29 称「由 Andrej Karpathy 提出的一种全新 AI 知识库架构理念」。
+- **普及度**：**主流**（开发者/技术自媒体圈层，2026-04 起爆发）。**但明确不是学术术语**：arXiv API 检索 `all:"LLM wiki"` 命中 **0 条**【直接核实】。
+
+---
+
+## 含义 B：DeepWiki——为代码仓库自动生成的「wiki 文档站」（Cognition / Devin）
+
+- **定义**：把任意 GitHub 仓库自动变成可对话的技术文档站点；免费公开版。
+- **一手来源（官方博客）**【直接核实】：《DeepWiki: AI docs for any repo》，The Cognition Team，**2025-05-05**。原文要点：它是 **Devin Wiki + Devin Search 的免费公开版**；把 URL 里的 `github.com` 换成 `deepwiki.com` 即可；上线时"已索引 50,000+ 个头部公开仓库"；私有仓库需 Devin 账号。
+  URL: https://cognition.ai/blog/deepwiki ；产品站 https://deepwiki.com/ （首屏 "DeepWiki provides up-to-date documentation you can talk to, for every repo in the world."【直接核实】）；官方文档 https://docs.devin.ai/work-with-devin/deepwiki 【直接核实，含 effort levels / 配置项】
+- **机制要点**：LLM 阅读代码库 → 生成结构化文档 + 架构图 + 可问答 agent（一篇批评文称生成过程约 10 分钟）。
+- **开源复刻**：`AsyncFuncAI/deepwiki-open` 18k★，自述 "Open Source DeepWiki: AI-Powered Wiki Generator for GitHub/Gitlab/Bitbucket Repositories"【直接核实】。
+- **普及度**：**主流**；且与含义 A **同名但完全不同**（这里是"代码→文档站点"，不是"我维护的个人知识库"）。
+
+---
+
+## 含义 C：Google Code Wiki——同一赛道（Gemini 驱动）
+
+- **定义**：谷歌版"代码仓库自动生成、持续更新文档"的代码 wiki。
+- **证据**：HN 提交 "Google Releases CodeWiki"（101 分，2025-11-14，指向 https://codewiki.google/ ）与 "Code Wiki: Accelerating your code understanding"（78 分，2025-11-26，指向官方博客 https://developers.googleblog.com/en/introducing-code-wiki-accelerating-your-code-understanding/ ）【直接核实，HN 索引】；codewiki.google 与 Google 博客本机不可达。
+- **独立旁证（且是批评方）**【直接核实】：Fabrizio Ferri Benedetti《Code wikis are documentation theater as a service》2025-11-15，把 **Code Wiki 与 DeepWiki 并列**，引其 landing page 口号 "Stop documenting. No more stale docs. Ever"，并称这类输出"只是 LLM 消化过程的副产品"。https://passo.uno/ai-wikis-docs-teather-as-a-service/
+- **同名学术项目**：`FSoft-AI4Code/CodeWiki`（ACL 2026，1.7k★，仓库建立 2025-06-25，自述 "structured repository-level documentation across multilingual codebases"）【直接核实】——**与 Google 的产品同名但不是同一个东西**。
+- **普及度**：**主流**。
+
+---
+
+## 含义 D：以 Wikipedia/Wikidata 为检索源或语料的 LLM 系统（"wiki-grounded LLM"）
+
+注意：这一族**都不自称 "LLM wiki"**，是"用 wiki 当燃料的 LLM"。
+
+- **WikiChat**（Stanford OVAL）【直接核实】：论文《WikiChat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia》，arXiv:2305.14292，提交 2023-05-23（v2 2023-10-27），作者 Sina J. Semnani、Violet Z. Yao、Heidi C. Zhang、Monica S. Lam；GitHub `stanford-oval/WikiChat` 1.6k★（建仓 2023-10-19），自述 "WikiChat is an improved RAG"。Demo: https://wikichat.genie.stanford.edu
+- **RAG 原论文**（Lewis et al.）【直接核实】：arXiv:2005.11401，2020-05-22；摘要原文称 non-parametric memory 是 "a dense vector index of **Wikipedia**"。
+- **REALM**（Guu et al.）【直接核实】：arXiv:2002.08909，2020-02-10，检索增强的语言模型预训练。
+- **WikiRAG**（名字冲突，至少三个东西）【直接核实仓库/【仅搜索摘要】论文】：
+  - `colab-nyuad/WikiRAG`——"framework for knowledge graph completion and evaluation derived from **Wikidata and Wikipedia**"（5★）；对应 ACM DL 论文 DOI 10.1145/3711896.3737444（2025-08-03）【仅搜索摘要】。
+  - `MauroAndretta/WikiRag`——一个检索管线项目（2024-08）【仅搜索摘要】。
+  - `wikirag.com` 站点、HF 数据集 `itpossible/WikiRAG`【仅搜索摘要】。
+- **普及度**：**主流（学术侧）**，但**不是 "LLM wiki" 这个词的用法**。
+
+---
+
+## 含义 E：「wiki 形态」的 agent 记忆/知识库（有其实，无其名）
+
+- **A-MEM: Agentic Memory for LLM Agents**【直接核实】：arXiv:2502.12110，2025-02-17（v11 至 2025-10-08）。摘要原文说"Following the basic principles of the **Zettelkasten** method… create interconnected knowledge networks through dynamic indexing and linking"，新记忆可触发**旧记忆的上下文与属性被更新**（记忆演化）。**这是学术上最接近"wiki 形态记忆"的正式论文，但论文用的是 Zettelkasten，不是 wiki**。
+- **Tencent/WeKnora** 29.5k★【直接核实】：自述 "turn raw documents into a queryable RAG, an autonomous reasoning agent, and a **self-maintaining Wiki**"——直接以 wiki 自述的代表性产品。
+- **inkeep/open-knowledge** 4.3k★【直接核实】：自述 "For knowledge bases, **LLM wikis**, specs, and notes"（把 "LLM wikis" 当作一个品类词用）。
+- **ClaudioDrews/memory-os** 1.4k★【直接核实】：7 层记忆操作系统，含 "**auto-curated wiki**" 管线。
+- **HN 上的同类**「直接核实，HN 索引」：《A Markdown wiki outscored every AI agent memory product we benchmarked》(2026-08-03)、《We gave our agent memory: building an LLM Wiki over sources that never sit still》(2026-07-14)。
+- **按事实排除（用户点名的三个）**：
+  - **Mem0**：65.9k★，官方自述 "**The Memory Layer for AI Agents** — Drop-in memory infrastructure… Context that persists"【直接核实】。**不是**"互相链接的 wiki 页面"形态（属向量/图记忆层）。**不应硬套进 wiki 类**。
+  - **NotebookLM**：**Karpathy 本人在 gist 里明确把它划到 RAG 一侧**（原文点名，见含义 A）。其官方定位是 source-grounded（且搜索摘要显示 2026-07 起更名 Gemini Notebook）【仅搜索摘要】。**不属于** wiki 形态。
+  - **Obsidian + LLM**：**属于**含义 A——Obsidian 就是 Karpathy 指定的阅读前端（"Obsidian is the IDE"）；社区另有 Obsidian 插件 "Karpathy LLM Wiki"【仅搜索摘要】。
+- **普及度**：**小众到主流之间**，术语上尚无统一名称（论文叫 Zettelkasten / agentic memory，产品叫 self-maintaining wiki）。
+
+---
+
+## 含义 F（边缘，前身/歧义）：字面同名但指别的东西
+
+- **「LLMWiki」= 关于 LLM 的文档/wiki 站**（2023 年就存在）：`OpenLLMAI/OpenLLMWiki` 270★，建仓 2023-04-13，自述 "Docs of OpenLLMAI. Survey, reproduction and domain/task adaptation of open source chatgpt alternatives"【直接核实】。**在 2026-04 之前，这个字符组合主要就是这个意思，且规模很小。**
+- **早期相关用法**："Show HN: LLM-Generated Wikipedia"（2023-10-09，6 分）【直接核实，HN】https://news.ycombinator.com/item?id=37822028
+- **辨伪发现（重要）**【直接核实】：`llm.wiki`、`llmwiki.org`、`llmwiki.com/.net`、`llmwiki.ai` **全是待售停放页**——llm.wiki 首屏为 "llm.wiki :: for sale … 4 domains · sold as a unit … © 2026"，llmwiki.ai 为 Spaceship.com 的 "Domain for sale"。**不要把「LLM Wiki」当作一个已有产品名去检索这些域名**。
+
+---
+
+## 最小共识
+
+把所有实际用法放在一起，唯一稳固的共同点只有一条：**"用 LLM 生成/维护的、多页面且互相链接的、人类可读的文档或知识集合"**。
+
+更值得注意的是**不一致的地方**：
+- "wiki" 的原义含"多人协作编辑"，在这些用法里**全部被剥离**——A 是"你几乎不写，LLM 全写"；B/C 是全自动生成；D 是维基百科作为语料。**"协作编辑"这一 wiki 的核心特征在每一种用法里都不在场**。
+- A/E 与 B/C 是**两个不同品类**：前者是"知识沉淀给自己/团队"（知识库），后者是"从代码榨出文档"（文档生成）。两者只在"LLM 写、markdown、多页、互链"这点上重合。
+
+---
+
+## 与 RAG / 知识图谱的关系
+
+**含义 A 的自我定位**（有来源，非推断）：明确是 RAG 的替代提案，理由原文是"LLM 每次都在从零重新发现知识，没有积累"——RAG 是 query 时检索，LLM Wiki 是 ingest 时编译并保鲜。
+
+**对 A 的最强反驳（有来源）**：HN 热帖下有开发者直接评 "This is just RAG. Yes, it's not using a vector database — but it's building an index file of semantic connections…"【直接核实，HN 47640875 评论，用户 kenforthewin】。另有评论称其为 "compaction for RAG"、批评 "Too much context pollution"。**即：该模式究竟是"RAG 之外的新范式"还是"RAG 的一种索引形态"，业内无共识。**
+
+**与知识图谱的关系**（以下为**据以上来源推断**，我已标注）：
+- LLM Wiki 实现里的"图"是**页面级链接图**，不是本体化三元组 KG——例：nashsu/llm_wiki 自述 "4-Signal Knowledge Graph"（direct links / source overlap / Adamic-Adar / type affinity）+ Louvain 社区发现【直接核实，README】；lucasastorian/llmwiki 提供 graph viewer。**推断**：这类图服务于导航与发现，不提供服务于推理的严格语义。
+- 真正面向 KG 的是 **WikiRAG** 那一族（Wikidata/Wikipedia → 知识图谱补全与评测）【直接核实仓库自述】。**两者不是一回事，切勿混用同一名词。**
+
+**解不解决的问题（标注推断）**：
+- 有来源地**解决**：维护成本的边际化——gist 原文 "The wiki stays maintained because the cost of maintenance is near zero"；以及跨文档综合不必重复计算。
+- **推断不解决**：事实正确性无 grounding 保证（A 类全部无强制引用校验机制）、规模上限（纯 markdown + 全文索引）、多人协作与权限（与 wiki 原义相反）、生成文档是否真能当文档用（passo.uno 的批评即针对 B/C 的这一点，**这条是直接来源**）。
+
+---
+
+## 来源清单
+
+**一手（含义 A）**
+- LLM Wiki（Karpathy gist，原始定义，"A pattern for building personal knowledge bases using LLMs"，2026-04-04）— https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+- Karpathy X 帖（引用自 starmorph，本机无法直连核实）— https://x.com/karpathy/status/2039805659525644595
+- HN 头条讨论（296 分，2026-04-04，含 "This is just RAG" 等反驳）— https://news.ycombinator.com/item?id=47640875
+- How to Build Karpathy's LLM Wiki（starmorph，2026-04-09）— https://blog.starmorph.com/blog/karpathy-llm-wiki-knowledge-base-guide
+
+**含义 A 的实现**
+- nashsu/llm_wiki（19.9k★，首次 commit 2026-04-05）— https://github.com/nashsu/llm_wiki
+- lucasastorian/llmwiki（1.6k★，自述引用上述 gist）— https://github.com/lucasastorian/llmwiki
+- inkeep/open-knowledge（4.3k★，tagline 含 "LLM wikis"）— https://github.com/inkeep/open-knowledge
+- atomicstrata/llm-wiki-compiler（2.1k★，"Inspired by Karpathy's LLM Wiki pattern"）— https://github.com/atomicstrata/llm-wiki-compiler
+- llmwiki.app（开源实现站点）— https://llmwiki.app/
+- Show HN: A Karpathy-style LLM wiki your agents maintain — https://news.ycombinator.com/item?id=47899844
+
+**含义 B**
+- DeepWiki: AI docs for any repo（Cognition 官方博客，2025-05-05）— https://cognition.ai/blog/deepwiki
+- DeepWiki 产品站 — https://deepwiki.com/
+- Devin 官方文档 DeepWiki repository wikis — https://docs.devin.ai/work-with-devin/deepwiki
+- AsyncFuncAI/deepwiki-open（18k★，开源复刻）— https://github.com/AsyncFuncAI/deepwiki-open
+- HN: DeepWiki – Which repo would you like to understand?（2025-04-25）— https://news.ycombinator.com/item?id=43796308
+
+**含义 C**
+- codewiki.google — https://codewiki.google/
+- Google 官方博客 Code Wiki 发布 — https://developers.googleblog.com/en/introducing-code-wiki-accelerating-your-code-understanding/
+- HN: Google Releases CodeWiki（101 分，2025-11-14）— https://news.ycombinator.com/item?id=46057050 （索引来源：Algolia，标题/URL/日期已核实）
+- Code wikis are documentation theater as a service（批评，2025-11-15）— https://passo.uno/ai-wikis-docs-teather-as-a-service/
+- FSoft-AI4Code/CodeWiki（ACL 2026，同名不同物）— https://github.com/FSoft-AI4Code/CodeWiki
+
+**含义 D**
+- WikiChat 论文 arXiv:2305.14292 — https://arxiv.org/abs/2305.14292
+- stanford-oval/WikiChat（1.6k★）— https://github.com/stanford-oval/WikiChat
+- RAG 原论文 arXiv:2005.11401（Wikipedia 向量索引作非参数记忆）— https://arxiv.org/abs/2005.11401
+- REALM arXiv:2002.08909 — https://arxiv.org/abs/2002.08909
+- colab-nyuad/WikiRAG（Wikidata+Wikipedia 的知识图谱补全）— https://github.com/colab-nyuad/WikiRAG
+- WikiRAG 论文 ACM DL — https://dl.acm.org/doi/10.1145/3711896.3737444
+
+**含义 E**
+- A-MEM: Agentic Memory for LLM Agents（Zettelkasten 互链记忆）arXiv:2502.12110 — https://arxiv.org/abs/2502.12110
+- Tencent/WeKnora（29.5k★，自述 "self-maintaining Wiki"）— https://github.com/Tencent/WeKnora
+- ClaudioDrews/memory-os（含 auto-curated wiki）— https://github.com/ClaudioDrews/memory-os
+- mem0ai/mem0（65.9k★，"Memory Layer"，**非** wiki 形态）— https://github.com/mem0ai/mem0
+- HN: A Markdown wiki outscored every AI agent memory product we benchmarked — https://news.ycombinator.com/item?id=49156055
+
+**含义 F / 辨伪**
+- OpenLLMAI/OpenLLMWiki（2023-04，关于 LLM 的文档站）— https://github.com/OpenLLMAI/OpenLLMWiki
+- Show HN: LLM-Generated Wikipedia（2023-10-09）— https://news.ycombinator.com/item?id=37822028
+- llm.wiki / llmwiki.org 待售页（4 域名打包出售，© 2026）— https://llm.wiki（llmwiki.ai 为 Spaceship 停放页）
+
+**中文圈证据（均【仅搜索摘要】，因需通过 cn.bing 摘要获取）**
+- 8 万人收藏：Karpathy 的 LLM Wiki 到底是什么？完整拆解 — https://juejin.cn/post/7625301482213130291
+- 一文讲透 LLM Wiki（原理 / 安装 / 实战）— https://zhuanlan.zhihu.com/p/2031762297308361026
+- LLM Wiki 完整解析：原理、架构、适用场景与 RAG 对比 — https://blog.csdn.net/aidoudoulong/article/details/162413284
+- LLM Wiki 和 RAG 的区别 — https://zhuanlan.zhihu.com/p/2024869224087037817
+- 从零搭建个人 Wiki RAG：Karpathy 范式的本地知识库 — https://cloud.tencent.com/developer/article/2654881
+
+---
+
+## 未找到 / 明确否定
+
+- **arXiv 全库检索 `"LLM wiki"`：0 命中**【直接核实】→ 该词**没有任何学术用法**，不是技术术语。
+- **中文「AI 维基」「大模型 wiki」「AI 写 wiki」**：未找到以这些为固定术语的权威或成规模用法【直接核实，多次检索均返回无关结果】。中文圈用的是直接照搬的英文词「LLM Wiki」。
+- **独立权威媒体/大厂官方文档使用「LLM Wiki」这个词**：未找到（除上述 Karpathy gist 与跟随它的社区）。这个词目前是**草根 + 技术自媒体**驱动的，权威性来自 Karpathy 这个源头，而非任何机构。
+- **x.com 原推文正文**：本机网络不可达，**未能直连核实**；其链接与"1600 万浏览"等说法转引自 starmorph 长文。
+- **同名字段的星标数是否含刷量**：未核实，仅照录 GitHub API 返回值。
+
+**一句话结论**：不存在单一含义。"LLM wiki" 在今天（2026-09）压倒性地指**含义 A（Karpathy 2026-04-04 提出的、LLM 自维护互链 markdown 知识库模式）**；「DeepWiki / Code Wiki」是**另一个同名品类（代码→文档）且早于含义 A 一年**，容易混淆；学术界的对应物叫 **WikiChat / WikiRAG / Zettelkasten agentic memory**，都不叫 LLM wiki。
+
+（本次调研的中间抓取文件在 `D:\tmp_research\`，为临时工作目录，可随时删除；未在工作区写入任何文件。）

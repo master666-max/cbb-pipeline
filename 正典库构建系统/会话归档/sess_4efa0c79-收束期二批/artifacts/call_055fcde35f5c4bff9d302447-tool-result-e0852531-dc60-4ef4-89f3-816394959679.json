@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-25T11:22:30.801Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"graphiti_dump.py — 按 group 导出 graphiti 图的实体/关系清单 + canon 命中率（质量评估件）。\n\n用法：py -X utf8 graphiti_dump.py --group <group_id> [--out <json>]\n命中率口径：实体名 ∈ 正典库实体名∪别名（canon 全集）→ hit；否则列出人工研判。\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport asyncio\nimport json\nimport sys\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nif str(HERE) not in sys.path:\n    sys.path.insert(0, str(HERE))\nfrom neo4j_export import derive_password  # noqa: E402\n\nBOLT = \"bolt://localhost:7693\"\nSTORE = HERE.parent.parent / \"迷深实战-本体库\"\n\n\ndef canon_set() -> set[str]:\n    names = set()\n    for f in STORE.glob(\"libraries/*/*/*.json\"):\n        try:\n            rec = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        nm = (rec.get(\"canonical\") or {}).get(\"name\")\n        if nm:\n            names.add(nm)\n    aliases = STORE / \"aliases.jsonl\"\n    if aliases.exists():\n        for ln in aliases.read_text(encoding=\"utf-8\").splitlines():\n            if ln.strip():\n                al = json.loads(ln).get(\"alias\")\n                if isinstance(al, str):\n                    names.add(al)\n    return names\n\n\nasync def dump(group: str | None) -> dict:\n    from neo4j import AsyncGraphDatabase\n    pw = derive_password(None)\n    driver = AsyncGraphDatabase.driver(BOLT, auth=(\"neo4j\", pw))\n    out: dict = {\"group\": group or \"(全部)\"}\n    async with driver.session(database=\"neo4j\") as s:\n        flt, params = (\"WHERE n.group_id = $g\", {\"g\": group}) if group else (\"\", {})\n        ents = await (await s.run(f\"MATCH (n:Entity) {flt} \"\n                                  \"RETURN n.name AS n, n.summary AS s\", params)).data()\n        rels = await (await s.run(f\"MATCH (a:Entity)-[r:RELATES_TO]->(b:Entity) {flt} \"\n                                  \"RETURN a.name AS f, r.fact AS fact, b.name AS t\",\n                                  params)).data()\n    await driver.close()\n    canon = canon_set()\n    hit = [e[\"n\"] for e in ents if e[\"n\"] in canon]\n    out.update({\"entities\": [{\"name\": e[\"n\"], \"canon_hit\": e[\"n\"] in canon,\n                              \"summary_head\": (e[\"s\"] or \"\")[:60]} for e in ents],\n                \"relations\": [{\"from\": r[\"f\"], \"fact\": (r[\"fact\"] or \"\")[:80], \"to\": r[\"t\"]}\n                              for r in rels],\n                \"canon命中率\": f\"{len(hit)}/{len(ents)}\"})\n    return out\n\n\nif __name__ == \"__main__\":\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--group\", default=None)\n    ap.add_argument(\"--out\", default=\"\")\n    ns = ap.parse_args()\n    rep = asyncio.run(dump(ns.group))\n    print(json.dumps(rep, ensure_ascii=False, indent=1))\n    if ns.out:\n        Path(ns.out).write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding=\"utf-8\")\n",
+      "afterContentLength": 2758,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\graphiti_dump.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_055fcde35f5c4bff9d302447",
+  "toolName": "Write",
+  "version": 1
+}

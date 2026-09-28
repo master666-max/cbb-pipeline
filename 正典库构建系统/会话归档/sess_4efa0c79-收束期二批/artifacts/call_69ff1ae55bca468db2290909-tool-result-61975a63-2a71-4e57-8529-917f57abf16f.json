@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-13T17:30:30.408Z",
+  "files": [
+    {
+      "afterContent": "# Step 0 施工工单（投喂给构建对话用 · 自包含）\n\n> 把本文件全文粘贴给构建对话即可开工。工单已合并：实验设计（P1 计划书第二节）+ 社区情报修订（step0-社区实测情报.md）+ 环境事实 + 红线。构建对话无需任何前置上下文。\n\n---\n\n## 任务一句话\n\n验证 Graphiti（`pip install graphiti-core`）对**中文小说文本**的实体/关系/时间抽取是否达到可用精度，产出三柴油账数字，判定 L0-L2 地基走 Graphiti 还是自研。这是可行性实验，只出一个决策信号，不建任何生产代码。\n\n## 已知环境（审核线 2026-09-14 实测，直接用，勿重复勘探）\n\n| 项 | 事实 |\n|---|---|\n| 语料 | `D:\\zcode专用！！！！危险！！！！！！！！！\\语料分析\\corpus\\clean_full.txt`（15,916,773 字节，UTF-8） |\n| 章节标记 | `<<<CHAPTER NNNN | 标题 >>>`；CHAPTER 0001 是\"新人观众推荐事先阅读本文\"（作者杂物，作序章型材料） |\n| LLM 通道 | LM Studio `http://127.0.0.1:8080/v1`（OpenAI 兼容，已在线）。模型：`tifa-deepsex-14b-cot-chat`（对话模型，抽取首选）、`hermes3.6-35b-a3b-uncensored-genesis-*`、`m-prometheus-14b.i1`（**judge 专用，禁止用作抽取**） |\n| 图库 | Docker 29.6.2 已装但 **daemon 未运行**（需先启动 Docker Desktop）；备选 FalkorDB 容器。Kuzu 后端上游已弃用，别用 |\n| Python | `py` = 3.14.7；uv 有 3.12.14。graphiti-core 要求 ≥3.10 → **建议 `uv venv` 开 3.12 虚拟环境** |\n| 网络 | pip 无镜像配置；无任何云 API 凭据 → **LLM 与 embedding 一律走 LM Studio** |\n\n## 执行步骤\n\n**阶段 A · 1 章最小验证（先跑这个）**\n1. 从语料选 1 章对话密集的中篇幅章（自看标题抽一章），切 3-5k token，存 `材料/` 并记录 CHAPTER 编号+字节偏移+sha256\n2. 起 Neo4j（Docker）→ `uv` 3.12 环境 `pip install graphiti-core` → 配 OpenAI 兼容客户端指向 LM Studio（模型名+base_url+temperature=0）\n3. embedding：优先在 LM Studio 加载一个 embedding 模型（如 nomic-embed-text）；实在没有，用随机向量 stub 并**在报告显式声明**（影响去重、不影响单章抽取测量）\n4. `add_episode` 喂入，导出全部节点+边（JSON）\n5. **第一眼判定（定性，出结论 A）**：实体名是否保持中文（语言漂移检查）？fact 句子通不通？实体/关系量级是否合理？——崩了（比如 fact 全变英文、实体全是乱码）当场停，写报告证伪；能用 → 进阶段 C\n\n**阶段 B · 补满 4 章 + 金标对账（A 通过后）**\n6. 再切 2 章对话密集 + 1 章低密度（序章型用 CHAPTER 0001 节选），全部 `add_episode`\n7. 金标：等审核线（另一对话）对同一切样出的金标 JSON，放 `金标/`（若审核线金标未就绪，可先自标初稿，但须标注\"构建线自标，待审核线复核\"）\n8. 写对账脚本算四个数：实体 precision / recall（匹配规则：精确+包含+别名，逐例可查）、关系方向正确率（头尾实体+关系三对齐）、时间表述可用率；输出原始 TP/FP/FN\n\n**判定线（业务口径，不许事后调）**：实体 P≥0.85 且 R≥0.70 ｜ 关系方向≥0.80 ｜ 时间≥0.60。\n**结论三分支**：全过→P2 走 Graphiti 地基；仅时间不过→时间归一化自研（cbb-anchor）；崩线→自研抽取+轻存储。\n\n## 已知雷区（出问题先对表，别误判\"中文不行\"）\n\n1. `extract_edges` **硬编码 max_tokens=16384**：模型 token 预算小于此会截断报错——遇到先降 chunk 大小，并在报告记录\n2. OpenAI 兼容客户端+本地模型**输出不稳定**（社区有 vllm 案例）：temperature=0、失败重试、抽样人工看原始返回\n3. 节点去重只靠 embedding 相似度：多章之间转写名/昵称漏合并是已知行为，记录即可（这正是 CBB 要自建的部分）\n4. BM25 全文检索 CJK 分词缺口：只影响检索不影响抽取，记入报告\"P2 风险\"节\n\n## 交付物（五件套，落 `P1执行区/step0-抽取精度实验/`）\n\n材料/（切样+溯源信息）｜金标/（JSON）｜脚本/（可一键复现）｜结果/（图导出 JSON+指标表含 TP/FP/FN）｜报告.md（**必须披露**：抽取模型名、embedding 方案、图后端、temperature、四个指标、结论分支、雷区对表情况）\n\n## 红线\n\n- API 密钥**不入任何文件**（本实验默认无云 API，全走本地，正常情况下不会出现密钥）\n- 只装 graphiti-core 及其依赖；**不安装** 16 个参考仓的任何技能\n- 语料源文件只读（大小/时间戳不可变）\n- 完成后通知用户，审核线按轻量档出判定（只卡：指标无事后调线、结论按三分支、密钥合规）\n",
+      "afterContentLength": 2463,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\P1执行区\\step0-施工工单.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_69ff1ae55bca468db2290909",
+  "toolName": "Write",
+  "version": 1
+}

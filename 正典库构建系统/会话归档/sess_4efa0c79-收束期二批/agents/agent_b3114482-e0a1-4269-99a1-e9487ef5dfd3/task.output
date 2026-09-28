@@ -1,0 +1,66 @@
+# HKUDS/LightRAG 扩展面核实报告
+
+核实基线：主分支 commit `6702eea`（2026-09-23，v1.5.8，浅克隆全量源码逐文件核对）+ GitHub API 实查。以下路径均在仓库内，URL 前缀 `https://github.com/HKUDS/LightRAG/blob/main/`。
+
+## 逐题结论
+
+**1. 存储抽象 — 四类接口齐全，后端丰富**
+- 接口基类全部在 `lightrag/base.py`：`BaseKVStorage`(L535)、`BaseVectorStorage`(L334)、`BaseGraphStorage`(L671)、`DocStatusStorage`(L1558，继承 BaseKVStorage)；公共基类 `StorageNameSpace`(L193)。注册表在 `lightrag/kg/__init__.py`（`STORAGE_IMPLEMENTATIONS`）。
+- 已内置后端（`lightrag/kg/__init__.py` L2-48）：
+  - KV：JsonKV / Redis / PG / Mongo / OpenSearch
+  - Graph：**NetworkX ✓、Neo4J ✓、Memgraph ✓**、PGGraphStorage(Apache AGE)、PGTableGraphStorage、Mongo、OpenSearch（实现文件在 `lightrag/kg/neo4j_impl.py`、`networkx_impl.py`、`memgraph_impl.py` 等）
+  - Vector：Nano(默认)/Faiss/**Milvus ✓/Qdrant ✓/PGVector ✓**/Mongo/OpenSearch/Noop（`lightrag/kg/milvus_impl.py`、`qdrant_impl.py`、`postgres_impl.py`、`faiss_impl.py`…）；Chroma 已移入 `lightrag/kg/deprecated/chroma_impl.py`
+  - DocStatus：Json/Redis/PG/Mongo/OpenSearch
+- 自实现后端需实现的 `@abstractmethod`（base.py 实查）：
+  - KV：`get_by_id / get_by_ids / filter_keys / upsert / delete / is_empty`（另有 `index_done_callback / drop` 继承自 StorageNameSpace）
+  - Vector：`query / upsert / delete_entity / delete_entity_relation / get_by_id / get_by_ids / delete / get_vectors_by_ids`（8 个；批量方法有默认实现）
+  - Graph：`has_node / has_edge / node_degree / edge_degree / get_node / get_edge / get_node_edges / upsert_node / upsert_edge / delete_node / remove_nodes / remove_edges / get_all_labels / get_knowledge_graph / get_all_nodes / get_all_edges / get_popular_labels / search_labels`（18 个；`get_nodes_batch` 等 batch 方法有默认实现，`get_knowledge_graph` 是 local/global 检索的邻域扩展入口）
+  - DocStatus：`get_status_counts / get_docs_by_statuses / get_docs_by_track_id / get_docs_paginated / get_all_status_counts / get_doc_by_file_path / get_doc_by_file_basename / get_doc_by_content_hash / get_docs_by_statuses_page / get_docs_by_ids / get_full_docs_by_ids / resolve_doc_source_strict`（12 个）
+
+**2. 喂现成图 — 存在且未弃用，完全跳过 LLM**
+- `insert_custom_kg / ainsert_custom_kg`：`lightrag/lightrag.py` L4330/L4340。docstring 明确 "Insert caller-constructed KG objects directly into the stores"，整条路径无 LLM 调用（直接写图+实体/关系向量库）。**未被弃用**（无任何 deprecation 标记，且在活跃维护中）；但有一处警告（lightrag.py L4356-4364）：该路径不走崩溃恢复日志，重可靠性场景官方建议走 `ainsert / ainsert_custom_chunks`。
+- 输入结构（`examples/insert_custom_kg.py` 实例 + lightrag.py L4387-4460 校验代码双重确认），为一个 dict：
+  - `"entities"`：`{entity_name, entity_type, description, source_id, file_path?}`
+  - `"relationships"`：`{src_id, tgt_id, description, keywords, weight, source_id, file_path?}`
+  - `"chunks"`：`{content, source_id, chunk_order_index?}`（可选，但 source_id 别名靠它解析成真实 chunk id 并回填 text_chunks/chunks_vdb）
+  - 约束：实体名经 `normalize_entity_name` 归一化；自环直接抛错；`weight` 下界=去重证据 source 数（`validate_relation_weight`）。
+
+**3. 查询模式与查询期 LLM 依赖**
+- mode 共 6 种：`local / global / hybrid / naive / mix / bypass`，默认 `mix`（`lightrag/base.py` L93）。分发逻辑 `lightrag/lightrag.py` L5042-5070：local/global/hybrid/mix→`kg_query`；naive→`naive_query`；bypass→完全不检索。
+- **关键词可外部传入**：`QueryParam.hl_keywords / ll_keywords`（base.py L137-141）。`operate.py` L4975 `get_keywords_from_query`：任一列表非空→直接返回、**不调 LLM**；两者都空→`extract_keywords_only` 调 LLM 抽关键词（operate.py L5176，JSON response_format，结果还会缓存）。即 local/global/hybrid/mix 默认查询期调 LLM，但可用外部关键词绕过。坑：两者都空且 query≥50 字符时直接返回 fail_response 不检索（operate.py L4759-4765），所以至少传 `ll_keywords`。
+- naive 模式无关键词抽取步骤；`only_need_context: bool`（base.py L102）可只取上下文不生成；另有 `only_need_prompt`、`enable_rerank`（默认 True，`rerank_model_func` 可注入）。
+
+**4. LLM 与嵌入可注入 — 均可**
+- `llm_model_func: Callable`（`lightrag/lightrag.py` L995）、`embedding_func: EmbeddingFunc | None`（L933）、`rerank_model_func`（L1057）均为构造参数。实际调用形如 `func(prompt, response_format={...})`，即 `(prompt, system_prompt=None, history_messages=[], **kwargs) -> str`。`EmbeddingFunc` 带维度校验（`lightrag/utils.py` L638）。官方自带 OpenAI 兼容端点示例：`examples/lightrag_openai_compatible_demo.py`、`examples/lightrag_ollama_demo.py`。
+
+**5. 抽取产物 schema 与检索硬依赖**
+- 节点（写入代码 `lightrag/lightrag.py` L4533-4540、合并逻辑 `lightrag/operate.py` L1785-1791）：`entity_id`（节点主键=实体名）、`entity_type`、`description`、`source_id`（chunk id）、`file_path`、`created_at`（int 时间戳）。
+- 边（lightrag.py L4702-4711、L4691-4699）：`src_id / tgt_id`（实体名）、`description`、`keywords`、`weight`(float)、`source_id`、`file_path`、`created_at`。
+- **硬格式**：多值 `description / source_id / file_path` 用 `<SEP>` 连接（`lightrag/constants.py` L49 `GRAPH_FIELD_SEP`，注释明示插入后不可改）；file_path 最多 75 条（constants.py L84）。向量库侧：entities_vdb 的 content=`entity_name+"\n"+description`；relationships_vdb 带 src_id/tgt_id/keywords/description/source_id/weight/file_path（lightrag.py L4623-4699）。检索硬依赖字段：实体名（向量召回的入口 key）、`description`（拼上下文）、`source_id`（回溯 chunk）、`keywords`（关系召回与呈现）、`weight`（排序）、degree（`_get_node_data`，operate.py L6200-6240）。外部图映射进来必须填：entity_id、description、source_id、keywords（边）、weight（边）；时间有效期语义无处安放（仅 `created_at` 一个整型字段），只能并入 description 文本。
+
+**6. 许可证与活跃度（GitHub API 实查）**
+- License：**MIT**（API `spdx_id: MIT`；`pyproject.toml` L13 一致）。Stars **39,844**、Forks 5,622、Open issues 284、`pushed_at` **2026-09-24**、created 2024-10-02。版本 1.5.8（`lightrag/_version.py`）。
+- **增量插入**：是。pipeline 按 content_hash 过滤已处理文档（`lightrag/pipeline.py` L758、L1058-1101），新文档逐 chunk 抽取后 `merge_nodes_and_edges` 合并进现有图（`lightrag/operate.py` L3514，upsert 语义、source_id 累积），不重建全图、LLM 缓存可复用。但注意物理层：默认 NanoVectorDB“无增量同步 API，每次全文件重载”（`lightrag/kg/nano_vector_db_impl.py` L437-439），NetworkX 每次 commit 全量序列化 GraphML；Neo4j/PG/Milvus 等后端是真增量。
+
+**7. 与 LanceDB 的关系 — 主分支没有**
+- `lightrag/kg/` 无 lancedb 文件，全库（py 代码）零 lancedb 引用。唯一官方提及：`docs/LightRAG-API-Server.md` L954 — "`dev-lancedb` development branch provides community-contributed LanceDB storage implementations for all four storage types"。已实查该分支存在（GitHub API，HEAD `0a11a01aff`）。即：主分支无、无官方示例，仅社区开发分支。
+
+## 接入面小结（针对：已有 Neo4j 图 + 4096 维向量库 + 自有四路召回重排）
+
+**接入点 1（最薄）：写入侧用 `ainsert_custom_kg` 喂图，零接口实现。**
+只需一个导出映射脚本（约 100-200 行）：把 Neo4j 节点/边导出为 `{entities, relationships, chunks}` dict，分批调用。必须补的字段：实体 `entity_name/entity_type/description/source_id`；边 `src_id/tgt_id/description/keywords/weight/source_id`；强烈建议同时给 `chunks`（否则 source_id 解析为 UNKNOWN，证据回溯链断）。代价：①时间有效期/边级时间戳**必须并入 description 文本**（schema 只剩 created_at）；②keywords 字段要为边补写检索关键词；③该路径不走崩溃恢复日志。若不喂现成图而是让 LightRAG 从原文抽取，则改走 `ainsert`（增量合并，需注入下述 llm/embedding 函数）。
+
+**接入点 2（次薄）：查询侧三个注入 + 两个参数，借它的图检索流水线。**
+- `llm_model_func` 指向任意 OpenAI 兼容本地端点（约 20 行包装）；`embedding_func` 包 4096 维模型（`EmbeddingFunc` 带 dim 校验，约 15 行）。
+- 向量库二选一：让 LightRAG 自建 entities_vdb/relationships_vdb/chunks_vdb（用 Faiss/PGVector/Milvus 官方后端，**注意它必须为实体/关系 description 单独建向量索引**——local/global 检索靠“关键词 embedding→实体向量”找入口节点，这一步免不了）；或写 `BaseVectorStorage` 适配器接自家向量库（8 个抽象方法，约 150-250 行，且行记录须带 content/src_id 等元字段）。
+- 查询参数：`QueryParam(hl_keywords=…, ll_keywords=…)` 外部传关键词（可用自有召回的关键词，**彻底跳过查询期 LLM**）+ `only_need_context=True` 只取拼好的上下文交给自家重排/生成；或用 `aquery_data()`（lightrag.py L4901）拿结构化 entities/relationships/chunks 数组进自家四路召回。
+- 若要直接挂现有 Neo4j schema：实现 `BaseGraphStorage` 全部 18 个抽象方法（约 500-800 行），代价最高；更省的是按 LightRAG schema（label `base`、属性 entity_id/description/source_id/…）写入其 Neo4JStorage 专用 workspace（可与其数据同库共存），接入量≈0。
+
+**结论**：最薄组合 = `ainsert_custom_kg`（喂图）+ `llm_model_func/embedding_func` 注入 + `QueryParam(hl/ll_keywords, only_need_context)`（取上下文），两者合计真实工作量约一天；`<SEP>` 多值格式、边 keywords/weight、实体 description 是必须补齐的三处 schema 鸿沟，时间有效期字段是唯一无处安放的语义。
+
+## 来源清单
+- 源码（主分支 commit 6702eea，逐文件读取核对行号）：`lightrag/base.py`、`lightrag/lightrag.py`、`lightrag/operate.py`、`lightrag/constants.py`、`lightrag/kg/__init__.py`、`lightrag/kg/factory.py`、`lightrag/kg/nano_vector_db_impl.py`、`lightrag/utils.py`、`lightrag/_version.py`、`lightrag/pipeline.py`、`pyproject.toml`、`examples/insert_custom_kg.py`（URL 前缀 https://github.com/HKUDS/LightRAG/blob/main/ ）
+- https://api.github.com/repos/HKUDS/LightRAG （stars/license/pushed_at）
+- https://api.github.com/repos/HKUDS/LightRAG/branches/dev-lancedb （分支存在性）
+- https://github.com/HKUDS/LightRAG/blob/main/docs/LightRAG-API-Server.md （LanceDB 唯一官方提及）
+- 查未找到项：主分支 LanceDB 实现（未找到）；insert_custom_kg 弃用标记（未找到，反向确认未弃用）。

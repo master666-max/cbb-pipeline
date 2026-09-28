@@ -1,0 +1,87 @@
+审查完成。以下为最终报告（所有疑点均已逐一到代码/运行时语义验证）。
+
+# 确认的 Bug 清单（按严重级降序）
+
+## 高
+
+**B1. derive.py:49-51 — 关系投影 MERGE 自动创建空端点节点（悬挂端点污染）**
+`MERGE (s:Entity {name:$subject, `group_id`:$ns})` / 同构的 `o` 节点：当 subject/object 的实体记录从未投影入库时，Cypher MERGE 会静默创建只有 name+group_id 的裸 Entity。这直接违反 v1 “禁自动造节点”纪律；gaps.py:5 明确把“ER 缺口（悬挂引用）”列为扫描源，但投影器先于扫描把悬挂引用物化成了空节点。
+触发：任何 relation 记录先于/缺失其端点实体投影。后果：图中累积无 entity_type/lib/valid_at 的幽灵节点，污染归属计数（ownership_verify_cypher）与检索。
+修法：先 MATCH 两端点，任一缺失则跳过并 incur 债务/入缺口队列，不用 MERGE 造端点。
+
+**B2. derive.py:96 + runner.py:77-81 — refeed_needed 检测不到账本前进（LightRAG 静默陈旧）**
+`replay_needed` 只在 `cp["ledger_offset"] > current_rows`（账本回卷）或无检查点时返回 True；账本**前进**（current > offset）返回 False。而 runner.refeed_needed 的文档语义是“自上次检查点以来有任何行 ⇒ 需重喂”。任何不经 finalize_chapter 收尾提交的账本增长（如 tools/积压重分流.py 直接用 LedgedStore 写 sidecar；finalize 在写库与 commit 之间崩溃）都会让派生视图永久漏重喂。test_v3_derive.py:47（“账本前进=无需重放”）把这个错误行为钉死了。
+修法：改为 `cp["ledger_offset"] != current_ledger_rows`，并同步修正测试。
+
+**B3. store.py:254 + ledger.py:18-23 — invalidations.jsonl 幂等键碰撞，第二次失效记账被静默吞掉**
+失效行只有 `{"record_id": existing_rid, "t_invalid": ..., "fields": ...}`，`idempotency_key_of` 依次取 key/item_id/**record_id** → 同一 existing 记录的第二次失效（不同 t_invalid/fields）被 LedgedStore.lappend 判为“重放”直接跳过。后果：同一实体多次 mutable 演化链丢失中间失效行，旧件 t_invalid 停留在首次值；`-i{n}` 计数（store.py:261）随之少算。附带发现：store.py:260-263 自动改名路径首次产出 `-i2`（计数含刚追加的行，跳过 -i1）；且 `_write_immutable` 目标文件已存在时返回 created=False 不报错——若新件 rid 与既有文件撞名，write_decision 仍报 "invalidation-update" 成功但新件实际未落盘，该身份的 live 集合变空（记录凭空消失）。
+修法：失效行加显式 `"key"` 字段（含 t_invalid+at），并在失效分支检查 created。
+
+## 中
+
+**B4. context.py:104-114 — build_context_pack 预算硬顶失守**
+卡片循环先独占预算（可吃满 `budget`），roll/tail 的长度在循环**之后**才计入 `used`，`budget_used` 可达 budget + 2×(budget/3) ≈ 3332（budget=2000），违反文档“预算硬顶（字符）”。测试只在小数据下断言 `budget_used <= budget` 故未暴露。
+修法：先预留 roll/tail 配额再进卡片循环。
+
+**B5. context.py:68 — cooldown 只读无写者，特性整体未接线（登记）**
+全仓 grep 确认 `cooldown_until` 仅在 activation_filter 被读取，无任何代码写入。模块头宣传的“cooldown 冷却——防重复挤占预算”永不生效：sticky 实体（每次 chapter 越过 sticky_until 就续期）永久占据 top-12 卡位。test_v3_phasec.py:64 注释声称“cooldown 剔除”但测试从未构造 cooldown。
+修法：在被预算/新近度挤出时写入 `cooldown_until = chapter + N`。
+
+**B6. store.py:228-231, 291-317 — 一致重复轨静默丢弃 incoming 独有的 canonical 字段（含 record_type 异同场景）**
+classify_conflicts 只比对双方 canonical 的**公共键**；键集不相交或多出的键 ⇒ 判"无冲突"⇒ `_consistent_duplicate_v1` 只合并 evidence+confidence，`merged = dict(existing)` 把 incoming 独有字段全部丢弃。identity 相同但 record_type 不同（经 `("id", record_id)` 分支匹配，store.py:22-29）时同样落入此轨：merged 保留 existing 的 record_type，incoming 类型与其 canonical 差异无声湮灭。admit_or_merge 同属 v1 等价锚可豁免，但 write_decision（v3 主路径）复用了它。
+修法：v3 重复轨对键集差异改走互补陈述/并集合并。
+
+**B7. store.py:233-235 — statement 与 assertion 混合冲突时陈述位差异整体丢失**
+互补陈述分支要求 `stmt and not assert_c`；当 incoming 同时改了 claim（statement）和 status（mutable）时走失效/闸分支，claim 差异既不进 complementary-statements.jsonl 也不进 invalidation 的 fields/闸 reason——静默丢失。
+修法：assert_c 非空时仍把 stmt 差异落 sidecar。
+
+**B8. runner.py:107 — `__main__` 入口 NameError（缺 `import sys`）**
+runner.py 顶部只 import json/pathlib/包内件，`sys.argv` 未定义；`py runner.py` 直接崩（仅影响脚本直跑，不影响包内调用）。
+修法：补 `import sys`。
+
+## 低
+
+**B9. runner.py:22 + context.py:57-59 — prepare_chapter 对不存在的 store 根路径崩溃**
+`save_state` 直接 `write_text` 不 mkdir；store 路径不存在（新建库/CBB_STORE 指向新目录/路径打错）时 FileNotFoundError（Store.__init__ 会 mkdir，context 不会）。
+修法：save_state 里 `mkdir(parents=True, exist_ok=True)`。
+
+**B10. er.py:87-89 — MergeLog.split 拆“规范名（根）”是静默空操作**
+merge→split→merge 重放对**叶变体**拆分正确（已逐一 trace：split 重置 `parent[variant]=variant` 脱离组，后续 merge 正确重根）；但当 split 目标是此前 merge 的 canonical（union-find 根）时 `parent[root]=root` 恒真，组内其他成员（parent→该根）原封不动，回滚无效且无任何报错。“回滚一等公民”仅在拆叶变体时成立。
+修法：split 行记录拆分前根，重放时对整组重挂；或拒绝拆根并报错。
+
+**B11. store.py:22-29 — identity_key 不对称：relation 键不含 library**
+entity 含 library，relation 不含。两个库同三元组 ⇒ 视为同一身份：canonical 相同则走 supersede 把另一库的证据折进**先入库那方**的库文件；claim 异则出互补事件。跨库串写。
+修法：relation 键加入 library（或明文声明跨库合并为预期）。
+
+**B12. gaps.py:36-37/58-59/66-67/75-76 — 缺口队列无幂等，重复扫描无限膨胀**
+缺口队列.jsonl 纯 append，无 idempotency 守卫（对比 sidecar 走账本幂等）；uniq 只在单次扫描内去重。多次跑 scan 队列重复行累积，load_queue 全量返回。
+修法：append 前按 (type,evidence) 对 load_queue 去重。
+
+**B13. promote.py:72,81,88 + promote.py:43 — 单考官可晋升 / `ch.kind` 属性 hack 的脆弱性**
+`need` 按实际收票数计算：3 编制 2 个通道故障时 1 support ⇒ need=1 ⇒ **promote**（虽标 degraded）——“异构 2/3”的异构性已不存在。这是被 test_v3_phased.py:44 显式钉住的设计决定，建议政策层面确认而非代码 bug。2 考官 1 support+1 unsure ⇒ need=⌈4/3⌉=2 ⇒ hold：保守、自洽，**不是 bug**。`ask.kind = kind` 闭包属性对普通函数可用，但 vote 的 except 分支也读 `ch.kind`——传入无 kind 的考官（bound method/partial 无法挂属性）会在异常处理里二次抛 AttributeError；votes 以 kind 为键，同 kind 双通道互相覆盖。
+
+**B14. plant.py:26-28,45-59 — 金标文件无幂等 + 章过滤残留陈旧 captured 标志**
+plant() 重复播种产生重复行（捕获率双重计数）；capture_rate 按 chapter 过滤跳过的株不改写 captured，保留上次运行标志。capture_rate 每次全量重写文件破坏 append-only。
+
+## 未接线登记（无调用方）
+
+- **er.blocking_key（er.py:27）：全仓零调用**（生产、tools、tests 均无）。ER 三段流水线的 blocking 段完全未接线。
+- **er.margin_decision（er.py:32）：仅 tests 调用**。margin 判决未接入任何 ingest/归一路径——0.85~0.95 相似带“废弃”只是文档宣言，无替代机制在跑。
+- **promote.build_panel/judge_isolated/promotion_check：仅 tests 调用**，G5 晋升门未接 runner/finalize。
+- **gate.py:62-64：契约校验是死代码**。`validate_record(...) if False else None`，注释称“留给 store.admit”，但 store.admit 从不校验；cbb_contracts 导入实际无人使用——v1 在案 33 测试的契约校验在 v2 写路径上整体缺席。
+- **runner.refeed_needed / context.carry_summary：仅 tests 与 runner 内部**（前者无生产消费方在 finalize 之外轮询）。
+
+# 疑点证伪（查证为非 bug）
+
+1. **context.py:99 `len([1]) and (...)`**：`len([1])` 恒为 1（truthy），表达式恒等于 `c.get('name') or c.get('subject') or ''`（运行时验证）。无行为错误，仅死代码噪音；最坏产出空行“第N章：”。
+2. **gaps.py:57 `not seen.add(...)`**：`set.add` 返回 None，`not None`==True，且短路保证 add 仅在未见过时执行——去重逻辑**正确**（运行时验证 `['x','y']`）。
+3. **audit.lqas 边界**：n=0 → "no-data"；p0=1 → k=0 项 `0.0**0`=1.0 ⇒ prob=1>0.05 ⇒ d=0 ⇒ threshold=0（仅全过才收），终止无死循环（p0=0 时 d 增至 n 后 break，运行时验证）；任意 p0∈(0,1] 必在 d≤n 内 break（prob(n)=1）。n=1 的 wilson = [0.2065, 1.0]，标准正确。性能：二项累计 O(n²) 重复算 comb，n=19 无感，n≥10⁴ 才痛——纯性能非正确性。
+4. **derive.upsert_edge_cypher 的 replace/f-string 混用**：`.replace("$NS", NS_PROPERTY)` 大小写敏感，只命中反引号内的 `` `$NS` `` ⇒ 产出 `` `group_id` ``，不碰参数 `$ns/$subject/$object`，产出**合法 Cypher**（真正的问题是 B1 的 MERGE 语义，非字符串拼装）。
+5. **splitting.segment_blocks 边界**：空输入 ⇒ []；边界块为首块 ⇒ 条件 `and cur` 吞掉（不产空首段，分组结果等价）；无边界路径尾部零头 extend 进末段（超 target_chars 属就近语义）；空文本块不崩。
+6. **store._derive_t_valid 无证据返回 None ⇒ _tv_lt 恒 False ⇒ 走闸**：保守设计且被 test_mutable_without_temporal_order_falls_to_gate 钉住，非 bug（混合 ch/日期格式同样保守 False）。
+7. **finalize 的 register_conflict 默认 True**：主线语义正确（矛盾必须显式入隔离区+全文留存）；False 仅服务重分流（tools/积压重分流.py:195,215 实际使用），避免反向造新隔离件。
+8. **finalize_chapter 身份缓存**：invalidated 排除 + version 最大值 + new_id 写后刷新，三者自洽；`chain` 变量加载未用属无害冗余（version 单调覆盖了 supersede 链；对照 tools/warm_cache 显式走链，两处实现不一致但结果等价）。
+9. **audit.suspicious_rank/stratified_sample、nli.dual_judge 计票键、quarantine.register 幂等、ledger.verify 读盘**：逐一过目，未发现逻辑错误。
+10. **judge_isolated 双调用**：每记录 2×考官数 次 LLM 调用（满编 6 次），纯成本问题；两序不一致回落 unsure 的语义正确（测试覆盖）。
+
+**总评**：最高优先修复 B1（空节点污染）、B2（重喂漏判——修一行但需连测试一起改）、B3（失效记账静默丢失）；B5/B14 与未接线清单说明 Phase C/D 多个机制是“文档先行、接线缺席”状态。

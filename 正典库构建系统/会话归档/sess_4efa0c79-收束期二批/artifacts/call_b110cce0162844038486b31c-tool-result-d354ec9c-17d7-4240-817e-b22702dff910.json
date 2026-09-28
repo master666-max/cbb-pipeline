@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T20:03:09.531Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_governance.py — Phase F·G08-G15 治理闭环测试。\"\"\"\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom cbb2 import governance  # noqa: E402\n\n\ndef test_classify_manual_bucket():\n    items = [\n        {\"detail\": \"嵌入相似度存疑 0.88\"},\n        {\"detail\": \"\"},\n        {\"detail\": \"entity_type: 入库='人物' vs 库内='组织'\"},\n        {\"detail\": \"嵌入相似度 0.92\"},\n    ]\n    r = governance.classify_manual_bucket(items)\n    assert len(r[\"artifact\"]) == 2 and len(r[\"empty_claim\"]) == 1 and len(r[\"unknown\"]) == 1\n\n\ndef test_conformal_calibrate_and_predict():\n    cal = governance.ConformalNLICalibrator(alpha=0.1)\n    labeled = [{\"predicted\": \"contradicts\", \"label\": \"contradicts\", \"score\": 0.9} for _ in range(6)] + \\\n              [{\"predicted\": \"neutral\", \"label\": \"entails\", \"score\": 0.3} for _ in range(4)]\n    r = cal.calibrate(labeled)\n    assert r[\"n\"] == 10 and r[\"threshold\"] > 0\n    # 高分正确→采纳\n    p1 = cal.predict(0.95, \"contradicts\")\n    assert not p1[\"abstain\"]\n    # 低分→弃权\n    p2 = cal.predict(0.05, \"contradicts\")\n    assert p2[\"abstain\"]\n\n\ndef test_examiner_quality_tracking():\n    tr = governance.ExaminerQualityTracker()\n    tr.record(\"good\", True)\n    tr.record(\"good\", True)\n    tr.record(\"bad\", False)\n    assert tr.quality(\"good\") > tr.quality(\"bad\")\n    assert tr.quality(\"unknown\") == 0.5  # 无数据=中性\n    assert tr.all_quality()[\"good\"] == 1.0\n\n\ndef test_wire_gap_queue_idempotent():\n    with tempfile.TemporaryDirectory() as td:\n        findings = [{\"type\": \"词表缺口\", \"evidence\": \"q-x\", \"proposed_action\": \"升级\"}]\n        n1 = governance.wire_gap_queue(Path(td), findings)\n        n2 = governance.wire_gap_queue(Path(td), findings)\n        assert n1 == 1 and n2 == 0  # 幂等\n        q = Path(td) / \"缺口队列.jsonl\"\n        assert len(q.read_text(encoding=\"utf-8\").splitlines()) == 1\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        fn()\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "afterContentLength": 2091,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_governance.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_b110cce0162844038486b31c",
+  "toolName": "Write",
+  "version": 1
+}

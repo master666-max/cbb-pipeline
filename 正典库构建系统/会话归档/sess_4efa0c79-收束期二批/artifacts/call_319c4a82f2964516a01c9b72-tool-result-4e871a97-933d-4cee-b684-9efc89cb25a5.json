@@ -1,0 +1,37 @@
+{
+  "createdAt": "2026-09-26T17:23:37.952Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.gaps — 缺口队列生成器（Phase D·U-D07；进化闭环唯一入口，流程设计 P5）。\n\n扫描来源：契诃夫超期（foreshadow）/ 词表缺口（quarantine 自创值）/ NLI 分歧簇（人审队列）/\n植物 miss / ER 缺口（悬挂引用）。产出 缺口队列.jsonl：{type, evidence, proposed_action}。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nfrom pathlib import Path\n\nQUEUE = \"缺口队列.jsonl\"\n\n\ndef _append(store_root: Path, row: dict):\n    p = Path(store_root) / QUEUE\n    p.parent.mkdir(parents=True, exist_ok=True)\n    with p.open(\"a\", encoding=\"utf-8\") as f:\n        f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + \"\\n\")\n\n\ndef scan_foreshadow_overdue(store_root: Path, current_chapter: int, grace: int = 3) -> list[dict]:\n    out = []\n    for f in sorted(Path(store_root).glob(\"libraries/foreshadow/*/*.json\")):\n        try:\n            r = json.loads(f.read_text(encoding=\"utf-8\"))\n        except Exception:\n            continue\n        c = r.get(\"canonical\") or {}\n        setup, payoff = c.get(\"setup_chapter\"), c.get(\"payoff_chapter\")\n        if isinstance(setup, int) and not isinstance(payoff, int) \\\n                and current_chapter - setup > grace:\n            out.append({\"type\": \"契诃夫超期\", \"evidence\": r.get(\"record_id\"),\n                        \"detail\": f\"{c.get('name')} setup@{setup} 超 {current_chapter-setup} 章未回收\",\n                        \"proposed_action\": \"下批抽取提示差量：关注该伏笔兑现\"})\n    for row in out:\n        _append(store_root, row)\n    return out\n\n\ndef scan_vocab_gaps(store_root: Path) -> list[dict]:\n    \"\"\"隔离区里 unknown/自创 entity_type 值 ⇒ 词表缺口。\"\"\"\n    out = []\n    q = Path(store_root) / \"quarantine-zone\" / \"items.jsonl\"\n    if not q.exists():\n        return out\n    for x in q.read_text(encoding=\"utf-8\").splitlines():\n        if not x.strip():\n            continue\n        it = json.loads(x)\n        d = it.get(\"detail\", \"\")\n        if it.get(\"subclass\") == \"contradiction_pending\" and \"entity_type\" in d:\n            out.append({\"type\": \"词表缺口\", \"evidence\": it.get(\"item_id\"),\n                        \"detail\": d[:120],\n                        \"proposed_action\": \"词表差量升级（区段边界批处理+措辞偏置审计）\"})\n    seen = set()\n    uniq = [r for r in out if r[\"detail\"] not in seen and not seen.add(r[\"detail\"])]\n    for row in uniq[:20]:\n        _append(store_root, row)\n    return uniq\n\n\ndef scan_plant_miss(store_root: Path, capture_report: dict) -> list[dict]:\n    out = [{\"type\": \"植物miss\", \"evidence\": r[\"plant_id\"], \"detail\": f\"{r['name']} 未捕获\",\n            \"proposed_action\": \"核查抽取器对该类断言的召回\"} for r in capture_report.get(\"miss\", [])]\n    for row in out:\n        _append(store_root, row)\n    return out\n\n\ndef scan_nli_disagreement(store_root: Path, dual_results: list[dict]) -> list[dict]:\n    out = [{\"type\": \"NLI分歧\", \"evidence\": json.dumps(r.get(\"votes\"), ensure_ascii=False)[:120],\n            \"detail\": \"双通道判定不一致\", \"proposed_action\": \"人审队列（只分流不裁决）\"}\n           for r in dual_results if not r.get(\"agree\") and r.get(\"votes\")]\n    for row in out:\n        _append(store_root, row)\n    return out\n\n\ndef load_queue(store_root: Path) -> list[dict]:\n    p = Path(store_root) / QUEUE\n    if not p.exists():\n        return []\n    return [json.loads(x) for x in p.read_text(encoding=\"utf-8\").splitlines() if x.strip()]\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\gaps.py",
+      "structuredPatch": [
+        {
+          "oldStart": 15,
+          "oldLines": 6,
+          "newStart": 15,
+          "newLines": 13,
+          "lines": [
+            " def _append(store_root: Path, row: dict):",
+            "     p = Path(store_root) / QUEUE",
+            "     p.parent.mkdir(parents=True, exist_ok=True)",
+            "+    if p.exists():  # B12：按 (type,evidence) 幂等——重复扫描不膨胀队列",
+            "+        for x in p.read_text(encoding=\"utf-8\").splitlines():",
+            "+            if not x.strip():",
+            "+                continue",
+            "+            old = json.loads(x)",
+            "+            if old.get(\"type\") == row.get(\"type\") and old.get(\"evidence\") == row.get(\"evidence\"):",
+            "+                return",
+            "     with p.open(\"a\", encoding=\"utf-8\") as f:",
+            "         f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + \"\\n\")",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_319c4a82f2964516a01c9b72",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-22T05:55:29.257Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"parallel_compare.py — CBB 产出 vs 老迷深资料库（37 复核世界书）平行对比\n只读。输出：花名册三方对账 + 关键别名交叉核验。\n\"\"\"\nimport glob, io, json, os, re\n\nLIB = r\"D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-本体库\"\nOLD = r\"D:\\zcode专用！！！！危险！！！！！！！！！\\迷深清洗工作\\迷深大酒馆v1.02\\世界书JSON\"\n\n# ── 老库：37 本角色专属世界书 ──\nold_names = set()\nfor p in glob.glob(os.path.join(OLD, \"角色专属世界书_*.json\")):\n    n = os.path.basename(p).replace(\"角色专属世界书_\", \"\").replace(\".json\", \"\")\n    old_names.add(n)\nprint(f\"[老库] 角色书 {len(old_names)} 本\")\n\n# ── CBB：character 库名册 + 全库设定名册 ──\ncbb_chars = {}\nfor p in glob.glob(os.path.join(LIB, \"libraries\", \"character\", \"provisional\", \"*.json\")):\n    try: r = json.load(io.open(p, encoding=\"utf-8\"))\n    except Exception: continue\n    cn = r.get(\"canonical\") or {}\n    nm = cn.get(\"name\") if isinstance(cn, dict) else None\n    if not nm: continue\n    chs = set()\n    ev = r.get(\"evidence\") or []\n    if isinstance(ev, dict): ev = [ev]\n    for e in ev:\n        c = e.get(\"chapter\")\n        if c is not None:\n            try: chs.add(int(c))\n            except Exception: pass\n    cbb_chars.setdefault(nm, set()).update(chs)\nprint(f\"[CBB] character 库唯一 canonical {len(cbb_chars)} 个\")\n\n# ── 三方对账（exact + 中点归一 + 包含式） ──\ndef norm(s): return s.replace(\"・\", \"·\").replace(\"　\", \"\").strip()\nold_n = {norm(x) for x in old_names}\ncbb_n = {norm(x): x for x in cbb_chars}\ninter = set(cbb_n) & old_n\nonly_old = sorted(old_n - set(cbb_n))\nonly_cbb = sorted(set(cbb_n) - old_n)\nprint(f\"[对账] 重合={len(inter)} | 只有老库={len(only_old)} | 只有CBB={len(only_cbb)}\")\nprint(\"只有老库样例:\", \"、\".join(only_old[:12]))\n# 只有 CBB：按最晚章排序，晚期章=预期（CBB 才跑到 238 位但老库全书都有? 老库全书37角色主要为前半）——列出前 12\noc = sorted(only_cbb, key=lambda n: -max(cbb_chars[cbb_n[n]] or {0}))\nprint(\"只有CBB样例(按最晚章降序):\")\nfor n in oc[:12]:\n    mx = max(cbb_chars[cbb_n[n]] or {0}); mn = min(cbb_chars[cbb_n[n]] or {0})\n    print(f\"   {cbb_n[n]}  ch{mn}~ch{mx}\")\n\n# ── 关键别名交叉核验（老库文件名 vs CBB 别名账/名册 的已知对应） ──\nal = [json.loads(l) for l in io.open(os.path.join(LIB, \"aliases.jsonl\"), encoding=\"utf-8\").read().strip().splitlines() if l.strip()]\nal_pairs = {(a.get(\"alias\"), a.get(\"entity_type\")) for a in al}\nprobes = [\"佩露修娜\", \"缇亚\", \"玛利亚\", \"斯诺\", \"莉帕\", \"帕林库洛\", \"诺文\", \"莱纳\"]\nprint(\"[交叉] 关键人物: 老库书存在? / CBB名册存在? / CBB别名账命中数\")\nfor pr in probes:\n    in_old = any(pr in x for x in old_names)\n    in_cbb = any(pr in x for x in cbb_chars)\n    hits = sum(1 for a, t in al_pairs if pr in (a or \"\"))\n    print(f\"   {pr}: 老库={'有' if in_old else '无'} CBB={'有' if in_cbb else '无'} 别名账命中={hits}\")\n",
+      "afterContentLength": 2478,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\parallel_compare.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_P2OHU9AwFfNMfwUiwDx29827",
+  "toolName": "Write",
+  "version": 1
+}

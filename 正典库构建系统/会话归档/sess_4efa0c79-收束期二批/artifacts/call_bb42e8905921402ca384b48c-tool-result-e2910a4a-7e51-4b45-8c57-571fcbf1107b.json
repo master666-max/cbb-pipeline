@@ -1,0 +1,56 @@
+{
+  "createdAt": "2026-09-26T17:30:37.097Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"build_release.py — Phase E 单命令构建：源真 → 发布树 + HASHES.json（--verify 可复算）。\n\n同步语义（build-managed 区）：\n  · scripts/cbb/{六技能目录,contracts,tools} ← 生产 cbb/ 同名目录（排除退役/实验族）\n  · scripts/cbb2 ← cbb-v2/cbb2（v3 核心包）\nbuild-managed 区内发布树多出的文件 = 构建产物漂移 → --verify FAIL；非管理区\n（SKILL.md/references/assets/全流程说明书/README/init_project）为发布自有资产，构建不动它们。\n排除族：graphiti_*（裁④退役）、lightrag_*、exp_*（对照实验）、web_console*、\nadapt_record_to_tier1（DEAD）、__pycache__/临时件。\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport hashlib\nimport json\nimport py_compile\nimport shutil\nimport subprocess\nimport sys\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parents[1]\nREL = ROOT / \"cbb-pipeline-skill\" / \"cbb-pipeline\"\nSRC_CBB = ROOT / \"cbb\"\nSRC_V2 = ROOT / \"cbb-v2\"\nMANIFEST = REL / \"HASHES.json\"\nVERSION = \"v3.0.0\"\n\nSYNC_DIRS = [(\"cbb-anchor\", \"cbb-anchor\"), (\"cbb-coordinate\", \"cbb-coordinate\"),\n             (\"cbb-extract\", \"cbb-extract\"), (\"cbb-gate1\", \"cbb-gate1\"),\n             (\"cbb-quarantine\", \"cbb-quarantine\"), (\"cbb-store\", \"cbb-store\"),\n             (\"contracts\", \"contracts\"), (\"tools\", \"tools\")]\nEXCLUDE_PREFIX = (\"exp_\", \"graphiti_\", \"lightrag_\", \"web_console\", \"adapt_record\",\n                  \"_\", \"test_d2\", \"test_图链\", \"test_graphiti_\", \"test_lightrag_\")\nEXCLUDE_NAMES = {\"判例.md\"}  # 判例=实例侧资产，不进发布包（references/判例模板.md 为模板）\n\n\ndef git_anchor() -> str:\n    return subprocess.run([\"git\", \"rev-parse\", \"HEAD\"], capture_output=True, text=True,\n                          cwd=str(ROOT)).stdout.strip()[:12]\n\n\ndef wanted_files(src: Path) -> set[Path]:\n    out = set()\n    for p in src.rglob(\"*\"):\n        if not p.is_file() or \"__pycache__\" in p.parts:\n            continue\n        rel = p.relative_to(src)\n        if any(part.startswith(\".\") for part in rel.parts):\n            continue\n        name = p.name\n        if name.startswith(EXCLUDE_PREFIX) or name in EXCLUDE_NAMES or name.endswith(\".pyc\"):\n            continue\n        out.add(rel)\n    return out\n\n\ndef sync_dir(src: Path, dst: Path) -> tuple[int, int]:\n    copied = removed = 0\n    wanted = wanted_files(src)\n    for rel in sorted(wanted):\n        s, d = src / rel, dst / rel\n        if d.exists() and d.read_bytes() == s.read_bytes():\n            continue\n        d.parent.mkdir(parents=True, exist_ok=True)\n        shutil.copyfile(s, d)\n        copied += 1\n    for p in sorted(dst.rglob(\"*\"), reverse=True):\n        if not p.is_file():\n            continue\n        if \"__pycache__\" in p.parts or p.name.startswith(EXCLUDE_PREFIX) or p.name.endswith(\".pyc\"):\n            p.unlink()\n            removed += 1\n            continue\n        rel = p.relative_to(dst)\n        if rel not in wanted:\n            p.unlink()\n            removed += 1\n    for p in sorted(dst.rglob(\"*\"), reverse=True):\n        if p.is_dir() and not any(p.iterdir()):\n            p.rmdir()\n    return copied, removed\n\n\ndef build() -> dict:\n    report = {\"synced\": {}, \"removed_total\": 0}\n    for src_name, dst_name in SYNC_DIRS:\n        copied, removed = sync_dir(SRC_CBB / src_name, REL / \"scripts\" / \"cbb\" / dst_name)\n        report[\"synced\"][dst_name] = {\"copied\": copied, \"removed\": removed}\n        report[\"removed_total\"] += removed\n    copied, removed = sync_dir(SRC_V2 / \"cbb2\", REL / \"scripts\" / \"cbb2\")\n    report[\"synced\"][\"cbb2\"] = {\"copied\": copied, \"removed\": removed}\n    report[\"removed_total\"] += removed\n\n    # 消费者可复算宣称（P1-3）：随包 v3 测试 + 指纹基线 + verify 脚本 + 依赖清单\n    tests_dst = REL / \"scripts\" / \"cbb2-tests\"\n    tests_dst.mkdir(parents=True, exist_ok=True)\n    for t in sorted((SRC_V2 / \"tests\").glob(\"*.py\")):\n        shutil.copyfile(t, tests_dst / t.name)\n    baseline = ROOT / \"analysis\" / \"characterization-baseline.json\"\n    if baseline.exists():\n        shutil.copyfile(baseline, tests_dst / \"characterization-baseline.json\")\n    (REL / \"scripts\" / \"verify_release.py\").write_text(\n        VERIFY_SCRIPT, encoding=\"utf-8\")\n    (REL / \"requirements.txt\").write_text(\"pyyaml>=6\\n\", encoding=\"utf-8\")\n\n    files = {}\n    for p in sorted(REL.rglob(\"*\")):\n        if p.is_file() and \"__pycache__\" not in p.parts and p.name != \"HASHES.json\":\n            rel = p.relative_to(REL).as_posix()\n            files[rel] = hashlib.sha256(p.read_bytes()).hexdigest()\n    manifest = {\"version\": VERSION, \"built_at_anchor\": git_anchor(),\n                \"口径\": \"发布树=构建产物；手改即 verify FAIL（治拷贝漂移病1）\",\n                \"files\": files}\n    MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=1),\n                        encoding=\"utf-8\")\n\n    n_py = 0\n    for p in REL.rglob(\"*.py\"):\n        if \"__pycache__\" in p.parts:\n            continue\n        py_compile.compile(str(p), doraise=True)\n        n_py += 1\n    for p in sorted(REL.rglob(\"__pycache__\"), reverse=True):  # P2：pyc 不进发布树\n        shutil.rmtree(p, ignore_errors=True)\n    report[\"py_compiled\"] = n_py\n    report[\"py_compiled\"] = n_py\n    report[\"files_in_manifest\"] = len(files)\n    report[\"status\"] = \"BUILT\"\n    return report\n\n\ndef verify() -> dict:\n    m = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    errors = []\n    actual = {p.relative_to(REL).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()\n              for p in REL.rglob(\"*\")\n              if p.is_file() and \"__pycache__\" not in p.parts and p.name != \"HASHES.json\"}\n    for rel, sha in m[\"files\"].items():\n        if rel not in actual:\n            errors.append(f\"缺失: {rel}\")\n        elif actual[rel] != sha:\n            errors.append(f\"漂移: {rel}\")\n    for rel in actual:\n        if rel not in m[\"files\"]:\n            errors.append(f\"多出(构建区外新增): {rel}\")\n    return {\"ok\": not errors, \"files\": len(m[\"files\"]), \"errors\": errors[:10]}\n\n\ndef main() -> int:\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--verify\", action=\"store_true\", help=\"只验 manifest，不构建\")\n    ns = ap.parse_args()\n    if ns.verify:\n        r = verify()\n        print(json.dumps(r, ensure_ascii=False, indent=1))\n        return 0 if r[\"ok\"] else 1\n    r = build()\n    v = verify()\n    r[\"verify\"] = v\n    print(json.dumps(r, ensure_ascii=False, indent=1))\n    return 0 if v[\"ok\"] else 1\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\tools\\build_release.py",
+      "structuredPatch": [
+        {
+          "oldStart": 27,
+          "oldLines": 6,
+          "newStart": 27,
+          "newLines": 32,
+          "lines": [
+            " MANIFEST = REL / \"HASHES.json\"",
+            " VERSION = \"v3.0.0\"",
+            " ",
+            "+VERIFY_SCRIPT = '''# -*- coding: utf-8 -*-",
+            "+\"\"\"verify_release.py — 发布树完整性自检：HASHES.json 逐件 sha256 核对（手改即 FAIL）。\"\"\"",
+            "+import hashlib, json, sys",
+            "+from pathlib import Path",
+            "+",
+            "+root = Path(__file__).resolve().parent.parent",
+            "+m = json.loads((root / \"HASHES.json\").read_text(encoding=\"utf-8\"))",
+            "+actual = {}",
+            "+for p in root.rglob(\"*\"):",
+            "+    if p.is_file() and \"__pycache__\" not in p.parts and p.name != \"HASHES.json\":",
+            "+        actual[p.relative_to(root).as_posix()] = hashlib.sha256(p.read_bytes()).hexdigest()",
+            "+errors = []",
+            "+for rel, sha in m[\"files\"].items():",
+            "+    if rel not in actual:",
+            "+        errors.append(f\"缺失: {rel}\")",
+            "+    elif actual[rel] != sha:",
+            "+        errors.append(f\"漂移: {rel}\")",
+            "+for rel in actual:",
+            "+    if rel not in m[\"files\"]:",
+            "+        errors.append(f\"多出(构建区外新增): {rel}\")",
+            "+if errors:",
+            "+    print(\"FAIL\\\\n\" + \"\\\\n\".join(errors[:20]))",
+            "+    sys.exit(1)",
+            "+print(f\"OK 发布树与 manifest 逐位一致（{len(m['files'])} 件）\")",
+            "+'''",
+            "+",
+            " SYNC_DIRS = [(\"cbb-anchor\", \"cbb-anchor\"), (\"cbb-coordinate\", \"cbb-coordinate\"),",
+            "              (\"cbb-extract\", \"cbb-extract\"), (\"cbb-gate1\", \"cbb-gate1\"),",
+            "              (\"cbb-quarantine\", \"cbb-quarantine\"), (\"cbb-store\", \"cbb-store\"),"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_bb42e8905921402ca384b48c",
+  "toolName": "Edit",
+  "version": 1
+}

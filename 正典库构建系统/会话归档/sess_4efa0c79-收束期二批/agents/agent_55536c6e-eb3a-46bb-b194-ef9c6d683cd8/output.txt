@@ -1,0 +1,15 @@
+抽取完成，结果已写入并通过校验。
+
+## 报告
+
+- **实体数：40**（人物 13、地点 9、组织 2、物品 4、技能魔法 9、概念 3）
+- **边数：61**（全部为中文完整陈述句 fact，source/target 均严格对应实体表，无悬空端点、无自环）
+- **写入路径：** `D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\P1执行区\step0-抽取精度实验\结果\extraction-tier1-excerpt1.json`
+
+## 执行说明
+
+1. **模板源码读取**：`/tmp/refcheck/...` 在 Windows 下 Read 不可达，经 cygpath 解析为 `C:\Users\26672\AppData\Local\Temp\refcheck\graphiti\graphiti_core\prompts\extract_nodes.py` 与 `extract_edges.py` 后用 Read 读取，抽取严格遵循其中规则（穷尽抽取、most-specific-form、possessor 限定命名、fact 保真条款、反幻觉条款、摘要的 dense-factual 要求）。
+2. **时间语义**：全文无绝对日期，所有 `valid_at`/`invalid_at` 均为 null；相对时间表述（“第一天”“休息时间为止”“每天每日”等）已保留在 fact 文本中。
+3. **忠实性处理**：人名/地名/魔法名（Dimension、Foam、Growth、魔石线、正道等）一律保留原文写法；文中 `缇亚` 与 `缇达` 一字之差且无法确证同一，按反幻觉条款作为两个实体分别抽取、互不合并；“店长”“玲小姐”按模板 possessor/限定规则以“酒馆店长”“玲”入图；均以切样内文本为唯一依据。
+4. **铁律遵守**：全程未读取任何路径含“金标”字样的文件或目录，抽取为独立完成。
+5. **校验**：文件为严格 JSON（`json.load` 通过），文件内无 JSON 之外的文字。

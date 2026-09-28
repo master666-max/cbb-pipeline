@@ -1,0 +1,66 @@
+调研完成。以下是可核验的机制清单（每条出处均已实际抓取页面确认标题与内容；凡我未能验证的，明确标注）。
+
+---
+
+## 一、可直接搬运的机制（7 条）
+
+**1. 双时间轴 + 失效宣告（invalid_at 写入规则）**
+出处：Zep/Graphiti，arXiv:2501.13956（2025-01-20，已抓 HTML 全文核验）
+原理：边同时带两套时间——`t_valid/t_invalid`（事实何时为真）与 `t'_created/t'_expired`（系统何时相信）；原文："When the system identifies temporally overlapping contradictions, it invalidates the affected edges by setting their **t_invalid** to the **t_valid of the invalidating edge**"，且"The system employs an LLM to compare new edges against semantically related existing edges to identify potential contradictions"。
+成本：纯 LLM 调用 + 图存储，无训练、无 GPU、开源。
+适配：直接填 CBB 的 0 条 invalid_at——新章抽取后，只与该实体/关系语义相关的旧边做 LLM 两两比对，命中则写 invalid_at + 把失效裁决入隔离区留痕。解决痛点①。
+风险：把"共存事实/角色说谎/传闻"误判为矛盾（"优先级：新信息"规则对吃设定正确，对不可靠叙述者会错）→ 失效必须走"待裁决"而非直接改状态。
+
+**2. 修订重跑 + 失效前向传播；reveal order 与 event order 分列**
+出处：Narrative World Model，arXiv:2607.05577（2026-07-06，已抓 HTML 含 §3.2/§3.3/附录 A）
+原理：原文"republishing an edited chapter invalidates the downstream edges that depended on the superseded state, so a correction propagates forward"；schema 中场景/事件同时存 `event order` 与 `reveal order`，角色状态存 `knowledge/unknowns`（谁知道什么、何时知道），伏笔存 `open/closed status, promised payoff`；世界事实存 `valid chapter range`。无训练（固定 Opus 4.8 + Sonnet 4.5 抽取），多跳准确率 0.898 vs Graphiti 0.574。
+适配：CBB 的 supersedes 链从"同实体合并"升级为"章级依赖"——修订某章时只重跑其下游，这是痛点①与④的核心机制；reveal/event 分列可同时喂时间轴库与伏笔库。
+风险：需先建"依赖来源章"字段（现库无），否则传播无从下手；全量重跑贵，须限定下游闭包。
+
+**3. 时态约束挖掘做全库冲突扫描（PaTeCon）**
+出处：arXiv:2304.09015（v3, 2023-05-12）与 arXiv:2312.11053（v2, 2025-07-23），均抓 abs 页核验
+原理：不用人工枚举约束，而是从 KG 自身挖掘图模式 + 统计信息自动生成时态约束（含按度量动态附加的类限制 class restriction），再扫违反者；论文明确针对"granularity issues"。
+成本：摘要显示为模式挖掘+统计，属确定性/离线脚本类；**未读全文，训练/GPU 需求未核实**。
+适配：解决痛点②③——约束一次挖掘、跨全库复用，突破"门只查同批"；类限制正对"类型粒度不一致"假冲突。
+风险：统计阈值产生伪阳；CBB 时间粒度只到章，约束可能过粗。建议只把违反项送隔离区，不自动改状态。
+
+**4. 不一致四分类器（把假冲突挡在人工之前）**
+出处：Kontrast，arXiv:2607.25959（v2, 2026-07-29，已核）
+原理：把跨源不一致分成四类——"information granularity differences / direct conflicts / temporal changes / KG incompleteness"，用 Text-to-SPARQL + LLM 推理归类。
+适配：CBB 隔离区 1222 件的自动分诊：粒度差异、KG 不完整 → 自动关闭为"非冲突"；temporal changes → 走机制 1 的失效流程；direct conflict → 才排人工 urgency。直接消解痛点③。
+风险：论文自陈受 Text-to-SPARQL 错误与噪声限制；分类本身也要留证据行号。可叠用 survey arXiv:2403.08319 的 context-memory / inter-context / intra-memory 作为二级标签。
+
+**5. 消解策略：来源可靠性 + 新信息优先**
+出处：Astute RAG，arXiv:2410.07176（已核）；Zep 的"prioritizes new information"（同 1）
+原理：迭代汇总内外部知识、"consolidates ... with source-awareness"、按 information reliability 出结论。
+适配：CBB 的裁决判据可固定为可审计的排序（原文引文完整度 > 推断；同章证据 > 跨章），而非让模型自由裁量。解决痛点①②的裁决策略缺位。
+风险：论文只到"reliability"层面，未给 claim 级细则；若把判据交给 LLM 会不可审计——必须落成脚本可复算的规则。
+
+**6. 全库级归纳：社区摘要**
+出处：GraphRAG，arXiv:2404.16130（已核）
+原理：LLM 建实体图 → 社区检测分组 → 预生成社区摘要 → 问全局问题时逐社区出局部答案再汇总，面向"全局感题"。
+适配：痛点④（全书级归纳）。可只对六库已抽事实建图（不重读 16MB 原文），社区检测用确定性算法并固定随机种子，摘要句强制回指章/行/引文。
+风险：token 成本是本清单最高项（可用"只抽一次、缓存摘要"压住）；摘要天然不可核验，必须做证据回指校验。
+
+**7. 确定性算子层 + 执行轨迹校验**
+出处：TGMS，arXiv:2607.10265（v2, 2026-07-24，已核）
+原理：13 个类型化时态算子作为 agent 工具（typed、deterministic、cost-guarded、bi-temporal），LLM 只规划与措辞，图计算由系统做；结论对内容寻址的执行轨迹核对，500 条注入错误全检出、0 伪阳。
+适配：CBB 最缺的"可审计"——把"事实→引文"升级为"由可重放算子从库中算出 + 轨迹"。覆盖痛点②④。
+风险：算子契约设计有一次性工作量；只覆盖可计算问题（时序/计数），叙事语义仍需 LLM。另可参考 ATOM（arXiv:2510.22590，"observed vs valid" 双时间原子事实 + 并行合并）作为抽取侧收窄方案。
+
+## 二、没核到的（诚实标注）
+
+- **Retcon 专题研究：未找到。** arXiv 全库检索 "retcon" 只返回 2 篇无关论文（2603.03317 提示词控制、2608.07542 AI 科研循环）。最接近的机制就是机制 2 的"修订传播"与机制 1 的失效宣告。
+- **Wikidata deprecated rank + P2241（retcon 治理/墓碑）**：【未核实】——wikidata.org 与 wikipedia.org 在本环境连接被重置（curl 报 Connection reset / timeout），无法举证，故不写入清单；如你本地可访问，值得自行确认后再纳入。
+- **实体同一性随时间（改名/身份揭示/分裂合并）**：2023–2026 无专文命中；只核到旧数据集 arXiv:1806.07524（2018）标题与日期。可用替代是机制 2 的 reveal order + "属性版本化为带区间边"。
+- **故事时间 vs 叙事时间**：无独立近期论文命中，机制 2 的 NWM 已内含该分列设计。
+
+## 三、明确不适用
+
+- **ConflictBank（arXiv:2408.12076）等评测基准**：类型学（misinformation / temporal discrepancies / semantic divergences）可借用，但基准本身要跑模型内部激活，属评测而非机制。
+- **需要探针/激活干预的做法**（如 ContextFocus 2601.04131、IRCAN 2406.18406、COIECD 2402.11893）：要白盒权重，本系统只有不透明 API，且不可审计。
+- **需要训练/微调的做法**（SI-FACT 2509.10208、LoRA 类；TKG 嵌入/扩散预测整条线如 2609.14279、2608.20804、2607.21949）：违反零预算、不能训练、无 GPU。
+- **"连续相位旋转把过期事实转出"（2604.11544）**：语义上是失效，但藏在向量相位里，无法回原文核验——与 CBB 的"证据可核验"硬约束冲突。
+- **纯 TKG 补全/外推（link prediction）**：为预测未来事实，CBB 要的是历史断言的可核验管理，方向相反。
+
+**落地顺序建议**：先做 1（补 invalid_at）+ 4（隔离区分诊），成本最低且立刻减人工；再做 3（约束扫描）打开跨批检测；2 与 7 是中期结构性改造；6 最后。

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T19:58:34.243Z",
+  "files": [
+    {
+      "afterContent": "# 前沿工具调研 · 知识图谱表示学习+资产化编排+检索LTR+形式化测试（四路归档）\n\n## KG表示学习\n\nPyKEEN（MIT，2039★，当天活跃）=首选；predict_target/predict_all top-k；**官方警告：KGE 分数无统计含义，只能作排序优先级**。万节点=FB15k-237 级，RotatE/ComplEx-N3 最优；KvsAll 打分>负采样（小图）。AnyBURL（BSD，规则+confidence）比 KGE 分数更适合缺口提议人审。冷启动 <500 三元组不可用。时序 TKG 均研究级无码——\"失效感知链接预测\"无生产件。三通道人审闭环：共现结构+KGE/AnyBURL 排序+LLM 语义校验。双时序进特征=validity 掩码+过期边负例+活跃度特征。\n\n## 资产化编排\n\n**核心判断：引\"薄编排层\"（doit），不引\"平台型编排器\"。** Dagster eager 语义对口但 Windows 无 CI+学习曲线数天；Prefect Windows 最硬但常驻架构冲突；doit file_dep MD5 内容哈希=检查点等价物（纯 pip/纯 Python/无常驻）；DVC 易主+小文件开销不引；watchdog ReadDirectoryChangesW 静默丢事件官方语义=事件流不能当唯一真相源。升级触发器：投影 4→8+。\n\n## 检索与学习排序\n\nLLM judge 判档位不可靠（κ 0.31-0.50）但排系统可靠（τ 0.87-0.94）；合成 query+稀疏判断 τ=0.157 完全不可用——正例池必须池化。Bruch CC 单参数融合少量标注即收敛 α∈[0.6,0.8] 优于 RRF；LambdaMART <100 锚定不上。中文索引：Lucene CJK 默认字 bigram（生造词免疫）；NeuCLIR 中文 BM25 0.290 强基线。拒答校准：充分性二判+逻辑回归（Google 自身用 500 条）；LoRA 微调不解决。\n\n## 形式化测试\n\nHypothesis v6.168.1（3.14 官宣支持，CPython CI 已用）；RuleBasedStateMachine=状态机+不变式每步检查；mutmut v3.8 变异测试 POSIX only（WSL/Linux CI），变异分数=趋势指标非硬 KPI；icontract 3.14 未官宣生产不挂；CrossHair 符号执行 3.14 就绪；dbt failing-rows 思想可移植。一句话：**Hypothesis 一个依赖覆盖 @given+stateful+invariant 三面，新依赖只有它**。\n\n## 知识图谱表示学习（续）\n\nPyKEEN predict_target 对候选 (h,r,t) 打分排序；AnyBURL 规则+confidence 可解释人审；Neo4j GDS Community 覆盖 LP 基线+Leiden+Node Similarity+LP Pipeline（Beta）；时序 TKGC 无生产件——**失效感知链接预测降级为三层工程方案**（validity 掩码+过期边负例+活跃度特征）。冷启动 <500 三元组 KGE 不可用→转 AnyBURL 或共现统计。\n",
+      "afterContentLength": 1404,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\前沿工具调研-四路归档精简-20260927.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_2169697882aa4a8391a87a7d",
+  "toolName": "Write",
+  "version": 1
+}

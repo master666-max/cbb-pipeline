@@ -1,0 +1,36 @@
+{
+  "createdAt": "2026-09-24T03:19:53.028Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"reconcile_github_tree.py — 发布树全量对账：本地所有件 vs GitHub 远端 tree（逐 blob sha）。\n\n判据：两端 sha 集合完全一致（本地多/少/异 → 逐一列出）。用于\"另一端下载复验\"前的自检。\n\"\"\"\nimport json\nimport os\nimport pathlib\nimport subprocess\n\nREPO = \"master666-max/cbb-pipeline\"\nPKG = pathlib.Path(r\"D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统/cbb-pipeline-skill/cbb-pipeline\")\n\n\ndef gh(args):\n    r = subprocess.run([\"gh\", \"api\"] + args, capture_output=True, text=True, encoding=\"utf-8\")\n    if r.returncode != 0:\n        raise RuntimeError(r.stderr[:300])\n    return json.loads(r.stdout)\n\n\nref = gh([f\"repos/{REPO}/git/refs/heads/main\"])\ncommit = ref[\"object\"][\"sha\"]\ntree = gh([f\"repos/{REPO}/git/trees/{commit}?recursive=1\"])\nremote = {e[\"path\"]: e[\"sha\"] for e in tree[\"tree\"] if e[\"type\"] == \"blob\"}\n\nlocal = {}\nfor p in sorted(PKG.rglob(\"*\")):\n    if p.is_file() and \"__pycache__\" not in p.parts:\n        rel = p.relative_to(PKG).as_posix()\n        h = subprocess.run([\"git\", \"hash-object\", str(p)], capture_output=True, text=True,\n                           encoding=\"utf-8\").stdout.strip()\n        local[rel] = h\n\nonly_local = sorted(set(local) - set(remote))\nonly_remote = sorted(set(remote) - set(local))\ndiff = sorted(k for k in set(local) & set(remote) if local[k] != remote[k])\n\nprint(f\"远端 HEAD {commit[:7]} | 本地 {len(local)} 件 / 远端 {len(remote)} 件\")\nprint(f\"仅本地（未推）: {len(only_local)}\")\nfor k in only_local:\n    print(\"   +\", k)\nprint(f\"仅远端（本地缺）: {len(only_remote)}\")\nfor k in only_remote:\n    print(\"   -\", k)\nprint(f\"内容不一致: {len(diff)}\")\nfor k in diff:\n    print(\"   ~\", k)\nprint(\"✓ 两端一致（逐 blob sha）\" if not (only_local or only_remote or diff) else \"✗ 存在差异（见上）\")\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\reconcile_github_tree.py",
+      "structuredPatch": [
+        {
+          "oldStart": 28,
+          "oldLines": 8,
+          "newStart": 28,
+          "newLines": 10,
+          "lines": [
+            " for p in sorted(PKG.rglob(\"*\")):",
+            "     if p.is_file() and \"__pycache__\" not in p.parts:",
+            "         rel = p.relative_to(PKG).as_posix()",
+            "-        h = subprocess.run([\"git\", \"hash-object\", str(p)], capture_output=True, text=True,",
+            "-                           encoding=\"utf-8\").stdout.strip()",
+            "+        # --no-filters：按磁盘原字节算 blob sha（默认会走 clean 过滤器把 CRLF 归一，",
+            "+        # 与经 REST 直推的远端字节不可比——前者比的是归一态，后者比的是落盘态）",
+            "+        h = subprocess.run([\"git\", \"hash-object\", \"--no-filters\", str(p)],",
+            "+                           capture_output=True, text=True, encoding=\"utf-8\").stdout.strip()",
+            "         local[rel] = h",
+            " ",
+            " only_local = sorted(set(local) - set(remote))"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_uhLdq5Ol1Q3TnUwjI0mo8924",
+  "toolName": "Edit",
+  "version": 1
+}

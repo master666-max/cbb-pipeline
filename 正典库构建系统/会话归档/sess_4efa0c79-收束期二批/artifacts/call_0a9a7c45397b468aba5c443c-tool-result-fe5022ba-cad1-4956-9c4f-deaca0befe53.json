@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T19:36:13.346Z",
+  "files": [
+    {
+      "afterContent": "# TRUSTED KEYS · 正典库公开检查点通道\n\n## 通道说明\n\n本目录存放正典库账本的**签名检查点**（C2SP tlog-tiles 风格）。每个检查点=账本某时点的行数+链尾哈希快照，推送到此处即形成独立于主库的外部锚——防\"持有者事后整体重写账本\"（split-view）。\n\n验证方式：`cbb2.notary.verify(channel_dir, store_root, origin)` 对账本全链重放后逐字段核对。\n\n## 信任锚\n\n| key id | 算法 | 生效区间 | namespace | 用途 |\n|---|---|---|---|---|\n| (未配) | Ed25519 | - | canon-checkpoint | 检查点签名 |\n\n## 签名与验证\n\n```\n# 签名（发布方）\nssh-keygen -Y sign -f ~/.ssh/id_ed25519 -n canon-checkpoint <checkpoint-file>\n\n# 验证（第三方，需 allowed_signers 文件）\necho \"identity@context key\" > allowed_signers\nssh-keygen -Y verify -f allowed_signers -I identity@context -n canon-checkpoint -s <sig-file> < checkpoint-file\n```\n\n## 轮换\n\n新旧 key 双签同一批 checkpoint 形成过渡链；历史验证按时点匹配有效 key（SSH `valid-after`/`valid-before` 原生支持）。\n",
+      "afterContentLength": 735,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库-公开检查点\\TRUSTED_KEYS.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_0a9a7c45397b468aba5c443c",
+  "toolName": "Write",
+  "version": 1
+}

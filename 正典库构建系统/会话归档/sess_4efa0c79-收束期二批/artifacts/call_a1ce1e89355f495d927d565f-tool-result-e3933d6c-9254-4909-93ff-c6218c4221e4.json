@@ -1,0 +1,63 @@
+{
+  "createdAt": "2026-09-14T02:49:46.908Z",
+  "files": [
+    {
+      "afterContent": "---\nname: cbb-skill-scout-status\ndescription: CBB Step 0 已收官（混合分支：Graphiti 路线成立+三条件）；本会话=审核线；下一步 P1 构建交 ZCode 闲时任务，下发模板已交付 P1执行区/闲时任务提示词模板.md（三层架构/BUILD-STATE断点）；DeepSeek key 轮换仍欠\nmetadata:\n  node_type: memory\n  type: project\n  originSessionId: sess_4efa0c79-075b-4809-a436-d313bf21a98d\n---\n\n正典库构建系统（CBB v1.0 冻结基线）进展，2026-09-14。工件在 `正典库构建系统/`：16 仓源码+索引清单（现成技能侦察/）、P1 建设计划书、P1执行区（施工工单/验收审核单/社区实测情报/报告-Tier1正式判定.md/闲时任务提示词模板.md/step0-抽取精度实验全套）。\n\n**分工（用户裁决）**：本会话=审核线（只审不建）；构建线先为另会话、2026-09-14 起正式构建任务改由 **ZCode 闲时任务** 执行（用户令）。B 路线锁定（\"力求绝对干净的正典库\"）；A 收窄为 evals-skills + neo4j-skills 两件外挂。\n\n**Step 0 已收官（正式判定=混合分支）**：Graphiti 路线成立，三个生产条件全部 Tier 2 实测验证——①R6 元文本规则走原生 custom_extraction_instructions（excerpt4 零污染）；②reference_time 用故事伪锚点（2000-01-01+i 天），禁墙钟；③去重走本地 Qwen3-Embedding-8B Q8（4096 维）。4 金标经三轮自审+DeepSeek 对抗 5 轮（255 挑战→采纳94）+用户终审通过；Tier 1 双模型 8 份抽取双口径（strict/adjusted）判定；Tier 2 原装 add_episode 4/4 集入库（40实体/66关系）。\n\n**闲时任务机制（官方文档核证，task-041）**：免费排队算力（套餐 0 消耗）、无保证开始时间、创建有日上限；单次执行有时长上限、**到点自动回队续同一会话**；**后台子代理不支持**；人工介入消息不免费；机器须保持唤醒。/goal=目标模式（设可校验目标，每轮自校验自续）。**下发模板已交付**：`正典库构建系统/P1执行区/闲时任务提示词模板.md` v1——三层架构（闲时任务=外壳/=/goal=内核/BUILD-STATE.md+逐件 git commit=磁盘锚，锚层不依赖会话）；STATE=缓存、磁盘+git=事实（R-014 入断点协议）；无人值守禁 build/plan 权限模式（卡确认），edit/yolo；代理自调 /goal 未实测（模板有条款自锚兜底）。下一单候选=P1 六技能骨架 M1（模板 C 节预填 U1-U8）。\n\n**模型/环境实测定案**：DeepSeek=云 API（api.deepseek.com OpenAI 兼容，ID `deepseek-flash` 推理模型、思维链可吃光 max_tokens→预算 65536；`deepseek-v4-pro` 在册）。LM Studio@127.0.0.1:8080：嵌入 `text-embedding-qwen3-embedding-8b@q8_0` 维度 4096；qwen3-reranker-4b 无 /v1/rerank。Neo4j 容器 neo4j-step0 在跑（bolt://localhost:7687）。**DeepSeek key 曾暴露于对话，作废轮换提醒仍欠，不入任何文件（D-004）**。\n\n**durable 教训**：①\"迷深是 R18\"=无关线索拼图，用户证伪；②探针结论只适用本会话 shell，勿泛化为项目约束；③用户已裁决的事实不再跑验证；④给用户交付审查材料要直接贴文本（\"给我文本啊😭\"）。\n\n详见 [[cbb-skill-reference-map]]。\n",
+      "afterContentLength": 1774,
+      "beforeContent": "---\nname: cbb-skill-scout-status\ndescription: CBB B 路线；本会话=审核线+Tier 1 亲自执行；4 金标已过 三轮自审+DeepSeek对抗5轮（255挑战→采纳94/部分18/驳回143，v5/v2/v2/v2），现等用户终审（唯一闸门）；excerpt1 双模型中期数已出（strict 被金标口径低估、adjusted 量级可 accept）；Embedding Q8 4096 维实测；DeepSeek-flash=推理模型预算 64k\nmetadata:\n  node_type: memory\n  type: project\n  originSessionId: sess_4efa0c79-075b-4809-a436-d313bf21a98d\n---\n\n正典库构建系统（CBB v1.0 冻结基线）技能侦察与 Step 0 进展，2026-09-14。工件在 `正典库构建系统/`：16 仓源码+索引清单+工作量预设（现成技能侦察/）、P1 建设计划书、P1执行区（施工工单/验收审核单/社区实测情报/step0-抽取精度实验全套）。\n\n**分工（用户裁决）**：本会话=审核线（只审不建），另会话=构建线；例外=Step 0 Tier 1 实验由本会话亲自执行（用户：\"抽取 LLM 你自己不能搞吗\"）。B 路线锁定（\"力求绝对干净的正典库\"）；A 收窄为 evals-skills + neo4j-skills 两件外挂。\n\n**金标质量流水线（用户逐级加码的最终形态）**：初稿 → 审核线三轮自审（逐项取证/漏标扫描/语料对账，机械脚本 verify_gold.py）→ **DeepSeek 对抗性自审 5 轮**（用户令；主题化攻击面：漏标/错标/口径/时间/红队终局，每轮喂前轮挑战防复读）→ 审核线逐条裁决 → 用户人工全文审查（唯一闸门，通过前不用于评分）。\n- **对抗结果**：255 条挑战（excerpt1 99/2 86/3 41/4 29），采纳94/部分18/驳回143。金标升版 **excerpt1 v5=36实体/35关系/15时间、excerpt2 v2=26/30/34、excerpt3 v2=19/19/12、excerpt4 v2=0/0/0**。裁决记录=`金标对抗裁决记录.md`（逐组列 digest 索引）。\n- **对抗咬中的真错**：帕林库洛动机边 target 劳拉维亚→**本国**（L95\"本国求之若渴\"反证，claim=true 托词）；excerpt3\"未能保护\"边违反 R4→删边入 note；excerpt4 金标自违反（把 2023 日期放 time_expressions）→删空+新增 **R6 元文本豁免**（元文本优先于一切规则，输出恒空——\"该抽零\"测试的自洽形态）；excerpt1 补 神圣魔法/信/直感/剑术+13 条漏标边（含拐骗/藏匿/出走/性别声称四条 claim=true）。\n- 规则集演化：R1 修订（固定出场职务称呼可立实体注无名）、type 枚举正式化、时间政策（纯指示副词/夸张语不入册）、切样外佐证入独立字段不入证据行、excerpt4 的 R6。\n- **审核线教训**：向用户交付审查材料要**直接贴文本**（\"给我文本啊😭\"=光给文件路径不解决审查需求）。\n\n**Step 0 当前状态（2026-09-14 深夜）**——两梯级：Tier 1（本会话）=真提示词抽取+金标评分；Tier 2（构建线）=原装 add_episode + DeepSeek API（定案 deepseek-flash）+本地 Qwen3-Embedding-8B Q8。\n- excerpt1 双模型已跑：GLM 子代理 40实体/61边；DeepSeek-flash 27/50。strict 数（对金标 v3，**未对 v5 重评**）：GLM 实体 P0.70/R0.966、关系 14/19、方向 0.786、时间 0.5；DeepSeek 0.926/0.862、12/19、0.75、0.3。中期报告=报告-Tier1中期-excerpt1.md。\n- **评分方法学**：金标是\"应抽样本\"非穷尽清单→strict P 被低估→正式判定用双口径（strict/adjusted）+关系事实级人工裁决（同端点多边不能端点贪心——score_tier1.py 已修：端点解析为实体索引再比、边 schema 双兼容 source/target vs source_entity_name/target_entity_name）。\n- **流水线教训（Tier 2 配置铁律）**：①reference_time 传墙钟→DeepSeek 给故事事实盖假日期，必须用故事锚点或禁用；②graphiti 反泛指条款拒抽无专名实体→custom_extraction_instructions 钩子注入中文小说指令；③deepseek-flash 是**推理模型**（思维链可吃光 max_tokens，16384 全灭）→预算 65536+分块兜底；④模板缺键用 Ctx 兜底。\n- **下一步**：用户终审 4 金标（\"给我文本\"后已全文贴出待裁决）→ 双模型×4切样全量抽取（GLM子代理×3+DeepSeek×4）→ 事实级裁决+双口径 → Tier 1 正式判定报告 → wrap-up（反思计数 1/5）。\n\n**模型/环境实测定案**：DeepSeek=云 API（api.deepseek.com OpenAI 兼容，ID `deepseek-flash`+`deepseek-v4-pro` 实测在册；key 用户聊天里给过，**不入任何文件，实验后建议用户作废轮换**）。LM Studio@127.0.0.1:8080 实测：嵌入 `text-embedding-qwen3-embedding-8b@q8_0` **维度 4096**（q4_k_m 备胎）、qwen3-reranker-4b 已挂但无 /v1/rerank（P2 用 llama-server）。\n\n**durable 教训（本会话三次翻车）**：①\"迷深是 R18\"=无关线索拼图，用户证伪（迷深非 R18，清洗一贯走云 API）；②\"无云 API\"=把本会话 shell 探针过度泛化；③用户已裁决的事实不要再跑验证。规则：语料属性只认用户裁决+实物对账；探针结论只适用本会话 shell。\n\n详见 [[cbb-skill-reference-map]]。\n",
+      "existedBefore": true,
+      "path": "C:\\Users\\26672\\.zcode\\cli\\memories\\projects\\project-da79cd2826c9f571\\memory\\cbb-skill-scout-status.md",
+      "structuredPatch": [
+        {
+          "oldStart": 1,
+          "oldLines": 30,
+          "newStart": 1,
+          "newLines": 22,
+          "lines": [
+            " ---",
+            " name: cbb-skill-scout-status",
+            "-description: CBB B 路线；本会话=审核线+Tier 1 亲自执行；4 金标已过 三轮自审+DeepSeek对抗5轮（255挑战→采纳94/部分18/驳回143，v5/v2/v2/v2），现等用户终审（唯一闸门）；excerpt1 双模型中期数已出（strict 被金标口径低估、adjusted 量级可 accept）；Embedding Q8 4096 维实测；DeepSeek-flash=推理模型预算 64k",
+            "+description: CBB Step 0 已收官（混合分支：Graphiti 路线成立+三条件）；本会话=审核线；下一步 P1 构建交 ZCode 闲时任务，下发模板已交付 P1执行区/闲时任务提示词模板.md（三层架构/BUILD-STATE断点）；DeepSeek key 轮换仍欠",
+            " metadata:",
+            "   node_type: memory",
+            "   type: project",
+            "   originSessionId: sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+            " ---",
+            " ",
+            "-正典库构建系统（CBB v1.0 冻结基线）技能侦察与 Step 0 进展，2026-09-14。工件在 `正典库构建系统/`：16 仓源码+索引清单+工作量预设（现成技能侦察/）、P1 建设计划书、P1执行区（施工工单/验收审核单/社区实测情报/step0-抽取精度实验全套）。",
+            "+正典库构建系统（CBB v1.0 冻结基线）进展，2026-09-14。工件在 `正典库构建系统/`：16 仓源码+索引清单（现成技能侦察/）、P1 建设计划书、P1执行区（施工工单/验收审核单/社区实测情报/报告-Tier1正式判定.md/闲时任务提示词模板.md/step0-抽取精度实验全套）。",
+            " ",
+            "-**分工（用户裁决）**：本会话=审核线（只审不建），另会话=构建线；例外=Step 0 Tier 1 实验由本会话亲自执行（用户：\"抽取 LLM 你自己不能搞吗\"）。B 路线锁定（\"力求绝对干净的正典库\"）；A 收窄为 evals-skills + neo4j-skills 两件外挂。",
+            "+**分工（用户裁决）**：本会话=审核线（只审不建）；构建线先为另会话、2026-09-14 起正式构建任务改由 **ZCode 闲时任务** 执行（用户令）。B 路线锁定（\"力求绝对干净的正典库\"）；A 收窄为 evals-skills + neo4j-skills 两件外挂。",
+            " ",
+            "-**金标质量流水线（用户逐级加码的最终形态）**：初稿 → 审核线三轮自审（逐项取证/漏标扫描/语料对账，机械脚本 verify_gold.py）→ **DeepSeek 对抗性自审 5 轮**（用户令；主题化攻击面：漏标/错标/口径/时间/红队终局，每轮喂前轮挑战防复读）→ 审核线逐条裁决 → 用户人工全文审查（唯一闸门，通过前不用于评分）。",
+            "-- **对抗结果**：255 条挑战（excerpt1 99/2 86/3 41/4 29），采纳94/部分18/驳回143。金标升版 **excerpt1 v5=36实体/35关系/15时间、excerpt2 v2=26/30/34、excerpt3 v2=19/19/12、excerpt4 v2=0/0/0**。裁决记录=`金标对抗裁决记录.md`（逐组列 digest 索引）。",
+            "-- **对抗咬中的真错**：帕林库洛动机边 target 劳拉维亚→**本国**（L95\"本国求之若渴\"反证，claim=true 托词）；excerpt3\"未能保护\"边违反 R4→删边入 note；excerpt4 金标自违反（把 2023 日期放 time_expressions）→删空+新增 **R6 元文本豁免**（元文本优先于一切规则，输出恒空——\"该抽零\"测试的自洽形态）；excerpt1 补 神圣魔法/信/直感/剑术+13 条漏标边（含拐骗/藏匿/出走/性别声称四条 claim=true）。",
+            "-- 规则集演化：R1 修订（固定出场职务称呼可立实体注无名）、type 枚举正式化、时间政策（纯指示副词/夸张语不入册）、切样外佐证入独立字段不入证据行、excerpt4 的 R6。",
+            "-- **审核线教训**：向用户交付审查材料要**直接贴文本**（\"给我文本啊😭\"=光给文件路径不解决审查需求）。",
+            "+**Step 0 已收官（正式判定=混合分支）**：Graphiti 路线成立，三个生产条件全部 Tier 2 实测验证——①R6 元文本规则走原生 custom_extraction_instructions（excerpt4 零污染）；②reference_time 用故事伪锚点（2000-01-01+i 天），禁墙钟；③去重走本地 Qwen3-Embedding-8B Q8（4096 维）。4 金标经三轮自审+DeepSeek 对抗 5 轮（255 挑战→采纳94）+用户终审通过；Tier 1 双模型 8 份抽取双口径（strict/adjusted）判定；Tier 2 原装 add_episode 4/4 集入库（40实体/66关系）。",
+            " ",
+            "-**Step 0 当前状态（2026-09-14 深夜）**——两梯级：Tier 1（本会话）=真提示词抽取+金标评分；Tier 2（构建线）=原装 add_episode + DeepSeek API（定案 deepseek-flash）+本地 Qwen3-Embedding-8B Q8。",
+            "-- excerpt1 双模型已跑：GLM 子代理 40实体/61边；DeepSeek-flash 27/50。strict 数（对金标 v3，**未对 v5 重评**）：GLM 实体 P0.70/R0.966、关系 14/19、方向 0.786、时间 0.5；DeepSeek 0.926/0.862、12/19、0.75、0.3。中期报告=报告-Tier1中期-excerpt1.md。",
+            "-- **评分方法学**：金标是\"应抽样本\"非穷尽清单→strict P 被低估→正式判定用双口径（strict/adjusted）+关系事实级人工裁决（同端点多边不能端点贪心——score_tier1.py 已修：端点解析为实体索引再比、边 schema 双兼容 source/target vs source_entity_name/target_entity_name）。",
+            "-- **流水线教训（Tier 2 配置铁律）**：①reference_time 传墙钟→DeepSeek 给故事事实盖假日期，必须用故事锚点或禁用；②graphiti 反泛指条款拒抽无专名实体→custom_extraction_instructions 钩子注入中文小说指令；③deepseek-flash 是**推理模型**（思维链可吃光 max_tokens，16384 全灭）→预算 65536+分块兜底；④模板缺键用 Ctx 兜底。",
+            "-- **下一步**：用户终审 4 金标（\"给我文本\"后已全文贴出待裁决）→ 双模型×4切样全量抽取（GLM子代理×3+DeepSeek×4）→ 事实级裁决+双口径 → Tier 1 正式判定报告 → wrap-up（反思计数 1/5）。",
+            "+**闲时任务机制（官方文档核证，task-041）**：免费排队算力（套餐 0 消耗）、无保证开始时间、创建有日上限；单次执行有时长上限、**到点自动回队续同一会话**；**后台子代理不支持**；人工介入消息不免费；机器须保持唤醒。/goal=目标模式（设可校验目标，每轮自校验自续）。**下发模板已交付**：`正典库构建系统/P1执行区/闲时任务提示词模板.md` v1——三层架构（闲时任务=外壳/=/goal=内核/BUILD-STATE.md+逐件 git commit=磁盘锚，锚层不依赖会话）；STATE=缓存、磁盘+git=事实（R-014 入断点协议）；无人值守禁 build/plan 权限模式（卡确认），edit/yolo；代理自调 /goal 未实测（模板有条款自锚兜底）。下一单候选=P1 六技能骨架 M1（模板 C 节预填 U1-U8）。",
+            " ",
+            "-**模型/环境实测定案**：DeepSeek=云 API（api.deepseek.com OpenAI 兼容，ID `deepseek-flash`+`deepseek-v4-pro` 实测在册；key 用户聊天里给过，**不入任何文件，实验后建议用户作废轮换**）。LM Studio@127.0.0.1:8080 实测：嵌入 `text-embedding-qwen3-embedding-8b@q8_0` **维度 4096**（q4_k_m 备胎）、qwen3-reranker-4b 已挂但无 /v1/rerank（P2 用 llama-server）。",
+            "+**模型/环境实测定案**：DeepSeek=云 API（api.deepseek.com OpenAI 兼容，ID `deepseek-flash` 推理模型、思维链可吃光 max_tokens→预算 65536；`deepseek-v4-pro` 在册）。LM Studio@127.0.0.1:8080：嵌入 `text-embedding-qwen3-embedding-8b@q8_0` 维度 4096；qwen3-reranker-4b 无 /v1/rerank。Neo4j 容器 neo4j-step0 在跑（bolt://localhost:7687）。**DeepSeek key 曾暴露于对话，作废轮换提醒仍欠，不入任何文件（D-004）**。",
+            " ",
+            "-**durable 教训（本会话三次翻车）**：①\"迷深是 R18\"=无关线索拼图，用户证伪（迷深非 R18，清洗一贯走云 API）；②\"无云 API\"=把本会话 shell 探针过度泛化；③用户已裁决的事实不要再跑验证。规则：语料属性只认用户裁决+实物对账；探针结论只适用本会话 shell。",
+            "+**durable 教训**：①\"迷深是 R18\"=无关线索拼图，用户证伪；②探针结论只适用本会话 shell，勿泛化为项目约束；③用户已裁决的事实不再跑验证；④给用户交付审查材料要直接贴文本（\"给我文本啊😭\"）。",
+            " ",
+            " 详见 [[cbb-skill-reference-map]]。"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_a1ce1e89355f495d927d565f",
+  "toolName": "Write",
+  "version": 1
+}

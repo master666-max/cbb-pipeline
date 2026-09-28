@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_8aa4b136-0f38-4e10-a1ab-454847c13a0e",
+  "childSessionId": "sess_subagent_agent_8aa4b136-0f38-4e10-a1ab-454847c13a0e",
+  "createdAt": "2026-09-22T15:17:59.473Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "Research skill authoring practices",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_8aa4b136-0f38-4e10-a1ab-454847c13a0e\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_8aa4b136-0f38-4e10-a1ab-454847c13a0e\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_e13641cf948d4be8945f8614",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是研究助理，联网调研（WebSearch + WebFetch，出处必须可核验）。输出中文。主题：**如何写好一个 Agent Skill（技能包）**——社区经验 + 最新研究，用于指导一次正式的 skill 重写。\n\n## 背景\n我要重写一个已发布的 Agent Skill（名为 cbb-pipeline：把长文本语料构造成\"证据可核验的正典知识库\"的流水线技能）。现有结构：SKILL.md（YAML frontmatter: name/description）＋ references/（5 个分主题 md）＋ scripts/（Python 六模块＋init_project.py）＋ assets/（project.template.yaml）。重写目标：从\"小说专用\"泛化为\"任意长文本语料通用\"，并吸收一套新的审查方法论。我需要知道**技能包本身应该怎么写**。\n\n## 要查清的问题（每条给出处）\n1. **权威规范**：Agent Skills 的开放规范（agentskills.io 或等价物）——SKILL.md 的 frontmatter 必填/可选字段、name 与 description 的写法约束（长度、触发词）、progressive disclosure（渐进披露）的原则、目录约定（references/ scripts/ assets/）、推荐的长度上限（SKILL.md 行数/token 预算）。\n2. **官方最佳实践**：Anthropic 官方关于 Agent Skills 的文档与工程博客（skill-creator 的指导思想）——description 怎么写才能被正确触发；什么内容放 SKILL.md、什么放 references、什么做成 scripts；常见反模式（太长、太泛、重复、把教程当技能）。\n3. **社区经验**：GitHub 上高星的 skill 集合（如 anthropics/skills、obra/superpowers 等）里反复出现的结构模式与踩坑总结；有没有人公开发过\"skill 写作清单/checklist\"。\n4. **最新研究（论文）**：与\"agent 技能库/可复用程序性知识\"直接相关的 2024-2026 论文——Voyager（技能库）、Agent Workflow Memory (AWM)、SkillWeaver、ExpeL 等：它们对\"技能应该如何被写/被抽象/被复用/被组合\"给出了什么可操作的结论（例如：技能粒度、可执行脚本 vs 自然语言步骤、技能检索触发）。每篇给 arXiv id 和一句话可操作结论。\n5. **评测/失败模式**：有没有研究或社区复盘指出\"skill 写法导致 agent 用不好\"的具体失败模式（描述模糊不触发、步骤太死、缺验收判据、上下文预算爆炸）。\n\n## 输出格式（中文，≤900 词）\n- 一节\"**写法规则清单**\"：从以上来源提炼 10~15 条**可直接执行**的规则（如\"description 公式、SKILL.md 行数上限、三层内容分界、脚本化判据、反模式清单\"），每条标注出处。\n- 一节\"**论文可操作结论**\"：每篇 2~3 行（结论＋对本项目的应用建议）。\n- 一节\"**对本重写的具体建议**：给我一份 v2.0 SKILL.md 的推荐骨架（各节标题＋行数预算）\"。\n禁止编造 URL/arXiv id；没核验到就标【未核实】。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_8aa4b136-0f38-4e10-a1ab-454847c13a0e\\task.output",
+  "updatedAt": "2026-09-22T15:25:21.509Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-22T15:25:21.509Z",
+  "totalDurationMs": 441897,
+  "totalTokens": 775589,
+  "totalToolUseCount": 25,
+  "usage": {
+    "inputTokens": 765743,
+    "outputTokens": 9846,
+    "totalTokens": 775589,
+    "cacheReadTokens": 655168,
+    "cacheWriteTokens": 0
+  }
+}

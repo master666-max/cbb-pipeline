@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T15:48:06.939Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_g25_adjudicate_lock.py — G25 并发锁：adjudicate 单写者（总工单 G25 判据）。\n并发压测双跑零交叠：异件并发零丢更新；同件并发幂等恰一行。\n\"\"\"\nimport json\nimport sys\nimport tempfile\nimport threading\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom cbb2.quarantine import QuarantineZone, adjudicate_lock  # noqa: E402\nfrom cbb2.ledger import LedgedStore  # noqa: E402\n\n\ndef _mk_zone(td, n=16):\n    z = QuarantineZone(Path(td))\n    for i in range(n):\n        z.register(\"low_confidence\", f\"detail-{i}\", record_id=f\"r-{i}\", at=\"ch0001\")\n    return z\n\n\ndef test_lock_is_held_exclusively():\n    with tempfile.TemporaryDirectory() as td:\n        with adjudicate_lock(Path(td)) as kind:\n            assert kind in (\"msvcrt\", \"fcntl\", None)\n\n\ndef test_concurrent_distinct_items_zero_lost_update():\n    \"\"\"8 线程各裁 2 件：全部落定+裁决行=件数（修复前整文件重写互踩会丢更新）。\"\"\"\n    with tempfile.TemporaryDirectory() as td:\n        z = _mk_zone(td, 16)\n        ids = [i[\"item_id\"] for i in z._load()]\n        errs = []\n\n        def worker(pair):\n            try:\n                for j, iid in enumerate(pair):\n                    z.adjudicate(iid, \"confirmed\" if j == 0 else \"rejected\", note=\"g25\")\n            except Exception as e:  # noqa: BLE001 — 压测收集面\n                errs.append(str(e))\n\n        pairs = [ids[i:i + 2] for i in range(0, 16, 2)]\n        threads = [threading.Thread(target=worker, args=(p,)) for p in pairs]\n        for t in threads:\n            t.start()\n        for t in threads:\n            t.join()\n        assert not errs, errs\n        items = z._load()\n        assert all(i[\"status\"] in (\"confirmed\", \"rejected\") for i in items)\n        adj = [l for l in (z.root / \"adjudications.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n               if l.strip()]\n        assert len(adj) == 16\n\n\ndef test_concurrent_same_item_idempotent_single_row():\n    \"\"\"同件并发同判定（经 LedgedStore）：裁决行恰 1——幂等检查与写入同锁，双写根除。\"\"\"\n    with tempfile.TemporaryDirectory() as td:\n        ls = LedgedStore(Path(td))\n        z = ls.zone\n        iid, created = z.register(\"low_confidence\", \"d\", record_id=\"r-x\", at=\"ch0001\")\n        assert created\n        errs = []\n\n        def worker():\n            try:\n                z.adjudicate(iid, \"confirmed\", note=\"g25-same\")\n            except Exception as e:  # noqa: BLE001 — 压测收集面\n                errs.append(str(e))\n\n        threads = [threading.Thread(target=worker) for _ in range(8)]\n        for t in threads:\n            t.start()\n        for t in threads:\n            t.join()\n        assert not errs, errs\n        adj = [l for l in (z.root / \"adjudications.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n               if l.strip()]\n        assert len(adj) == 1, json.dumps(adj, ensure_ascii=False)\n",
+      "afterContentLength": 2756,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_g25_adjudicate_lock.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_efb4228d0a53421cb0cc8c98",
+  "toolName": "Write",
+  "version": 1
+}

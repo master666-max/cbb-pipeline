@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T16:38:02.174Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.audit — 对样双轨 + Wilson 区间（Phase D·U-D05；流程设计 P5）。\n\n发现轨=可疑优先排序（找错，通过率不可外推——Northcutt 模式）；\n估计轨=分层随机抽样估计错误率，LQAS 可选（每层 n=19 只出合格/不合格）；\n一切通过率宣称带 **Wilson 95% 区间**（30 全过→下限仅 ~86%，不许点宣称）。\n\"\"\"\nfrom __future__ import annotations\n\nimport math\nimport random\nfrom collections import defaultdict\n\n\ndef wilson(passed: int, n: int, z: float = 1.96) -> tuple[float, float]:\n    \"\"\"Wilson score 区间（通过率宣称的合规形态）。\"\"\"\n    if n == 0:\n        return (0.0, 1.0)\n    p = passed / n\n    denom = 1 + z * z / n\n    center = (p + z * z / (2 * n)) / denom\n    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denom\n    return (max(0.0, center - half), min(1.0, center + half))\n\n\ndef suspicious_rank(records: list[dict]) -> list[dict]:\n    \"\"\"发现轨：最可疑优先——确定性启发式（缺 verified_against/置信低/证据少/孤立引用）。\"\"\"\n    def suspicion(r: dict) -> tuple:\n        prov = r.get(\"provenance\") or {}\n        conf = prov.get(\"extractor_confidence\", 100) or 0\n        n_ev = len(r.get(\"evidence\") or [])\n        va = r.get(\"verified_against\") or {}\n        sha_ok = bool(va.get(\"sha\")) and set(va.get(\"sha\", \"0\")) != {\"0\"}\n        return (-n_ev, -conf, not sha_ok, r.get(\"record_id\", \"\"))\n    return sorted(records, key=suspicion)\n\n\ndef stratified_sample(records: list[dict], stratum_key, n_per_stratum: int,\n                      seed: int = 20260927) -> list[dict]:\n    \"\"\"估计轨：分层随机（同层内真随机，固定种子可复算）。\"\"\"\n    strata: dict = defaultdict(list)\n    for r in records:\n        strata[stratum_key(r)].append(r)\n    rng = random.Random(seed)\n    out = []\n    for key in sorted(strata):\n        pool = strata[key][:]\n        rng.shuffle(pool)\n        out.extend(pool[:n_per_stratum])\n    return out\n\n\ndef lqas(passed: int, n: int, p0: float = 0.95) -> dict:\n    \"\"\"LQAS 验收抽样：n 条里 passed ≤ 阈值 d ⇒ 批合格。d 按 p0 与 n 查表近似（二项下界）。\"\"\"\n    if n == 0:\n        return {\"verdict\": \"no-data\"}\n    d = 0\n    while d <= n:\n        # P(观测 ≤ d | 真实通过率 = p0) ≤ 0.05 的最大 d —— 二项累计\n        prob = sum(math.comb(n, k) * p0 ** k * (1 - p0) ** (n - k) for k in range(0, d + 1))\n        if prob > 0.05:\n            break\n        d += 1\n    verdict = \"accept\" if passed <= max(0, d - 1) else \"reject\"\n    return {\"verdict\": verdict, \"threshold_d\": max(0, d - 1), \"passed\": passed, \"n\": n}\n\n\ndef report(passed: int, n: int, gate: float = 0.95) -> dict:\n    \"\"\"合规宣称形态：点值 + Wilson 区间 + 门槛判定（区间下限达门槛才算 PASS）。\"\"\"\n    lo, hi = wilson(passed, n)\n    return {\"passed\": passed, \"n\": n,\n            \"rate\": round(passed / n, 4) if n else 0.0,\n            \"wilson95\": [round(lo, 4), round(hi, 4)],\n            \"gate\": \"PASS\" if lo >= gate else \"FAIL\",\n            \"口径\": \"Wilson 95% 区间下限达门槛才算过——点宣称禁用（发现偏倚纪律）\"}\n",
+      "afterContentLength": 2652,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\audit.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_46bbe2c7c8014197b7eea7b9",
+  "toolName": "Write",
+  "version": 1
+}

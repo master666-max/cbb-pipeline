@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-09-27T15:20:10.945Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_properties.py — Phase F·G03：Hypothesis 属性测试（决策树完备性+账本链重算）。\n运行：py -X utf8 -m pytest test_v3_properties.py -x -q\n\"\"\"\nimport json\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom hypothesis import given, settings, strategies as st, HealthCheck  # noqa: E402\nfrom cbb2.store import Store  # noqa: E402\nfrom cbb2.ledger import LedgerChain  # noqa: E402\n\nrecord_strategy = st.fixed_dictionaries({\n    \"record_id\": st.text(min_size=1, max_size=12).filter(lambda s: s.isalnum()),\n    \"record_type\": st.sampled_from([\"entity\", \"relation\", \"event\"]),\n    \"library\": st.sampled_from([\"character\", \"relation\", \"event\"]),\n    \"status\": st.just(\"provisional\"),\n    \"canonical\": st.fixed_dictionaries({\n        \"name\": st.text(min_size=1, max_size=8).filter(lambda s: s.isprintable()),\n        \"entity_type\": st.sampled_from([\"人物\", \"组织\", \"地点\"]),\n        \"status\": st.sampled_from([\"alive\", \"dead\", \"missing\"]),\n    }),\n    \"evidence\": st.lists(st.fixed_dictionaries({\n        \"vol\": st.just(1), \"chapter\": st.integers(1, 100), \"line\": st.integers(1, 200),\n        \"quote\": st.text(min_size=1, max_size=20),\n    }), min_size=1, max_size=3),\n    \"provenance\": st.fixed_dictionaries({\"extractor_confidence\": st.integers(60, 95)}),\n    \"version\": st.just(1), \"supersedes\": st.none(),\n    \"verified_against\": st.fixed_dictionaries({\n        \"path\": st.just(\"t\"), \"sha\": st.just(\"a\" * 7), \"verified_at\": st.just(\"2000-01-01\")}),\n})\n\nentry_strategy = st.fixed_dictionaries({\n    \"seq\": st.integers(1, 100),\n    \"op\": st.just(\"append\"),\n    \"target\": st.sampled_from([\"libraries/character/provisional\", \"quarantine-zone/items.jsonl\"]),\n    \"idempotency_key\": st.text(min_size=1, max_size=10).filter(lambda s: s.isalnum()),\n    \"sha_before\": st.text(min_size=64, max_size=64),\n    \"sha_after\": st.text(min_size=64, max_size=64),\n    \"prev_hash\": st.text(min_size=64, max_size=64),\n    \"hash\": st.text(min_size=64, max_size=64),\n})\n\nTRACKS = {\"on-create\", \"consistent-duplicate\", \"complementary-statement\",\n          \"invalidation-update\", \"uncertain-coexist\", \"contradiction\"}\n\n\n@given(rec=record_strategy,\n       at=st.sampled_from([\"ch0014\", \"ch0020\", \"ch0050\"]))\n@settings(max_examples=30, deadline=None,\n          suppress_health_check=[HealthCheck.too_slow, HealthCheck.function_scoped_fixture])\ndef test_write_decision_total(rec, at):\n    \"\"\"任意输入必落五轨之一或抛已知 ValueError（不崩、不出未分类异常）。\"\"\"\n    with tempfile.TemporaryDirectory() as td:\n        store = Store(Path(td))\n        try:\n            out = store.write_decision(dict(rec), at=at, register_conflict=False)\n            assert out[\"track\"] in TRACKS\n        except ValueError:\n            pass  # 已知校验错误=可接受（不崩、不静默）\n\n\n@given(e1=record_strategy, e2=record_strategy,\n       at=st.sampled_from([\"ch0014\"]))\n@settings(max_examples=20, deadline=None,\n          suppress_health_check=[HealthCheck.too_slow, HealthCheck.function_scoped_fixture])\ndef test_idempotent_replay(e1, e2, at):\n    \"\"\"同输入二次 write_decision 不产生新库件（幂等守卫）。\"\"\"\n    with tempfile.TemporaryDirectory() as td:\n        store = Store(Path(td))\n        try:\n            store.write_decision(dict(e1), at=at, register_conflict=False)\n            n0 = sum(1 for _ in store.iter_records())\n            store.write_decision(dict(e2), at=at, register_conflict=False)\n            n1 = sum(1 for _ in store.iter_records())\n            assert n1 >= n0  # 只增不减\n        except ValueError:\n            pass  # 校验拒绝也是合法行为\n\n\n@given(entries=st.lists(entry_strategy, max_size=30))\n@settings(max_examples=30, deadline=None,\n          suppress_health_check=[HealthCheck.too_slow, HealthCheck.data_too_large])\ndef test_ledger_chain_recompute(entries):\n    with tempfile.TemporaryDirectory() as td:\n        lc = LedgerChain(Path(td) / \"ledger.jsonl\")\n        for e in entries:\n            lc.record_append(e[\"target\"], e[\"idempotency_key\"], e[\"sha_before\"], e[\"sha_after\"])\n        v = lc.verify()\n        assert v[\"ok\"]\n\n\n@given(data=st.data(), entries=st.lists(entry_strategy, min_size=2, max_size=10))\n@settings(max_examples=20, deadline=None)\ndef test_tamper_detection(data, entries):\n    with tempfile.TemporaryDirectory() as td:\n        lc = LedgerChain(Path(td) / \"ledger.jsonl\")\n        for e in entries:\n            lc.record_append(e[\"target\"], e[\"idempotency_key\"], e[\"sha_before\"], e[\"sha_after\"])\n        # 篡改一个字节\n        blob = bytearray((Path(td) / \"ledger.jsonl\").read_bytes())\n        if blob:\n            pos = data.draw(st.integers(0, len(blob) - 1))\n            blob[pos] ^= 0x01\n            (Path(td) / \"ledger.jsonl\").write_bytes(bytes(blob))\n            v = LedgerChain(Path(td) / \"ledger.jsonl\").verify()\n            # 要么哈希不匹配要么 prev 断链\n            assert not v[\"ok\"]\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_properties.py",
+      "structuredPatch": [
+        {
+          "oldStart": 3,
+          "oldLines": 6,
+          "newStart": 3,
+          "newLines": 7,
+          "lines": [
+            " 运行：py -X utf8 -m pytest test_v3_properties.py -x -q",
+            " \"\"\"",
+            " import json",
+            "+import string",
+            " import sys",
+            " import tempfile",
+            " from pathlib import Path"
+          ]
+        },
+        {
+          "oldStart": 14,
+          "oldLines": 19,
+          "newStart": 15,
+          "newLines": 26,
+          "lines": [
+            " from cbb2.store import Store  # noqa: E402",
+            " from cbb2.ledger import LedgerChain  # noqa: E402",
+            " ",
+            "+# 字母表直出不用 filter——st.text 默认全 Unicode，isalnum() 过滤器拒绝率 >90% 会触发",
+            "+# HealthCheck.filter_too_much（P-028 同批修正）",
+            "+ALNUM = st.text(alphabet=string.ascii_letters + string.digits, min_size=1, max_size=12)",
+            "+PRINTABLE = st.text(",
+            "+    alphabet=st.characters(blacklist_categories=(\"Cs\", \"Cc\")),  # 去代理/控制符=isprintable 全集",
+            "+    min_size=1, max_size=8)",
+            "+",
+            " record_strategy = st.fixed_dictionaries({",
+            "-    \"record_id\": st.text(min_size=1, max_size=12).filter(lambda s: s.isalnum()),",
+            "+    \"record_id\": ALNUM,",
+            "     \"record_type\": st.sampled_from([\"entity\", \"relation\", \"event\"]),",
+            "     \"library\": st.sampled_from([\"character\", \"relation\", \"event\"]),",
+            "     \"status\": st.just(\"provisional\"),",
+            "     \"canonical\": st.fixed_dictionaries({",
+            "-        \"name\": st.text(min_size=1, max_size=8).filter(lambda s: s.isprintable()),",
+            "+        \"name\": PRINTABLE,",
+            "         \"entity_type\": st.sampled_from([\"人物\", \"组织\", \"地点\"]),",
+            "         \"status\": st.sampled_from([\"alive\", \"dead\", \"missing\"]),",
+            "     }),",
+            "     \"evidence\": st.lists(st.fixed_dictionaries({",
+            "         \"vol\": st.just(1), \"chapter\": st.integers(1, 100), \"line\": st.integers(1, 200),",
+            "-        \"quote\": st.text(min_size=1, max_size=20),",
+            "+        \"quote\": st.text(min_size=1, max_size=20),  # 含代理/控制符——写路径须拒绝为 ValueError 而非崩",
+            "     }), min_size=1, max_size=3),",
+            "     \"provenance\": st.fixed_dictionaries({\"extractor_confidence\": st.integers(60, 95)}),",
+            "     \"version\": st.just(1), \"supersedes\": st.none(),"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_6761fccd990b4d23be28b71b",
+  "toolName": "Edit",
+  "version": 1
+}

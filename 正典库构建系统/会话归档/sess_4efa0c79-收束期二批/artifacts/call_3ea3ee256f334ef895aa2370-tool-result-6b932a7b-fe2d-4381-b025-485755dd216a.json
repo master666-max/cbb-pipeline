@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-09-27T17:19:18.479Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"g16c_rejudge.py — G16c 重审（回填后）：双外部考官对回填件重投票。\n考官输入审计（硬约束）：prompt 载荷白名单=canonical+引文串——出现任何图派生键即 abort\n（\"图给人当路标，不给机器当证词\"，2026-09-28 用户质询后立此防线）。\n\"\"\"\nimport json\nimport sys\nimport time\nfrom collections import Counter\nfrom concurrent.futures import ThreadPoolExecutor, as_completed\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\nsys.path.insert(0, str(ROOT / \"cbb-v2\"))\n\nfrom cbb2 import promote  # noqa: E402\n\nSTORE = ROOT / \"迷深实战-本体库\"\nSIDECAR = STORE / \"补充证据-回填-试点.jsonl\"\nG16B = STORE / \"G16b-票面台账.jsonl\"\nJOURNAL = STORE / \"G16c-重审台账-试点.jsonl\"\n\nALLOWED_PAYLOAD_KEYS = {\"canonical\", \"evidence_quotes\"}\nFORBIDDEN_MARKERS = (\"edges\", \"neighbors\", \"graph\", \"adjacency\", \"图\")\n\n\ndef build_payload(rec, supplements):\n    \"\"\"考官载荷：canonical+合并引文（原文+回填原文句）。白名单外一键即 abort。\"\"\"\n    quotes = [e.get(\"quote\", \"\") for e in (rec.get(\"evidence\") or [])]\n    quotes += [s.get(\"quote\", \"\") for s in supplements]\n    payload = {\"canonical\": rec.get(\"canonical\") or {}, \"evidence_quotes\": quotes}\n    bad = set(payload) - ALLOWED_PAYLOAD_KEYS\n    assert not bad, f\"考官输入审计 FAIL：白名单外字段 {bad}\"\n    blob = json.dumps(payload, ensure_ascii=False)\n    for m in FORBIDDEN_MARKERS:\n        assert m not in blob.lower() or m == \"图\" and \"图谱\" not in blob, \\\n            f\"考官输入审计 FAIL：疑似图派生内容 {m}\"\n    return payload\n\n\ndef main():\n    rows = [json.loads(l) for l in SIDECAR.read_text(encoding=\"utf-8\").splitlines() if l.strip()]\n    full = [r for r in rows if r[\"status\"] == \"full\"]\n    print(f\"回填 full 件: {len(full)}\")\n\n    g16b = {}\n    for l in G16B.read_text(encoding=\"utf-8\").splitlines():\n        if l.strip():\n            r = json.loads(l)\n            g16b[r[\"record_id\"]] = r[\"verdict\"]\n\n    panel, missing = promote.build_panel((\"DEEPSEEK\", \"QWEN\"))\n    print(f\"编制: {[c.kind for c in panel]}（缺席 {missing or '无'}）；full_size=3 → promote=双 support\")\n    if not panel:\n        return\n\n    def review_one(row):\n        rec = json.loads(Path(row[\"path\"] if False else \"\").read_text()) if False else None\n        # 从库件重读（sidecar 不存 canonical 全文，路径由库定位）\n        rec_path = None\n        for f in STORE.glob(f\"libraries/{row['library']}/*/{row['record_id']}.json\"):\n            rec_path = f\n            break\n        rec = json.loads(rec_path.read_text(encoding=\"utf-8\"))\n        payload = build_payload(rec, row[\"supplements\"])\n        conclusion = json.dumps(payload[\"canonical\"], ensure_ascii=False, sort_keys=True)\n        evidence = \"；\".join(payload[\"evidence_quotes\"])\n        res = promote.vote(conclusion, evidence, panel, full_size=3)\n        res[\"record_id\"] = row[\"record_id\"]\n        res[\"g16b_verdict\"] = g16b.get(row[\"record_id\"])\n        return res\n\n    t0 = time.time()\n    results = []\n    with JOURNAL.open(\"a\", encoding=\"utf-8\") as jf, \\\n            ThreadPoolExecutor(max_workers=8) as ex:\n        futs = [ex.submit(review_one, r) for r in full]\n        for n, fu in enumerate(as_completed(futs), 1):\n            try:\n                res = fu.result()\n            except Exception as e:  # noqa: BLE001 — 单件异常计数不拖批\n                res = {\"verdict\": \"error\", \"errors\": [{\"reason\": str(e)[:120]}]}\n            results.append(res)\n            jf.write(json.dumps(res, ensure_ascii=False, sort_keys=True) + \"\\n\")\n            jf.flush()\n            if n % 10 == 0 or n == len(full):\n                print(f\"  {n}/{len(full)}  {time.time()-t0:.0f}s\")\n\n    flips = Counter()\n    for r in results:\n        a, b = r.get(\"g16b_verdict\"), r.get(\"verdict\")\n        flips[f\"{a} → {b}\"] += 1\n    print(\"\\n翻转分布:\")\n    for k, v in flips.most_common():\n        print(f\"  {k}: {v}\")\n    print(f\"耗时 {time.time()-t0:.0f}s → {JOURNAL}\")\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\g16c_rejudge.py",
+      "structuredPatch": [
+        {
+          "oldStart": 55,
+          "oldLines": 8,
+          "newStart": 55,
+          "newLines": 7,
+          "lines": [
+            "         return",
+            " ",
+            "     def review_one(row):",
+            "-        rec = json.loads(Path(row[\"path\"] if False else \"\").read_text()) if False else None",
+            "-        # 从库件重读（sidecar 不存 canonical 全文，路径由库定位）",
+            "+        # 从库件重读（sidecar 不存 canonical 全文）",
+            "         rec_path = None",
+            "         for f in STORE.glob(f\"libraries/{row['library']}/*/{row['record_id']}.json\"):",
+            "             rec_path = f"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_3ea3ee256f334ef895aa2370",
+  "toolName": "Edit",
+  "version": 1
+}

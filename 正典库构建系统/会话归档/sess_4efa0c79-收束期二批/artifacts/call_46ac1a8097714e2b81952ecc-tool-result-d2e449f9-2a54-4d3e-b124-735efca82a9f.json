@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T04:30:39.502Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.config — 包级唯一配置源（env-first，无实例默认；吸收 路径惯例.py 判据）。\n\nv1 的头号债务：46 个模块各自 sys.path.insert + 散落 19 处实例名默认 + 7 处写死端口。\nv2：全部经此件推导——能推的从 store 推，推不出报错要参数。\n\"\"\"\nfrom __future__ import annotations\n\nimport os\nfrom pathlib import Path\n\nLIB_SUFFIX = \"-本体库\"\nWS_SUFFIX = \"-工作区\"\n\n\ndef sibling_by_convention(root: Path, suffix: str) -> Path | None:\n    if not root.exists():\n        return None\n    hits = sorted(p for p in root.iterdir() if p.is_dir() and p.name.endswith(suffix))\n    return hits[0] if hits else None\n\n\ndef store_of(root: Path) -> Path:\n    \"\"\"从任意上级目录按惯例名推 store；env CBB_STORE 优先；推不出报错。\"\"\"\n    env = os.environ.get(\"CBB_STORE\")\n    if env:\n        return Path(env)\n    d = root\n    for _ in range(6):\n        hit = sibling_by_convention(d, LIB_SUFFIX)\n        if hit:\n            return hit\n        nxt = d.parent\n        if nxt == d:\n            break\n        d = nxt\n    raise RuntimeError(\"推不出 store：设 CBB_STORE 或在项目根旁放 *-本体库/（惯例命名）\")\n\n\ndef workspace_of(store: Path) -> Path:\n    hit = sibling_by_convention(store.parent, WS_SUFFIX)\n    if hit:\n        return hit\n    raise RuntimeError(\"推不出 workspace：store 同级应有 *-工作区/（惯例命名）\")\n\n\ndef neo4j_http() -> str:\n    return os.environ.get(\"NEO4J_HTTP\", \"http://localhost:7474\")  # 出厂默认；实例端口走 env\n\n\ndef namespace() -> str:\n    ns = (os.environ.get(\"CBB_NAMESPACE\") or \"\").strip()\n    if not ns:\n        raise RuntimeError(\"缺命名空间：设 CBB_NAMESPACE（同机共图防串图）\")\n    return ns\n\n\ndef embed_endpoint() -> str:\n    return os.environ.get(\"EMBED_HTTP\", \"http://127.0.0.1:8080/v1/embeddings\")\n",
+      "afterContentLength": 1554,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\config.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_46ac1a8097714e2b81952ecc",
+  "toolName": "Write",
+  "version": 1
+}

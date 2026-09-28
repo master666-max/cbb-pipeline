@@ -1,0 +1,245 @@
+# 深度调研报告：cbb2 测试体系升级（2026-09-27）
+
+方法说明：本次以 GitHub API（gh 已认证）、PyPI JSON API、arXiv API、官方文档直查为准；通用 Web 搜索后端今天持续 429 限流，无法核实的具体案例均已标【待确认】。所有版本号/活跃度/CI 矩阵为 API 实测值。
+
+---
+
+## A. 逐题深度发现
+
+### Q1 Property-based testing（Hypothesis）
+
+**现状（API 实测）**
+- [HypothesisWorks/hypothesis](https://github.com/HypothesisWorks/hypothesis)：9,021 stars，最近 push **2026-09-25**（两天前），latest release **v6.168.1**（2026-09-23）。发布节奏每周数个版本，属 Python 生态最活跃测试库之一。License：GitHub 标 NOASSERTION（Apache-2.0 变体，商用友好）。
+- **Python 3.14 兼容：实测确认**。changelog 明文 "Add support for Python 3.14"，当前支持列表 "3.10, 3.11, 3.12, 3.13, **3.14, 3.14t**, PyPy 3.11"（[changelog.rst](https://hypothesis.readthedocs.io/en/latest/changelog.html) 实读；PyPI classifiers 含 3.14）。
+
+**与手写单测的互补证据**
+- 最强一手证据：**CPython 自身 CI 已有 "Hypothesis tests" job**，并开有 meta-issue [python/cpython#107862](https://github.com/python/cpython/issues/107862)（"What can we test with Hypothesis?"，公开征集属性测试点，附适用判据：快、可靠、数据策略简单）。相关 CI 稳定性 issue：[#131229](https://github.com/python/cpython/issues/131229)。
+- [官方 stateful 文档](https://hypothesis.readthedocs.io/en/latest/stateful.html)：`@rule`/`@invariant`/`@precondition`/Bundle/`@initialize`/`teardown`，"rules can be chained"；官方示例即**模型对照测试**（目录库 vs dict 模型，`values_agree` 一致性规则）——这正是 cbb2"store+模型对照"的教科书形状。
+- 生态实践证据：gh issue 搜索显示 `RuleBasedStateMachine` 大量用于"Connection lifecycle / canonical execution lifecycle / model-based safety testing"建模（如 [pycubrid#340](https://github.com/cubrid-lab/pycubrid/issues/340)）。具体“某年发现某库某 bug”级案例今天未能从一手信源核实，【待确认】——但 Hypothesis 的 failure database + shrinking 机制（README 实读：失败时给"最简可能复现例"）是其相对手写单测的核心增量，机制本身有官方文档背书。
+
+**表达力结论**：`@given` 覆盖"函数级不变式"（哈希链重算、幂等键）；`RuleBasedStateMachine` 覆盖"操作序列+状态不变式"（三态迁移），且 invariant 在**每一步后**检查——比手写单测只在末尾断言强一个量级。限制：precondition/invariant 不能读 Bundle（用实例变量绕过）；默认预算 `max_examples=50`，状态机建议 `stateful_step_count=50~100`。
+
+### Q2 变异测试（mutmut / cosmic-ray）
+
+**现状（API 实测）**
+- [boxed/mutmut](https://github.com/boxed/mutmut)：1,453 stars，push 2026-09-12，**v3.8.0（2026-09-12）**，BSD-3-Clause，PyPI classifiers **3.12/3.13/3.14/3.15**（[docs](https://mutmut.readthedocs.io/en/latest/)）。活跃且跟进最新 Python。
+- [sixty-north/cosmic-ray](https://github.com/sixty-north/cosmic-ray)：658 stars，push 2026-08-09，v8.7.0（2026-08-09），MIT；PyPI classifiers 仅到 **3.13** → 3.14 未声明【待确认】。
+
+**mutmut 关键能力（docs 实读，直击“金丝雀只测单点”）**
+- 按**调用栈把测试映射到被变异函数**（只跑相关测试）+ 可选 coverage 收窄（`mutate_only_covered_lines`，尊重 `# pragma: no cover`）；增量缓存、断点续跑、`mutmut browse` TUI 逐幸存者审阅、`export-cicd-stats`/badge 出变异分数、并行、forkserver 隔离、mypy 过滤等价候选。
+- **硬限制：基于 fork，POSIX only，Windows 需 WSL**（你的环境是 win32——必须在 WSL/Linux CI 跑）。
+
+**变异分数作为 KPI 的争议**
+- 反方最新实证：[arXiv:2606.10417](http://arxiv.org/abs/2606.10417)（2026-06）"Beyond Coverage and Kill Scores"——coverage 与 kill score 是“实现中心”度量，10 个 Java 库 8,922 方法实测 **17.5% 的预期行为完全未被任何测试覆盖**（行为缺口），即高分≠行为正确。
+- 经典批评（文献共识，非今日新证）：等价变异体不可杀、trivial 变异体拉高分、算子集无标准、成本高；2025-26 趋势是 LLM 生成更真实变异体 + 增量执行。相关近期论文：[arXiv:2309.02389](http://arxiv.org/abs/2309.02389) Contextual Predictive Mutation Testing。Google 工业实践（ICSE-SEIP 2021 "State of Mutation Testing at Google"）定性结论是**定向审计而非全库硬 KPI**【链接待确认，今日 arXiv 未检索到该篇】。
+- **落点**：变异分数适合当“**趋势型审计指标**”（每次 store 决策树逻辑改动后跑、盯幸存者清单），不适合当 per-commit 门禁 KPI。
+
+### Q3 契约式设计（icontract / deal）
+
+**现状（API 实测）**
+- [Parquery/icontract](https://github.com/Parquery/icontract)：416 stars，**v2.7.3（2026-01-29）**，MIT。push 停在 2026-01（8 个月）。**CI 实测矩阵只到 Python 3.8–3.13，无 3.14**；PyPI classifiers 更是停在 3.9。icontract 靠读取 lambda **字节码**反解条件，对 CPython 字节码变更敏感 → **3.14 兼容【待确认，风险中高】**。
+- [life4/deal](https://github.com/life4/deal)：915 stars，4.24.6（2025-11-30），MIT；**CI 实测矩阵只到 3.12**。特性：pre/post/invariant、异常/副作用跟踪（`raise=`/`pure=`）、内建 property-based 测试桥、**deal-solver（z3 静态检查，实验性）**。节奏慢、矩阵滞后。
+
+**运行时开销（官方基准页实测数据，[benchmarks](https://icontract.readthedocs.io/en/latest/benchmarks.html)）**
+- icontract 每次 **约 1.5–4.5 μs**（前置 3.91 μs / 后置 4.39 μs / invariant 2.04 μs）；裸内联 assert 0.15–0.28 μs；deal 约 1.0–4.7 μs。对纳秒级函数放大明显，对 cbb2 这种“写档+哈希”毫秒级路径**可忽略**。
+- 适配性：icontract 支持继承弱化前置/强化后置、`snapshot`（old 值）、违约信息带源码与变量值；且**被 CrossHair 官方集成**（README 实读）——契约可同时被运行时与符号执行双查。
+
+**结论**：工具可用但都未官宣 3.14。cbb2 的 `write_decision` 强制建议：**测试期**用 icontract（若本地 3.14 实测通过）或干脆用“契约写成 Hypothesis invariant”，**生产路径不挂装饰器**（省开销+省兼容风险）。
+
+### Q4 模糊测试（Atheris / Hypothesis 对 JSON gate）
+
+**现状（API 实测）**
+- [google/atheris](https://github.com/google/atheris)：1,680 stars，Apache-2.0，v3.1.0（2026-06-17）。README 实读：**支持 Linux(32/64) 与 macOS，Python 3.11–3.14；PyPI 3.1.0 wheels 实测含 cp312/cp313/cp314**。libFuzzer 覆盖率引导，可插桩 str 方法、接 OSS-Fuzz。**无 Windows**——win32 需 WSL 或 Linux CI。
+- [python-jsonschema/hypothesis-jsonschema](https://github.com/python-jsonschema/hypothesis-jsonschema)：280 stars，MPL-2.0，push 2025-12-05；**PyPI 最后发版 0.23.1（2024-02-28），classifiers 停在 3.11** → 半停滞，3.14【待确认】。原理是从 JSON Schema 生成合规+边界的 JSON 实例喂给 `@given`。
+
+**对 cbb2 gate 的两种打法**
+- gate 若已有 JSON Schema：`hypothesis-jsonschema` 直接生成对抗实例（缺字段/超长字符串/深度嵌套/NaN/非法 UTF-16 代理对——atheris 文档专门提 `ConsumeUnicodeNoSurrogates` 处理 Windows 路径类真实痛点）。
+- gate 若无 schema：纯 Hypothesis `st.recursive` 生成任意 JSON 形状（零依赖、3.14 无忧），断言"gate 永不抛未分类异常、输出要么 None 要么合法记录档”。
+- 字节级/内存级深挖（超出 Python 层）才需要 Atheris，且只能放 Linux CI。
+
+### Q5 轻量状态机建模与检查
+
+**现状（API 实测）**
+- [fgmacedo/python-statemachine](https://github.com/fgmacedo/python-statemachine)：1,317 stars，**v3.2.1（2026-08-01）**，MIT，push 2026-09-14，PyPI classifiers **含 3.14**。README 实读：`cond=`/`unless=` 守卫、同事件多迁移按声明序优先、自动迁移（guard 满足自动触发）、`StateChart`（SCXML 风格，支持 final state、并行状态、active configuration）、可出 Markdown/图表。**活跃，3.14 就绪**（[docs](https://python-statemachine.readthedocs.io/en/latest/) 200 OK）。
+- [pytransitions/transitions](https://github.com/pytransitions/transitions)：6,594 stars，v0.9.3（2025-07-02），MIT，push 2025-09（约一年缓速）；PyPI classifiers 到 3.13。功能：conditional transitions、check transitions、嵌套/并行。**注意：其 readthedocs 站今天实测 404（docs 站当前不可达，仓库本身活着）**。
+- **[pschanely/CrossHair](https://github.com/pschanely/CrossHair)**（问题外的关键补充）：1,333 stars，**v0.0.110（2026-08-16）**，push **2026-09-26（今天）**，PyPI classifiers **3.8–3.15 含 3.14**。用符号执行**离线检查**契约/断言：`crosshair check` 静态扫全函数路径、[diff_behavior](https://crosshair.readthedocs.io/en/latest/diff_behavior.html) 对两实现找行为差异、还能从契约**生成单测**。这是“Python 生态内最接近轻量模型检查”的东西。
+
+**三态迁移值得建模吗——成本收益判断**
+- 找不到严格的“成本收益实测案例”公开研究【待确认】。但可算账：cbb2 的状态机是** 3 个状态 + 2 个终态集合 + 隔离区**的小状态机，规则集 ≤10 条。引入 python-statemachine 当运行时框架 = 改造生产代码、收益（守卫集中化）小于风险；**引入 CrossHair/Hypothesis stateful 当离线检查器 = 零生产改动、直接复用现有 56 个手写单测里的隐式迁移表**。结论：不换运行时，用测试端建模。真正值得符号化验证的只有 2–3 条核心不变式（链连续、隔离区终态、晋升单向），用 CrossHair 对这几个函数跑即可。
+
+### Q6 数据管线测试思想（dbt / GX / pandera）
+
+**现状（API 实测）**
+- [dbt-labs/dbt](https://github.com/dbt-labs/dbt)（原 dbt-core 已并入该仓库）：13,933 stars，Apache-2.0，push 2026-09-26。[tests 文档](https://docs.getdbt.com/docs/build/tests)实读，核心思想可直接移植：
+  - 测试 = **返回“失败行”的 select**；0 行即通过。任何断言可写成“找出违反它的行"。
+  - **generic tests 四件套**：`unique` / `not_null` / `accepted_values` / `relationships`（跨表引用完整性）+ **singular tests**（一次性业务断言，如"总支付额不得为负"）。
+  - 实践建议：**每个模型的主键必须挂 unique+not_null**；对源数据假设挂测试；失败行可 `store_failures` 落库审计。
+- [great-expectations](https://github.com/great-expectations/great-expectations)：PyPI v1.23.2（2026-09-25，很活跃），Apache-2.0，**但 `requires_python = <3.14` → 3.14 不兼容，工具本身排除**。
+- [unionai-oss/pandera](https://github.com/unionai-oss/pandera)：4,467 stars，MIT，v0.33.1（2026-09-01），classifiers **含 3.14**。docs 实读：`DataFrameModel` 声明式 schema + Check，`lazy=True` 聚合全部违例成结构化报告（SCHEMA/DATA 分组），**`pandera[strategies]` 可从 schema 反向生成 property-based 测试数据**——与 Q1 正好闭环。
+
+---
+
+## B. 对 cbb2 的接入建议（property 形状）
+
+**分层**：决策树五分支→`@given` 分支判定性 property；三态迁移→`RuleBasedStateMachine`（含模型对照）；HASHES 链→代数性质；gate→对抗 JSON 生成；金丝雀升级→mutmut 定向审计；jsonl 数据面→dbt 式 failing-rows 审计。
+
+### B1. store 写入决策树（五分支）
+
+```python
+# 1) 完备性与互斥性：write 决策必须是五分支之一（决策表穷尽性）
+@given(record=record_strategy(), store=valid_store_strategy())
+def test_write_decision_is_total(record, store):
+    outcome = store.write_decision(record)          # 让 write 返回分支枚举
+    assert outcome in {IDENTITY_MATCHED, ASSERT_BIT_SPLIT, STMT_BIT_SPLIT,
+                       COMPLEMENT_INVAL, TRUE_CONTRA}
+
+# 2) 身份键匹配 → 幂等：同一身份键重复写入不产生新件、不改变任何已有字节
+@given(rec=record_strategy())
+def test_identity_key_idempotent(rec):
+    s = Store(); s.write_decision(rec); snap = s.snapshot_bytes()
+    out2 = s.write_decision(rec)
+    assert s.snapshot_bytes() == snap and out2 is IDENTITY_MATCHED
+
+# 3) 断言位/陈述位二分 → 判定性：落位与位谓词一一对应（元变性质：
+#    手写单测给固定的对，property 遍历 2^k 位组合）
+@given(a=rec_strategy(), b=rec_strategy())
+def test_split_placement_matches_predicate(a, b):
+    s = Store(); s.write_decision(a); out = s.write_decision(b)
+    if shares_identity(a, b):
+        assert (out is ASSERT_BIT_SPLIT) == (assert_bit(a) != assert_bit(b))
+        assert (out is STMT_BIT_SPLIT) == (assert_bit(a) == assert_bit(b)
+                                           and stmt_bit(a) != stmt_bit(b))
+
+# 4) 失效记账 → 字节不动性（t_invalid 只登记，不动旧件字节）：
+@given(old=rec_strategy(), new=complement_of(old))
+def test_invalidation_preserves_bytes(old, new):
+    s = Store(); s.write_decision(old); snap = s.snapshot_bytes()
+    out = s.write_decision(new)
+    if out is COMPLEMENT_INVAL:
+        assert s.snapshot_bytes() == snap               # 逐字节相等
+        assert s.t_invalid[-1].target_id == old.id      # 只追加登记
+
+# 5) 真矛盾 → 可达且可区分：构造必然矛盾的对，断言进入真矛盾分支且
+#    既不失效也不合并（三分之第三支不可被前两支吞掉）
+```
+
+### B2. 三态迁移状态机（provisional→confirmed 经晋升；隔离区 pending→confirmed/rejected）
+
+```python
+class StoreMachine(RuleBasedStateMachine):
+    """规则=迁移；invariant=每步后检查的不变式；模型对照=双记账"""
+    def __init__(self):
+        super().__init__()
+        self.real, self.model = Store(), ModelStore()   # ModelStore = 10 行 dict 模型
+
+    @initialize(rec=rec_strategy())
+    def seed(self, rec): self.real.provision(rec); self.model.provision(rec)
+
+    @precondition(lambda self: self.real.can_promote())
+    @rule(rec=rec_strategy())
+    def promote(self, rec):                             # provisional→confirmed
+        self.real.promote(rec); self.model.promote(rec)
+
+    @precondition(lambda self: self.real.quarantine_pending())
+    @rule(rec=rec_strategy(), verdict=sampled_from(["confirmed", "rejected"]))
+    def quarantine_resolve(self, rec, verdict):         # pending→终态，不可逆
+        self.real.quarantine_resolve(rec, verdict); self.model.resolve(rec, verdict)
+
+    @invariant def promotion_is_one_way(self):          # 不变式：无 confirmed→provisional 回边
+        assert not self.real.has_downgrade_edge()
+    @invariant def model_agrees(self):                  # 不变式：双记账一致
+        assert self.real.state_map() == self.model.state_map()
+
+TestStoreMachine = StoreMachine.TestCase
+TestStoreMachine.settings = settings(max_examples=200, stateful_step_count=50, deadline=None)
+```
+要点：`@precondition` 精确编码迁移守卫（比 `assume` 省预算）；`@invariant` 每步检查；模型对照把 56 个手写单测的隐式期望显式化。**不要**为此引入 python-statemachine 改生产代码。
+
+### B3. 哈希链账本（prev_hash 链 + 幂等键跳过）
+
+```python
+# 链重算性质：verify == 从创世重算（委托给独立第二实现，避免同源 bug）
+@given(entries=st.lists(entry_strategy(), max_size=100))
+def test_chain_recomputes_from_genesis(entries):
+    ledger = build_ledger(entries)
+    assert ledger.verify() == recompute_chain(entries)
+
+# 幂等键性质：同键二次 append 至多追加一次（n1-n0 ∈ {0,1}），且跳过分支不改链尾
+@given(k=entry_key_strategy(), p=payload_strategy())
+def test_idempotent_key_appends_at_most_once(k, p):
+    l = Ledger(); l.append(k, p); n0, h0 = len(l), l.head_hash()
+    l.append(k, p)
+    assert len(l) - n0 <= 1
+    if len(l) == n0: assert l.head_hash() == h0      # 跳过时链不动
+
+# 篡改检测性质：翻转任意一环任一字节 → verify 失败（且能定位到该环）
+@given(data=st.data(), entries=st.lists(entry_strategy(), min_size=2, max_size=30))
+def test_any_byte_flip_detected(data, entries):
+    l = build_ledger(entries); blob = bytearray(l.to_bytes())
+    i = data.draw(st.integers(0, len(blob) - 1)); blob[i] ^= 0x01
+    assert not Ledger.from_bytes(bytes(blob)).verify()
+
+# 首尾哈希连接性质（dbt relationships 思想）：每环 prev_hash == 前环 hash
+@given(entries=st.lists(entry_strategy(), max_size=100))
+def test_prev_links(entries):
+    for a, b in zip(build_ledger(entries).entries, build_ledger(entries).entries[1:]):
+        assert b.prev_hash == a.hash
+```
+
+### B4. gate 输入档对抗性
+
+```python
+json_ish = st.recursive(
+    st.none() | st.booleans() | st.integers(-2**63, 2**63)
+    | st.floats(allow_nan=True, allow_infinity=True) | st.text(),
+    lambda ch: st.lists(ch, max_size=4) | st.dictionaries(st.text(), ch, max_size=4),
+    max_leaves=25)
+
+@given(doc=json_ish)
+def test_gate_total_and_safe(doc):
+    out = gate.parse(doc)                 # gate 输入档解析器
+    assert out is None or isinstance(out, GateRecord)   # 不抛未分类异常
+```
+- gate 若有 JSON Schema → 换 [hypothesis-jsonschema](https://github.com/python-jsonschema/hypothesis-jsonschema)（注意其 3.14 未声明，先在本地实测；不行就退回上面的 `st.recursive`）。
+- 需要覆盖引导/字节级 fuzz → Atheris 放 **Linux CI**（cp314 wheel 已实测存在；win 本机不可用）。
+
+### B5. 金丝雀升级为系统性判别力度量
+
+- 在 WSL/Linux CI 对 `store/`（决策树+账本模块）跑 `mutmut run`：只变异被测试调用到的函数、`mutate_only_covered_lines=true`、`# pragma: no mutate` 排除数据类样板。
+- 产出不是"分数上墙"，而是**幸存变异体清单**：每个幸存者翻译成一条新断言（多数正对应“金丝雀只测单点”没覆盖的对偶分支）；把 mutmut badge 当趋势指标，per-commit 只跑增量。
+- 现有 56 个手写单测作为 mutmut 的 baseline 套件，先测当前变异分数做基线，再谈提升。
+
+### B6. jsonl 数据面离线审计（dbt 思想，不引工具）
+
+```python
+# generic checks 移植：每个检查 = 返回失败行的纯函数；空列表 = 通过
+CHECKS = {
+  "unique":            lambda rows, col: dup_rows(rows, col),          # 主键唯一
+  "not_null":          lambda rows, col: [r for r in rows if r[col] is None],
+  "accepted_values":   lambda rows, col, vs: [r for r in rows if r[col] not in vs],  # 状态枚举
+  "relationships":     lambda rows, col, other, f: [r for r in rows
+                          if r[col] not in {o[f] for o in other}],     # 跨档引用完整
+}
+def audit(rows, plan):        # plan: [(check, args)]; store_failures 思想：落盘失败行供人工审
+    return {name: fn(rows, *args) for name, fn, args in plan if fn(rows, *args)}
+```
+每个 jsonl 档至少挂 `unique+not_null`（主键）+ `accepted_values`（状态字段）+ `relationships`（跨文件 id 引用）；`pandera`（3.14 就绪）可作为 schema 化封装的可选项。
+
+---
+
+## C. 排除项（明说）
+
+| 排除 | 理由 |
+|---|---|
+| **great-expectations（工具）** | PyPI 实测 `requires_python <3.14`，与你的 3.14 环境冲突；仅取其“ Expectation 失败行报告”思想 |
+| **icontract 上生产路径** | CI 实测仅 3.8–3.13，字节码反解对 3.14 未验证【待确认】+ 每次调用 1.5–4.5 μs；只在测试期用或改用 Hypothesis invariant 表达同一契约 |
+| **deal** | CI 矩阵仅到 3.12、发版节奏慢（2025-11 后停）；deal-solver 实验性 |
+| **Atheris 在 win 本机** | README 实测仅 Linux/macOS；只放 Linux CI，且 Python 层解析器用 Hypothesis 已够 |
+| **cosmic-ray** | classifiers 仅到 3.13；增量/栈追踪/TUI 体验不如 mutmut 3.8，选 mutmut |
+| **python-statemachine / transitions 作为 cbb2 运行时** | 状态机太小（≤10 规则），换运行时收益不抵改造风险；transitions 的 readthedocs 当前还 404。用 Hypothesis stateful + CrossHair 离线检查 |
+| **TLA+/Alloy** | 超出“轻量”范畴，cbb2 无并发/分布式语义，三条核心不变式用 CrossHair+stateful 可达同等置信度 |
+| **hypothesis-jsonschema（默认依赖）** | 发版停在 2024-02、3.14 未声明；仅当 gate 有 JSON Schema 且本地实测通过时启用 |
+| **dpcontracts / PyContracts** | 前者已死（icontract 基准里 50 μs 级），后者字符串 DSL 慢且难维护 |
+| **“变异分数=硬 KPI”** | [arXiv:2606.10417](http://arxiv.org/abs/2606.10417) 实证：kill score 是实现中心度量，存在 ~17.5% 行为盲区；只当趋势审计指标 |
+
+**一句话路线**：先上 Hypothesis（@given 覆盖 B1/B3/B4 + 一个 StoreMachine 覆盖 B2）→ Linux CI 加 mutmut 定向审计（B5）→ jsonl 面加 dbt 式审计函数（B6）→ 可选 CrossHair 对三条核心不变式做符号级双保险。全部默认依赖只有 hypothesis 一个（3.14 官宣支持）。

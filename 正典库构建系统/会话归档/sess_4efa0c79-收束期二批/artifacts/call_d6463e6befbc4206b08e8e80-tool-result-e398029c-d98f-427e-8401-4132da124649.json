@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T15:10:17.343Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.contract — 契约 v3：profile 加载 + 断言/陈述位分类 + 时间位校验（U-A01）。\n\n六库 profile 草案见 profiles/（_review 栏=待人工审定标记）。\n分类保守序：unclassified → 按 immutable 处理（真矛盾走闸，绝不自动失效——R10 攻击面封堵）。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport re\nfrom pathlib import Path\n\nPROFILE_DIR = Path(__file__).resolve().parent / \"profiles\"\nPSEUDO_RE = re.compile(r\"^\\d{4}-\\d{2}-\\d{2}$|^ch\\d{1,5}$\", re.IGNORECASE)\n_cache: dict = {}\n\nKEYS = (\"assertion_fields\", \"statement_fields\", \"mutable_assertions\", \"immutable_assertions\")\n\n\ndef load_profile(library: str) -> dict:\n    if library in _cache:\n        return _cache[library]\n    p = PROFILE_DIR / f\"{library}.json\"\n    if not p.exists():\n        raise KeyError(f\"缺 profile: {library}（cbb2/profiles/{library}.json）\")\n    prof = json.loads(p.read_text(encoding=\"utf-8\"))\n    for k in KEYS:\n        prof.setdefault(k, [])\n    prof.setdefault(\"identity\", {\"entity\": \"name\", \"relation\": \"triple\", \"default\": \"record_id\"})\n    _cache[library] = prof\n    return prof\n\n\ndef field_kind(profile: dict, field: str) -> str:\n    \"\"\"statement | mutable | immutable | unclassified。\"\"\"\n    if field in profile[\"statement_fields\"]:\n        return \"statement\"\n    if field in profile[\"mutable_assertions\"]:\n        return \"mutable\"\n    if field in profile[\"immutable_assertions\"]:\n        return \"immutable\"\n    if field in profile[\"assertion_fields\"]:\n        return \"immutable\"  # 声明为断言但未定可变性：保守按不可变\n    return \"unclassified\"\n\n\ndef classify_conflicts(profile: dict, incoming: dict, stored: dict) -> list[dict]:\n    \"\"\"v3 比对域=双方 canonical 同键（扣除身份键 name）；返回 {field, kind, in, stored} 排序清单。\"\"\"\n    ca, cb = incoming.get(\"canonical\") or {}, stored.get(\"canonical\") or {}\n    out = []\n    for k in sorted((set(ca) & set(cb)) - {\"name\"}):\n        if ca[k] != cb[k]:\n            out.append({\"field\": k, \"kind\": field_kind(profile, k), \"in\": ca[k], \"stored\": cb[k]})\n    return out\n\n\ndef check_time_fields(record: dict, *, writing: bool) -> list[str]:\n    \"\"\"宽容读旧：读路径（writing=False）缺时间位不报错；写路径缺 at 报错（D-2/D-24，禁墙钟）。\"\"\"\n    if not writing:\n        return []\n    if not record.get(\"at\"):\n        return [\"缺 at（v3 写路径强制，伪锚点日历取值）——禁墙钟\"]\n    return []\n\n\ndef is_pseudo_date(v) -> bool:\n    return bool(PSEUDO_RE.match(str(v)))\n",
+      "afterContentLength": 2250,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\contract.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_d6463e6befbc4206b08e8e80",
+  "toolName": "Write",
+  "version": 1
+}

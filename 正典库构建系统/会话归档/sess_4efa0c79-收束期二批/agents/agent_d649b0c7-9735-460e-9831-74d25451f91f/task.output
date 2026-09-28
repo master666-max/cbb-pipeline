@@ -1,0 +1,124 @@
+调研完成。共检索 arXiv API 10 组查询 + WebSearch 验证 2 组，覆盖 6 题、约 40 篇 2025-2026 文献。以下为报告。
+
+---
+
+# CBB 知识抽取管线 SOTA 预调研报告（2026-09）
+
+**可信度标注**：高=已读 arXiv 摘要页/API 原文确认；中=搜索结果摘要，未逐字核对原文；低=有疑点（撤稿/占位符），已注明。
+
+## A. 逐题发现
+
+### 1. Schema-guided / 受控抽取 SOTA
+
+- **Schema 本身是可优化对象，不只是约束**。PARSE（EMNLP 2025 Industry Track，[arXiv:2510.08623](https://arxiv.org/abs/2510.08623)，2025-10-08，可信度高）：把 JSON schema 当作“可改进的合同”，ARCHITECT 自动优化 schema 使其更利于 LLM 消费，SCOPE 加反思式抽取护栏；SWDE 上抽取准确率最高 +64.7%，首次重试错误降 92%。**直接含义：词表/schema 的措辞质量对抽取精度的影响可能大于提示词微调。**
+- **受控解码只保语法不保语义**。多源一致：5 个小模型 14 任务实测，约束解码使 schema 合法率到 100% 但语义缺口仍在（[arXiv:2609.23742](https://arxiv.org/abs/2609.23742)，2026-09-20）；SE 实证研究结论“语法工具必要但不充分”（[arXiv:2606.09395](https://arxiv.org/abs/2606.09395)，2026-06-08）；JSONSchemaBench 系统评测 6 种约束解码框架（[arXiv:2501.10868](https://arxiv.org/abs/2501.10868)，2025-01-18）。可信度高。
+- **“格式税”主要来自提示层而非解码器**。The Format Tax（[arXiv:2604.03616](https://arxiv.org/abs/2604.03616)，2026-04-04）：提示中要求格式（而非 decoder 约束）造成大部分精度损失；“先自由推理、再格式化”可收回大部分。另有 44 模型普查：结构化输出显著压缩答案多样性（[arXiv:2607.18476](https://arxiv.org/abs/2607.18476)，2026-07-20）。可信度高。
+- **Schema 键名是指令通道**。Schema-Key Wording（AACL-IJCNLP 2026，[arXiv:2604.14862](https://arxiv.org/abs/2604.14862)，2026-04-16）：仅改动 schema 键的措辞就会显著移动 GSM8K/Math500 准确率，且提示与 schema 交互非加性。可信度高。
+- **Schema 演化管理已有闭环范式**：DIAL-KG（DASFAA 2026，[arXiv:2603.20059](https://arxiv.org/abs/2603.20059)，2026-03-20）：增量建图三阶段循环——双轨抽取→验证→Schema Induction + “演进意图评估”指导下轮构建；AgentCAT（[arXiv:2602.18479](https://arxiv.org/abs/2602.18479)，2026-02-10）：schema 治理管线 + 渐进式 schema 演化，跨约 800 篇文献。可信度高。
+- **安全警示**：约束解码的枚举/字典约束本身是越狱攻击面，DictAttack 在旗舰模型上 94.3-99.5% 攻击成功率（CCS 2026，[arXiv:2503.24191](https://arxiv.org/abs/2503.24191)，2025-03-31）。可信度高。
+
+### 2. 动态/自适应提示
+
+- **提示优化器已成熟且有 IC 类背书**：GEPA（ICLR 2026 Oral，[arXiv:2507.19457](https://arxiv.org/abs/2507.19457)，v1 2025-07-25/v2 2026-02-14）：反思式提示进化，胜 GRPO 平均 6%（最高 20%）且 rollout 少 35 倍，胜 MIPROv2 超 10%；但原文基准不含 IE 任务。可信度高。
+- **按输入特征逐例适配提示在 IE 上有直接证据**：One Prompt Does Not Fit All（[arXiv:2609.21626](https://arxiv.org/abs/2609.21626)，2026-09-18）：分层内外双循环按“用户画像”逐例改写抽取提示，292 用户基准成功率 74.58%，超最强基线 13.56 点；RLMOpt（[arXiv:2608.10471](https://arxiv.org/abs/2608.10471)，2026-08-11）：LM 自驱优化策略，含临床 IE（Chia），11 组种子对比 9 胜 GEPA。可信度高。
+- **动态少样本选择在抽取类任务上多数有效但有明确反例**：有效例——两阶段 DFSL 筛选（便宜模型初筛+强模型复检低置信，[arXiv:2512.11261](https://arxiv.org/abs/2512.11261)，2025-12-12）；codebook 引导 RAG + 动态少样本标注 F1 0.928（[arXiv:2512.08659](https://arxiv.org/abs/2512.08659)，2025-12-09）；IoT 评论抽取 >97% P/R（[arXiv:2601.00372](https://arxiv.org/abs/2601.00372)，2026-01-01）。反例——临床决策任务上“定向匹配的动态少样本”并不稳定胜过随机选例，匹配示例可能牺牲多样性，效果依任务/模型而异（[arXiv:2512.22966](https://arxiv.org/abs/2512.22966)，v2 2026-08-09）。可信度高。
+
+### 3. 闭环抽取（缺口/查询驱动）
+
+**坦白结论：没有找到成熟的“知识缺口驱动抽取”命名范式或端到端系统，只有零散相邻件。**
+
+- 最接近的真实闭环：DIAL-KG（同上，2026-03-20）——验证后的知识反馈驱动 schema 演化与下轮抽取，是“库的状态决定下一轮抽什么”的最完整实现。可信度高。
+- 查询驱动抽取作为运行时机制：IE as Cache（[arXiv:2604.14930](https://arxiv.org/abs/2604.14930)，2026-04-16）：把 IE 当作代理推理的“认知缓存”，查询触发按需抽取+缓存维护；Q2IT 长文档查询驱动多模态抽取（[arXiv:2608.22214](https://arxiv.org/abs/2608.22214)，2026-08-23）。可信度高（摘要级）。
+- 缺口预测驱动预取：Streaming Knowledge Compilation（[arXiv:2606.09877](https://arxiv.org/abs/2606.09877)，2026-06-03）：从流式信号预测“知识缺口”主动装填，附后悔界；单作者、摘要级，可信度中。
+- 主动学习侧：LLM4EA（NeurIPS 2024，[arXiv:2405.16806](https://arxiv.org/abs/2405.16806)，2024-05-27）：按结构价值优先挑选实体让 LLM 标注。可信度高。
+- 注意：ACE-GraphRAG（gap-aware context 精化，[arXiv:2608.01269](https://arxiv.org/abs/2608.01269)）**已撤稿，不可引用**。
+
+### 4. 长篇小说/叙事专用抽取
+
+- **中文小说最直接相关**：Dialogue-Based Multi-Dimensional Relationship Extraction from Novels（NLPCC 2025，[arXiv:2507.04852](https://arxiv.org/abs/2507.04852)，2025-07-07）：中文小说关系抽取数据集（填补中文文学标注稀缺），关系维度分离+对话构造+ICL。可信度高。这是检索到的**唯一**一篇中文小说 LLM 关系抽取。
+- **整本长篇的指代/别名**：整本法语长篇（28.5 万 token）指代消解标注库+可扩展模块化管线，下游能推断角色性别（[arXiv:2510.15594](https://arxiv.org/abs/2510.15594)，2025-10-17）；评测应按链长拆分（主角链/配角链/单例）否则单一分数误导（[arXiv:2401.00238](https://arxiv.org/abs/2401.00238)，2023-12-30）。可信度高。
+- **角色状态/一致性**：ChronoQA 基准 + E²RAG 实体-事件双图保持时序因果一致，角色一致性查询增益最大（[arXiv:2506.05939](https://arxiv.org/abs/2506.05939)，2025-06-06）；NarrativeFactScore 用“角色知识图”验证 >100K token 叙事摘要事实性（Agent-as-Judge，[arXiv:2501.09993](https://arxiv.org/abs/2501.09993)，2025-01-17）；故事时间感知 KG 防人设漂移（[arXiv:2512.07474](https://arxiv.org/abs/2512.07474)，2025-12-08）。可信度高。
+- **诚实的负结果**：冻结 KG 引导 9B 小模型做 30 本侦探小说推理，图路由 53.85% vs 近窗基线 46.15%，但 Holm 校正后无差异，作者自认探索性（[arXiv:2609.22939](https://arxiv.org/abs/2609.22939)，2026-09-19）。可信度高——**提示“KG 增益在小模型叙事推理上尚无严格证据”**。
+- **未找到**：中文超长网文（数百章级）事件/伏笔抽取的专门工作；"character state tracking"作为命名 benchmark 在 2025-2026 仍缺位。
+
+### 5. 上下文工程共识
+
+- **权威综述**：A Survey of Context Engineering for LLMs（[arXiv:2507.13334](https://arxiv.org/abs/2507.13334)，2025-07-17，1400+ 篇）：上下文工程=对信息载荷的系统化优化；关键论断——模型“理解复杂上下文”远强于“生成长输出”，理解/抽取类任务是更成熟的一侧。可信度高。
+- **滚动摘要 vs 实体卡 vs 检索组装的最接近对照证据**：Context by Distinct Information（[arXiv:2607.10441](https://arxiv.org/abs/2607.10441)，2026-07-11）：按“任务如何依赖过去”分三层——新颖性门控的内容寻址缓存（实体卡类）+ 递归状态（滚动摘要类）+ 近期窗口（局部性），达到全注意力效果只用约一半 token；**共识方向是混合而非单选**。可信度高。
+- **压缩状态优于原始记录**：对抗 POMDP 中程序化状态抽象的每 token 回报最高（较原始观测最高 +76%）（[arXiv:2605.16205](https://arxiv.org/abs/2605.16205)，2026-05-15）。可信度高。
+- **生产级对照**：Mem0（实体/图式记忆）对全上下文：token 省 90%+、p95 延迟降 91%，图变体再 +2%（[arXiv:2504.19413](https://arxiv.org/abs/2504.19413)，2025-04-28）；依赖图选择性取上下文使编辑一致性 56%→76% 且更省 token（LEDGER，[arXiv:2606.28379](https://arxiv.org/abs/2606.28379)，2026-06-19）；上下文策略化可省 token 19-53%（[arXiv:2606.25656](https://arxiv.org/abs/2606.25656)，2026-06-24）。可信度高。
+- **多阶段管线的指代漂移**：上下文在管线级联传递时，“上一章/前文”类指代表达会漂移，准确率从低于随机到近乎满分不等；**每阶段显式化指代对象**（[arXiv:2609.12162](https://arxiv.org/abs/2609.12162)，2026-09-10）。可信度高——对 CBB“子代理逐章+证据门”结构直接适用。
+- **未找到**：严格单变量对照“滚动摘要 vs 实体卡”的同题实测论文；上述为最接近证据。
+
+### 6. 蒸馏/小模型分层抽取
+
+- **生产级路由实测**：UCCI（[arXiv:2605.18796](https://arxiv.org/abs/2605.18796)，2026-05-11）：7.5 万查询生产 NER 负载，token 级边际不确定性校准路由，成本降约 31%、micro-F1 保持 0.91。可信度高。**这是与小模型跑量+大模型兜底最匹配的实测。**
+- **级联不总是最优**：决策论刻画显示轻量前置路由可胜过阈值级联（级联先付了便宜模型的成本）（[arXiv:2605.06350](https://arxiv.org/abs/2605.06350)，2026-05-07）；Conformal Cascade 给免训练的分布无关保真担保（[arXiv:2607.25018](https://arxiv.org/abs/2607.25018)，2026-07-27）。可信度高/中。
+- **蒸馏到 7-8B 跑文档级关系抽取**：CONSISTRE，教师推理迹蒸馏 + 一致性奖励（SFT+GRPO），缩小与专有模型差距且推理成本更低（[arXiv:2607.24312](https://arxiv.org/abs/2607.24312)，2026-07-27）。可信度高（摘要级）。
+- **小模型+自动提示/微调可胜大模型**：APO+人工在环→微调 Qwen2.5/LLaMA3 在 SDoH 抽取 Macro-F1 88.8-90.3 胜 GPT-4o-APO，标注省 80%（[arXiv:2507.07421](https://arxiv.org/abs/2507.07421)，2025-07-10）；自提示 Qwen2.5-14B+DPO 达 0.864 F1（[arXiv:2605.04221](https://arxiv.org/abs/2605.04221)，2026-05-05）；7B 后处理结构化层 schema 准确率 99.5%，超 Claude-3.5 约 20-25 点（SLOT，[arXiv:2505.04016](https://arxiv.org/abs/2505.04016)，2025-05-06）。可信度高（摘要级）。
+- 存疑不引：Signed Rescue Routing（[arXiv:2609.07786](https://arxiv.org/abs/2609.07786)）摘要含 TBD 占位结果。
+
+## B. 对 CBB 的可执行建议（按性价比排序）
+
+1. **用 GEPA 类优化器自动化 L2/L3 提示词阶梯，以确定性证据门通过率作奖励信号**（替代机制③的人工阶梯演进）。CBB 独有优势：引文逐字回落门天然是一个无噪声、免人工的 reward——这正是绝大多数抽取系统跑提示优化器的最大障碍。代价：每次优化需数百次 LLM 调用；须加“优化后回归闸”（有文献显示优化器会回退，见 Q2 反例与 PACE）。
+2. **词表缺口从“攒 50 攒批”改为“实时缺口队列 + 演进意图评估 + 下批生效”**，保留批中冻结不变（替代机制④）。DIAL-KG 的三阶段闭环是现成范式；同时按 PARSE 的发现，升级词表时把“schema 措辞优化”纳入流程（schema 措辞对精度的影响可到数十个点）。代价：每章抽取后追加轻量缺口提案步骤；词表版本管理 CBB 已具备。
+3. **上下文包重组为“实体卡 + 新颖性门控 + 近期窗口”三层混合，并把别名/代词映射显式写入包内**（调整机制②的内部结构，≤2K 预算可不变）。依据：混合结构省一半 token 保持效果（Q5）、跨阶段指代漂移须显式化（Q5）、压缩状态每 token 回报最高（Q5）。注意：**≥ 100 章跨度的 KG 辅助增益尚无严格显著证据**（Q4 负结果），不要指望上下文包解决全书级一致性。
+4. **引入小模型跑量 + 校准升级路由的双层抽取**（扩展机制①的调度员：按章/按单元路由模型档位）。UCCI 实测 -31% 成本、F1 持平；CBB 的证据门失败/降级事件就是免费的置信信号，无需额外训练校准器即可起步。代价：双模型运维+路由阈值调参；“前置路由可能优于后验级联”（Q6）提示应按章节特征预判难度（如对话密度、新出场角色数）。
+5. **输出侧考虑“自由推理 → 再结构化”两段式**（调整机制③输出规范）。格式税主要来自提示内格式要求而非解码器（Q1）；可用 SLOT 式 7B 小模型做廉价后处理层。同时明确预期：JSON/schema 约束只消灭格式失败，**不减少幻觉**——CBB 的证据门仍不可省。
+6. （较大手术，可选）**事件图与伏笔结构同构**：E²RAG 的实体-事件双图 + 故事时间感知（Q4）与 CBB 的伏笔抽取天然契合，事件图可承载“伏笔埋设→回收”的时序因果链。代价：三态库 schema 扩展，建议等 1-5 条见效后再动。
+
+## C. 颠覆性候选清单
+
+1. **“证据门作 reward 的提示-schema 共进化闭环”**（GEPA + PARSE + DIAL-KG 三者合并）：若成立，可整体替代人工 L0-L3 阶梯和人工判例维护——机制③④被自动化取代。这是对 CBB 现行演进方式颠覆性最大、且 CBB 条件最适配（已有确定性验证器）的候选。
+2. **“词表即提示词”效应**（Schema-Key Wording + Constrained Decoding Attack）：受控词表的枚举项措辞会系统性偏移抽取结果，且枚举约束可被利用为攻击面。对 CBB 意味着：四面防御中“输出侧禁词”若与词表枚举绑定，存在被措辞诱导绕过的风险；词表评审需要增加“措辞偏置审计”维度。
+3. **角色知识图第二验证轴**（NarrativeFactScore）：在逐字引文门之外，用从原文抽取的 CKG 交叉验证抽取结果的语义一致性——可捕捉“引文真实但解读错误”这一逐字回落验证的盲区。
+4. **查询驱动惰性抽取**（IE as Cache）：与 CBB“逐章全量抽取”相反的路线——按下游查询/缺口按需抽取。作为全量管线的补充（对低价值章节降采样）比整体替换更现实。
+
+## D. 明确未找到（不许编的部分）
+
+- “知识缺口驱动抽取/摄取”作为命名范式或成熟端到端系统：**未找到**，只有 DIAL-KG 闭环 schema 演化、LLM4EA 主动标注、IE-as-Cache 查询驱动等相邻件；唯一 gap-aware RAG 论文已撤稿。
+- 中文超长网文（数百章级）的伏笔/事件抽取专门工作：**未找到**（arXiv 仅有 NLPCC 2025 中文小说对话关系抽取一篇）。
+- "character state tracking" 2025-2026 命名 benchmark：**未找到**，最接近为 ChronoQA 一致性评测与 CKG 事实验证。
+- 滚动摘要 vs 实体卡 vs 检索组装的严格单变量同题实测：**未找到**；最接近为 Context by Distinct Information（混合架构）与 Mem0（对全上下文）。
+- GEPA 在 IE/结构化输出任务上的官方基准数字：原文摘要未含 IE 任务，其 IE 有效性属外推。
+
+Sources:
+- [PARSE: LLM Driven Schema Optimization (arXiv:2510.08623)](https://arxiv.org/abs/2510.08623)
+- [JSONSchemaBench (arXiv:2501.10868)](https://arxiv.org/abs/2501.10868)
+- [The Format Tax (arXiv:2604.03616)](https://arxiv.org/abs/2604.03616)
+- [Schema-Key Wording (arXiv:2604.14862)](https://arxiv.org/abs/2604.14862)
+- [Constrained Decoding Scale Gap (arXiv:2609.23742)](https://arxiv.org/abs/2609.23742)
+- [Structured Output Collapses Diversity (arXiv:2607.18476)](https://arxiv.org/abs/2607.18476)
+- [DIAL-KG (arXiv:2603.20059)](https://arxiv.org/abs/2603.20059)
+- [AgentCAT (arXiv:2602.18479)](https://arxiv.org/abs/2602.18479)
+- [Constrained Decoding Attack (arXiv:2503.24191)](https://arxiv.org/abs/2503.24191)
+- [GEPA (arXiv:2507.19457)](https://arxiv.org/abs/2507.19457)
+- [One Prompt Does Not Fit All (arXiv:2609.21626)](https://arxiv.org/abs/2609.21626)
+- [RLMOpt (arXiv:2608.10471)](https://arxiv.org/abs/2608.10471)
+- [DFSL Screening (arXiv:2512.11261)](https://arxiv.org/abs/2512.11261)
+- [MOSAIC (arXiv:2512.08659)](https://arxiv.org/abs/2512.08659)
+- [Clinical Prompting Counter-evidence (arXiv:2512.22966)](https://arxiv.org/abs/2512.22966)
+- [IE as Cache (arXiv:2604.14930)](https://arxiv.org/abs/2604.14930)
+- [Q2IT (arXiv:2608.22214)](https://arxiv.org/abs/2608.22214)
+- [Streaming Knowledge Compilation (arXiv:2606.09877)](https://arxiv.org/abs/2606.09877)
+- [LLM4EA (arXiv:2405.16806)](https://arxiv.org/abs/2405.16806)
+- [Chinese Novel Relation Extraction NLPCC 2025 (arXiv:2507.04852)](https://arxiv.org/abs/2507.04852)
+- [French Fiction Coreference (arXiv:2510.15594)](https://arxiv.org/abs/2510.15594)
+- [Coreference Eval by Chain Length (arXiv:2401.00238)](https://arxiv.org/abs/2401.00238)
+- [ChronoQA / E2RAG (arXiv:2506.05939)](https://arxiv.org/abs/2506.05939)
+- [NarrativeFactScore (arXiv:2501.09993)](https://arxiv.org/abs/2501.09993)
+- [Living the Novel (arXiv:2512.07474)](https://arxiv.org/abs/2512.07474)
+- [Beyond Linear Context (arXiv:2609.22939)](https://arxiv.org/abs/2609.22939)
+- [Context Engineering Survey (arXiv:2507.13334)](https://arxiv.org/abs/2507.13334)
+- [Context by Distinct Information (arXiv:2607.10441)](https://arxiv.org/abs/2607.10441)
+- [POMDP Context Study (arXiv:2605.16205)](https://arxiv.org/abs/2605.16205)
+- [LEDGER (arXiv:2606.28379)](https://arxiv.org/abs/2606.28379)
+- [Mem0 (arXiv:2504.19413)](https://arxiv.org/abs/2504.19413)
+- [Deixis in Pipelines (arXiv:2609.12162)](https://arxiv.org/abs/2609.12162)
+- [UCCI (arXiv:2605.18796)](https://arxiv.org/abs/2605.18796)
+- [Is Escalation Worth It (arXiv:2605.06350)](https://arxiv.org/abs/2605.06350)
+- [Conformal Cascade (arXiv:2607.25018)](https://arxiv.org/abs/2607.25018)
+- [CONSISTRE (arXiv:2607.24312)](https://arxiv.org/abs/2607.24312)
+- [SynthEHR (arXiv:2507.07421)](https://arxiv.org/abs/2507.07421)
+- [Self-Prompting SLM (arXiv:2605.04221)](https://arxiv.org/abs/2605.04221)
+- [SLOT (arXiv:2505.04016)](https://arxiv.org/abs/2505.04016)

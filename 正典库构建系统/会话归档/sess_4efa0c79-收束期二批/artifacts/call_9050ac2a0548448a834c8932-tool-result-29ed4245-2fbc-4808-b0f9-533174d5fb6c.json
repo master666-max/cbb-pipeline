@@ -1,0 +1,53 @@
+{
+  "createdAt": "2026-09-27T15:46:33.052Z",
+  "files": [
+    {
+      "beforeContent": "\"\"\"cbb2.quarantine — 隔离区（R14；数据格式与 v1 逐字节兼容——同 items.jsonl 可互操作）。\"\"\"\nfrom __future__ import annotations\n\nimport contextlib\nimport hashlib\nimport json\nfrom datetime import date\nfrom pathlib import Path\n\nGROUPS = (\"unresolved_time\", \"missing_anchor\", \"ambiguous_reference\",\n          \"entity_unalignable\", \"low_confidence\", \"out_of_scope\")\nSUBCLASSES = (\"contradiction_pending\", \"extrapolation_unverified\", \"overdue_omission\")\nGROUP_TO_SUBCLASS = {\n    \"unresolved_time\": \"overdue_omission\",\n    \"entity_unalignable\": \"contradiction_pending\",\n    \"low_confidence\": \"extrapolation_unverified\",\n}\n\n\n@contextlib.contextmanager\ndef adjudicate_lock(root: Path):\n    \"\"\"G25：adjudicate 读-改-写全程文件锁（单写者语义）。\n    Windows=msvcrt.locking 阻塞锁；POSIX=fcntl.flock；两者皆缺→无锁直行\n    （显式降级语义，调用面经 exceptions 面知晓——当前无双缺平台在役）。\n    锁文件=同目录 adjudicate.lock，随库落盘（幂等 touch）。\"\"\"\n    lock_path = Path(root) / \"adjudicate.lock\"\n    lock_path.touch(exist_ok=True)\n    f = open(lock_path, \"r+\", encoding=\"utf-8\")  # noqa: SIM115 — 锁生命周期=with 体\n    locked = False\n    try:\n        try:\n            import msvcrt\n            f.seek(0)\n            msvcrt.locking(f.fileno(), msvcrt.LK_LOCK, 1)  # 阻塞至获取\n            locked = \"msvcrt\"\n        except ImportError:\n            try:\n                import fcntl\n                fcntl.flock(f.fileno(), fcntl.LOCK_EX)\n                locked = \"fcntl\"\n            except ImportError:\n                locked = None  # 双缺：无锁直行（显式降级）\n        yield locked\n    finally:\n        if locked == \"msvcrt\":\n            try:\n                f.seek(0)\n                msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)\n            except OSError:\n                pass\n        f.close()\n\n\ndef _today() -> str:\n    return date.today().isoformat()  # noqa: DTZ011 — v1 兼容锚：墙钟仅作回退默认，主路径显式 at 透传\n\n\ndef item_id(group: str, record_id: str, detail: str) -> str:\n    h = hashlib.sha256(f\"{group}|{record_id}|{detail}\".encode()).hexdigest()[:12]\n    return f\"q-{h}\"\n\n\nclass QuarantineZone:\n    def __init__(self, root: Path):\n        self.root = Path(root)\n        self.root.mkdir(parents=True, exist_ok=True)\n        self.items_path = self.root / \"items.jsonl\"\n\n    def _load(self) -> list[dict]:\n        if not self.items_path.exists():\n            return []\n        return [json.loads(x) for x in\n                self.items_path.read_text(encoding=\"utf-8\").splitlines() if x.strip()]\n\n    def _append(self, item: dict):\n        with self.items_path.open(\"a\", encoding=\"utf-8\") as f:\n            f.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + \"\\n\")\n\n    def register(self, group: str, detail: str, record_id: str | None = None,\n                 source: str | None = None, blocks: list | None = None,\n                 subclass: str | None = None, at: str | None = None):\n        if group not in GROUPS:\n            raise ValueError(f\"非法隔离分组 {group!r}，合法={GROUPS}\")\n        sub = subclass or GROUP_TO_SUBCLASS.get(group, \"extrapolation_unverified\")\n        if sub not in SUBCLASSES:\n            raise ValueError(f\"非法子类 {sub!r}，合法={SUBCLASSES}\")\n        iid = item_id(group, record_id or \"\", detail)\n        if any(it[\"item_id\"] == iid for it in self._load()):\n            return iid, False\n        self._append({\"item_id\": iid, \"group\": group, \"subclass\": sub,\n                      \"source\": source, \"record_id\": record_id, \"detail\": detail,\n                      \"blocks_downstream\": sorted(set(blocks or [])),\n                      \"status\": \"pending\", \"at\": at or _today()})\n        return iid, True\n\n    def adjudicate(self, iid: str, verdict: str, note: str = \"\", by: str = \"human\"):\n        if verdict not in (\"confirmed\", \"rejected\"):\n            raise ValueError(\"verdict 合法=confirmed|rejected\")\n        items = self._load()\n        hit = next((i for i in items if i[\"item_id\"] == iid), None)\n        if hit is None:\n            raise KeyError(iid)\n        hit[\"status\"] = verdict\n        self.items_path.write_text(\n            \"\\n\".join(json.dumps(i, ensure_ascii=False, sort_keys=True) for i in items) + \"\\n\",\n            encoding=\"utf-8\")\n        with (self.root / \"adjudications.jsonl\").open(\"a\", encoding=\"utf-8\") as f:\n            f.write(json.dumps({\"item_id\": iid, \"verdict\": verdict, \"note\": note,\n                                \"by\": by, \"at\": _today()}, ensure_ascii=False) + \"\\n\")\n\n    def pending(self) -> list[dict]:\n        adj = {json.loads(x)[\"item_id\"] for x in\n               (self.root / \"adjudications.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n               if x.strip()} if (self.root / \"adjudications.jsonl\").exists() else set()\n        return [i for i in self._load() if i[\"item_id\"] not in adj]\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\quarantine.py",
+      "structuredPatch": [
+        {
+          "oldStart": 96,
+          "oldLines": 17,
+          "newStart": 96,
+          "newLines": 18,
+          "lines": [
+            "     def adjudicate(self, iid: str, verdict: str, note: str = \"\", by: str = \"human\"):",
+            "         if verdict not in (\"confirmed\", \"rejected\"):",
+            "             raise ValueError(\"verdict 合法=confirmed|rejected\")",
+            "-        items = self._load()",
+            "-        hit = next((i for i in items if i[\"item_id\"] == iid), None)",
+            "-        if hit is None:",
+            "-            raise KeyError(iid)",
+            "-        hit[\"status\"] = verdict",
+            "-        self.items_path.write_text(",
+            "-            \"\\n\".join(json.dumps(i, ensure_ascii=False, sort_keys=True) for i in items) + \"\\n\",",
+            "-            encoding=\"utf-8\")",
+            "-        with (self.root / \"adjudications.jsonl\").open(\"a\", encoding=\"utf-8\") as f:",
+            "-            f.write(json.dumps({\"item_id\": iid, \"verdict\": verdict, \"note\": note,",
+            "-                                \"by\": by, \"at\": _today()}, ensure_ascii=False) + \"\\n\")",
+            "+        with adjudicate_lock(self.root):  # G25：读-改-写全程单写者——并发互踩丢裁决根除",
+            "+            items = self._load()",
+            "+            hit = next((i for i in items if i[\"item_id\"] == iid), None)",
+            "+            if hit is None:",
+            "+                raise KeyError(iid)",
+            "+            hit[\"status\"] = verdict",
+            "+            self.items_path.write_text(",
+            "+                \"\\n\".join(json.dumps(i, ensure_ascii=False, sort_keys=True) for i in items) + \"\\n\",",
+            "+                encoding=\"utf-8\")",
+            "+            with (self.root / \"adjudications.jsonl\").open(\"a\", encoding=\"utf-8\") as f:",
+            "+                f.write(json.dumps({\"item_id\": iid, \"verdict\": verdict, \"note\": note,",
+            "+                                    \"by\": by, \"at\": _today()}, ensure_ascii=False) + \"\\n\")",
+            " ",
+            "     def pending(self) -> list[dict]:",
+            "         adj = {json.loads(x)[\"item_id\"] for x in"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_9050ac2a0548448a834c8932",
+  "toolName": "Edit",
+  "version": 1
+}

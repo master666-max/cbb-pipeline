@@ -1,0 +1,85 @@
+# CBB 切分机制网络预调研报告（2026-09）
+
+可信度标注：A=同行评审 / A-=评审会议但结果待复现 / B=arXiv 预印本有数据 / C=厂商博客或工程实践 / D=论坛经验。
+
+---
+
+## A. 逐题发现
+
+### Q1 语义切分 2024-2026 实证：整体偏负面的检索证据 + 一个“边界对齐逻辑单元”的正例
+
+- **反面结果（最强证据）**：Qu, Tu, Bao《Is Semantic Chunking Worth the Computational Cost?》，arXiv:2410.13070（2024-10-16），NAACL 2025 Findings pp.2155-2177，被引约 141 次。在文档检索、证据检索、RAG 生成三类任务上，语义切分相对固定大小切分**没有足以抵偿计算成本的一致增益**（[arXiv:2410.13070](https://arxiv.org/abs/2410.13070)）。可信度 A。
+- **反面结果（业界独立复述）**：Vectara 博客同题文章，结论为真实 RAG 系统中固定大小常**反超**语义切分（[vectara.com](https://www.vectara.com/blog/is-semantic-chunking-worth-the-computational-cost)）。可信度 C，但与 A 级论文互证。
+- **正面结果（关键限定条件）**：Mayo Clinic《Comparative Evaluation of Advanced Chunking for RAG in Clinical Decision Support》，Bioengineering 12(11):1194（2025-11-01）。自适应法（句嵌入余弦相似度≥0.8 聚合、约 500 词上限、外加 BART 微标题）医疗准确性 87% vs 基线 50%（p=0.001，Cohen's d=1.03）；**但纯语义聚类与命题切分的增益不显著**。失败模式定性结论：固定窗会截断“指令+时限+例外条款”，语义聚类会把安全例外句切开——增益来自**边界对齐逻辑单元**，不是来自“语义”本身（[PMC12649634](https://pmc.ncbi.nlm.nih.gov/articles/PMC12649634)）。可信度 A-（30 条查询、单科室、有参考-语料循环风险）。
+- **块长系统研究**：Bhat et al.《Rethinking Chunk Size for Long-Document Retrieval》arXiv:2505.21700（2025-05-29）：无普适最优块长；64-128 token 小块在很多数据集上意外地好；证据分散的任务 512-1024 更好；**嵌入模型本身对特定块长有偏置**（[arXiv:2505.21700](https://arxiv.org/abs/2505.21700)）。可信度 B。
+- 另有 2026 综述性对比 arXiv:2606.00881《Chunking Methods on RAG》（[html](https://arxiv.org/html/2606.00881v1)），把固定与语义列为两大传统基线。可信度 B（未深读）。
+- **IE 任务上的直接证据很少**：语义切分文献几乎全部在检索/QA 上评测，抽取任务未见一致增益的系统研究——这点明说：**没找到**“embedding 边界切分对 IE 有一致增益”的证据。
+
+### Q2 场景/边界检测：有专门任务与数据集，但精度远未解决；中文叙事几近空白
+
+- **精度基线**：KONVENS 2021 场景切分共享任务（德语小说，Hotho et al.，CEUR Vol-3001，2021-11-08）：**冠军系统只找到约 51% 的人工标注场景边界**；手工特征历史参考线 WindowDiff≈0.5（[任务综述](https://ceur-ws.org/Vol-3001/paper1.pdf)、[KONVENS 2021 STSS](https://ceur-ws.org/Vol-3001/)）。可信度 A-。结论：**小说场景切分是个“困难但可行”的未解问题**。
+- **2025 进展**：Guhr, Mao, Lin《Rethinking Scene Segmentation》（LaTeCH-CLfL 2025，2025-05，ACL）：在 20 世纪美国言情小说手工标注集上微调 transformer 分类器定位场景切换，自称"work in progress"，只有定性"promising"结果，无公开指标（[aclanthology.org/2025.latechclfl-1.8](https://aclanthology.org/2025.latechclfl-1.8/)）。可信度 A-。
+- **标注框架**：Alrashid《Automatic Segmentation of Narrative Text Into Scenes》（CEUR-WS Vol-3964，2025）提出 SceneML 标注体系（[paper9.pdf](https://ceur-ws.org/Vol-3964/paper9.pdf)）。可信度 B。
+- **最新对口工作（重要）**：《LitSeg: Narrative-Aware Document Segmentation for Literary RAG》arXiv:2605.27156（v1 2026-05-26，v2 2026-09-07）：多阶段 LLM 提示（事件抽取→叙事结构→转折点定位）指导文学 RAG 切块，并把多阶段 teacher 蒸馏成单次推理的 **LitSeg-Lite**；摘要页无具体数字（[arXiv:2605.27156](https://arxiv.org/abs/2605.27156)）。可信度 B。
+- **话题切分谱系**：Ghinassi et al.《Recent Trends in Linear Text Segmentation: A Survey》EMNLP 2024 Findings（[PDF](https://aclanthology.org/2024.findings-emnlp.174.pdf)）：从 TextTiling 到预训练模型迁移的谱系梳理；Krassovitskiy et al., Applied Sciences 15(19):10849（2025，MDPI）：LLM 嵌入提升分段精度（[mdpi.com](https://www.mdpi.com/2076-3417/15/19/10849)）。可信度 A / B。
+- **中文**：**没有找到**中文小说场景切分的成熟公开系统——最接近的是：发明专利 CN115408488A“用于小说场景文本的分割方法及系统”（场景实体提取+分割策略配置，[patents.google.com](https://patents.google.com/patent/CN115408488A/zh)）；阿里达摩院 PoNet 中文话题分割模型（AliMeeting4MUG 语料，**会议域非叙事**，[modelscope.cn](https://modelscope.cn/models/damo/nlp_ponet_document-segmentation_topic-level_chinese-base)）；徐邵洋等《基于篇章结构图网络的话题分割》中文信息学报 2021（[jcip.cipsc.org.cn](http://jcip.cipsc.org.cn/article/id/zwxxxb_3228)）；Hou et al. 对话主题分割 arXiv:2409.07672（2024，对话域）。此结论按“找不到就明说”处理。
+
+### Q3 块大小与抽取质量：抽取方向的最硬证据来自 GraphRAG；长上下文“整章最优”不成立
+
+- **抽取任务专属证据**：Microsoft GraphRAG 论文及官方文档：**更小的块抽出的实体更多、保真度更高**；默认 1200 token，块越大实体抽取输出保真度越低；Neo4j 官方实现文章（2024-07-09）复述作者发现：相对 2400 token，小块显著提升实体召回（[microsoft.github.io/graphrag](https://microsoft.github.io/graphrag/)、[neo4j.com](https://neo4j.com/)）。可信度 A-/C。这是与 CBB（知识抽取）最直接对口的量化结论。
+- **位置偏见**：Liu et al.《Lost in the Middle》TACL 2024（arXiv:2307.03172）：证据在中部时性能一致下降，长上下文模型也不例外（[arxiv.org](https://arxiv.org/abs/2307.03172)）。可信度 A。
+- **有效上下文缩水**：Hsieh et al.《RULER》arXiv:2404.06654（2024-04）：多模型有效上下文**不足标称一半**，含聚合/多跳任务（[arXiv:2404.06654](https://arxiv.org/abs/2404.06654)）。可信度 A。2026-01 有后续把"智能退化"定义为复合任务下降>30%（arXiv，检索到但未取到编号，可信度 B）；MIR-Bench arXiv:2502.09933（2025-02）测多针归纳推理，退化确认（[arXiv](https://arxiv.org/html/2502.09933v1)）。
+- **U 型曲线的两个来源**：位置 U 型（上条）；OP-RAG（Yuvazlap & Yu，NVIDIA，arXiv:2409.01666，2024-09）显示**检索块数**呈倒 U，保持原文顺序注入很关键（[arXiv:2409.01666](https://arxiv.org/abs/2409.01666)）。可信度 A-。严格的“块长-U 型曲线”专文**没找到**，2505.21700 是最接近的系统证据。
+- **overlap 实践**：业界惯例 10-20%（500 token 块配 50-100 token；对话 5-7 轮配 2-3 轮重叠）：[Firecrawl](https://www.firecrawl.dev/blog/best-chunking-strategies-rag)、[Meilisearch](https://www.meilisearch.com/blog/rag-chunking-strategies)。可信度 C。
+- **结论**：6-9 千字中文一章约几千 token，超出 GraphRAG 的 1200 token 经验值数倍。“长上下文时代整章一块最优”**无证据支持**；证据方向反而是“抽取召回随块变大而降”。
+
+### Q4 动态切分与“公式”：存在两个可认领的公式原型；speed-quality-cost 三角无公开形式化
+
+- **用户记忆中的“公式”最可能候选一**：LlamaIndex `SemanticChunker` 默认 breakpoint 公式——对相邻句余弦距离排序，**距离>95 分位数处切分**（`breakpoint_percentile_threshold=95` 默认），多处独立复述一致（[Towards AI 2025-09-18](https://pub.towardsai.net)、[CSDN](https://blog.csdn.net)、TUM 课程论文）。可信度 C+（多源互证）。
+- **候选二**：《Meta-Chunking: Learning Text Segmentation via Logical Perception》arXiv:2410.12788（2024-10）：**PPL 法**（句间困惑度差判界）与 **Margin Sampling 法**（LLM 判“两句是否应连”的 Yes/No 概率差）+ 动态合并，粒度介于句子与段落之间，成本远低于嵌入语义切分（[arXiv:2410.12788](https://arxiv.org/abs/2410.12788)）。可信度 B+。
+- **粒度-成本权衡的正式工作**：《Mix-of-Granularity》COLM 2024（Zhong et al.）：多粒度预切块+查询条件路由，显式平衡 token 成本（[COLM 2024](https://github.com/liunian-Jay/Awesome-RAG) 收录）；Google《RAG or Long-Context LLMs?》的 Self-Route 做同类成本路由。可信度 A-。
+- **结构化/后期/上下文化的适用边界**：Late Chunking（Jina，arXiv:2409.04701）：先整文档过长上下文嵌入模型再池化出块向量，文本不改写，适合“代词需要全文语境”且已用兼容嵌入模型的场合；Anthropic Contextual Retrieval（2024-09-19）：每块前 LLM 生成语境前言再嵌入，top-20 检索失败率 -35%（嵌入）/-49%（+BM25）/-67%（+重排），块约数百 token（[anthropic.com](https://www.anthropic.com/news/contextual-retrieval)、[Jina Part II](https://jina.ai/news/what-late-chunking-really-is-and-what-its-not-part-ii)）。两者效果定性相当（Jina 自评）。可信度 B / C+。
+- **信息密度/熵驱动**：entropy-chunker（GitHub，按信息密度定界、零嵌入成本，[github.com/Tulsani/entropy-chunker](https://github.com/Tulsani/entropy-chunker)）；CVPR 2026《Adaptive Action Chunking》用动作熵动态选块长（**VLA 机器人域**，证明“熵作块长判据”的形式化存在，[openaccess](https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_Adaptive_Action_Chunking_at_Inference-time_for_Vision-Language-Action_Models_CVPR_2026_paper.pdf)）；arXiv:2602.13194《Semantic Chunking and the Entropy of Natural Language》（2026-02，理论向）。可信度 C / B / B。
+- **明说**：把“块长/切点决策”写成统一公式并显式建模 speed-quality-cost 三角的公开工作**没找到**；最接近的是 MoG（成本路由）与 Meta-Chunking（PPL 判据）。实体共现图切分只有工程实现（agenticmemory 等的 NER-based chunker）与 KG 管线内的实体标注环节（[arXiv 2026-06](https://arxiv.org) "All Relations Lead to Rome"），无独立形式化论文。
+
+### Q5 边界信息损失：问题被反复证实；最有效缓解是“全局归并+状态传递”，重叠只是部分解
+
+- **证据**：多篇 2025 工作确认小块独立抽取会**割裂跨块事实**——Hyper-KGGen（alphaXiv）专门做“跨块共指消解+知识去重”修 KG 碎片化；生产 RAG 报告根因是块间无跨块注册，用"Contiguous Span Coalescing"修复。可信度 B/C。
+- **缓解-重叠**：业界 10-20% 重叠是标准但被明确评为“部分修复”。可信度 C。
+- **缓解-查询时扩展**：Pinecone 路线——存小块、检索后向父子块扩展上下文。可信度 C。
+- **缓解-二遍回读**：“gleaning pass"（反复抽取直到无新条目）有专门讨论（OpenReview《Verbatim Chunks Beat Lossy Artifact Extraction in Long-Conversation LLM Memory》）；Google LangExtract 的生产模式即“切块并行抽取+多 pass+聚合去重”（[genmind.ch 分析](https://genmind.ch/posts/LangExtract-Production-LLM-Powered-Information-Extraction)）。可信度 B/C。
+- **缓解-命题化**：Dense X Retrieval（arXiv:2312.06648，EMNLP 2024）：命题（原子自包含事实）为单元提升下游 QA——方向性支持“抽取输出本身就该是命题”。可信度 A-。
+- **领域内先例（直接相关）**：oh-story-claudecode 的 story-import 用 **tracking 层**（伏笔/时间线/角色状态逐章文件）而非重叠来维持跨章连续性（见 Q6）。可信度 C。
+- 定量对比“边界摘要 vs 重叠 vs 二遍”的受控实验**没找到**。
+
+### Q6 网文/轻小说工具：主流实践=以章为抽取单元，黄金三章特判，场景是派生标签
+
+- **oh-story-claudecode（开源，本次直接读取其 README）**：zenstory-ai 出品的扫榜→拆文→写作全流程技能包（[github.com/zenstory-ai/oh-story-claudecode](https://github.com/zenstory-ai/oh-story-claudecode)）。切分实践：
+  - 长篇拆文单元=**章**：黄金三章逐章深度拆解（`第1-3章_深度拆解.md`）+ 每章一个摘要文件（`第1章_摘要.md`…），配 `chapter-extractor` agent（Haiku 级模型）作为**并行拆文核心单元**（摘要+情节点+角色提及）；
+  - story-import（逆向导入已有小说）同样**逐章**抽取 事件/角色/设定/伏笔/时间线，写入 `追踪/` 目录（每块一个状态文件：伏笔、时间线、每角色状态）——跨章连续性靠状态层而非切块重叠；
+  - 短篇另用 54 情节点标记+原文引用+情绪曲线量化；剧情层会产出“分场景剧情单元”（场景作为**派生输出标签**，不是抽取单元）。
+- **story-long-analyze 技能**（[skills-hub.ai](https://skills-hub.ai/skills/oh-story-claudecode-story-long-analyze)）：管道式——黄金三章 Stage 1 先出快速预览报告，再继续深度拆解。可信度 C。
+- **清欢创作流程**（[wfdocs.apuxi.cn](https://wfdocs.apuxi.cn)）：章节拆文提示词、爆款黄金三章一键生成、AI 编辑审稿。可信度 C。
+- **积木社区 AI 网文一条龙**（[bbs.jimu.chat/t/topic/47](https://bbs.jimu.chat/t/topic/47)）：爆款**逐章**拆解为黄金三章、爽点密度、情绪节奏、角色档案、剧情线、力量体系，结构化输出复用。可信度 D。
+- **中文 RAG 工程共识**（CSDN，2026-07）：“先按章节切，长章节再按条款粒度二次切分，保留章节标题作元数据，边界加重叠”。可信度 C。
+- **结论**：没有找到任何中文网文工具按固定切片或按语义嵌入切块做抽取；**章单元+首章特判+逐章状态传递**是事实标准。知乎拆解文（五维评分/54 情节点）被 403 拒访，经 README 与二级来源交叉印证。
+
+---
+
+## B. 对 CBB 的可执行建议（5 条）
+
+1. **主单元保持“章”，但承认它是召回妥协而非最优解；给“重章”加门控二次切分。** 证据组合：语义切分无一致增益（Q1）反对回到 600 字切片；但 GraphRAG 系证据（Q3）表明几千 token 的大块会掉实体召回。折中即“默认整章、触发条件升级”：当一章命中重信号（新实体率高、场景数>2、字数超上限、战斗/多线交汇）时，仅对该章做章内逻辑分区块抽取后归并。成本只花在信息密集章，速度不整体劣化。
+
+2. **场景标签用“廉价机械信号+一次 LLM 扫描”获得，别追求高精度切分器。** 学术 SOTA 才找回 ~51% 场景边界（KONVENS 2021），2025 年仍属 work-in-progress（Guhr），中文叙事无现成模型（Q2，明说）。可行做法：规则信号（空行/分隔符、时间地点词跳变、出场人物集合交叠率）+ 单次 Haiku 级逐章标注，输出**场景元数据软标签**而非硬切边界；抄 LitSeg-Lite 的作业（强模型蒸馏成单遍轻量切分器）是 2026 年的中期升级路线。
+
+3. **动态分配判据的公式雏形（可直接实现）**：`升级抽取 = (新实体率 > θ_e) ∨ (场景边界数 > θ_s) ∨ (字数 > θ_len)`；边界检测用二选一的免费/廉价判据——相邻句余弦距离 95 分位（LlamaIndex 语义断点公式，用户记忆中的“公式”最可能是它）或 Meta-Chunking 的句间 PPL 突变（零嵌入成本，中文可用本地小模型算 PPL）。speed-quality-cost 三角的显式形式化不存在（Q4 明说），上述门控即其工程替代。
+
+4. **边界损失用“章间状态传递层”替代大 overlap**：每章抽取时在提示中前置一行“承接上文”摘要（上一章尾部场景+在场的进行中动作/对话），抽取后更新伏笔/时间线/角色状态文件（oh-story 的 tracking 模式，Q6）；跨块代词与实体归并交给全局实体归并 pass（Hyper-KGGen 路线）。这比 10-20% overlap 省 token 且直接针对代词回指/跨场景延续。
+
+5. **上线前做一次三档 A/B 定标**：按 GraphRAG 论文的方法，取 20-30 章做 整章块 / 章内 600-1200 token 逻辑分段 / 整章+二次扫描 三档，指标用每章新实体数与关键事件数（抽全率）+幻觉率。Mayo 研究（Q1）与 GraphRAG（Q3）的教训都是：块策略的增益方向因语料而异，必须本地实测，不要全量切换。
+
+## C. 颠覆性候选
+
+- **LitSeg/LitSeg-Lite 蒸馏路线**（arXiv:2605.27156，2026-09 v2）：多阶段叙事理论引导切分 → 蒸馏单遍轻量切分器，是“逻辑分区+速度”双目标的现成范式，与建议 2/3 可直接合流。
+- **命题化抽取**（Dense X，EMNLP 2024）：若抽取输出本身以原子命题为单位，切分粒度问题被降维——命题自带主语与语境，代词回指在命题化时被强制消解，可能比优化切分边界收益更大。
+- **OP-RAG 反思**：倒 U 曲线提示“块更多/更细不单调更好”，且**保持原文顺序**注入上下文对聚合类任务关键——对 CBB 的跨章事件归并 pass 有直接借鉴（按章节顺序而非相似度排列）。

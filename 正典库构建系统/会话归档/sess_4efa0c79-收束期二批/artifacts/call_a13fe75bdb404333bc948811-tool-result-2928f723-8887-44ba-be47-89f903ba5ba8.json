@@ -1,0 +1,36 @@
+{
+  "createdAt": "2026-09-27T16:29:02.395Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"g16b_vote_runner.py — G5 票数晋升·主库 provisional 大批（总工单 G16 余量执行件）。\n\n对象：迷深实战-本体库/libraries/*/*/*.json 里 status=provisional 的 6,278 件。\n机制：与 g16_vote_runner 同法（三考官隔离双序+答案对调+B13 需票满编制），\n     增量三点：①G13 权重入列（加权需票=满编权重和×2/3，against=0/n≥2 硬门不变）；\n     ②考官消费回执（calls/errors/latency 逐考官入报告）；③票面台账=resume 日志\n     （append-only，重跑跳过已评审 rid）。\n产出：迷深实战-本体库/G16b-票面台账.jsonl + G16b-晋升报告.json\n用法：py -X utf8 g16b_vote_runner.py [--limit N]\nenv：EXAMINER_{LOCAL,DEEPSEEK,QWEN}_{BASE,MODEL}+key 全进程 env（D-004）。\n\"\"\"\nimport json\nimport sys\nimport time\nfrom collections import Counter\nfrom concurrent.futures import ThreadPoolExecutor, as_completed\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\nsys.path.insert(0, str(ROOT / \"cbb-v2\"))\n\nfrom cbb2 import promote  # noqa: E402\nfrom cbb2 import ops  # noqa: E402\n\nSTORE = ROOT / \"迷深实战-本体库\"\nJOURNAL = STORE / \"G16b-票面台账.jsonl\"\nREPORT = STORE / \"G16b-晋升报告.json\"\nG13 = STORE / \"G13-票权加权报告.json\"\n\n\ndef main():\n    limit = None\n    if \"--limit\" in sys.argv:\n        limit = int(sys.argv[sys.argv.index(\"--limit\") + 1])\n    panel_kinds = (\"LOCAL\", \"DEEPSEEK\", \"QWEN\")\n    if \"--panel\" in sys.argv:  # 编制可裁：--panel DEEPSEEK,QWEN（2026-09-28 起 LOCAL 除役——\n        panel_kinds = tuple(sys.argv[sys.argv.index(\"--panel\") + 1].split(\",\"))  # 1B 判力弱+33%超时拖垮工人池）\n    workers = 6\n    if \"--workers\" in sys.argv:\n        workers = int(sys.argv[sys.argv.index(\"--workers\") + 1])\n\n    done = {}\n    if JOURNAL.exists():\n        for l in JOURNAL.read_text(encoding=\"utf-8\").splitlines():\n            if l.strip():\n                r = json.loads(l)\n                done[r[\"record_id\"]] = r[\"verdict\"]  # 后行覆盖前行——末行=现势判定\n    revote_holds = \"--revote-holds\" in sys.argv  # 编制升级后重审历史 hold（如双考官期 unsure 致 hold）\n\n    records = []\n    for p in sorted(STORE.glob(\"libraries/*/*/*.json\")):\n        try:\n            r = json.loads(p.read_text(encoding=\"utf-8\"))\n        except Exception:  # noqa: BLE001 — 坏件计数不拖批\n            continue\n        if r.get(\"status\") != \"provisional\" or r.get(\"record_id\") in done:\n            continue\n        ev = \"；\".join(e.get(\"quote\", \"\") for e in (r.get(\"evidence\") or []))\n        if not ev.strip():\n            continue\n        records.append(r)\n    if limit:\n        records = records[:limit]\n    total_lib = len(list(STORE.glob(\"libraries/*/*/*.json\")))\n    print(f\"主库 json {total_lib} 件；本轮评审 {len(records)}（已评审跳过 {len(done)}）\")\n\n    panel, missing = promote.build_panel(panel_kinds)\n    print(f\"考官编制: {[c.kind for c in panel]}（缺席: {missing or '无'}）\")\n    if not panel or not records:\n        print(\"G16b BLOCKED 或无可评件\")\n        return\n\n    full_size = 3  # B13 需票按满编制 3 算——编制裁到 2 名时 promote=双 support，门槛不降\n\n    weights = {}\n    if G13.exists():\n        g13 = json.loads(G13.read_text(encoding=\"utf-8\"))\n        weights = {k: v.get(\"weight_建议\", 1.0) for k, v in g13.get(\"examiners\", {}).items()}\n    print(f\"G13 权重: {weights or '（无——等权）'}\")\n\n    receipts = {c.kind: {\"calls\": 0, \"errors\": 0, \"latency_s\": 0.0} for c in panel}\n\n    def review_one(rec):\n        conclusion = json.dumps(rec.get(\"canonical\") or {}, ensure_ascii=False, sort_keys=True)\n        evidence = \"；\".join(e.get(\"quote\", \"\") for e in (rec.get(\"evidence\") or []))\n        res = promote.vote(conclusion, evidence, panel, full_size=full_size,\n                           weights=weights or None)\n        res[\"record_id\"] = rec.get(\"record_id\")\n        res[\"library\"] = rec.get(\"library\")\n        return res\n\n    t0 = time.time()\n    results = []\n    with JOURNAL.open(\"a\", encoding=\"utf-8\") as jf, \\\n            ThreadPoolExecutor(max_workers=workers) as ex:\n        futs = {ex.submit(review_one, r): r for r in records}\n        for n, fu in enumerate(as_completed(futs), 1):\n            try:\n                res = fu.result()\n            except Exception as e:  # noqa: BLE001 — 单件异常不拖垮整批\n                res = {\"verdict\": \"error\", \"votes\": {}, \"errors\": [{\"examiner\": \"runner\",\n                        \"reason\": str(e)[:120]}], \"degraded\": True,\n                        \"record_id\": futs[fu].get(\"record_id\")}\n            results.append(res)\n            jf.write(json.dumps(res, ensure_ascii=False, sort_keys=True) + \"\\n\")\n            jf.flush()\n            # 消费回执聚合（双序=每考官×2 调用；错误行计入 errors）\n            for kind, v in res.get(\"votes\", {}).items():\n                receipts.setdefault(kind, {\"calls\": 0, \"errors\": 0, \"latency_s\": 0.0})\n                receipts[kind][\"calls\"] += 2\n            for e in res.get(\"errors\", []):\n                k = e.get(\"examiner\")\n                if k in receipts:\n                    receipts[k][\"errors\"] += 1\n            if n % 50 == 0 or n == len(records):\n                cc = Counter(r[\"verdict\"] for r in results)\n                el = time.time() - t0\n                print(f\"  进度 {n}/{len(records)}  {dict(cc)}  {el:.0f}s\"\n                      f\"（{el/n:.1f}s/件，ETA {(el/n)*(len(records)-n)/60:.0f}min）\")\n\n    cc = Counter(r[\"verdict\"] for r in results)\n    report = {\n        \"unit\": \"G16b\", \"at\": time.strftime(\"%Y-%m-%dT%H:%M:%S\"),\n        \"panel\": [c.kind for c in panel], \"panel_missing\": missing,\n        \"weights\": weights,\n        \"主库json总数\": total_lib, \"本轮评审\": len(records),\n        \"历史已评审\": len(done), \"判定分布\": dict(cc),\n        \"考官消费回执\": receipts,\n        \"tenure口径\": \"首晋升批——tenure 自确认日起算，G17 首圈巡检承接存续核证\",\n        \"耗时s\": round(time.time() - t0, 1),\n    }\n    REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding=\"utf-8\")\n    print(f\"✓ 台账累计 {len(done)+len(results)}；判定分布 {dict(cc)}；报告 → {REPORT}\")\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\g16b_vote_runner.py",
+      "structuredPatch": [
+        {
+          "oldStart": 54,
+          "oldLines": 8,
+          "newStart": 54,
+          "newLines": 11,
+          "lines": [
+            "             r = json.loads(p.read_text(encoding=\"utf-8\"))",
+            "         except Exception:  # noqa: BLE001 — 坏件计数不拖批",
+            "             continue",
+            "-        if r.get(\"status\") != \"provisional\" or r.get(\"record_id\") in done:",
+            "+        if r.get(\"status\") != \"provisional\":",
+            "             continue",
+            "+        rid = r.get(\"record_id\")",
+            "+        if rid in done and not (revote_holds and done[rid] == \"hold\"):",
+            "+            continue",
+            "         ev = \"；\".join(e.get(\"quote\", \"\") for e in (r.get(\"evidence\") or []))",
+            "         if not ev.strip():",
+            "             continue"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_a13fe75bdb404333bc948811",
+  "toolName": "Edit",
+  "version": 1
+}

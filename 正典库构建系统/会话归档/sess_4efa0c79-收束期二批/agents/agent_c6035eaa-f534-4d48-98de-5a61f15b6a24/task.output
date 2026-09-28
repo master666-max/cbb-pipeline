@@ -1,0 +1,129 @@
+调研完成。所有数据均为只读收集。报告遵循以下规范（根路径已缩写：PROD=`D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb`，REL=`D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb-pipeline-skill\cbb-pipeline\scripts`，V2=`D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb-v2`，GUARD=`D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb-guard`）。
+
+# 代码资产测绘（CBB 全量重构调研）
+
+## 0. 总量统计
+
+| 目录 | .py 文件数 | 总行数 | 备注 |
+|---|---|---|---|
+| PROD（生产管线 cbb/） | 83 | 15,083 | tools 67/10,387 + 7技能件+contracts+smoke 16/4,696 |
+| REL（发布包 scripts/） | 71 | 12,855 | 含 init_project.py(64) |
+| V2（cbb-v2/） | 11 | 899 | cbb2 包 10 件 + acceptance 1 件 |
+| GUARD（cbb-guard/） | 0 | 474（.mjs+.md） | Node 实现，非 Python |
+| cbb-skills/ | 15 | 2,436 | 六技能+contracts 的镜像源 |
+
+## 1. 生产管线 cbb/ 目录树（两层，除缓存）
+
+```
+cbb/
+├── cbb-anchor/        SKILL.md + cbb_anchor.py(359) + test(241)
+├── cbb-coordinate/    SKILL.md + cbb_coordinate.py(255) + test(196)
+├── cbb-extract/       SKILL.md + cbb_extract.py(416) + test(290)
+├── cbb-gate1/         SKILL.md + cbb_gate1.py(400) + test(260)
+├── cbb-quarantine/    SKILL.md + cbb_quarantine.py(337) + test(187)
+├── cbb-store/         SKILL.md + cbb_store.py(560) + test(353) + test_w4_thresholds(97)
+├── contracts/         cbb_contracts.py(178) + test(275) + 4×schema.json + .gitkeep
+├── issues/            README.md
+├── smoke/             run_smoke.py(292) + fixtures + 2 out 文本
+├── tools/             38 业务件 + 29 test_*.py + 4 md + html/txt 杂件（详见 §2）
+├── 自审日志/           README + U-B00~B09（10 md）
+├── 交接文书-本体构筑.md / 验收判定-本体构筑.md
+```
+各技能件 docstring（职责）：gate1=「门1确定性硬校验(本体版v2·三域重构)」、store=「三态写入+版本化+双轨合并」、extract=「P2抽取器·四面防御」、quarantine=「B6隔离区管理器」、anchor=「锚点树+双时间轴」、coordinate=「P0预处理+全局坐标+编号注册表」、contracts=「四契约v2.0加载校验」、run_smoke=「六技能集成冒烟(离线)」。
+
+## 2. cbb/tools 明细表（38 个非 test 件；EXT=http/端口/docker/subprocess/netlib）
+
+| 文件 | 行 | 职责（docstring 首行） | EXT | 引同目录 | test |
+|---|---|---|---|---|---|
+| 环境自检.py | 523 | 步骤⓪外部环境自检+图谱归属判定 | http/8080/docker | 图库隔离 | Y |
+| 矛盾对生成.py | 416 | U-C03.8 NLI预筛准备件（触发器D=矛盾积压>50） | subprocess | 路径惯例 | Y |
+| 批次自检.py | 404 | 十项失效模式逐项断言 | subprocess | 重排器 | Y |
+| neo4j_export.py | 364 | 本体库→Neo4j 增量 MERGE 导出 | http/7695/docker/sub | - | Y |
+| 检索层.py | 351 | L6 混合检索（LanceDB 已裁） | http/8080 | lightrag_bridge,重排器 | Y |
+| 连续性巡检.py | 268 | 门1连续性域双载体实现 | http/7474 | - | Y |
+| 实体名归因.py | 261 | 图谱专名四分类归因 | - | - | Y |
+| ledger_chain.py | 256 | U-C03.6 吸收件（哈希链账本） | - | - | Y |
+| lightrag_live.py | 253 | LightRAG 副本实时同步哨 | - | delta_sync,export | Y |
+| 图库隔离.py | 198 | 独立 Neo4j 实例（docker） | http/8080/docker/sub | - | Y |
+| graphiti_ready.py | 206 | 一键就绪自检+四触发器哨兵 | http/7687/docker | graphiti_bridge,路径惯例 | Y |
+| 矛盾分流.py | 164 | 四分类分流+机械档处置 | - | 词表 | Y |
+| context_pack.py | 171 | 上下文包生成器（R-018） | - | 路径惯例 | Y |
+| web_console.py | 169 | 只读网页控制台 | http/8090 | 5件 | N |
+| embed_dedup_scan.py | 153 | 批收口嵌入查重扫描 | http/8080 | - | Y |
+| 派生层对账.py | 151 | 图/向量/正典三方计数对账哨 | - | - | Y |
+| 词表.py | 151 | 受控词表三件套（裁决③A） | - | - | Y |
+| build_evidence_index.py | 157 | evidence 级片段索引（U-F07续件） | http/8080 | 路径惯例 | Y |
+| lightrag_export.py | 183 | 图谱喂给 LightRAG（insert_custom_kg） | http/8080 | neo4j_export | N |
+| 失效宣告.py | 134 | 裁决①A 宣告失效写入件 | - | - | Y |
+| lightrag_bridge.py | 279 | 实验件：LightRAG 第五路召回 | http/8080 | graph_chain,检索层 | N |
+| graphiti_ingest.py | 157 | P2 全章摄入（双时序存储） | http/7695 | graphiti_dump,neo4j_export | N |
+| 诊断员.py | 119 | LLM 归因岗位（U-F08 黄区） | - | - | Y |
+| graph_audit.py | 118 | 图谱↔正典库对账（只读） | http/7474 | graph_chain,neo4j_export | Y |
+| graphiti_bridge.py | 129 | graphiti 就绪层（U-C03.7） | http/8080 | - | Y |
+| lightrag_delta_sync.py | 128 | 章收口增量同步 LightRAG | - | lightrag_export | N |
+| adapt_record_to_tier1.py | 57 | Record v2.0→Step0 Tier1 适配器(R-018) | - | - | N |
+| graph_chain.py | 107 | 图检索链构造器（读Neo4j零LLM） | http/7474/docker | neo4j_export | N（rel 侧有 test） |
+| exp_第五路对照.py | 270 | 预注册对照实验（四路vs第五路） | http/8081/docker | 3件 | N |
+| graphiti_spike.py | 106 | Graphiti 接线 spike（P2准备） | http/7693 | neo4j_export | N |
+| build_index_v2.py | 103 | U-F07 v2 富文本索引（断点续传） | http/8080 | 路径惯例 | N |
+| graphiti_dump.py | 76 | 按 group 导出图清单+命中率 | port 7693 | neo4j_export | N |
+| web_supplement.py | 75 | 网络搜索补充层（低置信材料） | http | - | Y |
+| 重排器.py | 68 | 本地重排模型统一客户端 | http/8081 | - | Y |
+| 捕获再捕获.py | 53 | Chapman 残余缺陷估计 | - | - | Y |
+| 匹配建议.py | 45 | 处置建议排序（岗位③，仅建议位） | - | 重排器 | Y |
+| 抽样排序.py | 40 | 最可疑优先抽样排序（岗位②） | - | 重排器 | Y |
+| 路径惯例.py | 80 | 从 store 反推项目根/工作区 | http/7695 | - | Y |
+
+test_*.py 共 29 个、4,386 行（其中 27 个与被测件同名对应；test_d2_graph_edge/test_图链增量网络/test_graph_chain(rel) 为组合测）。29 个 test 里 10 个标注"零网络/打桩"，外部依赖测试均用注入。
+
+## 3. cbb-v2/（899 行，11 件）
+
+| 模块 | 行 | 职责 | 自述 |
+|---|---|---|---|
+| cbb2/store.py | 225 | 三态存储+双轨合并 | **算法忠实移植 v1**，数据布局逐字节兼容 |
+| cbb2/ledger.py | 130 | 哈希链账本 | **移植 v1 ledger_chain 核心** |
+| cbb2/quarantine.py | 81 | 隔离区 | 与 v1 items.jsonl 互操作（重写保兼容） |
+| cbb2/corpus.py | 79 | 坐标/引文回落 R9/R10 | **算法忠实移植 v1 cbb_coordinate** |
+| cbb2/defenses.py | 59 | 抽取三侧防御 R6/R7/R8/R15 | **移植 v1 cbb_extract** |
+| cbb2/gate.py | 47 | make_record+证据门 | **移植 v1 gate1 同构** |
+| cbb2/search.py | 61 | 别名精确+关键词+RRF+引文核验 | 新写（端点路排除在核心包外） |
+| cbb2/config.py | 59 | env-first 唯一配置源 | 新写（吸收 路径惯例.py 判据） |
+| cbb2/runner.py | 35 | 章管线编排入口 | 新写骨架（探活降级） |
+| cbb2/__init__.py | 3 | 包化重建声明 | 等价优先 |
+| tests/acceptance.py | 120 | 验收：v1 特征基线五面指纹相等 | 行为等价证明 |
+
+结论：5 件自述忠实/移植（store/ledger/corpus/defenses/gate），4 件新写（search/config/runner/quarantine），有 v1 等价性验收件。
+
+## 4. 发布包 REL/ 与生产 cbb/ 对比
+
+REL 结构 = `README.md + init_project.py(64行,开书脚手架) + cbb/{六技能目录+contracts+tools}`，即生产 cbb/ 的裁剪快照（**不含** issues/、smoke/、自审日志/、交接文书、验收判定）。diff -rq 结果（除 `build_evidence_index.py` 两侧行数同 157 但**内容不同**外，双方共有文件全部一致）：
+
+- 仅在生产侧 tools（17 项）：`adapt_record_to_tier1.py、exp_第五路对照.py、graphiti_dump.py、graphiti_ingest.py、graphiti_spike.py、lightrag_bridge.py、lightrag_delta_sync.py、lightrag_export.py、lightrag_live.py、web_console.py、web_console.html、test_d2_graph_edge.py、test_lightrag_live.py、test_图链增量网络.py、判例.md、抽取规范.md、_poll_once_backup.txt` —— 即**整个 LightRAG/Graphiti-P2 实验族未进发布包**
+- 仅在发布侧 tools（1 项）：`test_graph_chain.py`（生产侧反而没有）
+- 生产侧独有目录：`cbb/issues/、cbb/smoke/（run_smoke.py 292 行）、cbb/自审日志/`
+
+## 5. cbb-guard/
+
+```
+GUARD/（0 个 .py；共 474 行）
+├── hooks/guard.mjs(210)      ← 唯一 hook 入口：node guard.mjs
+├── hooks/hooks.json(19)      ← PreToolUse matcher Write|Edit|MultiEdit|Bash，timeout 5s，env CBB_HOOK_BYPASS 旁通入决策账
+├── hooks/hooks.qoder.json(19) ← qoder 等价配置（另有 .claude-plugin/.qoder-plugin/.zcode-plugin 三个 plugin.json）
+├── tests/guard-suites.mjs(153) ← 28 个 chk() 断言
+├── commands/ 批次自检.md(22)/状态报告.md(33)/覆盖复算.md(18) ← 3 个 slash 命令
+└── README.md
+```
+职责（hooks.json description）：「二拦二警——拦①冻结线覆盖②红区 Write；决策账=工具内断言、副本漂移=状态报告常设项」。
+
+## 6. 孤儿模块判定（cbb/tools 内非 test 且无任何同目录 importer，共 17 个）
+
+- **孤儿 + 有配套 test（11 个，属正常 CLI 入口型）**：build_evidence_index、context_pack、graph_audit、匹配建议、失效宣告、批次自检、抽样排序、捕获再捕获、矛盾分流、诊断员、连续性巡检
+- **孤儿 + 无 test（6 个，DEAD/实验嫌疑）**：`adapt_record_to_tier1.py`、`build_index_v2.py`、`exp_第五路对照.py`、`graphiti_ingest.py`、`graphiti_spike.py`、`web_console.py`
+- `adapt_record_to_tier1.py` 状态确认：仅存在于生产 `PROD/tools/`（不在 REL 包、无 test、无 importer，57 行）。外部证据：`重构报告-20260926.md:17` 明记「DEAD 仅一件：adapt_record_to_tier1.py（历史迁移件，无引用不在包；保留对照不删——见 `analysis/定活-UNKNOWN裁定.json`）」；`迷深实战-BUILD-STATE.md:35` 留痕其 R-018 用途。git 中随 `0d6a7435`(U-C00 单章试车) 入库。
+
+## 7. 重构相关关键发现
+
+1. 生产与发布包 95% 同源（仅 build_evidence_index.py 内容漂移），重构时可将 REL 视为 PROD 的冻结子集处理。
+2. 未进发布包的 lightrag/graphiti/exp/web_console 共 11 个代码件（约 1,877 行）是天然的裁剪/退役候选，其中 graphiti_ingest/lightrag_* 相互引用成独立子图，可与核心件干净剥离。
+3. cbb-v2 是唯一带 v1 等价性验收（acceptance.py 指纹比对）的重写层，可作为重构目标形态参考。
+4. web_console.py 是唯一 http 服务器件（8090），图库隔离/环境自检/neo4j_export 直接操作 docker，重构时需单独考虑安全边界。

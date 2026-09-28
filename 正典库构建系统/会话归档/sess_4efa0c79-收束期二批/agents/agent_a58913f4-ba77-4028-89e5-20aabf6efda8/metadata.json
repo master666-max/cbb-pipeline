@@ -1,0 +1,14 @@
+{
+  "agentId": "agent_a58913f4-ba77-4028-89e5-20aabf6efda8",
+  "childSessionId": "sess_subagent_agent_a58913f4-ba77-4028-89e5-20aabf6efda8",
+  "completedAt": "2026-09-27T17:35:26.614Z",
+  "description": "主流程休眠机制盘点找适配",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_a58913f4-ba77-4028-89e5-20aabf6efda8\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_dc5fc568281c4c398f10a0b4",
+  "profileId": "Explore",
+  "prompt": "你在 D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统 工作目录。任务：盘点**主流程里已建成但休眠/半接线/旗标关闭的机制**，判定哪些能在当前收束期激活复用。\n\n## 信息源（按序通读）\n1. 《全量重构-PhaseA-BUILD-STATE.md》——A/B/C/D/E 五相全部机制表（注意 B01 投影检查点/C01 门控动态切分（旗标 CBB_DYNAMIC_SPLIT 默认 off）/C02 上下文包/C05 检索层双拷贝/D01-D05/E01-E05）\n2. 《CBB全流程说明书-20260925.md》的 v3 差异章（文件尾部 2026-09-27 追加）——全机制清单\n3. 《三件落地工单-回填件图谱视图抽取器条款-20260928.md》——当前在途件\n4. 用 grep 在 `cbb-v2/cbb2/` 逐模块核实现状（如 plant.py/coldstore.py/notary.py/audit.py/er.py/fastscan.py/schedule.py/governance.py 有哪些函数从未被 runner/工单调用）\n\n## 本阶段背景\n中文小说正典库（517 章，库 6,278 件）收束期：G16b 终审完成（1,273 晋升/4,887 hold——缺锚件为主）、U1 证据回填试点已通待全量、G17 FSRS 首圈巡检待启动（schedule.py 就绪、队列 903 卡）、G18 v3.1 发布待做（build_release+E01 基建在）、G19 外部验收待发、G10/G11/Wilson 共用人工判例窗。\n\n## 输出格式\n结构化清单，每条：`机制（模块.函数） | 现状（休眠/半接线/旗标关） | 本阶段适配点 | 激活成本 | 建议档位[现在激活/触发器挂起/保持休眠(理由)]`\n- 例：plant capture（D03）能否给 G17 首圈当锚定金标注入？coldstore 能否给 G18 发布瘦身？audit.py 发现轨能否给 4,887 hold 排序（可疑优先）？\n- 每条必须 grep 实证\"从未被调用\"或\"旗标 off\"，不许凭印象\n\n你的最终消息=完整清单（直接可用的合成原料）。",
+  "status": "stopped",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_a58913f4-ba77-4028-89e5-20aabf6efda8\\task.output",
+  "updatedAt": "2026-09-27T17:35:26.614Z"
+}

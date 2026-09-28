@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_33485134-6d05-4ced-a532-c516325dca26",
+  "childSessionId": "sess_subagent_agent_33485134-6d05-4ced-a532-c516325dca26",
+  "createdAt": "2026-09-22T13:08:42.156Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "Research verification and ER mechanisms",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_33485134-6d05-4ced-a532-c516325dca26\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_33485134-6d05-4ced-a532-c516325dca26\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_02_Td1kL1WSBgWMPmmUu69c2762",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是研究助理，做一次联网调研（WebSearch + WebFetch，必须给可核验出处）。输出中文。\n\n## 被服务的系统（CBB）背景，务必读准\n目标：把一部 517 章中文长篇小说的全文，构建成\"证据可核验\"的正典知识库（canon library）。要点：\n- **每条事实必须带证据四元组：卷/章/行/原文引文**，引文可回落原文逐字核验（现已 117185 条引文，99.83% 可对回原文）。\n- 三态写入：provisional 默认、confirmed 需人工晋升、隔离区放\"矛盾/低置信/不可归一\"等待裁决；隔离区有 urgency 排序与人工裁决账（129 件已裁，1222 件积压）。\n- 已有：门 1 三域校验（结构/引用完整性/连续性：死人走路、伏笔序、契诃夫枪超期、矛盾检测）；UNIQUE 约束族；嵌入相似度扫描（0.95/0.85 双阈值）做去重提示；别名四分类（专名/昵称需证据+0.85 门槛/描述性/头衔）；NLI 式三分预筛（entails/neutral/contradicts，上岗小考 separation=1.0）；账本 append-only 带哈希链；AI 抽检（第三方模型独立重抽对比）。\n- 已知痛点：①隔离区积压（大量假冲突来自**类型词表缺失**，实测同一条实体类型被写成\"人物\"/\"人物(迷宫生物)\"/\"人物(传说)\"多种）②跨批矛盾检测弱 ③实体消解靠字符串与嵌入阈值，对\"同一实体改名/身份揭示\"无力 ④人工裁决吞吐低（返工型冲突占了 128/129）。\n- 硬约束：**零预算、不能训练、不能常驻 GPU**；只能用 LLM 代理 + 确定性脚本离线跑；一切结论要可回溯到原文。\n\n## 调研范围（只要\"具体机制\"）\n1. **归因与引文核验（attribution / grounding）**：让模型输出可核验引文的方法（citation-based generation、attribution benchmark 如 ALCE 类的做法）、引文-断言的自动核验、逐字/归一化匹配的工程技巧（中文标点、译注、行号漂移的容差处理）。\n2. **LLM 抽取的幻觉与错误检测**：抽取结果的自动核验机制（一致性检查、双向蕴含、cross-model 对抗、抽样人工审计的最优抽样设计——比如如何在有限人力下最大化抓到系统性错误）。\n3. **实体消解（entity resolution）**：LLM 时代的 ER 机制（blocking/候选生成、成对比较、聚类一致性、\"存疑必须分开建\"的保守策略）、**同一实体随时间改名/身份揭示**的处理、以及\"粒度不一致\"（上海 vs 上海市）的自动归并方法。\n4. **模式/本体约束与约束校验**：受控词表与本体约束在 LLM 抽取中的应用（schema-guided extraction、SHACL 类的图约束校验、抽取后剪枝/校验、词表自举：从已有数据归纳出类型集合的方法）。\n5. **人工裁决队列的工程学**：如何设计裁决界面/队列/优先级、主动学习式的抽样（不确定性采样、committee 采样）以减少人工工作量、裁决结果如何回写与何时可晋升 confirmed。\n6. **审计与溯源**：可复算的审计链设计（provenance 标准如 W3C PROV、数据版本控制 DVC/lakeFS 类、快照与重放、哈希链账本的实践教训）。\n\n## 输出格式（中文，≤900 词）\n一条机制一段，每段含：**机制名** ｜ **出处**（arXiv id 或 URL；没核验到标【未核实】）｜ **一句话原理** ｜ **落地成本** ｜ **对 CBB 的适配点**（改哪个环节、解决哪条痛点）｜ **风险**。\n最后给\"**明确不适用**\"一节。禁止编造论文标题或 id。宁可少而准。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_33485134-6d05-4ced-a532-c516325dca26\\task.output",
+  "updatedAt": "2026-09-22T13:11:36.202Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-22T13:11:36.202Z",
+  "totalDurationMs": 173581,
+  "totalTokens": 461351,
+  "totalToolUseCount": 49,
+  "usage": {
+    "inputTokens": 434421,
+    "outputTokens": 26930,
+    "totalTokens": 461351,
+    "cacheReadTokens": 419968,
+    "reasoningTokens": 20433
+  }
+}

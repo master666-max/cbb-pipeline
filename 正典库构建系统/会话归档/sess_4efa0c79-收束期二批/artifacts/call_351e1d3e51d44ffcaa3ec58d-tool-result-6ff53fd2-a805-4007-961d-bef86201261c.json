@@ -1,0 +1,34 @@
+{
+  "createdAt": "2026-09-26T16:41:22.233Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"cbb2.er — 实体归一三段流水线 + 可撤销合并日志（Phase D·U-D08；路⑤ B1-B5）。\n\n规则归一（NFKC/括注剥离/零宽）→ blocking（首字+字符集键）→ [可选 LLM 判决回调]。\n合并可撤销：union-find + 合并日志（谁/何时/依据），split 回滚是一等公民。\n0.85~0.95 绝对相似带废弃 → margin（best/second 差）+ 分歧信号。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport re\nimport unicodedata\nfrom pathlib import Path\n\nBRACKET_RE = re.compile(r\"[（(].*?[)）]\")\nZERO_RE = re.compile(r\"[\\u200b\\u200c\\u200d\\ufeff]\")\n\n\ndef normalize_name(name: str) -> str:\n    \"\"\"确定性归一层：NFKC 全半角、剥括注、去零宽与空白。无风险消化大部分写法变体。\"\"\"\n    s = unicodedata.normalize(\"NFKC\", name or \"\")\n    s = BRACKET_RE.sub(\"\", s)\n    s = ZERO_RE.sub(\"\", s)\n    return s.strip()\n\n\ndef blocking_key(name: str) -> tuple:\n    n = normalize_name(name)\n    return (n[:1], \"\".join(sorted(set(n))[:6]), len(n))\n\n\ndef margin_decision(scores: dict[str, float], min_margin: float = 0.05) -> dict:\n    \"\"\"margin+分歧信号：best 与 second 差 < min_margin ⇒ 存疑人审；否则归 best。\"\"\"\n    ranked = sorted(scores.items(), key=lambda x: -x[1])\n    if not ranked:\n        return {\"target\": None, \"certain\": False}\n    best, s_best = ranked[0]\n    s_second = ranked[1][1] if len(ranked) > 1 else -1.0\n    certain = (s_best - s_second) >= min_margin\n    return {\"target\": best if certain else None, \"certain\": certain,\n            \"margin\": round(s_best - s_second, 4)}\n\n\nclass MergeLog:\n    \"\"\"可撤销合并：union-find + 操作日志（linked 分组按日志重放）。\"\"\"\n\n    def __init__(self, store_root: Path):\n        self.path = Path(store_root) / \"合并日志.jsonl\"\n\n    def _rows(self) -> list[dict]:\n        if not self.path.exists():\n            return []\n        return [json.loads(x) for x in self.path.read_text(encoding=\"utf-8\").splitlines()\n                if x.strip()]\n\n    def merge(self, canonical: str, variant: str, *, rule: str, confidence: float, at: str) -> dict:\n        row = {\"op\": \"merge\", \"canonical\": canonical, \"variant\": variant,\n               \"rule\": rule, \"confidence\": confidence, \"at\": at,\n               \"id\": f\"m-{hashlib_sha(canonical, variant, at)}\"}\n        with self.path.open(\"a\", encoding=\"utf-8\") as f:\n            f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + \"\\n\")\n        return row\n\n    def split(self, variant: str, *, at: str, note: str = \"\") -> dict:\n        row = {\"op\": \"split\", \"variant\": variant, \"at\": at, \"note\": note,\n               \"id\": f\"s-{hashlib_sha(variant, at, note)}\"}\n        with self.path.open(\"a\", encoding=\"utf-8\") as f:\n            f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + \"\\n\")\n        return row\n\n    def resolve(self, name: str) -> str:\n        \"\"\"重放日志求规范名：merge 归并、split 拆出（split 后该 variant 回到自身）。\"\"\"\n        parent: dict[str, str] = {}\n\n        def find(x: str) -> str:\n            parent.setdefault(x, x)\n            while parent[x] != x:\n                parent[x] = parent[parent[x]]\n                x = parent[x]\n            return x\n\n        for r in self._rows():\n            if r[\"op\"] == \"merge\":\n                a, b = find(r[\"canonical\"]), find(r[\"variant\"])\n                if a != b:\n                    parent[b] = a\n            elif r[\"op\"] == \"split\":\n                v = r[\"variant\"]\n                for k in list(parent):\n                    if find(k) == find(v) and k != v:\n                        parent[k] = k\n        return find(name)\n\n    def groups(self) -> dict[str, list[str]]:\n        g: dict[str, list[str]] = {}\n        names: set[str] = set()\n        for r in self._rows():\n            if r[\"op\"] == \"merge\":\n                names.add(r[\"canonical\"])\n                names.add(r[\"variant\"])\n        for n in names:\n            g.setdefault(self.resolve(n), []).append(n)\n        return g\n\n\ndef hashlib_sha(*parts: str) -> str:\n    import hashlib\n    return hashlib.sha256(\"|\".join(parts).encode(\"utf-8\")).hexdigest()[:12]\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\er.py",
+      "structuredPatch": [
+        {
+          "oldStart": 86,
+          "oldLines": 9,
+          "newStart": 86,
+          "newLines": 7,
+          "lines": [
+            "                     parent[b] = a",
+            "             elif r[\"op\"] == \"split\":",
+            "                 v = r[\"variant\"]",
+            "-                for k in list(parent):",
+            "-                    if find(k) == find(v) and k != v:",
+            "-                        parent[k] = k",
+            "+                parent[v] = v  # 拆分=变体脱离合并组，重新自成根（回滚一等公民）",
+            "         return find(name)",
+            " ",
+            "     def groups(self) -> dict[str, list[str]]:"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_351e1d3e51d44ffcaa3ec58d",
+  "toolName": "Edit",
+  "version": 1
+}

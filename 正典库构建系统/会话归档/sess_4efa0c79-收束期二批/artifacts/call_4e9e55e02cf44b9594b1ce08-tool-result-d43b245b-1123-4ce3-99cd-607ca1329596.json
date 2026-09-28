@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-13T18:42:22.431Z",
+  "files": [
+    {
+      "afterContent": "{\n  \"provenance\": {\n    \"excerpt_file\": \"材料/excerpt4-CHAPTER0001-序章型.md\",\n    \"source\": \"语料分析/corpus/clean_full.txt 行1-26 (CHAPTER 0001 新人观众推荐事先阅读本文)\",\n    \"excerpt_sha256_16\": \"9b0d2d0c7b4d2c4b\",\n    \"annotator\": \"审核线初稿——草案：三轮自审后交用户人工全文审查\",\n    \"evidence_basis\": \"行号=切样文件行号；本切样为粉丝向元文本（翻译组公告），非故事正文\"\n  },\n  \"annotation_rules_note\": \"特殊金标——'该抽零'纪律测试：本切样不含故事正典内容，理想抽取=零故事实体/零关系。抽取器若抽出以下内容均计 FP（非故事正典）：翻译者名（落地死的流星）、站点/平台（真白萌/贴吧/微博）、现实日期（2023年1月30日）、话数（373/374话）、作品名（迷深/空之境界/碧阳学园学生会议事录）、粉丝称谓（四大病娇/诺厨）。注：四大病娇/伏笔手法等属于'读者侧对作品的元描述'，CBB 正典库口径不收录\",\n  \"entities\": [],\n  \"edges\": [],\n  \"time_expressions\": [\n    {\"text\": \"2023年1月30日补笔\", \"line\": 24, \"kind\": \"现实日期(非故事时间)\", \"anchorable\": false}\n  ]\n}\n",
+      "afterContentLength": 687,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\P1执行区\\step0-抽取精度实验\\金标\\gold-excerpt4.json",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_4e9e55e02cf44b9594b1ce08",
+  "toolName": "Write",
+  "version": 1
+}

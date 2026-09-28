@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-14T15:12:34.267Z",
+  "files": [
+    {
+      "afterContent": "# BUILD-STATE · 全量构筑版阶段一（缓存，事实以磁盘+git为准）\n\n> 建立：2026-09-14 审核线预播种。协议照《全量构筑版-总纲.md》§S。\n> 双锚：/goal 由用户侧设置（判据见总纲 §G）；本头部为等价兜底锚。\n\n目标判据：U-A01~U-A17 全部 done；16 仓各一份独立详报落 `全量构筑版-分析报告/`（§R 六节齐备、断言带 文件:行号、三谜仓给出谜底）；U-A17 跨仓综合报告落盘；逐单位 commit 可证。\n\n单位清单（状态：todo）：\n- U-A01 agent-skills | 判据=总纲§R 六节报告落盘 | 证据=- | 幂等说明=报告快照型，重写走新版本\n- U-A02 author-toolkit | 判据=六节报告+三谜(5.8万行js用途)谜底 | 证据=- | 幂等=同上\n- U-A03 basic-memory-skills | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A04 chinese-webnovel-skills | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A05 claude-book | 判据=六节报告+三谜(191篇md)谜底 | 证据=- | 幂等=同上\n- U-A06 danghuangshang | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A07 evals-skills | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A08 graphify-novel | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A09 neo4j-skills | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A10 neuro-book | 判据=六节报告+三谜(54.7万行js疑vendored)谜底 | 证据=- | 幂等=同上\n- U-A11 oh-story-claudecode | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A12 sillytavern-skills | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A13 story-skills | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A14 story-systems-template | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A15 webnovel-writer | 判据=六节报告(GPL红旗复核) | 证据=- | 幂等=同上\n- U-A16 worldbook-skill | 判据=六节报告 | 证据=- | 幂等=同上\n- U-A17 跨仓综合报告 | 判据=16详报汇总裁决→全量构筑版本体路线修订书(对照实验版重构/保留清单) | 证据=- | 幂等=同上\n\n前置事实（2026-09-14 审核线核证）：实验版 cbb-skills/ 已冻结（FROZEN-实验版声明.md）；16 仓源码在 现成技能侦察/源码/；evals-skills+neo4j-skills 已装机（实验版 U0）。\n\n阻塞登记：（无）\n勘误日志：（无）\n",
+      "afterContentLength": 1326,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\全量构筑版-BUILD-STATE.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_2eea0980b91d478cb433e824",
+  "toolName": "Write",
+  "version": 1
+}

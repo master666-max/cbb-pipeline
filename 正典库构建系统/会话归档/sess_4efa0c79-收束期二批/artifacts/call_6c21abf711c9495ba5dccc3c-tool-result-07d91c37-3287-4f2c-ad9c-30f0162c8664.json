@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-09-26T15:42:26.491Z",
+  "files": [
+    {
+      "beforeContent": "{\n  \"library\": \"character\",\n  \"_review\": \"草案 v3.0.0-alpha（U-A01 交付物，字段分类待人工审定后去本栏）\",\n  \"identity\": {\"entity\": \"name\", \"relation\": \"triple\", \"default\": \"record_id\"},\n  \"assertion_fields\": [\"name\", \"entity_type\", \"status\"],\n  \"statement_fields\": [],\n  \"mutable_assertions\": [\"status\"],\n  \"immutable_assertions\": [\"entity_type\"]\n}\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\profiles\\character.json",
+      "structuredPatch": [
+        {
+          "oldStart": 4,
+          "oldLines": 6,
+          "newStart": 4,
+          "newLines": 7,
+          "lines": [
+            "   \"identity\": {\"entity\": \"name\", \"relation\": \"triple\", \"default\": \"record_id\"},",
+            "   \"assertion_fields\": [\"name\", \"entity_type\", \"status\"],",
+            "   \"statement_fields\": [],",
+            "-  \"mutable_assertions\": [\"status\"],",
+            "-  \"immutable_assertions\": [\"entity_type\"]",
+            "+  \"mutable_assertions\": [\"status\", \"entity_type\"],",
+            "+  \"immutable_assertions\": [],",
+            "+  \"_note\": \"entity_type 实证为随剧情精化（人物→人物(迷宫生物)→人物(迷宫守护者)），按失效记账演化；真冲突由 richer/vocab 对齐规则+闸1 拦截\"",
+            " }"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_6c21abf711c9495ba5dccc3c",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-09-26T15:42:26.507Z",
+  "files": [
+    {
+      "beforeContent": "{\n  \"library\": \"setting\",\n  \"_review\": \"草案 v3.0.0-alpha（U-A01 交付物，字段分类待人工审定后去本栏）\",\n  \"identity\": {\"entity\": \"name\", \"relation\": \"triple\", \"default\": \"record_id\"},\n  \"assertion_fields\": [\"name\", \"entity_type\", \"chapter\", \"tick\"],\n  \"statement_fields\": [\"fact\"],\n  \"mutable_assertions\": [],\n  \"immutable_assertions\": [\"entity_type\"]\n}\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\cbb2\\profiles\\setting.json",
+      "structuredPatch": [
+        {
+          "oldStart": 4,
+          "oldLines": 6,
+          "newStart": 4,
+          "newLines": 7,
+          "lines": [
+            "   \"identity\": {\"entity\": \"name\", \"relation\": \"triple\", \"default\": \"record_id\"},",
+            "   \"assertion_fields\": [\"name\", \"entity_type\", \"chapter\", \"tick\"],",
+            "   \"statement_fields\": [\"fact\"],",
+            "-  \"mutable_assertions\": [],",
+            "-  \"immutable_assertions\": [\"entity_type\"]",
+            "+  \"mutable_assertions\": [\"entity_type\"],",
+            "+  \"immutable_assertions\": [],",
+            "+  \"_note\": \"同 character：entity_type 实证为随剧情精化\"",
+            " }"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_7312c05487b447d18af062e9",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_466fbe40-d195-41c8-a0a7-5a339d4ef661",
+  "childSessionId": "sess_subagent_agent_466fbe40-d195-41c8-a0a7-5a339d4ef661",
+  "createdAt": "2026-09-24T19:22:34.755Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "Map graph-RAG landscape broadly",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_466fbe40-d195-41c8-a0a7-5a339d4ef661\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_466fbe40-d195-41c8-a0a7-5a339d4ef661\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_1ebc3a7be66f4066ad611b2f",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是调研员。任务：把 **图结构/结构化 RAG 赛道**（GraphRAG、LightRAG 之外的同类技术）搜全并如实汇报。用 WebSearch + WebFetch 检索一手源，**只报可核实内容**；每个系统的机制描述必须来自其论文/官方仓库 README；星标数来自 GitHub API 实查；查不到的标「未找到」，禁止编造。\n\n需要覆盖的候选（存在与否、机制、证据都要查）：\n1. **RAPTOR**（递归摘要树，arXiv 2401.18059）——机制、与 GraphRAG 社区摘要的异同。\n2. **HippoRAG / HippoRAG 2**（arXiv 2405.14831 / 2502.14802）——PPR 多跳检索，一句话即可。\n3. **KET-RAG / PropRAG / DALK / G-Retriever**——各自机制一句话 + 是否有实测数字（如索引成本、准确率）。\n4. **微软 GraphRAG 生态的分叉**：nano-graphrag、fast-graphrag 等社区复刻（GitHub 实查星标与活跃度，说明是否停滞）。\n5. **框架级实现**：LlamaIndex PropertyGraphIndex、Neo4j LLM Graph Builder / neo4j-graphrag-python、FalkorDB graphrag-sdk、cognee——各自定位一句话 + GitHub 实查（cognee 已被另查过，一句话即可）。\n6. **Agentic RAG 一族**（Self-RAG arXiv 2310.11511、CRAG arXiv 2401.15884、Adaptive-RAG arXiv 2403.14403）——各自核心机制一句话（检索决策/自我反思/纠错）。\n7. **上下文增强类**：Anthropic Contextual Retrieval（官方博客，2024-09 前后）——chunk 前置上下文的具体做法与官方数字（检索失败率降幅）。\n8. 其他你检索中发现的重要同类（若确有代表性）。\n\n输出格式（中文，紧凑）：\n- **机制族谱**：把这些技术归成 3~5 个机制家族（如：摘要层级族 / 图上扩散族 / 轻图双检索族 / 检索决策族 / 上下文增强族），每族一句话共同思想 + 成员列表。\n- **逐系统卡片**：名称 | 机制一句话 | 与 GraphRAG 的实质差别 | 证据（论文/星标/基准数字，带 URL）。\n- **谁真有增量**：从证据看，哪些是机制真不同、哪些是工程复刻或换皮（给判断依据）。\n- **来源清单**：一行一条「名称 — URL」。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_466fbe40-d195-41c8-a0a7-5a339d4ef661\\task.output",
+  "updatedAt": "2026-09-24T19:34:42.124Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-24T19:34:42.124Z",
+  "totalDurationMs": 727110,
+  "totalTokens": 952092,
+  "totalToolUseCount": 47,
+  "usage": {
+    "inputTokens": 934932,
+    "outputTokens": 17160,
+    "totalTokens": 952092,
+    "cacheReadTokens": 886016,
+    "cacheWriteTokens": 0
+  }
+}

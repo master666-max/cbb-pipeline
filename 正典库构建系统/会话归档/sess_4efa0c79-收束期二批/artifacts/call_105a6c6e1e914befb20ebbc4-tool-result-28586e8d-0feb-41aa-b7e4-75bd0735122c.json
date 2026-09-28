@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T22:55:12.676Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"mp_plant_exam.py — m-prometheus 判卷上岗考试：8 株植株隔离双序，捕获率 ≥5/6 过门。\n过门 → 晋升常编 DEEPSEEK+m-prometheus；不过 → 保持 DEEPSEEK 单票+人工队列现状。\n\"\"\"\nimport json\nimport sys\nimport time\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\nsys.path.insert(0, str(ROOT))\nsys.path.insert(0, str(ROOT / \"cbb-v2\"))\n\nfrom g16c_rejudge import build_plant_exam_items  # noqa: E402\nfrom g16c_escalate import chat  # noqa: E402\n\n\ndef main():\n    items = build_plant_exam_items()\n    print(f\"植株 {len(items)} 株（正 {sum(1 for i in items if i['expected']=='promote')} / \"\n          f\"负 {sum(1 for i in items if i['expected']=='not_promote')}）\")\n    correct = 0\n    rows = []\n    t0 = time.time()\n    for n, it in enumerate(items, 1):\n        rec, rid = it[\"rec\"], it[\"record_id\"]\n        conclusion = json.dumps(rec.get(\"canonical\") or {}, ensure_ascii=False, sort_keys=True)\n        evidence = \"；\".join(e.get(\"quote\", \"\") for e in (rec.get(\"evidence\") or []))\n        try:\n            a = chat(conclusion, evidence, \"ev\")\n            b = chat(conclusion, evidence, \"concl\")\n            v = a if a == b else \"unsure\"\n        except Exception as e:  # noqa: BLE001 — 考试面\n            v = f\"err:{str(e)[:60]}\"\n        exp = it[\"expected\"]\n        ok = (v == \"promote\") if exp == \"promote\" else (v in (\"hold\", \"human\"))\n        correct += ok\n        rows.append({\"plant\": rid, \"expected\": exp, \"mp_verdict\": v, \"pass\": ok})\n        print(f\"  [{n}] {rid[:32]} 期望={exp} → {v} {'✓' if ok else '✗'}\")\n    capture = correct / len(items) if items else 0\n    gate = len(items) > 0 and correct >= 5 and capture >= 5 / 6\n    out = {\"exam\": \"m-prometheus 判卷上岗考试\", \"at\": time.strftime(\"%Y-%m-%dT%H:%M:%S\"),\n           \"capture\": f\"{correct}/{len(items)} = {capture:.2f}\",\n           \"gate(≥5/6)\": \"PASS\" if gate else \"FAIL\", \"rows\": rows,\n           \"耗时s\": round(time.time() - t0, 1)}\n    (ROOT / \"迷深实战-本体库\" / \"m-prometheus上岗考试.json\").write_text(\n        json.dumps(out, ensure_ascii=False, indent=1), encoding=\"utf-8\")\n    print(json.dumps({k: out[k] for k in (\"capture\", \"gate(≥5/6)\", \"耗时s\")},\n                     ensure_ascii=False))\n    print(\"结论:\", \"m-prometheus 过门，常编 DEEPSEEK+m-prometheus\" if gate\n          else \"m-prometheus 不过门——维持 DEEPSEEK 单票+人工队列现状\")\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "afterContentLength": 2288,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\mp_plant_exam.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_105a6c6e1e914befb20ebbc4",
+  "toolName": "Write",
+  "version": 1
+}

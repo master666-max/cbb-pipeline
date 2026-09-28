@@ -1,0 +1,40 @@
+0.00.001.537 I srv  llama_server: initializing ...
+0.00.030.191 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.030.198 W srv  llama_server: embeddings enabled with n_batch (2048) > n_ubatch (512)
+0.00.030.204 W srv  llama_server: setting n_batch = n_ubatch = 512 to avoid assertion failure
+0.00.030.441 I srv  init_listene: The UI is disabled
+0.00.030.445 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.030.542 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.047.287 I srv    load_model: loading model 'D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m.gguf'
+0.00.499.550 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.03.128.952 W llama_init_from_model: model default pooling_type is [-1], but [4] was specified
+0.03.266.786 I cmn          init: llama threadpool init, n_threads = 16
+0.03.764.487 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 4096, kv_unified = 'true'
+0.03.782.144 I srv  llama_server: model loaded
+0.03.782.159 I srv  llama_server: listening on http://127.0.0.1:8081
+0.34.658.012 W srv    operator(): got exception: {"error":{"code":500,"message":"[json.exception.parse_error.101] parse error at line 1, column 42: syntax error while parsing value - invalid string: ill-formed UTF-8 byte; last read: '\"˭��'","type":"server_error"}}
+0.41.667.142 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.41.667.178 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.41.667.199 I slot get_availabl: id  2 | task -1 | selected slot by LRU, t_last = -1
+0.41.667.202 I slot launch_slot_: id  2 | task 1 | processing task, is_child = 0
+0.41.667.208 I slot get_availabl: id  1 | task -1 | selected slot by LRU, t_last = -1
+0.41.667.210 I slot launch_slot_: id  1 | task 2 | processing task, is_child = 0
+0.42.082.267 I slot      release: id  1 | task 2 | stop processing: n_tokens = 18, truncated = 0
+0.42.082.279 I slot      release: id  2 | task 1 | stop processing: n_tokens = 16, truncated = 0
+0.42.082.280 I slot      release: id  3 | task 0 | stop processing: n_tokens = 21, truncated = 0
+0.42.190.575 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 1.000
+0.42.190.589 I slot launch_slot_: id  3 | task 4 | processing task, is_child = 0
+0.42.192.035 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.42.192.044 I slot launch_slot_: id  0 | task 5 | processing task, is_child = 0
+0.42.192.052 I slot get_availabl: id  1 | task -1 | selected slot by LRU, t_last = 42055489
+0.42.192.053 I slot launch_slot_: id  1 | task 6 | processing task, is_child = 0
+0.42.587.536 I slot      release: id  0 | task 5 | stop processing: n_tokens = 16, truncated = 0
+0.42.587.555 I slot      release: id  1 | task 6 | stop processing: n_tokens = 18, truncated = 0
+0.42.587.570 I slot      release: id  3 | task 4 | stop processing: n_tokens = 21, truncated = 0
+0.55.265.884 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 1.000
+0.55.265.897 I slot launch_slot_: id  3 | task 8 | processing task, is_child = 0
+0.55.265.949 I slot get_availabl: id  2 | task -1 | selected slot by LRU, t_last = 42055496
+0.55.265.957 I slot launch_slot_: id  2 | task 9 | processing task, is_child = 0
+0.55.265.968 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 42560768
+0.55.265.970 I slot launch_slot_: id  0 | task 10 | processing task, is_child = 0
+0.55.265.976 I slot get_availabl: id  1 | task -1 | selected slot by LRU, t_last = 42560780

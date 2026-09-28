@@ -1,0 +1,18 @@
+0.00.001.835 I srv  llama_server: initializing ...
+0.00.031.368 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.031.376 W srv  llama_server: embeddings enabled with n_batch (2048) > n_ubatch (512)
+0.00.031.379 W srv  llama_server: setting n_batch = n_ubatch = 512 to avoid assertion failure
+0.00.031.548 I srv  init_listene: The UI is disabled
+0.00.031.554 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.031.634 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.040.707 I srv    load_model: loading model 'D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m-rerank.gguf'
+0.00.290.221 E llama_model_load: error loading model: done_getting_tensors: wrong number of tensors; expected 399, got 398
+0.00.290.230 E llama_model_load_from_file_impl: failed to load model
+0.00.290.683 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.459.467 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.523.184 E llama_model_load: error loading model: done_getting_tensors: wrong number of tensors; expected 399, got 398
+0.00.523.192 E llama_model_load_from_file_impl: failed to load model
+0.00.523.204 E cmn  common_init_: failed to load model 'D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m-rerank.gguf'
+0.00.523.206 E srv    load_model: failed to load model, 'D:/models/Qwen/Qwen3-Reranker-4B-q4_k_m/Qwen3-Reranker-4B-q4_k_m-rerank.gguf'
+0.00.523.440 I srv    operator(): operator(): cleaning up before exit...
+0.00.525.698 E srv  llama_server: exiting due to model loading error

@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-09-23T05:43:05.746Z",
+  "files": [
+    {
+      "beforeContent": "# 项目参数模板（v2.0 通用八项）—— 复制为 project.yaml 后填写\n# scripts/init_project.py 读取本文件生成工作区骨架\n# 术语：单元=切分单位（章/节/页/文档）；执行批次=一次连续执行会话；区段=重检查点\n\nproject:\n  name: \"\"                 # 项目名\n  corpus_type: novel       # 语料类型：novel|docs|wiki|legal|script|dialogue（适配建议见 references/架构与profile.md §五）\n  source_path: \"\"          # 全文语料路径（需含可切分单元标记）\n  unit_pattern: \"^<<<CHAPTER\\\\s*(\\\\d+)\"  # 单元标记正则（捕获组=编号）\n  library_path: \"\"         # 本体库落盘根（留空=自动：<项目>/库/）\n  workspace_path: \"\"       # 工作区落盘根（留空=自动：<项目>/工作区/）\n\nanchor:\n  mode: pseudo_date        # 伪锚点模式\n  epoch: \"2000-01-01\"      # 锚点纪元（第 i 单元 = epoch + i 天）\n  wall_clock: forbidden    # 禁墙钟（硬条款）\n\nprofile:                   # ── 本体 profile（假矛盾的疫苗；空=用小说六库样例）──\n  libraries: []            # 库类型集合，例：[character, event, relation, foreshadow, setting, timeline]\n  required_fields: {}      # 每库必填字段，例：{character: [name, entity_type]}\n  type_vocab: {}           # 受控词表（枚举；禁自由文本；值间禁包含关系），例：{entity_type: [人物, 组织, 地点]}\n  relation_vocab: []       # 关系类型枚举\n  vocab_bootstrap: auto    # 词表自举：auto=试车归纳+50单元回补 | manual=人工给定\n\nextract:\n  r6_verbatim: true        # 领域规则逐字内嵌抽取规范（R6 文本按项目改写，写法照模板）\n  alias_threshold: 0.85    # nickname 合并门槛（存疑分开建）\n  concurrency_start: 0     # 并发起步档（0=未标定；两段式数值依平台画像填，数据驱动）\n  concurrency_cruise: 0    # 巡航档（限流回落的最稳档；禁拍脑袋）\n  batch_units: 8           # 每 N 单元轻收口（断点密度）\n\ngate:\n  tau_provisional: 0.85    # provisional 路由阈值\n  tau_confirmed: 0.97      # confirmed 门槛（人工晋升前置）\n  overdue_units: 3         # 伏笔超期报警阈值（通用；小说=契诃夫枪）\n\ndedup:\n  embedding_scan: false    # 嵌入相似度扫描（需本地嵌入服务）\n  sim_merge: 0.95          # ≥ 走双轨合并流程\n  sim_suspect: 0.85        # 0.85~sim_merge 存疑入隔离（只提示不静默）\n\ngraph:\n  neo4j_uri: \"\"            # 留空=不启用图层；启用时每区段增量导出（强制派生层，债务台账制）\n\nreview:                    # ── 审查档位与抽样（公式见 references/审查与收口.md §四）──\n  tier: A                  # A 保命 | B 治理 | C 演化（C 类全库动作排主队列完成后）\n  sample_target_rate: 0.05 # 要证明的坏率上界 p\n  sample_confidence: 0.95  # 把握度 C；n = ln(1-C)/ln(1-p)（≤5%→59 条；≤1%→299 条）\n  sample_stratify: run     # 按执行批次分层，每层 8~10 条（禁均匀随机——缺陷按批次聚集）\n  dual_reviewer: true      # 双独立复查者+捕获-再捕获估残余缺陷（独立性=命门）\n  spotcheck_budget: 0      # 第三方对抗抽检预算（0=关闭；启用须台账逐次记账）\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-pipeline-skill\\cbb-pipeline\\assets\\project.template.yaml",
+      "structuredPatch": [
+        {
+          "oldStart": 36,
+          "oldLines": 6,
+          "newStart": 36,
+          "newLines": 8,
+          "lines": [
+            " ",
+            " dedup:",
+            "   embedding_scan: false    # 嵌入相似度扫描（需本地嵌入服务）",
+            "+  embedding_model: \"\"      # 嵌入档，例：qwen3-embedding-8b@q4_k_m（4096 维，≈4.7GB 可常驻）",
+            "+                           # 纪律：一项目内档位固定禁混用；换档＝重算全部嵌入＋阈值对照",
+            "   sim_merge: 0.95          # ≥ 走双轨合并流程",
+            "   sim_suspect: 0.85        # 0.85~sim_merge 存疑入隔离（只提示不静默）",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_01_ET_ugx8RCxBHRuRF0M5vTLR0645",
+  "toolName": "Edit",
+  "version": 1
+}

@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_3f7a77c9-0d98-44ee-ab16-ce9a8ada8ec3",
+  "childSessionId": "sess_subagent_agent_3f7a77c9-0d98-44ee-ab16-ce9a8ada8ec3",
+  "createdAt": "2026-09-26T17:21:10.777Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "调研：语料分析与文体学工具",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_3f7a77c9-0d98-44ee-ab16-ce9a8ada8ec3\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_3f7a77c9-0d98-44ee-ab16-ce9a8ada8ec3\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_c0835b63e4be4071b2087fa5",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是技术情报研究员，用 WebSearch/WebFetch 广域调研（今天 2026-09-27）。\n\n背景：中文长篇小说正典库项目。我们已有：确定性证据门（引文逐字回落原文）、三态知识库、批次自检十项、对样双轨抽样（发现/估计）、Wilson 区间、LQAS。想引入**语料分析学（corpus linguistics）与文体学（stylometry）**的成熟工具方法做质量面增强。\n\n调研问题（每题≥2 信源带 URL，注明 license/活跃度/中文支持）：\n1. 语料库检索与分析套件 2025-2026：AntConc、CQPweb/CorpusWorkBench、TXM、Voyant、NoSketch Engine——哪些支持中文、可编程接入（API/CLI）、适合自动化管线而非手工 GUI？\n2. 中文语料统计：n-gram/搭配（collocation）/关键词_extraction（keyness）的 Python 生态现状；有没有针对小说文体的成熟指标（词汇丰富度/对话密度/句长分布）及其基准值研究？\n3. 文体计量学（stylometry）：Stylo(R) 及 Python 替代（在线作者归属/文本相似度）——能否用于\"抽取文本 vs 原文\"的一致性佐证或章节作者漂移检测？\n4. 叙事学计算工具：foreshadowing/悬念/情节弧线（plot arc）检测、event storyline extraction——2024-2026 开源可用吗？\n5. 一致性与连续性检查器：连续性错误（continuity error）检测、事实一致性（fact consistency）、LongEval 类长文档一致性基准——工程可用的有哪些？\n\n输出：A 逐题发现（出处/license/中文适配）；B 对我们 5 个接缝（批次自检增强/对样排序特征/文体漂移监控 SPC 的指标源/缺口队列新扫描源/上下文包组装特征）的接入建议；C 明确排除项。找不到明说。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_3f7a77c9-0d98-44ee-ab16-ce9a8ada8ec3\\task.output",
+  "updatedAt": "2026-09-26T17:46:23.242Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-26T17:46:23.242Z",
+  "totalDurationMs": 1512266,
+  "totalTokens": 1089751,
+  "totalToolUseCount": 38,
+  "usage": {
+    "inputTokens": 1045744,
+    "outputTokens": 44007,
+    "totalTokens": 1089751,
+    "cacheReadTokens": 957824,
+    "cacheWriteTokens": 0
+  }
+}

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\test_dl_models.py", line 18, in <module>
+    out = nli({"text": "我将要去 Université Canadiens-Français 学习艺术。",
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               "text_pair": "我将去上学。"})[0]
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+KeyError: 0
+Traceback (most recent call last):
+  File "D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\test_dl_models.py", line 30, in <module>
+    HanLP = hanlp.load(hanlp.pretrained.coref.COREF_CONV_20211101, devices=-1)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'hanlp.pretrained' has no attribute 'coref'
+ERLANGSHEN FAIL: 0
+== ② HanLP 核指 ==
+HANLP FAIL: module 'hanlp.pretrained' has no attribute 'coref'

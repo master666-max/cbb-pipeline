@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T18:33:39.611Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"test_dl_models.py — B1/B4 依赖模型下载与冒烟（串行）。\n①Erlangshen-110M-NLI（hf-mirror）→ 一发蕴含冒烟\n②HanLP 核指模型 → 一句零指代冒烟\n任一失败不抛死——打印状态供主会话定 B4/B1 走向。\n\"\"\"\nimport os\nimport traceback\n\nos.environ.setdefault(\"HF_ENDPOINT\", \"https://hf-mirror.com\")\n\nprint(\"== ① Erlangshen-110M-NLI ==\")\ntry:\n    from transformers import pipeline\n    nli = pipeline(\"text-classification\",\n                   model=\"IDEA-CCNL/Erlangshen-RoBERTa-330M-NLI\",\n                   truncation=True)\n    out = nli({\"text\": \"我将要去 Université Canadiens-Français 学习艺术。\",\n               \"text_pair\": \"我将去上学。\"})[0]\n    print(\"冒烟:\", out)\n    print(\"ERLANGSHEN OK\")\nexcept Exception as e:  # noqa: BLE001 — 依赖探针面\n    print(\"ERLANGSHEN FAIL:\", str(e)[:200])\n    traceback.print_exc()\n\nprint()\nprint(\"== ② HanLP 核指 ==\")\ntry:\n    import hanlp\n    HanLP = hanlp.load(hanlp.pretrained.coref.COREF_CONV_20211101, devices=-1)\n    doc = HanLP([\"我从小就很喜欢吃苹果。\", \"它对我的健康很有帮助。\"])\n    print(\"冒烟 clusters:\", doc[\"coref\"])\n    print(\"HANLP OK\")\nexcept Exception as e:  # noqa: BLE001 — 依赖探针面\n    print(\"HANLP FAIL:\", str(e)[:200])\n    traceback.print_exc()\n",
+      "afterContentLength": 1111,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\test_dl_models.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_374707cee0b04d1e9f15b18d",
+  "toolName": "Write",
+  "version": 1
+}

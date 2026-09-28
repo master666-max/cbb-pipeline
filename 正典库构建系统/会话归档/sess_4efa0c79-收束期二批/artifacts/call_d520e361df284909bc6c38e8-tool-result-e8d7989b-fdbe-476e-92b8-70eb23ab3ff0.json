@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T19:58:14.411Z",
+  "files": [
+    {
+      "afterContent": "# 前沿工具调研 · 心理学与脑科学一路（2026-09-27）\n\n> 深度档：评分者一致性/信号检测论/记忆科学→重验证调度/认知负荷与上下文预算/判断去偏见/脑科学可迁移面。关键结论经 PyPI/Crossref/NeurIPS/Anki 官方/arXiv/PMC 一手源交叉核验。\n\n## 核心结论\n\n1. **G5 重验证调度有了数学解**：py-fsrs（MIT，Anki 官方调度器的 Python 版）DSR 三分量记忆模型——confirmed=Card，区段=时间轴，N 由幂遗忘曲线反解；巡检通过→间隔自动拉长、改判→重置回密集区。\n2. **NLI 通道校准升级为信号检测论**：d'/c 分解；ECE 单独不构成通道对比依据。\n3. **考官质量加权**：crowd-kit 的 GLAD/Dawid-Skene；Krippendorff α+Gwet AC1；晋升线取 α≥0.800。\n4. **上下文包预算**：Cowan 4±1 组块→≤4 语义块/包；Lost in the Middle→关键证据置首尾；surprisal 降序入包。\n5. **去偏见**：投票前 consider-the-opposite；dialectical bootstrapping；每月互动式案例库热身（纯告知无效 Morewedge 2015）。\n6. **中文适配**：AoA 19,716 简体词；minicons 逐 token surprisal；CSS 简化对；**中文眼动/自步阅读校准语料=空白**。\n\n## 工具清单（均核验 license/活跃度）\n\n| 工具 | License | 用途 |\n|---|---|---|\n| py-fsrs v6.3.2 | MIT | FSRS 重验证调度器 |\n| minicons | MIT | 中文逐 token surprisal |\n| krippendorff | GPL-3.0 | 评分者一致性 |\n| metadPy | GPL-3.0 | SDT d'/criterion/meta-d' |\n| crowd-kit | Apache-2.0 | Dawid-Skene/GLAD 票权聚合 |\n| netcal | Apache-2.0 | ECE/可靠性图/分桶校准 |\n| pingouin | GPL-3.0 | TOST 等效/置换检验 |\n\n## 对管线四机制映射\n\nG5 重验证→FSRS DSR+票权加权｜NLI 预筛→conformal 分流+SDT 校准｜对样双轨→Wilson+LQAS｜CUSUM→bootstrap 控制限+变更标记。\n",
+      "afterContentLength": 1129,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\前沿工具调研-心理与脑科学精简-20260927.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_d520e361df284909bc6c38e8",
+  "toolName": "Write",
+  "version": 1
+}

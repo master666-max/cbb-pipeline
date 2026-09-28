@@ -1,0 +1,47 @@
+{
+  "createdAt": "2026-09-13T20:21:43.530Z",
+  "files": [
+    {
+      "afterContent": "{\n  \"provenance\": {\n    \"excerpt_file\": \"材料/excerpt4-CHAPTER0001-序章型.md\",\n    \"source\": \"语料分析/corpus/clean_full.txt 行1-26（含末尾空行）(CHAPTER 0001 新人观众推荐事先阅读本文)\",\n    \"excerpt_sha256_16\": \"9b0d2d0c7b4d2c4b\",\n    \"annotator\": \"审核线三轮自审+DeepSeek对抗5轮裁决后定稿（v2）——待用户人工全文审查通过后用于评分\",\n    \"evidence_basis\": \"本切样含两个元文本子段：L3-L18 读者导读/评论、L19-L25 翻译组公告——均为非故事正文，输出恒为空\",\n    \"adversarial\": \"DeepSeek 5轮对抗挑战29条，裁决采纳6(规则澄清类)/驳回23（详见 金标对抗裁决记录.md）\"\n  },\n  \"annotation_rules_note\": \"R6 元文本豁免（对抗裁决新增）：元文本/非故事语料优先于 R1-R5，entities/edges/time_expressions 恒为空。FP 枚举按类别：所有现实人物（落地死的流星/作者/现任校对/其他大佬们）、平台（真白萌/贴吧/微博/版内论坛）、作品名（迷深/空之境界/碧阳学园学生会议事录）、话数卷数字数（373/374话/十卷之后/百万字前后）、现实日期（2023年1月30日）、粉丝称谓（四大病娇/诺厨）——全部零抽取。provenance 与规则中的现实日期为治理元数据，非故事标注，与 R6 不冲突（对抗裁决[243][250]之答复）。'诺厨'拆词提取'诺'的提案驳回：元文本豁免优先（[230][242]）\",\n  \"entities\": [],\n  \"edges\": [],\n  \"time_expressions\": []\n}\n",
+      "afterContentLength": 838,
+      "beforeContent": "{\n  \"provenance\": {\n    \"excerpt_file\": \"材料/excerpt4-CHAPTER0001-序章型.md\",\n    \"source\": \"语料分析/corpus/clean_full.txt 行1-26 (CHAPTER 0001 新人观众推荐事先阅读本文)\",\n    \"excerpt_sha256_16\": \"9b0d2d0c7b4d2c4b\",\n    \"annotator\": \"审核线三轮自审完成——待用户人工全文审查通过后用于评分（2026-09-14 用户裁决）\",\n    \"evidence_basis\": \"行号=切样文件行号；本切样为粉丝向元文本（翻译组公告），非故事正文\"\n  },\n  \"annotation_rules_note\": \"特殊金标——'该抽零'纪律测试：本切样不含故事正典内容，理想抽取=零故事实体/零关系。抽取器若抽出以下内容均计 FP（非故事正典）：翻译者名（落地死的流星）、站点/平台（真白萌/贴吧/微博）、现实日期（2023年1月30日）、话数（373/374话）、作品名（迷深/空之境界/碧阳学园学生会议事录）、粉丝称谓（四大病娇/诺厨）。注：四大病娇/伏笔手法等属于'读者侧对作品的元描述'，CBB 正典库口径不收录\",\n  \"entities\": [],\n  \"edges\": [],\n  \"time_expressions\": [\n    {\"text\": \"2023年1月30日补笔\", \"line\": 24, \"kind\": \"现实日期(非故事时间)\", \"anchorable\": false}\n  ]\n}\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\P1执行区\\step0-抽取精度实验\\金标\\gold-excerpt4.json",
+      "structuredPatch": [
+        {
+          "oldStart": 1,
+          "oldLines": 15,
+          "newStart": 1,
+          "newLines": 14,
+          "lines": [
+            " {",
+            "   \"provenance\": {",
+            "     \"excerpt_file\": \"材料/excerpt4-CHAPTER0001-序章型.md\",",
+            "-    \"source\": \"语料分析/corpus/clean_full.txt 行1-26 (CHAPTER 0001 新人观众推荐事先阅读本文)\",",
+            "+    \"source\": \"语料分析/corpus/clean_full.txt 行1-26（含末尾空行）(CHAPTER 0001 新人观众推荐事先阅读本文)\",",
+            "     \"excerpt_sha256_16\": \"9b0d2d0c7b4d2c4b\",",
+            "-    \"annotator\": \"审核线三轮自审完成——待用户人工全文审查通过后用于评分（2026-09-14 用户裁决）\",",
+            "-    \"evidence_basis\": \"行号=切样文件行号；本切样为粉丝向元文本（翻译组公告），非故事正文\"",
+            "+    \"annotator\": \"审核线三轮自审+DeepSeek对抗5轮裁决后定稿（v2）——待用户人工全文审查通过后用于评分\",",
+            "+    \"evidence_basis\": \"本切样含两个元文本子段：L3-L18 读者导读/评论、L19-L25 翻译组公告——均为非故事正文，输出恒为空\",",
+            "+    \"adversarial\": \"DeepSeek 5轮对抗挑战29条，裁决采纳6(规则澄清类)/驳回23（详见 金标对抗裁决记录.md）\"",
+            "   },",
+            "-  \"annotation_rules_note\": \"特殊金标——'该抽零'纪律测试：本切样不含故事正典内容，理想抽取=零故事实体/零关系。抽取器若抽出以下内容均计 FP（非故事正典）：翻译者名（落地死的流星）、站点/平台（真白萌/贴吧/微博）、现实日期（2023年1月30日）、话数（373/374话）、作品名（迷深/空之境界/碧阳学园学生会议事录）、粉丝称谓（四大病娇/诺厨）。注：四大病娇/伏笔手法等属于'读者侧对作品的元描述'，CBB 正典库口径不收录\",",
+            "+  \"annotation_rules_note\": \"R6 元文本豁免（对抗裁决新增）：元文本/非故事语料优先于 R1-R5，entities/edges/time_expressions 恒为空。FP 枚举按类别：所有现实人物（落地死的流星/作者/现任校对/其他大佬们）、平台（真白萌/贴吧/微博/版内论坛）、作品名（迷深/空之境界/碧阳学园学生会议事录）、话数卷数字数（373/374话/十卷之后/百万字前后）、现实日期（2023年1月30日）、粉丝称谓（四大病娇/诺厨）——全部零抽取。provenance 与规则中的现实日期为治理元数据，非故事标注，与 R6 不冲突（对抗裁决[243][250]之答复）。'诺厨'拆词提取'诺'的提案驳回：元文本豁免优先（[230][242]）\",",
+            "   \"entities\": [],",
+            "   \"edges\": [],",
+            "-  \"time_expressions\": [",
+            "-    {\"text\": \"2023年1月30日补笔\", \"line\": 24, \"kind\": \"现实日期(非故事时间)\", \"anchorable\": false}",
+            "-  ]",
+            "+  \"time_expressions\": []",
+            " }"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_f7a09a003c254061ac878d3d",
+  "toolName": "Write",
+  "version": 1
+}

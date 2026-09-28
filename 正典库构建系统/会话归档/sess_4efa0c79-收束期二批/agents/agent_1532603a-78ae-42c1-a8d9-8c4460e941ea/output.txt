@@ -1,0 +1,220 @@
+全部六项测绘完成。以下为结构化报告。
+
+---
+
+# CBB 正典库构建系统 · 流程与数据面测绘报告
+
+基准根目录：`D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\`（下称 `<ROOT>`）
+
+---
+
+## 1. CBB全流程说明书-20260925.md 逐段总结
+
+文件：`<ROOT>\CBB全流程说明书-20260925.md`（254 行）。总图 L9-20。每步按【目的 / 调用工具 / 机械检查 or 纸面纪律 / 依赖工具文件】给出：
+
+| 步 | 目的（一句话） | 调用工具 | 性质 | 依赖工具文件 |
+|---|---|---|---|---|
+| ⓪ 环境自检（L24-32） | 开工前探明全部基础设施，出 READY/BLOCKED 四态清单，把环境错配从运行时事故提前；防“静默降级” | `环境自检.py`（M1-M4 主链 / G1-G4 图 / E1 嵌入 / R1 重排 / L1 推理观察项 / P1 graphiti 路由 / J1 判定者声明） | **机械检查**（有工具+判据：未探=BLOCKED，exit 2 阻断） | `cbb/tools/环境自检.py`（＋`test_环境自检.py` 18 例） |
+| ① 初始化（L34-42） | 八项参数+本体 profile 写进 project.yaml 生成工作区骨架与 BUILD-STATE，“参数先行禁散文” | `init_project.py` | **机械检查**（生成器，有固定布局判据） | `cbb-pipeline-skill/cbb-pipeline/scripts/init_project.py`；输入 `assets/project.template.yaml` |
+| ② 边界与坐标（L44-52） | 解析语料自身章节标记切单元；每段落（卷,章,行,引文）四元组+block_id；伪锚点日历禁墙钟 | `cbb_coordinate` | **机械检查**（BOM/标记解析、四元组落盘均有判据与成对测试） | `scripts/cbb/cbb-coordinate/cbb_coordinate.py`（＋`test_cbb_coordinate.py`） |
+| ③ 试车（L54-60） | 单单元端到端串联，产出第一份 pipeline-summary 作“形状基准” | 无通用工具（实例侧 `runners/run_uc00_pipeline.py`）；门槛为**预注册**人工对照 | **纸面纪律**（流程编排无包内工具；门槛对照人工） | 实例：`迷深实战-工作区/runners/run_uc00_pipeline.py`；判例对照 `references/判例模板.md` |
+| ④ 小队列（L62-68） | 3~5 单元连跑＋故意混入脏单元，“主动接种”验证防御机制真实触发过 | 无专用工具；依赖 ⑤ 的防御件 | **纸面纪律**（编排），但被接种的四面防御本身有机检 | 依赖 ⑤.2 的 `cbb-extract/cbb_extract.py` 及其测试 |
+| ⑤ 主队列（L70-128） | 核心循环，每单元六小步 | 见下分项 | 混合 | — |
+| ⑤.1 上下文包（L72-78） | 调度员为无状态子代理打包规范+判例+库内先验+切片；“先验非事实源” | `context_pack.py` | 机械（工具行为有测试） | `cbb/tools/context_pack.py`＋`test_context_pack.py` |
+| ⑤.2 抽取四面防御（L80-92） | 读入侧元文本闸/安全侧注入闸/输出侧禁词八类/模型侧无先验填充 | `cbb_extract`（`screen_candidate`/`no_prior_fill`） | **机械检查**（“每面都有成对测试”L88） | `scripts/cbb/cbb-extract/cbb_extract.py`＋`test_cbb_extract.py`；规范 `references/抽取规范.md` |
+| ⑤.3 gate1 证据门（L94-100） | “幻觉的机械可检形态就是引文落不回原文”（L98）：四元组齐/逐字回落/无先验/契约合规 | `cbb_gate1` | **机械检查**（纯函数、同输入同判定） | `scripts/cbb/cbb-gate1/cbb_gate1.py`＋`test_cbb_gate1.py` |
+| ⑤.4 三态写入双轨分流（L102-110） | 置信路由 provisional/合并升级/矛盾进隔离；jsonl 全走 `_append` 汇聚成哈希链账本；supersede 旧件字节不动 | `cbb_store` | **机械检查**（哈希链防篡改可机验 L108） | `scripts/cbb/cbb-store/cbb_store.py`＋`test_cbb_store.py`、`test_w4_thresholds.py` |
+| ⑤.5 隔离区（L112-118） | “隔离区一等公民”，不确定的合法存放处，绝不静默丢弃 | `cbb_quarantine`（status_report） | **机械检查**（状态机 pending→裁决可对账） | `scripts/cbb/cbb-quarantine/cbb_quarantine.py`＋`test_cbb_quarantine.py` |
+| ⑤.6 实时同步哨（L120-128） | 1s 颗粒度扫 mtime 喂 LightRAG；毒批不静默丢；心跳让位防双写 | `lightrag_live.py` | 机械（故障注入实测 L128） | `cbb/tools/lightrag_live.py`（复用 `lightrag_export.py`/`lightrag_delta_sync.py`） |
+| ⑥ 收口（L130-171） | 每章/段收口五小步 | 见下 | 混合 | — |
+| ⑥.1 aux 四件（L132-141） | 嵌入扫描/Neo4j 导出/LightRAG delta/Graphiti 摄入——三派生视图+时序层，“派生件可随时全量重建” | run_chapter 收尾段 | 机械（探活降级不阻塞） | `runners/run_chapter.py`；`build_evidence_index.py`/`build_index_v2.py`（嵌入）、`neo4j_export.py`、`lightrag_delta_sync.py`、`graphiti_ingest.py`/`graphiti_bridge.py` |
+| ⑥.2 账本前置/后置门（L143-149） | 哈希链证明不了“没有漏”，跑前跑后各验一次，“事后审计变运行时拦截” | BUG-0 门 | **机械检查**（注入 ok:false 必 SystemExit，L149） | `cbb/tools/ledger_chain.py`＋`test_ledger_chain.py`；挂点 `runners/run_chapter.py:254-305`（`_verify_gate("前置")` L299、`("后置")` L305） |
+| ⑥.3 批次机械自检（L151-157） | 十项失效模式逐项机器断言，“出口=证据不是轮数” | `批次自检.py` | **机械检查**（输出 JSON 即留痕，FAIL 不许口头豁免） | `cbb/tools/批次自检.py`＋`test_批次自检.py`（3 例） |
+| ⑥.4 图对账与悬挂端点（L159-165） | 四断言面差异只报告不改写；悬挂端点两分法，禁自动 DELETE | `graph_audit` | **机械检查**（报告式） | `cbb/tools/graph_audit.py`＋`test_graph_audit.py`（13 例之一部分） |
+| ⑥.5 派生层对账（L167-171） | 图节点数==实体向量数、边数==关系向量数，“跑成功了不算对账” | `派生层对账.py` | **机械检查**（任一不过退出码 1） | `cbb/tools/派生层对账.py`＋`test_派生层对账.py` |
+| ⑦ 终审（L173-187） | 五层证据门 G1~G5，“出口=可复算的证据，与跑了多少轮无关” | 见下 | G1/G2/G4 机械；G3 半机械；G5+抽样纪律纸面 | G1=`cbb_gate1.py`；G2=批次自检 c8/检索层引文核验；G3=各域成对反例测试；G4=`派生层对账.py`/`graph_audit.py`；抽样=`抽样排序.py`＋`捕获再捕获.py`（Chapman）；G5 判定面非空=人工+`环境自检` 判定面检查 |
+| 附：检索层 L6（L189-209） | 五路召回+RRF+重排+引文核验（“落不回=拒答”）+网络补充层硬标记 | `检索层.py` 等 | 机械 | `cbb/tools/检索层.py`、`重排器.py`、`graph_chain.py`、`匹配建议.py`、`web_supplement.py`（各配 test_*） |
+| 附：守卫层（L211-215） | PreToolUse 拦冻结线覆盖与红区 Write；旁通唯一通道=绑定式裁定引用，无留痕不越权 | `cbb-guard` | **机械检查**（钩子+42 例回归夹具） | `cbb-guard/hooks/guard.mjs`、`hooks.json`、`tests/guard-suites.mjs`（42/42，L4-5） |
+
+---
+
+## 2. 发布技能 SKILL.md
+
+文件：`<ROOT>\cbb-pipeline-skill\cbb-pipeline\SKILL.md`（156 行，v2.0）。
+
+### 步骤结构（L20-40 流程总览）
+⓪ 基础设施自检与图库归属判定（L42-81，单列一步：三件基础设施不可抛弃，缺项阻断 exit 2，`--allow-degraded` 带债放行；四态 READY/BLOCKED/N/A/OBSERVED 不许互顶替，L53-55）→ ① 初始化（project.yaml 八项参数）→ ② 边界（语料自身标记+伪锚点禁墙钟）→ ③ 试车（单单元+预注册门槛）→ ④ 小队列（3~5 单元含脏单元）→ ⑤ 主队列（派工/gate/隔离分流/双轨入库）→ ⑥ 收口（轻收口+区段批次自检，收口必带未达项+导出债务笔数）→ ⑦ 终审（G1~G5，前置：L4 归属已判且导出债务=0；启用派生层再加 `派生层对账.py` PASS）。验收判据表 L124-133；核心纪律 11 条 L135-147。
+
+### Common Mistakes：共 17 条（L104-122），逐条+机检对照
+
+| # | 条目（一句话） | 机检对照 | 判定 |
+|---|---|---|---|
+| 1 | 把上下文包当事实源——先验与原文冲突以原文为准 | `test_context_pack.py`（工具打包并标注先验） | **有机检**（工具层；冲突裁决本身纸面） |
+| 2 | 跨章事实塞进 observations（否则入库即丢） | `test_contracts.py` category 枚举 + gate1 G1-SCHEMA | **有机检** |
+| 3 | 没有受控词表就开跑（604 件假矛盾实例） | `test_词表.py`（`词表.py` 自举/体检/记录核查） | **有机检** |
+| 4 | 均匀随机抽样（缺陷按批次聚集） | `test_抽样排序.py` | **有机检** |
+| 5 | “判定面为空”读成通过 | `test_批次自检.py`（c8/c9 零记录⇒SKIP） | **有机检** |
+| 6 | 多副本靠记忆同步 | `test_graph_audit.py`＋`test_派生层对账.py` | **有机检** |
+| 7 | 契约写歪（canonical 字符串/evidence 单对象等） | `test_contracts.py`＋`test_cbb_gate1.py`（G1-SCHEMA） | **有机检** |
+| 8 | 引文改写（须逐字子串） | gate1 G1-EVIDENCE 坐标回落＋批次自检 c8 | **有机检** |
+| 9 | 全库补齐做一半 | 无对应机械件（SKILL L154 自认“覆盖复算登记件 U-D10……缺机器核”，`cbb-guard/commands/覆盖复算.md` 是配方文档；c5 只有 WARN） | **纯纸面** |
+| 10 | 轮次式自审（数过程不数证据） | 无专测；属审查方法论 | **纯纸面** |
+| 11 | 把外部件 BLOCKED 读成“这层无所谓”/未探写 N/A | `test_环境自检.py`（未探=BLOCKED 机械强制） | **有机检** |
+| 12 | 共用图库当自己的（假干净） | `test_环境自检.py`（G4 ownership_verdict）＋`test_图库隔离.py` | **有机检** |
+| 13 | 一次超时就永久记不可用 | `环境自检.py` 回执带耗时+提示复测，但复测口径无专测 | **纯纸面**（工具提示，无断言） |
+| 14 | 派生层自造名一律删或一律收 | `test_实体名归因.py`（四分类处置） | **有机检** |
+| 15 | 拿“跑成功了”当对账（半途写） | `test_派生层对账.py`＋批次自检 SKIP 语义 | **有机检** |
+| 16 | 外部件直连就当能用（空正文比报错危险） | `test_graphiti_ready.py`（哨兵 B/D）＋`test_web_supplement.py`（guard_block_admission）＋`test_环境自检.py`（--exam 微考） | **有机检**（对应哨兵面） |
+| 17 | 发布件写死上一项目实例名 | `test_路径惯例.py`（不给图库基址即报错） | **有机检** |
+
+小结：17 条中 13 条能对上 test_*.py 或 cbb-guard 机检，4 条偏纸面（#9、#10 纯纸面；#1 冲突裁决、#13 复测口径为机检工具+纸面口径的混合）。cbb-guard 钩子本身（`cbb-guard/hooks/guard.mjs` 头注 L3-24）：拦 A 冻结线覆盖、拦 B 红区 Write（contracts/*.schema.json、在案工单、决策账），旁通须 `CBB_HOOK_BYPASS=<裁定引用>` 且自动入决策账；回归夹具 `tests/guard-suites.mjs` 42 例。
+
+---
+
+## 3. 契约 record.schema.json
+
+文件（三份同源）：`<ROOT>\cbb\contracts\record.schema.json`、`<ROOT>\cbb-pipeline-skill\cbb-pipeline\scripts\cbb\contracts\record.schema.json`、冻结版 `<ROOT>\cbb-skills\contracts\`（v1.0 判据不回改，见 schema L4 标题）。
+
+### 顶层必填（L6）
+`record_id, record_type, library, status, canonical, evidence, provenance, version, supersedes, verified_against`（10 项）。
+
+### 断言位（枚举/数值/pattern/受控词表）
+- `record_type` enum：event/entity/relation/foreshadow/setting/anchor（L9）
+- `library` enum：event/character/timeline/relation/setting/foreshadow（L10）
+- `status` enum：**confirmed/provisional 二态**（L11；L97 $comment：不设第四态，quarantine 走隔离区）
+- `evidence[]`：必含 vol/chapter/line（integer≥0）+ quote（minLength 1），可选 file、graph_edge{edge_id, valid_at, invalid_at}（L13-36）
+- `observations[].category`：19 类受控词表枚举（L44）
+- `verified_against`：path+sha（`^[0-9a-f]{7,64}$`）+verified_at（ISO 日期起头 pattern）三件套必填（L50-59）
+- `version` integer≥1（L93）；`supersedes` string|null（L94）；`spec_version` 可选 string（L95）
+- `provenance.gate_trace[].gate` enum ["1","2a","2b","3"]（L70）；`status_history[].by` enum ["human","shadow","promotion"]（L86）
+
+### canonical 子字段全集
+Schema 本身对 canonical **只有一行**：`"canonical": { "type": "object", "description": "按库类型的本体字段" }`（L12）——**schema 层不约束子字段**；子字段由 profile 的 `required_fields`/`type_vocab` 配置（`assets/project.template.yaml` L20-22）与抽取规范约束（`references/抽取规范.md:44`：“canonical 必须是对象”，写歪属 G1-SCHEMA 拦截项）。实测 6172 条在库记录枚举出的子字段全集（23 个）：
+
+| 库 | canonical 子字段 |
+|---|---|
+| character | name, entity_type |
+| event | name, kind, tick, instant, time_verbatim, entities |
+| relation | subject, rel_type, object, claim |
+| setting | name, entity_type, chapter, tick, fact |
+| foreshadow | name, note, tier, setup_chapter, payoff_chapter, entities, chapter |
+| timeline | label, kind, instant, day_offset, chapter_ref, parent_anchor, precision, pseudo_date, tick |
+
+### 明确回答：canonical 里有没有自由文本字段？
+**有。** 陈述位（自由文本，schema 与词表均不约束内容）：`claim`（relation 的关系断言）、`fact`（setting 的设定陈述）、`note`（foreshadow 备注）、`time_verbatim`（event 时间原文转写，实测长文本）、`label`（timeline 标签）、`name`（命名串，兼作身份键 `cbb_store.py:81`）。其中受控的断言位是 `entity_type`/`rel_type`/`kind`/`tier` 等（走 `type_vocab`/`relation_vocab` 受控词表，模板 L21-22 明写“禁自由文本”）。
+
+**断言位 vs 陈述位总结**：record 顶层除 canonical 外几乎全是断言位（枚举/整数/pattern）；`evidence[].quote` 与 `observations[].text` 是自由文本但属**可机验陈述位**（quote 受逐字回落检查，G1-EVIDENCE/批次自检 c8）；canonical 内部则是“每库少数受控分类字段 + 1~2 个自由文本陈述字段（claim/fact/note/time_verbatim/label）”的混合结构。
+
+---
+
+## 4. 迷深实战-工作区/ 测绘
+
+### 两层目录树（含文件数）
+```
+迷深实战-工作区/
+├── ab-gate/            5 文件（A-B门判定报告 + ch0051/52 双臂抽取件）
+├── anchors/            2（anchor-tree.v1.json、trial-v0-anchor-tree.ch14only.json）
+├── candidates/       406（cands-ch*.json）
+├── embedding/         136（scan-ch*.json）
+├── gate1/             201（gate1-ch*.json）
+├── logs/              322（manifest 摘要、pipeline-summary、neo4j-export-*、十查-*.md、对样-*、graph-audit-*）
+├── manifest/          203（boundary-table-v1.json、manifest-ch0001~0230、anchor-normalization.jsonl 582 行）
+├── runners/            15（run_chapter.py、run_uc00_pipeline.py、slice_batch.py、judge_exam.py 等）
+├── slice/             189（ch*.txt 切片）
+├── trial-v0-本体库/    （见下）
+├── 索引/lancedb/      182；索引/lightrag-exp/ 8
+├── 评分/               23（judge-exam、nli/、deepseek-probe/、tier1-ch14）
+└── 根散件 4（context-pack.md、rolling-summary.md、_build_ch0124_extract.py、子代理并行亲抽-评估与放量方案.md）
+```
+
+### trial-v0-本体库/ 完整结构
+```
+trial-v0-本体库/
+├── aliases.jsonl        8 行
+├── appearances.jsonl   34 行
+├── libraries/{character,event,foreshadow,relation,setting,timeline}/provisional/
+│   character=12, event=4, foreshadow=1, relation=37, setting=22, timeline=1  （共 77 件）
+└── quarantine-zone/
+    ├── items.jsonl          13 行（13 件 status=pending）
+    └── adjudications.jsonl   2 行
+```
+
+### 台账行数
+- `决策账.jsonl`（`<ROOT>\决策账.jsonl`）：**7 行**
+- 账本 `迷深实战-本体库\ledger.jsonl`：**4488 行**（trial-v0 无独立 ledger）
+- **处置台账：不存在同名 jsonl**。全库仅 `<ROOT>\审计修复台账-R4-20260924.md`（md 台账）；导出债务走 `导出债务.jsonl` 机制（SKILL L50），工作区内未落盘该文件。
+
+### 三态统计（find+wc 实测）
+- **confirmed：0 件**（全仓库不存在任何 `confirmed/` 目录；两库 libraries 下均只有 provisional）
+- **provisional**：trial-v0-本体库 **77 件**（记录级 grep `"status": "provisional"` = 77）；主库 `迷深实战-本体库` **6172 件**（character 1336 / event 1066 / foreshadow 590 / relation 1719 / setting 1261 / timeline 200，status 计数 6172 全 provisional）
+- **quarantine**：trial-v0 **13 件**（items.jsonl 13 行，全 pending；裁决 2 行）；主库 **1373 件**（items.jsonl 1373 行，adjudications 129 行）
+
+---
+
+## 5. 机械判定面清单
+
+### 5.1 批次自检.py 十项（`cbb-pipeline-skill\cbb-pipeline\scripts\cbb\tools\批次自检.py`）
+退出码 0=全 PASS/仅 SKIP，1=任一 FAIL；“FAIL 不许口头豁免”（L6）。检查器自身崩溃=SKIP 留痕（L370-371）：
+
+| # | 名称（行号） | 一句话判据 |
+|---|---|---|
+| c1 | 库/STATE/commit 三方对账（L151） | 账本头 seq vs STATE 游标 vs git porcelain 干净度；读不到 STATE⇒SKIP 不是 PASS；git 判不了⇒None 不是 True |
+| c2 | 章号边界一致（L192） | 候选章号集 vs 语料 `<<<CHAPTER` 声明面：超出=FAIL，缺口=WARN（缺号须登记） |
+| c3 | 元文本混入（R6 全量扫描，L211） | 正则 `月票|求收藏|求订阅|翻译组|作者的话|请假条|上架感言|推荐票`（L24）深遍历候选全字符串，命中=FAIL（`$._meta` 豁免） |
+| c4 | 墙钟入档（L224） | 正则 `20[2-4]\d-\d{2}-\d{2}`（L23）扫候选+anchor/timeline 记录，命中=FAIL（审计键 verified_at/at/created_tick/verified_against/r6_verbatim/revision 豁免，L25-26） |
+| c5 | 空单元登记（L242） | 已覆盖区间内零候选章⇒WARN（登记件 U-D10 未建）；游标后未入库=非缺陷 |
+| c6 | 隔离分流状态（L270） | items.jsonl 所有 status ∈ {pending, confirmed, rejected}，非法=FAIL |
+| c7 | 去重提示入账（L278） | workspace/embedding/ 有扫描产物⇒PASS，空⇒WARN |
+| c8 | 证据引文回落（全量，L285） | 每条 evidence.quote 必须是对应 slice 的逐字子串；引文数为 0⇒SKIP（判定面为空不许读成通过） |
+| c9 | verified_against 真实三件套（L316） | 每记录 path/sha/verified_at 齐且 sha 非"000…“占位；库内 0 记录⇒SKIP（空库刷不出绿） |
+| c10 | 断点与导出存在性（L334） | 库目录最近 git commit 存在＋logs/neo4j-export-*.json 件数（缺席记导出债务）；恒 PASS 只报数 |
+
+### 5.2 cbb_gate1.py G1-* 校验码全表（`scripts\cbb\cbb-gate1\cbb_gate1.py`）
+九码三域（L33-37 注册；L40-50 隔离子类映射；L53-63 修复动作 P0-P2）：
+
+| 码 | 域 | 判据 | 隔离子类 | 优先级 |
+|---|---|---|---|---|
+| G1-SCHEMA | validate | 契约 v2.0 结构违规（jsonschema 校验，L94） | extrapolation_unverified | P0 |
+| G1-EVIDENCE | validate | evidence 为空或四元组不全/坐标落不回（L101-108） | extrapolation_unverified | P0 |
+| G1-REF | links | canonical 引用字段或 supersedes 悬空（L124-127） | extrapolation_unverified | P1 |
+| G1-REL-BACKLINK | links | 关系单向缺回链（逆类型 12 对+对称 12 项，L65-70、158-163） | contradiction_pending | P1 |
+| G1-TIME_INVERSION | continuity | 因果前驱时间倒置（L190） | contradiction_pending | P1 |
+| G1-DEAD-WALK | continuity | 死亡实体后续事件（L223） | contradiction_pending | P0 |
+| G1-FORESHADOW-ORDER | continuity | payoff_chapter 早于 setup_chapter（L235） | contradiction_pending | P1 |
+| G1-CHEKHOV-OVERDUE | continuity | 伏笔 ≥3 章超期未兑现（L239） | overdue_omission | P2 |
+| G1-CONTRADICTION | continuity | 同字段矛盾（L257） | contradiction_pending | P0 |
+
+纯函数：无 LLM、无网络、无时钟（L15）。
+
+### 5.3 项目门.py
+**不存在。** 全仓库（含 .py/.md）grep “项目门” 零命中；`cbb/tools/` 与 skill 包 tools/ 均无此文件。职能上最接近“项目门”的是 ⓪ 步 `环境自检.py`：REQUIRED 主链四项 M1 解释器/M2 依赖 yaml/M3 工作区可写/M4 账本可追加（L68、103-133），图四项 G1 HTTP/G2 bolt/G3 凭证/G4 归属（L145-206），E1 嵌入（L220-222）、R1 重排（L233-236）、L1 推理观察项（L273-305）、P1 graphiti 包+路由（L357-367）、J1 判定者身份（L372-374）；`OBSERVE_ONLY = ("L1","P1","J1")`（L392）；exit 0 可开书 / exit 2 阻断（L30）。
+
+---
+
+## 6. 外部依赖端点全表
+
+全目录 grep `http://`＋端口（已合并重复；测试文件断言默认值的行计入“出处”）：
+
+| 端点 | 端口 | 用途 | 主要出处（file:line） |
+|---|---|---|---|
+| `http://localhost:7474`（env `NEO4J_HTTP`） | 7474 | Neo4j 正典图 HTTP（出厂默认；图导出/图对账/连续性巡检/图链） | `cbb/tools/环境自检.py:61`、`neo4j_export.py:28`、`graph_chain.py:20`、`graph_audit.py:31`、`连续性巡检.py:127,156`、`cbb-v2/cbb2/config.py:48` |
+| `http://localhost:7695` | 7695 | 正典图现役容器映射（7695→7474；A13 修复后口径；web 控制台探测） | `neo4j_export.py:11,27`、`环境自检.py:40`、`web_console.py:143`、`exp_第五路对照.py:47-48`、`test_图链增量网络.py:17`、`路径惯例.py:6` |
+| `bolt://localhost:7687` / `127.0.0.1:7687` | 7687 | Neo4j bolt 出厂端口（graphiti_ready 探活、smoke 探活、P1 实验脚本） | `graphiti_ready.py:30`、`smoke/run_smoke.py:226,237`、`P1执行区/.../run_tier2_pipeline.py:55,60`、`cbb_store.py:158`（文档） |
+| `bolt://localhost:7694` | 7694 | 现役 bolt 映射（7694→7687） | `neo4j_export.py:27`、`图库隔离.py:152` |
+| `bolt://localhost:7693`（env `GRAPHITI_BOLT`） | 7693 | Graphiti 专用图实例（双时序层，与正典图隔离） | `graphiti_dump.py:21`、`graphiti_ingest.py:8,36`、`graphiti_spike.py:34`；说明书 L223 “Graphiti 图（7693）” |
+| `--http-port 7697` / `--bolt-port 7696` | 7696/7697 | 图库隔离器新建专用实例默认发布端口 | `图库隔离.py:141-142`（`taken={7694,7695}` L152） |
+| `http://127.0.0.1:8080/v1/embeddings`（env `EMBED_HTTP`） | 8080 | 本地嵌入端点（qwen3-embedding-8b 4096 维；嵌入扫描/向量索引/LightRAG/graphiti 全走此） | `环境自检.py:62`、`build_evidence_index.py:26`、`build_index_v2.py:22`、`embed_dedup_scan.py:123`、`检索层.py:35`、`lightrag_export.py:34`、`lightrag_bridge.py:41`、`graphiti_bridge.py:39`、`graphiti_ingest.py:37`、`cbb-v2/cbb2/config.py:59` |
+| `http://127.0.0.1:8080/v1`（`SPIKE_LLM_BASE`/`EMB_BASE_PINNED`） | 8080 | 本地 LLM/chat 探测（NLI 微考 `/v1/chat/completions` L251、模型列表 `/v1/models` L279） | `环境自检.py:313,323,251,279`、`graphiti_spike.py:29,33`、`smoke/run_smoke.py:232` |
+| `http://127.0.0.1:8081/v1/rerank`（env `RERANK_HTTP`） | 8081 | 重排端点（qwen3-reranker） | `环境自检.py:63`、`重排器.py:18`；`能力落地-U-F01-重排端点-20260923.md:32` |
+| `http://127.0.0.1:1234/v1` | 1234 | LM Studio 出厂端口（观察项；Hyper-V 保留段风险，SKILL L76-78） | `环境自检.py:64`、`graphiti_bridge.py:28` |
+| `http://127.0.0.1:<--port>`（默认 **8090**） | 8090 | web_console 自身监听（本地检索控制台） | `web_console.py:9,160,162` |
+| LightRAG | 无 HTTP 端口 | 进程内嵌入（`from lightrag import LightRAG`），仅嵌入走 8080 | `lightrag_live.py:201-202` |
+
+要点：正典图 7695/7694 与 Graphiti 7693 双实例隔离；嵌入 8080、重排 8081、LM Studio 1234（观察项）、控制台 8090、隔离器新实例 7696/7697；所有端点可用 env 覆盖（`NEO4J_HTTP`/`EMBED_HTTP`/`RERANK_HTTP`/`GRAPHITI_BOLT`/`SPIKE_LLM_BASE`），`路径惯例.py` 实行“图库基址不给就报错，不许拿活端口当默认”（L67-74）。
+
+---
+
+### 附：关键交叉发现（供重构报告引用）
+1. 同一工具存在四份拷贝：`cbb/`（主开发）、`cbb-pipeline-skill/.../scripts/cbb/`（发布包）、`cbb-skills/`（v1 冻结）、`cbb-marketplace/cbb-guard/`（guard 再发布）——端点默认值已出现分叉（发布包 `neo4j_export.py:28` 仍是 7474 出厂默认，仅注释提 7695）。
+2. 说明书宣称与代码一致的锚点：批次自检十项、gate1 九码、BUG-0 前置后置门（`run_chapter.py:254-305`）均实证在位；说明书 L14 写"LightRAG 同步（live 哨 1s）"、L15 Graphiti 双时序，与 `lightrag_live.py`、`graphiti_ingest.py` 对应。
+3. confirmed 三态中的第三态从未落地：全系统 0 条 confirmed、0 个 confirmed 目录，与“高置信一致重复→合并升级”（说明书 L104）未在实际库中发生过，晋升路径（tau_confirmed=0.97，模板 L34）尚无实战样本。

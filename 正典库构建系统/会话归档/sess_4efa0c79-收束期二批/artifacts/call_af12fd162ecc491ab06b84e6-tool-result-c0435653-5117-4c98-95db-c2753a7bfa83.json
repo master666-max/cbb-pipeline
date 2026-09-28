@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-21T15:22:44.101Z",
+  "files": [
+    {
+      "afterContent": "# INDEX · CBB-正典库构建（件级一句话索引 + 已知缺陷）\n\n## 16仓对比研究/\n- `U-A17-跨仓综合报告与本体路线修订书.md` — 16 仓裁决总表（借鉴 11/外挂 2/只读 3）+三条件全景+逐技能保留重构吸收清单\n- `agent-skills.md` ~ `worldbook-skill.md`（16 份） — 每仓六节详报（架构/数据模型/可借鉴/许可/与 CBB 对照/处置）\n- `graphify-novel-v1.1-行号补强.md` — U-A08 整改件（26 条行号引用）\n- `验收判定-阶段一.md` — 17/17 通过判定+八条待确认 triage\n- `issues/` — 三谜归属错位等跨线议题件\n\n## 架构与漂移/\n- `决策补记录-架构漂移修正.md` — D1/D2 真漂移+W1-W4 弱化的零缺口修正（六项机制闭环）\n- `回忆-CBB架构与16仓档位-20260917.md` — 16+1 仓档位总表+漂移现状+编排状态+文件指针（会话回忆锚）\n- `验收判定-本体构筑.md` — 阶段二本体构筑验收 10/10（161 单测+冒烟 74 独立复测）\n\n## （本线外锚定，不在仓内）\n- 被测工作区运行态/本体库/实验版 — 见《被测件锚.md》\n- 方法发布件 — github.com/master666-max/cbb-pipeline（锚 commit 14b5b7c）\n\n## 已知缺陷（诚实清单）\n1. 抽取规范.md/判例模板.md 内保留迷深实例（私有仓可接受；公开仓已通用化脱敏）\n2. U-A17 详报含目标小说剧透内容（私有仓可接受）\n3. A/B 首测 FAIL 后的上下文包迭代版**未经第二轮实测**（重测待窗口）\n4. judge 停用期间批级评分缺失，隔离路由为保守默认（宁滥勿漏）\n5. 中文阈值（0.85/10%）仍为手设值，DC-3 自举待数据\n",
+      "afterContentLength": 835,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "/tmp/research-hub/CBB-正典库构建/INDEX.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_af12fd162ecc491ab06b84e6",
+  "toolName": "Write",
+  "version": 1
+}

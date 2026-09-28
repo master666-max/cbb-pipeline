@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-26T04:29:31.293Z",
+  "files": [
+    {
+      "afterContent": "# 业务规格（Given/When/Then）· 从代码与特征基线挖掘（2026-09-26）\n\n> 来源：analysis/characterization.py（真实运行指纹）+ cbb 各模块在案测试（37 件）+ 全流程说明书。\n> 每卡带 file:line 引用；imagine 重建必须满足全部 G/W/T（验收测试逐卡对应）。\n\n## R1 三态写入（P0）\n- **G** 任意 candidate 过契约校验\n- **W** `admit(rec, \"provisional\")`（cbb_store.py:234）\n- **T** 落 libraries/<lib>/provisional/<rid>.json；quarantine 决定不落 library（cbb_store.py:250）\n- 引：test_cbb_store.py::test_admit_three_states\n\n## R2 一致重复合并（P0）\n- **G** 库内已有同身份记录，新观察一致（confidence 不低于库内）\n- **W** `admit_or_merge(dup)`（cbb_store.py:353）\n- **T** track=\"consistent-duplicate\"，confidence 上调，版本 +1，**同内容重放零副作用**（P-017 证据子集守卫）\n- 引：test_cbb_store.py::test_reingest_same_observation_idempotent\n\n## R3 矛盾不静默合并（P0）\n- **G** 同身份冲突字段（alive vs dead）\n- **W** `admit_or_merge(conf)`\n- **T** track=\"contradiction\"，进隔离区 items.jsonl，**矛盾不落库**\n- 引：smoke/run_smoke.py:186-188\n\n## R4 原子写（P0）\n- **G** 任何库文件写入\n- **W** `_write_immutable`（cbb_store.py:193）\n- **T** temp+os.replace；崩溃不留半截 JSON；落定失败清残件\n- 引：test_cbb_store.py::test_a2b_crash_leaves_no_partial_file\n\n## R5 撕裂 JSON 不崩全链（P0）\n- **G** libraries 下存在撕裂/坏编码 JSON\n- **W** `iter_records()`\n- **T** 不抛异常，坏件入 iter_skipped 披露\n- 引：test_cbb_store.py::test_a2a_torn_json_disclosed_not_crash\n\n## R6 元文本闸（P0）\n- **G** 标题含\"章末说\"或正文含\"本章说/翻译：/转载请注明…\"\n- **W** `is_metatext`（cbb_extract.py:99）\n- **T** True → 整章跳过抽取\n- 引：characterization 抽取面；test_cbb_extract.py::test_metatext_chapter_yields_zero\n\n## R7 注入闸（P0）\n- **G** 正文含\"忽略之前/system prompt/rm -rf/```\"等\n- **W** `has_embedded_instruction`（cbb_extract.py:110）\n- **T** True → 整块拒抽（宁漏勿执行）\n- 引：characterization 抽取面\n\n## R8 跳过块登记（P1）\n- **G** 抽取跳过块（元文本/注入）\n- **W** `extract_stub(..., skipped_out=[])`\n- **T** 每跳过块登记 {chapter, line_start, reason}——不静默丢弃\n- 引：test_cbb_extract.py::test_a9_skipped_blocks_registered\n\n## R9 引文逐字回落（P0）\n- **G** 任意证据引文\n- **W** `locate_quote(blocks, vol, chapter, quote)`（cbb_coordinate.py:104）\n- **T** 首个 vol/chapter 匹配且 text 含 quote 的块；找不到=None（门1 判不可见）\n- 引：characterization 坐标面\n\n## R10 BOM 剥离（P0）\n- **G** 语料带 UTF-8 BOM\n- **W** `process_file`（cbb_coordinate.py:118）\n- **T** decode(\"utf-8-sig\")，首章标记必须匹配\n- 引：test_cbb_coordinate.py::test_a8_bom_stripped_no_coordinate_shift\n\n## R11 别名精确召回（P1）\n- **G** 查询含实体名/别名\n- **W** `alias_recall`（检索层.py:56）\n- **T** 确定性命中，零模型依赖\n- 引：characterization 检索面\n\n## R12 账本哈希链（P0）\n- **G** 任何 store 侧车写入\n- **W** LedgedStore._append → ledger.jsonl 追加（sha_before/after+幂等键）\n- **T** verify(store) ok=true；**旁路直写后 verify 必 false**\n- 引：characterization 账本面；test_ledger_chain.py::test_tamper_detected\n\n## R13 状态迁移有效态（P1）\n- **G** 迁移轨迹（provisional→confirmed→provisional）\n- **W** `status_transition` / `effective_status`\n- **T** from 记有效态；幂等重放 repeated=True\n- 引：test_cbb_store.py::test_a4_transition_from_is_effective_state\n\n## R14 隔离区一等公民（P0）\n- **G** 矛盾/低置信/超期件\n- **W** zone.register（group/subclass/detail/record_id/source）\n- **T** items.jsonl 登记；status 全法值；绝不静默丢\n- 引：批次自检 c6；test_cbb_quarantine.py\n\n## R15 批量计划确定性（P2）\n- **G** plan_batches(20, 8)\n- **T** [[1..8],[9..16],[17..20]]——同输入同输出\n- 引：characterization 抽取面\n",
+      "afterContentLength": 2993,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\analysis\\rules.md",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_a78094499f0a45619e232644",
+  "toolName": "Write",
+  "version": 1
+}

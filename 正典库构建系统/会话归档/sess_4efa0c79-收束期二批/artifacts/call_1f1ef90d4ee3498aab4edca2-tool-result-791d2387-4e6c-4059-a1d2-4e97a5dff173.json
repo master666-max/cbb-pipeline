@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-09-26T19:57:46.423Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_schedule.py — Phase F·G12 FSRS 重验证调度器。\"\"\"\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nfrom cbb2.schedule import ReviewScheduler, solve_interval  # noqa: E402\n\n\ndef test_solve_interval_monotonic():\n    assert solve_interval(1, 0.9) >= 1\n    assert solve_interval(10, 0.9) > solve_interval(5, 0.9)  # S↑→N↑\n    assert solve_interval(10, 0.95) > solve_interval(10, 0.90)  # r↑→N↓\n\n\ndef test_scheduler_roundtrip():\n    with tempfile.TemporaryDirectory() as td:\n        sched = ReviewScheduler(Path(td))\n        sched.schedule(\"e1\", tenure_segments=5, stability=3.0)\n        assert \"e1\" in sched.state\n        e = sched.state[\"e1\"]\n        assert e[\"interval\"] >= 1 and e[\"stability\"] == 3.0\n\n\ndef test_scheduler_pass_grows_fail_resets():\n    with tempfile.TemporaryDirectory() as td:\n        sched = ReviewScheduler(Path(td))\n        sched.schedule(\"e1\", tenure_segments=5, stability=3.0)\n        s0 = sched.state[\"e1\"][\"stability\"]\n        sched.record_check(\"e1\", passed=True, segment=10)\n        s_after_pass = sched.state[\"e1\"][\"stability\"]\n        assert s_after_pass > 3.0  # 通过→S 增长\n        sched.record_check(\"e1\", passed=False, segment=20)\n        s_after_fail = sched.state[\"e1\"][\"stability\"]\n        assert s_after_fail < s_after_pass  # 失败→S 衰减\n\n\ndef test_scheduler_due_filter():\n    with tempfile.TemporaryDirectory() as td:\n        sched = ReviewScheduler(Path(td))\n        sched.schedule(\"a\", tenure_segments=3, stability=2.0)\n        sched.schedule(\"b\", tenure_segments=8, stability=8.0)\n        due = sched.due(current_segment=50)\n        assert \"a\" in due and \"b\" in due  # 初始 last_checked=0，全到期\n\n\ndef test_scheduler_stats():\n    with tempfile.TemporaryDirectory() as td:\n        sched = ReviewScheduler(Path(td))\n        sched.schedule(\"x\", tenure_segments=3, stability=2.0)\n        s = sched.stats()\n        assert s[\"total\"] == 1\n\n\nif __name__ == \"__main__\":\n    fns = [v for k, v in sorted(globals().items()) if k.startswith(\"test_\")]\n    for fn in fns:\n        fn()\n        print(f\"OK {fn.__name__}\")\n    print(f\"{len(fns)} tests PASS\")\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_schedule.py",
+      "structuredPatch": [
+        {
+          "oldStart": 13,
+          "oldLines": 7,
+          "newStart": 13,
+          "newLines": 7,
+          "lines": [
+            " def test_solve_interval_monotonic():",
+            "     assert solve_interval(1, 0.9) >= 1",
+            "     assert solve_interval(10, 0.9) > solve_interval(5, 0.9)  # S↑→N↑",
+            "-    assert solve_interval(10, 0.95) > solve_interval(10, 0.90)  # r↑→N↓",
+            "+    assert solve_interval(10, 0.95) < solve_interval(10, 0.90)  # r↑→N↓（更高保持率→更频繁巡检）",
+            " ",
+            " ",
+            " def test_scheduler_roundtrip():"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_1f1ef90d4ee3498aab4edca2",
+  "toolName": "Edit",
+  "version": 1
+}

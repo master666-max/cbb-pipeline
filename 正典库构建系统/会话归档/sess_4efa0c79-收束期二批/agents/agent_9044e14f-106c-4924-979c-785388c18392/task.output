@@ -1,0 +1,49 @@
+# 开源混合检索引擎现状与选型（本地单机 / 嵌入式优先）
+
+## 一、逐候选核实
+
+**1) Neo4j 原生**｜向量索引自 5.13 起 **GA**（非 beta），Community 版可用，但存的必须是 `LIST<FLOAT>`（原生 `VECTOR` 属性需 Enterprise/Aura）；查询语法已改为 `SEARCH ... IN (VECTOR INDEX ... FOR $vec LIMIT k) SCORE AS`（2026.01 引入，旧 `db.index.vector.queryNodes` 自 2026.04 **弃用**）；全文 `SEARCH ... FULLTEXT INDEX` 自 **2026.09**（Cypher 25）。**无内置 RRF 函数**——官方定位"hybrid 是检索模式而非索引类型"，示例是用多个 SEARCH 源 + 权重手写 rank fusion。Windows 有原生 zip/Windows 服务/PowerShell 模块（**不必 Docker**）。维护活跃（2026.09 版本在发）。
+URL: cypher-manual/current/indexes/semantic-indexes/vector-indexes/、…/full-text-indexes/、…/clauses/search/、developer/genai-ecosystem/hybrid-search/、operations-manual/current/installation/windows/
+
+**2) sqlite-vec + FTS5**｜PyPI 稳定版 0.1.9（有 `win_amd64` wheel），仓库最新 0.1.10-alpha.4（2026-05-18），README 自述 **pre-v1、会有破坏性变更**，207 个未关 issue → 维护节奏偏慢。**本机实测**：Python 3.50.4 的 sqlite3 **FTS5 已启用**（`CREATE VIRTUAL TABLE ... fts5` 成功）。hybrid 需自写 RRF。
+URL: github.com/asg017/sqlite-vec、pypi.org/project/sqlite-vec/
+
+**3) DuckDB VSS/FTS**｜【未核实】官网 `core_extensions/vss` 页面 curl/WebFetch 均只返回重定向壳，未能确认实验/稳定状态与 HNSW 持久化限制。
+
+**4) Qdrant**｜hybrid = `prefetch` + fusion：**RRF**（服务器默认 k=2；参数化 k 自 v1.16、加权 RRF 自 v1.17）、**DBSF** 自 v1.11。**Python 本地模式**（`QdrantClient(":memory:")` / `path=...`）可用：客户端源码内确有 `local/sparse.py`、`local/sparse_distances.py` 与 `hybrid/fusion.py`（RRF/DBSF），且 `query_points` 实现 prefetch 解析 → 本地模式支持 sparse+hybrid；但官方措辞是"development, prototyping and testing"。Windows 有原生 `qdrant-x86_64-pc-windows-msvc.zip`（服务式）。活跃：v1.19.1（2026-09-04）。
+URL: qdrant.tech/documentation/concepts/hybrid-queries/、github.com/qdrant/qdrant-client（README "Local mode"）
+
+**5) LanceDB**｜0.39.0，**有 `cp310-abi3-win_amd64` wheel，纯内嵌无服务**。FTS 已迁到 **Lance-native**（不再接受旧 Tantivy 参数）；新写入行需 `table.optimize()` 才进 FTS/ANN 索引（官方建议约 10 万行变更或 20 次 DML 后调用）。hybrid：`table.search(query_type="hybrid").vector(v).text(q).rerank(RRFReranker(K=60))`——RRF **模型无关、无需密钥、默认启用**；另有 LinearCombination / CrossEncoder / ColBERT；自定义 reranker 继承 `Reranker` 实现 `rerank_hybrid()`。活跃（2026-09-23 仍有提交）。
+URL: docs.lancedb.com/search/hybrid-search、/reranking/rrf、/reranking/custom-reranker、/search/full-text-search
+
+**6) Milvus Lite / Chroma / Weaviate embedded**｜Milvus Lite **3.2.1 已改为纯 Python 重写**，`py3-none-any` wheel，依赖 faiss-cpu（有 win wheel）、pyarrow、grpcio；README 明示支持 **dense + 稀疏 BM25 + hybrid**，平台含 Windows 但 CI 只覆盖 Windows+Py3.10，融合 API 细节【未核实】（milvus.io 文档 403）。Chroma 1.5.9 内嵌可用，但检索侧只有 `where_document` 的 `$contains/$regex`（子串/正则，**无 BM25 排名、无融合**），hybrid/full-text 被归到 Chroma Cloud。**Weaviate Embedded 官方标 Experimental、仅 Linux/macOS → Windows 直接排除**。
+URL: github.com/milvus-io/milvus-lite、docs.trychroma.com/docs/querying-collections/full-text-search、docs.weaviate.io/deploy/installation-guides/embedded
+
+**7) Meilisearch / Typesense**｜Meilisearch v1.54.0（2026-09-21）有 `meilisearch-windows-amd64.exe`，hybrid 内置（`semanticRatio` 默认 0.5 自动调权），`rest` embedder 可接任意 API、`userProvided` 可传预计算向量；**但是常驻服务，且无重排**。Typesense hybrid 用 rank fusion（`alpha` 调 0.7/0.3 加权），可手填 `vector_query` 或走 OpenAI-compatible 自动嵌入（GPL-3.0）；**Windows 仅 "Windows (WSL)"，无原生二进制**；也是服务。
+URL: meilisearch.com/docs/capabilities/hybrid_search/overview、typesense.org/docs/30.2/api/vector-search.html、typesense.org/docs/guide/install-typesense.html
+
+**8) pgvector / ParadeDB**｜pgvector README 有专门 Hybrid Search 章节，给 **RRF 与 cross-encoder 示例**（Python 侧融合）；Windows 需 VS 编译（`nmake /F Makefile.win`）。ParadeDB 0.25.9：BM25+向量按 **RRF** 融合，但**向量搜索是 beta（0.25.0+）**，部署以 Docker/Linux 为主，Windows【未核实】。成本 = 多一个 Postgres 常驻。
+URL: github.com/pgvector/pgvector（Hybrid Search / Installation Notes - Windows）、paradedb.com/docs/concepts/hybrid/overview
+
+**9) 框架层**｜Haystack：`DocumentJoiner` 源码含 `RECIPROCAL_RANK_FUSION` 模式；`OpenAIDocumentEmbedder` 有 `api_base_url` 参数（源码确认）→ 可直连 LM Studio。LlamaIndex：`QueryFusionRetriever` 源码含 `reciprocal_rerank` / `relative_score` / `dist_based_score` 三种融合；有 `OpenAILikeEmbedding`。LightRAG：本地/全局/**hybrid/mix** 查询模式 + reranker（2025.08 起），可选 Neo4j 存储，但默认存储自述"仅适合小规模测试，不适合生产"。RAGFlow：Docker Compose 常驻。
+URL: github.com/deepset-ai/haystack（components/joiners/document_joiner.py）、github.com/run-llama/llama_index（retrievers/fusion_retriever.py）、github.com/HKUDS/LightRAG
+
+## 二、按本项目约束排序的推荐
+
+1. **Neo4j 原生（首选，条件是 FULLTEXT 能在你实例上用）**——唯一"零新增常驻进程"路线（复用 7694），10 万片段远低于其能力边界；向量索引 Community 可用、过滤走 `SEARCH ... WHERE`、批量 upsert 用 `UNWIND`。代价：RRF 要按官方指南手写 Cypher；向量必须客户端预计算（正合你要的本地点）。**先验证**：在 7694 上执行一条 `CREATE FULLTEXT INDEX` 即可定论（Community 是否支持，文档未标注【未核实】）。
+2. **LanceDB（首选"纯嵌入式"）**——pip 即用、无服务、单目录持久化；RRF 内置且默认、可传预计算向量、可自定义 reranker 接 `/v1/rerank`；Windows wheel 已确认。
+3. **sqlite-vec + FTS5（极简保底）**——本机 FTS5 实测已启用，sqlite-vec 有 Windows wheel，零服务；代价是 RRF 自写、组件处于 pre-v1；风险可接受（数据量小，随时可迁）。
+   备选第 4：Milvus Lite（BM25+hybrid 内置的纯 Python 包），但依赖重、Windows 覆盖有限。
+
+**不建议**：Weaviate embedded（不支持 Windows）；Chroma OSS（无 BM25/无融合，hybrid 是云功能）；Meilisearch/Typesense（都是常驻服务，Typesense 还要 WSL/Docker，均无内置重排）；pgvector/ParadeDB（新增 Postgres 常驻 + Windows 自编译）；Qdrant 服务版（违背"少常驻"，本地模式虽支持 sparse+prefetch+RRF，但官方定位原型，且你已有 Neo4j）；RAGFlow（Docker 常驻）。
+
+## 三、接本地模型的关键细节
+
+- **Neo4j**：向量只能在客户端算好（Cypher 传 `LIST<FLOAT>`）；无 rerank 集成，重排在 Python 侧调 `http://127.0.0.1:8080/v1/rerank`。
+- **LanceDB**：可直接 `search(query_type="hybrid").vector([...]).text("...")` 用预计算向量；RRF 无模型本地跑；要 HTTP 重排就继承 `Reranker` 写 `rerank_hybrid()`，必须产出 `_relevance_score` 列否则报错。
+- **sqlite-vec + FTS5**：向量预计算写入 `vec0`；BM25 用 FTS5 的 `bm25()`；两者名次在 Python 里做 RRF（约十行）。
+- **Milvus Lite**：支持预计算向量；rerank 端点对接方式【未核实】。
+- **Meilisearch**：`userProvided` + 查询 `vector` 参数（必须自己算查询向量）；或 `rest` embedder 指向本地端点；无重排。
+- **Typesense**：手填查询 embedding 走 `vector_query`，或用其 OpenAI-compatible 远程模型配置。
+- **Haystack / LlamaIndex**：`OpenAIDocumentEmbedder(api_base_url=...)`、`OpenAILikeEmbedding` 可直连 127.0.0.1:8080；重排用本地 ranker 或自写组件。
+- **共性坑**：维度写死（Neo4j `vector.dimensions`、`Vector(dim)`、`float[N]`），换嵌入模型即需重建索引；LM Studio/llama-server 的 `/v1/rerank` 是否返回标准 rerank 响应体需自测【待确认】。

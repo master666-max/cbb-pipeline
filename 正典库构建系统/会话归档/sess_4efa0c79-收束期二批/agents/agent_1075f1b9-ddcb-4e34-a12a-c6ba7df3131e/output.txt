@@ -1,0 +1,65 @@
+# CBB 技术情报预调研报告（检索日期 2026-09-26）
+
+## A. 逐题发现
+
+### Q1 混合检索 2025-2026 共识
+
+**1. RRF vs 加权融合**
+- **Calibrated Fusion for Heterogeneous Graph-Vector Retrieval**（arXiv 2603.28886，2026-04）— 可信度高（arXiv 原文）。核心论点：RRF 完全丢弃分数只用秩，是异构融合的稳健基线；但若分数可校准（概率积分变换 PIT，实测效果约等于简单 max 归一化），**校准分数融合优于秩融合**，论文专设 §3.5 "Comparison to RRF"。这是 2026 年最直接的“RRF 何时不够”论证。
+- **未找到** 2025-2026 专门做"RRF vs 加权融合"权威 A/B 实测的独立论文（明说）。工程侧现状：Elasticsearch/Weaviate 默认 RRF；ES 官方文档确认 `rank_constant` 默认 60、`rank_window_size` 默认=最终 `size`，“调大窗口提升相关性但牺牲性能”（https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion，活文档）。
+- 实践共识（多源一致）：**后接交叉编码器重排器时，融合方式之间的差距会被大幅抹平**——因为重排器只看融合后的 top-N。
+
+**2. 图路（1-2 跳子图）何时真有增益**
+- **RAG vs. GraphRAG: A Systematic Evaluation and Key Insights**（Han et al.，arXiv 2502.11371，v1 2025-02-17，v3 2026-03-04）— 可信度高（被引 140+）。结论：GraphRAG 在**多跳、关系中心、全局综合**类问题上胜；事实型/局部查询向量 RAG 足够；代价是索引成本高（约 $0.01/doc vs 更高）。元综述，主张“选择+融合”而非二选一。
+- **Democratizing GraphRAG（SPRIG）**（arXiv 2602.23372，2025-12-27）— 可信度高（arXiv 原文验证）。NER 共现图 + Personalized PageRank，CPU 线性时间零 token 成本；论文明确给出**“CPU 图检索何时改进多跳召回、何时 RRF 词法混合已足够”**的实验边界。
+- Persistent Systems 博客 "When Does GraphRAG Outperform Traditional RAG?"（2026-09 下旬）— 可信度中（企业博客，仅搜索摘要级验证）：图增益集中在跨文档连事实的多跳推理。
+- 旁证（Graphiti #1924，见 Q5）：作者实测**朴素 BM25+余弦+BFS 浅层遍历 RRF 融合**在多跳任务上已打出强基线（mean 0.90），复杂结构化管线反而更差（0.60）。
+
+**3. 多路召回配比**：无权威专文（明说）。ES 默认窗口=最终条数，实践共识是每路窗口取最终数的 3-10 倍并保持各路深度均衡（此为文档推断，非实证结论，标【待确认】）。
+
+### Q2 归因与拒答 2025-2026 SOTA
+
+- **Sufficient Context: A New Lens on RAG**（Google，arXiv 2411.06037，2024-11；配套 https://research.google/blog/deeper-insights-into-retrieval-augmented-generation-the-role-of-sufficient-context）— 可信度高。三个关键发现：①“上下文充分性”可被一个小分类器预测；②**RAG 悖论：给了检索材料后模型更难拒答**（有材料在手就倾向强行作答，即使材料不足）；③用充分性分类器做 selective generation 可同时提升正确率与拒答校准。
+- **MiniCheck**（Tang/Laban/Durrett，EMNLP 2024，arXiv 2404.10774，v2 2024-10-01）— 可信度高。MiniCheck-FT5（770M）达到 GPT-4 级 grounding 核验精度、成本低 400 倍；附带 LLM-AggreFact 基准。2025-10 的小大模型协同综述（arXiv）仍将其列为生产级核验工具——即“MiniCheck 式过滤器”在 2025-2026 已是被广泛引用的成熟范式，CBB 的逐字核验闸属同类但更严格（逐字落回 vs 蕴含判断）。
+- **Do LLM Attribution Metrics Transfer?**（arXiv 2606.23915，2026-06-22）— 可信度高（arXiv 原文验证）。审计 8 种自动归因评分器：**指标排名跨数据集会反转**，结论是“归因指标必须在目标语料上验证”。直接支撑“拒答闸阈值要自校准、不能抄别人”。
+- **AttributionBench**（arXiv 2402.15089，2024-02-23）— 可信度高。归因自动评测很难：微调后 GPT-3.5 仅约 80 macro-F1。AIS 框架源头：Rashkin et al.，arXiv 2112.12870（2021-12）。
+- **RGB 基准**（Chen et al.，arXiv 2309.01431，2023-09）— **中英双语各 600 例**，专测噪声鲁棒/负向拒答/信息整合/反事实四能力；结论：各 LLM 拒答能力普遍偏弱。这是最接近“中文拒答评测”的可用基准。
+- **FingER**（fact-level answerability for explainable refusals，OpenReview dNFDLAvk48，日期未确认【待确认】）— 多跳 RAG 场景按“事实/hop 粒度”判该不该答。
+- **中文归因专项评测**：**未找到** 2025-2026 专门的中文归因/引用可溯源基准（明说）。最接近的是 RGB 中文切分（2023）与 AttributionBench（2024，英文为主）。这本身是个发现：中文归因评测是空白，CBB 的逐字落回核验没有现成中文标杆可比。
+
+### Q3 查询路由
+
+- **Per-Query Gating of LLM Rerankers for Multi-Hop Retrieval**（arXiv 2609.22880，2026-09-19，全文已读）— 可信度高，且作者自曝修正过夸大结论（早期版本称 73% 无损节省，正式版承认依赖 oracle 回退）。数据：用 27 个检索分数/词面统计特征训练的逐查询门控，**平均跳过 51% 的重排器调用、平均代价 1.2pp**；但 9 个实验格中 8 个出现有害跳过（190 有害 vs 136 有益），**跨数据集泛化未测试**。这是“学习式门控成本收益”最严谨的 2026 实测。
+- **When to Reason: Semantic Router for vLLM**（arXiv 2510.08731，2025-10）— 可信度高。嵌入语义路由在 MMLU-Pro 上 +10.2pp 且降本，证明**便宜的路由器（嵌入相似度级）能拿到大部分收益**。
+- BoundaryRouter（"Learning Agent Routing From Early Experience"，arXiv，2026）：比提示词路由 +37.9%、比 RAG 路由 +8.2%（搜索摘要级，arXiv ID 未捕获【待确认】）。
+- 实践面（可信度中，从业者文章）：Agentic RAG Field Guide（dataaigent.info）——路由器是全链路最便宜组件、能兑现大部分可用改进；RouteLLM 类可省 40-85% 成本。共识：**固定混合检索仍是基线，路由只在“不同查询真的需要不同管线”时才有增量**。
+
+### Q4 RP/世界观问答（lorebook/world info）
+
+- **SillyTavern 官方 World Info 文档**（https://docs.sillytavern.app/usage/core-concepts/worldinfo/，活文档，2026-09 抓取）— 可信度高（一手）。当前完整机制清单：关键词+正则主键；**可选过滤键四种逻辑（AND ANY / AND ALL / NOT ANY / NOT ALL）**；🔵常驻 vs 🟢选择性 vs **🔗向量化**（嵌入相似度替代关键词匹配，只替换触发判定，概率/过滤/分组照常生效）；扫描深度；**递归（带递归层级 Recursion Level，按层处理）**；**时间性激活：sticky（激活后粘滞 N 条消息）/ cooldown（冷却）/ delay（需历史满 N 条）**；触发概率；包含组（Inclusion Group，同组只注入一条，可按键命中数打分 Group Scoring）；Min Activations/Max Depth（扫到配额为止）；预算上限；命名出口（Outlets，`{{outlet::Name}}` 手动布点）；**明确警示“整词匹配对中文等非空格语言有害”**。
+- **GitHub feature request**（2025-01-10）— 社区仍抱怨纯关键词触发处理不了细粒度语义，语义触发依赖独立的 Data Bank/Vector Storage，未并入 World Info 主链。即：**关键词扫描→向量递归扫描→时间性激活三级机制并存，2025-2026 的演进方向是把三者编成“每条目可独立配置的触发策略”而非全局开关**。
+- **长期 RP 一致性记忆**：Sleep-time Compute（UC Berkeley + Letta，2025-04，"Sleep-time Compute: Beyond Inference Scaling at Test-time"，arXiv ID 2504.13171【待确认】）——空闲期用强模型预整理记忆；Mem0 生产记忆管线（ECAI 2025 论文）；DolphinBench（arXiv，约 2026-09-22）：所有记忆系统在**多跳记忆任务上仍低于 7%**——多跳一致性是公认未解。**RP 专用（人格一致性×记忆架构）在索引文献里基本空白**（明说：多轮检索无果）。
+
+### Q5 图上多跳不用 LLM 的路线
+
+- **Graphiti #1924**（getzep/graphiti，2026-09-25，全文已读）— 可信度高（一手，极新）。核心内容：BFS 无判定展开 depth-2 中位耗时 ~22s（~1.9k 节点子图）vs depth-1 ~2.7s，不可行；提出 TraversalJudge 接口——**逐层（per-level）批量布尔判定 keep/follow、beam width、P(已答) 早停、投机预取**。实验要点：①基线 BM25+余弦+BFS 浅层 RRF top-8 mean 0.90，judged traversal 提升 87%（1.68），加 BFS 种子 +100%（1.80）；②**逐层判定至关重要：一次性全选判定得分更差（1.63）**；③判得准不等于答得好（过滤仅删 1 边）。依赖 Codex/GPT 级 LLM 当 judge 是其局限。
+- **SPRIG**（arXiv 2602.23372，2025-12-27）：完全不用 LLM 的图路——NER 共现图 + PPR，CPU 线性时间，给出何时胜过 RRF 词法混合的边界。
+- **Efficient Multi-Hop QA over KGs**（arXiv 2511.19648，2025-11）：批评“实体链接+路径排序全靠 LLM 推理”的部署瓶颈，提出两个混合算法做高效可验证的路径排序。
+- **子图序列化给重排器**：**未找到精确匹配论文**（明说）。最接近实践：Graphiti #1924 把逐层事实序列化给 judge（但 judge 是 LLM）；2609.27669 "The Path Matters"（2026-09）研究小模型+KG 解耦图访问与推理（摘要级验证）。CBB“子图序列化给 qwen3-reranker”这条路在公开文献里没有现成范式，属于自研空间。
+
+## B. 对 CBB 的可执行建议
+
+1. **五路召回不减配，但按“问题类型分工”写成显式契约**。多源证据一致：每路各有真增益区间（骨架图链→关系/多跳；向量→语义改写；别名→专名；LightRAG→全局综合；2502.11371、SPRIG、Graphiti 实测均支持）。要动的是**增益条件判定**而非删路：给图路和 LightRAG 路加便宜的门控特征（疑问是否含关系词/实体对/全局综合词），宽进窄出。2609.22880 证明学习门控能省 ~50% 重排成本但**非无损、跨数据集不保证泛化**——所以 CBB 的门控应保守起步，且必须留在配方指纹四元组的管控下（改门控=改尺子）。
+2. **融合层维持 RRF，重排后差距本就趋零**；真正的调参空间在**每路窗口深度**（ES 默认窗口=最终条数明显偏浅，窗口深度是比融合公式更高杠杆的旋钮）。若做实验臂，方向不是手调加权，而是 Calibrated Fusion 式校准分数融合（PIT/简单 max 归一化，2603.28886）——但这与防“改尺子”制度冲突，应作为带指纹版本的受控对照实验。
+3. **拒答闸校准**：CBB 的“逐字落回原文”是构造性判据，比蕴含式（MiniCheck 类）更严，方向正确；需补的是 Google sufficient-context 的教训——**有检索材料时模型系统性倾向强行作答**，拒答阈值应按“上下文充分性”分桶校准（材料不足桶要更宽进），并用自己的中文开发集画误拒/漏放曲线定阈值。依据 2606.23915，**不要直接采用任何外部论文的 F1/阈值数字**（归因指标跨语料反转）；可用 RGB 中文切分的 negative-rejection 式指标做内部回归测试。
+4. **Lorebook 触发机制对上下文包的三条移植**：①**时间性激活**（sticky/cooldown/delay）——正文检索面缺的正是“激活状态”维度：同一设定条目注入后粘滞 N 章、冷却期防重复、递归层级按层处理，直接抄 ST 语义即可；②**NOT ANY/NOT ALL 负向过滤键 + Inclusion Group（同组只进一条、按键命中数打分）**——治理上下文包内冗余和预算挤占；③核对关键词路是否对中文禁用了“整词匹配”（ST 文档明确此设置伤中文——若 CBB 有类似逻辑是隐性漏召回点）。
+5. **若骨架图链要加深跳数，照 Graphiti #1924 的结论做**：逐层判定（绝不要一次展开两层再全选打分）、beam 2-4、P(已答)早停；judge 可复用 qwen3-reranker（8081）当逐边/逐层过滤器，无需引入生成式 LLM——这同时满足“无 LLM 多跳”与成本约束。
+
+## C. 颠覆性候选
+
+1. **“朴素三路 RRF 打败复杂结构化管线”**（Graphiti #1924 实测：BM25+余弦+BFS 浅层 mean 0.90 vs LightRAG 式结构化管线 0.60）。若在 CBB 中文小说语料复现，**LightRAG 图谱社区路是最该被替换的一路**——换成“关键词+向量+1-2 跳带标签遍历的浅层 RRF”可能以更低成本保住增益。
+2. **SPRIG 式零 token 图构建**（arXiv 2602.23372）：NER 共现图+PPR，CPU 线性时间——可为骨架图链提供一个不依赖 LLM 抽取的兜底图/交叉验证路，缓解骨架图构建的噪声依赖。
+3. **Sleep-time compute 前置编译**：空闲期把新章节预编译成设定条目/骨架边/预期查询，检索期只做匹配——对“写到第 N 章查前 N-1 章”的写作辅助负载是天然契合。
+4. （反向警示）2609.22880 作者自曝早期"73% 无损节省"依赖 oracle 标签——检索领域 2026 年论文的自报节省数字普遍需复核，采纳任何门控/路由结论前先看是否有 oracle 依赖。
+
+**信源缺口声明**：中文归因专项基准（2025-2026）未找到；RRF vs 加权的直接 A/B 专文未找到；BoundaryRouter 与 Sleep-time Compute 的 arXiv ID、FingER 与 DolphinBench 的日期未能在本次检索中确证，均已标注【待确认】。搜索接口多次 429 限流，个别从业者信源（persistent.com 博客、RouteLLM 对比文）仅达搜索摘要级验证。

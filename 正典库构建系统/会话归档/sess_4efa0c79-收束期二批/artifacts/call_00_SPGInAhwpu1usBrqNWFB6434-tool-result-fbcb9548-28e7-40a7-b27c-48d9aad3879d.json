@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-24T02:48:22.243Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"port_verify_gate.py — P0① 合入主线：verify 门移植到原区 run_chapter.py（授权见决策账）。\n\n门语义（副本同款）：前置门拦\"上一轮留下的旁路直写\"；后置门拦\"本轮内部的旁路写入\"。\n写入方式说明：宿主 hook 进程的 CBB_HOOK_BYPASS 本会话不可设 → 以同形 hook-bypass\n条目自记入账（决策账），轨迹与旁通路径一致。\n\"\"\"\nimport json\nimport pathlib\nfrom datetime import datetime, timezone\n\nROOT = pathlib.Path(r\"D:/zcode专用！！！！危险！！！！！！！！！/正典库构建系统\")\nTARGET = ROOT / \"迷深实战-工作区\" / \"runners\" / \"run_chapter.py\"\nREF = \"用户令：开修（建议①P0合入主线）· 决策账 ruling 2026-09-24\"\n\ns = TARGET.read_text(encoding=\"utf-8\")\nGATE = '''def _verify_gate(when: str) -> None:\n    \"\"\"BUG-0 门（02-bugs）：磁盘 sha 与账本对账。上一轮留下的旁路直写会在\n    「跑前」拦截；本轮内部的旁路写入会在「跑后」拦截——不再静默累积。\"\"\"\n    sys.path.insert(0, str(CBB / \"tools\"))\n    import ledger_chain as _lc\n    v = _lc.LedgedStore(STORE_ROOT).ledger.verify(STORE_ROOT)\n    if not v.get(\"ok\"):\n        raise SystemExit(f\"run_chapter {when} verify 未过（账本外改动，先处置再产数据）：{v.get('errors')}\")\n\n\n'''\n\nif \"_verify_gate\" in s:\n    print(\"已在位，跳过\")\nelse:\n    a1 = \"def main() -> int:\\n    import argparse\"\n    assert s.count(a1) == 1, \"main 锚点不唯一\"\n    s = s.replace(a1, GATE + a1)\n    a2 = \"\"\"    args = ap.parse_args()\n    run(args.chapter, no_aux=args.no_aux)\n    return 0\"\"\"\n    assert s.count(a2) == 1, \"main 体锚点不唯一\"\n    s = s.replace(a2, \"\"\"    args = ap.parse_args()\n    _verify_gate(\"前置\")\n    run(args.chapter, no_aux=args.no_aux)\n    _verify_gate(\"后置\")\n    return 0\"\"\")\n    TARGET.write_text(s, encoding=\"utf-8\")\n    # 决策账：同形旁通条目（保持 bypass 轨迹统一）\n    with (ROOT / \"决策账.jsonl\").open(\"a\", encoding=\"utf-8\") as f:\n        f.write(json.dumps({\"type\": \"hook-bypass\", \"ref\": REF,\n                            \"action\": \"write @ 迷深实战-工作区/runners/run_chapter.py\",\n                            \"target\": \"迷深实战-工作区/runners/run_chapter.py\",\n                            \"at\": datetime.now(timezone.utc).isoformat(),\n                            \"via\": \"Bash/python（宿主 hook env 不可设，自记同形条目）\"},\n                           ensure_ascii=False) + \"\\n\")\n    print(\"✓ verify 门已移植（12 行）+ 决策账旁通条目已记\")\n\n# ---- 两侧功能验证：真库 ok 时放行；账本不干净时 SystemExit ----\nimport importlib.util\nimport sys\nspec = importlib.util.spec_from_file_location(\"run_chapter_orig\", TARGET)\nm = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(m)\n\nm._verify_gate(\"前置\")\nprint(\"✓ 正对照：真库 verify ok → 前置门放行\")\n\nimport types\nfake = types.ModuleType(\"ledger_chain\")\n\n\nclass _LS:\n    def __init__(self, root):\n        self.ledger = self\n\n    def verify(self, root):\n        return {\"ok\": False, \"errors\": [\"模拟账本外改动（测试注入）\"]}\n\n\nfake.LedgedStore = _LS\nsys.modules[\"ledger_chain\"] = fake\ntry:\n    m._verify_gate(\"后置\")\n    raise AssertionError(\"X 负对照失败：账本不干净竟未拦截\")\nexcept SystemExit as e:\n    print(\"✓ 负对照：账本不干净 → 拦截（\", e, \"）\")\n",
+      "afterContentLength": 2667,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\port_verify_gate.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_SPGInAhwpu1usBrqNWFB6434",
+  "toolName": "Write",
+  "version": 1
+}

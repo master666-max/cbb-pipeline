@@ -1,0 +1,40 @@
+{
+  "createdAt": "2026-09-23T05:42:59.439Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"graphiti_bridge.py — U-C03.7 graphiti 就绪层（工单 v1.8 §0 · 2026-09-18）\n\n用户裁决：\"接口端口准备好，加个 LLM 就能用\"。本件=端口，不含运行时依赖：\n- LLMConfig 工厂双预设：DeepSeek 付费档 / LM Studio 本地 GLM-5.3flash 免费档；\n  凭证走环境变量（DEEPSEEK_API_KEY / LMSTUDIO_API_KEY），缺失即明确报错（D-004：key 不落盘不输出）。\n- 嵌入已知档：qwen3-embedding-8b（q8_0，4096 维）@ http://127.0.0.1:8080/v1/embeddings。\n- ingest_candidates()：cbb 候选 → graphiti add_episode，**复用 cbb-extract\n  build_episode_kwargs**（Step0 Tier2 已验证形态），禁重造参数组装。\n- graphiti 未安装时 import 即明确报错（不静默降级）。\n\n启用三步见同目录 GRAPHITI-READY.md。\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport os\nimport sys\nfrom pathlib import Path\n\nCBB = Path(__file__).resolve().parents[1]\nsys.path.insert(0, str(CBB / \"cbb-extract\"))\nsys.path.insert(0, str(CBB / \"cbb-anchor\"))\nimport cbb_extract  # noqa: E402  build_episode_kwargs 单一事实源\n\nDEEPSEEK_BASE = \"https://api.deepseek.com/v1\"\nDEEPSEEK_MODEL = \"deepseek-flash\"          # 在案名（工单 v1.8 §0 抽检条款同款）\nLMSTUDIO_BASE = \"http://127.0.0.1:1234/v1\"\nLMSTUDIO_MODEL = \"glm-5.3-flash\"           # 本地免费档（用户裁决双预设之一）\n\nEMBEDDING_PROFILE = {                       # 嵌入已知档（U-C01 起在案）\n    \"provider\": \"lmstudio\",\n    \"model\": \"qwen3-embedding-8b\",\n    \"quant\": \"q8_0\", \"dim\": 4096,\n    \"base_url\": \"http://127.0.0.1:8080/v1/embeddings\",\n}\n\n\ndef llm_config(preset: str) -> dict:\n    \"\"\"LLMConfig 工厂双预设。返回 graphiti LLMConfig 构造参数（dict）；\n    凭证缺失立即 ValueError（明确指出变量名），绝不返回半配置。\"\"\"\n    if preset == \"deepseek\":\n        key = os.environ.get(\"DEEPSEEK_API_KEY\")\n        if not key:\n            raise ValueError(\"缺环境变量 DEEPSEEK_API_KEY（D-004：凭证只走环境变量，不落盘）\")\n        return {\"api_base\": DEEPSEEK_BASE, \"api_key\": key, \"model\": DEEPSEEK_MODEL}\n    if preset == \"lmstudio-flash\":\n        # LM Studio 本地档无鉴权是常态：key 可选，缺省占位 \"lm-studio\"（服务端不校验）\n        key = os.environ.get(\"LMSTUDIO_API_KEY\") or \"lm-studio\"\n        return {\"api_base\": LMSTUDIO_BASE, \"api_key\": key, \"model\": LMSTUDIO_MODEL}\n    raise ValueError(f\"未知预设 {preset!r}：合法=deepseek | lmstudio-flash\")\n\n\ndef embedding_config() -> dict:\n    return dict(EMBEDDING_PROFILE)\n\n\ndef make_graphiti(preset: str, neo4j_uri: str, neo4j_user: str, neo4j_password: str):\n    \"\"\"组装 Graphiti 实例（延迟 import——未安装 graphiti 时此处才报错）。\"\"\"\n    try:\n        from graphiti_core import Graphiti\n        from graphiti_core.llm_client import LLMConfig\n    except ImportError as e:  # pragma: no cover（离线 stub 不触达）\n        raise ImportError(\n            \"graphiti 未安装：py -m pip install graphiti-core\"\n            \"（启用步骤见 cbb/tools/GRAPHITI-READY.md）\") from e\n    pw = neo4j_password or os.environ.get(\"NEO4J_PASSWORD\")\n    if not pw:\n        raise ValueError(\"缺 Neo4j 密码：参数 neo4j_password 或环境变量 NEO4J_PASSWORD\")\n    llm = LLMConfig(**llm_config(preset))\n    return Graphiti(neo4j_uri, neo4j_user, pw, llm_config=llm)\n\n\ndef episode_body_of(chapter_no: int, records: list[dict]) -> str:\n    \"\"\"一章候选记录 → episode 文本（确定性序列化；实体/关系/事件/伏笔全量）。\"\"\"\n    parts = [f\"CHAPTER {chapter_no:04d} 正典记录\"]\n    for r in records:\n        c = r.get(\"canonical\", {})\n        head = c.get(\"name\") or f\"{c.get('subject')} --{c.get('rel_type')}--> {c.get('object')}\"\n        parts.append(f\"[{r.get('record_type')}] {head}\")\n        for o in r.get(\"observations\", []):\n            parts.append(f\"  - {o.get('text', '')}\")\n    return \"\\n\".join(parts)\n\n\ndef ingest_candidates(graphiti, chapter_records: dict[int, list[dict]],\n                      group_id: str = \"mishen-canon\") -> dict:\n    \"\"\"候选批量入 graphiti：每章一个 add_episode，kwargs 全部经\n    cbb_extract.build_episode_kwargs 组装（已测形态：伪锚点 reference_time+R6 标配）。\n    graphiti 参数=任意具备 add_episode(**kwargs) 协议的对象（stub 单测即用此协议）。\"\"\"\n    results = {}\n    for chapter_no in sorted(chapter_records):\n        recs = chapter_records[chapter_no]\n        kwargs = cbb_extract.build_episode_kwargs(\n            order_index=chapter_no,\n            episode_body=episode_body_of(chapter_no, recs),\n            episode_name=f\"ch{chapter_no:04d}\",\n            group_id=group_id,\n            source_description=\"cbb jsonl 本体库 · 迷深实战\",\n        )\n        results[chapter_no] = graphiti.add_episode(**kwargs)\n    return results\n\n\ndef main(argv=None) -> int:  # pragma: no cover（CLI 便捷口）\n    import argparse\n    ap = argparse.ArgumentParser(description=\"graphiti 桥（U-C03.7）\")\n    ap.add_argument(\"--print-presets\", action=\"store_true\")\n    ns = ap.parse_args(argv)\n    if ns.print_presets:\n        print(json.dumps({\n            \"presets\": {\"deepseek\": {\"api_base\": DEEPSEEK_BASE, \"model\": DEEPSEEK_MODEL,\n                                     \"env\": \"DEEPSEEK_API_KEY\"},\n                        \"lmstudio-flash\": {\"api_base\": LMSTUDIO_BASE, \"model\": LMSTUDIO_MODEL,\n                                           \"env\": \"LMSTUDIO_API_KEY(可选)\"}},\n            \"embedding\": EMBEDDING_PROFILE}, ensure_ascii=False, indent=1))\n        return 0\n    return 1\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb\\tools\\graphiti_bridge.py",
+      "structuredPatch": [
+        {
+          "oldStart": 28,
+          "oldLines": 10,
+          "newStart": 28,
+          "newLines": 14,
+          "lines": [
+            " LMSTUDIO_BASE = \"http://127.0.0.1:1234/v1\"",
+            " LMSTUDIO_MODEL = \"glm-5.3-flash\"           # 本地免费档（用户裁决双预设之一）",
+            " ",
+            "-EMBEDDING_PROFILE = {                       # 嵌入已知档（U-C01 起在案）",
+            "+EMBEDDING_PROFILE = {                       # 嵌入已知档（U-C01 起在案；档位改判 2026-09-23）",
+            "     \"provider\": \"lmstudio\",",
+            "     \"model\": \"qwen3-embedding-8b\",",
+            "-    \"quant\": \"q8_0\", \"dim\": 4096,",
+            "+    \"quant\": \"q4_k_m\",                     # ← q8_0 改 q4_k_m（用户令\"q4 常驻显存\"）：",
+            "+                                           #   q4≈4.7GB，与重排器≈2.5GB 同驻 12G 卡，免换装；",
+            "+                                           #   纪律：一项目内档位固定，禁 q8/q4 混用（向量不可比），",
+            "+                                           #   换档=重算全部嵌入；换档前跑 q8↔q4 同批距离对照确认阈值不漂",
+            "+    \"dim\": 4096,",
+            "     \"base_url\": \"http://127.0.0.1:8080/v1/embeddings\",",
+            " }",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_jp7tMR8fjlm3z9mYrYLc2252",
+  "toolName": "Edit",
+  "version": 1
+}

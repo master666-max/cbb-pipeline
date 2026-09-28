@@ -1,0 +1,82 @@
+调研完成（约 30 个信源交叉验证，GitHub API/PyPI/CRAN/arXiv/OpenAlex/官网直接抓取为主，WebSearch 辅助）。以下为最终报告。
+
+---
+
+# 语料分析学 × 文体计量学 调研报告（2026-09-27）
+
+## A. 逐题发现
+
+### Q1 语料库检索与分析套件（2025–2026 现状）
+
+| 工具 | 自动化接入 | 中文 | License | 活跃度 | 结论 |
+|---|---|---|---|---|---|
+| **AntConc 4.4.2** | 无 CLI/API，纯 GUI（官网通篇未提及任何自动化接口） | 可用（UTF-8），但中文需预分词；有中文帮助文件 | freeware（非开源，license 是单独 PDF） | 持续更新（2026 年版本号） | 排除出管线，仅限人工抽查 |
+| **CWB / CQP** | CQP 是真正的 CLI 查询处理器（核心组件），cwb-encode/cwb-makeall 可脚本化建库，适合 subprocess 驱动 | 可自建中文语料库（预分词后以 vertical 格式入库） | 开源（GPL 系）【待确认：官网首页/download 页均未明示具体 GPL 版本】 | 稳定版 3.5 | ✅ 若需要全文索引级检索，这是首选 |
+| **CQPweb** | PHP 服务端 GUI（stable 3.2 / cutting-edge 3.3，页面信息停留在 2021），不为自动化设计 | 可建中文库但需预分词 | 开源 | 低速维护 | 排除（用 CQP CLI 替代） |
+| **TXM** | Groovy/Java 脚本驱动（官网明示 "Script drivable for repetitive tasks automation"），内嵌 CQP+R | Unicode 通用，中文社区有基于 TXM 建汉语库的实践论文（[EADH 项目页](https://eadh.org/projects/txm)），但无官方中文文档 | GPL-3 | SF 页面最后更新 2024-12-09 | 可用但重（Eclipse RCP 桌面架构），仅当需要对应分析/分类时考虑 |
+| **Voyant** | 网页 GUI；程序化路径是 Spyral notebook（JS），无 CLI | 默认空格/标点切词，中文需预分词后导入（[西交利物浦图书馆指南](https://lib.xjtlu.edu.cn/node/1801)、[中大图书馆介绍](https://www.lib.cuhk.edu.hk/tc/about/events/202309ds-text-tools)） | GPL-3（GitHub voyanttools/Voyant） | 维护中 | 排除出管线 |
+| **NoSketch Engine**（Manatee + Bonito/KonText） | ✅ 最佳：Manatee 提供 Python 绑定，KonText 有内置 API（XML-RPC/REST），可 Docker 自托管；CQL 全查询语言 | 可自建中文库（预分词 vertical 入库）；商业版 Sketch Engine 有 zhTenTen 先例证明可行 | KonText GPL-2.0（GitHub czcorpus/kontext 已验证）；Manatee GPL 系 | [korpus.sk](https://korpus.sk)（捷克国家语料库）长期维护，CLARIN.SI 基础设施 | ✅ 全库检索自动化的最优解 |
+
+信源：[AntConc 官网](https://www.laurenceanthony.net/software/antconc/)、[CWB 官网](https://cwb.sourceforge.io/)、[TXM @ SourceForge](https://sourceforge.net/projects/txm/)、[czcorpus/kontext](https://github.com/czcorpus/kontext)、[北外语料库工具页（中文预分词方案）](https://corpus.bfsu.edu.cn/TOOLS.htm)、[BCC 语料库](https://bcc.blcu.edu.cn/help.html)（62 亿字在线平台，无开源 API，仅作参照）。
+
+### Q2 中文语料统计生态
+
+**分词（管线基石）**：
+- **jieba** 0.42.1，MIT，35k stars——事实标准但冻结（最后 release 2020，push 2024-08）：[github.com/fxsjy/jieba](https://github.com/fxsjy/jieba)
+- **HanLP 2.x**，Apache-2.0，**活跃（push 2026-09-15）**，分词+词性+句法一体，管线首选：[github.com/hankcs/HanLP](https://github.com/hankcs/HanLP)
+- **LTP 4.2.14**（HIT-SCIR）——⚠️ GitHub 仓库**无 LICENSE 文件**、PyPI 无 license 字段【待确认，商用前须核】
+- THULAC（MIT，2022 年停更）、pkuseg（停更）→ 不进新代码
+
+**统计组件（均验证 license）**：
+- 搭配/n-gram：NLTK collocations（MIT）+ `jieba.analyse`（TF-IDF/TextRank 内置）；关键词 log-likelihood：PyPI `keyness` 0.26（MIT）、[mikesuhan/keyness](https://github.com/mikesuhan/keyness)（小工具）；频率基线：**wordfreq** 3.1.1（Apache-2.0，含中文词频表）：[github.com/rspeer/wordfreq](https://github.com/rspeer/wordfreq)
+- **词汇丰富度**：PyPI `lexical-diversity` 0.1.1（MIT，含 MTLD/HD-D/TTR）；**TextDescriptives** 2.8.4（Apache-2.0，spaCy 插件，活跃，已验证 README：提供 sentence_length_mean/std、token_length、POS 比例、coherence、quality 等组件，中文换 zh 模型即可；readability 中仅 LIX/RIX 类长度公式对中文有效，Flesch 系音节公式无效）：[github.com/HLasse/TextDescriptives](https://github.com/HLasse/TextDescriptives)
+- **对话密度/句长分布**：**无现成包**——正则抓「」“”+ 分句器自算，属 30 行以内工程
+- **小说文体基准值研究**：**未找到公认基准**。最接近的先例是 *Rural versus urban fiction in contemporary Chinese literature: Quantitative approach*（[LLC 2021, doi:10.1093/llc/fqab094](https://doi.org/10.1093/llc/fqab094)）——证明方法可行但无 norm 值。建议以自家正典库人写章节为基线自建 z-score 标尺（与 LQAS 思路同构）。此为诚实结论，不是检索失败。
+
+### Q3 文体计量学（Stylometry）
+
+- **stylo（R）**：v0.7.71（2026-06-16），GPL-3，活跃。Burrows' Delta、Rolling Delta、consensus tree、**imposters()（本质就是“此文本是否出自该作者签名”的验证法，正对“抽取文本 vs 原文”场景）**。中文需预分词后以空格分词文本喂入：[github.com/computationalstylistics/stylo](https://github.com/computationalstylistics/stylo)
+- **pydelta（Python）**：PyPI 1.7.0，GPL，Delta 分析移植（PyPI 官方页验证；GitHub 原仓库 404【待确认镜像位置】）
+- **PAN @ CLEF 2025**：已转向 **"Voight-Kampff" 生成式 AI 作者身份验证**（7 语言、75 个生成器；总览论文 [CEUR-WS Vol-4038 paper 277](https://ceur-ws.org/Vol-4038/paper_277.pdf)），代码开源：[pan-webis-de/pan25-generative-ai-authorship-verification](https://github.com/pan-webis-de/pan25-generative-ai-authorship-verification)（Apache-2.0 已验证）；经典基线库 [pan-webis-de/pan-code](https://github.com/pan-webis-de/pan-code)（MIT）
+- 人类作者归属的 Python 生态无单一“stylo 平替”，标准做法是字符 n-gram+sklearn 或函数词向量+Delta（pydelta/自实现）；**中文文体计量无现成包**（OpenAlex 检索仅见 LLC 2021 类个案研究）
+- 对我们：**逐字回落原文门负责“真”与“全”，stylometry 负责独立的分布级佐证**——两层正交，互不替代。
+
+### Q4 计算叙事学工具（2024–2026 开源盘点）
+
+- **情节弧线**：唯二成熟件是 R 的 **syuzhet** 1.0.7（GPL，2023-08，“Sentiment-Derived Plot Arcs”，英文词典，中文需换中文情感模型）、[Reagan et al. 2016 六种情感弧线](https://doi.org/10.1140/epjds/s13688-016-0093-1)、[The narrative arc（Science Advances 2020）](https://doi.org/10.1126/sciadv.aba2196)——代码路径 storywrangling 已失链【待确认】；方法可用中文情感模型滚动打分自实现
+- **event storyline extraction**：有综述（[ACM CSUR 2023, doi:10.1145/3584741](https://doi.org/10.1145/3584741)；[AI Review 2023](https://doi.org/10.1007/s10462-022-10338-7)）和 2026 年 LLM+KG 新闻故事线案例（[Scientific Data, doi:10.1038/s41597-026-07036-2](https://doi.org/10.1038/s41597-026-07036-2)）——均为研究级管线，非 drop-in 工具
+- **foreshadowing/悬念检测**：**明说：没有找到可用的开源检测器或数据集**（中英文双路检索均无；仅有 Cheong & Young 2008 的计算叙事理论、“Measuring Suspense in Real Time” 2024 实验心理学方法论文）。LLM 长篇生成文献（如 DOC）也只把伏笔列为“值得探索的方向”
+
+### Q5 一致性/连续性检查器
+
+- **事实一致性（文本对级别，工程可用）**：
+  - **SummaC**（NLI 式，Apache-2.0，[github.com/tingofurro/summac](https://github.com/tingofurro/summac)）
+  - **AlignScore**（MIT 已验证，[github.com/yuh-zha/AlignScore](https://github.com/yuh-zha/AlignScore)，ACL 2023，[HF 检查点](https://huggingface.co/yzha/AlignScore)）
+  - **FActScore**（MIT，[github.com/shmsw25/FActScore](https://github.com/shmsw25/FActScore)，依赖 LLM+检索）
+  - **SAFE**（Apache-2.0，[google-deepmind/long-form-factuality](https://github.com/google-deepmind/long-form-factuality)）
+  - ⚠️ 上述核心模型**全是英文训练**——中文落地须换中文 NLI 底座（OCNLI/CMNLI 微调模型），属自建集成。QAFactEval 仓库已 404【待确认】
+- **长文一致性基准**：**LongBench v2**（MIT，[github.com/THUDM/LongBench](https://github.com/THUDM/LongBench)，ACL 2025，[arXiv:2412.15204](https://doi.org/10.48550/arxiv.2412.15204)，**双语含中文**）、**RULER**（Apache-2.0，[github.com/NVIDIA/RULER](https://github.com/NVIDIA/RULER)，[arXiv:2404.06654](https://doi.org/10.48550/arxiv.2404.06654)）、HELMET（[arXiv:2410.02694](https://doi.org/10.48550/arxiv.2410.02694)；官方仓库定位失败【待确认】）
+- **LongEval 澄清（前提修正）**：[CLEF LongEval](https://clef-longeval.github.io/) 是**检索有效性随时间持续性的评测 lab**（2026 新增 LongEval-RAG/TopEx/USim），**不是长文档一致性基准**——不能直接作为我们的参照系
+- **continuity error 检测**：**明说：没有专用开源工具**（OpenAlex/arXiv 双检无命中）；相邻方向只有长视频叙事生成一致性综述（ICCVW 2025）——同样须自建（NLI+实体状态追踪）
+
+## B. 对 5 个接缝的接入建议
+
+1. **批次自检增强（十项之外新增“文体指纹”组）**：HanLP 分词/分句 → 每批计算 sentence_length_mean/σ（TextDescriptives 或自算）、MTLD/HD-D（lexical-diversity）、对话密度（「」“”正则）、POS 函数词比例（TextDescriptives pos_proportions）。全部确定性、离线、MIT/Apache 许可，与证据门哲学同构。阈值不是拍脑袋：以正典库人写章节分布定 ±3σ。
+2. **对样排序特征（发现/估计双轨）**：为每个待抽样本计算与“全书基线”的 Burrows' Delta（pydelta 或 30 行自实现，R 侧用 stylo 定期校验）+ 字符 n-gram 相似度，Delta 最大者排前——把人力优先投向“最不像这本书”的样本，等效于 Wilson/LQAS 在比例域的效率增益。
+3. **文体漂移 SPC 指标源**：滚动窗口（章/批）序列：MTLD、对话密度、句长均值、top-100 函数词分布与全书的余弦/KL 距离、Delta 序列。控制限用 stylo rolling delta 在人写正典上标定；stylo 的 imposters() 可作越限后的二阶验证器（“这一章是否仍出自同一作者签名”）。中文情感弧线（中文模型滚动打分）作为可选的叙事斜率指标。
+4. **缺口队列新扫描源**：**NoSketch Engine（Manatee Python 绑定）或 CQP CLI 自托管全正典索引**，用 CQL 批量跑“专名共现无证据条目”“异常搭配（log-likelihood 离群）”“未见过的 n-gram”三类查询，把命中的片段推入缺口队列——这是全库级扫描，补足批次自检的局部性。频率基线用 wordfreq 校准。
+5. **上下文包组装特征**：组装前对候选块两两跑中文 NLI（OCNLI/CMNLI 底座，SummaC 式分段一致率）过滤互相矛盾的块；用 TextDescriptives 的句长/对话密度做块间风格均衡（避免上下文包全是纯叙述或全是纯对话）；引用块必须过逐字回落门，文体特征只做排序权重不做否决。
+
+## C. 明确排除项（找不到/不适用，明说）
+
+- **AntConc、Voyant、CQPweb、TXM 桌面版**：GUI 优先，不进自动化管线（前两者可作人工抽查台）
+- **Sketch Engine 商业版**：订阅费+语料上传顾虑，排除
+- **foreshadowing/悬念检测器、continuity error 检测器、storyline extraction 现成工具**：**不存在可用的开源件**（Q4/Q5 已给出检索证据）——相关需求降级为“自建轻量代理指标”，并列入研究观察而非工具队列
+- **textstat**：音节公式，对中文无效
+- **THULAC/pkuseg**：停更，不进新代码
+- **PyPI `stylometry` 0.1.0**：UNKNOWN license、玩具级，排除
+- **LTP**：无明确 license 文件【待确认】——在核实前不作为管线依赖，用 HanLP 顶替
+- **LongEval 作为“长文档一致性基准”**：前提有误（实为时间持续性评测 lab），不据此设计
+- **SummaC/AlignScore/FActScore/SAFE 的原版模型直接用于中文**：英文训练，必须换中文 NLI 底座
+- **EvoStory（2026）**：无可验证 DOI/出处，不采信
+- jieba：可用但冻结——新管线以 HanLP 为主、jieba 仅作兼容层

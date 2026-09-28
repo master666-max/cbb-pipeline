@@ -1,0 +1,103 @@
+# 休眠/半接线机制盘点清单（收束期激活复用判定）
+
+证据基线：`cbb-v2/cbb2/` 全模块 `def/class` 枚举 + 全仓 grep 调用点（排除 tests/__pycache__）；真库=`D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\迷深实战-本体库`（libraries/*/*/*.json 共 6,278 件，glob 兼容性已实测）。
+
+## 零、基线对照：已接线在岗的（非休眠，列此为对照，不展开）
+
+| 机制 | 接线证据 |
+|---|---|
+| schedule.ReviewScheduler（FSRS） | `g17_patrol_queue.py:18` import；真库已有 `巡检调度.json`+`G17-首圈巡检队列.json`——**G17 就绪属实** |
+| promote.build_panel/vote | `g16b_vote_runner.py:71,90`、`g16c_rejudge.py:52,67` 实调 |
+| ops（考官 env 编制） | `g16b_vote_runner.py:24` import；但 `ops.capability_gate` 本体仅 selftest+测试调用（见第 10 条） |
+| governance.ExaminerQualityTracker | `g13_weighting_report.py:16,25`（G13 已结，历史在用） |
+| C05 检索层双拷贝判据 | `cbb/tools/检索层.py:236` `rerank_requested`+`backend`+口径字段在岗；当前活跃路径=mechanical 降级（8081 rerank 未启） |
+| tools/build_release.py（E01） | 在位，v3.0.0 已发版，G18 v3.1 直接复跑 |
+
+## 一、判定清单（按建议档位排序）
+
+**1. notary 账本检查点外发/独立复算（cbb2/notary.publish / notary.verify）**
+- 现状：**休眠**。grep 全仓：`publish/verify` 仅 `cbb-v2\tests\test_v3_notary.py` 调用；`ledger_head/checkpoint_text` 仅被 notary.publish 内部调用。零生产调用点。
+- 本阶段适配点：**G19 外部验收锚——正中设计意图**。`verify` 只读 ledger.jsonl 原文+通道文件、不 import 任何 store 代码（notary.py:7-8 独立复算原则），验收者信任面=文件本身；`publish` 可挂 ssh-keygen 签名（CBB_NOTARY_KEY env，未配=未签名仍可验）。G18 发版时 publish 一个检查点，G19 用 verify 全链重放核对。
+- 激活成本：极低（build_release 尾部加一步 publish + G19 工单附 verify 命令；纯函数，无新依赖）。
+- 档位：**现在激活**（G18 发版动作顺带，收益=外部可复算的防 split-view 锚）。
+
+**2. lens 只读分析层（cbb2/lens.full_report / tri_state_counts / invalidation_chain）**
+- 现状：**休眠**。grep：仅 `cbb-v2\tests\test_v3_lens.py` 调用；退役的 `cbb\tools\web_console.py:9` 指名它作替代读面，但替代后无任何调用者。
+- 本阶段适配点：G18 发版说明的库况快照（full_report 一行出三态计数+失效链+互补陈述+分库计数）；G16c 重审/U1 回填前后的对账基线。**注意两点实证**：①三个计数函数是纯 stdlib（duckdb 只在从未被调用的 `_conn` 里，实际上零依赖）；②真库 glob 兼容已验证（`libraries/*/*/*.json`=6,278 件）；③真库**尚无 invalidations.jsonl**，`invalidation_chain` 优雅返回空——侧面实证收束期还没走过失效记账路径。
+- 激活成本：极低（零依赖、纯读）。
+- 档位：**现在激活**。
+
+**3. audit.report / audit.wilson 区间出具器（cbb2/audit.report）**
+- 现状：**半接线**。`wilson` 仅被 `audit.report` 内部调用（audit.py:72）；`report` 全仓零外部调用者；`suspicious_rank/stratified_sample/lqas` 仅测试调用。g16b/g16c 台账脚本均未 import audit（grep 实证 g16b 只用 promote+ops）。
+- 本阶段适配点：破坏性变更 2「通过率宣称必须带 Wilson 区间」——G16b 全量重审、U1 回填命中率（试点 87.5% 待全量）、G16c 重审的**对外宣称**目前没有统一走 report()出具区间。此条与已排除的「G10/G11/Wilson 人工判例窗」「发现轨 hold 排序」不同面：这是宣称面的区间出具器，不是判例窗。
+- 激活成本：极低（一行调用+台账报告模板加字段）。
+- 档位：**现在激活**（U1 全量+G16c 报告口径合规刚需）。
+
+**4. context.carry_summary 承接摘要（cbb2/context.carry_summary）**
+- 现状：**休眠**（随 runner 链）。grep：仅 `runner.py:34`（runner 本身零生产调用）+测试调用。真库兼容性已实测（_records 的 `libraries/*/*/*.json` glob 命中 6,278 件）；carry_summary 本体**零写面**（activation_filter 才写状态文件，本条不用它）。
+- 本阶段适配点：G16b hold 人工窗/回填判例窗的「前情提要」——按 `evidence[].chapter` 最大值=上一章过滤在场实体+最近事件，机械 ≤200 字，先验非事实源口径随包。给人工判定包降上下文成本。
+- 激活成本：低（一个包装调用；注意盲点：回填件若 evidence 无 int chapter 会被过滤掉，试点先验）。
+- 档位：**现在激活**（人工窗信息包标配）。
+
+**5. fastscan AC 粗筛（cbb2/fastscan.scan_patterns / ac_scan）**
+- 现状：**休眠**。grep 全仓：仅 `test_v3_fastscan_coldstore.py`；v1 生产扫描件 `cbb\tools\批次自检.py` 用的是自己的 re.compile（:22-23 实证），未接 fastscan；`g_backfill.py` 也是自写 re（imports 全 stdlib 实证）。
+- 本阶段适配点：U1 全量回填的原句/锚文本匹配提速（Aho-Corasick 多模式 vs 逐 pattern re；pyahocorasick 可选依赖缺席自动降级 regex，降级安全）。
+- 激活成本：低（g_backfill 现有 re 已能跑，换装纯提速）。
+- 档位：**触发器挂起**（U1 全量发车时若探得匹配耗时成瓶颈再换装；87.5% 命中试点说明现行 re 够用）。
+
+**6. ops.capability_gate 运行契约闸（cbb2/ops.capability_gate）**
+- 现状：**半接线**。grep：仅 ops.selftest 内部两处（self-test 用）+测试调用；作为通用「四缺一 BLOCKED」判定器无生产调用者（D-28 机制面已收口但闸体未上岗）。
+- 本阶段适配点：U1 回填全量/G17 巡检/G19 验收各工单的**发车前 gate**（端点在位/消费件存在/已接线/回执），把「凭证在位≠接线」检查从散文变成一行断言。
+- 激活成本：极低（发车工单开头加一行调用）。
+- 档位：**触发器挂起**（绑到三个待发车工单的开工门，发车即用）。
+
+**7. governance.classify_manual_bucket 人工桶分桶器（cbb2/governance.classify_manual_bucket）**
+- 现状：**休眠**。grep：仅 `test_v3_governance.py` 调用。
+- 本阶段适配点：Phase A 遗留的人工桶 268 处置+信息保全 186 review（BUILD-STATE D 相遗留项，收束期仍在账上）开窗时的机械预分桶。
+- 激活成本：低（一个处置脚本调用）。
+- 档位：**触发器挂起**（人工桶处置工单开窗时）。
+
+**8. derive 投影派生层（cbb2/derive.ProjectionCheckpoint / DebtLedger / upsert_node_cypher / ownership_verify_cypher；B01/B02/B03）**
+- 现状：**休眠（整链）**。grep：`from cbb2...derive` 生产调用**零**；`cbb\tools\neo4j_export.py` 不 import cbb2.derive（仅 `derive_password` 撞名，实证）；ProjectionCheckpoint 唯一消费者是 runner.finalize（runner 本身休眠）。BUILD-STATE B 相遗留「投影检查点与 lightrag_live 接线随 Phase C」从未发生——C 相 runner 建好了但也没接生产。归属单键 group_id 写读同源、双时序落图、债务 repay 全部只活在测试里。
+- 本阶段适配点：下轮图导出窗口（BUILD-STATE 明记「ns 写侧历史节点 SET group_id 回填待下轮图导出顺带」）——v1 neo4j_export 与 v3 derive 的收编决策必须那时做，否则 B02 的 D-13 根治在生产图上始终未生效。
+- 激活成本：中（v1 导出件换装/桥接+图回归）。
+- 档位：**触发器挂起**（下轮图导出窗口强制决策点；收束期其他动作不依赖它）。
+
+**9. runner 总装层（cbb2/runner.prepare_chapter / finalize_chapter / close_out_gap_queue / run_chapter / refeed_needed；C03）**
+- 现状：**休眠（整层）**。grep：三函数生产调用零（仅 test_v3_phasec.py）。真库 `缺口队列.jsonl`（856 行）存在，说明 close_out_gap_queue 被人工跑过至少一次，但无持续调用者。
+- 本阶段适配点：收束期主链已停抽，runner 全层无戏；可拆件已单列（carry_summary→第 4 条、wire_gap_queue 四扫描器→下条）。
+- 激活成本：不适用。
+- 档位：**保持休眠**（触发条件=重抽窗/外部书；组件级复用见各单列条）。
+
+**10. gaps 四扫描器+wire_gap_queue（cbb2/gaps.* + governance.wire_gap_queue）**
+- 现状：**半接线**。唯一调用链=runner.close_out_gap_queue（runner.py:51-57，休眠链）；但产物 `缺口队列.jsonl` 真库在册 856 行（幂等追加实证可用）。人工窗分发口径已由他路判定（跳过）。
+- 本阶段适配点：G17 巡检若发现新缺口（回填 miss、词表缺口），wire_gap_queue 的 (type,evidence) 幂等去重可直接复用为登记口，不必新写。
+- 激活成本：极低（函数独立于 runner，直接 import 即用）。
+- 档位：**触发器挂起**（G17 巡检出首个新缺口时）。
+
+**11. coldstore 账本冷段 zstd（cbb2/coldstore.segment_ledger / decompress_segment / load_all_rows；F·G07）**
+- 现状：**休眠**。grep：仅 `test_v3_fastscan_coldstore.py`；`cbb2/ledger.py` 无任何冷段/zst 引用（grep 实证零命中）。
+- 本阶段适配点：**不能直接用于 G18 发布包瘦身**——实证两条硬伤：①segment_ledger 只往 `账本冷段/` 写压缩副本+尾段明文，**从不删改 ledger.jsonl 原件**（coldstore.py:28-42），账本不缩小，发布包自然不瘦；②notary.verify 与账本 verify 都直读 ledger.jsonl，若有人删原件换段则会断链。瘦身正解仍是 build_release 的退役族排除+manifest。
+- 激活成本：如强用=高（需补「归档后删原件+读侧全部换 load_all_rows」改造）。
+- 档位：**保持休眠**（触发条件=账本体量成实患；当前库 6,278 件不构成）。回答题目问题：**否**。
+
+**12. er 归一三段（cbb2/er.normalize_name / blocking_key / margin_decision / MergeLog；D05）**
+- 现状：**休眠**。grep：normalize_name 生产调用零；blocking_key **全仓连测试调用都是零**；margin_decision/MergeLog 仅 `test_v3_phased.py:135,138`。store.py 合并路径（supersede）未使用 er.MergeLog（grep store.py 实证零命中）——「合并必须留合并日志」的破坏性变更 4 在 store 侧走的是自己的 supersede 索引，MergeLog（可撤销 split 一等公民）整个没接。BUILD-STATE 正确性审查已登记「er.blocking_key/margin_decision 未接线（等 ER 批）」。
+- 本阶段适配点：收束期无 ER 批；G16b/G16c 是投票晋升不是别名合并，无当前适配点。唯一潜在面=若重审发现误晋升需「拆组回滚」，MergeLog 的 split 撤销语义可参考，但晋升回滚走票面台账更直接。
+- 激活成本：中（等 ER 批整体换装）。
+- 档位：**保持休眠**（理由：触发批不在此收束期内，且 blocking_key 连单测外消费者都没有，单独激活无意义）。
+
+**13. splitting 门控动态切分（cbb2/splitting.enabled 等；C01，旗标关）**
+- 现状：**旗标关+休眠链**。`CBB_DYNAMIC_SPLIT` 默认 off（splitting.py:21 实证）；唯一消费者=runner（休眠）；env 无任何配置点设 on（全仓 grep 仅文档/发布件/测试）。与已排除的「切分三档 A/B 协议」重叠，不展开——补一句 grep 事实：旗标 off 且无任何现役配置翻它，重抽窗前无人会碰。
+- 档位：**保持休眠**（517 章已全量，定标窗口=重抽窗，与他路判定一致）。
+
+**14. NLI 闸 1 写入回调接线面（store.write_decision 的 nli_gate/nli_merge_gate 形参 + nli.dual_judge/exam）**
+- 现状：**休眠（接线面真空）**。grep 实证：`nli_gate=/nli_merge_gate=` 全仓唯一传参者=测试 lambda（test_v3_store.py）；dual_judge/exam 仅测试调用。他路已判定「后两道闸」，此处补的 grep 事实是：**连闸 1（矛盾预筛）的回调也没有任何生产调用者传过**——即 v3 写入决策树的 NLI 双通道在生产里从未通过一次真件。收束期无新抽取，此真空不阻塞；但 U1 回填若走 write_decision 补证据，值得知道现在回路上没有 NLI。
+- 档位：**保持休眠**（归属他路判定的 NLI 主题，仅提供接线真空的 grep 证据）。
+
+**15. ConformalNLICalibrator / plant / conformal / 判卷掺植物等**
+- 现状：均为测试-only（grep 实证），但全部属他路已判定项（conformal=G11 BLOCKED、plant capture→G17 已入现做、掺植物已覆盖）——**跳过不重复**，仅确认 grep 结果与其判定一致。
+
+## 二、一句话结论
+
+收束期立刻能白捡的三件：**notary（G19 外部验收锚，正中其设计意图）**、**lens（G18 库况快照+G16c 对账，实测零依赖零写面）**、**audit.report（U1/G16c 宣称的 Wilson 区间合规）**，外加 carry_summary 给人工窗当前情提要（真库 glob 兼容已实测）。挂触发器四件：capability_gate（三工单发车门）、fastscan（U1 提速备胎）、classify_manual_bucket（人工桶开窗）、gaps/wire_gap_queue（G17 新缺口登记口）。必须保持休眠的：coldstore（结构性不能瘦发布包）、er 整模块（连测试外零消费者）、runner/derive 整链（等下轮图导出与重抽窗，其中 derive 是下轮图导出的强制决策点）。

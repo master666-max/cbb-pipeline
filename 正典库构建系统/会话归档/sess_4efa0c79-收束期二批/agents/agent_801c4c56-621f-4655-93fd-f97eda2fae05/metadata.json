@@ -1,0 +1,39 @@
+{
+  "agentId": "agent_801c4c56-621f-4655-93fd-f97eda2fae05",
+  "childSessionId": "sess_subagent_agent_801c4c56-621f-4655-93fd-f97eda2fae05",
+  "createdAt": "2026-09-22T14:08:02.804Z",
+  "cwd": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "description": "Research audit sampling formulas",
+  "metadataFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_801c4c56-621f-4655-93fd-f97eda2fae05\\metadata.json",
+  "outputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_801c4c56-621f-4655-93fd-f97eda2fae05\\output.txt",
+  "parentSessionId": "sess_4efa0c79-075b-4809-a436-d313bf21a98d",
+  "parentToolUseId": "call_00_yM96enqmD0K1kExL64cS3364",
+  "profileId": "general-purpose",
+  "profileSnapshot": {
+    "name": "general-purpose",
+    "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
+    "color": "blue",
+    "injectAgentsMd": true,
+    "source": "built-in",
+    "systemPrompt": "You are an agent for ZCode CLI. Given the user's message, you should use the tools available to complete the task. Complete the task fully—don't gold-plate, but don't leave it half-done. When you complete the task, respond with a concise report covering what was done and any key findings — the caller will relay this to the user, so it only needs the essentials.\n\nYour strengths:\n- Searching for code, configurations, and patterns across large codebases\n- Analyzing multiple files to understand system architecture\n- Investigating complex questions that require exploring many files\n- Performing multi-step research tasks\n\nGuidelines:\n- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.\n- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn't yield results.\n- Be thorough: Check multiple locations, consider different naming conventions, look for related files.\n- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.\n- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.",
+    "tools": [
+      "*"
+    ]
+  },
+  "prompt": "你是研究助理，做一次联网调研（WebSearch + WebFetch，必须给可核验出处）。输出中文。\n\n## 背景（被服务的系统）\n一个\"从长篇中文小说全文构建证据可核验知识库\"的流水线，现在要设计**审查抽样**（不是生产抽样）。真实规模：\n- 语料：517 章（已处理 230 章，剩 287 章），分 6 个工作段（6-102／103-199／200-296／297-393／394-490／491-517）\n- 库内记录：6172 条（六类：角色/事件/关系/伏笔/设定/时间轴）\n- 证据引文：117185 条（每条引文都能回落原文逐字核验；现测 99.83% 可回落）\n- 现有口径写的是\"随机抽 30 条对原文核证据\"\n- 关键顾虑：错误**按班车聚集**（同一个执行班车、同一版抽取规范、同一份上下文包 ⇒ 缺陷不是独立同分布，而是成簇）\n- 人工预算：单个夜间窗口只能看几十条\n\n## 要你查清并回答的问题（每条都要公式 + 出处）\n1. **\"以置信度证明坏率不超过 p\"的公式族**：二项 vs **超几何（有限总体修正）**。给出精确公式（含 FPC 版本），并说明在什么 n/N 比例下 FPC 明显减少所需样本量。给出 95% 与 99% 置信度、p=1%/3%/5%/10% 时的 n（总体现为 6172 与 117185 两种规模）。\n2. **零缺陷接受抽样（c=0）**：一旦真抽到缺陷怎么办？给出\"观测到 k 个缺陷后坏率上界\"的计算方式（Clopper-Pearson 精确上界 / Wilson 区间），并给一张小表（n=30/59/100 时，k=0/1/2/3 对应的 95% 上界）。\n3. **标准抽样方案**：ISO 2859-1 / ANSI-ASQ Z1.4 / MIL-STD-105E 的**一般检验水平与 AQL** 是什么意思、它们的样本量字码表怎么用；以及\"**c=0 计划**\"（如 Squeglia 的 C=0 抽样表 / Zero Acceptance Number Sampling Plans）与它们的差别。指出这套标准是为**验收**设计的，用在\"内部质量证明\"上是否合适（要明说适用边界）。\n4. **序贯抽样**：Wald 的 SPRT（序贯概率比检验）与贝叶斯序贯抽样——什么时候比固定 n 更省样本？给出判决边界公式。\n5. **分层与分配**：比例分配 vs **Neyman 最优分配** vs 风险导向分配（可查 ISA 530 审计抽样、AICPA Audit Sampling Guide、Monetary Unit Sampling）。给出\"按各层工作量/风险分配样本量\"的公式。特别给出：**当缺陷成簇时**，有效样本量的调整方式（设计效应 design effect / 整群抽样 cluster sampling 的 deff 公式）。\n6. **捕获-再捕获（capture-recapture）**：用两个（或三个）独立复查者估计**残余缺陷总数**的经典估计量（Lincoln-Petersen、Chapman、三样本的 log-linear 模型），含置信区间；以及在软件检查/文档审查里的应用证据（有无法证实的实证研究）。这被用来回答\"还有多少没被发现\"。\n7. 若有**软件工程/文档审查**领域的抽样实证（如软件检查的抽样效率、审查投入与缺陷发现的曲线、边际收益递减的实证数字），一并给出。\n\n## 输出格式（中文，≤1100 词）\n分节对应上面 7 问；每条：**结论一句话 → 公式（可复制的数学式）→ 出处（URL 或标准号，必须可核验，没核实到标【未核实】）→ 对本案的适用边界与坑**。\n最后给一节 **\"给本案的落地建议\"**：按\"机器能全量 ≠ 需要抽样\"的前提，说明哪些层根本不该抽样（应全量机器查），哪些层该抽样、抽多少、怎么分层、用哪个估计量报结果。\n禁止编造文献或标准号。不确定就标【未核实】。",
+  "status": "completed",
+  "taskOutputFile": "C:\\Users\\26672\\.zcode\\cli\\agents\\sess_4efa0c79-075b-4809-a436-d313bf21a98d\\agent_801c4c56-621f-4655-93fd-f97eda2fae05\\task.output",
+  "updatedAt": "2026-09-22T14:25:57.123Z",
+  "workspaceRoot": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统",
+  "completedAt": "2026-09-22T14:25:57.123Z",
+  "totalDurationMs": 1073918,
+  "totalTokens": 2168104,
+  "totalToolUseCount": 56,
+  "usage": {
+    "inputTokens": 2121841,
+    "outputTokens": 46263,
+    "totalTokens": 2168104,
+    "cacheReadTokens": 2087936,
+    "reasoningTokens": 23043
+  }
+}

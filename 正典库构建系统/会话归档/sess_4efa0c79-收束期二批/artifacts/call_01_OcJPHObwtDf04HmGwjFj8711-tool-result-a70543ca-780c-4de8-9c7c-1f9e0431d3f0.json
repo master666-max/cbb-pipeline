@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-09-23T02:40:43.561Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"rest_push_skill_v2.py — 经 Git Data REST 推送 cbb-pipeline v2.0 全部变更件（git 协议被阻时的通道）\"\"\"\nimport io, json, os, subprocess, time\n\nREPO = \"master666-max/cbb-pipeline\"\nSRC = r\"D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-pipeline-skill\\cbb-pipeline\"\nFILES = [\n    \"SKILL.md\",\n    \"README.md\",\n]\nTMP = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"_rest_skill_tmp.json\")\n\ndef gh(args, input_file=None):\n    cmd = [\"gh\", \"api\"] + args\n    if input_file:\n        cmd += [\"--input\", input_file]\n    r = subprocess.run(cmd, capture_output=True, text=True, encoding=\"utf-8\")\n    if r.returncode != 0:\n        raise RuntimeError(f\"gh fail: {' '.join(args[:3])} :: {r.stderr[:300]}\")\n    return json.loads(r.stdout) if r.stdout.strip() else {}\n\ndef gh_json(args, payload):\n    io.open(TMP, \"w\", encoding=\"utf-8\").write(json.dumps(payload, ensure_ascii=False))\n    return gh(args, input_file=TMP)\n\nfor i in range(1, 9):\n    try:\n        ref = gh([f\"repos/{REPO}/git/refs/heads/main\"])\n        parent = ref[\"object\"][\"sha\"]\n        tree = gh([f\"repos/{REPO}/git/commits/{parent}\"])[\"tree\"][\"sha\"]\n        entries = []\n        for rel in FILES:\n            content = io.open(os.path.join(SRC, *rel.split(\"/\")), encoding=\"utf-8\").read()\n            blob = gh([\"-X\", \"POST\", f\"repos/{REPO}/git/blobs\",\n                       \"-f\", f\"content={content}\", \"-f\", \"encoding=utf-8\"])\n            entries.append({\"path\": rel, \"mode\": \"100644\", \"type\": \"blob\", \"sha\": blob[\"sha\"]})\n            print(f\"  blob OK {rel} ({len(content)}B)\")\n        newtree = gh_json([\"-X\", \"POST\", f\"repos/{REPO}/git/trees\"],\n                          {\"base_tree\": tree, \"tree\": entries})\n        commit = gh_json([\"-X\", \"POST\", f\"repos/{REPO}/git/commits\"],\n                         {\"message\": \"v2.0: 通用架构（任意长文本语料+本体profile+受控词表+八项参数）+ 审查体制换壳（五层证据门/批次机械自检/单位收口三件套/按执行批次分层抽样+捕获再捕获）；十查与终审废止留痕；SKILL.md 重写（触发词前置/三层分界/Common Mistakes/验收判据）\",\n                          \"tree\": newtree[\"sha\"], \"parents\": [parent]})\n        gh_json([\"-X\", \"PATCH\", f\"repos/{REPO}/git/refs/heads/main\"],\n                {\"sha\": commit[\"sha\"], \"force\": False})\n        time.sleep(2)\n        chk = gh([f\"repos/{REPO}/commits/{commit['sha']}\"])\n        print(f\"✓ v2.0 八件已推送并远端确认 {chk['sha'][:7]}\")\n        break\n    except Exception as e:\n        print(f\"第{i}轮失败：{str(e)[:180]}；重试\")\n        time.sleep(4)\nelse:\n    print(\"✗ 八轮未成功\")\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\rest_push_skill_v2.py",
+      "structuredPatch": [
+        {
+          "oldStart": 38,
+          "oldLines": 7,
+          "newStart": 38,
+          "newLines": 7,
+          "lines": [
+            "         newtree = gh_json([\"-X\", \"POST\", f\"repos/{REPO}/git/trees\"],",
+            "                           {\"base_tree\": tree, \"tree\": entries})",
+            "         commit = gh_json([\"-X\", \"POST\", f\"repos/{REPO}/git/commits\"],",
+            "-                         {\"message\": \"v2.0: 通用架构（任意长文本语料+本体profile+受控词表+八项参数）+ 审查体制换壳（五层证据门/批次机械自检/单位收口三件套/按执行批次分层抽样+捕获再捕获）；十查与终审废止留痕；SKILL.md 重写（触发词前置/三层分界/Common Mistakes/验收判据）\",",
+            "+                         {\"message\": \"docs: 门面与标题去代号化——README/SKILL 标题改为『长文本资料库构建流水线』，正文 CBB 提及清零（仅保留机器标识 name 与真实目录路径）；v2.0 说明改为白话\",",
+            "                           \"tree\": newtree[\"sha\"], \"parents\": [parent]})",
+            "         gh_json([\"-X\", \"PATCH\", f\"repos/{REPO}/git/refs/heads/main\"],",
+            "                 {\"sha\": commit[\"sha\"], \"force\": False})"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_01_OcJPHObwtDf04HmGwjFj8711",
+  "toolName": "Edit",
+  "version": 1
+}

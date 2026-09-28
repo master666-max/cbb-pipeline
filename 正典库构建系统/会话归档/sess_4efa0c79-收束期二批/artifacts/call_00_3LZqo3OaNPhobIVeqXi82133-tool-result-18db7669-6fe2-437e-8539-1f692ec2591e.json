@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-09-22T05:04:32.171Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"midterm_check.py — 中期判定机械核验（位200 快照）\n①引文全量回原文核验 ②跨距实体（早期章+晚期章同现=跨章身份维护） ③库存分型统计\n只读，零写入。\n\"\"\"\nimport glob, io, json, os, random, re, sys\n\nLIB = r\"D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\迷深实战-本体库\"\nCORPUS = r\"D:\\zcode专用！！！！危险！！！！！！！！！\\语料分析\\corpus\\clean_full.txt\"\nrandom.seed(20260922)\n\nfull = io.open(CORPUS, encoding=\"utf-8\").read()\nfull_norm = re.sub(r\"\\s\", \"\", full)  # 去所有空白做宽松匹配\n\ndef q_ok(q):\n    if not q or len(q) < 8:\n        return None  # 过短不判\n    if q in full:\n        return True\n    if re.sub(r\"\\s\", \"\", q) in full_norm:\n        return True\n    return False\n\nrecs = []\nfor p in glob.glob(os.path.join(LIB, \"libraries\", \"*\", \"provisional\", \"*.json\")):\n    try:\n        r = json.load(io.open(p, encoding=\"utf-8\"))\n    except Exception as e:\n        recs.append({\"_parse_error\": f\"{p}: {e}\"})\n        continue\n    r[\"_path\"] = p\n    recs.append(r)\n\nparse_err = [r for r in recs if \"_parse_error\" in r]\nrecs = [r for r in recs if \"_parse_error\" not in r]\nprint(f\"记录总数={len(recs)} 解析错误={len(parse_err)}\")\nfor e in parse_err[:3]: print(\"  \", e[\"_parse_error\"][:120])\n\n# 分型统计\nfrom collections import Counter\nby_lib = Counter(os.path.basename(os.path.dirname(os.path.dirname(r[\"_path\"]))) for r in recs)\nby_type = Counter(r.get(\"record_type\") or r.get(\"type\") or \"?\") for r in recs)\nprint(\"按库:\", dict(by_lib))\nprint(\"按型:\", dict(by_type))\n\n# 引文核验 + 跨距\nchecked = pass_n = fail_n = short_n = 0\nfails = []\nspan = {}  # canonical name -> set(chapters)\nfor r in recs:\n    ev = r.get(\"evidence\") or []\n    if isinstance(ev, dict): ev = [ev]\n    chs = set()\n    for e in ev:\n        q = e.get(\"quote\") or e.get(\"引文\") or \"\"\n        ch = e.get(\"chapter\") or e.get(\"章\")\n        if ch is not None:\n            try: chs.add(int(ch))\n            except Exception: pass\n        ok = q_ok(q)\n        if ok is None: short_n += 1; continue\n        checked += 1\n        if ok: pass_n += 1\n        else:\n            fail_n += 1\n            if len(fails) < 8: fails.append((r[\"_path\"].split(os.sep)[-1], q[:40], ch))\n    name = r.get(\"canonical\", {}).get(\"name\") if isinstance(r.get(\"canonical\"), dict) else r.get(\"name\")\n    if name and chs:\n        span.setdefault(name, set()).update(chs)\n\nprint(f\"引文核验: 受检={checked} 通过={pass_n} 失败={fail_n} 过短跳过={short_n}\")\nfor f in fails: print(\"  失败样例:\", f)\ncross = [(n, min(c), max(c)) for n, c in span.items() if min(c) < 100 and max(c) > 150]\nprint(f\"跨距实体(区分<100且>150章): {len(cross)} 个; 样例:\")\nfor n, a, b in sorted(cross, key=lambda x: -(x[2]-x[1]))[:5]:\n    print(f\"   {n}: ch{a}~ch{b} 跨度{b-a}\")\n\n# 别名账\nal = io.open(os.path.join(LIB, \"aliases.jsonl\"), encoding=\"utf-8\").read().strip().splitlines()\nprint(f\"别名账 {len(al)} 行; 样例3行:\")\nfor l in al[-3:]:\n    try:\n        d = json.loads(l); print(\"   \", str(d)[:110])\n    except Exception: print(\"   [坏行]\", l[:80])\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\tools\\midterm_check.py",
+      "structuredPatch": [
+        {
+          "oldStart": 39,
+          "oldLines": 7,
+          "newStart": 39,
+          "newLines": 7,
+          "lines": [
+            " # 分型统计",
+            " from collections import Counter",
+            " by_lib = Counter(os.path.basename(os.path.dirname(os.path.dirname(r[\"_path\"]))) for r in recs)",
+            "-by_type = Counter(r.get(\"record_type\") or r.get(\"type\") or \"?\") for r in recs)",
+            "+by_type = Counter((r.get(\"record_type\") or r.get(\"type\") or \"?\") for r in recs)",
+            " print(\"按库:\", dict(by_lib))",
+            " print(\"按型:\", dict(by_type))",
+            " "
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_00_3LZqo3OaNPhobIVeqXi82133",
+  "toolName": "Edit",
+  "version": 1
+}

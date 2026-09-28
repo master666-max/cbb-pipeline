@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-27T15:33:08.682Z",
+  "files": [
+    {
+      "afterContent": "# -*- coding: utf-8 -*-\n\"\"\"g17_patrol_queue.py — G17 区段巡检启动·首圈队列生成（总工单 G17 执行件·前置）。\n\n对象：全部 confirmed 群体（隔离区 confirmed 743+ + 主库 G16b 晋升批——台账为准）。\n动作：FSRS ReviewScheduler.schedule(record_id, tenure_segments, stability) 建卡；\n      首圈 due(current_segment=1) 抽样名单落盘，供巡检执行（重推导一致率报告）。\n判据（完整版在 G16b 收口后出）：巡检报告（重推导一致率）+改判率序列入 CUSUM 备用。\n用法：py -X utf8 g17_patrol_queue.py [--sample 50]\n\"\"\"\nimport json\nimport random\nimport sys\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parent\nsys.path.insert(0, str(ROOT / \"cbb-v2\"))\n\nfrom cbb2.schedule import ReviewScheduler  # noqa: E402\n\nSTORE = ROOT / \"迷深实战-本体库\"\nQZ = STORE / \"quarantine-zone\" / \"items.jsonl\"\nG16B = STORE / \"G16b-票面台账.jsonl\"\nOUT = STORE / \"G17-首圈巡检队列.json\"\n\n\ndef confirmed_ids() -> list:\n    ids = []\n    for l in QZ.read_text(encoding=\"utf-8\").splitlines():\n        if l.strip() and json.loads(l).get(\"status\") == \"confirmed\":\n            ids.append(json.loads(l)[\"item_id\"])\n    if G16B.exists():\n        for l in G16B.read_text(encoding=\"utf-8\").splitlines():\n            if l.strip() and json.loads(l).get(\"verdict\") == \"promote\":\n                ids.append(json.loads(l)[\"record_id\"])\n    return ids\n\n\ndef main():\n    sample_n = 50\n    if \"--sample\" in sys.argv:\n        sample_n = int(sys.argv[sys.argv.index(\"--sample\") + 1])\n\n    ids = confirmed_ids()\n    rs = ReviewScheduler(STORE)\n    st = rs.stats()\n    scheduled = 0\n    for rid in ids:\n        if rid not in st.get(\"cards\", {}):\n            rs.schedule(rid, tenure_segments=1, stability=1.0)  # 首圈冷启动 stability=1.0\n            scheduled += 1\n    due = rs.due(current_segment=1)\n    rng = random.Random(20260927)  # 固定种子可复算（对样门纪律）\n    sample = sorted(due) if len(due) <= sample_n else rng.sample(sorted(due), sample_n)\n    OUT.write_text(json.dumps({\n        \"unit\": \"G17\", \"at\": \"2026-09-27\",\n        \"confirmed总数\": len(ids),\n        \"新建卡\": scheduled, \"已有卡\": len(ids) - scheduled,\n        \"due首圈\": len(due), \"首圈抽样\": sample,\n        \"抽样口径\": f\"固定种子 20260927，n={len(sample)}\",\n        \"下一步\": \"巡检执行=逐条重推导（考官复核或 NLI 复判）→ record_check(passed) →\"\n                 \"重推导一致率报告+改判率序列入 CUSUM 备用\",\n    }, ensure_ascii=False, indent=1), encoding=\"utf-8\")\n    print(f\"confirmed {len(ids)}（新建卡 {scheduled}）；due 首圈 {len(due)}；抽样 {len(sample)} → {OUT}\")\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "afterContentLength": 2300,
+      "beforeContent": null,
+      "existedBefore": false,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\g17_patrol_queue.py",
+      "structuredPatch": []
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_42cecef3fd75409f80c749bb",
+  "toolName": "Write",
+  "version": 1
+}

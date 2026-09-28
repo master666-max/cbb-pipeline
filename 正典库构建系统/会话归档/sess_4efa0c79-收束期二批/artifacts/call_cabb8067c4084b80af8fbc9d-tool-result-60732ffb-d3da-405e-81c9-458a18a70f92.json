@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-09-27T15:50:57.808Z",
+  "files": [
+    {
+      "beforeContent": "# -*- coding: utf-8 -*-\n\"\"\"test_v3_g24_boundary_count.py — G24 数章权威：init_project 章数=边界表（D-9 收口判据）。\n判据：517 章边界表与计数值一致（真表 smoke）+ 表内自洽校验 + legacy/回落路径注记。\n\"\"\"\nimport importlib\nimport io\nimport json\nimport sys\nimport tempfile\nfrom pathlib import Path\n\nimport pytest\n\nHERE = Path(__file__).resolve().parent\nsys.path.insert(0, str(HERE.parent))\n\nSCRIPTS = HERE.parents[1] / \"cbb-pipeline-skill\" / \"cbb-pipeline\" / \"scripts\"\nsys.path.insert(0, str(SCRIPTS))\npytest.importorskip(\"yaml\")\ninit_project = importlib.import_module(\"init_project\")\n\n\ndef _mk_src(tmp, markers=5, prose_trap=True):\n    p = Path(tmp) / \"clean.txt\"\n    lines = [f\"<<<CHAPTER {i}>>>\" for i in range(markers)]\n    if prose_trap:\n        lines.append(\"他想起书中那行『<<<CHAPTER』的排版记号，不觉失笑。\")  # D-9 误计源\n    p.write_text(\"\\n\".join(lines) + \"\\n\", encoding=\"utf-8\")\n    return str(p)\n\n\ndef test_boundary_table_is_authoritative():\n    with tempfile.TemporaryDirectory() as td:\n        src = _mk_src(td, markers=5)\n        tbl = Path(td) / \"boundary-table-v1.json\"\n        tbl.write_text(json.dumps({\"chapter_count\": 517,\n                                   \"chapters\": [{\"no\": i} for i in range(517)]}),\n                       encoding=\"utf-8\")\n        n, note = init_project.chapter_count_of(src, td, boundary=str(tbl))\n        assert n == 517 and \"边界表\" in note\n\n\ndef test_inconsistent_table_rejected():\n    with tempfile.TemporaryDirectory() as td:\n        src = _mk_src(td, markers=5)\n        tbl = Path(td) / \"bad.json\"\n        tbl.write_text(json.dumps({\"chapter_count\": 3,\n                                   \"chapters\": [{\"no\": i} for i in range(5)]}),\n                       encoding=\"utf-8\")\n        with pytest.raises(SystemExit, match=\"自相矛盾\"):\n            init_project.chapter_count_of(src, td, boundary=str(tbl))\n\n\ndef test_fallback_and_legacy_annotate_non_authoritative():\n    with tempfile.TemporaryDirectory() as td:\n        src = _mk_src(td, markers=5)  # 含 1 处正文陷阱——标记口径会误计为 6\n        n_fb, note_fb = init_project.chapter_count_of(src, td, boundary=None)\n        assert n_fb == 6 and \"非权威\" in note_fb  # 误计如实发生+注记声明非权威\n        n_lg, note_lg = init_project.chapter_count_of(src, td, legacy=True)\n        assert n_lg == 6 and \"--legacy\" in note_lg\n\n\ndef test_real_boundary_table_517():\n    tbl = HERE.parents[2] / \"迷深实战-工作区\" / \"manifest\" / \"boundary-table-v1.json\"\n    if not tbl.exists():\n        pytest.skip(\"真库边界表不在本机\")\n    data = json.loads(tbl.read_text(encoding=\"utf-8\"))\n    assert int(data[\"chapter_count\"]) == 517\n    chapters = data.get(\"chapters\")\n    if isinstance(chapters, list):\n        assert len(chapters) == 517  # 表内自洽=判据原文\n",
+      "existedBefore": true,
+      "path": "D:\\zcode专用！！！！危险！！！！！！！！！\\正典库构建系统\\cbb-v2\\tests\\test_v3_g24_boundary_count.py",
+      "structuredPatch": [
+        {
+          "oldStart": 61,
+          "oldLines": 7,
+          "newStart": 61,
+          "newLines": 7,
+          "lines": [
+            " ",
+            " ",
+            " def test_real_boundary_table_517():",
+            "-    tbl = HERE.parents[2] / \"迷深实战-工作区\" / \"manifest\" / \"boundary-table-v1.json\"",
+            "+    tbl = HERE.parents[1] / \"迷深实战-工作区\" / \"manifest\" / \"boundary-table-v1.json\"",
+            "     if not tbl.exists():",
+            "         pytest.skip(\"真库边界表不在本机\")",
+            "     data = json.loads(tbl.read_text(encoding=\"utf-8\"))"
+          ]
+        }
+      ]
+    }
+  ],
+  "kind": "workspace_file_before_change",
+  "toolCallId": "call_cabb8067c4084b80af8fbc9d",
+  "toolName": "Edit",
+  "version": 1
+}

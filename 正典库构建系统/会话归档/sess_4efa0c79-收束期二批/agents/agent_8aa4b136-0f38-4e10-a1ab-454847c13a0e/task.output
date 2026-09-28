@@ -1,0 +1,59 @@
+调研完成，所有出处已核验。以下为报告。
+
+---
+
+# 如何写好一个 Agent Skill：调研报告
+
+## 一、写法规则清单
+
+1. **frontmatter 只保证两个字段**：`name`（1–64 字符，小写字母/数字/连字符，禁首尾连字符、禁连续连字符，须与目录名一致）+ `description`（1–1024 字符）。可选：`license`、`compatibility`（≤500 字符）、`metadata`、`allowed-tools`（实验性）。出处：[agentskills.io 规范](https://agentskills.io/specification)
+2. **description 是唯一触发机制，须包含“做什么＋何时用”**，并写入具体触发关键词；官方 skill-creator 明确指出模型倾向"undertrigger"，要求写得"pushy"（列举用户可能提到但未点名 skill 的场景）。出处：[anthropics/skills skill-creator](https://github.com/anthropics/skills)
+3. **但 description 禁止概括工作流程**：社区实测发现"description 里写了流程摘要，agent 就照 description 干、跳过正文”（一次审查变成漏掉第二次审查的案例）；推荐以"Use when…"开头只写触发条件。这与规则 2 不矛盾：写**能力一句话＋触发条件**，不写**步骤**。出处：[obra/superpowers writing-skills](https://github.com/obra/superpowers)
+4. **把关键触发词放 description 最前面**：Claude Code 实测 description＋when_to_use 合计在技能列表中被截断于 1536 字符。出处：[code.claude.com/skills 故障排查](https://code.claude.com/docs/en/skills)
+5. **三层渐进披露**：元数据（~100 token，常驻）→ SKILL.md 正文（**<5000 token / <500 行**为推荐上限）→ references/scripts/assets（按需加载，无限）。出处：[agentskills.io 规范](https://agentskills.io/specification)、[Anthropic 工程博客](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+6. **三层内容分界**：`scripts/`＝确定性/重复性操作（可执行而无需读入上下文）；`references/`＝按需查阅的细节（多域时按变体分文件，如 aws.md/gcp.md，只读相关那份）；`assets/`＝输出用模板。SKILL.md 正文只留“工作流＋何时读哪个文件”。出处：skill-creator、agentskills.io
+7. **reference 文件 >300 行须加目录**；文件引用只做一层深，避免深层嵌套。出处：skill-creator、agentskills.io
+8. **重复出现的操作固化为脚本**：若多次运行中 agent 反复独立写出同一个辅助脚本，就把它放进 `scripts/` 并让 skill 调用它。出处：skill-creator
+9. **解释 why，少用 ALL-CAPS 的 MUST/ALWAYS**：官方称之为“黄旗”；用祈使句＋讲道理代替死板约束，避免过拟合到个例。出处：skill-creator
+10. **一词一职**：一个 skill 只做一件事；什么都做的 skill 触发不可靠。出处：[Anthropic 工程博客](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)、arXiv 2607.25032
+11. **命名动词开头/动名词**：`creating-skills` 优于 `skill-creation`。出处：superpowers
+12. **跨技能引用用名字＋显式标记**（"REQUIRED SUB-SKILL: x"），不用会强制载入、烧掉上下文的 @链接。出处：superpowers
+13. **用触发评测集调 description**：造 20 条真实查询（应触发 8–10 条＋**近似误触发负例** 8–10 条），按留出集分数选优防过拟合；且只有 agent 自己搞不定的复杂任务才会触发 skill，简单任务不会。出处：skill-creator
+14. **先基线后写作（skill-TDD）**：先让 agent 无 skill 跑典型场景、记录其失败/错误理由，再针对性写；改版用“有 skill vs 旧版”基线对比，且在**全新会话**中测。出处：superpowers、[code.claude.com](https://code.claude.com/docs/en/skills)
+15. **改版保持原 name**（不叫 -v2）。出处：skill-creator
+
+## 二、论文可操作结论
+
+- **Voyager**（arXiv:2305.16291，2023）：技能＝可执行代码程序，用**程序描述的 embedding 做检索**，执行失败自动迭代修正。→ 应用：description/reference 里放足“任务形态”关键词，检索触发才算写得合格。
+- **ExpeL**（arXiv:2308.10144，AAAI 2024）：对比成功与失败轨迹提炼自然语言 insights，推理时检索。→ 应用：把已知失败模式写成"Common Mistakes"节。
+- **AWM**（arXiv:2409.07429，ICML 2025）：从轨迹中归纳**可复用工作流**，只向 agent 选择性注入；在线归纳即可提升 WebArena/Mind2Web 成功率。→ 应用：SKILL.md 正文写成“工作流"而非知识点罗列。
+- **SkillWeaver**（arXiv:2504.07079，2025）：技能应被抽象为**带自测的 API**（练习→蒸馏成健壮接口）。→ 应用：scripts 供确定性入口，正文中教“何时调”而非“如何实现”。
+- **SkillAxe**（arXiv:2606.10546，2026）：SkillsBench 上人类写的 skill 平均＋16.2 个百分点，**LLM 一次成稿 skill 无可测增益**；质量可拆为四维——质量影响、**触发精度**、**指令依从性**、**解题路径覆盖**。→ 应用：重写后按这四维自评。
+- **SkillRevise**（arXiv:2606.01139，EMNLP 2026 Findings）：基于**执行证据**迭代修订 skill（36.05%→61.63%），修订可跨执行器迁移。→ 应用：用真实跑批日志定位 skill 缺陷再改。
+- **Authoring Agent Skills: A SE Approach**（arXiv:2607.25032，2026）：skill 是软件工件——单一职责、接口/实现分离、低耦合、token 预算节约、用行为评测替代确定性测试。→ 应用：references 即“实现”，正文即“接口”。
+
+## 三、对本重写的具体建议：v2.0 SKILL.md 骨架（预算 ~250 行）
+
+```
+---frontmatter（≤10 行）
+name: cbb-pipeline（目录同名，勿改）
+description: 能力一句＋触发条件（语料构建/知识库/证据核验/长文本语料/正典化…，
+  含"即使用户没点名 cbb 也应用"的 pushy 子句），≤1024 字符，触发词前置，禁写流程步骤
+# cbb-pipeline（~20 行）
+## Overview：一句话＋证据可核验的核心原则（why）
+## When to Use / When NOT：症状列表；声明简单检索任务无需本技能
+## Pipeline 总览（~30 行）：六阶段流程图/编号步骤，每步一行＋指向对应模块
+## Quick Reference（~30 行）：命令表、init_project.py 用法（细节用 --help）
+## Stage 详述（~80 行）：每阶段≤15 行——输入/输出/验收判据/常见错误；
+  超出部分移 references/（按受众分文件：methodology.md / evidence-audit.md / corpus-types.md）
+## 通用性适配层（~30 行）：v2 关键——按语料类型（小说/论文/法条/对话）查
+  references/corpus-types.md 对应小节，正文只留选择逻辑
+## Common Mistakes（~20 行）：来自 ExpeL 式失败复盘
+## Acceptance Criteria（~15 行）：每步可核验产出物清单（SkillAxe"指令依从"维）
+scripts/：六模块＋init（判定：步骤确定性→脚本化，参考 SkillWeaver）
+assets/：project.template.yaml 不变
+```
+
+**重写流程**：按规则 14 先跑无 skill 基线 → 按 SkillAxe 四维自评 → 用触发评测集（规则 13）调 description。description 上限 1024 字符（规范），Claude Code 截断 1536 字符（含 when_to_use）。
+
+**主要出处**：[agentskills.io 规范](https://agentskills.io/specification) · [agentskills.io 集成指南](https://agentskills.io/integrate-skills) · [Anthropic 工程博客](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) · [anthropics/skills](https://github.com/anthropics/skills)（skill-creator/SKILL.md 原文）· [obra/superpowers](https://github.com/obra/superpowers)（writing-skills/SKILL.md 原文）· [code.claude.com/skills](https://code.claude.com/docs/en/skills)。论文 id 均经 arXiv API 核验，无【未核实】项。

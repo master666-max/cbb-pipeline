@@ -1,0 +1,88 @@
+调研完成。以下为情报报告。
+
+---
+
+# LLM 时代知识抽取与叙事理解·开源资产调研报告（2026-09-27）
+
+## A. 逐题发现
+
+### A1. LLM 知识抽取框架 2025–2026
+
+| 项目 | License | Stars | 活跃度（pushed） | 要点 |
+|---|---|---|---|---|
+| [zjunlp/DeepKE](https://github.com/zjunlp/DeepKE) | MIT | 4,484 | 2026-07 | NER/RE/AE/EE 工具箱，LLM 部分支持 LoRA 微调（Qwen/LLaMA/ChatGLM/DeepSeek 系），中文文档齐全，浙大出品 |
+| [zjunlp/OneKE](https://github.com/zjunlp/OneKE)（[WWW 2025 论文](https://dl.acm.org/doi/10.1145/3696410.3697052)，权重在 HF `zjunlp/OneKE`） | MIT | 195（仓库仅 Docker/Agent 壳） | 2025-07 | **Schema 引导抽取**：给 schema→LLM 按 schema 出实体/关系/事件，13 个中英 IE 数据集训练评测；与我们“受控词表→抽取”思路同构 |
+| [zjunlp/KnowLM](https://github.com/zjunlp/KnowLM) | MIT | 1,386 | **2025-01（停滞 20 个月）** | KnowLM-IE 指令抽取模型，已被 OneKE 路线实质取代 |
+| [OpenSPG/KAG](https://github.com/OpenSPG/KAG)（蚂蚁） | Apache-2.0 | 9,073 | 2026-01（半年未更） | 逻辑形式引导推理+知识图谱，强在多跳/规则推理；工程重（引擎+SDK），二开成本高 |
+| [microsoft/graphrag](https://github.com/microsoft/graphrag) | MIT | 36,109 | 2026-09（活跃） | 社区检测+层级摘要的原版；中文人物关系抽取质量依赖自定义 prompt 与实体类型配置 |
+| [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG)（[EMNLP 2025](https://arxiv.org/abs/2410.05779)） | MIT | 39,871 | 2026-09（非常活跃） | 实体/关系双层图+向量混合检索，抽取 prompt 可换、schema 可配，代码量小、二开最友好 |
+| [gusye1234/nano-graphrag](https://github.com/gusye1234/nano-graphrag) | MIT | 3,989 | 2026-01 | GraphRAG 最小可读实现，适合当“抄架构”的参考书而非生产件 |
+| PaddleNLP 内 [UIE](https://arxiv.org/abs/2203.12277)（[PaddlePaddle/PaddleNLP](https://github.com/PaddlePaddle/PaddleNLP)） | Apache-2.0 | 12,978 | 2026-05 | 中文小模型闭环抽取的老牌方案，但要训练数据、泛化到网文私设弱 |
+
+**小说/剧本专用 fork：没有成熟大项目**。GitHub 检索到的全是 <1k star 社区件：[yekup/novel-graphrag](https://github.com/yekup/novel-graphrag)（*3，MIT，网文逐章编译 Wiki+人物图谱）、[stqinmi-Tong/GraphRAG](https://github.com/stqinmi-Tong/GraphRAG)（LLM+Neo4j 小说图谱问答）、[DecisionNerd/memgraph_import](https://github.com/DecisionNerd/memgraph_import)（小说→KG）、[gwaves/novel_reader](https://github.com/gwaves/novel_reader)（*9，MIT，长篇阅读器带 KG+RAG）。结论：**小说域抽取质量没有公认排行榜**，各框架的中文评测都是自家数据集自证；实测口碑以 LightRAG（快、可换 prompt）和 OneKE（中文 schema 抽取权重最好）分头领先。
+
+### A2. Schema 约束抽取 / 结构化输出
+
+- [dottxt-ai/outlines](https://github.com/dottxt-ai/outlines)：Apache-2.0，15,885★，pushed 2026-09-21。正则/JSON-Schema/CFG 约束解码鼻祖，社区版维护活跃。
+- [mlc-ai/xgrammar](https://github.com/mlc-ai/xgrammar)（[论文](https://arxiv.org/abs/2411.15100)）：Apache-2.0，1,935★，pushed 2026-09-24。star 不高但**已被 vLLM/SGLang/TensorRT-LLM 内置为默认结构化输出后端**，是生产事实标准。
+- [567-labs/instructor](https://github.com/567-labs/instructor)：MIT，13,944★，pushed 2026-09-24。Pydantic 校验+重试路线（不做 token 级约束，适合 API 模型）。
+- **幻觉/质量实证**（关键争论，双方都有）：
+  - 反方：[Let Me Speak Freely?（arXiv:2408.02442, EMNLP 2024）](https://arxiv.org/abs/2408.02442)称 JSON 模式等格式限制显著降低推理表现（提出 FRDR 现象）。
+  - 正方：[Say What You Mean（dottxt 官方回应，2024-11）](https://blog.dottxt.co/say-what-you-mean-sometimes.html)复现发现原论文把“没吐出合法 JSON”误算成“推理差”；**用真正的约束解码（outlines）+ 合理 schema，准确率与自由生成持平甚至更高**。
+  - 后续基准：[JSONSchemaBench（arXiv:2507.16768）](https://arxiv.org/abs/2507.16768)、[Draft-Conditioned Constrained Decoding（arXiv:2502.09061）](https://arxiv.org/abs/2502.09061)。中文特化实测口碑：无系统公开评测【待确认】，但 xgrammar/outlines 对中文 token 化无特殊劣化报告；instructor 中文社区使用案例多。
+
+### A3. 实体消解/ER 的 LLM 工具化
+
+- [moj-analytical-services/splink](https://github.com/moj-analytical-services/splink)：MIT，2,434★，pushed 2026-09-25（活跃）。概率记录链接（Fellegi-Sunter），blocking 规则+对比图表一流，**无内置 LLM**；实践中已有“Splink 阻断 + LLM-in-the-loop 裁决模糊 sameAs 对”的成套用法（如 [IntelShed OSINT 平台](https://discuss.huggingface.co/t/intelshed-an-open-source-platform-for-osint-ai-investigations) 自述架构）。
+- [dedupeio/dedupe](https://github.com/dedupeio/dedupe)：MIT，4,516★，pushed 2025-07（半维护）。经典主动学习去重，可作 embedding 召回层参考。
+- [J535D165/recordlinkage](https://github.com/J535D165/recordlinkage)：BSD-3，1,062★，**2024-02 起停更**——排除。
+- [zinggAI/zingg](https://github.com/zinggAI/zingg)：**AGPL-3.0**，1,252★，活跃。**许可证风险，见 C 节**。
+- LLM-native ER：[getzep/graphiti](https://github.com/getzep/graphiti)（Apache-2.0，约 31k★，活跃）内建 LLM 实体抽取+合并+**边失效（bi-temporal invalidation）**，其“新事实使旧事实失效而非删除”正是失效记账制的同类实现，值得精读；小型专件 [benseverndev-oss/goldenmatch](https://github.com/benseverndev-oss/goldenmatch)（MIT，132★，零配置 ER+身份层）。学术系 [megagonlabs/sudowoodo](https://github.com/megagonlabs/sudowoodo)（对比学习 ER，仅 19★）。
+- **结论：embedding 召回 + LLM judge 两阶段没有占主导的开箱即用实现**，主流是 Splink/dedupe 概率层外挂 LLM 裁决的组合拳。用户提到的 “Zornitza 谱系”**未能检索到对应项目**【待确认】——最接近的名字是 Zingg（见上，AGPL）。
+
+### A4. 叙事理解开源模型/数据集 2025–2026
+
+- [NovelQA](https://novelqa.github.io/)（[OpenReview](https://openreview.net/forum?id=NovelQA)）：整本小说 >200K token 阅读理解基准，适合当正典库端到端评测集。
+- [yingpengma/Awesome-Story-Generation](https://github.com/yingpengma/Awesome-Story-Generation)：故事生成/理解资源总表（含中文长文本叙事 benchmark 索引），2025 持续维护。
+- [yuezih/Movie101](https://github.com/yuezih/Movie101)：CC-BY-4.0，76★，2025-06；中文电影叙事理解基准（解说级），对白密集文本可迁移评测。
+- [SeriesBench（arXiv 2504，2025-04）](https://arxiv.org/abs/2504.10735)（剧集叙事理解，视频域）、[ConStory-Bench（HF Papers）](https://huggingface.co/papers)：长篇叙事一致性评测，2000 prompts。
+- **伏笔识别：无被广泛采用的开源数据集**（多轮检索确认该方向仍以 arXiv 论文散点存在）；可考 [FARR 伏笔框架代码](https://github.com/sahar-ab/FARR-py)（2021，基于 WritingPrompts 子集，年代偏旧）；“Codified Foreshadowing–Payoff” 一文的数据是否放出**未能核实【待确认】**。
+- 开源权重的故事理解专用模型：**没有找到**——2025–2026 该任务均由通用 LLM + 结构化 prompt 完成，无独立 SFT 权重线。
+
+### A5. RAG 语料工程端到端管线
+
+| 项目 | License | Stars | 活跃度 | 一句话 |
+|---|---|---|---|---|
+| [infiniflow/ragflow](https://github.com/infiniflow/ragflow)（[文档](https://ragflow.io)） | Apache-2.0 | 91,329 | 2026-09（极活跃） | DeepDoc 中文版式理解+模板化 chunking+抽取+索引+评测一体，中文书籍/PDF 语料工程首选参考 |
+| [google/langextract](https://github.com/google/langextract)（[发布博文 2025-07-30](https://developers.googleblog.com/en/introducing-langextract.html)） | Apache-2.0 | 38,887 | 2026-09 | **字符偏移量 source grounding**：每条抽取挂回原文精确 span+HTML 可视化；分块/多轮/并行 |
+| [docling-project/docling](https://github.com/docling-project/docling) | MIT | 67,986 | 2026-09 | PDF/EPUB→结构化（Markdown/JSON），版面+表格模型；子项目 [docling-graph](https://github.com/docling-project/docling-graph)（*906，MIT）直接文档→KG |
+| [ucbepic/docetl](https://github.com/ucbepic/docetl)（[DocETL](https://arxiv.org/abs/2410.12189)） | MIT | 4,107 | 2026-09 | LLM 数据处理管线声明式 DSL + **管线自动优化器**（等价重写降低成本提精度） |
+| [cocoindex-io/cocoindex](https://github.com/cocoindex-io/cocoindex) | Apache-2.0 | 11,602 | 2026-09 | Rust 声明式增量索引引擎，数据流定义→自动增量更新，与“失效记账制”天然契合 |
+| [feyninc/chonkie](https://github.com/feyninc/chonkie) | MIT | 4,772 | 2026-09 | 轻量 chunking 库（语义/神经分块可插拔） |
+| [HKUDS/RAG-Anything](https://github.com/HKUDS/RAG-Anything) | MIT | 23,426 | 2026-09 | 多模态文档→LightRAG 全家桶 |
+| 评估件：[vibrantlabsai/ragas](https://github.com/vibrantlabsai/ragas)（Apache-2.0，15.9k★，**2026-02 后放缓**）；[confident-ai/deepeval](https://github.com/confident-ai/deepeval)（Apache-2.0，18.5k★，活跃） |
+
+## B. 对我们管线的接入建议
+
+1. **抽取层（LLM 抽取→证据门）**：抽取调用统一走 **xgrammar（自托管 vLLM/SGLang）或 outlines** 做 JSON-Schema 约束解码，schema 直接由受控词表生成——证据链表明：约束解码不增加幻觉、反而消灭格式性噪音；API 模型场景用 instructor+Pydantic 兜底。证据门可借鉴 **LangExtract 的字符偏移 grounding 设计**（Apache-2.0，库本身可直接引入），让“证据必须锚回原文”从模糊匹配升级为精确 span 对齐。
+2. **抽取模型**：中文 schema 引导抽取试换 **OneKE 权重**做高吞吐预抽取（MIT，词表/schema 我们自己出），DeepKE 留作微调工具箱；KnowLM 不再跟进。
+3. **ER 归一三段流水线**：不替换，维持自有两阶段；增强点有三——(a) 阻断/阈值层抄 **Splink** 的 m/u 概率模型与对比可视化（MIT）；(b) 合并裁决与**失效传播**精读 **graphiti 的边失效实现**（Apache-2.0）；(c) 明确排除 Zingg（AGPL）。
+4. **三态库/图检索**：图侧参考 **LightRAG** 的双层实体/关系索引与可换 prompt 抽取（MIT、活跃、代码薄）；**KAG** 仅作逻辑形式推理的阅读参考（半年未更，不引入依赖）。
+5. **语料入库前端**：EPUB/TXT/PDF 清洗换 **Docling**（MIT）或 **RAGFlow DeepDoc** 的版式理解；chunking 用 **Chonkie**；**CocoIndex** 的声明式增量索引可对接失效记账制（改一条→重索引受影响子图而非全库）。
+6. **评估**：管线级评估引入 **DeepEval**（活跃）或 Ragas；正典库端到端用 **NovelQA** 式整本小说 QA 做回归集；伏笔/弧线暂无现成数据，需自建标注【无现成开源资产，找不到】。
+
+## C. 明确排除项
+
+- **Zingg**（AGPL-3.0 强传染）——任何接入都会污染我们许可；如需只用其算法思想，禁止复制代码。
+- **KnowLM**（2025-01 停更，1.4k★，被 OneKE 取代）——不作为依赖。
+- **J535D165/recordlinkage**（2024-02 停更）——排除。
+- **dedupe**（MIT 但半维护，2025-07 后无动静）——不作为新架构底座，只作思想参考。
+- **nano-graphrag**（4k★，更新平缓）——只读参考，不引入。
+- **无 license 的小说项目**（MaliangAINovalWriter *881、StoryMoss *76 等）——**无许可证=默认保留所有权利，法律上不可复用**；仅可看产品形态。
+- **纯论文无码/无数据**：伏笔识别各 2024–2026 论文（含 Codified Foreshadowing–Payoff【待确认】）、"Zornitza 谱系”（查无此项目）。
+- **视频域叙事基准**（SeriesBench、MovieNet 类）——文本正典库用不上。
+- **Say What You Mean**（dottxt 博客）——非同行评审，只作工程证据与 2408.02442 对读，不当定论。
+
+**未找到项汇总**：小说/剧本专用成熟抽取 fork、中文结构化输出约束解码的系统性公开评测、embedding+LLM-judge 两阶段 ER 的主导性开源实现、伏笔识别的公认开源数据集、开源权重的故事理解专用模型——以上五项确证缺位。
+
+Sources: [DeepKE](https://github.com/zjunlp/DeepKE) · [OneKE](https://github.com/zjunlp/OneKE) · [KnowLM](https://github.com/zjunlp/KnowLM) · [KAG](https://github.com/OpenSPG/KAG) · [GraphRAG](https://github.com/microsoft/graphrag) · [LightRAG](https://github.com/HKUDS/LightRAG) · [nano-graphrag](https://github.com/gusye1234/nano-graphrag) · [outlines](https://github.com/dottxt-ai/outlines) · [xgrammar](https://github.com/mlc-ai/xgrammar) · [instructor](https://github.com/567-labs/instructor) · [Let Me Speak Freely (2408.02442)](https://arxiv.org/abs/2408.02442) · [Say What You Mean](https://blog.dottxt.co/say-what-you-mean-sometimes.html) · [JSONSchemaBench (2507.16768)](https://arxiv.org/abs/2507.16768) · [splink](https://github.com/moj-analytical-services/splink) · [dedupe](https://github.com/dedupeio/dedupe) · [zingg](https://github.com/zinggAI/zingg) · [graphiti](https://github.com/getzep/graphiti) · [goldenmatch](https://github.com/benseverndev-oss/goldenmatch) · [NovelQA](https://openreview.net) · [Movie101](https://github.com/yuezih/Movie101) · [Awesome-Story-Generation](https://github.com/yingpengma/Awesome-Story-Generation) · [FARR](https://github.com/sahar-ab/FARR-py) · [RAGFlow](https://github.com/infiniflow/ragflow) · [LangExtract](https://github.com/google/langextract) · [LangExtract 发布博文](https://developers.googleblog.com/en/introducing-langextract.html) · [docling](https://github.com/docling-project/docling) · [docling-graph](https://github.com/docling-project/docling-graph) · [DocETL](https://github.com/ucbepic/docetl) · [CocoIndex](https://github.com/cocoindex-io/cocoindex) · [Chonkie](https://github.com/feyninc/chonkie) · [RAG-Anything](https://github.com/HKUDS/RAG-Anything) · [ragas](https://github.com/vibrantlabsai/ragas) · [DeepEval](https://github.com/confident-ai/deepeval) · [IntelShed 讨论](https://discuss.huggingface.co/t/intelshed-an-open-source-platform-for-osint-ai-investigations) · [novel-graphrag](https://github.com/yekup/novel-graphrag) · [SeriesBench](https://arxiv.org/abs/2504.10735)

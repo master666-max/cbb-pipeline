@@ -1,0 +1,26 @@
+三单元全部完成。汇报如下。
+
+## 交付物与判据自查
+
+**G03 规格文档（3 件，均新建）**
+- `D:\zcode专用！！！！危险！！！！！！！！！\正典库构建系统\cbb-v2\specs\README.md` — G03 审计哲学路线定位（TLA+/Alloy 伪代码落档、Quint 可选后续）+ 三不变式对应表（晋升单向性/三态互斥/决策树总性 → 源码锚点 → 运行时测试锚点）+ 审计哲学三提案（调研 §C）到 v3 实现的映射表
+- `cbb-v2\specs\写入决策树.tla.md` — 五分支决策树（on-create/consistent-duplicate/complementary-statement/invalidation-update/contradiction+uncertain-coexist 子轨，TRACKS 集合与 `test_v3_properties.py` 逐字一致）、三态迁移（Promote 票门/HumanTransition 留痕/Adjudicate）、四大不变式、已知 ValueError 族总表
+- `cbb-v2\specs\账本链完整性.alloy.md` — ChainShape/TamperDetection/SeqContinuity/ExternalDrift/CorruptLineMarkedNotCrash（P-028 坏行占位不崩）/AppendOnly/IdempotentAppend，全部对 `ledger.py` 实码
+- 判据：specs/ 三件在案 ✅
+
+**G06 mutmut 清单（1 件，新建）**
+- `cbb-v2\mutmut-变异对象清单.md` — 6 个风险排序对象（store.write_decision 五分支 9 个变异点、ledger.line_hash/verify 7 个、promote.vote 票门 5 个、schedule.solve_interval 4 个、contract.is_pseudo_date 3 个、governance.ConformalNLICalibrator 4 个），每项含“变异什么/哪条现存测试应杀死（逐一核对 test_v3_store 18 条等）/幸存=什么缺陷信号”
+- 判据：清单在案 ✅；末尾如实记录 mutmut 仅 POSIX（Windows 不可跑，照录调研 Q2 硬限制），幸存者报告需 WSL/POSIX【待确认-环境就绪后补】
+
+**G05 文档 v3 同步**
+- `CBB全流程说明书-20260925.md` 追加 `## v3 差异章（2026-09-27 追加）`（第 257 行起，九节：契约 v3+失效记账制/写入决策树五分支/NLI 双通道+conformal/票数晋升 G5+FSRS 调度/投影派生层+账本强化/治理闭环 Wilson 区间/runner 编排/Graphiti 退役与随包缺席/破坏性变更照录，逐条带 `cbb2/*.py` 指针，素材全部从 RELEASE-NOTES-v3.md、PhaseA-BUILD-STATE、源码核实）
+- 版本联动：`cbb\README.md`、`cbb-v2\README.md` 各加 `版本：v3.0（2026-09-27 同步）` 行；发布树 `cbb-pipeline/SKILL.md` 已是 version "3.0" 无需改
+- 判据：grep "v3" 说明书 17 命中、cbb/README 1 命中、cbb-v2/README 1 命中（均非零）✅；差异章在案 ✅
+
+## 关键发现与【待确认】项
+
+1. **RELEASE-NOTES-v3.md 不在 cbb-v2/ 下**，实际位于 `cbb-pipeline-skill\cbb-pipeline\RELEASE-NOTES-v3.md`，已按实际路径取材。
+2. **发布树受 HASHES.json manifest 保护**（实测其内含全流程说明书/SKILL/RELEASE-NOTES）：发布树副本说明书当前与根说明书逐字一致，但**不会自动吸收差异章**，须走 `tools/build_release.py` 重建——已在差异章第九节登记【待确认：发布树是否需要吸收本章，属发版决策】。
+3. **"confirmed 是 sink"的代码边界**：写入面严格成立（write_decision 全分支强制 provisional，红队 P1-5），但 `status_transition` 允许 human 两态互迁（R13 全留痕）——TLA 规格已如实建为“写入面+自动面 sink+人工回退显式留痕事件”，是否封死人工回退登记【待确认】。
+4. **测试覆盖缺口如实登记**（G06 清单内）：is_pseudo_date 非字符串输入路径、ledger 坏行 fixture 直测、conformal 校准集下限守卫均无专测，预期幸存，已给断言草稿。
+5. 未动 `cbb-v2/cbb2/` 下任何 .py（git 确认：该目录唯一 untracked 的 `tei.py` 是他批单元既有产物，非我创建）；未执行任何 git add/commit。
