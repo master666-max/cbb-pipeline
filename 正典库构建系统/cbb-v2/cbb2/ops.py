@@ -24,6 +24,24 @@ def examiner_env(kind: str) -> dict:
                           else (fallback if key else "")}
 
 
+def secret_from_registry(name: str, hive: str = "User") -> str:
+    """env 缺席时从 Windows 注册表回读令牌（setx 落在 HKCU\\Environment）。
+    值只入内存：不打印、不落盘、不进异常文本（D-004）；跨进程续跑不依赖宿主重启（P-027）。
+    读取失败等同缺席，由调用方按 BLOCKED 处理。"""
+    import subprocess
+    keyring = ("HKCU\\Environment" if hive == "User"
+               else r"HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment")
+    try:
+        out = subprocess.run(["reg", "query", keyring, "/v", name],
+                             capture_output=True, text=True, timeout=10)
+        for line in out.stdout.splitlines():
+            if name in line and "REG_SZ" in line:
+                return line.split("REG_SZ", 1)[1].strip()
+    except Exception:  # noqa: BLE001
+        return ""
+    return ""
+
+
 def capability_gate(capability: str, *, endpoint_alive: bool, artifact_exists: bool,
                     wired: bool, receipt_present: bool) -> dict:
     missing = [name for name, ok in

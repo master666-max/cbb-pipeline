@@ -22,7 +22,8 @@ i_to = int(sys.argv[sys.argv.index("--to") + 1])
 model = sys.argv[sys.argv.index("--model") + 1]
 base = sys.argv[sys.argv.index("--base") + 1] if "--base" in sys.argv else "https://api-inference.modelscope.cn/v1"
 
-key = os.environ.get("MODELSCOPE_SDK_TOKEN") or os.environ.get("EXAMINER_THIRD_API_KEY") or ""
+key = (os.environ.get("MODELSCOPE_SDK_TOKEN") or os.environ.get("EXAMINER_THIRD_API_KEY")
+       or ops.secret_from_registry("MODELSCOPE_SDK_TOKEN") or "")
 if not key:
     print("BLOCKED：MODELSCOPE_SDK_TOKEN 未设置", flush=True)
     sys.exit(2)
@@ -31,12 +32,19 @@ outdir = ROOT / "迷深实战-本体库" / "试车-工作流"
 manifest = [json.loads(l) for l in (outdir / "manifest.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
 items = manifest[i_from:i_to]
 
-outf = outdir / "third_votes.jsonl"
+# 分片独立输出（P-028 防线——并发切片共写一个文件会撕裂）；done-set 容错读全部历史
+outf = outdir / f"third_votes_{i_from}_{i_to}.jsonl"
 done = set()
-if outf.exists():
-    for l in outf.read_text(encoding="utf-8").splitlines():
-        if l.strip():
-            r = json.loads(l)
+for tf in [outdir / "third_votes.jsonl"] + list(outdir.glob("third_votes_*.jsonl")):
+    if tf.exists():
+        for l in tf.read_text(encoding="utf-8").splitlines():
+            s = l.strip()
+            if not s:
+                continue
+            try:
+                r = json.loads(s)
+            except Exception:
+                continue
             if r.get("third_vote") in ("support", "against", "unsure"):
                 done.add(r["record_id"])
 

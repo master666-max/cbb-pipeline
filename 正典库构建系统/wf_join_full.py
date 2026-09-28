@@ -23,6 +23,12 @@ from cbb2 import audit  # noqa: E402
 STORE = ROOT / "迷深实战-本体库"
 outdir = STORE / "试车-工作流"
 manifest = [json.loads(l) for l in (outdir / "manifest.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+# 植株特权映射（is_plant/expected）：修复后判卷面 manifest 不再携带，从 manifest_priv.jsonl 读；
+# 旧轮（试车）无 priv 文件时回落 manifest 自带字段。
+_privf = outdir / "manifest_priv.jsonl"
+priv = {r["record_id"]: r for r in
+        (json.loads(l) for l in (_privf if _privf.exists() else outdir / "manifest.jsonl")
+         .read_text(encoding="utf-8").splitlines() if l.strip())}
 
 VALID = {"support", "against", "unsure"}
 bad_lines = 0
@@ -54,9 +60,10 @@ for fp in ds_files:
     if fp.exists():
         ds.update(load_votes(fp.read_text(encoding="utf-8").splitlines(), "ds_vote"))
 third = {}
-tf = outdir / "third_votes.jsonl"
-if tf.exists():
-    third = load_votes(tf.read_text(encoding="utf-8").splitlines(), "third_vote")
+third_files = [outdir / "third_votes.jsonl"] + [Path(p) for p in sorted(glob.glob(str(outdir / "third_votes_*.jsonl")))]
+for tf in third_files:
+    if tf.exists():
+        third.update(load_votes(tf.read_text(encoding="utf-8").splitlines(), "third_vote"))
 
 rows_out = []
 for it in manifest:
@@ -89,7 +96,7 @@ for it in manifest:
         verdict = "hold"
     rows_out.append({"record_id": rid, "verdict": verdict, "votes": votes, "need": need,
                      "against": against, "errors": errors, "degraded": n < 3,
-                     "is_plant": bool(it.get("is_plant")), "expected": it.get("expected"),
+                     "is_plant": bool(priv[rid].get("is_plant")), "expected": priv[rid].get("expected"),
                      "口径": "编制3/3：GLM=本会话端口(工作流子代理)、DEEPSEEK=官方API、THIRD=ModelScope API-Inference(Step-3.7-Flash)"})
 
 with (STORE / "G16c-重审台账-工作流.jsonl").open("a", encoding="utf-8") as jf:

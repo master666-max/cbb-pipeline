@@ -25,7 +25,8 @@ manifest = [json.loads(l) for l in (outdir / "manifest.jsonl").read_text(encodin
 items = manifest[i_from:i_to]
 
 base = os.environ.get("EXAMINER_DEEPSEEK_BASE") or "https://api.deepseek.com"
-key = os.environ.get("EXAMINER_DEEPSEEK_API_KEY") or os.environ.get("DEEPSEEK_API_KEY") or ""
+key = (os.environ.get("EXAMINER_DEEPSEEK_API_KEY") or os.environ.get("DEEPSEEK_API_KEY")
+       or ops.secret_from_registry("DEEPSEEK_API_KEY") or "")
 models = [m for m in [os.environ.get("EXAMINER_DEEPSEEK_MODEL") or "", "deepseek-chat", "deepseek-v4-flash"] if m]
 mt = int(os.environ.get("EXAMINER_MAX_TOKENS") or 4096)
 # 分片独立输出文件：多批次并发时不再共写一个文件（撕裂防线）；兼容读取旧 ds_votes.jsonl
