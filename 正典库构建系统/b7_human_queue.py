@@ -43,16 +43,16 @@ def main():
     coref = {}
     if coref_dir.exists():
         for f in coref_dir.glob("batch-*.json"):
-            for r in json.loads(f.read_text(encoding="utf-8")).get("results", []):
+            d = json.loads(f.read_text(encoding="utf-8"))
+            for r in (d.get("results", []) if isinstance(d, dict) else d):
                 coref[r["record_id"]] = r
 
     confirmed = {rid for rid, v in {**g16b, **g16c, **esc}.items()
                  if v.get("verdict") == "promote"}
     queue = []
-    for rid, verdict in g16b.items():
-        if rid in confirmed or verdict != "hold" and verdict != "human":
-            continue
-        if verdict == "promote":
+    for rid, brow in g16b.items():
+        verdict = brow.get("verdict") if isinstance(brow, dict) else brow
+        if rid in confirmed or verdict not in ("hold", "human"):
             continue
         lib = None
         rec = None

@@ -91,7 +91,7 @@ def main():
         sidecar = Path(sys.argv[sys.argv.index("--sidecar") + 1])
         if not sidecar.is_absolute():
             sidecar = STORE / sidecar.name  # 相对名锚到库根（防 cwd 漂移）
-    journal = JOURNAL_FULL if sidecar.name == "补充证据-回填.jsonl" else JOURNAL_PILOT
+    journal = JOURNAL_PILOT if "试点" in sidecar.name else JOURNAL_FULL  # 非试点 sidecar 一律全量台账
     n_plants = 4
     if "--plants" in sys.argv:
         n_plants = int(sys.argv[sys.argv.index("--plants") + 1])
@@ -108,6 +108,21 @@ def main():
                 prescreen[r["record_id"]] = r["route"]
     routed = [r for r in full if prescreen.get(r["record_id"]) == "human_nli"]
     full = [r for r in full if prescreen.get(r["record_id"]) != "human_nli"]
+    if "--revote-qwen-against" in sys.argv:
+        # B5c：重判被 claim 字段契约缺陷污染的 QWEN=against 件（判词 v2 下重跑）
+        last = {}
+        if JOURNAL_FULL.exists():
+            for l in JOURNAL_FULL.read_text(encoding="utf-8").splitlines():
+                if l.strip():
+                    r = json.loads(l)
+                    last[r["record_id"]] = r
+        before = len(full)
+        full = [r for r in full
+                if r["record_id"] in last
+                and last[r["record_id"]].get("votes", {}).get("QWEN") == "against"
+                and last[r["record_id"]].get("verdict") == "human"]
+        print(f"B5c 契约缺陷重判模式: {len(full)}/{before} 件（JUDGE_PROMPT v2）")
+
     if "--revote-incomplete" in sys.argv:
         # B5b 补判模式：只重判 QWEN 缺席的持票不完整件（末行 hold 且票数<2）
         last = {}
@@ -119,7 +134,7 @@ def main():
         before = len(full)
         full = [r for r in full
                 if r["record_id"] in last
-                and last[r["record_id"]].get("verdict") == "hold"
+                and last[r["record_id"]].get("verdict") in ("hold", "blocked")
                 and len(last[r["record_id"]].get("votes", {})) < 2]
         print(f"B5b 补判模式: 只重判票面不完整件 {len(full)}/{before}")
     print(f"回填可审件: {len(full)}（NLI 预筛转人工 {len(routed)}，其路由见补充证据-NLI预筛.jsonl）")
@@ -159,7 +174,10 @@ def main():
             res["g16b_verdict"] = None
         return res
 
-    items = [(r, False) for r in full] + [(p, True) for p in plants]
+    items = [(r, False) for r in full]
+    step = max(1, len(items) // (len(plants) or 1))  # 植株穿插全卷——末尾堆放会让末段故障漏检（B5 实证）
+    for off, p in enumerate(plants):
+        items.insert(min(off * step, len(items)), (p, True))
     t0 = time.time()
     results = []
     with journal.open("a", encoding="utf-8") as jf, \
@@ -210,3 +228,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def build_plant_exam_items():
+    """判卷上岗考试条目（m-prometheus 上岗考试用）——与掺植物同源同构。"""
+    return build_plants(4, 20260928)
