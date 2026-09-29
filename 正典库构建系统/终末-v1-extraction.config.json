@@ -1,0 +1,33 @@
+{
+ "version": "1.0",
+ "book": "终末停滞委员会·第一卷",
+ "corpus": {
+  "path": "D:\\qoder专用！！！\\终末停滞委员会-正典库\\corpus"
+ },
+ "boundary_file": "D:\\qoder专用！！！\\终末停滞委员会-正典库\\工作区\\manifest\\boundary-table-v1.json",
+ "store_root": "D:\\qoder专用！！！\\终末停滞委员会-正典库\\本体库",
+ "work_dir": "终末试点",
+ "panel_concurrency": 3,
+ "anchor_check": true,
+ "types": {
+  "_note": "R-030：值已人审标定（2026-09-29，六值原样），全量抽取按此锁定；新值出现须再彩排+人审",
+  "libraries": [
+   "character",
+   "event",
+   "relation",
+   "foreshadow",
+   "setting"
+  ],
+  "entity_type_values": [
+   "人物",
+   "术语",
+   "地点",
+   "物件",
+   "组织",
+   "能力"
+  ],
+  "mutable_fields": [
+   "entity_type"
+  ]
+ }
+}
