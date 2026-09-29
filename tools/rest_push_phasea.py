@@ -89,6 +89,14 @@ for attempt in range(1, 6):
                                       capture_output=True, text=True).stdout.strip()
                 entries.append({"path": rel, "mode": "160000", "type": "commit", "sha": gsha})
                 continue
+            if t.returncode != 0 and "could not get object info" in (t.stderr or ""):
+                # gitlink：嵌套仓 HEAD 不在本库对象库——ls-tree 读树条目取指针 sha（160000 保真）
+                ls = subprocess.run(["git", "ls-tree", TARGET, "--", rel],
+                                    capture_output=True, text=True)
+                parts = ls.stdout.split("\t", 1)[0].split()
+                if len(parts) >= 3 and parts[1] == "commit":
+                    entries.append({"path": rel, "mode": parts[0], "type": "commit", "sha": parts[2]})
+                    continue
             raw = subprocess.run(["git", "cat-file", "blob", f"{TARGET}:{rel}"],
                                  capture_output=True)
             if raw.returncode != 0:
