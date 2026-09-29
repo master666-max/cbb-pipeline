@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "book": "终末停滞委员会·第一卷",
+  "store_root": "D:\\qoder专用！！！\\终末停滞委员会-正典库\\本体库",
+  "work_dir": "终末试点",
+  "contract_file": "contracts/judge-v2.2.txt",
+  "panel": {
+    "GLM": {"channel": "subagent"},
+    "DEEPSEEK": {
+      "base": "https://api.deepseek.com",
+      "model": "deepseek-chat",
+      "key": {"env": "DEEPSEEK_API_KEY", "registry": "DEEPSEEK_API_KEY"}
+    },
+    "THIRD": {
+      "base": "https://token-plan-cn.xiaomimimo.com/v1",
+      "model": "mimo-v2.6-flash",
+      "key": {"registry": "EXAMINER_MIMO_TP_KEY", "registry2": "EXAMINER_MIMO_API_KEY"},
+      "role": "audit",
+      "max_tokens": 2048,
+      "paced": true
+    }
+  },
+  "plants": {"pairs": 2, "seed": 20260929},
+  "batch": {"chunk": 10},
+  "gate": {"correct_min": 3, "capture_min": 0.8334}
+}
