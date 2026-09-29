@@ -1,26 +1,43 @@
 {
-  "version": "1.0",
-  "book": "迷深实战",
-  "store_root": "迷深实战-本体库",
-  "work_dir": "迷深实战-本体库/试车-工作流",
-  "contract_file": "contracts/judge-v2.2.txt",
-  "panel": {
-    "GLM": {"channel": "subagent"},
-    "DEEPSEEK": {
-      "base": "https://api.deepseek.com",
-      "model": "deepseek-chat",
-      "key": {"env": "DEEPSEEK_API_KEY", "registry": "DEEPSEEK_API_KEY"}
-    },
-    "THIRD": {
-      "base": "https://token-plan-cn.xiaomimimo.com/v1",
-      "model": "mimo-v2.6-flash",
-      "key": {"registry": "EXAMINER_MIMO_TP_KEY", "registry2": "EXAMINER_MIMO_API_KEY"},
-      "role": "audit",
-      "max_tokens": 2048,
-      "paced": true
-    }
+ "version": "1.0",
+ "book": "迷深实战",
+ "store_root": "迷深实战-本体库",
+ "work_dir": "迷深实战-工作区/判卷",
+ "contract_file": "contracts/judge-v2.2.txt",
+ "panel": {
+  "GLM": {
+   "channel": "subagent"
   },
-  "plants": {"pairs": 4, "seed": 20260928},
-  "batch": {"chunk": 10},
-  "gate": {"correct_min": 5, "capture_min": 0.8334}
+  "DEEPSEEK": {
+   "base": "https://api.deepseek.com",
+   "model": "deepseek-chat",
+   "key": {
+    "env": "DEEPSEEK_API_KEY",
+    "registry": "DEEPSEEK_API_KEY"
+   }
+  },
+  "THIRD": {
+   "base": "https://token-plan-cn.xiaomimimo.com/v1",
+   "model": "mimo-v2.6-flash",
+   "key": {
+    "registry": "EXAMINER_MIMO_TP_KEY",
+    "registry2": "EXAMINER_MIMO_API_KEY"
+   },
+   "role": "audit",
+   "max_tokens": 2048,
+   "paced": true
+  }
+ },
+ "plants": {
+  "pairs": 4,
+  "seed": 20260928
+ },
+ "batch": {
+  "chunk": 10
+ },
+ "gate": {
+  "correct_min": 5,
+  "capture_min": 0.8334
+ },
+ "_注": "work_dir 指向专轮目录——2026-09-29 曾误指历史试车目录覆写 59 文件（git 已恢复），教训：开轮前查 work_dir 指向"
 }
