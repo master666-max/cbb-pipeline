@@ -123,3 +123,33 @@ def build_boundary(cfg) -> dict:
     cfg.boundary_file.write_text(json.dumps(table, ensure_ascii=False, sort_keys=True, indent=1),
                                  encoding="utf-8")
     return {"chapter_count": len(chapters), "out": str(cfg.boundary_file)}
+
+
+def ingest_diff(cfg, state: dict | None = None) -> dict:
+    """批次 4 增量检测：刷新边界表并逐章内容哈希比对 ingest-state。
+
+    new=未摄入章（chapter_no 不在 state）；changed=已摄入但内容哈希变化——
+    **转人工，不自动重抽**（修订语义属判卷级，自动重抽会造重复记录）；unchanged=其余。
+    """
+    import hashlib
+    state = state or {}
+    build_boundary(cfg)  # 刷新边界文件（派生件，幂等）
+    table = json.loads(cfg.boundary_file.read_text(encoding="utf-8"))
+    raw = cfg.corpus.read_bytes()
+    lines = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    new, changed, unchanged = [], [], 0
+    for ch in table["chapters"]:
+        no = ch["chapter_no"]
+        # 尾部空行不入内容哈希（末章吸收语料尾部换行；中段尾部空行的增删不影响内容判定）
+        body = "\n".join(lines[ch["marker_line"] - 1: ch["line_end"]]).rstrip("\n")
+        sha = hashlib.sha256(body.encode("utf-8")).hexdigest()
+        st = state.get(str(no))
+        if st is None:
+            new.append({"chapter_no": no, "title": ch["title"], "sha": sha})
+        elif st.get("sha") != sha:
+            changed.append({"chapter_no": no, "title": ch["title"],
+                            "old_sha": st.get("sha"), "new_sha": sha})
+        else:
+            unchanged += 1
+    return {"new": new, "changed": changed, "unchanged": unchanged,
+            "boundary_file": str(cfg.boundary_file)}
