@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "book": "迷深实战",
+  "store_root": "迷深实战-本体库",
+  "work_dir": "迷深实战-本体库/试车-工作流",
+  "contract_file": "contracts/judge-v2.2.txt",
+  "panel": {
+    "GLM": {"channel": "subagent"},
+    "DEEPSEEK": {
+      "base": "https://api.deepseek.com",
+      "model": "deepseek-chat",
+      "key": {"env": "DEEPSEEK_API_KEY", "registry": "DEEPSEEK_API_KEY"}
+    },
+    "THIRD": {
+      "base": "https://token-plan-cn.xiaomimimo.com/v1",
+      "model": "mimo-v2.6-flash",
+      "key": {"registry": "EXAMINER_MIMO_TP_KEY", "registry2": "EXAMINER_MIMO_API_KEY"},
+      "role": "audit",
+      "max_tokens": 2048,
+      "paced": true
+    }
+  },
+  "plants": {"pairs": 4, "seed": 20260928},
+  "batch": {"chunk": 10},
+  "gate": {"correct_min": 5, "capture_min": 0.8334}
+}
