@@ -1,0 +1,42 @@
+{
+ "plant": {
+  "n": 8,
+  "v1": {
+   "support": 4,
+   "unsure": 4
+  },
+  "v2": {
+   "unsure": 8
+  },
+  "v1_support": 4,
+  "v2_support": 0
+ },
+ "flip": {
+  "n": 40,
+  "v1": {
+   "support": 27,
+   "unsure": 9,
+   "against": 4
+  },
+  "v2": {
+   "unsure": 31,
+   "support": 9
+  },
+  "v1_support": 27,
+  "v2_support": 9
+ },
+ "ds_support_ctrl": {
+  "n": 12,
+  "v1": {
+   "support": 12
+  },
+  "v2": {
+   "support": 10,
+   "unsure": 2
+  },
+  "v1_support": 12,
+  "v2_support": 10
+ },
+ "v1support_v2unsure_翻转": 24,
+ "判读": "H2/混合：plant 层 v1 也未恢复 support——契约非唯一因，看 flip/ctrl 层分布再判"
+}

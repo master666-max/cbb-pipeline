@@ -25,7 +25,7 @@ REL = ROOT / "cbb-pipeline-skill" / "cbb-pipeline"
 SRC_CBB = ROOT / "cbb"
 SRC_V2 = ROOT / "cbb-v2"
 MANIFEST = REL / "HASHES.json"
-VERSION = "v3.0.0"
+VERSION = "v3.1.0"
 
 VERIFY_SCRIPT = '''# -*- coding: utf-8 -*-
 """verify_release.py — 发布树完整性自检：HASHES.json 逐件 sha256 核对（手改即 FAIL）。"""

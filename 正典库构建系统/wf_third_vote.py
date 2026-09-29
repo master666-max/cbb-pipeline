@@ -22,11 +22,17 @@ i_to = int(sys.argv[sys.argv.index("--to") + 1])
 model = sys.argv[sys.argv.index("--model") + 1]
 base = sys.argv[sys.argv.index("--base") + 1] if "--base" in sys.argv else "https://api-inference.modelscope.cn/v1"
 
-key = (os.environ.get("MODELSCOPE_SDK_TOKEN") or os.environ.get("EXAMINER_THIRD_API_KEY")
+# key 优先级：槽位 key（env→注册表）> 平台默认（MODELSCOPE）——dwfrun-62698cc8 实证：
+# host env 里残留的 MODELSCOPE_TOKEN 会抢先命中被发给阶跃官方 → 401 烧票，槽位必须最先。
+key = (os.environ.get("EXAMINER_THIRD_API_KEY")
+       or ops.secret_from_registry("EXAMINER_THIRD_API_KEY")
+       or os.environ.get("MODELSCOPE_SDK_TOKEN")
        or ops.secret_from_registry("MODELSCOPE_SDK_TOKEN") or "")
 if not key:
-    print("BLOCKED：MODELSCOPE_SDK_TOKEN 未设置", flush=True)
+    print("BLOCKED：MODELSCOPE_SDK_TOKEN / EXAMINER_THIRD_API_KEY 均未设置（env 与注册表）", flush=True)
     sys.exit(2)
+# 官方付费端点免免费档 pacing（1.2s 双序间隔 / 2.5s 件间隔是 ModelScope 15 RPM 时代的产物）
+PAID = "modelscope" not in base
 
 outdir = ROOT / "迷深实战-本体库" / "试车-工作流"
 manifest = [json.loads(l) for l in (outdir / "manifest.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
@@ -94,7 +100,8 @@ for it in items:
     err = None
     try:
         va = parse(ask_rl(p_ev, model))
-        time.sleep(1.2)
+        if not PAID:
+            time.sleep(1.2)
         vb = parse(ask_rl(p_co, model))
         vote = va if va == vb else "unsure"
         ok += 1
@@ -107,5 +114,6 @@ for it in items:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
         f.flush()
     print(f"third {it['record_id']} -> {vote} ({err or 'ok'})", flush=True)
-    time.sleep(2.5)
+    if not PAID:
+        time.sleep(2.5)
 print(f"THIRD batch [{i_from}:{i_to}] done: ok={ok} fail={fail} model={model}")

@@ -354,3 +354,36 @@
 - 版本：v1（2026-09-28 建立；吸收 0b895845 未立条教训）
 - schema_version：3
 - 状态：active
+
+### P-030 / 2026-09-29 / 动态工作流修订后 world.run 按 argv 身份复放：被调脚本内容变更对缓存不可见——改脚本必改 argv 加轮次 tag
+- 场景：放量判卷 dwf 修订（wf_third_vote.py 内部换阶跃官方契约）后 AmendWorkflow 续跑，DS 腿"完成"但零新票，合票报 ds_votes_v22.jsonl 不存在。
+- 根因：world.run 调用点缓存身份=命令+argv（+调用点序），**不含被调脚本文件内容**——脚本内部契约文本全换了，调用点 argv 原样 → 直接复放旧执行结果，新逻辑零执行。
+- 对策：①被调脚本内容变更时 argv 必须加轮次标识（`--round N`）破缓存；②凡"改了脚本但行为没变"先怀疑缓存复放，查产物文件 mtime。
+- 实例：dwfrun-62698cc8→b80c6efd DS 腿 v2.2 零实跑；放量 dwf DS/Step 补票 --round 2/3/5 一路用 argv 破缓存（正面用法）
+- 关键词：AmendWorkflow、world.run、缓存复放、argv 身份、脚本内容变更、轮次 tag
+- 关联：[[PT-023]]（工作流编排主范式）、[[P-017]]（幂等断言同族——缓存也是幂等面）
+- 版本：v1（2026-09-29 建立）
+- schema_version：3
+- 状态：active
+
+### P-031 / 2026-09-29 / 工作流修订不连带清理旧 world.run 子进程：多代孤儿并发混写同一 append 文件
+- 场景：一天三次 AmendWorkflow（换 base/key/round），每代 6 个 wf_third_vote 子进程持续存活写盘。
+- 根因：amend 停掉的是运行宿主，**已在跑的 world.run 子进程成为孤儿继续执行**——三代 18 进程并发 append 同一批分片文件：401 错行+有效票交错（外部审计逐行核验才现形），P-028 撕裂实拍 5 坏行。
+- 对策：①子进程命令行内嵌代际标识（`--round N`），修订后按 argv 清点格杀旧代（PowerShell Get-CimInstance 按 CommandLine 过滤 taskkill）；②修订后立即进程清点+60 秒增量验数（错行率归零才算清干净）。
+- 实例：wf_third_vote --round 2/3/4 三代清点 18→6；60 秒增量 10 有效票/0 四〇一确认纯净
+- 关键词：孤儿进程、world.run、AmendWorkflow、进程清点、混写、代际标识
+- 关联：[[P-028]]（并发 append 撕裂——孤儿混写是其放大器）、[[PT-023]]
+- 版本：v1（2026-09-29 建立）
+- schema_version：3
+- 状态：active
+
+### P-032 / 2026-09-29 / Python 生成器内 if/else 条件链是 SyntaxError 高发位：sum(1 for x if A if B else C)——判定计数一律 helper 函数
+- 场景：植株正确计数三处（wf_join_v21.py、wf_join_dual.py、DS 弃权 A/B 摘要）同日三犯 `SyntaxError: invalid syntax`。
+- 根因：生成器表达式只允许连续 `if` 过滤，**不能写 if/else 三元当过滤体**——`sum(1 for r in xs if (A) if B else (C))` 直接语法错；三元属表达式位，想当过滤器用必须包成函数。
+- 对策：立规——判定型计数一律写 helper 函数（`def _ok(r): return ...`）再 `sum(1 for r in xs if _ok(r))`；禁写内联 if/else 过滤体。
+- 实例：wf_join_v21.py L75、wf_join_dual.py L136、ab_ds_contract 摘要段（三犯全被 py_compile/运行时拦截，零入库）
+- 关键词：生成器表达式、三元条件、SyntaxError、计数、helper 函数
+- 关联：[[P-004]]（同日另犯：内联 python -c 转义替换三连败——同类"该用 Write/函数别硬写内联"）
+- 版本：v1（2026-09-29 建立；同日三犯立规）
+- schema_version：3
+- 状态：active

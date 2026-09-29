@@ -80,14 +80,30 @@ class Store:
 
     def _append(self, name: str, obj: dict):
         p = self.root / name
+        try:
+            line = json.dumps(obj, ensure_ascii=False, sort_keys=True) + "\n"
+        except (TypeError, ValueError) as e:
+            raise ValueError(f"{name}: 对象不可 JSON 序列化：{e}") from None
         with p.open("a", encoding="utf-8") as f:
-            f.write(json.dumps(obj, ensure_ascii=False, sort_keys=True) + "\n")
+            try:
+                f.write(line)
+            except UnicodeEncodeError as e:  # 未配对代理等——拒绝写而非半行崩溃
+                raise ValueError(f"{name}: 含不可 UTF-8 编码字符：{e}") from None
 
     def _load_all(self, name: str) -> list[dict]:
         p = self.root / name
         if not p.exists():
             return []
-        return [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
+        raw = p.read_bytes()
+        out = []
+        for x in raw.split(b"\n"):  # 只按 \n 切——行内 U+0085/U+2028 不是行界（P-028）
+            if not x.strip():
+                continue
+            try:
+                out.append(json.loads(x.decode("utf-8")))
+            except (UnicodeDecodeError, json.JSONDecodeError):
+                self.iter_skipped.append(name)
+        return out
 
     # ---- 遍历（R5：撕裂披露不崩） ----
 

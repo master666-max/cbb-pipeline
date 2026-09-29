@@ -32,8 +32,19 @@ class LedgerChain:
 
     def _rows(self) -> list[dict]:
         if self._cache is None:
-            self._cache = [json.loads(x) for x in
-                           self.path.read_text(encoding="utf-8").splitlines() if x.strip()]
+            rows: list[dict] = []
+            raw = self.path.read_bytes() if self.path.exists() else b""
+            # 只按 \n 切行——JSON 字符串可合法含 U+0085/U+2028 等 Unicode 行分隔符，
+            # str.splitlines() 会把它们当行界撕碎 JSON（P-028）；坏行以标记占位不崩，
+            # 由 verify() 判"行损坏"（审计工具对任意输入必须给判定，不许抛异常）。
+            for line in raw.split(b"\n"):
+                if not line.strip():
+                    continue
+                try:
+                    rows.append(json.loads(line.decode("utf-8")))
+                except (UnicodeDecodeError, json.JSONDecodeError):
+                    rows.append({"corrupt": line.decode("utf-8", "replace")[:32]})
+            self._cache = rows
         return self._cache
 
     def _rows_fresh(self) -> list[dict]:
@@ -41,8 +52,8 @@ class LedgerChain:
         return self._rows()
 
     def has_key(self, target: str, key: str) -> bool:
-        return any(r["op"] == "append" and r["target"] == target
-                   and r["idempotency_key"] == key for r in self._rows())
+        return any(r.get("op") == "append" and r.get("target") == target
+                   and r.get("idempotency_key") == key for r in self._rows())
 
     def _append_row(self, op: str, target: str, key: str,
                     sha_before: str, sha_after: str) -> dict:
@@ -64,13 +75,17 @@ class LedgerChain:
         rows = self._rows_fresh()
         errors, prev_hash = [], EMPTY_SHA
         for i, r in enumerate(rows):
-            if r["prev_hash"] != prev_hash:
-                errors.append(f"seq{r['seq']}: prev_hash 断链")
-            if r["hash"] != line_hash(r):
-                errors.append(f"seq{r['seq']}: 行哈希不匹配（被篡改？）")
-            if r["seq"] != i + 1:
-                errors.append(f"seq{r['seq']}: 序号不连续")
-            prev_hash = r["hash"]
+            if r.get("corrupt") is not None and "corrupt" in r:
+                errors.append(f"line{i+1}: 行损坏无法解析（{r['corrupt']!r}…）")
+                prev_hash = None  # 后续行 prev_hash 必不一致——让断链误差显式暴露
+                continue
+            if r.get("prev_hash") != prev_hash:
+                errors.append(f"seq{r.get('seq')}: prev_hash 断链")
+            if r.get("hash") != line_hash(r):
+                errors.append(f"seq{r.get('seq')}: 行哈希不匹配（被篡改？）")
+            if r.get("seq") != i + 1:
+                errors.append(f"seq{r.get('seq')}: 序号不连续")
+            prev_hash = r.get("hash")
         if store_root is not None:
             import hashlib as _h
             last = {}
@@ -148,18 +163,23 @@ class LedgedStore:
         orig_adj = zone.adjudicate
 
         def zadjudicate(iid, verdict, note="", by="human", _orig=orig_adj, _led=led):
+            from .quarantine import adjudicate_lock
             key = f"{iid}|{verdict}"
-            if _led.has_key("quarantine-zone/adjudications.jsonl", key):
-                return {"item_id": iid, "repeated": True}
-            sha_b_items = self._sha(zone.items_path)
-            adj_path = zone.root / "adjudications.jsonl"
-            sha_b_adj = self._sha(adj_path)
-            out = _orig(iid, verdict, note=note, by=by)
-            _led.record_append("quarantine-zone/items.jsonl", key,
-                               sha_b_items, self._sha(zone.items_path))
-            _led.record_append("quarantine-zone/adjudications.jsonl", key + "|adj",
-                               sha_b_adj, self._sha(adj_path))
-            return out
+            # G25：幂等检查+裁决内核+账本双记全程同锁——并发双写与丢更新同根除；
+            # 内核直呼 _adjudicate_inner（其外层公开法自带同锁，嵌套会死锁）
+            with adjudicate_lock(zone.root):
+                # 检查键=记账键（key|adj）——原检查用裸 key 与记账键错位，重复裁决从未被拦（本批修复）
+                if _led.has_key("quarantine-zone/adjudications.jsonl", key + "|adj"):
+                    return {"item_id": iid, "repeated": True}
+                sha_b_items = self._sha(zone.items_path)
+                adj_path = zone.root / "adjudications.jsonl"
+                sha_b_adj = self._sha(adj_path)
+                out = zone._adjudicate_inner(iid, verdict, note, by)
+                _led.record_append("quarantine-zone/items.jsonl", key,
+                                   sha_b_items, self._sha(zone.items_path))
+                _led.record_append("quarantine-zone/adjudications.jsonl", key + "|adj",
+                                   sha_b_adj, self._sha(adj_path))
+                return out
         zone.adjudicate = zadjudicate
 
     def __getattr__(self, name):

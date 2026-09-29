@@ -24,6 +24,24 @@ def examiner_env(kind: str) -> dict:
                           else (fallback if key else "")}
 
 
+def secret_from_registry(name: str, hive: str = "User") -> str:
+    """env 缺席时从 Windows 注册表回读令牌（setx 落在 HKCU\\Environment）。
+    值只入内存：不打印、不落盘、不进异常文本（D-004）；跨进程续跑不依赖宿主重启（P-027）。
+    读取失败等同缺席，由调用方按 BLOCKED 处理。"""
+    import subprocess
+    keyring = ("HKCU\\Environment" if hive == "User"
+               else r"HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment")
+    try:
+        out = subprocess.run(["reg", "query", keyring, "/v", name],
+                             capture_output=True, text=True, timeout=10)
+        for line in out.stdout.splitlines():
+            if name in line and "REG_SZ" in line:
+                return line.split("REG_SZ", 1)[1].strip()
+    except Exception:  # noqa: BLE001
+        return ""
+    return ""
+
+
 def capability_gate(capability: str, *, endpoint_alive: bool, artifact_exists: bool,
                     wired: bool, receipt_present: bool) -> dict:
     missing = [name for name, ok in
@@ -54,10 +72,15 @@ def probe_http(url: str, timeout: float = 4.0) -> bool:
 
 
 def chat_once(base: str, model: str, api_key: str, prompt: str,
-              timeout: float = 60.0) -> str:
-    """OpenAI 兼容 chat 单发（非流式）。调用方负责系统提示词锚定。"""
-    body = json.dumps({"model": model, "messages": [{"role": "user", "content": prompt}],
-                       "temperature": 0, "stream": False}).encode()
+              timeout: float = 60.0, max_tokens: int | None = None) -> str:
+    """OpenAI 兼容 chat 单发（非流式）。调用方负责系统提示词锚定。
+    max_tokens：思考型模型（GLM-5.3/Qwen3 系）必须给足——reasoning 先行，
+    缺省不传=服务端默认。"""
+    payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
+               "temperature": 0, "stream": False}
+    if max_tokens:
+        payload["max_tokens"] = max_tokens
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(
         base.rstrip("/") + "/chat/completions", data=body,
         headers={"Content-Type": "application/json",

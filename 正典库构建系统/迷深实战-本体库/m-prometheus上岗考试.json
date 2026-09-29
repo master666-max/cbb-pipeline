@@ -1,13 +1,13 @@
 {
  "exam": "m-prometheus 判卷上岗考试",
- "at": "2026-09-28T06:59:48",
- "capture": "0/8 = 0.00",
+ "at": "2026-09-28T11:19:22",
+ "capture": "4/8 = 0.50",
  "gate(≥5/6)": "FAIL",
  "rows": [
   {
    "plant": "plant-pos-00--m-m-m-m",
    "expected": "promote",
-   "mp_verdict": "support",
+   "mp_verdict": "err:非 JSON 输出：''",
    "pass": false
   },
   {
@@ -32,26 +32,26 @@
    "plant": "plant-neg-00",
    "expected": "not_promote",
    "mp_verdict": "unsure",
-   "pass": false
+   "pass": true
   },
   {
    "plant": "plant-neg-01",
    "expected": "not_promote",
    "mp_verdict": "unsure",
-   "pass": false
+   "pass": true
   },
   {
    "plant": "plant-neg-02",
    "expected": "not_promote",
    "mp_verdict": "unsure",
-   "pass": false
+   "pass": true
   },
   {
    "plant": "plant-neg-03",
    "expected": "not_promote",
    "mp_verdict": "unsure",
-   "pass": false
+   "pass": true
   }
  ],
- "耗时s": 143.8
+ "耗时s": 319.7
 }

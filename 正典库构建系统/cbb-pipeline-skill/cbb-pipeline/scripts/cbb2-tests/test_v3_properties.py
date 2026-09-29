@@ -3,6 +3,7 @@
 运行：py -X utf8 -m pytest test_v3_properties.py -x -q
 """
 import json
+import string
 import sys
 import tempfile
 from pathlib import Path
@@ -14,19 +15,26 @@ from hypothesis import given, settings, strategies as st, HealthCheck  # noqa: E
 from cbb2.store import Store  # noqa: E402
 from cbb2.ledger import LedgerChain  # noqa: E402
 
+# 字母表直出不用 filter——st.text 默认全 Unicode，isalnum() 过滤器拒绝率 >90% 会触发
+# HealthCheck.filter_too_much（P-028 同批修正）
+ALNUM = st.text(alphabet=string.ascii_letters + string.digits, min_size=1, max_size=12)
+PRINTABLE = st.text(
+    alphabet=st.characters(blacklist_categories=("Cs", "Cc")),  # 去代理/控制符=isprintable 全集
+    min_size=1, max_size=8)
+
 record_strategy = st.fixed_dictionaries({
-    "record_id": st.text(min_size=1, max_size=12).filter(lambda s: s.isalnum()),
+    "record_id": ALNUM,
     "record_type": st.sampled_from(["entity", "relation", "event"]),
     "library": st.sampled_from(["character", "relation", "event"]),
     "status": st.just("provisional"),
     "canonical": st.fixed_dictionaries({
-        "name": st.text(min_size=1, max_size=8).filter(lambda s: s.isprintable()),
+        "name": PRINTABLE,
         "entity_type": st.sampled_from(["人物", "组织", "地点"]),
         "status": st.sampled_from(["alive", "dead", "missing"]),
     }),
     "evidence": st.lists(st.fixed_dictionaries({
         "vol": st.just(1), "chapter": st.integers(1, 100), "line": st.integers(1, 200),
-        "quote": st.text(min_size=1, max_size=20),
+        "quote": st.text(min_size=1, max_size=20),  # 含代理/控制符——写路径须拒绝为 ValueError 而非崩
     }), min_size=1, max_size=3),
     "provenance": st.fixed_dictionaries({"extractor_confidence": st.integers(60, 95)}),
     "version": st.just(1), "supersedes": st.none(),
@@ -38,11 +46,18 @@ entry_strategy = st.fixed_dictionaries({
     "seq": st.integers(1, 100),
     "op": st.just("append"),
     "target": st.sampled_from(["libraries/character/provisional", "quarantine-zone/items.jsonl"]),
-    "idempotency_key": st.text(min_size=1, max_size=10).filter(lambda s: s.isalnum()),
-    "sha_before": st.text(min_size=64, max_size=64),
-    "sha_after": st.text(min_size=64, max_size=64),
-    "prev_hash": st.text(min_size=64, max_size=64),
-    "hash": st.text(min_size=64, max_size=64),
+    # 去 Cs（未配对代理）：代理无法 UTF-8 编码，属字节层非法输入；
+    # 保留 U+0085/U+2028 等——它们正是行撕裂缺陷的考题
+    "idempotency_key": st.text(alphabet=st.characters(blacklist_categories=("Cs",)),
+                               min_size=1, max_size=10),
+    "sha_before": st.text(alphabet=st.characters(blacklist_categories=("Cs",)),
+                          min_size=64, max_size=64),
+    "sha_after": st.text(alphabet=st.characters(blacklist_categories=("Cs",)),
+                         min_size=64, max_size=64),
+    "prev_hash": st.text(alphabet=st.characters(blacklist_categories=("Cs",)),
+                         min_size=64, max_size=64),
+    "hash": st.text(alphabet=st.characters(blacklist_categories=("Cs",)),
+                    min_size=64, max_size=64),
 })
 
 TRACKS = {"on-create", "consistent-duplicate", "complementary-statement",

@@ -13,11 +13,13 @@ from cbb2 import notary  # noqa: E402
 
 
 def seed_ledger(root: Path, n: int):
-    """种子账本：行哈希公式与 cbb2.ledger.line_hash 同源（保证 verify 重放可用）。"""
+    """种子账本：行哈希公式与 cbb2.ledger.line_hash 同源（保证 verify 重放可用）。
+    创世种子单源自 cbb2.ledger.EMPTY_SHA（v1.14：notary 私设 "genesis" 与写入侧
+    EMPTY_SHA 双约定致 verify 第 1 行误判断链——真实账本实证后修复）。"""
     import hashlib
-    from cbb2.ledger import line_hash
+    from cbb2.ledger import line_hash, EMPTY_SHA
     root.mkdir(parents=True, exist_ok=True)
-    prev = "genesis"
+    prev = EMPTY_SHA
     lines = []
     for i in range(1, n + 1):
         payload = {"seq": i, "op": "append", "target": "libraries/x/provisional", "i": i,

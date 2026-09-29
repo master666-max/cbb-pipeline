@@ -1,6 +1,7 @@
 """cbb2.quarantine — 隔离区（R14；数据格式与 v1 逐字节兼容——同 items.jsonl 可互操作）。"""
 from __future__ import annotations
 
+import contextlib
 import hashlib
 import json
 from datetime import date
@@ -14,6 +15,40 @@ GROUP_TO_SUBCLASS = {
     "entity_unalignable": "contradiction_pending",
     "low_confidence": "extrapolation_unverified",
 }
+
+
+@contextlib.contextmanager
+def adjudicate_lock(root: Path):
+    """G25：adjudicate 读-改-写全程文件锁（单写者语义）。
+    Windows=msvcrt.locking 阻塞锁；POSIX=fcntl.flock；两者皆缺→无锁直行
+    （显式降级语义，调用面经 exceptions 面知晓——当前无双缺平台在役）。
+    锁文件=同目录 adjudicate.lock，随库落盘（幂等 touch）。"""
+    lock_path = Path(root) / "adjudicate.lock"
+    lock_path.touch(exist_ok=True)
+    f = open(lock_path, "r+", encoding="utf-8")  # noqa: SIM115 — 锁生命周期=with 体
+    locked = False
+    try:
+        try:
+            import msvcrt
+            f.seek(0)
+            msvcrt.locking(f.fileno(), msvcrt.LK_LOCK, 1)  # 阻塞至获取
+            locked = "msvcrt"
+        except ImportError:
+            try:
+                import fcntl
+                fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+                locked = "fcntl"
+            except ImportError:
+                locked = None  # 双缺：无锁直行（显式降级）
+        yield locked
+    finally:
+        if locked == "msvcrt":
+            try:
+                f.seek(0)
+                msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+            except OSError:
+                pass
+        f.close()
 
 
 def _today() -> str:
@@ -59,6 +94,12 @@ class QuarantineZone:
         return iid, True
 
     def adjudicate(self, iid: str, verdict: str, note: str = "", by: str = "human"):
+        """公开裁决入口：读-改-写全程单写者锁（G25）。账本面请走 LedgedStore（其 zadjudicate
+        自持同一把锁直呼 _adjudicate_inner——幂等检查与账本追加同锁，双写根除且不嵌套死锁）。"""
+        with adjudicate_lock(self.root):
+            self._adjudicate_inner(iid, verdict, note, by)
+
+    def _adjudicate_inner(self, iid: str, verdict: str, note: str, by: str):
         if verdict not in ("confirmed", "rejected"):
             raise ValueError("verdict 合法=confirmed|rejected")
         items = self._load()
