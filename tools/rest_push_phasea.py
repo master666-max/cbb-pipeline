@@ -82,6 +82,13 @@ for attempt in range(1, 6):
             if rel in deleted:
                 entries.append({"path": rel, "mode": "100644", "type": "blob", "sha": None})
                 continue
+            # 条目类型分派（v1.17）：gitlink(160000) 保真传递——blob cat-file 对嵌套仓指针必 bad file
+            t = subprocess.run(["git", "cat-file", "-t", f"{TARGET}:{rel}"], capture_output=True, text=True)
+            if t.returncode == 0 and t.stdout.strip() == "commit":
+                gsha = subprocess.run(["git", "rev-parse", f"{TARGET}:{rel}"],
+                                      capture_output=True, text=True).stdout.strip()
+                entries.append({"path": rel, "mode": "160000", "type": "commit", "sha": gsha})
+                continue
             raw = subprocess.run(["git", "cat-file", "blob", f"{TARGET}:{rel}"],
                                  capture_output=True)
             if raw.returncode != 0:
