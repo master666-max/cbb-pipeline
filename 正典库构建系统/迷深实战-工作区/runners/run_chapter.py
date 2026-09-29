@@ -19,6 +19,15 @@ CBB = WORK.parent / "cbb"
 ROOT = WORK.parent
 CORPUS = ROOT.parent / "语料分析" / "corpus" / "clean_full.txt"
 STORE_ROOT = ROOT / "迷深实战-本体库"
+
+# 批次 2·V3：路径可由 extraction.config.json 覆盖（缺省回落迷深现役，零回归）
+_cfgp = ROOT / "extraction.config.json"
+if _cfgp.exists():
+    sys.path.insert(0, str(ROOT / "cbb-v2"))
+    from cbb2 import extraction as _ex
+    _c = _ex.load_config(_cfgp)
+    CORPUS = _c.corpus or CORPUS
+    STORE_ROOT = _c.store_root or STORE_ROOT
 sys.path.insert(0, str(CBB / "contracts"))
 sys.path.insert(0, str(CBB / "cbb-coordinate"))
 sys.path.insert(0, str(CBB / "cbb-gate1"))

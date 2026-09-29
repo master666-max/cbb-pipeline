@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -16,6 +17,15 @@ WORK = HERE.parent
 BT = WORK / "manifest" / "boundary-table-v1.json"
 SLICE = WORK / "slice"
 CORPUS = WORK.parent.parent / "语料分析" / "corpus" / "clean_full.txt"
+
+# 批次 2·V3：路径可由 extraction.config.json 覆盖（缺省回落迷深现役，零回归）
+_cfgp = WORK.parent / "extraction.config.json"
+if _cfgp.exists():
+    sys.path.insert(0, str(WORK.parent / "cbb-v2"))
+    from cbb2 import extraction as _ex
+    _c = _ex.load_config(_cfgp)
+    BT = _c.boundary_file or BT
+    CORPUS = _c.corpus or CORPUS
 
 
 def slice_range(ch_from: int, ch_to: int, force: bool = False) -> list[dict]:

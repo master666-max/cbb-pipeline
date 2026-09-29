@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "book": "迷深实战",
+  "corpus": {"path": "../语料分析/corpus/clean_full.txt"},
+  "boundary_file": "迷深实战-工作区/manifest/boundary-table-v1.json",
+  "chapter_marker_regex": "^<<<CHAPTER (\\d{4}) \\| (.*?)>>>(?:\\s*\\[([A-Z]+:[^\\]]+)\\])?\\s*$",
+  "expected_chapter_count": 517,
+  "vocab_file": "词表类型映射-20260926.json",
+  "precedent_file": "迷深实战-工作区/判例.md",
+  "context_pack": {"dir": "迷深实战-工作区/上下文包", "auto_update": true},
+  "store_root": "迷深实战-本体库",
+  "work_dir": "迷深实战-工作区",
+  "panel_concurrency": 3,
+  "anchor_check": true,
+  "types": {
+    "_note": "R-030：以下类型体系/可变位为迷深语料实证值，禁止跨书盲抄——换书须经 V4 彩排校准重新标定",
+    "libraries": ["character", "event", "relation", "foreshadow", "setting"],
+    "mutable_fields": ["entity_type", "name_aliases"]
+  }
+}
