@@ -123,11 +123,13 @@ def main():
 
     # 搜索页（客户端过滤 search.json）
     (out / "search.json").write_text(json.dumps(search, ensure_ascii=False), encoding="utf-8")
+    (out / "search_data.js").write_text("const data = " + json.dumps(search, ensure_ascii=False) + ";")
+    search_inline = json.dumps(search, ensure_ascii=False)
     (out / "search.html").write_text(page_shell("搜索", """
 <input id=q placeholder='输入名称/别名/record_id' style='width:60%;padding:6px'>
 <ul id=results></ul>
+<script src="search_data.js"></script>
 <script>
-const data = search_data;
 const q = document.getElementById('q'), ul = document.getElementById('results');
 q.addEventListener('input', () => {
   const s = q.value.trim().toLowerCase();
@@ -184,11 +186,13 @@ function draw() {
     li.textContent = n.to + '（' + n.p + '）'; ul.appendChild(li); });
 }
 sel.addEventListener('change', draw);
+sel.value = sel.options.length ? sel.options[0].value : '';
 if (sel.value) draw();
 """
     (out / "graph_data.json").write_text(graph_json, encoding="utf-8")
     (out / "graph.html").write_text(page_shell("egocentric 图谱", f"""
 <p>选择节点查看一度关系（{len(nodes)} 节点 / {len(edges)} 边；三态着色随节点状态）。</p>
+<p><b id=info></b></p>
 <p><select id=sel></select></p>
 <svg id=svg width=900 height=500 style='background:#fff;border:1px solid #ddd'></svg>
 <ul id=nb></ul>
