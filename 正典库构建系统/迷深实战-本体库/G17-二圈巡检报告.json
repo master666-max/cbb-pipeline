@@ -1,0 +1,26 @@
+{
+ "unit": "G17-二圈",
+ "at": "2026-09-30T02:59:54",
+ "抽样": 50,
+ "NLI分布": {
+  "ENTAILMENT": 18,
+  "null": 24,
+  "NEUTRAL": 4,
+  "CONTRADICTION": 4
+ },
+ "锚定重推导一致率": "49/50",
+ "NLI改判候选率": "4/26",
+ "改判候选": [
+  "cand-entity-ab2719634011",
+  "cand-entity-104fe9609289",
+  "cand-entity-c99e4044ff46",
+  "cand-entity-73714c449cd3"
+ ],
+ "CUSUM基线": {
+  "n": 26,
+  "contrad_cnt": 4,
+  "p0": 0.1538,
+  "口径": "改判率序列首点；控制限需 bootstrap（D3 三前提其一已备）"
+ },
+ "耗时s": 5.6
+}
