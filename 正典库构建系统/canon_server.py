@@ -357,7 +357,7 @@ def run_server(store_root: str, port: int = 8420):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--store", default=str(ROOT / "迷深实战-本体库"))
+    ap.add_argument("--store", required=True)
     ap.add_argument("--port", type=int, default=8420)
     args = ap.parse_args()
     STORE = Path(args.store).resolve()
