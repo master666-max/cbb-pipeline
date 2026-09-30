@@ -10,6 +10,7 @@
 import json
 import random
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -39,6 +40,13 @@ def main():
     sample_n = 50
     if "--sample" in sys.argv:
         sample_n = int(sys.argv[sys.argv.index("--sample") + 1])
+    # 批次 7：种子/出路径参数化——二圈换种子出新样本（可复算纪律保留：种子入档）
+    seed = 20260927
+    if "--seed" in sys.argv:
+        seed = int(sys.argv[sys.argv.index("--seed") + 1])
+    out = STORE / "G17-首圈巡检队列.json"
+    if "--out" in sys.argv:
+        out = Path(sys.argv[sys.argv.index("--out") + 1])
 
     ids = confirmed_ids()
     rs = ReviewScheduler(STORE)
@@ -48,18 +56,18 @@ def main():
             rs.schedule(rid, tenure_segments=1, stability=1.0)  # 首圈冷启动 stability=1.0
             scheduled += 1
     due = rs.due(current_segment=1)
-    rng = random.Random(20260927)  # 固定种子可复算（对样门纪律）
+    rng = random.Random(seed)  # 种子入档可复算（对样门纪律）
     sample = sorted(due) if len(due) <= sample_n else rng.sample(sorted(due), sample_n)
-    OUT.write_text(json.dumps({
-        "unit": "G17", "at": "2026-09-27",
+    out.write_text(json.dumps({
+        "unit": "G17", "at": time.strftime("%Y-%m-%d"),
         "confirmed总数": len(ids),
         "新建卡": scheduled, "已有卡": len(ids) - scheduled,
         "due首圈": len(due), "首圈抽样": sample,
-        "抽样口径": f"固定种子 20260927，n={len(sample)}",
+        "抽样口径": f"种子 {seed}，n={len(sample)}",
         "下一步": "巡检执行=逐条重推导（考官复核或 NLI 复判）→ record_check(passed) →"
                  "重推导一致率报告+改判率序列入 CUSUM 备用",
     }, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"confirmed {len(ids)}（新建卡 {scheduled}）；due 首圈 {len(due)}；抽样 {len(sample)} → {OUT}")
+    print(f"confirmed {len(ids)}（新建卡 {scheduled}）；due 首圈 {len(due)}；抽样 {len(sample)} → {out}")
 
 
 if __name__ == "__main__":
