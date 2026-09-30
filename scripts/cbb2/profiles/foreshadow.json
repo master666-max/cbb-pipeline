@@ -1,0 +1,9 @@
+{
+  "library": "foreshadow",
+  "_review": "草案 v3.0.0-alpha（U-A01 交付物，字段分类待人工审定后去本栏；payoff_chapter 兑现后回填=可变断言位）",
+  "identity": {"entity": "name", "relation": "triple", "default": "record_id"},
+  "assertion_fields": ["name", "tier", "setup_chapter", "payoff_chapter", "entities", "chapter"],
+  "statement_fields": ["note"],
+  "mutable_assertions": ["payoff_chapter"],
+  "immutable_assertions": ["tier", "setup_chapter"]
+}

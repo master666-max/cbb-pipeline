@@ -4,13 +4,23 @@ description: 把任意小说（长篇/多卷/网文/轻小说等）构建成证�
 license: CC-BY-4.0 (content)
 compatibility: 需 Python 3.10+（Windows 用 py -X utf8 启动器）。三件基础设施不可抛弃、全程随流程跑：知识图谱（连通且归属已判）／嵌入向量模型／重排模型——缺项默认阻断开书，带理由降级会自动记一笔导出债务。判定者与执行者是宿主 Agent，本地推理端点仅列为观察项。真源永远是账本，图与索引皆为可重建的派生视图
 metadata:
-  version: "2.0"
-  origin: 通用架构总纲 v2.0（16 仓吸收 + 迷深实例 44.5% 实战沉淀 + 田·声明式审计纪律，2026-09）
+  version: "3.0"
+  origin: 通用架构总纲 v2.0（16 仓吸收 + 迷深实例 44.5% 实战沉淀 + 田·声明式审计纪律，2026-09）；v3.0 = 全量重构（失效记账制/契约v3/写入决策树/票数晋升，2026-09-27）；v3.1 = 判卷契约刻度+严格双票编制(2/3)+第三方抽检审计通道（2026-09-29）
 ---
 
 # 小说资料库构建流水线
 
 **核心原则：逻辑不活在模型上下文里，活在库的账本上。** 任何事实进正典必须：带原文证据（可逐字回落）→ 过机械门 → 与既有事实对撞（重复与矛盾分开处理）→ 三态落位 → 全程 append-only 可回放。抽取无状态，记忆在库；模型负责读和判，**系统负责记、对、废**。
+
+## v3 差异与迁移（v2 消费者必读）
+
+1. **入库入口换了**：`scripts/cbb2/` 是 v3 核心包——`cbb2.runner.finalize_chapter(候选, at=伪锚点)` 走**写入决策树五分支**（新建/一致重复+闸2/互补陈述/失效记账/真矛盾+闸1）。`scripts/cbb/cbb-store/cbb_store.py` 的 `admit_or_merge` 是 **v1 等价锚（保留旧缺陷语义，仅回归对照用）——新流水线禁止使用**。
+2. **状态变化≠矛盾**：死亡/迁居/关系演变（mutable 断言位+时序可证）走**失效记账**（invalidations.jsonl），旧件保留+新件入库；隔离区只收"不可同真断言位冲突"。
+3. **at 必填**：一切写路径显式传伪锚点日期（`YYYY-MM-DD|chNNNN`），缺参即 ValueError；墙钟日期禁用。
+4. **canonical 二分**：字段按 `scripts/cbb2/profiles/*.json` 分类（assertion/statement/mutable/immutable）；陈述位差异=互补陈述事件（complementary-statements.jsonl），不再判矛盾。
+5. **G5 晋升**：confirmed 由三考官票数制产生（`cbb2/promote.py`，env 编制 LOCAL/DEEPSEEK/QWEN）——不再有置信度单门限。
+6. **env 契约**：全部环境变量以 `scripts/cbb2/ops.py`、`cbb2/splitting.py`、`cbb2/config.py` 与各工具 docstring 为准；核心含 CBB_NAMESPACE/CBB_STORE/NEO4J_*/EMBED_HTTP/RERANK_HTTP/EXAMINER_*/CBB_DYNAMIC_SPLIT/CBB_THETA_*。
+7. 本版**不随包**：web 控制台、LightRAG 桥族、Graphiti 族（裁④退役，退役登记见源仓 cbb/tools/legacy-退役-GRAPHITI-*.md）。
 
 ## 何时使用 / 何时不用
 
@@ -95,6 +105,10 @@ metadata:
 | [references/判例模板.md](references/判例模板.md) | 跨单元裁决判例集格式（封顶 30 条） | 裁决时 |
 | [scripts/cbb/](scripts/cbb/) | 六模块+四契约（coordinate/anchor/extract/gate1/quarantine/store） | 实现与校验 |
 | [scripts/cbb/tools/](scripts/cbb/tools/) | 上下文包/嵌入查重/图导出/账本链/NLI 矛盾对/图桥（各配单测） | 对应场景直接运行 |
+| [scripts/cbb2/](scripts/cbb2/) | **收束期核心**：ledger 账本/notary 存证/store 三态写入/promote 判卷晋升/**judging 判卷编制/aggregate L3 聚合/materialize 三重门放行/export 自锚定快照/cusum 改判率监测/extraction 增量摄入** | ⑤ 写入、判卷、物料化、交付、巡检的实现与校验 |
+| [scripts/pipeline/](scripts/pipeline/) | **收束期运行件**：judge_exam 上岗考试/judge_assemble 组卷/judge_ds 考官腿/judge_join 严格双票合卷/run_materialize 放行/wiki_export 快照/batch6_export 世界书+RAG/kg_export 图谱三格式/canon_server 活体控制台/ingest_watch 增量探测/g17_circle 巡检圈 | 抽取期收口后逐件直接运行 |
+| [scripts/cbb/contracts/judge-v2.2.txt](scripts/cbb/contracts/judge-v2.2.txt) | 现行判卷契约——**PT-026：可校准仪器参数**，变更须同批 A/B+植物考试+50 件验证轮（反面：直接全量换约=判卷漂移，实测支持率 27/40→9/40） | 每轮判卷；换契约前 |
+| [scripts/cbb2-tests/](scripts/cbb2-tests/) | 收束期测试套件（判卷/物料化/快照/聚合/CUSUM/增量） | 改 cbb2/pipeline 后、发版前 |
 | [assets/project.template.yaml](assets/project.template.yaml) | 项目参数模板（通用八项+本体 profile 段） | 开新项目填配置 |
 
 ## 通用性适配（v2 关键）
