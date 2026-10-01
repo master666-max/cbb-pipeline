@@ -65,7 +65,9 @@ LMSTUDIO_DEFAULT = "http://127.0.0.1:1234/v1"
 EMBED_MODEL_DEFAULT = "text-embedding-qwen3-embedding-8b@q8_0"
 RERANK_MODEL_DEFAULT = "qwen3-reranker-4b"
 
-REQUIRED = ("M1 解释器", "M2 依赖 yaml", "M3 工作区可写", "M4 账本可追加")
+# 2026-10-01 审计修正：M2「依赖 yaml」移除——全仓唯一 yaml 消费方 init_project.py 已改纯标准库解析，
+# 这一项曾把干净机器的开书自检误判成 BLOCKED（主链实际零第三方依赖）。
+REQUIRED = ("M1 解释器", "M2 工作区可写", "M3 账本可追加")
 
 
 def item(name: str, state: str, note: str, **extra) -> dict:
@@ -95,29 +97,23 @@ def http_json(url: str, payload: dict | None = None, timeout: float = 20.0,
         return json.loads(r.read().decode("utf-8", "ignore")), time.time() - t0
 
 
-# ---------------- 主链必需四项 ----------------
+# ---------------- 主链必需三项 ----------------
 
 def check_required(workspace: Path, ledger: Path) -> list[dict]:
     out = []
     v = sys.version_info
     out.append(item("M1 解释器", "READY" if (v.major, v.minor) >= (3, 10) else "BLOCKED",
                     f"Python {v.major}.{v.minor}.{v.micro}（需 ≥3.10）"))
-    try:
-        import yaml  # noqa: F401
-        out.append(item("M2 依赖 yaml", "READY", "可导入"))
-    except ImportError:
-        out.append(item("M2 依赖 yaml", "BLOCKED", "缺：py -m pip install pyyaml"))
-
     workspace.mkdir(parents=True, exist_ok=True)
     probe = workspace / ".env-selftest-write.probe"
     try:
         probe.write_text("probe", encoding="utf-8")
         ok = probe.stat().st_size == len("probe")
         probe.unlink()
-        out.append(item("M3 工作区可写", "READY" if ok and not probe.exists() else "BLOCKED",
+        out.append(item("M2 工作区可写", "READY" if ok and not probe.exists() else "BLOCKED",
                         f"真写一发再删：{workspace}"))
     except OSError as e:
-        out.append(item("M3 工作区可写", "BLOCKED", f"{type(e).__name__}: {e}"))
+        out.append(item("M2 工作区可写", "BLOCKED", f"{type(e).__name__}: {e}"))
 
     if ledger.exists():
         before = ledger.stat().st_size
@@ -125,12 +121,12 @@ def check_required(workspace: Path, ledger: Path) -> list[dict]:
             with open(ledger, "a", encoding="utf-8"):
                 pass
             same = ledger.stat().st_size == before
-            out.append(item("M4 账本可追加", "READY" if same else "BLOCKED",
+            out.append(item("M3 账本可追加", "READY" if same else "BLOCKED",
                             f"以追加模式打开且字节未变（{before}）"))
         except OSError as e:
-            out.append(item("M4 账本可追加", "BLOCKED", f"{type(e).__name__}: {e}"))
+            out.append(item("M3 账本可追加", "BLOCKED", f"{type(e).__name__}: {e}"))
     else:
-        out.append(item("M4 账本可追加", "READY", f"账本尚不存在（首写方）：{ledger}"))
+        out.append(item("M3 账本可追加", "READY", f"账本尚不存在（首写方）：{ledger}"))
     return out
 
 

@@ -134,8 +134,9 @@ py -X utf8 scripts/cbb/tools/环境自检.py --project-token <本书命名空间
 # 1. 安装为技能（或就在本目录用；Qoder 侧按插件位装）
 cp -r . ~/.zcode/skills/cbb-pipeline
 
-# 2. 开新书：一条命令出脚手架
-py -X utf8 scripts/init_project.py --book 书名 --into D:/书库目录
+# 2. 开新书：复制模板为 project.yaml，填好 project.name 与 project.source_path，再出脚手架
+cp assets/project.template.yaml project.yaml
+py -X utf8 scripts/init_project.py project.yaml
 
 # 3. 抽取期：按 SKILL.md ⓪-⑦ 推进（切章 → 彩排标定 → 主队列 → 收口自检）
 
@@ -150,11 +151,11 @@ py -X utf8 scripts/pipeline/batch6_export.py                                   #
 py -X utf8 scripts/pipeline/kg_export.py                                       # LightRAG/GraphML/三元组
 py -X utf8 scripts/pipeline/canon_server.py --store 本体库 --port 8420         # 活体控制台
 
-# 全套测试（纯标准库，无需装任何东西）
-py -X utf8 -m pytest scripts/cbb scripts/cbb2-tests -q     # 486 passed, 5 skipped
+# 全套测试（v1 侧测试纯标准库可直跑；cbb2 侧需 pytest/hypothesis）
+py -X utf8 -m pytest scripts/cbb scripts/cbb2-tests -q     # 486 passed, 5 skipped（需先 pip install pytest hypothesis）
 ```
 
-**环境要求**：Python 3.10+（主链与测试纯标准库）。抽取期要接一个 LLM（换书只换三样配置）；判卷考官要两个外部对话端点（key 走环境变量/注册表读回，**不写入任何文件**）；Neo4j 仅图派生层增值件需要。
+**环境要求**：Python 3.10+（主链纯标准库；cbb2 侧测试需 pytest/hypothesis）。抽取期要接一个 LLM（换书只换三样配置）；判卷考官要两个外部对话端点（key 走环境变量/注册表读回，**不写入任何文件**）；Neo4j 仅图派生层增值件需要。
 
 ## 凭什么信它
 

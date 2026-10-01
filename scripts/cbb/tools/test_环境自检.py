@@ -105,7 +105,7 @@ class 主链必需(unittest.TestCase):
             led = Path(t) / "我是目录"      # 用目录冒充不可追加的账本 ⇒ 打开应失败
             led.mkdir()
             its = es.check_required(ws, led)
-            self.assertEqual(find(its, "M4 账本可追加")["state"], "BLOCKED")
+            self.assertEqual(find(its, "M3 账本可追加")["state"], "BLOCKED")
 
 
 class 归属判定(unittest.TestCase):

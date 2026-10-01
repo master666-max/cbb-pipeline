@@ -31,6 +31,8 @@ class TestGraphChain(unittest.TestCase):
                 pass
         except Exception:
             self.skipTest("Neo4j 缺席（如实跳过，不计过）")
+        import os
+        os.environ.setdefault("CBB_NAMESPACE", "default")  # graph_chain 2026-10 起强制命名空间
         import graph_chain as gc2
         rows = gc2._cypher("MATCH (a:Entity)-[r:REL]-() WITH a, count(r) AS d "
                            "RETURN a.name AS n ORDER BY d DESC LIMIT 1", {})

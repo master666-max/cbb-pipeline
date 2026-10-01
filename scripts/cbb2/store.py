@@ -8,10 +8,26 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from pathlib import Path
 
 from . import contract
 from .quarantine import QuarantineZone
+
+# 2026-10-01 审计修正：cbb2 写入链恢复契约校验（v1 admit/supersede 同位防线，
+# 重写时丢失）。import 兼容双布局：scripts/cbb2（parents[1]）与扁平安装（parents[2]）。
+_V1_CONTRACTS_CANDIDATES = [
+    Path(__file__).resolve().parents[1] / "cbb" / "contracts",
+    Path(__file__).resolve().parents[2] / "cbb" / "contracts",
+]
+for _c in _V1_CONTRACTS_CANDIDATES:
+    if _c.exists() and str(_c) not in sys.path:
+        sys.path.insert(0, str(_c))
+try:
+    import cbb_contracts
+    _HAVE_V1 = True
+except ImportError:
+    _HAVE_V1 = False
 
 CORROBORATION_BUMP = 2.0
 TRANSITION_BYS = ("human", "shadow", "promotion")
@@ -142,8 +158,13 @@ class Store:
             raise ValueError("quarantine 走 register_quarantine（显式分组语义）")
         rec = dict(record)
         rec["status"] = decision
+        # 2026-10-01 审计修正：对齐 v1 admit 的 status_history 条目（{"from","to","by"}）。
+        # 原条目缺 from 且 by="cbb2-admit" 不在 schema 枚举（human|shadow|promotion）内——
+        # 契约校验归位前一直静默写出违规件。
         rec.setdefault("provenance", {}).setdefault("status_history", []).append(
-            {"to": decision, "by": "cbb2-admit"})
+            {"from": "candidate", "to": decision, "by": "promotion"})
+        if _HAVE_V1:
+            cbb_contracts.validate_record(rec)  # 严格：库内态必须全契约合规（与 v1 admit 同位）
         return self._write_immutable(self._lib_path(rec["library"], decision, rid), rec)
 
     def register_quarantine(self, record: dict, group: str, detail: str):
@@ -158,14 +179,27 @@ class Store:
             raise KeyError(old_id)
         if new_record["record_id"] == old_id:
             raise ValueError("supersede 不得同 id")
-        new_record["version"] = old.get("version", 1) + 1
-        new_record["supersedes"] = old_id
+        new = dict(new_record)
+        if new.get("status") not in ("confirmed", "provisional"):
+            new["status"] = "provisional"  # 修订版默认 provisional 待重过门（B1 保守，v1 同款）
+        new["version"] = old.get("version", 1) + 1
+        new["supersedes"] = old_id
+        new.setdefault("provenance", {}).setdefault("status_history", []).append(
+            {"from": "superseded:" + old_id, "to": new["status"], "by": "promotion"})
+        if _HAVE_V1:
+            cbb_contracts.validate_record(new)
         path, created = self._write_immutable(
-            self._lib_path(new_record["library"], new_record.get("status", old["status"]),
-                           new_record["record_id"]), new_record)
+            self._lib_path(new["library"], new["status"], new["record_id"]), new)
+        if not created:
+            # 2026-10-01 审计修正：目标 rid 已有文件（另一批次的 -m{n} 撞件）时，
+            # 索引若照写，resolve_latest 永远解析到旧文件——本次合并内容被静默丢弃。
+            # v1 有 created 检查，重写时丢失；此处宁响不吞，显式抛错交调用方改派。
+            raise ValueError(
+                f"supersede 目标已存在：{path}——拒绝写 supersede-index"
+                f"（照写会让 resolve_latest 静默返回旧内容）")
         self._append("supersede-index.jsonl",
-                     {"old_id": old_id, "new_id": new_record["record_id"],
-                      "version": new_record["version"]})
+                     {"old_id": old_id, "new_id": new["record_id"],
+                      "version": new["version"]})
         return path, created
 
     def resolve_latest(self, rid: str):
@@ -245,7 +279,7 @@ class Store:
             rec["at"] = at
             rec["status"] = "provisional"  # 红队 P1-5：confirmed 仅能由 G5 晋升产生
             rec["version"] = 1             # 红队 P0-2：版本链由系统掌管，不信 incoming
-            rec.pop("supersedes", None)
+            rec["supersedes"] = None  # 新记录无前件；schema 必填（原 pop 直接漏键——契约校验归位后现形）
             rec.setdefault("t_valid", self._derive_t_valid(incoming))
             path, created, rid = self._admit_unique(rec, "provisional")
             return {"track": "on-create", "new_id": rid,
@@ -284,7 +318,7 @@ class Store:
             rec["at"] = at
             rec["status"] = "provisional"  # 红队 P1-5
             rec["t_valid"] = new_tv
-            rec.pop("supersedes", None)
+            rec["supersedes"] = None  # 新记录无前件；schema 必填（原 pop 直接漏键——契约校验归位后现形）
             rec["version"] = 1
             path, created, rid = self._admit_unique(rec, "provisional")  # 红队 P0-1：撞名改派，不静默吞
             return {"track": "invalidation-update", "invalidated": existing["record_id"],
@@ -301,7 +335,7 @@ class Store:
             rec["at"] = at
             rec["status"] = "provisional"  # 红队 P1-5
             rec["version"] = 1             # 红队 P0-2
-            rec.pop("supersedes", None)
+            rec["supersedes"] = None  # 新记录无前件；schema 必填（原 pop 直接漏键——契约校验归位后现形）
             rec.setdefault("t_valid", new_tv)
             rec.setdefault("_meta", {})["uncertain"] = {
                 "vs": existing["record_id"], "fields": [c["field"] for c in assert_c], "at": at}
@@ -328,7 +362,10 @@ class Store:
         new_conf = (incoming.get("provenance") or {}).get("extractor_confidence", 0) or 0
         merged.setdefault("provenance", {})["extractor_confidence"] = min(
             100.0, max(old_conf, new_conf) + CORROBORATION_BUMP)
-        seen_q, ev = set(), list(existing.get("evidence") or [])
+        # 2026-10-01 审计修正：seen_q 必须用 existing 的证据键播种——否则 incoming 与
+        # 库内重叠的引文会再次 append，多轮佐证下证据按轮次复合膨胀（P-017 按 set 判
+        # 对重复不可见，拦不住）。
+        seen_q, ev = _ev_set(existing), list(existing.get("evidence") or [])
         for e in incoming.get("evidence") or []:
             k = (e.get("vol"), e.get("chapter"), e.get("line"), e.get("quote"))
             if k not in seen_q:

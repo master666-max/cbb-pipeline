@@ -176,9 +176,10 @@ class Handler(BaseHTTPRequestHandler):
                 rid = r["record_id"]
                 nm = (r.get("canonical") or {}).get("name") or rid
                 st = eff.get(rid) or r.get("status", "?")
+                # 2026-10-01 审计修正：rid 来自库内记录（半可信），未转义即存储型 XSS 注入口
                 rows += (f"<tr><td>{badge(st)}</td>"
-                         f"<td><a href='/record/{rid}'>{_e(nm)}</a></td>"
-                         f"<td><code>{rid}</code></td></tr>")
+                         f"<td><a href='/record/{_e(rid)}'>{_e(nm)}</a></td>"
+                         f"<td><code>{_e(rid)}</code></td></tr>")
             self._html(page_shell(f"{lib} · {len(subset)} 件",
                                   f"<input type=text id=q value='{_e(q)}' placeholder='过滤…' "
                                   f"onkeyup=\"location='?q='+this.value\">"
@@ -195,15 +196,15 @@ class Handler(BaseHTTPRequestHandler):
             nm = canon.get("name") or rid
             st = eff.get(rid) or rec.get("status", "?")
             ev = rec.get("evidence") or []
-            quotes = "".join(f'<div class=quote>[卷{e.get("vol","?")} 章{e.get("chapter","?")} '
-                             f'行{e.get("line","?")}] {_e(str(e.get("quote","")))}</div>'
+            quotes = "".join(f'<div class=quote>[卷{_e(str(e.get("vol","?")))} 章{_e(str(e.get("chapter","?")))} '
+                             f'行{_e(str(e.get("line","?")))}] {_e(str(e.get("quote","")))}</div>'
                              for e in ev if isinstance(e, dict))
             canon_html = _e(json.dumps(canon, ensure_ascii=False, sort_keys=True, indent=1))
             obs = rec.get("observations") or []
             obs_html = "".join(f"<li>[{_e(str(o.get('category','')))}] {_e(str(o.get('text','')))}</li>"
                                for o in obs if isinstance(o, dict))
             self._html(page_shell(f"{nm} · {badge(st)}",
-                                  f"<p><code>{rid}</code> ｜ library: {_e(rec.get('library',''))}</p>"
+                                  f"<p><code>{_e(rid)}</code> ｜ library: {_e(rec.get('library',''))}</p>"
                                   f"<h2>断言（canonical）</h2><pre>{canon_html}</pre>"
                                   f"<h2>证据引文（逐字）</h2>{quotes or '<p>无</p>'}"
                                   + (f"<h2>观察</h2><ul>{obs_html}</ul>" if obs_html else "")
@@ -222,14 +223,15 @@ class Handler(BaseHTTPRequestHandler):
             body += "<tr><th>名称</th><th>状态</th><th>类型</th><th>record_id</th></tr>"
             for rid, nm, r in results[:100]:
                 st = eff.get(rid) or r.get("status", "?")
-                body += (f"<tr><td><a href='/record/{rid}'>{_e(nm)}</a></td>"
-                         f"<td>{badge(st)}</td><td><code>{rid}</code></td></tr>")
+                body += (f"<tr><td><a href='/record/{_e(rid)}'>{_e(nm)}</a></td>"
+                         f"<td>{badge(st)}</td><td><code>{_e(rid)}</code></td></tr>")
             body += "</table>"
             self._html(page_shell(f"搜索「{_e(q)}」", body))
 
         elif path == "/graph":
             nodes, edges = build_graph(records, eff)
-            gj = json.dumps({"nodes": nodes, "edges": edges}, ensure_ascii=False)
+            # 2026-10-01 审计修正：json 直嵌 <script> 遇 `</script>` 即逃逸执行（存储型 XSS），先转义闭合序列
+            gj = json.dumps({"nodes": nodes, "edges": edges}, ensure_ascii=False).replace("</", "<\\/")
             body = (f"<p>{len(nodes)} 节点 / {len(edges)} 边（选节点看一度关系）</p>"
                     f"<input id=sel_list list=dl list='dl' placeholder='跳到…' style='width:300px'>"
                     f"<datalist id=dl></datalist>"
@@ -314,9 +316,10 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def page_shell(title, body):
+    # 2026-10-01 审计修正：删掉 `.replace("<main><h1>", "<main>", 1)`——它把 h1 开标签吞掉，
+    # 所有 browse/search/graph 页标题变成裸文本+孤立 </h1>
     return (f"<!doctype html><html lang=zh><meta charset=utf-8><title>{_e(title)}</title>"
-            f"<style>{CSS}</style>{NAV}<main><h1>{_e(title)}</h1>{body}</main>".replace(
-                "<main><h1>", "<main>", 1))
+            f"<style>{CSS}</style>{NAV}<main><h1>{_e(title)}</h1>{body}</main>")
 
 
 def build_graph(records, eff):
@@ -335,7 +338,9 @@ def build_graph(records, eff):
         if r.get("library") != "relation":
             continue
         canon = r.get("canonical") or {}
-        s, p, o = canon.get("subject"), canon.get("predicate"), canon.get("object")
+        # 2026-10-01 审计修正：库内契约是 rel_type（store 身份键口径），predicate 是旧投影方言；
+        # 只读 predicate 使 v1 形态记录的边标签全部退化成"关联"
+        s, p, o = canon.get("subject"), canon.get("rel_type") or canon.get("predicate"), canon.get("object")
         if s and o:
             edges.append({"source": s, "predicate": p or "关联", "target": o,
                           "status": eff.get(r["record_id"]) or r.get("status", "?")})

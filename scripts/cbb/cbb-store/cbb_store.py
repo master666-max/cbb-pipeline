@@ -322,7 +322,9 @@ class ThreeStateStore:
             new_conf = (incoming.get("provenance") or {}).get("extractor_confidence", 0) or 0
             merged.setdefault("provenance", {})["extractor_confidence"] = min(
                 100.0, max(old_conf, new_conf) + CORROBORATION_BUMP)
-            seen_q, ev = set(), list(existing.get("evidence") or [])
+            # 2026-10-01 审计修正：seen_q 用 existing 证据键播种——否则 incoming 与库内
+            # 重叠的引文会再次 append，多轮佐证下证据复合膨胀（cbb2 同步修）。
+            seen_q, ev = _ev_set(existing), list(existing.get("evidence") or [])
             for e in incoming.get("evidence") or []:
                 k = (e.get("vol"), e.get("chapter"), e.get("line"), e.get("quote"))
                 if k not in seen_q:

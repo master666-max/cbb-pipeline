@@ -9,12 +9,12 @@
 用法：py -X utf8 kg_export.py --store 迷深实战-本体库 --out kg-export/
 """
 import argparse
+import csv
 import json
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE / "cbb-v2"))
 
 
 def load_store(store_root: str):
@@ -123,17 +123,20 @@ def export_graphml(entities, relations, out: Path):
 
 
 def export_triples(entities, relations, out: Path):
-    """三元组 CSV：subject,predicate,object,status,source_record_id"""
-    lines = ["subject,predicate,object,status,source_record_id"]
-    for r in relations:
-        canon = r.get("canonical") or {}
-        sub, pred, obj = canon.get("subject"), canon.get("rel_type") or canon.get("predicate"), canon.get("object")
-        st = r.get("status", "provisional")
-        if sub and obj:
-            lines.append(f'"{sub}","{pred or "关联"}","{obj}","{st}"')
-    for e in entities:
-        lines.append(f'"{e["entity_name"]}","是类型","{e["entity_type"]}","{e["status"]}","{e["record_id"]}"')
-    out.joinpath("triples.csv").write_text("\n".join(lines), encoding="utf-8")
+    """三元组 CSV：subject,predicate,object,status,source_record_id
+    2026-10-01 审计修正：改用 csv.writer——原 f-string 手拼引号遇值内 `"` 即 CSV 注入/断行；
+    且关系行漏写第 5 列（source_record_id 对全部关系恒空），下游按它回链关系会静默拿到空。"""
+    with out.joinpath("triples.csv").open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["subject", "predicate", "object", "status", "source_record_id"])
+        for r in relations:
+            canon = r.get("canonical") or {}
+            sub, pred, obj = canon.get("subject"), canon.get("rel_type") or canon.get("predicate"), canon.get("object")
+            st = r.get("status", "provisional")
+            if sub and obj:
+                w.writerow([sub, pred or "关联", obj, st, r["record_id"]])
+        for e in entities:
+            w.writerow([e["entity_name"], "是类型", e["entity_type"], e["status"], e["record_id"]])
 
 
 def main():

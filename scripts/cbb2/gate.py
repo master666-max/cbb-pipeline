@@ -13,9 +13,13 @@ import json
 import sys
 from pathlib import Path
 
-_V1_CONTRACTS = Path(__file__).resolve().parents[2] / "cbb" / "contracts"
-if _V1_CONTRACTS.exists() and str(_V1_CONTRACTS) not in sys.path:
-    sys.path.insert(0, str(_V1_CONTRACTS))
+_V1_CONTRACTS_CANDIDATES = [
+    Path(__file__).resolve().parents[1] / "cbb" / "contracts",
+    Path(__file__).resolve().parents[2] / "cbb" / "contracts",
+]
+for _c in _V1_CONTRACTS_CANDIDATES:
+    if _c.exists() and str(_c) not in sys.path:
+        sys.path.insert(0, str(_c))
 try:
     import cbb_contracts
     _HAVE_V1 = True
@@ -58,9 +62,9 @@ def make_record(record_type: str, library: str, canonical: dict, evidence: list[
                        "gate_trace": [], "precedent_refs": [], "status_history": []},
         "version": 1, "supersedes": None,
     }
-    if _HAVE_V1 and status == "provisional":
-        cbb_contracts.validate_record(rec, allow_candidate=False) if False else None
-        # 契约校验留给 store.admit（与 v1 admit 内联校验同位）；此处只构造
+    # 2026-10-01 审计修正：删除 `validate_record(...) if False else None` 死调用——
+    # 它配上旧注释"校验留给 store.admit"制造了防线存在的假象。现在 store.admit/
+    # supersede 已真校验（v1 同位），构造期只做形态构造。
     return rec
 
 
