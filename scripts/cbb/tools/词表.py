@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """词表.py — 受控词表三件套（2026-09-22 用户裁定 ③A+B）
 
 裁定 ③A 三条通用规则（逐条机械执行）：
@@ -39,7 +38,7 @@ def iter_records(store_root: Path | str, status_dir: str = "provisional"):
         for f in sorted(d.glob("*.json")):
             try:
                 yield json.loads(f.read_text(encoding="utf-8"))
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 continue
 
 

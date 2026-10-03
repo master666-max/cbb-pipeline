@@ -227,7 +227,7 @@ def load_votes(paths: list, key: str) -> dict:
 def join_strict(cfg: JudgeConfig, glm_dir: Path | None = None, ds_file: Path | None = None,
                 tag: str = "round") -> dict:
     """v1.9 严格双票合票：GLM×DEEPSEEK 双 support ∧ 零 against → promote；any against → human；
-    余 → hold；n=0 → blocked。植株捕获门走 cfg.gate（correct≥min ∧ capture≥5/6）。
+    余 → hold；n=0 → blocked。植株捕获门走 cfg.gate（correct≥min ∧ capture≥capture_min）。
     判词 append 至 workdir/judging_ledger.jsonl；摘要写 workdir/摘要-{tag}.json 并返回。"""
     work = cfg.work_dir
     glm_dir = glm_dir or (work / "glm_chunks")
@@ -274,7 +274,7 @@ def join_strict(cfg: JudgeConfig, glm_dir: Path | None = None, ds_file: Path | N
     real = [r for r in rows if not r["is_plant"]]
     correct = sum(1 for r in plants if _correct(r["verdict"], r["expected"]))
     capture = correct / len(plants) if plants else 0.0
-    gate = len(plants) > 0 and correct >= int(cfg.gate["correct_min"]) and capture >= 5 / 6
+    gate = len(plants) > 0 and correct >= int(cfg.gate["correct_min"]) and capture >= float(cfg.gate["capture_min"])  # 2026-10-01 审计修正：capture_min 此前假旋钮（读而不生效）
     n_pass = dist["promote"]
     lo, hi = audit.wilson(n_pass, len(real)) if real else (0, 0)
     summary = {"unit": f"judging-dual-{tag}", "book": cfg.book, "at": time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -341,7 +341,7 @@ def repair(cfg: JudgeConfig) -> dict:
 
 def exam(cfg: JudgeConfig, examiner_name: str, plants: list[dict]) -> dict:
     """植株上岗考试：指定考官双序评审，正株须 support、负株 unsure/against。
-    门：correct≥cfg.gate.correct_min ∧ capture≥5/6。零副作用（不写库/工作区）。"""
+    门：correct≥cfg.gate.correct_min ∧ capture≥cfg.gate.capture_min。零副作用（不写库/工作区）。"""
     e = cfg.examiner(examiner_name)
     if not e.key():
         return {"gate": "BLOCKED", "examiner": examiner_name, "errors": ["key 未解析（env/注册表）"]}
@@ -374,6 +374,6 @@ def exam(cfg: JudgeConfig, examiner_name: str, plants: list[dict]) -> dict:
         correct += ok
         rows.append({"plant": p["record_id"], "expected": p["expected"], "verdict": v, "pass": ok})
     capture = correct / len(plants) if plants else 0.0
-    gate = len(plants) > 0 and correct >= int(cfg.gate["correct_min"]) and capture >= 5 / 6
+    gate = len(plants) > 0 and correct >= int(cfg.gate["correct_min"]) and capture >= float(cfg.gate["capture_min"])  # 2026-10-01 审计修正：capture_min 此前假旋钮（读而不生效）
     return {"examiner": examiner_name, "correct": correct, "total": len(plants),
             "capture": round(capture, 3), "gate": "PASS" if gate else "FAIL", "rows": rows}

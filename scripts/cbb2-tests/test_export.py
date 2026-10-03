@@ -64,15 +64,28 @@ def test_project_graph_nodes_edges():
     recs = [
         _rec("cand-e1", "沈青梧", ["引文"], lib="character"),
         _rec("cand-e2", "玉佩", ["引文"], lib="setting"),
+        # 契约形态（rel_type，store.identity_key 口径）
         {"record_id": "cand-r1", "library": "relation", "status": "provisional",
-         "canonical": {"subject": "沈青梧", "predicate": "持有", "object": "玉佩"},
+         "canonical": {"subject": "沈青梧", "rel_type": "持有", "object": "玉佩"},
          "evidence": [{"vol": 1, "chapter": 3, "line": 10, "quote": "引文"}]},
+        # 旧投影方言（predicate）只许作兜底，不许覆盖 rel_type
+        {"record_id": "cand-r2", "library": "relation", "status": "provisional",
+         "canonical": {"subject": "沈青梧", "rel_type": "同盟", "predicate": "旧名", "object": "玉佩"},
+         "evidence": [{"vol": 1, "chapter": 4, "line": 11, "quote": "引文"}]},
+        # 仅有旧方言的历史件：回退到 predicate 而不是退化成"关联"
+        {"record_id": "cand-r3", "library": "relation", "status": "provisional",
+         "canonical": {"subject": "沈青梧", "predicate": "持有", "object": "玉佩"},
+         "evidence": [{"vol": 1, "chapter": 5, "line": 12, "quote": "引文"}]},
     ]
     nodes, edges = export.project_graph(recs)
     names = {n["name"] for n in nodes}
     assert {"沈青梧", "玉佩"} <= names
-    assert len(edges) == 1 and edges[0]["source"] == "沈青梧" and edges[0]["target"] == "玉佩"
+    assert len(edges) == 3 and edges[0]["source"] == "沈青梧" and edges[0]["target"] == "玉佩"
     assert edges[0]["predicate"] == "持有" and edges[0]["status"] == "provisional"
+    # 2026-10-01 审计修正锁定：rel_type 优先，predicate 仅兜底（此前只读 predicate，
+    # 正规写入链的关系边标签全部静默退化成"关联"）
+    assert edges[1]["predicate"] == "同盟"
+    assert edges[2]["predicate"] == "持有"
 
 
 import json  # noqa: E402  （底部导入以保持测试顶部聚焦——Python 允许）

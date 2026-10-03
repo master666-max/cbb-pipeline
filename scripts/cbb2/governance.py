@@ -9,6 +9,8 @@ import math
 from collections import defaultdict
 from pathlib import Path
 
+from . import jsonl_io  # P-028：共享 JSONL 读面（撕裂安全+坏行披露）
+
 # ---- G08 人工桶处置 ----
 
 def classify_manual_bucket(items: list[dict]) -> dict:
@@ -102,10 +104,9 @@ def wire_gap_queue(store_root: Path, findings: list[dict]) -> int:
     q_path = Path(store_root) / "缺口队列.jsonl"
     existing = set()
     if q_path.exists():
-        for x in q_path.read_text(encoding="utf-8").splitlines():
-            if x.strip():
-                r = json.loads(x)
-                existing.add((r.get("type"), r.get("evidence")))
+        for r in jsonl_io.parse_jsonl(q_path.read_text(encoding="utf-8"),
+                                      source="缺口队列.jsonl")[0]:
+            existing.add((r.get("type"), r.get("evidence")))
     added = 0
     with q_path.open("a", encoding="utf-8") as f:
         for fd in findings:

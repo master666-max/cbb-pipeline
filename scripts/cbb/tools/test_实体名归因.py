@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_实体名归因.py — 四分类必须各有一正一负对照，且"不许默认判模型的锅"要能测
 
 夹具全部现造（临时目录＋自写语料），不依赖外部语料与网络。
@@ -13,7 +12,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import 实体名归因 as m  # noqa: E402
+import 实体名归因 as m
 
 CORPUS = "梅芙莉莎握紧沙姆希尔。弗恩·西蒙站在中庭。言万说：面具是审判者给的。"
 

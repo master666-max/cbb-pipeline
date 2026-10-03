@@ -85,6 +85,24 @@ class TestValidateDomain(unittest.TestCase):
         res = g1.check_record(rec, {})
         self.assertIn("G1-EVIDENCE", [v["code"] for v in res["violations"]])
 
+    def test_dirty_evidence_none_no_batch_crash(self):  # 修1 回归：evidence=[None] 记违规不崩批
+        rec = entity("缇达")
+        rec["evidence"] = [None]
+        res = g1.check_batch([rec], {})
+        self.assertEqual(res["summary"]["total"], 1)
+        self.assertEqual(res["summary"]["intercept"], 1)  # 一条脏证据只拦本条，不打崩整批流程
+        codes = [v["code"] for v in res["intercepted"][0]["check"]["violations"]]
+        self.assertIn("G1-EVIDENCE", codes)               # 脏证据计入违规明细
+        issue = res["intercepted"][0]["issues"][0]        # to_issue 不因 None 崩（span 兜底空对象）
+        self.assertEqual(issue["evidence_span"], {})
+
+    def test_dirty_evidence_none_event_no_chapter_crash(self):  # 修1 回归：event 载体 _chapter_of 不因 None 崩
+        rec = event("亡灵现身", entity_refs=[], chapter=20)
+        rec["evidence"] = [None]
+        res = g1.check_record(rec, {})
+        self.assertEqual(res["verdict"], "intercept")  # 崩门→拦截：违规明细承载，不出异常
+        self.assertIn("G1-EVIDENCE", [v["code"] for v in res["violations"]])
+
 
 class TestLinksDomain(unittest.TestCase):
     """域二 links：引用完整性+关系逆类型 12 对+对称 12 项双向回链。"""
@@ -93,6 +111,25 @@ class TestLinksDomain(unittest.TestCase):
         rec = event("集结", entity_refs=["rec-不存在"], chapter=20)
         res = g1.check_record(rec, {"known_ids": set()})
         self.assertIn("G1-REF", [v["code"] for v in res["violations"]])
+
+    def test_entity_refs_name_contract_no_false_ref(self):  # 修2 回归：契约口径=实体名，批内名称引用不误报
+        # 旧实现把 entity_refs 当 record_id 查 known_ids → "帕林"被假判悬空（双语义错半边）
+        recs = [entity("帕林"), event("集结", entity_refs=["帕林"], chapter=20)]
+        res = g1.check_batch(recs, {"known_ids": set()})
+        self.assertEqual(res["summary"]["intercept"], 0)
+
+    def test_entity_refs_dangling_name_caught(self):  # 修2 回归：名称口径下悬空引用仍拦截
+        res = g1.check_batch([event("集结", entity_refs=["查无此人"], chapter=20)],
+                             {"known_ids": set()})
+        self.assertEqual(res["summary"]["intercept"], 1)
+        codes = [v["code"] for v in res["intercepted"][0]["check"]["violations"]]
+        self.assertIn("G1-REF", codes)
+
+    def test_entity_refs_legacy_id_still_resolved(self):  # 修2 兼容：历史 id 拼写件直命中 known_ids 不误报
+        e = entity("帕林")
+        res = g1.check_batch([event("集结", entity_refs=[e["record_id"]], chapter=20)],
+                             {"known_ids": {e["record_id"]}})
+        self.assertEqual(res["summary"]["intercept"], 0)
 
     def test_counterexample_inverse_missing(self):  # 可执行反例：parent 无 child 回链
         recs = [relation("卢卡", "parent", "缇达")]

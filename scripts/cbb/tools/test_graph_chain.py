@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
 """test_graph_chain.py — 链构造器包内自洽测试（Neo4j 缺席→如实 SKIP，不计过）。"""
-import importlib
+import os
 import sys
 import unittest
+
+os.environ.setdefault("CBB_NAMESPACE", "audit-test")  # 2026-10-01 ns 强制门引入后的测试适配
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -10,7 +11,7 @@ sys.path.insert(0, str(HERE))
 
 try:
     import graph_chain as gc
-except Exception as e:  # 依赖缺席
+except Exception as e:  # 依赖缺席  # noqa: BLE001 — 宽捕获=显式报错/降级语义
     gc = None
     _import_err = str(e)
 
@@ -29,7 +30,7 @@ class TestGraphChain(unittest.TestCase):
             import urllib.request
             with urllib.request.urlopen(gc.BASE + "/", timeout=3):
                 pass
-        except Exception:
+        except Exception:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
             self.skipTest("Neo4j 缺席（如实跳过，不计过）")
         import graph_chain as gc2
         rows = gc2._cypher("MATCH (a:Entity)-[r:REL]-() WITH a, count(r) AS d "

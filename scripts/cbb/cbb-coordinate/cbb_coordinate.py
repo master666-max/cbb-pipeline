@@ -92,12 +92,23 @@ def coordinate(text: str, vol: int = 1) -> dict:
                 "line_start": p["line_start"], "line_end": p["line_end"],
                 "text": p["text"], "sha256": p["sha256"],
             })
+    # 重复章号检测（2026-10-03 审计修正）：同卷同章号出现多次 → block_id 按
+    # (卷,章,段) 生成必然撞号——旧实现无告警无计数，溯源冲突静默发生。
+    chapter_seen: dict[tuple[int, int], int] = {}
+    for ch in chapters:
+        k = (ch["vol"], ch["chapter"])
+        chapter_seen[k] = chapter_seen.get(k, 0) + 1
+    dup_chapters = sorted(c for (_, c), n in chapter_seen.items() if n > 1)
+    warnings = ([f"重复章号 {len(dup_chapters)} 个（章号 {dup_chapters}）："
+                 "block_id 将撞号，须核对章标记"] if dup_chapters else [])
     return {
         "vol_default": vol,
         "chapter_count": len(chapters),
         "chapters": chapters,
         "block_count": len(blocks),
         "blocks": blocks,
+        "duplicate_chapters": dup_chapters,
+        "warnings": warnings,
     }
 
 
@@ -111,12 +122,14 @@ def locate_quote(blocks: list[dict], vol: int, chapter: int, quote: str):
 
 
 def process_file(source: Path, cache_dir: Path, vol: int = 1) -> dict:
-    """幂等分块缓存：键 = sha256(全文+vol+算法版本)。命中读缓存，未命中计算落盘。
+    """幂等分块缓存：键 = sha256(全文+vol+算法版本+源名)。命中读缓存，未命中计算落盘。
     断点协议：长篇分批处理时，已处理分块直接命中缓存跳过（graphify-novel 批处理扫章
-    的『强制重读磁盘、不靠上下文累积』同思路——状态在盘不在内存）。"""
+    的『强制重读磁盘、不靠上下文累积』同思路——状态在盘不在内存）。
+    缓存键含源名（2026-10-03 审计修正）：不同源文件全文相同时，旧键会把先入缓存者的
+    source.name 还给后者——溯源链静默串档；键含 src= 后同名同文才共用缓存。"""
     raw = source.read_bytes()
     text = raw.decode("utf-8-sig")  # A8 修复（审计 R4）：剥 BOM（记事本默认带 BOM → 首章标记失配 → 全库坐标偏移）
-    key = sha256_text(f"{sha256_text(text)}|vol={vol}|algo=coord-v1")
+    key = sha256_text(f"{sha256_text(text)}|vol={vol}|algo=coord-v1|src={source.name}")
     cache_dir.mkdir(parents=True, exist_ok=True)
     cpath = cache_dir / f"{key}.json"
     if cpath.exists():

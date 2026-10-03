@@ -41,7 +41,17 @@ METATEXT_TITLE_PATTERNS = (
     "请假", "上架感言", "完本感言",
 )
 METATEXT_BODY_PATTERNS = (
-    "翻译：", "校对：", "转载请注明", "本章说", "评论区", "点赞", "收藏", "月票",
+    "翻译：", "校对：", "转载请注明", "本章说", "评论区",
+)
+# 裸词（点赞/收藏/月票）不再做子串匹配——正文叙述「他把玉佩收藏了十年」会被误杀整章跳过。
+# 改为强边界匹配：仅命中【整行元文本标签形态】（求收藏！/【月票】/点赞·收藏/行首#标签）；
+# 命中必须登记 skipped_out（B6 绝不静默丢弃），不得只 continue 零痕迹。
+METATEXT_BARE_WORDS = ("点赞", "收藏", "月票")
+_METATEXT_BARE_LINE_RX = re.compile(
+    r"^[#＃\s【\[\(（「『]*"
+    r"(?:(?:求|请|投|记得|感谢|谢谢)?[\s·、,，!！?？。~～*～\-—#＃【】\[\]()（）]*(?:点赞|收藏|月票)"
+    r"[\s·、,，!！?？。~～*～\-—#＃【】\[\]()（）]*)+"
+    r"[】\]\)）」』]*[!！?？。~～*～\s]*$"
 )
 
 # ---- ④安全侧：注入防御（untrusted narrative text——正文内嵌指令样模式→整块拒抽） ----
@@ -97,12 +107,16 @@ LIBRARY_OF_TYPE = {"event": "event", "entity": "character"}
 # ---- ①读入侧 + ④安全侧：双闸 ----
 
 def is_metatext(title: str = "", text_sample: str = "") -> bool:
-    """确定性启发式：标题或正文抽样命中元文本特征 → 整章跳过（stub 第一道闸）。"""
+    """确定性启发式：标题或正文抽样命中元文本特征 → 整章跳过（stub 第一道闸）。
+    裸词（点赞/收藏/月票）只在整行标签形态命中——正文叙述子串不触发（防误杀）。"""
     for pat in METATEXT_TITLE_PATTERNS:
         if pat in (title or ""):
             return True
     for pat in METATEXT_BODY_PATTERNS:
         if pat in (text_sample or ""):
+            return True
+    for line in (text_sample or "").splitlines():
+        if _METATEXT_BARE_LINE_RX.match(line.strip()):
             return True
     return False
 
@@ -396,19 +410,22 @@ def main(argv=None) -> int:
 
     manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
     titles = {c["chapter"]: c["title"] for c in manifest.get("chapters", [])}
+    skipped: list[dict] = []  # B6 绝不静默丢弃：元文本/注入块跳过必须登记并随 payload 落盘
     cands = extract_stub(
         manifest["blocks"],
         lexicon=[x for x in args.lexicon.split(",") if x.strip()],
         event_patterns=[x for x in args.events.split(",") if x.strip()],
         chapter_titles=titles,
+        skipped_out=skipped,
     )
     hard = verify_evidence(cands, manifest["blocks"])  # 机械硬检查随跑
-    payload = {"candidate_count": len(cands), "candidates": cands, "hard_check": hard}
+    payload = {"candidate_count": len(cands), "candidates": cands, "hard_check": hard,
+               "skipped": skipped, "skipped_count": len(skipped)}
     if args.out:
         Path(args.out).write_text(json.dumps(payload, ensure_ascii=False, indent=1),
                                   encoding="utf-8")
     print(f"[extract] candidates={len(cands)} hard_check={hard['passed']}/{hard['total']} "
-          f"R6=内置标配 四面防御=并配")
+          f"skipped={len(skipped)} R6=内置标配 四面防御=并配")
     return 0
 
 

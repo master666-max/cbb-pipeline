@@ -9,6 +9,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from . import jsonl_io  # P-028：共享 JSONL 读面（撕裂安全+坏行披露）
+
 STATE = "植物捕获-金标.jsonl"
 
 
@@ -18,8 +20,8 @@ def plant(store_root: Path, seeds: list[dict], at: str) -> list[dict]:
     p = Path(store_root) / STATE
     existing = set()
     if p.exists():
-        existing = {json.loads(x)["plant_id"]
-                    for x in p.read_text(encoding="utf-8").splitlines() if x.strip()}
+        rows, _bad = jsonl_io.parse_jsonl(p.read_text(encoding="utf-8"), source=STATE)
+        existing = {r.get("plant_id") for r in rows if r.get("plant_id")}
     out = []
     for s in seeds:
         pid = "plant-" + hashlib.sha256(json.dumps(s, sort_keys=True, ensure_ascii=False)
@@ -40,7 +42,7 @@ def capture_rate(store_root: Path, harvested_records: list[dict],
                  chapter: int | None = None) -> dict:
     """捕获率=被抽中(身份键命中 expect.name)且断言符合 expect 的株数 / 总株数。"""
     p = Path(store_root) / STATE
-    plants = [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()] \
+    plants = jsonl_io.parse_jsonl(p.read_text(encoding="utf-8"), source=STATE)[0] \
         if p.exists() else []
     idx = {}
     for r in harvested_records:

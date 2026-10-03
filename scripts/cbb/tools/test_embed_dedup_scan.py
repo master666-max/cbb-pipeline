@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_embed_dedup_scan.py — 嵌入查重工具单测（零网络：伪 embed_fn）。
 py -X utf8 cbb/tools/test_embed_dedup_scan.py  （或 unittest 默认发现）
 """

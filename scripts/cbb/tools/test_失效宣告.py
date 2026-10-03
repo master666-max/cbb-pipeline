@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_失效宣告.py — 裁决 ①A 的机械闸测试（含正对照：拒对了＋放过了）"""
 import json
 import sys
@@ -6,6 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import importlib
+
 m = importlib.import_module("失效宣告")
 
 
@@ -23,8 +23,8 @@ def test_forbidden_kinds_rejected(tmp_path):
 
 def test_value_conflict_requires_human_and_dual_evidence(tmp_path):
     """value_conflict：by=agent 拒；单侧证据拒；human+双侧 过。"""
-    kw = dict(record_id="r1", invalid_at=200, kind="value_conflict",
-              verdict_ref="q-1", by="agent", evidence_sides=2)
+    kw = {"record_id": "r1", "invalid_at": 200, "kind": "value_conflict",
+              "verdict_ref": "q-1", "by": "agent", "evidence_sides": 2}
     try:
         m.write_invalidation(tmp_path, **kw)
         raise AssertionError("agent 不得写 value_conflict")
@@ -44,7 +44,7 @@ def test_value_conflict_requires_human_and_dual_evidence(tmp_path):
 
 
 def test_superseded_allows_agent_and_requires_dual(tmp_path):
-    rec, ok = m.write_invalidation(tmp_path, record_id="r2", invalid_at=300,
+    _rec, ok = m.write_invalidation(tmp_path, record_id="r2", invalid_at=300,
                                    kind="superseded", verdict_ref="rec-new",
                                    by="agent", evidence_sides=2)
     assert ok
@@ -58,8 +58,8 @@ def test_superseded_allows_agent_and_requires_dual(tmp_path):
 
 
 def test_idempotent_double_write(tmp_path):
-    kw = dict(record_id="r4", invalid_at=50, kind="termination",
-              verdict_ref="q-9", by="human", evidence_sides=1)
+    kw = {"record_id": "r4", "invalid_at": 50, "kind": "termination",
+              "verdict_ref": "q-9", "by": "human", "evidence_sides": 1}
     r1, c1 = m.write_invalidation(tmp_path, **kw)
     r2, c2 = m.write_invalidation(tmp_path, **kw)
     assert c1 and not c2 and r1 == r2

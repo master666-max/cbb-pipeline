@@ -52,6 +52,12 @@ if tf.exists():
         trans[e.get("record_id")] = e.get("to") or trans.get(e.get("record_id"))
 eff = {r["record_id"]: trans.get(r["record_id"]) or r.get("status", "provisional") for r in records}
 
+# --status confirmed：按 effective status 真过滤（文件 status + transitions 叠加，末条胜出）。
+# 审计修复：原实现 --status 只是写进摘要的假开关（零过滤），未定（provisional）记录
+# 会以「已确认」名义外流。零命中=如实输出 0 条（cluster/lorebook/rag 全为 0）。
+if ns.status == "confirmed":
+    records = [r for r in records if eff.get(r["record_id"]) == "confirmed"]
+
 clusters = aggregate.build_clusters(records=records, alias_rows=alias_rows)
 
 

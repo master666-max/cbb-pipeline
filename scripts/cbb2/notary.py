@@ -20,6 +20,7 @@ LEDGER = "ledger.jsonl"
 # v1.14 单源修复：创世种子必须与 ledger 写入侧一致（EMPTY_SHA=64 零），否则 verify 全链重放
 # 在第 1 行即误判断链（本库 ledger.jsonl 首行 prev_hash=EMPTY_SHA 实证）。此前私设 "genesis"
 # 字符串为双创世约定 bug——保留 GENESIS 名以兼容 chain_head 兜底语义，值改由 ledger 单源。
+from . import jsonl_io  # P-028：撕裂安全切行（只按 \n 切——纯文本工具，非 store 代码）
 from .ledger import EMPTY_SHA as GENESIS  # noqa: E402
 
 
@@ -29,7 +30,7 @@ def ledger_head(store_root: Path) -> dict:
     rows = 0
     last_hash = None
     if p.exists():
-        for line in p.read_text(encoding="utf-8").splitlines():
+        for line in jsonl_io.read_jsonl_lines(p.read_text(encoding="utf-8")):
             if not line.strip():
                 continue
             rows += 1
@@ -83,7 +84,7 @@ def verify(channel_dir: Path, store_root: Path, origin: str) -> dict:
     latest = cps[-1]
     text = latest.read_text(encoding="utf-8")
     fields = {}
-    for line in text.splitlines():
+    for line in jsonl_io.read_jsonl_lines(text):
         if ":" in line:
             k, v = line.split(":", 1)
             fields[k.strip()] = v.strip()
@@ -93,7 +94,7 @@ def verify(channel_dir: Path, store_root: Path, origin: str) -> dict:
     prev = GENESIS
     errors = []
     if p.exists():
-        for line in p.read_text(encoding="utf-8").splitlines():
+        for line in jsonl_io.read_jsonl_lines(p.read_text(encoding="utf-8")):
             if not line.strip():
                 continue
             rows += 1

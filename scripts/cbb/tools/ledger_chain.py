@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """ledger_chain.py — U-C03.6 吸收件（工单 v1.5 §0 吸收条款 · 2026-09-18）
 
 两件：
@@ -25,7 +24,7 @@ from pathlib import Path
 EMPTY_SHA = "0" * 64  # 目标文件尚不存在时的 sha_before 约定值
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "cbb-store"))
-import cbb_store  # noqa: E402  ThreeStateStore（本体只读复用）
+import cbb_store
 
 
 def _sha256_file(p: Path) -> str:
@@ -227,7 +226,7 @@ def main(argv=None) -> int:
     f = sub.add_parser("fingerprint")
     f.add_argument("--ranker", required=True); f.add_argument("--criterion", required=True)
     f.add_argument("--sort", required=True); f.add_argument("--params-json", default="{}")
-    a = ns = ap.parse_args(argv)
+    ns = ap.parse_args(argv)
 
     if ns.cmd == "genesis":
         store = Path(ns.store)

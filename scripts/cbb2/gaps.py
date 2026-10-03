@@ -8,6 +8,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from . import jsonl_io  # P-028：共享 JSONL 读面（撕裂安全+坏行披露）
+
 QUEUE = "缺口队列.jsonl"
 
 
@@ -15,10 +17,8 @@ def _append(store_root: Path, row: dict):
     p = Path(store_root) / QUEUE
     p.parent.mkdir(parents=True, exist_ok=True)
     if p.exists():  # B12：按 (type,evidence) 幂等——重复扫描不膨胀队列
-        for x in p.read_text(encoding="utf-8").splitlines():
-            if not x.strip():
-                continue
-            old = json.loads(x)
+        rows, _bad = jsonl_io.parse_jsonl(p.read_text(encoding="utf-8"), source=QUEUE)
+        for old in rows:
             if old.get("type") == row.get("type") and old.get("evidence") == row.get("evidence"):
                 return
     with p.open("a", encoding="utf-8") as f:
@@ -50,10 +50,8 @@ def scan_vocab_gaps(store_root: Path) -> list[dict]:
     q = Path(store_root) / "quarantine-zone" / "items.jsonl"
     if not q.exists():
         return out
-    for x in q.read_text(encoding="utf-8").splitlines():
-        if not x.strip():
-            continue
-        it = json.loads(x)
+    for it in jsonl_io.parse_jsonl(q.read_text(encoding="utf-8"),
+                                   source="quarantine-zone/items.jsonl")[0]:
         d = it.get("detail", "")
         if it.get("subclass") == "contradiction_pending" and "entity_type" in d:
             out.append({"type": "词表缺口", "evidence": it.get("item_id"),
@@ -87,4 +85,4 @@ def load_queue(store_root: Path) -> list[dict]:
     p = Path(store_root) / QUEUE
     if not p.exists():
         return []
-    return [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
+    return jsonl_io.parse_jsonl(p.read_text(encoding="utf-8"), source=QUEUE)[0]

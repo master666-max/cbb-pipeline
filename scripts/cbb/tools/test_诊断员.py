@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_诊断员.py — U-F08 测试：量尺执行＋红区隔离＋C2 升级闸"""
 import importlib
 import json

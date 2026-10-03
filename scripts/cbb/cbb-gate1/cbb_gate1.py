@@ -24,6 +24,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "contracts"))
+try:  # C2 锚定谓词单一来源：cbb2.anchor_check（缺席=warn 域静默跳过，gate1 保持零依赖可跑）
+    sys.path.insert(0, str(HERE.parents[1] / "cbb-v2"))
+    from cbb2 import anchor_check as _anchor_check
+except Exception:
+    _anchor_check = None
 sys.path.insert(0, str(HERE.parent / "cbb-coordinate"))
 sys.path.insert(0, str(HERE.parent / "cbb-anchor"))
 import cbb_contracts  # noqa: E402
@@ -35,6 +40,8 @@ REASON_CODES = (
     "G1-TIME_INVERSION", "G1-DEAD-WALK", "G1-FORESHADOW-ORDER",
     "G1-CHEKHOV-OVERDUE", "G1-CONTRADICTION",
 )
+
+WARN_CODES = ("E-ANCHOR-ENTITIES", "E-SHACL-OBJECT")  # C2/C3：warn 级不拦截不隔离
 
 # 拦截 → 隔离区三子类（U-A17 采纳的 quarantine 三子类；v1 暂定映射就此收敛）
 REASON_TO_QUARANTINE_SUBCLASS = {
@@ -100,6 +107,10 @@ def _check_evidence(rec: dict, blocks: list[dict]) -> list[dict]:
     if not evs:
         return [{"code": "G1-EVIDENCE", "detail": "evidence 为空（B4 无证据不入库）"}]
     for i, ev in enumerate(evs):
+        if not isinstance(ev, dict):  # 修1 脏证据类型防御：None/标量记违规明细、不进四元组校验（不崩批）
+            out.append({"code": "G1-EVIDENCE",
+                        "detail": f"证据[{i}] 非 dict（{type(ev).__name__}），四元组不可校验"})
+            continue
         if not cbb_contracts.evidence_ok(ev):
             out.append({"code": "G1-EVIDENCE", "detail": f"证据[{i}] 四元组不完整: {ev!r}"})
             continue
@@ -113,15 +124,26 @@ def _check_evidence(rec: dict, blocks: list[dict]) -> list[dict]:
 
 # ================= 域二 links：引用完整性+关系回链 =================
 
-def _check_refs(rec: dict, known_ids) -> list[dict]:
+def _check_refs(rec: dict, known_ids, entities_by_name=None) -> list[dict]:
+    """引用悬空（links 域）。entity_refs 语义统一为**实体名**（契约口径裁定，修2）：
+    record.schema.json v2.0 对 canonical.entity_refs 无 id 级锁定（canonical=按库类型本体字段），
+    实体的可判定主键是 canonical.name——死人走路（本件 _check_dead_walk）、C2 锚定谓词
+    （anchor_check）、smoke 夹具全按名称引用；id 级解释是少数派，迁到名称口径。
+    兼容映射：元素命中 entities_by_name → 映射其 record_id；或元素本身即已知 record_id
+    （历史 id 拼写件）→ 均视为已解，不误报。causal_predecessors / supersedes 仍为 record_id 语义。"""
     if known_ids is None:
         return []
     out = []
     canon = rec.get("canonical") or {}
-    for field in ("causal_predecessors", "entity_refs"):
-        for rid in canon.get(field) or []:
-            if rid not in known_ids:
-                out.append({"code": "G1-REF", "detail": f"canonical.{field} 引用悬空: {rid}"})
+    for rid in canon.get("causal_predecessors") or []:
+        if rid not in known_ids:
+            out.append({"code": "G1-REF", "detail": f"canonical.causal_predecessors 引用悬空: {rid}"})
+    for ref in canon.get("entity_refs") or []:
+        ent = (entities_by_name or {}).get(ref)
+        rid = (ent or {}).get("record_id") or ref  # 名称→record_id 兼容映射（契约口径=实体名）
+        if rid not in known_ids and ref not in known_ids:
+            out.append({"code": "G1-REF",
+                        "detail": f"canonical.entity_refs 引用悬空（实体名不在实体表/已知记录）: {ref}"})
     sup = rec.get("supersedes")
     if sup is not None and sup not in known_ids:
         out.append({"code": "G1-REF", "detail": f"supersedes 引用悬空: {sup}"})
@@ -203,7 +225,7 @@ def _resolve_day(rec, records_by_id: dict) -> dict | None:
 
 def _chapter_of(rec: dict):
     ev = (rec.get("evidence") or [{}])[0]
-    return ev.get("chapter")
+    return ev.get("chapter") if isinstance(ev, dict) else None  # 修1：脏证据取不到章=放弃该判据，不崩
 
 
 def _check_dead_walk(rec: dict, entities_by_name: dict) -> list[dict]:
@@ -266,7 +288,7 @@ def check_record(rec: dict, ctx: dict) -> dict:
     all_records, entities_by_name, seen_statuses, current_chapter}"""
     violations = (
         _check_schema(rec) + _check_evidence(rec, ctx.get("blocks"))          # validate 域
-        + _check_refs(rec, ctx.get("known_ids"))                              # links 域
+        + _check_refs(rec, ctx.get("known_ids"), ctx.get("entities_by_name"))  # links 域
         + _check_relation_backlinks(rec, ctx.get("all_records") or [])        # links 域
         + _check_time_inversion(rec, ctx.get("records_by_id") or {})          # continuity 域
         + _check_dead_walk(rec, ctx.get("entities_by_name") or {})            # continuity 域
@@ -274,9 +296,21 @@ def check_record(rec: dict, ctx: dict) -> dict:
         + _check_contradiction(rec, ctx.get("seen_statuses") or {})           # continuity 域
     )
     codes = [v["code"] for v in violations]
+    warns = []
+    if _anchor_check is not None:
+        # 修1 warn 域同防：脏证据元素（None/非 dict）不进锚定引文集（validate 域已记违规）；
+        # 以浅拷贝视图喂锚定检查，不改写输入（EXPLAIN 拒写）。
+        ev_raw = rec.get("evidence") or []
+        ev_clean = [e for e in ev_raw if isinstance(e, dict)]
+        anchor_view = dict(rec, evidence=ev_clean) if len(ev_clean) != len(ev_raw) else rec
+        warns = _anchor_check.check_anchor_entities(anchor_view)
+        names = ctx.get("entity_names_normed")
+        if names:
+            warns += _anchor_check.check_relation_object_in_entities(rec, set(names))
     return {
         "record_id": rec.get("record_id", "?"),
         "verdict": "intercept" if violations else "pass",
+        "warnings": warns,
         "violations": violations,
         "quarantine_subclass": REASON_TO_QUARANTINE_SUBCLASS.get(codes[0]) if codes else None,
         "gate_trace_entry": {"gate": "1", "verdict_id": _vid(rec.get("record_id", "?"), codes)},
@@ -291,12 +325,13 @@ def to_issue(check: dict, record: dict) -> dict:
         raise ValueError("pass 的检查不产 Issue")
     rid = record.get("record_id", "?")
     priority, command = FIX_ACTIONS[code]
+    ev0 = (record.get("evidence") or [{}])[0]  # 修1：脏证据（None/标量）不出 span——不崩 Issue 构造
     issue = {
         "issue_id": f"{check['gate_trace_entry']['verdict_id']}-issue",
         "skill": "cbb-gate1",
         "error_type": code,
         "claim": check["violations"][0]["detail"],
-        "evidence_span": dict(record.get("evidence", [{}])[0]) if record.get("evidence") else {},
+        "evidence_span": dict(ev0) if isinstance(ev0, dict) else {},
         "graph_context": {"record_id": rid, "quarantine_subclass": check["quarantine_subclass"]},
         "severity": priority,
         "extraction_confidence": 100,
@@ -324,7 +359,16 @@ def check_batch(candidates: list[dict], ctx: dict | None = None) -> dict:
     entities_by_name = {r["canonical"]["name"]: r for r in candidates
                         if r.get("record_type") == "entity" and isinstance(r.get("canonical"), dict)
                         and r["canonical"].get("name")}
-    ctx.setdefault("entities_by_name", entities_by_name)
+    # 2026-10-03 审计修正：ctx.entities_by_name（--library-root 从全库注入）与本批合并——
+    # 本批同名实体=最新观察覆盖库内基线。旧 setdefault 语义下注入即丢本批实体，同批
+    # 死人走路反而失效；无注入时行为不变（仍纯本批）。局限：CLI 缺省（无 --library-root）
+    # 时跨批 dead-walk/悬空引用仍只覆盖本批——见 main 的参数帮助明示。
+    injected = ctx.get("entities_by_name")
+    if injected:
+        merged = dict(injected)
+        merged.update(entities_by_name)
+        entities_by_name = merged
+    ctx["entities_by_name"] = entities_by_name
     seen_statuses: dict[str, str] = {}
 
     passed, intercepted = [], []
@@ -372,11 +416,45 @@ def make_generic_record(record_type: str, library: str, canonical: dict,
     return rec
 
 
+def _load_library_view(root: Path) -> tuple[dict, set, int]:
+    """全库记录视图（2026-10-03 审计修正：--library-root 注入口——旧 CLI 只从本批候选构建
+    entities_by_name，跨批 dead-walk/悬空引用判定基本失效）。
+    返回 (entities_by_name, known_ids, unreadable)：entities 同名多版本取最高版本
+    （supersede 链最新口径，同版本按路径序后者胜）；known_ids=全库 record_id 集
+    （悬空引用/跨批 supersedes 判定用）；不可读件计数披露不静默。"""
+    entities: dict[str, dict] = {}
+    known: set = set()
+    unreadable = 0
+    for p in sorted(Path(root).glob("libraries/*/*/*.json")):
+        try:
+            rec = json.loads(p.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError, UnicodeDecodeError):
+            unreadable += 1
+            continue
+        rid = rec.get("record_id")
+        if rid:
+            known.add(rid)
+        if rec.get("record_type") != "entity":
+            continue
+        c = rec.get("canonical") or {}
+        n = c.get("name")
+        if not n:
+            continue
+        cur = entities.get(n)
+        if cur is None or rec.get("version", 1) >= cur.get("version", 1):
+            entities[n] = rec
+    return entities, known, unreadable
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="CBB 门1 确定性硬校验（本体版 v2 · 三域）")
     ap.add_argument("--candidates", required=True, help="cbb-extract 候选 JSON（{candidates:[…]}）")
     ap.add_argument("--manifest", default=None, help="坐标 manifest JSON（供证据回落校验）")
     ap.add_argument("--known-ids", default=None, help="已知记录 ID 清单 JSON 数组（可选）")
+    ap.add_argument("--library-root", default=None,
+                    help="本体库根（含 libraries/<lib>/<status>/）。提供时从全库记录注入 "
+                         "entities_by_name+known_ids，跨批死人走路/悬空引用判定才真正生效；"
+                         "缺省仅本批候选——跨批域基本失效（已知局限）")
     ap.add_argument("--current-chapter", type=int, default=None,
                     help="当前推进章号（契诃夫枪超期判定的时钟位，缺省则跳过该检查）")
     args = ap.parse_args(argv)
@@ -388,11 +466,22 @@ def main(argv=None) -> int:
         ctx["blocks"] = json.loads(Path(args.manifest).read_text(encoding="utf-8"))["blocks"]
     if args.known_ids:
         ctx["known_ids"] = set(json.loads(Path(args.known_ids).read_text(encoding="utf-8")))
+    if args.library_root:
+        ents, known, unreadable = _load_library_view(Path(args.library_root))
+        ctx["entities_by_name"] = ents
+        # known_ids 注入全库 id；check_batch 会并上本批候选 id（候选间互引合法）
+        if ctx["known_ids"] is None:
+            ctx["known_ids"] = known
+        else:
+            ctx["known_ids"] |= known
     result = check_batch(cands, ctx)
     print(f"[gate1] total={result['summary']['total']} "
           f"pass={result['summary']['pass']} intercept={result['summary']['intercept']} "
           f"by_code={ {k: v for k, v in result['summary']['by_code'].items() if v} } "
           f"(三域=validate/links/continuity；Issue=契约v2.0只产不写)")
+    if args.library_root:
+        print(f"[gate1] library-root={args.library_root} 实体={len(ents)} "
+              f"已知记录={len(known)} 不可读={unreadable}（跨批 dead-walk/悬空引用已启用）")
     return 0
 
 

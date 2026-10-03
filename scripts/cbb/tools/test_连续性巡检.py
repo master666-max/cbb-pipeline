@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_连续性巡检.py — U-F02 判据测试：双载体一致（夹具）、图缺席兜底、规则单一来源"""
 import importlib
 import json
@@ -76,7 +75,6 @@ def test_double_carrier_consistency(tmp_path, monkeypatch=None):
 def test_graph_absent_falls_back_to_file(tmp_path, monkeypatch=None):
     """判据②：图不可用 → auto 自动落文件，输出同形且口径注明。"""
     store = _mk_fixture_store(tmp_path)
-    import types
     m = 巡检
     orig_probe, orig_gl = m.probe_graph, m.graph_loader
     m.probe_graph = lambda base=None, timeout=4.0: False          # 图探活失败
@@ -122,6 +120,44 @@ def test_graph_loader_requires_namespace():
     finally:
         if had is not None:
             os.environ["CBB_NAMESPACE"] = had
+
+
+def test_graph_loader_dual_namespace_keys():
+    """修5 回归：写侧两代归属键（v1=e.ns，cbb2/Graphiti=group_id）——读侧必须双键兼容，
+    否则 cbb2 图上巡检永远查空=假绿；两键皆无的节点计入未归属披露。图端点全程 mock。"""
+    ns = "proj-x"
+    seen = []
+
+    def fake_cypher(base, database, statement, user, password, parameters=None):
+        seen.append(statement)
+        assert parameters == {"ns": ns}
+        if "group_id IS NULL" in statement:      # 未归属计数查询
+            return [{"row": [2]}]
+        if "RETURN e.name" in statement:         # 实体查询（cbb2 图：只有 group_id，无 ns）
+            return [{"row": ["甲"]}, {"row": ["乙"]}]
+        if "RETURN s.name" in statement:         # 关系查询
+            return [{"row": ["甲", "乙", "parent"]}]
+        raise AssertionError(f"未预期的查询：{statement[:60]}")
+
+    orig = 巡检._cypher
+    巡检._cypher = fake_cypher
+    try:
+        view = 巡检.graph_loader(base="http://stub", password="x", ns=ns)
+    finally:
+        巡检._cypher = orig
+
+    assert view["entities"] == {"甲", "乙"}, view          # group_id-only 节点必须能查回（双键兼容）
+    assert view["relations"] and view["relations"][0]["rel_type"] == "parent"
+    assert view["unattributed_nodes"] == 2                 # 两键皆无=计数进视图
+    findings = 巡检.evaluate(view)
+    assert any(f["rule"] == "unattributed_nodes" and "未归属披露" in f["detail"]
+               for f in findings), findings                # 未归属必须现形，不当"没有"
+    # 双键防回退断言：主查询必须同时含两代归属键，缺一即回退单键假绿
+    ents_stmt = next(s for s in seen if "RETURN e.name" in s)
+    assert "e.ns=$ns" in ents_stmt and "e.group_id=$ns" in ents_stmt, ents_stmt
+    rels_stmt = next(s for s in seen if "RETURN s.name" in s)
+    for key in ("s.ns=$ns", "s.group_id=$ns", "o.ns=$ns", "o.group_id=$ns"):
+        assert key in rels_stmt, rels_stmt
 
 
 if __name__ == "__main__":

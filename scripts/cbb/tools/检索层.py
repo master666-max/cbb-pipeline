@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """检索层.py — L6 混合检索（U-F07 · 引擎=LanceDB 已裁 · 2026-09-23）
 
 四路召回 → RRF 融合（纯公式）→ 本地重排精排（岗位④）→ **引文核验**。
@@ -39,15 +38,14 @@ def embed(texts: list[str], base: str | None = None, model: str = "text-embeddin
         data = json.loads(raw)
         arr = sorted(data["data"], key=lambda x: x["index"])
         return [d["embedding"] for d in arr]
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return None
 
 
 def _http_post(url: str, payload: bytes, timeout: float) -> str:
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    with EMB_LOCK:  # 与第五路共享同一端点——并发 400 防线
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.read().decode("utf-8")
+    with EMB_LOCK, urllib.request.urlopen(req, timeout=timeout) as r:  # SIM117 合并；EMB_LOCK=与第五路共享端点的并发 400 防线
+        return r.read().decode("utf-8")
 
 
 def os_env(k: str, d: str) -> str:  # 便于测试注入
@@ -66,7 +64,7 @@ def alias_recall(query: str, store_root: Path) -> list[dict]:
     for f in sorted(store.glob("libraries/character/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         nm = (rec.get("canonical") or {}).get("name")
         if nm:
@@ -116,7 +114,7 @@ def verify_citations(citations: list[dict], store_root: Path) -> dict:
             store.glob("libraries/timeline/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         rid = rec.get("record_id")
         for ev in rec.get("evidence") or []:
@@ -159,19 +157,25 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
     if index_dir is None or not Path(index_dir).exists():
         notes.append("向量路缺席：索引未建（本查询退化为 别名+关键词+图 三路）")
 
-    # 路③向量（需索引＋嵌入端点）
+    # 路③向量（需索引＋嵌入端点）。T-5：缺席必落口径——嵌入端点哑返空 / records 表
+    # 缺席（_open_table 吞异常返 None）也是缺席，不许静默跳过（旧实现这两种情形
+    # 与"这一路命中 0 项"在输出上同形，违反自家 T-5 纪律）。
     if index_dir and Path(index_dir).exists():
         try:
             import lancedb  # noqa: F401
             qv = embed_fn([query])
-            if qv:
+            if not qv:
+                notes.append("向量路缺席：嵌入端点未返回向量")
+            else:
                 db = _db(index_dir)
                 tbl = _open_table(db, "records")
-                if tbl is not None:
+                if tbl is None:
+                    notes.append("向量路缺席：records 表未建")
+                else:
                     res = tbl.search(qv[0]).limit(top_k).to_list()
                     paths.append([r.get("name") for r in res])
                     notes.append("向量路命中")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
             notes.append(f"向量路缺席（{str(e)[:40]}）")
     else:
         notes.append("向量路缺席：索引未建")
@@ -211,6 +215,8 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
         backend = bk
         if bk == "rerank":
             notes.append("精排打分对象=富文本")
+        else:  # D-29 判据面：请求了重排却降级=能力未接线，必须响，不许静默
+            notes.append("D-29 判据：rerank=True 但重排降级为 mechanical（端点/transport 缺席）")
 
     top = [{"name": n, "rrf": round(s, 6)} for n, s in ranked[:top_k]]
     # 查询日志：第三期真实负载复核的数据底座。三条改过的行为，都来自实测教训：
@@ -231,9 +237,9 @@ def hybrid_search(query: str, store_root: Path, index_dir: Path | None = None,
                                     "backend": backend, "paths": len([p for p in paths if p])},
                                    ensure_ascii=False) + "\n")
             notes.append(f"查询日志已写 {logp.name}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
             notes.append(f"查询日志写入失败（{str(e)[:40]}）：负载底座不可信，须修")
-    return {"top": top, "backend": backend, "paths": len([p for p in paths if p]),
+    return {"top": top, "backend": backend, "rerank_requested": bool(rerank), "paths": len([p for p in paths if p]),
             "口径": "；".join(notes) or "无降级"}
 
 
@@ -257,11 +263,11 @@ def _fifth_auto(query: str, store_root: Path, index_dir: Path | None,
         sys_path = str(Path(__file__).resolve().parent)
         if sys_path not in __import__("sys").path:
             __import__("sys").path.insert(0, sys_path)
-        import lightrag_bridge as lb   # 图游走桥件；未随发布件安装时这里会 ImportError
+        import lightrag_bridge as lb  # 图游走桥件；未随发布件安装时这里会 ImportError
         rep = lb.fifth_recall(query, store_root, top_k)
         names = list(rep["names"])
         return (names or None), f"游走返回 {len(names)} 项" + ("" if names else "（空面，未并入）")
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return None, f"调用失败（{type(e).__name__}: {str(e)[:40]}）"
 
 
@@ -292,13 +298,30 @@ def _text_lookup(index_dir: Path | None, names: list[str]) -> tuple[list[str], s
         if len(rows) >= cap:
             note += f"（扫描上限 {cap} 触顶，超出部分未投影——命中数偏低时先想这里）"
         return [tmap.get(n, n) for n in names], note
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return names, f"富文本投影失败（{type(e).__name__}: {str(e)[:44]}）：精排退回 name 串"
+
+
+def _record_label(rec: dict) -> str:
+    """记录的确定性标签（keyword_recall 召回名面）：canonical.name 优先；
+    relation 无 name → 三元组串；timeline 等 → label/kind；兜底 record_id。"""
+    c = rec.get("canonical") or {}
+    nm = c.get("name")
+    if isinstance(nm, str) and nm:
+        return nm
+    if c.get("subject") or c.get("object"):
+        return f"{c.get('subject', '')}-{c.get('rel_type', '')}-{c.get('object', '')}"
+    for k in ("label", "kind"):
+        if isinstance(c.get(k), str) and c[k]:
+            return c[k]
+    return str(rec.get("record_id") or "")
 
 
 def keyword_recall(query: str, store_root: Path, limit: int = 10) -> list[dict]:
     """路②关键词：确定性包含匹配（索引缺席时的机械降级；FTS 建成后由 LanceDB 接管）。
-    中文无空格 → 标点切分＋二元切分（bigram）取词，均为机械规则。"""
+    中文无空格 → 标点切分＋二元切分（bigram）取词，均为机械规则。
+    扫全部库面（character/event/relation/foreshadow/setting/timeline）——旧实现只扫
+    character，事件/关系/伏笔全不可召回；打分文本基=标签+canonical+观察+证据引文。"""
     terms = {t for t in re.split(r"[\s，。？！、]+", query) if len(t) >= 2}
     for t in list(terms):
         for i in range(len(t) - 1):
@@ -306,15 +329,18 @@ def keyword_recall(query: str, store_root: Path, limit: int = 10) -> list[dict]:
     hits: list[dict] = []
     seen: set[str] = set()
     store = Path(store_root)
-    for f in sorted(store.glob("libraries/character/*/*.json")):
+    for f in sorted(store.glob("libraries/*/*/*.json")):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
-        nm = (rec.get("canonical") or {}).get("name") or ""
-        if nm in seen:
+        nm = _record_label(rec)
+        if not nm or nm in seen:
             continue
-        text = nm + json.dumps(rec.get("observations", []), ensure_ascii=False)
+        text = (nm + json.dumps(rec.get("canonical") or {}, ensure_ascii=False)
+                + json.dumps(rec.get("observations", []), ensure_ascii=False)
+                + json.dumps([e.get("quote") or "" for e in rec.get("evidence") or []],
+                             ensure_ascii=False))
         score = sum(1 for t in terms if t in text)
         if score:
             hits.append({"name": nm, "score": score})
@@ -331,7 +357,7 @@ def _db(index_dir: Path):
 def _open_table(db, name: str):
     try:
         return db.open_table(name)
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return None
 
 

@@ -12,6 +12,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from . import jsonl_io  # P-028：共享 JSONL 读面（撕裂安全+坏行披露）
+
 # ---- U-B02 归属单键（D-13 根治：唯一键名，写读同源） ----
 NS_PROPERTY = "group_id"
 
@@ -104,11 +106,15 @@ class DebtLedger:
 
     def __init__(self, store_root: Path):
         self.path = Path(store_root) / "导出债务.jsonl"
+        self.skipped: list[dict] = []  # 坏行披露（iter_skipped 式，P-028：不静默丢弃）
 
     def _rows(self) -> list[dict]:
         if not self.path.exists():
             return []
-        return [json.loads(x) for x in self.path.read_text(encoding="utf-8").splitlines() if x.strip()]
+        rows, skipped = jsonl_io.parse_jsonl(self.path.read_text(encoding="utf-8"),
+                                             source="导出债务.jsonl")
+        self.skipped.extend(skipped)
+        return rows
 
     def _append(self, row: dict):
         self.path.parent.mkdir(parents=True, exist_ok=True)

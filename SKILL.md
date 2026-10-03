@@ -1,12 +1,12 @@
 ---
-agent_created: true
 name: cbb-pipeline
 description: 把任意小说（长篇/多卷/网文/轻小说等）构建成证据可核验的正典知识库：每条事实带原文引文四元组、三态写入、append-only 账本、五层证据门审查。Use when 用户要建世界观/角色/设定知识库、小说入库、小说文本抽取、lore/正典/canon 构建、证据可溯源知识库、知识图谱、伏笔台账、实体别名治理、终审抽检，或要求"每条结论可回溯到原文"——即使用户没有点名该技能也应使用。不适用于：无需溯源的一次性摘要、单文档简单问答。
 license: CC-BY-4.0 (content)
 compatibility: 需 Python 3.10+（Windows 用 py -X utf8 启动器）。三件基础设施不可抛弃、全程随流程跑：知识图谱（连通且归属已判）／嵌入向量模型／重排模型——缺项默认阻断开书，带理由降级会自动记一笔导出债务。判定者与执行者是宿主 Agent，本地推理端点仅列为观察项。真源永远是账本，图与索引皆为可重建的派生视图
 metadata:
-  version: "3.0"
+  version: "3.1"
   origin: 通用架构总纲 v2.0（16 仓吸收 + 迷深实例 44.5% 实战沉淀 + 田·声明式审计纪律，2026-09）；v3.0 = 全量重构（失效记账制/契约v3/写入决策树/票数晋升，2026-09-27）；v3.1 = 判卷契约刻度+严格双票编制(2/3)+第三方抽检审计通道（2026-09-29）
+  changelog: 2026-10-03 文档实态对齐——版本号 3.0→3.1 补升（内容自 v3.1 差异章起已为 v3.1）；「不随包」口径更正（Graphiti bridge/ready 以退役形态随包、web 控制台已随包）；交付四形态与 README 表统一
 ---
 
 # 小说资料库构建流水线
@@ -21,7 +21,7 @@ metadata:
 4. **canonical 二分**：字段按 `scripts/cbb2/profiles/*.json` 分类（assertion/statement/mutable/immutable）；陈述位差异=互补陈述事件（complementary-statements.jsonl），不再判矛盾。
 5. **G5 晋升**：confirmed 由三考官票数制产生（`cbb2/promote.py`，env 编制 LOCAL/DEEPSEEK/QWEN）——不再有置信度单门限。
 6. **env 契约**：全部环境变量以 `scripts/cbb2/ops.py`、`cbb2/splitting.py`、`cbb2/config.py` 与各工具 docstring 为准；核心含 CBB_NAMESPACE/CBB_STORE/NEO4J_*/EMBED_HTTP/RERANK_HTTP/EXAMINER_*/CBB_DYNAMIC_SPLIT/CBB_THETA_*。
-7. 本版**不随包**：web 控制台、LightRAG 桥族、Graphiti 族（裁④退役，退役登记见源仓 cbb/tools/legacy-退役-GRAPHITI-*.md）。
+7. **随包口径**（2026-10-03 对表实态）：web 控制台**已随包**（`scripts/pipeline/canon_server.py`，v3.1 收束期批次交付）；LightRAG 桥族（export/bridge/delta_sync/live）**不随包**（留源仓）；Graphiti 族按裁决④裁四退役——五件中 `graphiti_bridge.py`/`graphiti_ready.py` 以退役形态**原地保留在包内** `scripts/cbb/tools/`（退役登记同目录 [legacy-退役-GRAPHITI-裁四-20260927.md](scripts/cbb/tools/legacy-退役-GRAPHITI-裁四-20260927.md)），ingest/spike/dump 三件不在包。
 
 ## 何时使用 / 何时不用
 
@@ -55,8 +55,9 @@ metadata:
               （都 support 且零 against=晋升；双 unsure=人审；其余=hold）
             → run_materialize 三重门放行（轮次植株门∧暂定态∧gate1 零违规；
               confirmed 走账本迁移 by="promotion"，引擎复验选票不信调用方自滤）
-            → 交付四形态：wiki_export 自锚定快照 / batch6_export 世界书+RAG 块 /
-              kg_export 图谱三格式 / canon_server 活体控制台（每请求现读库）
+            → 交付四形态（口径同 README「交付物长这样」表）：正典库本体（活体）/
+              wiki_export 自锚定快照 / batch6_export 世界书+RAG 块 /
+              kg_export 知识图谱 + canon_server 活体控制台（每请求现读库）
             → g17_circle 巡检圈：改判率喂 CUSUM（p0/k/h 预注册），上偏越限即停线
             契约=仪器参数（PT-026）：换契约必须同批 A/B + 植物考试 + 50 件验证轮封顶，
             禁止直接全量换约（实测：措辞变化使同批支持率 27/40→9/40）

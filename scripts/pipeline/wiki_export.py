@@ -94,8 +94,13 @@ for lib, rs in sorted(by_lib.items()):
     (idx / "by-type" / f"{lib}.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 sup_lines = ["# 失效链索引（supersede-index）", ""]
-for r in sup:
-    sup_lines.append(f"- seq{r.get('seq')} `{r.get('op')}` → {r.get('target')}（sha_after `{str(r.get('sha_after'))[:12]}`）")
+# 审计修复：supersede-index.jsonl 真实字段是 old_id/new_id/version（cbb2 store.supersede 落盘口径），
+# 原渲染误用账本（ledger.jsonl）字段 seq/op/target/sha_after ⇒ 整页 seqNone None → None 垃圾行。
+if sup:
+    for s in sup:
+        sup_lines.append(f"- `{s.get('old_id')}` → `{s.get('new_id')}`（version {s.get('version')}）")
+else:
+    sup_lines.append("（无失效链记录：supersede-index.jsonl 为空或不存在）")
 (idx / "superseded.md").write_text("\n".join(sup_lines) + "\n", encoding="utf-8")
 
 comp_lines = ["# 互补陈述索引（complementary-statements）", ""]

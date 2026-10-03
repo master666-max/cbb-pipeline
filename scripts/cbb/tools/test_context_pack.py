@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_context_pack.py — U-F04 包内重排测试（夹具库＋桩重排器；降级同形断言）"""
 import importlib
 import json
@@ -85,7 +84,7 @@ def test_unavailable_falls_back_same_shape(tmp_path):
 
 
 def test_budget_respected_with_rerank(tmp_path):
-    stub = lambda q, docs, mech: (list(reversed(mech)), "rerank")  # noqa: E731
+    stub = lambda q, docs, mech: (list(reversed(mech)), "rerank")
     store = mk_store(tmp_path)
     txt = cp.build(store, None, store.parent / "rolling-summary.md", reranker=stub)
     assert len(txt) <= cp.BUDGET_CHARS + 120  # 预算内（允许头部标注行的少量字符）

@@ -7,11 +7,16 @@ import json
 from datetime import date
 from pathlib import Path
 
+from . import jsonl_io  # P-028：共享 JSONL 读面（撕裂安全+坏行披露）
+
 GROUPS = ("unresolved_time", "missing_anchor", "ambiguous_reference",
           "entity_unalignable", "low_confidence", "out_of_scope")
 SUBCLASSES = ("contradiction_pending", "extrapolation_unverified", "overdue_omission")
+# 2026-10-03 审计口径收敛：unresolved_time 对齐 v1 GROUP_TO_SUBCLASS 映射
+# （extrapolation_unverified=时间锚挂不上属外推待证；旧 overdue_omission 是映射漂移——
+#  overdue_omission 语义=契诃夫枪超期遗漏，与时间不可解析无关）。
 GROUP_TO_SUBCLASS = {
-    "unresolved_time": "overdue_omission",
+    "unresolved_time": "extrapolation_unverified",
     "entity_unalignable": "contradiction_pending",
     "low_confidence": "extrapolation_unverified",
 }
@@ -65,12 +70,15 @@ class QuarantineZone:
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
         self.items_path = self.root / "items.jsonl"
+        self.skipped: list[dict] = []  # 坏行披露（iter_skipped 式，P-028：不静默丢弃）
 
     def _load(self) -> list[dict]:
         if not self.items_path.exists():
             return []
-        return [json.loads(x) for x in
-                self.items_path.read_text(encoding="utf-8").splitlines() if x.strip()]
+        rows, skipped = jsonl_io.parse_jsonl(
+            self.items_path.read_text(encoding="utf-8"), source="quarantine/items.jsonl")
+        self.skipped.extend(skipped)
+        return rows
 
     def _append(self, item: dict):
         with self.items_path.open("a", encoding="utf-8") as f:
@@ -115,7 +123,11 @@ class QuarantineZone:
                                 "by": by, "at": _today()}, ensure_ascii=False) + "\n")
 
     def pending(self) -> list[dict]:
-        adj = {json.loads(x)["item_id"] for x in
-               (self.root / "adjudications.jsonl").read_text(encoding="utf-8").splitlines()
-               if x.strip()} if (self.root / "adjudications.jsonl").exists() else set()
+        adj_path = self.root / "adjudications.jsonl"
+        adj: set = set()
+        if adj_path.exists():
+            rows, skipped = jsonl_io.parse_jsonl(
+                adj_path.read_text(encoding="utf-8"), source="quarantine/adjudications.jsonl")
+            self.skipped.extend(skipped)
+            adj = {r.get("item_id") for r in rows}
         return [i for i in self._load() if i["item_id"] not in adj]

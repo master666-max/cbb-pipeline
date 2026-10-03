@@ -124,7 +124,9 @@ def project_graph(records: list[dict]) -> tuple[list[dict], list[dict]]:
         if (r.get("library") or r.get("record_type")) != "relation":
             continue
         canon = r.get("canonical") or {}
-        s, p, o = canon.get("subject"), canon.get("predicate"), canon.get("object")
+        # 2026-10-01 审计修正：库内契约是 rel_type（store.identity_key 口径），predicate 是旧投影方言；
+        # 只读 predicate 使正规写入链的关系边标签全部退化成"关联"
+        s, p, o = canon.get("subject"), canon.get("rel_type") or canon.get("predicate"), canon.get("object")
         if s and o:
             edges.append({"source": s, "predicate": p or "关联", "target": o,
                           "status": r.get("status"), "record_id": r["record_id"]})

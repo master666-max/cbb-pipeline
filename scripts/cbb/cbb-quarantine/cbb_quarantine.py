@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """cbb_quarantine.py — CBB B6 隔离区管理器（本体版 v2）
 
-保留（v1.0）：五类分组请你确认报告 + append-only 裁决通道（终态留档不删）+
+保留（v1.0）：分组请你确认报告 + append-only 裁决通道（终态留档不删）+
 登记幂等（item_id 内容哈希）+ 报告确定性（无时钟字段）。
 吸收（U-A17 §3，三子类为用户裁决案）：
   - **quarantine 三子类**：contradiction_pending（矛盾待裁决）/
     extrapolation_unverified（外推待证）/ overdue_omission（超期遗漏）——
-    五分组保留为细粒度入口（gate1/anchor 原因码），三子类为分流层（路由与统计）；
+    六分组保留为细粒度入口（gate1/anchor 原因码），三子类为分流层（路由与统计）；
   - **urgency 公式**（webnovel-writer status_reporter.py:507-546 转译）：
     urgency=(已过章节/目标回收章节)×层级权重——核心 3.0（必须回收否则剧情崩塌）/
     支线 2.0（否则显得作者健忘）/装饰 1.0（可回收可不回收仅增加真实感）；
@@ -25,19 +25,22 @@ import sys
 from datetime import date as _date
 from pathlib import Path
 
+# 2026-10-03 审计口径收敛：隔离分组对齐 cbb2 的六组（补 out_of_scope——范围外候选
+# 也须显式隔离不静默丢；同 items.jsonl 双向互操作的前提是分组字面量集合一致）。
 GROUPS = ("unresolved_time", "missing_anchor", "ambiguous_reference",
-          "entity_unalignable", "low_confidence")
+          "entity_unalignable", "low_confidence", "out_of_scope")
 SUBCLASSES = ("contradiction_pending", "extrapolation_unverified", "overdue_omission")
 SUBCLASS_CN = {"contradiction_pending": "矛盾待裁决",
                "extrapolation_unverified": "外推待证",
                "overdue_omission": "超期遗漏"}
-# 五分组 → 三子类默认分流（gate1 已带子类时以其为准）
+# 六分组 → 三子类默认分流（gate1 已带子类时以其为准）
 GROUP_TO_SUBCLASS = {
     "unresolved_time": "extrapolation_unverified",
     "missing_anchor": "extrapolation_unverified",
     "ambiguous_reference": "extrapolation_unverified",
     "entity_unalignable": "contradiction_pending",  # 实体不可归一=潜在同名冲突，须裁决
     "low_confidence": "extrapolation_unverified",
+    "out_of_scope": "extrapolation_unverified",     # 范围外=语料内不可证（cbb2 同款缺省）
 }
 DECISIONS = ("confirmed", "rejected")  # Part V：quarantine ──人工裁决──→ confirmed|rejected（终态）
 
@@ -50,6 +53,19 @@ TOP_URGENT_N = 3             # 写前注入只取前 3 条（urgent_loops 同思
 def _today() -> str:
     """今日日期（审计日期位用；与故事伪锚点禁墙钟无关——那是故事时间，这是记账时间）。"""
     return _date.today().isoformat()
+
+
+def _check_iso_date(value: str | None, where: str) -> str | None:
+    """日期位格式校验（YYYY-MM-DD）（2026-10-03 审计修正）：脏日期在入口拦下并以明话
+    报错——旧实现不校验，脏日期入库后 status_report 的 fromisoformat 对账必崩
+    （ValueError 裸栈，既看不出是哪条脏数据也看不出该找谁修）。"""
+    if value is None:
+        return None
+    try:
+        _date.fromisoformat(value)
+    except (ValueError, TypeError) as e:
+        raise ValueError(f"{where} 日期位格式非法（须 YYYY-MM-DD，实为 {value!r}）") from e
+    return value
 
 
 def _item_id(group: str, record_id: str, detail: str) -> str:
@@ -147,6 +163,7 @@ class QuarantineZone:
             raise ValueError(f"非法子类 {sub!r}，合法={SUBCLASSES}")
         if tier is not None:  # 期限项自动归超期遗漏子类（除非显式指定）
             sub = subclass or "overdue_omission"
+        at = _check_iso_date(at, "register(at=)")
         item_id = _item_id(group, record_id or "", detail)
         if any(it["item_id"] == item_id for it in self._load(self.items_path)):
             return item_id, False
@@ -175,6 +192,7 @@ class QuarantineZone:
         缺省=今日；历史补录只许填实际日期，不得编造。"""
         if decision not in DECISIONS:
             raise ValueError(f"非法裁决 {decision!r}，合法={DECISIONS}")
+        at = _check_iso_date(at, "adjudicate(at=)")
         items = self._load(self.items_path)
         if not any(it["item_id"] == item_id for it in items):
             raise KeyError(f"隔离条目不存在: {item_id}")
@@ -204,7 +222,9 @@ class QuarantineZone:
         滞后口径（T-5：标签与量对账）＝今日 − 最早未裁条目的登记日（仅计带 at 位的条目）；
         历史件无 at 位不计入，并在口径中如实披露计入比例。"""
         from datetime import date as _date
-        t = today or _today().isoformat()
+        # 修4①（2026-10-03 审计）：_today() 返回的已是 str，旧实现再调 .isoformat()
+        # 使无参调用必崩 AttributeError；today 入参一并过格式校验（修4②）。
+        t = _check_iso_date(today, "status_report(today=)") or _today()
         pend, adj = self.pending(), self.adjudicated()
         dated = [it["at"] for it in pend if it.get("at")]
         if dated:

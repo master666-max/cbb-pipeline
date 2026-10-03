@@ -11,6 +11,8 @@ import re
 import unicodedata
 from pathlib import Path
 
+from . import jsonl_io  # P-028：共享 JSONL 读面（撕裂安全+坏行披露）
+
 BRACKET_RE = re.compile(r"[（(].*?[)）]")
 ZERO_RE = re.compile(r"[\u200b\u200c\u200d\ufeff]")
 
@@ -45,12 +47,15 @@ class MergeLog:
 
     def __init__(self, store_root: Path):
         self.path = Path(store_root) / "合并日志.jsonl"
+        self.skipped: list[dict] = []  # 坏行披露（iter_skipped 式，P-028：不静默丢弃）
 
     def _rows(self) -> list[dict]:
         if not self.path.exists():
             return []
-        return [json.loads(x) for x in self.path.read_text(encoding="utf-8").splitlines()
-                if x.strip()]
+        rows, skipped = jsonl_io.parse_jsonl(self.path.read_text(encoding="utf-8"),
+                                             source="合并日志.jsonl")
+        self.skipped.extend(skipped)
+        return rows
 
     def merge(self, canonical: str, variant: str, *, rule: str, confidence: float, at: str) -> dict:
         row = {"op": "merge", "canonical": canonical, "variant": variant,

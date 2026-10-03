@@ -57,7 +57,12 @@ class LedgerChain:
 
     def _append_row(self, op: str, target: str, key: str,
                     sha_before: str, sha_after: str) -> dict:
-        prev = self._rows()[-1] if self._rows() else None
+        rows = self._rows()
+        prev = rows[-1] if rows else None
+        if prev is not None and ("seq" not in prev or "hash" not in prev):
+            # P-1：尾行损坏（corrupt 占位/残缺行）→ 重锚恢复，不再 prev["seq"] KeyError 裸崩
+            # （曾使所有侧车写入永久崩溃）。重锚行本身入账留痕，verify() 识别接链。
+            prev = self._reanchor("尾行损坏，重锚接链")
         payload = {"seq": (prev["seq"] + 1) if prev else 1, "op": op, "target": target,
                    "idempotency_key": key, "sha_before": sha_before, "sha_after": sha_after,
                    "prev_hash": prev["hash"] if prev else EMPTY_SHA}
@@ -67,6 +72,21 @@ class LedgerChain:
         if self._cache is not None:
             self._cache.append(payload)
         return payload
+
+    def _reanchor(self, reason: str) -> dict:
+        """P-1 恢复路径：尾行损坏时重锚接链（追加 reanchor 行留痕，不静默）。
+        prev_hash 回锚 EMPTY_SHA；verify() 识别 reanchor 允许在损坏断点后重新接链——
+        此后记账/侧车写入照常，损坏历史仍由 verify 显式披露。"""
+        rows = self._rows()
+        anchor = {"seq": len(rows) + 1, "op": "reanchor", "target": "",
+                  "idempotency_key": "reanchor", "sha_before": EMPTY_SHA,
+                  "sha_after": EMPTY_SHA, "prev_hash": EMPTY_SHA, "note": reason[:80]}
+        anchor["hash"] = line_hash(anchor)
+        with self.path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(anchor, ensure_ascii=False, sort_keys=True) + "\n")
+        if self._cache is not None:
+            self._cache.append(anchor)
+        return anchor
 
     def record_append(self, target: str, key: str, sha_before: str, sha_after: str):
         return self._append_row("append", target, key, sha_before, sha_after)
@@ -79,6 +99,8 @@ class LedgerChain:
                 errors.append(f"line{i+1}: 行损坏无法解析（{r['corrupt']!r}…）")
                 prev_hash = None  # 后续行 prev_hash 必不一致——让断链误差显式暴露
                 continue
+            if r.get("op") == "reanchor" and prev_hash is None:
+                prev_hash = EMPTY_SHA  # P-1：重锚行在损坏断点后从 EMPTY_SHA 重新接链（恢复留痕）
             if r.get("prev_hash") != prev_hash:
                 errors.append(f"seq{r.get('seq')}: prev_hash 断链")
             if r.get("hash") != line_hash(r):

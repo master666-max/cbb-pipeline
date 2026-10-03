@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_neo4j_export.py — Neo4j 导出工具单测（零网络：伪 commit 收集器 + 临时 fixture 库）。
 py -X utf8 cbb/tools/test_neo4j_export.py
 """
@@ -23,8 +22,9 @@ def tearDownModule():
 sys.path.insert(0, str(HERE.parent / "cbb-store"))
 sys.path.insert(0, str(HERE.parent / "contracts"))
 sys.path.insert(0, str(HERE))
-import cbb_store  # noqa: E402
-import neo4j_export as m  # noqa: E402
+import cbb_store
+
+import neo4j_export as m
 
 
 def mk_entity(name, etype="人物", lib="character", rid=None):

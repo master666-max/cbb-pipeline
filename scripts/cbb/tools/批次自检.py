@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """批次自检.py — 批次机械自检器（终审方法论 §11.2 · 十项失效模式逐项断言 · 2026-09-24）
 
 十查的机器替身：检查面与十查相同（失效模式穷举），执行载体＝机器。
@@ -25,6 +24,9 @@ META_PAT = re.compile(r"月票|求收藏|求订阅|翻译组|作者的话|请假
 AUDIT_KEYS = {"verified_at", "at", "created_tick", "verified_against",
               "r6_verbatim", "revision"}  # 审计位合法带真日期/规则原文（真库干跑发现的豁免缺项）
 
+# 修3 坏件披露：loader 拒收的坏件不许静默出局——计数在此，run() 并入「未达项」清单披露
+BAD_LOADS: list[str] = []
+
 
 def _jsonl(p: Path) -> list[dict]:
     if not p.exists():
@@ -38,8 +40,9 @@ def _records(store: Path):
         try:
             rec = json.loads(f.read_text(encoding="utf-8"))
             out.append(rec)
-        except Exception:
-            continue  # 超长路径等由读取方各自兜底；此处计数在 C7
+        except (OSError, json.JSONDecodeError) as e:
+            BAD_LOADS.append(f"库记录坏件 {f.relative_to(store)}"
+                             f"（{type(e).__name__}）——已排除在判定面外")
     return out
 
 
@@ -52,8 +55,8 @@ def _candidates(ws: Path) -> list[dict]:
         try:
             out.append({"file": f.name, "chapter": int(re.search(r"ch(\d+)", f.name).group(1)),
                         "data": json.loads(f.read_text(encoding="utf-8"))})
-        except Exception:
-            continue
+        except (OSError, json.JSONDecodeError, AttributeError) as e:
+            BAD_LOADS.append(f"候选坏件 {f.name}（{type(e).__name__}）——已排除在判定面外")
     return out
 
 
@@ -67,8 +70,8 @@ def _slices(ws: Path) -> dict[int, str]:
         if mnum:
             try:
                 out[int(mnum.group(1))] = f.read_text(encoding="utf-8", errors="replace")
-            except Exception:
-                pass
+            except (OSError, json.JSONDecodeError) as e:
+                BAD_LOADS.append(f"切片坏件 {f.name}（{type(e).__name__}）——已排除在判定面外")
     return out
 
 
@@ -131,9 +134,9 @@ def _git_state(store: Path) -> tuple[bool | None, str]:
     def _run(args):
         try:
             p = subprocess.run(["git", *args], capture_output=True, text=True,
-                               timeout=30, cwd=str(store.parent))
+                               timeout=30, cwd=str(store.parent), check=False)
             return p, ""
-        except Exception as e:  # git 不在 PATH / 超时
+        except Exception as e:  # git 不在 PATH / 超时  # noqa: BLE001 — 宽捕获=显式报错/降级语义
             return None, f"git 调用异常 {type(e).__name__}"
     p, err = _run(["rev-parse", "--is-inside-work-tree"])
     if p is None:
@@ -318,9 +321,7 @@ def c9_verified_against(store: Path) -> dict:
     recs = list(_records(store))
     for rec in recs:
         va = rec.get("verified_against") or {}
-        if not va.get("path") or not va.get("sha") or not va.get("verified_at"):
-            bad.append(rec.get("record_id"))
-        elif set(va.get("sha", "")) == {"0"}:
+        if not va.get("path") or not va.get("sha") or not va.get("verified_at") or set(va.get("sha", "")) == {"0"}:
             bad.append(rec.get("record_id"))
     if not recs:
         return {"no": 9, "name": "verified_against 真实三件套", "status": "SKIP",
@@ -335,10 +336,15 @@ def c10_commit_and_export(ws: Path, store: Path) -> dict:
     exports = list((ws / "logs").glob("neo4j-export-*.json")) if (ws / "logs").exists() else []
     try:
         r = subprocess.run(["git", "log", "--oneline", "-1", "--", str(store)],
-                           capture_output=True, text=True, timeout=30, cwd=str(store.parent))
+                           capture_output=True, text=True, timeout=30, cwd=str(store.parent), check=False)
         head = r.stdout.strip().splitlines()[0] if r.stdout.strip() else "（无）"
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         head = "（git 不可用）"
+    if not exports:
+        # 修4 回归点：导出 0 件不许读成 PASS（旧实现恒 PASS=假绿）——缺席=无面可判，记 SKIP
+        return {"no": 10, "name": "断点与导出存在性", "status": "SKIP",
+                "detail": f"库目录最近 commit={head[:50]}；图导出产物 0 件——无面可判（不是通过）",
+                "口径": "导出债务口径：零产物记 SKIP 入未达项，有产物才可 PASS"}
     return {"no": 10, "name": "断点与导出存在性", "status": "PASS",
             "detail": f"库目录最近 commit={head[:50]}；图导出产物 {len(exports)} 件（导出债务口径：缺席记债务）"}
 
@@ -350,6 +356,7 @@ ALL_CHECKS = [c1_three_way, c2_chapter_boundary, c3_metatext, c4_wallclock, c5_e
 def run(store_root: Path, ws: Path, corpus: Path | None = None,
         state: str | Path | None = None) -> dict:
     store, ws = Path(store_root), Path(ws)
+    BAD_LOADS.clear()  # 修3：坏件披露按本次运行重算
     corpus_ch = _corpus_chapters(Path(corpus)) if corpus else None
     jobs = [
         (c1_three_way, (store, ws, state)),
@@ -367,18 +374,22 @@ def run(store_root: Path, ws: Path, corpus: Path | None = None,
     for i, (fn, args) in enumerate(jobs, 1):
         try:
             r = fn(*args)
-        except Exception as e:  # 检查器自身崩溃=SKIP 并留痕（T-6：判据侧的错也要现形）
+        except Exception as e:  # 检查器自身崩溃=SKIP 并留痕（T-6：判据侧的错也要现形）  # noqa: BLE001 — 宽捕获=显式报错/降级语义
             r = {"no": i, "name": fn.__name__, "status": "SKIP", "detail": f"检查器异常：{str(e)[:80]}"}
         r["no"] = i
         results.append(r)
     fails = [r for r in results if r["status"] == "FAIL"]
     warns = [r for r in results if r["status"] == "WARN"]
     skips = [r for r in results if r["status"] == "SKIP"]
+    bad = list(BAD_LOADS)  # 修3：坏行/坏件计入披露面（与「未达项」清单同款，不静默出局）
     return {"checks": results, "fail": len(fails), "warn": len(warns), "skip": len(skips),
+            "bad_loads": len(bad),
             "exit_hint": 1 if fails else 0,
-            "未达项": [f"#{r['no']} {r['name']}：{r['detail'][:70]}" for r in skips + warns],
+            "未达项": [f"#{r['no']} {r['name']}：{r['detail'][:70]}" for r in skips + warns]
+                     + [f"坏件披露：{b}" for b in bad],
             "口径": "留痕=本输出；合法例外须有登记依据；SKIP＝检查器异常或无面可判（T-6 现形），"
-                    "SKIP 不算过——收口报告必须把「未达项」逐条抄进去"}
+                    "SKIP 不算过——收口报告必须把「未达项」逐条抄进去；"
+                    "loader 坏件不静默出局（计入 bad_loads 并入未达项披露）"}
 
 
 def main(argv=None) -> int:
@@ -397,6 +408,8 @@ def main(argv=None) -> int:
         print(f"  [{r['status']:4s}] #{r['no']:>2} {r['name']}｜{r['detail'][:80]}")
     if rep.get("skip"):
         print(f"  未达项 {rep['skip']} 条 SKIP（不算过，须逐条抄进收口报告）")
+    if rep.get("bad_loads"):
+        print(f"  坏件披露 {rep['bad_loads']} 件（已排除在判定面外，逐条见 JSON「未达项」）")
     return rep["exit_hint"]
 
 

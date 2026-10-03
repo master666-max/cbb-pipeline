@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 """连续性巡检.py — 门1 连续性域的**双载体**实现（U-F02；2026-09-23）
 
 设计（对应工单判据：①双载体一致 ②图缺席自动兜底且同形 ③规则只存一处）：
     · **一套规则、两个装载器、一个求值器**：
-        file_loader(store)  → 视图
+        filx_loader(store)  → 视图
         graph_loader(neo4j) → 视图
         evaluate(视图)      → findings          ← 规则只在这一处实现
     · 逆类型/对称表**从 cbb-gate1 导入**（禁止抄第二份）：
@@ -34,7 +33,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "cbb-gate1"))
 try:  # 规则单一来源：门1 的表（缺失时明确报错，不静默降级成"没有规则"）
     from cbb_gate1 import RELATIONSHIP_INVERSES, SYMMETRIC_RELATIONSHIPS  # type: ignore
-except Exception as e:  # pragma: no cover
+except Exception as e:  # noqa: BLE001 — 导入失败即 SystemExit 显式报错（fail-fast 语义）
     raise SystemExit(f"无法从 cbb-gate1 导入逆类型/对称表（规则单一来源）：{e}")
 
 LIBS = ("character", "relation", "setting", "event", "foreshadow", "timeline")
@@ -49,7 +48,7 @@ def _records(store: Path, lib: str):
         for f in sorted((d / status).glob("*.json")):
             try:
                 yield json.loads(f.read_text(encoding="utf-8"))
-            except Exception:
+            except (OSError, json.JSONDecodeError):
                 continue
 
 
@@ -129,21 +128,32 @@ def graph_loader(base: str | None = None, database: str = "neo4j",
     password = password or os.environ.get("NEO4J_PASSWORD")
     if not password:
         raise RuntimeError("缺 NEO4J_PASSWORD（D-004：凭证只走环境变量）")
-    # 读侧必须带命名空间过滤：不带就是"一条查询扫到别人项目的实体"，产出零孤悬零矛盾的假干净
+    # 读侧必须带命名空间过滤：不带就是"一条查询扫到别人项目的实体"，产出零孤悬零矛盾的假干净。
+    # 修5 归属键双键兼容：写侧有两代——v1 导出器写 e.ns（neo4j_export MERGE {ns,name}），
+    # cbb2/Graphiti 写 group_id（graphiti_ingest）——只读 e.ns 会让 cbb2 图永远查空=假绿。
     ns = (ns or os.environ.get("CBB_NAMESPACE") or "").strip()
     if not ns:
         raise RuntimeError("缺命名空间：graph 载体需 --namespace/env CBB_NAMESPACE；"
                            "无过滤的全库读不许当巡检依据（改用 --backend file）")
     ents = [r["row"][0] for r in _cypher(base, database,
-                                         "MATCH (e:Entity) WHERE e.ns=$ns RETURN e.name",
+                                         "MATCH (e:Entity) WHERE e.ns=$ns OR e.group_id=$ns "
+                                         "RETURN e.name",
                                          user, password, {"ns": ns})]
     rels = [{"subject": r["row"][0], "object": r["row"][1], "rel_type": r["row"][2], "record_id": None}
             for r in _cypher(base, database,
                              "MATCH (s:Entity)-[r:REL]->(o:Entity) "
-                             "WHERE s.ns=$ns AND o.ns=$ns RETURN s.name, o.name, r.rel_type",
+                             "WHERE (s.ns=$ns OR s.group_id=$ns) AND (o.ns=$ns OR o.group_id=$ns) "
+                             "RETURN s.name, o.name, r.rel_type",
                              user, password, {"ns": ns})]
+    # 修5 未归属披露：ns/group_id 两键皆无的 Entity 不落任何命名空间过滤——
+    # 巡检覆盖面对它们有洞，必须现形而不是静默当"没有"。
+    unattr_rows = _cypher(base, database,
+                          "MATCH (e:Entity) WHERE e.ns IS NULL AND e.group_id IS NULL "
+                          "RETURN count(e)",
+                          user, password, {"ns": ns})
+    unattributed = unattr_rows[0]["row"][0] if unattr_rows else 0
     return {"entities": set(ents), "aliases": {}, "relations": rels,
-            "appearances": None, "deaths": {},
+            "appearances": None, "deaths": {}, "unattributed_nodes": unattributed,
             "capabilities": {"entities": True, "aliases": False, "relations": True,
                              "appearances": False, "deaths": False,
                              # 结构性失明：导出器 MERGE 端点时自动创建 :Entity 节点 →
@@ -157,7 +167,7 @@ def probe_graph(base: str | None = None, timeout: float = 4.0) -> bool:
     try:
         with urllib.request.urlopen(base.rstrip("/") + "/", timeout=timeout) as r:
             return r.status == 200
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程异常族宽捕获=降级语义
         return False
 
 
@@ -169,7 +179,7 @@ def evaluate(view: dict) -> list[dict]:
     ents = view["entities"]
     alias_names = set(view["aliases"].keys())
 
-    names_ok = lambda n: (n in ents) or (n in alias_names)  # noqa: E731
+    names_ok = lambda n: (n in ents) or (n in alias_names)
 
     if view["capabilities"].get("orphan_detectable", True):
         for rel in view["relations"]:
@@ -217,6 +227,11 @@ def evaluate(view: dict) -> list[dict]:
     else:
         f.append({"rule": "alias_conflict", "backend": bk, "record_id": None,
                   "detail": "不可用：本载体无别名数据（口径注明，未判）"})
+    unattr = view.get("unattributed_nodes") or 0
+    if unattr:  # 修5 未归属披露：两键皆无的节点不在任何归属过滤结果里——覆盖面有洞必须现形
+        f.append({"rule": "unattributed_nodes", "backend": bk, "record_id": None,
+                  "detail": f"未归属披露：{unattr} 个 Entity 节点 ns/group_id 双缺，"
+                            "不在本次归属过滤判定面内——须人工归属后复检"})
     return f
 
 

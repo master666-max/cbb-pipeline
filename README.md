@@ -66,7 +66,7 @@
 | 属性 | 表现 |
 |---|---|
 | **成本（token）** | 每章约 3 万–4.5 万 token；500 万字、517 章 ≈ **1600 万–2400 万 token**（实测外推） |
-| **换书零改造** | 只换三样配置：单元切分规则、类型体系（须彩排标定）、可选词表 |
+| **换书零改造** | 只换三样配置：单元切分规则、类型体系（须彩排标定）、可选词表；另有一处按项目改写——抽取提示词的领域规则段（R6，见 [references/抽取规范.md](references/抽取规范.md) §2，实例段是小说 profile 逐字样例） |
 | **双向可验证** | 每条结论翻回原文自证；还能与经人工复核的既有库自动交叉对账 |
 
 > **为什么知识图谱不当仓库？** 库本体永远是纯文本文件（可逐字核对、可 diff、可断点续跑）；图是照着文件另画的参考层，干跨章关系巡检与抽取前"人物小抄"。两头规矩：**入库不依赖它**（它坏了先记账照常干活），**终审必须依赖它**（导出债务清零才许做终审）。Neo4j 只在这一处可选需要，不装不影响主链与交付。
@@ -114,7 +114,7 @@ flowchart TB
 给想看机制的人，每条在仓内都有对应实现与测试：
 
 1. **append-only 账本 + 哈希链**（`cbb2/ledger.py`）——每行带前行哈希，快照锚定链头，任何删改可验。genesis 单源（`EMPTY_SHA`）；"双 genesis"是真实踩过并修掉的坑。
-2. **证据四元组与五层证据门**（`cbb/cbb-gate1/`）——格式→逐字回落→时间线→跨章一致性→样本回核，层层有正负对照测试。
+2. **证据四元组与 gate1 证据门**（`cbb/cbb-gate1/`）——三域九码确定性校验（validate 结构与证据回落 / links 引用回链 / continuity 连续性），每域配正负对照测试；**G1~G5 五层证据门是终审概念**（见 [references/审查与收口.md](references/审查与收口.md)），与 gate1 不是一回事。
 3. **判卷编制与植株门**（`cbb2/judging.py` + `pipeline/judge_exam.py`）——编制=配置（`judging.config.json`），考官 key 走 env→registry 顺序读回、零硬编码；植株构造支持三种记录形态；特权字段（expected/is_plant）物理分离，防"考官看见答案"。
 4. **契约刻度校准法 PT-026**（`contracts/`）——契约是行为仪器：措辞变动必须同批 A/B + 植物考试 + 50 件验证轮三步定档，禁止直接全量换约。
 5. **物料化三重门**（`cbb2/materialize.py`）——轮次门（植株捕获 PASS）∧ 暂定态 ∧ gate1 零违规；引擎内部复验选票，不信任调用方过滤。
@@ -134,8 +134,9 @@ py -X utf8 scripts/cbb/tools/环境自检.py --project-token <本书命名空间
 # 1. 安装为技能（或就在本目录用；Qoder 侧按插件位装）
 cp -r . ~/.zcode/skills/cbb-pipeline
 
-# 2. 开新书：一条命令出脚手架
-py -X utf8 scripts/init_project.py --book 书名 --into D:/书库目录
+# 2. 开新书：复制模板为 project.yaml，填好 project.name 与 project.source_path，再出脚手架
+cp assets/project.template.yaml project.yaml
+py -X utf8 scripts/init_project.py project.yaml
 
 # 3. 抽取期：按 SKILL.md ⓪-⑦ 推进（切章 → 彩排标定 → 主队列 → 收口自检）
 
@@ -150,11 +151,11 @@ py -X utf8 scripts/pipeline/batch6_export.py                                   #
 py -X utf8 scripts/pipeline/kg_export.py                                       # LightRAG/GraphML/三元组
 py -X utf8 scripts/pipeline/canon_server.py --store 本体库 --port 8420         # 活体控制台
 
-# 全套测试（纯标准库，无需装任何东西）
-py -X utf8 -m pytest scripts/cbb scripts/cbb2-tests -q     # 486 passed, 5 skipped
+# 全套测试（v1 侧测试纯标准库可直跑；cbb2 侧需 pytest/hypothesis）
+py -X utf8 -m pytest scripts/cbb scripts/cbb2-tests -q     # 486 passed, 5 skipped（需先 pip install pytest hypothesis）
 ```
 
-**环境要求**：Python 3.10+（主链与测试纯标准库）。抽取期要接一个 LLM（换书只换三样配置）；判卷考官要两个外部对话端点（key 走环境变量/注册表读回，**不写入任何文件**）；Neo4j 仅图派生层增值件需要。
+**环境要求**：Python 3.10+（主链纯标准库；cbb2 侧测试需 pytest/hypothesis）。抽取期要接一个 LLM（换书只换三样配置，另需按项目改写抽取提示词的领域规则段 R6）；判卷考官要两个外部对话端点（key 走环境变量/注册表读回，**不写入任何文件**）；Neo4j 仅图派生层增值件需要。
 
 ## 凭什么信它
 
@@ -180,7 +181,7 @@ py -X utf8 -m pytest scripts/cbb scripts/cbb2-tests -q     # 486 passed, 5 skipp
 
 **抽取和判卷为什么必须分开？** 抽取者判自己的卷子=考生改卷。独立考官编制 + 植株掺卷让"判卷质量"本身可测量：捕获率不过门，整卷结果自动降级，污染进不了正式库。
 
-**换一本书要改什么？** 三样：单元切分规则、本体类型体系（必须经三章彩排重新标定，禁止盲抄他书——R-030）、可选词表。正文流程、契约、门、账本全部不变；`init_project.py` 生成的模板里写死了这条纪律。
+**换一本书要改什么？** 三样：单元切分规则、本体类型体系（必须经三章彩排重新标定，禁止盲抄他书——R-030）、可选词表；另有一处按项目改写：抽取提示词的领域规则段（R6，见 [references/抽取规范.md](references/抽取规范.md) §2——实例段是小说 profile 的逐字样例，须替换为自有领域规则）。正文流程、契约、门、账本全部不变；`init_project.py` 生成的模板里写死了这条纪律。
 
 **必须联网吗？** 抽取要接 LLM、判卷要接两个外部考官端点；测试、快照导出、图谱导出、静态站、动态控制台全部离线可跑。
 
@@ -223,7 +224,7 @@ py -X utf8 -m pytest scripts/cbb scripts/cbb2-tests -q     # 486 passed, 5 skipp
 
 ## 路线图
 
-- [x] 抽取期六模块 + 五层证据门 + 三态写入（517 章实例验证）
+- [x] 抽取期六模块（含 gate1 三域九码证据门；G1~G5 五层=终审概念）+ 三态写入（517 章实例验证）
 - [x] v3 包化重建：ledger / notary / store / promote / NLI / 治理（数据布局与 v1 逐字节兼容）
 - [x] 收束期产品化批次 1-7：判卷配置层 / 增量摄入 / 快照交付 / 物料化 / 聚合+CUSUM 巡检 / 世界书+RAG 导出 / 动态控制台
 - [x] 契约刻度校准法落地（PT-026）：v1→v2.2 同批 A/B 定位 + 50 件验证轮 + 契约文本进版本管理

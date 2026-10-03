@@ -22,6 +22,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import os
 import sys
@@ -35,22 +36,24 @@ from cbb_quarantine import QuarantineZone  # noqa: E402
 
 # Part XI 名义阈值（P2 由置信度校准器标定取代）
 # —— v1.4 漂移修正 W4（2026-09-17，U-C03.5）：三档显式化 + B3 再校准挂钩 ——
+# —— 2026-10-03 审计修正：量纲统一 0-100。extractor_confidence/CORROBORATION_BUMP
+#    本就是百分制（bump 2.0、封顶 100），旧 0-1 小数阈与之混用，校准报告分带全错 ——
 # 语义（三档两边界，宁滥勿漏）：
-#   τ_confirmed  = 0.97：confirmed 参考带顶（B1：confirmed 永不因置信度单独达成，
+#   τ_confirmed  = 97：confirmed 参考带顶（B1：confirmed 永不因置信度单独达成，
 #                  须门2b/人工通道；此常量只作校准报告的带顶基准，不驱动路由晋级）；
-#   τ_provisional= 0.85：provisional 带地板（≥ 于此值入库 provisional）；
-#   τ_quarantine = 0.85：quarantine 边界（< 于此值路由隔离区 low_confidence）。
+#   τ_provisional= 85：provisional 带地板（≥ 于此值入库 provisional）；
+#   τ_quarantine = 85：quarantine 边界（< 于此值路由隔离区 low_confidence）。
 #   τ_quarantine 与 τ_provisional 同值=设计决定（B1 保守：两带之间无灰区；
 #   调整属审核线裁决，B3 校准报告只呈建议，不自动改）。
-TAU_CONFIRMED = 0.97
-TAU_PROVISIONAL = 0.85
-TAU_QUARANTINE = 0.85
+TAU_CONFIRMED = 97.0
+TAU_PROVISIONAL = 85.0
+TAU_QUARANTINE = 85.0
 THRESHOLDS = {
     "tau_confirmed": TAU_CONFIRMED,
     "tau_provisional": TAU_PROVISIONAL,
     "tau_quarantine": TAU_QUARANTINE,
     "corroboration_bump": 2.0,
-    "note": "confirmed 永不因置信度单独达成（B1）；调整=审核线建议制（W4/B3）",
+    "note": "confirmed 永不因置信度单独达成（B1）；量纲 0-100；调整=审核线建议制（W4/B3）",
 }
 CORROBORATION_BUMP = 2.0  # 一致重复每见一次独立佐证的置信度上调步长（CBB 定约，封顶 100）
 
@@ -63,18 +66,6 @@ UNIQUE_CONSTRAINTS = (
     "relations_unique(subject,rel_type,object)",     # 关系三元组唯一
     "appearances_unique(entity,chapter)",            # 出场唯一
 )
-
-
-def route_by_confidence(confidence: float) -> str:
-    """三档显式路由（W4）：≥τ_provisional → provisional；<τ_quarantine → quarantine。
-    confirmed 永不因置信度单独达成（门2b/人工通道缺席时的 B1 保守纪律）。
-    τ_quarantine..τ_provisional 之间当前不可达（两阈值同值=设计决定）；若审核线
-    日后拉开两阈值，该区间的保守路由=隔离（宁滥勿漏）。"""
-    if confidence >= TAU_PROVISIONAL:
-        return "provisional"
-    if confidence < TAU_QUARANTINE:
-        return "quarantine"
-    return "quarantine"  # 灰区保守：隔离（当前不可达分支，W4 留位）
 
 
 def identity_key(record: dict) -> tuple:
@@ -232,10 +223,16 @@ class ThreeStateStore:
 
     # ---- 三态入库（保留面） ----
     def admit(self, record: dict, decision: str, gate_trace_entry: dict | None = None,
-              quarantine_group: str | None = None, quarantine_detail: str = ""):
+              quarantine_group: str | None = None, quarantine_detail: str = "",
+              quarantine_subclass: str | None = None):
         """candidate → confirmed/provisional/quarantine。
         confirmed/provisional：严格契约校验（status 置为目标态）+ status_history 初始条目；
-        quarantine：不进 library，登记隔离区（B1：库中只有 confirmed/provisional）。"""
+        quarantine：不进 library，登记隔离区（B1：库中只有 confirmed/provisional）；
+        quarantine_subclass：转发 gate1 的三子类（contradiction_pending/
+        extrapolation_unverified/overdue_omission），缺省按五分组默认分流
+        （2026-10-03 审计修正：旧签名无法转发，gate1 判出的子类在入库时被丢）。
+        深拷贝 incoming：本方法对记录的改写（status/provenance）不得污染调用方对象
+        （2026-10-03 审计修正：旧浅拷贝使重复 admit 时输入记录被原地改写）。"""
         if decision not in ADMIT_DECISIONS:
             raise ValueError(f"非法入库决定 {decision!r}，合法={ADMIT_DECISIONS}")
         rid = record.get("record_id")
@@ -247,11 +244,11 @@ class ThreeStateStore:
                 group=quarantine_group or "low_confidence",
                 detail=quarantine_detail or "门1 拦截件",
                 record_id=rid, source="cbb-store",
-                blocks=[],
+                blocks=[], subclass=quarantine_subclass,
             )
             return iid, created
 
-        stored = dict(record)
+        stored = copy.deepcopy(record)
         stored["status"] = decision
         hist_entry = {"from": "candidate", "to": decision, "by": "promotion"}
         stored.setdefault("provenance", {})
@@ -323,6 +320,8 @@ class ThreeStateStore:
             merged.setdefault("provenance", {})["extractor_confidence"] = min(
                 100.0, max(old_conf, new_conf) + CORROBORATION_BUMP)
             seen_q, ev = set(), list(existing.get("evidence") or [])
+            for e in ev:  # 2026-10-01 审计修正：seen_q 用 existing 证据键播种——原实现只查 incoming，多轮佐证下证据按轮次复合膨胀（P-017 看不见）
+                seen_q.add((e.get("vol"), e.get("chapter"), e.get("line"), e.get("quote")))
             for e in incoming.get("evidence") or []:
                 k = (e.get("vol"), e.get("chapter"), e.get("line"), e.get("quote"))
                 if k not in seen_q:
@@ -357,11 +356,15 @@ class ThreeStateStore:
 
     # ---- verified_against 漂移钩子（story-systems） ----
     def drift_check(self, record: dict, current_sha: str) -> dict:
-        """源 SHA 与记录验证时 SHA 不一致 → stale（须重验：重读场景→更新声明→bump 版本）。"""
+        """源 SHA 与记录验证时 SHA 不一致 → stale（须重验：重读场景→更新声明→bump 版本）。
+        任一侧无 SHA（记录未带验证 SHA / 对账表未提供该源当前 SHA）→ 视为新鲜：
+        缺一份即不可判漂移，宁可放过不可误报（2026-10-03 审计修正：旧实现对账表缺
+        该源时以空串充当 current_sha，把未提供 SHA 的源误判 stale）。"""
         va = record.get("verified_against") or {}
         return {"record_id": record.get("record_id"), "path": va.get("path"),
                 "verified_sha": va.get("sha"), "current_sha": current_sha,
-                "stale": bool(va.get("sha")) and va.get("sha") != current_sha}
+                "stale": bool(va.get("sha")) and bool(current_sha)
+                and va.get("sha") != current_sha}
 
     def stale_records(self, current_shas: dict[str, str]) -> list[dict]:
         """全库漂移扫描：{path: 当前 SHA} → stale 记录清单（重验门输入）。"""
@@ -429,7 +432,7 @@ class ThreeStateStore:
             raise KeyError(f"被取代记录不在库: {old_id}")
         if new_record.get("record_id") == old_id:
             raise ValueError("新版本必须换 record_id（旧件不可覆盖）")
-        new = dict(new_record)
+        new = copy.deepcopy(new_record)  # 深拷贝：版本化改写不得污染调用方传入的记录对象
         if new.get("status") not in ("confirmed", "provisional"):
             new["status"] = "provisional"  # 修订版默认 provisional 待重过门（B1 保守）
         new["version"] = old["version"] + 1

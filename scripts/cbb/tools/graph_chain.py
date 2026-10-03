@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """graph_chain.py — 图检索链构造器（深度参数化；读 Neo4j 真源，零 LLM）。
 
 设计：
@@ -17,6 +16,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 import os
+
 BASE = os.environ.get("NEO4J_HTTP", "http://localhost:7474")  # 7474=Neo4j 出厂默认，非某项目的映射端口  # 跨机：env 覆盖
 _PW = None
 
@@ -46,14 +46,25 @@ def _cypher(statement: str, params: dict) -> list[dict]:
     return out["results"][0]["data"]
 
 
+def _ns() -> str:
+    # 2026-10-01 审计修正：图链查询此前不带 ns 过滤——同机共用图库时会把别的项目的
+    # 同名实体关系算进本书推断链（"返回零矛盾的假干净"）。与 graph_audit 同口径。
+    ns = (os.environ.get("CBB_NAMESPACE") or "").strip()
+    if not ns:
+        raise RuntimeError("缺命名空间：设 env CBB_NAMESPACE。无命名空间不许读共享图库")
+    return ns
+
+
 def _hop(nodes: list[str], limit_per_node: int) -> dict[str, list[dict]]:
-    """一跳邻接：{起点名: [{to, rel, fact, edge_id, valid_at, invalid_at}]}（双向）。"""
+    """一跳邻接：{起点名: [{to, rel, fact, edge_id, valid_at, invalid_at}]}（双向，限本命名空间）。"""
+    ns = _ns()
     adj: dict[str, list[dict]] = {n: [] for n in nodes}
     for n in nodes:
         rows = _cypher("MATCH (a:Entity {name:$n})-[r:REL]-(b:Entity) "
-                       "WHERE b.name <> $n RETURN b.name AS to, r.rel_type AS rel, r.fact AS fact, "
+                       "WHERE a.ns=$ns AND b.ns=$ns AND r.ns=$ns AND b.name <> $n "
+                       "RETURN b.name AS to, r.rel_type AS rel, r.fact AS fact, "
                        "r.edge_id AS edge_id, r.valid_at AS valid_at, r.invalid_at AS invalid_at "
-                       "LIMIT $lim", {"n": n, "lim": limit_per_node})
+                       "LIMIT $lim", {"n": n, "ns": ns, "lim": limit_per_node})
         for d in rows:
             row = d["row"]
             adj[n].append({"to": row[0], "rel": row[1], "fact": row[2],

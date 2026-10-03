@@ -182,6 +182,22 @@ class TestAdjudicationChannel(unittest.TestCase):
         self.assertEqual([it["detail"] for it in zone2.pending()], ["a"])
         self.assertEqual(len(zone2.adjudicated()), 1)
 
+    def test_status_report_no_args_and_dirty_date_rejected(self):
+        """修4① 回归：status_report() 无参调用不得崩（旧实现对 _today() 的 str 返回值
+        再调 .isoformat() → AttributeError 必崩）；修4② 附带：脏日期在入口被明话拒收。"""
+        zone, td = make_zone()
+        self.addCleanup(td.cleanup)
+        zone.register("low_confidence", "无参对账回归")
+        rep = zone.status_report()                      # 旧实现崩在这
+        self.assertEqual(rep["pending_total"], 1)
+        self.assertEqual(rep["裁决滞后"]["days"], 0)     # 今日登记 → 滞后 0
+        self.assertIn("带日期位", rep["裁决滞后"]["口径"])
+        with self.assertRaises(ValueError) as ctx:      # 修4②：脏日期格式校验+明确报错
+            zone.register("low_confidence", "脏日期登记", at="2026/09/31")
+        self.assertIn("YYYY-MM-DD", str(ctx.exception))
+        with self.assertRaises(ValueError):
+            zone.adjudicate("q-xx", "confirmed", at="昨天")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -249,8 +249,10 @@ def test_entity_without_name_rejected():
             pass
 
 
-def test_relation_identity_includes_library():
-    """红队 P1-4 回归：relation 身份键含 library——跨库不串身份。"""
+def test_relation_identity_excludes_library():
+    """红队 P1-4 回归（2026-10-03 审计口径收敛改写）：relation 身份键=三元组不含 library，
+    对齐 v1 cbb_store.identity_key——库是归档柜不是身份，同三元组跨库归并（旧 cbb2
+    关系键含 library 是口径漂移：store.identity_key 与 v1 查询方对同一库件判不同身份）。"""
     with tempfile.TemporaryDirectory() as td:
         st = Store(Path(td))
         a = mk("rl-a", "relation", {"subject": "卢卡", "rel_type": "同盟", "object": "缇达", "claim": "甲"}, 3)
@@ -258,7 +260,7 @@ def test_relation_identity_includes_library():
         b = mk("rl-b", "relation", {"subject": "卢卡", "rel_type": "同盟", "object": "缇达", "claim": "甲"}, 4)
         b["library"] = "foreshadow"
         r = st.write_decision(b, at="ch0004")
-        assert r["track"] == "on-create"  # 不同库=不同身份
+        assert r["track"] == "consistent-duplicate"  # 跨库同三元组=同身份（一致性归并，不另立新件）
 
 
 def test_incoming_only_keys_preserved():

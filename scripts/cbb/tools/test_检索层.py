@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_检索层.py — U-F07：别名召回/RRF/关键词/降级/引文核验（零网络；LanceDB 用例条件跳过）"""
 import importlib
 import json
@@ -52,6 +51,37 @@ def test_keyword_recall_scores(tmp_path):
     store = mk_store(tmp_path)
     hits = 检索.keyword_recall("手环的少年", store)
     assert hits and hits[0]["name"] == "相川涡波"  # 观察文本含"手环""少年"
+
+
+def test_keyword_recall_covers_all_libraries(tmp_path):
+    """修1② 回归：keyword 降级扫全部库面——旧实现只扫 character，事件/关系/伏笔
+    全不可召回。event/relation 记录须能被各自文本（canonical/引文）命中。"""
+    store = mk_store(tmp_path)
+    ev = store / "libraries" / "event" / "provisional"
+    ev.mkdir(parents=True, exist_ok=True)
+    (ev / "evt-1.json").write_text(json.dumps(
+        {"record_id": "evt-1", "record_type": "event", "library": "event",
+         "canonical": {"name": "涡波邀请格连入队被拒", "kind": "邀请/拒绝"},
+         "evidence": [{"vol": 1, "chapter": 42, "line": 3, "quote": "格连摇头拒绝了"}]},
+        ensure_ascii=False), encoding="utf-8")
+    hits_ev = {h["name"] for h in 检索.keyword_recall("邀请格连", store)}
+    assert "涡波邀请格连入队被拒" in hits_ev, hits_ev          # 事件库可召回
+    hits_rel = {h["name"] for h in 检索.keyword_recall("情报传递", store)}
+    assert any("情报传递" in n for n in hits_rel), hits_rel    # 关系库可召回（三元组标签）
+
+
+def test_vector_path_absence_always_noted(tmp_path):
+    """修1① 回归：向量路缺席必落口径（T-5）——嵌入端点哑返空 / records 表缺席
+    两种旧实现静默跳过的情形，现在必须在口径里留痕，不与"命中 0 项"同形。"""
+    store = mk_store(tmp_path)
+    idx = tmp_path / "idx-empty-table"          # 索引目录在、records 表未建
+    idx.mkdir()
+    r = 检索.hybrid_search("涡波", store, index_dir=idx, top_k=3, rerank=False,
+                           embed_fn=lambda ts: [[0.5] * 8])
+    assert "records 表未建" in r["口径"], r["口径"]
+    r2 = 检索.hybrid_search("涡波", store, index_dir=idx, top_k=3, rerank=False,
+                            embed_fn=lambda ts: None)   # 嵌入端点哑返空
+    assert "嵌入端点未返回向量" in r2["口径"], r2["口径"]
 
 
 def test_hybrid_search_degrades_without_index(tmp_path):

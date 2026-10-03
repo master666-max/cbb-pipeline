@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_抽样排序.py — 岗位②测试（桩传输；正负对照成对）"""
 import importlib
 import json

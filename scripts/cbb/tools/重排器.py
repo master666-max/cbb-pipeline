@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """重排器.py — 本地重排模型统一客户端（U-F04~F06 共用；2026-09-23）
 
 职责（能力落地-工单 深融条款）：给四个岗位提供"分数/排序"能力，**只影响先看谁，不影响算不算对**。
@@ -43,7 +42,7 @@ def score(query: str, documents: list[str], endpoint: str | None = None,
         for r in results:
             out[int(r["index"])] = float(r.get("relevance_score") or 0.0)
         return out
-    except Exception:
+    except Exception:  # noqa: BLE001 — 网络/子进程/HTTP 异常族宽捕获=探活降级语义
         return None
 
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """诊断员.py — LLM 归因岗位（U-F08 · 黄区 · 量尺已裁 2026-09-23）
 
 裁定组合：A1 主代理 ＋ B2 样本≤30（含经人批准的升级权，每异常最多两批）＋ C2 一次初诊＋一次复诊 ＋ D2 单次≤8K token ＋ E 决策账＋周复盘。
@@ -28,7 +27,7 @@ ESCALATION_MAX = 1  # 每异常升级批次数上限（B2：初诊 1 批 + 升�
 
 
 def _today() -> str:
-    return _date.today().isoformat()
+    return _date.today().isoformat()  # noqa: DTZ011 — 显示用墙钟不入正典
 
 
 def prepare(anomaly: dict, samples: list[dict], escalation: bool = False,

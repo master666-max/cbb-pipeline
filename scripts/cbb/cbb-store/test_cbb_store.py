@@ -2,7 +2,7 @@
 """test_cbb_store.py — cbb_store v2 单测（py -X utf8 运行）
 
 判据锚：双轨分流（一致重复上调合并/矛盾隔离+Verdict 不静默合并）+约束防重+漂移钩子。
-保留面：三态写入/旁车迁移/幂等/supersede 版本化/置信度路由。
+保留面：三态写入/旁车迁移/幂等/supersede 版本化（置信度路由随零调用死代码退役，2026-10-03）。
 新增：UNIQUE 约束族/时序回放/写入安全围栏/multiversion 四动作合并。
 """
 import json
@@ -51,9 +51,13 @@ def relation_rec(subject, rel_type, obj, rid=None):
 class TestRouteAndAdmit(unittest.TestCase):
     """保留面：置信度路由+三态写入。"""
 
-    def test_route_by_confidence(self):
-        self.assertEqual(cs.route_by_confidence(0.99), "provisional")  # confirmed 永不因置信度单独达成
-        self.assertEqual(cs.route_by_confidence(0.10), "quarantine")
+    def test_route_by_confidence_retired(self):
+        """修2④ 回归：route_by_confidence 全仓零调用=死代码，已删除不得复活；
+        三阈值量纲统一 0-100（与 extractor_confidence/CORROBORATION_BUMP 同制）。"""
+        self.assertFalse(hasattr(cs, "route_by_confidence"),
+                         "route_by_confidence 已删（零调用死代码），不得复活")
+        self.assertEqual((cs.TAU_PROVISIONAL, cs.TAU_QUARANTINE, cs.TAU_CONFIRMED),
+                         (85.0, 85.0, 97.0))
 
     def test_admit_three_states(self):
         store, td = make_store()

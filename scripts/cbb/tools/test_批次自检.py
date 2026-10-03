@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """test_批次自检.py — 十项断言的正负对照（栽好的问题必须被抓，干净的必须全绿）"""
 import importlib
 import json
@@ -145,6 +144,56 @@ def test_c8_c9_空库不刷绿(tmp_path):
     assert rr[8][0] == "SKIP", rr[8]
     assert rr[9][0] == "SKIP", rr[9]
     assert rep["skip"] >= 2 and rep["exit_hint"] == 0
+
+
+def test_bad_loads_disclosed_not_silent(tmp_path):
+    """修3 回归：坏件不许被 except:continue 静默排除在判定面外——计数并入「未达项」披露。"""
+    ws, store = tmp_path / "ws", tmp_path / "store"
+    ws.mkdir(parents=True)
+    (ws / "candidates").mkdir()
+    (ws / "slice").mkdir()
+    (ws / "candidates" / "extraction-ch0001.json").write_text("{ 坏 json", encoding="utf-8")
+    (store / "libraries" / "character" / "provisional").mkdir(parents=True)
+    (store / "libraries" / "character" / "provisional" / "bad.json").write_text("not-json", encoding="utf-8")
+    (store / "ledger.jsonl").write_text('{"seq": 1}\n', encoding="utf-8")
+    (tmp_path / "BUILD-STATE.md").write_text("游标：1", encoding="utf-8")
+    rep = 自检.run(store, ws, None)
+    assert rep["bad_loads"] >= 2, rep
+    assert any(x.startswith("坏件披露：") for x in rep["未达项"]), rep["未达项"]
+    disclosed = "\n".join(rep["未达项"])
+    assert "extraction-ch0001.json" in disclosed and "bad.json" in disclosed, disclosed
+
+
+def test_c10_zero_export_is_skip_not_pass(tmp_path):
+    """修4 回归：导出 0 件 ⇒ SKIP（旧实现恒 PASS=假绿）。"""
+    ws, store = tmp_path / "ws", tmp_path / "store"
+    ws.mkdir(parents=True)
+    (ws / "candidates").mkdir()
+    (ws / "slice").mkdir()
+    store.mkdir(parents=True)
+    (store / "ledger.jsonl").write_text('{"seq": 1}\n', encoding="utf-8")
+    (tmp_path / "BUILD-STATE.md").write_text("游标：1", encoding="utf-8")
+    rep = 自检.run(store, ws, None)
+    st, detail = rules(rep)[10]
+    assert st == "SKIP", (st, detail)
+    assert "0 件" in detail, detail
+
+
+def test_c10_with_exports_pass(tmp_path):
+    """修4 正对照：有导出产物才可 PASS。"""
+    ws, store = tmp_path / "ws", tmp_path / "store"
+    ws.mkdir(parents=True)
+    (ws / "candidates").mkdir()
+    (ws / "slice").mkdir()
+    (ws / "logs").mkdir()
+    (ws / "logs" / "neo4j-export-0001.json").write_text("{}", encoding="utf-8")
+    store.mkdir(parents=True)
+    (store / "ledger.jsonl").write_text('{"seq": 1}\n', encoding="utf-8")
+    (tmp_path / "BUILD-STATE.md").write_text("游标：1", encoding="utf-8")
+    rep = 自检.run(store, ws, None)
+    st, detail = rules(rep)[10]
+    assert st == "PASS", (st, detail)
+    assert "1 件" in detail, detail
 
 
 if __name__ == "__main__":

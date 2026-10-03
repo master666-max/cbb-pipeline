@@ -4,6 +4,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from . import jsonl_io  # P-028：共享 JSONL 读面（撕裂安全+坏行披露）
+
 
 def alias_recall(query: str, store_root: Path) -> list[dict]:
     q = query
@@ -20,7 +22,8 @@ def alias_recall(query: str, store_root: Path) -> list[dict]:
             id2name[rec.get("record_id")] = nm
     aliases = store / "aliases.jsonl"
     if aliases.exists():
-        for row in [json.loads(x) for x in aliases.read_text(encoding="utf-8").splitlines() if x.strip()]:
+        for row in jsonl_io.parse_jsonl(aliases.read_text(encoding="utf-8"),
+                                        source="aliases.jsonl")[0]:
             al = row.get("alias")
             if isinstance(al, str) and al and al in q:
                 rid = row.get("entity_id")

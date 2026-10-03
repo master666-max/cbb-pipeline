@@ -133,22 +133,47 @@ def refeed_needed(store_root: Path, view: str = "lightrag") -> bool:
     return ProjectionCheckpoint(Path(store_root), view).replay_needed(rows)
 
 
+def _aux_tool_dir() -> Path | None:
+    """aux 工具目录按模块位置推导（2026-10-03 审计修正①：旧写法相对路径 "cbb/tools/…"
+    +cwd=store.parent 在当前布局下必错——脚本从未被真正执行，崩溃被伪装成 blocked）。
+    双布局兼容：包 scripts/cbb2→parents[1]；工作区 cbb-v2/cbb2→parents[2]。
+    找不到返回 None（缺席经 FileNotFoundError 显式入披露，不伪装）。"""
+    here = Path(__file__).resolve()
+    for base in (here.parents[1], here.parents[2]):
+        d = base / "cbb" / "tools"
+        if (d / "embed_dedup_scan.py").exists():
+            return d
+    return None
+
+
 def run_chapter(chapter_no: int, store: Path | None = None, no_aux: bool = False) -> dict:
-    """v2 编排骨架（aux 四件探活降级；保留兼容 Phase A 前调用面）。"""
+    """v2 编排骨架（aux 四件探活降级；保留兼容 Phase A 前调用面）。
+    aux 披露口径（2026-10-03 审计修正②）：工具有 stdout 披露行（含探活失败 rc=2 的
+    blocked 协议）→ 解析其末行；rc!=0 且无 stdout（裸崩/用法错）→ status=error +
+    returncode + stderr 尾部——不再伪装 blocked；rc=0 无产出 → blocked（旧降级语义）。"""
     store = store or config.store_of(Path(__file__).parents[2])
     aux = {"embedding": None, "graph": None, "replica": None, "temporal": None}
     if not no_aux:
+        tool_dir = _aux_tool_dir()
         aux_steps = [
-            ("embedding", ["py", "-X", "utf8", "cbb/tools/embed_dedup_scan.py"]),
-            ("graph", ["py", "-X", "utf8", "cbb/tools/neo4j_export.py"]),
+            ("embedding", "embed_dedup_scan.py"),
+            ("graph", "neo4j_export.py"),
         ]
-        for key, cmd in aux_steps:
+        for key, script in aux_steps:
             try:
                 import subprocess
+                cmd = ["py", "-X", "utf8",
+                       str(tool_dir / script) if tool_dir else script]
                 r = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8",
                                    timeout=600, cwd=str(store.parent), check=False)  # aux 降级语义
-                aux[key] = (json.loads(r.stdout.strip().splitlines()[-1])
-                            if r.stdout.strip() else {"status": "blocked"})
+                out = (r.stdout or "").strip()
+                if r.returncode != 0 and not out:
+                    aux[key] = {"status": "error", "returncode": r.returncode,
+                                "stderr": (r.stderr or "")[-200:]}
+                elif out:
+                    aux[key] = json.loads(out.splitlines()[-1])
+                else:
+                    aux[key] = {"status": "blocked"}
             except Exception as e:  # noqa: BLE001 — aux 探活降级：子进程异常族全捕获不阻塞主链
                 aux[key] = {"status": "error", "stderr": str(e)[-200:]}
     return {"chapter": chapter_no, "aux": aux,

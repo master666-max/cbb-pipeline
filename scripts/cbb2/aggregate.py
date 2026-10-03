@@ -60,6 +60,7 @@ def build_clusters(records: list[dict], alias_rows: list[dict]) -> list[dict]:
         merge_blocked = kind in ("title", "descriptor") or (kind == "nickname" and conf < 0.85)
         if known and not merge_blocked:
             union("name:" + alias_t, "rid:" + eid)
+            union("alias:" + alias_t, "rid:" + eid)  # 2026-10-01 审计修正：alias: 节点此前从未创建，alias_texts 恒空 ⇒ 世界书别名触发键全缺
         else:
             # 保守语义：不合并的映射降级为该名簇的存疑标注
             external_by_name[alias_t].add(eid)

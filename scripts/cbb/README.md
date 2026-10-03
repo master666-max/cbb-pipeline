@@ -1,18 +1,15 @@
-# CBB 本体版（全量构筑版 · 阶段二产物根）
+# scripts/cbb/ — 抽取期实现层（六模块 + 契约 + tools）
 
-> 依据：《本体构筑-工单.md》v1.0（唯一指令源）§0——本目录为正典库构建系统本体落盘根。
-> 前身：`../cbb-skills/`（实验版，FROZEN 只读，交接基线 73 单测）。本目录是**全量构筑版**（吸收 16 仓分析成果的重构产物），两者并存不覆盖。
-> 状态缓存：`../本体构筑-BUILD-STATE.md`（磁盘+git 为事实）。
+> 抽取期六模块（coordinate/anchor/extract/gate1/quarantine/store）＋四契约＋tools 工具族，各模块与工具配随仓单测。
+> 收束期核心见 [`../cbb2/`](../cbb2/)，收束期运行件见 [`../pipeline/`](../pipeline/)；总入口见仓根 [SKILL.md](../../SKILL.md) 与 [README.md](../../README.md)。
 
 ## 目录
 
-- `contracts/` — 四契约 schema v2 + 校验器（U-B01）
-- `cbb-coordinate/` — 幂等坐标+追加序纪律（U-B02）
-- `cbb-anchor/` — 双时间轴 tick/instant/time（U-B03）
-- `cbb-extract/` — 四面防御抽取（U-B04）
-- `cbb-gate1/` — 三域校验 validate/links/continuity（U-B05）
-- `cbb-quarantine/` — 三子类隔离区+urgency（U-B06）
-- `cbb-store/` — 双轨合并+UNIQUE 约束族（cbb-merge 并入，U-B07）
-- `smoke/` — 集成冒烟（U-B08）
-- `自审日志/` — §3 十轮自审逐轮留痕（每单位一个文件）
-- `issues/` — 工单与事实冲突登记处（§0 前言约定）
+- `contracts/` — 四契约 schema v2（case/issue/record/verdict）+ 校验器 `cbb_contracts.py` + 判卷契约 `judge-v2.2.txt`
+- `cbb-coordinate/` — 幂等坐标+追加序纪律（引文四元组落坐标）
+- `cbb-anchor/` — 双时间轴 tick/instant/time
+- `cbb-extract/` — 四面防御抽取
+- `cbb-gate1/` — 证据门：三域九码确定性硬校验（validate/links/continuity）
+- `cbb-quarantine/` — 三子类隔离区+urgency
+- `cbb-store/` — 双轨合并+UNIQUE 约束族（说明见其 [README.md](cbb-store/README.md)）
+- `tools/` — 派生与巡检工具族：词表/批次自检/环境自检/图库隔离/检索层/neo4j 导出/图对账/实体名归因/派生层对账/连续性巡检等（各配单测）
